@@ -1,0 +1,10 @@
+# vim: set ft=sh tw=0:
+
+# ~/.bashrc in an Arch install on my Acer Veriton T661 system
+
+# Joseph Harriott  http://momentary.eu/  Sat 23 Mar 2019
+# source ~/.bashrc if you've changed something here...
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+

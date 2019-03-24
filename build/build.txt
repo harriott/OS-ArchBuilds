@@ -1,10 +1,12 @@
 vim: fdl=1 ft=build fdm=expr:
 
+robocopy /mir D:\Dropbox\JH\IT_stack\onGitHub\AcerVeritonT661 G:\AcerVeritonT661
+
 # Physical Configuration
 LabelFlash DVD writer in top tray with flip-down front cover, SATA2
 ## hd's
 SDSSDA240G on SATA1, sitting loosely in a tray
-  Formatted in Knoppix 8.1 and prepared with 12GB ext4 followed by 40GB ext4
+gpt partitions built up from a previous gdisk
 ### added hd's & not yet connected to SATA ports
 9QG2FFEE, 2nd tray from bottom
 HD103SJ, lowest tray
@@ -19,80 +21,72 @@ TL-WR702N plugged into LAN socket as Client to Samsung Core Prime
 booted to  archlinux-2019.03.01-x86_64.iso  CD
 loadkeys uk
 ## storage spaces
-lsblk -f  indicated   gdisk /dev/sda
-  n > Enter (defaults to 3) > Enter (defaults to after 2) > +1m > ef02
-  n > Enter (defaults to 4) > Enter (defaults to after 3) > +5g > 8200 (Linux swap)
-  n > Enter (defaults to 5) > Enter (defaults to after 4) > Enter (defaulted to 468862094, then end)
-    Enter (defaults to 8300 Linux filesystem)
-  w
-mkswap /dev/sda4   for   swapon /dev/sda4
-  (then  swapon -s  shows /dev/sda4 has default Priority -2)
-mount /dev/sda1 /mnt   then   mkdir /mnt/home   then  mount /dev/sda2 /mnt/home
+lsblk -f  indicated   gdisk /dev/sda   x (extra functionality) > z (Zap)  y
+  gdisk /dev/sda   t > 2 > 8304   w > y
+swapon /dev/sda4   (then  swapon -s  shows /dev/sda4 has default Priority -2)
+mkfs.ext4 /dev/sda2  y   for   mount /dev/sda2 /mnt
+mkdir /mnt/home   then   mkfs.ext4 /dev/sda3  y   for   mount /dev/sda3 /mnt/home
 ## internet
-ip link  reports  LAN  socket as  enp0s25
-ping -c 3 8.8.8.8  got a response
+(ip link  reports  LAN  socket as  enp0s25) ping -c 3 8.8.8.8  got a response
 ## install the base packages
-pacstrap /mnt base base-devel  installed a load
-## fstab
-cat /mnt/etc/fstab  reveals it to have just the headers, so:
-  genfstab -U -p /mnt >> /mnt/etc/fstab   generated info for  /  /home  & the  swap  partition
+pacstrap /mnt base base-devel  installed 155 Packages
+## after base Packages
+K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
+mkdir /home/mnt   for   mount /dev/sdf1 /home/mnt
+cd /home/mnt/AcerVeritonT661/build   for   bash after-basePackages.sh
 ## change root
 arch-chroot /mnt
-### Time zone
-ls -l /etc/localtime  shows it's a symlink to  ../usr/share/zoneinfo/UTC, so  rm /etc/localtime
-ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime  (don't cat this!)
-hwclock --systohc
-### Locale
+sudo -ll   works
+### after chroot
+K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
+mount /dev/sdf1 /mnt
+cd /mnt/AcerVeritonT661/build   for   bash after-chroot.sh
+### locale
 vi /etc/locale.gen
   and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
-  loadkeys uk  again for  cat /etc/locale.gen | grep -A 17 en_GB   then  locale-gen
-cat /etc/locale.conf   shows it ain't there, so   echo LANG=en_GB.UTF-8 > /etc/locale.conf
-cat /etc/vconsole.conf  shows it ain't there, so  echo KEYMAP=uk > /etc/vconsole.conf
-### Networking
-cat /etc/hostname   shows it ain't there, so   echo avt661 > /etc/hostname
-#### /etc/hosts
-vi /etc/hosts
-##### appended
-127.0.0.1 localhost
-::1       localhost
-127.0.1.1 avt661.localdomain avt661
-#### Network Time Protocol
-pacman -S ntp  = 2 packages
+  cat /etc/locale.gen | grep -v ^#   then  locale-gen
+### update K16GB500
+cd /   then  umount /dev/sdf1   for updating, then   mount /dev/sdg1 /mnt
+pacman -S rsync
+rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
+### after locale
+cd /home/AcerVeritonT661/build   for    bash after_locale.sh
 ### root password
 passwd
-### Microcode
-pacman -S intel-ucode
-### GRUB
-pacman -S grub   1 Package
-lsblk -f  indicates:  grub-install --target=i386-pc /dev/sda
-### reboot
-exit   then   reboot   which was clunky...
+### shutdown to eject CD
+exit   then   shutdown -h  now
 ## booted to SSD
-logged in as "root"  dhcpcd enp0s25   ping -c 3 8.8.8.8  got a response
-### framebuffer
-pacman -S fbset   1 Package   then  fbset -i   reports  mode 1366x768
-### fstrim
-systemctl status fstrim.timer  reports it to be disabled
-systemctl enable fstrim.timer  "Created symlink /etc/systemd/system/timers.target.wants/fstrim.timer → /usr/lib/systemd/system/fstrim.timer"
-### Swap
-cat /sys/fs/cgroup/memory/memory.swappiness   reports  60
-ls /etc/sysctl.d   shows it to empty, so  echo "vm.swappiness=10" > /etc/sysctl.d/99-sysctl.conf
+restarted, immediately ejecting the CD
+slow to get to Grub, then to console...
+logged in as "root"
+### internet
+dhcpcd enp0s25
+### K16GB500
+mount /dev/sdg1 /mnt
+rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
+### when booted to SSD
+cd /home/AcerVeritonT661/build   for    bash -x whenSSD.sh
+### User jo
+passwd jo
+visudo   and  added  jo ALL=(ALL) ALL   above the   root declaration
+### stat root folders
+stat -c '%n %a %G %U' /*   etc
+### update /home/AcerVeritonT661
+umount /dev/sdf1   for updating, then   mount /dev/sdf1 /mnt
+rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
+### override-conf
+bash -x override-conf.sh   reboot
+### AcerVeritonT661
+sudo mkdir /mnt/K16GB500  pw for jo
+stat -c '%n %a %G %U' /mnt/*  reveals it to be  755 root root
+lsblk -f  indicated  sudo mount /dev/sdb1 /mnt/K16GB500
+cp -r /mnt/K16GB500/AcerVeritonT661/ .
+stat -c '%n %a %G %U' *  reveals it to be  755 jo jo
+### noclear-conf
+sudo bash -x noclear-conf.sh   sudo reboot
+### AcerVeritonT661
+lsblk -f  indicated  sudo mount /dev/sdf1 /mnt/K16GB500
+rsync -irtv --delete /mnt/K16GB500/AcerVeritonT661 /home/jo/
+### Numlock
+sudo bash -x Numlock.sh   sudo reboot
 # waiting
-## Time 6.1s slow
-as revealed by   http://time.is/
-sudo ntpd -qg
-sudo hwclock --systohc
-## drives
-cd /mnt
-  mkdir SDSSDA240G
-  mkdir WD30EZRZ
-  cp /home/jo/fstab /etc/fstab
-  stat -c '%A %a %U %G %n' *   reveals some are root (all 755)
-  chown jo:jo *
-#### User jo
-useradd -m -G wheel -s /bin/bash jo
-  useradd: warning: the home directory already exists.
-  Not copying any file from skel directory into it.
-  passwd jo
-#### sudoers
-visudo, and uncommented second wheel line   cat /etc/sudoers

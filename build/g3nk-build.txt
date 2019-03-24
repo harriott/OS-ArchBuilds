@@ -1,0 +1,106 @@
+vim: fdl=1 ft=build fdm=expr:
+
+# Physical Configuration
+LabelFlash DVD writer in top tray with flip-down front cover, SATA2
+## hd's
+SDSSDA240G on SATA1, sitting loosely in a tray
+  Formatted in Knoppix 8.1 and prepared with 12GB ext4 followed by 40GB ext4
+### added hd's & not yet connected to SATA ports
+9QG2FFEE, 2nd tray from bottom
+HD103SJ, lowest tray
+WD1001FALS in a plastic holder, third wide tray down
+## human interface
+Logitech ® Ultra-Flat Keyboard  plugged in purple
+Logitech Cordless Desktop EX 110 Mouse plugged in Green PS/2 port
+GNR TS501
+## internet
+TL-WR702N plugged into LAN socket as Client to Samsung Core Prime
+# Arch install
+booted to  archlinux-2019.03.01-x86_64.iso  CD
+loadkeys uk
+## storage spaces
+lsblk -f  indicated   gdisk /dev/sda   x (extra functionality) > z (Zap)  y
+  gdisk /dev/sda   o (create a new empty GUID partition table GPT & new protective MBR)
+    w   for  gdisk /dev/sda
+      n > Enter (defaults to 1) > Enter (defaults to 2048) > +1m > ef02 (= BIOS boot partition)
+      n > Enter (defaults to 2) > Enter (defaults to after 1) > +9g > 8304 (= Linux x86-64 root)
+      n > Enter (defaults to 3) > Enter (defaults to after 2) > +40g > 8302 (= Linux /home)
+      n > Enter (defaults to 4) > Enter (defaults to after 3) > +5g > 8200 (= Linux swap)
+      n > Enter (defaults to 5) > Enter (defaults to after 4) >
+        Enter (defaulted to 468862094, then end) > Enter (defaults to 8300 Linux filesystem)
+      w > y
+mkswap /dev/sda4   for   swapon /dev/sda4
+  (then  swapon -s  shows /dev/sda4 has default Priority -2)
+parted /dev/sda print   reports   Partition Table gpt  and that  sda2 & sda3  are already ext4
+mkfs.ext4 /dev/sda2  y   for   mount /dev/sda2 /mnt
+mkdir /mnt/home   then   mkfs.ext4 /dev/sda3  y   for   mount /dev/sda3 /mnt/home
+## internet
+ip link  reports  LAN  socket as  enp0s25
+ping -c 3 8.8.8.8  got a response
+## install the base packages
+pacstrap /mnt base base-devel  installed 155 Packages
+## fstab
+cat /mnt/etc/fstab  reveals it to have just the headers, so:
+  genfstab -U -p /mnt >> /mnt/etc/fstab   generated info for  /  /home  & the  swap  partition
+## change root
+arch-chroot /mnt
+sudo -ll   works
+### Time zone
+ls -l /etc/localtime  shows it's a symlink to  ../usr/share/zoneinfo/UTC, so  rm /etc/localtime
+ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime  (don't cat this!)
+hwclock --systohc
+### Locale
+vi /etc/locale.gen
+  and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
+  cat /etc/locale.gen | grep -A 17 en_GB   then  locale-gen
+cat /etc/locale.conf   shows it ain't there, so   echo LANG=en_GB.UTF-8 > /etc/locale.conf
+cat /etc/vconsole.conf  shows it ain't there, so  echo KEYMAP=uk > /etc/vconsole.conf
+### Networking
+cat /etc/hostname   shows it ain't there, so   echo avt661 > /etc/hostname
+#### /etc/hosts
+vi /etc/hosts
+##### appended
+127.0.0.1 localhost
+::1       localhost
+127.0.1.1 avt661.localdomain avt661
+#### Network Time Protocol
+pacman -S ntp  = 2 packages
+### root password
+passwd
+### Microcode
+pacman -S intel-ucode
+### GRUB
+pacman -S grub   1 Package
+lsblk -f  indicates:  grub-install --target=i386-pc /dev/sda
+#### re-generate  grub.cfg
+grub-mkconfig -o /boot/grub/grub.cfg
+### shutdown to eject CD
+exit   then   shutdown -h  now   seized, so went hard...
+## booted to SSD
+restarted, immediately ejecting the CD
+slow to get to Grub, then to console...
+logged in as "root"
+### internet
+dhcpcd enp0s25   ping -c 3 8.8.8.8  got a response
+### framebuffer
+pacman -S fbset   1 Package   then  fbset -i   reports  mode 1366x768
+### fstrim
+systemctl status fstrim.timer  reports it to be disabled
+systemctl enable fstrim.timer  "Created symlink /etc/systemd/system/timers.target.wants/fstrim.timer → /usr/lib/systemd/system/fstrim.timer"
+reboot > logged in as "root"  revealed it to be  active
+### Swap
+cat /sys/fs/cgroup/memory/memory.swappiness   reports  60
+ls /etc/sysctl.d   shows it to empty, so  echo "vm.swappiness=10" > /etc/sysctl.d/99-sysctl.conf
+reboot > logged in as "root"  revealed it to be  active
+### Git
+pacman -S tig  for 5 packages
+### User jo
+useradd -m jo   then   passwd jo
+visudo   and  added  jo ALL=(ALL) ALL   above the   root declaration
+### stat root folders
+stat -c '%n %a %G %U' /  reports  755 root root
+stat -c '%n %a %G %U' /*  seems okay, if a little lax,
+  /home  is owned by  root root, but its contents are a mess...
+userdel -r jo   got rid of odd  /jo
+### broken
+attempt to remove  /home  broke the system...
