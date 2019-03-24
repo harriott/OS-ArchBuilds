@@ -6,3 +6,4 @@
 mkdir /etc/systemd/system/getty@.service.d
 echo [Service] > /etc/systemd/system/getty@.service.d/activate-numlock.conf
 echo "ExecStartPre=/bin/sh -c 'setleds +num < /dev/%I'" >> /etc/systemd/system/getty@.service.d/activate-numlock.conf
+cat /etc/systemd/system/getty@.service.d/activate-numlock.conf

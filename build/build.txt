@@ -93,4 +93,23 @@ sudo bash -x Numlock.sh   sudo reboot
 systemctl enable dhcpcd@enp0s25   got me  "Created symlink /etc/systemd/system/multi-user.target.wants/dhcpcd@enp0s25.service → /usr/lib/systemd/system/dhcpcd@.service"   sudo reboot
 ### Secure Shell
 sudo pacman -S openssh  = 3 packages
+### firewalld
+sudo pacman -S firewalld   = 17 packages including nftables & python
+(sudo systemctl enable firewalld 2>&1) | tee firewalld.txt   which contained:
+  Created symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service → /usr/lib/systemd/system/firewalld.service.
+  Created symlink /etc/systemd/system/multi-user.target.wants/firewalld.service → /usr/lib/systemd/system/firewalld.service.
+(sudo systemctl start firewalld) | tee firewalld.txt   which contained:
+  ...
+  ... WARNING: ipset not usable, disabling ipset usage in firewall.
+  ... WARNING: ebtables-restore and ebtables are missing, disabling bridge firewall.
+sudo reboot   for   sudo firewall-cmd --state
+#### active zone
+firewall-cmd --get-default-zone   reports  "public"
+sudo firewall-cmd --list-all
+sudo firewall-cmd --set-default-zone=home   sudo reboot  jammed, so hard restart...
+firewall-cmd --panic-on
+sudo firewall-cmd --get-zone-of-interface=enp0s25   returns "no zone"
+
+sudo firewall-cmd --zone=drop --change-interface=enp0s25
+
 # waiting
