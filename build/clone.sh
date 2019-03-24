@@ -3,4 +3,4 @@
 
 # bash -x <thisfile>.sh
 
-git clone git@github.com:harriott/AcerVeritonT661.git
+git clone git@github.com:harriott/AcerVeritonT661.git /home/jo
