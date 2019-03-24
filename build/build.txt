@@ -89,4 +89,8 @@ lsblk -f  indicated  sudo mount /dev/sdf1 /mnt/K16GB500
 rsync -irtv --delete /mnt/K16GB500/AcerVeritonT661 /home/jo/
 ### Numlock
 sudo bash -x Numlock.sh   sudo reboot
+### enp0s25 always live
+systemctl enable dhcpcd@enp0s25   got me  "Created symlink /etc/systemd/system/multi-user.target.wants/dhcpcd@enp0s25.service → /usr/lib/systemd/system/dhcpcd@.service"   sudo reboot
+### Secure Shell
+sudo pacman -S openssh  = 3 packages
 # waiting
