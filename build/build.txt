@@ -137,6 +137,8 @@ sudo systemctl enable clamav-freshclam.service   created a symlink
 sudo systemctl enable clamav-daemon.service   created two symlinks
 sudo reboot
 #### EICAR test file
+bash -x EICAR.sh
+
 curl -o http://www.eicar.org/download/eicar.com.txt
 
 clamscan -
