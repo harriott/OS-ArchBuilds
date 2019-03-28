@@ -128,9 +128,19 @@ sudo pacman -S clamav   for 2 Packages
 sudo freshclam
   ...
   WARNING: Clamd was NOT notified: Can't connect to clamd through /var/lib/clamav/clamd.sock: No such file or directory
+sudo bash -x clamd-sock.sh
+#### sudo pacman -Syu  for 3 Packages
+#### LocalSocket
+cat /etc/clamav/clamd.conf grep Loc   shows that the supposed  clamd.sock  line ain't there...
+#### daemons
+sudo systemctl enable clamav-freshclam.service   created a symlink
+sudo systemctl enable clamav-daemon.service   created two symlinks
+sudo reboot
+#### EICAR test file
+curl -o http://www.eicar.org/download/eicar.com.txt
 
-    sudo touch /var/lib/clamav/clamd.sock
-    sudo chown clamav:clamav /var/lib/clamav/clamd.sock
+clamscan -
+
 #### ClamAV check
 in  IT_Copied/Cross-platform/:
   curl http://www.eicar.org/download/eicar.com.txt | clamscan -
