@@ -4,7 +4,7 @@ robocopy /mir D:\Dropbox\JH\IT_stack\onGitHub\AcerVeritonT661 G:\AcerVeritonT661
 
 # Physical Configuration
 LabelFlash DVD writer in top tray with flip-down front cover, SATA2
-## hd's
+## HDs
 SDSSDA240G on SATA1, sitting loosely in a tray
 gpt partitions built up from a previous gdisk
 ### added hd's & not yet connected to SATA ports
@@ -15,8 +15,8 @@ WD1001FALS in a plastic holder, third wide tray down
 Logitech ® Ultra-Flat Keyboard  plugged in purple
 Logitech Cordless Desktop EX 110 Mouse plugged in Green PS/2 port
 GNR TS501
-## internet
-TL-WR702N plugged into LAN socket as Client to Samsung Core Prime
+## TL-WR702N
+plugged into LAN socket as Client to Samsung Core Prime
 # Arch install
 booted to  archlinux-2019.03.01-x86_64.iso  CD
 loadkeys uk
@@ -59,7 +59,7 @@ exit   then   shutdown -h  now
 restarted, immediately ejecting the CD
 slow to get to Grub, then to console...
 logged in as "root"
-### internet
+### enp0s25
 dhcpcd enp0s25
 ### K16GB500
 mount /dev/sdg1 /mnt
@@ -107,9 +107,39 @@ sudo reboot   for   sudo firewall-cmd --state
 firewall-cmd --get-default-zone   reports  "public"
 sudo firewall-cmd --list-all
 sudo firewall-cmd --set-default-zone=home   sudo reboot  jammed, so hard restart...
-firewall-cmd --panic-on
-sudo firewall-cmd --get-zone-of-interface=enp0s25   returns "no zone"
+##### failed to block ping 8.8.8.8
+firewall-cmd --zone=drop --add-rich-rule='rule family="ipv4" source address="8.8.8.8" reject'
+##### home
+sudo firewall-cmd --set-default-zone=home
+sudo firewall-cmd --permanent --zone=home --change-interface=enp0s25
+sudo reboot   for  sudo firewall-cmd --list-all
+### connected HDs
+WD1001FALS to SATA3
+9QG2FFEE to SATA4
+HD103SJ to SATA5
+### enp0s25 snag
+systemctl status dhcpcd@enp0s25   reporting  "failed"
+### bind-tools
+sudo pacman -S bind-tools  for 4 packages
+### Wget
+sudo pacman -S wget   Packages (1) wget-1.20.1-3
+### ClamAV
+sudo pacman -S clamav   for 2 Packages
+sudo freshclam
+  ...
+  WARNING: Clamd was NOT notified: Can't connect to clamd through /var/lib/clamav/clamd.sock: No such file or directory
 
-sudo firewall-cmd --zone=drop --change-interface=enp0s25
-
+    sudo touch /var/lib/clamav/clamd.sock
+    sudo chown clamav:clamav /var/lib/clamav/clamd.sock
+#### ClamAV check
+in  IT_Copied/Cross-platform/:
+  curl http://www.eicar.org/download/eicar.com.txt | clamscan -
+  ...
+  stdin: Eicar-Test-Signature FOUND
+  ...
+  Known viruses: 6335533
+  Engine version: 0.99.2
+#### clamscan
+in ~/Arch:
+  sudo clamscan -r --exclude-dir=/mnt --exclude-dir=/run/media/jo / 2>&1 | tee clamscan.txt
 # waiting
