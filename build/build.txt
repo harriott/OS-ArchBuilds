@@ -137,21 +137,31 @@ sudo systemctl enable clamav-freshclam.service   created a symlink
 sudo systemctl enable clamav-daemon.service   created two symlinks
 sudo reboot
 #### EICAR test file
-bash -x EICAR.sh
-
-curl -o http://www.eicar.org/download/eicar.com.txt
-
-clamscan -
-
-#### ClamAV check
-in  IT_Copied/Cross-platform/:
-  curl http://www.eicar.org/download/eicar.com.txt | clamscan -
-  ...
-  stdin: Eicar-Test-Signature FOUND
-  ...
-  Known viruses: 6335533
-  Engine version: 0.99.2
+bash -x EICAR.sh  for   clamscan eicar.com.txt   FOUND
 #### clamscan
 in ~/Arch:
-  sudo clamscan -r --exclude-dir=/mnt --exclude-dir=/run/media/jo / 2>&1 | tee clamscan.txt
+  sudo clamscan -r --exclude-dir=/sys / 2>&1 | tee clamscan.txt
+    in /var/cache/pacman/pkg  got lots of  Warnings  that  "decompress file size exceeds limits - only scanning 24117248 bytes"
+cat clamscant.txt | grep -A 1 exceeds   reveales  /usr/share/gettextarchive.dir.tar.xz
+  & 9 files in  /var/cache/pacman/pkg   too big
+  ls -lSr /var/cache/pacman/pkg   reveals that the largest of the latter is  linux-firmware, 78M
+#### clamav-unofficial-sigs
+mkdir ~/Arch   cd Arch
+git clone https://aur.archlinux.org/clamav-unofficial-sigs/
+makepkg -sic
+##### sudo pacman -Syu  for 2 Packages
+##### Enable the clamav-unofficial-sigs.timer
+systemctl list-timers
+sudo systemctl enable clamav-unofficial-sigs.timer   created a symlink
+##### update signatures manually
+sudo clamav-unofficial-sigs.sh   downloaded and imported  Sanesecurity  keyring
+#### clamdscan
+sudo vi /etc/clamav/clamd.conf   & uncomment the two ExcludePath declarations
+sudo clamdscan --multiscan --fdpass
+  got a load of "WARNING: /...: Not supported file type"
+  and a few access ERRORs for /tmp/clamav*  files
+  251 in total, but no infected files
+### rnano for visudo
+sudo bash -x rnano_for_visudo.sh
 # waiting
+## EXPORT SUDO_EDITOR=rnano
