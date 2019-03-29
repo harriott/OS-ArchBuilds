@@ -163,5 +163,7 @@ sudo clamdscan --multiscan --fdpass
   251 in total, but no infected files
 ### rnano for visudo
 sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
+### connect HDs
+sudo bash -x fstabLABELs.sh
 # waiting
 ## EXPORT SUDO_EDITOR=rnano
