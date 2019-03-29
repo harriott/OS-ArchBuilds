@@ -157,13 +157,22 @@ sudo systemctl enable clamav-unofficial-sigs.timer   created a symlink
 sudo clamav-unofficial-sigs.sh   downloaded and imported  Sanesecurity  keyring
 #### clamdscan
 sudo vi /etc/clamav/clamd.conf   & uncomment the two ExcludePath declarations
-sudo clamdscan --multiscan --fdpass
+sudo clamdscan --multiscan --fdpass /
   got a load of "WARNING: /...: Not supported file type"
   and a few access ERRORs for /tmp/clamav*  files
   251 in total, but no infected files
 ### rnano for visudo
 sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
-### connect HDs
+### 9QG2FFEE
 sudo bash -x fstabLABELs.sh
+#### clamdscan
+sudo clamdscan --multiscan --fdpass /mnt/9QG2FFEE   took  288 minutes and found 12 infections
+find . -type d -printf '%d\n' | sort -rn | head -1   returned 21, so
+sudo rnano /etc/clamav/clamd.conf   added   ExcludePath ^/lost+found/
+  uncommented  MaxDirectoryRecursion  & set to 21
+find . -type d -printf '%d %p\n' | grep ^21   and homed in on a deep directory to scan again
 # waiting
+## mlocate
+sudo pacman -Syu  for 2 Packages
+sudo pacman -S mlocate
 ## EXPORT SUDO_EDITOR=rnano
