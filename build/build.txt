@@ -30,10 +30,10 @@ mkdir /mnt/home   then   mkfs.ext4 /dev/sda3  y   for   mount /dev/sda3 /mnt/hom
 (ip link  reports  LAN  socket as  enp0s25) ping -c 3 8.8.8.8  got a response
 ## install the base packages
 pacstrap /mnt base base-devel  installed 155 Packages
-## after base Packages
+## genfstab
 K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
 mkdir /home/mnt   for   mount /dev/sdf1 /home/mnt
-cd /home/mnt/AcerVeritonT661/build   for   bash after-basePackages.sh
+cd /home/mnt/AcerVeritonT661/build   for   bash genfstab.sh
 ## change root
 arch-chroot /mnt
 sudo -ll   works
@@ -162,6 +162,6 @@ sudo clamdscan --multiscan --fdpass
   and a few access ERRORs for /tmp/clamav*  files
   251 in total, but no infected files
 ### rnano for visudo
-sudo bash -x rnano_for_visudo.sh
+sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
 # waiting
 ## EXPORT SUDO_EDITOR=rnano
