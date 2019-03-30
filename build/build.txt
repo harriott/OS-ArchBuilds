@@ -171,6 +171,12 @@ find . -type d -printf '%d\n' | sort -rn | head -1   returned 21, so
 sudo rnano /etc/clamav/clamd.conf   added   ExcludePath ^/lost+found/
   uncommented  MaxDirectoryRecursion  & set to 21
 find . -type d -printf '%d %p\n' | grep ^21   and homed in on a deep directory to scan again
+### HD103SJ
+also mounted by  fstabLABELs.sh
+cd /mnt/HD103SJ   for   sudo clamdscan --multiscan --fdpass .
+### WD1001FALS
+
+also mounted by  fstabLABELs.sh
 # waiting
 ## mlocate
 sudo pacman -Syu  for 2 Packages
