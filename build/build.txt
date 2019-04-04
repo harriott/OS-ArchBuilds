@@ -181,19 +181,23 @@ cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
 sudo pacman -Syu  for 13 Packages
 pacman -S ncdu
 # waiting
-## 190401 Backup
-Rebooted to  archlinux-2019.04.01-x86_64.iso  CD
+## 190404 Backup
+mkdir AcerVeritonT661-rsyncBackup
 
-(with K8GBDT100 plugged in) Start > Del > KingstonDataTraveler 2.0PMA  up top
-  Restarted into archlinux-2017.01.01-dual.iso
+Rebooted to  archlinux-2019.04.01-x86_64.iso  CD
 cd /
-lsblk -f  (listed these in wrong order, but) indicated:
-  mount dev/sdc1 mnt
-  mount dev/sdc2 mnt/home
-  mount dev/sdg1 mnt/mnt/WD30EZRZ
-cd mnt/home/jo/Arch/Install
+lsblk -f   indicated:
+  ls mnt
+    mount dev/sda2 mnt
+  ls mnt/home
+    mount dev/sda3 mnt/home
+  ls mnt/mnt/9QG2FFEE
+    mount dev/sdc1 mnt/mnt/9QG2FFEE
+cd mnt/home/jo/AcerVeritonT661/build
   bash rsyncBackup.sh
-reboot   Hard Disk Boot Priority > SDSSDA240G
+shutdown -h  now   snagged, so hard shutdown
+  restarted, ejecting the CD
+cd /mnt/9QG2FFEE
 ## mlocate
 sudo pacman -Syu  for 2 Packages
 sudo pacman -S mlocate

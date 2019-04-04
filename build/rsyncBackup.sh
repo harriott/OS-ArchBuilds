@@ -4,12 +4,10 @@
 # Full system backup
 # ------------------
 
-# Joseph Harriott, Tue 02 Apr 2019
-
 # Run this script from a Live ISO:  bash /mnt/home/jo/Arch/rsyncBackup.sh
 
 # Backup destination
-backdest=/mnt/mnt/9QG2FFEE
+backdest=/mnt/mnt/9QG2FFEE/AcerVeritonT661-rsyncBackup
 
 # Labels for backup name
 date=$(date "+%F-%H-%M")
@@ -28,9 +26,9 @@ if [ $gobu ]; then
     fi
     echo "rsync-ing:"
     mkdir $bfolder
-    for sysfolder in boot etc root usr var; do
+    for sysfolder in boot etc home root usr var; do
       mkdir $bfolder/$sysfolder
-      rsync -aAivX /mnt/$sysfolder/ $bfolder/$sysfolder
+      rsync -aAivX /mnt/$sysfolder/ $bfolder/$sysfolder 2>&1 | tee $bfolder-$sysfolder.txt
     done
   fi
 fi
