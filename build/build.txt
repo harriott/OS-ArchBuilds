@@ -1,6 +1,7 @@
 vim: fdl=0 ft=build fdm=expr:
 
 # general tips
+man hier
 robocopy /mir D:\Dropbox\JH\IT_stack\onGitHub\AcerVeritonT661 G:\AcerVeritonT661
 
 ## get at root on tty2
@@ -59,7 +60,7 @@ cd /home/AcerVeritonT661/build   for    bash after_locale.sh
 #### root password
 passwd
 #### shutdown to eject CD
-exit   then   shutdown -h  now
+exit   then   shutdown -h now
 ### booted to SSD
 restarted, immediately ejecting the CD
 slow to get to Grub, then to console...
@@ -226,20 +227,30 @@ rm -r /h21-home-jo/.local/share/Trash/files/chromium
 lsblk -f  indicated   sudo mount /dev/sdj1 /mnt/K16GB500
 stat -c '%n %a %G %U' /mnt/K16GB500/*  reveals them to be  755 root root  so
   sudo cp -r h21-home-jo /mnt/K16GB500/
-shutdown -h  now   seized the framebuffer such that I couldn't even get at tty2, so hard off
+shutdown -h now
+  got the system, I think, to the useless low-level halt.target, requiring a hard power off
 ## grab etc xinitrc
 sudo cp /etc/X11/xinit/xinitrc /mnt/K16GB500/
-shutdown -h  now   seized the framebuffer such that I couldn't even get at tty2, so hard off
+sudo shutdown -h now
+  got the system, I think, to the useless low-level halt.target, requiring a hard power off
+# Openbox
+cd ~/AcerVeritonT661/build   for   sudo bash -x Openbox.sh
+  for   59 Packages   5 Packages
+## grab default configuration
+sudo cp -R /etc/xdg/openbox /mnt/K16GB500
+halt -p
+# xinitrc
+powered on into jo for   cp AcerVeritonT661/configFiles/xinitrc .xinitrc
+startx
+# obmenu-generator
+obmenu-generator.sh
 # waiting
 sudo pacman -Syu
-## Openbox
-sudo pacman -S hicolor-icon-theme openbox openbox-themes pcmanfm tint2  = 43 Packages
-## configure Openbox
-sudo pacman -S lxappearance-obconf obconf  = 4 packages
-sudo pacman -S ttf-ubuntu-font-family  = 1 package
 ## 32-bit OpenGL
 sudo pacman -S lib32-mesa
 ## mlocate
 sudo pacman -Syu  for 2 Packages
 sudo pacman -S mlocate
 ## EXPORT SUDO_EDITOR=rnano
+## Tales from responsivenessland
+## Zen kernel
