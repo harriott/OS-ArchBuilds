@@ -1,99 +1,104 @@
-vim: fdl=1 ft=build fdm=expr:
+vim: fdl=0 ft=build fdm=expr:
 
+# general tips
 robocopy /mir D:\Dropbox\JH\IT_stack\onGitHub\AcerVeritonT661 G:\AcerVeritonT661
 
-# Physical Configuration
+## get at root on tty2
+Ctrl+Alt+F2 > root + pw
+
+# to 190404 Backup
+## Physical Configuration
 LabelFlash DVD writer in top tray with flip-down front cover, SATA2
-## HDs
+### HDs
 SDSSDA240G on SATA1, sitting loosely in a tray
 gpt partitions built up from a previous gdisk
-### added hd's & not yet connected to SATA ports
+#### added hd's & not yet connected to SATA ports
 9QG2FFEE, 2nd tray from bottom
 HD103SJ, lowest tray
 WD1001FALS in a plastic holder, third wide tray down
-## human interface
+### human interface
 Logitech ® Ultra-Flat Keyboard  plugged in purple
 Logitech Cordless Desktop EX 110 Mouse plugged in Green PS/2 port
 GNR TS501
-## TL-WR702N
+### TL-WR702N
 plugged into LAN socket as Client to Samsung Core Prime
-# Arch install
+## Arch install
 booted to  archlinux-2019.03.01-x86_64.iso  CD
 loadkeys uk
-## storage spaces
+### storage spaces
 lsblk -f  indicated   gdisk /dev/sda   x (extra functionality) > z (Zap)  y
   gdisk /dev/sda   t > 2 > 8304   w > y
 swapon /dev/sda4   (then  swapon -s  shows /dev/sda4 has default Priority -2)
 mkfs.ext4 /dev/sda2  y   for   mount /dev/sda2 /mnt
 mkdir /mnt/home   then   mkfs.ext4 /dev/sda3  y   for   mount /dev/sda3 /mnt/home
-## internet
+### internet
 (ip link  reports  LAN  socket as  enp0s25) ping -c 3 8.8.8.8  got a response
-## install the base packages
+### install the base packages
 pacstrap /mnt base base-devel  installed 155 Packages
-## genfstab
+### genfstab
 K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
 mkdir /home/mnt   for   mount /dev/sdf1 /home/mnt
 cd /home/mnt/AcerVeritonT661/build   for   bash genfstab.sh
-## change root
+### change root
 arch-chroot /mnt
 sudo -ll   works
-### after chroot
+#### after chroot
 K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
 mount /dev/sdf1 /mnt
 cd /mnt/AcerVeritonT661/build   for   bash after-chroot.sh
-### locale
+#### locale
 vi /etc/locale.gen
   and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
   cat /etc/locale.gen | grep -v ^#   then  locale-gen
-### update K16GB500
+#### update K16GB500
 cd /   then  umount /dev/sdf1   for updating, then   mount /dev/sdg1 /mnt
 pacman -S rsync
 rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
-### after locale
+#### after locale
 cd /home/AcerVeritonT661/build   for    bash after_locale.sh
-### root password
+#### root password
 passwd
-### shutdown to eject CD
+#### shutdown to eject CD
 exit   then   shutdown -h  now
-## booted to SSD
+### booted to SSD
 restarted, immediately ejecting the CD
 slow to get to Grub, then to console...
 logged in as "root"
-### enp0s25
+#### enp0s25
 dhcpcd enp0s25
-### K16GB500
+#### K16GB500
 mount /dev/sdg1 /mnt
 rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
-### when booted to SSD
+#### when booted to SSD
 cd /home/AcerVeritonT661/build   for    bash -x whenSSD.sh
-### User jo
+#### User jo
 passwd jo
 visudo   and  added  jo ALL=(ALL) ALL   above the   root declaration
-### stat root folders
+#### stat root folders
 stat -c '%n %a %G %U' /*   etc
-### update /home/AcerVeritonT661
+#### update /home/AcerVeritonT661
 umount /dev/sdf1   for updating, then   mount /dev/sdf1 /mnt
 rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
-### override-conf
+#### override-conf
 bash -x override-conf.sh   reboot
-### AcerVeritonT661
+#### AcerVeritonT661
 sudo mkdir /mnt/K16GB500  pw for jo
 stat -c '%n %a %G %U' /mnt/*  reveals it to be  755 root root
 lsblk -f  indicated  sudo mount /dev/sdb1 /mnt/K16GB500
 cp -r /mnt/K16GB500/AcerVeritonT661/ .
 stat -c '%n %a %G %U' *  reveals it to be  755 jo jo
-### noclear-conf
+#### noclear-conf
 sudo bash -x noclear-conf.sh   sudo reboot
-### AcerVeritonT661
+#### AcerVeritonT661
 lsblk -f  indicated  sudo mount /dev/sdf1 /mnt/K16GB500
 rsync -irtv --delete /mnt/K16GB500/AcerVeritonT661 /home/jo/
-### Numlock
+#### Numlock
 sudo bash -x Numlock.sh   sudo reboot
-### enp0s25 always live
+#### enp0s25 always live
 systemctl enable dhcpcd@enp0s25   got me  "Created symlink /etc/systemd/system/multi-user.target.wants/dhcpcd@enp0s25.service → /usr/lib/systemd/system/dhcpcd@.service"   sudo reboot
-### Secure Shell
+#### Secure Shell
 sudo pacman -S openssh  = 3 packages
-### firewalld
+#### firewalld
 sudo pacman -S firewalld   = 17 packages including nftables & python
 (sudo systemctl enable firewalld 2>&1) | tee firewalld.txt   which contained:
   Created symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service → /usr/lib/systemd/system/firewalld.service.
@@ -103,87 +108,85 @@ sudo pacman -S firewalld   = 17 packages including nftables & python
   ... WARNING: ipset not usable, disabling ipset usage in firewall.
   ... WARNING: ebtables-restore and ebtables are missing, disabling bridge firewall.
 sudo reboot   for   sudo firewall-cmd --state
-#### active zone
+##### active zone
 firewall-cmd --get-default-zone   reports  "public"
 sudo firewall-cmd --list-all
 sudo firewall-cmd --set-default-zone=home   sudo reboot  jammed, so hard restart...
-##### failed to block ping 8.8.8.8
+###### failed to block ping 8.8.8.8
 firewall-cmd --zone=drop --add-rich-rule='rule family="ipv4" source address="8.8.8.8" reject'
-##### home
+###### home
 sudo firewall-cmd --set-default-zone=home
 sudo firewall-cmd --permanent --zone=home --change-interface=enp0s25
 sudo reboot   for  sudo firewall-cmd --list-all
-### connected HDs
+#### connected HDs
 WD1001FALS to SATA3
 9QG2FFEE to SATA4
 HD103SJ to SATA5
-### enp0s25 snag
+#### enp0s25 snag
 systemctl status dhcpcd@enp0s25   reporting  "failed"
-### bind-tools
+#### bind-tools
 sudo pacman -S bind-tools  for 4 packages
-### Wget
+#### Wget
 sudo pacman -S wget   Packages (1) wget-1.20.1-3
-### ClamAV
+#### ClamAV
 sudo pacman -S clamav   for 2 Packages
 sudo freshclam
   ...
   WARNING: Clamd was NOT notified: Can't connect to clamd through /var/lib/clamav/clamd.sock: No such file or directory
 sudo bash -x clamd-sock.sh
-#### sudo pacman -Syu  for 3 Packages
-#### LocalSocket
+##### sudo pacman -Syu  for 3 Packages
+##### LocalSocket
 cat /etc/clamav/clamd.conf grep Loc   shows that the supposed  clamd.sock  line ain't there...
-#### daemons
+##### daemons
 sudo systemctl enable clamav-freshclam.service   created a symlink
 sudo systemctl enable clamav-daemon.service   created two symlinks
 sudo reboot
-#### EICAR test file
+##### EICAR test file
 bash -x EICAR.sh  for   clamscan eicar.com.txt   FOUND
-#### clamscan
+##### clamscan
 in ~/Arch:
   sudo clamscan -r --exclude-dir=/sys / 2>&1 | tee clamscan.txt
     in /var/cache/pacman/pkg  got lots of  Warnings  that  "decompress file size exceeds limits - only scanning 24117248 bytes"
 cat clamscant.txt | grep -A 1 exceeds   reveales  /usr/share/gettextarchive.dir.tar.xz
   & 9 files in  /var/cache/pacman/pkg   too big
   ls -lSr /var/cache/pacman/pkg   reveals that the largest of the latter is  linux-firmware, 78M
-#### clamav-unofficial-sigs
+##### clamav-unofficial-sigs
 mkdir ~/Arch   cd Arch
 git clone https://aur.archlinux.org/clamav-unofficial-sigs/
 makepkg -sic
-##### sudo pacman -Syu  for 2 Packages
-##### Enable the clamav-unofficial-sigs.timer
+###### sudo pacman -Syu  for 2 Packages
+###### Enable the clamav-unofficial-sigs.timer
 systemctl list-timers
 sudo systemctl enable clamav-unofficial-sigs.timer   created a symlink
-##### update signatures manually
+###### update signatures manually
 sudo clamav-unofficial-sigs.sh   downloaded and imported  Sanesecurity  keyring
-#### clamdscan
+##### clamdscan
 sudo vi /etc/clamav/clamd.conf   & uncomment the two ExcludePath declarations
 sudo clamdscan --multiscan --fdpass /
   got a load of "WARNING: /...: Not supported file type"
   and a few access ERRORs for /tmp/clamav*  files
   251 in total, but no infected files
-### rnano for visudo
+#### rnano for visudo
 sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
-### 9QG2FFEE
+#### 9QG2FFEE
 sudo bash -x fstabLABELs.sh
-#### clamdscan
+##### clamdscan
 sudo clamdscan --multiscan --fdpass /mnt/9QG2FFEE   took  288 minutes and found 12 infections
 find . -type d -printf '%d\n' | sort -rn | head -1   returned 21, so
 sudo rnano /etc/clamav/clamd.conf   added   ExcludePath ^/lost+found/
   uncommented  MaxDirectoryRecursion  & set to 21
 find . -type d -printf '%d %p\n' | grep ^21   and homed in on a deep directory to scan again
-### HD103SJ
+#### HD103SJ
 also mounted by  fstabLABELs.sh
 cd /mnt/HD103SJ   for   sudo clamdscan --multiscan --fdpass .
-### WD1001FALS
+#### WD1001FALS
 also mounted by  fstabLABELs.sh
 cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
-### ncdu
+#### ncdu
 sudo pacman -Syu  for 13 Packages
-pacman -S ncdu
-# waiting
+sudo pacman -S ncdu
 ## 190404 Backup
 mkdir AcerVeritonT661-rsyncBackup
-
 Rebooted to  archlinux-2019.04.01-x86_64.iso  CD
 cd /
 lsblk -f   indicated:
@@ -195,9 +198,47 @@ lsblk -f   indicated:
     mount dev/sdc1 mnt/mnt/9QG2FFEE
 cd mnt/home/jo/AcerVeritonT661/build
   bash rsyncBackup.sh
-shutdown -h  now   snagged, so hard shutdown
-  restarted, ejecting the CD
-cd /mnt/9QG2FFEE
+reboot  then CD wouldn't eject on press, but system booted into  SDSSDA240G
+# ViewSonic VX2025wm
+pre-Arch progress seems to be 640x480
+GRUB 2 seems to be 1680x1050
+sudo fbset -i   reports  mode 1680x1050
+# graphics card
+lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
+# Xorg
+sudo pacman -Syu  for 4 Packages
+  ==> WARNING: Possibly missing firmware for module: aic94xx
+  ==> WARNING: Possibly missing firmware for module: wd719x
+# Intel video driver & OpenGL
+sudo pacman -S xf86-video-intel mesa   for 25 Packages
+## Xorg
+sudo pacman -S xorg-server   for 19 Packages
+# Updates
+sudo pacman -Syu   for 3 Packages
+# xinit
+sudo pacman -S xorg-xinit   8 Packages
+## grab old configuration files
+WD30EZRZ  plugged in
+sudo mkdir /mnt/WD30EZRZ
+lsblk -f  indicated   sudo mount /dev/sdi1 /mnt/WD30EZRZ
+rsync -irtv --delete /mnt/WD30EZRZ/systemBackup-rsync/h21-home-jo ~/h21-home-jo/
+rm -r /h21-home-jo/.local/share/Trash/files/chromium
+lsblk -f  indicated   sudo mount /dev/sdj1 /mnt/K16GB500
+stat -c '%n %a %G %U' /mnt/K16GB500/*  reveals them to be  755 root root  so
+  sudo cp -r h21-home-jo /mnt/K16GB500/
+shutdown -h  now   seized the framebuffer such that I couldn't even get at tty2, so hard off
+## grab etc xinitrc
+sudo cp /etc/X11/xinit/xinitrc /mnt/K16GB500/
+shutdown -h  now   seized the framebuffer such that I couldn't even get at tty2, so hard off
+# waiting
+sudo pacman -Syu
+## Openbox
+sudo pacman -S hicolor-icon-theme openbox openbox-themes pcmanfm tint2  = 43 Packages
+## configure Openbox
+sudo pacman -S lxappearance-obconf obconf  = 4 packages
+sudo pacman -S ttf-ubuntu-font-family  = 1 package
+## 32-bit OpenGL
+sudo pacman -S lib32-mesa
 ## mlocate
 sudo pacman -Syu  for 2 Packages
 sudo pacman -S mlocate
