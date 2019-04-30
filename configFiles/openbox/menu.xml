@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- My iconified call of a dynamic menu generator. -->
+
 <openbox_menu>
-    <menu id="root-menu" label="OpenBox 3" execute="/usr/bin/obmenu-generator">
+    <menu id="root-menu" label="obmenu-generator" execute="/usr/bin/obmenu-generator -i">
     </menu>
 </openbox_menu>
