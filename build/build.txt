@@ -243,7 +243,21 @@ halt -p
 powered on into jo for   cp AcerVeritonT661/configFiles/xinitrc .xinitrc
 startx
 # obmenu-generator
-obmenu-generator.sh
+in ~/Arch/AUR  bash -x ~/AcerVeritonT661/bash/obmenu-generator.sh
+## auracle-git
+sudo pacman -Syu   for 8 packages
+### meson
+sudo pacman -S meson   for 6 Packages
+### auracle-git
+in ~/jo/Arch/AUR/auracle-git:  makepkg -s 2>&1 | tee makepkg.txt   pulled in 3 packages
+sudo pacman -U auracle-git-r220.d04b9cf-1-x86.64.pkg.tar.xz  = 1 package
+auracle sync
+## perl-linux-desktopfiles
+in ~/jo/Arch/AUR/perl-linux-desktopfiles:  makepkg -s 2>&1 | tee makepkg.txt
+sudo pacman -U <*>.pkg.tar.xz  = 1 package
+## obmenu-generator
+in ~/jo/Arch/AUR/obmenu-generator:  makepkg -s 2>&1 | tee makepkg.txt   pulled in   perl-data-dump
+sudo pacman -U <*>.pkg.tar.xz  = 1 package
 # waiting
 sudo pacman -Syu
 ## 32-bit OpenGL
@@ -254,3 +268,6 @@ sudo pacman -S mlocate
 ## EXPORT SUDO_EDITOR=rnano
 ## Tales from responsivenessland
 ## Zen kernel
+## Openbox appearance
+sudo pacman -S lxappearance-obconf obconf
+sudo pacman -S ttf-ubuntu-font-family
