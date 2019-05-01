@@ -266,8 +266,11 @@ in ~/AcerVeritonT661:
 # Terminal emulators
 sudo pacman -Syu  for 32 Packages
 sudo pacman -S rxvt-unicode xterm  for 8 packages
-# Openbox appearance
-sudo pacman -S lxappearance-obconf obconf ttf-ubuntu-font-family
+# Keyboard in X
+is US
+## generate 00-keyboard.conf
+sudo bash -x ~/AcerVeritonT661/bash/generateKeyboardConf.sh
+  - generated  /etc/X11/xorg.conf.d/00-keyboard.conf  &  restarting Openbox got the mapping
 # waiting
 sudo pacman -Syu
 ## 32-bit OpenGL
@@ -278,3 +281,5 @@ sudo pacman -S mlocate
 ## EXPORT SUDO_EDITOR=rnano
 ## Tales from responsivenessland
 ## Zen kernel
+## disk utilities
+pacman -S gvfs ntfs-3g udisks2
