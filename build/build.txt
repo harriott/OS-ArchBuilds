@@ -263,9 +263,11 @@ in ~/AcerVeritonT661:
   git fetch
   git merge origin master
   copy -RP configFiles/openbox ~/.config/openbox
-## Terminal emulators
+# Terminal emulators
 sudo pacman -Syu  for 32 Packages
 sudo pacman -S rxvt-unicode xterm  for 8 packages
+# Openbox appearance
+sudo pacman -S lxappearance-obconf obconf ttf-ubuntu-font-family
 # waiting
 sudo pacman -Syu
 ## 32-bit OpenGL
@@ -276,6 +278,3 @@ sudo pacman -S mlocate
 ## EXPORT SUDO_EDITOR=rnano
 ## Tales from responsivenessland
 ## Zen kernel
-## Openbox appearance
-sudo pacman -S lxappearance-obconf obconf
-sudo pacman -S ttf-ubuntu-font-family
