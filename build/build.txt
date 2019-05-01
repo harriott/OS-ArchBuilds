@@ -269,8 +269,10 @@ sudo pacman -S rxvt-unicode xterm  for 8 packages
 # Keyboard in X
 is US
 ## generate 00-keyboard.conf
-sudo bash -x ~/AcerVeritonT661/bash/generateKeyboardConf.sh
+sudo bash -x ~/AcerVeritonT661/configFiles/generateKeyboardConf.sh
   - generated  /etc/X11/xorg.conf.d/00-keyboard.conf  &  restarting Openbox got the mapping
+# disable DPMS
+sudo cp ~/AcerVeritonT661/configFiles/10-monitor.conf /etc/X11/xorg.conf.d/
 # waiting
 sudo pacman -Syu
 ## 32-bit OpenGL
