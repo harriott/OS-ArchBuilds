@@ -271,8 +271,14 @@ is US
 ## generate 00-keyboard.conf
 sudo bash -x ~/AcerVeritonT661/configFiles/generateKeyboardConf.sh
   - generated  /etc/X11/xorg.conf.d/00-keyboard.conf  &  restarting Openbox got the mapping
-# disable DPMS
+# disable screen blanking
+## disable DPMS
 sudo cp ~/AcerVeritonT661/configFiles/10-monitor.conf /etc/X11/xorg.conf.d/
+reboot
+## X settings
+pacman -S xorg-xset
+xset q   reports that  Num Lock is off  and  Screen Saver begins after 600s
+xset s off   stopped the 600s screensaver
 # waiting
 sudo pacman -Syu
 ## 32-bit OpenGL

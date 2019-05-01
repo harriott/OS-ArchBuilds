@@ -39,5 +39,8 @@ fi
 # exec xterm -geometry 80x66+0+0 -name login
 
 # JH additions
+## stop the 600s screensaver
+xset s off
+## launch Openbox
 exec openbox-session
 
