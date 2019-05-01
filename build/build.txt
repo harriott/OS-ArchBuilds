@@ -279,6 +279,8 @@ reboot
 pacman -S xorg-xset
 xset q   reports that  Num Lock is off  and  Screen Saver begins after 600s
 xset s off   stopped the 600s screensaver
+# Pacmatic
+sudo pacman -S pacmatic python-html2text
 # waiting
 sudo pacman -Syu
 ## 32-bit OpenGL
