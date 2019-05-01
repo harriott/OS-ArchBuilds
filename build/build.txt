@@ -260,7 +260,7 @@ in ~/jo/Arch/AUR/obmenu-generator:  makepkg -s 2>&1 | tee makepkg.txt   pulled i
 sudo pacman -U <*>.pkg.tar.xz  = 1 package
 ## configure
 in ~/AcerVeritonT661:
-  git fetch origin
+  git fetch
   git merge origin master
   copy -RP configFiles/openbox ~/.config/openbox
 # waiting
