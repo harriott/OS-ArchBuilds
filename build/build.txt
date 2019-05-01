@@ -263,6 +263,9 @@ in ~/AcerVeritonT661:
   git fetch
   git merge origin master
   copy -RP configFiles/openbox ~/.config/openbox
+## Terminal emulators
+sudo pacman -Syu  for 32 Packages
+sudo pacman -S rxvt-unicode xterm  for 8 packages
 # waiting
 sudo pacman -Syu
 ## 32-bit OpenGL
