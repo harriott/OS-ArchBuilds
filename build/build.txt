@@ -28,55 +28,55 @@ booted to  archlinux-2019.03.01-x86_64.iso  CD
 loadkeys uk
 ### storage spaces
 lsblk -f  indicated   gdisk /dev/sda   x (extra functionality) > z (Zap)  y
-  gdisk /dev/sda   t > 2 > 8304   w > y
+    gdisk /dev/sda   t > 2 > 8304   w > y
 swapon /dev/sda4   (then  swapon -s  shows /dev/sda4 has default Priority -2)
-mkfs.ext4 /dev/sda2  y   for   mount /dev/sda2 /mnt
-mkdir /mnt/home   then   mkfs.ext4 /dev/sda3  y   for   mount /dev/sda3 /mnt/home
+    mkfs.ext4 /dev/sda2  y   for   mount /dev/sda2 /mnt
+    mkdir /mnt/home   then   mkfs.ext4 /dev/sda3  y   for   mount /dev/sda3 /mnt/home
 ### internet
-(ip link  reports  LAN  socket as  enp0s25) ping -c 3 8.8.8.8  got a response
+    (ip link  reports  LAN  socket as  enp0s25) ping -c 3 8.8.8.8  got a response
 ### install the base packages
-pacstrap /mnt base base-devel  installed 155 Packages
+    pacstrap /mnt base base-devel  installed 155 Packages
 ### genfstab
-K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
-mkdir /home/mnt   for   mount /dev/sdf1 /home/mnt
-cd /home/mnt/AcerVeritonT661/build   for   bash genfstab.sh
+    K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
+    mkdir /home/mnt   for   mount /dev/sdf1 /home/mnt
+    cd /home/mnt/AcerVeritonT661/build   for   bash genfstab.sh
 ### change root
-arch-chroot /mnt
-sudo -ll   works
+    arch-chroot /mnt
+    sudo -ll   works
 #### after chroot
-K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
-mount /dev/sdf1 /mnt
-cd /mnt/AcerVeritonT661/build   for   bash after-chroot.sh
+    K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
+    mount /dev/sdf1 /mnt
+    cd /mnt/AcerVeritonT661/build   for   bash after-chroot.sh
 #### locale
-vi /etc/locale.gen
-  and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
-  cat /etc/locale.gen | grep -v ^#   then  locale-gen
+    vi /etc/locale.gen
+    and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
+    cat /etc/locale.gen | grep -v ^#   then  locale-gen
 #### update K16GB500
-cd /   then  umount /dev/sdf1   for updating, then   mount /dev/sdg1 /mnt
-pacman -S rsync
-rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
+    cd /   then  umount /dev/sdf1   for updating, then   mount /dev/sdg1 /mnt
+    pacman -S rsync
+    rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
 #### after locale
-cd /home/AcerVeritonT661/build   for    bash after_locale.sh
+    cd /home/AcerVeritonT661/build   for    bash after_locale.sh
 #### root password
-passwd
+    passwd
 #### shutdown to eject CD
-exit   then   shutdown -h now
+    exit   then   shutdown -h now
 ### booted to SSD
-restarted, immediately ejecting the CD
-slow to get to Grub, then to console...
-logged in as "root"
+    restarted, immediately ejecting the CD
+    slow to get to Grub, then to console...
+    logged in as "root"
 #### enp0s25
-dhcpcd enp0s25
+    dhcpcd enp0s25
 #### K16GB500
-mount /dev/sdg1 /mnt
-rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
+    mount /dev/sdg1 /mnt
+    rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
 #### when booted to SSD
-cd /home/AcerVeritonT661/build   for    bash -x whenSSD.sh
+    cd /home/AcerVeritonT661/build   for    bash -x whenSSD.sh
 #### User jo
-passwd jo
-visudo   and  added  jo ALL=(ALL) ALL   above the   root declaration
+    passwd jo
+    visudo   and  added  jo ALL=(ALL) ALL   above the   root declaration
 #### stat root folders
-stat -c '%n %a %G %U' /*   etc
+    stat -c '%n %a %G %U' /*   etc
 #### update /home/AcerVeritonT661
 umount /dev/sdf1   for updating, then   mount /dev/sdf1 /mnt
 rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
@@ -102,12 +102,12 @@ sudo pacman -S openssh  = 3 packages
 #### firewalld
 sudo pacman -S firewalld   = 17 packages including nftables & python
 (sudo systemctl enable firewalld 2>&1) | tee firewalld.txt   which contained:
-  Created symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service → /usr/lib/systemd/system/firewalld.service.
-  Created symlink /etc/systemd/system/multi-user.target.wants/firewalld.service → /usr/lib/systemd/system/firewalld.service.
+Created symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service → /usr/lib/systemd/system/firewalld.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/firewalld.service → /usr/lib/systemd/system/firewalld.service.
 (sudo systemctl start firewalld) | tee firewalld.txt   which contained:
-  ...
-  ... WARNING: ipset not usable, disabling ipset usage in firewall.
-  ... WARNING: ebtables-restore and ebtables are missing, disabling bridge firewall.
+...
+... WARNING: ipset not usable, disabling ipset usage in firewall.
+... WARNING: ebtables-restore and ebtables are missing, disabling bridge firewall.
 sudo reboot   for   sudo firewall-cmd --state
 ##### active zone
 firewall-cmd --get-default-zone   reports  "public"
@@ -132,8 +132,8 @@ sudo pacman -S wget   Packages (1) wget-1.20.1-3
 #### ClamAV
 sudo pacman -S clamav   for 2 Packages
 sudo freshclam
-  ...
-  WARNING: Clamd was NOT notified: Can't connect to clamd through /var/lib/clamav/clamd.sock: No such file or directory
+...
+WARNING: Clamd was NOT notified: Can't connect to clamd through /var/lib/clamav/clamd.sock: No such file or directory
 sudo bash -x clamd-sock.sh
 ##### sudo pacman -Syu  for 3 Packages
 ##### LocalSocket
@@ -146,96 +146,96 @@ sudo reboot
 bash -x EICAR.sh  for   clamscan eicar.com.txt   FOUND
 ##### clamscan
 in ~/Arch:
-  sudo clamscan -r --exclude-dir=/sys / 2>&1 | tee clamscan.txt
-    in /var/cache/pacman/pkg  got lots of  Warnings  that  "decompress file size exceeds limits - only scanning 24117248 bytes"
+sudo clamscan -r --exclude-dir=/sys / 2>&1 | tee clamscan.txt
+in /var/cache/pacman/pkg  got lots of  Warnings  that  "decompress file size exceeds limits - only scanning 24117248 bytes"
 cat clamscant.txt | grep -A 1 exceeds   reveales  /usr/share/gettextarchive.dir.tar.xz
-  & 9 files in  /var/cache/pacman/pkg   too big
-  ls -lSr /var/cache/pacman/pkg   reveals that the largest of the latter is  linux-firmware, 78M
+& 9 files in  /var/cache/pacman/pkg   too big
+ls -lSr /var/cache/pacman/pkg   reveals that the largest of the latter is  linux-firmware, 78M
 ##### clamav-unofficial-sigs
 mkdir ~/Arch   cd Arch
 git clone https://aur.archlinux.org/clamav-unofficial-sigs/
 makepkg -sic
 ###### sudo pacman -Syu  for 2 Packages
 ###### Enable the clamav-unofficial-sigs.timer
-systemctl list-timers
-sudo systemctl enable clamav-unofficial-sigs.timer   created a symlink
+    systemctl list-timers
+    sudo systemctl enable clamav-unofficial-sigs.timer   created a symlink
 ###### update signatures manually
-sudo clamav-unofficial-sigs.sh   downloaded and imported  Sanesecurity  keyring
+    sudo clamav-unofficial-sigs.sh   downloaded and imported  Sanesecurity  keyring
 ##### clamdscan
-sudo vi /etc/clamav/clamd.conf   & uncomment the two ExcludePath declarations
-sudo clamdscan --multiscan --fdpass /
-  got a load of "WARNING: /...: Not supported file type"
-  and a few access ERRORs for /tmp/clamav*  files
-  251 in total, but no infected files
+    sudo vi /etc/clamav/clamd.conf   & uncomment the two ExcludePath declarations
+    sudo clamdscan --multiscan --fdpass /
+    got a load of "WARNING: /...: Not supported file type"
+    and a few access ERRORs for /tmp/clamav*  files
+    251 in total, but no infected files
 #### rnano for visudo
-sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
+    sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
 #### 9QG2FFEE
-sudo bash -x fstabLABELs.sh
+    sudo bash -x fstabLABELs.sh
 ##### clamdscan
-sudo clamdscan --multiscan --fdpass /mnt/9QG2FFEE   took  288 minutes and found 12 infections
-find . -type d -printf '%d\n' | sort -rn | head -1   returned 21, so
-sudo rnano /etc/clamav/clamd.conf   added   ExcludePath ^/lost+found/
-  uncommented  MaxDirectoryRecursion  & set to 21
-find . -type d -printf '%d %p\n' | grep ^21   and homed in on a deep directory to scan again
+    sudo clamdscan --multiscan --fdpass /mnt/9QG2FFEE   took  288 minutes and found 12 infections
+    find . -type d -printf '%d\n' | sort -rn | head -1   returned 21, so
+    sudo rnano /etc/clamav/clamd.conf   added   ExcludePath ^/lost+found/
+    uncommented  MaxDirectoryRecursion  & set to 21
+    find . -type d -printf '%d %p\n' | grep ^21   and homed in on a deep directory to scan again
 #### HD103SJ
-also mounted by  fstabLABELs.sh
-cd /mnt/HD103SJ   for   sudo clamdscan --multiscan --fdpass .
+    also mounted by  fstabLABELs.sh
+    cd /mnt/HD103SJ   for   sudo clamdscan --multiscan --fdpass .
 #### WD1001FALS
-also mounted by  fstabLABELs.sh
-cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
+    also mounted by  fstabLABELs.sh
+    cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
 #### ncdu
-sudo pacman -Syu  for 13 Packages
-sudo pacman -S ncdu
+    sudo pacman -Syu  for 13 Packages
+    sudo pacman -S ncdu
 ## 190404 Backup
-mkdir AcerVeritonT661-rsyncBackup
-Rebooted to  archlinux-2019.04.01-x86_64.iso  CD
-cd /
-lsblk -f   indicated:
-  ls mnt
+    mkdir AcerVeritonT661-rsyncBackup
+    Rebooted to  archlinux-2019.04.01-x86_64.iso  CD
+    cd /
+    lsblk -f   indicated:
+    ls mnt
     mount dev/sda2 mnt
-  ls mnt/home
+    ls mnt/home
     mount dev/sda3 mnt/home
-  ls mnt/mnt/9QG2FFEE
+    ls mnt/mnt/9QG2FFEE
     mount dev/sdc1 mnt/mnt/9QG2FFEE
-cd mnt/home/jo/AcerVeritonT661/build
-  bash rsyncBackup.sh
-reboot  then CD wouldn't eject on press, but system booted into  SDSSDA240G
+    cd mnt/home/jo/AcerVeritonT661/build
+    bash rsyncBackup.sh
+    reboot  then CD wouldn't eject on press, but system booted into  SDSSDA240G
 # ViewSonic VX2025wm
-pre-Arch progress seems to be 640x480
-GRUB 2 seems to be 1680x1050
-sudo fbset -i   reports  mode 1680x1050
+    pre-Arch progress seems to be 640x480
+    GRUB 2 seems to be 1680x1050
+    sudo fbset -i   reports  mode 1680x1050
 # graphics card
-lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
+    lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
 # Xorg
-sudo pacman -Syu  for 4 Packages
-  ==> WARNING: Possibly missing firmware for module: aic94xx
-  ==> WARNING: Possibly missing firmware for module: wd719x
+    sudo pacman -Syu  for 4 Packages
+    ==> WARNING: Possibly missing firmware for module: aic94xx
+    ==> WARNING: Possibly missing firmware for module: wd719x
 # Intel video driver & OpenGL
-sudo pacman -S xf86-video-intel mesa   for 25 Packages
+    sudo pacman -S xf86-video-intel mesa   for 25 Packages
 ## Xorg
-sudo pacman -S xorg-server   for 19 Packages
+    sudo pacman -S xorg-server   for 19 Packages
 # Updates
-sudo pacman -Syu   for 3 Packages
+    sudo pacman -Syu   for 3 Packages
 # xinit
-sudo pacman -S xorg-xinit   8 Packages
+    sudo pacman -S xorg-xinit   8 Packages
 ## grab old configuration files
-WD30EZRZ  plugged in
-sudo mkdir /mnt/WD30EZRZ
-lsblk -f  indicated   sudo mount /dev/sdi1 /mnt/WD30EZRZ
-rsync -irtv --delete /mnt/WD30EZRZ/systemBackup-rsync/h21-home-jo ~/h21-home-jo/
-rm -r /h21-home-jo/.local/share/Trash/files/chromium
-lsblk -f  indicated   sudo mount /dev/sdj1 /mnt/K16GB500
-stat -c '%n %a %G %U' /mnt/K16GB500/*  reveals them to be  755 root root  so
-  sudo cp -r h21-home-jo /mnt/K16GB500/
-shutdown -h now
-  got the system, I think, to the useless low-level halt.target, requiring a hard power off
+    WD30EZRZ  plugged in
+    sudo mkdir /mnt/WD30EZRZ
+    lsblk -f  indicated   sudo mount /dev/sdi1 /mnt/WD30EZRZ
+    rsync -irtv --delete /mnt/WD30EZRZ/systemBackup-rsync/h21-home-jo ~/h21-home-jo/
+    rm -r /h21-home-jo/.local/share/Trash/files/chromium
+    lsblk -f  indicated   sudo mount /dev/sdj1 /mnt/K16GB500
+    stat -c '%n %a %G %U' /mnt/K16GB500/*  reveals them to be  755 root root  so
+                                           sudo cp -r h21-home-jo /mnt/K16GB500/
+                                           shutdown -h now
+                                           got the system, I think, to the useless low-level halt.target, requiring a hard power off
 ## grab etc xinitrc
 sudo cp /etc/X11/xinit/xinitrc /mnt/K16GB500/
 sudo shutdown -h now
-  got the system, I think, to the useless low-level halt.target, requiring a hard power off
+got the system, I think, to the useless low-level halt.target, requiring a hard power off
 # Openbox
 cd ~/AcerVeritonT661/build   for   sudo bash -x Openbox.sh
-  for   59 Packages   5 Packages
+for   59 Packages   5 Packages
 ## grab default configuration
 sudo cp -R /etc/xdg/openbox /mnt/K16GB500
 halt -p
@@ -260,9 +260,9 @@ in ~/jo/Arch/AUR/obmenu-generator:  makepkg -s 2>&1 | tee makepkg.txt   pulled i
 sudo pacman -U <*>.pkg.tar.xz  = 1 package
 ## configure
 in ~/AcerVeritonT661:
-  git fetch
-  git merge origin master
-  copy -RP configFiles/openbox ~/.config/openbox
+git fetch
+git merge origin master
+copy -RP configFiles/openbox ~/.config/openbox
 # Terminal emulators
 sudo pacman -Syu  for 32 Packages
 sudo pacman -S rxvt-unicode xterm  for 8 packages
@@ -270,7 +270,7 @@ sudo pacman -S rxvt-unicode xterm  for 8 packages
 is US
 ## generate 00-keyboard.conf
 sudo bash -x ~/AcerVeritonT661/configFiles/generateKeyboardConf.sh
-  - generated  /etc/X11/xorg.conf.d/00-keyboard.conf  &  restarting Openbox got the mapping
+- generated  /etc/X11/xorg.conf.d/00-keyboard.conf  &  restarting Openbox got the mapping
 # disable screen blanking
 ## disable DPMS
 sudo cp ~/AcerVeritonT661/configFiles/10-monitor.conf /etc/X11/xorg.conf.d/
@@ -283,18 +283,36 @@ xset s off   stopped the 600s screensaver
 sudo bash -x ~/AcerVeritonT661/configFiles/Pacmatic.sh
 sudo pacmatic -Syu
 pacmatic -Qqo '/usr/lib/perl5/5.28/vendor_perl'   listed
-  libproxy perl-data-dump perl-error perl-mailtools perl-timedate   which I left as they are
+libproxy perl-data-dump perl-error perl-mailtools perl-timedate   which I left as they are
 # K16GB500
 lsblk -f  indicated   sudo mount /dev/sdj1 /mnt/K16GB500
 # PCManFM
 sudo pacmatic -S mailcap pcmanfm tint2
 Menu > File Manager   pops up "Failed to execute child process xdg-open"
+cp ~/AcerVeritonT661/configFiles/openbox/autostart ~/.config/openbox
+cp ~/AcerVeritonT661/configFiles/openbox/schema.pl ~/.config/obmenu-generator
+cp ~/AcerVeritonT661/configFiles/openbox/rc.xml ~/.config/openbox
 ## mimeo
-cd /home/mnt/AcerVeritonT661/build   for  bash -x mimeo.sh
+cd ~/Arch/AUR   for  bash -x ~/AcerVeritonT661/build/steps/mimeo.sh
+### openbox-themes
+in ~/jo/Arch/AUR/openbox-themes:  makepkg -s 2>&1 | tee makepkg.txt
+    sudo pacman -U <*>.pkg.tar.xz  = 1 package
+### xdg-utils-mimeo
+    in ~/jo/Arch/AUR/xdg-utils-mimeo:  makepkg -s 2>&1 | tee makepkg.txt  (6 Packages)
+    sudo pacman -U <*>.pkg.tar.xz  = 1 package
+### mimeo
+#### GnuPG keys
+gpg --homedir /etc/pacman.d/gnupg --list-keys > PacmanKeyring.txt
+gpg --list-keys   created   ~/.gnupg/   with   trustdb.gpg   within
 
-in ~/jo/Arch/AUR/mimeo:  makepkg -s 2>&1 | tee makepkg.txt
+in ~/jo/Arch/AUR/mimeo: ~/AcerVeritonT661/build/steps/mimeo-gpg.sh
+#### mimeo
+in ~/jo/Arch/AUR/mimeo:  makepkg -s 2>&1 | tee makepkg.txt  (brought in  python-xdg)
+sudo pacman -U <*>.pkg.tar.xz  = 1 package
 # waiting
-sudo pacman -Syu
+sudo pacmatic -Syu
+## xdg-utils
+Is this ever needed?
 ## 32-bit OpenGL
 sudo pacman -S lib32-mesa
 ## mlocate
