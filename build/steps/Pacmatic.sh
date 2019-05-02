@@ -4,5 +4,5 @@
 # sudo bash -x <thisfile>.sh
 
 # Pacmatic
-sudo pacman -S pacmatic python-html2text
+pacman -S pacmatic python-html2text
 
