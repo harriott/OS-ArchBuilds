@@ -296,19 +296,26 @@ cp ~/AcerVeritonT661/configFiles/openbox/rc.xml ~/.config/openbox
 cd ~/Arch/AUR   for  bash -x ~/AcerVeritonT661/build/steps/mimeo.sh
 ### openbox-themes
 in ~/jo/Arch/AUR/openbox-themes:  makepkg -s 2>&1 | tee makepkg.txt
-    sudo pacman -U <*>.pkg.tar.xz  = 1 package
+  sudo pacman -U <*>.pkg.tar.xz  = 1 package
 ### xdg-utils-mimeo
-    in ~/jo/Arch/AUR/xdg-utils-mimeo:  makepkg -s 2>&1 | tee makepkg.txt  (6 Packages)
-    sudo pacman -U <*>.pkg.tar.xz  = 1 package
+in ~/jo/Arch/AUR/xdg-utils-mimeo:  makepkg -s 2>&1 | tee makepkg.txt  (6 Packages)
+  sudo pacman -U <*>.pkg.tar.xz  = 1 package
 ### mimeo
 #### GnuPG keys
 gpg --homedir /etc/pacman.d/gnupg --list-keys > PacmanKeyring.txt
 gpg --list-keys   created   ~/.gnupg/   with   trustdb.gpg   within
-
-in ~/jo/Arch/AUR/mimeo: ~/AcerVeritonT661/build/steps/mimeo-gpg.sh
+bash -x ~/AcerVeritonT661/build/steps/mimeo-gpg.sh
+  gpg --list-keys   shows  Xyne's key  EC3CBE7F607D11E663149E811D1F0DC78F173680
 #### mimeo
 in ~/jo/Arch/AUR/mimeo:  makepkg -s 2>&1 | tee makepkg.txt  (brought in  python-xdg)
 sudo pacman -U <*>.pkg.tar.xz  = 1 package
+# disk utilities
+sudo pacmatic -Syu   for 10 Packages
+pacman -S gvfs ntfs-3g udisks2   for 23 Packages
+# bashrc-root
+Ctrl+Alt+F2 > root + pw   for   ls -a   shows that there's no   .bashrc   and no colouring of   ls
+
+sudo cp ~/AcerVeritonT661/configFiles/bashrc-root /root/.bashrc
 # waiting
 sudo pacmatic -Syu
 ## xdg-utils
@@ -321,7 +328,5 @@ sudo pacman -S mlocate
 ## EXPORT SUDO_EDITOR=rnano
 ## Tales from responsivenessland
 ## Zen kernel
-## disk utilities
-pacman -S gvfs ntfs-3g udisks2
 ## rx.xml Keybinding for PrintScreen
 ## rx.xml Keybinding for CopyQ
