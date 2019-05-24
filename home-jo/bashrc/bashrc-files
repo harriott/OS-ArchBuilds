@@ -37,6 +37,8 @@ locd () {
     locate $1 | xargs -I {} bash -c 'if [ -d "{}" ]; then echo {}; fi'
 }
 
+source /etc/profile.d/autojump.bash
+
 # trash-cli
 # ---------
 alias tl='trash-list'

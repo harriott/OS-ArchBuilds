@@ -6,5 +6,6 @@
 # update my bash configuration
 cp -f bashrc ~/.bashrc
 cp -f bashrc-files ~/.bashrc-files
-source ~/.bashrc
+
+# after this you need to  source ~/.bashrc
 
