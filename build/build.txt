@@ -330,8 +330,7 @@ sudo bash -x ~/AcerVeritonT661/build/steps/DHCPCD-noWaitConf.sh
 reboot   confirmed that I no longer have the start-job delay for DHCPCD
 ping -c 3 8.8.8.8   got a response
 # get my root .bashrc settings working in root Console
-cp ~/AcerVeritonT661/root/bash_profile ~/.bash_profile
-cp ~/AcerVeritonT661/root/bashrc ~/.bashrc
+sudo bash -x bashConfig.sh
 # waiting
 sudo pacmatic -Syu
 ## xdg-utils
