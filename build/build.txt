@@ -323,6 +323,10 @@ cp ~/AcerVeritonT661/configFiles/bash_profile ~/.bash_profile
 echo $INPUTRC   shows it to be empty
 cat /etc/inputrc   shows it to be quite busy
 echo $TERM   reports what CLI is being used
+# PCManFM Trash
+Edit > Preferences > Confirm before moving files into "trash can"   off-ticked
+# turn off -w flag in dhcpcd@.service
+sudo bash -x ~/AcerVeritonT661/build/steps/DHCPCD-noWaitConf.sh
 # waiting
 sudo pacmatic -Syu
 ## xdg-utils
