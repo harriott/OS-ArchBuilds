@@ -18,6 +18,12 @@ alias 4up='cd ../../../../'
 alias p='ping -c 3 8.8.8.8'
 alias pqs='pacman -Qs'
 
+# a colorised (bold blue) prompt, with git support
+source /usr/share/git/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+PS1='\[\e[1;34m\][\u \W$(__git_ps1 " (%s)")]\$\[\e[0m\] '
+
 # File management
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
 alias so="stat -c '%a %n'"
