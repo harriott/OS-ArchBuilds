@@ -30,7 +30,6 @@ export HISTCONTROL=ignorespace:erasedups
 export HISTFILESIZE=10000
 export HISTIGNORE='?:??'
 export HISTSIZE=1000
-export HISTTIMEFORMAT="%h %d %H:%M:%S "
 PROMPT_COMMAND='history -a'
 shopt -s histappend
 

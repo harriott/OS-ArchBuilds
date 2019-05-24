@@ -22,7 +22,6 @@ alias s="stat -c '%A %a %h %U %G %s %y %n'"
 alias h='history'
 export HISTCONTROL=ignorespace:erasedups
 export HISTIGNORE='?:??'
-export HISTTIMEFORMAT="%h %d %H:%M:%S "
 PROMPT_COMMAND='history -a'
 shopt -s histappend
 
