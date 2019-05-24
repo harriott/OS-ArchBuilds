@@ -1,0 +1,43 @@
+# vim: set ft=sh tw=0:
+
+# File managing stuff
+# -------------------
+# sourced, ultimately, by ~/.bashrc
+# (source ~/.bashrc if you've changed something here...)
+
+# Joseph Harriott  http://momentary.eu/  Fri 24 May 2019
+
+alias 2up='cd ../../'
+alias 3up='cd ../../../'
+alias 4up='cd ../../../../'
+alias s="stat -c '%A %a %h %U %G %s %y %n'"
+alias so="stat -c '%a %n'"
+alias sm="stat -c '%y %n'"
+shopt -s dotglob extglob globstar nullglob
+
+findTexs () {
+    echo "vim: nowrap tw=0:" > LaTeX-search.txt
+    echo "" >> LaTeX-search.txt
+    find -iname \*.tex -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort >> LaTeX-search.txt
+    echo "" >> LaTeX-search.txt
+}
+
+# Git
+# ---
+alias ga='git add'
+alias gis='git status -u'
+gic () {
+    git commit -m "$1"
+}
+
+# locate directories:
+# -------------------
+locd () {
+    locate $1 | xargs -I {} bash -c 'if [ -d "{}" ]; then echo {}; fi'
+}
+
+# trash-cli
+# ---------
+alias tl='trash-list'
+alias tre='trash-restore'
+

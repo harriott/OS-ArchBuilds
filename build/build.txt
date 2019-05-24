@@ -337,6 +337,11 @@ sudo pacman -S pkgfile
 sudo pkgfile -u
 systemctl list-timers
 sudo systemctl enable pkgfile-update.timer   created a symlink
+# trash-cli
+sudo pacman -S trash-cli
+trash-list
+# update my bash configuration
+in  ~/AcerVeritonT661/home-jo/bashrc :  bash -x bashConfig.sh
 # waiting
 sudo pacmatic -Syu
 ## xdg-utils
