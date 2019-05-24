@@ -2,9 +2,27 @@
 
 # ~/.bashrc in an Arch install on my Acer Veriton T661 system
 
-# Joseph Harriott  http://momentary.eu/  Sat 23 Mar 2019
+# Joseph Harriott  http://momentary.eu/  Fri 24 May 2019
 # source ~/.bashrc if you've changed something here...
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# ----------------------
+# my preferences:
+# ----------------------
+
+alias 2up='cd ../../'
+alias 3up='cd ../../../'
+alias 4up='cd ../../../../'
+alias p='ping -c 3 8.8.8.8'
+alias pqs='pacman -Qs'
+alias s="stat -c '%A %a %h %U %G %s %y %n'"
+alias so="stat -c '%a %n'"
+alias sm="stat -c '%y %n'"
+
+alias h='history'
+export HISTCONTROL=ignoreboth
+export HISTFILESIZE=10000
+export HISTSIZE=1000
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
