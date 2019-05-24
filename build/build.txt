@@ -322,6 +322,7 @@ cp ~/AcerVeritonT661/configFiles/bash_profile ~/.bash_profile
 # configure GNU Readline
 echo $INPUTRC   shows it to be empty
 cat /etc/inputrc   shows it to be quite busy
+echo $TERM   reports what CLI is being used
 # waiting
 sudo pacmatic -Syu
 ## xdg-utils
