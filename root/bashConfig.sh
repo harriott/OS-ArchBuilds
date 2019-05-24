@@ -4,6 +4,6 @@
 # sudo bash -x <thisfile>.sh
 
 # get my root bash configuration fully working, including in Console
-cp ~/AcerVeritonT661/root/bash_profile ~/.bash_profile
-cp ~/AcerVeritonT661/root/bashrc ~/.bashrc
+cp /home/jo/AcerVeritonT661/root/bash_profile /root/.bash_profile
+cp /home/jo/AcerVeritonT661/root/bashrc /root/.bashrc
 
