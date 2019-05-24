@@ -26,7 +26,7 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 
 # History
 alias h='history'
-export HISTCONTROL=ignorespace:erasedups
+export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=10000
 export HISTIGNORE='?:??'
 export HISTSIZE=1000
