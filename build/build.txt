@@ -157,10 +157,10 @@ git clone https://aur.archlinux.org/clamav-unofficial-sigs/
 makepkg -sic
 ###### sudo pacman -Syu  for 2 Packages
 ###### Enable the clamav-unofficial-sigs.timer
-  systemctl list-timers
-  sudo systemctl enable clamav-unofficial-sigs.timer   created a symlink
+systemctl list-timers
+sudo systemctl enable clamav-unofficial-sigs.timer   created a symlink
 ###### update signatures manually
-  sudo clamav-unofficial-sigs.sh   downloaded and imported  Sanesecurity  keyring
+sudo clamav-unofficial-sigs.sh   downloaded and imported  Sanesecurity  keyring
 ##### clamdscan
   sudo vi /etc/clamav/clamd.conf   & uncomment the two ExcludePath declarations
   sudo clamdscan --multiscan --fdpass /
@@ -331,6 +331,12 @@ reboot   confirmed that I no longer have the start-job delay for DHCPCD
 ping -c 3 8.8.8.8   got a response
 # get my root .bashrc settings working in root Console
 sudo bash -x bashConfig.sh
+# pkgfile
+in  ~/Arch :  sudo pacmatic -Syu   for 30 Packages
+sudo pacman -S pkgfile
+sudo pkgfile -u
+systemctl list-timers
+sudo systemctl enable pkgfile-update.timer   created a symlink
 # waiting
 sudo pacmatic -Syu
 ## xdg-utils
