@@ -5,8 +5,8 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# echo "Going to startx in 3 seconds"
-read -t 3 -p "- enter any alphanumeric to abort : " keyhit
+echo "Going to startx in 8 seconds"
+read -t 8 -p "- enter any alphanumeric to abort : " keyhit
 if [ $keyhit ]; then
   echo "okay, startx yourself when ready"
 else

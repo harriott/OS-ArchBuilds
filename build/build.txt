@@ -318,8 +318,7 @@ sudo cp ~/AcerVeritonT661/configFiles/bashrc-root /root/.bashrc
 # "Removable medium is inserted" pop-up
 PCManFM > Edit > Preferences > Volume Management > Show available options  off-ticked
 # startx from Console
-bash_profile
-
+cp ~/AcerVeritonT661/configFiles/bash_profile ~/.bash_profile
 # configure GNU Readline
 echo $INPUTRC   shows it to be empty
 cat /etc/inputrc   shows it to be quite busy
