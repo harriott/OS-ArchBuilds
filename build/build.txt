@@ -327,6 +327,8 @@ echo $TERM   reports what CLI is being used
 Edit > Preferences > Confirm before moving files into "trash can"   off-ticked
 # turn off -w flag in dhcpcd@.service
 sudo bash -x ~/AcerVeritonT661/build/steps/DHCPCD-noWaitConf.sh
+reboot   confirmed that I no longer have the start-job delay for DHCPCD
+ping -c 3 8.8.8.8   got a response
 # waiting
 sudo pacmatic -Syu
 ## xdg-utils
