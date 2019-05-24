@@ -17,12 +17,20 @@ alias 3up='cd ../../../'
 alias 4up='cd ../../../../'
 alias p='ping -c 3 8.8.8.8'
 alias pqs='pacman -Qs'
+
+# File management
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
 alias so="stat -c '%a %n'"
 alias sm="stat -c '%y %n'"
+shopt -s dotglob extglob globstar nullglob
 
+# History
 alias h='history'
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignorespace:erasedups
 export HISTFILESIZE=10000
+export HISTIGNORE='?:??'
 export HISTSIZE=1000
 export HISTTIMEFORMAT="%h %d %H:%M:%S "
+PROMPT_COMMAND='history -a'
+shopt -s histappend
+

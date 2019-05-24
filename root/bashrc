@@ -15,10 +15,16 @@ alias ls='ls --color=auto'
 # ---------------
 set -o vi
 
-alias h='history'
+alias p='ping -c 3 8.8.8.8'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
-export HISTCONTROL=erasedups
+
+# History
+alias h='history'
+export HISTCONTROL=ignorespace:erasedups
 export HISTIGNORE='?:??'
+export HISTTIMEFORMAT="%h %d %H:%M:%S "
+PROMPT_COMMAND='history -a'
+shopt -s histappend
 
 # a colorised (bold red) prompt:
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '

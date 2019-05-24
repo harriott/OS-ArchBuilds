@@ -1,0 +1,8 @@
+# vim: set ft=sh tw=0:
+#
+# ~/.bash_profile
+# get my  .bashrc  settings working in  Console
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
