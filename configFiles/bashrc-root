@@ -1,12 +1,12 @@
 # vim: set ft=sh tw=0:
 # ~/.bashrc
-# Joseph Harriott, Thu 07 Jan 2016
+# Joseph Harriott, Sun 12 May 2019
 # source /root/.bashrc   if you've changed something here...
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# set by Arch:
+# suggested by Arch:
 alias ls='ls --color=auto'
 # PS1='[\u@\h \W]\$ '
 

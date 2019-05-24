@@ -1,0 +1,15 @@
+# vim: set ft=sh tw=0:
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+# echo "Going to startx in 3 seconds"
+read -t 3 -p "- enter any alphanumeric to abort : " keyhit
+if [ $keyhit ]; then
+  echo "okay, startx yourself when ready"
+else
+  [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
+fi
+

@@ -28,55 +28,55 @@ booted to  archlinux-2019.03.01-x86_64.iso  CD
 loadkeys uk
 ### storage spaces
 lsblk -f  indicated   gdisk /dev/sda   x (extra functionality) > z (Zap)  y
-    gdisk /dev/sda   t > 2 > 8304   w > y
+  gdisk /dev/sda   t > 2 > 8304   w > y
 swapon /dev/sda4   (then  swapon -s  shows /dev/sda4 has default Priority -2)
-    mkfs.ext4 /dev/sda2  y   for   mount /dev/sda2 /mnt
-    mkdir /mnt/home   then   mkfs.ext4 /dev/sda3  y   for   mount /dev/sda3 /mnt/home
+  mkfs.ext4 /dev/sda2  y   for   mount /dev/sda2 /mnt
+  mkdir /mnt/home   then   mkfs.ext4 /dev/sda3  y   for   mount /dev/sda3 /mnt/home
 ### internet
-    (ip link  reports  LAN  socket as  enp0s25) ping -c 3 8.8.8.8  got a response
+  (ip link  reports  LAN  socket as  enp0s25) ping -c 3 8.8.8.8  got a response
 ### install the base packages
-    pacstrap /mnt base base-devel  installed 155 Packages
+  pacstrap /mnt base base-devel  installed 155 Packages
 ### genfstab
-    K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
-    mkdir /home/mnt   for   mount /dev/sdf1 /home/mnt
-    cd /home/mnt/AcerVeritonT661/build   for   bash genfstab.sh
+  K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
+  mkdir /home/mnt   for   mount /dev/sdf1 /home/mnt
+  cd /home/mnt/AcerVeritonT661/build   for   bash genfstab.sh
 ### change root
-    arch-chroot /mnt
-    sudo -ll   works
+  arch-chroot /mnt
+  sudo -ll   works
 #### after chroot
-    K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
-    mount /dev/sdf1 /mnt
-    cd /mnt/AcerVeritonT661/build   for   bash after-chroot.sh
+  K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
+  mount /dev/sdf1 /mnt
+  cd /mnt/AcerVeritonT661/build   for   bash after-chroot.sh
 #### locale
-    vi /etc/locale.gen
-    and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
-    cat /etc/locale.gen | grep -v ^#   then  locale-gen
+  vi /etc/locale.gen
+  and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
+  cat /etc/locale.gen | grep -v ^#   then  locale-gen
 #### update K16GB500
-    cd /   then  umount /dev/sdf1   for updating, then   mount /dev/sdg1 /mnt
-    pacman -S rsync
-    rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
+  cd /   then  umount /dev/sdf1   for updating, then   mount /dev/sdg1 /mnt
+  pacman -S rsync
+  rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
 #### after locale
-    cd /home/AcerVeritonT661/build   for    bash after_locale.sh
+  cd /home/AcerVeritonT661/build   for    bash after_locale.sh
 #### root password
-    passwd
+  passwd
 #### shutdown to eject CD
-    exit   then   shutdown -h now
+  exit   then   shutdown -h now
 ### booted to SSD
-    restarted, immediately ejecting the CD
-    slow to get to Grub, then to console...
-    logged in as "root"
+  restarted, immediately ejecting the CD
+  slow to get to Grub, then to console...
+  logged in as "root"
 #### enp0s25
-    dhcpcd enp0s25
+  dhcpcd enp0s25
 #### K16GB500
-    mount /dev/sdg1 /mnt
-    rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
+  mount /dev/sdg1 /mnt
+  rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
 #### when booted to SSD
-    cd /home/AcerVeritonT661/build   for    bash -x whenSSD.sh
+  cd /home/AcerVeritonT661/build   for    bash -x whenSSD.sh
 #### User jo
-    passwd jo
-    visudo   and  added  jo ALL=(ALL) ALL   above the   root declaration
+  passwd jo
+  visudo   and  added  jo ALL=(ALL) ALL   above the   root declaration
 #### stat root folders
-    stat -c '%n %a %G %U' /*   etc
+  stat -c '%n %a %G %U' /*   etc
 #### update /home/AcerVeritonT661
 umount /dev/sdf1   for updating, then   mount /dev/sdf1 /mnt
 rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
@@ -157,78 +157,78 @@ git clone https://aur.archlinux.org/clamav-unofficial-sigs/
 makepkg -sic
 ###### sudo pacman -Syu  for 2 Packages
 ###### Enable the clamav-unofficial-sigs.timer
-    systemctl list-timers
-    sudo systemctl enable clamav-unofficial-sigs.timer   created a symlink
+  systemctl list-timers
+  sudo systemctl enable clamav-unofficial-sigs.timer   created a symlink
 ###### update signatures manually
-    sudo clamav-unofficial-sigs.sh   downloaded and imported  Sanesecurity  keyring
+  sudo clamav-unofficial-sigs.sh   downloaded and imported  Sanesecurity  keyring
 ##### clamdscan
-    sudo vi /etc/clamav/clamd.conf   & uncomment the two ExcludePath declarations
-    sudo clamdscan --multiscan --fdpass /
-    got a load of "WARNING: /...: Not supported file type"
-    and a few access ERRORs for /tmp/clamav*  files
-    251 in total, but no infected files
+  sudo vi /etc/clamav/clamd.conf   & uncomment the two ExcludePath declarations
+  sudo clamdscan --multiscan --fdpass /
+  got a load of "WARNING: /...: Not supported file type"
+  and a few access ERRORs for /tmp/clamav*  files
+  251 in total, but no infected files
 #### rnano for visudo
-    sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
+  sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
 #### 9QG2FFEE
-    sudo bash -x fstabLABELs.sh
+  sudo bash -x fstabLABELs.sh
 ##### clamdscan
-    sudo clamdscan --multiscan --fdpass /mnt/9QG2FFEE   took  288 minutes and found 12 infections
-    find . -type d -printf '%d\n' | sort -rn | head -1   returned 21, so
-    sudo rnano /etc/clamav/clamd.conf   added   ExcludePath ^/lost+found/
-    uncommented  MaxDirectoryRecursion  & set to 21
-    find . -type d -printf '%d %p\n' | grep ^21   and homed in on a deep directory to scan again
+  sudo clamdscan --multiscan --fdpass /mnt/9QG2FFEE   took  288 minutes and found 12 infections
+  find . -type d -printf '%d\n' | sort -rn | head -1   returned 21, so
+  sudo rnano /etc/clamav/clamd.conf   added   ExcludePath ^/lost+found/
+  uncommented  MaxDirectoryRecursion  & set to 21
+  find . -type d -printf '%d %p\n' | grep ^21   and homed in on a deep directory to scan again
 #### HD103SJ
-    also mounted by  fstabLABELs.sh
-    cd /mnt/HD103SJ   for   sudo clamdscan --multiscan --fdpass .
+  also mounted by  fstabLABELs.sh
+  cd /mnt/HD103SJ   for   sudo clamdscan --multiscan --fdpass .
 #### WD1001FALS
-    also mounted by  fstabLABELs.sh
-    cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
+  also mounted by  fstabLABELs.sh
+  cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
 #### ncdu
-    sudo pacman -Syu  for 13 Packages
-    sudo pacman -S ncdu
+  sudo pacman -Syu  for 13 Packages
+  sudo pacman -S ncdu
 ## 190404 Backup
-    mkdir AcerVeritonT661-rsyncBackup
-    Rebooted to  archlinux-2019.04.01-x86_64.iso  CD
-    cd /
-    lsblk -f   indicated:
-    ls mnt
-    mount dev/sda2 mnt
-    ls mnt/home
-    mount dev/sda3 mnt/home
-    ls mnt/mnt/9QG2FFEE
-    mount dev/sdc1 mnt/mnt/9QG2FFEE
-    cd mnt/home/jo/AcerVeritonT661/build
-    bash rsyncBackup.sh
-    reboot  then CD wouldn't eject on press, but system booted into  SDSSDA240G
+  mkdir AcerVeritonT661-rsyncBackup
+  Rebooted to  archlinux-2019.04.01-x86_64.iso  CD
+  cd /
+  lsblk -f   indicated:
+  ls mnt
+  mount dev/sda2 mnt
+  ls mnt/home
+  mount dev/sda3 mnt/home
+  ls mnt/mnt/9QG2FFEE
+  mount dev/sdc1 mnt/mnt/9QG2FFEE
+  cd mnt/home/jo/AcerVeritonT661/build
+  bash rsyncBackup.sh
+  reboot  then CD wouldn't eject on press, but system booted into  SDSSDA240G
 # ViewSonic VX2025wm
-    pre-Arch progress seems to be 640x480
-    GRUB 2 seems to be 1680x1050
-    sudo fbset -i   reports  mode 1680x1050
+  pre-Arch progress seems to be 640x480
+  GRUB 2 seems to be 1680x1050
+  sudo fbset -i   reports  mode 1680x1050
 # graphics card
-    lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
+  lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
 # Xorg
-    sudo pacman -Syu  for 4 Packages
-    ==> WARNING: Possibly missing firmware for module: aic94xx
-    ==> WARNING: Possibly missing firmware for module: wd719x
+  sudo pacman -Syu  for 4 Packages
+  ==> WARNING: Possibly missing firmware for module: aic94xx
+  ==> WARNING: Possibly missing firmware for module: wd719x
 # Intel video driver & OpenGL
-    sudo pacman -S xf86-video-intel mesa   for 25 Packages
+  sudo pacman -S xf86-video-intel mesa   for 25 Packages
 ## Xorg
-    sudo pacman -S xorg-server   for 19 Packages
+  sudo pacman -S xorg-server   for 19 Packages
 # Updates
-    sudo pacman -Syu   for 3 Packages
+  sudo pacman -Syu   for 3 Packages
 # xinit
-    sudo pacman -S xorg-xinit   8 Packages
+  sudo pacman -S xorg-xinit   8 Packages
 ## grab old configuration files
-    WD30EZRZ  plugged in
-    sudo mkdir /mnt/WD30EZRZ
-    lsblk -f  indicated   sudo mount /dev/sdi1 /mnt/WD30EZRZ
-    rsync -irtv --delete /mnt/WD30EZRZ/systemBackup-rsync/h21-home-jo ~/h21-home-jo/
-    rm -r /h21-home-jo/.local/share/Trash/files/chromium
-    lsblk -f  indicated   sudo mount /dev/sdj1 /mnt/K16GB500
-    stat -c '%n %a %G %U' /mnt/K16GB500/*  reveals them to be  755 root root  so
-                                           sudo cp -r h21-home-jo /mnt/K16GB500/
-                                           shutdown -h now
-                                           got the system, I think, to the useless low-level halt.target, requiring a hard power off
+  WD30EZRZ  plugged in
+  sudo mkdir /mnt/WD30EZRZ
+  lsblk -f  indicated   sudo mount /dev/sdi1 /mnt/WD30EZRZ
+  rsync -irtv --delete /mnt/WD30EZRZ/systemBackup-rsync/h21-home-jo ~/h21-home-jo/
+  rm -r /h21-home-jo/.local/share/Trash/files/chromium
+  lsblk -f  indicated   sudo mount /dev/sdj1 /mnt/K16GB500
+  stat -c '%n %a %G %U' /mnt/K16GB500/*  reveals them to be  755 root root  so
+                                         sudo cp -r h21-home-jo /mnt/K16GB500/
+                                         shutdown -h now
+                                         got the system, I think, to the useless low-level halt.target, requiring a hard power off
 ## grab etc xinitrc
 sudo cp /etc/X11/xinit/xinitrc /mnt/K16GB500/
 sudo shutdown -h now
@@ -314,8 +314,15 @@ sudo pacmatic -Syu   for 10 Packages
 pacman -S gvfs ntfs-3g udisks2   for 23 Packages
 # bashrc-root
 Ctrl+Alt+F2 > root + pw   for   ls -a   shows that there's no   .bashrc   and no colouring of   ls
-
 sudo cp ~/AcerVeritonT661/configFiles/bashrc-root /root/.bashrc
+# "Removable medium is inserted" pop-up
+PCManFM > Edit > Preferences > Volume Management > Show available options  off-ticked
+# startx from Console
+bash_profile
+
+# configure GNU Readline
+echo $INPUTRC   shows it to be empty
+cat /etc/inputrc   shows it to be quite busy
 # waiting
 sudo pacmatic -Syu
 ## xdg-utils
