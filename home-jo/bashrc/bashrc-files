@@ -7,10 +7,6 @@
 
 # Joseph Harriott  http://momentary.eu/  Fri 24 May 2019
 
-alias 2up='cd ../../'
-alias 3up='cd ../../../'
-alias 4up='cd ../../../../'
-
 up(){
   local dir=""
   limit=$1
@@ -18,13 +14,12 @@ up(){
     do
       dir=$dir/..
     done
-  echo $dir
   dir=$(echo $dir | sed 's/^\///')
-  echo $dir
   if [ -z "$dir" ]; then
     dir=..
   fi
   cd $dir
+}
 
 alias ls='ls --color=auto'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
