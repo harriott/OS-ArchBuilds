@@ -28,7 +28,7 @@ if [ $gobu ]; then
     mkdir $bfolder
     for sysfolder in boot etc home root usr var; do
       mkdir $bfolder/$sysfolder
-      rsync -aAivX /mnt/$sysfolder/ $bfolder/$sysfolder 2>&1 | tee $bfolder-$sysfolder.txt
+      rsync -aAivX /mnt/$sysfolder/ $bfolder/$sysfolder 2>&1 | tee $bfolder/$sysfolder.txt
     done
   fi
 fi

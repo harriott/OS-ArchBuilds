@@ -345,6 +345,20 @@ in  ~/AcerVeritonT661/home-jo/bashrc :  bash -x bashConfig.sh; source ~/.bashrc
 # autojump
 sudo pacmatic -S autojump
 autojump -h
+# 190525 Backup
+  mkdir AcerVeritonT661-rsyncBackup
+  Rebooted to  archlinux-2019.05.01-x86_64.iso  CD
+  cd /
+  lsblk -f   indicated:
+    ls mnt
+    mount dev/sda2 mnt
+    ls mnt/home
+    mount dev/sda3 mnt/home
+    ls mnt/mnt/9QG2FFEE
+    mount dev/sdc1 mnt/mnt/9QG2FFEE
+    cd mnt/home/jo/AcerVeritonT661/build
+  bash rsyncBackup.sh
+  reboot  then CD wouldn't eject on press, but system booted into  SDSSDA240G
 # waiting
 sudo pacmatic -Syu
 ## xdg-utils

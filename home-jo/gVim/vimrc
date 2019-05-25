@@ -1,0 +1,3 @@
+" Point to my Arch vimrc:
+source $HOME/.vim/Arch-vimrc-sprbMb.vim
+

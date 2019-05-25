@@ -1,0 +1,5 @@
+" ----------------------------------------------------------------------------
+" this is a pointer, on a GNU+Linux system, to my more portably located gvimrc
+" ----------------------------------------------------------------------------
+source $HOME/.vim/gvimrc.vim
+
