@@ -20,7 +20,5 @@ URxvt.geometry: 115x24
 URxvt.saveLines: 8192
 
 ! Need to quit & restart X if the following  URxvt  colour-scheme selection is changed:
-!#include "/mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/GNU+Linux/Arch/jo/Arch/Xresources/gako-railroad"
-!#include "/mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/GNU+Linux/Arch/jo/Arch/Xresources/gako-HeadStick"
-!#include "/mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/GNU+Linux/Arch/jo/Arch/Xresources/myURxvtSolarizedLight"
+!#include "myURxvtSolarizedLight"
 

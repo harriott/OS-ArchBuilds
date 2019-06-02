@@ -1,0 +1,17 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda2
+UUID=f300bd84-9cfb-4a39-b815-e1b470df127f	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda3
+UUID=9393967e-d27c-4dc5-925b-827da2b49e64	/home     	ext4      	rw,relatime	0 2
+
+# /dev/sda4
+UUID=bc5adc45-3517-452d-a75b-3b990ec8b699	none      	swap      	defaults  	0 0
+
+LABEL=9QG2FFEE /mnt/9QG2FFEE  ext4  defaults  0  2
+LABEL=HD103SJ /mnt/HD103SJ  ext4  defaults  0  2
+LABEL=SDSSDA240G /mnt/SDSSDA240G  ext4  defaults  0  2
+LABEL=WD1001FALS /mnt/WD1001FALS  ext4  defaults  0  2
