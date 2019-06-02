@@ -20,5 +20,5 @@ URxvt.geometry: 115x24
 URxvt.saveLines: 8192
 
 ! Need to quit & restart X if the following  URxvt  colour-scheme selection is changed:
-!#include "myURxvtSolarizedLight"
+#include "~/AcerVeritonT661/home-jo/Xresources/myURxvtSolarizedLight"
 

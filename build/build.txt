@@ -367,8 +367,8 @@ $ lsblk -rno LABEL /dev/sda2   returned  SDSSDA240G
   sudo blkid   confirmed that
 sudo mkdir /mnt/SDSSDA240G
 /etc/fstab  is  644 root root
-
 sudo cp fstab /etc/fstab
+reboot
 # gVim
 
 sudo pacman -S gvim
