@@ -7,6 +7,9 @@ robocopy /mir D:\Dropbox\JH\IT_stack\onGitHub\AcerVeritonT661 G:\AcerVeritonT661
 ## get at root on tty2
 Ctrl+Alt+F2 > root + pw
 
+## Updates
+in  ~/Arch :  sudo pacmatic -Syu   for n Packages
+
 # to 190404 Backup
 ## Physical Configuration
 LabelFlash DVD writer in top tray with flip-down front cover, SATA2
@@ -33,50 +36,50 @@ swapon /dev/sda4   (then  swapon -s  shows /dev/sda4 has default Priority -2)
   mkfs.ext4 /dev/sda2  y   for   mount /dev/sda2 /mnt
   mkdir /mnt/home   then   mkfs.ext4 /dev/sda3  y   for   mount /dev/sda3 /mnt/home
 ### internet
-  (ip link  reports  LAN  socket as  enp0s25) ping -c 3 8.8.8.8  got a response
+(ip link  reports  LAN  socket as  enp0s25) ping -c 3 8.8.8.8  got a response
 ### install the base packages
-  pacstrap /mnt base base-devel  installed 155 Packages
+pacstrap /mnt base base-devel  installed 155 Packages
 ### genfstab
-  K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
-  mkdir /home/mnt   for   mount /dev/sdf1 /home/mnt
-  cd /home/mnt/AcerVeritonT661/build   for   bash genfstab.sh
+K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
+mkdir /home/mnt   for   mount /dev/sdf1 /home/mnt
+cd /home/mnt/AcerVeritonT661/build   for   bash genfstab.sh
 ### change root
-  arch-chroot /mnt
-  sudo -ll   works
+arch-chroot /mnt
+sudo -ll   works
 #### after chroot
-  K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
-  mount /dev/sdf1 /mnt
-  cd /mnt/AcerVeritonT661/build   for   bash after-chroot.sh
+K16GB500  plugged in carrying  JH\IT_stack\onGitHub\AcerVeritonT661
+mount /dev/sdf1 /mnt
+cd /mnt/AcerVeritonT661/build   for   bash after-chroot.sh
 #### locale
-  vi /etc/locale.gen
-  and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
-  cat /etc/locale.gen | grep -v ^#   then  locale-gen
+vi /etc/locale.gen
+and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
+cat /etc/locale.gen | grep -v ^#   then  locale-gen
 #### update K16GB500
-  cd /   then  umount /dev/sdf1   for updating, then   mount /dev/sdg1 /mnt
-  pacman -S rsync
-  rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
+cd /   then  umount /dev/sdf1   for updating, then   mount /dev/sdg1 /mnt
+pacman -S rsync
+rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
 #### after locale
-  cd /home/AcerVeritonT661/build   for    bash after_locale.sh
+cd /home/AcerVeritonT661/build   for    bash after_locale.sh
 #### root password
-  passwd
+passwd
 #### shutdown to eject CD
-  exit   then   shutdown -h now
+exit   then   shutdown -h now
 ### booted to SSD
-  restarted, immediately ejecting the CD
-  slow to get to Grub, then to console...
-  logged in as "root"
+restarted, immediately ejecting the CD
+slow to get to Grub, then to console...
+logged in as "root"
 #### enp0s25
-  dhcpcd enp0s25
+dhcpcd enp0s25
 #### K16GB500
-  mount /dev/sdg1 /mnt
-  rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
+mount /dev/sdg1 /mnt
+rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
 #### when booted to SSD
-  cd /home/AcerVeritonT661/build   for    bash -x whenSSD.sh
+cd /home/AcerVeritonT661/build   for    bash -x whenSSD.sh
 #### User jo
-  passwd jo
-  visudo   and  added  jo ALL=(ALL) ALL   above the   root declaration
+passwd jo
+visudo   and  added  jo ALL=(ALL) ALL   above the   root declaration
 #### stat root folders
-  stat -c '%n %a %G %U' /*   etc
+stat -c '%n %a %G %U' /*   etc
 #### update /home/AcerVeritonT661
 umount /dev/sdf1   for updating, then   mount /dev/sdf1 /mnt
 rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
@@ -162,27 +165,27 @@ sudo systemctl enable clamav-unofficial-sigs.timer   created a symlink
 ###### update signatures manually
 sudo clamav-unofficial-sigs.sh   downloaded and imported  Sanesecurity  keyring
 ##### clamdscan
-  sudo vi /etc/clamav/clamd.conf   & uncomment the two ExcludePath declarations
-  sudo clamdscan --multiscan --fdpass /
-  got a load of "WARNING: /...: Not supported file type"
-  and a few access ERRORs for /tmp/clamav*  files
-  251 in total, but no infected files
+sudo vi /etc/clamav/clamd.conf   & uncomment the two ExcludePath declarations
+sudo clamdscan --multiscan --fdpass /
+got a load of "WARNING: /...: Not supported file type"
+and a few access ERRORs for /tmp/clamav*  files
+251 in total, but no infected files
 #### rnano for visudo
   sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
 #### 9QG2FFEE
-  sudo bash -x fstabLABELs.sh
+sudo bash -x fstabLABELs.sh
 ##### clamdscan
-  sudo clamdscan --multiscan --fdpass /mnt/9QG2FFEE   took  288 minutes and found 12 infections
-  find . -type d -printf '%d\n' | sort -rn | head -1   returned 21, so
-  sudo rnano /etc/clamav/clamd.conf   added   ExcludePath ^/lost+found/
-  uncommented  MaxDirectoryRecursion  & set to 21
-  find . -type d -printf '%d %p\n' | grep ^21   and homed in on a deep directory to scan again
+sudo clamdscan --multiscan --fdpass /mnt/9QG2FFEE   took  288 minutes and found 12 infections
+find . -type d -printf '%d\n' | sort -rn | head -1   returned 21, so
+sudo rnano /etc/clamav/clamd.conf   added   ExcludePath ^/lost+found/
+uncommented  MaxDirectoryRecursion  & set to 21
+find . -type d -printf '%d %p\n' | grep ^21   and homed in on a deep directory to scan again
 #### HD103SJ
-  also mounted by  fstabLABELs.sh
-  cd /mnt/HD103SJ   for   sudo clamdscan --multiscan --fdpass .
+also mounted by  fstabLABELs.sh
+cd /mnt/HD103SJ   for   sudo clamdscan --multiscan --fdpass .
 #### WD1001FALS
-  also mounted by  fstabLABELs.sh
-  cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
+also mounted by  fstabLABELs.sh
+cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
 #### ncdu
   sudo pacman -Syu  for 13 Packages
   sudo pacman -S ncdu
@@ -369,11 +372,71 @@ sudo mkdir /mnt/SDSSDA240G
 /etc/fstab  is  644 root root
 sudo cp fstab /etc/fstab
 reboot
-# gVim
-
-sudo pacman -S gvim
+# Xresources changed
+xrdb -query -all
+# PCManFM - Terminal emulator
+Preferences > Advanced > Terminal > urxvt
+# Updates
+in  ~/Arch :  sudo pacmatic -Syu   for 171 Packages
+because  pacman-contrib  wasn't there, got  pacdiff  error for 3 pacnew files...
+when plugging in K16GB500 or K16GBDTR500  get "unkown filesystem type 'vfat'"
+## pacnews
+su > root pw  for  fs pacnew
+### firewalld.conf
+cd /etc/firewalld  for  diff -y firewalld.conf firewalld.conf.pacnew
+firewall-cmd --get-default-zone   reports  "public"
+mv firewall-conf firewall-conf.old
+mv firewall-conf.pacnew firewall-conf
+sudo firewall-cmd --set-default-zone=home
+halt -p
+### clamd.conf
+cd /etc/clamav
+  diff -y --suppress-common-lines clamd.conf clamd.conf.pacnew
+  mv clamd.conf clamd.conf.old
+  mv clamd.conf.pacnew clamd.conf
+  vi clamd.conf
+    uncomment the two ExcludePath declarations
+    added   ExcludePath ^/lost+found/
+    uncommented  MaxDirectoryRecursion  & set to 21
+#### clamdscan
+sudo clamdscan --multiscan --fdpass /
+  got a load of "WARNING: /...: Not supported file type"
+  ERROR: Can't access file /run/user/1000/gvfs
+  ended with  ERROR: Communication error
+##### Exclude \mnt
+vi clamd.conf
+  added   ExcludePath ^/mnt/
+sudo clamdscan --multiscan --fdpass /
+  got a load of "WARNING: /...: Not supported file type"
+  ERROR: Can't access file /run/user/1000/gvfs
+  0 Infected files
+### mirrorlist
+(reboot  fixed  vfat error)
+su > root pw
+cd /etc/pacman.d
+cp mirrorlist.pacnew mirrorlist.j9d
+vi mirrorlist.j9d   uncommented those for France that aren't less than 100% at Mirror Status page
+cat mirrorlist.j9d | grep -A 9 France
+#### pacman-contrib
+pacman -S pacman-contrib
+#### rankmirrors
+rankmirrors mirrorlist.j9d > mirrorlist
+cat mirrorlist
+rm mirrorlist.pacnew
+pacman -Syyuu   got me tzdata-2019c-1
+# Reflector
+sudo pacman -S reflector
+cd /etc/pacman.d
+  sudo cp mirrorlist mirrorlist.j9e
+  reflector --country France --age 12 --protocol https --sort rate --save mirrorlist
+  cat mirrorlist   shows it's captured 7 Servers
+  sudo pacman -Syyuu
 # waiting
 sudo pacmatic -Syu
+## CopyQ
+sudo pacman -S copyq
+## gVim
+sudo pacman -S gvim vim-easymotion
 ## xdg-utils
 Is this ever needed?
 ## 32-bit OpenGL
@@ -387,3 +450,4 @@ sudo pacman -S mlocate
 ## rx.xml Keybinding for PrintScreen
 ## rx.xml Keybinding for CopyQ
 ## GNU+Linux\Arch\ISO\190501alias.txt
+## Redshift
