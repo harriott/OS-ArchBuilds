@@ -321,6 +321,12 @@
       <menu>root-menu</menu>
     </action>
   </keybind>
+  <!-- Keybinding for PrintScreen - JH -->
+  <keybind key="Print">
+    <action name="Execute">
+      <command>/home/jo/Arch/Install/importScreenshot.sh</command>
+    </action>
+  </keybind>
 </keyboard>
 
 <mouse>

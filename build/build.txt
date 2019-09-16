@@ -431,6 +431,10 @@ cd /etc/pacman.d
   reflector --country France --age 12 --protocol https --sort rate --save mirrorlist
   cat mirrorlist   shows it's captured 7 Servers
   sudo pacman -Syyuu
+# openbox/importScreenshot.sh
+in /home/jo/Arch/
+  cp ~/AcerVeritonT661/home-jo/openbox/importScreenshot.sh importScreenshot.sh
+  chmod 755 importScreenshot.sh
 # waiting
 sudo pacmatic -Syu
 ## CopyQ
