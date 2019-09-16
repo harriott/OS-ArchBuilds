@@ -436,7 +436,31 @@ sudo pacmatic -Syu
 ## CopyQ
 sudo pacman -S copyq
 ## gVim
-sudo pacman -S gvim vim-easymotion
+sudo pacman -S
+gvim
+
+calendar-vim
+nerdtree
+vim-LanguageTool
+vim-airline
+vim-airline-themes
+vim-bufexplorer
+vim-colors-solarized
+vim-ctrlp
+vim-easymotion
+vim-fugitive
+vim-gitgutter
+vim-gruvbox-git
+vim-mediawiki
+vim-nerdcommenter
+vim-repeat
+vim-simpylfold
+vim-supertab
+vim-surround
+vim-syntastic
+vim-table-mode
+vim-tabular
+vim-undotree
 ## xdg-utils
 Is this ever needed?
 ## 32-bit OpenGL
