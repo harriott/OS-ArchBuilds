@@ -324,7 +324,7 @@
   <!-- Keybinding for PrintScreen - JH -->
   <keybind key="Print">
     <action name="Execute">
-      <command>/home/jo/Arch/Install/importScreenshot.sh</command>
+      <command>/home/jo/.config/openbox/importScreenshot.sh</command>
     </action>
   </keybind>
 </keyboard>

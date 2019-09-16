@@ -1,8 +1,8 @@
 #!/bin/bash
 # vim: set et tw=0:
 
-# Take a time-stamped fullscreenshot
-# ----------------------------------
+# Take a time-stamped fullscreenshot using ImageMagick
+# ----------------------------------------------------
 # Called by  Openbox's  rc.xml  because:
 # <command>importScreenshot</command>  doesn't find my Bash function
 # and the following line doesn't get correctly parsed either.

@@ -432,9 +432,13 @@ cd /etc/pacman.d
   cat mirrorlist   shows it's captured 7 Servers
   sudo pacman -Syyuu
 # openbox/importScreenshot.sh
-in /home/jo/Arch/
+in /home/jo/.config/openbox/
   cp ~/AcerVeritonT661/home-jo/openbox/importScreenshot.sh importScreenshot.sh
   chmod 755 importScreenshot.sh
+cp ~/AcerVeritonT661/home-jo/openbox/rc.xml ~/.config/openbox/rc.xml
+## ImageMagick
+in  ~/Arch :  sudo pacmatic -Syu   for 171 Packages
+sudo pacman -S imagemagick   for 3 packages
 # waiting
 sudo pacmatic -Syu
 ## CopyQ
