@@ -19,7 +19,7 @@ alias pqs='pacman -Qs'
 source /usr/share/git/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
-PS1='\[\e[1;34m\][\u \W$(__git_ps1 " (%s)")]\$\[\e[0m\] '
+PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
 
 # Command not found hook
 source /usr/share/doc/pkgfile/command-not-found.bash

@@ -439,36 +439,34 @@ cp ~/AcerVeritonT661/home-jo/openbox/rc.xml ~/.config/openbox/rc.xml
 ## ImageMagick
 in  ~/Arch :  sudo pacmatic -Syu   for 171 Packages
 sudo pacman -S imagemagick   for 3 packages
+# CopyQ
+sudo pacmatic -Syu   got me 5 Packages
+sudo pacman -S copyq   12 Packages
+## inbuilt Autostart not functional
+CopyQ > Ctrl+P > Autostart   reboot  took too long so hard restart
+CopyQ > Ctrl+P > Autostart off-ticked
+## CopyQ > Ctrl+P
+Items > Text > HTML off-ticked
+Items > Text > Maximum number of lines > 2
 # waiting
 sudo pacmatic -Syu
-## CopyQ
-sudo pacman -S copyq
 ## gVim
-sudo pacman -S
-gvim
+sudo pacman -S gvim vim-airline vim-bufexplorer vim-ctrlp vim-easymotion vim-fugitive vim-gitgutter
+
+vim-nerdcommenter vim-nerdtree vim-supertab vim-surround vim-syntastic vim-tabular
+
+vim-airline-themes
 
 calendar-vim
-nerdtree
-vim-LanguageTool
-vim-airline
-vim-airline-themes
-vim-bufexplorer
 vim-colors-solarized
-vim-ctrlp
-vim-easymotion
-vim-fugitive
-vim-gitgutter
 vim-gruvbox-git
+vim-LanguageTool
 vim-mediawiki
-vim-nerdcommenter
 vim-repeat
 vim-simpylfold
-vim-supertab
-vim-surround
-vim-syntastic
 vim-table-mode
-vim-tabular
 vim-undotree
+
 ## xdg-utils
 Is this ever needed?
 ## 32-bit OpenGL
@@ -479,7 +477,6 @@ sudo pacman -S mlocate
 ## EXPORT SUDO_EDITOR=rnano
 ## Tales from responsivenessland
 ## Zen kernel
-## rx.xml Keybinding for PrintScreen
 ## rx.xml Keybinding for CopyQ
 ## GNU+Linux\Arch\ISO\190501alias.txt
 ## Redshift
