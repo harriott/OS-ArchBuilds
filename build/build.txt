@@ -448,14 +448,14 @@ CopyQ > Ctrl+P > Autostart off-ticked
 ## CopyQ > Ctrl+P
 Items > Text > HTML off-ticked
 Items > Text > Maximum number of lines > 2
+~/.config/openbox/autostart  Updated   Exit Openbox for  startx
+# gVim
+sudo pacman -S gvim vim-airline vim-bufexplorer vim-ctrlp vim-easymotion vim-fugitive vim-gitgutter
+  got me  11 Packages, including  vim-airline-themes
+sudo pacman -S vim-nerdcommenter vim-nerdtree vim-supertab vim-surround vim-syntastic vim-tabular
 # waiting
 sudo pacmatic -Syu
 ## gVim
-sudo pacman -S gvim vim-airline vim-bufexplorer vim-ctrlp vim-easymotion vim-fugitive vim-gitgutter
-
-vim-nerdcommenter vim-nerdtree vim-supertab vim-surround vim-syntastic vim-tabular
-
-vim-airline-themes
 
 calendar-vim
 vim-colors-solarized
