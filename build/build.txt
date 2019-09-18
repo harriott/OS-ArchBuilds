@@ -250,6 +250,7 @@ startx
 in ~/Arch/AUR  bash -x ~/AcerVeritonT661/bash/obmenu-generator.sh
 ### auracle-git
 sudo pacman -Syu   for 8 packages
+git clone https://github.com/falconindy/auracle
 #### meson
 sudo pacman -S meson   for 6 Packages
 #### auracle-git
@@ -457,6 +458,15 @@ sudo pacman -S vim-nerdcommenter vim-nerdtree vim-supertab vim-surround vim-synt
 auracle sync
 ## harriott/miscUtils.git
 in ~/  git clone https://github.com/harriott/miscUtils
+## make SDSSDA240G writable
+in  ~/mnt/  s *  reveals an odd mix:
+  drwxr-xr-x 755 9 jo jo 4096 2019-04-04 22:32:10.551982257 +0200 9QG2FFEE
+  drwxrwxrwx 777 14 jo jo 4096 2018-06-19 20:09:17.093641774 +0200 HD103SJ
+  drwxr-xr-x 755 2 root root 4096 2019-05-25 23:40:09.276184245 +0200 K16GB500
+  drwxr-xr-x 755 3 root root 4096 2019-06-02 05:47:20.000000000 +0200 SDSSDA240G
+  drwx------ 700 6 jo jo 4096 2018-06-19 20:21:52.623679209 +0200 WD1001FALS
+  drwxr-xr-x 755 2 root root 4096 2019-04-18 10:39:25.017081089 +0200 WD30EZRZ
+chown jo:jo SDSSDA240G
 # waiting
 sudo pacmatic -Syu
 ## gVim
