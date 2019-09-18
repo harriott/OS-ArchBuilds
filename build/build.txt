@@ -456,7 +456,7 @@ sudo pacman -S vim-nerdcommenter vim-nerdtree vim-supertab vim-surround vim-synt
 # AUR updates
 auracle sync
 ## harriott/miscUtils.git
-in ~/  git clone git@github.com:harriott/miscUtils.git
+in ~/  git clone https://github.com/harriott/miscUtils
 # waiting
 sudo pacmatic -Syu
 ## gVim
