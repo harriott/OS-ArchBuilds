@@ -156,7 +156,7 @@ cat clamscant.txt | grep -A 1 exceeds   reveales  /usr/share/gettextarchive.dir.
 ls -lSr /var/cache/pacman/pkg   reveals that the largest of the latter is  linux-firmware, 78M
 ##### clamav-unofficial-sigs
 mkdir ~/Arch   cd Arch
-git clone https://aur.archlinux.org/clamav-unofficial-sigs/
+git clone https://aur.archlinux.org/clamav-unofficial-sigs
 makepkg -sic
 ###### sudo pacman -Syu  for 2 Packages
 ###### Enable the clamav-unofficial-sigs.timer
@@ -250,7 +250,6 @@ startx
 in ~/Arch/AUR  bash -x ~/AcerVeritonT661/bash/obmenu-generator.sh
 ### auracle-git
 sudo pacman -Syu   for 8 packages
-git clone https://github.com/falconindy/auracle
 #### meson
 sudo pacman -S meson   for 6 Packages
 #### auracle-git
@@ -467,20 +466,62 @@ in  ~/mnt/  s *  reveals an odd mix:
   drwx------ 700 6 jo jo 4096 2018-06-19 20:21:52.623679209 +0200 WD1001FALS
   drwxr-xr-x 755 2 root root 4096 2019-04-18 10:39:25.017081089 +0200 WD30EZRZ
 chown jo:jo SDSSDA240G
+## AUR updates
+in  ~/Arch/AUR/
+### auracle-git
+rm auracle-git
+git clone https://aur.archlinux.org/auracle-git.git
+cd auracle-git   for   makepkg -s 2>&1 | tee makepkg.txt
+sudo pacman -U *.pkg.tar.xz  = 1 package
+cd ..
+### clamav-unofficial-sigs
+rm clamav-unofficial-sigs
+git clone https://aur.archlinux.org/clamav-unofficial-sigs
+makepkg -sic
+#### (as a test) update signatures manually
+sudo clamav-unofficial-sigs.sh
+cd ..
+### mimeo
+rm mimeo
+git clone https://aur.archlinux.org/mimeo.git
+makepkg -sic
+cd ..
+### xdg-utils-mimeo
+rm xdg-utils-mimeo
+git clone https://aur.archlinux.org/xdg-utils-mimeo.git
+having checked the PCKGBUILD,  cd xdg-utils-mimeo   for   makepkg -sic   cd ..
+# gVim AUR Packages
+in  ~/Arch/AUR/
+
+## calendar-vim
+git clone https://aur.archlinux.org/packages/vim-calendar-git
+having checked the PCKGBUILD,  cd calendar-vim   for   makepkg -sic   cd ..
+## vim-colors-solarized
+git clone https://aur.archlinux.org/packages/vim-colors-solarized-git
+having checked the PCKGBUILD,  cd vim-colors-solarized   for   makepkg -sic   cd ..
+## vim-gruvbox-git
+git clone https://aur.archlinux.org/packages/vim-gruvbox-git/
+having checked the PCKGBUILD,  cd vim-gruvbox-git   for   makepkg -sic   cd ..
+## vim-LanguageTool
+git clone https://aur.archlinux.org/packages/vim-languagetool/
+having checked the PCKGBUILD,  cd vim-LanguageTool   for   makepkg -sic   cd ..
+## vim-mediawiki
+git clone https://aur.archlinux.org/packages/vim-mediawiki/
+having checked the PCKGBUILD,  cd vim-mediawiki   for   makepkg -sic   cd ..
+## vim-repeat
+git clone https://aur.archlinux.org/packages/vim-repeat/
+having checked the PCKGBUILD,  cd vim-repeat   for   makepkg -sic   cd ..
+## vim-simpylfold
+git clone https://aur.archlinux.org/packages/vim-simpylfold/
+having checked the PCKGBUILD,  cd vim-simpylfold   for   makepkg -sic   cd ..
+## vim-table-mode
+git clone https://aur.archlinux.org/packages/vim-table-mode/
+having checked the PCKGBUILD,  cd vim-table-mode   for   makepkg -sic   cd ..
+## vim-undotree
+git clone https://aur.archlinux.org/packages/vim-undotree/
+having checked the PCKGBUILD,  cd vim-undotree   for   makepkg -sic   cd ..
 # waiting
 sudo pacmatic -Syu
-## gVim
-
-calendar-vim
-vim-colors-solarized
-vim-gruvbox-git
-vim-LanguageTool
-vim-mediawiki
-vim-repeat
-vim-simpylfold
-vim-table-mode
-vim-undotree
-
 ## xdg-utils
 Is this ever needed?
 ## 32-bit OpenGL
@@ -491,6 +532,5 @@ sudo pacman -S mlocate
 ## EXPORT SUDO_EDITOR=rnano
 ## Tales from responsivenessland
 ## Zen kernel
-## rx.xml Keybinding for CopyQ
 ## GNU+Linux\Arch\ISO\190501alias.txt
 ## Redshift
