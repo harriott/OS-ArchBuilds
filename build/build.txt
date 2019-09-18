@@ -453,6 +453,10 @@ Items > Text > Maximum number of lines > 2
 sudo pacman -S gvim vim-airline vim-bufexplorer vim-ctrlp vim-easymotion vim-fugitive vim-gitgutter
   got me  11 Packages, including  vim-airline-themes
 sudo pacman -S vim-nerdcommenter vim-nerdtree vim-supertab vim-surround vim-syntastic vim-tabular
+# AUR updates
+auracle sync
+## harriott/miscUtils.git
+in ~/  git clone git@github.com:harriott/miscUtils.git
 # waiting
 sudo pacmatic -Syu
 ## gVim
