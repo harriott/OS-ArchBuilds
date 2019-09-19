@@ -519,6 +519,7 @@ having checked the PCKGBUILD,  cd vim-undotree   for   makepkg -sic   cd ..
 # SSH keys
 ssh-keygen -b 4096 -C "trohib@gmail.com" -f ~/.ssh/id_rsa-trohib   > no pw
 # Dropbox
+(should've been after installing a browser)
 in  ~/Arch :  sudo pacmatic -Syu   for 6 Packages
 in  ~/Arch/AUR/   bash -x ~/AcerVeritonT661/build/steps/gVimAURclones.sh
   having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic
@@ -528,9 +529,25 @@ gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
 ## makepkg
 makepkg -sic   jo's pw for the install   cd ..
 ## run Dropbox
-Menu > Network > Dropbox > Sign in
+Menu > Network > Dropbox > Sign in  not getting a response...
 ## dropbox-dist folder
 install -dm0 ~/.dropbox-dist
+## run Dropbox
+Menu > Network > Dropbox > Sign in  not getting a response, so  reboot   Dropbox didn't Autostart...
+## htop
+sudo pacman -S htop
+## Font packages
+fc-list   reveals that  adobe-source-code-pro-fonts  are already there
+(selection from Arch Fonts page) sudo pacman -S bdf-unifont ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid ttf-fira-mono ttf-freefont ttf-hack ttf-inconsolata ttf-liberation ttf-linux-libertine ttf-roboto
+
+## Chromium
+(after ttf fonts) pacman -S chromium
+
+(default libx264)  = 51 packages
+xdg-open https://archlinux.org   Opened Chromium. Webpage fonts are crap.
+### Sign in to Chromium
+Signed in for Settings > Advanced sync > Choose what to sync > Bookmarks & Open Tabs off-ticked
+  Appearance > Home button & bookmarks bar off
 # waiting
 in  ~/Arch :  sudo pacmatic -Syu
 ## .ssh config
