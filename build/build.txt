@@ -517,9 +517,16 @@ having checked the PCKGBUILD,  cd vim-table-mode   for   makepkg -sic   cd ..
 ## vim-undotree
 having checked the PCKGBUILD,  cd vim-undotree   for   makepkg -sic   cd ..
 # SSH keys
-ssh-keygen -b 4096 -C "trohib@gmail.com" -f ~/.ssh/id_rsa-trohib
+ssh-keygen -b 4096 -C "trohib@gmail.com" -f ~/.ssh/id_rsa-trohib   > no pw
+# Dropbox
+in  ~/Arch :  sudo pacmatic -Syu   for 6 Packages
 # waiting
-sudo pacmatic -Syu
+in  ~/Arch :  sudo pacmatic -Syu
+in  ~/Arch/AUR/   bash -x ../../AcerVeritonT661/build/steps/gVimAURclones.sh
+## .ssh config
+## test ssh to GitHub
+ssh -T git@github.com
+  Hi harriott! You've successfully authenticated, but GitHub does not provide shell access.
 ## my gVim dotfiles...
 in  ~/  git clone https://github.com/harriott/vimfiles   and renamed to  .vim
 .git/config > origin  changed to  gh
