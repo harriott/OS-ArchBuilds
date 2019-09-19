@@ -525,10 +525,12 @@ in  ~/Arch/AUR/   bash -x ~/AcerVeritonT661/build/steps/gVimAURclones.sh
     installed  gendesk  then failed for gpg key
 ## Dropbox public key
 gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-
 ## makepkg
-makepkg -sic
-  cd ..
+makepkg -sic   jo's pw for the install   cd ..
+## run Dropbox
+Menu > Network > Dropbox > Sign in
+## dropbox-dist folder
+install -dm0 ~/.dropbox-dist
 # waiting
 in  ~/Arch :  sudo pacmatic -Syu
 ## .ssh config
