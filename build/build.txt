@@ -496,16 +496,18 @@ in  ~/Arch/AUR/
 git clone https://aur.archlinux.org/vim-calendar-git.git
 having checked the PCKGBUILD,  cd calendar-vim   for   makepkg -sic   cd ..
 ## the rest
-sudo bash -x gVimAURclones.sh
-
+sudo bash -x ../../AcerVeritonT661/build/steps/gVimAURclones.sh
 ## vim-colors-solarized
 having checked the PCKGBUILD,  cd vim-colors-solarized   for   makepkg -sic   cd ..
 ## vim-gruvbox-git
 having checked the PCKGBUILD,  cd vim-gruvbox-git   for   makepkg -sic   cd ..
 ## vim-LanguageTool
-having checked the PCKGBUILD,  cd vim-LanguageTool   for   makepkg -sic   cd ..
+having checked the PCKGBUILD,  cd vim-LanguageTool   for
+  makepkg -sic > 1 (jre-openjdk-headless)  for 4 Packages, including  languagetool
+    then installed  unzip,  and finally  vim-LanguageTool   cd ..
 ## vim-mediawiki
-having checked the PCKGBUILD,  cd vim-mediawiki   for   makepkg -sic   cd ..
+having checked the PCKGBUILD,  cd vim-mediawiki   for
+  makepkg -sic   installed  ed   then   vim-mediawiki   cd ..
 ## vim-repeat
 having checked the PCKGBUILD,  cd vim-repeat   for   makepkg -sic   cd ..
 ## vim-simpylfold
@@ -514,8 +516,13 @@ having checked the PCKGBUILD,  cd vim-simpylfold   for   makepkg -sic   cd ..
 having checked the PCKGBUILD,  cd vim-table-mode   for   makepkg -sic   cd ..
 ## vim-undotree
 having checked the PCKGBUILD,  cd vim-undotree   for   makepkg -sic   cd ..
+# SSH keys
+ssh-keygen -b 4096 -C "trohib@gmail.com" -f ~/.ssh/id_rsa-trohib
 # waiting
 sudo pacmatic -Syu
+## my gVim dotfiles...
+in  ~/  git clone https://github.com/harriott/vimfiles   and renamed to  .vim
+.git/config > origin  changed to  gh
 ## xdg-utils
 Is this ever needed?
 ## 32-bit OpenGL
