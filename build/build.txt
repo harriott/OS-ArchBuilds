@@ -538,16 +538,14 @@ Menu > Network > Dropbox > Sign in  not getting a response, so  reboot   Dropbox
 sudo pacman -S htop
 ## Font packages
 fc-list   reveals that  adobe-source-code-pro-fonts  are already there
-(selection from Arch Fonts page) sudo pacman -S bdf-unifont ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid ttf-fira-mono ttf-freefont ttf-hack ttf-inconsolata ttf-liberation ttf-linux-libertine ttf-roboto
-
+(selection from Arch Fonts page) sudo pacman -S bdf-unifont ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid ttf-fira-mono ttf-freefont ttf-hack ttf-inconsolata ttf-liberation ttf-linux-libertine ttf-roboto   for 13 Packages
 ## Chromium
-(after ttf fonts) pacman -S chromium
-
-(default libx264)  = 51 packages
-xdg-open https://archlinux.org   Opened Chromium. Webpage fonts are crap.
-### Sign in to Chromium
-Signed in for Settings > Advanced sync > Choose what to sync > Bookmarks & Open Tabs off-ticked
-  Appearance > Home button & bookmarks bar off
+(after ttf fonts) pacman -S chromium   for 48 Packages
+xdg-open https://archlinux.org   Opened Chromium
+Current user > Turn on sync > Signed in with my Google credentials
+  Choose what to sync > Bookmarks & Open Tabs off-ticked
+## run Dropbox
+got a Chromium page to Sign in > jharr@ftml.net + pw
 # waiting
 in  ~/Arch :  sudo pacmatic -Syu
 ## .ssh config
