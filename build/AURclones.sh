@@ -3,7 +3,7 @@
 
 # sudo bash -x <thisfile>.sh
 
-git clone https://aur.archlinux.org/dropbox.git
+# git clone https://aur.archlinux.org/dropbox.git
 # git clone https://aur.archlinux.org/vim-colors-solarized-git.git
 # git clone https://aur.archlinux.org/vim-gruvbox-git.git
 # git clone https://aur.archlinux.org/vim-languagetool.git

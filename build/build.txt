@@ -520,9 +520,17 @@ having checked the PCKGBUILD,  cd vim-undotree   for   makepkg -sic   cd ..
 ssh-keygen -b 4096 -C "trohib@gmail.com" -f ~/.ssh/id_rsa-trohib   > no pw
 # Dropbox
 in  ~/Arch :  sudo pacmatic -Syu   for 6 Packages
+in  ~/Arch/AUR/   bash -x ~/AcerVeritonT661/build/steps/gVimAURclones.sh
+  having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic
+    installed  gendesk  then failed for gpg key
+## Dropbox public key
+gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+
+## makepkg
+makepkg -sic
+  cd ..
 # waiting
 in  ~/Arch :  sudo pacmatic -Syu
-in  ~/Arch/AUR/   bash -x ../../AcerVeritonT661/build/steps/gVimAURclones.sh
 ## .ssh config
 ## test ssh to GitHub
 ssh -T git@github.com
