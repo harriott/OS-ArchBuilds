@@ -4,6 +4,8 @@ vim: fdl=0 ft=build fdm=expr:
 man hier
 robocopy /mir D:\Dropbox\JH\IT_stack\onGitHub\AcerVeritonT661 G:\AcerVeritonT661
 
+## available disk
+df -h
 ## get at root on tty2
 Ctrl+Alt+F2 > root + pw
 
@@ -546,22 +548,58 @@ Current user > Turn on sync > Signed in with my Google credentials
   Choose what to sync > Bookmarks & Open Tabs off-ticked
 ## run Dropbox
 got a Chromium page to Sign in > jharr@ftml.net + pw
+### available disk
+Preferences > Sync > [ Selective > off-ticked all   Move > /mnt/SDSSDA240G/ ]
+Preferences > Sync > [ Selective > JH + ]
+# SSH to GitHub
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/SSHconfig ~/.ssh/config
+## test
+ssh -T git@github.com
+  The authenticity of host 'github.com (140.82.118.4)' can't be established.
+  RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+  Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+  Warning: Permanently added 'github.com,140.82.118.4' (RSA) to the list of known hosts.
+  Hi harriott! You've successfully authenticated, but GitHub does not provide shell access.
+# my gVim dotfiles
+in  ~/  git clone git@github.com:harriott/vimfiles.git
+in  ~/vimfiles/pack/   bash clones.sh
+in /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/gVim/   bash Install.sh
+renamed ~/vimfiles/ to ~/.vim
+created  ~/.vimswap
+.git/config > origin  changed to  gh
+# mlocate
+in  ~/Arch :  sudo pacmatic -Syu
+  Packages (4) intel-ucode-20190918-1  libelf-0.177-1  linux-5.3.arch1-1  openresolv-3.9.2-1
+  ...
+  ==> WARNING: Possibly missing firmware for module: aic94xx
+  ==> WARNING: Possibly missing firmware for module: wd719x
+  ...
+sudo pacman -S mlocate   Packages (1) mlocate-0.26.git.20170220-1
+sudo updatedb
+# NERDTree
+(as the Package is way out of date) sudo pacman -Rs vim-nerdtree
+# vim-fugitive
+(as the Package is out of date) sudo pacman -Rs vim-fugitive
 # waiting
 in  ~/Arch :  sudo pacmatic -Syu
-## .ssh config
-## test ssh to GitHub
-ssh -T git@github.com
-  Hi harriott! You've successfully authenticated, but GitHub does not provide shell access.
-## my gVim dotfiles...
-in  ~/  git clone https://github.com/harriott/vimfiles   and renamed to  .vim
-.git/config > origin  changed to  gh
+## bashrc changed to symlink
+rm ~/.bashrc
+ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/Web_Design/DokuWiki/media/unix-like/arch/sprbMb/bashrc ~/.bashrc
+source ~/.bashrc
+## bashrc-files changed to symlink
+## Bash profile changed to symlink
+rm ~/.bash_profile   for  sudo ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/bash_profile ~/.bash_profile
+## Openbox configurations changed to symlinks
+rm ~/.config/openbox/autostart
+ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/openbox/autostart ~/.config/openbox/autostart
+rm ~/.config/openbox/menu.xml
+ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/openbox/menu.xml ~/.config/openbox/menu.xml
+rm ~/.config/openbox/rc.xml
+ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/openbox/rc.xml ~/.config/openbox/rc.xml
 ## xdg-utils
 Is this ever needed?
 ## 32-bit OpenGL
 sudo pacman -S lib32-mesa
-## mlocate
-sudo pacman -Syu  for 2 Packages
-sudo pacman -S mlocate
 ## EXPORT SUDO_EDITOR=rnano
 ## Tales from responsivenessland
 ## Zen kernel
