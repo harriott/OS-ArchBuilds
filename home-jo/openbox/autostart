@@ -17,7 +17,9 @@
 #xfce-mcs-manager &
 
 copyq & # because CopyQ's internal Autostart doesn't work
+dropbox &
+gvim &
 obmenu-generator &
-pcmanfm &
+# pcmanfm &
 tint2 &
 urxvt &

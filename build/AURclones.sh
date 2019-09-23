@@ -3,8 +3,9 @@
 
 # sudo bash -x <thisfile>.sh
 
-# git clone https://aur.archlinux.org/dropbox.git
+# sudo rm -r dropbox; git clone https://aur.archlinux.org/dropbox.git
 # git clone https://aur.archlinux.org/vim-colors-solarized-git.git
+git clone https://aur.archlinux.org/gtkhash.git
 # git clone https://aur.archlinux.org/vim-gruvbox-git.git
 # git clone https://aur.archlinux.org/vim-languagetool.git
 # git clone https://aur.archlinux.org/vim-mediawiki.git

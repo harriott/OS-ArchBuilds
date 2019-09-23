@@ -1,8 +1,10 @@
 vim: fdl=0 ft=build fdm=expr:
 
 # general tips
+autojump -s
 man hier
 robocopy /mir D:\Dropbox\JH\IT_stack\onGitHub\AcerVeritonT661 G:\AcerVeritonT661
+sudo parted -l
 
 ## available disk
 df -h
@@ -13,6 +15,7 @@ Ctrl+Alt+F2 > root + pw
 in  ~/Arch :  sudo pacmatic -Syu   for n Packages
 
 # to 190404 Backup
+Physical Configuration, Arch install
 ## Physical Configuration
 LabelFlash DVD writer in top tray with flip-down front cover, SATA2
 ### HDs
@@ -206,24 +209,26 @@ cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
   bash rsyncBackup.sh
   reboot  then CD wouldn't eject on press, but system booted into  SDSSDA240G
 # to 190525 Backup
+(redacted for some of my file locations)
+graphics hw, Xorg, Openbox, auracle-git, perl-linux-desktopfiles, obmenu-generator, rxvt-unicode, xterm, 00-keyboard.conf, disable screen blanking, Pacmatic, PCManFM, mimeo, ntfs-3g, udisks2, bashrc-root, bash_profile, no-wait.conf, pkgfile, trash-cli, autojump
 ## ViewSonic VX2025wm
-  pre-Arch progress seems to be 640x480
-  GRUB 2 seems to be 1680x1050
-  sudo fbset -i   reports  mode 1680x1050
+pre-Arch progress seems to be 640x480
+GRUB 2 seems to be 1680x1050
+sudo fbset -i   reports  mode 1680x1050
 ## graphics card
-  lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
+lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
 ## Xorg
-  sudo pacman -Syu  for 4 Packages
-  ==> WARNING: Possibly missing firmware for module: aic94xx
-  ==> WARNING: Possibly missing firmware for module: wd719x
-## Intel video driver & OpenGL
-  sudo pacman -S xf86-video-intel mesa   for 25 Packages
+sudo pacman -Syu  for 4 Packages
+==> WARNING: Possibly missing firmware for module: aic94xx
+==> WARNING: Possibly missing firmware for module: wd719x
+### Intel video driver & OpenGL
+sudo pacman -S xf86-video-intel mesa   for 25 Packages
 ### Xorg
-  sudo pacman -S xorg-server   for 19 Packages
+sudo pacman -S xorg-server   for 19 Packages
 ## Updates
-  sudo pacman -Syu   for 3 Packages
+sudo pacman -Syu   for 3 Packages
 ## xinit
-  sudo pacman -S xorg-xinit   8 Packages
+sudo pacman -S xorg-xinit   8 Packages
 ### grab old configuration files
 WD30EZRZ  plugged in
 sudo mkdir /mnt/WD30EZRZ
@@ -275,8 +280,7 @@ sudo pacman -S rxvt-unicode xterm  for 8 packages
 ## Keyboard in X
 is US
 ### generate 00-keyboard.conf
-sudo bash -x ~/AcerVeritonT661/configFiles/generateKeyboardConf.sh
-- generated  /etc/X11/xorg.conf.d/00-keyboard.conf  &  restarting Openbox got the mapping
+sudo bash -x /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/steps/generateKeyboardConf.sh  - generated  /etc/X11/xorg.conf.d/00-keyboard.conf  &  restarting Openbox got the mapping
 ## disable screen blanking
 ### disable DPMS
 sudo cp ~/AcerVeritonT661/configFiles/10-monitor.conf /etc/X11/xorg.conf.d/
@@ -286,7 +290,7 @@ pacman -S xorg-xset
 xset q   reports that  Num Lock is off  and  Screen Saver begins after 600s
 xset s off   stopped the 600s screensaver
 ## Pacmatic
-sudo bash -x ~/AcerVeritonT661/configFiles/Pacmatic.sh
+sudo bash -x /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/steps/generateKeyboardConf.sh
 sudo pacmatic -Syu
 pacmatic -Qqo '/usr/lib/perl5/5.28/vendor_perl'   listed
 libproxy perl-data-dump perl-error perl-mailtools perl-timedate   which I left as they are
@@ -324,7 +328,7 @@ sudo cp ~/AcerVeritonT661/configFiles/bashrc-root /root/.bashrc
 ## "Removable medium is inserted" pop-up
 PCManFM > Edit > Preferences > Volume Management > Show available options  off-ticked
 ## startx from Console
-cp ~/AcerVeritonT661/configFiles/bash_profile ~/.bash_profile
+cp /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/bash_profile ~/.bash_profile
 ## configure GNU Readline
 echo $INPUTRC   shows it to be empty
 cat /etc/inputrc   shows it to be quite busy
@@ -332,7 +336,7 @@ echo $TERM   reports what CLI is being used
 ## PCManFM Trash
 Edit > Preferences > Confirm before moving files into "trash can"   off-ticked
 ## turn off -w flag in dhcpcd@.service
-sudo bash -x ~/AcerVeritonT661/build/steps/DHCPCD-noWaitConf.sh
+sudo bash -x /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/steps/DHCPCD-noWaitConf.sh
 reboot   confirmed that I no longer have the start-job delay for DHCPCD
 ping -c 3 8.8.8.8   got a response
 ## get my root .bashrc settings working in root Console
@@ -352,19 +356,21 @@ in  ~/AcerVeritonT661/home-jo/bashrc :  bash -x bashConfig.sh; source ~/.bashrc
 sudo pacmatic -S autojump
 autojump -h
 ## 190525 Backup
-  Rebooted to  archlinux-2019.05.01-x86_64.iso  CD
-  cd /
-  lsblk -f   indicated:
-    ls mnt
-    mount dev/sda2 mnt
-    ls mnt/home
-    mount dev/sda3 mnt/home
-    ls mnt/mnt/9QG2FFEE
-    mount dev/sdc1 mnt/mnt/9QG2FFEE
-  cd mnt/home/jo/AcerVeritonT661/build
-  bash rsyncBackup.sh
+Rebooted to  archlinux-2019.05.01-x86_64.iso  CD
+cd /
+lsblk -f   indicated:
+  ls mnt
+  mount dev/sda2 mnt
+  ls mnt/home
+  mount dev/sda3 mnt/home
+  ls mnt/mnt/9QG2FFEE
+  mount dev/sdc1 mnt/mnt/9QG2FFEE
+cd mnt/home/jo/AcerVeritonT661/build
+bash rsyncBackup.sh
 halt -p   got stuck, so hard restart, ejecting CD
-# mount rest of SDSSDA240G
+# to 190923 Backup
+mount SDSSDA240G, Reflector, importScreenshot.sh, CopyQ, gVim, gVim AUR Packages, SSH keys, Dropbox, SSH to GitHub, gVim dotfiles, mlocate, gitconfig, Time zone, GPRename
+## mount rest of SDSSDA240G
 lsblk -f  indicated
   sudo mkfs.ext4 -L SDSSDA240G -n /dev/sda5   y   seemed okay, so
     sudo mkfs.ext4 -L SDSSDA240G /dev/sda5   y
@@ -374,24 +380,24 @@ sudo mkdir /mnt/SDSSDA240G
 /etc/fstab  is  644 root root
 sudo cp fstab /etc/fstab
 reboot
-# Xresources changed
+## Xresources changed
 xrdb -query -all
-# PCManFM - Terminal emulator
+## PCManFM - Terminal emulator
 Preferences > Advanced > Terminal > urxvt
-# Updates
+## Updates
 in  ~/Arch :  sudo pacmatic -Syu   for 171 Packages
 because  pacman-contrib  wasn't there, got  pacdiff  error for 3 pacnew files...
 when plugging in K16GB500 or K16GBDTR500  get "unkown filesystem type 'vfat'"
-## pacnews
+### pacnews
 su > root pw  for  fs pacnew
-### firewalld.conf
+#### firewalld.conf
 cd /etc/firewalld  for  diff -y firewalld.conf firewalld.conf.pacnew
 firewall-cmd --get-default-zone   reports  "public"
 mv firewall-conf firewall-conf.old
 mv firewall-conf.pacnew firewall-conf
 sudo firewall-cmd --set-default-zone=home
 halt -p
-### clamd.conf
+#### clamd.conf
 cd /etc/clamav
   diff -y --suppress-common-lines clamd.conf clamd.conf.pacnew
   mv clamd.conf clamd.conf.old
@@ -400,66 +406,66 @@ cd /etc/clamav
     uncomment the two ExcludePath declarations
     added   ExcludePath ^/lost+found/
     uncommented  MaxDirectoryRecursion  & set to 21
-#### clamdscan
+##### clamdscan
 sudo clamdscan --multiscan --fdpass /
   got a load of "WARNING: /...: Not supported file type"
   ERROR: Can't access file /run/user/1000/gvfs
   ended with  ERROR: Communication error
-##### Exclude \mnt
+###### Exclude \mnt
 vi clamd.conf
   added   ExcludePath ^/mnt/
 sudo clamdscan --multiscan --fdpass /
   got a load of "WARNING: /...: Not supported file type"
   ERROR: Can't access file /run/user/1000/gvfs
   0 Infected files
-### mirrorlist
+#### mirrorlist
 (reboot  fixed  vfat error)
 su > root pw
 cd /etc/pacman.d
 cp mirrorlist.pacnew mirrorlist.j9d
 vi mirrorlist.j9d   uncommented those for France that aren't less than 100% at Mirror Status page
 cat mirrorlist.j9d | grep -A 9 France
-#### pacman-contrib
+##### pacman-contrib
 pacman -S pacman-contrib
-#### rankmirrors
+##### rankmirrors
 rankmirrors mirrorlist.j9d > mirrorlist
 cat mirrorlist
 rm mirrorlist.pacnew
 pacman -Syyuu   got me tzdata-2019c-1
-# Reflector
+## Reflector
 sudo pacman -S reflector
 cd /etc/pacman.d
   sudo cp mirrorlist mirrorlist.j9e
   reflector --country France --age 12 --protocol https --sort rate --save mirrorlist
   cat mirrorlist   shows it's captured 7 Servers
   sudo pacman -Syyuu
-# openbox/importScreenshot.sh
+## openbox/importScreenshot.sh
 in /home/jo/.config/openbox/
   cp ~/AcerVeritonT661/home-jo/openbox/importScreenshot.sh importScreenshot.sh
   chmod 755 importScreenshot.sh
 cp ~/AcerVeritonT661/home-jo/openbox/rc.xml ~/.config/openbox/rc.xml
-## ImageMagick
+### ImageMagick
 in  ~/Arch :  sudo pacmatic -Syu   for 171 Packages
 sudo pacman -S imagemagick   for 3 packages
-# CopyQ
+## CopyQ
 sudo pacmatic -Syu   got me 5 Packages
 sudo pacman -S copyq   12 Packages
-## inbuilt Autostart not functional
+### inbuilt Autostart not functional
 CopyQ > Ctrl+P > Autostart   reboot  took too long so hard restart
 CopyQ > Ctrl+P > Autostart off-ticked
-## CopyQ > Ctrl+P
+### CopyQ > Ctrl+P
 Items > Text > HTML off-ticked
 Items > Text > Maximum number of lines > 2
 ~/.config/openbox/autostart  Updated   Exit Openbox for  startx
-# gVim
+## gVim
 sudo pacman -S gvim vim-airline vim-bufexplorer vim-ctrlp vim-easymotion vim-fugitive vim-gitgutter
   got me  11 Packages, including  vim-airline-themes
 sudo pacman -S vim-nerdcommenter vim-nerdtree vim-supertab vim-surround vim-syntastic vim-tabular
-# AUR updates
+## AUR updates
 auracle sync
-## harriott/miscUtils.git
+### harriott/miscUtils.git
 in ~/  git clone https://github.com/harriott/miscUtils
-## make SDSSDA240G writable
+### make SDSSDA240G writable
 in  ~/mnt/  s *  reveals an odd mix:
   drwxr-xr-x 755 9 jo jo 4096 2019-04-04 22:32:10.551982257 +0200 9QG2FFEE
   drwxrwxrwx 777 14 jo jo 4096 2018-06-19 20:09:17.093641774 +0200 HD103SJ
@@ -468,106 +474,106 @@ in  ~/mnt/  s *  reveals an odd mix:
   drwx------ 700 6 jo jo 4096 2018-06-19 20:21:52.623679209 +0200 WD1001FALS
   drwxr-xr-x 755 2 root root 4096 2019-04-18 10:39:25.017081089 +0200 WD30EZRZ
 chown jo:jo SDSSDA240G
-## AUR updates
+### AUR updates
 in  ~/Arch/AUR/
-### auracle-git
+#### auracle-git
 rm auracle-git
 git clone https://aur.archlinux.org/auracle-git.git
 cd auracle-git   for   makepkg -s 2>&1 | tee makepkg.txt
 sudo pacman -U *.pkg.tar.xz  = 1 package
 cd ..
-### clamav-unofficial-sigs
+#### clamav-unofficial-sigs
 rm clamav-unofficial-sigs
 git clone https://aur.archlinux.org/clamav-unofficial-sigs
 makepkg -sic
-#### (as a test) update signatures manually
+##### (as a test) update signatures manually
 sudo clamav-unofficial-sigs.sh
 cd ..
-### mimeo
+#### mimeo
 rm mimeo
 git clone https://aur.archlinux.org/mimeo.git
 makepkg -sic
 cd ..
-### xdg-utils-mimeo
+#### xdg-utils-mimeo
 rm xdg-utils-mimeo
 git clone https://aur.archlinux.org/xdg-utils-mimeo.git
 having checked the PCKGBUILD,  cd xdg-utils-mimeo   for   makepkg -sic   cd ..
-# gVim AUR Packages
+## gVim AUR Packages
 in  ~/Arch/AUR/
-## vim-calendar-vim
+### vim-calendar-vim
 git clone https://aur.archlinux.org/vim-calendar-git.git
 having checked the PCKGBUILD,  cd calendar-vim   for   makepkg -sic   cd ..
-## the rest
+### the rest
 sudo bash -x ../../AcerVeritonT661/build/steps/gVimAURclones.sh
-## vim-colors-solarized
+### vim-colors-solarized
 having checked the PCKGBUILD,  cd vim-colors-solarized   for   makepkg -sic   cd ..
-## vim-gruvbox-git
+### vim-gruvbox-git
 having checked the PCKGBUILD,  cd vim-gruvbox-git   for   makepkg -sic   cd ..
-## vim-LanguageTool
+### vim-LanguageTool
 having checked the PCKGBUILD,  cd vim-LanguageTool   for
   makepkg -sic > 1 (jre-openjdk-headless)  for 4 Packages, including  languagetool
     then installed  unzip,  and finally  vim-LanguageTool   cd ..
-## vim-mediawiki
+### vim-mediawiki
 having checked the PCKGBUILD,  cd vim-mediawiki   for
   makepkg -sic   installed  ed   then   vim-mediawiki   cd ..
-## vim-repeat
+### vim-repeat
 having checked the PCKGBUILD,  cd vim-repeat   for   makepkg -sic   cd ..
-## vim-simpylfold
+### vim-simpylfold
 having checked the PCKGBUILD,  cd vim-simpylfold   for   makepkg -sic   cd ..
-## vim-table-mode
+### vim-table-mode
 having checked the PCKGBUILD,  cd vim-table-mode   for   makepkg -sic   cd ..
-## vim-undotree
+### vim-undotree
 having checked the PCKGBUILD,  cd vim-undotree   for   makepkg -sic   cd ..
-# SSH keys
+## SSH keys
 ssh-keygen -b 4096 -C "trohib@gmail.com" -f ~/.ssh/id_rsa-trohib   > no pw
-# Dropbox
+## Dropbox
 (should've been after installing a browser)
 in  ~/Arch :  sudo pacmatic -Syu   for 6 Packages
 in  ~/Arch/AUR/   bash -x ~/AcerVeritonT661/build/steps/gVimAURclones.sh
   having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic
     installed  gendesk  then failed for gpg key
-## Dropbox public key
+### Dropbox public key
 gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-## makepkg
+### makepkg
 makepkg -sic   jo's pw for the install   cd ..
-## run Dropbox
+### run Dropbox
 Menu > Network > Dropbox > Sign in  not getting a response...
-## dropbox-dist folder
+### dropbox-dist folder
 install -dm0 ~/.dropbox-dist
-## run Dropbox
+### run Dropbox
 Menu > Network > Dropbox > Sign in  not getting a response, so  reboot   Dropbox didn't Autostart...
-## htop
+### htop
 sudo pacman -S htop
-## Font packages
+### Font packages
 fc-list   reveals that  adobe-source-code-pro-fonts  are already there
 (selection from Arch Fonts page) sudo pacman -S bdf-unifont ttf-bitstream-vera ttf-croscore ttf-dejavu ttf-droid ttf-fira-mono ttf-freefont ttf-hack ttf-inconsolata ttf-liberation ttf-linux-libertine ttf-roboto   for 13 Packages
-## Chromium
+### Chromium
 (after ttf fonts) pacman -S chromium   for 48 Packages
 xdg-open https://archlinux.org   Opened Chromium
 Current user > Turn on sync > Signed in with my Google credentials
   Choose what to sync > Bookmarks & Open Tabs off-ticked
-## run Dropbox
+### run Dropbox
 got a Chromium page to Sign in > jharr@ftml.net + pw
-### available disk
+#### available disk
 Preferences > Sync > [ Selective > off-ticked all   Move > /mnt/SDSSDA240G/ ]
 Preferences > Sync > [ Selective > JH + ]
-# SSH to GitHub
+## SSH to GitHub
 ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/SSHconfig ~/.ssh/config
-## test
+### test
 ssh -T git@github.com
   The authenticity of host 'github.com (140.82.118.4)' can't be established.
   RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
   Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
   Warning: Permanently added 'github.com,140.82.118.4' (RSA) to the list of known hosts.
   Hi harriott! You've successfully authenticated, but GitHub does not provide shell access.
-# my gVim dotfiles
+## my gVim dotfiles
 in  ~/  git clone git@github.com:harriott/vimfiles.git
 in  ~/vimfiles/pack/   bash clones.sh
 in /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/gVim/   bash Install.sh
 renamed ~/vimfiles/ to ~/.vim
 created  ~/.vimswap
 .git/config > origin  changed to  gh
-# mlocate
+## mlocate
 in  ~/Arch :  sudo pacmatic -Syu
   Packages (4) intel-ucode-20190918-1  libelf-0.177-1  linux-5.3.arch1-1  openresolv-3.9.2-1
   ...
@@ -576,22 +582,103 @@ in  ~/Arch :  sudo pacmatic -Syu
   ...
 sudo pacman -S mlocate   Packages (1) mlocate-0.26.git.20170220-1
 sudo updatedb
-# NERDTree
+## NERDTree
 (as the Package is way out of date) sudo pacman -Rs vim-nerdtree
-# vim-fugitive
+## vim-fugitive
 (as the Package is out of date) sudo pacman -Rs vim-fugitive
+## ~/.gitconfig
+copied in from  /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo
+## mistaken attempt to make WD30EZRZ readable
+(even though it's not in the box)
+in  ~/mnt/  chown jo:jo WD30EZRZ   reboot   it's still unreadable...
+### /mnt/K16GB500
+sudo rm -r /mnt/K16GB500
+### WD30EZRZ added to fstab
+su > root pw
+  echo "LABEL=WD30EZRZ /mnt/WD30EZRZ  ext4  defaults  0  2" >> /etc/fstab
+  exit
+cp /etc/fstab /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/etc/fstab
+reboot
+but it wasn't in the box, so got into emergency mode > root pw
+cd /etc
+vi fstab
+removed last line
+reboot
+### /mnt/WD30EZRZ
+sudo rm -r /mnt/WD30EZRZ
+## CopyQ
+Preferences > Shortcuts > Show/hide main window > Win+P (= Meta+P)
+## Time zone
+ls -l /etc/localtime  shows it's a symlink to  /usr/share/zoneinfo/Europe/Paris
+sudo ntpd -qg
+hwclock --systohc --utc
+## GPRename
+in  ~/Arch :  sudo pacmatic -Syu   Packages (5) bind-tools-9.14.6-1  btrfs-progs-5.2.2-1  imagemagick-7.0.8.66-1  linux-5.3.1.arch1-1  openssh-8.0p1-3
+sudo pacman -S gprename   Packages (7) cairo-perl-1.106-8  glib-perl-1.329-2  gtk2-perl-1.24992-4  pango-perl-1.227-11  perl-libintl-perl-1.31-3  perl-locale-gettext-1.07-8  gprename-20190221-1
+### mlocate timer
+systemctl status updatedb.timer  reports it to be active
+### mlocate path allowing /mnt/SDSSDA240G/
+in  /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/etc/:
+  cp /etc/updatedb.conf j9n-1-updatedb.conf
+  sed 's#/mnt#/mnt/9QG2FFEE /mnt/HD103SJ /mnt/WD1001FALS#' /etc/updatedb.conf > j9n-2-updatedb.conf
+  sudo cp j9n-2-updatedb.conf /etc/updatedb.conf
+sudo updatedb  - was blisteringly fast!
+### GtkHash, abandoned
+auracle sync
+### Dropbox
+in  ~/Arch/AUR/
+  bash -x /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/AURclones.sh
+#### bashrc-files changed to symlink
+rm ~/.bashrc-files
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/bashrc/bashrc-files /home/jo/.bashrc-files
+/mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/Web_Design/DokuWiki/media/unix-like/arch/sprbMb/bashrc ~/.bashrc
+source ~/.bashrc
+#### Dropbox
+having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-81.4.195-1
+hvaing accidentally cancelled,   sudo pacman -U dropbox-81.4.195-1-x86_64.pkg.tar.xz
+Dropbox self-reporting as v81.4.127, so quit for  dropbox &  which got it up-to-date
+### autostart
+rm ~/.config/openbox/autostart
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/openbox/autostart ~/.config/openbox/autostart
+#### GtkHash
+in  ~/Arch/AUR/
+  bash -x /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/AURclones.sh
+## 190923 Backup
+clear Downloads folder & Trash for:
+  Reboot to  archlinux-2019.09.01-x86_64.iso  CD
+  cd /
+  lsblk -f   indicated:
+    ls mnt
+    mount dev/sda2 mnt
+    ls mnt/home
+    mount dev/sda3 mnt/home
+    ls mnt/mnt/SDSSDA240G
+    mount dev/sda5 mnt/mnt/SDSSDA240G
+    ls mnt/mnt/9QG2FFEE
+    mount dev/sdc1 mnt/mnt/9QG2FFEE
+  cd mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build
+  bash rsyncBackup.sh
+  halt -p
+# rhash
+in  ~/Arch :  sudo pacmatic -Syu   Packages (1) fontconfig-2:2.13.91+23+g65087ac-1
+sudo pacman -S rhash   Packages (1) rhash-1.3.8-1
+# AlsaUtils
+sudo pacman -S alsa-utils   Packages (2) fftw-3.3.5-1  alsa-utils-1.1.2-1
+# CopyQ > Preferences > History
+Maximum > 300
+# Test sound
+in one terminal:  speaker-test -c 2
+in another terminal:  find /proc/asound/ -name hw_params | xargs -I FILE grep -v -l "closed" FILE | grep '/proc/asound/card./pcm.p/sub./hw_params'   reported  /proc/asound/card0/pcm0p/sub0/hw_params
+reboot  got sound out from front and back green sockets
 # waiting
-in  ~/Arch :  sudo pacmatic -Syu
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
 ## bashrc changed to symlink
 rm ~/.bashrc
 ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/Web_Design/DokuWiki/media/unix-like/arch/sprbMb/bashrc ~/.bashrc
 source ~/.bashrc
-## bashrc-files changed to symlink
 ## Bash profile changed to symlink
 rm ~/.bash_profile   for  sudo ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/bash_profile ~/.bash_profile
 ## Openbox configurations changed to symlinks
-rm ~/.config/openbox/autostart
-ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/openbox/autostart ~/.config/openbox/autostart
 rm ~/.config/openbox/menu.xml
 ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/openbox/menu.xml ~/.config/openbox/menu.xml
 rm ~/.config/openbox/rc.xml

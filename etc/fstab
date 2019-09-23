@@ -15,3 +15,4 @@ LABEL=9QG2FFEE /mnt/9QG2FFEE  ext4  defaults  0  2
 LABEL=HD103SJ /mnt/HD103SJ  ext4  defaults  0  2
 LABEL=SDSSDA240G /mnt/SDSSDA240G  ext4  defaults  0  2
 LABEL=WD1001FALS /mnt/WD1001FALS  ext4  defaults  0  2
+LABEL=WD30EZRZ /mnt/WD30EZRZ  ext4  defaults  0  2

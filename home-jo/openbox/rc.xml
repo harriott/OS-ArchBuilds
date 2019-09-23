@@ -252,6 +252,10 @@
   <keybind key="A-m">
     <action name="ToggleMaximize"/>
   </keybind>
+  <!-- Keybinding for Resize - JH -->
+  <keybind key="W-r">
+    <action name="Resize"/>
+  </keybind>
 
   <!-- Keybindings for window switching -->
   <keybind key="A-Tab">

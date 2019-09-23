@@ -7,6 +7,7 @@
 
 # Joseph Harriott  http://momentary.eu/  Fri 24 May 2019
 
+# move up [n] directories
 up(){
   local dir=""
   limit=$1
@@ -21,7 +22,10 @@ up(){
   cd $dir
 }
 
+alias gpr='gprename &'
+alias rpd='bash /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/rsync-portabledrives/rsync.sh'
 alias ls='ls --color=auto'
+alias pcm='pcmanfm & disown'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
 alias so="stat -c '%a %n'"
 alias sm="stat -c '%y %n'"

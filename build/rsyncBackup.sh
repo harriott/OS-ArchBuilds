@@ -26,7 +26,7 @@ if [ $gobu ]; then
     fi
     echo "rsync-ing:"
     mkdir $bfolder
-    for sysfolder in boot etc home root usr var; do
+    for sysfolder in boot etc home root usr; do
       mkdir $bfolder/$sysfolder
       rsync -aAivX /mnt/$sysfolder/ $bfolder/$sysfolder 2>&1 | tee $bfolder/$sysfolder.txt
     done
