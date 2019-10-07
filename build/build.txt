@@ -303,11 +303,12 @@ cp ~/AcerVeritonT661/configFiles/openbox/autostart ~/.config/openbox
 cp ~/AcerVeritonT661/configFiles/openbox/schema.pl ~/.config/obmenu-generator
 cp ~/AcerVeritonT661/configFiles/openbox/rc.xml ~/.config/openbox
 ### mimeo
-cd ~/Arch/AUR   for  bash -x ~/AcerVeritonT661/build/steps/mimeo.sh
+cd ~/Arch/AUR   for  bash -x /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/steps/mimeo.sh
 #### openbox-themes
 in ~/jo/Arch/AUR/openbox-themes:  makepkg -s 2>&1 | tee makepkg.txt
   sudo pacman -U <*>.pkg.tar.xz  = 1 package
 #### xdg-utils-mimeo
+xdg-utils-mimeo
 in ~/jo/Arch/AUR/xdg-utils-mimeo:  makepkg -s 2>&1 | tee makepkg.txt  (6 Packages)
   sudo pacman -U <*>.pkg.tar.xz  = 1 package
 #### mimeo
@@ -582,9 +583,9 @@ in  ~/Arch :  sudo pacmatic -Syu
   ...
 sudo pacman -S mlocate   Packages (1) mlocate-0.26.git.20170220-1
 sudo updatedb
-## NERDTree
+## remove vim-nerdtree
 (as the Package is way out of date) sudo pacman -Rs vim-nerdtree
-## vim-fugitive
+## remove vim-fugitive
 (as the Package is out of date) sudo pacman -Rs vim-fugitive
 ## ~/.gitconfig
 copied in from  /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo
@@ -637,7 +638,7 @@ source ~/.bashrc
 having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-81.4.195-1
 hvaing accidentally cancelled,   sudo pacman -U dropbox-81.4.195-1-x86_64.pkg.tar.xz
 Dropbox self-reporting as v81.4.127, so quit for  dropbox &  which got it up-to-date
-### autostart
+### autostart changed to symlink
 rm ~/.config/openbox/autostart
 ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/openbox/autostart ~/.config/openbox/autostart
 #### GtkHash
@@ -659,23 +660,183 @@ clear Downloads folder & Trash for:
   cd mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build
   bash rsyncBackup.sh
   halt -p
-# rhash
+# to 191002 Backup
+rhash, AlsaUtils, PNMixer, LibreOffice Fresh, vim-ale, vim-recover-git, p7zip, remove vim-gruvbox-git
+## rhash
 in  ~/Arch :  sudo pacmatic -Syu   Packages (1) fontconfig-2:2.13.91+23+g65087ac-1
 sudo pacman -S rhash   Packages (1) rhash-1.3.8-1
-# AlsaUtils
+## AlsaUtils
 sudo pacman -S alsa-utils   Packages (2) fftw-3.3.5-1  alsa-utils-1.1.2-1
-# CopyQ > Preferences > History
+## CopyQ > Preferences > History
 Maximum > 300
-# Test sound
+## Test sound
 in one terminal:  speaker-test -c 2
 in another terminal:  find /proc/asound/ -name hw_params | xargs -I FILE grep -v -l "closed" FILE | grep '/proc/asound/card./pcm.p/sub./hw_params'   reported  /proc/asound/card0/pcm0p/sub0/hw_params
 reboot  got sound out from front and back green sockets
+## PNMixer
+in  ~/Arch :  sudo pacmatic -Syu
+  Packages (3) systemd-243.51-1  systemd-libs-243.51-1  systemd-sysvcompat-243.51-1
+  ...
+  ==> WARNING: Possibly missing firmware for module: aic94xx
+  ==> WARNING: Possibly missing firmware for module: wd719x
+  ...
+in  ~/Arch/AUR/
+  bash -x /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/AURclones.sh
+having checked the PCKGBUILD,  cd pnmixer   for   makepkg -sic   Packages (1) libnotify-0.7.8-1
+  Packages (3) jsoncpp-1.9.1-1  libuv-1.31.0-1  cmake-3.15.3-2   Packages (1) pnmixer-gtk3-0.7.2-2
+Multimedia > PNMixer > Preferences > View > Draw
+(to get sound out of front socket) alsamixer > Headphone > 100
+## LibreOffice Fresh
+sudo pacman -S libreoffice-fresh-en-gb   Packages (39) boost-libs-1.69.0-2  clucene-2.3.3.4-10  harfbuzz-icu-2.6.1-1  hunspell-1.7.0-2  hyphen-2.8.8-2  libabw-0.1.3-1  libcdr-0.1.5-2  libcmis-0.5.2-2  libe-book-0.1.3-5  libepubgen-0.1.1-1  libetonyek-0.1.9-1  libexttextcat-3.4.5-1  libfreehand-0.1.2-2  libixion-0.14.1-2  liblangtag-0.6.2-2  libmspub-0.1.4-5  libmwaw-0.3.15-1  libnumbertext-1.0.5-1  libodfgen-0.1.7-1  liborcus-0.14.1-2  libpagemaker-0.0.4-1  libqxp-0.0.2-2  libreoffice-fresh-6.3.1-1  librevenge-0.0.4-2  libstaroffice-0.0.6-1  libtommath-1.1.0-1  libvisio-0.1.7-1  libwpd-0.10.3-1  libwpg-0.3.3-1  libwps-0.4.10-1  libzmf-0.0.2-6  lpsolve-5.5.2.5-3  neon-0.30.2-3  poppler-0.80.0-1  raptor-2.0.15-11  rasqal-1:0.9.33-2  redland-1:1.0.17-7  xmlsec-1.2.28-1  libreoffice-fresh-en-gb-6.3.1-1
+Ran it to generate  ~/.config/libreoffice/4/user
+  in there, deleted  config  folder &  registrymodifications.xcu
+  replaced those from
+    /mnt/SDSSDA240G/Dropbox/JH/Now/Technos/IT/Cross-platform/OpenOffice/LibreOffice/j9o-HPP-user
+## Okular, almost
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+  Packages (4) libtasn1-4.14-2  poppler-0.80.0-2  tzdata-2019c-2  xterm-349-1
+sudo pacman -S okular
+  :: There are 2 providers available for phonon-qt5-backend:
+  :: Repository extra
+     1) phonon-qt5-gstreamer  2) phonon-qt5-vlc
+  Ctrl-C
+### phonon-qt5-vlc
+sudo pacman -S phonon-qt5-vlc   Packages (17) a52dec-0.7.4-10  aribb24-1.0.3-2  faad2-2.8.8-1  libdca-0.0.6-1  libdvbpsi-1:1.3.3-1  libebml-1.3.9-1  libmad-0.15.1b-8  libmatroska-1.5.2-1  libmpcdec-1:0.1+r475-2  libmpeg2-0.5.1-6  libtar-1.2.20-4  libupnp-1.6.25-1  lua-5.3.5-2  phonon-qt5-4.11.0-1  taglib-1.11.1-3  vlc-3.0.8-1  phonon-qt5-vlc-0.11.0-1
+### Okular
+sudo pacman -S okular   Packages (86) accounts-qml-module-0.7-2  attica-5.62.0-1  cdparanoia-10.2-7  dbus-glib-0.110-1  discount-2.2.6-1  djvulibre-3.5.27-4  exiv2-0.27.2-1  ghostscript-9.27-2  graphene-1.10.0-1  gst-plugins-base-1.16.1-1  gst-plugins-base-libs-1.16.1-1  gstreamer-1.16.1-1  ijs-0.35-2  jbig2dec-0.16-1  kaccounts-integration-19.08.1-1  kactivities-5.62.0-1  karchive-5.62.0-1  kauth-5.62.0-1  kbookmarks-5.62.0-1  kcmutils-5.62.0-1  kcodecs-5.62.0-1  kcompletion-5.62.0-1  kconfig-5.62.0-1  kconfigwidgets-5.62.0-1  kcoreaddons-5.62.0-1  kcrash-5.62.0-1  kdbusaddons-5.62.0-1  kdeclarative-5.62.0-1  kglobalaccel-5.62.0-1  kguiaddons-5.62.0-1  ki18n-5.62.0-1  kiconthemes-5.62.0-1  kio-5.62.1-1  kirigami2-5.62.0-1  kitemviews-5.62.0-1  kjobwidgets-5.62.0-1  kjs-5.62.0-1  knotifications-5.62.0-1  kpackage-5.62.0-1  kparts-5.62.0-1  kpty-5.62.0-1  kservice-5.62.0-1  ktextwidgets-5.62.0-1  kwallet-5.62.0-1  kwidgetsaddons-5.62.0-1  kwindowsystem-5.62.0-1  kxmlgui-5.62.0-1  libaccounts-glib-1.24-1  libaccounts-qt-1.16-1  libdbusmenu-qt5-0.9.3+16.04.20160218-4  libimobiledevice-1.2.0+87+g92c5462-1  libkexiv2-19.08.1-1  libpaper-1.1.24-11  libplist-2.0.0+11+gec9ba8b-2  libspectre-0.2.8-2  libusbmuxd-1.0.10+29+g9db5747-1  libvisual-0.4.0-7  media-player-info-24-1  openal-1.19.1-2  orc-0.4.30-1  polkit-qt5-0.113.0-1  poppler-qt5-0.80.0-2  purpose-5.62.0-1  qca-2.2.1-2  qt5-declarative-5.13.1-1  qt5-graphicaleffects-5.13.1-1  qt5-location-5.13.1-1  qt5-multimedia-5.13.1-1  qt5-quickcontrols-5.13.1-1  qt5-quickcontrols2-5.13.1-1  qt5-sensors-5.13.1-1  qt5-speech-5.13.1-1  qt5-webchannel-5.13.1-1  qt5-webkit-5.212.0alpha3-4  run-parts-4.8.6.1-1  signon-kwallet-extension-19.08.1-1  signon-plugin-oauth2-0.24-2  signon-ui-0.17+20150611-2  signond-8.60-1  solid-5.62.0-1  sonnet-5.62.0-1  threadweaver-5.62.0-1  upower-0.99.11-1  usbmuxd-1.1.0+48+g1cc8b34-3  woff2-1.0.2-1  okular-19.08.1-1
+  n
+### remove phonon-qt5-vlc
+sudo pacman -Rs vim-fugitive
+## vim ALE & Recover
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+  Packages (11) e2fsprogs-1.45.4-1  gc-8.0.4-2  iproute2-5.3.0-1  libwacom-1.1-1  libxvmc-1.0.12-2  pango-1:1.44.6+2-1  phonon-qt5-4.11.1-1  phonon-qt5-vlc-0.11.1-1  shared-mime-info-1.14-1  vim-gitgutter-636.ba049e7-1  xorgproto-2019.1-2
+sudo pacman -S vim-ale   Packages (1) vim-ale-2.5.0-1
+### vim-recover-git
+auracle sync
+#### xdg-utils-mimeo Updated
+in  ~/Arch/AUR/
+  ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/AURclones.sh AURclones.sh
+  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd xdg-utils-mimeo   for   makepkg -sic   cd ..
+  Packages (1) xdg-utils-mimeo-1.1.3+18+g0547886-
+#### vim-recover-git
+in  ~/Arch/AUR/:  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd vim-recover-git   for   makepkg -sic   cd ..
+  Packages (1) vim-recover-git-r202.491c7ba-1
+## p7zip
+sudo pacman -S p7zip  = 1 package
+## remove vim-gruvbox-git
+sudo pacman -Rs vim-gruvbox-git   Packages (1) vim-gruvbox-git-v2.0.0.r66.gcb4e7a5-1
+## Dropbox stopped noticing changes
+fixed by Quitting and restarting it
+## ShellCheck, aborted
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (16) bash-5.0.011-1  fuse-common-3.7.0-1  fuse3-3.7.0-1  gnutls-3.6.10-1  gvim-8.1.2102-1  harfbuzz-2.6.2-1  harfbuzz-icu-2.6.2-1  imagemagick-7.0.8.67-1  liblangtag-0.6.3-1  libnl-3.5.0-1  libusb-1.0.23-1  linux-firmware-20190923.417a9c6-1  ttf-croscore-20190926-1  vim-nerdcommenter-2.5.2-1  vim-runtime-8.1.2102-1  zstd-1.4.3-1
+### ShellCheck fail
+sudo pacman -S shellcheck   Packages (24) ghc-libs-8.6.5-1  haskell-aeson-1.4.4.0-13  haskell-attoparsec-0.13.2.3-2  haskell-base-compat-0.10.5-5  haskell-base-orphans-0.8.1-22  haskell-diff-0.3.4-9  haskell-dlist-0.8.0.7-3  haskell-erf-2.0.0.0-13  haskell-hashable-1.2.7.0-8  haskell-integer-logarithms-1.0.3-2  haskell-primitive-0.6.4.0-6  haskell-quickcheck-2.13.2-6  haskell-random-1.1-17  haskell-regex-base-0.93.2-38  haskell-regex-tdfa-1.2.3.2-1  haskell-scientific-0.3.6.2-13  haskell-splitmix-0.0.3-3  haskell-tagged-0.8.6-6  haskell-th-abstraction-0.3.1.0-1  haskell-time-compat-1.9.2.2-12  haskell-unordered-containers-0.2.10.0-18  haskell-uuid-types-1.0.3-20  haskell-vector-0.12.0.3-16  shellcheck-0.7.0-27
+  ...
+  error: not enough free disk space
+## 191002 Backup
+clear Downloads folder & Trash for:
+  Reboot to  archlinux-2019.10.01-x86_64.iso  CD
+  cd /
+  lsblk -f   indicated:
+    ls mnt
+    mount dev/sda2 mnt
+    ls mnt/home
+    mount dev/sda3 mnt/home
+    ls mnt/mnt/SDSSDA240G
+    mount dev/sda5 mnt/mnt/SDSSDA240G
+    ls mnt/mnt/9QG2FFEE
+    mount dev/sdc1 mnt/mnt/9QG2FFEE
+  cd mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build
+  bash rsyncBackup.sh
+# resize /
+lsblk -f   indicated:
+  umount /dev/sdc1
+  umount /dev/sda5
+  umount /dev/sda3
+  umount /dev/sda2
+parted /dev/sda
+(decided to recheck contents of SDSSDA240G) halt -p
+## GParted Live
+booted into  gparted-live-1.0.0-5-i686.iso > Select keymap from arch list > 02 British English >
+  Which mode > Enter (=0)   seized, so rebooted
+booted into  gparted-live-1.0.0-5-i686.iso > Select keymap from arch list > 02 British English >
+  Which mode > 2   but seized again, so rebooted
+## KNOPPIX_V8.6
+booted into  KNOPPIX_V8.6-2019-08-08-EN.iso:
+  Menu > System Tools > GParted > right clicked in sda5 for  Resize/Move > Free space preceeding >
+    30560 > Apply
+  Menu > Shutdown
+Once back into Openbox, got hundreds of Dropbox sync's, creating a stack of conflicts, so:
+  find -name "* conflicted copy *"
+  find -name "* (avt661's conflicted copy *" -exec rm -f {} \;
+## SparkyLinux LXQT
+booted  sparkylinux-2019.09-x86_64-lxqt.iso > More Languages > UK English
+  Menu > System Tools > GParted > right clicked in sda4 for  Resize/Move >
+    and dragged it to the end > Apply
+  Menu > Leave > Shutdown
+Restarted into Arch Openbox - all seemed well
+## SparkyLinux Rescue
+booted  sparkylinux-2019.09-x86_64-rescue.iso > More Languages > UK English
+  Applications > GParted > right clicked in sda3 for  Resize/Move >
+    and dragged it to the end > Apply
+  Application > Log Out > PowerOff
+Restarted into Arch Openbox - all seemed well
+## SparkyLinux GameOver
+booted  sparkylinux-2019.09-x86_64-gameover.iso > More Languages > UK English
+  Menu > System Tools > GParted > right clicked in sda2 for  Resize/Move >
+    and expanded it to the end > Apply
+  Menu > Shutdown
+Restarted into Arch Openbox - all seemed well
+# ShellCheck
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (6) cmake-3.15.4-1  fribidi-1.0.7-1  iana-etc-20190930-1  libpcap-1.9.1-1  p11-kit-0.23.18.1-1  pacman-mirrorlist-20191001-1
+## mirrorlist
+su > root pw
+  cd /etc/pacman.d
+  mv mirrorlist.pacnew mirrorlist.pacnew.ja3
+### Reflector
+  reflector --country France --age 12 --protocol https --sort rate --save mirrorlist
+  cat mirrorlist   shows it's captured 8 Servers
+  pacman -Syyuu   Packages (2) libglvnd-1.2.0-1  mesa-19.2.0-2
+### Time 1h 0.2s ahead
+  as revealed by   http://time.is/
+  ntpd -qg
+  hwclock --systohc
+  reboot  - time good
+## ShellCheck
+sudo pacman -S shellcheck   Packages (24) ghc-libs-8.6.5-1  haskell-aeson-1.4.4.0-13  haskell-attoparsec-0.13.2.3-2  haskell-base-compat-0.10.5-5  haskell-base-orphans-0.8.1-22  haskell-diff-0.3.4-9  haskell-dlist-0.8.0.7-3  haskell-erf-2.0.0.0-13  haskell-hashable-1.2.7.0-8  haskell-integer-logarithms-1.0.3-2  haskell-primitive-0.6.4.0-6  haskell-quickcheck-2.13.2-6  haskell-random-1.1-17  haskell-regex-base-0.93.2-38  haskell-regex-tdfa-1.2.3.2-1  haskell-scientific-0.3.6.2-13  haskell-splitmix-0.0.3-3  haskell-tagged-0.8.6-6  haskell-th-abstraction-0.3.1.0-1  haskell-time-compat-1.9.2.2-12  haskell-unordered-containers-0.2.10.0-18  haskell-uuid-types-1.0.3-20  haskell-vector-0.12.0.3-16  shellcheck-0.7.0-27
+# gsimplecal
+sudo pacman -S gsimplecal   Packages (1) gsimplecal-2.1-3
+in a terminal  gsimplecal &  to toggle it
+## in tint2
+in  ~/.config/tint2/tint2rc, these changes:
+  # left-click needs to be empty to avoid seizure of gsimplecal on double-click:
+  clock_lclick_command =  
+  clock_rclick_command = gsimplecal &
+  clock_mclick_command = gsimplecal &
+  clock_uwheel_command = gsimplecal prev_month
+  clock_dwheel_command = gsimplecal next_month
+### reload tint2rc
+killall -SIGUSR1 tint2
+# Zathura
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (11) ca-certificates-mozilla-3.46.1-1  gtk-update-icon-cache-1:3.24.12-1  gtk3-1:3.24.12-1  jack-0.125.0-8  languagetool-4.7-1  libuv-1.32.0-1  nss-3.46.1-1  pkgfile-20-2  python-packaging-19.2-2  zita-alsa-pcmi-0.3.2-2  zita-resampler-1.6.2-2
+sudo pacman -S zathura-pdf-mupdf   Packages (5) girara-0.3.3-1  jbig2dec-0.16-1  libsynctex-2019.51075-3  zathura-0.4.4-1  zathura-pdf-mupdf-0.3.5-1
+locate zathurarc   shows that its doesn't exist
+# CopyQ > Preferences > History
+Maximum > 500
+# symlink for zathurarc
+rm ~/.config/zathura/zathurarc
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/zathurarc ~/.config/zathura/zathurarc
+#### GtkHash
+in  ~/Arch/AUR/
+  bash -x /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/AURclones.sh
 # waiting
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+## qpdfview
+## an rtf set to Open with LibreOffice
 ## bashrc changed to symlink
 rm ~/.bashrc
-ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/Web_Design/DokuWiki/media/unix-like/arch/sprbMb/bashrc ~/.bashrc
-source ~/.bashrc
 ## Bash profile changed to symlink
 rm ~/.bash_profile   for  sudo ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/bash_profile ~/.bash_profile
 ## Openbox configurations changed to symlinks
@@ -692,3 +853,4 @@ sudo pacman -S lib32-mesa
 ## Zen kernel
 ## GNU+Linux\Arch\ISO\190501alias.txt
 ## Redshift
+## Bluefish

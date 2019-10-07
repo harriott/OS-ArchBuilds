@@ -1,0 +1,11 @@
+
+# Adding reverse search between gvim and zathura
+set synctex true
+set synctex-editor-command "gvim --remote-silent +%{line} %{input}"
+
+# Enable copy to clipboard
+set selection-clipboard clipboard
+
+# first page on the left side:
+set first-page-column 1:1
+
