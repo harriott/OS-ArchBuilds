@@ -2,8 +2,11 @@ vim: fdl=0 ft=build fdm=expr:
 
 # general tips
 autojump -s
+cat /proc/cpuinfo
+lsof -i
 man hier
 robocopy /mir D:\Dropbox\JH\IT_stack\onGitHub\AcerVeritonT661 G:\AcerVeritonT661
+sudo iotop -o
 sudo parted -l
 
 ## available disk
@@ -210,7 +213,7 @@ cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
   reboot  then CD wouldn't eject on press, but system booted into  SDSSDA240G
 # to 190525 Backup
 (redacted for some of my file locations)
-graphics hw, Xorg, Openbox, auracle-git, perl-linux-desktopfiles, obmenu-generator, rxvt-unicode, xterm, 00-keyboard.conf, disable screen blanking, Pacmatic, PCManFM, mimeo, ntfs-3g, udisks2, bashrc-root, bash_profile, no-wait.conf, pkgfile, trash-cli, autojump
+graphics hw, Xorg, Openbox, auracle-git, perl-linux-desktopfiles, obmenu-generator, rxvt-unicode, xterm, 00-keyboard.conf, disable screen blanking, python-html2text, Pacmatic, PCManFM, mimeo, ntfs-3g, udisks2, bashrc-root, bash_profile, no-wait.conf, pkgfile, trash-cli, autojump
 ## ViewSonic VX2025wm
 pre-Arch progress seems to be 640x480
 GRUB 2 seems to be 1680x1050
@@ -632,18 +635,14 @@ in  ~/Arch/AUR/
 #### bashrc-files changed to symlink
 rm ~/.bashrc-files
 ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/bashrc/bashrc-files /home/jo/.bashrc-files
-/mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/Web_Design/DokuWiki/media/unix-like/arch/sprbMb/bashrc ~/.bashrc
 source ~/.bashrc
 #### Dropbox
 having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-81.4.195-1
-hvaing accidentally cancelled,   sudo pacman -U dropbox-81.4.195-1-x86_64.pkg.tar.xz
+having accidentally cancelled,   sudo pacman -U dropbox-81.4.195-1-x86_64.pkg.tar.xz
 Dropbox self-reporting as v81.4.127, so quit for  dropbox &  which got it up-to-date
 ### autostart changed to symlink
 rm ~/.config/openbox/autostart
 ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/openbox/autostart ~/.config/openbox/autostart
-#### GtkHash
-in  ~/Arch/AUR/
-  bash -x /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/AURclones.sh
 ## 190923 Backup
 clear Downloads folder & Trash for:
   Reboot to  archlinux-2019.09.01-x86_64.iso  CD
@@ -828,9 +827,6 @@ Maximum > 500
 # symlink for zathurarc
 rm ~/.config/zathura/zathurarc
 ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/zathurarc ~/.config/zathura/zathurarc
-#### GtkHash
-in  ~/Arch/AUR/
-  bash -x /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build/AURclones.sh
 # CopyQ > Preferences > History
 Maximum > 600
 # TRIM
@@ -845,12 +841,178 @@ Ctrl+Alt+F2 > logged in as "root"
 ## font
 showconsolefont
 ## left for over 2h, no blanking
+# pkgstats
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) librsvg-2:2.46.1-1
+sudo pacman -S pkgstats  Packages (1) pkgstats-2.4.2-1
+pkgstats
+  Collecting data...
+  Submitting data...
+  Thanks for your submission. :-)
+  See results at https://www.archlinux.de/?page=Statistics
+# Conky
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) gdk-pixbuf2-2.40.0-1
+sudo pacman -S conky  Packages (3) libxnvctrl-435.21-1  wireless_tools-30.pre9-2  conky-1.11.5-2
+# galculator
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt 
+  ...
+  :: Synchronising package databases...
+  error: failed retrieving file 'core.db' from mirror.oldsql.cc : SSL certificate problem: certificate has expired
+  downloading core.db...
+  error: failed retrieving file 'extra.db' from mirror.oldsql.cc : SSL certificate problem: certificate has expired
+  downloading extra.db...
+  error: failed retrieving file 'community.db' from mirror.oldsql.cc : SSL certificate problem: certificate has expired
+  downloading community.db...
+  ...
+  n
+sudo reflector --country France --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+  sudo pacman -Syyuu   Packages (20) archlinux-keyring-20191011-1  chromium-77.0.3865.120-1  colord-1.4.4+9+g1ce26da-1  dhcpcd-8.0.6-1  fontconfig-2:2.13.91+24+g75eadca-1  jre-openjdk-headless-13.u33-1  kbd-2.2.0-4  libsoup-2.68.2-1  libx11-1.6.9-3  licenses-20191011-1  llvm-libs-9.0.0-3  man-pages-5.03-1  mesa-19.2.1-1  mkinitcpio-26-1  openssh-8.1p1-1  parted-3.3-1  python-attrs-19.2.0-1  shellcheck-0.7.0-35  sqlite-3.30.1-1  xorgproto-2019.1-3
+sudo pacman -S galculator  Packages (1) galculator-2.1.4-4
+# SpeedCrunch
+sudo pacman -S speedcrunch  Packages (2) qt5-tools-5.13.1-2  speedcrunch-0.12.0-2
+# lsof
+sudo pacman -S lsof  Packages (1) lsof-4.93.2-1
+lsof -c dropbox
+# screenFetch
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt  Packages (1) shellcheck-0.7.0-36
+sudo pacman -S screenfetch   Packages (6) bc-1.07.1-3  libdmx-1.1.4-1  libxxf86dga-1.1.5-1  xorg-xdpyinfo-1.3.2-2  xorg-xprop-1.2.4-1  screenfetch-3.9.0-1
+screenfetch -v
+# Neofetch
+sudo pacman -S neofetch  Packages (1) neofetch-6.1.0-1
+# bashrc changed to symlink
+rm ~/.bashrc
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/bashrc/bashrc /home/jo/.bashrc
+source ~/.bashrc
+# Time 1.3s fast
+as revealed by   http://time.is/
+sudo ntpd -qg
+sudo hwclock --systohc
+# Pinta
+sudo pacman -S pinta   Packages (6) gtk-sharp-2-2.12.45-2  libgdiplus-5.6.1-2  libglade-2.6.4-6  mono-6.0.0.334-1  mono-addins-1.3.3-2  pinta-1.6-4
+# CopyQ > Preferences > History
+Maximum > 700
+# qimgv-git
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+  Packages (4) gcr-3.34.0-1  librsvg-2:2.46.2-1  linux-5.3.6.arch1-1  sudo-1.8.28-1
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+  Packages (1) reflector-2019.10-1
+## AUR package updates
+auracle sync
+### Dropbox v82.4.155
+in  ~/Arch/AUR/:  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-82.4.155-1
+Dropbox self-reporting as v81.4.195, so quit for  dropbox &  which got it up-to-date
+### vim-undotree
+in  ~/Arch/AUR/:  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd vim-undotree   for   makepkg -sic
+  having accidentally cancelled,   sudo pacman -U vim-undotree-6.1-1-any.pkg.tar.xz
+    Packages (1) vim-undotree-6.1-1
+## qimgv-git
+in  ~/Arch/AUR/:  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd qimgv-git   for   makepkg -sic
+  Packages (19) cifs-utils-6.8-2  ldb-1:1.5.5-1  libbsd-0.9.1-1  libcaca-0.99.beta19-2  libdvdnav-6.0.0-1  libdvdread-6.0.1-1  libmng-2.0.3-2  libwbclient-4.10.8-1  lua52-5.2.4-4  mujs-1.0.6-1  rubberband-1.8.2-2  smbclient-4.10.8-1  talloc-2.2.0-1  tevent-1:0.9.39-2  uchardet-0.0.6-2  vamp-plugin-sdk-2.8.0-1  exiv2-0.27.2-1  mpv-1:0.29.1-11  qt5-imageformats-5.13.1-1
+  took ages to make, with some warnings   Packages (1) qimgv-git-v0.8.5.r0.g750a8df-1
+# iotop
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) shellcheck-0.7.0-38
+sudo pacman -S iotop   Packages (1) iotop-0.6-6
+sudo iotop -o
+# TeX Live
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) pkgfile-21-1
+sudo pacman -S texlive-most  > Enter (=all)   Packages (21) gd-2.2.5-2  libpaper-1.1.24-11  libsigsegv-2.12-1  perl-file-which-1.23-2  potrace-1.16-1  run-parts-4.8.6.1-1  t1lib-5.1.2-7  texlive-bin-2019.51075-3  zziplib-0.13.69-1  texlive-bibtexextra-2019.50908-1  texlive-core-2019.50917-1  texlive-fontsextra-2019.50876-1  texlive-formatsextra-2019.50602-1  texlive-games-2019.50815-1  texlive-humanities-2019.50921-1  texlive-latexextra-2019.50920-1  texlive-music-2019.50602-1  texlive-pictures-2019.50872-1  texlive-pstricks-2019.50587-1  texlive-publishers-2019.50915-1  texlive-science-2019.50760-1
+# SANE
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) python-attrs-19.3.0-1
+sudo pacman -S sane
+  Packages (4) libgphoto2-2.5.23-1  libieee1284-0.2.11-7  net-snmp-5.8-4  sane-1.0.28-1
+# Mouse checks
+Logitech EX 110 cordless optical mouse
+## xorg-xinput
+sudo pacman -S xorg-xinput   Packages (2) xorg-xrandr-1.5.1-1  xorg-xinput-1.6.3-1
+## Mouse configuration
+xinput list   indicated   xinput list-props 8   &   xinput get-button-map 8
+# xev
+sudo pacman -S xorg-xev   Packages (1) xorg-xev-1.2.3-1
+## tests
+xev
+xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+xev | awk -F'[ )]+' '/^ButtonPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+# remap keys
+## XBindKeys
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (5) bison-3.4.2-1  expat-2.2.9-1  openbox-3.6.1-5  readline-8.0.001-1  texinfo-6.7-1
+sudo pacman -S xbindkeys   Packages (1) xbindkeys-1.8.6-3
+xbindkeys -h
+### start with the example config file
+xbindkeys -d > ~/.xbindkeysrc
+xbindkeys --key > mouse middle-click   reports:
+  "(Scheme function)"
+      m:0x200 + b:2   (mouse)
+## xautomation
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+  Packages (3) bind-tools-9.14.7-1  jbig2dec-0.17-1  sudo-1.8.28.p1-1
+sudo pacman -S xautomation   Packages (1) xautomation-1.09-3
+xte -h
+# flake8
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) zathura-pdf-mupdf-0.3.5-2
+sudo pacman -S flake8   Packages (5) python-entrypoints-0.3-1  python-mccabe-0.6.1-2  python-pycodestyle-2.5.0-1  python-pyflakes-2.1.1-1  flake8-1:3.7.8-1
+# iscan
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (11) archlinux-keyring-20191018-1  libdrm-2.4.100-1  libglvnd-1.2.0-3  libinput-1.14.2-1  libxkbcommon-0.9.0-1  libxkbcommon-x11-0.9.0-1  linux-5.3.7.arch1-1  mesa-19.2.1-2  shellcheck-0.7.0-43  xmlsec-1.2.29-1  xorgproto-2019.2-1
+sudo pacman -S iscan   Packages (2) libstdc++5-3.3.6-6  iscan-2.30.3.1-2
+## AUR package updates
+auracle sync
+### obmenu-generator
+in  ~/Arch/AUR/:  bash -x AURclones.sh
+having checked the PCKGBUILD
+  accidentally   cd obmenu-themes   for   makepkg -sic   Packages (1) openbox-themes-1.0.2-4   cd ..
+  cd obmenu-generator   for   makepkg -sic   Packages (1) obmenu-generator-0.86-1
+    ** The schema file has been installed as: /etc/xdg/obmenu-generator/schema.pl
+      so diff'd it with mine   cd ..
+### qimgv-git
+in  ~/Arch/AUR/:  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd qimgv-git   for   makepkg -sic
+  Packages (1) qimgv-git-v0.8.6.r8.gda61e79-1
+## iscan-plugin-gt-f500
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+  Packages (2) libxkbcommon-0.9.0-2  libxkbcommon-x11-0.9.0-2
+in  ~/Arch/AUR/:  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd iscan-plugin-gt-f500   for   makepkg -sic
+  Packages (1) iscan-plugin-gt-f500-1.0.0-4
+# Bluefish
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (15) btrfs-progs-5.3-1  ca-certificates-mozilla-3.47-1  glib2-2.62.2-1  imagemagick-7.0.8.68-2  libblockdev-2.23-1  libuv-1.33.0-1  libxkbcommon-0.9.1-1  libxkbcommon-x11-0.9.1-1  nspr-4.23-1  nss-3.47-1  shellcheck-0.7.0-45  systemd-243.78-1  systemd-libs-243.78-1  systemd-sysvcompat-243.78-1  tslib-1.21-1
+(accidentally)  sudo pacman -S iscan   Packages (1) iscan-2.30.3.1-2
+sudo pacman -S bluefish
+  Packages (5) aspell-0.60.8-1  enchant-2.2.7-1  hspell-1.4-2  libvoikko-4.2-1  bluefish-2.2.10-4
+# dosfstools
+pqs dosfstools   reveals I have v4.1-2
+# Epson Perfection 2480 Photo checks
+scanimage -L
+  device `snapscan:libusb:002:004' is a EPSON EPSON Scanner flatbed scanner
+scanimage -A
+  Output format is not set, using pnm as a default.
+  [snapscan] Cannot open firmware file /usr/share/sane/snapscan/your-firmwarefile.bin.
+  [snapscan] Edit the firmware file entry in snapscan.conf.
+  scanimage: open of device snapscan:libusb:002:004 failed: Invalid argument
+so  briefly plugged it into  11-n012na
+dance at plugin for  scanimage -A
+    Output format is not set, using pnm as a default.
+    [snapscan] Scanner warming up - waiting 30 seconds.
+# somehow restarted during night
+## XBindKeys snag
+fixed by adding call in  ~/.xinitrc
+# nomacs
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (13) chromium-78.0.3904.70-1  expac-9-2  gtk-update-icon-cache-1:3.24.12+32+g39e28ab933-1  gtk3-1:3.24.12+32+g39e28ab933-1  librsvg-2:2.46.3-1  libuv-1.33.1-1  lm_sensors-3.6.0-1  mesa-19.2.2-1  pacman-5.2.0-2  pacman-contrib-1.2.0-3  python2-2.7.17-1  shellcheck-0.7.0-48  xkeyboard-config-2.28-1
+sudo pacman -S nomacs   Packages (17) blas-3.8.0-2  cblas-3.8.0-2  cdparanoia-10.2-7  graphene-1.10.0-1  gst-plugins-base-1.16.1-1  gst-plugins-base-libs-1.16.1-1  gstreamer-1.16.1-1  intel-tbb-2019.9-1  lapack-3.8.0-2  libdc1394-2.2.6-1  libraw-0.19.5-2  libvisual-0.4.0-7  opencv-4.1.2-2  openexr-2.4.0-4  orc-0.4.30-1  quazip-0.8.1-2  nomacs-3.12-7
+# xinitrc changed to symlink
+rm ~/.xinitrc
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/xinitrc /home/jo/.xinitrc
+# bashrc-images symlink
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/bashrc/bashrc-images /home/jo/.bashrc-images
+# cnvt.sh symlink
+sudo ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/bashrc/cnvt.sh /usr/local/bin/cnvt.sh
+# nomacs Settings
+Ctrl+Shift+p > Close on ESC
 # waiting
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+## texlive-localmanager-git
 ## qpdfview
 ## an rtf set to Open with LibreOffice
-## bashrc changed to symlink
-rm ~/.bashrc
 ## Bash profile changed to symlink
 rm ~/.bash_profile   for  sudo ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/bash_profile ~/.bash_profile
 ## Openbox configurations changed to symlinks
@@ -867,4 +1029,45 @@ sudo pacman -S lib32-mesa
 ## Zen kernel
 ## GNU+Linux\Arch\ISO\190501alias.txt
 ## Redshift
-## Bluefish
+## Transmission
+## HP ENVY 5532
+## feh
+## PhotoQt
+## pqiv
+## XnViewMP
+in  ~/Arch/AUR/ :  bash -x AURclones.sh
+  having checked the PCKGBUILD,  cd xnviewmp   for   makepkg -sic   cd ..
+*.jpg > Properties > Open with > XnView
+## Scan.sh symlink
+sudo ln -s /mnt/SDSSDA240G/Dropbox/JH/k-Now/Technos/IT/GNU+Linux/Arch/Scan.sh /usr/local/bin/Scan.sh
+## Audacious
+## Asunder
+## vorbis-tools
+## DVD Playback
+## DVD Shrink
+## Thunderbird
+## tig
+## Perl modules
+## cdrtools
+## Calibre
+## Pandoc
+## Firefox
+## OutThere.cls
+## PTP camera
+## dvd+rw-tools
+## LPD-rapport.cls
+## Java
+## Minecraft
+## PulseAudio
+## Font Squirrel fonts
+## smartmontools
+## mpg123
+## perl-rename
+## UNRAR
+## Tesseract
+## FreeCAD
+## Tree
+## mtpfs
+## English (British) language pack for Thunderbird
+## RHash
+## Midori

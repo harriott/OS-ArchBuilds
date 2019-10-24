@@ -42,5 +42,6 @@ fi
 ## stop the 600s screensaver
 xset s off
 ## launch Openbox
+xbindkeys
 exec openbox-session
 
