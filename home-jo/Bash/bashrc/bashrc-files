@@ -1,11 +1,12 @@
 # vim: set ft=sh tw=0:
 
+# -------------------
 # File managing stuff
 # -------------------
 # sourced, ultimately, by ~/.bashrc
 # (source ~/.bashrc if you've changed something here...)
 
-# Joseph Harriott  http://momentary.eu/  Fri 24 May 2019
+# Joseph Harriott  http://momentary.eu/
 
 # move up [n] directories
 up(){
@@ -31,17 +32,6 @@ alias so="stat -c '%a %n'"
 alias sm="stat -c '%y %n'"
 shopt -s autocd dotglob extglob globstar nullglob
 
-findSecure () {
-  find $1* -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort
-}
-
-findTexs () {
-    echo "vim: nowrap tw=0:" > LaTeX-search.txt
-    echo "" >> LaTeX-search.txt
-    find -iname \*.tex -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort >> LaTeX-search.txt
-    echo "" >> LaTeX-search.txt
-}
-
 # Git
 # ---
 alias ga='git add'
@@ -57,6 +47,25 @@ locd () {
 }
 
 source /etc/profile.d/autojump.bash
+
+# time-sorted lists of files
+# --------------------------
+findSecure () {
+  find $1* -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort
+}
+
+findDTSort () {
+  eval "find -iname \*.$1 $printfDTsort"
+}
+
+findTexs () {
+    echo "vim: nowrap tw=0:" > LaTeX-search.txt
+    echo "" >> LaTeX-search.txt
+    find -iname \*.tex -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort >> LaTeX-search.txt
+    echo "" >> LaTeX-search.txt
+}
+
+printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
 
 # trash-cli
 # ---------
