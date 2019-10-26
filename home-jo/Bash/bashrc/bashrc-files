@@ -50,19 +50,27 @@ source /etc/profile.d/autojump.bash
 
 # time-sorted lists of files
 # --------------------------
-findSecure () {
-  find $1* -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort
+
+# find date-time sort Encrypted folder
+fdtsEF () {
+  eval "find $1* $printfDTsort"
 }
 
-findDTSort () {
-  eval "find -iname \*.$1 $printfDTsort"
-}
-
-findTexs () {
-    echo "vim: nowrap tw=0:" > LaTeX-search.txt
-    echo "" >> LaTeX-search.txt
-    find -iname \*.tex -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort >> LaTeX-search.txt
-    echo "" >> LaTeX-search.txt
+# find date-time sort files of a certain type (filename extension)
+fdtsExt () {
+  if [ $1 ]; then
+    dtsfile=dts-$1.txt
+    echo "vim: nowrap tw=0:" > $dtsfile
+    echo "" >> $dtsfile
+    echo $PWD >> $dtsfile
+    eval "find -iname \*.$1 $printfDTsort >> $dtsfile"
+    echo "" >> $dtsfile
+    if [ $1 = "tex" ] || [ $1 = "txt" ]; then
+      sed -i "s| \.| $PWD|" $dtsfile
+    fi
+  else
+    echo "^ need a file type (= filename extension)"
+  fi
 }
 
 printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
