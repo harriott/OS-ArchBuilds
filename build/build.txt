@@ -1081,6 +1081,102 @@ pyfil sys.path
 # cnvt.sh symlink fixed
 sudo rm /usr/local/bin/cnvt.sh
 sudo ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/Imagey/cnvt.sh /usr/local/bin/cnvt.sh
+# NETGEAR WG111v2 in top-left USB port
+lsusb -v | grep NetGear   indicated   lsusb -vs 006
+ idProduct  0x6a00 WG111v2 54 Mbps Wireless [RealTek RTL8187L]
+ip link   suggested   sudo ip link set wlp0s29f7u4 up
+ip link ls wlp0s29f7u4
+dmesg | grep wlp0s29f7u4
+  [374855.584645] rtl8187 2-4:1.0 wlp0s29f7u4: renamed from wlan0
+## iw
+sudo pacman -S iw  Packages (1) iw-5.3-1
+iw dev   reported   Interface wlp0s29f7u4
+sudo iw dev wlp0s29f7u4 link   reported   Not connected
+in ~/Arch/  sudo iw dev wlp0s29f7u4 scan > WG111v2scan.txt
+  ~/Arch/WG111v2scan.txt > SSID  for access points
+## systemd-networkd
+networkctl list
+## iwd
+sudo pacman -S iwd   Packages (2) ell-0.25-1  iwd-0.23-1
+sudo systemctl enable iwd.service   created a symlink
+systemctl status iwd.service
+reboot  to get it working
+### iwctl
+device list   shows   wlp0s29f7u4
+station wlp0s29f7u4 get-networks   listed   Moto G (4) 1367   among others, and live updates
+quit
+# NETGEAR WG111v2 in heighest off board back USB port
+## wlan0, at first
+ip link   reports   wlan0 UP
+### iwctl
+device list   shows   wlan0
+station wlan0 get-networks   listed   Moto G (4) 1367   among others, and live updates
+(should be double quotes) station wlan0 connect 'Moto G (4) 1367' > Passphrase
+device wlan0 show
+station wlan0 show
+### get internet
+sudo dhcpcd wlan0   got me the internet through
+#### attempt at wlan0 always live
+sudo systemctl enable dhcpcd@wlan0   got me a symlink
+  reboot  got a long start job for wlan0, then no internet...
+sudo systemctl disable dhcpcd@wlan0   removed the symlink
+reboot
+## wlp0s26f7u5, then wlan0
+ip link   now reports   wlp0s26f7u5 UP
+### iwctl
+device list   shows   wlp0s26f7u5
+station wlp0s26f7u5 get-networks   listed   Xperia XA2_b31f   among others
+station wlp0s26f7u5 connect "Xperia XA2_b31f" > Passphrase
+#### get internet
+sudo dhcpcd wlp0s26f7u5   got me the internet through
+reboot   it's no longer finding    Xperia XA2_b31f
+##### tweaks
+sudo ip link set wlp0s26f7u5 down
+sudo ip link set wlp0s26f7u5 up
+### noarp
+cat /etc/dhcpcd.conf | grep noarp   returns nowt,
+echo "noarp" | sudo tee -a /etc/dhcpcd.conf
+### iwctl built-in network configuration unsuccessful
+sudo dhcpcd -k wlp0s26f7u5
+sudo sed -i 's/# enable_network_config=False/enable_network_config=True/' /etc/iwd/main.conf
+reboot   ping worked immediately, but Chrome & Dropbox don't connect, so
+sudo sed -i 's/enable_network_config=True/# enable_network_config=False/' /etc/iwd/main.conf
+reboot
+### iwctl one-line check
+iwctl station wlp0s26f7u5 get-networks
+### systemctl enable dhcpcd trial
+sudo systemctl enable dhcpcd@wlp0s26f7u5   got me a symlink
+#### persistance
+turned off  Xperia XA2_b31f  then on again, but no connection and it's not listed by  iwctl
+##### attempts
+systemctl status dhcpcd@wlp0s26f7u5
+sudo systemctl stop dhcpcd@wlp0s26f7u5
+sudo systemctl disable dhcpcd@wlp0s26f7u5
+unplugged & replugged  NETGEAR WG111v2 in heighest off board back USB port
+  ip link   reports it as  wlan0
+sudo systemctl enable dhcpcd@wlan0   got me a symlink
+systemctl status dhcpcd@wlan0
+sudo systemctl start dhcpcd@wlan0   doesn't complete:
+  A dependency job for dhcpcd@wlan0.service failed. See 'journalctl -xe' for details.
+sudo systemctl disable dhcpcd@wlan0   removed a symlink
+### get internet
+sudo dhcpcd wlan0   got me the internet through
+#### SSID interrupted
+iwctl station wlp0s26f7u5 get-networks  not finding  Xperia XA2_b31f
+sudo dhcpcd -k wlan0
+sudo ip link set wlan0 down
+sudo ip link set wlan0 up
+sudo dhcpcd wlan0   got me the internet through
+# Scan.sh symlink
+sudo ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/Imagey/Scan.sh /usr/local/bin/Scan.sh
+# NETGEAR WG111v2 replugged in heighest off board back USB port
+ip link   reports it as  wlan0
+iwctl station wlan0 get-networks  shows it's connected to  Xperia XA2_b31f
+sudo dhcpcd wlan0   got me the internet through
+## systemd-networkd
+sudo systemctl enable systemd-networkd.service   got me 4 symlinks
+sudo systemctl status systemd-networkd.service
+sudo systemctl start systemd-networkd.service
 # waiting
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
 ## texlive-localmanager-git
@@ -1111,8 +1207,6 @@ sudo pacman -S lib32-mesa
 in  ~/Arch/AUR/ :  bash -x AURclones.sh
   having checked the PCKGBUILD,  cd xnviewmp   for   makepkg -sic   cd ..
 *.jpg > Properties > Open with > XnView
-## Scan.sh symlink
-sudo ln -s /mnt/SDSSDA240G/Dropbox/JH/k-Now/Technos/IT/GNU+Linux/Arch/Scan.sh /usr/local/bin/Scan.sh
 ## Audacious
 ## Asunder
 ## vorbis-tools
@@ -1144,3 +1238,6 @@ sudo ln -s /mnt/SDSSDA240G/Dropbox/JH/k-Now/Technos/IT/GNU+Linux/Arch/Scan.sh /u
 ## English (British) language pack for Thunderbird
 ## RHash
 ## Midori
+## NETGEAR WG111v2
+sudo iw dev wlp0s29f7u4 station dump
+sudo iw dev wlp0s29f7u4

@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# Joseph Harriott, Oct 2019
+
 if [ $1 = "248" ]; then
 	siPrefix="scanimage --format=tiff -p --resolution"
 	declare -a Resns=(1 2 3 4 6 12)

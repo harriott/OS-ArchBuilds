@@ -6,38 +6,38 @@
 # sourced, ultimately, by ~/.bashrc
 # (source ~/.bashrc if you've changed something here...)
 
-# Joseph Harriott  http://momentary.eu/  Fri 24 May 2019
+# Joseph Harriott  http://momentary.eu/  Wed 30 Oct 2019
 
 
 # Lighten an image
 # ----------------
 cl () {
-    inimag=${1%.*}
-	convert $1 -level 0,75% -quality 80 $inimag-l.jpg
+  inimag=${1%.*}
+  convert $1 -level 0,75% -quality 80 $inimag-l.jpg
 }
 
 # Convert scanned images to jpg with ImageMagick
 # ------------------------------------------------
 # (needs cnvt.sh in $PATH and won't work with white-spaces in file names)
 c () {
-	bash cnvt.sh $1 "-quality 70"
+  bash cnvt.sh $1 "-quality 70"
 }
 cg () {
-	bash cnvt.sh $1 "-colorspace gray -quality 80"
+  bash cnvt.sh $1 "-colorspace gray -quality 80"
 }
 cr () {
-	bash cnvt.sh $1 -resize $2
+  bash cnvt.sh $1 -resize $2
 }
 crg () {
-	bash cnvt.sh $1 "-colorspace gray -resize" $2
+  bash cnvt.sh $1 "-colorspace gray -resize" $2
 }
 cll () {
-	bash cnvt.sh $1 "-level 25%,75%,.5 -quality 50"
+  bash cnvt.sh $1 "-level 25%,75%,.5 -quality 50"
 }
 
 # Sane's scanimage tool
 # ---------------------
 S () {
-	bash Scan.sh $1 $2 $3 $4
+  bash Scan.sh $1 $2 $3 $4
 }
 
