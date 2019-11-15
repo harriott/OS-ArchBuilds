@@ -20,6 +20,7 @@ conky -c /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/Conky/ja8-
 copyq & # because CopyQ's internal Autostart doesn't work
 dropbox &
 gvim &
+# htop &  snags...
 obmenu-generator &
 # pcmanfm &
 pnmixer &

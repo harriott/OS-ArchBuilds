@@ -1,0 +1,28 @@
+# Joseph Harriott
+
+[general]
+ui = Blinkenlights
+accounts = gmx
+
+[Account gmx]
+localrepository = gmx-local
+remoterepository = gmx-remote
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
+
+[Repository gmx-local]
+type = Maildir
+localfolders = ~/Mail/gmx/
+
+[Repository gmx-remote]
+type = IMAP
+remotehost = imap.gmx.com
+remoteuser = harriott@gmx.com
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remotepass = i3w56sqTtifym

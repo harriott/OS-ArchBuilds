@@ -48,6 +48,30 @@ locd () {
 
 source /etc/profile.d/autojump.bash
 
+# nnn
+# ---
+
+# cd on quit
+n()
+{
+    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # To cd on quit only on ^G, export NNN_TMPFILE after the call to nnn
+
+    nnn "$@"
+    export NNN_TMPFILE=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd
+
+    if [ -f $NNN_TMPFILE ]; then
+            . $NNN_TMPFILE
+            rm -f $NNN_TMPFILE > /dev/null
+    fi
+}
+
+export NNN_BMS='n:~/.config/nnn'
+export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
+export NNN_CONTEXT_COLORS="2136" # use a different color for each context
+export NNN_PLUG='c:fzcd;o:fzy-open'
+export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
+
 # time-sorted lists of files
 # --------------------------
 

@@ -34,6 +34,7 @@ our $SCHEMA = [
     {item => ['xterm',            'xterm',        'utilities-terminal']},
     {item => ['urxvt',            'rxvt-unicode', 'terminal']},
     {item => ['xdg-open http://', 'Web Browser',  'web-browser']},
+    {item => ['thunderbird',      'Mail',         'web-browser']},
     {item => ['gmrun',            'Run command',  'system-run']},
 
     {sep => 'Categories'},
@@ -100,11 +101,14 @@ our $SCHEMA = [
     {sep => undef},
 
     ## The xscreensaver lock command
-    {item => ['xscreensaver-command -lock', 'Lock', 'system-lock-screen']},
+    # {item => ['xscreensaver-command -lock', 'Lock', 'system-lock-screen']},
 
     ## This option uses the default Openbox's "Exit" action
     {exit => ['Exit', 'application-exit']},
 
     ## This uses the 'oblogout' menu
     # {item => ['oblogout', 'Exit', 'application-exit']},
+
+	# attempt to get rid of query:
+	# {raw => q(<item label="Quit X"><action name="Execute"><command>openbox --exit</action</item>)},
 ]

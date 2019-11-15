@@ -6,20 +6,39 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-! My changes ------------------
-! xrdb -merge $HOME/.Xresources
-! -----------------------------
+! My additions
+! ------------
+
+! After changes here, either quit & restart X or  xrdb ~/.Xresources
 
 ! rxvt-unicode:
 ! -------------
 
+! colorschemes:
+! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Xresources/BastianRieck"
+! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Xresources/gruvbox-urxvt256"
+#include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Xresources/LukeSmith_base16"
+! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Xresources/myURxvtSolarizedLight"
+
 ! default terminal wide enough for  ip l :
 URxvt.geometry: 115x24
+
+! font :
+URxvt.font:     xft:ubuntu mono:size=10
+URxvt.boldFont: xft:ubuntu mono:bold:size=10
 
 ! A large scrollback buffer (over 8x the default):
 URxvt.saveLines: 8192
 
-! Need to quit & restart X if the following  URxvt  colour-scheme selection is changed:
-! #include "AcerVeritonT661/home-jo/Xresources/myURxvtSolarizedLight"
-! #include "AcerVeritonT661/home-jo/Xresources/gruvbox-urxvt256"
+!-*- Perl extensions -*-
+URxvt.perl-ext-common: autocomplete-ALL-the-things,default,keyboard-select,matcher,resize-font,selection-to-clipboard,xresources-256
+URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
+URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
+URxvt.keysym.M-quotedbl:  perl:aAtt:skeleton-complete
+URxvt.url-launcher:   /usr/bin/chromium
+URxvt.underlineURLs:  True
+URxvt.matcher.button: 1
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-e: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
 

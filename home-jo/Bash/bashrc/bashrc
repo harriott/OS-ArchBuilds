@@ -12,9 +12,6 @@
 # my preferences:
 # ----------------------
 
-alias p='ping -c 3 8.8.8.8'
-alias pqs='pacman -Qs'
-
 # a colorised (bold blue) prompt, with git support
 source /usr/share/git/completion/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
@@ -23,6 +20,9 @@ PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
 
 # Command not found hook
 source /usr/share/doc/pkgfile/command-not-found.bash
+
+# for tmux
+export VISUAL=vim
 
 # History
 alias h='history'
@@ -36,7 +36,28 @@ shopt -s histappend
 source ~/.bashrc-files
 source ~/.bashrc-images
 
-neofetch
+# Internetish
+alias p='ping -c 3 8.8.8.8'
+alias pqs='pacman -Qs'
+
+doup () {
+  sudo ip link set wlwg111v2 down
+  sudo ip link set wlwg111v2 up
+}
+
+OI () {
+offlineimap -a gmx & pid1=$!
+wait $pid1
+echo "Last execution: $(date)"
+}
+
+# System
+export GPG_TTY=$(tty)
+
+# data only if not in tmux
+if [ ! $TERM == "screen" ]; then
+  neofetch
+fi
 
 # virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs

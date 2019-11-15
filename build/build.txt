@@ -5,6 +5,9 @@ autojump -s
 cat /proc/cpuinfo
 lsof -i
 man hier
+networkctl list
+pgrep
+pstree
 robocopy /mir D:\Dropbox\JH\IT_stack\onGitHub\AcerVeritonT661 G:\AcerVeritonT661
 sudo iotop -o
 sudo parted -l
@@ -14,11 +17,8 @@ df -h
 ## get at root on tty2
 Ctrl+Alt+F2 > root + pw
 
-## Updates
-in  ~/Arch :  sudo pacmatic -Syu   for n Packages
-
 # to 190404 Backup
-Physical Configuration, Arch install, fstrim
+Physical Configuration, Arch install, fbset, tig, fstrim, swappiness, override-conf, noclear-conf, activate-numlock.conf, dhcpcd@enp0s25, openssh, firewalld, bind-tools, Wget, ClamAV, rnano for visudo, /etc/fstab, /etc/clamav/clamd.conf, ncdu
 ## Physical Configuration
 LabelFlash DVD writer in top tray with flip-down front cover, SATA2
 ### HDs
@@ -195,8 +195,8 @@ cd /mnt/HD103SJ   for   sudo clamdscan --multiscan --fdpass .
 also mounted by  fstabLABELs.sh
 cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
 #### ncdu
-  sudo pacman -Syu  for 13 Packages
-  sudo pacman -S ncdu
+sudo pacman -Syu  for 13 Packages
+sudo pacman -S ncdu
 ## 190404 Backup
   mkdir AcerVeritonT661-rsyncBackup
   Rebooted to  archlinux-2019.04.01-x86_64.iso  CD
@@ -1081,6 +1081,8 @@ pyfil sys.path
 # cnvt.sh symlink fixed
 sudo rm /usr/local/bin/cnvt.sh
 sudo ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/Imagey/cnvt.sh /usr/local/bin/cnvt.sh
+# TL-WR702N
+has been switched to Client of Moto G4
 # NETGEAR WG111v2 in top-left USB port
 lsusb -v | grep NetGear   indicated   lsusb -vs 006
  idProduct  0x6a00 WG111v2 54 Mbps Wireless [RealTek RTL8187L]
@@ -1177,13 +1179,322 @@ sudo dhcpcd wlan0   got me the internet through
 sudo systemctl enable systemd-networkd.service   got me 4 symlinks
 sudo systemctl status systemd-networkd.service
 sudo systemctl start systemd-networkd.service
+### rename the interface to wlwg111v2
+sudo cp /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/etc/systemd/10-wlwg111v2.link /etc/systemd/network/10-wlwg111v2.link
+reboot
+iwctl station wlwg111v2 get-networks   shows it's connected to  Xperia XA2_b31f
+sudo dhcpcd wlwg111v2   got me the internet through
+networkctl list
+# Thunderbird
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (12) cmake-3.15.5-1  dhcpcd-8.1.1-1  ell-0.26-1  ffmpeg-1:4.2.1-3  harfbuzz-2.6.4-1  harfbuzz-icu-2.6.4-1  imagemagick-7.0.9.2-1  iwd-1.0-3  shared-mime-info-1.15-1  sudo-1.8.29-1  x264-3:0.157.r2980.34c06d1-1  x265-3.2.1-1
+sudo pacman -S thunderbird-i18n-en-gb   Packages (4) dbus-glib-0.110-1  mozilla-common-1.4-5  thunderbird-68.2.0-1  thunderbird-i18n-en-gb-68.2.0-1
+## schema.pl changed to symlink
+rm ~/.config/obmenu-generator/schema.pl
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/openbox/schema.pl ~/.config/obmenu-generator/schema.pl
+## Thunderbird Profile
+Ran it to generate ~/.thunderbird
+# SSID interrupted
+ip link   showed it's got   state DOWN
+sudo ip link set wlwg111v2 up   didn't work, so
+  sudo ip link set wlwg111v2 down
+  sudo ip link set wlwg111v2 up   got me internet
+# SSID interrupted again
+(unneeded) sudo dhcpcd -k wlwg111v2
+sudo cp /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/etc/systemd/25-wlwg111v2.network /etc/systemd/network/25-wlwg111v2.network
+reboot   then could ping, but nothing arriving in chrome...
+  sudo dhcpcd wlwg111v2   got me the internet through
+sudo systemctl enable systemd-resolved.service   got me 2 symlinks
+(unneeded) sudo systemctl status systemd-resolved.service
+(unneeded) sudo systemctl start systemd-resolved.service
+sudo dhcpcd -k wlwg111v2
+reboot   got me internet
+# SSID interrupted again
+iwctl station wlan0 get-networks  reporting all but   Xperia XA2_b31f
+  sudo dhcpcd wlwg111v2   didn't help,   reboot   got me internet
+# SSID interrupted again
+iwctl station wlan0 get-networks  reporting all but   Xperia XA2_b31f
+sudo systemctl stop systemd-networkd.service   followed by
+  sudo systemctl start systemd-networkd.service   didn't help
+sudo ip link set wlwg111v2 down   followed by   sudo ip link set wlwg111v2 up   got me internet
+# SSID interrupted again
+sudo ip link set wlwg111v2 down   followed by   sudo ip link set wlwg111v2 up   got me internet
+  implemented this in  ~/.bashrc  as function  doup
+# Opera
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+  gzip: stdin: not in gzip format
+  Packages (16) chromium-78.0.3904.87-1  kmod-26-3  linux-5.3.8.1-1  mkinitcpio-27-1  texlive-bibtexextra-2019.52577-1  texlive-core-2019.52579-1  texlive-fontsextra-2019.52580-1  texlive-formatsextra-2019.51280-1  texlive-games-2019.52525-1  texlive-humanities-2019.52574-1  texlive-latexextra-2019.52575-1  texlive-music-2019.52275-1  texlive-pictures-2019.52499-1  texlive-pstricks-2019.52550-1  texlive-publishers-2019.52538-1  texlive-science-2019.52582-1
+sudo pacman -S opera   Packages (1) opera-64.0.3417.54-1
+# NeoMutt
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (16) cryptsetup-2.2.2-1  iana-etc-20191030-1  ldb-1:1.5.6-1  libedit-20191025_3.1-1  libwbclient-4.10.10-1  opera-64.0.3417.83-1  pacman-5.2.1-1  python-virtualenvwrapper-4.8.4-2  qt5-base-5.13.2-1  qt5-imageformats-5.13.2-1  qt5-script-5.13.2-1  qt5-svg-5.13.2-1  qt5-tools-5.13.2-1  qt5-x11extras-5.13.2-1  re2-20191101-1  smbclient-4.10.10-1
+sudo pacman -S neomutt   Packages (5) gmime3-3.2.4-1  kyotocabinet-1.2.77-1  notmuch-runtime-0.29.2-1  xapian-core-1:1.4.13-1  neomutt-20191102-1
+# Thunderbird Profile
+moved out contents of ~/.thunderbird/3df0pcma.default-release
+in Play0:  7z x jav-HPP-pbxfgpuo.default.7z > pw   and contents copied over
+# muttrc
+~/.mutt/muttrc
+# OfflineIMAP
+sudo pacman -S offlineimap   Packages (4) python2-rfc6555-0.0.0-1  python2-selectors2-2.0.1-2  python2-uritemplate-3.0.0-4  offlineimap-7.3.0-1
+cp /usr/share/offlineimap/offlineimap.conf.minimal ~/.offlineimaprc
+# LastPass CLI
+sudo pacman -S lastpass-cli   Packages (1) lastpass-cli-1.3.3-1
+logged in
+# gpg access to keyservers
+keep getting:
+  gpg: error searching keyserver: Server indicated a failure
+  gpg: keyserver search failed: Server indicated a failure
+follows my attempts to fix, later the problem dissappeared for a while
+## Dropbox public key
+gpg --search-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E   fails immediately
+## other attempts
+gpg --keyserver pool.sks-keyservers.net --search-key A36B494F   fails immediately
+### dirmngr
+sudo killall dirmngr
+ps -ef | grep dirmngr
+gpg --keyserver hkp://pool.sks-keyservers.net:80 --search-key A36B494F   fails immediately
+gpg --keyserver hkp://keyserver.ubuntu.com:80 --search-key 9A2FD067A2E3EF7B   fails immediately
+sudo pacman -Syyuu   Packages (13) adwaita-icon-theme-3.34.2-1  gcc-9.2.0-4  gcc-libs-9.2.0-4  git-2.24.0-1  mesa-19.2.3-1  opera-64.0.3417.92-1  orc-0.4.31-1  python-pyparsing-2.4.4-1  python2-pyparsing-2.4.4-1  systemd-243.78-2  systemd-libs-243.78-2  systemd-sysvcompat-243.78-2  xterm-350-1
+## firewalld
+sudo firewall-cmd --info-zone=home
+  home (active)
+    target: default
+    icmp-block-inversion: no
+    interfaces: enp0s25
+    sources: 
+    services: dhcpv6-client mdns samba-client ssh
+    ports: 
+    protocols: 
+    masquerade: no
+    forward-ports: 
+    source-ports: 
+    icmp-blocks: 
+    rich rules:
+sudo firewall-cmd --query-lockdown
+  no
+sudo firewall-cmd --query-panic
+  no
+sudo firewall-cmd --state
+  running
+sudo firewall-cmd --list-ports
+sudo systemctl stop firewalld   but still getting immediate gpg failure to access keyserver, so
+  sudo systemctl start firewalld
+## more attempts
+sudo gpg --search-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+  ...
+  gpg: keybox '/root/.gnupg/pubring.kbx' created
+  gpg: error searching keyserver: Server indicated a failure
+  gpg: keyserver search failed: Server indicated a failure
+## try through TL-WR702N
+### stop systemd-resolved
+sudo systemctl stop systemd-resolved.service
+  gpg --keyserver hkp://keyserver.ubuntu.com:80 --search-key 9A2FD067A2E3EF7B   failed slowly
+### stop systemd-networkd
+sudo systemctl stop systemd-networkd.service
+  can ping, but nothing coming through to Chrome...
+  gpg --keyserver hkp://keyserver.ubuntu.com:80 --search-key 9A2FD067A2E3EF7B   failed slowly
+### disable systemd-resolved
+sudo systemctl disable systemd-resolved.service
+reboot   and could get internet through Chrome
+#### gpg quick connections
+gpg --keyserver hkp://keyserver.ubuntu.com:80 --search-key 9A2FD067A2E3EF7B
+gpg --search-key A36B494F
+gpg --keyserver pool.sks-keyservers.net --search-key A36B494F
+gpg --search-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+journalctl | grep dirmngr
+#### host
+$ host keyserver.ubuntu.com
+keyserver.ubuntu.com has address 162.213.33.8
+keyserver.ubuntu.com has address 162.213.33.9
+### re-enable systemd-resolved
+sudo systemctl enable systemd-resolved.service   got me 2 symlinks
+reboot
+### back to NETGEAR WG111v2 in heighest off board back USB port
+both host & gpg connecting as expected
+# gpg access to keyservers gone again - fix resolv.conf
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf   got it working
+# import sprbMb-Arch-private.asc
+in  /mnt/SDSSDA240G/Encrypted/Secure1/Networking/:
+  gpg --import sprbMb-Arch-private.asc
+gpg --list-secret-keys   A56094AACA80D75BF1A64BF6842A4DEE13F327EF
+## update it
+gpg --edit-key jharr >
+  expire > 2y > y
+    ...
+    sec  rsa2048/842A4DEE13F327EF
+         created: 2015-05-18  expires: 2021-11-06  usage: SC
+         trust: unknown       validity: unknown
+    ssb  rsa2048/EF588D28EA790E9F
+         created: 2015-05-18  expired: 2016-05-17  usage: E
+    [ unknown] (1). Joseph Harriott (sprbMb Arch) <jharr@ftml.net>
+    [ revoked] (2)  Joseph Harriott (sprbMb Arch) <trohib@gmail.com>
+    ...
+    gpg: WARNING: Your encryption subkey expires soon.
+  key 1 > 2y > y
+  uid 1 > sign
+  save
+## get the keygrip
+gpg --with-keygrip -K
+  sec   rsa2048 2015-05-18 [SC] [expires: 2021-11-06]
+        A56094AACA80D75BF1A64BF6842A4DEE13F327EF
+        Keygrip = CFC1B2EF8C745F99B57C4543F43FE34EC89E0B36
+  uid           [ultimate] Joseph Harriott (sprbMb Arch) <jharr@ftml.net>
+  ssb   rsa2048 2015-05-18 [E] [expires: 2021-11-06]
+        Keygrip = 5EEFFB0B9BBF6A43B177E45A57F847A23E62380C
+## gpg-agent.conf symlink for passphrase
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+reboot
+## try to cache passphrase
+/usr/lib/gnupg/gpg-preset-passphrase --preset CFC1B2EF8C745F99B57C4543F43FE34EC89E0B36 > pw
+gpg-connect-agent 'keyinfo --list' /bye
+  S KEYINFO CFC1B2EF8C745F99B57C4543F43FE34EC89E0B36 D - - 1 P - - -
+  S KEYINFO 5EEFFB0B9BBF6A43B177E45A57F847A23E62380C D - - - P - - -
+# gnupg.org
+https://www.gnupg.org/  sometimes won't load.  Only fix I've yet found is a reboot.
+# gpgtar test (in Play0)
+gpgtar -e -r jharr -o Actions.tar.gpg Actions.sh
+rm Actions.sh
+gpgtar --list-archive Actions.tar.gpg
+  gpgtar: gpg: encrypted with 2048-bit RSA key, ID EF588D28EA790E9F, created 2015-05-18
+  gpgtar: gpg:       "Joseph Harriott (sprbMb Arch) <jharr@ftml.net>"
+  gpgtar: gpg: public key decryption failed: Inappropriate ioctl for device
+## get pinentry working
+export GPG_TTY=$(tty)  then   gpgtar --list-archive Actions.tar.gpg   got the pinentry-curses screen
+gpgtar -d Actions.tar.gpg   got me  Actions.tar_1_/Actions.sh
+# try to cache gpg passphrase again
+/usr/lib/gnupg/gpg-preset-passphrase --preset CFC1B2EF8C745F99B57C4543F43FE34EC89E0B36 > pw
+in Play 0:  gpgtar -d Actions.tar.gpg   still brought up the pinentry-curses dialogue...
+## test for gpg-agent.socket
+systemctl list-unit-files --type=socket   doesn't list it...
+systemctl --user status gpg-agent.socket
+  ...
+  Active: active (running)
+pstree   shows that  gpg-agent  is running
+# check systemd processes
+ps -eaf | grep "[s]ystemd"
+pgrep systemd
+ps -A | grep systemd
+systemd-analyze
+systemctl list-unit-files --type=mount
+# gpg signatures
+gpg2 --list-sigs
+# gpg test my keys
+echo "...seems to be working..." | gpg -ase -r sprbMb | gpg
+in Play 0:  gpgtar -d Actions.tar.gpg   worked without pinentry, so maybe the preset worked...
+# offlineimaprc symlink
+Moved  ~/.offlineimaprc  to
+  /JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/offlineimaprc   for
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/offlineimaprc ~/.offlineimaprc
+# OfflineIMAP version
+offlineimap -V
+# nnn
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (46) acl-2.2.53-2  adwaita-icon-theme-3.34.3-1  attr-2.4.48-2  bzip2-1.0.8-3  chromium-78.0.3904.97-1  cifs-utils-6.9-1  coreutils-8.31-3  curl-7.67.0-3  dav1d-0.5.1-1  dhcpcd-8.1.1-2  faad2-2.9.1-1  ffmpeg-1:4.2.1-4  findutils-4.7.0-2  fuse-common-3.8.0-1  fuse3-3.8.0-1  gawk-5.0.1-2  glslang-7.13.3496-1  grub-2:2.04-3  gvim-8.1.2268-1  imagemagick-7.0.9.2-3  intel-ucode-20191112-1  iso-codes-4.4-1  libcdio-paranoia-10.2+2.0.1-1  libdvdnav-6.0.1-1  libdvdread-6.0.2-1  libplacebo-1.21.0-1  librsvg-2:2.46.3+6+g4735bd07-1  libssh-0.9.2-1  libtiff-4.1.0-1  libxnvctrl-440.31-1  linux-5.3.11.1-1  mesa-19.2.3-2  mkinitcpio-27-2  mpv-1:0.30.0-4  neomutt-20191111-1  python-dbus-1.2.10-1  python-dbus-common-1.2.10-1  rubberband-1.8.2-3  shaderc-2019.0-3  shellcheck-0.7.0-49  thunderbird-68.2.2-1  thunderbird-i18n-en-gb-68.2.2-1  vamp-plugin-sdk-2.9.0-1  vim-runtime-8.1.2268-1  vlc-3.0.8-6  vulkan-icd-loader-1.1.127-1
+sudo pacman -S nnn   Packages (1) nnn-2.7-1
+# Xresources changed to symlink
+rm ~/.Xresources  for  ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Xresources/Xresources ~/.Xresources
+# xsel
+sudo pacman -S xsel   Packages (1) xsel-1.2.0.20160929-2
+## test
+xsel -bo
+# fzy
+sudo pacman -S fzy   Packages (1) fzy-1.0-1
+fzy -h
+# nnn plugins
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh > jo's pw
+got me   /usr/local/bin/nlaunch
+# Compton
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+  Packages (4) intel-ucode-20191113-1  patch-2.7.6-8  psmisc-23.3-1  xz-5.2.4-2
+sudo pacman -S compton
+  Packages (4) libconfig-1.7.2-2  libev-4.27-1  libxdg-basedir-1.2.0-4  compton-7.4-1
+compton &   got immediate high transparency of  urxvt, and greyed out the black desktop
+killall compton
+compton -CG &   could be used occasionally, but it slows down  Alt+Tab
+# tmux
+## AUR package updates
+auracle sync
+### Dropbox v83.4.152
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-84.4.170-1
+### qimgv-git
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd qimgv-git   for   makepkg -sic   failed
+## tmux
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd tmux   for   makepkg -sic
+  Packages (3) libevent-2.1.11-2  bash-completion-2.9-1  tmux-2.9_a-4
+  Packages (1) tmux-bash-completion-r13.847eda6-1
+# Gmrun
+sudo pacman -S gmrun   Packages (1) gmrun-0.9.5w-1
+# Bash profile changed to symlink
+rm ~/.bash_profile   for  ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/bash_profile ~/.bash_profile
+# tmux tweaks
+## test for activation of vi mode
+echo $VISUAL
+echo $EDITOR
+## test for login shell
+echo $0
+shopt login_shell
+## tmux.conf
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Bash/tmux.conf ~/.tmux.conf
+# urxvt-perls
+in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (91) audit-2.8.5-6  avahi-0.7+18+g1b5f401-3  bind-tools-9.14.7-4  boost-libs-1.71.0-4  brotli-1.0.7-3  btrfs-progs-5.3.1-3  chromium-78.0.3904.97-2  firewalld-0.8.0-1  flake8-1:3.7.9-1  gobject-introspection-runtime-1.62.0-3  gpgme-1.13.1-3  gvim-8.1.2268-2  harfbuzz-2.6.4-2  harfbuzz-icu-2.6.4-2  icu-65.1-2  iotop-0.6-7  ldb-1:1.5.6-2  libblockdev-2.23-3  libbytesize-2.1-3  libcdr-0.1.5-3  libe-book-0.1.3-6  libibus-1.5.21-3  libixion-0.14.1-5  libmspub-0.1.4-6  liborcus-0.14.1-5  libproxy-0.4.15-13  libqxp-0.0.2-3  libreoffice-fresh-6.3.2-4  libsynctex-2019.51075-4  libutil-linux-2.34-6  libvisio-0.1.7-2  libvoikko-4.3-1  libwbclient-4.10.10-2  libxml2-2.9.9-6  libzmf-0.0.2-7  llvm-libs-9.0.0-4  mesa-19.2.4-1  meson-0.52.0-4  nftables-1:0.9.2-2  notmuch-runtime-0.29.2-3  opencv-4.1.2-4  openexr-2.4.0-6  perl-5.30.1-1  poppler-0.82.0-1  pygobject-devel-3.34.0-3  python-3.8.0-1  python-appdirs-1.4.3-5  python-attrs-19.3.0-3  python-dbus-1.2.12-1  python-dbus-common-1.2.12-1  python-decorator-4.4.1-1  python-entrypoints-0.3-3  python-gobject-3.34.0-3  python-html2text-2019.8.11-3  python-mccabe-0.6.1-4  python-packaging-19.2-5  python-pycodestyle-2.5.0-3  python-pyflakes-2.1.1-3  python-pyparsing-2.4.4-2  python-setuptools-1:41.2.0-5  python-six-1.13.0-2  python-slip-0.6.5-4  python-stevedore-1.31.0-3  python-virtualenv-16.1.0-3  python-virtualenv-clone-0.5.3-3  python-virtualenvwrapper-4.8.4-3  python-xdg-0.26-4  python2-appdirs-1.4.3-5  python2-packaging-19.2-5  python2-pyparsing-2.4.4-2  python2-rfc6555-0.0.0-2  python2-selectors2-2.0.1-4  python2-setuptools-1:41.2.0-5  python2-six-1.13.0-2  python2-uritemplate-3.0.0-6  python2-virtualenv-16.1.0-3  qt5-base-5.13.2-2  raptor-2.0.15-12  reflector-2019.10-2  smbclient-4.10.10-2  talloc-2.2.0-3  tdb-1.3.18-4  tevent-1:0.9.39-4  texlive-bin-2019.51075-4  thunderbird-68.2.2-2  trash-cli-0.17.1.14-5  util-linux-2.34-6  vim-runtime-8.1.2268-2  volume_key-0.3.12-2  xcb-proto-1.13-4  xfsprogs-5.2.1-2
+### pacnews
+su > root pw  for  fs pacnew
+## firewalld.conf.pacnew
+cd /etc/firewalld  for  diff -y firewalld.conf firewalld.conf.pacnew
+  shows that AutomaticHelpers section is removed
+sudo mv firewalld.conf firewalld.conf.old
+sudo mv firewalld.conf.pacnew firewalld.conf
+reboot
+firewall-cmd --get-default-zone   reports  "public"
+sudo firewall-cmd --set-default-zone=home   Error: COMMAND_FAILED: '{"chain": "raw_PREROUTING_ZONES", "expr": [{"goto": {"target": "raw_PRE_public"}}], "family": "inet", "table": "firewalld"}'
+firewall-cmd --get-default-zone   reports  "home"
+reboot
+### check firewalld
+sudo firewall-cmd --state
+  running
+sudo firewall-cmd --info-zone=home
+  home (active)
+    target: default
+    icmp-block-inversion: no
+    interfaces: enp0s25
+    sources: 
+    services: dhcpv6-client mdns samba-client ssh
+    ports: 
+    protocols: 
+    masquerade: no
+    forward-ports: 
+    source-ports: 
+    icmp-blocks: 
+    rich rules: 
+## urxvt-perls
+sudo pacman -S urxvt-perls   Packages (1) urxvt-perls-2.2-2
+## xdg-open snag
+can only open chromium directly, and
+  $ xdg-open https://archlinux.org   reports "/usr/bin/python3: No module named Mimeo"
+sudo pacman -Rs mimeo   Packages (2) python-xdg-0.26-4  mimeo-2019.7-1
+### mimeo
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd mimeo   for   makepkg -sic
+  Packages (1) python-xdg-0.26-4   Packages (1) mimeo-2019.7-1
+xdg-open https://archlinux.org   opened in chromium
+# qimgv-git
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PCKGBUILD,  cd qimgv-git   for   makepkg -sic
+   Packages (1) qimgv-git-v0.8.8.r12.g6e84931-1
+# tmux.conf symlink fixed
+rm ~/.tmux.conf
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/terminal/tmux.conf ~/.tmux.conf
+# urxvt-perls
+rm ~/.urxvt/ext/xresources-256
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/terminal/urxvtPerls/xresources-256 ~/.urxvt/ext/xresources-256
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/terminal/urxvtPerls/resize-font ~/.urxvt/ext/resize-font
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/terminal/urxvtPerls/autocomplete-ALL-the-things ~/.urxvt/ext/autocomplete-ALL-the-things
 # waiting
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
+sudo pacman -Syu   for n Packages
 ## texlive-localmanager-git
 ## qpdfview
 ## an rtf set to Open with LibreOffice
-## Bash profile changed to symlink
-rm ~/.bash_profile   for  sudo ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/bash_profile ~/.bash_profile
 ## Openbox configurations changed to symlinks
 rm ~/.config/openbox/menu.xml
 ln -s /mnt/WD30EZRZ/Dropbox/JH/Now/Technos/IT/InterNetworking/WebDesign/DokuWiki/media/unix-like/arch/sprbMb/openbox/menu.xml ~/.config/openbox/menu.xml
@@ -1212,7 +1523,6 @@ in  ~/Arch/AUR/ :  bash -x AURclones.sh
 ## vorbis-tools
 ## DVD Playback
 ## DVD Shrink
-## Thunderbird
 ## tig
 ## Perl modules
 ## cdrtools
@@ -1235,9 +1545,7 @@ in  ~/Arch/AUR/ :  bash -x AURclones.sh
 ## FreeCAD
 ## Tree
 ## mtpfs
-## English (British) language pack for Thunderbird
 ## RHash
 ## Midori
-## NETGEAR WG111v2
-sudo iw dev wlp0s29f7u4 station dump
-sudo iw dev wlp0s29f7u4
+## byobu
+## Cmus
