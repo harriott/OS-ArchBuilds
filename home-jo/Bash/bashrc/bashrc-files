@@ -24,7 +24,7 @@ up(){
 }
 
 alias gpr='gprename &'
-alias rpd='bash /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/rsync-portabledrives/rsync.sh'
+alias rpd='bash $DROPBOX/JH/IT_stack/onGitHub/rsync-portabledrives/rsync.sh'
 alias ls='ls --color=auto'
 alias pcm='pcmanfm & disown'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
@@ -47,6 +47,12 @@ locd () {
 }
 
 source /etc/profile.d/autojump.bash
+# autojump commands:
+#   autojump --help
+#   autojump -s
+#   j <pathFragment>
+#   jo [<fragmentOfAPathToOpenInFileManager>]
+#   jo [<fragmentOfAChildPathToOpenInFileManager>]
 
 # nnn
 # ---
@@ -66,7 +72,7 @@ n()
     fi
 }
 
-export NNN_BMS='n:~/.config/nnn'
+export NNN_BMS='l:$DROPBOX/JH/Work/ST/LPD/IdF;m:$DROPBOX/CAMusic;n:~/.config/nnn'
 export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
 export NNN_PLUG='c:fzcd;o:fzy-open'
@@ -92,6 +98,7 @@ fdtsExt () {
     if [ $1 = "tex" ] || [ $1 = "txt" ]; then
       sed -i "s| \.| $PWD|" $dtsfile
     fi
+    echo "results are in $dtsfile"
   else
     echo "^ need a file type (= filename extension)"
   fi

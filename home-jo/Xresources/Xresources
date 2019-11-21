@@ -15,6 +15,7 @@ Xft.rgba: rgb
 ! -------------
 
 ! colorschemes:
+! (#include can't handle variables in the paths)
 ! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Xresources/BastianRieck"
 ! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Xresources/gruvbox-urxvt256"
 #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Xresources/LukeSmith_base16"
@@ -32,13 +33,14 @@ URxvt.saveLines: 8192
 
 !-*- Perl extensions -*-
 URxvt.perl-ext-common: autocomplete-ALL-the-things,default,keyboard-select,matcher,resize-font,selection-to-clipboard,xresources-256
+
 URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
 URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
 URxvt.keysym.M-quotedbl:  perl:aAtt:skeleton-complete
-URxvt.url-launcher:   /usr/bin/chromium
-URxvt.underlineURLs:  True
-URxvt.matcher.button: 1
+URxvt.url-launcher:       /usr/bin/chromium
+URxvt.underlineURLs:      True
+URxvt.keysym.M-e:         perl:keyboard-select:activate
+URxvt.keysym.M-s:         perl:keyboard-select:search
+URxvt.matcher.button:     1
 URxvt.clipboard.autocopy: true
-URxvt.keysym.M-e: perl:keyboard-select:activate
-URxvt.keysym.M-s: perl:keyboard-select:search
 
