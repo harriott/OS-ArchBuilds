@@ -1,4 +1,4 @@
-! https://bastian.rieck.ru/blog/posts/2013/making_urxvt_beautiful/
+! https://github.com/LukeSmithxyz/st/blob/master/.Xdefaults
 
 urxvt*foreground: white
 urxvt*background: black
@@ -19,4 +19,6 @@ urxvt*background: black
 *.color13:      #ba8baf
 *.color14:      #86c1b9
 *.color15:      #f8f8f8
+
+nicely muted
 

@@ -22,7 +22,7 @@ PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
 source /usr/share/doc/pkgfile/command-not-found.bash
 
 # for tmux
-export VISUAL=vim
+export VISUAL=nvim
 
 # History
 alias h='history'

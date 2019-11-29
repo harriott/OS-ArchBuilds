@@ -8,6 +8,16 @@
 
 # Joseph Harriott  http://momentary.eu/
 
+alias gpr='gprename &'
+alias rpd='bash $DROPBOX/JH/IT_stack/onGitHub/rsync-portabledrives/rsync.sh'
+alias l='ls --color=auto'
+alias m='cmus'
+alias pcm='pcmanfm & disown'
+alias s="stat -c '%A %a %h %U %G %s %y %n'"
+alias so="stat -c '%a %n'"
+alias sm="stat -c '%y %n'"
+shopt -s autocd dotglob extglob globstar nullglob
+
 # move up [n] directories
 up(){
   local dir=""
@@ -23,15 +33,6 @@ up(){
   cd $dir
 }
 
-alias gpr='gprename &'
-alias rpd='bash $DROPBOX/JH/IT_stack/onGitHub/rsync-portabledrives/rsync.sh'
-alias ls='ls --color=auto'
-alias pcm='pcmanfm & disown'
-alias s="stat -c '%A %a %h %U %G %s %y %n'"
-alias so="stat -c '%a %n'"
-alias sm="stat -c '%y %n'"
-shopt -s autocd dotglob extglob globstar nullglob
-
 # Git
 # ---
 alias ga='git add'
@@ -46,7 +47,7 @@ locd () {
     locate $1 | xargs -I {} bash -c 'if [ -d "{}" ]; then echo {}; fi'
 }
 
-source /etc/profile.d/autojump.bash
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 # autojump commands:
 #   autojump --help
 #   autojump -s
@@ -72,7 +73,8 @@ n()
     fi
 }
 
-export NNN_BMS='l:$DROPBOX/JH/Work/ST/LPD/IdF;m:$DROPBOX/CAMusic;n:~/.config/nnn'
+# NNN_BMS can't handle variables in the path
+export NNN_BMS='l:/mnt/SDSSDA240G/Dropbox/JH/Work/ST/LPD/IdF;m:/mnt/SDSSDA240G/Dropbox/CAMusic;n:~/.config/nnn'
 export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
 export NNN_PLUG='c:fzcd;o:fzy-open'

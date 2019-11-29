@@ -2,8 +2,11 @@ vim: fdl=0 ft=build fdm=expr:
 
 # general tips
 autojump -s
+blkid -o list
 cat /proc/cpuinfo
+df -h
 lsof -i
+lsusb
 man hier
 networkctl list
 pgrep
@@ -14,6 +17,9 @@ xrandr
 
 ## available disk
 df -h
+## fix this file
+:%s#mnt$DROPBOX/$AVT661#mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661#c
+
 ## get at root on tty2
 Ctrl+Alt+F2 > root + pw
 
@@ -501,40 +507,40 @@ cd ..
 #### xdg-utils-mimeo
 rm xdg-utils-mimeo
 git clone https://aur.archlinux.org/xdg-utils-mimeo.git
-having checked the PCKGBUILD,  cd xdg-utils-mimeo   for   makepkg -sic   cd ..
+having checked the PKGBUILD,  cd xdg-utils-mimeo   for   makepkg -sic   cd ..
 ## gVim AUR Packages
 in  ~/Arch/AUR/
 ### vim-calendar-vim
 git clone https://aur.archlinux.org/vim-calendar-git.git
-having checked the PCKGBUILD,  cd calendar-vim   for   makepkg -sic   cd ..
+having checked the PKGBUILD,  cd calendar-vim   for   makepkg -sic   cd ..
 ### the rest
 sudo bash -x ../../AcerVeritonT661/build/steps/gVimAURclones.sh
 ### vim-colors-solarized
-having checked the PCKGBUILD,  cd vim-colors-solarized   for   makepkg -sic   cd ..
+having checked the PKGBUILD,  cd vim-colors-solarized   for   makepkg -sic   cd ..
 ### vim-gruvbox-git
-having checked the PCKGBUILD,  cd vim-gruvbox-git   for   makepkg -sic   cd ..
+having checked the PKGBUILD,  cd vim-gruvbox-git   for   makepkg -sic   cd ..
 ### vim-LanguageTool
-having checked the PCKGBUILD,  cd vim-LanguageTool   for
+having checked the PKGBUILD,  cd vim-LanguageTool   for
   makepkg -sic > 1 (jre-openjdk-headless)  for 4 Packages, including  languagetool
     then installed  unzip,  and finally  vim-LanguageTool   cd ..
 ### vim-mediawiki
-having checked the PCKGBUILD,  cd vim-mediawiki   for
+having checked the PKGBUILD,  cd vim-mediawiki   for
   makepkg -sic   installed  ed   then   vim-mediawiki   cd ..
 ### vim-repeat
-having checked the PCKGBUILD,  cd vim-repeat   for   makepkg -sic   cd ..
+having checked the PKGBUILD,  cd vim-repeat   for   makepkg -sic   cd ..
 ### vim-simpylfold
-having checked the PCKGBUILD,  cd vim-simpylfold   for   makepkg -sic   cd ..
+having checked the PKGBUILD,  cd vim-simpylfold   for   makepkg -sic   cd ..
 ### vim-table-mode
-having checked the PCKGBUILD,  cd vim-table-mode   for   makepkg -sic   cd ..
+having checked the PKGBUILD,  cd vim-table-mode   for   makepkg -sic   cd ..
 ### vim-undotree
-having checked the PCKGBUILD,  cd vim-undotree   for   makepkg -sic   cd ..
+having checked the PKGBUILD,  cd vim-undotree   for   makepkg -sic   cd ..
 ## SSH keys
 ssh-keygen -b 4096 -C "trohib@gmail.com" -f ~/.ssh/id_rsa-trohib   > no pw
 ## Dropbox
 (should've been after installing a browser)
 in  ~/Arch :  sudo pacmatic -Syu   for 6 Packages
 in  ~/Arch/AUR/   bash -x ~/AcerVeritonT661/build/steps/gVimAURclones.sh
-  having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic
+  having checked the PKGBUILD,  cd dropbox   for   makepkg -sic
     installed  gendesk  then failed for gpg key
 ### Dropbox public key
 gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
@@ -637,7 +643,7 @@ rm ~/.bashrc-files
 ln -s $DROPBOX/$AVT661/home-jo/Bash/bashrc/bashrc-files /home/jo/.bashrc-files
 source ~/.bashrc
 #### Dropbox
-having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-81.4.195-1
+having checked the PKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-81.4.195-1
 having accidentally cancelled,   sudo pacman -U dropbox-81.4.195-1-x86_64.pkg.tar.xz
 Dropbox self-reporting as v81.4.127, so quit for  dropbox &  which got it up-to-date
 ### autostart changed to symlink
@@ -656,7 +662,7 @@ clear Downloads folder & Trash for:
     mount dev/sda5 mnt/mnt/SDSSDA240G
     ls mnt/mnt/9QG2FFEE
     mount dev/sdc1 mnt/mnt/9QG2FFEE
-  cd mnt$DROPBOX/$AVT661/build
+  cd mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build
   bash rsyncBackup.sh
   halt -p
 # to 191002 Backup
@@ -681,7 +687,7 @@ in  ~/Arch :  sudo pacmatic -Syu
   ...
 in  ~/Arch/AUR/
   bash -x $DROPBOX/$AVT661/build/AURclones.sh
-having checked the PCKGBUILD,  cd pnmixer   for   makepkg -sic   Packages (1) libnotify-0.7.8-1
+having checked the PKGBUILD,  cd pnmixer   for   makepkg -sic   Packages (1) libnotify-0.7.8-1
   Packages (3) jsoncpp-1.9.1-1  libuv-1.31.0-1  cmake-3.15.3-2   Packages (1) pnmixer-gtk3-0.7.2-2
 Multimedia > PNMixer > Preferences > View > Draw
 (to get sound out of front socket) alsamixer > Headphone > 100
@@ -716,11 +722,11 @@ auracle sync
 in  ~/Arch/AUR/
   ln -s $DROPBOX/$AVT661/build/AURclones.sh AURclones.sh
   bash -x AURclones.sh
-having checked the PCKGBUILD,  cd xdg-utils-mimeo   for   makepkg -sic   cd ..
+having checked the PKGBUILD,  cd xdg-utils-mimeo   for   makepkg -sic   cd ..
   Packages (1) xdg-utils-mimeo-1.1.3+18+g0547886-
 #### vim-recover-git
 in  ~/Arch/AUR/:  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd vim-recover-git   for   makepkg -sic   cd ..
+having checked the PKGBUILD,  cd vim-recover-git   for   makepkg -sic   cd ..
   Packages (1) vim-recover-git-r202.491c7ba-1
 ## p7zip
 sudo pacman -S p7zip  = 1 package
@@ -747,9 +753,10 @@ clear Downloads folder & Trash for:
     mount dev/sda5 mnt/mnt/SDSSDA240G
     ls mnt/mnt/9QG2FFEE
     mount dev/sdc1 mnt/mnt/9QG2FFEE
-  cd mnt$DROPBOX/$AVT661/build
+  cd mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build
   bash rsyncBackup.sh
-# resize /
+# to 191128 Backup
+## resize /
 lsblk -f   indicated:
   umount /dev/sdc1
   umount /dev/sda5
@@ -757,12 +764,12 @@ lsblk -f   indicated:
   umount /dev/sda2
 parted /dev/sda
 (decided to recheck contents of SDSSDA240G) halt -p
-## GParted Live
+### GParted Live
 booted into  gparted-live-1.0.0-5-i686.iso > Select keymap from arch list > 02 British English >
   Which mode > Enter (=0)   seized, so rebooted
 booted into  gparted-live-1.0.0-5-i686.iso > Select keymap from arch list > 02 British English >
   Which mode > 2   but seized again, so rebooted
-## KNOPPIX_V8.6
+### KNOPPIX_V8.6
 booted into  KNOPPIX_V8.6-2019-08-08-EN.iso:
   Menu > System Tools > GParted > right clicked in sda5 for  Resize/Move > Free space preceeding >
     30560 > Apply
@@ -770,45 +777,45 @@ booted into  KNOPPIX_V8.6-2019-08-08-EN.iso:
 Once back into Openbox, got hundreds of Dropbox sync's, creating a stack of conflicts, so:
   find -name "* conflicted copy *"
   find -name "* (avt661's conflicted copy *" -exec rm -f {} \;
-## SparkyLinux LXQT
+### SparkyLinux LXQT
 booted  sparkylinux-2019.09-x86_64-lxqt.iso > More Languages > UK English
   Menu > System Tools > GParted > right clicked in sda4 for  Resize/Move >
     and dragged it to the end > Apply
   Menu > Leave > Shutdown
 Restarted into Arch Openbox - all seemed well
-## SparkyLinux Rescue
+### SparkyLinux Rescue
 booted  sparkylinux-2019.09-x86_64-rescue.iso > More Languages > UK English
   Applications > GParted > right clicked in sda3 for  Resize/Move >
     and dragged it to the end > Apply
   Application > Log Out > PowerOff
 Restarted into Arch Openbox - all seemed well
-## SparkyLinux GameOver
+### SparkyLinux GameOver
 booted  sparkylinux-2019.09-x86_64-gameover.iso > More Languages > UK English
   Menu > System Tools > GParted > right clicked in sda2 for  Resize/Move >
     and expanded it to the end > Apply
   Menu > Shutdown
 Restarted into Arch Openbox - all seemed well
-# ShellCheck
+## ShellCheck
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (6) cmake-3.15.4-1  fribidi-1.0.7-1  iana-etc-20190930-1  libpcap-1.9.1-1  p11-kit-0.23.18.1-1  pacman-mirrorlist-20191001-1
-## mirrorlist
+### mirrorlist
 su > root pw
   cd /etc/pacman.d
   mv mirrorlist.pacnew mirrorlist.pacnew.ja3
-### Reflector
+#### Reflector
   reflector --country France --age 12 --protocol https --sort rate --save mirrorlist
   cat mirrorlist   shows it's captured 8 Servers
   pacman -Syyuu   Packages (2) libglvnd-1.2.0-1  mesa-19.2.0-2
-### Time 1h 0.2s ahead
+#### Time 1h 0.2s ahead
   as revealed by   http://time.is/
   ntpd -qg
   hwclock --systohc
   reboot  - time good
-## ShellCheck
+### ShellCheck
 sudo pacman -S shellcheck   Packages (24) ghc-libs-8.6.5-1  haskell-aeson-1.4.4.0-13  haskell-attoparsec-0.13.2.3-2  haskell-base-compat-0.10.5-5  haskell-base-orphans-0.8.1-22  haskell-diff-0.3.4-9  haskell-dlist-0.8.0.7-3  haskell-erf-2.0.0.0-13  haskell-hashable-1.2.7.0-8  haskell-integer-logarithms-1.0.3-2  haskell-primitive-0.6.4.0-6  haskell-quickcheck-2.13.2-6  haskell-random-1.1-17  haskell-regex-base-0.93.2-38  haskell-regex-tdfa-1.2.3.2-1  haskell-scientific-0.3.6.2-13  haskell-splitmix-0.0.3-3  haskell-tagged-0.8.6-6  haskell-th-abstraction-0.3.1.0-1  haskell-time-compat-1.9.2.2-12  haskell-unordered-containers-0.2.10.0-18  haskell-uuid-types-1.0.3-20  haskell-vector-0.12.0.3-16  shellcheck-0.7.0-27
-# gsimplecal
+## gsimplecal
 sudo pacman -S gsimplecal   Packages (1) gsimplecal-2.1-3
 in a terminal  gsimplecal &  to toggle it
-## in tint2
+### in tint2
 in  ~/.config/tint2/tint2rc, these changes:
   # left-click needs to be empty to avoid seizure of gsimplecal on double-click:
   clock_lclick_command =  
@@ -816,32 +823,32 @@ in  ~/.config/tint2/tint2rc, these changes:
   clock_mclick_command = gsimplecal &
   clock_uwheel_command = gsimplecal prev_month
   clock_dwheel_command = gsimplecal next_month
-### reload tint2rc
+#### reload tint2rc
 killall -SIGUSR1 tint2
-# Zathura
+## Zathura
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (11) ca-certificates-mozilla-3.46.1-1  gtk-update-icon-cache-1:3.24.12-1  gtk3-1:3.24.12-1  jack-0.125.0-8  languagetool-4.7-1  libuv-1.32.0-1  nss-3.46.1-1  pkgfile-20-2  python-packaging-19.2-2  zita-alsa-pcmi-0.3.2-2  zita-resampler-1.6.2-2
 sudo pacman -S zathura-pdf-mupdf   Packages (5) girara-0.3.3-1  jbig2dec-0.16-1  libsynctex-2019.51075-3  zathura-0.4.4-1  zathura-pdf-mupdf-0.3.5-1
 locate zathurarc   shows that its doesn't exist
-# CopyQ > Preferences > History
+## CopyQ > Preferences > History
 Maximum > 500
-# symlink for zathurarc
+## symlink for zathurarc
 rm ~/.config/zathura/zathurarc
 ln -s $DROPBOX/$AVT661/home-jo/zathurarc ~/.config/zathura/zathurarc
-# CopyQ > Preferences > History
+## CopyQ > Preferences > History
 Maximum > 600
-# TRIM
-## verify TRIM support
+## TRIM
+### verify TRIM support
 lsblk --discard   shows  DISC-GRAN = 512B, DISC-MAX = 2G
-### hdparm
+#### hdparm
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (41) at-spi2-atk-2.34.1-1  binutils-2.32-3  boost-libs-1.71.0-2  cairo-1.17.2+17+g52a7c79fd-2  coreutils-8.31-2  diffutils-3.7-2  file-5.37-3  filesystem-2019.10-1  firewalld-0.7.2-1  gcc-9.2.0-2  gcc-libs-9.2.0-2  glib-networking-2.62.1-1  glib2-2.62.1-1  glibc-2.30-1  grep-3.3-2  gvfs-1.42.1-1  gzip-1.10-2  imagemagick-7.0.8.68-1  less-551-2  libcmis-0.5.2-3  libglvnd-1.2.0-2  libixion-0.14.1-3  liborcus-0.14.1-3  libreoffice-fresh-6.3.2-2  libreoffice-fresh-en-gb-6.3.2-1  libtool-2.4.6+42+gb88cebd5-6  linux-5.3.5.arch1-1  linux-api-headers-5.3.1-1  meson-0.52.0-1  nano-4.5-1  pacman-contrib-1.2.0-2  polkit-0.116-3  python-3.7.4-2  sed-4.7-2  shellcheck-0.7.0-30  sqlite-3.30.0-1  tar-1.32-2  ttf-croscore-20190926-2  vulkan-icd-loader-1.1.123-1  which-2.21-4  xf86-video-intel-1:2.99.917+893+gbff5eca4-1
 sudo pacman -S hdparm   Packages (1) hdparm-9.58-2
 sudo hdparm -I /dev/sda
-# Console
+## Console
 Ctrl+Alt+F2 > logged in as "root"
-## font
+### font
 showconsolefont
-## left for over 2h, no blanking
-# pkgstats
+### left for over 2h, no blanking
+## pkgstats
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) librsvg-2:2.46.1-1
 sudo pacman -S pkgstats  Packages (1) pkgstats-2.4.2-1
 pkgstats
@@ -849,10 +856,10 @@ pkgstats
   Submitting data...
   Thanks for your submission. :-)
   See results at https://www.archlinux.de/?page=Statistics
-# Conky
+## Conky
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) gdk-pixbuf2-2.40.0-1
 sudo pacman -S conky  Packages (3) libxnvctrl-435.21-1  wireless_tools-30.pre9-2  conky-1.11.5-2
-# galculator
+## galculator
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt 
   ...
   :: Synchronising package databases...
@@ -867,121 +874,121 @@ in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
 sudo reflector --country France --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
   sudo pacman -Syyuu   Packages (20) archlinux-keyring-20191011-1  chromium-77.0.3865.120-1  colord-1.4.4+9+g1ce26da-1  dhcpcd-8.0.6-1  fontconfig-2:2.13.91+24+g75eadca-1  jre-openjdk-headless-13.u33-1  kbd-2.2.0-4  libsoup-2.68.2-1  libx11-1.6.9-3  licenses-20191011-1  llvm-libs-9.0.0-3  man-pages-5.03-1  mesa-19.2.1-1  mkinitcpio-26-1  openssh-8.1p1-1  parted-3.3-1  python-attrs-19.2.0-1  shellcheck-0.7.0-35  sqlite-3.30.1-1  xorgproto-2019.1-3
 sudo pacman -S galculator  Packages (1) galculator-2.1.4-4
-# SpeedCrunch
+## SpeedCrunch
 sudo pacman -S speedcrunch  Packages (2) qt5-tools-5.13.1-2  speedcrunch-0.12.0-2
-# lsof
+## lsof
 sudo pacman -S lsof  Packages (1) lsof-4.93.2-1
 lsof -c dropbox
-# screenFetch
+## screenFetch
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt  Packages (1) shellcheck-0.7.0-36
 sudo pacman -S screenfetch   Packages (6) bc-1.07.1-3  libdmx-1.1.4-1  libxxf86dga-1.1.5-1  xorg-xdpyinfo-1.3.2-2  xorg-xprop-1.2.4-1  screenfetch-3.9.0-1
 screenfetch -v
-# Neofetch
+## Neofetch
 sudo pacman -S neofetch  Packages (1) neofetch-6.1.0-1
-# bashrc changed to symlink
+## bashrc changed to symlink
 rm ~/.bashrc
 ln -s $DROPBOX/$AVT661/home-jo/Bash/bashrc/bashrc /home/jo/.bashrc
 source ~/.bashrc
-# Time 1.3s fast
+## Time 1.3s fast
 as revealed by   http://time.is/
 sudo ntpd -qg
 sudo hwclock --systohc
-# Pinta
+## Pinta
 sudo pacman -S pinta   Packages (6) gtk-sharp-2-2.12.45-2  libgdiplus-5.6.1-2  libglade-2.6.4-6  mono-6.0.0.334-1  mono-addins-1.3.3-2  pinta-1.6-4
-# CopyQ > Preferences > History
+## CopyQ > Preferences > History
 Maximum > 700
-# qimgv-git
+## qimgv-git
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
   Packages (4) gcr-3.34.0-1  librsvg-2:2.46.2-1  linux-5.3.6.arch1-1  sudo-1.8.28-1
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
   Packages (1) reflector-2019.10-1
-## AUR package updates
+### AUR package updates
 auracle sync
-### Dropbox v82.4.155
+#### Dropbox v82.4.155
 in  ~/Arch/AUR/:  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-82.4.155-1
+having checked the PKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-82.4.155-1
 Dropbox self-reporting as v81.4.195, so quit for  dropbox &  which got it up-to-date
-### vim-undotree
+#### vim-undotree
 in  ~/Arch/AUR/:  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd vim-undotree   for   makepkg -sic
+having checked the PKGBUILD,  cd vim-undotree   for   makepkg -sic
   having accidentally cancelled,   sudo pacman -U vim-undotree-6.1-1-any.pkg.tar.xz
     Packages (1) vim-undotree-6.1-1
-## qimgv-git
+### qimgv-git
 in  ~/Arch/AUR/:  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd qimgv-git   for   makepkg -sic
+having checked the PKGBUILD,  cd qimgv-git   for   makepkg -sic
   Packages (19) cifs-utils-6.8-2  ldb-1:1.5.5-1  libbsd-0.9.1-1  libcaca-0.99.beta19-2  libdvdnav-6.0.0-1  libdvdread-6.0.1-1  libmng-2.0.3-2  libwbclient-4.10.8-1  lua52-5.2.4-4  mujs-1.0.6-1  rubberband-1.8.2-2  smbclient-4.10.8-1  talloc-2.2.0-1  tevent-1:0.9.39-2  uchardet-0.0.6-2  vamp-plugin-sdk-2.8.0-1  exiv2-0.27.2-1  mpv-1:0.29.1-11  qt5-imageformats-5.13.1-1
   took ages to make, with some warnings   Packages (1) qimgv-git-v0.8.5.r0.g750a8df-1
-# iotop
+## iotop
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) shellcheck-0.7.0-38
 sudo pacman -S iotop   Packages (1) iotop-0.6-6
 sudo iotop -o
-# TeX Live
+## TeX Live
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) pkgfile-21-1
 sudo pacman -S texlive-most  > Enter (=all)   Packages (21) gd-2.2.5-2  libpaper-1.1.24-11  libsigsegv-2.12-1  perl-file-which-1.23-2  potrace-1.16-1  run-parts-4.8.6.1-1  t1lib-5.1.2-7  texlive-bin-2019.51075-3  zziplib-0.13.69-1  texlive-bibtexextra-2019.50908-1  texlive-core-2019.50917-1  texlive-fontsextra-2019.50876-1  texlive-formatsextra-2019.50602-1  texlive-games-2019.50815-1  texlive-humanities-2019.50921-1  texlive-latexextra-2019.50920-1  texlive-music-2019.50602-1  texlive-pictures-2019.50872-1  texlive-pstricks-2019.50587-1  texlive-publishers-2019.50915-1  texlive-science-2019.50760-1
-# SANE
+## SANE
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) python-attrs-19.3.0-1
 sudo pacman -S sane
   Packages (4) libgphoto2-2.5.23-1  libieee1284-0.2.11-7  net-snmp-5.8-4  sane-1.0.28-1
-# Mouse checks
+## Mouse checks
 Logitech EX 110 cordless optical mouse
-## xorg-xinput
+### xorg-xinput
 sudo pacman -S xorg-xinput   Packages (2) xorg-xrandr-1.5.1-1  xorg-xinput-1.6.3-1
-## Mouse configuration
+### Mouse configuration
 xinput list   indicated   xinput list-props 8   &   xinput get-button-map 8
-# xev
+## xev
 sudo pacman -S xorg-xev   Packages (1) xorg-xev-1.2.3-1
-## tests
+### tests
 xev
 xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 xev | awk -F'[ )]+' '/^ButtonPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
-# remap keys
-## XBindKeys
+## remap keys
+### XBindKeys
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (5) bison-3.4.2-1  expat-2.2.9-1  openbox-3.6.1-5  readline-8.0.001-1  texinfo-6.7-1
 sudo pacman -S xbindkeys   Packages (1) xbindkeys-1.8.6-3
 xbindkeys -h
-### start with the example config file
+#### start with the example config file
 xbindkeys -d > ~/.xbindkeysrc
 xbindkeys --key > mouse middle-click   reports:
   "(Scheme function)"
       m:0x200 + b:2   (mouse)
-## xautomation
+### xautomation
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
   Packages (3) bind-tools-9.14.7-1  jbig2dec-0.17-1  sudo-1.8.28.p1-1
 sudo pacman -S xautomation   Packages (1) xautomation-1.09-3
 xte -h
-# flake8
+## flake8
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) zathura-pdf-mupdf-0.3.5-2
 sudo pacman -S flake8   Packages (5) python-entrypoints-0.3-1  python-mccabe-0.6.1-2  python-pycodestyle-2.5.0-1  python-pyflakes-2.1.1-1  flake8-1:3.7.8-1
-# iscan
+## iscan
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (11) archlinux-keyring-20191018-1  libdrm-2.4.100-1  libglvnd-1.2.0-3  libinput-1.14.2-1  libxkbcommon-0.9.0-1  libxkbcommon-x11-0.9.0-1  linux-5.3.7.arch1-1  mesa-19.2.1-2  shellcheck-0.7.0-43  xmlsec-1.2.29-1  xorgproto-2019.2-1
 sudo pacman -S iscan   Packages (2) libstdc++5-3.3.6-6  iscan-2.30.3.1-2
-## AUR package updates
+### AUR package updates
 auracle sync
-### obmenu-generator
+#### obmenu-generator
 in  ~/Arch/AUR/:  bash -x AURclones.sh
-having checked the PCKGBUILD
+having checked the PKGBUILD
   accidentally   cd obmenu-themes   for   makepkg -sic   Packages (1) openbox-themes-1.0.2-4   cd ..
   cd obmenu-generator   for   makepkg -sic   Packages (1) obmenu-generator-0.86-1
     ** The schema file has been installed as: /etc/xdg/obmenu-generator/schema.pl
       so diff'd it with mine   cd ..
-### qimgv-git
+#### qimgv-git
 in  ~/Arch/AUR/:  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd qimgv-git   for   makepkg -sic
+having checked the PKGBUILD,  cd qimgv-git   for   makepkg -sic
   Packages (1) qimgv-git-v0.8.6.r8.gda61e79-1
-## iscan-plugin-gt-f500
+### iscan-plugin-gt-f500
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
   Packages (2) libxkbcommon-0.9.0-2  libxkbcommon-x11-0.9.0-2
 in  ~/Arch/AUR/:  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd iscan-plugin-gt-f500   for   makepkg -sic
+having checked the PKGBUILD,  cd iscan-plugin-gt-f500   for   makepkg -sic
   Packages (1) iscan-plugin-gt-f500-1.0.0-4
-# Bluefish
+## Bluefish
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (15) btrfs-progs-5.3-1  ca-certificates-mozilla-3.47-1  glib2-2.62.2-1  imagemagick-7.0.8.68-2  libblockdev-2.23-1  libuv-1.33.0-1  libxkbcommon-0.9.1-1  libxkbcommon-x11-0.9.1-1  nspr-4.23-1  nss-3.47-1  shellcheck-0.7.0-45  systemd-243.78-1  systemd-libs-243.78-1  systemd-sysvcompat-243.78-1  tslib-1.21-1
 (accidentally)  sudo pacman -S iscan   Packages (1) iscan-2.30.3.1-2
 sudo pacman -S bluefish
   Packages (5) aspell-0.60.8-1  enchant-2.2.7-1  hspell-1.4-2  libvoikko-4.2-1  bluefish-2.2.10-4
-# dosfstools
+## dosfstools
 pqs dosfstools   reveals I have v4.1-2
-# Epson Perfection 2480 Photo checks
+## Epson Perfection 2480 Photo checks
 scanimage -L
   device `snapscan:libusb:002:004' is a EPSON EPSON Scanner flatbed scanner
 scanimage -A
@@ -993,25 +1000,25 @@ so  briefly plugged it into  11-n012na
 dance at plugin for  scanimage -A
     Output format is not set, using pnm as a default.
     [snapscan] Scanner warming up - waiting 30 seconds.
-# somehow restarted during night
-## XBindKeys snag
+## somehow restarted during night
+### XBindKeys snag
 fixed by adding call in  ~/.xinitrc
-# nomacs
+## nomacs
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (13) chromium-78.0.3904.70-1  expac-9-2  gtk-update-icon-cache-1:3.24.12+32+g39e28ab933-1  gtk3-1:3.24.12+32+g39e28ab933-1  librsvg-2:2.46.3-1  libuv-1.33.1-1  lm_sensors-3.6.0-1  mesa-19.2.2-1  pacman-5.2.0-2  pacman-contrib-1.2.0-3  python2-2.7.17-1  shellcheck-0.7.0-48  xkeyboard-config-2.28-1
 sudo pacman -S nomacs   Packages (17) blas-3.8.0-2  cblas-3.8.0-2  cdparanoia-10.2-7  graphene-1.10.0-1  gst-plugins-base-1.16.1-1  gst-plugins-base-libs-1.16.1-1  gstreamer-1.16.1-1  intel-tbb-2019.9-1  lapack-3.8.0-2  libdc1394-2.2.6-1  libraw-0.19.5-2  libvisual-0.4.0-7  opencv-4.1.2-2  openexr-2.4.0-4  orc-0.4.30-1  quazip-0.8.1-2  nomacs-3.12-7
-# xinitrc changed to symlink
+## xinitrc changed to symlink
 rm ~/.xinitrc
 ln -s $DROPBOX/$AVT661/home-jo/xinitrc /home/jo/.xinitrc
-# bashrc-images symlink
+## bashrc-images symlink
 ln -s $DROPBOX/$AVT661/home-jo/Bash/bashrc/bashrc-images /home/jo/.bashrc-images
-# cnvt.sh symlink
+## cnvt.sh symlink
 sudo ln -s $DROPBOX/$AVT661/home-jo/Bash/bashrc/cnvt.sh /usr/local/bin/cnvt.sh
-# nomacs Settings
+## nomacs Settings
 Ctrl+Shift+p > Close on ESC
-# virtualenvwrapper
+## virtualenvwrapper
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (25) binutils-2.33.1-1  btrfs-progs-5.3.1-1  gcc-9.2.0-3  gcc-libs-9.2.0-3  glibc-2.30-2  intel-tbb-2019.9-2  jre-openjdk-headless-13.0.1.u9-1  libbsd-0.10.0-1  libcups-2.3.0-4  libglvnd-1.2.0-5  libinput-1.14.3-1  libssh-0.9.1-1  libtommath-1.2.0-1  linux-5.3.7.arch1-2  linux-firmware-20191022.2b016af-1  man-db-2.9.0-1  mpv-1:0.30.0-2  ndctl-67-1  pango-1:1.44.7-1  vim-ale-2.6.0-1  vim-syntastic-3.10.0-1  vlc-3.0.8-3  vulkan-icd-loader-1.1.126-1  xorg-server-1.20.5-4  xorg-server-common-1.20.5-4
 sudo pacman -S python-virtualenvwrapper   Packages (10) python-stevedore-1.31.0-1  python-virtualenv-16.1.0-1  python-virtualenv-clone-0.5.3-1  python2-appdirs-1.4.3-2  python2-packaging-19.2-2  python2-pyparsing-2.4.2-1  python2-setuptools-1:41.2.0-1  python2-six-1.12.0-1  python2-virtualenv-16.1.0-1  python-virtualenvwrapper-4.8.4-1
-## configuration lines added to ~/.bashrc
+### configuration lines added to ~/.bashrc
 launched a shell, getting:
   virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/premkproject
   virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/postmkproject
@@ -1025,7 +1032,7 @@ launched a shell, getting:
   virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/preactivate
   virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/postactivate
   virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/get_env_details
-# virtualenv jas
+## virtualenv jas
 mkvirtualenv jas
   Using base prefix '/usr'
   New python executable in /home/jo/.virtualenvs/jas/bin/python
@@ -1036,38 +1043,38 @@ mkvirtualenv jas
   virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/jas/bin/preactivate
   virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/jas/bin/postactivate
   virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/jas/bin/get_env_details
-## Python Oneliner try-out
+### Python Oneliner try-out
 pip install oneliner
-### pyl-3.4
+#### pyl-3.4
 in ~/:  find -iname "pyl*"  found  /home/jo/.virtualenvs/jas/bin/pyl-3.4
-#### test
+##### test
 date +%s | pyl-3.4 -j ' => ' -line '_, datetime.datetime.fromtimestamp(int(_))'
   1572293782 => 2019-10-28 21:16:22
-### Uninstall Python Oneliner
+#### Uninstall Python Oneliner
 pip uninstall oneliner
-# pyfil
-## AUR package updates
+## pyfil
+### AUR package updates
 auracle sync
   auracle: error while loading shared libraries: libalpm.so.11: cannot open shared object file: No such file or directory
-### auracle-git
+#### auracle-git
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd auracle-git   for   makepkg -sic
+having checked the PKGBUILD,  cd auracle-git   for   makepkg -sic
 Packages (1) auracle-git-r290.d59f80b-1
-### Dropbox v83.4.152
+#### Dropbox v83.4.152
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-83.4.152-1
-### xdg-utils-mimeo Updated
+having checked the PKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-83.4.152-1
+#### xdg-utils-mimeo
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd xdg-utils-mimeo   for   makepkg -sic
+having checked the PKGBUILD,  cd xdg-utils-mimeo   for   makepkg -sic
   Packages (1) xdg-utils-mimeo-1.1.3+18+g0547886-3
-## AUR pyfil attempt
+### AUR pyfil attempt
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd pyfil   for   makepkg -sic
+having checked the PKGBUILD,  cd pyfil   for   makepkg -sic
   ==> ERROR: pkgbase should not be an array
-## virtualenv jas
+### virtualenv jas
 workon jas
 pip install pyfil
-### test
+#### test
 pyfil sys.path
   [
     "/home/jo/.virtualenvs/jas/bin",
@@ -1078,79 +1085,79 @@ pyfil sys.path
     "/usr/lib/python3.7",
     "/home/jo/.virtualenvs/jas/lib/python3.7/site-packages"
   ]
-# cnvt.sh symlink fixed
+## cnvt.sh symlink fixed
 sudo rm /usr/local/bin/cnvt.sh
 sudo ln -s $DROPBOX/$AVT661/home-jo/Bash/Imagey/cnvt.sh /usr/local/bin/cnvt.sh
-# TL-WR702N
+## TL-WR702N
 has been switched to Client of Moto G4
-# NETGEAR WG111v2 in top-left USB port
+## NETGEAR WG111v2 in top-left USB port
 lsusb -v | grep NetGear   indicated   lsusb -vs 006
  idProduct  0x6a00 WG111v2 54 Mbps Wireless [RealTek RTL8187L]
 ip link   suggested   sudo ip link set wlp0s29f7u4 up
 ip link ls wlp0s29f7u4
 dmesg | grep wlp0s29f7u4
   [374855.584645] rtl8187 2-4:1.0 wlp0s29f7u4: renamed from wlan0
-## iw
+### iw
 sudo pacman -S iw  Packages (1) iw-5.3-1
 iw dev   reported   Interface wlp0s29f7u4
 sudo iw dev wlp0s29f7u4 link   reported   Not connected
 in ~/Arch/  sudo iw dev wlp0s29f7u4 scan > WG111v2scan.txt
   ~/Arch/WG111v2scan.txt > SSID  for access points
-## systemd-networkd
+### systemd-networkd
 networkctl list
-## iwd
+### iwd
 sudo pacman -S iwd   Packages (2) ell-0.25-1  iwd-0.23-1
 sudo systemctl enable iwd.service   created a symlink
 systemctl status iwd.service
 reboot  to get it working
-### iwctl
+#### iwctl
 device list   shows   wlp0s29f7u4
 station wlp0s29f7u4 get-networks   listed   Moto G (4) 1367   among others, and live updates
 quit
-# NETGEAR WG111v2 in heighest off board back USB port
-## wlan0, at first
+## NETGEAR WG111v2 in heighest off board back USB port
+### wlan0, at first
 ip link   reports   wlan0 UP
-### iwctl
+#### iwctl
 device list   shows   wlan0
 station wlan0 get-networks   listed   Moto G (4) 1367   among others, and live updates
 (should be double quotes) station wlan0 connect 'Moto G (4) 1367' > Passphrase
 device wlan0 show
 station wlan0 show
-### get internet
+#### get internet
 sudo dhcpcd wlan0   got me the internet through
-#### attempt at wlan0 always live
+##### attempt at wlan0 always live
 sudo systemctl enable dhcpcd@wlan0   got me a symlink
   reboot  got a long start job for wlan0, then no internet...
 sudo systemctl disable dhcpcd@wlan0   removed the symlink
 reboot
-## wlp0s26f7u5, then wlan0
+### wlp0s26f7u5, then wlan0
 ip link   now reports   wlp0s26f7u5 UP
-### iwctl
+#### iwctl
 device list   shows   wlp0s26f7u5
 station wlp0s26f7u5 get-networks   listed   Xperia XA2_b31f   among others
 station wlp0s26f7u5 connect "Xperia XA2_b31f" > Passphrase
-#### get internet
+##### get internet
 sudo dhcpcd wlp0s26f7u5   got me the internet through
 reboot   it's no longer finding    Xperia XA2_b31f
-##### tweaks
+###### tweaks
 sudo ip link set wlp0s26f7u5 down
 sudo ip link set wlp0s26f7u5 up
-### noarp
+#### noarp
 cat /etc/dhcpcd.conf | grep noarp   returns nowt,
 echo "noarp" | sudo tee -a /etc/dhcpcd.conf
-### iwctl built-in network configuration unsuccessful
+#### iwctl built-in network configuration unsuccessful
 sudo dhcpcd -k wlp0s26f7u5
 sudo sed -i 's/# enable_network_config=False/enable_network_config=True/' /etc/iwd/main.conf
 reboot   ping worked immediately, but Chrome & Dropbox don't connect, so
 sudo sed -i 's/enable_network_config=True/# enable_network_config=False/' /etc/iwd/main.conf
 reboot
-### iwctl one-line check
+#### iwctl one-line check
 iwctl station wlp0s26f7u5 get-networks
-### systemctl enable dhcpcd trial
+#### systemctl enable dhcpcd trial
 sudo systemctl enable dhcpcd@wlp0s26f7u5   got me a symlink
-#### persistance
+##### persistance
 turned off  Xperia XA2_b31f  then on again, but no connection and it's not listed by  iwctl
-##### attempts
+###### attempts
 systemctl status dhcpcd@wlp0s26f7u5
 sudo systemctl stop dhcpcd@wlp0s26f7u5
 sudo systemctl disable dhcpcd@wlp0s26f7u5
@@ -1161,44 +1168,44 @@ systemctl status dhcpcd@wlan0
 sudo systemctl start dhcpcd@wlan0   doesn't complete:
   A dependency job for dhcpcd@wlan0.service failed. See 'journalctl -xe' for details.
 sudo systemctl disable dhcpcd@wlan0   removed a symlink
-### get internet
+#### get internet
 sudo dhcpcd wlan0   got me the internet through
-#### SSID interrupted
+##### SSID interrupted
 iwctl station wlp0s26f7u5 get-networks  not finding  Xperia XA2_b31f
 sudo dhcpcd -k wlan0
 sudo ip link set wlan0 down
 sudo ip link set wlan0 up
 sudo dhcpcd wlan0   got me the internet through
-# Scan.sh symlink
+## Scan.sh symlink
 sudo ln -s $DROPBOX/$AVT661/home-jo/Bash/Imagey/Scan.sh /usr/local/bin/Scan.sh
-# NETGEAR WG111v2 replugged in heighest off board back USB port
+## NETGEAR WG111v2 replugged in heighest off board back USB port
 ip link   reports it as  wlan0
 iwctl station wlan0 get-networks  shows it's connected to  Xperia XA2_b31f
 sudo dhcpcd wlan0   got me the internet through
-## systemd-networkd
+### systemd-networkd
 sudo systemctl enable systemd-networkd.service   got me 4 symlinks
 sudo systemctl status systemd-networkd.service
 sudo systemctl start systemd-networkd.service
-### rename the interface to wlwg111v2
+#### rename the interface to wlwg111v2
 sudo cp $DROPBOX/$AVT661/etc/systemd/10-wlwg111v2.link /etc/systemd/network/10-wlwg111v2.link
 reboot
 iwctl station wlwg111v2 get-networks   shows it's connected to  Xperia XA2_b31f
 sudo dhcpcd wlwg111v2   got me the internet through
 networkctl list
-# Thunderbird
+## Thunderbird
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (12) cmake-3.15.5-1  dhcpcd-8.1.1-1  ell-0.26-1  ffmpeg-1:4.2.1-3  harfbuzz-2.6.4-1  harfbuzz-icu-2.6.4-1  imagemagick-7.0.9.2-1  iwd-1.0-3  shared-mime-info-1.15-1  sudo-1.8.29-1  x264-3:0.157.r2980.34c06d1-1  x265-3.2.1-1
 sudo pacman -S thunderbird-i18n-en-gb   Packages (4) dbus-glib-0.110-1  mozilla-common-1.4-5  thunderbird-68.2.0-1  thunderbird-i18n-en-gb-68.2.0-1
-## schema.pl changed to symlink
+### schema.pl changed to symlink
 rm ~/.config/obmenu-generator/schema.pl
 ln -s $DROPBOX/$AVT661/home-jo/openbox/schema.pl ~/.config/obmenu-generator/schema.pl
-## Thunderbird Profile
+### Thunderbird Profile
 Ran it to generate ~/.thunderbird
-# SSID interrupted
+## SSID interrupted
 ip link   showed it's got   state DOWN
 sudo ip link set wlwg111v2 up   didn't work, so
   sudo ip link set wlwg111v2 down
   sudo ip link set wlwg111v2 up   got me internet
-# SSID interrupted again
+## SSID interrupted again
 (unneeded) sudo dhcpcd -k wlwg111v2
 sudo cp $DROPBOX/$AVT661/etc/systemd/25-wlwg111v2.network /etc/systemd/network/25-wlwg111v2.network
 reboot   then could ping, but nothing arriving in chrome...
@@ -1208,52 +1215,52 @@ sudo systemctl enable systemd-resolved.service   got me 2 symlinks
 (unneeded) sudo systemctl start systemd-resolved.service
 sudo dhcpcd -k wlwg111v2
 reboot   got me internet
-# SSID interrupted again
+## SSID interrupted again
 iwctl station wlan0 get-networks  reporting all but   Xperia XA2_b31f
   sudo dhcpcd wlwg111v2   didn't help,   reboot   got me internet
-# SSID interrupted again
+## SSID interrupted again
 iwctl station wlan0 get-networks  reporting all but   Xperia XA2_b31f
 sudo systemctl stop systemd-networkd.service   followed by
   sudo systemctl start systemd-networkd.service   didn't help
 sudo ip link set wlwg111v2 down   followed by   sudo ip link set wlwg111v2 up   got me internet
-# SSID interrupted again
+## SSID interrupted again
 sudo ip link set wlwg111v2 down   followed by   sudo ip link set wlwg111v2 up   got me internet
   implemented this in  ~/.bashrc  as function  doup
-# Opera
+## Opera
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
   gzip: stdin: not in gzip format
   Packages (16) chromium-78.0.3904.87-1  kmod-26-3  linux-5.3.8.1-1  mkinitcpio-27-1  texlive-bibtexextra-2019.52577-1  texlive-core-2019.52579-1  texlive-fontsextra-2019.52580-1  texlive-formatsextra-2019.51280-1  texlive-games-2019.52525-1  texlive-humanities-2019.52574-1  texlive-latexextra-2019.52575-1  texlive-music-2019.52275-1  texlive-pictures-2019.52499-1  texlive-pstricks-2019.52550-1  texlive-publishers-2019.52538-1  texlive-science-2019.52582-1
 sudo pacman -S opera   Packages (1) opera-64.0.3417.54-1
-# NeoMutt
+## NeoMutt
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (16) cryptsetup-2.2.2-1  iana-etc-20191030-1  ldb-1:1.5.6-1  libedit-20191025_3.1-1  libwbclient-4.10.10-1  opera-64.0.3417.83-1  pacman-5.2.1-1  python-virtualenvwrapper-4.8.4-2  qt5-base-5.13.2-1  qt5-imageformats-5.13.2-1  qt5-script-5.13.2-1  qt5-svg-5.13.2-1  qt5-tools-5.13.2-1  qt5-x11extras-5.13.2-1  re2-20191101-1  smbclient-4.10.10-1
 sudo pacman -S neomutt   Packages (5) gmime3-3.2.4-1  kyotocabinet-1.2.77-1  notmuch-runtime-0.29.2-1  xapian-core-1:1.4.13-1  neomutt-20191102-1
-# Thunderbird Profile
+## Thunderbird Profile
 moved out contents of ~/.thunderbird/3df0pcma.default-release
 in Play0:  7z x jav-HPP-pbxfgpuo.default.7z > pw   and contents copied over
-# muttrc
+## muttrc
 ~/.mutt/muttrc
-# OfflineIMAP
+## OfflineIMAP
 sudo pacman -S offlineimap   Packages (4) python2-rfc6555-0.0.0-1  python2-selectors2-2.0.1-2  python2-uritemplate-3.0.0-4  offlineimap-7.3.0-1
 cp /usr/share/offlineimap/offlineimap.conf.minimal ~/.offlineimaprc
-# LastPass CLI
+## LastPass CLI
 sudo pacman -S lastpass-cli   Packages (1) lastpass-cli-1.3.3-1
 logged in
-# gpg access to keyservers
+## gpg access to keyservers
 keep getting:
   gpg: error searching keyserver: Server indicated a failure
   gpg: keyserver search failed: Server indicated a failure
 follows my attempts to fix, later the problem dissappeared for a while
-## Dropbox public key
+### Dropbox public key
 gpg --search-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E   fails immediately
-## other attempts
+### other attempts
 gpg --keyserver pool.sks-keyservers.net --search-key A36B494F   fails immediately
-### dirmngr
+#### dirmngr
 sudo killall dirmngr
 ps -ef | grep dirmngr
 gpg --keyserver hkp://pool.sks-keyservers.net:80 --search-key A36B494F   fails immediately
 gpg --keyserver hkp://keyserver.ubuntu.com:80 --search-key 9A2FD067A2E3EF7B   fails immediately
 sudo pacman -Syyuu   Packages (13) adwaita-icon-theme-3.34.2-1  gcc-9.2.0-4  gcc-libs-9.2.0-4  git-2.24.0-1  mesa-19.2.3-1  opera-64.0.3417.92-1  orc-0.4.31-1  python-pyparsing-2.4.4-1  python2-pyparsing-2.4.4-1  systemd-243.78-2  systemd-libs-243.78-2  systemd-sysvcompat-243.78-2  xterm-350-1
-## firewalld
+### firewalld
 sudo firewall-cmd --info-zone=home
   home (active)
     target: default
@@ -1277,45 +1284,45 @@ sudo firewall-cmd --state
 sudo firewall-cmd --list-ports
 sudo systemctl stop firewalld   but still getting immediate gpg failure to access keyserver, so
   sudo systemctl start firewalld
-## more attempts
+### more attempts
 sudo gpg --search-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
   ...
   gpg: keybox '/root/.gnupg/pubring.kbx' created
   gpg: error searching keyserver: Server indicated a failure
   gpg: keyserver search failed: Server indicated a failure
-## try through TL-WR702N
-### stop systemd-resolved
+### try through TL-WR702N
+#### stop systemd-resolved
 sudo systemctl stop systemd-resolved.service
   gpg --keyserver hkp://keyserver.ubuntu.com:80 --search-key 9A2FD067A2E3EF7B   failed slowly
-### stop systemd-networkd
+#### stop systemd-networkd
 sudo systemctl stop systemd-networkd.service
   can ping, but nothing coming through to Chrome...
   gpg --keyserver hkp://keyserver.ubuntu.com:80 --search-key 9A2FD067A2E3EF7B   failed slowly
-### disable systemd-resolved
+#### disable systemd-resolved
 sudo systemctl disable systemd-resolved.service
 reboot   and could get internet through Chrome
-#### gpg quick connections
+##### gpg quick connections
 gpg --keyserver hkp://keyserver.ubuntu.com:80 --search-key 9A2FD067A2E3EF7B
 gpg --search-key A36B494F
 gpg --keyserver pool.sks-keyservers.net --search-key A36B494F
 gpg --search-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
 journalctl | grep dirmngr
-#### host
+##### host
 $ host keyserver.ubuntu.com
 keyserver.ubuntu.com has address 162.213.33.8
 keyserver.ubuntu.com has address 162.213.33.9
-### re-enable systemd-resolved
+#### re-enable systemd-resolved
 sudo systemctl enable systemd-resolved.service   got me 2 symlinks
 reboot
-### back to NETGEAR WG111v2 in heighest off board back USB port
+#### back to NETGEAR WG111v2 in heighest off board back USB port
 both host & gpg connecting as expected
-# gpg access to keyservers gone again - fix resolv.conf
+## gpg access to keyservers gone again - fix resolv.conf
 sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf   got it working
-# import sprbMb-Arch-private.asc
+## import sprbMb-Arch-private.asc
 in  /mnt/SDSSDA240G/Encrypted/Secure1/Networking/:
   gpg --import sprbMb-Arch-private.asc
 gpg --list-secret-keys   A56094AACA80D75BF1A64BF6842A4DEE13F327EF
-## update it
+### update it
 gpg --edit-key jharr >
   expire > 2y > y
     ...
@@ -1331,7 +1338,7 @@ gpg --edit-key jharr >
   key 1 > 2y > y
   uid 1 > sign
   save
-## get the keygrip
+### get the keygrip
 gpg --with-keygrip -K
   sec   rsa2048 2015-05-18 [SC] [expires: 2021-11-06]
         A56094AACA80D75BF1A64BF6842A4DEE13F327EF
@@ -1339,68 +1346,68 @@ gpg --with-keygrip -K
   uid           [ultimate] Joseph Harriott (sprbMb Arch) <jharr@ftml.net>
   ssb   rsa2048 2015-05-18 [E] [expires: 2021-11-06]
         Keygrip = 5EEFFB0B9BBF6A43B177E45A57F847A23E62380C
-## gpg-agent.conf symlink for passphrase
+### gpg-agent.conf symlink for passphrase
 ln -s $DROPBOX/$AVT661/home-jo/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 reboot
-## try to cache passphrase
+### try to cache passphrase
 /usr/lib/gnupg/gpg-preset-passphrase --preset CFC1B2EF8C745F99B57C4543F43FE34EC89E0B36 > pw
 gpg-connect-agent 'keyinfo --list' /bye
   S KEYINFO CFC1B2EF8C745F99B57C4543F43FE34EC89E0B36 D - - 1 P - - -
   S KEYINFO 5EEFFB0B9BBF6A43B177E45A57F847A23E62380C D - - - P - - -
-# gnupg.org
+## gnupg.org
 https://www.gnupg.org/  sometimes won't load.  Only fix I've yet found is a reboot.
-# gpgtar test (in Play0)
+## gpgtar test (in Play0)
 gpgtar -e -r jharr -o Actions.tar.gpg Actions.sh
 rm Actions.sh
 gpgtar --list-archive Actions.tar.gpg
   gpgtar: gpg: encrypted with 2048-bit RSA key, ID EF588D28EA790E9F, created 2015-05-18
   gpgtar: gpg:       "Joseph Harriott (sprbMb Arch) <jharr@ftml.net>"
   gpgtar: gpg: public key decryption failed: Inappropriate ioctl for device
-## get pinentry working
+### get pinentry working
 export GPG_TTY=$(tty)  then   gpgtar --list-archive Actions.tar.gpg   got the pinentry-curses screen
 gpgtar -d Actions.tar.gpg   got me  Actions.tar_1_/Actions.sh
-# try to cache gpg passphrase again
+## try to cache gpg passphrase again
 /usr/lib/gnupg/gpg-preset-passphrase --preset CFC1B2EF8C745F99B57C4543F43FE34EC89E0B36 > pw
 in Play 0:  gpgtar -d Actions.tar.gpg   still brought up the pinentry-curses dialogue...
-## test for gpg-agent.socket
+### test for gpg-agent.socket
 systemctl list-unit-files --type=socket   doesn't list it...
 systemctl --user status gpg-agent.socket
   ...
   Active: active (running)
 pstree   shows that  gpg-agent  is running
-# check systemd processes
+## check systemd processes
 ps -eaf | grep "[s]ystemd"
 pgrep systemd
 ps -A | grep systemd
 systemd-analyze
 systemctl list-unit-files --type=mount
-# gpg signatures
+## gpg signatures
 gpg2 --list-sigs
-# gpg test my keys
+## gpg test my keys
 echo "...seems to be working..." | gpg -ase -r sprbMb | gpg
 in Play 0:  gpgtar -d Actions.tar.gpg   worked without pinentry, so maybe the preset worked...
-# offlineimaprc symlink
+## offlineimaprc symlink
 Moved  ~/.offlineimaprc  to
   /$AVT661/home-jo/offlineimaprc   for
 ln -s $DROPBOX/$AVT661/home-jo/offlineimaprc ~/.offlineimaprc
-# OfflineIMAP version
+## OfflineIMAP version
 offlineimap -V
-# nnn
+## nnn
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (46) acl-2.2.53-2  adwaita-icon-theme-3.34.3-1  attr-2.4.48-2  bzip2-1.0.8-3  chromium-78.0.3904.97-1  cifs-utils-6.9-1  coreutils-8.31-3  curl-7.67.0-3  dav1d-0.5.1-1  dhcpcd-8.1.1-2  faad2-2.9.1-1  ffmpeg-1:4.2.1-4  findutils-4.7.0-2  fuse-common-3.8.0-1  fuse3-3.8.0-1  gawk-5.0.1-2  glslang-7.13.3496-1  grub-2:2.04-3  gvim-8.1.2268-1  imagemagick-7.0.9.2-3  intel-ucode-20191112-1  iso-codes-4.4-1  libcdio-paranoia-10.2+2.0.1-1  libdvdnav-6.0.1-1  libdvdread-6.0.2-1  libplacebo-1.21.0-1  librsvg-2:2.46.3+6+g4735bd07-1  libssh-0.9.2-1  libtiff-4.1.0-1  libxnvctrl-440.31-1  linux-5.3.11.1-1  mesa-19.2.3-2  mkinitcpio-27-2  mpv-1:0.30.0-4  neomutt-20191111-1  python-dbus-1.2.10-1  python-dbus-common-1.2.10-1  rubberband-1.8.2-3  shaderc-2019.0-3  shellcheck-0.7.0-49  thunderbird-68.2.2-1  thunderbird-i18n-en-gb-68.2.2-1  vamp-plugin-sdk-2.9.0-1  vim-runtime-8.1.2268-1  vlc-3.0.8-6  vulkan-icd-loader-1.1.127-1
 sudo pacman -S nnn   Packages (1) nnn-2.7-1
-# Xresources changed to symlink
+## Xresources changed to symlink
 rm ~/.Xresources  for  ln -s $DROPBOX/$AVT661/home-jo/Xresources/Xresources ~/.Xresources
-# xsel
+## xsel
 sudo pacman -S xsel   Packages (1) xsel-1.2.0.20160929-2
-## test
+### test
 xsel -bo
-# fzy
+## fzy
 sudo pacman -S fzy   Packages (1) fzy-1.0-1
 fzy -h
-# nnn plugins
+## nnn plugins
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh > jo's pw
 got me   /usr/local/bin/nlaunch
-# Compton
+## Compton
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
   Packages (4) intel-ucode-20191113-1  patch-2.7.6-8  psmisc-23.3-1  xz-5.2.4-2
 sudo pacman -S compton
@@ -1408,38 +1415,38 @@ sudo pacman -S compton
 compton &   got immediate high transparency of  urxvt, and greyed out the black desktop
 killall compton
 compton -CG &   could be used occasionally, but it slows down  Alt+Tab
-# tmux
-## AUR package updates
+## tmux
+### AUR package updates
 auracle sync
-### Dropbox v83.4.152
+#### Dropbox v83.4.152
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-84.4.170-1
-### qimgv-git
+having checked the PKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-84.4.170-1
+#### qimgv-git
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd qimgv-git   for   makepkg -sic   failed
-## tmux-bash-completion
+having checked the PKGBUILD,  cd qimgv-git   for   makepkg -sic   failed
+### tmux-bash-completion
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd tmux   for   makepkg -sic
+having checked the PKGBUILD,  cd tmux   for   makepkg -sic
   Packages (3) libevent-2.1.11-2  bash-completion-2.9-1  tmux-2.9_a-4
   Packages (1) tmux-bash-completion-r13.847eda6-1
-# Gmrun
+## Gmrun
 sudo pacman -S gmrun   Packages (1) gmrun-0.9.5w-1
-# Bash profile changed to symlink
+## Bash profile changed to symlink
 rm ~/.bash_profile   for  ln -s $DROPBOX/$AVT661/home-jo/Bash/bash_profile ~/.bash_profile
-# tmux tweaks
-## test for activation of vi mode
+## tmux tweaks
+### test for activation of vi mode
 echo $VISUAL
 echo $EDITOR
-## test for login shell
+### test for login shell
 echo $0
 shopt login_shell
-## tmux.conf
+### tmux.conf
 ln -s $DROPBOX/$AVT661/home-jo/Bash/tmux.conf ~/.tmux.conf
-# urxvt-perls
+## urxvt-perls
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (91) audit-2.8.5-6  avahi-0.7+18+g1b5f401-3  bind-tools-9.14.7-4  boost-libs-1.71.0-4  brotli-1.0.7-3  btrfs-progs-5.3.1-3  chromium-78.0.3904.97-2  firewalld-0.8.0-1  flake8-1:3.7.9-1  gobject-introspection-runtime-1.62.0-3  gpgme-1.13.1-3  gvim-8.1.2268-2  harfbuzz-2.6.4-2  harfbuzz-icu-2.6.4-2  icu-65.1-2  iotop-0.6-7  ldb-1:1.5.6-2  libblockdev-2.23-3  libbytesize-2.1-3  libcdr-0.1.5-3  libe-book-0.1.3-6  libibus-1.5.21-3  libixion-0.14.1-5  libmspub-0.1.4-6  liborcus-0.14.1-5  libproxy-0.4.15-13  libqxp-0.0.2-3  libreoffice-fresh-6.3.2-4  libsynctex-2019.51075-4  libutil-linux-2.34-6  libvisio-0.1.7-2  libvoikko-4.3-1  libwbclient-4.10.10-2  libxml2-2.9.9-6  libzmf-0.0.2-7  llvm-libs-9.0.0-4  mesa-19.2.4-1  meson-0.52.0-4  nftables-1:0.9.2-2  notmuch-runtime-0.29.2-3  opencv-4.1.2-4  openexr-2.4.0-6  perl-5.30.1-1  poppler-0.82.0-1  pygobject-devel-3.34.0-3  python-3.8.0-1  python-appdirs-1.4.3-5  python-attrs-19.3.0-3  python-dbus-1.2.12-1  python-dbus-common-1.2.12-1  python-decorator-4.4.1-1  python-entrypoints-0.3-3  python-gobject-3.34.0-3  python-html2text-2019.8.11-3  python-mccabe-0.6.1-4  python-packaging-19.2-5  python-pycodestyle-2.5.0-3  python-pyflakes-2.1.1-3  python-pyparsing-2.4.4-2  python-setuptools-1:41.2.0-5  python-six-1.13.0-2  python-slip-0.6.5-4  python-stevedore-1.31.0-3  python-virtualenv-16.1.0-3  python-virtualenv-clone-0.5.3-3  python-virtualenvwrapper-4.8.4-3  python-xdg-0.26-4  python2-appdirs-1.4.3-5  python2-packaging-19.2-5  python2-pyparsing-2.4.4-2  python2-rfc6555-0.0.0-2  python2-selectors2-2.0.1-4  python2-setuptools-1:41.2.0-5  python2-six-1.13.0-2  python2-uritemplate-3.0.0-6  python2-virtualenv-16.1.0-3  qt5-base-5.13.2-2  raptor-2.0.15-12  reflector-2019.10-2  smbclient-4.10.10-2  talloc-2.2.0-3  tdb-1.3.18-4  tevent-1:0.9.39-4  texlive-bin-2019.51075-4  thunderbird-68.2.2-2  trash-cli-0.17.1.14-5  util-linux-2.34-6  vim-runtime-8.1.2268-2  volume_key-0.3.12-2  xcb-proto-1.13-4  xfsprogs-5.2.1-2
-### pacnews
+#### pacnews
 su > root pw  for  fs pacnew
-## firewalld.conf.pacnew
+### firewalld.conf.pacnew
 cd /etc/firewalld  for  diff -y firewalld.conf firewalld.conf.pacnew
   shows that AutomaticHelpers section is removed
 sudo mv firewalld.conf firewalld.conf.old
@@ -1449,7 +1456,7 @@ firewall-cmd --get-default-zone   reports  "public"
 sudo firewall-cmd --set-default-zone=home   Error: COMMAND_FAILED: '{"chain": "raw_PREROUTING_ZONES", "expr": [{"goto": {"target": "raw_PRE_public"}}], "family": "inet", "table": "firewalld"}'
 firewall-cmd --get-default-zone   reports  "home"
 reboot
-### check firewalld
+#### check firewalld
 sudo firewall-cmd --state
   running
 sudo firewall-cmd --info-zone=home
@@ -1466,89 +1473,233 @@ sudo firewall-cmd --info-zone=home
     source-ports: 
     icmp-blocks: 
     rich rules: 
-## urxvt-perls
+### urxvt-perls
 sudo pacman -S urxvt-perls   Packages (1) urxvt-perls-2.2-2
-## xdg-open snag
+### xdg-open snag
 can only open chromium directly, and
   $ xdg-open https://archlinux.org   reports "/usr/bin/python3: No module named Mimeo"
 sudo pacman -Rs mimeo   Packages (2) python-xdg-0.26-4  mimeo-2019.7-1
-### mimeo
+#### mimeo
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd mimeo   for   makepkg -sic
+having checked the PKGBUILD,  cd mimeo   for   makepkg -sic
   Packages (1) python-xdg-0.26-4   Packages (1) mimeo-2019.7-1
 xdg-open https://archlinux.org   opened in chromium
-# qimgv-git
+## qimgv-git
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd qimgv-git   for   makepkg -sic
+having checked the PKGBUILD,  cd qimgv-git   for   makepkg -sic
    Packages (1) qimgv-git-v0.8.8.r12.g6e84931-1
-# tmux.conf symlink fixed
+## tmux.conf symlink fixed
 rm ~/.tmux.conf
 ln -s $DROPBOX/$AVT661/home-jo/terminal/tmux.conf ~/.tmux.conf
-# urxvt-perls
+## urxvt-perls
 rm ~/.urxvt/ext/xresources-256
 ln -s $DROPBOX/$AVT661/home-jo/terminal/urxvtPerls/xresources-256 ~/.urxvt/ext/xresources-256
 ln -s $DROPBOX/$AVT661/home-jo/terminal/urxvtPerls/resize-font ~/.urxvt/ext/resize-font
 ln -s $DROPBOX/$AVT661/home-jo/terminal/urxvtPerls/autocomplete-ALL-the-things ~/.urxvt/ext/autocomplete-ALL-the-things
-# Transmission
+## Transmission
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (6) dhcpcd-8.1.2-1  libreoffice-fresh-6.3.3-1  libreoffice-fresh-en-gb-6.3.3-1  python-pyparsing-2.4.5-1  python2-pyparsing-2.4.5-1  shellcheck-0.7.0-51
 sudo pacman -S transmission-qt   Packages (1) transmission-qt-2.94-2
-# root trustdb.gpg
+## root trustdb.gpg
 (as root) gpg -K   got me (unneeded)   gpg: /root/.gnupg/trustdb.gpg: trustdb created
-# figlet
+## figlet
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (5) copyq-3.9.3-1  gmime3-3.2.5-1  intel-ucode-20191115-1  iwd-1.1-2  shellcheck-0.7.0-54
-## figlet-fonts
+### figlet-fonts
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd qimgv-git   for   makepkg -sic   Packages (1) figlet-2.2.5-3
+having checked the PKGBUILD,  cd qimgv-git   for   makepkg -sic   Packages (1) figlet-2.2.5-3
   Packages (1) figlet-fonts-1.0-3
-# lynx
+## lynx
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
   :: Replace compton with community/picom? [Y/n]
   Packages (4) compton-7.4-1 [removal]  imagemagick-7.0.9.4-1  picom-7.4-1  screenfetch-3.9.1-1
 picom -CG &   could be used occasionally, but it slows down  Alt+Tab
-## Picom fail
+### Picom fail
 ln -s $DROPBOX/$AVT661/home-jo/picom.conf ~/.picom.conf
 picom -CGb
   doesn't bring transparency to urxvt
   grey's out desktop background, except in Conky
 killall picom
-### remove Picom
+#### remove Picom
 sudo pacman -Rs picom
   Packages (4) libconfig-1.7.2-2  libev-4.27-1  libxdg-basedir-1.2.0-4  picom-7.4-1
-## lynx
+### lynx
 sudo pacman -S lynx   Packages (1) lynx-2.8.9-2
-# mutt-wizard-git
+## mutt-wizard-git
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
   Packages (2) imagemagick-7.0.9.5-1  shellcheck-0.7.0-55
-## AUR package updates
+### AUR package updates
 auracle sync
-### Dropbox v85.4.155
+#### Dropbox v85.4.155
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-85.4.155-1
-## mutt-wizard-git
+having checked the PKGBUILD,  cd dropbox   for   makepkg -sic   Packages (1) dropbox-85.4.155-1
+### mutt-wizard-git
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PCKGBUILD,  cd mutt-wizard-git    for   makepkg -sic
+having checked the PKGBUILD,  cd mutt-wizard-git    for   makepkg -sic
   Packages (6) gsasl-1.8.1-1  tree-1.8.0-1  xclip-0.13-2  isync-1.3.1-1  msmtp-1.8.6-1  pass-1.7.3-1
   Packages (1) mutt-wizard-git-r698.g8a41a9a-1
-# Cmus
+## Cmus
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (140) archlinux-keyring-20191018-2  argon2-20190702-2  autoconf-2.69-6  automake-1.16.1-2  bash-5.0.011-2  binutils-2.33.1-2  bison-3.4.2-2  ca-certificates-20181109-2  ca-certificates-mozilla-3.47-2  ca-certificates-utils-20181109-2  cracklib-2.9.7-2  db-5.3.28-5  dbus-1.12.16-3  device-mapper-2.02.186-3  diffutils-3.7-3  dmraid-1.0.0.rc16.3-12  dnssec-anchors-20190629-2  dosfstools-4.1-3  e2fsprogs-1.45.4-2  ed-1.15-2  expat-2.2.9-2  fakeroot-1.24-2  file-5.37-4  filesystem-2019.10-2  flex-2.6.4-3  gdbm-1.18.1-3  gettext-0.20.1-3  glib2-2.62.2-2  glibc-2.30-3  gmp-6.1.2-3  gnupg-2.2.17-3  gnutls-3.6.10-2  gpm-1.20.7.r27.g1fd1941-2  grep-3.3-3  groff-1.22.4-2  gzip-1.10-3  hdparm-9.58-3  hwids-20191025-2  inetutils-1.9.4-8  iproute2-5.3.0-2  iptables-1:1.8.3-3  iputils-20190709-2  iw-5.3-2  jfsutils-1.1.15-7  json-c-0.13.1-3  kbd-2.2.0-5  keyutils-1.6.1-2  krb5-1.17-2  ldns-1.7.1-2  less-551-3  libaio-0.3.112-2  libarchive-3.4.0-3  libassuan-2.5.3-2  libcap-2.27-2  libcap-ng-0.7.9-2  libelf-0.177-2  libevent-2.1.11-3  libffi-3.2.1-4  libgcrypt-1.8.5-2  libgpg-error-1.36-3  libidn-1.35-2  libidn2-2.3.0-1  libksba-1.3.5-2  libldap-2.4.48-2  libmnl-1.0.4-3  libmpc-1.1.0-2  libnftnl-1.1.4-2  libnghttp2-1.39.2-2  libnl-3.5.0-2  libnsl-1.2.0-2  libpcap-1.9.1-2  libpipeline-1.5.1-2  libpsl-0.21.0-2  libsasl-2.1.27-2  libseccomp-2.4.1-3  libsecret-0.19.1-2  libssh2-1.9.0-2  libtasn1-4.14-3  libtirpc-1.1.4-2  libtool-2.4.6+42+gb88cebd5-7  libunistring-0.9.10-2  libusb-1.0.23-2  licenses-20191011-2  linux-api-headers-5.3.1-2  linux-firmware-20191022.2b016af-3  logrotate-3.15.1-2  lvm2-2.02.186-3  lz4-1:1.9.2-2  lzo-2.10-3  m4-1.4.18-3  make-4.2.1-4  man-pages-5.03-2  mdadm-4.1-2  minizip-1:1.2.11-4  mkinitcpio-busybox-1.30.1-2  mlocate-0.26.git.20170220-2  mpfr-4.0.2-2  nano-4.5-2  ncurses-6.1-7  netctl-1.20-2  nettle-3.5.1-2  npth-1.6-2  nspr-4.23-2  nss-3.47-2  openresolv-3.9.2-2  openssh-8.1p1-2  openssl-1.1.1.d-2  p11-kit-0.23.18.1-2  pacman-mirrorlist-20191001-2  pam-1.3.1-2  pambase-20190105.1-2  pciutils-3.6.2-2  pcre-8.43-2  pcre2-10.33-2  pinentry-1.1.0-5  pkgconf-1.6.3-3  popt-1.16-11  procps-ng-3.3.15-2  psmisc-23.3-2  readline-8.0.001-2  reiserfsprogs-3.6.27-3  run-parts-4.8.6.1-2  s-nail-14.9.15-2  sed-4.7-3  shadow-4.7-3  sqlite-3.30.1-2  sysfsutils-2.1.0-11  tar-1.32-3  texinfo-6.7-2  thin-provisioning-tools-0.8.5-3  tzdata-2019c-3  usbutils-012-2  vi-1:070224-4  which-2.21-5  wireless_tools-30.pre9-3  xf86-video-intel-1:2.99.917+895+gcb6bff95-1  xfsprogs-5.2.1-3  xterm-351-1  zlib-1:1.2.11-4  zstd-1.4.3-2
 sudo pacman -S cmus   Packages (2) libdiscid-0.6.2-2  cmus-2.8.0-3
-# fix urxvt-perls symlinks
+## fix urxvt-perls symlinks
 rm ~/.urxvt/ext/autocomplete-ALL-the-things; ln -s $DROPBOX/$AVT661/home-jo/urxvt/Perls/autocomplete-ALL-the-things ~/.urxvt/ext/autocomplete-ALL-the-things; rm ~/.urxvt/ext/resize-font; ln -s $DROPBOX/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/urxvt/Perls/resize-font ~/.urxvt/ext/resize-font; rm ~/.urxvt/ext/xresources-256; ln -s $DROPBOX/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/urxvt/Perls/xresources-256 ~/.urxvt/ext/xresources-256
-# Tmux Resurrect
+## Tmux Resurrect
 in  $DROPBOX/$AVT661/home-jo/tmux/Plugins
   git clone https://github.com/tmux-plugins/tmux-resurrect
-# tmux.conf symlink fixed
+## tmux.conf symlink fixed
 rm ~/.tmux.conf; ln -s $DROPBOX/$AVT661/home-jo/tmux/tmux.conf ~/.tmux.conf
-# sysstat
+## sysstat
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
   Packages (3) chromium-78.0.3904.108-1  sane-1.0.28-2  tig-2.5.0-1
 sudo pacman -S sysstat   Packages (1) sysstat-12.1.7-1
-# tmux global session options
+## tmux global session options
 in  $DROPBOX/JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch/tmux/:
   tmux show-options -g > jbk-globalSessionOptions.txt
+## Mutt Wizard
+### initialise pass
+pass init jharr@ftml.net
+  mkdir: created directory '/home/jo/.password-store/'
+  Password store initialized for jharr@ftml.net
+### add gmx
+renamed  ~/Mail to oldMail   for   mw add
+  Do you want to keep your mail for this account offline with mbsync? yes
+  harriott@gmx.com
+    Congrats! Server info has automatically been found, so you won't have to look anything up!
+        IMAP server: imap.gmx.net
+        IMAP port: 993
+        SMTP server: mail.gmx.net
+        SMTP port: 587
+  Real name: Joseph Harriott
+  Account name: gmx
+  Enter password for mutt-wizard-gmx: gmx pw
+  You should now be able to run `mbsync gmx` to begin to download your mail.
+mw ls   reported   1: gmx
+got me   ~/.config/mutt/muttrc  &  ~/.config/msmtp/config  &  ~/.mbsyncrc  &  ~/.notmuch-config
+### moved my OfflineIMAP configurations out to /mnt/HD103SJ/Share-More/jbc-OfflineIMAP-gmx
+## preparing for urlview
+in a tmux pane, began logging for   sudo pacman -Syu   Packages (61) alsa-lib-1.2.1.1-1  alsa-utils-1.2.1-1  bind-tools-9.14.8-1  blas-3.9.0-2  ca-certificates-mozilla-3.47.1-1  cblas-3.9.0-2 expac-10-1  faad2-2.9.1-2  gc-8.0.4-3  glib2-2.62.3-1  glslang-7.13.3496-2  gnupg-2.2.18-1  gtk-update-icon-cache-1:3.24.13-1 gtk3-1:3.24.13-1  gvfs-1.42.2-1  haskell-aeson-1.4.6.0-3  haskell-attoparsec-0.13.2.3-3  haskell-diff-0.4.0-1 haskell-time-compat-1.9.2.2-13  haskell-unordered-containers-0.2.10.0-19  iana-etc-20191123-1  imlib2-1.6.0-1 intel-ucode-20191115-2  iproute2-5.4.0-1  keyutils-1.6.1-3  lapack-3.9.0-2  libepoxy-1.5.4-1  libgusb-0.3.1-1 librsvg-2:2.46.4-1  libtasn1-4.15.0-1  libtool-2.4.6+42+gb88cebd5-8  libutil-linux-2.34-8  libxml2-2.9.10-1 libxnvctrl-440.36-1  libxslt-1.1.34-1  linux-5.3.13.1-1  man-pages-5.04-1  mesa-19.2.6-1  mono-6.4.0.198-1  nss-3.47.1-1 opera-65.0.3467.48-1  pcre2-10.34-1  popt-1.16-12  python-dbus-1.2.14-1  python-dbus-common-1.2.14-1 python-ordered-set-3.1.1-1  python-setuptools-1:41.6.0-1  python2-ordered-set-3.1.1-1  python2-setuptools-1:41.6.0-1 qt5-base-5.13.2-3  shellcheck-0.7.0-64  systemd-243.162-2  systemd-libs-243.162-2  systemd-sysvcompat-243.162-2 talloc-2.3.0-1  tmux-3.0-1  util-linux-2.34-8  x264-3:0.157.r2980.34c06d1-2  xapian-core-1:1.4.14-1  xorg-server-1.20.6-1 xorg-server-common-1.20.6-1
+### AUR package updates
+auracle sync   reports   autojump   now in AUR
+#### preparing for autojump
+in  ~/Arch/AUR/:  tweaked  AURclones.sh
+### Tmux Resurrect snag with tmux 3.0
+in a tmux pane, began logging for   sudo pacman -Syu   Packages (1) tmux-3.0-2
+## 191128 Backup
+when plugging in  SDUII4GB  get "unkown filesystem type 'vfat'", so rebooted
+clear Downloads folder & Trash for:  halt -p
+boot  to KSE98GB containing ARCH_201911 > Del to enter CMOS Setup Utility
+  1st Boot Device > Generic USB SD Reader  still booted to  SDSSDA240G...
+  Hard Disk Drives > 1st Drive > Kingston DataTraveler
+  cd /
+  lsblk -f   indicated:
+    ls mnt
+    mount dev/sda2 mnt
+    ls mnt/home
+    mount dev/sda3 mnt/home
+    ls mnt/mnt/SDSSDA240G
+    mount dev/sda5 mnt/mnt/SDSSDA240G
+    ls mnt/mnt/9QG2FFEE
+    mount dev/sdc1 mnt/mnt/9QG2FFEE
+  cd mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build
+  bash rsyncBackup.sh
+reboot > Del > to enter CMOS Setup Utility > Hard Disk Drives > 1st Drive > P0-SanDisk SDSSDA24
+# urlview
+## AUR package updates
+auracle sync
+### finish autojump
+in  ~/Arch/AUR/:  bash -x AURclones.sh
+having checked the PKGBUILD,  cd autojump    for   makepkg -sic
+  Please manually add the following line(s) to ~/.bashrc:
+    [[ -s /home/jo/Arch/AUR/autojump/pkg/autojump/etc/profile.d/autojump.sh ]] && source /home/jo/Arch/AUR/autojump/pkg/autojump/etc/profile.d/autojump.sh
+  Please restart terminal(s) before running autojump.
+  ...
+  Packages (1) autojump-22.5.3-5
+### mimeo fail
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd mimeo
+  in a tmux pane, began logging for   makepkg -sic
+    curl: (6) Could not resolve host: xyne.archlinux.ca
+#### update mirrors
+sudo reflector --country France --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+cat /etc/pacman.d/mirrorlist   shows it's captured 6 Servers
+sudo pacman -Syyuu
+#### mimeo retry
+"It's not just you! xyne.archlinux.ca is down."
+### mutt-wizard-git
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd mutt-wizard-git    for   makepkg -sic
+  Packages (1) mutt-wizard-git-r718.g569bda9-1
+## urlview
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd urlview    for   makepkg -sic
+## tmux.conf symlink reset
+ln -sf $DROPBOX/$AVT661/home-jo/tmux/tmux.conf ~/.tmux.conf
+## urlview set default pages to chromium
+sudo sed -i 's#X11R6/bin/netscape#bin/chromium#' /etc/urlview/url_handler.sh
+sudo sed -i 's#lynx:XT /usr/bin/chromium:XW#chromium:XW /usr/bin/lynx:XT#' /etc/urlview/url_handler.sh
+# Mutt Wizard
+in gmx  o (= run mbsync to sync gmx) fails with
+  "/usr/bin/mailsync: line 51: STATUSBAR: parameter null or not set"
+mw delete > 1 (gmx) > y > y
+## add gmx
+mw add
+  Do you want to keep your mail for this account offline with mbsync? yes
+  harriott@gmx.com
+    Congrats! Server info has automatically been found, so you won't have to look anything up!
+        IMAP server: imap.gmx.net
+        IMAP port: 993
+        SMTP server: mail.gmx.net
+        SMTP port: 587
+  Real name: Joseph Harriott
+  Account name: gmx
+  Enter password for mutt-wizard-gmx: gmx pw
+  You should now be able to run `mbsync gmx` to begin to download your mail.
+mw ls   reported   1: gmx
+neomutt reports "no mailbox"
+### purge
+mw purge
+rm ~/.config/mutt/muttrc
+rm ~/.notmuch-config
+### add gmx again
+mw add
+  Do you want to keep your mail for this account offline with mbsync? yes
+  harriott@gmx.com
+    Congrats! Server info has automatically been found, so you won't have to look anything up!
+        IMAP server: imap.gmx.net
+        IMAP port: 993
+        SMTP server: mail.gmx.net
+        SMTP port: 587
+  Real name: Joseph Harriott
+  Account name: gmx
+  Enter password for mutt-wizard-gmx: gmx pw
+  You should now be able to run `mbsync gmx` to begin to download your mail.
+mw ls   reported   1: gmx
+neomutt  works now, because  ~/.config/mutt/muttrc  has this line:
+  source /home/jo/.config/mutt/accounts/1-gmx.muttrc # mw-autogenerated
+mailsync still failing...
+# AUR package updates
+(should've done a pacman -Syu before this) auracle sync
+## mimeo
+in  ~/Arch/AUR/mimeo
+  in a tmux pane, began logging for   makepkg -sic   Packages (1) mimeo-2019.7-2
+xdg-open https://archlinux.org   opened in chromium
+## xdg-utils-mimeo
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd xdg-utils-mimeo
+  in a tmux pane, began logging for   makepkg -sic
+    Packages (1) xdg-utils-mimeo-1.1.3+18+g0547886-5
+# Updates
+sudo pacman -Syu   Packages (2) cmake-3.16.0-1  xf86-video-intel-1:2.99.917+897+g0867eea6-1
+# Neovim
+mkdir -p ~/.config/nvim
+## symlink vimrc's
+rm ~/.gvimrc; ln -s $DROPBOX/$AVT661/home-jo/gVim/gvimrc ~/.gvimrc
+rm ~/.vimrc; ln -s $DROPBOX/$AVT661/home-jo/gVim/vimrc ~/.vimrc
+### fix those
+ln -sf $DROPBOX/$AVT661/home-jo/Vim/gVim/gvimrc ~/.gvimrc
+ln -sf $DROPBOX/$AVT661/home-jo/Vim/gVim/vimrc ~/.vimrc
+## Neovim
+ln -s $DROPBOX/$AVT661/home-jo/Vim/init.vim ~/.config/nvim/init.vim
+sudo pacman -S neovim python-pynvim   Packages (10) libluv-1.30.1-1  libtermkey-0.22-1  libvterm-0.1.git5.4a5fa43-1  luajit-2.0.5-2  msgpack-c-3.2.0-1  python-greenlet-0.4.15-4  python-msgpack-0.6.2-3  unibilium-2.0.0-1  neovim-0.4.3-1  python-pynvim-0.4.0-1
 # waiting
-in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
-sudo pacman -Syu   for n Packages
 ## texlive-localmanager-git
 ## qpdfview
 ## an rtf set to Open with LibreOffice
@@ -1572,7 +1723,7 @@ sudo pacman -S lib32-mesa
 ## pqiv
 ## XnViewMP
 in  ~/Arch/AUR/ :  bash -x AURclones.sh
-  having checked the PCKGBUILD,  cd xnviewmp   for   makepkg -sic   cd ..
+  having checked the PKGBUILD,  cd xnviewmp   for   makepkg -sic   cd ..
 *.jpg > Properties > Open with > XnView
 ## Audacious
 ## Asunder
@@ -1604,8 +1755,9 @@ in  ~/Arch/AUR/ :  bash -x AURclones.sh
 ## Midori
 ## byobu
 ## youtube-dl
-## urlview-git
 ## OfflineIMAP removal
 rm ~/.offlineimaprc
 ## Screenkey
 ## pulseeffects
+## Vimiv
+## ncmpcpp
