@@ -21,4 +21,5 @@ urxvt*background: black
 *.color15: #ebdbb2
 
 ! this is a little loud, but easy to read eg cmus banners
+! neovim default has pink URLs and very faint folds
 

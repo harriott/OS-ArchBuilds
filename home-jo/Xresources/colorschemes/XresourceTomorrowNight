@@ -51,5 +51,7 @@
 *.color7:       t_selection
 *.color15:      t_current_line
 
-! a little cold, but readable neomutt, cmus, neovim, nnn
+! a little cold, but readable neomutt, neovim, nnn
+! cmus time-line is almost unreadable...
+! makes tmux look like gVim
 

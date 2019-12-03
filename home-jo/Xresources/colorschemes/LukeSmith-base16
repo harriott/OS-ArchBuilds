@@ -20,5 +20,5 @@ urxvt*background: black
 *.color14:      #86c1b9
 *.color15:      #f8f8f8
 
-nicely muted
+! nicely muted
 
