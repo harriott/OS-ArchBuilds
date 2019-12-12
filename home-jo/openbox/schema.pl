@@ -36,6 +36,7 @@ our $SCHEMA = [
     {item => ['xdg-open http://', 'Web Browser',  'web-browser']},
     {item => ['thunderbird',      'Mail',         'web-browser']},
     {item => ['gmrun',            'Run command',  'system-run']},
+    {item => ['quodlibet',        'Quod Libet',   'web-browser']},
 
     {sep => 'Categories'},
 

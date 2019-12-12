@@ -310,6 +310,12 @@
   </keybind>
 
   <!-- Keybindings for running applications -->
+  <!-- Keybinding to toggle Cmus play/pause - JH -->
+  <keybind key="W-c">
+    <action name="Execute">
+      <command>cmus-remote -u</command>
+    </action>
+  </keybind>
   <keybind key="W-e">
     <action name="Execute">
       <startupnotify>

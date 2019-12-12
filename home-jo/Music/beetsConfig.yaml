@@ -1,0 +1,14 @@
+# my Beets configuration file. Joseph Harriott
+
+directory: ~/BeetsMusic
+library: ~/.local/beetsLibrary.db
+
+import:
+    # copy: no
+    # write: no
+
+plugins: chroma
+
+# chroma:
+    # auto: no
+

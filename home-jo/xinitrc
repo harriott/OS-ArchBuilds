@@ -41,7 +41,7 @@ fi
 # ------------
 # JH additions
 # ------------
-export DROPBOX=/mnt/SDSSDA240G/Dropbox
+export DROPBOX=/mnt/SDSSDA240G/Dropbox # keep this capitalised for finding it without need for $
 export AVT661='JH/IT_stack/onGitHub/AcerVeritonT661'
 
 ## stop the 600s screensaver

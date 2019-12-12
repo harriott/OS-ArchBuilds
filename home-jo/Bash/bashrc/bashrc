@@ -37,6 +37,7 @@ source ~/.bashrc-files
 source ~/.bashrc-images
 
 # Internetish
+alias i='iwctl station wlwg111v2 get-networks'
 alias p='ping -c 3 8.8.8.8'
 alias pqs='pacman -Qs'
 
@@ -45,11 +46,9 @@ doup () {
   sudo ip link set wlwg111v2 up
 }
 
-OI () {
-offlineimap -a gmx & pid1=$!
-wait $pid1
-echo "Last execution: $(date)"
-}
+# email
+alias ms='mbsync fm; mbsync gmx'
+alias nmf='neomutt -F ~/.config/mutt/muttrc-fm'
 
 # System
 export GPG_TTY=$(tty)

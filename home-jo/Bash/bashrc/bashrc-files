@@ -11,12 +11,14 @@
 alias gpr='gprename &'
 alias rpd='bash $DROPBOX/JH/IT_stack/onGitHub/rsync-portabledrives/rsync.sh'
 alias l='ls --color=auto'
-alias m='cmus'
 alias pcm='pcmanfm & disown'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
 alias so="stat -c '%a %n'"
 alias sm="stat -c '%y %n'"
 shopt -s autocd dotglob extglob globstar nullglob
+
+# backup my Mutt Wizard files
+alias mwb='bash $DROPBOX/$AVT661/home-jo/Email/mwBackup.sh'
 
 # move up [n] directories
 up(){
@@ -32,6 +34,13 @@ up(){
   fi
   cd $dir
 }
+
+# cmus
+# ----
+alias m='cmus'
+
+# update library
+alias uc='bash $DROPBOX/$AVT661/home-jo/Music/cmusUpdateLibrary.sh'
 
 # Git
 # ---
