@@ -83,10 +83,10 @@ n()
 }
 
 # NNN_BMS can't handle variables in the path
-export NNN_BMS='l:/mnt/SDSSDA240G/Dropbox/JH/Work/ST/LPD/IdF;m:/mnt/SDSSDA240G/Dropbox/CAMusic;n:~/.config/nnn'
+export NNN_BMS='c:/mnt/HD103SJ/Share-IT-Copied/Unix-like;i:/mnt/SDSSDA240G/Dropbox/JH/Now/Technos/IT;l:/mnt/SDSSDA240G/Dropbox/JH/Work/ST/LPD/IdF;m:/mnt/SDSSDA240G/Dropbox/CAMusic;n:~/.config/nnn'
 export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
-export NNN_PLUG='c:fzcd;o:fzy-open'
+export NNN_PLUG='c:fzcd;o:fzy-open;t:treeview'
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
 
 # time-sorted lists of files

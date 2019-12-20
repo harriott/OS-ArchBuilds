@@ -1,4 +1,4 @@
-# vim: filetype=neomuttrc
+# muttrc-*  filetypes are set in  plugin/buffers.vim
 
 # tweaks to, and sourced by, mutt-wizard's ~/.config/mutt/muttrc
 # keep this for the rare occasions that you need to call neomutt directly

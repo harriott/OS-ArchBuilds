@@ -22,7 +22,7 @@ Channel fm
 Expunge Both
 Master :fm-remote:
 Slave :fm-local:
-Patterns "INBOX" "Archive" "Done" "Drafts" "Sent\ Items" "Junk\ Mail" "Trash" "Waiting"
+Patterns "INBOX" "Archive" "Drafts" "Sent\ Items" "Junk\ Mail" "Trash" "Waiting"
 Create Both
 SyncState *
 MaxMessages 0

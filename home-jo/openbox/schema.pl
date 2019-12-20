@@ -33,8 +33,11 @@ our $SCHEMA = [
     {item => ['xdg-open .',       'File Manager', 'system-file-manager']},
     {item => ['xterm',            'xterm',        'utilities-terminal']},
     {item => ['urxvt',            'rxvt-unicode', 'terminal']},
-    {item => ['xdg-open http://', 'Web Browser',  'web-browser']},
-    {item => ['thunderbird',      'Mail',         'web-browser']},
+    # {item => ['xdg-open http://', 'Web Browser',  'web-browser']},
+    {item => ['xdg-open http://', 'chromium',  'web-browser']},
+    {item => ['opera', 'opera',  'web-browser']},
+    # {item => ['thunderbird',      'Mail',         'web-browser']},
+    {item => ['thunderbird',      'Thunderbird',         'web-browser']},
     {item => ['gmrun',            'Run command',  'system-run']},
     {item => ['quodlibet',        'Quod Libet',   'web-browser']},
 

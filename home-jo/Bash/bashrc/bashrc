@@ -22,6 +22,7 @@ PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
 source /usr/share/doc/pkgfile/command-not-found.bash
 
 # for tmux
+export EDITOR=nvim
 export VISUAL=nvim
 
 # History
@@ -48,7 +49,8 @@ doup () {
 
 # email
 alias ms='mbsync fm; mbsync gmx'
-alias nmf='neomutt -F ~/.config/mutt/muttrc-fm'
+alias nmf='neomutt -F $DROPBOX/$AVT661/home-jo/Email/muttrc-fm'
+alias nmx='neomutt -F $DROPBOX/$AVT661/home-jo/Email/muttrc-gmx'
 
 # System
 export GPG_TTY=$(tty)
