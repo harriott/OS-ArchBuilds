@@ -11,7 +11,7 @@
 alias gpr='gprename &'
 alias rpd='bash $DROPBOX/JH/IT_stack/onGitHub/rsync-portabledrives/rsync.sh'
 alias l='ls --color=auto'
-alias pcm='pcmanfm & disown'
+alias pf='pcmanfm & disown'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
 alias so="stat -c '%a %n'"
 alias sm="stat -c '%y %n'"
@@ -83,7 +83,16 @@ n()
 }
 
 # NNN_BMS can't handle variables in the path
-export NNN_BMS='c:/mnt/HD103SJ/Share-IT-Copied/Unix-like;i:/mnt/SDSSDA240G/Dropbox/JH/Now/Technos/IT;l:/mnt/SDSSDA240G/Dropbox/JH/Work/ST/LPD/IdF;m:/mnt/SDSSDA240G/Dropbox/CAMusic;n:~/.config/nnn'
+export NNN_BMS='c:/mnt/HD103SJ/Share-IT-Copied;i:/mnt/SDSSDA240G/Dropbox/JH/Now/Technos/IT;j:/run/media/jo;l:/mnt/SDSSDA240G/Dropbox/JH/Work/ST/LPD/IdF;m:/mnt/SDSSDA240G/Dropbox/CAMusic;n:~/.config/nnn;s:/mnt/SDSSDA240G/Dropbox/JH/Copied/forWork/Education/Science-Engineering;z:/mnt/SDSSDA240G/Dropbox/JH/Work/France/IdF/Paris/19e/Cafezoide'
+#  c:/mnt/HD103SJ/Share-IT-Copied
+#  i:/mnt/SDSSDA240G/Dropbox/JH/Now/Technos/IT
+#  j:/run/media/jo
+#  l:/mnt/SDSSDA240G/Dropbox/JH/Work/ST/LPD/IdF
+#  m:/mnt/SDSSDA240G/Dropbox/CAMusic
+#  n:~/.config/nnn
+#  s:/mnt/SDSSDA240G/Dropbox/JH/Copied/forWork/Education/Science-Engineering
+#  z:/mnt/SDSSDA240G/Dropbox/JH/Work/France/IdF/Paris/19e/Cafezoide
+
 export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
 export NNN_PLUG='c:fzcd;o:fzy-open;t:treeview'

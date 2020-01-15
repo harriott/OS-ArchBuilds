@@ -9,14 +9,13 @@ lsof -i
 lsusb
 man hier
 networkctl list
+pass ls
 pgrep
 pstree
 sudo iotop -o
 sudo parted -l
 xrandr
 
-## available disk
-df -h
 ## fix this file
 :%s#mnt$DROPBOX/$AVT661#mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661#c
 
@@ -1387,8 +1386,7 @@ gpg2 --list-sigs
 echo "...seems to be working..." | gpg -ase -r sprbMb | gpg
 in Play 0:  gpgtar -d Actions.tar.gpg   worked without pinentry, so maybe the preset worked...
 ## offlineimaprc symlink
-Moved  ~/.offlineimaprc  to
-  /$AVT661/home-jo/offlineimaprc   for
+Moved  ~/.offlineimaprc  to   $DROPBOX/$AVT661/home-jo/offlineimaprc   for
 ln -s $DROPBOX/$AVT661/home-jo/offlineimaprc ~/.offlineimaprc
 ## OfflineIMAP version
 offlineimap -V
@@ -1807,6 +1805,86 @@ having checked the PKGBUILD,  cd dropbox
   in a tmux pane, began logging for   makepkg -sic  Packages (1) dropbox-87.4.138-1
 ## youtube-dl
 sudo pacman -S youtube-dl   Packages (1) youtube-dl-2019.11.28-1
+# JH.sty
+kpsewhich -var-value=TEXMFHOME   reports   /home/jo/texmf
+mkdir ~/texmf/tex/latex/jo
+ln -s /mnt/SDSSDA240G/Dropbox/JH/JH.sty ~/texmf/tex/latex/jo/JH.sty
+# PhotoCollage
+## Updates
+sudo pacman -Syu
+### Xorg cleanup snag
+:: python-pyqt5 and pyqt5-common are in conflict. Remove pyqt5-common? [y/N] y
+error: failed to prepare transaction (could not satisfy dependencies)
+:: installing xorgproto (2019.2-2) breaks dependency 'dmxproto' required by libdmx
+:: installing xorgproto (2019.2-2) breaks dependency 'xf86dgaproto' required by libxxf86dga
+### Xorg cleanup check
+pqs libdmx   reports   local/libdmx 1.1.4-1
+pqs libxxf86dga   reports   local/libxxf86dga 1.1.5-1
+pqs libxxf86misc   reports nothing
+### Xorg cleanup
+sudo pacman -Rdd libdmx libxxf86dga && pacman -Syu
+  Packages (2) libdmx-1.1.4-1  libxxf86dga-1.1.5-1
+error: you cannot perform this operation unless you are root  - should've had another sudo in there
+sudo pacman -Syu
+  :: python-pyqt5 and pyqt5-common are in conflict. Remove pyqt5-common? [y/N] y
+  Packages (93) archlinux-keyring-20191219-1  bind-tools-9.14.9-1  chromium-79.0.3945.88-2  device-mapper-2.02.186-4  dhcpcd-8.1.4-1  ell-0.27-1  expat-2.2.9-3  git-2.24.1-4  glib2-2.62.4-1  groff-1.22.4-3  grub-2:2.04-5  gvim-8.2.0033-1  haskell-aeson-1.4.6.0-6  haskell-attoparsec-0.13.2.3-6  haskell-base-compat-0.11.0-1  haskell-base-orphans-0.8.1-24  haskell-dlist-0.8.0.7-6  haskell-quickcheck-2.13.2-10  haskell-splitmix-0.0.3-7  haskell-time-compat-1.9.2.2-16  haskell-unordered-containers-0.2.10.0-22  haskell-vector-0.12.0.3-20  imagemagick-7.0.9.13-1  iwd-1.4-1  libarchive-3.4.1-1  libedit-20191211_3.1-1  libevdev-1.8.0-2  libevent-2.1.11-4  libice-1.0.10-2  libieee1284-0.2.11-8  libjpeg-turbo-2.0.4-1  libtirpc-1.2.5-1  libva-2.6.0-1  libvpx-1.8.2-1  libwacom-1.2-1  libx11-1.6.9-6  libxau-1.0.9-2  libxcomposite-0.4.5-2  libxdamage-1.1.5-2  libxdmcp-1.1.3-2  libxext-1.3.4-2  libxfixes-5.0.3-3  libxfont2-2.0.4-2  libxi-1.7.10-2  libxinerama-1.1.4-2  libxrandr-1.5.2-2  libxrender-0.9.10-3  libxss-1.2.3-2  libxtst-1.2.3-3  libxv-1.0.11-3  libxxf86vm-1.1.4-3  linux-5.4.7.arch1-1  linux-firmware-20191220.6871bff-1  llvm-libs-9.0.1-1  lvm2-2.02.186-4  md4c-0.4.2-1  mpv-1:0.31.0-1  msmtp-1.8.7-1  msmtp-mta-1.8.7-1  nano-4.7-1  nomacs-3.12-9  offlineimap-7.3.2-1  openbox-3.6.1-6  opencv-4.2.0-1  pacman-contrib-1.3.0-1  pyqt5-common-5.13.2-3 [removal]  python-3.8.1-1  python-pyparsing-2.4.6-1  python-pyqt5-5.14.0-3  python-setuptools-1:42.0.2-1  python2-pyparsing-2.4.6-1  python2-setuptools-1:42.0.2-1  python2-uritemplate-3.0.1-1  qt5-base-5.14.0-1  qt5-imageformats-5.14.0-1  qt5-script-5.14.0-1  qt5-svg-5.14.0-1  qt5-tools-5.14.0-2  qt5-x11extras-5.14.0-1  re2-20200101-1  s-nail-14.9.16-1  shellcheck-0.7.0-83  talloc-2.3.1-1  thunderbird-68.3.1-1  thunderbird-i18n-en-gb-68.3.1-1  v4l-utils-1.18.0-1  vim-runtime-8.2.0033-1  vulkan-icd-loader-1.1.130-1  xorg-server-1.20.6-2  xorg-server-common-1.20.6-2  xorg-xdpyinfo-1.3.2-3  xorgproto-2019.2-2  youtube-dl-2020.01.01-1
+## virtualenv photocollage
+mkvirtualenv photocollage
+  Using base prefix '/usr'
+  New python executable in /home/jo/.virtualenvs/photocollage/bin/python
+  Installing setuptools, pip, wheel...
+  done.
+  virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/photocollage/bin/predeactivate
+  virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/photocollage/bin/postdeactivate
+  virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/photocollage/bin/preactivate
+  virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/photocollage/bin/postactivate
+  virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/photocollage/bin/get_env_details
+pip install photocollage
+### try PhotoCollage
+photocollage
+  Traceback (most recent call last):
+    File "/home/jo/.virtualenvs/photocollage/bin/photocollage", line 21, in <module>
+      from photocollage import gtkgui
+    File "/home/jo/.virtualenvs/photocollage/lib/python3.8/site-packages/photocollage/gtkgui.py", line 26, in <module>
+      import cairo
+  ModuleNotFoundError: No module named 'cairo'
+python -V   reports   Python 3.8.1
+pqs cairo   reports   python-cairo 1.18.2-3
+## PhotoCollage
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd photocollage
+  in a tmux pane, began logging for   makepkg -sic
+    Packages (2) libimagequant-2.12.5-1  python-pillow-6.2.1-1
+    Packages (1) photocollage-1.4.4-3
+# accidental hard shutdown
+systemd-shutdown[1]: Waiting for process: (sd-sync), bash, (sd-sync)   took ages
+  then other snags, but it got there...
+# accidental hard shutdown again
+went smoothly
+# firewalld firewall-applet appeared in tray
+right-click > Enable Notifications
+# Nikon CoolPix P7700
+plugged it in for   lsusb   which reported "Nikon Corp. NIKON DSC COOLPIX P7700-PTP"
+  but not visible in PcManFM, so unplugged it for
+## gphoto2
+### Updates
+sudo pacman -Syu   Packages (81) archlinux-keyring-20200108-1  ca-certificates-mozilla-3.49-1  cantarell-fonts-1:0.201-1  chromium-79.0.3945.117-1  cifs-utils-6.10-1  curl-7.68.0-1  device-mapper-2.02.186-5  dhcpcd-8.1.5-1  e2fsprogs-1.45.5-1  ffmpeg-1:4.2.2-1  file-5.38-1  git-2.25.0-1  glib-networking-2.62.3-1  glslang-8.13.3559-1  grep-3.4-1  gst-plugins-ugly-1.16.2-2  gvim-8.2.0100-1  haskell-aeson-1.4.6.0-8  haskell-attoparsec-0.13.2.3-8  haskell-base-orphans-0.8.1-27  haskell-dlist-0.8.0.7-8  haskell-quickcheck-2.13.2-12  haskell-splitmix-0.0.3-9  haskell-time-compat-1.9.2.2-18  haskell-unordered-containers-0.2.10.0-24  haskell-vector-0.12.0.3-22  iana-etc-20191231-1  imagemagick-7.0.9.16-1  intel-gmmlib-19.4.1-1  intel-media-driver-19.4.0.r-1  intel-media-sdk-19.4.0-1  iproute2-5.4.0-2  iptables-1:1.8.4-1  libcap-2.29-1  libedit-20191231_3.1-1  libevent-2.1.11-5  libglvnd-1.3.0-2  libgusb-0.3.1-2  libinput-1.15.0-1  libluv-1.32.0-1  libpipeline-1.5.2-1  libplacebo-1.21.0-2  libpulse-13.0-3  libreoffice-fresh-6.3.4-2  libsndfile-1.0.28-3  libsynctex-2019.51075-5  libuv-1.34.1-1  libwebp-1.1.0-1  linux-5.4.11.arch1-1  lvm2-2.02.186-5  mesa-19.3.2-2  meson-0.53.0-1  notmuch-runtime-0.29.3-2  nss-3.49-1  opera-66.0.3515.27-1  pacman-5.2.1-4  pacman-mirrorlist-20200103-1  poppler-0.84.0-1  python-3.8.1-3  python-packaging-20.0-1  python-pyqt5-5.14.1-1  python-setuptools-1:44.0.0-1  python2-packaging-20.0-1  python2-setuptools-1:44.0.0-1  rsync-3.1.3-2  s-nail-14.9.16-2  sane-1.0.28-3  shaderc-2019.0-4  shellcheck-0.7.0-88  sudo-1.8.30-1  texlive-bin-2019.51075-5  thunderbird-68.4.1-1  ttf-croscore-20190926-4  unibilium-2.0.0-2  vim-runtime-8.2.0100-1  vlc-3.0.8-8  wavpack-5.2.0-1  x264-3:0.159.r2991.1771b55-1  xorg-server-1.20.6-3  xorg-server-common-1.20.6-3  xvidcore-1.3.7-1
+sudo pacman -Syu   Packages (1) libimagequant-2.12.6-1
+### AUR package updates
+auracle sync
+#### Dropbox
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd dropbox   for   makepkg -sic  Packages (1) dropbox-88.4.172-1
+#### photocollage
+sudo pacman -Rs photocollage
+  Packages (3) libimagequant-2.12.6-1  python-pillow-6.2.1-1  photocollage-1.4.4-3
+### gphoto2
+sudo pacman -S gphoto2   Packages (1) gphoto2-2.5.23-1
+## gvfs-gphoto2
+sudo pacman -Syu   Packages (1) youtube-dl-2020.01.15-1
+sudo pacman -S gvfs-gphoto2   Packages (1) gvfs-gphoto2-1.42.2-1
+# pass insert jnbh
+then checked with   pass ls   pass jnbh
 # waiting
 ## texlive-localmanager-git
 ## qpdfview
@@ -1855,7 +1933,6 @@ in  ~/Arch/AUR/ :  bash -x AURclones.sh
 ## UNRAR
 ## Tesseract
 ## FreeCAD
-## Tree
 ## mtpfs
 ## RHash
 ## Midori

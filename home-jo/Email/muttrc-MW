@@ -45,14 +45,14 @@ unset confirmappend # don't ask of confirmation when moving emails
 bind attach <return> view-mailcap
 bind attach l view-mailcap
 bind editor <space> noop
-bind pager,attach h exit
+# bind pager,attach h exit
 bind pager j next-line
 bind pager k previous-line
 bind index D delete-message
 bind index U undelete-message
 bind index h noop
 bind index <space> tag-entry
-#bind browser h goto-parent
+# bind browser h goto-parent
 macro browser h '<change-dir><kill-line>..<enter>' "Go to parent folder"
 bind index,pager H view-raw-message
 bind browser l select-entry

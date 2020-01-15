@@ -14,6 +14,11 @@ Joseph's useful urxvt commands - http://momentary.eu/
     C+? => show
 
 # Searching
-    Alt+e => keyboard-select:activate
     Alt+s => scrollback search
+
+## keyboard-select
+    Alt+e => keyboard-select:activate
+
+- Cursor movements don't work in `cmus`, `neomutt pager`, or `nnn`.
+- Right end of status line shows "Bot" when it's active.
 

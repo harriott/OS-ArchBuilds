@@ -7,6 +7,7 @@
 # git clone https://aur.archlinux.org/autojump-git.git
 # git clone https://aur.archlinux.org/figlet-fonts.git
 # git clone https://aur.archlinux.org/iscan-plugin-gt-f500.git
+# git clone https://aur.archlinux.org/photocollage.git
 # git clone https://aur.archlinux.org/pnmixer-gtk3.git
 # git clone https://aur.archlinux.org/pyfil.git
 # git clone https://aur.archlinux.org/tmux-bash-completion.git
