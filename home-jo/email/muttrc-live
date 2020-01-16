@@ -1,0 +1,58 @@
+# muttrc-*  filetypes are set in  plugin/buffers.vim
+
+# my preferred configuration file for accessing  Fastmail
+# I prefer to call this through an alias in my  ~/.bashrc
+
+source $DROPBOX/$AVT661/home-jo/Email/muttrc-MW
+
+# this is developed to my preferences from  accounts/2-fm.muttrc  which was created by  Mutt Wizard
+#  mbsync live   using ~/.mbsyncrc
+#  msmtp  uses settings put by  Mutt Wizard  into  ~/.config/msmtp/config
+
+set realname = "Joseph Harriott"
+set from = $live
+set sendmail = "msmtp -a live"
+set folder = "/home/jo/.local/share/mail/live"
+set header_cache = /home/jo/.cache/mutt-wizard/live/headers
+set message_cachedir = /home/jo/.cache/mutt-wizard/live/bodies
+set mbox_type = Maildir
+
+bind index,pager gg noop
+bind index,pager g noop
+bind index gg first-entry
+
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set postponed = "+Drafts"
+set trash = "+Deleted"
+
+# if you make changes here, you probably need to clear your folders, and start afresh
+# rm -r ~/.cache/mutt-wizard/live/* ~/.local/share/mail/live/*
+# and fix  ~/.mbsyncrc  to correspond
+mailboxes "=Archive" "=Deleted" "=Drafts" "=INBOX" "=Junk" "=Sent" "=Waiting"
+# I needed the help of Thunderbird to find these folder names.
+
+# tweak the default status line to show  "->live":
+set status_format=" -%r-NeoMutt->live: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
+
+macro index,pager ga "<change-folder>=Archive<enter>" "go to Archive"
+macro index,pager Ga "<save-message>=Archive<enter>" "move mail to Archive"
+
+macro index,pager gd "<change-folder>=Deleted<enter>" "go to Deleted"
+macro index,pager Gd "<save-message>=Deleted<enter>" "move mail to Deleted"
+
+macro index,pager gr "<change-folder>=Drafts<enter>" "go to dRafts"
+macro index,pager Gr "<save-message>=Drafts<enter>" "move mail to dRafts"
+
+macro index,pager gi "<change-folder>=INBOX<enter>" "go to Inbox"
+macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to Inbox"
+
+macro index,pager gj "<change-folder>=Junk<enter>" "go to Junk"
+macro index,pager Gj "<save-message>=Junk<enter>" "move mail to Junk"
+
+macro index,pager gs "<change-folder>=Sent<enter>" "go to Sent"
+macro index,pager Gs "<save-message>=Sent<enter>" "move mail to Sent"
+
+macro index,pager gw "<change-folder>=Waiting<enter>" "go to Waiting"
+macro index,pager Gw "<save-message>=Waiting<enter>" "move mail to Waiting"
+
