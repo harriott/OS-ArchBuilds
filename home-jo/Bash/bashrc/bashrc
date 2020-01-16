@@ -48,7 +48,7 @@ doup () {
 }
 
 # email
-alias ms='mbsync fm; mbsync gmx'
+alias ms='mbsync fm; mbsync gmx; mbsync live'
 alias nmf='neomutt -F $DROPBOX/$AVT661/home-jo/Email/muttrc-ftml'
 alias nml='neomutt -F $DROPBOX/$AVT661/home-jo/Email/muttrc-live'
 alias nmx='neomutt -F $DROPBOX/$AVT661/home-jo/Email/muttrc-gmx'

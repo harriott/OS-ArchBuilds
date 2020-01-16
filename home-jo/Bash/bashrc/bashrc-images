@@ -35,6 +35,12 @@ cll () {
   bash cnvt.sh $1 "-level 25%,75%,.5 -quality 50"
 }
 
+# Recursively find all *.jpg (- that's case insensitive) files in the current directory
+# and set  -orientation=Horizontal   if necessary.
+jpo () {
+  exiftool -r -ext jpg -overwrite_original -orientation=Horizontal -progress -if '$orientation =~ /Rotate/' .
+}
+
 # Sane's scanimage tool
 # ---------------------
 S () {

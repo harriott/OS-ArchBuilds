@@ -2,6 +2,7 @@ vim: fdl=0 ft=build fdm=expr:
 
 # general tips
 autojump -s
+bc
 blkid -o list
 cat /proc/cpuinfo
 df -h
@@ -14,6 +15,8 @@ pgrep
 pstree
 sudo iotop -o
 sudo parted -l
+tmux a -t myname
+tmux ls
 xrandr
 
 ## fix this file
@@ -1885,6 +1888,15 @@ sudo pacman -Syu   Packages (1) youtube-dl-2020.01.15-1
 sudo pacman -S gvfs-gphoto2   Packages (1) gvfs-gphoto2-1.42.2-1
 # pass insert jnbh
 then checked with   pass ls   pass jnbh
+# Font Squirrel fonts
+in   IT-Copied/CrossPlatform/Fonts/FontSquirrel-forAVT661
+  for font in $(ls); do fc-list $font; done   returned nothing, so
+sudo ln -s /mnt/HD103SJ/Share-IT-Copied/CrossPlatform/Fonts/FontSquirrel-forAVT661 /usr/share/fonts/FontSquirrel
+# perl-image-exiftool
+### Updates
+sudo pacman -Syu   Packages (7) ca-certificates-mozilla-3.49.1-1  nnn-2.9-1  nss-3.49.1-1  rsync-3.1.3-3  sed-4.8-1  xorg-server-1.20.7-1  xorg-server-common-1.20.7-1
+## perl-image-exiftool
+sudo pacman -S perl-image-exiftool   Packages (1) perl-image-exiftool-11.70-1
 # waiting
 ## texlive-localmanager-git
 ## qpdfview
