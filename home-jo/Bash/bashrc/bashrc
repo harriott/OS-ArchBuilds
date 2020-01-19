@@ -48,10 +48,10 @@ doup () {
 }
 
 # email
-alias ms='mbsync fm; mbsync gmx; mbsync live'
-alias nmf='neomutt -F $DROPBOX/$AVT661/home-jo/Email/muttrc-ftml'
-alias nml='neomutt -F $DROPBOX/$AVT661/home-jo/Email/muttrc-live'
-alias nmx='neomutt -F $DROPBOX/$AVT661/home-jo/Email/muttrc-gmx'
+alias ms='echo "fm:"; mbsync fm; echo "gmx:"; mbsync gmx; echo "live:"; mbsync live; echo "notmuch new:"; notmuch new; echo "notmuchTags.sh"; bash $DROPBOX/$AVT661/home-jo/email/notmuchTags.sh'
+alias nmf='neomutt -F $DROPBOX/$AVT661/home-jo/email/muttrc-ftml'
+alias nml='neomutt -F $DROPBOX/$AVT661/home-jo/email/muttrc-live'
+alias nmx='neomutt -F $DROPBOX/$AVT661/home-jo/email/muttrc-gmx'
 source $DROPBOX/JH/IT_stack/GNULinuxEmail/mymuttrcAddresses
 
 # System

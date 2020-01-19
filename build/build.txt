@@ -1897,6 +1897,12 @@ sudo ln -s /mnt/HD103SJ/Share-IT-Copied/CrossPlatform/Fonts/FontSquirrel-forAVT6
 sudo pacman -Syu   Packages (7) ca-certificates-mozilla-3.49.1-1  nnn-2.9-1  nss-3.49.1-1  rsync-3.1.3-3  sed-4.8-1  xorg-server-1.20.7-1  xorg-server-common-1.20.7-1
 ## perl-image-exiftool
 sudo pacman -S perl-image-exiftool   Packages (1) perl-image-exiftool-11.70-1
+# TextNotes.cls symlink
+ln -s /mnt/SDSSDA240G/Dropbox/JH/Now/TextNotes/TextNotes.cls ~/texmf/tex/latex/jo/TextNotes.cls
+ln -s /mnt/SDSSDA240G/Dropbox/JH/Now/TextNotes/memoirArticle.sty ~/texmf/tex/latex/jo/memoirArticle.sty
+# Notmuch config
+mv ~/.notmuch-config /mnt/SDSSDA240G/Dropbox/JH/IT_stack/GNULinuxEmail/notmuch-config
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/GNULinuxEmail/notmuch-config ~/.notmuch-config
 # waiting
 ## texlive-localmanager-git
 ## qpdfview
@@ -1932,7 +1938,6 @@ in  ~/Arch/AUR/ :  bash -x AURclones.sh
 ## Calibre
 ## Pandoc
 ## Firefox
-## OutThere.cls
 ## PTP camera
 ## dvd+rw-tools
 ## LPD-rapport.cls
@@ -1957,3 +1962,4 @@ rm ~/.offlineimaprc
 ## qutebrowser
 ## easytag
 ## Astroid
+## verseSettings.sty
