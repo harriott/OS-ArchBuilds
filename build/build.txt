@@ -1903,6 +1903,16 @@ ln -s /mnt/SDSSDA240G/Dropbox/JH/Now/TextNotes/memoirArticle.sty ~/texmf/tex/lat
 # Notmuch config
 mv ~/.notmuch-config /mnt/SDSSDA240G/Dropbox/JH/IT_stack/GNULinuxEmail/notmuch-config
 ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/GNULinuxEmail/notmuch-config ~/.notmuch-config
+# Transmission
+Preferences > Play a sound  off-ticked
+# pass insert gmail
+then checked with   pass ls   pass gmail
+pass rm gmail
+## pass insert gmail-neomutt
+# msmtp/config permissions
+chmod 600 ~/.config/msmtp/config
+# Thunderbird 2nd step for Gmail
+alert on  G Moto > Yes  then  un+pw  in  Thunderbird verification pop-up
 # waiting
 ## texlive-localmanager-git
 ## qpdfview
@@ -1936,7 +1946,6 @@ in  ~/Arch/AUR/ :  bash -x AURclones.sh
 ## Perl modules
 ## cdrtools
 ## Calibre
-## Pandoc
 ## Firefox
 ## PTP camera
 ## dvd+rw-tools
@@ -1963,3 +1972,4 @@ rm ~/.offlineimaprc
 ## easytag
 ## Astroid
 ## verseSettings.sty
+## Pandoc

@@ -7,14 +7,10 @@ source $DROPBOX/$AVT661/home-jo/email/muttrc-MW
 set realname = "Joseph Harriott"
 set mbox_type = Maildir
 
-set spoolfile = "+INBOX"
 set postponed = "+Drafts"
 
 macro index,pager gr "<change-folder>=Drafts<enter>" "go to dRafts"
 macro index,pager Gr "<save-message>=Drafts<enter>" "move mail to dRafts"
-
-macro index,pager gi "<change-folder>=INBOX<enter>" "go to Inbox"
-macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to Inbox"
 
 macro index,pager gw "<change-folder>=Waiting<enter>" "go to Waiting"
 macro index,pager Gw "<save-message>=Waiting<enter>" "move mail to Waiting"

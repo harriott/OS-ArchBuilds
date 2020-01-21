@@ -13,14 +13,13 @@ set folder = "/home/jo/.local/share/mail/fm"
 set header_cache = /home/jo/.cache/mutt-wizard/fm/headers
 set message_cachedir = /home/jo/.cache/mutt-wizard/fm/bodies
 
-set spoolfile = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+Trash"
 
 # if you make changes here, you probably need to clear your folders, and start afresh
 # rm -r ~/.cache/mutt-wizard/fm/* ~/.local/share/mail/fm/*
 # and fix  ~/.mbsyncrc  to correspond
-mailboxes "=Archive" "=Cafezoide" "=Deauram" "=Drafts" "=Friends" "=INBOX" "=Junk\ Mail" "=Sent\ Items" "=Trash" "=Waiting" "=Work"
+mailboxes "=Archives" "=Cafezoide" "=Deauram" "=Drafts" "=Friends" "=INBOX" "=Junk\ Mail" "=Sent\ Items" "=Trash" "=Waiting" "=Work"
 virtual-mailboxes "All" "notmuch://?query=tag:fm"
 
 # tweak the default status line to show  "->fm":
@@ -28,8 +27,8 @@ set status_format=" -%r-NeoMutt->fm: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?
 
 source $DROPBOX/$AVT661/home-jo/email/muttrc-all
 
-macro index,pager ga "<change-folder>=Archive<enter>" "go to Archive"
-macro index,pager Ga "<save-message>=Archive<enter>" "move mail to Archive"
+macro index,pager ga "<change-folder>=Archives<enter>" "go to Archives"
+macro index,pager Ga "<save-message>=Archives<enter>" "move mail to Archives"
 
 macro index,pager gf "<change-folder>=Friends<enter>" "go to Friends"
 macro index,pager Gf "<save-message>=Friends<enter>" "move mail to Friends"
@@ -39,9 +38,6 @@ macro index,pager Gz "<save-message>=Cafezoide<enter>" "move mail to Cafezoide"
 
 macro index,pager gd "<change-folder>=Deauram<enter>" "go to Deauram"
 macro index,pager Gd "<save-message>=Deauram<enter>" "move mail to Deauram"
-
-macro index,pager gi "<change-folder>=INBOX<enter>" "go to INBOX"
-macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to INBOX"
 
 macro index,pager gj "<change-folder>=Junk\ Mail<enter>" "go to Junk"
 macro index,pager Gj "<save-message>=Junk\ Mail<enter>" "move mail to Junk"

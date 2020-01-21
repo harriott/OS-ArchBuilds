@@ -26,8 +26,6 @@ auto_view text/html		# automatically show html (mailcap uses w3m)
 auto_view application/pgp-encrypted
 alternative_order text/plain text/enriched text/html
 bind index,pager g noop
-bind index,pager gg noop
-bind index gg first-entry
 bind index \Cf noop
 
 set menu_scroll # smoother movement
@@ -36,6 +34,8 @@ unset confirmappend # don't ask of confirmation when moving emails
 # Useful key bindings for the index
 #  $ == sync changes
 #  * or <End> > <last-entry> == jump to the last entry
+#  ] > <half-down>
+#  [ > <half-up>
 #  ; tag-prefix == apply next function to tagged messages
 #  = or <Home> -> <first-entry> == jump to the first entry
 #  l == limit
@@ -59,10 +59,6 @@ bind index h noop
 bind index <space> tag-entry
 bind index,pager H view-raw-message
 bind browser l select-entry
-bind pager,browser gg top-page
-bind pager,browser G bottom-page
-bind index,pager,browser d half-down
-bind index,pager,browser u half-up
 bind index,pager S sync-mailbox
 bind index,pager R group-reply
 bind index \031 previous-undeleted	# Mouse wheel

@@ -13,6 +13,7 @@ set folder = "/home/jo/.local/share/mail/gmx"
 set header_cache = /home/jo/.cache/mutt-wizard/gmx/headers
 set message_cachedir = /home/jo/.cache/mutt-wizard/gmx/bodies
 
+set spoolfile = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+Trash"
 

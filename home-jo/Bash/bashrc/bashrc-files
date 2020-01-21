@@ -18,7 +18,7 @@ alias sm="stat -c '%y %n'"
 shopt -s autocd dotglob extglob globstar nullglob
 
 # backup my Mutt Wizard files
-alias mwb='bash $DROPBOX/$AVT661/home-jo/Email/mwBackup.sh'
+alias mwb='bash $DROPBOX/$AVT661/home-jo/email/mwBackup.sh'
 
 # move up [n] directories
 up(){

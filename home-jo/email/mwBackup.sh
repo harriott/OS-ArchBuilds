@@ -16,19 +16,24 @@ if [ ! -d $backdest ]; then
   echo "The target directory ain't there, quitting."
   exit
 fi
-echo "rsync-ing:"
+echo -e "\e[1m7z-ing:\e[0m"
+echo "/home/jo/.local/share/mail/"
+echo -e "\e[92m/home/jo/.local/share/mail.7z\e[0m"
+7z a -mx1 ~/.local/share/mail.7z ~/.local/share/mail
+echo -e "\e[1mcp-ing:\e[0m"
 mkdir $bfolder
 nodes=(
   "/home/jo/.cache/mutt-wizard" \
   "/home/jo/.config/msmtp/config" \
   "/home/jo/.config/mutt" \
-  "/home/jo/.local/share/mail" \
+  "/home/jo/.local/share/mail.7z" \
   "/home/jo/.mbsyncrc" \
-  "/home/jo/.notmuch-config" \
 )
 for node in "${nodes[@]}"; do
   mynode=${node/\/home\/jo\/\./}
+  # mynode=${node/\~\/\./}
   backupnode=${mynode//\//_}
-  echo $backupnode
-  cp -r $node "$bfolder/$backupnode"
+  echo "$node"
+  echo -e "\e[92m$bfolder/$backupnode\e[0m"
+  cp -r $node "$bfolder/$backupnode" # (can't stat "~/...")
 done
