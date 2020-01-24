@@ -31,11 +31,14 @@ source $DROPBOX/$AVT661/home-jo/email/muttrc-all
 macro index,pager ga "<change-folder>=Archives<enter>" "go to Archives"
 macro index,pager Ga "<save-message>=Archives<enter>" "move mail to Archives"
 
+macro index,pager gr "<change-folder>=Drafts<enter>" "go to dRafts"
+macro index,pager Gr "<save-message>=Drafts<enter>" "move mail to dRafts"
+
 macro index,pager gs "<change-folder>=Sent<enter>" "go to Sent"
 macro index,pager Gs "<save-message>=Sent<enter>" "move mail to Sent"
 
-macro index,pager gp "<change-folder>=Spam<enter>" "go to sPam"
-macro index,pager Gp "<save-message>=Spam<enter>" "move mail to sPam"
+macro index,pager gj "<change-folder>=Spam<enter>" "go to spam"
+macro index,pager Gj "<save-message>=Spam<enter>" "move mail to spam"
 
 macro index,pager gt "<change-folder>=Trash<enter>" "go to Trash"
 macro index,pager Gt "<save-message>=Trash<enter>" "move mail to Trash"

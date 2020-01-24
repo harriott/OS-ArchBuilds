@@ -35,6 +35,9 @@ macro index,pager Ga "<save-message>=Archive<enter>" "move mail to Archive"
 macro index,pager gd "<change-folder>=Deleted<enter>" "go to Deleted"
 macro index,pager Gd "<save-message>=Deleted<enter>" "move mail to Deleted"
 
+macro index,pager gr "<change-folder>=Drafts<enter>" "go to dRafts"
+macro index,pager Gr "<save-message>=Drafts<enter>" "move mail to dRafts"
+
 macro index,pager gi "<change-folder>=Inbox<enter>" "go to Inbox"
 macro index,pager Gi "<save-message>=Inbox<enter>" "move mail to Inbox"
 

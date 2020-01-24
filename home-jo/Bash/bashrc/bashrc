@@ -48,11 +48,17 @@ doup () {
 }
 
 # email
-alias ms='echo "fm:"; mbsync fm; echo "gmx:"; mbsync gmx; echo "live:"; mbsync live; echo "notmuch new:"; notmuch new; echo "notmuchTags.sh"; bash $DROPBOX/$AVT661/home-jo/email/notmuchTags.sh'
-alias nmf='neomutt -F $DROPBOX/$AVT661/home-jo/email/muttrc-ftml'
-alias nml='neomutt -F $DROPBOX/$AVT661/home-jo/email/muttrc-live'
-alias nmx='neomutt -F $DROPBOX/$AVT661/home-jo/email/muttrc-gmx'
-source $DROPBOX/JH/IT_stack/GNULinuxEmail/mymuttrcAddresses
+nmnew () { echo "notmuch new:"; notmuch new; }
+msf () { mbsync fm    ; nmnew ; echo "nmTags-fm.sh"    ; bash $hje/nmTags-fm.sh    ; }
+msg () { mbsync gmail ; nmnew ; echo "nmTags-gmail.sh" ; bash $hje/nmTags-gmail.sh ; }
+msl () { mbsync live  ; nmnew ; echo "nmTags-live.sh"  ; bash $hje/nmTags-live.sh  ; }
+msx () { mbsync gmx   ; nmnew ; echo "nmTags-gmx.sh"   ; bash $hje/nmTags-gmx.sh   ; }
+alias ms='echo "fm:"; msf; echo "gmail:"; msg'
+alias nmf='neomutt -F $hje/muttrc-ftml'
+alias nmg='neomutt -F $hje/muttrc-gmail'
+alias nml='neomutt -F $hje/muttrc-live'
+alias nmx='neomutt -F $hje/muttrc-gmx'
+source $GNULE/mymuttrcAddresses
 
 # System
 export GPG_TTY=$(tty)

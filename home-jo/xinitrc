@@ -41,8 +41,12 @@ fi
 # ------------
 # JH additions
 # ------------
+# defined here so they can be accessed by  $DROPBOX/$AVT661/home-jo/openbox/autostart  &  gvim
+# kill tmux sessions if you've made changes here
 export DROPBOX=/mnt/SDSSDA240G/Dropbox # keep this capitalised for finding it without need for $
 export AVT661='JH/IT_stack/onGitHub/AcerVeritonT661'
+export hje=$DROPBOX/$AVT661/home-jo/email
+export GNULE=$DROPBOX/JH/IT_stack/GNULinuxEmail
 
 ## stop the 600s screensaver
 xset s off

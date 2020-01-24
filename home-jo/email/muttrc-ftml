@@ -7,7 +7,7 @@
 #  mbsync fm   using ~/.mbsyncrc
 #  msmtp  uses settings put by  Mutt Wizard  into  ~/.config/msmtp/config
 
-set from = $ftml
+set from = $fm # defined in my  $GNULE/mymuttrcAddresses
 set sendmail = "msmtp -a fm"
 set folder = "/home/jo/.local/share/mail/fm"
 set header_cache = /home/jo/.cache/mutt-wizard/fm/headers
@@ -39,6 +39,9 @@ macro index,pager Gz "<save-message>=Cafezoide<enter>" "move mail to Cafezoide"
 
 macro index,pager gd "<change-folder>=Deauram<enter>" "go to Deauram"
 macro index,pager Gd "<save-message>=Deauram<enter>" "move mail to Deauram"
+
+macro index,pager gr "<change-folder>=Drafts<enter>" "go to dRafts"
+macro index,pager Gr "<save-message>=Drafts<enter>" "move mail to dRafts"
 
 macro index,pager gi "<change-folder>=INBOX<enter>" "go to INBOX"
 macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to INBOX"
