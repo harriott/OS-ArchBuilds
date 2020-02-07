@@ -21,10 +21,12 @@
 # git clone https://aur.archlinux.org/vim-simpylfold.git
 # git clone https://aur.archlinux.org/vim-table-mode.git
 # git clone https://aur.archlinux.org/xnviewmp.git
+git clone https://aur.archlinux.org/dust.git
 
 # sudo rm -r auracle-git; git clone https://aur.archlinux.org/auracle-git.git
 # sudo rm -r chromium-widevine; git clone https://aur.archlinux.org/chromium-widevine.git
-sudo rm -r dropbox; git clone https://aur.archlinux.org/dropbox.git
+# sudo rm -r clamav-unofficial-sigs; git clone https://aur.archlinux.org/clamav-unofficial-sigs
+# sudo rm -r dropbox; git clone https://aur.archlinux.org/dropbox.git
 # sudo rm -r gtkhash # clone https://aur.archlinux.org/gtkhash.git
 # sudo rm -r mimeo; git clone https://aur.archlinux.org/mimeo.git
 # sudo rm -r mutt-wizard-git; git clone https://aur.archlinux.org/mutt-wizard-git.git

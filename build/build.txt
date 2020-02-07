@@ -1879,7 +1879,7 @@ auracle sync
 ##### Dropbox
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
 having checked the PKGBUILD,  cd dropbox   for   makepkg -sic  Packages (1) dropbox-88.4.172-1
-##### photocollage
+#### photocollage
 sudo pacman -Rs photocollage
   Packages (3) libimagequant-2.12.6-1  python-pillow-6.2.1-1  photocollage-1.4.4-3
 #### gphoto2
@@ -1939,9 +1939,102 @@ bash rsyncBackup.sh
 reboot > Del > to enter CMOS Setup Utility > Advanced Setup > Hard Disk Drives >
   P0-SanDisk SDSSDA24 moved up to be 1st Drive
 # Pandoc
-## Updates
 sudo pacman -Syu   Packages (1) perl-timedate-2.31-1
 sudo pacman -S pandoc   Packages (83) cmark-gfm-0.29.0.gfm.0-1  haskell-aeson-pretty-0.8.8-9  haskell-ansi-terminal-0.10.2-1  haskell-asn1-encoding-0.9.6-7  haskell-asn1-parse-0.9.5-7  haskell-asn1-types-0.3.3-17  haskell-async-2.2.2-1  haskell-base16-bytestring-0.1.1.6-14  haskell-base64-bytestring-1.0.0.2-22  haskell-basement-0.0.11-1  haskell-bitarray-0.0.1.1-12  haskell-blaze-builder-0.4.1.0-8  haskell-blaze-html-0.9.1.2-8  haskell-blaze-markup-0.8.2.3-7  haskell-byteable-0.1.1-14  haskell-case-insensitive-1.2.1.0-1  haskell-cereal-0.5.8.1-1  haskell-cmark-gfm-0.2.1-7  haskell-cmdargs-0.10.20-8  haskell-colour-2.3.5-18  haskell-connection-0.3.1-9  haskell-cookie-0.4.5-1  haskell-cryptonite-0.26-20  haskell-data-default-0.7.1.1-40  haskell-data-default-class-0.1.2.0-13  haskell-data-default-instances-containers-0.0.1-25  haskell-data-default-instances-dlist-0.0.1-53  haskell-data-default-instances-old-locale-0.0.1-25  haskell-digest-0.0.1.2-14  haskell-doclayout-0.2.0.1-6  haskell-doctemplates-0.7.1-6  haskell-errors-2.3.0-40  haskell-exceptions-0.10.4-3  haskell-glob-0.10.0-26  haskell-haddock-library-1.8.0-8  haskell-hourglass-0.2.12-36  haskell-hslua-1.0.3.2-11  haskell-hslua-module-system-0.2.1-19  haskell-hslua-module-text-0.2.1-28  haskell-hsyaml-0.2.1.0-6  haskell-http-4000.3.14-73  haskell-http-client-0.6.4-36  haskell-http-client-tls-0.3.5.3-151  haskell-http-types-0.12.3-34  haskell-hxt-9.3.1.18-2  haskell-hxt-charproperties-9.4.0.0-1  haskell-hxt-regex-xmlschema-9.2.0.3-17  haskell-hxt-unicode-9.0.2.4-13  haskell-ipynb-0.1-95  haskell-juicypixels-3.3.4-7  haskell-memory-0.14.18-39  haskell-mime-types-0.1.0.9-3  haskell-network-2.8.0.1-4  haskell-network-uri-2.6.1.0-18  haskell-old-locale-1.0.0.7-19  haskell-old-time-1.1.0.3-19  haskell-pandoc-types-1.20-6  haskell-pem-0.2.4-65  haskell-regex-pcre-0.94.4-14  haskell-safe-0.3.18-1  haskell-sha-1.6.4.4-8  haskell-skylighting-0.8.3-7  haskell-skylighting-core-0.8.3-7  haskell-socks-0.6.1-7  haskell-split-0.2.3.3-27  haskell-streaming-commons-0.2.1.2-1  haskell-syb-0.7.1-1  haskell-tagsoup-0.14.8-17  haskell-temporary-1.3-44  haskell-texmath-0.12-6  haskell-text-conversions-0.3.0-7  haskell-tls-1.4.1-93  haskell-transformers-compat-0.6.5-1  haskell-unicode-transforms-0.3.6-1  haskell-utf8-string-1.0.1.1-13  haskell-x509-1.7.5-40  haskell-x509-store-1.6.7-39  haskell-x509-system-1.6.6-107  haskell-x509-validation-1.6.11-39  haskell-xml-1.3.14-19  haskell-zip-archive-0.4.1-21  haskell-zlib-0.6.2.1-1  pandoc-2.8-14
+# youtube-dl fail
+"Signature extraction failed"
+## Updates
+sudo pacman -Syu   Packages (16) ca-certificates-20181109-3  ca-certificates-mozilla-3.49.1-2  ca-certificates-utils-20181109-3  ffmpeg-1:4.2.2-2  htop-2.2.0-3  intel-media-sdk-19.4.0-4  languagetool-4.8-1  libmfx-19.4.0-4  libsecret-0.20.0-1  libutil-linux-2.35-1  libuv-1.34.2-1  linux-5.4.14.arch1-1  meson-0.53.1-1  nss-3.49.1-2  p11-kit-0.23.19-1  util-linux-2.35-1
+## AUR package updates
+auracle sync
+### obmenu-generator
+in  ~/Arch/AUR/:  bash -x AURclones.sh
+having checked the PKGBUILD,  cd obmenu-generator   for   makepkg -sic
+  Packages (1) obmenu-generator-0.87-1
+    ** The schema file has been installed as: /etc/xdg/obmenu-generator/schema.pl
+      so diff'd it with mine
+# gvfs-mtp
+## Updates
+sudo pacman -Syu   Packages (22) alsa-utils-1.2.1-2  bind-tools-9.14.10-1  ca-certificates-mozilla-3.49.2-1  dbus-1.12.16-5  gendesk-1.0.5-1  gst-plugins-good-1.16.2-2  gvim-8.2.0148-1  imagemagick-7.0.9.19-1  jre-openjdk-headless-13.0.2.u8-1  linux-5.4.15.arch1-1  mpv-1:0.32.0-1  nss-3.49.2-1  python-3.8.1-4  python-pynvim-0.4.1-1  python-six-1.14.0-1  python2-six-1.14.0-1  qt5-declarative-5.14.0-3  qt5-wayland-5.14.0-3  thunderbird-68.4.2-1  thunderbird-i18n-en-gb-68.4.2-1  vim-runtime-8.2.0148-1  youtube-dl-2020.01.24-1
+## AUR package updates
+auracle sync
+### clamav-unofficial-sigs
+in  ~/Arch/AUR/:  bash -x AURclones.sh
+having checked the PKGBUILD,  cd clamav-unofficial-sigs   for   makepkg -sic
+  Packages (1) clamav-unofficial-sigs-7.0.1-1
+## Updates
+sudo pacman -Syu   Packages (1) vulkan-icd-loader-1.2.131-1
+## gvfs-mtp
+sudo pacman -S gvfs-mtp   Packages (2) libmtp-1.1.16-1  gvfs-mtp-1.42.2-1
+## plugged in Moto G4
+Moto G4 > Use USB to > Transfer files
+  restarted PCManFM such that Moto G (4) appeared
+# broot
+## Updates
+sudo pacman -Syu   Packages (66) boost-libs-1.72.0-1  ca-certificates-mozilla-3.49.2-3  chromium-80.0.3987.87-1  cmake-3.16.4-1  copyq-3.10.0-1  cryptsetup-2.3.0-1  dhcpcd-8.1.6-1  file-5.38-3  girara-0.3.4-1  gnutls-3.6.12-1  iana-etc-20200117-1  imagemagick-7.0.9.21-1  iproute2-5.5.0-1  krb5-1.17.1-1  libcap-2.30-1  libcdr-0.1.6-1  libcmis-0.5.2-4  libgusb-0.3.3-1  libixion-0.15.0-1  libmtp-1.1.17-1  liborcus-0.15.3-1  libpaper-1.1.28-1  libreoffice-fresh-6.4.0-2  libreoffice-fresh-en-gb-6.4.0-1  libsecret-0.20.1-1  libsynctex-2019.51075-6  libtasn1-4.16.0-1  libutil-linux-2.35.1-1  libxnvctrl-440.59-1  linux-5.5.2.arch1-1  linux-firmware-20200122.1eb2408-1  mesa-19.3.3-1  mtdev-1.1.6-1  ninja-1.10.0-1  nss-3.49.2-3  openexr-2.4.0-7  openresolv-3.10.0-1  opera-66.0.3515.72-1  p11-kit-0.23.20-2  perl-error-0.17029-1  perl-image-exiftool-11.85-1  poppler-0.85.0-1  python-cairo-1.19.0-1  python-dbus-1.2.16-1  python-dbus-common-1.2.16-1  python-musicbrainzngs-0.7.1-1  python-pyqt5-5.14.1-2  python-pyqt5-sip-12.7.1-1  qt5-base-5.14.1-1  qt5-declarative-5.14.1-1  qt5-imageformats-5.14.1-1  qt5-script-5.14.1-1  qt5-svg-5.14.1-1  qt5-tools-5.14.1-1  qt5-wayland-5.14.1-1  qt5-x11extras-5.14.1-1  s-nail-14.9.17-1  shadow-4.8.1-1  sqlite-3.31.1-1  sudo-1.8.31-1  texlive-bin-2019.51075-6  util-linux-2.35.1-1  vulkan-icd-loader-1.2.132-1  xkeyboard-config-2.29-1  xterm-353-1  zathura-0.4.5-1
+## AUR package updates
+auracle sync
+### Dropbox
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd dropbox   for   makepkg -sic  Packages (1) dropbox-89.4.278-1
+## broot
+sudo pacman -S broot  Packages (1) broot-0.12.2-1
+broot  for  br  script installation   Removed added lines from  ~/.bash_profile
+# cdrtools
+## Updates
+sudo pacman -Syu   Packages (6) bison-3.5.1-1  make-4.3-1  nspr-4.25-1  systemd-244.2-1  systemd-libs-244.2-1  systemd-sysvcompat-244.2-1
+## cdrtools
+sudo pacman -S cdrtools   Packages (1) cdrtools-3.02a09-2
+## check optical drives
+cdrecord dev=/dev/sr0 -checkdrive
+  Vendor_info    : 'ATAPI   '
+  Identifikation : 'DVD A  DH16A6S  '
+  Revision       : 'YA17'
+# YouTube Audio renderer error
+reboot
+# dust
+## Updates
+sudo pacman -Syu   Packages (1) broot-0.13.0-1
+## dust
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd dust   for   makepkg -sic  for  cargo, I selected  rustup
+  Packages (1) rustup-1.21.1-3
+  ...
+  ==> Starting build()...
+  error: no default toolchain configured
+### rust stable toolchain
+$ rustup toolchain install stable
+  info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
+  info: latest update on 2020-01-30, rust version 1.41.0 (5e1a79984 2020-01-27)
+  info: downloading component 'cargo'
+    4.7 MiB /   4.7 MiB (100 %)   1.7 MiB/s in  2s ETA:  0s
+  info: downloading component 'clippy'
+    1.8 MiB /   1.8 MiB (100 %)   1.7 MiB/s in  1s ETA:  0s
+  info: downloading component 'rust-docs'
+   12.0 MiB /  12.0 MiB (100 %)   1.6 MiB/s in  7s ETA:  0s
+  info: downloading component 'rust-std'
+   17.5 MiB /  17.5 MiB (100 %)   1.4 MiB/s in 12s ETA:  0s
+  info: downloading component 'rustc'
+   57.9 MiB /  57.9 MiB (100 %)   1.5 MiB/s in 43s ETA:  0s
+  info: downloading component 'rustfmt'
+    3.1 MiB /   3.1 MiB (100 %)   1.5 MiB/s in  2s ETA:  0s
+  info: installing component 'cargo'
+  info: installing component 'clippy'
+  info: installing component 'rust-docs'
+   12.0 MiB /  12.0 MiB (100 %)   2.9 MiB/s in  3s ETA:  0s
+  info: installing component 'rust-std'
+   17.5 MiB /  17.5 MiB (100 %)  11.2 MiB/s in  1s ETA:  0s
+  info: installing component 'rustc'
+   57.9 MiB /  57.9 MiB (100 %)   8.2 MiB/s in  7s ETA:  0s
+  info: installing component 'rustfmt'
+    stable-x86_64-unknown-linux-gnu installed - rustc 1.41.0 (5e1a79984 2020-01-27)
+  info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
+$ rustc -V   reported   rustc 1.41.0 (5e1a79984 2020-01-27)
+in  JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch/encoding/Rust
+  rustc hello.rs  then  ./hello  got me  "Hello, World!"
+## dust
+in  ~/Arch/AUR/dust/:  makepkg -sic   downloaded and installed a load of rust components
+  Packages (1) dust-0.4.41-1
 # waiting
 ## texlive-localmanager-git
 ## qpdfview
@@ -2001,3 +2094,4 @@ rm ~/.offlineimaprc
 ## easytag
 ## Astroid
 ## verseSettings.sty
+## moar

@@ -51,8 +51,6 @@ unset confirmappend # don't ask of confirmation when moving emails
 bind attach <return> view-mailcap
 bind attach l view-mailcap
 bind editor <space> noop
-bind pager j next-line
-bind pager k previous-line
 bind index D delete-message
 bind index U undelete-message
 bind index h noop

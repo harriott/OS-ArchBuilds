@@ -21,6 +21,9 @@ PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
 # Command not found hook
 source /usr/share/doc/pkgfile/command-not-found.bash
 
+# for broot
+export PAGER=less
+
 # for tmux
 export EDITOR=nvim
 export VISUAL=nvim
@@ -48,17 +51,17 @@ doup () {
 }
 
 # email
+source $GNULE/mymuttrcAddresses
 nmnew () { echo "notmuch new:"; notmuch new; }
 msf () { mbsync fm    ; nmnew ; echo "nmTags-fm.sh"    ; bash $hje/nmTags-fm.sh    ; }
 msg () { mbsync gmail ; nmnew ; echo "nmTags-gmail.sh" ; bash $hje/nmTags-gmail.sh ; }
 msl () { mbsync live  ; nmnew ; echo "nmTags-live.sh"  ; bash $hje/nmTags-live.sh  ; }
 msx () { mbsync gmx   ; nmnew ; echo "nmTags-gmx.sh"   ; bash $hje/nmTags-gmx.sh   ; }
-alias ms='echo "fm:"; msf; echo "gmail:"; msg'
+alias ms='echo -e "\e[1m\e[95m-- fm --\e[0m"; msf; echo -e "\e[1m\e[95m-- gmail --\e[0m"; msg; echo -e "\e[1m\e[95m-- gmx --\e[0m"; msx; echo -e "\e[1m\e[95m-- live --\e[0m"; msl'
 alias nmf='neomutt -F $hje/muttrc-ftml'
 alias nmg='neomutt -F $hje/muttrc-gmail'
 alias nml='neomutt -F $hje/muttrc-live'
 alias nmx='neomutt -F $hje/muttrc-gmx'
-source $GNULE/mymuttrcAddresses
 
 # System
 export GPG_TTY=$(tty)
