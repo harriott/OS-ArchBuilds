@@ -5,6 +5,7 @@
 
 # git clone https://aur.archlinux.org/autojump.git
 # git clone https://aur.archlinux.org/autojump-git.git
+# git clone https://aur.archlinux.org/dust.git
 # git clone https://aur.archlinux.org/figlet-fonts.git
 # git clone https://aur.archlinux.org/iscan-plugin-gt-f500.git
 # git clone https://aur.archlinux.org/photocollage.git
@@ -21,7 +22,7 @@
 # git clone https://aur.archlinux.org/vim-simpylfold.git
 # git clone https://aur.archlinux.org/vim-table-mode.git
 # git clone https://aur.archlinux.org/xnviewmp.git
-git clone https://aur.archlinux.org/dust.git
+git clone https://aur.archlinux.org/moar.git
 
 # sudo rm -r auracle-git; git clone https://aur.archlinux.org/auracle-git.git
 # sudo rm -r chromium-widevine; git clone https://aur.archlinux.org/chromium-widevine.git

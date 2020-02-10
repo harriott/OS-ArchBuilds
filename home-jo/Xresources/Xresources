@@ -41,6 +41,7 @@ URxvt.saveLines: 8192
 !-*- Perl extensions -*-
 URxvt.perl-ext-common: autocomplete-ALL-the-things,default,keyboard-select,matcher,resize-font,selection-to-clipboard,xresources-256
 
+URxvt.cursorUnderline:    true
 URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
 URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
 URxvt.keysym.M-quotedbl:  perl:aAtt:skeleton-complete

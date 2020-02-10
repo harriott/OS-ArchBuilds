@@ -2035,6 +2035,23 @@ in  JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch/encoding/Rust
 ## dust
 in  ~/Arch/AUR/dust/:  makepkg -sic   downloaded and installed a load of rust components
   Packages (1) dust-0.4.41-1
+# moar
+## Updates
+sudo pacman -Syu   Packages (3) bdf-unifont-12.1.04-1  pacman-mirrorlist-20200207-1  sane-1.0.29-1
+  warning: /etc/pacman.d/mirrorlist installed as /etc/pacman.d/mirrorlist.pacnew
+### update mirrors
+sudo reflector --country France --age 12 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+cat /etc/pacman.d/mirrorlist   shows it's captured 6 Servers
+sudo rm /etc/pacman.d/mirrorlist.pacnew
+sudo rm /etc/pacman.d/mirrorlist.pacnew.ja3
+sudo pacman -Syyuu   Packages (6) ca-certificates-mozilla-3.50-1  chromium-80.0.3987.87-2  clamav-0.102.2-1  imagemagick-7.0.9.22-1  neomutt-20191207-2  nss-3.50-1
+## moar
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD, cd moar   for   makepkg -sic
+  Packages (2) go-2:1.13.7-1  highlight-3.55-1   then   Packages (1) moar-0.9.18-1
+# move inputrc to symlink
+rm ~/.inputrc
+ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/inputrc ~/.inputrc
 # waiting
 ## texlive-localmanager-git
 ## qpdfview
@@ -2094,4 +2111,5 @@ rm ~/.offlineimaprc
 ## easytag
 ## Astroid
 ## verseSettings.sty
-## moar
+## jump
+## ripgrep
