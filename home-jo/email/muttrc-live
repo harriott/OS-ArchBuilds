@@ -20,8 +20,8 @@ set trash = "+Deleted"
 # if you make changes here, you probably need to clear your folders, and start afresh
 # rm -r ~/.cache/mutt-wizard/live/* ~/.local/share/mail/live/*
 # and fix  ~/.mbsyncrc  to correspond
-mailboxes "=Archive" "=Deleted" "=Drafts" "=Inbox" "=Junk" "=LPD" "=Sent" "=Waiting" "=Work"
-# - I needed the help of Thunderbird to find these folder names.
+mailboxes "=Archive" "=Deleted" "=Drafts" "=Inbox" "=Junk" "=LPD" "=Sent" "=Waiting"
+# - any errors here will trigger others
 virtual-mailboxes "All" "notmuch://?query=tag:live"
 
 # tweak the default status line to show  "->live":
@@ -49,7 +49,4 @@ macro index,pager Gp "<save-message>=LPD<enter>" "move mail to LPD"
 
 macro index,pager gs "<change-folder>=Sent<enter>" "go to Sent"
 macro index,pager Gs "<save-message>=Sent<enter>" "move mail to Sent"
-
-macro index,pager gk "<change-folder>=Work<enter>" "go to Work"
-macro index,pager Gk "<save-message>=Work<enter>" "move mail to Work"
 

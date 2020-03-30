@@ -9,3 +9,6 @@ set selection-clipboard clipboard
 # first page on the left side:
 set first-page-column 1:1
 
+# for  xdg-open http://...
+set sandbox none
+

@@ -1,0 +1,22 @@
+vim: set et tw=0:
+
+Having booted up with Logitech C200 plugged in:
+
+$ lsmod | grep snd
+snd_hda_codec_realtek   126976  1
+snd_hda_codec_generic    94208  1 snd_hda_codec_realtek
+ledtrig_audio          16384  2 snd_hda_codec_generic,snd_hda_codec_realtek
+snd_hda_intel          57344  6
+snd_intel_dspcfg       28672  1 snd_hda_intel
+snd_usb_audio         294912  0
+snd_hda_codec         163840  3 snd_hda_codec_generic,snd_hda_intel,snd_hda_codec_realtek
+snd_hda_core          106496  4 snd_hda_codec_generic,snd_hda_intel,snd_hda_codec,snd_hda_codec_realtek
+snd_usbmidi_lib        40960  1 snd_usb_audio
+snd_hwdep              16384  2 snd_usb_audio,snd_hda_codec
+snd_rawmidi            45056  1 snd_usbmidi_lib
+snd_seq_device         16384  1 snd_rawmidi
+snd_pcm               143360  5 snd_hda_intel,snd_usb_audio,snd_hda_codec,snd_hda_core
+mc                     61440  5 videodev,snd_usb_audio,videobuf2_v4l2,uvcvideo,videobuf2_common
+snd_timer              40960  2 snd_pcm
+snd                   114688  21 snd_hda_codec_generic,snd_seq_device,snd_hwdep,snd_hda_intel,snd_usb_audio,snd_usbmidi_lib,snd_hda_codec,snd_hda_codec_realtek,snd_timer,snd_pcm,snd_rawmidi
+

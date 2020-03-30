@@ -22,7 +22,11 @@ PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
 source /usr/share/doc/pkgfile/command-not-found.bash
 
 # for broot
-export PAGER=moar
+if [ -s "/usr/bin/moar" ]; then
+  export PAGER=moar
+else
+  export PAGER=less
+fi
 
 # for tmux
 export EDITOR=nvim

@@ -44,6 +44,6 @@ jpo () {
 # Sane's scanimage tool
 # ---------------------
 S () {
-  bash Scan.sh $1 $2 $3 $4
+  bash $DROPBOX/$AVT661/home-jo/Bash/Imagey/Scan.sh $1 $2 $3 $4
 }
 

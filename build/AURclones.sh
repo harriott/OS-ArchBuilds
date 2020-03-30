@@ -5,9 +5,11 @@
 
 # git clone https://aur.archlinux.org/autojump.git
 # git clone https://aur.archlinux.org/autojump-git.git
-# git clone https://aur.archlinux.org/dust.git
 # git clone https://aur.archlinux.org/figlet-fonts.git
 # git clone https://aur.archlinux.org/iscan-plugin-gt-f500.git
+# git clone https://aur.archlinux.org/moar.git
+# git clone https://aur.archlinux.org/perl-data-printer.git
+# git clone https://aur.archlinux.org/perl-clone-pp.git
 # git clone https://aur.archlinux.org/photocollage.git
 # git clone https://aur.archlinux.org/pnmixer-gtk3.git
 # git clone https://aur.archlinux.org/pyfil.git
@@ -22,12 +24,12 @@
 # git clone https://aur.archlinux.org/vim-simpylfold.git
 # git clone https://aur.archlinux.org/vim-table-mode.git
 # git clone https://aur.archlinux.org/xnviewmp.git
-git clone https://aur.archlinux.org/moar.git
 
 # sudo rm -r auracle-git; git clone https://aur.archlinux.org/auracle-git.git
 # sudo rm -r chromium-widevine; git clone https://aur.archlinux.org/chromium-widevine.git
 # sudo rm -r clamav-unofficial-sigs; git clone https://aur.archlinux.org/clamav-unofficial-sigs
-# sudo rm -r dropbox; git clone https://aur.archlinux.org/dropbox.git
+sudo rm -r dropbox; git clone https://aur.archlinux.org/dropbox.git
+# sudo rm -r dust; git clone https://aur.archlinux.org/dust.git
 # sudo rm -r gtkhash # clone https://aur.archlinux.org/gtkhash.git
 # sudo rm -r mimeo; git clone https://aur.archlinux.org/mimeo.git
 # sudo rm -r mutt-wizard-git; git clone https://aur.archlinux.org/mutt-wizard-git.git

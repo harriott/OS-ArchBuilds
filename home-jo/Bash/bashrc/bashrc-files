@@ -23,6 +23,11 @@ source /home/jo/.config/broot/launcher/bash/br
 # backup my Mutt Wizard files
 alias mwb='bash $DROPBOX/$AVT661/home-jo/email/mwBackup.sh'
 
+# count filetypes
+cft(){
+  find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
+}
+
 # move up [n] directories
 up(){
   local dir=""
@@ -105,6 +110,12 @@ export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
 export NNN_PLUG='c:fzcd;o:fzy-open;t:treeview'
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
+
+# Pandoc my markdown notes
+# ------------------------
+export MD4PDF="$DROPBOX/JH/IT_stack/onGitHub/md4pdf"
+alias m4p='bash $MD4PDF/GNULinux/m4p.sh'
+alias m4ps='bash $MD4PDF/GNULinux/m4ps.sh'
 
 # time-sorted lists of files
 # --------------------------
