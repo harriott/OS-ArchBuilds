@@ -5,7 +5,6 @@ Acer Veriton T661
 # general tips
 autojump -s
 bc
-br
 blkid -o list
 cat /proc/cpuinfo
 df -h
@@ -18,13 +17,16 @@ pgrep
 pstree
 sudo iotop -o
 sudo parted -l
-tmux a -t myname
-tmux ls
 xrandr
 
 ## $DROPBOX
 :%s#mnt$DROPBOX/$AVT661#mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661#c
-:s#/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661#$DROPBOX/$AVT661#
+:s#/mnt/SDSSDA240G/Dropbox#$DROPBOX#
+:s#JH/IT_stack/onGitHub/AcerVeritonT661#$AVT661#
+
+## filesystem searching
+br                    # broot
+find . -type f | fzy  # for finding something fuzzily fast
 
 ## folder sizes
 br --sizes
@@ -33,6 +35,11 @@ ncdu
 
 ## get at root on tty2
 Ctrl+Alt+F2 > root + pw
+
+## tmux
+tmux a -t myname        # attach to session myname
+tmux kill-server; tmux  # good for resetting
+tmux ls                 # list sessions
 
 # to 190404 Backup
 Physical Configuration, Arch install, fbset, tig, fstrim, swappiness, override-conf, noclear-conf, activate-numlock.conf, dhcpcd@enp0s25, openssh, firewalld, bind-tools, Wget, ClamAV, rnano for visudo, /etc/fstab, /etc/clamav/clamd.conf, ncdu
@@ -871,7 +878,7 @@ pkgstats
 in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (1) gdk-pixbuf2-2.40.0-1
 sudo pacman -S conky  Packages (3) libxnvctrl-435.21-1  wireless_tools-30.pre9-2  conky-1.11.5-2
 ## galculator
-in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt 
+in  ~/Arch :  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt
   ...
   :: Synchronising package databases...
   error: failed retrieving file 'core.db' from mirror.oldsql.cc : SSL certificate problem: certificate has expired
@@ -1550,7 +1557,7 @@ having checked the PKGBUILD,  cd mutt-wizard-git    for   makepkg -sic
 in ~/Arch/  sudo pacmatic -Syu 2>&1 | tee pacmatic.txt   Packages (140) archlinux-keyring-20191018-2  argon2-20190702-2  autoconf-2.69-6  automake-1.16.1-2  bash-5.0.011-2  binutils-2.33.1-2  bison-3.4.2-2  ca-certificates-20181109-2  ca-certificates-mozilla-3.47-2  ca-certificates-utils-20181109-2  cracklib-2.9.7-2  db-5.3.28-5  dbus-1.12.16-3  device-mapper-2.02.186-3  diffutils-3.7-3  dmraid-1.0.0.rc16.3-12  dnssec-anchors-20190629-2  dosfstools-4.1-3  e2fsprogs-1.45.4-2  ed-1.15-2  expat-2.2.9-2  fakeroot-1.24-2  file-5.37-4  filesystem-2019.10-2  flex-2.6.4-3  gdbm-1.18.1-3  gettext-0.20.1-3  glib2-2.62.2-2  glibc-2.30-3  gmp-6.1.2-3  gnupg-2.2.17-3  gnutls-3.6.10-2  gpm-1.20.7.r27.g1fd1941-2  grep-3.3-3  groff-1.22.4-2  gzip-1.10-3  hdparm-9.58-3  hwids-20191025-2  inetutils-1.9.4-8  iproute2-5.3.0-2  iptables-1:1.8.3-3  iputils-20190709-2  iw-5.3-2  jfsutils-1.1.15-7  json-c-0.13.1-3  kbd-2.2.0-5  keyutils-1.6.1-2  krb5-1.17-2  ldns-1.7.1-2  less-551-3  libaio-0.3.112-2  libarchive-3.4.0-3  libassuan-2.5.3-2  libcap-2.27-2  libcap-ng-0.7.9-2  libelf-0.177-2  libevent-2.1.11-3  libffi-3.2.1-4  libgcrypt-1.8.5-2  libgpg-error-1.36-3  libidn-1.35-2  libidn2-2.3.0-1  libksba-1.3.5-2  libldap-2.4.48-2  libmnl-1.0.4-3  libmpc-1.1.0-2  libnftnl-1.1.4-2  libnghttp2-1.39.2-2  libnl-3.5.0-2  libnsl-1.2.0-2  libpcap-1.9.1-2  libpipeline-1.5.1-2  libpsl-0.21.0-2  libsasl-2.1.27-2  libseccomp-2.4.1-3  libsecret-0.19.1-2  libssh2-1.9.0-2  libtasn1-4.14-3  libtirpc-1.1.4-2  libtool-2.4.6+42+gb88cebd5-7  libunistring-0.9.10-2  libusb-1.0.23-2  licenses-20191011-2  linux-api-headers-5.3.1-2  linux-firmware-20191022.2b016af-3  logrotate-3.15.1-2  lvm2-2.02.186-3  lz4-1:1.9.2-2  lzo-2.10-3  m4-1.4.18-3  make-4.2.1-4  man-pages-5.03-2  mdadm-4.1-2  minizip-1:1.2.11-4  mkinitcpio-busybox-1.30.1-2  mlocate-0.26.git.20170220-2  mpfr-4.0.2-2  nano-4.5-2  ncurses-6.1-7  netctl-1.20-2  nettle-3.5.1-2  npth-1.6-2  nspr-4.23-2  nss-3.47-2  openresolv-3.9.2-2  openssh-8.1p1-2  openssl-1.1.1.d-2  p11-kit-0.23.18.1-2  pacman-mirrorlist-20191001-2  pam-1.3.1-2  pambase-20190105.1-2  pciutils-3.6.2-2  pcre-8.43-2  pcre2-10.33-2  pinentry-1.1.0-5  pkgconf-1.6.3-3  popt-1.16-11  procps-ng-3.3.15-2  psmisc-23.3-2  readline-8.0.001-2  reiserfsprogs-3.6.27-3  run-parts-4.8.6.1-2  s-nail-14.9.15-2  sed-4.7-3  shadow-4.7-3  sqlite-3.30.1-2  sysfsutils-2.1.0-11  tar-1.32-3  texinfo-6.7-2  thin-provisioning-tools-0.8.5-3  tzdata-2019c-3  usbutils-012-2  vi-1:070224-4  which-2.21-5  wireless_tools-30.pre9-3  xf86-video-intel-1:2.99.917+895+gcb6bff95-1  xfsprogs-5.2.1-3  xterm-351-1  zlib-1:1.2.11-4  zstd-1.4.3-2
 sudo pacman -S cmus   Packages (2) libdiscid-0.6.2-2  cmus-2.8.0-3
 ## fix urxvt-perls symlinks
-rm ~/.urxvt/ext/autocomplete-ALL-the-things; ln -s $DROPBOX/$AVT661/home-jo/urxvt/Perls/autocomplete-ALL-the-things ~/.urxvt/ext/autocomplete-ALL-the-things; rm ~/.urxvt/ext/resize-font; ln -s $DROPBOX/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/urxvt/Perls/resize-font ~/.urxvt/ext/resize-font; rm ~/.urxvt/ext/xresources-256; ln -s $DROPBOX/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/urxvt/Perls/xresources-256 ~/.urxvt/ext/xresources-256
+rm ~/.urxvt/ext/autocomplete-ALL-the-things; ln -s $DROPBOX/$AVT661/home-jo/urxvt/Perls/autocomplete-ALL-the-things ~/.urxvt/ext/autocomplete-ALL-the-things; rm ~/.urxvt/ext/resize-font; ln -s $DROPBOX/$AVT661/home-jo/urxvt/Perls/resize-font ~/.urxvt/ext/resize-font; rm ~/.urxvt/ext/xresources-256; ln -s $DROPBOX/$AVT661/home-jo/urxvt/Perls/xresources-256 ~/.urxvt/ext/xresources-256
 ## Tmux Resurrect
 in  $DROPBOX/$AVT661/home-jo/tmux/Plugins
   git clone https://github.com/tmux-plugins/tmux-resurrect
@@ -1717,7 +1724,7 @@ sudo pacman -Syu   Packages (12) alsa-lib-1.2.1.2-2  alsa-topology-conf-1.2.1-1 
 sudo pacman -Syu   Packages (2) iwd-1.2-1  neomutt-20191129-3
 ### Openbox rc.xml changed to symlink
 rm ~/.config/openbox/rc.xml
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/openbox/rc.xml ~/.config/openbox/rc.xml
+ln -s $DROPBOX/$AVT661/home-jo/openbox/rc.xml ~/.config/openbox/rc.xml
 openbox --reconfigure
 ### chromium-widevine
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
@@ -1753,7 +1760,7 @@ sudo pacman -Syu
   Packages (4) bind-tools-9.14.8-4  btrfs-progs-5.4-1  libmaxminddb-1.4.2-1  python-ply-3.11-4
 sudo pacman -S beets   Packages (7) python-jellyfish-0.7.2-3  python-munkres-1.1.2-3  python-musicbrainzngs-0.6-5  python-mutagen-1.43.0-1  python-unidecode-1.1.1-3  python-yaml-5.1.2-3  beets-1.4.9-2
 ### configuration file
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/beetsConfig.yaml ~/.config/beets/config.yaml
+ln -s $DROPBOX/$AVT661/home-jo/beetsConfig.yaml ~/.config/beets/config.yaml
 ## Picard tryout
 sudo pacman -S picard   Packages (4) pyqt5-common-5.13.2-3  python-pyqt5-5.13.2-3  python-sip-pyqt5-4.19.19-3  picard-2.2.3-2
 ### uninstall
@@ -1766,14 +1773,14 @@ Quod Libet > Preferences > Library > all of my music folders
 sudo pacman -Rs beets   Packages (6) python-jellyfish-0.7.2-3  python-munkres-1.1.2-3  python-musicbrainzngs-0.6-5  python-unidecode-1.1.1-3  python-yaml-5.1.2-3  beets-1.4.9-2
 removed my configs in ~/jo
 ## muttrc symlinks
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Email/muttrc-JH ~/.config/mutt/muttrc-JH
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/Email/muttrc-fm ~/.config/mutt/muttrc-fm
+ln -s $DROPBOX/$AVT661/home-jo/Email/muttrc-JH ~/.config/mutt/muttrc-JH
+ln -s $DROPBOX/$AVT661/home-jo/Email/muttrc-fm ~/.config/mutt/muttrc-fm
 ## Beets again
 sudo pacman -Syu   Packages (24) ca-certificates-mozilla-3.48-1  clamav-0.102.1-1  gst-plugins-base-1.16.2-1  gst-plugins-base-libs-1.16.2-1  gst-plugins-good-1.16.2-1  gst-plugins-ugly-1.16.2-1  gstreamer-1.16.2-1  iw-5.4-1  java-runtime-common-3-2  libxslt-1.1.34-2  linux-5.4.2.arch1-1  linux-firmware-20191118.e8a0f4c-2  mpv-1:0.30.0-5  neomutt-20191207-1  notmuch-runtime-0.29.3-1  nspr-4.24-1  nss-3.48-1  opera-65.0.3467.62-1  pcre2-10.34-2  shellcheck-0.7.0-69  thunderbird-68.3.0-1  thunderbird-i18n-en-gb-68.3.0-1  urxvt-perls-2.3-1  vulkan-icd-loader-1.1.129-1
 sudo pacman -S beets   Packages (6) python-jellyfish-0.7.2-3  python-munkres-1.1.2-3  python-musicbrainzngs-0.6-5  python-unidecode-1.1.1-3  python-yaml-5.1.2-3  beets-1.4.9-2
 ### configuration file
 mkdir ~/.config/beets
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/beetsConfig.yaml ~/.config/beets/config.yaml
+ln -s $DROPBOX/$AVT661/home-jo/beetsConfig.yaml ~/.config/beets/config.yaml
 mkdir ~/BeetsMusic
 ### Chromaprint/Acoustid Plugin dependencies
 sudo pacman -S python-pyacoustid python2-gobject
@@ -1821,7 +1828,7 @@ sudo pacman -S youtube-dl   Packages (1) youtube-dl-2019.11.28-1
 ## JH.sty
 kpsewhich -var-value=TEXMFHOME   reports   /home/jo/texmf
 mkdir ~/texmf/tex/latex/jo
-ln -s /mnt/SDSSDA240G/Dropbox/JH/JH.sty ~/texmf/tex/latex/jo/JH.sty
+ln -s $DROPBOX/JH/JH.sty ~/texmf/tex/latex/jo/JH.sty
 ## PhotoCollage
 ### Updates
 sudo pacman -Syu
@@ -1908,11 +1915,11 @@ sudo pacman -Syu   Packages (7) ca-certificates-mozilla-3.49.1-1  nnn-2.9-1  nss
 ### perl-image-exiftool
 sudo pacman -S perl-image-exiftool   Packages (1) perl-image-exiftool-11.70-1
 ## TextNotes.cls symlink
-ln -s /mnt/SDSSDA240G/Dropbox/JH/Now/TextNotes/TextNotes.cls ~/texmf/tex/latex/jo/TextNotes.cls
-ln -s /mnt/SDSSDA240G/Dropbox/JH/Now/TextNotes/memoirArticle.sty ~/texmf/tex/latex/jo/memoirArticle.sty
+ln -s $DROPBOX/JH/Now/TextNotes/TextNotes.cls ~/texmf/tex/latex/jo/TextNotes.cls
+ln -s $DROPBOX/JH/Now/TextNotes/memoirArticle.sty ~/texmf/tex/latex/jo/memoirArticle.sty
 ## Notmuch config
-mv ~/.notmuch-config /mnt/SDSSDA240G/Dropbox/JH/IT_stack/GNULinuxEmail/notmuch-config
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/GNULinuxEmail/notmuch-config ~/.notmuch-config
+mv ~/.notmuch-config $DROPBOX/JH/IT_stack/GNULinuxEmail/notmuch-config
+ln -s $DROPBOX/JH/IT_stack/GNULinuxEmail/notmuch-config ~/.notmuch-config
 ## Transmission
 Preferences > Play a sound  off-ticked
 ## pass insert gmail
@@ -2061,7 +2068,7 @@ having checked the PKGBUILD, cd moar   for   makepkg -sic
   Packages (2) go-2:1.13.7-1  highlight-3.55-1   then   Packages (1) moar-0.9.18-1
 ## move inputrc to symlink
 rm ~/.inputrc
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/home-jo/inputrc ~/.inputrc
+ln -s $DROPBOX/$AVT661/home-jo/inputrc ~/.inputrc
 ## ripgrep
 ### Updates
 sudo pacman -Syu   Packages (9) autoconf-2.69-7  hwids-20200204-1  iwd-1.5-1  neomutt-20191207-3  ntp-4.2.8.p13-3  systemd-244.2-2  systemd-libs-244.2-2  systemd-sysvcompat-244.2-2  ttf-liberation-2.1.0-1
@@ -2126,7 +2133,7 @@ sudo pacman -S ghostscript   Packages (2) ijs-0.35-2  ghostscript-9.51-1
 tested with   gs -h
 ## Pandoc templates symlink
 made  ~/.pandoc  for
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/pandoc-templates ~/.pandoc/templates
+ln -s $DROPBOX/JH/IT_stack/onGitHub/pandoc-templates ~/.pandoc/templates
 ## Noto Sans CJK
 ### Updates
 sudo pacmatic -Syu   Packages (42) bind-tools-9.16.1-1  fuse-common-3.9.1-1  fuse3-3.9.1-1  ghostscript-9.52-1  haskell-aeson-1.4.7.0-1  haskell-aeson-pretty-0.8.8-28  haskell-base-compat-batteries-0.11.1-18  haskell-doctemplates-0.8.1-11  haskell-haddock-library-1.8.0-39  haskell-http-4000.3.14-148  haskell-http-client-0.6.4.1-17  haskell-http-client-tls-0.3.5.3-203  haskell-hxt-9.3.1.18-45  haskell-ipynb-0.1-160  haskell-jira-wiki-markup-1.1.2-1  haskell-network-uri-2.6.3.0-44  haskell-pandoc-types-1.20-25  haskell-skylighting-0.8.3.2-43  haskell-skylighting-core-0.8.3.2-43  haskell-texmath-0.12.0.1-36  libmwaw-0.3.16-1  libreoffice-fresh-6.4.2-1  libreoffice-fresh-en-gb-6.4.2-1  linux-5.5.10.arch1-1  llvm-libs-9.0.1-2  man-pages-5.05-2  neomutt-20200320-1  nomacs-3.14.2-1  ntp-4.2.8.p14-1  openssl-1.1.1.e-1  opera-67.0.3575.97-1  pandoc-2.9.2-69  python-virtualenv-16.2.0-1  python2-2.7.17-2  python2-virtualenv-16.2.0-1  shellcheck-0.7.0-196  systemd-245.2-2  systemd-libs-245.2-2  systemd-sysvcompat-245.2-2  vulkan-icd-loader-1.2.135-1  xf86-input-libinput-0.29.0-2  xz-5.2.5-1
@@ -2135,16 +2142,16 @@ sudo pacman -S noto-fonts-cjk   Packages (1) noto-fonts-cjk-20190409-1
 fc-list | grep SC
 ## Pandoc defaults
 made  ~/.pandoc/defaults  for
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/md4pdf/GNULinux/defaults.yaml ~/.pandoc/defaults/md4pdfGNULinux.yaml
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/md4pdf/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
-ln -s /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/md4pdf/defaults.yaml ~/.pandoc/defaults/md4pdf.yaml
+ln -s $DROPBOX/JH/IT_stack/onGitHub/md4pdf/GNULinux/defaults.yaml ~/.pandoc/defaults/md4pdfGNULinux.yaml
+ln -s $DROPBOX/JH/IT_stack/onGitHub/md4pdf/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
+ln -s $DROPBOX/JH/IT_stack/onGitHub/md4pdf/defaults.yaml ~/.pandoc/defaults/md4pdf.yaml
 ## texlive-langextra
 ### Updates
 sudo pacmatic -Syu   Packages (24) cmake-3.17.0-1  go-2:1.14.1-1  haskell-connection-0.3.1-26  haskell-haddock-library-1.8.0-40  haskell-http-4000.3.14-151  haskell-http-client-0.6.4.1-20  haskell-http-client-tls-0.3.5.3-205  haskell-hxt-9.3.1.18-47  haskell-ipynb-0.1-161  haskell-jira-wiki-markup-1.1.3-1  haskell-network-3.1.1.1-1  haskell-network-uri-2.6.3.0-47  haskell-skylighting-0.8.3.2-45  haskell-skylighting-core-0.8.3.2-45  haskell-socks-0.6.1-21  haskell-streaming-commons-0.2.1.2-15  haskell-texmath-0.12.0.1-38  haskell-tls-1.5.4-6  libdvdnav-6.1.0-1  libdvdread-6.1.0-1  pandoc-2.9.2-72  python-setuptools-1:46.1.1-1  reflector-2020.3.21.2-1  shellcheck-0.7.0-199
 ### texlive-langextra
 sudo pacman -S texlive-langextra   Packages (1) texlive-langextra-2019.52581-1
 ## verseSettings.sty
-ln -s /mnt/SDSSDA240G/Dropbox/JH/Copied/verseSettings.sty ~/texmf/tex/latex/jo/verseSettings.sty
+ln -s $DROPBOX/JH/Copied/verseSettings.sty ~/texmf/tex/latex/jo/verseSettings.sty
 ## Falkon
 ### Updates
 sudo pacmatic -Syu   Packages (7) gd-2.3.0-1  gmime3-3.2.7-1  imagemagick-7.0.10.2-2  libbluray-1.2.0-1  python2-setuptools-2:44.1.0-1  ttf-inconsolata-1:3.000-1  vim-gitgutter-671.0e509fb-1
@@ -2345,6 +2352,47 @@ sudo cp $DROPBOX/$AVT661/etc/modprobedAlsabase.conf /etc/modprobe.d/alsa-base.co
 reboot  got the sound flowing again
 ## set alsamixer to my preferences
 then   sudo alsactl store
+# Zathura print dialogue defaults to Print to LPR
+# Fortune
+## Updates
+sudo pacmatic -Syu   Packages (73) haskell-aeson-1.4.7.1-3  haskell-aeson-pretty-0.8.8-31  haskell-asn1-encoding-0.9.6-23  haskell-asn1-parse-0.9.5-23  haskell-asn1-types-0.3.4-2  haskell-base-noprelude-4.13.0.0-1  haskell-connection-0.3.1-28  haskell-cryptonite-0.26-34  haskell-doctemplates-0.8.1-14  haskell-haddock-library-1.8.0-45  haskell-hslua-1.0.3.2-25  haskell-hslua-module-system-0.2.1-33  haskell-hslua-module-text-0.2.1-42  haskell-http-4000.3.14-157  haskell-http-client-0.6.4.1-26  haskell-http-client-tls-0.3.5.3-210  haskell-http-types-0.12.3-51  haskell-hxt-9.3.1.18-52  haskell-ipynb-0.1-165  haskell-memory-0.15.0-14  haskell-network-3.1.1.1-3  haskell-network-uri-2.6.3.0-53  haskell-pandoc-types-1.20-28  haskell-pem-0.2.4-79  haskell-skylighting-0.8.3.2-51  haskell-skylighting-core-0.8.3.2-51  haskell-socks-0.6.1-22  haskell-streaming-commons-0.2.1.2-16  haskell-texmath-0.12.0.1-43  haskell-tls-1.5.4-8  haskell-unordered-containers-0.2.10.0-36  haskell-x509-1.7.5-55  haskell-x509-store-1.6.7-54  haskell-x509-system-1.6.6-122  haskell-x509-validation-1.6.11-54  iana-etc-20200327-1  intel-tbb-2020.2-1  libbluray-1.2.0-3  libnghttp2-1.40.0-1  liborcus-0.15.4-1  libreoffice-fresh-6.4.2-2  libsynctex-2019.51075-8  linux-5.5.13.arch2-1  mesa-20.0.2-1  meson-0.54.0-1  pandoc-2.9.2.1-2  perl-5.30.2-1  poppler-0.87.0-1  python-filelock-3.0.12-3  python-msgpack-1.0.0-1  python-virtualenv-20.0.15-1  python2-backports-1.0-2  python2-configparser-4.0.2-1  python2-contextlib2-0.6.0.post1-1  python2-filelock-3.0.12-3  python2-importlib-metadata-1.5.0-1  python2-importlib_resources-1.0.2-1  python2-pathlib2-2.3.5-1  python2-scandir-1.10.0-1  python2-typing-3.7.4.1-1  python2-virtualenv-20.0.15-1  python2-wheel-0.34.2-2  python2-zipp-1:1.1.0-1  qt5-base-5.14.1-4  ripgrep-12.0.1-1  shellcheck-0.7.0-207  tevent-1:0.10.2-1  texlive-bin-2019.51075-8  vim-airline-0.11-1  vim-airline-themes-r1386.63b66df-1  xorg-server-1.20.8-1  xorg-server-common-1.20.8-1  zathura-pdf-mupdf-0.3.5-3
+## Fortune
+sudo pacman -S fortune-mod   Packages (2) recode-3.7.6-1  fortune-mod-2.12.0-1
+# vfat snag
+K8GBDTIG3 got "unkown filesystem type 'vfat'"
+fixed by a reboot
+# covid19-cli-git
+## Updates
+sudo pacmatic -Syu   Packages (12) chromium-80.0.3987.162-1  gnutls-3.6.13-1  haskell-hslua-1.1.0-1  haskell-hslua-module-system-0.2.1-34  haskell-hslua-module-text-0.2.1-43  librsvg-2:2.48.2-1  man-db-2.9.1-2  meson-0.54.0-2  openssl-1.1.1.f-1  pandoc-2.9.2.1-3  re2-1:20200401-1  shellcheck-0.7.0-208
+## covid19-cli-git
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd covid19-cli-git   for   makepkg -sic
+  Packages (2) oniguruma-6.9.4-1  jq-1.6-2
+  Packages (1) covid19-cli-git-0.2.3.r0.gc8686a6-1
+# CmusNotify
+## Updates
+sudo pacmatic -Syu   Packages (10) bind-tools-9.16.1-2  btrfs-progs-5.4.1-1  coreutils-8.32-1  graphite-1:1.3.14-1  libnetfilter_conntrack-1.0.8-1  mesa-20.0.3-1  nano-4.9.1-1  systemd-245.4-1  systemd-libs-245.4-1  systemd-sysvcompat-245.4-1
+## CmusNotify
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd cmus-notify   for   makepkg -sic
+  failed for want of   python-notify2
+## notify2
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd python-notify2   for   makepkg -sic
+  Packages (1) python-notify2-0.3.1-2
+## CmusNotify
+cd cmus-notify   for   makepkg -sic    Packages (1) cmus-notify-1.4.0-1
+cmus_notify -h
+## cmus/rc
+ln -s $DROPBOX/$AVT661/home-jo/Music/cmus-rc.conf ~/.config/cmus/rc
+## cmus_notify.sh
+chmod +x $DROPBOX/$AVT661/home-jo/Music/cmus_notify.sh
+## Dunst
+### Updates
+sudo pacmatic -Syu   Packages (72) atk-2.36.0-1  haskell-aeson-1.4.7.1-4  haskell-aeson-pretty-0.8.8-32  haskell-ansi-terminal-0.10.3-16  haskell-asn1-encoding-0.9.6-24  haskell-asn1-parse-0.9.5-24  haskell-asn1-types-0.3.4-3  haskell-async-2.2.2-6  haskell-attoparsec-0.13.2.4-2  haskell-base-compat-batteries-0.11.1-24  haskell-base-orphans-0.8.2-26  haskell-base64-bytestring-1.0.0.3-13  haskell-blaze-html-0.9.1.2-22  haskell-blaze-markup-0.8.2.4-2  haskell-case-insensitive-1.2.1.0-6  haskell-cmark-gfm-0.2.1-19  haskell-colour-2.3.5-40  haskell-connection-0.3.1-29  haskell-cryptonite-0.26-35  haskell-data-default-0.7.1.1-52  haskell-data-default-instances-dlist-0.0.1-65  haskell-dlist-0.8.0.7-20  haskell-doclayout-0.3-7  haskell-doctemplates-0.8.1-15  haskell-emojis-0.1-14  haskell-errors-2.3.0-52  haskell-exceptions-0.10.4-24  haskell-glob-0.10.0-38  haskell-haddock-library-1.8.0-46  haskell-hashable-1.3.0.0-2  haskell-hourglass-0.2.12-49  haskell-hslua-1.1.0-2  haskell-hslua-module-system-0.2.1-35  haskell-hslua-module-text-0.2.1-44  haskell-hsyaml-0.2.1.0-19  haskell-http-4000.3.14-159  haskell-http-client-0.6.4.1-28  haskell-http-client-tls-0.3.5.3-211  haskell-http-types-0.12.3-52  haskell-hxt-9.3.1.18-53  haskell-ipynb-0.1-166  haskell-jira-wiki-markup-1.1.4-2  haskell-juicypixels-3.3.5-3  haskell-memory-0.15.0-15  haskell-network-3.1.1.1-6  haskell-network-uri-2.6.3.0-55  haskell-pandoc-types-1.20-29  haskell-pem-0.2.4-80  haskell-quickcheck-2.14-5  haskell-scientific-0.3.6.2-19  haskell-skylighting-0.8.3.2-52  haskell-skylighting-core-0.8.3.2-52  haskell-socks-0.6.1-23  haskell-split-0.2.3.4-21  haskell-splitmix-0.0.4-16  haskell-streaming-commons-0.2.1.2-17  haskell-tagsoup-0.14.8-29  haskell-temporary-1.3-64  haskell-texmath-0.12.0.1-44  haskell-text-conversions-0.3.0-21  haskell-time-compat-1.9.3-3  haskell-tls-1.5.4-9  haskell-unordered-containers-0.2.10.0-37  haskell-uuid-types-1.0.3-25  haskell-vector-0.12.1.2-18  haskell-x509-1.7.5-56  haskell-x509-store-1.6.7-55  haskell-x509-system-1.6.6-123  haskell-x509-validation-1.6.11-55  haskell-zip-archive-0.4.1-32  pandoc-2.9.2.1-4  shellcheck-0.7.0-209
+### Dunst
+sudo pacman -S dunst   Packages (1) dunst-1.4.1-1
+ln -s $DROPBOX/$AVT661/home-jo/dunstrc ~/.config/dunst/dunstrc
 # waiting
 ## texlive-localmanager-git
 ## qpdfview
@@ -2383,7 +2431,6 @@ in  ~/Arch/AUR/ :  bash -x AURclones.sh
 ## LPD-rapport.cls
 ## Java
 ## Minecraft
-## Font Squirrel fonts
 ## smartmontools
 ## mpg123
 ## UNRAR
