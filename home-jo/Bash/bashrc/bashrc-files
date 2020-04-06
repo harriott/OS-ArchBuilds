@@ -92,7 +92,7 @@ n()
 
 # NNN_BMS can't handle variables in the path
 # only first 10 get loaded correctly
-export NNN_BMS='a:/home/jo/.local/share/mail;c:/mnt/HD103SJ/Share-IT-Copied;i:/mnt/SDSSDA240G/Dropbox/JH/Now/Technos/IT;j:/run/media/jo;l:/mnt/SDSSDA240G/Dropbox/JH/Work/ST/LPD/IdF;m:/mnt/SDSSDA240G/Dropbox/CAMusic;r:/mnt/SDSSDA240G/Dropbox/JH/Copied/Practical0/France/Places/IdF/Transport/RATP;s:/mnt/SDSSDA240G/Dropbox/JH/Copied/forWork/Education/Science-Engineering;w:/mnt/SDSSDA240G/Dropbox/JH/Then0/Deauram/with;z:/mnt/SDSSDA240G/Dropbox/JH/Work/France/IdF/Paris/19e/Cafezoide'
+export NNN_BMS='a:/home/jo/.local/share/mail;c:/mnt/HD103SJ/Share-IT-Copied;i:/mnt/SDSSDA240G/Dropbox/JH/Now/Technos/IT;j:/run/media/jo;l:/mnt/SDSSDA240G/Dropbox/JH/Work/ST/LPD/IdF;m:/mnt/SDSSDA240G/Dropbox/CAMusic;r:/mnt/SDSSDA240G/Dropbox/JH/Copied/Practical0/France/Places/IdF/Transport/RATP;s:/mnt/SDSSDA240G/Dropbox/JH/Copied/forWork/Education/Science-Engineering;t:/mnt/SDSSDA240G/Dropbox/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:/mnt/SDSSDA240G/Dropbox/JH/Then0/Deauram/with'
 #  a:/home/jo/.local/share/mail
 #  c:/mnt/HD103SJ/Share-IT-Copied
 #  i:/mnt/SDSSDA240G/Dropbox/JH/Now/Technos/IT
@@ -101,9 +101,8 @@ export NNN_BMS='a:/home/jo/.local/share/mail;c:/mnt/HD103SJ/Share-IT-Copied;i:/m
 #  m:/mnt/SDSSDA240G/Dropbox/CAMusic
 #  r:/mnt/SDSSDA240G/Dropbox/JH/Copied/Practical0/France/Places/IdF/Transport/RATP
 #  s:/mnt/SDSSDA240G/Dropbox/JH/Copied/forWork/Education/Science-Engineering
-#   t:/mnt/SDSSDA240G/Dropbox/JH/F+F/fromDiptonAvenue/ThaverMohammed
+#  t:/mnt/SDSSDA240G/Dropbox/JH/F+F/fromDiptonAvenue/ThaverMohammed
 #  w:/mnt/SDSSDA240G/Dropbox/JH/Then0/Deauram/with
-#  z:/mnt/SDSSDA240G/Dropbox/JH/Work/France/IdF/Paris/19e/Cafezoide
 #
 #  Previously:
 #    n:~/.config/nnn

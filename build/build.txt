@@ -2440,6 +2440,29 @@ http://localhost:631/printers/ENVY_5530 > Set Default Options > Media Size > A4 
 sudo pacmatic -Syu   Packages (39) chromium-80.0.3987.163-1  ell-0.30-1  falkon-3.1.0-10  gtk-update-icon-cache-1:3.24.17-2  gtk3-1:3.24.17-2  gvim-8.2.0510-1  haskell-aeson-1.4.7.1-5  haskell-aeson-pretty-0.8.8-33  haskell-data-default-0.7.1.1-53  haskell-data-default-instances-dlist-0.0.1-66  haskell-dlist-0.8.0.8-1  haskell-doctemplates-0.8.1-16  haskell-glob-0.10.0-39  haskell-haddock-library-1.8.0-47  haskell-http-4000.3.14-162  haskell-http-client-0.6.4.1-31  haskell-http-client-tls-0.3.5.3-214  haskell-hxt-9.3.1.18-56  haskell-ipynb-0.1-169  haskell-network-uri-2.6.3.0-58  haskell-pandoc-types-1.20-30  haskell-skylighting-0.8.3.4-1  haskell-skylighting-core-0.8.3.4-1  haskell-texmath-0.12.0.1-47  hwloc-2.2.0-1  intel-gmmlib-20.1.1-1  iproute2-5.6.0-1  libnftnl-1.1.6-1  libwps-0.4.11-1  linux-firmware-20200316.8eb0b28-1  mesa-20.0.4-1  neovim-0.4.3-3  netctl-1.21-2  nftables-1:0.9.4-1  pandoc-2.9.2.1-10  python-pyqt5-5.14.2-1  python-pyqt5-sip-12.7.2-1  shellcheck-0.7.0-215  vim-runtime-8.2.0510-1
 ## dvd+rw-tools
 sudo pacman -S dvd+rw-tools   Packages (1) dvd+rw-tools-7.1-8
+# bfg
+## Updates
+sudo pacmatic -Syu   :: Replace python-xdg with extra/python-pyxdg? [Y/n]
+  Packages (13) bison-3.5.4-1  ffmpeg-1:4.2.2-5  gobject-introspection-runtime-1.64.1-1  gtk-update-icon-cache-1:3.24.17+4+g8c97702a07-2  gtk3-1:3.24.17+4+g8c97702a07-2  imagemagick-7.0.10.5-1  languagetool-4.9-1  python-pyparsing-2.4.7-1  python-pyxdg-0.26-6  python-xdg-0.26-4 [removal]  python2-pyparsing-2.4.7-1  vlc-3.0.8-12  x265-3.3-1
+  warning: directory permissions differ on /usr/share/languagetool/third-party-licenses/
+  filesystem: 755  package: 775
+    sudo chmod 775 /usr/share/languagetool/third-party-licenses/
+## bfg
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd bfg   for   makepkg -sic
+  Packages (1) python-notify2-0.3.1-2
+  :: There are 3 providers available for java-runtime>8:
+  :: Repository extra
+     1) jre-openjdk  2) jre10-openjdk  3) jre11-openjdk
+  Enter a number (default=1): 1    Packages (1) jre-openjdk-13.0.2.u8-1
+  (1/1) installing jre-openjdk
+  when you use a non-reparenting window manager,
+  set _JAVA_AWT_WM_NONREPARENTING=1 in /etc/profile.d/jre.sh
+  Optional dependencies for jre-openjdk
+      alsa-lib: for basic sound support [installed]
+      gtk2: for the Gtk+ 2 look and feel - desktop usage [installed]
+      gtk3: for the Gtk+ 3 look and feel - desktop usage [installed]
+  Packages (1) bfg-1.13.0-3
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

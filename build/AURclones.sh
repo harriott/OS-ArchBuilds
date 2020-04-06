@@ -15,6 +15,7 @@
 # git clone https://aur.archlinux.org/photocollage.git
 # git clone https://aur.archlinux.org/pnmixer-gtk3.git
 # git clone https://aur.archlinux.org/pyfil.git
+# git clone https://aur.archlinux.org/python-notify2.git
 # git clone https://aur.archlinux.org/tmux-bash-completion.git
 # git clone https://aur.archlinux.org/urlview.git
 # git clone https://aur.archlinux.org/vim-colors-solarized-git.git
@@ -26,7 +27,7 @@
 # git clone https://aur.archlinux.org/vim-simpylfold.git
 # git clone https://aur.archlinux.org/vim-table-mode.git
 # git clone https://aur.archlinux.org/xnviewmp.git
-git clone https://aur.archlinux.org/python-notify2.git
+git clone https://aur.archlinux.org/bfg.git
 
 # sudo rm -r auracle-git; git clone https://aur.archlinux.org/auracle-git.git
 # sudo rm -r chromium-widevine; git clone https://aur.archlinux.org/chromium-widevine.git
