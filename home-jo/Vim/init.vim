@@ -1,7 +1,13 @@
-"
+
 " share my gVim configuration
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
-set termguicolors " for accurate colour codes, can turn off with :se notgc
 source ~/.vimrc
 
+" for accurate colour codes
+set termguicolors
+" can turn off with :se notgc
+
+" let g:Hexokinase_highlighters = ['foreground']
+let g:Hexokinase_highlighters = ['foregroundfull']
+packadd vim-hexokinase

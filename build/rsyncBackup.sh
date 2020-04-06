@@ -4,7 +4,7 @@
 # Full system backup
 # ------------------
 
-# Run this script from a Live ISO:  bash /mnt/home/jo/Arch/rsyncBackup.sh
+# Run this script from a Live ISO:  bash <path-to-script>/rsyncBackup.sh
 
 # Backup destination
 backdest=/mnt/mnt/9QG2FFEE/AcerVeritonT661-rsyncBackup
