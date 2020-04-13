@@ -20,9 +20,11 @@ conky -c $DROPBOX/$AVT661/Conky/ja8-my.conf
 copyq & # because CopyQ's internal Autostart doesn't work
 dropbox &
 gvim &
+# hp-systray & disown   doesn't launch...
 # htop &  snags...
 obmenu-generator &
 # pcmanfm &
 pnmixer &
+redshift-gtk -l 48.8646:2.3984 &
 tint2 &
 urxvt &

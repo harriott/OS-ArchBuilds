@@ -1,0 +1,45 @@
+# vim: set ft=sh tw=0:
+
+# commands for syncing mailboxes
+source $GNULE/mymuttrcAddresses
+nmnew () { echo "notmuch new:"; notmuch new; }
+msf () { mbsync fm    ; nmnew ; echo "nmTags-fm.sh"    ; bash $hje/nmTags-fm.sh    ; }
+msg () { mbsync gmail ; nmnew ; echo "nmTags-gmail.sh" ; bash $hje/nmTags-gmail.sh ; }
+msl () { mbsync live  ; nmnew ; echo "nmTags-live.sh"  ; bash $hje/nmTags-live.sh  ; }
+msx () { mbsync gmx   ; nmnew ; echo "nmTags-gmx.sh"   ; bash $hje/nmTags-gmx.sh   ; }
+alias ms='echo -e "\e[1m\e[95m-- fm --\e[0m"; msf; echo -e "\e[1m\e[95m-- gmail --\e[0m"; msg; echo -e "\e[1m\e[95m-- gmx --\e[0m"; msx; echo -e "\e[1m\e[95m-- live --\e[0m"; msl'
+
+# commands for reading mailboxes
+alias nmf='neomutt -F $hje/muttrc-ftml'
+alias nmg='neomutt -F $hje/muttrc-gmail'
+alias nml='neomutt -F $hje/muttrc-live'
+alias nmx='neomutt -F $hje/muttrc-gmx'
+
+# commands to grab mutt-alias
+alias mas='bash ~/mutt-alias.sh/mutt-alias.sh'
+#  https://github.com/Konfekt/mutt-alias.sh
+export mail=/home/jo/.local/share/mail
+magf () {
+  for folder in Archive Cafezoide Deauram Friends Waiting Work; do
+    mas -a $GNULE/aliases-fm-mag "/home/jo/.local/share/mail/fm/$folder/cur"
+  done
+}
+magg () {
+  for folder in Archives Waiting; do
+    mas -a $GNULE/aliases-gmail-mag "/home/jo/.local/share/mail/gmail/$folder/cur"
+  done
+}
+magx () {
+  for folder in Archives Waiting; do
+    mas -a $GNULE/aliases-gmx-mag "/home/jo/.local/share/mail/gmx/$folder/cur"
+  done
+}
+magl () {
+  for folder in Archive LPD Waiting; do
+    mas -a $GNULE/aliases-live-mag "/home/jo/.local/share/mail/live/$folder/cur"
+  done
+}
+
+# command to backup my Mutt Wizard files
+alias mwb='bash $DROPBOX/$AVT661/home-jo/email/mwBackup.sh'
+

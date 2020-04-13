@@ -3,12 +3,12 @@
 # based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
 # general settings for neomutt
 
-set mailcap_path = /usr/share/mutt-wizard/mailcap
+set mailcap_path = $DROPBOX/$AVT661/home-jo/email/mailcap-MW
 set date_format="%y/%m/%d %I:%M%p"
 set index_format="%2C %zs %?X?A& ? %D %-15.15F %s (%-4.4c)"
 # set sort = 'reverse-date'
 set smtp_authenticators = 'gssapi:login'
-set query_command = "abook --mutt-query '%s'"
+# set query_command = "abook --mutt-query '%s'"
 set rfc2047_parameters = yes
 set pager_stop = yes # don't page on into next message
 set sleep_time = 0  # Pause 0 seconds for informational messages
@@ -66,19 +66,19 @@ bind pager \031 previous-line  # Mouse wheel
 bind pager \005 next-line  # Mouse wheel
 bind pager ] half-down
 bind pager [ half-up
-bind editor <Tab> complete-query
 
 # address book (from MW):
-macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>" "add the sender address to abook"
+# macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>" "add the sender address to abook"
 
-# Notmuch:
+# Searching:
 # this hard to decipher MW command only works in the current folder (so need to define an folder containing all of the emails to allow full searching of each email account):
 macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>read -p 'Enter a search term to find with notmuch: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
 # reset limit to view all messages in the folder:
 macro index \Cl "<limit>all\n" "show all messages (undo limit)"
-# the following allows virtual folders to be populated with Notmuch queries:
-set nm_default_uri = "notmuch:///home/jo/.local/share/mail/"
+# the following two lines allow virtual folders to be populated with Notmuch queries across the whole account:
+set nm_default_uri = "notmuch://$mail/"
 macro index,pager gq "<vfolder-from-query>" "go notmuch Query"
 
+# Layout:
 source $DROPBOX/$AVT661/home-jo/email/muttrc-MW-layout
 

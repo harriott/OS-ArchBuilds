@@ -41,8 +41,9 @@ export HISTSIZE=1000
 PROMPT_COMMAND='history -a'
 shopt -s histappend
 
-source ~/.bashrc-files
-source ~/.bashrc-images
+source $DROPBOX/$AVT661/home-jo/Bash/bashrc-email
+source $DROPBOX/$AVT661/home-jo/Bash/bashrc-files
+source $DROPBOX/$AVT661/home-jo/Bash/bashrc-images
 
 # Internetish
 alias i='iwctl station wlwg111v2 get-networks'
@@ -53,19 +54,6 @@ doup () {
   sudo ip link set wlwg111v2 down
   sudo ip link set wlwg111v2 up
 }
-
-# email
-source $GNULE/mymuttrcAddresses
-nmnew () { echo "notmuch new:"; notmuch new; }
-msf () { mbsync fm    ; nmnew ; echo "nmTags-fm.sh"    ; bash $hje/nmTags-fm.sh    ; }
-msg () { mbsync gmail ; nmnew ; echo "nmTags-gmail.sh" ; bash $hje/nmTags-gmail.sh ; }
-msl () { mbsync live  ; nmnew ; echo "nmTags-live.sh"  ; bash $hje/nmTags-live.sh  ; }
-msx () { mbsync gmx   ; nmnew ; echo "nmTags-gmx.sh"   ; bash $hje/nmTags-gmx.sh   ; }
-alias ms='echo -e "\e[1m\e[95m-- fm --\e[0m"; msf; echo -e "\e[1m\e[95m-- gmail --\e[0m"; msg; echo -e "\e[1m\e[95m-- gmx --\e[0m"; msx; echo -e "\e[1m\e[95m-- live --\e[0m"; msl'
-alias nmf='neomutt -F $hje/muttrc-ftml'
-alias nmg='neomutt -F $hje/muttrc-gmail'
-alias nml='neomutt -F $hje/muttrc-live'
-alias nmx='neomutt -F $hje/muttrc-gmx'
 
 # System
 export GPG_TTY=$(tty)
@@ -78,4 +66,11 @@ fi
 # virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
+
+# auto-added by $ cpan
+PATH="/home/jo/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/jo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/jo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/jo/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/jo/perl5"; export PERL_MM_OPT;
 

@@ -47,6 +47,6 @@ for Resn in "${Resns[@]}"; do
     # $siPrefix $2"00" $height > "$3.tiff"
     resolution=$2"00"
     goscan="$siPrefix $resolution $height > $3.tiff"
-    echo $goscan
+    eval $goscan
   fi
 done

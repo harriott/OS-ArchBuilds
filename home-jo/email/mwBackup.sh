@@ -5,7 +5,7 @@
 # ------------------------
 
 # Backup destination
-backdest=/mnt/HD103SJ/Share-More/mw-AVT661
+backdest=/mnt/9QG2FFEE/Share-More/mw-AVT661
 
 # Labels for backup name
 date=$(date "+%F-%H-%M")
@@ -17,16 +17,18 @@ if [ ! -d $backdest ]; then
   exit
 fi
 echo -e "\e[1m7z-ing:\e[0m"
-echo "/home/jo/.local/share/mail/"
-echo -e "\e[92m/home/jo/.local/share/mail.7z\e[0m"
-7z a -mx1 ~/.local/share/mail.7z ~/.local/share/mail
+echo "$mail/"
+echo -e "\e[92m$mail.7z\e[0m"
+7z a -mx1 $mail.7z $mail
 echo -e "\e[1mcp-ing:\e[0m"
 mkdir $bfolder
 nodes=(
   "/home/jo/.cache/mutt-wizard" \
+    # - created by Mutt Wizard, can eventually be deleted
   "/home/jo/.config/msmtp/config" \
   "/home/jo/.config/mutt" \
-  "/home/jo/.local/share/mail.7z" \
+    # - created by Mutt Wizard, can eventually be deleted
+  "$mail.7z" \
   "/home/jo/.mbsyncrc" \
 )
 for node in "${nodes[@]}"; do

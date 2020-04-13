@@ -9,16 +9,19 @@
 
 set from = $live
 set sendmail = "msmtp -a live"
-set folder = "/home/jo/.local/share/mail/live"
-set header_cache = /home/jo/.cache/mutt-wizard/live/headers
-set message_cachedir = /home/jo/.cache/mutt-wizard/live/bodies
+set folder = "$mail/live"
+set header_cache = /home/jo/.cache/mutt/live/headers
+set message_cachedir = /home/jo/.cache/mutt/live/bodies
 
 set spoolfile = "+Inbox"
 set record = "+Sent"
 set trash = "+Deleted"
 
+set alias_file = "$GNULE/aliases-live"
+source $alias_file
+
 # if you make changes here, you probably need to clear your folders, and start afresh
-# rm -r ~/.cache/mutt-wizard/live/* ~/.local/share/mail/live/*
+# rm -r ~/.cache/mutt/live/* ~/.local/share/mail/live/*
 # and fix  ~/.mbsyncrc  to correspond
 mailboxes "=Archive" "=Deleted" "=Drafts" "=Inbox" "=Junk" "=LPD" "=Sent" "=Waiting"
 # - any errors here will trigger others

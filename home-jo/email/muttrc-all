@@ -7,6 +7,9 @@ source $DROPBOX/$AVT661/home-jo/email/muttrc-MW
 set realname = "Joseph Harriott"
 set mbox_type = Maildir
 
+set sort_alias = alias
+set reverse_alias = yes
+
 set postponed = "+Drafts"
 
 macro index,pager gw "<change-folder>=Waiting<enter>" "go to Waiting"
