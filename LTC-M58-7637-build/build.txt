@@ -1,0 +1,69 @@
+vim: fdl=0 ft=build fdm=expr:
+
+Lenovo ThinkCentre M58 type 7637 - LTC-M58-7637
+
+# Physical Configuration
+HD103SJ
+Logitech Wireless Mouse M525
+Logitech Ultra-Flat Y-BP62a
+# Arch install
+booted to archlinux-2020.04.01-x86_64.iso usb
+loadkeys fr
+## disk partitions
+lsblk -f  indicated   /dev/sda
+### zap existing
+gdisk /dev/sda > x (extra functionality) > z (Zap)  y > y
+## create new GPT
+gdisk /dev/sda   o (create a new empty GUID partition table GPT & new protective MBR) y
+  w   for  gdisk /dev/sda  (MBR: protection  GPT: present)
+## create partitions
+gdisk /dev/sda
+  n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +1m >
+    ef02 (BIOS boot partition)
+  n > Partition number (defaults to 2) > First sector (defaults to 4096) > +9g > 8200 (Linux swap)
+  n > Partition number (defaults to 3) > First sector (defaults to the sector after partition 2) >
+    +60g > Hex code > 8304 Linux x86-64 root (/)
+  n > Partition number (defaults to 4) > First sector (defaults to the sector after partition 3) >
+    +50g > Hex code > 8302 (Linux home)
+  n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 4) >
+    Enter > 8300 (Linux filesystem)
+  w
+## format & mount partitions
+lsblk -l
+mkswap /dev/sda2   for   swapon /dev/sda2   (then  swapon -s  shows /dev/sda2 has Priority -2)
+mkfs.ext4 /dev/sda3   for   mount /dev/sda3 /mnt
+  mkdir /mnt/home   then   mkfs.ext4 /dev/sda4   for   mount /dev/sda4 /mnt/home
+## Moto G4 plugged into front left USB
+ip link   reports it as   enp0s26f7u1   so   dhcpcd enp0s26f7u1
+  ping -c 3 8.8.8.8  got a response
+## install the base packages
+pacstrap /mnt base linux linux-firmware   got people 117
+## genfstab
+genfstab -U /mnt >> /mnt/etc/fstab   then checked with   cat /mnt/etc/fstab
+## change root
+arch-chroot /mnt
+## time zone
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+## generate /etc/adjtime
+hwclock --systohc
+## system clock
+timedatectl set-ntp true   then   timedatectl status
+## big mistake
+cat /etc/localtime - totally fucked up the console, so hard shutdown
+## restarted to archlinux-2020.04.01-x86_64.iso usb
+loadkeys fr
+gdisk -l /dev/sda
+## time zone + system clock again
+ls -l /etc/localtime  shows it's a symlink to  ../usr/share/zoneinfo/UTC, so  rm /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime   then checked with   timedatectl status
+hwclock --systohc
+## locale
+vi /etc/locale.gen   and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
+cat /etc/locale.gen | grep -v '^#'   then  locale-gen
+
+### after locale
+cd /home/AcerVeritonT661/build   for    bash after_locale.sh
+### root password
+passwd
+### shutdown to eject CD
+exit   then   shutdown -h now
