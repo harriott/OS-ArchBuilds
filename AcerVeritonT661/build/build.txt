@@ -2904,3 +2904,4 @@ rm ~/.offlineimaprc
 ## jump
 ## noto-fonts-emoji
 ## cups-pdf
+## uninstall pacmatic

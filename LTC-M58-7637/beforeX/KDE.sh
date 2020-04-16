@@ -9,12 +9,8 @@ trap read debug  # puts a read request after each executable line
 cp $( dirname "${BASH_SOURCE[0]}" )/xinitrc ~/.xinitrc
 
 # trash-cli
-sudo pacmatic -S trash-cli
+sudo pacman -S trash-cli
 trash-list
-
-# autojump
-sudo pacmatic -S autojump
-autojump -h
 
 # SSH keys
 mkdir ~/.ssh

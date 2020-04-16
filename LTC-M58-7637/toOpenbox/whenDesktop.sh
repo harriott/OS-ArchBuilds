@@ -5,6 +5,10 @@
 set -x
 trap read debug
 
+# autojump
+# ...
+autojump -h
+
 # Updates
 sudo pacman -Syu
 

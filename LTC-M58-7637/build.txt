@@ -109,11 +109,13 @@ bash /mnt/K8GBDT100/testClamAV.sh
 ### prepare for KDE
 ip link   reports Moto G4 still at   enp0s29f7u6
 lsblk -f  indicated   mount /dev/sdj1 /mnt/K8GBDT100
-bash /mnt/K8GBDT100/rootKDE.sh
-
+bash /mnt/K8GBDT100/rootKDE.sh   selected  phonon-qt5-vlc  fcron
 # jo
 exit   for   login > jo > pw
-### prepare .xinitrc
+mkdir K8GBDT100   then   lsblk -f  indicated   sudo mount /dev/sdj1 K8GBDT100
+bash K8GBDT100/KDE.sh   (pacmatic generated a load of errors again)
+startx
+Plasma > Matériel > Périphériques d'entrée > Souris > Vitesse > 8
 # waiting
 ## graphics card
 lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
