@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# JH note:
+#  this first part is just copied from the default  /etc/xinitrc
+#  symlink this to  ~/.xinitrc  so that it is used instead of the default
+#  more of my additions below
+
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -41,17 +46,16 @@ fi
 # ------------
 # JH additions
 # ------------
-# defined here so they can be accessed by  $DROPBOX/$AVT661/home-jo/openbox/autostart  &  gvim
+# defined here so they can be accessed by any KDE settings and by  gvim
 # kill tmux sessions if you've made changes here
 export DROPBOX=/mnt/SDSSDA240G/Dropbox # keep this capitalised for finding it without need for $
 export AVT661='JH/IT_stack/onGitHub/ArchBuilds/AcerVeritonT661'
 export hje=$DROPBOX/$AVT661/home-jo/email
 export GNULE=$DROPBOX/JH/IT_stack/GNULinuxEmail
 
-## stop the 600s screensaver
+# stop the 600s screensaver
 xset s off
 
-## launch Openbox
-xbindkeys
-exec openbox-session
+# launch KDE
+exec startplasma-x11
 

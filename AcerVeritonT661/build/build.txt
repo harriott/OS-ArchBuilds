@@ -97,7 +97,7 @@ mount /dev/sdf1 /mnt
 cd /mnt/AcerVeritonT661/build   for   bash after-chroot.sh
 #### locale
 vi /etc/locale.gen
-and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
+and uncommented   en_GB.UTF-8 UTF-8  &  en_US.UTF-8 UTF_8  &  fr_FR.UTF-8 UTF_8
 cat /etc/locale.gen | grep -v ^#   then  locale-gen
 #### update K16GB500
 cd /   then  umount /dev/sdf1   for updating, then   mount /dev/sdg1 /mnt
@@ -128,7 +128,7 @@ stat -c '%n %a %G %U' /*   etc
 #### update /home/AcerVeritonT661
 umount /dev/sdf1   for updating, then   mount /dev/sdf1 /mnt
 rsync -irtv --delete /mnt/AcerVeritonT661 /home/AcerVeritonT661/
-#### override-conf
+#### Automatic login to virtual console
 bash -x override-conf.sh   reboot
 #### AcerVeritonT661
 sudo mkdir /mnt/K16GB500  pw for jo
@@ -136,7 +136,7 @@ stat -c '%n %a %G %U' /mnt/*  reveals it to be  755 root root
 lsblk -f  indicated  sudo mount /dev/sdb1 /mnt/K16GB500
 cp -r /mnt/K16GB500/AcerVeritonT661/ .
 stat -c '%n %a %G %U' *  reveals it to be  755 jo jo
-#### noclear-conf
+#### Have boot messages stay on tty1
 sudo bash -x noclear-conf.sh   sudo reboot
 #### AcerVeritonT661
 lsblk -f  indicated  sudo mount /dev/sdf1 /mnt/K16GB500
@@ -173,7 +173,7 @@ WD1001FALS to SATA3
 HD103SJ to SATA5
 #### enp0s25 snag
 systemctl status dhcpcd@enp0s25   reporting  "failed"
-#### bind-tools
+#### DNS Lookup utility
 sudo pacman -S bind-tools  for 4 packages
 #### Wget
 sudo pacman -S wget   Packages (1) wget-1.20.1-3
@@ -330,7 +330,7 @@ pacman -S xorg-xset
 xset q   reports that  Num Lock is off  and  Screen Saver begins after 600s
 xset s off   stopped the 600s screensaver
 ## Pacmatic
-sudo bash -x $DROPBOX/$AVT661/build/steps/generateKeyboardConf.sh
+sudo bash -x Pacmatic.sh
 sudo pacmatic -Syu
 pacmatic -Qqo '/usr/lib/perl5/5.28/vendor_perl'   listed
 libproxy perl-data-dump perl-error perl-mailtools perl-timedate   which I left as they are
@@ -377,7 +377,7 @@ echo $TERM   reports what CLI is being used
 ## PCManFM Trash
 Edit > Preferences > Confirm before moving files into "trash can"   off-ticked
 ## turn off -w flag in dhcpcd@.service
-sudo bash -x $DROPBOX/$AVT661/build/steps/DHCPCD-noWaitConf.sh
+sudo bash -x DHCPCD-noWaitConf.sh
 reboot   confirmed that I no longer have the start-job delay for DHCPCD
 ping -c 3 8.8.8.8   got a response
 ## get my root .bashrc settings working in root Console
@@ -2826,6 +2826,24 @@ rm ~/.bashrc ~/.bashrc/files ~/.bashrc/images
 rm ~/.bashrc-files ~/.bashrc-images
 ln -s $DROPBOX/$AVT661/home-jo/Bash/bashrc /home/jo/.bashrc
 source ~/.bashrc
+# Updates
+sudo pacmatic -Syu   (got two errors)   Packages (17) ca-certificates-mozilla-3.51.1-1  haskell-http-4000.3.14-164  haskell-http-client-0.6.4.1-33  haskell-http-client-tls-0.3.5.3-216  haskell-hxt-9.3.1.18-58  haskell-network-uri-2.6.3.0-60  haskell-skylighting-0.8.3.4-3  haskell-skylighting-core-0.8.3.4-4  haskell-texmath-0.12.0.1-49  libxnvctrl-440.82-1  nnn-3.1-1  nss-3.51.1-1  pandoc-2.9.2.1-13  perl-alien-build-2.19-1  shellcheck-0.7.0-218  thunderbird-68.7.0-1  thunderbird-i18n-en-gb-68.7.0-1
+  (17/17) checking for file conflicts
+  error: failed to commit transaction (conflicting files)
+  nss: /usr/lib/p11-kit-trust.so exists in filesystem
+  Errors occurred, no packages were upgraded.
+sudo pacman -Syu --overwrite /usr/lib\*/p11-kit-trust.so
+# Test ClamAV
+curl https://secure.eicar.org/eicar.com.txt | clamscan -
+  stdin: {HEX}EICAR.TEST.3.UNOFFICIAL FOUND
+# sh check
+br /bin > sh   shows that it's a symlink to   bash
+file -h /bin/sh  reports  "/bin/sh: symbolic link to bash"
+## fix xinitrc symlink
+echo $AVT661
+export AVT661='JH/IT_stack/onGitHub/ArchBuilds/AcerVeritonT661'
+rm ~/.xinitrc
+ln -s $DROPBOX/$AVT661/jo/xinitrc /home/jo/.xinitrc
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

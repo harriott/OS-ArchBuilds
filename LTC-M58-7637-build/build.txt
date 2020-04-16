@@ -6,17 +6,19 @@ Lenovo ThinkCentre M58 type 7637 - LTC-M58-7637
 HD103SJ
 Logitech Wireless Mouse M525
 Logitech Ultra-Flat Y-BP62a
+ViewSonic VA1616w
 # Arch install
+## first attempt, failed
 booted to archlinux-2020.04.01-x86_64.iso usb
 loadkeys fr
-## disk partitions
+### disk partitions
 lsblk -f  indicated   /dev/sda
-### zap existing
+#### zap existing
 gdisk /dev/sda > x (extra functionality) > z (Zap)  y > y
-## create new GPT
+### create new GPT
 gdisk /dev/sda   o (create a new empty GUID partition table GPT & new protective MBR) y
   w   for  gdisk /dev/sda  (MBR: protection  GPT: present)
-## create partitions
+### create partitions
 gdisk /dev/sda
   n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +1m >
     ef02 (BIOS boot partition)
@@ -28,42 +30,93 @@ gdisk /dev/sda
   n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 4) >
     Enter > 8300 (Linux filesystem)
   w
-## format & mount partitions
+### format & mount partitions
 lsblk -l
 mkswap /dev/sda2   for   swapon /dev/sda2   (then  swapon -s  shows /dev/sda2 has Priority -2)
 mkfs.ext4 /dev/sda3   for   mount /dev/sda3 /mnt
   mkdir /mnt/home   then   mkfs.ext4 /dev/sda4   for   mount /dev/sda4 /mnt/home
-## Moto G4 plugged into front left USB
+### Moto G4 plugged into front left USB
 ip link   reports it as   enp0s26f7u1   so   dhcpcd enp0s26f7u1
   ping -c 3 8.8.8.8  got a response
-## install the base packages
-pacstrap /mnt base linux linux-firmware   got people 117
-## genfstab
+### install the base packages
+pacstrap /mnt base linux linux-firmware   got me 117
+### genfstab
 genfstab -U /mnt >> /mnt/etc/fstab   then checked with   cat /mnt/etc/fstab
-## change root
+### change root
 arch-chroot /mnt
-## time zone
+### time zone
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
-## generate /etc/adjtime
+### generate /etc/adjtime
 hwclock --systohc
-## system clock
+### system clock
 timedatectl set-ntp true   then   timedatectl status
-## big mistake
+### big mistake
 cat /etc/localtime - totally fucked up the console, so hard shutdown
-## restarted to archlinux-2020.04.01-x86_64.iso usb
+### restarted to archlinux-2020.04.01-x86_64.iso usb
 loadkeys fr
 gdisk -l /dev/sda
-## time zone + system clock again
+### time zone + system clock again
 ls -l /etc/localtime  shows it's a symlink to  ../usr/share/zoneinfo/UTC, so  rm /etc/localtime
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime   then checked with   timedatectl status
 hwclock --systohc
-## locale
-vi /etc/locale.gen   and uncommented   en_GB.UTF-8 UTF-8  &  en_US>UTF-8 UTF_8  &  fr_FR>UTF-8 UTF_8
+### locale
+vi /etc/locale.gen   and uncommented   en_GB.UTF-8 UTF-8  &  en_US.UTF-8 UTF_8  &  fr_FR.UTF-8 UTF_8
 cat /etc/locale.gen | grep -v '^#'   then  locale-gen
-
-### after locale
-cd /home/AcerVeritonT661/build   for    bash after_locale.sh
-### root password
-passwd
-### shutdown to eject CD
-exit   then   shutdown -h now
+### Moto G4 plugged into back top right USB
+ip link   reports it as   enp0s29f7u6   so   dhcpcd enp0s29f7u6
+  ping -c 3 8.8.8.8  got a response
+### Updates
+pacmatic -Syu  for 33 Packages  but got error due to conflicting files, and nothing installed
+pacman -Syu --overwrite /usr/lib\*/p11-kit-trust.so   for 33 Packages
+  but got subsequent bizarre write fails...
+## second attempt
+### K8GBDT100 for essential.sh
+mkdir K8GBDT100
+lsblk -f  indicated   mount /dev/sdj1 /mnt/K8GBDT100
+bash K8GBDT100/install.sh
+  mkinitcpio   got selected
+  perl   warned about empty locale settings
+### bootloader.sh
+mkdir /mnt/K8GBDT100
+lsblk -f  indicated   mount /dev/sdd1 /mnt/K8GBDT100
+bash /mnt/K8GBDT100/bootloader.sh
+# root
+## restart
+reboot   (for Grub, then to console)   login > root > pw   - no  dhcpcd  so
+### get DHCP client daemon
+reboot to   archlinux-2020.04.01-x86_64.iso usb
+dhcpcd enp0s26f7u1
+mount /dev/sda3 /mnt   for   arch-chroot /mnt   then   pacmatic -Syu   for 1 Package   then
+  pacmatic -S dhcpcd
+exit   for   reboot
+## restart
+login > root > pw
+### K8GBDT100 for afterGrub.sh
+lsblk -f  indicated   mount /dev/sdb1 /mnt/K8GBDT100
+bash /mnt/K8GBDT100/afterGrub.sh
+### K8GBDT100 for afterReflector.sh
+lsblk -f  indicated   mount /dev/sdd1 /mnt/K8GBDT100
+bash /mnt/K8GBDT100/afterGrub.sh
+  fbset -i  reported  1366x768
+  warning "Clamd was NOT notified"...
+## restart
+login > root > pw
+### ClamAV tweaks
+ip link   reports Moto G4 still at   enp0s29f7u6
+lsblk -f  indicated   mount /dev/sdf1 /mnt/K8GBDT100
+bash /mnt/K8GBDT100/ClamAVsock.sh
+bash /mnt/K8GBDT100/testClamAV.sh
+### prepare .xinitrc
+# waiting
+## graphics card
+lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
+## gitk
+## Openbox Themes
+openbox-themes
+## PCManFM "Removable medium is inserted" pop-up
+PCManFM > Edit > Preferences > Volume Management > Show available options  off-ticked
+## PCManFM Trash
+PCManFM > Edit > Preferences > Confirm before moving files into "trash can"   off-ticked
+## PCManFM - Terminal emulator
+Preferences > Advanced > Terminal > urxvt
+## enp0s25 always live
