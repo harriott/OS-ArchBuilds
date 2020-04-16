@@ -17,13 +17,6 @@ sudo pacman -Syu
 # obmenu-generator
 # ...
 
-# generate 00-keyboard.conf
-sudo localectl --no-convert set-x11-keymap fr logitech_base
-
-# Terminal emulators
-sudo pacman -Syu  for 32 Packages
-sudo pacman -S rxvt-unicode xterm
-
 # PCManFM
 pacman -S pcmanfm
 # ...
@@ -40,6 +33,10 @@ sudo pacman -S gvfs
 # mimeo
 # ...
 
+# install gVim
+cp -f gvimrc ~/.gvimrc
+cp -f vimrc ~/.vimrc
+
 # openbox/importScreenshot.sh
 # ...
 
@@ -48,9 +45,6 @@ sudo pacman -S gvfs
 
 # Dropbox
 # after installing a browser
-
-# SSH to GitHub
-# ...
 
 # PNMixer
 # ...
@@ -103,9 +97,6 @@ sudo pacman -S pinta
 # Thunderbird
 # ...
 
-# NeoMutt
-sudo pacman -S neomutt
-
 # LastPass CLI
 sudo pacman -S lastpass-cli
 
@@ -122,9 +113,6 @@ sudo pacman -S gmrun
 # ...
 
 # Transmission
-# ...
-
-# Neovim
 # ...
 
 # Google Widevine for chromium

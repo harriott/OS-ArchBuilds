@@ -41,9 +41,9 @@ export HISTSIZE=1000
 PROMPT_COMMAND='history -a'
 shopt -s histappend
 
-source $DROPBOX/$AVT661/home-jo/Bash/bashrc-email
-source $DROPBOX/$AVT661/home-jo/Bash/bashrc-files
-source $DROPBOX/$AVT661/home-jo/Bash/bashrc-images
+source $DROPBOX/$AVT661/jo/Bash/bashrc-email
+source $DROPBOX/$AVT661/jo/Bash/bashrc-files
+source $DROPBOX/$AVT661/jo/Bash/bashrc-images
 
 # Internetish
 alias i='iwctl station wlwg111v2 get-networks'

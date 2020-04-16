@@ -107,8 +107,10 @@ lsblk -f  indicated   mount /dev/sdf1 /mnt/K8GBDT100
 bash /mnt/K8GBDT100/ClamAVsock.sh
 bash /mnt/K8GBDT100/testClamAV.sh
 ### prepare for KDE
+ip link   reports Moto G4 still at   enp0s29f7u6
+lsblk -f  indicated   mount /dev/sdj1 /mnt/K8GBDT100
+bash /mnt/K8GBDT100/rootKDE.sh
 
-bash /mnt/K8GBDT100/KDE.sh
 # jo
 exit   for   login > jo > pw
 ### prepare .xinitrc
@@ -125,3 +127,4 @@ PCManFM > Edit > Preferences > Confirm before moving files into "trash can"   of
 ## PCManFM - Terminal emulator
 Preferences > Advanced > Terminal > urxvt
 ## enp0s25 always live
+## disable DPMS

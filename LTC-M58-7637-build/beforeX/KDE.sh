@@ -21,8 +21,11 @@ mkdir ~/.ssh
 cp $( dirname "${BASH_SOURCE[0]}" )/id_rsa-deauram ~/.ssh/id_rsa
 cp $( dirname "${BASH_SOURCE[0]}" )/id_rsa-deauram.pub ~/.ssh/id_rsa.pub
 
-## gVim
-# ...
+# generate 00-keyboard.conf
+sudo localectl --no-convert set-x11-keymap fr logitech_base
+
+# Terminal emulators
+sudo pacman -S rxvt-unicode xterm
 
 # now try  startx
 

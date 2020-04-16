@@ -8,9 +8,6 @@ trap read debug
 # ~/.gitconfig
 # ...
 
-# disable DPMS
-# ...
-
 # get my root .bashrc settings working in root Console
 # ...
 

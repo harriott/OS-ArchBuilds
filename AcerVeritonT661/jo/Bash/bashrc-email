@@ -41,5 +41,5 @@ magl () {
 }
 
 # command to backup my Mutt Wizard files
-alias mwb='bash $DROPBOX/$AVT661/home-jo/email/mwBackup.sh'
+alias mwb='bash $DROPBOX/$AVT661/jo/email/mwBackup.sh'
 

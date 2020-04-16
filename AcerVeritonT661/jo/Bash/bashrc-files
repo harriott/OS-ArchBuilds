@@ -45,7 +45,7 @@ up(){
 alias m='cmus'
 
 # update library
-alias uc='bash $DROPBOX/$AVT661/home-jo/Music/cmusUpdateLibrary.sh'
+alias uc='bash $DROPBOX/$AVT661/jo/Music/cmusUpdateLibrary.sh'
 
 # Git
 # ---
