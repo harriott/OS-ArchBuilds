@@ -40,20 +40,10 @@ sudo pacman -S gvfs
 # mimeo
 # ...
 
-# bashrc-root
-# ...
-
-# trash-cli
-sudo pacman -S trash-cli
-trash-list
-
 # openbox/importScreenshot.sh
 # ...
 
 # CopyQ
-# ...
-
-## gVim
 # ...
 
 # Dropbox

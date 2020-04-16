@@ -10,7 +10,7 @@ trap read debug  # puts a read request after each executable line
 dhcpcd enp0s29f7u6
 ping -c 3 8.8.8.8
 
-# turn off -w flag in dhcpcd@.service
+# Have boot messages stay on tty1
 mkdir /etc/systemd/system/dhcpcd@.service.d
 cp ../../configFiles/etc/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
 
@@ -20,8 +20,11 @@ pacman -S hicolor-icon-theme
 # Ubuntu font family
 pacman -S ttf-ubuntu-font-family
 
-# login as jo
+# place bashrc
+cp $( dirname "${BASH_SOURCE[0]}" )/rootBashrc .bashrc
 
-# place xinitrc
-cp $( dirname "${BASH_SOURCE[0]}" )/xinitrc ~/.xinitrc
+# KDE
+pacman -S kde-applications plasma
+
+# now login as jo
 
