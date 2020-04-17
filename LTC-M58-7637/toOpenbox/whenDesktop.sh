@@ -5,18 +5,8 @@
 set -x
 trap read debug
 
-# autojump
-# ...
-autojump -h
-
 # Updates
 sudo pacman -Syu
-
-# auracle-git
-# ...
-
-# perl-linux-desktopfiles
-# ...
 
 # obmenu-generator
 # ...
@@ -25,14 +15,14 @@ sudo pacman -Syu
 pacman -S pcmanfm
 # ...
 
-# mailcap - for some reason
+# perl-linux-desktopfiles
+# ...
+
+# mailcap
 sudo pacmatic -S mailcap
 
 # GVFS
 sudo pacman -S gvfs
-
-# Fangfrisch
-# ...
 
 # mimeo
 # ...
@@ -54,9 +44,6 @@ cp -f vimrc ~/.vimrc
 # ...
 
 # LibreOffice Fresh
-# ...
-
-# ShellCheck (for xVim)
 # ...
 
 # Zathura
@@ -83,9 +70,6 @@ sudo pacman -S pinta
 # rebind Mouse middle key
 # ...
 
-# flake8
-# ...
-
 # iscan
 # ...
 
@@ -100,9 +84,6 @@ sudo pacman -S pinta
 
 # Thunderbird
 # ...
-
-# LastPass CLI
-sudo pacman -S lastpass-cli
 
 # GnuPG for pinentry
 # ...
@@ -130,13 +111,4 @@ sudo pacman -S gphoto2
 
 # gvfs-mtp - for accessing phone memory
 sudo pacman -S gvfs-mtp
-
-# broot
-# ...
-
-# dust
-# ...
-
-# moar
-# ...
 

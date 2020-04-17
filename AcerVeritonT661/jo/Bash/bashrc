@@ -2,65 +2,21 @@
 
 # ~/.bashrc in an Arch install on my Acer Veriton T661 system
 
-# Joseph Harriott  http://momentary.eu/  Fri 24 May 2019
+# Joseph Harriott  Fri 17 Apr 2020
 # source ~/.bashrc if you've changed something here...
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-# ----------------------
-# my preferences:
-# ----------------------
-
-# a colorised (bold blue) prompt, with git support
-source /usr/share/git/completion/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
-
-# Command not found hook
-source /usr/share/doc/pkgfile/command-not-found.bash
-
-# for broot
-if [ -s "/usr/bin/moar" ]; then
-  export PAGER=moar
-else
-  export PAGER=less
-fi
-
-# for tmux
-export EDITOR=nvim
-export VISUAL=nvim
-
-# History
-alias h='history'
-export HISTCONTROL=ignoreboth:erasedups
-export HISTFILESIZE=10000
-export HISTIGNORE='?:??'
-export HISTSIZE=1000
-PROMPT_COMMAND='history -a'
-shopt -s histappend
-
-source $DROPBOX/$MACHINE/jo/Bash/bashrc-email
-source $DROPBOX/$MACHINE/jo/Bash/bashrc-files
-source $DROPBOX/$MACHINE/jo/Bash/bashrc-images
-
-# Internetish
-alias i='iwctl station wlwg111v2 get-networks'
-alias p='ping -c 3 8.8.8.8'
-alias pqs='pacman -Qs'
+source ~/bashrc-console
 
 doup () {
   sudo ip link set wlwg111v2 down
   sudo ip link set wlwg111v2 up
 }
+alias d='doup'
 
-# System
-export GPG_TTY=$(tty)
-
-# data only if not in tmux
-if [ ! $TERM == "screen" ]; then
-  neofetch
+if [[ $DROPBOX ]]; then
+  source $DROPBOX/$ARCHBUILDS/jo/bashrc-email
+  source $DROPBOX/$ARCHBUILDS/jo/bashrc-images
+  source $DROPBOX/$ARCHBUILDS/jo/bashrc-ob
 fi
 
 # virtualenvwrapper

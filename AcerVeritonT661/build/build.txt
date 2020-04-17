@@ -13,6 +13,7 @@ pgrep
 pstree
 sudo iotop -o
 sudo parted -l
+whereis <executable>
 xrandr
 
 ## $DROPBOX
@@ -50,6 +51,8 @@ lsblk -f
 sudo parted -l
 
 ## tmux
+resize -s 65 120        # good for half of ViewSonic VX2025wm
+
 tmux a -t myname        # attach to session myname
 tmux kill-server; tmux  # good for resetting
 tmux ls                 # list sessions
@@ -787,6 +790,7 @@ clear Downloads folder & Trash for:
   cd mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661/build
   bash rsyncBackup.sh
 # to 191128 Backup
+resize /, ShellCheck, gsimplecal, Zathura, verify TRIM, pkgstats, Conky, galculator, SpeedCrunch, lsof, screenFetch, Neofetch, correct time, Pinta, qimgv-git, iotop, TeX Live, SANE, xorg-xinput, xev, XBindKeys, xautomation, flake8, iscan, iscan-plugin-gt-f500, Bluefish, nomacs, virtualenvwrapper, pyfil, iw, iwd, Thunderbird, Opera, NeoMutt, OfflineIMAP, LastPass CLI, sprbMb-Arch-private.asc, get pinentry working, nnn, xsel, fzy, nnn plugins, Compton, tmux, tmux-bash-completion, Gmrun, urxvt-perls, mimeo, xdg-utils-mimeo, Transmission, root trustdb.gpg, figlet, figlet-fonts, lynx, mutt-wizard-git, Cmus, Tmux Resurrect, sysstat
 ## resize /
 lsblk -f   indicated:
   umount /dev/sdc1
@@ -1290,6 +1294,7 @@ sudo killall dirmngr
 ps -ef | grep dirmngr
 gpg --keyserver hkp://pool.sks-keyservers.net:80 --search-key A36B494F   fails immediately
 gpg --keyserver hkp://keyserver.ubuntu.com:80 --search-key 9A2FD067A2E3EF7B   fails immediately
+### Updates
 sudo pacman -Syyuu   Packages (13) adwaita-icon-theme-3.34.2-1  gcc-9.2.0-4  gcc-libs-9.2.0-4  git-2.24.0-1  mesa-19.2.3-1  opera-64.0.3417.92-1  orc-0.4.31-1  python-pyparsing-2.4.4-1  python2-pyparsing-2.4.4-1  systemd-243.78-2  systemd-libs-243.78-2  systemd-sysvcompat-243.78-2  xterm-350-1
 ### firewalld
 sudo firewall-cmd --info-zone=home
@@ -1456,7 +1461,7 @@ in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
 having checked the PKGBUILD,  cd qimgv-git   for   makepkg -sic   failed
 ### tmux-bash-completion
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
-having checked the PKGBUILD,  cd tmux   for   makepkg -sic
+having checked the PKGBUILD,  cd tmux-bash-completion   for   makepkg -sic
   Packages (3) libevent-2.1.11-2  bash-completion-2.9-1  tmux-2.9_a-4
   Packages (1) tmux-bash-completion-r13.847eda6-1
 ## Gmrun
@@ -1514,7 +1519,7 @@ in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
 having checked the PKGBUILD,  cd mimeo   for   makepkg -sic
   Packages (1) python-xdg-0.26-4   Packages (1) mimeo-2019.7-1
 xdg-open https://archlinux.org   opened in chromium
-## qimgv-git
+### qimgv-git
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
 having checked the PKGBUILD,  cd qimgv-git   for   makepkg -sic
    Packages (1) qimgv-git-v0.8.8.r12.g6e84931-1
@@ -1632,6 +1637,7 @@ boot  to KSE98GB containing ARCH_201911 > Del to enter CMOS Setup Utility
   bash rsyncBackup.sh
 reboot > Del > to enter CMOS Setup Utility > Hard Disk Drives > 1st Drive > P0-SanDisk SDSSDA24
 # to 200122 Backup
+urlview, Neovim, chromium-widevine, Kid3, Beets, Picard, quodlibet, Chromaprint/Acoustid Plugin dependencies, Inotify, msmtp-mta, youtube-dl, JH.sty, PhotoCollage, gphoto2, Font Squirrel fonts, perl-image-exiftool, TextNotes.cls
 ## urlview
 ### AUR package updates
 auracle sync
@@ -1968,6 +1974,7 @@ bash rsyncBackup.sh
 reboot > Del > to enter CMOS Setup Utility > Advanced Setup > Hard Disk Drives >
   P0-SanDisk SDSSDA24 moved up to be 1st Drive
 # to 200328 Backup
+Pandoc, gvfs-mtp, broot, cdrtools, YouTube Audio renderer error, rust stable toolchain, dust, moar, ripgrep, exa, perl-data-printer, perl-clone-pp, Ghostscript, Noto Sans CJK, texlive-langextra, verseSettings.sty, Falkon, Ecasound, HPLIP, CUPS
 ## Pandoc
 sudo pacman -Syu   Packages (1) perl-timedate-2.31-1
 sudo pacman -S pandoc   Packages (83) cmark-gfm-0.29.0.gfm.0-1  haskell-aeson-pretty-0.8.8-9  haskell-ansi-terminal-0.10.2-1  haskell-asn1-encoding-0.9.6-7  haskell-asn1-parse-0.9.5-7  haskell-asn1-types-0.3.3-17  haskell-async-2.2.2-1  haskell-base16-bytestring-0.1.1.6-14  haskell-base64-bytestring-1.0.0.2-22  haskell-basement-0.0.11-1  haskell-bitarray-0.0.1.1-12  haskell-blaze-builder-0.4.1.0-8  haskell-blaze-html-0.9.1.2-8  haskell-blaze-markup-0.8.2.3-7  haskell-byteable-0.1.1-14  haskell-case-insensitive-1.2.1.0-1  haskell-cereal-0.5.8.1-1  haskell-cmark-gfm-0.2.1-7  haskell-cmdargs-0.10.20-8  haskell-colour-2.3.5-18  haskell-connection-0.3.1-9  haskell-cookie-0.4.5-1  haskell-cryptonite-0.26-20  haskell-data-default-0.7.1.1-40  haskell-data-default-class-0.1.2.0-13  haskell-data-default-instances-containers-0.0.1-25  haskell-data-default-instances-dlist-0.0.1-53  haskell-data-default-instances-old-locale-0.0.1-25  haskell-digest-0.0.1.2-14  haskell-doclayout-0.2.0.1-6  haskell-doctemplates-0.7.1-6  haskell-errors-2.3.0-40  haskell-exceptions-0.10.4-3  haskell-glob-0.10.0-26  haskell-haddock-library-1.8.0-8  haskell-hourglass-0.2.12-36  haskell-hslua-1.0.3.2-11  haskell-hslua-module-system-0.2.1-19  haskell-hslua-module-text-0.2.1-28  haskell-hsyaml-0.2.1.0-6  haskell-http-4000.3.14-73  haskell-http-client-0.6.4-36  haskell-http-client-tls-0.3.5.3-151  haskell-http-types-0.12.3-34  haskell-hxt-9.3.1.18-2  haskell-hxt-charproperties-9.4.0.0-1  haskell-hxt-regex-xmlschema-9.2.0.3-17  haskell-hxt-unicode-9.0.2.4-13  haskell-ipynb-0.1-95  haskell-juicypixels-3.3.4-7  haskell-memory-0.14.18-39  haskell-mime-types-0.1.0.9-3  haskell-network-2.8.0.1-4  haskell-network-uri-2.6.1.0-18  haskell-old-locale-1.0.0.7-19  haskell-old-time-1.1.0.3-19  haskell-pandoc-types-1.20-6  haskell-pem-0.2.4-65  haskell-regex-pcre-0.94.4-14  haskell-safe-0.3.18-1  haskell-sha-1.6.4.4-8  haskell-skylighting-0.8.3-7  haskell-skylighting-core-0.8.3-7  haskell-socks-0.6.1-7  haskell-split-0.2.3.3-27  haskell-streaming-commons-0.2.1.2-1  haskell-syb-0.7.1-1  haskell-tagsoup-0.14.8-17  haskell-temporary-1.3-44  haskell-texmath-0.12-6  haskell-text-conversions-0.3.0-7  haskell-tls-1.4.1-93  haskell-transformers-compat-0.6.5-1  haskell-unicode-transforms-0.3.6-1  haskell-utf8-string-1.0.1.1-13  haskell-x509-1.7.5-40  haskell-x509-store-1.6.7-39  haskell-x509-system-1.6.6-107  haskell-x509-validation-1.6.11-39  haskell-xml-1.3.14-19  haskell-zip-archive-0.4.1-21  haskell-zlib-0.6.2.1-1  pandoc-2.8-14
@@ -2855,6 +2862,46 @@ in  ~/Arch/AUR/   rm AURclones.sh
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
 having checked the PKGBUILD,  cd xdg-utils-mimeo  for  makepkg -sic
   Packages (1) xdg-utils-mimeo-1.1.3+19+g9816ebb-2
+# fix .(g)vimrc symlinks
+ln -sf $DROPBOX/$ARCHBUILDS/jo/gvimrc ~/.gvimrc
+ln -sf $DROPBOX/$ARCHBUILDS/jo/vimrc ~/.vimrc
+# fix Bash profile symlink
+ln -sf $DROPBOX/$ARCHBUILDS/jo/bash_profile ~/.bash_profile
+# bashrc symlink fixed
+ln -sf $DROPBOX/$ARCHBUILDS/jo/bashrc ~/.bashrc
+source ~/.bashrc
+# fix inputrc symlink
+ln -sf $DROPBOX/$ARCHBUILDS/jo/inputrc ~/.inputrc
+# remove picom.conf
+rm ~/.picom.conf
+# fix tmux.conf symlink
+ln -sf $DROPBOX/$ARCHBUILDS/jo/tmux/tmux.conf ~/.tmux.conf
+# allow ip without pw
+sudo bash -c "cat $DROPBOX/$ARCHBUILDS/etc/sudoers-ip >> /etc/sudoers"
+sudo visudo -c -f /etc/sudoers   got me "/etc/sudoers: parsed OK"
+# fix Xresources symlink
+ln -sf $DROPBOX/$ARCHBUILDS/jo/Xresources/Xresources ~/.Xresources
+# fix .(g)vimrc symlinks
+ln -sf $DROPBOX/$ARCHBUILDS/jo/Vim/gvimrc ~/.gvimrc
+ln -sf $DROPBOX/$ARCHBUILDS/jo/Vim/vimrc ~/.vimrc
+# fix init.vim symlink
+ln -sf $DROPBOX/$ARCHBUILDS/jo/Vim/init.vim ~/.config/nvim/init.vim
+# fix dunstrc symlink
+ln -sf $DROPBOX/$ARCHBUILDS/jo/dunstrc ~/.config/dunst/dunstrc
+# a load of symlinks fixed
+bash fixSymlinks.sh
+# bashrc symlink fixed
+ln -sf $AVT661/jo/Bash/bashrc ~/.bashrc
+source ~/.bashrc
+# second virtual console is inaccessible
+# Openbox theme
+## ObConf (was already there)
+### Updates
+sudo pacman -Syu   Packages (9) adwaita-icon-theme-3.36.1-1  libreoffice-fresh-6.4.3-1  libreoffice-fresh-en-gb-6.4.3-1  libtar-1.2.20-5  libtirpc-1.2.6-1  man-pages-5.06-1  neomutt-20200417-1  xf86-video-intel-1:2.99.917+901+gf2a54e25-1  zziplib-0.13.70-2
+### ObConf
+sudo pacman -S obconf   Packages (1) obconf-2.0.4-6   reinstalled...
+## Openbox theme
+Menu > Settings > Openbox Configuration Manager > (was set to  Clearlooks) Loma
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

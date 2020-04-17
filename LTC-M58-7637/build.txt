@@ -116,6 +116,20 @@ mkdir K8GBDT100   then   lsblk -f  indicated   sudo mount /dev/sdj1 K8GBDT100
 bash K8GBDT100/KDE.sh   (pacmatic generated a load of errors again)
 startx
 Plasma > Matériel > Périphériques d'entrée > Souris > Vitesse > 8
+Redémarrer
+# Automatic login to virtual console
+login > jo > pw
+lsblk -f  indicated   sudo mount /dev/sdb1 K8GBDT100
+sudo bash K8GBDT100/alvc.sh
+# startx from Console
+lsblk -f  indicated   sudo mount /dev/sdb1 K8GBDT100
+cp K8GBDT100/bash_profile .bash_profile
+reboot
+# KDE Connect Device Widget
+Discover > KDE Connect Device Widget
+sudo pacman -S packagekit-qt5
+but failed to get a working package, so   sudo pacman -S kdeconnect
+widget still broken...
 # waiting
 ## graphics card
 lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
@@ -130,3 +144,4 @@ PCManFM > Edit > Preferences > Confirm before moving files into "trash can"   of
 Preferences > Advanced > Terminal > urxvt
 ## enp0s25 always live
 ## disable DPMS
+## change the time of notifications

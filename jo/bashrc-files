@@ -1,0 +1,95 @@
+# vim: set ft=sh tw=0:
+
+# -------------------
+# File managing stuff
+# -------------------
+# sourced, ultimately, by ~/.bashrc
+# (source ~/.bashrc if you've changed something here...)
+# these are more settings that can also be useful in Console
+
+# Joseph Harriott  http://momentary.eu/
+
+alias l='ls --color=auto'
+alias s="stat -c '%A %a %h %U %G %s %y %n'"
+alias so="stat -c '%a %n'"
+alias sm="stat -c '%y %n'"
+shopt -s autocd dotglob extglob globstar nullglob
+
+# added by broot to .bashrc:
+source /home/jo/.config/broot/launcher/bash/br
+
+# count filetypes
+cft(){
+  find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
+}
+
+# move up [n] directories
+up(){
+  local dir=""
+  limit=$1
+  for ((i=1 ; i <= limit ; i++))
+    do
+      dir=$dir/..
+    done
+  dir=$(echo $dir | sed 's/^\///')
+  if [ -z "$dir" ]; then
+    dir=..
+  fi
+  cd $dir
+}
+
+# Git
+# ---
+alias ga='git add'
+alias gis='git status -u'
+gic () {
+    git commit -m "$1"
+}
+
+# locate directories:
+# -------------------
+locd () {
+    locate $1 | xargs -I {} bash -c 'if [ -d "{}" ]; then echo {}; fi'
+}
+
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+# autojump commands:
+#   autojump --help
+#   autojump -s
+#   j <pathFragment>
+#   jo [<fragmentOfAPathToOpenInFileManager>]
+#   jo [<fragmentOfAChildPathToOpenInFileManager>]
+
+# time-sorted lists of files
+# --------------------------
+
+# find date-time sort Encrypted folder
+fdtsEF () {
+  eval "find $1* $printfDTsort"
+}
+
+# find date-time sort files of a certain type (filename extension)
+fdtsExt () {
+  if [ $1 ]; then
+    dtsfile=dts-$1.txt
+    echo "vim: nowrap tw=0:" > $dtsfile
+    echo "" >> $dtsfile
+    echo $PWD >> $dtsfile
+    eval "find -iname \*.$1 $printfDTsort >> $dtsfile"
+    echo "" >> $dtsfile
+    if [ $1 = "tex" ] || [ $1 = "txt" ]; then
+      sed -i "s| \.| $PWD|" $dtsfile
+    fi
+    echo "results are in $dtsfile"
+  else
+    echo "^ need a file type (= filename extension)"
+  fi
+}
+
+printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
+
+# trash-cli
+# ---------
+alias tl='trash-list'
+alias tre='trash-restore'
+

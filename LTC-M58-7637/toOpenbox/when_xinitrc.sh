@@ -16,11 +16,5 @@ pacman -S lxappearance-obconf obconf
 
 # startx from Console
 
-# X settings
-pacman -S xorg-xset
-
 # gsimplecal
-
-# xsel
-pacman -S xsel
 

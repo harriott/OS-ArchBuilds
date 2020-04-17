@@ -1,4 +1,4 @@
-vim: set fdl=1 ft=markdown fdm=expr:
+vim: set fdl=2 ft=markdown fdm=expr:
 
 Joseph's useful urxvt commands - http://momentary.eu/
 

@@ -1,0 +1,3 @@
+
+## allow root access to ip
+jo ALL = (root) NOPASSWD: /usr/bin/ip
