@@ -23,6 +23,12 @@ cft(){
   find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
 }
 
+# fzf
+if [ -s "/usr/share/fzf" ]; then
+  source /usr/share/fzf/key-bindings.bash
+  source /usr/share/fzf/completion.bash
+fi
+
 # move up [n] directories
 up(){
   local dir=""

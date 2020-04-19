@@ -1,13 +1,25 @@
+" Configuration for neovimm
 
-" share my gVim configuration
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-source ~/.vimrc
+" symlink this file to  ~/.config/nvim
 
-" for accurate colour codes
-set termguicolors
-" can turn off with :se notgc
+if 1
 
-" let g:Hexokinase_highlighters = ['foreground']
-let g:Hexokinase_highlighters = ['foregroundfull']
-packadd vim-hexokinase
+  " Share my gVim configuration
+  set runtimepath^=~/.vim runtimepath+=~/.vim/after
+  let &packpath = &runtimepath
+  source ~/.vimrc
+
+  " for accurate colour codes
+  set termguicolors
+  " can turn off with :se notgc
+
+  " let g:Hexokinase_highlighters = ['foreground']
+  let g:Hexokinase_highlighters = ['foregroundfull']
+  packadd vim-hexokinase
+
+else
+
+  " Or explore how function keys are working
+  source $DROPBOX/$ARCHBUILDS/jo/Vim/fnKeyTest.vim
+
+endif

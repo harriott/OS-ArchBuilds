@@ -7,6 +7,9 @@
 
 source ~/bashrc-console
 
+# backup destination for  mwBackup.sh
+muttBasckupDestination=/mnt/9QG2FFEE/Share-More/mw-AVT661
+
 doup () {
   sudo ip link set wlwg111v2 down
   sudo ip link set wlwg111v2 up

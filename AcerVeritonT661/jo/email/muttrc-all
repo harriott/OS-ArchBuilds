@@ -2,7 +2,7 @@
 
 # my configuration settings that are common across my email accounts
 
-source $DROPBOX/$AVT661/home-jo/email/muttrc-MW
+source $hje/muttrc-MW
 
 set realname = "Joseph Harriott"
 set mbox_type = Maildir

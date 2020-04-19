@@ -51,7 +51,7 @@ fi
 export DROPBOX=/mnt/SDSSDA240G/Dropbox # keep this capitalised for finding it without need for $
 export ARCHBUILDS=JH/IT_stack/onGitHub/ArchBuilds
 export MACHINE=$DROPBOX/$ARCHBUILDS/LTC-M58-7637
-export hje=$DROPBOX/$MACHINE/home-jo/email
+export hje=$MACHINE/home-jo/email
 export GNULE=$DROPBOX/JH/IT_stack/GNULinuxEmail
 
 # stop the 600s screensaver

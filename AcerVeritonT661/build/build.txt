@@ -39,6 +39,10 @@ autojump -s
 br                    # broot
 find . -type f | fzy  # for finding something fuzzily fast
 
+#### fzf
+Alt+c   # to change directory
+Ctrl+t  # puts node selection onto command line
+
 ### folder sizes
 br --sizes
 dust
@@ -2902,6 +2906,11 @@ sudo pacman -Syu   Packages (9) adwaita-icon-theme-3.36.1-1  libreoffice-fresh-6
 sudo pacman -S obconf   Packages (1) obconf-2.0.4-6   reinstalled...
 ## Openbox theme
 Menu > Settings > Openbox Configuration Manager > (was set to  Clearlooks) Loma
+# fzf
+## Updates
+sudo pacmatic -Syu   Packages (22) harfbuzz-2.6.5-1  harfbuzz-icu-2.6.5-1  haskell-haddock-library-1.8.0-50  haskell-http-4000.3.14-168  haskell-http-client-0.6.4.1-37  haskell-http-client-tls-0.3.5.3-219  haskell-hxt-9.3.1.18-61  haskell-ipynb-0.1-171  haskell-network-uri-2.6.3.0-64  haskell-skylighting-0.8.3.4-6  haskell-skylighting-core-0.8.3.4-7  haskell-texmath-0.12.0.1-52  llvm-libs-10.0.0-1  mesa-20.0.4-2  pandoc-2.9.2.1-18  qt5-tools-5.14.2-2  shellcheck-0.7.0-223  systemd-245.5-1  systemd-libs-245.5-1  systemd-sysvcompat-245.5-1  vorbis-tools-1.4.0-9  xfsprogs-5.6.0-1
+## fzf
+sudo pacman -S fzf   Packages (1) fzf-0.21.1-1
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

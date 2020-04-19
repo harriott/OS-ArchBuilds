@@ -4,15 +4,12 @@
 # Mutt Wizard files backup
 # ------------------------
 
-# Backup destination
-backdest=/mnt/9QG2FFEE/Share-More/mw-AVT661
-
 # Labels for backup name
 date=$(date "+%F-%H-%M")
-bfolder="$backdest/$date"
+bfolder="$muttBasckupDestination/$date"
 
 # Check if target directory exists
-if [ ! -d $backdest ]; then
+if [ ! -d $muttBasckupDestination ]; then
   echo "The target directory ain't there, quitting."
   exit
 fi

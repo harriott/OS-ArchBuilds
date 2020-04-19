@@ -9,9 +9,10 @@
 # ln -s $DROPBOX/$ARCHBUILDS/jo/bashrc-files ~/bashrc-files
 # ln -sf $AVT661/jo/SSHconfig ~/.ssh/config
 # ln -sf $AVT661/jo/Music/cmus-rc.conf ~/.config/cmus/rc
-ln -sf $AVT661/jo/Openbox/schema.pl ~/.config/obmenu-generator/schema.pl
-ln -sf $AVT661/jo/Openbox/autostart ~/.config/openbox/autostart
+# ln -sf $AVT661/jo/Openbox/schema.pl ~/.config/obmenu-generator/schema.pl
+# ln -sf $AVT661/jo/Openbox/autostart ~/.config/openbox/autostart
 # ln -sf $DROPBOX/$ARCHBUILDS/jo/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+ln -sf $DROPBOX/$ARCHBUILDS/jo/Vim/init.vim ~/.config/nvim/init.vim
 # ln -sf $DROPBOX/$ARCHBUILDS/jo/openbox/rc.xml ~/.config/openbox/rc.xml
 # ln -sf $DROPBOX/$ARCHBUILDS/jo/zathurarc ~/.config/zathura/zathurarc
 # rm ~/.config/beets/config.yaml
