@@ -5,10 +5,13 @@
 # -------------------
 # sourced, ultimately, by ~/.bashrc
 # (source ~/.bashrc if you've changed something here...)
+
 # these are more settings that can also be useful in Console
 
 # Joseph Harriott  http://momentary.eu/
 
+# alias f="fzf --preview 'bat --color=always {} | head -500'"
+alias f="fzf --preview 'bat --color=always {}'"
 alias l='ls --color=auto'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
 alias so="stat -c '%a %n'"

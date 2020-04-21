@@ -341,10 +341,22 @@
         <command>kfmclient openProfile filemanagement</command>
       </action>
     </keybind>
+    <!-- Keybinding for gVim - JH -->
+    <keybind key="W-g">
+      <action name="Execute">
+        <command>gvim</command>
+      </action>
+    </keybind>
     <!-- Keybinding for global Menu - JH -->
     <keybind key="W-m">
       <action name="ShowMenu">
         <menu>root-menu</menu>
+      </action>
+    </keybind>
+    <!-- Keybinding for urxvt - JH -->
+    <keybind key="W-r">
+      <action name="Execute">
+        <command>urxvt</command>
       </action>
     </keybind>
     <!-- Keybinding for PrintScreen - JH -->

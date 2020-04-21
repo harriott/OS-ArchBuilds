@@ -1,0 +1,58 @@
+vim: fdl=0 ft=build fdm=expr:
+
+batman <command>
+bc
+cat /proc/cpuinfo
+lsof -i
+lsusb
+man hier
+pass ls
+pgrep
+pstree
+sudo iotop -o
+sudo parted -l
+whereis <executable>
+xrandr
+
+# get at root on tty2
+Ctrl+Alt+F2 > root + pw
+
+# networking
+sudo firewall-cmd --panic-on
+
+## devices
+ip link
+networkctl list
+
+# storage
+cdrecord dev=/dev/sr0 -checkdrive
+
+## filesystem searching
+autojump -s
+br                    # broot
+fd
+find . -type f | fzy  # for finding something fuzzily fast
+rg <someText>         # searches recursively in files
+
+### fzf
+Alt+c   # to change directory
+Ctrl+t  # puts node selection onto command line
+
+## folder sizes
+br --sizes
+dust
+ncdu
+
+## non-optical
+blkid -o list
+df -h
+lsblk -f
+sudo parted -l
+
+# tmux
+resize -s 65 120        # good for half of ViewSonic VX2025wm
+
+tmux a -t myname        # attach to session myname
+tmux kill-server; tmux  # good for resetting
+tmux ls                 # list sessions
+

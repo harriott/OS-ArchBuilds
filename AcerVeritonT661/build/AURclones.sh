@@ -5,6 +5,7 @@
 
 # git clone https://aur.archlinux.org/autojump.git
 # git clone https://aur.archlinux.org/autojump-git.git
+# git clone https://aur.archlinux.org/bat-extras-git.git
 # git clone https://aur.archlinux.org/bfg.git
 # git clone https://aur.archlinux.org/cmus-notify.git
 # git clone https://aur.archlinux.org/covid19-cli-git.git

@@ -16,7 +16,7 @@
 #
 #xfce-mcs-manager &
 
-conky -c $DROPBOX/$AVT661/Conky/ja8-my.conf
+conky -c $MACHINE/Conky/ja8-my.conf
 copyq & # because CopyQ's internal Autostart doesn't work
 dropbox &
 gvim &

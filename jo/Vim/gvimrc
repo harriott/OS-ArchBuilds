@@ -1,5 +1,6 @@
 " ----------------------------------------------------------------------------
 " this is a pointer, on a GNU+Linux system, to my more portably located gvimrc
 " ----------------------------------------------------------------------------
+let g:monitor='1680x1050' " for setting window size
 source $HOME/.vim/gvimrc-Arch.vim
 

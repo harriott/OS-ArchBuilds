@@ -130,6 +130,7 @@ Discover > KDE Connect Device Widget
 sudo pacman -S packagekit-qt5
 but failed to get a working package, so   sudo pacman -S kdeconnect
 widget still broken...
+# changed monitor to Fujitsu E19W-5
 # waiting
 ## graphics card
 lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller

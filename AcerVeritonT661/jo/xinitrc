@@ -48,6 +48,7 @@ fi
 # ------------
 # defined here so they can be accessed by  $MACHINE/jo/Openbox/autostart  & by  gvim
 # kill tmux sessions if you've made changes here
+export BAT_CONFIG_PATH="$DROPBOX/$ARCHBUILDS/jo/bat.conf"
 export DROPBOX=/mnt/SDSSDA240G/Dropbox           # keep this capitalised for finding it without need for $
 export ARCHBUILDS=JH/IT_stack/onGitHub/ArchBuilds
 export MACHINE=$DROPBOX/$ARCHBUILDS/AcerVeritonT661
