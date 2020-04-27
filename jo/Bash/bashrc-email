@@ -17,29 +17,28 @@ alias nmx='neomutt -F $hje/muttrc-gmx'
 
 # commands to grab mutt-alias
 alias mas='bash ~/mutt-alias.sh/mutt-alias.sh'
-#  https://github.com/Konfekt/mutt-alias.sh
 export mail=/home/jo/.local/share/mail
 magf () {
   for folder in Archive Cafezoide Deauram Friends Waiting Work; do
-    mas -a $GNULE/aliases-fm-mag "/home/jo/.local/share/mail/fm/$folder/cur"
+    mas -a $GNULE/aliases-fm-mag "$mail/fm/$folder/cur"
   done
 }
 magg () {
   for folder in Archives Waiting; do
-    mas -a $GNULE/aliases-gmail-mag "/home/jo/.local/share/mail/gmail/$folder/cur"
+    mas -a $GNULE/aliases-gmail-mag "$mail/gmail/$folder/cur"
   done
 }
 magx () {
   for folder in Archives Waiting; do
-    mas -a $GNULE/aliases-gmx-mag "/home/jo/.local/share/mail/gmx/$folder/cur"
+    mas -a $GNULE/aliases-gmx-mag "$mail/gmx/$folder/cur"
   done
 }
 magl () {
   for folder in Archive LPD Waiting; do
-    mas -a $GNULE/aliases-live-mag "/home/jo/.local/share/mail/live/$folder/cur"
+    mas -a $GNULE/aliases-live-mag "$mail/live/$folder/cur"
   done
 }
 
 # command to backup my Mutt Wizard files
-alias mwb='bash $DROPBOX/$MACHINE/jo/email/mwBackup.sh'
+alias mwb='bash $hje/mwBackup.sh'
 

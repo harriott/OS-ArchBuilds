@@ -10,6 +10,7 @@
 
 # Joseph Harriott  http://momentary.eu/
 
+
 # alias f="fzf --preview 'bat --color=always {} | head -500'"
 alias f="fzf --preview 'bat --color=always {}'"
 alias l='ls --color=auto'
@@ -76,6 +77,7 @@ locd () {
 fdtsEF () {
   eval "find $1* $printfDTsort"
 }
+alias fe='fdtsEF'
 
 # find date-time sort files of a certain type (filename extension)
 fdtsExt () {
@@ -94,6 +96,7 @@ fdtsExt () {
     echo "^ need a file type (= filename extension)"
   fi
 }
+alias fx='fdtsExt'
 
 printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
 

@@ -13,7 +13,7 @@
 # my preferences:
 # ----------------------
 
-source ~/bashrc-files
+source ~/.bashrc-files
 
 # a colorised (bold blue) prompt, with git support
 source /usr/share/git/completion/git-prompt.sh

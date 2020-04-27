@@ -7,22 +7,42 @@ lsof -i
 lsusb
 man hier
 pass ls
-pgrep
-pstree
-sudo iotop -o
 sudo parted -l
+vimiv &
 whereis <executable>
 xrandr
+
+# fonts
+In a folder of possible fonts, to check if any are already installed:
+  for font in $(ls); do fc-list $font; done
+
+fc-list
+/usr/share/fonts>$ fd -L consolas
 
 # get at root on tty2
 Ctrl+Alt+F2 > root + pw
 
+# multimedia
+mediainfo --help |moar
+mpv av://v4l2:/dev/video0
+
 # networking
+echo "hello there" | nmx -s "message sent from neomutt" jharr@ftml.net
 sudo firewall-cmd --panic-on
 
 ## devices
 ip link
 networkctl list
+
+# processes
+pkill zoom
+pgrep
+pstree
+sudo iotop -o
+
+# sound
+pulsemixer
+sudo alsactl store
 
 # storage
 cdrecord dev=/dev/sr0 -checkdrive
@@ -48,6 +68,10 @@ blkid -o list
 df -h
 lsblk -f
 sudo parted -l
+
+## Trash
+trash-empty
+sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
 # tmux
 resize -s 65 120        # good for half of ViewSonic VX2025wm

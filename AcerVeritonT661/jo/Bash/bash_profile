@@ -1,7 +1,0 @@
-# vim: set ft=sh tw=0:
-#
-# ~/.bash_profile
-
-# Use full paths:
-. /mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/bash_profile
-

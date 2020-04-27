@@ -9,9 +9,10 @@
 # git clone https://aur.archlinux.org/bfg.git
 # git clone https://aur.archlinux.org/cmus-notify.git
 # git clone https://aur.archlinux.org/covid19-cli-git.git
+# git clone https://aur.archlinux.org/dragon-drag-and-drop.git
+# git clone https://aur.archlinux.org/droidcam.git
 # git clone https://aur.archlinux.org/figlet-fonts.git
 # git clone https://aur.archlinux.org/iscan-plugin-gt-f500.git
-# git clone https://aur.archlinux.org/moar.git
 # git clone https://aur.archlinux.org/perl-data-printer.git
 # git clone https://aur.archlinux.org/perl-clone-pp.git
 # git clone https://aur.archlinux.org/photocollage.git
@@ -29,7 +30,8 @@
 # git clone https://aur.archlinux.org/vim-simpylfold.git
 # git clone https://aur.archlinux.org/vim-table-mode.git
 # git clone https://aur.archlinux.org/xnviewmp.git
-git clone https://aur.archlinux.org/dragon-drag-and-drop.git
+# git clone https://aur.archlinux.org/zoom.git
+git clone https://aur.archlinux.org/msmtp-oauth2.git
 
 # sudo rm -r auracle-git; git clone https://aur.archlinux.org/auracle-git.git
 # sudo rm -r chromium-widevine; git clone https://aur.archlinux.org/chromium-widevine.git
@@ -38,6 +40,7 @@ git clone https://aur.archlinux.org/dragon-drag-and-drop.git
 # sudo rm -r dust; git clone https://aur.archlinux.org/dust.git
 # sudo rm -r gtkhash # clone https://aur.archlinux.org/gtkhash.git
 # sudo rm -r mimeo; git clone https://aur.archlinux.org/mimeo.git
+# sudo rm -r moar; git clone https://aur.archlinux.org/moar.git
 # sudo rm -r mutt-wizard-git; git clone https://aur.archlinux.org/mutt-wizard-git.git
 # sudo rm -r obmenu-generator; git clone https://aur.archlinux.org/obmenu-generator.git
 # sudo rm -r qimgv-git; git clone https://aur.archlinux.org/qimgv-git.git

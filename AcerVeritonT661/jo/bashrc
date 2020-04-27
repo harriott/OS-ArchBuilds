@@ -5,7 +5,7 @@
 # Joseph Harriott  Fri 17 Apr 2020
 # source ~/.bashrc if you've changed something here...
 
-source ~/bashrc-console
+source ~/.bashrc-console
 
 # backup destination for  mwBackup.sh
 muttBasckupDestination=/mnt/9QG2FFEE/Share-More/mw-AVT661
@@ -17,10 +17,13 @@ doup () {
 alias d='doup'
 
 if [[ $DROPBOX ]]; then
-  source $DROPBOX/$ARCHBUILDS/jo/bashrc-email
-  source $DROPBOX/$ARCHBUILDS/jo/bashrc-images
-  source $DROPBOX/$ARCHBUILDS/jo/bashrc-ob
+  source $ARCHBUILDS/jo/Bash/bashrc-email
+  source $ARCHBUILDS/jo/Bash/bashrc-images
+  source $ARCHBUILDS/jo/Bash/bashrc-ob
 fi
+
+alias rs0='bash /mnt/WD1001FALS/rsyncBackup-AVT661/archive-Sync0.sh'
+alias rs1='bash /mnt/WD1001FALS/rsyncBackup-AVT661/archive-Sync1.sh'
 
 # virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs

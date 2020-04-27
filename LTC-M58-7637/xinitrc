@@ -48,11 +48,13 @@ fi
 # ------------
 # defined here so they can be accessed by any KDE settings and by  gvim
 # kill tmux sessions if you've made changes here
-export DROPBOX=/mnt/SDSSDA240G/Dropbox # keep this capitalised for finding it without need for $
+export BAT_CONFIG_PATH="$DROPBOX/$ARCHBUILDS/jo/bat.conf"  # for the bat pager
+export DROPBOX=/mnt/SDSSDA240G/Dropbox   # keep this capitalised for finding it without need for $
 export ARCHBUILDS=JH/IT_stack/onGitHub/ArchBuilds
-export MACHINE=$DROPBOX/$ARCHBUILDS/LTC-M58-7637
-export hje=$MACHINE/home-jo/email
-export GNULE=$DROPBOX/JH/IT_stack/GNULinuxEmail
+    export MACHINE=$DROPBOX/$ARCHBUILDS/LTC-M58-7637
+    export hje=$MACHINE/jo/email                     #  home-jo-email
+    export GNULE=$DROPBOX/JH/IT_stack/GNULinuxEmail  # where I keep private configurations
+        export Imagey=$DROPBOX/$ARCHBUILDS/jo/Bash/Imagey
 
 # stop the 600s screensaver
 xset s off

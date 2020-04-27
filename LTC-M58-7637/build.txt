@@ -6,9 +6,10 @@ Lenovo ThinkCentre M58 type 7637 - LTC-M58-7637
 HD103SJ
 Logitech Wireless Mouse M525
 Logitech Ultra-Flat Y-BP62a
-ViewSonic VA1616w
-# Arch install
-## first attempt, failed
+monitor started as ViewSonic VA1616w
+wan intended via TL-WN821N
+# Arch install - from the ISO
+## first attempt - typed commands - failed
 booted to archlinux-2020.04.01-x86_64.iso usb
 loadkeys fr
 ### disk partitions
@@ -35,7 +36,7 @@ lsblk -l
 mkswap /dev/sda2   for   swapon /dev/sda2   (then  swapon -s  shows /dev/sda2 has Priority -2)
 mkfs.ext4 /dev/sda3   for   mount /dev/sda3 /mnt
   mkdir /mnt/home   then   mkfs.ext4 /dev/sda4   for   mount /dev/sda4 /mnt/home
-### Moto G4 plugged into front left USB
+### wan via Moto G4 plugged into front left USB
 ip link   reports it as   enp0s26f7u1   so   dhcpcd enp0s26f7u1
   ping -c 3 8.8.8.8  got a response
 ### install the base packages
@@ -62,26 +63,26 @@ hwclock --systohc
 ### locale
 vi /etc/locale.gen   and uncommented   en_GB.UTF-8 UTF-8  &  en_US.UTF-8 UTF_8  &  fr_FR.UTF-8 UTF_8
 cat /etc/locale.gen | grep -v '^#'   then  locale-gen
-### Moto G4 plugged into back top right USB
+### wan Moto G4 plugged into back top right USB
 ip link   reports it as   enp0s29f7u6   so   dhcpcd enp0s29f7u6
   ping -c 3 8.8.8.8  got a response
 ### Updates
 pacmatic -Syu  for 33 Packages  but got error due to conflicting files, and nothing installed
 pacman -Syu --overwrite /usr/lib\*/p11-kit-trust.so   for 33 Packages
   but got subsequent bizarre write fails...
-## second attempt
-### K8GBDT100 for essential.sh
-mkdir K8GBDT100
-lsblk -f  indicated   mount /dev/sdj1 /mnt/K8GBDT100
-bash K8GBDT100/install.sh
-  mkinitcpio   got selected
-  perl   warned about empty locale settings
-### bootloader.sh
+## second attempt - K8GBDT100 for a Bash script
+Moto G4 still plugged into back top right USB for wan provision
 mkdir /mnt/K8GBDT100
-lsblk -f  indicated   mount /dev/sdd1 /mnt/K8GBDT100
-bash /mnt/K8GBDT100/bootloader.sh
-# root
-## restart
+lsblk -f  indicated   mount /dev/sdj1 /mnt/K8GBDT100
+bash K8GBDT100/<script>
+###=> prepare partitions
+mkinitcpio   got selected
+perl   warned about empty locale settings
+###=> system settings
+###=> Updates
+###=> bootloader
+# preparations from root
+## get DHCP client daemon
 reboot   (for Grub, then to console)   login > root > pw   - no  dhcpcd  so
 ### get DHCP client daemon
 reboot to   archlinux-2020.04.01-x86_64.iso usb
@@ -89,23 +90,17 @@ dhcpcd enp0s26f7u1
 mount /dev/sda3 /mnt   for   arch-chroot /mnt   then   pacmatic -Syu   for 1 Package   then
   pacmatic -S dhcpcd
 exit   for   reboot
-## restart
+## after Grub
 login > root > pw
-### K8GBDT100 for afterGrub.sh
-lsblk -f  indicated   mount /dev/sdb1 /mnt/K8GBDT100
-bash /mnt/K8GBDT100/afterGrub.sh
-### K8GBDT100 for afterReflector.sh
-lsblk -f  indicated   mount /dev/sdd1 /mnt/K8GBDT100
-bash /mnt/K8GBDT100/afterGrub.sh
-  fbset -i  reported  1366x768
-  warning "Clamd was NOT notified"...
-## restart
+###=> after Grub
+fbset -i  reported  1366x768
+warning "Clamd was NOT notified"...
+###=> Softwares
+###=> anti-malware
+## after firewalld
 login > root > pw
-### ClamAV tweaks
-ip link   reports Moto G4 still at   enp0s29f7u6
-lsblk -f  indicated   mount /dev/sdf1 /mnt/K8GBDT100
-bash /mnt/K8GBDT100/ClamAVsock.sh
-bash /mnt/K8GBDT100/testClamAV.sh
+###=> ClamAV empty sock file
+###=> prepare for X
 ### prepare for KDE
 ip link   reports Moto G4 still at   enp0s29f7u6
 lsblk -f  indicated   mount /dev/sdj1 /mnt/K8GBDT100
@@ -131,6 +126,10 @@ sudo pacman -S packagekit-qt5
 but failed to get a working package, so   sudo pacman -S kdeconnect
 widget still broken...
 # changed monitor to Fujitsu E19W-5
+# various, up to AURs
+renamed ~/K8GBDT100 to ~/mnt
+lsblk -f  indicated   sudo mount /dev/sdc1 K8GBDT100
+bash mnt/alvc.sh
 # waiting
 ## graphics card
 lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller

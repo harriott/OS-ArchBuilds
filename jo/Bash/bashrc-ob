@@ -9,7 +9,7 @@
 # Joseph Harriott
 
 alias gpr='gprename &'
-alias rpd='bash $DROPBOX/JH/IT_stack/onGitHub/rsync-portabledrives/rsync.sh'
+alias rpd='bash $ITstack/onGitHub/rsync-portabledrives/rsync.sh'
 alias pf='pcmanfm & disown'
 
 # cmus
@@ -17,7 +17,7 @@ alias pf='pcmanfm & disown'
 alias m='cmus'
 
 # update library
-alias uc='bash $DROPBOX/$MACHINE/jo/Music/cmusUpdateLibrary.sh'
+alias uc='bash $MACHINE/jo/Music/cmusUpdateLibrary.sh'
 
 # nnn
 # ---
@@ -61,7 +61,7 @@ export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
 
 # Pandoc my markdown notes
 # ------------------------
-export MD4PDF="$DROPBOX/JH/IT_stack/onGitHub/md4pdf"
+export MD4PDF="$ITstack/onGitHub/md4pdf"
 alias m4p='bash $MD4PDF/GNULinux/m4p.sh'
 alias m4ps='bash $MD4PDF/GNULinux/m4ps.sh'
 

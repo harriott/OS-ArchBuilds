@@ -20,19 +20,19 @@ cl () {
 # ------------------------------------------------
 # (needs cnvt.sh in $PATH and won't work with white-spaces in file names)
 c () {
-  bash cnvt.sh $1 "-quality 70"
+  bash $Imagey/cnvt.sh $1 "-quality 70"
 }
 cg () {
-  bash cnvt.sh $1 "-colorspace gray -quality 80"
+  bash $Imagey/cnvt.sh $1 "-colorspace gray -quality 80"
 }
 cr () {
-  bash cnvt.sh $1 -resize $2
+  bash $Imagey/cnvt.sh $1 -resize $2
 }
 crg () {
-  bash cnvt.sh $1 "-colorspace gray -resize" $2
+  bash $Imagey/cnvt.sh $1 "-colorspace gray -resize" $2
 }
 cll () {
-  bash cnvt.sh $1 "-level 25%,75%,.5 -quality 50"
+  bash $Imagey/cnvt.sh $1 "-level 25%,75%,.5 -quality 50"
 }
 
 # Recursively find all *.jpg (- that's case insensitive) files in the current directory
@@ -44,6 +44,6 @@ jpo () {
 # Sane's scanimage tool
 # ---------------------
 S () {
-  bash $DROPBOX/$MACHINE/jo/Bash/Imagey/Scan.sh $1 $2 $3 $4
+  bash $Imagey/Scan.sh $1 $2 $3 $4
 }
 

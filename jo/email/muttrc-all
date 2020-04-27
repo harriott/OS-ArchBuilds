@@ -2,6 +2,8 @@
 
 # my configuration settings that are common across my email accounts
 
+set reflow_wrap=0
+# (default is 78) doesn't dynamically adapt to terminal size changes
 source $hje/muttrc-MW
 
 set realname = "Joseph Harriott"
