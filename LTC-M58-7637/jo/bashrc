@@ -1,0 +1,9 @@
+# vim: set ft=sh tw=0:
+
+# ~/.bashrc in an Arch install on my Acer Veriton T661 system
+
+# Joseph Harriott  Tue 28 Apr 2020
+# source ~/.bashrc if you've changed something here...
+
+source ~/.bashrc-console
+

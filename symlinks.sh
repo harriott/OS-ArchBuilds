@@ -7,10 +7,13 @@
 # To inspect symlinks:   find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
 #=> logged in as jo, in X - Bash generics
-# ln -sf $ARCHBUILDS/jo/Bash/bash_profile   ~/.bash_profile
-# sudo ln -sf $ARCHBUILDS/jo/Bash/bashrc-console ~/.bashrc-console
-# sudo ln -sf $ARCHBUILDS/jo/Bash/bashrc-files   ~/.bashrc-files
-sudo ln -sf $ARCHBUILDS/jo/bash_history.sh ~/Arch/bash_history.sh
-# sudo ln -sf $MACHINE/jo/bashrc /home/jo/.bashrc
-# sudo ln -sf $MACHINE/jo/xinitrc /home/jo/.xinitrc
+# sort by last use of "~":  :sort /,*\~/
+
+ln -sf $ARCHBUILDS/jo/Bash/bash_profile    ~/.bash_profile
+ln -sf $MACHINE/jo/bashrc                  ~/.bashrc
+ln -sf $ARCHBUILDS/jo/Bash/bashrc-console  ~/.bashrc-console
+ln -sf $ARCHBUILDS/jo/Bash/bashrc-files    ~/.bashrc-files
+ln -sf $ARCHBUILDS/jo/Vim/init.vim         ~/.config/nvim/init.vim
+ln -sf $MACHINE/jo/xinitrc                 ~/.xinitrc
+ln -sf $ARCHBUILDS/jo/bash_history.sh      ~/Arch/bash_history.sh
 

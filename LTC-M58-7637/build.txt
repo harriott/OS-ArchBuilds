@@ -6,7 +6,7 @@ Lenovo ThinkCentre M58 type 7637 - LTC-M58-7637
 HD103SJ
 Logitech Wireless Mouse M525
 Logitech Ultra-Flat Y-BP62a
-monitor started as ViewSonic VA1616w
+monitor (ViewSonic VA1616w) Fujitsu E19W-5
 wan intended via TL-WN821N
 # Arch install - from the ISO
 ## first attempt - typed commands - failed
@@ -78,58 +78,62 @@ bash K8GBDT100/<script>
 ###=> prepare partitions
 mkinitcpio   got selected
 perl   warned about empty locale settings
+###=> install essential stuff then chroot
 ###=> system settings
 ###=> Updates
 ###=> bootloader
 # preparations from root
-## get DHCP client daemon
-reboot   (for Grub, then to console)   login > root > pw   - no  dhcpcd  so
-### get DHCP client daemon
-reboot to   archlinux-2020.04.01-x86_64.iso usb
-dhcpcd enp0s26f7u1
-mount /dev/sda3 /mnt   for   arch-chroot /mnt   then   pacmatic -Syu   for 1 Package   then
-  pacmatic -S dhcpcd
-exit   for   reboot
-## after Grub
 login > root > pw
 ###=> after Grub
 fbset -i  reported  1366x768
 warning "Clamd was NOT notified"...
 ###=> Softwares
 ###=> anti-malware
-## after firewalld
-login > root > pw
 ###=> ClamAV empty sock file
+###=> Automatic login to virtual console
 ###=> prepare for X
-### prepare for KDE
-ip link   reports Moto G4 still at   enp0s29f7u6
-lsblk -f  indicated   mount /dev/sdj1 /mnt/K8GBDT100
-bash /mnt/K8GBDT100/rootKDE.sh   selected  phonon-qt5-vlc  fcron
+###=> prepare for KDE
+selected  phonon-qt5-vlc  fcron
 # jo
-exit   for   login > jo > pw
-mkdir K8GBDT100   then   lsblk -f  indicated   sudo mount /dev/sdj1 K8GBDT100
-bash K8GBDT100/KDE.sh   (pacmatic generated a load of errors again)
-startx
-Plasma > Matériel > Périphériques d'entrée > Souris > Vitesse > 8
-Redémarrer
-# Automatic login to virtual console
 login > jo > pw
-lsblk -f  indicated   sudo mount /dev/sdb1 K8GBDT100
-sudo bash K8GBDT100/alvc.sh
-# startx from Console
-lsblk -f  indicated   sudo mount /dev/sdb1 K8GBDT100
-cp K8GBDT100/bash_profile .bash_profile
-reboot
-# KDE Connect Device Widget
+##=> before X
+## startx
+Plasma > Matériel > Périphériques d'entrée > Souris > Vitesse > 8
+renamed ~/K8GBDT100 to ~/mnt
+## KDE Connect Device Widget
 Discover > KDE Connect Device Widget
 sudo pacman -S packagekit-qt5
 but failed to get a working package, so   sudo pacman -S kdeconnect
 widget still broken...
-# changed monitor to Fujitsu E19W-5
-# various, up to AURs
-renamed ~/K8GBDT100 to ~/mnt
-lsblk -f  indicated   sudo mount /dev/sdc1 K8GBDT100
-bash mnt/alvc.sh
+## autoInstalljo.sh
+bash autoInstalljo.sh
+###=> Updates
+###=> Bash configurations
+###=> xinitrc
+###=> ssh/id_rsa permission fix
+###=> vim 1
+###=> vim 2
+###=> AUR directory
+###=> AURs
+selected rustup
+# reboot
+su > root pw
+## mount a USB drive
+mv /mnt/K8GBDT100 /mnt/mnt
+lsblk -f  indicated   mount /dev/sdc1 /mnt/mnt
+cd /mnt/mnt
+## get online
+dhcpcd enp0s29f7u6
+## bash autoInstallroot.sh
+###=> final tweaks 1
+## mount USB drive again
+cd /mnt/mnt/ArchBuilds/LTC-M58-7637
+bash autoInstallroot.sh
+###=> final tweaks 2
+###=> finish as root
+# from jo in KDE
+Konsole in .../ArchBuilds/LTC-M58-7637/:
+##=> Dropbox
 # waiting
 ## graphics card
 lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller

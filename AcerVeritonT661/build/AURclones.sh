@@ -12,6 +12,7 @@
 # git clone https://aur.archlinux.org/dragon-drag-and-drop.git
 # git clone https://aur.archlinux.org/droidcam.git
 # git clone https://aur.archlinux.org/figlet-fonts.git
+# git clone https://aur.archlinux.org/getmail.git
 # git clone https://aur.archlinux.org/iscan-plugin-gt-f500.git
 # git clone https://aur.archlinux.org/perl-data-printer.git
 # git clone https://aur.archlinux.org/perl-clone-pp.git
@@ -29,9 +30,8 @@
 # git clone https://aur.archlinux.org/vim-repeat.git
 # git clone https://aur.archlinux.org/vim-simpylfold.git
 # git clone https://aur.archlinux.org/vim-table-mode.git
+# git clone https://aur.archlinux.org/xdg-utils-mimeo.git
 # git clone https://aur.archlinux.org/xnviewmp.git
-# git clone https://aur.archlinux.org/zoom.git
-git clone https://aur.archlinux.org/msmtp-oauth2.git
 
 # sudo rm -r auracle-git; git clone https://aur.archlinux.org/auracle-git.git
 # sudo rm -r chromium-widevine; git clone https://aur.archlinux.org/chromium-widevine.git
@@ -45,5 +45,6 @@ git clone https://aur.archlinux.org/msmtp-oauth2.git
 # sudo rm -r obmenu-generator; git clone https://aur.archlinux.org/obmenu-generator.git
 # sudo rm -r qimgv-git; git clone https://aur.archlinux.org/qimgv-git.git
 # sudo rm -r vim-undotree; git clone https://aur.archlinux.org/vim-undotree.git
-# sudo rm -r xdg-utils-mimeo; git clone https://aur.archlinux.org/xdg-utils-mimeo.git
+# sudo rm -r zoom; git clone https://aur.archlinux.org/zoom.git
+sudo rm -r msmtp-oauth2; git clone https://aur.archlinux.org/msmtp-oauth2.git
 

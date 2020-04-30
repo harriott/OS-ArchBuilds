@@ -29,9 +29,12 @@ trap read debug  # puts a read request after each executable line
 dhcpcd enp0s29f7u6
 ping -c 3 8.8.8.8
 
+#=> * Updates
+pacman -Syu
+
 # #=> install essential stuff then chroot
 # # install the base packages
-# pacstrap /mnt base linux linux-firmware
+# pacstrap /mnt base dhcpcd linux linux-firmware
 
 # # genfstab
 # genfstab -U /mnt >> /mnt/etc/fstab
@@ -70,9 +73,6 @@ ping -c 3 8.8.8.8
 # echo "127.0.0.1 localhost" >> /etc/hosts
 # echo "::1       localhost" >> /etc/hosts
 # echo "127.0.1.1 avt661.localdomain avt661" >> /etc/hosts
-
-#=> * Updates
-pacman -Syu
 
 # #=> bootloader
 # # Grub, Microcode, Network Time Protocol
@@ -207,7 +207,6 @@ pacman -Syu
 # pacman -S firewalld
 # systemctl enable firewalld
 # systemctl start firewalld
-# reboot  # maybe wasn't necessary
 
 # #=> ClamAV empty sock file
 # # as freshclam triggered warning "Clamd was NOT notified"
@@ -221,6 +220,12 @@ pacman -Syu
 # # freshclam daemon
 # systemctl enable clamav-freshclam.service
 # systemctl start clamav-freshclam.service
+
+# #=> Automatic login to virtual console
+# ls /etc/systemd/system
+# mkdir /etc/systemd/system/getty@tty1.service.d
+# cp /mnt/mnt/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
+# reboot
 
 # #=> prepare for X
 # # testing ClamAV - first turn off debug
@@ -248,30 +253,105 @@ pacman -Syu
 # pacman -S xorg-xinit
 
 # # grab xinitrc
-# cp /etc/X11/xinit/xinitrc $( dirname "${BASH_SOURCE[0]}" )
+# cp /etc/X11/xinit/xinitrc /mnt/mnt
 
-# # as you've written to this script's location on a removable drive, un-mount it now
+# #=> prepare for KDE
+# # allow dhcpcd without pw
+# bash -c "cat /mnt/mnt/sudoers-dhcpcd >> /etc/sudoers"
+# visudo -c -f /etc/sudoers
+# cat /etc/sudoers
 
-#=> prepare for KDE
-# default-icon-theme was already there
-# pacman -S hicolor-icon-theme
+# # default-icon-theme was already there
+# # pacman -S hicolor-icon-theme
 
-# Have boot messages stay on tty1
-mkdir /etc/systemd/system/dhcpcd@.service.d
-cp $( dirname "${BASH_SOURCE[0]}" )/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
+# # flake8
+# pacman -S flake8
 
-# KDE
-pacman -S kde-applications plasma
-# phonon-qt5
+# # generate 00-keyboard.conf
+# localectl --no-convert set-x11-keymap fr logitech_base
+# localectl status
 
-# NeoMutt
-pacman -S neomutt
+# # KDE
+# pacman -S kde-applications plasma
+# # phonon-qt5
 
-# place bashrc
-cp $( dirname "${BASH_SOURCE[0]}" )/rootBashrc .bashrc
+# # LastPass CLI
+# pacman -S lastpass-cli
 
-# Ubuntu font family
-pacman -S ttf-ubuntu-font-family
+# # NeoMutt
+# pacman -S neomutt
 
-# now unmount this device and then login as jo
+# # ShellCheck (for bash linting in xVim)
+# pacman -S shellcheck
+
+# # terminal emulators
+# pacman -S rxvt-unicode xterm
+
+# # trash-cli
+# pacman -S trash-cli
+
+# # Ubuntu font family
+# pacman -S ttf-ubuntu-font-family
+
+# # X settings
+# pacman -S xorg-xset
+
+# # xsel
+# pacman -S xsel
+
+# #=> Have boot messages stay on tty1
+# mkdir /etc/systemd/system/dhcpcd@.service.d
+# cp /mnt/mnt/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
+
+# #=> final tweaks 1
+# # bat
+# pacman -S bat
+
+# # fd
+# pacman -S fd
+
+# # fzf
+# pacman -S fzf
+
+# # htop
+# pacman -S htop
+
+# # mediainfo
+# pacman -S mediainfo
+
+# # Neovim
+# pacman -S neovim python-pynvim
+
+# #=> final tweaks 2
+# # root bash configurations
+# cp /mnt/mnt/ArchBuilds/root/bash_profile /root/.bash_profile
+# cp /mnt/mnt/ArchBuilds/root/bashrc /root/.bashrc
+
+# # shfmt (for bat-extras-git)
+# pacman -S shfmt
+
+#=> final tweaks 3
+# Bashtop
+sudo pacman -S bashtop
+
+# chromium
+pacman -S chromium
+
+# espeak-ng-espeak & termdown
+pacman -S espeak-ng-espeak termdown
+espeak -v fr+f2 "Bonjour tout le monde"
+
+# fcron
+pacman -S fcron
+systemctl enable fcron.service
+
+# vim Packages
+pacman -S vim-ale vim-colors-solarized-git vim-airline vim-bufexplorer vim-calendar-vim vim-ctrlp vim-easymotion vim-gitgutter vim-LanguageTool vim-nerdcommenter vim-simpylfold  for Python folding vim-supertab  for better tab completion vim-surround vim-syntastic vim-tabular vim-undotree vim-mediawiki
+
+# default browser
+xdg-open https://archlinux.org
+
+#=> finish as root
+# now login as jo
+exit
 

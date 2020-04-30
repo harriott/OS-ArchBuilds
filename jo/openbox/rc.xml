@@ -44,7 +44,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Loma</name>
+    <name>LomaJH</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.

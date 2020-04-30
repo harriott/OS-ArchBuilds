@@ -11,3 +11,4 @@ git clone https://aur.archlinux.org/dropbox.git
 git clone https://aur.archlinux.org/dust.git
 git clone https://aur.archlinux.org/moar.git
 git clone https://aur.archlinux.org/python-fangfrisch.git
+git clone https://aur.archlinux.org/packages/openbox-themes/

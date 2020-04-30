@@ -2996,7 +2996,7 @@ sudo pacman -S python-google-api-python-client   Packages (17) python-cachetools
 sudo pacman -S python-google-auth-httplib2   Packages (1) python-google-auth-httplib2-0.0.3-5
 ### python-google-auth-oauthlib
 sudo pacman -S python-google-auth-oauthlib   Packages (7) python-asn1crypto-1.3.0-1  python-cffi-1.14.0-2  python-cryptography-2.9.2-1  python-oauthlib-3.1.0-4  python-pycparser-2.20-1  python-requests-oauthlib-1.3.0-2  python-google-auth-oauthlib-0.4.1-1
-## msmtp-oauth2
+## msmtp-oauth2 - first attempt
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
 having checked the PKGBUILD,  cd msmtp-oauth2   for   makepkg -sic
   unable to find  getmail  so failed
@@ -3012,6 +3012,53 @@ in  /usr/local/bin/:
 sudo rm cnvt.sh
 ran $ARCHBUILDS/symlinks.sh
 fcrontab -e  & appended  @ 20 bash ~/Arch/bash_history.sh
+# termdown
+## Updates
+sudo pacmatic -Syu   Packages (7) chromium-81.0.4044.129-1  cups-2.3.3-1  gtk-update-icon-cache-1:3.24.20-1  gtk3-1:3.24.20-1  libcups-2.3.3-1  neon-0.31.1-1  zziplib-0.13.71-1
+### AUR package updates
+auracle sync
+#### zoom
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD, cd zoom   for   makepkg -sic   Packages (1) zoom-5.0.398100.0427-1
+## espeak-ng-espeak & termdown
+sudo pacman -S espeak-ng-espeak termdown   Packages (7) espeak-ng-1.50-2  pcaudiolib-1.1-2  python-click-7.1.1-1  python-dateutil-2.8.1-3  python-pyfiglet-0.8.post0-3  espeak-ng-espeak-1.50-2  termdown-1.17.0-1
+espeak -v fr+f2 "Bonjour tout le monde"
+# Updates
+sudo pacmatic -Syu
+  Packages (4) chromaprint-1.5.0-1  cmake-3.17.2-1  imagemagick-7.0.10.10-1  opera-68.0.3618.56-1
+### AUR package updates
+auracle sync
+#### zoom
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD, cd zoom   for   makepkg -sic   Packages (1) zoom-5.0.398100.0427-1
+# msmtp acces to Gmail - abandoned
+## Updates
+sudo pacmatic -Syu   Replace libwbclient with extra/smbclient?
+  Packages (16) glslang-8.13.3743-1  ldb-1:2.1.1-1  libplacebo-1.29.1-3  libwbclient-4.11.3-3 [removal]  licenses-20200427-1  man-pages-5.06-2  mesa-20.0.5-3  mpv-1:0.32.0-4  pkgconf-1.6.3-4  quazip-0.9-1  shaderc-2020.0-1  smbclient-4.12.1-1  texinfo-6.7-3  vlc-3.0.10-1  vulkan-icd-loader-1.2.137-1  xterm-354-1
+## getmail
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd getmail   for   makepkg -sic   Packages (1) getmail-5.14-1
+## msmtp-oauth2
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd msmtp-oauth2   for   makepkg -sic
+  :: msmtp-oauth2 and msmtp are in conflict. Remove msmtp? [y/N] y
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: removing msmtp breaks dependency 'msmtp' required by msmtp-mta
+  :: removing msmtp breaks dependency 'msmtp' required by mutt-wizard-git
+  ==> WARNING: Failed to install built package(s).
+## Removed getmail
+sudo pacman -Rs getmail   Packages (1) getmail-5.14-1
+# Bashtop
+sudo pacman -S bashtop   Packages (1) bashtop-0.8.15-1
+# uninstall vim-recover-git
+sudo pacman -Rs vim-recover-git   Packages (1) vim-recover-git-r202.491c7ba-1
+# Openbox theme tweak for active window
+mkdir ~/.local/share/themes
+cp -r /usr/share/themes/Loma ~/.local/share/themes/LomaJH
+sed -i '/window.active.border.color:/ s/#000000/#FF8000/' ~/.local/share/themes/LomaJH/openbox-3/themerc
+# tint2 tweak for active window
+sed -i 's/border_color = #ffffff/border_color = #00ff00/' ~/.config/tint2/tint2rc
+killall -SIGUSR1 tint2
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

@@ -13,6 +13,7 @@
 # my preferences:
 # ----------------------
 
+alias b='batman'
 source ~/.bashrc-files
 
 # a colorised (bold blue) prompt, with git support

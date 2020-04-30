@@ -1,5 +1,6 @@
 vim: fdl=0 ft=build fdm=expr:
 
+bashtop
 batman <command>
 bc
 cat /proc/cpuinfo
@@ -72,6 +73,10 @@ sudo parted -l
 ## Trash
 trash-empty
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
+
+# termdown
+termdown --help | moar
+termdown -b 10
 
 # tmux
 resize -s 65 120        # good for half of ViewSonic VX2025wm
