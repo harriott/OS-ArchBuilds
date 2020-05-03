@@ -1,0 +1,19 @@
+vim: fdl=0 ft=build fdm=expr:
+
+# Physical Configuration
+
+# Arch install - from the ISO
+
+# waiting
+## graphics card
+lspci | grep -e VGA -e 3D  reports
+## Openbox Themes
+openbox-themes
+## PCManFM "Removable medium is inserted" pop-up
+PCManFM > Edit > Preferences > Volume Management > Show available options  off-ticked
+## PCManFM Trash
+PCManFM > Edit > Preferences > Confirm before moving files into "trash can"   off-ticked
+## PCManFM - Terminal emulator
+Preferences > Advanced > Terminal > urxvt
+## enp0s25 always live
+## change the time of notifications

@@ -3056,9 +3056,23 @@ sudo pacman -Rs vim-recover-git   Packages (1) vim-recover-git-r202.491c7ba-1
 mkdir ~/.local/share/themes
 cp -r /usr/share/themes/Loma ~/.local/share/themes/LomaJH
 sed -i '/window.active.border.color:/ s/#000000/#FF8000/' ~/.local/share/themes/LomaJH/openbox-3/themerc
+sed -i '/^border.width:/ s/1/2/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 # tint2 tweak for active window
 sed -i 's/border_color = #ffffff/border_color = #00ff00/' ~/.config/tint2/tint2rc
 killall -SIGUSR1 tint2
+# uninstall autojump
+sudo pacmatic -Rs autojump  Packages (1) autojump-22.5.3-5
+reboot
+# jump
+## Updates
+sudo pacmatic -Syu
+  :: Replace haskell-exceptions with community/ghc-libs? [Y/n]
+  Packages (121) bind-tools-9.16.2-2  clamav-0.102.2-2  cryptsetup-2.3.1-3  ghc-libs-8.10.1-2  girara-0.3.4-2  gsettings-desktop-schemas-3.36.1-1  haskell-aeson-1.4.7.1-7  haskell-aeson-pretty-0.8.8-36  haskell-ansi-terminal-0.10.3-17  haskell-asn1-encoding-0.9.6-25  haskell-asn1-parse-0.9.5-25  haskell-asn1-types-0.3.4-4  haskell-async-2.2.2-7  haskell-attoparsec-0.13.2.4-3  haskell-base-compat-0.11.1-7  haskell-base-compat-batteries-0.11.1-25  haskell-base-orphans-0.8.2-27  haskell-base16-bytestring-0.1.1.6-19  haskell-base64-bytestring-1.1.0.0-1  haskell-basement-0.0.11-6  haskell-bitarray-0.0.1.1-16  haskell-blaze-builder-0.4.1.0-12  haskell-blaze-html-0.9.1.2-24  haskell-blaze-markup-0.8.2.5-2  haskell-byteable-0.1.1-18  haskell-case-insensitive-1.2.1.0-7  haskell-cereal-0.5.8.1-5  haskell-cmark-gfm-0.2.1-20  haskell-cmdargs-0.10.20-12  haskell-colour-2.3.5-41  haskell-connection-0.3.1-30  haskell-cookie-0.4.5-5  haskell-cryptonite-0.26-36  haskell-data-default-0.7.1.1-54  haskell-data-default-class-0.1.2.0-17  haskell-data-default-instances-containers-0.0.1-29  haskell-data-default-instances-dlist-0.0.1-67  haskell-data-default-instances-old-locale-0.0.1-29  haskell-diff-0.4.0-5  haskell-digest-0.0.1.2-18  haskell-dlist-0.8.0.8-2  haskell-doclayout-0.3-9  haskell-doctemplates-0.8.2-3  haskell-emojis-0.1-15  haskell-erf-2.0.0.0-17  haskell-errors-2.3.0-53  haskell-exceptions-0.10.4-24 [removal]  haskell-glob-0.10.0-40  haskell-haddock-library-1.8.0-52  haskell-hashable-1.3.0.0-3  haskell-hourglass-0.2.12-50  haskell-hslua-1.1.0-3  haskell-hslua-module-system-0.2.1-36  haskell-hslua-module-text-0.2.1-45  haskell-hsyaml-0.2.1.0-20  haskell-http-4000.3.14-174  haskell-http-client-0.6.4.1-43  haskell-http-client-tls-0.3.5.3-224  haskell-http-types-0.12.3-53  haskell-hxt-9.3.1.18-66  haskell-hxt-charproperties-9.4.0.0-5  haskell-hxt-regex-xmlschema-9.2.0.3-21  haskell-hxt-unicode-9.0.2.4-17  haskell-integer-logarithms-1.0.3-6  haskell-ipynb-0.1-174  haskell-jira-wiki-markup-1.1.4-4  haskell-juicypixels-3.3.5-4  haskell-memory-0.15.0-16  haskell-mime-types-0.1.0.9-7  haskell-network-3.1.1.1-8  haskell-network-uri-2.6.3.0-70  haskell-old-locale-1.0.0.7-23  haskell-old-time-1.1.0.3-23  haskell-pandoc-types-1.20-32  haskell-pem-0.2.4-81  haskell-primitive-0.7.0.1-2  haskell-quickcheck-2.14-6  haskell-random-1.1-21  haskell-regex-base-0.94.0.0-4  haskell-regex-pcre-0.95.0.0-4  haskell-regex-tdfa-1.3.1.0-4  haskell-safe-0.3.18-5  haskell-scientific-0.3.6.2-20  haskell-sha-1.6.4.4-12  haskell-skylighting-0.8.3.4-12  haskell-skylighting-core-0.8.3.4-13  haskell-socks-0.6.1-24  haskell-split-0.2.3.4-23  haskell-splitmix-0.0.4-17  haskell-streaming-commons-0.2.1.2-18  haskell-syb-0.7.1-5  haskell-tagged-0.8.6-10  haskell-tagsoup-0.14.8-30  haskell-temporary-1.3-65  haskell-texmath-0.12.0.2-5  haskell-text-conversions-0.3.0-23  haskell-th-abstraction-0.3.2.0-4  haskell-time-compat-1.9.3-4  haskell-tls-1.5.4-10  haskell-transformers-compat-0.6.5-5  haskell-unicode-transforms-0.3.6-5  haskell-unordered-containers-0.2.10.0-38  haskell-utf8-string-1.0.1.1-17  haskell-uuid-types-1.0.3-26  haskell-vector-0.12.1.2-19  haskell-x509-1.7.5-57  haskell-x509-store-1.6.7-56  haskell-x509-system-1.6.6-124  haskell-x509-validation-1.6.11-56  haskell-xml-1.3.14-23  haskell-zip-archive-0.4.1-33  haskell-zlib-0.6.2.1-5  json-c-0.14-1  linux-5.6.8.arch1-1  linux-headers-5.6.8.arch1-1  mesa-20.0.6-2  ndctl-68-2  opera-68.0.3618.63-1  pandoc-2.9.2.1-25  shellcheck-0.7.1-4  tmux-3.1_a-1
+## Samokovarov's jump
+in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
+having checked the PKGBUILD,  cd jump   for   makepkg -sic   Packages (1) jump-0.30.1-1
+# Picard quit
+Options > User Interface > Show a quit confirmation  off
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

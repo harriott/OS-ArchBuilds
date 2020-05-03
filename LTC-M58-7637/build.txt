@@ -8,6 +8,7 @@ Logitech Wireless Mouse M525
 Logitech Ultra-Flat Y-BP62a
 monitor (ViewSonic VA1616w) Fujitsu E19W-5
 wan intended via TL-WN821N
+
 # Arch install - from the ISO
 ## first attempt - typed commands - failed
 booted to archlinux-2020.04.01-x86_64.iso usb
@@ -130,22 +131,43 @@ dhcpcd enp0s29f7u6
 cd /mnt/mnt/ArchBuilds/LTC-M58-7637
 bash autoInstallroot.sh
 ###=> final tweaks 2
-###=> finish as root
+###=> final tweaks 3
+xdg-open got "Erreur -- KIO Client"
+###=> vim Packages
 # from jo in KDE
-Konsole in .../ArchBuilds/LTC-M58-7637/:
+Konsole in .../ArchBuilds/LTC-M58-7637/
 ##=> Dropbox
+##=> Dust
+##=> Fangfrisch
+##=> moar
+##=> AURs 2
+##=> tests
+## ALSA
+weirdly, internal speaker is controlled by the 2nd Headphone slider in alsamixer
+sudo alsactl store
+## Chromium
+Utilisateur actuel > Activer la synchronisation > trohib@gmail.com > pw > Paramètres >
+  Gérer la synchronisation > Favoris & Onglets ouverts off > Confirmer
+## Espace de travail
+Configuration du système > Gestion de fenêtres > Changeur de tâches > Grille
+## default browser
+xdg-settings get default-web-browser  reports  kfmclient_html.desktop
+Configuration du système > Personnalisation > Applications > Applications par défaut >
+  Navigateur web > dans l'application suivante > Chromium
+xdg-open https://archlinux.org   opened in Chromium
+## vim-LanguageTool
+cd ~/Arch/AUR/vim-languagetool  for   makepkg -sic > 1 (jre-openjdk-headless)
+  also installed  languagetool  then  unzip
+## X settings
+xset q   reports that  Num Lock is off  and  Screen Saver begins after 600s
+## KWallet
+Service de portefeuilles de KDE > Classique... blowfish > Mot de passe > blank
+## Klipper
+right-click to configure > [ générale > [ Ignorer la sélection   Taille > 300 ]
+  Raccourcis > Afficher > Win+C ]
+## create partitions
+## Dropbox
 # waiting
 ## graphics card
-lspci | grep -e VGA -e 3D  reports   Intel Corporation 82Q35 Express Integrated Graphics Controller
+lspci | grep -e VGA -e 3D  reports
 ## gitk
-## Openbox Themes
-openbox-themes
-## PCManFM "Removable medium is inserted" pop-up
-PCManFM > Edit > Preferences > Volume Management > Show available options  off-ticked
-## PCManFM Trash
-PCManFM > Edit > Preferences > Confirm before moving files into "trash can"   off-ticked
-## PCManFM - Terminal emulator
-Preferences > Advanced > Terminal > urxvt
-## enp0s25 always live
-## disable DPMS
-## change the time of notifications

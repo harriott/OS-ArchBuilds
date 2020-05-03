@@ -43,21 +43,33 @@ sudo iotop -o
 
 # sound
 pulsemixer
+
+## ALSA
+alsamixer
 sudo alsactl store
 
 # storage
 cdrecord dev=/dev/sr0 -checkdrive
 
-## filesystem searching
-autojump -s
+## directory structures
 br                    # broot
 fd
 find . -type f | fzy  # for finding something fuzzily fast
 rg <someText>         # searches recursively in files
 
+### exa
+e
+e -la  # for permissions
+e -1a  # for symlinks
+e -T   # for tree
+
 ### fzf
 Alt+c   # to change directory
 Ctrl+t  # puts node selection onto command line
+
+### jump
+  j <fuzzysearch> [<fuzzysear> ...]
+  jump top
 
 ## folder sizes
 br --sizes

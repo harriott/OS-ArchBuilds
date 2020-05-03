@@ -5,6 +5,7 @@
 # Joseph Harriott  Fri 17 Apr 2020
 # source ~/.bashrc if you've changed something here...
 
+export BFG=/mnt/9QG2FFEE/Share-IT-Copied/CrossPlatform/Encoding/Git/bfg-1.13.0.jar
 source ~/.bashrc-console
 
 # backup destination for  mwBackup.sh

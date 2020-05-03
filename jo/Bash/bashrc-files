@@ -11,6 +11,7 @@
 # Joseph Harriott  http://momentary.eu/
 
 
+alias e='exa'
 # alias f="fzf --preview 'bat --color=always {} | head -500'"
 alias f="fzf --preview 'bat --color=always {}'"
 alias l='ls --color=auto'
@@ -26,6 +27,13 @@ source /home/jo/.config/broot/launcher/bash/br
 cft(){
   find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
 }
+
+# for broot
+if [ -s "/usr/bin/moar" ]; then
+  export PAGER=moar
+else
+  export PAGER=less
+fi
 
 # fzf
 if [ -s "/usr/share/fzf" ]; then
@@ -61,14 +69,6 @@ gic () {
 locd () {
     locate $1 | xargs -I {} bash -c 'if [ -d "{}" ]; then echo {}; fi'
 }
-
-[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
-# autojump commands:
-#   autojump --help
-#   autojump -s
-#   j <pathFragment>
-#   jo [<fragmentOfAPathToOpenInFileManager>]
-#   jo [<fragmentOfAChildPathToOpenInFileManager>]
 
 # time-sorted lists of files
 # --------------------------

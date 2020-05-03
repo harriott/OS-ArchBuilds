@@ -25,30 +25,14 @@ PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
 # Command not found hook
 source /usr/share/doc/pkgfile/command-not-found.bash
 
-# data only if not in tmux
+# system data displayed only if not in tmux
 if [ ! $TERM == "screen" ]; then
   neofetch
-fi
-
-# for broot
-if [ -s "/usr/bin/moar" ]; then
-  export PAGER=moar
-else
-  export PAGER=less
 fi
 
 # for tmux
 export EDITOR=nvim
 export VISUAL=nvim
-
-# History
-alias h='history'
-export HISTCONTROL=ignoreboth:erasedups
-export HISTFILESIZE=10000
-export HISTIGNORE='?:??'
-export HISTSIZE=1000
-PROMPT_COMMAND='history -a'
-shopt -s histappend
 
 # Internetish
 alias i='iwctl station wlwg111v2 get-networks'
@@ -57,4 +41,18 @@ alias pqs='pacman -Qs'
 
 # System, for GnuPG
 export GPG_TTY=$(tty)
+
+# settings involving  $PROMPT_COMMAND
+# -----------------------------------
+# 1 history
+alias h='history'
+export HISTCONTROL=ignoreboth:erasedups
+export HISTFILESIZE=10000
+export HISTIGNORE='?:??'
+export HISTSIZE=1000
+PROMPT_COMMAND='history -a'
+shopt -s histappend
+
+# 2 for Samokovarov's  jump
+eval "$(jump shell)"  # makes further adjustments to  $PROMPT_COMMAND
 

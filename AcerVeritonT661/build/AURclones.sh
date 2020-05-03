@@ -32,6 +32,7 @@
 # git clone https://aur.archlinux.org/vim-table-mode.git
 # git clone https://aur.archlinux.org/xdg-utils-mimeo.git
 # git clone https://aur.archlinux.org/xnviewmp.git
+git clone https://aur.archlinux.org/jump.git
 
 # sudo rm -r auracle-git; git clone https://aur.archlinux.org/auracle-git.git
 # sudo rm -r chromium-widevine; git clone https://aur.archlinux.org/chromium-widevine.git
@@ -41,10 +42,10 @@
 # sudo rm -r gtkhash # clone https://aur.archlinux.org/gtkhash.git
 # sudo rm -r mimeo; git clone https://aur.archlinux.org/mimeo.git
 # sudo rm -r moar; git clone https://aur.archlinux.org/moar.git
+# sudo rm -r msmtp-oauth2; git clone https://aur.archlinux.org/msmtp-oauth2.git
 # sudo rm -r mutt-wizard-git; git clone https://aur.archlinux.org/mutt-wizard-git.git
 # sudo rm -r obmenu-generator; git clone https://aur.archlinux.org/obmenu-generator.git
 # sudo rm -r qimgv-git; git clone https://aur.archlinux.org/qimgv-git.git
 # sudo rm -r vim-undotree; git clone https://aur.archlinux.org/vim-undotree.git
 # sudo rm -r zoom; git clone https://aur.archlinux.org/zoom.git
-sudo rm -r msmtp-oauth2; git clone https://aur.archlinux.org/msmtp-oauth2.git
 

@@ -1,6 +1,6 @@
 # vim: set ft=sh tw=0:
 #
-# ~/.inputrc - configure GNU Readline
+# symlink this to  ~/.inputrc - configure GNU Readline
 #
 
 # Vi-style editing:
@@ -15,14 +15,14 @@ set vi-ins-mode-string "i"
 $include /etc/inputrc
 set keymap vi-command
 # these are for vi-command mode
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+"\e[A": history-search-backward  # arrow up
+"\e[B": history-search-forward   # arrow down
 j: history-search-forward
 k: history-search-backward
 set keymap vi-insert
 # these are for vi-insert mode
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+"\e[A": history-search-backward  # arrow up
+"\e[B": history-search-forward   # arrow down
 
 # Colorized completion
 # Color files by types

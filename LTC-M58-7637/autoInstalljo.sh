@@ -1,9 +1,17 @@
 #!/bin/bash
 # vim: fdm=expr fdc=1 ft=shbuild:
 
-# bash <thisfile>.sh
+# sed -n '5p' autoInstallroot.sh
+# script autoInstallroot-$(date "+%y%m%d-%H%M")
+# bash <thisScript>
+
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
+
+ARCHBUILDS=/home/jo/mnt/ArchBuilds
+# ARCHBUILDS=/mnt/mnt/ArchBuilds
+# ARCHBUILDS=/run/media/jo/K8GBDT100/ArchBuilds
+    MACHINE=$ARCHBUILDS/LTC-M58-7637
 
 # #=> * Moto G4
 # # plugged into back top right USB
@@ -13,6 +21,9 @@ trap read debug  # puts a read request after each executable line
 
 #=> * Updates
 sudo pacman -Syu
+
+#=> * symlinks
+. $ARCHBUILDS/symlinks.sh
 
 # #=> before X
 # # broot
@@ -57,31 +68,29 @@ sudo pacman -Syu
 # mkdir ~/Arch
 # mkdir ~/Arch/AUR
 
-# #=> AURs
+# #=> AURs 1
 # cd ~/Arch/AUR
 # bash -x /run/media/jo/K8GBDT100/AURclones.sh
 
 # # 8192eu-dkms
-# cd 8192eu-dkms
+# cd ~/Arch/AUR/8192eu-dkms
 # makepkg -sic
-# cd ..
+# cd ~
 
 # # auracle-git
-# cd auracle-git
+# cd ~/Arch/AUR/auracle-git
 # makepkg -sic
-# cd ..
+# cd ~
 
 # # autojump-git
-# cd autojump-git
+# cd ~/Arch/AUR/autojump-git
 # makepkg -sic
 # autojump -h
-# cd ..
+# cd ~
 
 # # bat-extras-git
-# cd bat-extras-git
+# cd ~/Arch/AUR/bat-extras-git
 # makepkg -sic
-# cd ..
-
 # cd ~
 
 # #=> Dropbox
@@ -118,6 +127,53 @@ sudo pacman -Syu
 
 # #=> moar
 # cd ~/Arch/AUR/moar
+# makepkg -sic
+# cd ~
+
+# #=> AURs 2
+# cd ~/Arch/AUR
+# bash -x $ARCHBUILDS/LTC-M58-7637/AURclones.sh
+
+# # Samokovarov's jump
+# cd ~/Arch/AUR/jump
+# makepkg -sic
+# cd ~
+
+# # vim-mediawiki
+# cd ~/Arch/AUR/vim-mediawiki
+# makepkg -sic
+# cd ~
+
+# # vim-simpylfold
+# cd ~/Arch/AUR/vim-simpylfold
+# makepkg -sic
+# cd ~
+
+# # vim Solarized
+# cd ~/Arch/AUR/vim-colors-solarized-git
+# makepkg -sic
+# cd ~
+
+# # vim-undotree
+# cd ~/Arch/AUR/vim-undotree
+# makepkg -sic
+# cd ~
+
+# #=> tests
+# # default browser
+# xdg-open https://archlinux.org
+
+# # espeak-ng-espeak & termdown
+# espeak -v fr+f2 "Bonjour tout le monde"
+
+# #=> AURs 3
+# # vim Calendar
+# cd ~/Arch/AUR/vim-calendar-git
+# makepkg -sic
+# cd ~
+
+# # vim LanguageTool
+# cd ~/Arch/AUR/vim-languagetool
 # makepkg -sic
 # cd ~
 

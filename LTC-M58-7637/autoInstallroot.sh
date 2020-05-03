@@ -1,9 +1,14 @@
 #!/bin/bash
 # vim: fdm=expr fdc=1 ft=shbuild:
 
-# bash <thisfile>.sh
+# sed -n '5p' autoInstallroot.sh
+# script autoInstallroot-$(date "+%y%m%d-%H%M")
+# bash <thisScript>
+
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
+
+ARCHBUILDS=/mnt/mnt/ArchBuilds
 
 # #=> prepare partitions
 # loadkeys fr
@@ -324,34 +329,39 @@ pacman -Syu
 
 # #=> final tweaks 2
 # # root bash configurations
-# cp /mnt/mnt/ArchBuilds/root/bash_profile /root/.bash_profile
-# cp /mnt/mnt/ArchBuilds/root/bashrc /root/.bashrc
+# cp $ARCHBUILDS/root/bash_profile /root/.bash_profile
+# cp $ARCHBUILDS/root/bashrc /root/.bashrc
 
 # # shfmt (for bat-extras-git)
 # pacman -S shfmt
 
-#=> final tweaks 3
-# Bashtop
-sudo pacman -S bashtop
+# #=> final tweaks 3
+# # Bashtop
+# sudo pacman -S bashtop
 
-# chromium
-pacman -S chromium
+# # chromium
+# pacman -S chromium
 
-# espeak-ng-espeak & termdown
-pacman -S espeak-ng-espeak termdown
-espeak -v fr+f2 "Bonjour tout le monde"
+# # espeak-ng-espeak & termdown
+# pacman -S espeak-ng-espeak termdown
 
-# fcron
-pacman -S fcron
-systemctl enable fcron.service
+# # fcron
+# pacman -S fcron
+# systemctl enable fcron.service
 
-# vim Packages
-pacman -S vim-ale vim-colors-solarized-git vim-airline vim-bufexplorer vim-calendar-vim vim-ctrlp vim-easymotion vim-gitgutter vim-LanguageTool vim-nerdcommenter vim-simpylfold  for Python folding vim-supertab  for better tab completion vim-surround vim-syntastic vim-tabular vim-undotree vim-mediawiki
+# # uninstall autojump
+# sudo pacmatic -Rs autojump
 
-# default browser
-xdg-open https://archlinux.org
+# #=> vim Packages
+# pacman -S vim-ale vim-airline vim-bufexplorer vim-ctrlp vim-easymotion vim-gitgutter vim-nerdcommenter vim-supertab vim-surround vim-syntastic vim-tabular
 
-#=> finish as root
-# now login as jo
-exit
+#=> monitor settings
+# disable DPMS
+cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
+
+# stop the 600s screensaver, until reboot
+xset s off
+
+#=> end script
+# now  exit  script and root
 

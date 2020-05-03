@@ -190,6 +190,7 @@ makepkg -sic
 mkdir ~/.local/share/themes
 cp -r /usr/share/themes/Loma ~/.local/share/themes/LomaJH
 sed -i '/window.active.border.color:/ s/#000000/#FF8000/' ~/.local/share/themes/LomaJH/openbox-3/themerc
+sed -i '/^border.width:/ s/1/2/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 cd ..
 
 cd ~
