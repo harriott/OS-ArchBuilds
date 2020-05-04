@@ -2,25 +2,26 @@ vim: fdl=0 ft=build fdm=expr:
 
 Lenovo ThinkCentre M58 type 7637 - LTC-M58-7637
 
-# Physical Configuration
+# to 200503 Backup
+## Physical Configuration
 HD103SJ
 Logitech Wireless Mouse M525
 Logitech Ultra-Flat Y-BP62a
 monitor (ViewSonic VA1616w) Fujitsu E19W-5
 wan intended via TL-WN821N
 
-# Arch install - from the ISO
-## first attempt - typed commands - failed
+## Arch install - from the ISO
+### first attempt - typed commands - failed
 booted to archlinux-2020.04.01-x86_64.iso usb
 loadkeys fr
-### disk partitions
+#### disk partitions
 lsblk -f  indicated   /dev/sda
-#### zap existing
+##### zap existing
 gdisk /dev/sda > x (extra functionality) > z (Zap)  y > y
-### create new GPT
+#### create new GPT
 gdisk /dev/sda   o (create a new empty GUID partition table GPT & new protective MBR) y
   w   for  gdisk /dev/sda  (MBR: protection  GPT: present)
-### create partitions
+#### create partitions
 gdisk /dev/sda
   n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +1m >
     ef02 (BIOS boot partition)
@@ -32,141 +33,179 @@ gdisk /dev/sda
   n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 4) >
     Enter > 8300 (Linux filesystem)
   w
-### format & mount partitions
+#### format & mount partitions
 lsblk -l
 mkswap /dev/sda2   for   swapon /dev/sda2   (then  swapon -s  shows /dev/sda2 has Priority -2)
 mkfs.ext4 /dev/sda3   for   mount /dev/sda3 /mnt
   mkdir /mnt/home   then   mkfs.ext4 /dev/sda4   for   mount /dev/sda4 /mnt/home
-### wan via Moto G4 plugged into front left USB
+#### wan via Moto G4 plugged into front left USB
 ip link   reports it as   enp0s26f7u1   so   dhcpcd enp0s26f7u1
   ping -c 3 8.8.8.8  got a response
-### install the base packages
+#### install the base packages
 pacstrap /mnt base linux linux-firmware   got me 117
-### genfstab
+#### genfstab
 genfstab -U /mnt >> /mnt/etc/fstab   then checked with   cat /mnt/etc/fstab
-### change root
+#### change root
 arch-chroot /mnt
-### time zone
+#### time zone
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
-### generate /etc/adjtime
+#### generate /etc/adjtime
 hwclock --systohc
-### system clock
+#### system clock
 timedatectl set-ntp true   then   timedatectl status
-### big mistake
+#### big mistake
 cat /etc/localtime - totally fucked up the console, so hard shutdown
-### restarted to archlinux-2020.04.01-x86_64.iso usb
+#### restarted to archlinux-2020.04.01-x86_64.iso usb
 loadkeys fr
 gdisk -l /dev/sda
-### time zone + system clock again
+#### time zone + system clock again
 ls -l /etc/localtime  shows it's a symlink to  ../usr/share/zoneinfo/UTC, so  rm /etc/localtime
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime   then checked with   timedatectl status
 hwclock --systohc
-### locale
+#### locale
 vi /etc/locale.gen   and uncommented   en_GB.UTF-8 UTF-8  &  en_US.UTF-8 UTF_8  &  fr_FR.UTF-8 UTF_8
 cat /etc/locale.gen | grep -v '^#'   then  locale-gen
-### wan Moto G4 plugged into back top right USB
+#### wan Moto G4 plugged into back top right USB
 ip link   reports it as   enp0s29f7u6   so   dhcpcd enp0s29f7u6
   ping -c 3 8.8.8.8  got a response
-### Updates
+#### Updates
 pacmatic -Syu  for 33 Packages  but got error due to conflicting files, and nothing installed
 pacman -Syu --overwrite /usr/lib\*/p11-kit-trust.so   for 33 Packages
   but got subsequent bizarre write fails...
-## second attempt - K8GBDT100 for a Bash script
+### second attempt - K8GBDT100 for a Bash script
 Moto G4 still plugged into back top right USB for wan provision
 mkdir /mnt/K8GBDT100
 lsblk -f  indicated   mount /dev/sdj1 /mnt/K8GBDT100
 bash K8GBDT100/<script>
-###=> prepare partitions
+####=> prepare partitions
 mkinitcpio   got selected
 perl   warned about empty locale settings
-###=> install essential stuff then chroot
-###=> system settings
-###=> Updates
-###=> bootloader
-# preparations from root
+####=> install essential stuff then chroot
+####=> system settings
+####=> Updates
+####=> bootloader
+## preparations from root
 login > root > pw
-###=> after Grub
+####=> after Grub
 fbset -i  reported  1366x768
 warning "Clamd was NOT notified"...
-###=> Softwares
-###=> anti-malware
-###=> ClamAV empty sock file
-###=> Automatic login to virtual console
-###=> prepare for X
-###=> prepare for KDE
+####=> Softwares
+####=> anti-malware
+####=> ClamAV empty sock file
+####=> Automatic login to virtual console
+####=> prepare for X
+####=> prepare for KDE
 selected  phonon-qt5-vlc  fcron
-# jo
+## jo
 login > jo > pw
-##=> before X
-## startx
+###=> before X
+### startx
 Plasma > Matériel > Périphériques d'entrée > Souris > Vitesse > 8
 renamed ~/K8GBDT100 to ~/mnt
-## KDE Connect Device Widget
+### KDE Connect Device Widget
 Discover > KDE Connect Device Widget
 sudo pacman -S packagekit-qt5
 but failed to get a working package, so   sudo pacman -S kdeconnect
 widget still broken...
-## autoInstalljo.sh
+### autoInstalljo.sh
 bash autoInstalljo.sh
-###=> Updates
-###=> Bash configurations
-###=> xinitrc
-###=> ssh/id_rsa permission fix
-###=> vim 1
-###=> vim 2
-###=> AUR directory
-###=> AURs
+####=> Updates
+####=> Bash configurations
+####=> xinitrc
+####=> ssh/id_rsa permission fix
+####=> vim 1
+####=> vim 2
+####=> AUR directory
+####=> AURs
 selected rustup
-# reboot
+## reboot
 su > root pw
-## mount a USB drive
+### mount a USB drive
 mv /mnt/K8GBDT100 /mnt/mnt
 lsblk -f  indicated   mount /dev/sdc1 /mnt/mnt
 cd /mnt/mnt
-## get online
+### get online
 dhcpcd enp0s29f7u6
-## bash autoInstallroot.sh
-###=> final tweaks 1
-## mount USB drive again
+### bash autoInstallroot.sh
+####=> final tweaks 1
+### mount USB drive again
 cd /mnt/mnt/ArchBuilds/LTC-M58-7637
 bash autoInstallroot.sh
-###=> final tweaks 2
-###=> final tweaks 3
+####=> final tweaks 2
+####=> final tweaks 3
 xdg-open got "Erreur -- KIO Client"
-###=> vim Packages
-# from jo in KDE
+####=> vim Packages
+## from jo in KDE
 Konsole in .../ArchBuilds/LTC-M58-7637/
-##=> Dropbox
-##=> Dust
-##=> Fangfrisch
-##=> moar
-##=> AURs 2
-##=> tests
-## ALSA
+###=> Dropbox
+###=> Dust
+###=> Fangfrisch
+###=> moar
+###=> AURs 2
+###=> tests
+### ALSA
 weirdly, internal speaker is controlled by the 2nd Headphone slider in alsamixer
 sudo alsactl store
-## Chromium
+### Chromium
 Utilisateur actuel > Activer la synchronisation > trohib@gmail.com > pw > Paramètres >
   Gérer la synchronisation > Favoris & Onglets ouverts off > Confirmer
-## Espace de travail
+### Espace de travail
 Configuration du système > Gestion de fenêtres > Changeur de tâches > Grille
-## default browser
+### default browser
 xdg-settings get default-web-browser  reports  kfmclient_html.desktop
 Configuration du système > Personnalisation > Applications > Applications par défaut >
   Navigateur web > dans l'application suivante > Chromium
 xdg-open https://archlinux.org   opened in Chromium
-## vim-LanguageTool
+### vim-LanguageTool
 cd ~/Arch/AUR/vim-languagetool  for   makepkg -sic > 1 (jre-openjdk-headless)
   also installed  languagetool  then  unzip
-## X settings
+### X settings
 xset q   reports that  Num Lock is off  and  Screen Saver begins after 600s
-## KWallet
+### KWallet
 Service de portefeuilles de KDE > Classique... blowfish > Mot de passe > blank
-## Klipper
+### Klipper
 right-click to configure > [ générale > [ Ignorer la sélection   Taille > 300 ]
   Raccourcis > Afficher > Win+C ]
-## create partitions
-## Dropbox
+### Dropbox Signed in, then Paused
+### Économie d'énergie
+Configuration du système > Matériel > Gestion de l'énergie > Économie d'énergie pour l'écran  off
+## 200503 Backup
+precautionary reboot
+### boot  to  KSE98GB  containing  ARCH_202005
+at bootup, Enter > F12 > Kingston
+#### rsyncBackup
+cd /
+lsblk -f   indicated:
+  ls mnt
+  mount dev/sda3 mnt
+  ls mnt/home
+  mount dev/sda4 mnt/home
+  ls mnt/mnt/mnt0
+  mount dev/sdc1 mnt/mnt/mnt0
+  ls mnt/mnt/mnt1
+  mount dev/sdd1 mnt/mnt/mnt1
+cd /mnt/mnt/mnt0/ArchBuilds
+bash rsyncBackup.sh
+### halt p
+# grow  sda4 /home
+needs at least 70 GiB set aside for jo, then 50 GiB for Deauram's possible needs
+##=> KDE Partition Manager
+## grow  sda4 /home
+Les Applications > Système > Gestionnaire de partitions de KDE
+/dev/sda5 > Supprimer
+### fail
+/dev/sda4 > Redimensionner
+/dev/sda5 > Nouvelle > HD103SJ
+## booted into KNOPPIX v8.6.1
+did it with GParted
+# Dropbox
+Préférences > Synchronasitation > sélective > a few of most useful folders
+# Night Color
+Préférences > Matériel > Affichage et Écran > Couleur de nuit > Activer
+# Yakuake
+Meta+Y
+# enable HD103SJ
+##=> fstab
 # waiting
 ## graphics card
 lspci | grep -e VGA -e 3D  reports

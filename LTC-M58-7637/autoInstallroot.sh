@@ -8,7 +8,9 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-ARCHBUILDS=/mnt/mnt/ArchBuilds
+# ARCHBUILDS=/mnt/mnt/ArchBuilds
+ARCHBUILDS=/run/media/jo/K8GBDT100/ArchBuilds
+    MACHINE=$ARCHBUILDS/LTC-M58-7637
 
 # #=> prepare partitions
 # loadkeys fr
@@ -355,12 +357,28 @@ pacman -Syu
 # #=> vim Packages
 # pacman -S vim-ale vim-airline vim-bufexplorer vim-ctrlp vim-easymotion vim-gitgutter vim-nerdcommenter vim-supertab vim-surround vim-syntastic vim-tabular
 
-#=> monitor settings
-# disable DPMS
-cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
+# #=> monitor settings
+# # disable DPMS
+# cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
 
-# stop the 600s screensaver, until reboot
-xset s off
+# # stop the 600s screensaver, until reboot
+# xset s off
+
+# #=> KDE Partition Manager
+# # (it's not in Discover...)
+# pacman -S partitionmanager
+
+#=> fstab
+# add HD103SJ to fstab
+echo "LABEL=HD103SJ /mnt/HD103SJ  ext4  defaults  0  2" >> /etc/fstab
+cp /etc/fstab $MACHINE/fstab
+halt -p
+
+# Redshift
+pacman -S redshift
+
+# Uninstall  urxvt
+pacman -Rs rxvt-unicode
 
 #=> end script
 # now  exit  script and root

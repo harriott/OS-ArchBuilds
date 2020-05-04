@@ -50,6 +50,7 @@ sudo alsactl store
 
 # storage
 cdrecord dev=/dev/sr0 -checkdrive
+find . -type l -ls  # recursively list all symlinks
 
 ## directory structures
 br                    # broot
@@ -60,7 +61,6 @@ rg <someText>         # searches recursively in files
 ### exa
 e
 e -la  # for permissions
-e -1a  # for symlinks
 e -T   # for tree
 
 ### fzf

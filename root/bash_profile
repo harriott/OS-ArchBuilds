@@ -6,3 +6,5 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
+
+source /root/.config/broot/launcher/bash/br

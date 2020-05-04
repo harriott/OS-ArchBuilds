@@ -18,4 +18,5 @@
 # git clone https://aur.archlinux.org/vim-mediawiki.git
 # git clone https://aur.archlinux.org/vim-simpylfold.git
 # git clone https://aur.archlinux.org/vim-undotree.git
+git clone https://aur.archlinux.org/plasma5-applets-eventcalendar.git
 

@@ -1,6 +1,6 @@
 vim: fdl=0 ft=build fdm=expr:
 
-Acer Veriton T661
+Acer Veriton T661 - AVT661
 
 # $DROPBOX
 :%s#mnt$DROPBOX/$AVT661#mnt/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/AcerVeritonT661#c

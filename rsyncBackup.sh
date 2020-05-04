@@ -7,7 +7,10 @@
 # Run this script from a Live ISO:  bash <path-to-script>/rsyncBackup.sh
 
 # Backup destination
-backdest=/mnt/mnt/9QG2FFEE/AcerVeritonT661-rsyncBackup
+backdest=/mnt/mnt/mnt1/LTC-M58-7637-system-rsyncBackup
+# backdest=/mnt/mnt/WD1001FALS/AVT661-system-rsyncBackup
+# backdest=/run/media/jo/MK6021GAS/LTC-M58-7637-system-rsyncBackup
+mkdir $backdest
 
 # Labels for backup name
 date=$(date "+%F-%H-%M")

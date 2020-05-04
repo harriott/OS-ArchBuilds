@@ -52,9 +52,12 @@ export DROPBOX=/mnt/SDSSDA240G/Dropbox   # keep this capitalised for finding it 
     export ITstack=$DROPBOX/JH/IT_stack
         export ARCHBUILDS=$ITstack/onGitHub/ArchBuilds
             export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
-            export MACHINE=$ARCHBUILDS/AcerVeritonT661
-            export hje=$ARCHBUILDS/jo/email                     #  home-jo-email
             export Imagey=$ARCHBUILDS/jo/Bash/Imagey
+            export machineName=AVT661
+                export MACHINE=$ARCHBUILDS/$machineName
+            export Openbox=$ARCHBUILDS/jo/Openbox
+                export hje=$Openbox/mail  #  home-jo-email
+                export tmux=$Openbox/tmux  # used in tmux.conf
         export GNULE=$ITstack/GNULinuxEmail  # where I keep private configurations
 
 # stop the 600s screensaver

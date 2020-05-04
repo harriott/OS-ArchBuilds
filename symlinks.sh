@@ -2,22 +2,24 @@
 # vim: fdm=expr fdc=1 ft=shbuild:
 
 # bash -x <thisfile>.sh
-#  for some reason, the sudo's need to be written in this file (instead of sudo bash...)
+# can be run alone, but I source this, ultimately, from  ~/.xinitrc
 
 # To inspect symlinks:   find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
+# sort these lists by last use of "~":  :sort /,*\~/
+
 #=> logged in as jo, in X - Bash generics
-# action='ln -sf'
-action='cp --remove-destination'
+# action='cp --remove-destination'
+action='ln -sf'
 
-# sort by last use of "~":  :sort /,*\~/
-
-$action $ARCHBUILDS/jo/Bash/bash_profile    ~/.bash_profile
-$action $MACHINE/jo/bashrc                  ~/.bashrc
-$action $ARCHBUILDS/jo/Bash/bashrc-console  ~/.bashrc-console
-$action $ARCHBUILDS/jo/Bash/bashrc-files    ~/.bashrc-files
-$action $ARCHBUILDS/jo/Vim/init.vim         ~/.config/nvim/init.vim
-$action $ARCHBUILDS/jo/inputrc              ~/.inputrc
-$action $MACHINE/jo/xinitrc                 ~/.xinitrc
-$action $ARCHBUILDS/jo/bash_history.sh      ~/Arch/bash_history.sh
+$action $ARCHBUILDS/jo/Bash/bash_profile   ~/.bash_profile
+$action $MACHINE/jo/bashrc                 ~/.bashrc
+$action $ARCHBUILDS/jo/Bash/bashrc-console ~/.bashrc-console
+$action $ARCHBUILDS/jo/Bash/bashrc-files   ~/.bashrc-files
+$action $ARCHBUILDS/jo/Vim/init.vim        ~/.config/nvim/init.vim
+$action $ARCHBUILDS/jo/Vim/gvimrc           ~/.gvimrc
+$action $ARCHBUILDS/jo/Vim/vimrc           ~/.vimrc
+$action $ARCHBUILDS/jo/inputrc             ~/.inputrc
+$action $MACHINE/jo/xinitrc                ~/.xinitrc
+$action $ARCHBUILDS/jo/bash_history.sh     ~/Arch/bash_history.sh
 

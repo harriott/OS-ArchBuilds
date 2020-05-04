@@ -68,10 +68,11 @@ sudo pacman -Syu
 # mkdir ~/Arch
 # mkdir ~/Arch/AUR
 
-# #=> AURs 1
-# cd ~/Arch/AUR
-# bash -x /run/media/jo/K8GBDT100/AURclones.sh
+#=> AURclones
+cd ~/Arch/AUR
+bash -x $ARCHBUILDS/LTC-M58-7637/AURclones.sh
 
+# #=> AURs 1
 # # 8192eu-dkms
 # cd ~/Arch/AUR/8192eu-dkms
 # makepkg -sic
@@ -131,9 +132,6 @@ sudo pacman -Syu
 # cd ~
 
 # #=> AURs 2
-# cd ~/Arch/AUR
-# bash -x $ARCHBUILDS/LTC-M58-7637/AURclones.sh
-
 # # Samokovarov's jump
 # cd ~/Arch/AUR/jump
 # makepkg -sic
@@ -176,4 +174,10 @@ sudo pacman -Syu
 # cd ~/Arch/AUR/vim-languagetool
 # makepkg -sic
 # cd ~
+
+#=> AURs 4
+Event Calendar
+cd ~/Arch/AUR/plasma5-applets-eventcalendar
+makepkg -sic
+cd ~
 

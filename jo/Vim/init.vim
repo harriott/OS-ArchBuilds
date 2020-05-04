@@ -1,6 +1,6 @@
 " Configuration for neovimm
 
-" symlink this file to  ~/.config/nvim
+" symlink this file to  ~/.config/nvim/init.vim
 
 if 1
 

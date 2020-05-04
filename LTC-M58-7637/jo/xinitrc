@@ -52,13 +52,12 @@ export DROPBOX=/mnt/SDSSDA240G/Dropbox   # keep this capitalised for finding it 
     export ITstack=$DROPBOX/JH/IT_stack
         export ARCHBUILDS=$ITstack/onGitHub/ArchBuilds
             export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
-            export MACHINE=$ARCHBUILDS/LTC-M58-7637
-            export hje=$ARCHBUILDS/jo/email                     #  home-jo-email
+            export machineName=LTC-M58-7637
+                export MACHINE=$ARCHBUILDS/$machineName
             export Imagey=$ARCHBUILDS/jo/Bash/Imagey
-        export GNULE=$ITstack/GNULinuxEmail  # where I keep private configurations
 
 # stop the 600s screensaver
-xset s off
+# xset s off
 
 # launch KDE
 exec startplasma-x11
