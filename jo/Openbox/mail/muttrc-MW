@@ -3,7 +3,7 @@
 # based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
 # general settings for neomutt
 
-set mailcap_path = $hje/mailcap-MW
+set mailcap_path = $email/mailcap-MW
 set date_format="%y/%m/%d %I:%M%p"
 set index_format="%2C %zs %?X?A& ? %D %-15.15F %s (%-4.4c)"
 # set sort = 'reverse-date'
@@ -80,5 +80,5 @@ set nm_default_uri = "notmuch://$mail/"
 macro index,pager gq "<vfolder-from-query>" "go notmuch Query"
 
 # Layout:
-source $hje/muttrc-MW-layout
+source $email/muttrc-MW-layout
 

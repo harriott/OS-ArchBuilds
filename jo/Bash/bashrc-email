@@ -3,21 +3,21 @@
 # commands for syncing mailboxes
 source $GNULE/mymuttrcAddresses
 nmnew () { echo "notmuch new:"; notmuch new; }
-msf () { mbsync fm    ; nmnew ; echo "nmTags-fm.sh"    ; bash $hje/nmTags-fm.sh    ; }
-msg () { mbsync gmail ; nmnew ; echo "nmTags-gmail.sh" ; bash $hje/nmTags-gmail.sh ; }
-msl () { mbsync live  ; nmnew ; echo "nmTags-live.sh"  ; bash $hje/nmTags-live.sh  ; }
-msx () { mbsync gmx   ; nmnew ; echo "nmTags-gmx.sh"   ; bash $hje/nmTags-gmx.sh   ; }
+msf () { mbsync fm    ; nmnew ; echo "nmTags-fm.sh"    ; bash $email/nmTags-fm.sh    ; }
+msg () { mbsync gmail ; nmnew ; echo "nmTags-gmail.sh" ; bash $email/nmTags-gmail.sh ; }
+msl () { mbsync live  ; nmnew ; echo "nmTags-live.sh"  ; bash $email/nmTags-live.sh  ; }
+msx () { mbsync gmx   ; nmnew ; echo "nmTags-gmx.sh"   ; bash $email/nmTags-gmx.sh   ; }
 alias ms='echo -e "\e[1m\e[95m-- fm --\e[0m"; msf; echo -e "\e[1m\e[95m-- gmail --\e[0m"; msg; echo -e "\e[1m\e[95m-- gmx --\e[0m"; msx; echo -e "\e[1m\e[95m-- live --\e[0m"; msl'
 
 # commands for reading mailboxes
-alias nmf='neomutt -F $hje/muttrc-ftml'
-alias nmg='neomutt -F $hje/muttrc-gmail'
-alias nml='neomutt -F $hje/muttrc-live'
-alias nmx='neomutt -F $hje/muttrc-gmx'
+alias nmf='neomutt -F $email/muttrc-ftml'
+alias nmg='neomutt -F $email/muttrc-gmail'
+alias nml='neomutt -F $email/muttrc-live'
+alias nmx='neomutt -F $email/muttrc-gmx'
 
 # commands to grab mutt-alias
 alias mas='bash ~/mutt-alias.sh/mutt-alias.sh'
-export mail=/home/jo/.local/share/mail
+export mail=/home/jo/.local/share/mail  # used also in  muttrc-*
 magf () {
   for folder in Archive Cafezoide Deauram Friends Waiting Work; do
     mas -a $GNULE/aliases-fm-mag "$mail/fm/$folder/cur"
@@ -40,5 +40,5 @@ magl () {
 }
 
 # command to backup my Mutt Wizard files
-alias mwb='bash $hje/mwBackup.sh'
+alias mwb='bash $email/mwBackup.sh'
 
