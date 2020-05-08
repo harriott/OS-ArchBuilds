@@ -9,30 +9,26 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> * enp0s29f7u6
+# #=> 0 enp0s29f7u6
 # # Moto G4 plugged into back top right USB
 # #  ip link   reports it as   enp0s29f7u6
 # sudo dhcpcd enp0s29f7u6  # (assuming jo has sudoer right to dhcpcd)
 # ping -c 3 8.8.8.8
 
-# #=> * environment variables
-# # these are eventually set in  ~/.xinitrc
+# #=> 0 environment variables
+# # if  ~/.xinitrc  hasn't been run
 
-# # ARCHBUILDS=/home/jo/Dropbox/JH/IT_stack/onGitHub/ArchBuilds
-# # ARCHBUILDS=/home/jo/mnt/ArchBuilds
-# # ARCHBUILDS=/mnt/mnt/ArchBuilds
-# # ARCHBUILDS=/run/media/jo/K8GBDT100/ArchBuilds
+# ARCHBUILDS=/home/jo/Dropbox/JH/IT_stack/onGitHub/ArchBuilds
+#     MACHINE=$ARCHBUILDS/LTC-M58-7637; echo $MACHINE
 
-# # MACHINE=$ARCHBUILDS/LTC-M58-7637; echo $MACHINE
-
-#=> * Updates
+#=> 0 Updates
 sudo pacman -Syu
 # reboot if kernel updated !
 true
 auracle sync
 true
 
-# #=> 0 build
+# #=> 1 build
 
 # #==> broot
 # broot  # to load  br
@@ -54,11 +50,11 @@ true
 # # neovim
 # mkdir ~/.config/nvim
 
-# #=> 1 AUR 0 - make AUR directory
+# #=> 2 AUR 0 - make AUR directory
 # mkdir ~/Arch
 # mkdir ~/Arch/AUR
 
-# #=> 1 AUR 1 preparations
+# #=> 2 AUR 1 preparations
 
 # # #==> Dropbox public key
 # # gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
@@ -70,7 +66,7 @@ true
 # # # 2 Rust Toolchain
 # # rustup toolchain install stable
 
-# #=> 1 AUR 2 AURs
+# #=> 2 AUR 2 AURs
 
 # #==> 8192eu-dkms - install
 # # needs  appmenu-gtk-module dkms linux-headers
@@ -215,7 +211,7 @@ true
 # makepkg -sic
 # cd ~
 
-# #=> 1 AUR 3 settings
+# #=> 2 AUR 3 settings
 
 # #==> 8192eu - blacklist rtl8xxxu
 # echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
@@ -227,7 +223,10 @@ true
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer
 
-# #=> tests
+#=> 2 symlinks
+. $ARCHBUILDS/userSymlinks/jo.sh
+
+# #=> 2 tests
 # # default browser
 # xdg-open https://archlinux.org
 

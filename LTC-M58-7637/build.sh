@@ -4,13 +4,25 @@
 # sed -n '5p' build.sh
 # script build-$(date "+%y%m%d-%H%M")
 
-# as root  bash build.sh
-
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> * environment variables
-# # these are eventually set in  ~/.xinitrc
+# #=> * Moto G4
+# # plugged into back top right USB
+# #  ip link   reports it as   enp0s29f7u6
+# dhcpcd enp0s29f7u6
+# ping -c 3 8.8.8.8
+
+# #=> * Updates
+# pacman -Syu
+# reboot if kernel updated !
+# true
+
+# #=> 0 initial install
+# as root:  bash build.sh
+
+# #==> 0 environment variables
+# # these are eventually set in  ~/.xinitrc  so can be passed through with  -E
 
 # # ARCHBUILDS=/home/jo/Dropbox/JH/IT_stack/onGitHub/ArchBuilds
 # # ARCHBUILDS=/home/jo/mnt/ArchBuilds
@@ -19,20 +31,7 @@ trap read debug  # puts a read request after each executable line
 
 # # MACHINE=$ARCHBUILDS/LTC-M58-7637; echo $MACHINE
 
-# #=> * Moto G4
-# # plugged into back top right USB
-# #  ip link   reports it as   enp0s29f7u6
-# dhcpcd enp0s29f7u6
-# ping -c 3 8.8.8.8
-
-#=> * Updates
-pacman -Syu
-# reboot if kernel updated !
-true
-
-# #=> 0 initial install
-
-# #==> 0 prepare partitions
+# #==> 1 prepare partitions
 # loadkeys fr
 
 # # disks already partitioned with  gdisk
@@ -50,7 +49,7 @@ true
 # mount /dev/sda4 /mnt/home
 # # forgot sda5...
 
-# #==> 1 install essential stuff then chroot
+# #==> 2 install essential stuff then chroot
 # # install the base packages
 # pacstrap /mnt base dhcpcd linux linux-firmware
 
@@ -61,7 +60,7 @@ true
 # # change root
 # arch-chroot /mnt  # kills this script
 
-# #==> 2 networking
+# #==> 3 networking
 # # cat /etc/hostname   shows it ain't there
 # echo ltcm58 > /etc/hostname
 # # /etc/hosts
@@ -74,7 +73,7 @@ true
 # systemctl status NetworkManager.service
 # true
 
-# #==> 3 system settings
+# #==> 4 system settings
 # # time zone
 # ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
@@ -97,7 +96,7 @@ true
 # # cat /etc/vconsole.conf  shows it ain't there
 # echo KEYMAP=fr > /etc/vconsole.conf
 
-# #==> 4 bootloader
+# #==> 5 bootloader
 # # Grub, Microcode, Network Time Protocol
 # pacman -S grub intel-ucode ntp
 # # lsblk -f  indicates sda
@@ -114,7 +113,7 @@ true
 # # quit chroot
 # exit
 
-# #==> 5 after Grub
+# #==> 6 after Grub
 # # check local time correction
 # timedatectl status
 
@@ -164,31 +163,45 @@ true
 # useradd -m -G wheel jo
 # until passwd jo; do echo "try again"; done
 
-# #=> 1 fstab
+# #=> 1 when jo
+# sudo -E bash build.sh  # passing through the environment
+true
+
+# #==> 0 environment variables
+# # these are set in  ~/.xinitrc
+
+# # ARCHBUILDS=/home/jo/Dropbox/JH/IT_stack/onGitHub/ArchBuilds
+# # ARCHBUILDS=/home/jo/mnt/ArchBuilds
+# # ARCHBUILDS=/mnt/mnt/ArchBuilds
+# # ARCHBUILDS=/run/media/jo/K8GBDT100/ArchBuilds
+
+# # MACHINE=$ARCHBUILDS/LTC-M58-7637; echo $MACHINE
+
+# #==> 1 fstab
 # # add HD103SJ to fstab
 # echo "LABEL=HD103SJ /mnt/HD103SJ  ext4  defaults  0  2" >> /etc/fstab
 # cp /etc/fstab $MACHINE/fstab
 # chown jo:jo $MACHINE/fstab
 # halt -p
 
-# #=> 1 to X
+# #==> 1 to X
 
-# #==> automatic login to virtual console
+# #===> automatic login to virtual console
 # ls /etc/systemd/system
 # mkdir /etc/systemd/system/getty@tty1.service.d
 # cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
 # reboot
 
-# #==> allow dhcpcd without pw
+# #===> allow dhcpcd without pw
 # bash -c "cat /mnt/mnt/sudoers-dhcpcd >> /etc/sudoers"
 # visudo -c -f /etc/sudoers
 # cat /etc/sudoers
 
-# #==> ClamAV
+# #===> ClamAV
 # pacman -S clamav
 # freshclam
 
-# #===> ClamAV empty sock file
+# #====> ClamAV empty sock file
 # # as freshclam triggered warning "Clamd was NOT notified"
 # touch /run/clamav/clamd.ctl
 # chown clamav:clamav /run/clamav/clamd.ctl
@@ -199,18 +212,18 @@ true
 # # freshclam daemon
 # systemctl enable clamav-freshclam.service --now
 
-# #===> testing ClamAV
+# #====> testing ClamAV
 # first turn off debug
 # trap - debug
 # #  be patient after the curl
 # curl https://secure.eicar.org/eicar.com.txt | clamscan -
 # trap read debug
 
-# #==> disable dhcpcd wait at start
+# #===> disable dhcpcd wait at start
 # mkdir /etc/systemd/system/dhcpcd@.service.d
 # cp $ARCHBUILDS/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
 
-# #==> Firewalld
+# #===> Firewalld
 # pacman -S firewalld
 # systemctl enable firewalld --now
 
@@ -223,18 +236,18 @@ true
 # # check firewalld
 # firewall-cmd --state
 
-# #==> generate 00-keyboard.conf
+# #===> generate 00-keyboard.conf
 # localectl --no-convert set-x11-keymap fr logitech_base
 # localectl status
 # true
 
-# #==> have boot messages stay on tty1
+# #===> have boot messages stay on tty1
 # cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
 
-# #==> Intel video driver & OpenGL
+# #===> Intel video driver & OpenGL
 # pacman -S xf86-video-intel mesa
 
-# #==> prepare for X
+# #===> prepare for X
 # # Xorg
 # pacman -S xorg-server
 
@@ -247,25 +260,25 @@ true
 # # xsel
 # pacman -S xsel
 
-# #==> root bash configurations
+# #===> root bash configurations
 # cp $ARCHBUILDS/root/bash_profile /root/.bash_profile
 # cp $ARCHBUILDS/root/bashrc /root/.bashrc
 
-# #==> softwares - appearance
+# #===> softwares - appearance
 # # default-icon-theme was already there
 # # pacman -S hicolor-icon-theme
 
 # # Ubuntu font family
 # pacman -S ttf-ubuntu-font-family
 
-# #==> softwares - AV
+# #===> softwares - AV
 # # AlsaUtils
 # pacman -S alsa-utils
 
 # # mediainfo
 # pacman -S mediainfo
 
-# #==> softwares - file manage
+# #===> softwares - file manage
 # # bat
 # pacman -S bat
 
@@ -309,7 +322,32 @@ true
 # # trash-cli
 # pacman -S trash-cli
 
-# #==> softwares - networking
+# #===> softwares - info
+# # htop
+# pacman -S htop
+
+# # iotop
+# pacman -S iotop
+
+# # lshw
+# pacman -S lshw
+
+# # lsof
+# pacman -S lsof
+
+# # man-db
+pacman -S man-db
+
+# # man-pages
+pacman -S man-pages
+
+# # Neofetch
+# pacman -S neofetch
+
+# # sysstat
+# pacman -S sysstat
+
+# #===> softwares - networking
 # # DNS Lookup utility
 # pacman -S bind-tools
 
@@ -334,7 +372,7 @@ true
 # # Wget
 # pacman -S wget
 
-# #==> softwares - system
+# #===> softwares - system
 # # appmenu-gtk-module - for *8192eu*
 # pacman -S appmenu-gtk-module
 # pacman -Rs appmenu-gtk-module
@@ -355,25 +393,10 @@ true
 # pacman -S fcron
 # systemctl enable fcron.service
 
-# # htop
-# pacman -S htop
-
-# # iotop
-# pacman -S iotop
-
 # # linux headers - for *8192eu*
 # pacman -S linux-headers
 # # - don't forget to  reboot !
 # true
-
-# # lshw
-# pacman -S lshw
-
-# # lsof
-# pacman -S lsof
-
-# # Neofetch
-# pacman -S neofetch
 
 # # pkgfile
 # pacman -S pkgfile
@@ -384,17 +407,14 @@ true
 # # pkgstats
 # pacman -S pkgstats
 
-# # sysstat
-# pacman -S sysstat
-
 # # xterm
 # pacman -S xterm
 
-# #==> vim
+# #===> vim
 # # 0 gVim
 # pacman -S gvim
 
-# #===> 1 Vim
+# #====> 1 Vim
 # # flake8
 # pacman -S flake8
 
@@ -407,29 +427,35 @@ true
 # # ShellCheck (for bash linting in xVim)
 # pacman -S shellcheck
 
-# #=> 2 when X
+# #==> 2 when X
 
-# #==> monitor settings
+# #===> monitor settings
 # # disable DPMS
 # cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
 
 # # stop the 600s screensaver, until reboot
 # xset s off
 
-# #==> KDE 0
+# #===> KDE 0
 # pacman -S kde-applications plasma
 # # phonon-qt5
 
-# #==> KDE 1
+# #===> KDE 1
 
-# #===> KDE Partition Manager
+# #====> KDE Partition Manager
 # # (it's not in Discover...)
 # pacman -S partitionmanager
 
-#=> 3 user do
-# User do, creating the home directory and adding to group wheel
-groupadd du
-gpasswd -a jo du
-useradd -m -G du wheel do
-until passwd do; do echo "try again"; done
+# #==> 3 user dj
+# # creating the home directory and adding to group wheel
+# useradd -m -G wheel dj  #  wheel allows sudo
+# until passwd dj; do echo 'try again'; done
+# mkdir ~/dup
+# chmod o=rx ~/dup  #  full permissions for other users
+
+# #===> automatic login to virtual console
+# cp "$MACHINE/override-dj.conf" /etc/systemd/system/getty@tty1.service.d/override.conf
+# cat /etc/systemd/system/getty@tty1.service.d/override.conf
+# # reboot when ready
+# true
 

@@ -270,6 +270,10 @@ Configuration du système > Matériel > Périphériques d'entrée > Clavier > Ve
   > Activé
 # Plasma Installateur d'extensions
 reporting API error "Open Collaboration Service" for a while
+# Plasma seized
+Ctrl+Alt+F2 > root + pw > reboot
+#=> 3 user dj
+fazgheh3
 # waiting
 ## gitk
 ## Arch Linux System Tray Update Notifier and Upgrader

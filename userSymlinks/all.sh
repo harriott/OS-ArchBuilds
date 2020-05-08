@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
+# vim: fdm=expr fdc=1 fdl=1 ft=shbuild:
 
 # bash -x <thisfile>.sh
 # can be run alone, but I source this from  $Openbox/symlinks.sh
@@ -8,7 +8,7 @@
 
 # sort these lists by last use of "~":  :sort /,*\~/
 
-#=> logged in as jo, in X - Bash generics
+#=> logged in as user
 # action='cp --remove-destination'
 action='ln -sf'
 
@@ -21,6 +21,4 @@ $action $ITstack/gitconfig                 ~/.gitconfig
 $action $ARCHBUILDS/jo/Vim/gvimrc          ~/.gvimrc
 $action $ARCHBUILDS/jo/Vim/vimrc           ~/.vimrc
 $action $ARCHBUILDS/jo/inputrc             ~/.inputrc
-$action $MACHINE/jo/xinitrc                ~/.xinitrc
-$action $ARCHBUILDS/jo/bash_history.sh     ~/Arch/bash_history.sh
 

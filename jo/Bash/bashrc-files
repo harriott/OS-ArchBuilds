@@ -21,8 +21,8 @@ alias so="stat -c '%a %n'"
 alias sm="stat -c '%y %n'"
 shopt -s autocd dotglob extglob globstar nullglob
 
-# added by broot to .bashrc:
-source /home/jo/.config/broot/launcher/bash/br
+# generalised from what broot added to .bashrc:
+source ~/.config/broot/launcher/bash/br
 
 # count filetypes
 cft(){

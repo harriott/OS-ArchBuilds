@@ -9,10 +9,10 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> * environment variables
+# #=> 0 environment variables
 # # these are eventually set in  ~/.xinitrc
 
-#=> * Updates
+#=> 0 Updates
 sudo pacman -Syu
 true
 auracle sync
@@ -219,6 +219,9 @@ true
 # cd ~
 
 # #=> 1 AUR 3 settings
+
+#=> 2 symlinks
+. $ARCHBUILDS/userSymlinks/jo.sh
 
 # #=> tests
 # # default browser
