@@ -7,7 +7,7 @@
 
 #=> logged in as jo, in X
 
-# rm                                                   ~/.config/beets/config.yaml
+# rm ~/.config/beets/config.yaml
 
 # sudo ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile
 # sudo rm /root/bashrc-console

@@ -329,7 +329,7 @@ cat /etc/inputrc   shows it to be quite busy
 echo $TERM   reports what CLI is being used
 ## PCManFM Trash
 Edit > Preferences > Confirm before moving files into "trash can"   off-ticked
-## turn off -w flag in dhcpcd@.service
+## disable dhcpcd wait at start
 sudo bash -x DHCPCD-noWaitConf.sh
 reboot   confirmed that I no longer have the start-job delay for DHCPCD
 ping -c 3 8.8.8.8   got a response
@@ -1163,14 +1163,12 @@ sudo ip link set wlan0 up
 sudo dhcpcd wlan0   got me the internet through
 ## Scan.sh symlink
 sudo ln -s $DROPBOX/$AVT661/home-jo/Bash/Imagey/Scan.sh /usr/local/bin/Scan.sh
-## NETGEAR WG111v2 replugged in heighest off board back USB port
+## NETGEAR WG111v2 replugged in highest off board back USB port
 ip link   reports it as  wlan0
 iwctl station wlan0 get-networks  shows it's connected to  Xperia XA2_b31f
 sudo dhcpcd wlan0   got me the internet through
 ### systemd-networkd
-sudo systemctl enable systemd-networkd.service   got me 4 symlinks
-sudo systemctl status systemd-networkd.service
-sudo systemctl start systemd-networkd.service
+####=> systemd-networkd
 #### rename the interface to wlwg111v2
 sudo cp $DROPBOX/$AVT661/etc/systemd/10-wlwg111v2.link /etc/systemd/network/10-wlwg111v2.link
 reboot
@@ -3026,9 +3024,9 @@ espeak -v fr+f2 "Bonjour tout le monde"
 # Updates
 sudo pacmatic -Syu
   Packages (4) chromaprint-1.5.0-1  cmake-3.17.2-1  imagemagick-7.0.10.10-1  opera-68.0.3618.56-1
-### AUR package updates
+## AUR package updates
 auracle sync
-#### zoom
+### zoom
 in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
 having checked the PKGBUILD, cd zoom   for   makepkg -sic   Packages (1) zoom-5.0.398100.0427-1
 # msmtp acces to Gmail - abandoned
@@ -3073,6 +3071,18 @@ in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
 having checked the PKGBUILD,  cd jump   for   makepkg -sic   Packages (1) jump-0.30.1-1
 # Picard quit
 Options > User Interface > Show a quit confirmation  off
+# Updates
+sudo pacmatic -Syu   Packages (72) boost-libs-1.72.0-2  ca-certificates-mozilla-3.52-1  chromium-81.0.4044.129-2  cryptsetup-2.3.2-1  curl-7.70.0-1  faad2-2.9.2-1  gvfs-1.44.1-3  gvfs-gphoto2-1.44.1-3  gvfs-mtp-1.44.1-3  harfbuzz-2.6.5-2  harfbuzz-icu-2.6.5-2  haskell-aeson-1.4.7.1-8  haskell-aeson-pretty-0.8.8-37  haskell-doclayout-0.3-10  haskell-doctemplates-0.8.2-4  haskell-haddock-library-1.8.0-53  haskell-http-4000.3.14-176  haskell-http-client-0.6.4.1-45  haskell-http-client-tls-0.3.5.3-225  haskell-hxt-9.3.1.18-67  haskell-ipynb-0.1.0.1-1  haskell-network-uri-2.6.3.0-72  haskell-pandoc-types-1.20-33  haskell-skylighting-0.8.3.4-13  haskell-skylighting-core-0.8.3.4-14  haskell-texmath-0.12.0.2-6  iana-etc-20200428-1  icu-67.1-1  imagemagick-7.0.10.10-2  jansson-2.12-2  json-c-0.14-2  ldb-1:2.1.2-1  libcdr-0.1.6-2  libe-book-0.1.3-7  libmicrohttpd-0.9.70-2  libmspub-0.1.4-7  libqxp-0.0.2-4  libreoffice-fresh-6.4.3-3  libsynctex-2019.51075-10  libtool-2.4.6+42+gb88cebd5-12  libvisio-0.1.7-3  libxml2-2.9.10-2  libzmf-0.0.2-8  linux-5.6.10.arch1-1  linux-headers-5.6.10.arch1-1  luajit-2.0.5-3  mailcap-2.1.49-1  neomutt-20200501-1  netctl-1.23-1  nss-3.52-1  pacman-5.2.1-5  pandoc-2.9.2.1-29  perl-clone-0.45-1  poppler-0.88.0-1  python-pyacoustid-1.2.0-1  python-pytz-2020.1-1  python2-importlib-metadata-1.5.2-1  qt5-base-5.14.2-2  qt5-location-5.14.2-2  qt5-webengine-5.14.2-2  raptor-2.0.15-13  s-nail-14.9.19-1  shellcheck-0.7.1-8  smbclient-4.12.2-3  texlive-bin-2019.51075-10  thunderbird-68.7.0-2  tmux-3.1_b-1  v4l-utils-1.18.1-1  xfsprogs-5.6.0-2  xmlsec-1.2.30-2  xterm-356-1  youtube-dl-2020.05.03-1
+## AUR package updates
+auracle sync
+# Timeshift
+## MIME type for PKGBUILD
+Was happily opening  gVim  but now  chromium...
+mimeo -m PKGBUILD   reporting  text/html
+mimeo --add text/html gvim.desktop   (using /usr/share/applications/gvim.desktop)
+  - changed nothing and wasn't needed - it's the Timeshift PKGBUILD that's odd
+##=> Timeshift
+I couldn't get it to work graphically, so Uninstalled.
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

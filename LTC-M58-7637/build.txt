@@ -100,7 +100,7 @@ selected  phonon-qt5-vlc  fcron
 login > jo > pw
 ###=> before X
 ### startx
-Plasma > Matériel > Périphériques d'entrée > Souris > Vitesse > 8
+Configuration du système > Matériel > Périphériques d'entrée > Souris > Vitesse > 8
 renamed ~/K8GBDT100 to ~/mnt
 ### KDE Connect Device Widget
 Discover > KDE Connect Device Widget
@@ -204,9 +204,73 @@ Préférences > Synchronasitation > sélective > a few of most useful folders
 Préférences > Matériel > Affichage et Écran > Couleur de nuit > Activer
 # Yakuake
 Meta+Y
-# enable HD103SJ
+# as root
 ##=> fstab
-# waiting
+##=> final tweaks 4
+# as jo
+mkdir ~/.vimswap
+Alt+D A > Event Calendar  onto Desktop, and configured
+## start Yakuake with KDE
+Configuration du système > Espace de travail > Démarrage et arrèt > Démarrage automatique >
+  Ajouter > Système > Yakuake
 ## graphics card
-lspci | grep -e VGA -e 3D  reports
+lspci | grep -e VGA -e 3D  reports  00:02.0 VGA compatible controller: Intel Corporation 4 Series Chipset Integrated Graphics Controller (rev 03)
+# TL-WN821N
+having installed 8192eu-dkms, and rebooted,
+  ip link   suggested   sudo ip link set wlp0s29f7u5 up   but no response..
+sudo depmod -a
+sudo modprobe 8192eu
+  modprobe: FATAL: Module 8192eu not found in directory /lib/modules/5.6.10-arch1-1
+lsmod | grep rtl8
+  rtl8xxxu   147456  0
+  mac80211  1032192  1 rtl8xxxu
+# shortcut to Konsole gone
+Configuration du système > Espace de travail > Raccourcis > Raccourcis personnalisés > KMenuEdit >
+  Launch Konsole > Declencheur > Ctrl+Alt+T
+# linux headers
+# TL-WN821N
+8192eu-dkms
+  Gtk-Message: 14:15:46.255: Failed to load module "appmenu-gtk-module"
+## appmenu-gtk-module dkms linux-headers
+## 8192eu-dkms
+$ pqs rtl8192eu
+local/8192eu-dkms 100.3575500-1
+    Driver for the Realtek 8192eu chipset (DKMS)
+lsmod | grep 8192eu
+  8192eu    1585152  0
+  cfg80211  884736  1 8192eu
+TL-WN821N plugged in, not flashing green
+  sudo modprobe 8192eu   returns nothing
+sudo lshw -c network
+  ...
+  *-network:1 DÉSACTIVÉ
+       description: Interface réseau sans fil
+       identifiant matériel: 5
+       information bus: usb@1:1
+       nom logique: wlp0s26f7u1
+       numéro de série: d0:37:45:32:5f:e9
+       fonctionnalités: ethernet physical wireless
+       configuration: broadcast=yes driver=rtl8192eu driverversion=5.6.10-arch1-1 multicast=yes wireless=unassociated
+sudo ip link set wlp0s26f7u1 up
+ip link ls wlp0s26f7u1
+dmesg | grep wlp0s26f7u1
+  [13081.527873] rtl8192eu 1-1:1.0 wlp0s26f7u1: renamed from wlan0
+### iwctl
+device list   shows   wlp0s26f7u1
+station wlp0s26f7u1 get-networks   listed   Xperia XA2_b31f   among others
+quit
+# Networking
+systemctl status NetworkManager.service   shows it to be inactive
+##=> NetworkManager
+# TL-WN821N again
+##=> 8192eu - blacklist rtl8xxxu
+got it working, but without the green LED flashing
+# Numlock on at Plasma start
+Configuration du système > Matériel > Périphériques d'entrée > Clavier > Verroulliage numérique
+  > Activé
+# Plasma Installateur d'extensions
+reporting API error "Open Collaboration Service" for a while
+# waiting
 ## gitk
+## Arch Linux System Tray Update Notifier and Upgrader
+plasma5-applets-kde-arch-update-notifier-git

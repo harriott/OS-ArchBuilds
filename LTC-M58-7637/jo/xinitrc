@@ -48,7 +48,7 @@ fi
 # ------------
 # defined here so they can be accessed by any KDE settings and by  gvim
 # kill tmux sessions if you've made changes here
-export DROPBOX=/mnt/SDSSDA240G/Dropbox   # keep this capitalised for finding it without need for $
+export DROPBOX=/home/jo/Dropbox   # keep this capitalised for finding it without need for $
     export ITstack=$DROPBOX/JH/IT_stack
         export ARCHBUILDS=$ITstack/onGitHub/ArchBuilds
             export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager

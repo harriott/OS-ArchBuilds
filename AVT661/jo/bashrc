@@ -11,12 +11,6 @@ source ~/.bashrc-console
 # backup destination for  mwBackup.sh
 muttBasckupDestination=/mnt/9QG2FFEE/Share-More/mw-AVT661
 
-doup () {
-  sudo ip link set wlwg111v2 down
-  sudo ip link set wlwg111v2 up
-}
-alias d='doup'
-
 if [[ $DROPBOX ]]; then
   source $ARCHBUILDS/jo/Bash/bashrc-email
   source $ARCHBUILDS/jo/Bash/bashrc-images
@@ -25,6 +19,14 @@ fi
 
 alias rs0='bash /mnt/WD1001FALS/rsyncBackup-AVT661/archive-Sync0.sh'
 alias rs1='bash /mnt/WD1001FALS/rsyncBackup-AVT661/archive-Sync1.sh'
+
+# NETGEAR WG111v2
+doup () {
+  sudo ip link set wlwg111v2 down
+  sudo ip link set wlwg111v2 up
+}
+alias d='doup'
+alias i='iwctl station wlwg111v2 get-networks'
 
 # virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs

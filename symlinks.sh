@@ -2,7 +2,7 @@
 # vim: fdm=expr fdc=1 ft=shbuild:
 
 # bash -x <thisfile>.sh
-# can be run alone, but I source this, ultimately, from  ~/.xinitrc
+# can be run alone, but I source this from  $Openbox/symlinks.sh
 
 # To inspect symlinks:   find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
@@ -17,7 +17,8 @@ $action $MACHINE/jo/bashrc                 ~/.bashrc
 $action $ARCHBUILDS/jo/Bash/bashrc-console ~/.bashrc-console
 $action $ARCHBUILDS/jo/Bash/bashrc-files   ~/.bashrc-files
 $action $ARCHBUILDS/jo/Vim/init.vim        ~/.config/nvim/init.vim
-$action $ARCHBUILDS/jo/Vim/gvimrc           ~/.gvimrc
+$action $ITstack/gitconfig                 ~/.gitconfig
+$action $ARCHBUILDS/jo/Vim/gvimrc          ~/.gvimrc
 $action $ARCHBUILDS/jo/Vim/vimrc           ~/.vimrc
 $action $ARCHBUILDS/jo/inputrc             ~/.inputrc
 $action $MACHINE/jo/xinitrc                ~/.xinitrc

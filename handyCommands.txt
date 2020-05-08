@@ -6,8 +6,6 @@ bc
 cat /proc/cpuinfo
 lsof -i
 lsusb
-man hier
-pass ls
 sudo parted -l
 vimiv &
 whereis <executable>
@@ -29,11 +27,19 @@ mpv av://v4l2:/dev/video0
 
 # networking
 echo "hello there" | nmx -s "message sent from neomutt" jharr@ftml.net
+ip l
+iwctl known-networks list
 sudo firewall-cmd --panic-on
+sudo lshw -c network
 
 ## devices
 ip link
 networkctl list
+
+# pass
+pass edit gmail-neomutt
+pass gmail-neomutt
+pass ls
 
 # processes
 pkill zoom
@@ -85,6 +91,11 @@ sudo parted -l
 ## Trash
 trash-empty
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
+
+# system
+man hier   #  description of the filesystem hierarchy
+systemctl  #  list running Systemd units
+w          #  list users and load on system
 
 # termdown
 termdown --help | moar

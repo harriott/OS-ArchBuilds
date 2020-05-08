@@ -21,6 +21,7 @@ ln -sf $ITstack/onGitHub/md4pdf/GNULinux/defaults.yaml ~/.pandoc/defaults/md4pdf
 ln -sf $ITstack/onGitHub/md4pdf/defaults-toc.yaml      ~/.pandoc/defaults/md4pdfToC.yaml
 ln -sf $MACHINE/jo/SSHconfig                           ~/.ssh/config
 ln -sf $tmux/tmux.conf                                 ~/.tmux.conf
+ln -sf $Openbox/vimrc                                  ~/.vimrc
 ln -sf $MACHINE/build/AURclones.sh                     ~/Arch/AUR/AURclones.sh
 
 rm -r ~/.pandoc/templates; ln -s $ITstack/onGitHub/pandoc-templates ~/.pandoc/templates

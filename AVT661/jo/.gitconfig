@@ -2,9 +2,10 @@
 
 # This file should be symlinked to  ~/.gitconfig
 
-# This is Git's per-user configuration file, as for Arch.
+# This is Git's per-user configuration file. As for Arch.
 # Its contents are referred to as needed by Git, making changes saved here instantaneous.
+# Can't use environment variables herein...
 
 [include]
-	path = $ITstack/gitconfig
+	path = /mnt/SDSSDA240G/Dropbox/JH/IT_stack/gitconfig
 

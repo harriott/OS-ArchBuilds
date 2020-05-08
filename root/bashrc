@@ -15,6 +15,7 @@ alias ls='ls --color=auto'
 # ---------------
 set -o vi
 
+alias f="fzf --preview 'bat --color=always {}'"
 alias p='ping -c 3 8.8.8.8'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
 

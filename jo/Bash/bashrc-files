@@ -15,6 +15,7 @@ alias e='exa'
 # alias f="fzf --preview 'bat --color=always {} | head -500'"
 alias f="fzf --preview 'bat --color=always {}'"
 alias l='ls --color=auto'
+alias mo='moar'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
 alias so="stat -c '%a %n'"
 alias sm="stat -c '%y %n'"
