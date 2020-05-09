@@ -15,7 +15,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> * Updates
 # pacman -Syu
-# reboot if kernel updated !
+# # reboot if kernel updated !
 # true
 
 # #=> 0 initial install
@@ -316,6 +316,9 @@ true
 # # ripgrep
 # pacman -S ripgrep
 
+# # rsync
+# pacman -S rsync
+
 # # shfmt (for bat-extras-git)
 # pacman -S shfmt
 
@@ -336,10 +339,10 @@ true
 # pacman -S lsof
 
 # # man-db
-pacman -S man-db
+# pacman -S man-db
 
 # # man-pages
-pacman -S man-pages
+# pacman -S man-pages
 
 # # Neofetch
 # pacman -S neofetch
@@ -426,6 +429,12 @@ pacman -S man-pages
 
 # # ShellCheck (for bash linting in xVim)
 # pacman -S shellcheck
+
+#==> 2 ownership of HD103SJ
+chown -Rc jo:jo /mnt/HD103SJ
+rm -r /mnt/HD103SJ/lost+found
+# chmod g=rx /mnt/HD103SJ  # was unneccessqry
+true
 
 # #==> 2 when X
 

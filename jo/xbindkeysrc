@@ -1,0 +1,5 @@
+#
+# mouse wheel click acts as double left click
+"/usr/bin/xte 'usleep 10000' 'mouseclick 1' 'mouseclick 1'"
+  b:2 + release
+

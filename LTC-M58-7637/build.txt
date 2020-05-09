@@ -107,8 +107,8 @@ Discover > KDE Connect Device Widget
 sudo pacman -S packagekit-qt5
 but failed to get a working package, so   sudo pacman -S kdeconnect
 widget still broken...
-### autoInstalljo.sh
-bash autoInstalljo.sh
+### jo/build.sh
+bash build.sh
 ####=> Updates
 ####=> Bash configurations
 ####=> xinitrc
@@ -126,11 +126,11 @@ lsblk -f  indicated   mount /dev/sdc1 /mnt/mnt
 cd /mnt/mnt
 ### get online
 dhcpcd enp0s29f7u6
-### bash autoInstallroot.sh
+### bash build.sh
 ####=> final tweaks 1
 ### mount USB drive again
 cd /mnt/mnt/ArchBuilds/LTC-M58-7637
-bash autoInstallroot.sh
+bash build.sh
 ####=> final tweaks 2
 ####=> final tweaks 3
 xdg-open got "Erreur -- KIO Client"
@@ -272,8 +272,29 @@ Configuration du système > Matériel > Périphériques d'entrée > Clavier > Ve
 reporting API error "Open Collaboration Service" for a while
 # Plasma seized
 Ctrl+Alt+F2 > root + pw > reboot
-#=> 3 user dj
-fazgheh3
+# dj
+##=> 3 user dj
+##=> 0 X settings
+# reboot into dj KDE
+## connected to Xperia XA2_b31f
+Service de portefeuilles de KDE > Classique... blowfish > Mot de passe > blank
+## Plasma
+Configuration du système > [ Thème global > Brise sombre
+  Apparence des applications > Décorations de fenêtres > Oxygen
+  Comportement de l'espace de travail > [ Verrouillage d'écran > Activation > Verrouller > off
+    Apparence > Couleur pleine > Couleur > black ]
+  Gestion de fenêtres > Changeur de tâches > Grille
+  Personnalisation > [ Paramètres régionnaux > Date et heure > Date et heure > automatiquement
+    Retours des utilisateurs > maximum ]
+  Matériel > [ Affichage et Écran > Couleur du nuit > Activer
+    Gestion de l'énergie > Économie d'énergie pour l'écran  off
+Configurer le bureau > Fond > Type > Couleur pleine > black
+### Klipper
+Ajouter des composants graphiques > Presse-papiers  dragged to tray
+right-click to configure > [ générale > [ Ignorer la sélection   Taille > 300 ]
+  Raccourcis > Afficher > Win+C ]
+# memory use
+is around 1.8 Gi at idle
 # waiting
 ## gitk
 ## Arch Linux System Tray Update Notifier and Upgrader

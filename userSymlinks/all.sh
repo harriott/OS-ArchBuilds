@@ -19,6 +19,7 @@ $action $ARCHBUILDS/jo/Bash/bashrc-files   ~/.bashrc-files
 $action $ARCHBUILDS/jo/Vim/init.vim        ~/.config/nvim/init.vim
 $action $ITstack/gitconfig                 ~/.gitconfig
 $action $ARCHBUILDS/jo/Vim/gvimrc          ~/.gvimrc
-$action $ARCHBUILDS/jo/Vim/vimrc           ~/.vimrc
 $action $ARCHBUILDS/jo/inputrc             ~/.inputrc
+$action $ARCHBUILDS/jo/Vim/vimrc           ~/.vimrc
+$action $ARCHBUILDS/jo/xbindkeysrc         ~/.xbindkeysrc
 
