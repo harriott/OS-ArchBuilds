@@ -48,7 +48,7 @@ fi
 # ------------
 # defined here so they can be accessed by any KDE settings and by  gvim
 # kill tmux sessions if you've made changes here
-export ARCHBUILDS=/home/dj/ArchBuilds
+export ARCHBUILDS=/home/dj/.ArchBuilds
     export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
     export machineName=LTC-M58-7637
         export MACHINE=$ARCHBUILDS/$machineName
@@ -56,6 +56,8 @@ export ARCHBUILDS=/home/dj/ArchBuilds
 
 # stop the 600s screensaver
 # xset s off
+
+xbindkeys  # for mouse middle-click
 
 # launch KDE
 exec startplasma-x11

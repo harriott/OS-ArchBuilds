@@ -211,6 +211,15 @@ true
 # makepkg -sic
 # cd ~
 
+# #==> xbindkeys
+# # for mouse middle click
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/xbindkeys.git
+# cd xbindkeys
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
 # #=> 2 AUR 3 settings
 
 # #==> 8192eu - blacklist rtl8xxxu
@@ -223,8 +232,8 @@ true
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer
 
-#=> 2 symlinks
-. $ARCHBUILDS/userSymlinks/jo.sh
+# #=> 2 symlinks
+# . $ARCHBUILDS/userSymlinks/jo.sh
 
 # #=> 2 tests
 # # default browser

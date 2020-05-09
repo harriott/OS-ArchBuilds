@@ -3083,6 +3083,10 @@ mimeo --add text/html gvim.desktop   (using /usr/share/applications/gvim.desktop
   - changed nothing and wasn't needed - it's the Timeshift PKGBUILD that's odd
 ##=> Timeshift
 I couldn't get it to work graphically, so Uninstalled.
+# memory use with clamd
+is around 1.06 Gi at idle (with  clamd  using 41%) stopped & disabled the daemon
+# memory use is 232M at idle
+# CPU use is 2% at idle
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

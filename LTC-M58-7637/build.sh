@@ -7,16 +7,11 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> * Moto G4
+# #=> 0 Moto G4
 # # plugged into back top right USB
 # #  ip link   reports it as   enp0s29f7u6
 # dhcpcd enp0s29f7u6
 # ping -c 3 8.8.8.8
-
-# #=> * Updates
-# pacman -Syu
-# # reboot if kernel updated !
-# true
 
 # #=> 0 initial install
 # as root:  bash build.sh
@@ -163,6 +158,11 @@ trap read debug  # puts a read request after each executable line
 # useradd -m -G wheel jo
 # until passwd jo; do echo "try again"; done
 
+# #=> 1 Updates
+# pacman -Syu
+# # reboot if kernel updated !
+# true
+
 # #=> 1 when jo
 # sudo -E bash build.sh  # passing through the environment
 true
@@ -207,10 +207,14 @@ true
 # chown clamav:clamav /run/clamav/clamd.ctl
 # freshclam
 
-# # ClamAV daemon
+# #====> ClamAV daemons
 # systemctl enable clamav-daemon.service --now
+# systemctl status clamav-daemon.service
+
 # # freshclam daemon
 # systemctl enable clamav-freshclam.service --now
+
+# systemctl disable clamav-daemon.service --now
 
 # #====> testing ClamAV
 # first turn off debug
@@ -430,11 +434,10 @@ true
 # # ShellCheck (for bash linting in xVim)
 # pacman -S shellcheck
 
-#==> 2 ownership of HD103SJ
-chown -Rc jo:jo /mnt/HD103SJ
-rm -r /mnt/HD103SJ/lost+found
-# chmod g=rx /mnt/HD103SJ  # was unneccessqry
-true
+# #==> 2 ownership of HD103SJ
+# chown -Rc jo:jo /mnt/HD103SJ
+# rm -r /mnt/HD103SJ/lost+found
+# true
 
 # #==> 2 when X
 
@@ -454,6 +457,10 @@ true
 # #====> KDE Partition Manager
 # # (it's not in Discover...)
 # pacman -S partitionmanager
+
+# #===> xautomation
+# # for mouse middle click
+# pacman -S xautomation
 
 # #==> 3 user dj
 # # creating the home directory and adding to group wheel

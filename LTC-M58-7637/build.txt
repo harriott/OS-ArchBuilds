@@ -293,8 +293,19 @@ Configurer le bureau > Fond > Type > Couleur pleine > black
 Ajouter des composants graphiques > Presse-papiers  dragged to tray
 right-click to configure > [ générale > [ Ignorer la sélection   Taille > 300 ]
   Raccourcis > Afficher > Win+C ]
-# memory use
-is around 1.8 Gi at idle
+# memory use 602M at idle
+was around 1.8 Gi at idle with Plasma also up for jo on tty2, and clamd
+# CPU use is 2% at idle
+# start Dolphin with KDE
+Configuration du système > Espace de travail > Démarrage et arrèt > Démarrage automatique >
+  Ajouter > Système > Dolphin
+# mouse middle click
+#=> xbindkeys
+xbindkeys --key  then had to right-click on desktop before  middle-click  in the window reported:
+  "(Scheme function)"
+      m:0x200 + b:2   (mouse)
+#=> xautomation
+line from  ~/.xbindkeysrc  works
 # waiting
 ## gitk
 ## Arch Linux System Tray Update Notifier and Upgrader

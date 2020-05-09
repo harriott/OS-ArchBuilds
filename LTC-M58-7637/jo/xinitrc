@@ -59,6 +59,8 @@ export DROPBOX=/home/jo/Dropbox   # keep this capitalised for finding it without
 # stop the 600s screensaver
 # xset s off
 
+xbindkeys  # for mouse middle-click
+
 # launch KDE
 exec startplasma-x11
 

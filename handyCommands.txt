@@ -97,6 +97,10 @@ man hier   #  description of the filesystem hierarchy
 systemctl  #  list running Systemd units
 w          #  list users and load on system
 
+## monitoring
+bashtop
+htop
+
 # termdown
 termdown --help | moar
 termdown -b 10
