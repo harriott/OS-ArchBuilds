@@ -235,10 +235,15 @@ true
 # firewall-cmd --set-default-zone=home
 # # open UDP port 5353 (needed later for Avahi)
 # firewall-cmd --permanent --zone=home --add-port 5353/udp
-# firewall-cmd --info-zone=home
+# firewall-cmd --info-zone=home  # essential for the ports
 
 # # check firewalld
 # firewall-cmd --state
+
+# ports for KDE Connect
+# firewall-cmd --zone=home --permanent --add-port=1714-1764/tcp
+# firewall-cmd --zone=home --permanent --add-port=1714-1764/udp
+# systemctl restart firewalld.service
 
 # #===> generate 00-keyboard.conf
 # localectl --no-convert set-x11-keymap fr logitech_base
@@ -265,8 +270,10 @@ true
 # pacman -S xsel
 
 # #===> root bash configurations
-# cp $ARCHBUILDS/root/bash_profile /root/.bash_profile
-# cp $ARCHBUILDS/root/bashrc /root/.bashrc
+# cp $ARCHBUILDS/root/bashrc /root/.bashrc  # the only one that's best kept as a hard copy
+# ln -sf $ARCHBUILDS/Bash/bashrc-generic /root/.bashrc-generic
+# ln -sf $ARCHBUILDS/Bash/inputrc /root/.inputrc
+# ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile
 
 # #===> softwares - appearance
 # # default-icon-theme was already there
@@ -376,6 +383,9 @@ true
 # # Secure Shell
 # pacman -S openssh
 
+# # sshfs (for KDE Connect)
+# pacman -S sshfs
+
 # # Wget
 # pacman -S wget
 
@@ -413,6 +423,9 @@ true
 
 # # pkgstats
 # pacman -S pkgstats
+
+# # my system backup script
+# ln -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh
 
 # # xterm
 # pacman -S xterm
@@ -474,4 +487,13 @@ true
 # cat /etc/systemd/system/getty@tty1.service.d/override.conf
 # # reboot when ready
 # true
+
+# # #==> 4 shared HD103SJ
+# groupadd jodj
+# chgrp jodj /mnt/HD103SJ
+# chmod 770 /mnt/HD103SJ
+# chmod +s /mnt/HD103SJ
+# usermod -a -G jodj jo
+# usermod -a -G jodj dj
+# # reboot so dj can detect this permission
 

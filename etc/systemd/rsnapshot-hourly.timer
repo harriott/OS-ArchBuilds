@@ -1,0 +1,12 @@
+
+[Unit]
+Description=rsnapshot hourly backup
+
+[Timer]
+# Run hourly
+OnCalendar=*-*-* *:00:00
+Persistent=true
+Unit=rsnapshot@hourly.service
+
+[Install]
+WantedBy=timers.target

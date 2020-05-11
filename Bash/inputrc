@@ -25,6 +25,7 @@ set keymap vi-insert
 "\e[B": history-search-forward   # arrow down
 
 # Colorized completion
+# (these settings are masked by fzf)
 # Color files by types
 set colored-stats On
 # Append char to indicate type

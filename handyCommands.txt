@@ -29,8 +29,12 @@ mpv av://v4l2:/dev/video0
 echo "hello there" | nmx -s "message sent from neomutt" jharr@ftml.net
 ip l
 iwctl known-networks list
-sudo firewall-cmd --panic-on
 sudo lshw -c network
+
+## firewall-cmd
+sudo firewall-cmd --info-zone=home
+sudo firewall-cmd --info-zone=public
+sudo firewall-cmd --panic-on
 
 ## devices
 ip link
@@ -60,13 +64,14 @@ find . -type l -ls  # recursively list all symlinks
 
 ## directory structures
 br                    # broot
+<directory>           # cd <directory>  ( shopt autocd )
 fd
 find . -type f | fzy  # for finding something fuzzily fast
 rg <someText>         # searches recursively in files
 
 ### exa
 e
-e -la  # for permissions
+e -la  # for permissions and symlinks
 e -T   # for tree
 
 ### fzf
@@ -74,8 +79,8 @@ Alt+c   # to change directory
 Ctrl+t  # puts node selection onto command line
 
 ### jump
-  j <fuzzysearch> [<fuzzysear> ...]
-  jump top
+j <fuzzysearch> [<fuzzysear> ...]
+jump top
 
 ## folder sizes
 br --sizes
@@ -88,11 +93,12 @@ df -h
 lsblk -f
 sudo parted -l
 
-## Trash
+### Trash
 trash-empty
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
 # system
+as root,  du -sh /boot /etc /home /root /usr
 man hier   #  description of the filesystem hierarchy
 systemctl  #  list running Systemd units
 w          #  list users and load on system

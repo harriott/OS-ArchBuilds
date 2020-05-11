@@ -1,0 +1,79 @@
+# vim: set ft=sh tw=0:
+
+# Joseph Harriott
+# Bash configurations that are also useful in Console and as root.
+# To be sourced by the parent  ~/.bashrc
+# source ~/.bashrc if you've changed something here...
+
+
+alias b='batman'
+alias mo='moar'
+
+# command history
+alias h='history'
+export HISTCONTROL=ignoreboth:erasedups
+export HISTIGNORE='?:??'
+PROMPT_COMMAND='history -a' # Samokovarov's  jump  later tweaks this
+shopt -s histappend
+
+# Internetish
+alias p='ping -c 3 8.8.8.8'
+alias pqs='pacman -Qs'
+alias wp='curl wttr.in/Paris'  # weather
+
+
+# better file managing
+# --------------------
+alias e='exa'
+alias l='ls --color=auto'
+alias s="stat -c '%A %a %h %U %G %s %y %n'"
+alias so="stat -c '%a %n'"
+alias sm="stat -c '%y %n'"
+
+shopt -s autocd dotglob extglob globstar nullglob
+
+# broot
+if [ -s "/usr/bin/broot" ]; then
+    if [ -s "/usr/bin/moar" ]; then
+      export PAGER=moar
+    else
+      export PAGER=less
+    fi
+
+    # generalised from what broot added to .bashrc:
+    source ~/.config/broot/launcher/bash/br
+fi
+
+# count filetypes
+cft(){
+  find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
+}
+
+# fzf
+if [ -s "/usr/share/fzf" ]; then
+    # alias f="fzf --preview 'bat --color=always {} | head -500'"
+    alias f="fzf --preview 'bat --color=always {}'"
+    source /usr/share/fzf/key-bindings.bash
+    source /usr/share/fzf/completion.bash
+fi
+
+# locate directories
+locd () {
+    locate $1 | xargs -I {} bash -c 'if [ -d "{}" ]; then echo {}; fi'
+}
+
+# move up [n] directories
+up(){
+  local dir=""
+  limit=$1
+  for ((i=1 ; i <= limit ; i++))
+    do
+      dir=$dir/..
+    done
+  dir=$(echo $dir | sed 's/^\///')
+  if [ -z "$dir" ]; then
+    dir=..
+  fi
+  cd $dir
+}
+

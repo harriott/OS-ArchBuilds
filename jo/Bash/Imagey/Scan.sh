@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Joseph Harriott, Oct 2019
+# Joseph Harriott
 
 # $1 manually chooses the scanner because there's no other easy way
 #  only one scanning device should be plugged in
@@ -11,6 +11,7 @@
 # $2 an integer equivalent to scan resolution/100
 #  2 is good for Epson Perfection 2480 Photo
 #  3 is good for HP ENVY 5532
+#  when empty, triggers an attempt to log HP ENVY 5532 network address
 # $3 is the desired tiff basename
 # $4 optionally limits scan height
 
@@ -35,7 +36,8 @@ elif [ $1 = "55n" ] || [ $1 = "55u" ] ; then
   fi
   siPrefix="scanimage $device -p --format=tiff --mode Color --resolution"
 else
-  exit
+    echo 'no such scanner'
+    exit
 fi
 if [ $4 ] ; then
   height="-y $4"

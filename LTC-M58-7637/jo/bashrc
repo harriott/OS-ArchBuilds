@@ -2,8 +2,15 @@
 
 # ~/.bashrc in an Arch install on my Acer Veriton T661 system
 
-# Joseph Harriott  Tue 28 Apr 2020
+# Joseph Harriott
 # source ~/.bashrc if you've changed something here...
 
-source ~/.bashrc-console
+[[ $- != *i* ]] && return  # if not running interactively, don't do anything
+
+if [[ $ARCHBUILDS ]]; then
+    # 1 useful everywhere
+    source $ARCHBUILDS/Bash/bashrc-generic
+    # 2 useful also in Console
+    source $ARCHBUILDS/jo/Bash/bashrc-console
+fi
 

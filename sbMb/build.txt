@@ -1,9 +1,8 @@
 vim: fdl=0 ft=build fdm=expr:
 
-# Physical Configuration
-
-# Arch install - from the ISO
-
+# build
+## Arch install - from the ISO
+# physical configuration
 # waiting
 ## graphics card
 lspci | grep -e VGA -e 3D  reports

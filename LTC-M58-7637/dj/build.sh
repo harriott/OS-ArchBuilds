@@ -9,12 +9,12 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 X settings
+#=> 0 X settings
 ARCHBUILDS=/home/dj/.ArchBuilds
     MACHINE=$ARCHBUILDS/$machineName
 echo $MACHINE
-mkdir -p ~/.config/nvim
-. $ARCHBUILDS/symlinks.sh
-ln -sf $MACHINE/dj/xinitrc ~/.xinitrc
-broot
+# mkdir -p ~/.config/nvim
+. $ARCHBUILDS/userSymlinks/all.sh
+# ln -sf $MACHINE/dj/xinitrc ~/.xinitrc
+# broot
 

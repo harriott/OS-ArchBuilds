@@ -1,20 +1,19 @@
 # vim: set ft=sh tw=0:
 
-# ~/.bashrc in an Arch install on my Acer Veriton T661 system
+# -------------------
+# File managing stuff
+# -------------------
+# sourced, ultimately, by ~/.bashrc
+# (source ~/.bashrc if you've changed something here...)
 
-# Joseph Harriott  http://momentary.eu/  Fri 24 May 2019
-# Bash configurations that are also useful in Console.
-# source ~/.bashrc if you've changed something here...
+# These are more settings that can also be useful in Console.
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# Joseph Harriott  http://momentary.eu/
 
-# ----------------------
-# my preferences:
-# ----------------------
 
-alias b='batman'
-source ~/.bashrc-files
+# bigger command history
+export HISTFILESIZE=10000
+export HISTSIZE=1000
 
 # a colorised (bold blue) prompt, with git support
 source /usr/share/git/completion/git-prompt.sh
@@ -22,37 +21,64 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
 
-# Command not found hook
+# command not found hook
 source /usr/share/doc/pkgfile/command-not-found.bash
 
-# system data displayed only if not in tmux
-if [ ! $TERM == "screen" ]; then
-  neofetch
+# Samokovarov's  jump
+if [ -s "/usr/bin/jump" ]; then
+    eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
 fi
+
+# System, for GnuPG
+export GPG_TTY=$(tty)
 
 # for tmux
 export EDITOR=nvim
 export VISUAL=nvim
 
-# Internetish
-alias p='ping -c 3 8.8.8.8'
-alias pqs='pacman -Qs'
-alias wp='curl wttr.in/Paris'  # weather
 
-# System, for GnuPG
-export GPG_TTY=$(tty)
+# Git
+# ---
+alias ga='git add'
+alias gis='git status -u'
+gic () {
+    git commit -m "$1"
+}
 
-# settings involving  $PROMPT_COMMAND
-# -----------------------------------
-# 1 history
-alias h='history'
-export HISTCONTROL=ignoreboth:erasedups
-export HISTFILESIZE=10000
-export HISTIGNORE='?:??'
-export HISTSIZE=1000
-PROMPT_COMMAND='history -a'
-shopt -s histappend
 
-# 2 for Samokovarov's  jump
-eval "$(jump shell)"  # makes further adjustments to  $PROMPT_COMMAND
+# time-sorted lists of files
+# --------------------------
+
+# find date-time sort Encrypted folder
+fdtsEF () {
+  eval "find $1* $printfDTsort"
+}
+alias fe='fdtsEF'
+
+# find date-time sort files of a certain type (filename extension)
+fdtsExt () {
+  if [ $1 ]; then
+    dtsfile=dts-$1.txt
+    echo "vim: nowrap tw=0:" > $dtsfile
+    echo "" >> $dtsfile
+    echo $PWD >> $dtsfile
+    eval "find -iname \*.$1 $printfDTsort >> $dtsfile"
+    echo "" >> $dtsfile
+    if [ $1 = "tex" ] || [ $1 = "txt" ]; then
+      sed -i "s| \.| $PWD|" $dtsfile
+    fi
+    echo "results are in $dtsfile"
+  else
+    echo "^ need a file type (= filename extension)"
+  fi
+}
+alias fx='fdtsExt'
+
+printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
+
+
+# trash-cli
+# ---------
+alias tl='trash-list'
+alias tre='trash-restore'
 

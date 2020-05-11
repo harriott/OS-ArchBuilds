@@ -1,10 +1,9 @@
 # vim: set ft=sh tw=0:
-# ~/.bashrc
-# Joseph Harriott, Sun 12 May 2019
+
+# Joseph Harriott
 # source /root/.bashrc   if you've changed something here...
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+[[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
 # offered by Arch:
 alias ls='ls --color=auto'
@@ -14,17 +13,7 @@ alias ls='ls --color=auto'
 # my preferences:
 # ---------------
 set -o vi
-
-alias f="fzf --preview 'bat --color=always {}'"
-alias p='ping -c 3 8.8.8.8'
-alias s="stat -c '%A %a %h %U %G %s %y %n'"
-
-# History
-alias h='history'
-export HISTCONTROL=ignorespace:erasedups
-export HISTIGNORE='?:??'
-PROMPT_COMMAND='history -a'
-shopt -s histappend
+source /root/.bashrc-generic
 
 # a colorised (bold red) prompt:
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '

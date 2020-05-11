@@ -2,26 +2,20 @@ vim: fdl=0 ft=build fdm=expr:
 
 Lenovo ThinkCentre M58 type 7637 - LTC-M58-7637
 
-# to 200503 Backup
-## Physical Configuration
-HD103SJ
-Logitech Wireless Mouse M525
-Logitech Ultra-Flat Y-BP62a
-monitor (ViewSonic VA1616w) Fujitsu E19W-5
-wan intended via TL-WN821N
-
-## Arch install - from the ISO
-### first attempt - typed commands - failed
+# build
+## to 200503 Backup
+### Arch install - from the ISO
+#### first attempt - typed commands - failed
 booted to archlinux-2020.04.01-x86_64.iso usb
 loadkeys fr
-#### disk partitions
+##### disk partitions
 lsblk -f  indicated   /dev/sda
-##### zap existing
+###### zap existing
 gdisk /dev/sda > x (extra functionality) > z (Zap)  y > y
-#### create new GPT
+##### create new GPT
 gdisk /dev/sda   o (create a new empty GUID partition table GPT & new protective MBR) y
   w   for  gdisk /dev/sda  (MBR: protection  GPT: present)
-#### create partitions
+##### create partitions
 gdisk /dev/sda
   n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +1m >
     ef02 (BIOS boot partition)
@@ -33,147 +27,145 @@ gdisk /dev/sda
   n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 4) >
     Enter > 8300 (Linux filesystem)
   w
-#### format & mount partitions
+##### format & mount partitions
 lsblk -l
 mkswap /dev/sda2   for   swapon /dev/sda2   (then  swapon -s  shows /dev/sda2 has Priority -2)
 mkfs.ext4 /dev/sda3   for   mount /dev/sda3 /mnt
   mkdir /mnt/home   then   mkfs.ext4 /dev/sda4   for   mount /dev/sda4 /mnt/home
-#### wan via Moto G4 plugged into front left USB
+##### wan via Moto G4 plugged into front left USB
 ip link   reports it as   enp0s26f7u1   so   dhcpcd enp0s26f7u1
   ping -c 3 8.8.8.8  got a response
-#### install the base packages
+##### install the base packages
 pacstrap /mnt base linux linux-firmware   got me 117
-#### genfstab
+##### genfstab
 genfstab -U /mnt >> /mnt/etc/fstab   then checked with   cat /mnt/etc/fstab
-#### change root
+##### change root
 arch-chroot /mnt
-#### time zone
+##### time zone
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
-#### generate /etc/adjtime
+##### generate /etc/adjtime
 hwclock --systohc
-#### system clock
+##### system clock
 timedatectl set-ntp true   then   timedatectl status
-#### big mistake
+##### big mistake
 cat /etc/localtime - totally fucked up the console, so hard shutdown
-#### restarted to archlinux-2020.04.01-x86_64.iso usb
+##### restarted to archlinux-2020.04.01-x86_64.iso usb
 loadkeys fr
 gdisk -l /dev/sda
-#### time zone + system clock again
+##### time zone + system clock again
 ls -l /etc/localtime  shows it's a symlink to  ../usr/share/zoneinfo/UTC, so  rm /etc/localtime
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime   then checked with   timedatectl status
 hwclock --systohc
-#### locale
+##### locale
 vi /etc/locale.gen   and uncommented   en_GB.UTF-8 UTF-8  &  en_US.UTF-8 UTF_8  &  fr_FR.UTF-8 UTF_8
 cat /etc/locale.gen | grep -v '^#'   then  locale-gen
-#### wan Moto G4 plugged into back top right USB
+##### wan Moto G4 plugged into back top right USB
 ip link   reports it as   enp0s29f7u6   so   dhcpcd enp0s29f7u6
   ping -c 3 8.8.8.8  got a response
-#### Updates
+##### Updates
 pacmatic -Syu  for 33 Packages  but got error due to conflicting files, and nothing installed
 pacman -Syu --overwrite /usr/lib\*/p11-kit-trust.so   for 33 Packages
   but got subsequent bizarre write fails...
-### second attempt - K8GBDT100 for a Bash script
+#### second attempt - K8GBDT100 for a Bash script
 Moto G4 still plugged into back top right USB for wan provision
 mkdir /mnt/K8GBDT100
 lsblk -f  indicated   mount /dev/sdj1 /mnt/K8GBDT100
 bash K8GBDT100/<script>
-####=> prepare partitions
+#####=> prepare partitions
 mkinitcpio   got selected
 perl   warned about empty locale settings
-####=> install essential stuff then chroot
-####=> system settings
-####=> Updates
-####=> bootloader
-## preparations from root
+#####=> install essential stuff then chroot
+#####=> system settings
+#####=> Updates
+#####=> bootloader
+### preparations from root
 login > root > pw
-####=> after Grub
+#####=> after Grub
 fbset -i  reported  1366x768
 warning "Clamd was NOT notified"...
-####=> Softwares
-####=> anti-malware
-####=> ClamAV empty sock file
-####=> Automatic login to virtual console
-####=> prepare for X
-####=> prepare for KDE
+#####=> Softwares
+#####=> anti-malware
+#####=> ClamAV empty sock file
+#####=> Automatic login to virtual console
+#####=> prepare for X
+#####=> prepare for KDE
 selected  phonon-qt5-vlc  fcron
-## jo
+### jo
 login > jo > pw
-###=> before X
-### startx
-Configuration du système > Matériel > Périphériques d'entrée > Souris > Vitesse > 8
+####=> before X
+#### startx
+Plasma: Souris > Vitesse > 8
 renamed ~/K8GBDT100 to ~/mnt
-### KDE Connect Device Widget
+#### KDE Connect Device Widget
 Discover > KDE Connect Device Widget
 sudo pacman -S packagekit-qt5
 but failed to get a working package, so   sudo pacman -S kdeconnect
 widget still broken...
-### jo/build.sh
+#### jo/build.sh
 bash build.sh
-####=> Updates
-####=> Bash configurations
-####=> xinitrc
-####=> ssh/id_rsa permission fix
-####=> vim 1
-####=> vim 2
-####=> AUR directory
-####=> AURs
+#####=> Updates
+#####=> Bash configurations
+#####=> xinitrc
+#####=> ssh/id_rsa permission fix
+#####=> vim 1
+#####=> vim 2
+#####=> AUR directory
+#####=> AURs
 selected rustup
-## reboot
+### reboot
 su > root pw
-### mount a USB drive
+#### mount a USB drive
 mv /mnt/K8GBDT100 /mnt/mnt
 lsblk -f  indicated   mount /dev/sdc1 /mnt/mnt
 cd /mnt/mnt
-### get online
+#### get online
 dhcpcd enp0s29f7u6
-### bash build.sh
-####=> final tweaks 1
-### mount USB drive again
+#### bash build.sh
+#####=> final tweaks 1
+#### mount USB drive again
 cd /mnt/mnt/ArchBuilds/LTC-M58-7637
 bash build.sh
-####=> final tweaks 2
-####=> final tweaks 3
+#####=> final tweaks 2
+#####=> final tweaks 3
 xdg-open got "Erreur -- KIO Client"
-####=> vim Packages
-## from jo in KDE
+#####=> vim Packages
+### from jo in KDE
 Konsole in .../ArchBuilds/LTC-M58-7637/
-###=> Dropbox
-###=> Dust
-###=> Fangfrisch
-###=> moar
-###=> AURs 2
-###=> tests
-### ALSA
+####=> Dropbox
+####=> Dust
+####=> Fangfrisch
+####=> moar
+####=> AURs 2
+####=> tests
+#### ALSA
 weirdly, internal speaker is controlled by the 2nd Headphone slider in alsamixer
 sudo alsactl store
-### Chromium
+#### Chromium
 Utilisateur actuel > Activer la synchronisation > trohib@gmail.com > pw > Paramètres >
   Gérer la synchronisation > Favoris & Onglets ouverts off > Confirmer
-### Espace de travail
-Configuration du système > Gestion de fenêtres > Changeur de tâches > Grille
-### default browser
+#### Plasma: Changeur de tâches > Grille
+#### default browser
 xdg-settings get default-web-browser  reports  kfmclient_html.desktop
-Configuration du système > Personnalisation > Applications > Applications par défaut >
-  Navigateur web > dans l'application suivante > Chromium
+Plasma: Applications par défaut > Chromium
 xdg-open https://archlinux.org   opened in Chromium
-### vim-LanguageTool
+#### vim-LanguageTool
 cd ~/Arch/AUR/vim-languagetool  for   makepkg -sic > 1 (jre-openjdk-headless)
   also installed  languagetool  then  unzip
-### X settings
+#### X settings
 xset q   reports that  Num Lock is off  and  Screen Saver begins after 600s
-### KWallet
+#### KWallet
 Service de portefeuilles de KDE > Classique... blowfish > Mot de passe > blank
-### Klipper
+#### Klipper
 right-click to configure > [ générale > [ Ignorer la sélection   Taille > 300 ]
   Raccourcis > Afficher > Win+C ]
-### Dropbox Signed in, then Paused
-### Économie d'énergie
-Configuration du système > Matériel > Gestion de l'énergie > Économie d'énergie pour l'écran  off
-## 200503 Backup
+#### Dropbox Signed in, then Paused
+#### DPM
+Plasma: Économie d'énergie pour l'écran  off
+### 200503 Backup
 precautionary reboot
-### boot  to  KSE98GB  containing  ARCH_202005
+#### boot  to  KSE98GB  containing  ARCH_202005
 at bootup, Enter > F12 > Kingston
-#### rsyncBackup
+##### rsyncBackup
 cd /
 lsblk -f   indicated:
   ls mnt
@@ -186,36 +178,34 @@ lsblk -f   indicated:
   mount dev/sdd1 mnt/mnt/mnt1
 cd /mnt/mnt/mnt0/ArchBuilds
 bash rsyncBackup.sh
-### halt p
-# grow  sda4 /home
+#### halt p
+## grow  sda4 (/home)
 needs at least 70 GiB set aside for jo, then 50 GiB for Deauram's possible needs
-##=> KDE Partition Manager
-## grow  sda4 /home
+###=> KDE Partition Manager
+### grow  sda4 /home
 Les Applications > Système > Gestionnaire de partitions de KDE
 /dev/sda5 > Supprimer
-### fail
+#### fail
 /dev/sda4 > Redimensionner
 /dev/sda5 > Nouvelle > HD103SJ
-## booted into KNOPPIX v8.6.1
+### booted into KNOPPIX v8.6.1
 did it with GParted
-# Dropbox
+## Dropbox
 Préférences > Synchronasitation > sélective > a few of most useful folders
-# Night Color
+## Night Color
 Préférences > Matériel > Affichage et Écran > Couleur de nuit > Activer
-# Yakuake
+## Yakuake
 Meta+Y
-# as root
-##=> fstab
-##=> final tweaks 4
-# as jo
+## as root
+###=> fstab
+###=> final tweaks 4
+## as jo
 mkdir ~/.vimswap
 Alt+D A > Event Calendar  onto Desktop, and configured
-## start Yakuake with KDE
-Configuration du système > Espace de travail > Démarrage et arrèt > Démarrage automatique >
-  Ajouter > Système > Yakuake
-## graphics card
+### start Yakuake with KDE
+### graphics card
 lspci | grep -e VGA -e 3D  reports  00:02.0 VGA compatible controller: Intel Corporation 4 Series Chipset Integrated Graphics Controller (rev 03)
-# TL-WN821N
+## TL-WN821N
 having installed 8192eu-dkms, and rebooted,
   ip link   suggested   sudo ip link set wlp0s29f7u5 up   but no response..
 sudo depmod -a
@@ -224,15 +214,14 @@ sudo modprobe 8192eu
 lsmod | grep rtl8
   rtl8xxxu   147456  0
   mac80211  1032192  1 rtl8xxxu
-# shortcut to Konsole gone
-Configuration du système > Espace de travail > Raccourcis > Raccourcis personnalisés > KMenuEdit >
-  Launch Konsole > Declencheur > Ctrl+Alt+T
-# linux headers
-# TL-WN821N
+## shortcut to Konsole gone
+restored manually
+## linux headers
+## TL-WN821N
 8192eu-dkms
   Gtk-Message: 14:15:46.255: Failed to load module "appmenu-gtk-module"
-## appmenu-gtk-module dkms linux-headers
-## 8192eu-dkms
+### appmenu-gtk-module dkms linux-headers
+### 8192eu-dkms
 $ pqs rtl8192eu
 local/8192eu-dkms 100.3575500-1
     Driver for the Realtek 8192eu chipset (DKMS)
@@ -255,57 +244,93 @@ sudo ip link set wlp0s26f7u1 up
 ip link ls wlp0s26f7u1
 dmesg | grep wlp0s26f7u1
   [13081.527873] rtl8192eu 1-1:1.0 wlp0s26f7u1: renamed from wlan0
-### iwctl
+#### iwctl
 device list   shows   wlp0s26f7u1
 station wlp0s26f7u1 get-networks   listed   Xperia XA2_b31f   among others
 quit
-# Networking
+## Networking
 systemctl status NetworkManager.service   shows it to be inactive
-##=> NetworkManager
-# TL-WN821N again
-##=> 8192eu - blacklist rtl8xxxu
+###=> NetworkManager
+## TL-WN821N again
+###=> 8192eu - blacklist rtl8xxxu
 got it working, but without the green LED flashing
-# Numlock on at Plasma start
-Configuration du système > Matériel > Périphériques d'entrée > Clavier > Verroulliage numérique
-  > Activé
-# Plasma Installateur d'extensions
+## Numlock on at Plasma start
+## Plasma Installateur d'extensions
 reporting API error "Open Collaboration Service" for a while
-# Plasma seized
+## Plasma seized
 Ctrl+Alt+F2 > root + pw > reboot
-# dj
-##=> 3 user dj
-##=> 0 X settings
-# reboot into dj KDE
-## connected to Xperia XA2_b31f
+## dj
+###=> 3 user dj
+###=> 0 X settings
+## reboot into dj KDE
+### connected to Xperia XA2_b31f
 Service de portefeuilles de KDE > Classique... blowfish > Mot de passe > blank
-## Plasma
-Configuration du système > [ Thème global > Brise sombre
-  Apparence des applications > Décorations de fenêtres > Oxygen
-  Comportement de l'espace de travail > [ Verrouillage d'écran > Activation > Verrouller > off
-    Apparence > Couleur pleine > Couleur > black ]
-  Gestion de fenêtres > Changeur de tâches > Grille
-  Personnalisation > [ Paramètres régionnaux > Date et heure > Date et heure > automatiquement
-    Retours des utilisateurs > maximum ]
-  Matériel > [ Affichage et Écran > Couleur du nuit > Activer
-    Gestion de l'énergie > Économie d'énergie pour l'écran  off
-Configurer le bureau > Fond > Type > Couleur pleine > black
-### Klipper
+### Plasma
+automatic date-time adjustment
+black wallpaper
+night light
+screensaver off
+send usage data
+#### Klipper
 Ajouter des composants graphiques > Presse-papiers  dragged to tray
 right-click to configure > [ générale > [ Ignorer la sélection   Taille > 300 ]
   Raccourcis > Afficher > Win+C ]
-# memory use 602M at idle
+## memory use 602M at idle
 was around 1.8 Gi at idle with Plasma also up for jo on tty2, and clamd
-# CPU use is 2% at idle
-# start Dolphin with KDE
-Configuration du système > Espace de travail > Démarrage et arrèt > Démarrage automatique >
-  Ajouter > Système > Dolphin
-# mouse middle click
-#=> xbindkeys
+## CPU use is 2% at idle
+## start Dolphin with KDE
+## mouse middle click
+##=> xbindkeys
 xbindkeys --key  then had to right-click on desktop before  middle-click  in the window reported:
   "(Scheme function)"
       m:0x200 + b:2   (mouse)
-#=> xautomation
+##=> xautomation
 line from  ~/.xbindkeysrc  works
+## KSnapshot
+ImpEcr > Configurer > Enregistrer automatiquement
+##=> 4 shared HD103SJ
+## Dropbox jammed
+quit & relaunched
+## top left corner turned off in Screen Edges
+# physical configuration
+HD103SJ
+Logitech Wireless Mouse M525
+Logitech Ultra-Flat Y-BP62a
+monitor (ViewSonic VA1616w) Fujitsu E19W-5
+wan intended via TL-WN821N
+# Plasma
+## Menu > Configuration du système
+### Apparence
+Apparence des applications > Décorations de fenêtres > Oxygen
+Thème global > Brise sombre
+### Espace de travail
+Démarrage et arrèt > Démarrage automatique > Ajouter > Système > Dolphin, Yakuake
+Raccourcis > Raccourcis personnalisés > KMenuEdit > Launch Konsole > Declencheur > Ctrl+Alt+T
+Recherche > Ne pas > tweaked
+#### Comportement de l'espace de travail
+Screen Edges (Bords de l'écran) > clicked on top left square in image > Aucune action
+Verrouillage d'écran > Activation > Verrouller > off
+##### Effets du bureau
+Animation de changement de bureau virtuel > Glissage
+###### Ornements
+Fenêtres en gélatine
+Tomber en ruine
+#### Gestion de fenêtres > Changeur de tâches
+Affiche la fenêtre off
+Grille de vignettes
+### Matériel
+Affichage et Écran > Couleur du nuit > Activer
+Gestion de l'énergie > Économie d'énergie pour l'écran  off
+#### Périphériques d'entrée
+Clavier > Verroulliage numérique > Activé
+Souris > Vitesse > 8
+### Personnalisation
+Applications > Applications par défaut > Navigateur web > dans l'application suivante > Chromium
+Paramètres régionnaux > Date et heure > Date et heure > automatiquement
+Retours des utilisateurs > maximum
+## right-click on Desktop > Configurer le bureau (Paramètres Dossier du bureau)
+Actions de la souris > Bouton central > Coller removed
+Fond d'écran > Couleur pleine > Couleur > black
 # waiting
 ## gitk
 ## Arch Linux System Tray Update Notifier and Upgrader

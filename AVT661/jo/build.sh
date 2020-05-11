@@ -12,11 +12,11 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 environment variables
 # # these are eventually set in  ~/.xinitrc
 
-#=> 0 Updates
-sudo pacman -Syu
-true
-auracle sync
-true
+# #=> 0 Updates
+# sudo pacman -Syu
+# true
+# auracle sync
+# true
 
 # #=> 1 AUR 0 - make AUR directory
 # mkdir ~/Arch
@@ -220,10 +220,17 @@ true
 
 # #=> 1 AUR 3 settings
 
-#=> 2 symlinks
-. $ARCHBUILDS/userSymlinks/jo.sh
+# #=> 2 rsnapshot
+# cp /etc/rsnapshot.conf $MACHINE/etc/defaults/k59-rsnapshot.conf
+# cp /etc/rsnapshot.conf $MACHINE/etc/rsnapshot.conf
+sudo cp $MACHINE/etc/rsnapshot.conf /etc/rsnapshot.conf
+rsnapshot configtest
+rsnapshot -t hourly
 
-# #=> tests
+# #=> 2 symlinks
+# . $ARCHBUILDS/userSymlinks/jo.sh
+
+# #=> 2 tests
 # # default browser
 # xdg-open https://archlinux.org
 

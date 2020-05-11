@@ -6,13 +6,16 @@
 
 # Run this script from a Live ISO:  bash <path-to-script>/rsyncBackup.sh
 
-# Backup destinations when running from a live ISO:
-backdest=/mnt/mnt/mnt1/LTC-M58-7637-system-rsyncBackup
-# backdest=/mnt/mnt/WD1001FALS/AVT661-system-rsyncBackup
-# backdest=/run/media/jo/MK6021GAS/LTC-M58-7637-system-rsyncBackup
-mnt=/mnt
+# When running from a live ISO:
+#  backup destinations:
+#   backdest=/mnt/mnt/mnt1/LTC-M58-7637-system-rsyncBackup
+#   backdest=/mnt/mnt/WD1001FALS/AVT661-system-rsyncBackup
+#   backdest=/run/media/jo/MK6021GAS/LTC-M58-7637-system-rsyncBackup
+#  source prefix:
+#   mnt=/mnt
 
-# Backup destinations when running from root:
+# Backup destinations when running from root (eg via tty3):
+ backdest=/mnt/WD1001FALS/AVT661-system-rsyncBackup
 
 # Possibly
 # mkdir $backdest
@@ -20,7 +23,7 @@ mnt=/mnt
 # Labels for backup name
 date=$(date "+%F-%H-%M")
 bfolder="$backdest/$date"
-echo "Intending to rsync-backup of some of what's on /mnt to $bfolder"
+echo "Intending to rsync the significant system directories to $bfolder"
 
 # Check, then go:
 echo -n "Have you logged out of your user accounts, and are ready to backup? (y/N): "
