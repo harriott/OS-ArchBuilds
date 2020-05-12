@@ -11,3 +11,6 @@
 # # (it's not in Discover...)
 # pacman -S partitionmanager
 
+# #=> KDE 2 check iwd.service (for Kdenetwork)
+# systemctl status iwd.service
+

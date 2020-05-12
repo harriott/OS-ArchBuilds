@@ -4,10 +4,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 Updates
-. $ARCHBUILDS/build/2-when_jo/0-updates.sh
-
-# #=> 1 to X
+# #=> 0 to X
 # sudo -E bash build.sh  # passing through the environment
 true
 
@@ -20,5 +17,5 @@ true
 # pacman -S xf86-video-intel mesa
 
 # #==> to X
-. $ARCHBUILDS/build/2-when_jo/0-before_desktop.sh
+. $ARCHBUILDS/build-root-subScripts/2-when_jo-0-before_desktop.sh
 

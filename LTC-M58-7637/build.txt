@@ -196,9 +196,7 @@ Préférences > Synchronasitation > sélective > a few of most useful folders
 Préférences > Matériel > Affichage et Écran > Couleur de nuit > Activer
 ## Yakuake
 Meta+Y
-## as root
-###=> fstab
-###=> final tweaks 4
+## $ARCHBUILDS/build-root-subScripts/2-when_jo-0-before_desktop.sh
 ## as jo
 mkdir ~/.vimswap
 Alt+D A > Event Calendar  onto Desktop, and configured
@@ -292,6 +290,13 @@ ImpEcr > Configurer > Enregistrer automatiquement
 ## Dropbox jammed
 quit & relaunched
 ## top left corner turned off in Screen Edges
+## first run of rsnapshot
+## rsnapshot timers
+sudo -E bash 2-when_jo-1-when_X-1-when_rsnapshot_conf.sh
+## waiting
+### gitk
+### Arch Linux System Tray Update Notifier and Upgrader
+plasma5-applets-kde-arch-update-notifier-git
 # physical configuration
 HD103SJ
 Logitech Wireless Mouse M525
@@ -331,8 +336,3 @@ Retours des utilisateurs > maximum
 ## right-click on Desktop > Configurer le bureau (Paramètres Dossier du bureau)
 Actions de la souris > Bouton central > Coller removed
 Fond d'écran > Couleur pleine > Couleur > black
-# first run of rsnapshot
-# waiting
-## gitk
-## Arch Linux System Tray Update Notifier and Upgrader
-plasma5-applets-kde-arch-update-notifier-git

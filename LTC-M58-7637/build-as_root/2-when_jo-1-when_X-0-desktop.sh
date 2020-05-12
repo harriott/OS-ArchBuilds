@@ -14,7 +14,7 @@ trap read debug  # puts a read request after each executable line
 true
 
 # #==> 0 KDE
-. $ARCHBUILDS/build/2-when_jo/1-when_X/0-kde.sh
+. $ARCHBUILDS/build-root-subScripts/2-when_jo-1-when_X-kde.sh
 
 # #=> shared HD103SJ
 # groupadd jodj

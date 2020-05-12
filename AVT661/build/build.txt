@@ -3137,3 +3137,4 @@ rm ~/.offlineimaprc
 ## noto-fonts-emoji
 ## cups-pdf
 ## uninstall pacmatic
+## NetworkManager

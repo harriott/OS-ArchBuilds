@@ -1,60 +1,16 @@
 #!/bin/bash
 # vim: fdm=expr fdc=1 ft=shbuild:
 
-# sed -n '5p' build.sh
-# script build-$(date "+%y%m%d-%H%M")
-
-# as root  bash build.sh
+# bash build.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 enp0s29f7u6
-# # Moto G4 plugged into back top right USB
-# #  ip link   reports it as   enp0s29f7u6
-# sudo dhcpcd enp0s29f7u6  # (assuming jo has sudoer right to dhcpcd)
-# ping -c 3 8.8.8.8
-
-# #=> 0 environment variables
-# # if  ~/.xinitrc  hasn't been run
-
-# ARCHBUILDS=/home/jo/Dropbox/JH/IT_stack/onGitHub/ArchBuilds
-#     MACHINE=$ARCHBUILDS/LTC-M58-7637; echo $MACHINE
-
-# #=> 0 Updates
-# sudo pacman -Syu
-# # reboot if kernel updated !
-# true
-# auracle sync
-# true
-
-# #=> 1 build
-
-# #==> broot
-# broot  # to load  br
-
-# #==> SSH keys
-# mkdir ~/.ssh
-# cp $( dirname "${BASH_SOURCE[0]}" )/id_rsa-deauram ~/.ssh/id_rsa
-# cp $( dirname "${BASH_SOURCE[0]}" )/id_rsa-deauram.pub ~/.ssh/id_rsa.pub
-
-# ssh/id_rsa permission
-# chmod 600 ~/.ssh/id_rsa
-
-# #==> vims
-# # gVim
-# cd ~
-# git clone git@github.com:harriott/vimfiles.git
-# mv vimfiles .vim
-
-# # neovim
-# mkdir ~/.config/nvim
-
-# #=> 2 AUR 0 - make AUR directory
+# #=> AUR 0 - make AUR directory
 # mkdir ~/Arch
 # mkdir ~/Arch/AUR
 
-# #=> 2 AUR 1 preparations
+# #=> AUR 1 preparations
 
 # # #==> Dropbox public key
 # # gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
@@ -66,7 +22,7 @@ trap read debug  # puts a read request after each executable line
 # # # 2 Rust Toolchain
 # # rustup toolchain install stable
 
-# #=> 2 AUR 2 AURs
+# #=> AUR 2 AURs
 
 # #==> 8192eu-dkms - install
 # # needs  appmenu-gtk-module dkms linux-headers
@@ -220,7 +176,7 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-# #=> 2 AUR 3 settings
+# #=> AUR 3 settings
 
 # #==> 8192eu - blacklist rtl8xxxu
 # echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
@@ -232,28 +188,15 @@ trap read debug  # puts a read request after each executable line
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer
 
-# #=> 2 rsnapshot conf, for first run
-# # grab the default
-# cp /etc/rsnapshot.conf $MACHINE/etc/k5c-rsnapshot.conf
-# cp /etc/rsnapshot.conf $MACHINE/etc/rsnapshot.conf
+# #=> broot
+# broot  # to load  br
 
-# # my configuration
-# mkdir /mnt/HD103SJ/rsnapshot
-sudo cp $MACHINE/etc/rsnapshot.conf /etc/rsnapshot.conf
+# #=> vims
+# # gVim
+# cd ~
+# git clone git@github.com:harriott/vimfiles.git
+# mv vimfiles .vim
 
-# # check
-# rsnapshot configtest
-# # simulate first run
-# rsnapshot -t hourly
-# # now need to  sudo rsnapshot hourly  and monitor progress with  du -sh rsnapshot
-
-# #=> 2 symlinks
-# . $ARCHBUILDS/userSymlinks/jo.sh
-
-# #=> 2 tests
-# # default browser
-# xdg-open https://archlinux.org
-
-# # espeak-ng-espeak & termdown
-# espeak -v fr+f2 "Bonjour tout le monde"
+# # neovim
+# mkdir ~/.config/nvim
 

@@ -3,6 +3,12 @@ vim: fdl=0 ft=build fdm=expr:
 # build
 ## Arch install - from the ISO
 # physical configuration
+Acer GF-7300SE-N-A3  on  PCIEX16
+ASUSA EN6200LE TC256  on  PCIEX4
+AMD FX 8350 Black Edition
+  Gigabyte GA-970A-DS3P rev.2.1
+  HyperX FURY 8 GB
+HP DH-16A1L  on  SATA1
 # waiting
 ## graphics card
 lspci | grep -e VGA -e 3D  reports

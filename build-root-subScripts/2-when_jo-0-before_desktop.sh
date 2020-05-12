@@ -3,15 +3,14 @@
 
 # to be sourced from a parent build script
 
-# #=> 1 fstab
+# #=> 0 fstab
 # # add HD103SJ to fstab
 # echo "LABEL=HD103SJ /mnt/HD103SJ  ext4  defaults  0  2" >> /etc/fstab
 # cp /etc/fstab $MACHINE/fstab
 # chown jo:jo $MACHINE/fstab
 # halt -p
 
-# #=> 1 to X
-
+# #=> 0 to X
 # #==> automatic login to virtual console
 # ls /etc/systemd/system
 # mkdir /etc/systemd/system/getty@tty1.service.d
@@ -93,8 +92,7 @@
 # ln -sf $ARCHBUILDS/Bash/inputrc /root/.inputrc
 # ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile
 
-# #=> 2 when X
-
+# #=> 1 when X
 # #==> monitor settings
 # # disable DPMS
 # cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
