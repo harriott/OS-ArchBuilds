@@ -3,6 +3,7 @@
 
 # Full system backup
 # ------------------
+# this is only needed until I've setup  rsnapshot
 
 # Run this script from a Live ISO:  bash <path-to-script>/rsyncBackup.sh
 

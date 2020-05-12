@@ -21,12 +21,12 @@ trap read debug  # puts a read request after each executable line
 # ARCHBUILDS=/home/jo/Dropbox/JH/IT_stack/onGitHub/ArchBuilds
 #     MACHINE=$ARCHBUILDS/LTC-M58-7637; echo $MACHINE
 
-#=> 0 Updates
-sudo pacman -Syu
-# reboot if kernel updated !
-true
-auracle sync
-true
+# #=> 0 Updates
+# sudo pacman -Syu
+# # reboot if kernel updated !
+# true
+# auracle sync
+# true
 
 # #=> 1 build
 
@@ -231,6 +231,21 @@ true
 
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer
+
+# #=> 2 rsnapshot conf, for first run
+# # grab the default
+# cp /etc/rsnapshot.conf $MACHINE/etc/k5c-rsnapshot.conf
+# cp /etc/rsnapshot.conf $MACHINE/etc/rsnapshot.conf
+
+# # my configuration
+# mkdir /mnt/HD103SJ/rsnapshot
+sudo cp $MACHINE/etc/rsnapshot.conf /etc/rsnapshot.conf
+
+# # check
+# rsnapshot configtest
+# # simulate first run
+# rsnapshot -t hourly
+# # now need to  sudo rsnapshot hourly  and monitor progress with  du -sh rsnapshot
 
 # #=> 2 symlinks
 # . $ARCHBUILDS/userSymlinks/jo.sh

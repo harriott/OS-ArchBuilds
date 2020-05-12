@@ -169,7 +169,7 @@ got a load of "WARNING: /...: Not supported file type"
 and a few access ERRORs for /tmp/clamav*  files
 251 in total, but no infected files
 #### rnano for visudo
-  sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
+sudo visudo   to add to end a blank line followed by   Defaults editor=/usr/bin/rnano
 #### 9QG2FFEE
 sudo bash -x fstabLABELs.sh
 ##### clamdscan

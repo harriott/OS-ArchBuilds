@@ -11,16 +11,18 @@ trap read debug  # puts a read request after each executable line
 
 # #=> 0 initial install
 
-# #==> systemd-networkd
+# #==> 1 prepare partitions
+
+# #==> 3 systemd-networkd
 # sudo systemctl enable systemd-networkd.service --now
 # sudo systemctl status systemd-networkd.service
 # true
 
-# #=> 1 Updates
-# pacman -Syu
-# # pacman -Syyuu
-# # reboot if kernel updated !
-# true
+#=> 1 Updates
+pacman -Syu
+# pacman -Syyuu
+# reboot if kernel updated !
+true
 
 # #=> 1 fstab
 
@@ -49,9 +51,32 @@ true
 # ln -sf $ARCHBUILDS/Bash/inputrc /root/.inputrc
 # ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile
 
+# #===> softwares - appearance
+
 # #===> softwares - file manage
-# # rsnapshot
+# # rsnapshot 1 install
 # pacman -S rsnapshot
+
+# #===> softwares - networking
+# pacman -S thunderbird-i18n-en-gb
+
+# #===> softwares - system
+# glances
+# pacman -S glances
+
+# libstatgrab
+# pacman -S libstatgrab
+
+# # lshw
+# pacman -S lshw
+
+# my system backup script
+# ln -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh
+
+# #=> 2 when X
+
+# #=> 3 when rsnapshot conf
+# # rsnapshot 2 timers
 # for systemdUnit in $ARCHBUILDS/etc/systemd/rsnapshot*; do
     # cp $systemdUnit /etc/systemd/system/${systemdUnit##/*/}
 # done
@@ -60,16 +85,4 @@ true
 # systemctl enable --now rsnapshot-weekly.timer
 # systemctl enable --now rsnapshot-monthly.timer
 # systemctl status rsnapshot-hourly.timer
-
-# #===> softwares - networking
-# pacman -S thunderbird-i18n-en-gb
-
-# #===> softwares - system
-# # lshw
-# pacman -S lshw
-
-# my system backup script
-# ln -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh
-
-# #=> 2 when X
 

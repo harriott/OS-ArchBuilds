@@ -1,9 +1,9 @@
 vim: fdl=0 ft=build fdm=expr:
 
-bashtop
 batman <command>
 bc
 cat /proc/cpuinfo
+colorpicker --one-shot --preview
 lsof -i
 lsusb
 sudo parted -l
@@ -91,6 +91,7 @@ ncdu
 blkid -o list
 df -h
 lsblk -f
+$DROPBOX/JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch > rg -ttxt ft=bbcode > forum.txt
 sudo parted -l
 
 ### Trash
@@ -105,7 +106,9 @@ w          #  list users and load on system
 
 ## monitoring
 bashtop
+glances
 htop
+saidar -c
 
 # termdown
 termdown --help | moar

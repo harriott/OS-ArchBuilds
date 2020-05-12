@@ -13,11 +13,10 @@ trap read debug  # puts a read request after each executable line
 # dhcpcd enp0s29f7u6
 # ping -c 3 8.8.8.8
 
-# #=> 0 initial install
+# #=> 0 install continued as chroot
 # as root:  bash build.sh
 
 # #==> 0 environment variables
-# # these are eventually set in  ~/.xinitrc  so can be passed through with  -E
 
 # # ARCHBUILDS=/home/jo/Dropbox/JH/IT_stack/onGitHub/ArchBuilds
 # # ARCHBUILDS=/home/jo/mnt/ArchBuilds
@@ -25,35 +24,6 @@ trap read debug  # puts a read request after each executable line
 # # ARCHBUILDS=/run/media/jo/K8GBDT100/ArchBuilds
 
 # # MACHINE=$ARCHBUILDS/LTC-M58-7637; echo $MACHINE
-
-# #==> 1 prepare partitions
-# loadkeys fr
-
-# # disks already partitioned with  gdisk
-# gdisk -l /dev/sda
-
-# # format & mount partitions
-# lsblk -l
-# mkswap /dev/sda2
-# swapon /dev/sda2
-# swapon -s  # should show /dev/sda2 has Priority -2
-# mkfs.ext4 /dev/sda3
-# mount /dev/sda3 /mnt
-# mkdir /mnt/home
-# mkfs.ext4 /dev/sda4
-# mount /dev/sda4 /mnt/home
-# # forgot sda5...
-
-# #==> 2 install essential stuff then chroot
-# # install the base packages
-# pacstrap /mnt base dhcpcd linux linux-firmware
-
-# # genfstab
-# genfstab -U /mnt >> /mnt/etc/fstab
-# cat /mnt/etc/fstab
-
-# # change root
-# arch-chroot /mnt  # kills this script
 
 # #==> 3 networking
 # # cat /etc/hostname   shows it ain't there
@@ -160,7 +130,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> 1 Updates
 # pacman -Syu
-# # reboot if kernel updated !
+# reboot if kernel updated !
 # true
 
 # #=> 1 when jo
@@ -168,7 +138,7 @@ trap read debug  # puts a read request after each executable line
 true
 
 # #==> 0 environment variables
-# # these are set in  ~/.xinitrc
+# # these are set in  ~/.xinitrc  so can be passed through with  -E
 
 # # ARCHBUILDS=/home/jo/Dropbox/JH/IT_stack/onGitHub/ArchBuilds
 # # ARCHBUILDS=/home/jo/mnt/ArchBuilds
@@ -327,6 +297,9 @@ true
 # # ripgrep
 # pacman -S ripgrep
 
+# # rsnapshot install
+# pacman -S rsnapshot
+
 # # rsync
 # pacman -S rsync
 
@@ -410,6 +383,9 @@ true
 # pacman -S fcron
 # systemctl enable fcron.service
 
+# glances
+# pacman -S glances
+
 # # linux headers - for *8192eu*
 # pacman -S linux-headers
 # # - don't forget to  reboot !
@@ -488,7 +464,18 @@ true
 # # reboot when ready
 # true
 
-# # #==> 4 shared HD103SJ
+# #==> 3 when rsnapshot conf
+# # rsnapshot 2 timers
+# for systemdUnit in $ARCHBUILDS/etc/systemd/rsnapshot*; do
+    # cp $systemdUnit /etc/systemd/system/${systemdUnit##/*/}
+# done
+# systemctl enable --now rsnapshot-hourly.timer
+# systemctl enable --now rsnapshot-daily.timer
+# systemctl enable --now rsnapshot-weekly.timer
+# systemctl enable --now rsnapshot-monthly.timer
+# systemctl status rsnapshot-hourly.timer
+
+# #==> 4 shared HD103SJ
 # groupadd jodj
 # chgrp jodj /mnt/HD103SJ
 # chmod 770 /mnt/HD103SJ

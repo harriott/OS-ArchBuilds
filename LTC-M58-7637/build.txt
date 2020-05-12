@@ -331,6 +331,7 @@ Retours des utilisateurs > maximum
 ## right-click on Desktop > Configurer le bureau (Paramètres Dossier du bureau)
 Actions de la souris > Bouton central > Coller removed
 Fond d'écran > Couleur pleine > Couleur > black
+# first run of rsnapshot
 # waiting
 ## gitk
 ## Arch Linux System Tray Update Notifier and Upgrader

@@ -22,6 +22,8 @@ alias uc='bash $MACHINE/jo/Music/cmusUpdateLibrary.sh'
 # nnn
 # ---
 
+[ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
+
 # cd on quit
 n()
 {
@@ -58,6 +60,7 @@ export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
 export NNN_PLUG='c:fzcd;d:dragdrop;g:getplugs;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
+export NNN_LOCKER='saidar -c' # not arriving in my case
 
 # Pandoc my markdown notes
 # ------------------------

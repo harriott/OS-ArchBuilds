@@ -53,6 +53,14 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
+# #==> colorpicker
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/colorpicker.git
+# cd colorpicker
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
 # #==> Dropbox
 # cd ~/Arch/AUR
 # sudo rm -r dropbox
@@ -209,23 +217,30 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-# #==> Zoom
-# cd ~/Arch/AUR
-# sudo rm -r zoom
-# git clone https://aur.archlinux.org/zoom.git
-# cd zoom
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#==> Zoom
+cd ~/Arch/AUR
+sudo rm -r zoom
+git clone https://aur.archlinux.org/zoom.git
+cd zoom
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> 1 AUR 3 settings
 
-# #=> 2 rsnapshot
+# #=> 2 rsnapshot conf
+# # grab the default
 # cp /etc/rsnapshot.conf $MACHINE/etc/defaults/k59-rsnapshot.conf
 # cp /etc/rsnapshot.conf $MACHINE/etc/rsnapshot.conf
-sudo cp $MACHINE/etc/rsnapshot.conf /etc/rsnapshot.conf
-rsnapshot configtest
-rsnapshot -t hourly
+
+# # paste my modified version
+# sudo cp $MACHINE/etc/rsnapshot.conf /etc/rsnapshot.conf
+
+# # test
+# rsnapshot configtest
+
+# # first run
+# rsnapshot -t hourly
 
 # #=> 2 symlinks
 # . $ARCHBUILDS/userSymlinks/jo.sh
