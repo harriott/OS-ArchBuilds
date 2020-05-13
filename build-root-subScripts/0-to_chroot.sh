@@ -3,7 +3,10 @@
 
 # to be sourced from a parent build script
 
-#=> 2 install essential stuff then chroot
+# update the system clock
+timedatectl set-ntp true
+
+#=> install essential stuff then chroot
 # install the base packages
 pacstrap /mnt base dhcpcd linux linux-firmware
 

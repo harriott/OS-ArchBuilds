@@ -49,6 +49,12 @@ gic () {
 # time-sorted lists of files
 # --------------------------
 
+# find all types of files
+fdtsAll () {
+  eval "find * $printfDTsort"
+}
+alias fa='fdtsAll'
+
 # find date-time sort Encrypted folder
 fdtsEF () {
   eval "find $1* $printfDTsort"

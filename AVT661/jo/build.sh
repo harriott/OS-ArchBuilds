@@ -243,7 +243,7 @@ cd ~
 # rsnapshot -t hourly
 
 # #=> 2 symlinks
-# . $ARCHBUILDS/userSymlinks/jo.sh
+ln -sf $ARCHBUILDS/build-root-standalone/rsyncSystemRestore.sh /mnt/WD1001FALS/rsnapshot/rsyncSystemRestore.sh
 
 # #=> 2 tests
 # # default browser

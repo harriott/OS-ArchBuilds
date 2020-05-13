@@ -1,14 +1,93 @@
 vim: fdl=0 ft=build fdm=expr:
 
+# boot to archlinux-2020.04.01-x86_64.iso on KSE98GB
+UEFI KingstonDataTraveler 3.0PMAP
+ready on up-arrow to select Arch Linux archiso x86_64 UEFI CD
+## USB2
+can see my Seagate Expansion 500GB
+can see my Toshiba Canvio Basics HDTB330EK3CA
+## USB3
+can't see my Toshiba Canvio Basics HDTB330EK3CA
+## XHCI Hand-off Disabled
+boot hangs at  Created slice system-dhcpcd.slice
+# boot to Knoppix v8.6.1 DVD
+## P1 ATAPI DVD A DH16A1L
+keyboard and mouse dead
+### EHCI Hand-off Enabled
+got quickly into the Knoppix boot screen, then took time to fire up KDE
+## UEFI - no luck
+# boot to Knoppix v8.6.1 USB, EHCI Hand-off Enabled
+## UEFI USB MassStorage Device
+got quickly through to KDE
+sound from rear green 3.5 mm socket, but not from front speaker
+### USB2
+can see my Seagate Expansion 500GB
+### USB3
+can't see my Toshiba Canvio Basics HDTB330EK3CA
+# boot to K8GBDTIG3 containing linuxmint-19.3-xfce-64bit.iso
+F12 repeatedly at start
+## PMAP
+KingstonDataTraveler G3 PMAP
+- got in, keyboard could select boot choice but, once live, keyboard & mouse dead
+### IOMMU Enabled
+- got in, keyboard could select boot choice but loads of errors, then
+  (initramfs) Unable to find a medium containing file system
+same when booting Mint in compatibility mode
+### Mint in compatibility mode
+(initramfs) Unable to find a medium containing file system
+## UEFI
+UEFI KingstonDataTraveler G3 PMAP
+- got in, keyboard could select boot choice but, once live, keyboard & mouse dead
+### EHCI Hand-off Enabled
+(initramfs) Unable to find a medium containing file system
+### IOMMU Enabled
+got in, keyboard could select boot choice but loads of errors, then
+  (initramfs) Unable to find a medium containing file system
+same when booting Mint in compatibility mode
+### Mint in compatibility mode
+(initramfs) Unable to find a medium containing file system
 # build
 ## Arch install - from the ISO
+get online, as in  0-XA2.sh
+cd /mnt; mkdir mnt
+### create new GPT
+gdisk /dev/sda > o (create a new empty GUID partition table GPT & new protective MBR) y
+  w   for  gdisk /dev/sda  (MBR: protection  GPT: present)
+### create partitions
+gdisk /dev/sda
+  n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +260m >
+    ef00 (EFI system partition)
+  n > Partition number (defaults to 2) > First sector (defaults to 534527) > +60g > Hex code >
+    8304 Linux x86-64 root (/)
+  n > Partition number (defaults to 3) > First sector (defaults to the sector after partition 2) >
+    +4g > 8200 (Linux swap)
+  n > Partition number (defaults to 4) > First sector (defaults to the sector after partition 3) >
+    +60g > Hex code > 8302 (Linux home)
+  n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 4) >
+    +600g > 8300 (Linux filesystem)
+  n > Partition number (defaults to 6) > First sector (defaults to the sector after partition 5) >
+    Enter > 8300 (Linux filesystem)
+  w
+# GIGABYTE UEFI DualBIOS
+easily entered by Del fairly quickly at start
+Logitech MX 610 Laser Cordless Mouse & Perixx PERIBOARD-407W keyboard function
+## BIOS Features when only DVD
+Boot Option #1 > UEFI ATAPI DVD A DH16A1L
+Boot Option #2 >   P1 ATAPI DVD A DH16A1L
 # physical configuration
-Acer GF-7300SE-N-A3  on  PCIEX16
-ASUSA EN6200LE TC256  on  PCIEX4
-AMD FX 8350 Black Edition
-  Gigabyte GA-970A-DS3P rev.2.1
-  HyperX FURY 8 GB
-HP DH-16A1L  on  SATA1
+## cbh
+Logitech MX 610 Laser Cordless Mouse
+Perixx PERIBOARD-407W keyboard
+## drives
+HP DH-16A1L DVD drive  in 2nd large bay from top, & on  SATA1
+Western Digital Blue WD30EZRZ 3 To SATA 600  in top large bay, & on  SATA0
+## motherboard
+Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
+  AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
+  HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
+### graphics
+Acer GF-7300SE-N-A3 nVidia GeForce 7300 graphics card  on  PCIEX16
+ASUSA EN6200LE TC256 nVidia GeForce 6200  on  PCIEX4
 # waiting
 ## graphics card
 lspci | grep -e VGA -e 3D  reports

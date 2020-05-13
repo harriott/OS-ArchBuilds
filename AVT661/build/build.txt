@@ -3087,6 +3087,17 @@ I couldn't get it to work graphically, so Uninstalled.
 is around 1.06 Gi at idle (with  clamd  using 41%) stopped & disabled the daemon
 # memory use is 232M at idle
 # CPU use is 2% at idle
+# after a brief power outage, sound gone
+sound still functioning from a Knoppix boot
+I removed PulseAudio (& Zoom) then alsa-utils
+## speaker-test -c 2
+Playback device is default
+Stream parameters are 48000Hz, S16_LE, 2 channels
+Using 16 octaves of pink noise
+ALSA lib pcm_dmix.c:1089:(snd_pcm_dmix_open) unable to open slave
+Playback open error: -16,Device or resource busy
+## reverted to an earlier rsnapshot
+quit Openbox, then from tty2 as root, ran /mnt/WD1001FALS/rsnapshot/rsyncSystemRestore.sh
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

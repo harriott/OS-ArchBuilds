@@ -109,10 +109,18 @@
 
 # #==> softwares - AV
 # # AlsaUtils
+# pacman -Rs alsa-utils
 # pacman -S alsa-utils
 
 # # mediainfo
 # pacman -S mediainfo
+
+# # PulseAudio
+# pacman -S pulsemixer
+# # removal step 1 (also removes pulseaudio-alsa)
+# pacman -Rs zoom
+# # removal step 1 (also removes pulseaudio)
+# pacman -Rs pulsemixer
 
 # #==> softwares - file manage
 # # bat

@@ -13,10 +13,10 @@ trap read debug  # puts a read request after each executable line
 # # espeak-ng-espeak & termdown
 # espeak -v fr+f2 "Bonjour tout le monde"
 
-# #=> Updates
-# sudo pacman -Syu
-# # reboot if kernel updated !
-# true
-# auracle sync
-# true
+#=> Updates
+sudo pacman -Syu
+# reboot if kernel updated !
+true
+auracle sync
+true
 
