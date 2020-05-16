@@ -30,7 +30,7 @@
 #        user username@gmail.com
 #        passwordeval pass username/GmailAPI/token
 #
-#   3. You've preloaded your  ~/.password-store
+#   3. Preloaded your  ~/.password-store
 #        echo $(date +%s) | pass insert -e $user/GmailAPI/token-expire
 #        echo <GoogleAPIClientID> | pass insert -e username/GmailAPI/CID
 #        echo <GoogleAPIClientSecret> | pass insert -e username/GmailAPI/CS
@@ -39,9 +39,24 @@
 user=$1
 # user=username
 
+get_access_token() {
+    # $GNULE/GmailAPI  should point to the directory that contains  oauth2.py
+    # https://github.com/google/gmail-oauth2-tools/blob/master/python/oauth2.py
+
+    { IFS= read -r tokenline && IFS= read -r expireline; } < \
+    <(python2 $GNULE/GmailAPI/oauth2.py --user=$user \
+    --client_id=$(pass $user/GmailAPI/CID) \
+    --client_secret=$(pass $user/GmailAPI/CS) \
+    --refresh_token=$(pass $user/GmailAPI/refresh))
+
+    token=${tokenline#Access Token: }
+    expire=${expireline#Access Token Expiration Seconds: }
+}
+
 token="$(pass $user/GmailAPI/token)"
-expire="$(pass $user/GmailAPI/token-expire)"
-now=$(date +%s)
+# Christian included an expire time to avoid unneccessary calls
+    expire="$(pass $user/GmailAPI/token-expire)"  # you can reset it as described above
+    now=$(date +%s)
 
 if [[ $token && $expire && $now -lt $((expire - 60)) ]]; then
     echo $token
@@ -52,18 +67,4 @@ else
     echo $expire | pass insert -e $user/GmailAPI/token-expire
     echo $token
 fi
-
-get_access_token() {
-    # $GNULE/GmailAPI  should point to the directory that contains  oauth2.py
-    # https://github.com/google/gmail-oauth2-tools/blob/master/python/oauth2.py
-
-    { IFS= read -r tokenline && IFS= read -r expireline; } < \
-    <(python2 $GNULE/GmailAPI/oauth2.py --user=$account \
-    --client_id=$(pass $user/GmailAPI/CID) \
-    --client_secret=$(pass $user/GmailAPI/CS) \
-    --refresh_token=$(pass $user/GmailAPI/refresh))
-
-    token=${tokenline#Access Token: }
-    expire=${expireline#Access Token Expiration Seconds: }
-}
 
