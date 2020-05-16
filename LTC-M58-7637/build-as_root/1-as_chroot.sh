@@ -30,5 +30,6 @@ trap read debug  # puts a read request after each executable line
 # true
 
 # #==> 2 build as chroot
-. $ARCHBUILDS/build/1-as_chroot.sh
+# this will lead to a reboot
+. $ARCHBUILDS/build-root-subScripts/1-as_chroot.sh
 

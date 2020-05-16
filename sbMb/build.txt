@@ -68,6 +68,14 @@ gdisk /dev/sda
   n > Partition number (defaults to 6) > First sector (defaults to the sector after partition 5) >
     Enter > 8300 (Linux filesystem)
   w
+### mount K8GBDT100
+mkdir /bootstrap  # ephemeral, gone on reboot
+mount /dev/sdc1 /bootstrap
+cd /bootstrap/ArchBuilds/sbMb  for  bash 0-to_chroot.sh
+#### mount K8GBDT100
+cd /mnt
+umount /dev/sdc1
+cd /bootstrap/ArchBuilds/sbMb  for  bash 0-to_chroot.sh
 # GIGABYTE UEFI DualBIOS
 easily entered by Del fairly quickly at start
 Logitech MX 610 Laser Cordless Mouse & Perixx PERIBOARD-407W keyboard function

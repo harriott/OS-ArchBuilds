@@ -3098,6 +3098,18 @@ ALSA lib pcm_dmix.c:1089:(snd_pcm_dmix_open) unable to open slave
 Playback open error: -16,Device or resource busy
 ## reverted to an earlier rsnapshot
 quit Openbox, then from tty2 as root, ran /mnt/WD1001FALS/rsnapshot/rsyncSystemRestore.sh
+# paccache
+==> finished: 1531 packages removed (disk space saved: 10.81 GiB)
+# Zoom
+should bring in: alsa-plugins pulseaudio rtkit webrtc-audio-processing pulseaudio-alsa
+  but failing as some of those packages files are already present in /usr/share/
+  they were brought back by a restore after I'd removed them
+  I located and removed them manually
+## Zoom
+# password-store
+Deleted  ~/.password-store  for
+  cp -rf $GNULE/AVT661-password-store ~/.password-store  and removed the source
+    as it's now automatically backed up in  /mnt/WD1001FALS/rsnapshot/
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

@@ -1,0 +1,9 @@
+error: failed to commit transaction (conflicting files)
+zoom: /usr/bin/zoom exists in filesystem
+zoom: /usr/share/applications/Zoom.desktop exists in filesystem
+zoom: /usr/share/mime/packages/zoom.xml exists in filesystem
+zoom: /usr/share/pixmaps/Zoom.png exists in filesystem
+zoom: /usr/share/pixmaps/application-x-zoom.png exists in filesystem
+Errors occurred, no packages were upgraded.
+==> WARNING: Failed to install built package(s).
+==> Cleaning up...

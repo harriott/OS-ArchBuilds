@@ -3,30 +3,33 @@
 
 # to be sourced from a parent build script
 
+set -v  # prints each statement here, including comments
+trap read debug  # puts a read request after each executable line
+
 # #=> 0 install continued as chroot
 
-# #==> 0 system settings
-# # time zone
-# ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+#==> 0 system settings
+# time zone
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
-# # system clock
-# timedatectl set-ntp true
-# timedatectl status
-# # doesn't show local correction
+# system clock
+timedatectl set-ntp true
+timedatectl status
+# doesn't show local correction
 
-# # hardware clock
-# hwclock --systohc
+# hardware clock
+hwclock --systohc
 
-# # locale
-# sed -i 's/^#en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
-# sed -i 's/^#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
-# sed -i 's/^#fr_FR.UTF-8/fr_FR.UTF-8/' /etc/locale.gen
-# cat /etc/locale.gen | grep -v '^#'
-# locale-gen
-# # cat /etc/locale.conf   shows it ain't there
-# echo LANG=fr_FR.UTF-8 > /etc/locale.conf
-# # cat /etc/vconsole.conf  shows it ain't there
-# echo KEYMAP=fr > /etc/vconsole.conf
+# locale
+sed -i 's/^#en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
+sed -i 's/^#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+sed -i 's/^#fr_FR.UTF-8/fr_FR.UTF-8/' /etc/locale.gen
+cat /etc/locale.gen | grep -v '^#'
+locale-gen
+# cat /etc/locale.conf   shows it ain't there
+echo LANG=fr_FR.UTF-8 > /etc/locale.conf
+# cat /etc/vconsole.conf  shows it ain't there
+echo KEYMAP=fr > /etc/vconsole.conf
 
 # #==> 1 bootloader
 # # Grub, Microcode, Network Time Protocol
@@ -94,4 +97,8 @@
 # # User jo, creating the home directory and adding to group wheel
 # useradd -m -G wheel jo
 # until passwd jo; do echo "try again"; done
+
+# #==> 5 end
+# # you're ready to reboot and login to jo
+# reboot
 

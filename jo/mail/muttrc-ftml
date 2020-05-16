@@ -1,0 +1,62 @@
+# muttrc-*  filetypes are set in  plugin/buffers.vim
+
+# my preferred configuration file for accessing  Fastmail
+# I prefer to call this through an alias in my  ~/.bashrc
+
+# this is developed to my preferences from  accounts/2-fm.muttrc  which was created by  Mutt Wizard
+#  mbsync fm   using ~/.mbsyncrc
+#  msmtp  uses settings put by  Mutt Wizard  into  ~/.config/msmtp/config
+
+set from = $fm # defined in my  $GNULE/mymuttrcAddresses
+set sendmail = "msmtp -a fm"
+set folder = "$mail/fm"
+set header_cache = /home/jo/.cache/mutt/fm/headers
+set message_cachedir = /home/jo/.cache/mutt/fm/bodies
+
+set spoolfile = "+INBOX"
+set record = "+Sent\ Items"
+set trash = "+Trash"
+
+set alias_file = "$GNULE/aliases-fm"
+source $alias_file
+
+# if you make changes here, you probably need to clear your folders, and start afresh
+# rm -r ~/.cache/mutt/fm/* $mail/fm/*
+mailboxes "=Archive" "=Cafezoide" "=Deauram" "=Drafts" "=Friends" "=INBOX" "=Junk\ Mail" "=Sent\ Items" "=Trash" "=Waiting" "=Work"
+virtual-mailboxes "All" "notmuch://?query=tag:fm"
+
+# tweak the default status line to show  "->fm":
+set status_format=" -%r-NeoMutt->fm: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
+
+source $email/muttrc-all
+
+macro index,pager ga "<change-folder>=Archive<enter>" "go to Archive"
+macro index,pager Ga "<save-message>=Archive<enter>" "move mail to Archive"
+
+macro index,pager gf "<change-folder>=Friends<enter>" "go to Friends"
+macro index,pager Gf "<save-message>=Friends<enter>" "move mail to Friends"
+
+macro index,pager gz "<change-folder>=Cafezoide<enter>" "go to Cafezoide"
+macro index,pager Gz "<save-message>=Cafezoide<enter>" "move mail to Cafezoide"
+
+macro index,pager gd "<change-folder>=Deauram<enter>" "go to Deauram"
+macro index,pager Gd "<save-message>=Deauram<enter>" "move mail to Deauram"
+
+macro index,pager gr "<change-folder>=Drafts<enter>" "go to dRafts"
+macro index,pager Gr "<save-message>=Drafts<enter>" "move mail to dRafts"
+
+macro index,pager gi "<change-folder>=INBOX<enter>" "go to INBOX"
+macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to INBOX"
+
+macro index,pager gj "<change-folder>=Junk\ Mail<enter>" "go to Junk"
+macro index,pager Gj "<save-message>=Junk\ Mail<enter>" "move mail to Junk"
+
+macro index,pager gs "<change-folder>=Sent\ Items<enter>" "go to Sent"
+macro index,pager Gs "<save-message>=Sent\ Items<enter>" "move mail to Sent"
+
+macro index,pager gt "<change-folder>=Trash<enter>" "go to Trash"
+macro index,pager Gt "<save-message>=Trash<enter>" "move mail to Trash"
+
+macro index,pager gk "<change-folder>=Work<enter>" "go to Work"
+macro index,pager Gk "<save-message>=Work<enter>" "move mail to Work"
+

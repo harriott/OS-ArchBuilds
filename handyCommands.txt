@@ -1,9 +1,12 @@
 vim: fdl=0 ft=build fdm=expr:
 
+!! # execute last command
 batman <command>
 bc
 cat /proc/cpuinfo
 colorpicker --one-shot --preview
+Ctrl+s  pause output to screen
+Ctrl+q  resume output to screen
 lsof -i
 lsusb
 sudo parted -l
@@ -60,14 +63,10 @@ sudo alsactl store
 
 # storage
 cdrecord dev=/dev/sr0 -checkdrive
-find . -type l -ls  # recursively list all symlinks
 
 ## directory structures
 br                    # broot
 <directory>           # cd <directory>  ( shopt autocd )
-fd
-find . -type f | fzy  # for finding something fuzzily fast
-rg <someText>         # searches recursively in files
 
 ### exa
 e
@@ -98,10 +97,21 @@ sudo parted -l
 trash-empty
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
+## file searching
+fd
+find . -type f | fzy  # for finding something fuzzily fast
+find . -type l -ls    # recursively list all symlinks
+
+### grepping
+egrep '<someText>|<otherText>'
+rg <someText>         # searches recursively in files
+rg '<someText>|<otherText>'
+
 # system
 as root,  du -sh /boot /etc /home /root /usr
 man hier   #  description of the filesystem hierarchy
 systemctl  #  list running Systemd units
+systemctl --no-pager
 w          #  list users and load on system
 
 ## monitoring
@@ -117,6 +127,7 @@ termdown -b 10
 # tmux
 resize -s 65 120        # good for half of ViewSonic VX2025wm
 
+tmux a                  # attach
 tmux a -t myname        # attach to session myname
 tmux kill-server; tmux  # good for resetting
 tmux ls                 # list sessions

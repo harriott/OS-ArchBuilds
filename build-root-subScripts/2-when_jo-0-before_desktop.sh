@@ -11,6 +11,7 @@
 # halt -p
 
 # #=> 0 to X
+# really needed
 # #==> automatic login to virtual console
 # ls /etc/systemd/system
 # mkdir /etc/systemd/system/getty@tty1.service.d
@@ -93,6 +94,7 @@
 # ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile
 
 # #=> 1 when X
+# wanted
 # #==> monitor settings
 # # disable DPMS
 # cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
@@ -246,13 +248,16 @@
 # pacman -S fcron
 # systemctl enable fcron.service
 
-# glances
+# # glances
 # pacman -S glances
 
 # # linux headers - for *8192eu*
 # pacman -S linux-headers
 # # - don't forget to  reboot !
 # true
+
+# # pacutils
+# pacman -S pacutils
 
 # # pkgfile
 # pacman -S pkgfile

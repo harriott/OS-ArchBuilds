@@ -4,6 +4,7 @@
 # Full system backup
 # ------------------
 # this is only needed until I've setup  rsnapshot
+# (then use $ARCHBUILDS/build-root-standalone-2-when_jo/rsyncSystemRestore1.sh)
 
 # Run this script from a Live ISO:  bash <path-to-script>/rsyncBackup.sh
 
@@ -38,7 +39,7 @@ if [ $gobu ]; then
     fi
     echo "rsync-ing:"
     mkdir $bfolder
-    for sysfolder in boot etc home root usr; do
+    for sysfolder in boot etc home root usr var; do
       mkdir $bfolder/$sysfolder
       rsync -aAivX $mnt/$sysfolder/ $bfolder/$sysfolder 2>&1 | tee $bfolder/$sysfolder.txt
     done

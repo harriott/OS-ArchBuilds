@@ -4,7 +4,7 @@
 # general settings for neomutt
 
 set mailcap_path = $email/mailcap-MW
-set date_format="%y/%m/%d %H:%M"
+set date_format="%y/%m/%d %I:%M%p"
 set index_format="%2C %zs %?X?A& ? %D %-15.15F %s (%-4.4c)"
 # set sort = 'reverse-date'
 set smtp_authenticators = 'gssapi:login'

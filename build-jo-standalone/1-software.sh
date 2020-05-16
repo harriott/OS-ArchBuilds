@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdm=expr fdc=1 ft=shbuild:
 
-# bash build.sh
+# bash <this_script>
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -38,6 +38,7 @@ trap read debug  # puts a read request after each executable line
 
 # #==> auracle-git
 # cd ~/Arch/AUR
+# sudo rm -r auracle-git
 # git clone https://aur.archlinux.org/auracle-git.git
 # cd auracle-git
 # xdg-open PKGBUILD
@@ -49,6 +50,14 @@ trap read debug  # puts a read request after each executable line
 # sudo rm -r bat-extras-git
 # git clone https://aur.archlinux.org/bat-extras-git.git
 # cd bat-extras-git
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# #==> colorpicker
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/colorpicker.git
+# cd colorpicker
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
@@ -65,6 +74,7 @@ trap read debug  # puts a read request after each executable line
 # #==> Dust
 # # (after Rust Toolchain)
 # cd ~/Arch/AUR
+# sudo rm -r dust
 # git clone https://aur.archlinux.org/dust.git
 # cd dust
 # xdg-open PKGBUILD
@@ -90,12 +100,73 @@ trap read debug  # puts a read request after each executable line
 # #==> moar
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/moar.git
+# sudo rm -r moar
 # cd moar
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
 
 # #==> old & unwanted
+# git clone https://aur.archlinux.org/bfg.git
+# git clone https://aur.archlinux.org/cmus-notify.git
+# git clone https://aur.archlinux.org/covid19-cli-git.git
+# git clone https://aur.archlinux.org/dragon-drag-and-drop.git
+# git clone https://aur.archlinux.org/figlet-fonts.git
+# git clone https://aur.archlinux.org/getmail.git
+# git clone https://aur.archlinux.org/iscan-plugin-gt-f500.git
+# git clone https://aur.archlinux.org/perl-data-printer.git
+# git clone https://aur.archlinux.org/perl-clone-pp.git
+# git clone https://aur.archlinux.org/photocollage.git
+# git clone https://aur.archlinux.org/pnmixer-gtk3.git
+# git clone https://aur.archlinux.org/pyfil.git
+# git clone https://aur.archlinux.org/python-notify2.git
+# git clone https://aur.archlinux.org/tmux-bash-completion.git
+# git clone https://aur.archlinux.org/urlview.git
+# git clone https://aur.archlinux.org/vim-gruvbox-git.git
+# git clone https://aur.archlinux.org/vim-recover-git.git
+# git clone https://aur.archlinux.org/vim-repeat.git
+# git clone https://aur.archlinux.org/vim-table-mode.git
+# git clone https://aur.archlinux.org/xdg-utils-mimeo.git
+# git clone https://aur.archlinux.org/xnviewmp.git
+
+# sudo rm -r chromium-widevine; git clone https://aur.archlinux.org/chromium-widevine.git
+# sudo rm -r clamav-unofficial-sigs; git clone https://aur.archlinux.org/clamav-unofficial-sigs
+# sudo rm -r gtkhash # clone https://aur.archlinux.org/gtkhash.git
+# sudo rm -r mimeo; git clone https://aur.archlinux.org/mimeo.git
+# sudo rm -r msmtp-oauth2; git clone https://aur.archlinux.org/msmtp-oauth2.git
+# sudo rm -r mutt-wizard-git; git clone https://aur.archlinux.org/mutt-wizard-git.git
+# sudo rm -r obmenu-generator; git clone https://aur.archlinux.org/obmenu-generator.git
+
+# #===> DroidCam
+# cd ~/Arch/AUR
+# sudo rm -r droidcam
+# git clone https://aur.archlinux.org/droidcam.git
+# cd droidcam
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# sudo pacman -Rs droidcam
+
+# #===> gtksu-git
+# # to run Timeshift from Menu
+# cd ~/Arch/AUR
+# sudo rm -r gtksu-git
+# git clone https://aur.archlinux.org/gtksu-git.git
+# cd gtksu-git
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# #===> Timeshift
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/timeshift.git
+# cd timeshift
+# gvim PKGBUILD  # (because mimeo identifies it as html)
+# makepkg -sic
+# cd ~
+
+# sudo pacman -Rs timeshift
 
 # #===> 8192eu-dkms - remove
 # sudo pacman -Rs 8192eu-dkms
@@ -107,6 +178,15 @@ trap read debug  # puts a read request after each executable line
 # sudo rm -r rtl8192eu
 # git clone https://aur.archlinux.org/rtl8192eu.git
 # cd rtl8192eu
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# #==> qimgv-git
+# cd ~/Arch/AUR
+# sudo rm -r qimgv-git
+# git clone https://aur.archlinux.org/qimgv-git.git
+# cd qimgv-git
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
@@ -161,6 +241,7 @@ trap read debug  # puts a read request after each executable line
 
 # #==> vim-undotree
 # cd ~/Arch/AUR
+# sudo rm -r vim-undotree
 # git clone https://aur.archlinux.org/vim-undotree.git
 # cd vim-undotree
 # xdg-open PKGBUILD
@@ -175,6 +256,15 @@ trap read debug  # puts a read request after each executable line
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
+
+#==> Zoom
+cd ~/Arch/AUR
+sudo rm -r zoom
+git clone https://aur.archlinux.org/zoom.git
+cd zoom
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> AUR 3 settings
 
