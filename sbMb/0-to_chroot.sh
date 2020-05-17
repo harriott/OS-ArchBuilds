@@ -10,14 +10,14 @@ trap read debug  # puts a read request after each executable line
 #==> 0 environment variables
 ARCHBUILDS=/bootstrap/ArchBuilds
 
-# #==> 1 prepare partitions
-# loadkeys uk
+#==> 1 prepare
+loadkeys uk
 
-# # verify UEFI boot mode
-# ls /sys/firmware/efi/efivars
+# verify UEFI boot mode
+ls /sys/firmware/efi/efivars
 
-# # disks already partitioned with  gdisk
-# gdisk -l /dev/sda
+# disks already partitioned with  gdisk
+gdisk -l /dev/sda
 
 # #==> 2 format needed partitions
 # # EFI
@@ -36,7 +36,9 @@ mkfs.fat -F32 /dev/sda1
 # mkfs.ext4 /dev/sda4
 
 #==> 3 mount needed partitions
-# # EFI
+# EFI
+[ -d /efi ] || mkdir /efi # a real directory in sda2
+mount /dev/sda1 /efi
 
 # /
 mount /dev/sda2 /mnt

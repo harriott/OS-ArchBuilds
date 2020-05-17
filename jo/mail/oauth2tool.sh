@@ -28,7 +28,7 @@
 #        port 587
 #        from username@gmail.com
 #        user username@gmail.com
-#        passwordeval pass username/GmailAPI/token
+#        passwordeval bash oauth2tool.sh username
 #
 #   3. Preloaded your  ~/.password-store
 #        echo $(date +%s) | pass insert -e $user/GmailAPI/token-expire
