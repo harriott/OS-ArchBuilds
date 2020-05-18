@@ -2823,7 +2823,7 @@ ln -sf $DROPBOX/$ARCHBUILDS/jo/inputrc ~/.inputrc
 # remove picom.conf
 rm ~/.picom.conf
 # fix tmux.conf symlink
-ln -sf $DROPBOX/$ARCHBUILDS/jo/tmux/tmux.conf ~/.tmux.conf
+ln -sf $ARCHBUILDS/jo/tmux/tmux.conf ~/.tmux.conf
 # allow ip without pw
 sudo bash -c "cat $DROPBOX/$ARCHBUILDS/etc/sudoers-ip >> /etc/sudoers"
 sudo visudo -c -f /etc/sudoers   got me "/etc/sudoers: parsed OK"

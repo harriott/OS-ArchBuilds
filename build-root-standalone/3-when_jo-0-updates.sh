@@ -4,11 +4,11 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> Updates
-# pacman -Syu
-# # pacman -Syyuu
-# reboot if kernel updated !
-# true
+#=> Updates
+pacman -Syu
+# pacman -Syyuu
+reboot if kernel updated !
+true
 
 #=> reduce the pacman cache
 paccache -r

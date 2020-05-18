@@ -14,6 +14,9 @@ vimiv &
 whereis <executable>
 xrandr
 
+# check graphics card
+lspci | grep -e VGA -e 3D
+
 # fonts
 In a folder of possible fonts, to check if any are already installed:
   for font in $(ls); do fc-list $font; done

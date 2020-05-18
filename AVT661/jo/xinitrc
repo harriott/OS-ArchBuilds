@@ -57,7 +57,7 @@ export DROPBOX=/mnt/SDSSDA240G/Dropbox   # keep this capitalised for finding it 
                 export MACHINE=$ARCHBUILDS/$machineName
             export Openbox=$ARCHBUILDS/jo/Openbox
                 export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
-                export tmux=$Openbox/tmux  # used in tmux.conf
+                export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
         export GNULE=$ITstack/GNULinuxEmail  # where I keep private configurations
 
 # stop the 600s screensaver

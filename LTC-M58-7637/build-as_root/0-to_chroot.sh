@@ -4,37 +4,25 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 install to chroot
-# as root:  bash build.sh
+#=> 0 install to chroot
+as root  bash <this_script>
 
-# #==> 0 environment variables
+#==> 0 environment variables
+ARCHBUILDS=/bs/ArchBuilds
 
-# # ARCHBUILDS=/home/jo/Dropbox/JH/IT_stack/onGitHub/ArchBuilds
-# # ARCHBUILDS=/home/jo/mnt/ArchBuilds
-# # ARCHBUILDS=/mnt/mnt/ArchBuilds
-# # ARCHBUILDS=/run/media/jo/K8GBDT100/ArchBuilds
+#==> 1 prepare
+loadkeys fr
 
-# # MACHINE=$ARCHBUILDS/LTC-M58-7637; echo $MACHINE
+# disks already partitioned with  gdisk
+gdisk -l /dev/sda
 
-# #==> 1 prepare partitions
-# loadkeys fr
+#==> 2 format needed partitions
 
-# # disks already partitioned with  gdisk
-# gdisk -l /dev/sda
+#==> 3 mount needed partitions
 
-# # format & mount partitions
-# lsblk -l
-# mkswap /dev/sda2
-# swapon /dev/sda2
-# swapon -s  # should show /dev/sda2 has Priority -2
-# mkfs.ext4 /dev/sda3
-# mount /dev/sda3 /mnt
-# mkdir /mnt/home
-# mkfs.ext4 /dev/sda4
-# mount /dev/sda4 /mnt/home
-# # forgot sda5...
+#==> 4 format extra partition
 
-# #==> 2 install essential stuff then chroot
-# this script will be killed after this
+#==> 5 install essential stuff then chroot
+this script will be killed after this
 . $ARCHBUILDS/build/0-to_chroot.sh
 

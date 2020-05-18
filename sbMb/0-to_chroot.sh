@@ -8,21 +8,21 @@ trap read debug  # puts a read request after each executable line
 # as root  bash <this_script>
 
 #==> 0 environment variables
-ARCHBUILDS=/bootstrap/ArchBuilds
+ARCHBUILDS=/bs/ArchBuilds
 
-#==> 1 prepare
-loadkeys uk
+# #==> 1 prepare
+# loadkeys uk
 
-# verify UEFI boot mode
-ls /sys/firmware/efi/efivars
+# # verify UEFI boot mode
+# ls /sys/firmware/efi/efivars
 
-# disks already partitioned with  gdisk
-gdisk -l /dev/sda
+# # disks already partitioned with  gdisk
+# gdisk -l /dev/sda
 
 # #==> 2 format needed partitions
 # # EFI
-lsblk -l
-mkfs.fat -F32 /dev/sda1
+# lsblk -l
+# mkfs.fat -F32 /dev/sda1
 
 # # /
 # mkfs.ext4 /dev/sda2
@@ -35,27 +35,31 @@ mkfs.fat -F32 /dev/sda1
 # # /home
 # mkfs.ext4 /dev/sda4
 
-#==> 3 mount needed partitions
-# EFI
-[ -d /efi ] || mkdir /efi # a real directory in sda2
-mount /dev/sda1 /efi
-
-# /
+#==> 3 mount /
 mount /dev/sda2 /mnt
 
+# #==> 4 create permanent mount points
+# # EFI
+# [ -d /mnt/efi ] || mkdir /mnt/efi
+
+# # /home
+# [ -d /mnt/home ] || mkdir /mnt/home
+
+#==> 5 mount needed partitions
+# EFI
+mount /dev/sda1 /mnt/efi
+
 # /home
-[ -d /mnt/home ] || mkdir /mnt/home # a real directory in sda2
 mount /dev/sda4 /mnt/home
 
-# #==> 4 format extra partition
+# #==> 6 format extra partition
 # # these will be implemented later by fstab
 # # WD30EZRZ-1 - big enough for my Dropbox
 # mkfs.ext4 /dev/sda5
 # # WD30EZRZ-2 - for anything else
 # mkfs.ext4 /dev/sda6
 
-#==> 5 install essential stuff then chroot
-mountpoint=/mnt
+#==> 7 install essential stuff then chroot
 # this script will be killed after this
 . $ARCHBUILDS/build-root-subScripts/0-to_chroot.sh
 

@@ -75,7 +75,10 @@ bash K8GBDT100/<script>
 mkinitcpio   got selected
 perl   warned about empty locale settings
 #####=> install essential stuff then chroot
-#####=> system settings
+bash build-as_root/0-MotoG4.sh
+bash build-as_root/0-to_chroot.sh
+#####=> as chroot, prepare for jo
+bash build-root-standalone/1-as_chroot-prepare_for_jo.sh
 #####=> Updates
 #####=> bootloader
 ### preparations from root

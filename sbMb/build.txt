@@ -68,18 +68,45 @@ gdisk /dev/sda
   n > Partition number (defaults to 6) > First sector (defaults to the sector after partition 5) >
     Enter > 8300 (Linux filesystem)
   w
-### mount K8GBDT100
-mkdir /bootstrap  # ephemeral, gone on reboot
-mount /dev/sdc1 /bootstrap
-cd /bootstrap/ArchBuilds/sbMb  for  bash 0-to_chroot.sh
+### mount K8GBDT100 for pacstrap
+mkdir /bs   mount /dev/sdc1 /bs   cd /bs/ArchBuilds/sbMb
+#### remount K8GBDT100
+cd /mnt   umount /dev/sdc1
+mount /dev/sdc1 /bs   cd /bs/ArchBuilds/sbMb  for
+  bash 0-XA2.sh
+  bash 0-to_chroot.sh
+##### error due to dhcpcd in the pacstrap line
+checking package integrity  Error: linux-firmware: signature from Laurent Carlier is invalid
+##### error again due to dhcpcd in the pacstrap line
+checking package integrity  Error: linux: signature from Jan Alexander Steffens is invalid
+##### unplug K8GBDT100
+### chroot after power outage
+rebooted to archlinux-2020.04.01-x86_64.iso on KSE98GB
 #### mount K8GBDT100
-cd /mnt
-umount /dev/sdc1
-cd /bootstrap/ArchBuilds/sbMb  for  bash 0-to_chroot.sh
+mkdir /bs   mount /dev/sdc1 /bs   cd /bs/ArchBuilds/sbMb  for
+  bash 0-XA2.sh
+  bash 0-to_chroot.sh
+mount /dev/sdc1 /mnt   cd /mnt/ArchBuilds/build-root-standalone  for  1-as_chroot-bootloader.sh
+## booted with GRUB - logged in as root
+### get online
+XA2 tethered   ping -c 3 8.8.8.8  shows it's connected
+#### check for dhcpcd
+pacman -Qs dhcpcd  shows it ain't there...
+### 2-as_root-prepare_for_jo.sh
+mount /dev/sdb1 /mnt   cd /mnt/ArchBuilds/build-root-standalone   for
+  bash build-root-standalone/2-as_root-prepare_for_jo.sh
+### waiting
+#### (having accidentally set it on) Numlock off in getty
+build-root-standalone/2-as_root-Numlock.sh
+#### updates
+build-root-standalone/3-when_jo-0-updates.sh
+#### build-root-standalone/4-when_jo-0-before_desktop.sh
 # GIGABYTE UEFI DualBIOS
 easily entered by Del fairly quickly at start
-Logitech MX 610 Laser Cordless Mouse & Perixx PERIBOARD-407W keyboard function
-## BIOS Features when only DVD
+Logitech MX 610 Laser Cordless Mouse & Perixx PERIBOARD-407W keyboard function normally
+## BIOS Features
+Full Screen LOGO > Disabled
+### when only DVD
 Boot Option #1 > UEFI ATAPI DVD A DH16A1L
 Boot Option #2 >   P1 ATAPI DVD A DH16A1L
 # physical configuration
@@ -96,16 +123,3 @@ Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16
 ### graphics
 Acer GF-7300SE-N-A3 nVidia GeForce 7300 graphics card  on  PCIEX16
 ASUSA EN6200LE TC256 nVidia GeForce 6200  on  PCIEX4
-# waiting
-## graphics card
-lspci | grep -e VGA -e 3D  reports
-## Openbox Themes
-openbox-themes
-## PCManFM "Removable medium is inserted" pop-up
-PCManFM > Edit > Preferences > Volume Management > Show available options  off-ticked
-## PCManFM Trash
-PCManFM > Edit > Preferences > Confirm before moving files into "trash can"   off-ticked
-## PCManFM - Terminal emulator
-Preferences > Advanced > Terminal > urxvt
-## enp0s25 always live
-## change the time of notifications

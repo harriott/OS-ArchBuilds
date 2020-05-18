@@ -7,6 +7,6 @@ trap read debug  # puts a read request after each executable line
 #=> 0 XA2
 # plugged into back top upper USB
 ip link
-dhcpcd enp0s18f2u1
+dhcpcd enp0s22f2u3
 ping -c 3 8.8.8.8
 
