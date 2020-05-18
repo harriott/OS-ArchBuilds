@@ -11,6 +11,7 @@ I started with help from Luke Smith. [Mutt Wizard: Command Line Email at 156% Ef
     - `neomutt` is just a terminal program for reading and sorting emails. It requires a shit-load of configuration to get it working your way, but it's worth it in the end. This is the central treasure that you may be looking for. It's mildly life-changing.
     - `notmuch` provides a very quick way to tag emails to help you later find things
 - Writing emails - my setup launches `neovim` in the same terminal window, which is just amazingly handy for me as I do all of my organisation and writing of stuff with variants of `vim`.
+- Sending emails - I use `msmtp` of course, and now it supports `OAUTH2`!
 - Searching for text in a folder, an account, or all accounts is easy, either using `notmuch` or by doing something like `~/.local/share/mail$ rg Miscov` (- `ripgrep`).
 
 Good luck.
