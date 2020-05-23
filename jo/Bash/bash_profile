@@ -3,18 +3,16 @@
 # my generic  bash_profile
 # ------------------------
 
-# this should be sourced by  ~/.bash_profile
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# first test that X hasn't launched
-ps aux|grep -v grep|grep "/usr/lib/Xorg" >& /dev/null
+# first test that X hasn't launched for this user
+ps aux | grep $USER | grep -v grep | grep "/usr/lib/Xorg" >& /dev/null
 EXITSTATUS=$?
 if [ $EXITSTATUS -eq 1 ]; then
   if (read -rsn1 -t8 -p"Going to startx in 8 seconds, press any key to abort: "); then
     echo -en "Okay, \e[1mstartx\e[0m yourself when ready...\n"
   else
-    [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx
+    [[ -z $DISPLAY ]] && startx
   fi
 fi
 

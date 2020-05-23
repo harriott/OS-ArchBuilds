@@ -43,6 +43,7 @@ our $SCHEMA = [
     {item => ['opera',            'opera',                'web-browser']},
     {item => ['quodlibet',        'Quod Libet',           'web-browser']},
     {item => ['picard',           'MusicBrainz Picard',   'web-browser']},
+    {item => ['zoom',             'Zoom',                 'web-browser']},
 
     {sep => 'Categories'},
 

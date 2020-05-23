@@ -6,13 +6,35 @@ Setting up `mutt` with `notmuch` for the first time isn't easy, but it *is* wort
 
 I started with help from Luke Smith. [Mutt Wizard: Command Line Email at 156% Efficiency](https://youtu.be/mPiQuWbF57M), and his [Code](https://gitlab.com/LukeSmithxyz/mutt-wizard), and of course the excellent ArchWiki, and a load of other helpful posts around the web, and over a long time, got this here setup which now allows me to move easily in and out of email accounts, quickly sort, read, write, sync and send.
 
-- Getting my emails - I prefer `mbsync` (over `offlineimap`). You can find example configurations around the web.
-- Reading my emails - I use an alias defined in my `bashrc-email` (you can find in this repository) to fire up `neomutt` and to set `notmuch` tags
+- **Getting my emails** - I prefer `mbsync` (over `offlineimap`). You can find example configurations around the web.
+- **Reading my emails** - I use an alias defined in my `bashrc-email` (you can find in this repository) to fire up `neomutt` and to set `notmuch` tags
     - `neomutt` is just a terminal program for reading and sorting emails. It requires a shit-load of configuration to get it working your way, but it's worth it in the end. This is the central treasure that you may be looking for. It's mildly life-changing.
     - `notmuch` provides a very quick way to tag emails to help you later find things
-- Writing emails - my setup launches `neovim` in the same terminal window, which is just amazingly handy for me as I do all of my organisation and writing of stuff with variants of `vim`.
-- Sending emails - I use `msmtp` of course, and now it supports `OAUTH2`!
-- Searching for text in a folder, an account, or all accounts is easy, either using `notmuch` or by doing something like `~/.local/share/mail$ rg Miscov` (- `ripgrep`).
+- **Writing emails** - my setup launches `neovim` in the same terminal window, which is just amazingly handy for me as I do all of my organisation and writing of stuff with variants of `vim`.
+- **Sending emails** - I use `msmtp` of course, and now it supports `OAUTH2`!
+- **Searching for text** in a folder, an account, or all accounts is easy, either using `notmuch` or by doing something like a `ripgrep`, `~/.local/share/mail$ rg Miscov`.
 
-Good luck.
+# associated practices
+I turn off conversation view for all of my accounts. I just personally find it confusing.
+
+## Gmail
+- I create a folder named "Archives" for emails that are done but worth keeping.
+- I avoid hitting the `Archive` button on Gmail's web interface because that just strips away all labels such that the email is then lost in `All Mail`.
+- I set up 2-Step Verification in my Google Accounts such that I can enable the API, then use `msmtp` for sending Gmails (see `oauth2tool.sh`).
+
+## HTML in emails
+I don't bother, as some do, trying to view HTML emails in `neovim`. So these are my workarounds:
+
+- The vast majority of links that appear in a text version of an email in `neomutt` I can mouse-click on to open in my default browser.
+- HTML-only emails, such as the newsletter of la Mairie de Paris I open in Thunderbird.
+
+## I still use Thunderbird alongside
+because it's still an excellent open-source program that allows me to:
+
+- reply from a different account that I received an email from
+- append received emails together in my reply
+- easily move as many emails as I want from one account to another
+- check folder settings for an account
+- get ready access to accounts that take some time to setup, such as Gmail's `OAUTH2` requirement when I've setup 2-step verification
+- remove attachments from an email while leaving the name of the attachment in the email - handy for having a more compact store of done emails while still being able to see what was sent with them (I wish `neomutt` had this ability)
 

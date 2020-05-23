@@ -7,8 +7,8 @@ trap read debug  # puts a read request after each executable line
 #=> Updates
 pacman -Syu
 # pacman -Syyuu
-reboot if kernel updated !
-true
+# reboot if kernel updated !
+find /etc -type f -name "*pacnew"
 
 #=> reduce the pacman cache
 paccache -r

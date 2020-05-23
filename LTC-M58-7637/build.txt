@@ -300,6 +300,21 @@ sudo -E bash 2-when_jo-1-when_X-1-when_rsnapshot_conf.sh
 ### gitk
 ### Arch Linux System Tray Update Notifier and Upgrader
 plasma5-applets-kde-arch-update-notifier-git
+## pacman -Syu
+### phonon-qt5 dependency cycle
+after many days, pacman -Syu
+  avertissement : phonon-qt5-vlc sera installé avant sa dépendance phonon-qt5
+sudo pacman -Rs phonon-qt5-vlc
+  la suppression de phonon-qt5-vlc casse la dépendance « phonon-qt5-backend » requise par phonon-qt5
+sudo pacman -Rs phonon-qt5-backend
+  erreur : impossible de trouver la cible : phonon-qt5-backend
+sudo pacman -S phonon-qt5
+### pacman -Syu
+## shadow.pacnew
+in /etc/: su + root pw  for
+  nvim -o shadow shadow.pacnew   then  rm /etc/shadow.pacnew
+reboot
+## frequently laggy and using all of CPU...
 # physical configuration
 HD103SJ
 Logitech Wireless Mouse M525

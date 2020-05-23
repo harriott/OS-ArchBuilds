@@ -3,6 +3,12 @@
 # based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
 # layout settings for neomutt
 
+
+# paging down leaves lines of overlap
+set pager_context=2
+# show the message in the index
+set pager_index_lines=1
+
 # Sidebar mappings
 set sidebar_visible = yes
 set sidebar_width = 20

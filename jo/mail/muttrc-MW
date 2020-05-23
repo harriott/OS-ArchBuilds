@@ -33,20 +33,26 @@ set menu_scroll # smoother movement
 unset confirmappend # don't ask of confirmation when moving emails
 
 # Useful key bindings for the index
-#  $ == sync changes
-#  * or <End> > <last-entry> == jump to the last entry
-#  ] > <half-down>
-#  [ > <half-up>
-#  ; tag-prefix == apply next function to tagged messages
-#  = or <Home> -> <first-entry> == jump to the first entry
-#  l == limit
-#  T -> tag-pattern == tag messages matching a pattern
-#   T > .* == tags all in a folder
-#  U == undo deletion
+#  $ ==> sync changes
+#  * or <End> -> <last-entry> ==> jump to the last entry
+#  ] -> <half-down>
+#  [ -> <half-up>
+#  ; tag-prefix ==> apply next function to tagged messages
+#  = or <Home> -> <first-entry> ==> jump to the first entry
+#  l ==> limit
+#  T -> tag-pattern ==> tag messages matching a pattern
+#   T > .* ==> tags all in a folder
+#  U ==> undo deletion
 
 # Useful key bindings for the browser
-# c? == enter browser
-# p == parent folder
+# c? ==> enter browser
+# p ==> parent folder
+
+# Useful key bindings for the pager
+#  - -> <previous-page> ==> page up
+#  <enter> -> <next-line> ==> scroll down a line
+#  <space> -> <next-page> ==> page down
+#  = -> <previous-line> ==> scroll up a line
 
 # General rebindings
 bind attach <return> view-mailcap
@@ -66,6 +72,7 @@ bind pager \031 previous-line  # Mouse wheel
 bind pager \005 next-line  # Mouse wheel
 bind pager ] half-down
 bind pager [ half-up
+bind pager = previous-line
 
 # address book (from MW):
 # macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>" "add the sender address to abook"

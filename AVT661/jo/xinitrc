@@ -63,7 +63,8 @@ export DROPBOX=/mnt/SDSSDA240G/Dropbox   # keep this capitalised for finding it 
 # stop the 600s screensaver
 xset s off
 
-# launch Openbox
-xbindkeys  # must be before Openbox
+# Openbox
+export QT_QPA_PLATFORMTHEME=qt5ct # QPA set here so qt5ct works from Menu too
+xbindkeys  # must be before launching Openbox
 exec openbox-session
 

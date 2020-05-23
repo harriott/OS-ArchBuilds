@@ -3110,6 +3110,14 @@ should bring in: alsa-plugins pulseaudio rtkit webrtc-audio-processing pulseaudi
 Deleted  ~/.password-store  for
   cp -rf $GNULE/AVT661-password-store ~/.password-store  and removed the source
     as it's now automatically backed up in  /mnt/WD1001FALS/rsnapshot/
+# PDFsam Basic
+sudo pacman -S pdfsam (brings in jdk-openjdk)
+# Viewsonic VA903m
+# CopyQ theme
+Ctrl+P (= File > Preferences) > Appearance > Forest
+# Qt5 theme - for better tab differentiation in CopyQ
+sudo pacman -S qt5ct  then, having set the variable,  Menu > Settings > Qt5 Settings
+sudo pacman -S qt5-styleplugins
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

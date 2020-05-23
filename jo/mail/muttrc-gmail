@@ -24,6 +24,7 @@ source $alias_file
 # rm -r ~/.cache/mutt/gmail/* ~/.local/share/mail/gmail/*
 # and fix  ~/.mbsyncrc  to correspond
 mailboxes "=Archives" "=[Google\ Mail].Bin" "=[Google\ Mail].Drafts" "=[Google\ Mail].Sent\ Mail" "=[Google\ Mail].Spam" "=INBOX" "=Waiting"
+# - any errors here will trigger others
 virtual-mailboxes "All" "notmuch://?query=tag:gmail"
 
 # tweak the default status line to show  "->gmail":

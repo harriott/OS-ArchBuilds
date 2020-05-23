@@ -17,6 +17,10 @@ xrandr
 # check graphics card
 lspci | grep -e VGA -e 3D
 
+# CUPS - when a printer is paused/disabled
+lpstat -p
+sudo cupsenable 553_192_168_43_249
+
 # fonts
 In a folder of possible fonts, to check if any are already installed:
   for font in $(ls); do fc-list $font; done

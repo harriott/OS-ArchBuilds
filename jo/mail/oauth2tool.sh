@@ -40,11 +40,11 @@ user=$1
 # user=username
 
 get_access_token() {
-    # $GNULE/GmailAPI  should point to the directory that contains  oauth2.py
+    # $GNULE  should point to the directory that contains  oauth2.py
     # https://github.com/google/gmail-oauth2-tools/blob/master/python/oauth2.py
 
     { IFS= read -r tokenline && IFS= read -r expireline; } < \
-    <(python2 $GNULE/GmailAPI/oauth2.py --user=$user \
+    <(python2 $GNULE/oauth2.py --user=$user \
     --client_id=$(pass $user/GmailAPI/CID) \
     --client_secret=$(pass $user/GmailAPI/CS) \
     --refresh_token=$(pass $user/GmailAPI/refresh))

@@ -7,10 +7,11 @@
 # action='cp --remove-destination'
 action='ln -sf'
 
-. $ARCHBUILDS/userSymlinks/all.sh
+. $ARCHBUILDS/build-jo-standalone/0-symlinks-all.sh
 
 $action $ARCHBUILDS/jo/Vim/gvimrc      ~/.gvimrc
 $action $ARCHBUILDS/jo/Vim/init.vim    ~/.config/nvim/init.vim
+$action $ARCHBUILDS/jo/tmux/tmux.conf  ~/.tmux.conf
 $action $ARCHBUILDS/jo/Vim/vimrc       ~/.vimrc
 $action $ARCHBUILDS/jo/bash_history.sh ~/Arch/bash_history.sh
 $action $ITstack/gitconfig             ~/.gitconfig

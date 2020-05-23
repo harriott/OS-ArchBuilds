@@ -54,6 +54,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
+# #==> chromium-widevine
+# cd ~/Arch/AUR
+# sudo rm -r chromium-widevine
+# git clone https://aur.archlinux.org/chromium-widevine.git
+# cd chromium-widevine
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
 # #==> colorpicker
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/colorpicker.git
@@ -62,14 +71,14 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-# #==> Dropbox
-# cd ~/Arch/AUR
-# sudo rm -r dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#==> Dropbox
+cd ~/Arch/AUR
+sudo rm -r dropbox
+git clone https://aur.archlinux.org/dropbox.git
+cd dropbox
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #==> Dust
 # # (after Rust Toolchain)
@@ -129,7 +138,6 @@ trap read debug  # puts a read request after each executable line
 # git clone https://aur.archlinux.org/xdg-utils-mimeo.git
 # git clone https://aur.archlinux.org/xnviewmp.git
 
-# sudo rm -r chromium-widevine; git clone https://aur.archlinux.org/chromium-widevine.git
 # sudo rm -r clamav-unofficial-sigs; git clone https://aur.archlinux.org/clamav-unofficial-sigs
 # sudo rm -r gtkhash # clone https://aur.archlinux.org/gtkhash.git
 # sudo rm -r mimeo; git clone https://aur.archlinux.org/mimeo.git
@@ -257,14 +265,14 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#==> Zoom
-cd ~/Arch/AUR
-sudo rm -r zoom
-git clone https://aur.archlinux.org/zoom.git
-cd zoom
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #==> Zoom
+# cd ~/Arch/AUR
+# sudo rm -r zoom
+# git clone https://aur.archlinux.org/zoom.git
+# cd zoom
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> AUR 3 settings
 

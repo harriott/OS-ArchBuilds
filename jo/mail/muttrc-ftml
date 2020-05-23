@@ -7,7 +7,7 @@
 #  mbsync fm   using ~/.mbsyncrc
 #  msmtp  uses settings put by  Mutt Wizard  into  ~/.config/msmtp/config
 
-set from = $fm # defined in my  $GNULE/mymuttrcAddresses
+set from = $fm  # defined in my  $GNULE/mymuttrcAddresses
 set sendmail = "msmtp -a fm"
 set folder = "$mail/fm"
 set header_cache = /home/jo/.cache/mutt/fm/headers

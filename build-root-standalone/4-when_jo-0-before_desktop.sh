@@ -227,6 +227,10 @@
 # # Wget
 # pacman -S wget
 
+# #==> softwares - pdfsam
+# # brings in jdk-openjdk
+# pacman -S pdfsam
+
 # #==> softwares - system
 # # appmenu-gtk-module - for *8192eu*
 # pacman -S appmenu-gtk-module

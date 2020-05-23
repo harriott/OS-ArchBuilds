@@ -17,27 +17,27 @@ alias nmg='neomutt -F $email/muttrc-gmail'
 alias nml='neomutt -F $email/muttrc-live'
 alias nmx='neomutt -F $email/muttrc-gmx'
 
-# commands to grab mutt-alias
+# commands to grab mutt-alias (can be slow)
 alias mas='bash ~/mutt-alias.sh/mutt-alias.sh'
 export mail=/home/jo/.local/share/mail  # used also in  muttrc-*
 magf () {
   for folder in Archive Cafezoide Deauram Friends Waiting Work; do
-    mas -a $GNULE/aliases-fm-mag "$mail/fm/$folder/cur"
+    mas -a $GNULE/aliases-fm-mag -p "$mail/fm/$folder/cur"
   done
 }
 magg () {
   for folder in Archives Waiting; do
-    mas -a $GNULE/aliases-gmail-mag "$mail/gmail/$folder/cur"
+    mas -a $GNULE/aliases-gmail-mag -p "$mail/gmail/$folder/cur"
   done
 }
 magx () {
   for folder in Archives Waiting; do
-    mas -a $GNULE/aliases-gmx-mag "$mail/gmx/$folder/cur"
+    mas -a $GNULE/aliases-gmx-mag -p "$mail/gmx/$folder/cur"
   done
 }
 magl () {
   for folder in Archive LPD Waiting; do
-    mas -a $GNULE/aliases-live-mag "$mail/live/$folder/cur"
+    mas -a $GNULE/aliases-live-mag -p "$mail/live/$folder/cur"
   done
 }
 
