@@ -3118,6 +3118,8 @@ Ctrl+P (= File > Preferences) > Appearance > Forest
 # Qt5 theme - for better tab differentiation in CopyQ
 sudo pacman -S qt5ct  then, having set the variable,  Menu > Settings > Qt5 Settings
 sudo pacman -S qt5-styleplugins
+# CopyQ exit
+Ctrl+P (= File > Preferences) > General > Confirm application exit off
 # waiting
 ## texlive-localmanager-git
 ## qpdfview

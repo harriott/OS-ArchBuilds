@@ -315,6 +315,8 @@ in /etc/: su + root pw  for
   nvim -o shadow shadow.pacnew   then  rm /etc/shadow.pacnew
 reboot
 ## frequently laggy and using all of CPU...
+## Xresources
+~/.Xresources  ain't there!
 # physical configuration
 HD103SJ
 Logitech Wireless Mouse M525

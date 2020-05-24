@@ -12,6 +12,7 @@
 
 # #=> 0 to X
 # really needed
+
 # #==> automatic login to virtual console
 # ls /etc/systemd/system
 # mkdir /etc/systemd/system/getty@tty1.service.d
@@ -49,10 +50,6 @@
 # curl https://secure.eicar.org/eicar.com.txt | clamscan -
 # trap read debug
 
-# #==> disable dhcpcd wait at start
-# mkdir /etc/systemd/system/dhcpcd@.service.d
-# cp $ARCHBUILDS/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
-
 # #==> Firewalld
 # pacman -S firewalld
 # systemctl enable firewalld --now
@@ -70,9 +67,6 @@
 # firewall-cmd --zone=home --permanent --add-port=1714-1764/tcp
 # firewall-cmd --zone=home --permanent --add-port=1714-1764/udp
 # systemctl restart firewalld.service
-
-# #==> have boot messages stay on tty1
-# cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
 
 # #==> prepare for X
 # # Xorg
@@ -95,6 +89,7 @@
 
 # #=> 1 when X
 # wanted
+
 # #==> monitor settings
 # # disable DPMS
 # cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
@@ -125,79 +120,21 @@
 # pacman -Rs pulsemixer
 
 # #==> softwares - file manage
-# # bat
-# pacman -S bat
-
-# # broot
-# pacman -S broot
-
-# # exa
-# pacman -S exa
-
-# # fd
-# pacman -S fd
-
-# # fzf
-# pacman -S fzf
-
 # # fzy
 # pacman -S fzy
 
 # # Git
 # pacman -S git
 
-# # mlocate
-# pacman -S mlocate
-# updatedb
-
-# # ncdu
-# pacman -S ncdu
-
-# # p7zip
-# pacman -S p7zip
-
-# # rhash
-# pacman -S rhash
-
-# # ripgrep
-# pacman -S ripgrep
-
 # # rsnapshot install
 # pacman -S rsnapshot
-
-# # rsync
-# pacman -S rsync
 
 # # shfmt (for bat-extras-git)
 # pacman -S shfmt
 
-# # trash-cli
-# pacman -S trash-cli
-
 # #==> softwares - info
-# # htop
-# pacman -S htop
-
-# # iotop
-# pacman -S iotop
-
-# # lshw
-# pacman -S lshw
-
-# # lsof
-# pacman -S lsof
-
-# # man-db
-# pacman -S man-db
-
-# # man-pages
-# pacman -S man-pages
-
 # # Neofetch
 # pacman -S neofetch
-
-# # sysstat
-# pacman -S sysstat
 
 # #==> softwares - networking
 # # DNS Lookup utility
@@ -205,12 +142,6 @@
 
 # # Chromium
 # pacman -S chromium
-
-# # iNet Wireless Daemon
-# pacman -S iwd
-# systemctl enable iwd.service --now
-# systemctl status iwd.service
-# true
 
 # # LastPass CLI
 # pacman -S lastpass-cli
@@ -224,53 +155,13 @@
 # # sshfs (for KDE Connect)
 # pacman -S sshfs
 
-# # Wget
-# pacman -S wget
-
 # #==> softwares - pdfsam
 # # brings in jdk-openjdk
 # pacman -S pdfsam
 
 # #==> softwares - system
-# # appmenu-gtk-module - for *8192eu*
-# pacman -S appmenu-gtk-module
-# pacman -Rs appmenu-gtk-module
-# true
-
-# # Bashtop
-# sudo pacman -S bashtop
-
-# # dkms - for *8192eu*
-# pacman -S dkms
-# # - don't forget to  reboot !
-# true
-
 # # espeak-ng-espeak & termdown
 # pacman -S espeak-ng-espeak termdown
-
-# # fcron
-# pacman -S fcron
-# systemctl enable fcron.service
-
-# # glances
-# pacman -S glances
-
-# # linux headers - for *8192eu*
-# pacman -S linux-headers
-# # - don't forget to  reboot !
-# true
-
-# # pacutils
-# pacman -S pacutils
-
-# # pkgfile
-# pacman -S pkgfile
-# pkgfile -u
-# systemctl enable pkgfile-update.timer
-# systemctl list-timers
-
-# # pkgstats
-# pacman -S pkgstats
 
 # # my system backup script
 # ln -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh

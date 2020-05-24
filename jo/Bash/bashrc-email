@@ -44,3 +44,18 @@ magl () {
 # command to backup my Mutt Wizard files
 alias mwb='bash $email/mwBackup.sh'
 
+# notmuch searching:
+nmse () {
+    notmuchsearch="$1 $2 $3 $4 $5 $6 $7 $8 $9"
+    echo $notmuchsearch
+    notmuch search $notmuchsearch
+}
+nmsh () {
+    echo '# vim: set ft=mail tw=0:' > nms.mail
+    echo >> nms.mail
+    nmsh="notmuch show $notmuchsearch"
+    echo -en "\e[92m  $nmsh\n"
+    eval "$nmsh >> nms.mail"
+    gvim -c "silent! message{ id:" nms.mail  # ready to search for each message
+}
+

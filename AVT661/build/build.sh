@@ -45,11 +45,8 @@ true
 # sudo sed -i 's#/mnt/9QG2FFEE ##' /etc/updatedb.conf
 # sudo sed -i 's#/mnt/HD103SJ ##' /etc/updatedb.conf
 
-# #===> root bash configurations
-# cp $ARCHBUILDS/root/bashrc /root/.bashrc  # the only one that's best kept as a hard copy
-# ln -sf $ARCHBUILDS/Bash/bashrc-generic /root/.bashrc-generic
-# ln -sf $ARCHBUILDS/Bash/inputrc /root/.inputrc
-# ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile
+# #===> root bashrc
+# cp $ARCHBUILDS/root/bashrc /root/.bashrc  # copying it so that broot can ammend it
 
 # #===> softwares - appearance
 

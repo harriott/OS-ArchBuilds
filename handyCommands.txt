@@ -7,7 +7,6 @@ cat /proc/cpuinfo
 colorpicker --one-shot --preview
 Ctrl+s  pause output to screen
 Ctrl+q  resume output to screen
-lsof -i
 lsusb
 sudo parted -l
 vimiv &
@@ -56,6 +55,7 @@ pass gmail-neomutt
 pass ls
 
 # processes
+lsof -i
 pkill zoom
 pgrep
 pstree

@@ -10,7 +10,7 @@ set index_format="%2C %zs %?X?A& ? %D %-15.15F %s (%-4.4c)"
 set smtp_authenticators = 'gssapi:login'
 # set query_command = "abook --mutt-query '%s'"
 set rfc2047_parameters = yes
-set pager_stop = yes # don't page on into next message
+set pager_stop = yes  # don't page on into next message
 set sleep_time = 0  # Pause 0 seconds for informational messages
 set markers = no  # Disables the `+` displayed at line wraps
 set mark_old = no  # Unread mail stay unread until read
@@ -18,11 +18,11 @@ set mime_forward = yes  # attachments are forwarded with mail
 set wait_key = no  # mutt won't ask "press key to continue"
 set fast_reply   # skip to compose when replying
 set fcc_attach   # save attachments with the body
-set forward_format = "Fwd: %s" # format of subject when forwarding
+set forward_format = "Fwd: %s"  # format of subject when forwarding
 set forward_quote  # include message in forwards
 set reverse_name  # reply as whomever it was to
 set include   # include message in replies
-set mail_check=60 # to avoid lags using IMAP with some email providers (yahoo for example)
+set mail_check=60  # to avoid lags using IMAP with some email providers (yahoo for example)
 auto_view text/html  # automatically show html (mailcap uses w3m)
 auto_view application/pgp-encrypted
 alternative_order text/plain text/enriched text/html
@@ -39,14 +39,14 @@ unset confirmappend # don't ask of confirmation when moving emails
 #  [ -> <half-up>
 #  ; tag-prefix ==> apply next function to tagged messages
 #  = or <Home> -> <first-entry> ==> jump to the first entry
-#  l ==> limit
+#  B ==> toggle sidebar
 #  T -> tag-pattern ==> tag messages matching a pattern
 #   T > .* ==> tags all in a folder
 #  U ==> undo deletion
 
 # Useful key bindings for the browser
-# c? ==> enter browser
-# p ==> parent folder
+#  c? ==> enter browser
+#  p ==> parent folder
 
 # Useful key bindings for the pager
 #  - -> <previous-page> ==> page up
@@ -74,18 +74,24 @@ bind pager ] half-down
 bind pager [ half-up
 bind pager = previous-line
 
-# address book (from MW):
-# macro index,pager a "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>" "add the sender address to abook"
-
-# Searching:
-# this hard to decipher MW command only works in the current folder (so need to define an folder containing all of the emails to allow full searching of each email account):
-macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>read -p 'Enter a search term to find with notmuch: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
-# reset limit to view all messages in the folder:
-macro index \Cl "<limit>all\n" "show all messages (undo limit)"
-# the following two lines allow virtual folders to be populated with Notmuch queries across the whole account:
-set nm_default_uri = "notmuch://$mail/"
-macro index,pager gq "<vfolder-from-query>" "go notmuch Query"
-
 # Layout:
 source $email/muttrc-MW-layout
+
+# Searching
+# ---------
+
+bind index l noop
+bind index ll limit
+macro index lb "<limit> ~b " "limit by term in message body"
+
+# the following two lines allow virtual folders to be populated with Notmuch queries across all of your mail folder
+set nm_default_uri = "notmuch://$mail/"
+macro index,pager gq "<vfolder-from-query>" "go notmuch Query"
+#   search patterns:
+#     "search term with spaces"
+#     partial*
+#     searchterm1 tag:autocompletes searchterm2
+
+# reset limit to view all messages in the folder (after l > searchterm)
+macro index la "<limit>all\n" "show all messages (undo limit)"
 
