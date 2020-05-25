@@ -81,7 +81,7 @@ source $email/muttrc-MW-layout
 # ---------
 
 bind index l noop
-bind index ll limit
+bind index ll limit  # ~p = to me, ~P = from me
 macro index lb "<limit> ~b " "limit by term in message body"
 
 # the following two lines allow virtual folders to be populated with Notmuch queries across all of your mail folder

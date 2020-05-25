@@ -107,13 +107,7 @@ pacman -Syu
 # dragon-drag-and-drop
 # ...
 
-# droidcam
-# ...
-
 # figlet
-# ...
-
-# Font Squirrel fonts
 # ...
 
 # galculator
@@ -173,31 +167,23 @@ pacman -Syu
 # xvt-perls
 # ...
 
+#=> softwares - documenting
 # Zathura
 # ...
 
-# Zoom
-# ...
-
-#=> AURs
+#=> openbox-themes
 cd ~/Arch/AUR
-bash -x /mnt/mnt/ArchBuilds/sbMb/AURclones.sh
-
-# openbox-themes
+git clone https://aur.archlinux.org/openbox-themes.git
 cd openbox-themes
+xdg-open PKGBUILD
 makepkg -sic
 # Openbox Loma theme tweak for active window
 mkdir ~/.local/share/themes
 cp -r /usr/share/themes/Loma ~/.local/share/themes/LomaJH
 sed -i '/window.active.border.color:/ s/#000000/#FF8000/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 sed -i '/^border.width:/ s/1/2/' ~/.local/share/themes/LomaJH/openbox-3/themerc
-cd ..
-
 cd ~
 
 #=> after chromium
 # Dropbox
-
-# Google Widevine for chromium
-# ...
 

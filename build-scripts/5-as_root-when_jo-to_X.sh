@@ -83,9 +83,6 @@
 
 # #==> root bash configurations
 # cp $ARCHBUILDS/root/bashrc /root/.bashrc  # the only one that's best kept as a hard copy
-# ln -sf $ARCHBUILDS/Bash/bashrc-generic /root/.bashrc-generic
-# ln -sf $ARCHBUILDS/Bash/inputrc /root/.inputrc
-# ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile
 
 # #=> 1 when X
 # wanted

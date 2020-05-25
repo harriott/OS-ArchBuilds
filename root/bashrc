@@ -13,7 +13,8 @@ alias ls='ls --color=auto'
 # my preferences:
 # ---------------
 set -o vi
-source /root/.bashrc-generic
+[[ -f /root/.bashrc-generic ]] && . /root/.bashrc-generic
+[[ -f $ARCHBUILDS/Bash/bashrc-generic ]] && . $ARCHBUILDS/Bash/bashrc-generic
 
 # a colorised (bold red) prompt:
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '

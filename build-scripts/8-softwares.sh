@@ -6,11 +6,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> AUR 0 - make AUR directory
-# mkdir ~/Arch
-# mkdir ~/Arch/AUR
-
-# #=> AUR 1 preparations
+# #=> AUR 0 preparations
 
 # # #==> Dropbox public key
 # # gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
@@ -22,7 +18,7 @@ trap read debug  # puts a read request after each executable line
 # # # 2 Rust Toolchain
 # # rustup toolchain install stable
 
-# #=> AUR 2 AURs
+# #=> AUR 1 AURs
 
 # #==> 8192eu-dkms - install
 # # needs  appmenu-gtk-module dkms linux-headers
@@ -72,6 +68,7 @@ trap read debug  # puts a read request after each executable line
 # cd ~
 
 #==> Dropbox
+# only once there's a browser, and preferably after LastPass
 cd ~/Arch/AUR
 sudo rm -r dropbox
 git clone https://aur.archlinux.org/dropbox.git
@@ -86,14 +83,6 @@ cd ~
 # sudo rm -r dust
 # git clone https://aur.archlinux.org/dust.git
 # cd dust
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
-
-# #==> Event Calendar
-# cd ~/Arch/AUR
-# git clone https://aur.archlinux.org/plasma5-applets-eventcalendar.git
-# cd plasma5-applets-eventcalendar
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
@@ -190,15 +179,6 @@ cd ~
 # makepkg -sic
 # cd ~
 
-# #==> qimgv-git
-# cd ~/Arch/AUR
-# sudo rm -r qimgv-git
-# git clone https://aur.archlinux.org/qimgv-git.git
-# cd qimgv-git
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
-
 # #==> Samokovarov's jump
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/jump.git
@@ -274,7 +254,7 @@ cd ~
 # makepkg -sic
 # cd ~
 
-# #=> AUR 3 settings
+# #=> AUR 2 settings
 
 # #==> 8192eu - blacklist rtl8xxxu
 # echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
@@ -294,7 +274,8 @@ cd ~
 # cd ~
 # git clone git@github.com:harriott/vimfiles.git
 # mv vimfiles .vim
+# mkdir ~/.vimswap
 
 # # neovim
-# mkdir ~/.config/nvim
+# mkdir -p ~/.config/nvim
 

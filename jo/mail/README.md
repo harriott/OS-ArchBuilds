@@ -12,14 +12,15 @@ I started with help from Luke Smith. [Mutt Wizard: Command Line Email at 156% Ef
     - `notmuch` provides a very quick way to tag emails to help you later find things
 - **Writing emails** - my setup launches `neovim` in the same terminal window, which is just amazingly handy for me as I do all of my organisation and writing of stuff with variants of `vim`.
 - **Sending emails** - I use `msmtp` of course, and now it supports `OAUTH2`!
-- **Searching for text** in a folder, an account, or all accounts is easy, either using `notmuch` or by doing something like a `ripgrep`, `~/.local/share/mail$ rg Miscov`.
+- **Searching for text** in a folder, an account, or all accounts is easy, either using `notmuch` (I've made a couple of small tools in my `bashrc-email` for pulling out the text of emails to `gVim`) or by doing something like a `ripgrep`, `~/.local/share/mail$ rg Miscov`.
 
 # associated practices
-I turn off conversation view for all of my accounts. I just personally find it confusing.
+I turn off conversation view for all of my accounts. I get what it does, but I dislike it, and it doesn't help in my workflow.
 
 ## Gmail
-- I create a folder named "Archives" for emails that are done but worth keeping.
-- I avoid hitting the `Archive` button on Gmail's web interface because that just strips away all labels such that the email is then lost in `All Mail`.
+- Archiving:
+    - I create a folder named "Archives" for emails that are done but worth keeping.
+    - I avoid hitting the `Archive` button on Gmail's web interface because that just strips away all labels such that the email is then lost in `All Mail`.
 - I set up 2-Step Verification in my Google Accounts such that I can enable the API, then use `msmtp` for sending Gmails (see `oauth2tool.sh`).
 
 ## HTML in emails

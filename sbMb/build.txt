@@ -92,15 +92,17 @@ mount /dev/sdc1 /mnt   cd /mnt/ArchBuilds/build-root-standalone  for  1-as_chroo
 XA2 tethered   ping -c 3 8.8.8.8  shows it's connected
 #### check for dhcpcd
 pacman -Qs dhcpcd  shows it ain't there...
-### 2-as_root-prepare_for_jo.sh
-mount /dev/sdb1 /mnt   cd /mnt/ArchBuilds/build-root-standalone   for
-  bash build-root-standalone/2-as_root-prepare_for_jo.sh
 ### waiting
 #### (having accidentally set it on) Numlock off in getty
 build-root-standalone/2-as_root-Numlock.sh
+#### root Bash configuration
+bash 1-symlinks_for_root_bashrc.sh
 #### updates
 build-root-standalone/3-when_jo-0-updates.sh
 #### build-root-standalone/4-when_jo-0-before_desktop.sh
+#### 2-as_root-prepare_for_jo.sh
+mount /dev/sdb1 /mnt   cd /mnt/ArchBuilds/build-root-standalone   for
+  bash build-root-standalone/2-as_root-prepare_for_jo.sh
 # GIGABYTE UEFI DualBIOS
 easily entered by Del fairly quickly at start
 Logitech MX 610 Laser Cordless Mouse & Perixx PERIBOARD-407W keyboard function normally

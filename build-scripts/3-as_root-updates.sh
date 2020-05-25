@@ -10,6 +10,6 @@ pacman -Syu
 # reboot if kernel updated !
 find /etc -type f -name "*pacnew"
 
-#=> reduce the pacman cache
-paccache -r
+# #=> (when pacman-contrib) reduce the pacman cache
+# paccache -r
 
