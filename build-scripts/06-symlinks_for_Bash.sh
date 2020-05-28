@@ -3,8 +3,6 @@
 
 # can be run alone, but I source this from  .../<user>/build.sh
 
-# To inspect symlinks:   find ~ -path '*/.virtualenvs' -prune -o -type l -ls
-
 # sort these lists by last use of "~":  :sort /,*\~/
 
 #=> logged in as user

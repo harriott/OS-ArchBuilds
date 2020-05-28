@@ -35,14 +35,16 @@ unset confirmappend # don't ask of confirmation when moving emails
 # Useful key bindings for the index
 #  $ ==> sync changes
 #  * or <End> -> <last-entry> ==> jump to the last entry
-#  ] -> <half-down>
-#  [ -> <half-up>
+#  / ~F ==> find flagged message
 #  ; tag-prefix ==> apply next function to tagged messages
 #  = or <Home> -> <first-entry> ==> jump to the first entry
 #  B ==> toggle sidebar
+#  N ==> toggle New mark
 #  T -> tag-pattern ==> tag messages matching a pattern
 #   T > .* ==> tags all in a folder
 #  U ==> undo deletion
+#  [ -> <half-up>
+#  ] -> <half-down>
 
 # Useful key bindings for the browser
 #  c? ==> enter browser

@@ -3,6 +3,8 @@
 
 # bash <thisfile>.sh  to fix my Openbox install
 
+# sort these lists by last use of "~":  :sort /,*\~/
+
 #=> symlinks for Openbox itself
 
 ln -sf $MACHINE/jo/openbox/schema.pl                   ~/.config/obmenu-generator/schema.pl

@@ -83,6 +83,7 @@ e -T   # for tree
 ### fzf
 Alt+c   # to change directory
 Ctrl+t  # puts node selection onto command line
+gvim -o `f`  # calling upon fzf
 
 ### jump
 j <fuzzysearch> [<fuzzysear> ...]
@@ -107,7 +108,10 @@ sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 ## file searching
 fd
 find . -type f | fzy  # for finding something fuzzily fast
-find . -type l -ls    # recursively list all symlinks
+
+### recursively list symlinks
+find . -type l -ls
+find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
 ### grepping
 egrep '<someText>|<otherText>'

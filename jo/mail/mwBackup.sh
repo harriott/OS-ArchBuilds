@@ -3,6 +3,7 @@
 
 # Mutt Wizard files backup
 # ------------------------
+# this isn't needed once  rsnapshot  is running
 
 # Labels for backup name
 date=$(date "+%F-%H-%M")

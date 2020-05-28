@@ -41,12 +41,12 @@ macro index,pager Gb "<save-message>=[Google\ Mail].Bin<enter>" "move mail to Bi
 macro index,pager gr "<change-folder>=[Google\ Mail].Drafts<enter>" "go to Drafts"
 macro index,pager Gr "<save-message>=[Google\ Mail].Drafts<enter>" "move mail to Drafts"
 
+macro index,pager gi "<change-folder>=INBOX<enter>" "go to INBOX"
+macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to INBOX"
+
 macro index,pager gs "<change-folder>=[Google\ Mail].Sent\ Mail<enter>" "go to Sent Mail"
 macro index,pager Gs "<save-message>=[Google\ Mail].Sent\ Mail<enter>" "move mail to Sent Mail"
 
 macro index,pager gj "<change-folder>=[Google\ Mail].Spam<enter>" "go to Spam"
 macro index,pager Gj "<save-message>=[Google\ Mail].Spam<enter>" "move mail to Spam"
-
-macro index,pager gi "<change-folder>=INBOX<enter>" "go to INBOX"
-macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to INBOX"
 

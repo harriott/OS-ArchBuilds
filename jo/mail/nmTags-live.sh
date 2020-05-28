@@ -20,7 +20,3 @@ notmuch tag +lpd -- folder:live/LPD and not tag:lpd
 # live/Waiting:
 notmuch tag +waiting -- folder:live/Waiting and not tag:waiting
 
-# live/Work:
-notmuch tag +work -- folder:live/Work and not tag:work
-notmuch tag -archive -- folder:live/Work and tag:archive
-

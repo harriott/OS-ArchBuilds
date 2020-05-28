@@ -23,7 +23,7 @@ source $alias_file
 # if you make changes here, you probably need to clear your folders, and start afresh
 # rm -r ~/.cache/mutt/live/* ~/.local/share/mail/live/*
 # and fix  ~/.mbsyncrc  to correspond
-mailboxes "=Archive" "=Deleted" "=Drafts" "=Inbox" "=Junk" "=LPD" "=Sent" "=Waiting"
+mailboxes "=Archive" "=Deleted" "=Drafts" "=Inbox" "=Junk" "=Sent" "=Waiting"
 # - any errors here will trigger others
 virtual-mailboxes "All" "notmuch://?query=tag:live"
 

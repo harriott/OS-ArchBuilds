@@ -3,6 +3,8 @@
 
 # bash -x <thisfile>.sh
 
+# sort these lists by last use of "~":  :sort /,*\~/
+
 #=> for jo - get going
 
 ln -sf $ARCHBUILDS/jo/Vim/init.vim    ~/.config/nvim/init.vim
