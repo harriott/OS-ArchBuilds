@@ -6,6 +6,18 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+# #=> 0 broot br
+# broot  # to load  br
+
+# #=> 0 configure vims
+# # gVim
+# cd ~
+# git clone git@github.com:harriott/vimfiles.git
+# mv vimfiles .vim
+
+# # neovim
+# mkdir ~/.config/nvim
+
 # #=> AUR 0 preparations
 
 # # #==> Dropbox public key
@@ -30,6 +42,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 # # reboot !
+# true
+
+# #==> 8192eu-dkms - remove
+# sudo pacman -Rs 8192eu-dkms
+# reboot !
 # true
 
 # #==> auracle-git
@@ -67,15 +84,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#==> Dropbox
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-sudo rm -r dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #==> Dropbox
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# sudo rm -r dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #==> Dust
 # # (after Rust Toolchain)
@@ -104,73 +121,15 @@ cd ~
 # makepkg -sic
 # cd ~
 
-# #==> old & unwanted
-# git clone https://aur.archlinux.org/bfg.git
-# git clone https://aur.archlinux.org/cmus-notify.git
-# git clone https://aur.archlinux.org/covid19-cli-git.git
-# git clone https://aur.archlinux.org/dragon-drag-and-drop.git
-# git clone https://aur.archlinux.org/figlet-fonts.git
-# git clone https://aur.archlinux.org/getmail.git
-# git clone https://aur.archlinux.org/iscan-plugin-gt-f500.git
-# git clone https://aur.archlinux.org/perl-data-printer.git
-# git clone https://aur.archlinux.org/perl-clone-pp.git
-# git clone https://aur.archlinux.org/photocollage.git
-# git clone https://aur.archlinux.org/pnmixer-gtk3.git
-# git clone https://aur.archlinux.org/pyfil.git
-# git clone https://aur.archlinux.org/python-notify2.git
-# git clone https://aur.archlinux.org/tmux-bash-completion.git
-# git clone https://aur.archlinux.org/urlview.git
-# git clone https://aur.archlinux.org/vim-gruvbox-git.git
-# git clone https://aur.archlinux.org/vim-recover-git.git
-# git clone https://aur.archlinux.org/vim-repeat.git
-# git clone https://aur.archlinux.org/vim-table-mode.git
-# git clone https://aur.archlinux.org/xdg-utils-mimeo.git
-# git clone https://aur.archlinux.org/xnviewmp.git
+#==> pscircle-git
+cd ~/Arch/AUR
+git clone https://aur.archlinux.org/pscircle-git.git
+cd pscircle-git
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
-# sudo rm -r clamav-unofficial-sigs; git clone https://aur.archlinux.org/clamav-unofficial-sigs
-# sudo rm -r gtkhash # clone https://aur.archlinux.org/gtkhash.git
-# sudo rm -r mimeo; git clone https://aur.archlinux.org/mimeo.git
-# sudo rm -r msmtp-oauth2; git clone https://aur.archlinux.org/msmtp-oauth2.git
-# sudo rm -r mutt-wizard-git; git clone https://aur.archlinux.org/mutt-wizard-git.git
-# sudo rm -r obmenu-generator; git clone https://aur.archlinux.org/obmenu-generator.git
-
-# #===> DroidCam
-# cd ~/Arch/AUR
-# sudo rm -r droidcam
-# git clone https://aur.archlinux.org/droidcam.git
-# cd droidcam
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
-
-# sudo pacman -Rs droidcam
-
-# #===> gtksu-git
-# # to run Timeshift from Menu
-# cd ~/Arch/AUR
-# sudo rm -r gtksu-git
-# git clone https://aur.archlinux.org/gtksu-git.git
-# cd gtksu-git
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
-
-# #===> Timeshift
-# cd ~/Arch/AUR
-# git clone https://aur.archlinux.org/timeshift.git
-# cd timeshift
-# gvim PKGBUILD  # (because mimeo identifies it as html)
-# makepkg -sic
-# cd ~
-
-# sudo pacman -Rs timeshift
-
-# #===> 8192eu-dkms - remove
-# sudo pacman -Rs 8192eu-dkms
-# reboot !
-# true
-
-# #===> rtl8192eu
+# #==> rtl8192eu
 # cd ~/Arch/AUR
 # sudo rm -r rtl8192eu
 # git clone https://aur.archlinux.org/rtl8192eu.git
@@ -265,17 +224,4 @@ cd ~
 
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer
-
-# #=> broot
-# broot  # to load  br
-
-# #=> vims
-# # gVim
-# cd ~
-# git clone git@github.com:harriott/vimfiles.git
-# mv vimfiles .vim
-# mkdir ~/.vimswap
-
-# # neovim
-# mkdir -p ~/.config/nvim
 

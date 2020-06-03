@@ -1,15 +1,12 @@
 vim: fdl=0 ft=build fdm=expr:
 
 !! # execute last command
-batman <command>
 bc
 cat /proc/cpuinfo
-colorpicker --one-shot --preview
 Ctrl+s  pause output to screen
 Ctrl+q  resume output to screen
 lsusb
 sudo parted -l
-vimiv &
 whereis <executable>
 xrandr
 
@@ -30,15 +27,29 @@ fc-list
 # get at root on tty2
 Ctrl+Alt+F2 > root + pw
 
+# imagey
+colorpicker --one-shot --preview
+
+## Nomacs
+Alt+m  toggle menu
+f      toggles selected panes
+
+## sxiv
+sxiv -ft *  # opens directly to thumbnails, using fullscreen
+sxiv -r *
+
 # multimedia
 mediainfo --help |moar
 mpv av://v4l2:/dev/video0
 
 # networking
-echo "hello there" | nmx -s "message sent from neomutt" jharr@ftml.net
 ip l
 iwctl known-networks list
 sudo lshw -c network
+
+## email
+echo "hello there" | nmx -s "message sent from neomutt" jharr@ftml.net
+nmse parlotte date:sat
 
 ## firewall-cmd
 sudo firewall-cmd --info-zone=home
@@ -53,6 +64,10 @@ networkctl list
 pass edit gmail-neomutt
 pass gmail-neomutt
 pass ls
+
+# PDFs
+pdfimages -h
+pdfinfo <a_pdf_file>  # A5 = 420x595. See GSview for more sizes.
 
 # processes
 lsof -i
@@ -69,6 +84,7 @@ alsamixer
 sudo alsactl store
 
 # storage
+b <command>  # batman
 cdrecord dev=/dev/sr0 -checkdrive
 
 ## directory structures
@@ -142,4 +158,11 @@ tmux a                  # attach
 tmux a -t myname        # attach to session myname
 tmux kill-server; tmux  # good for resetting
 tmux ls                 # list sessions
+
+# Vimiv
+O  switch focus
+o  toggle the library
+t  toggle thumbnail mode
+vimiv &
+w  write changes
 

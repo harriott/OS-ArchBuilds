@@ -44,6 +44,7 @@ pacman -S gvfs-mtp
 pacman -S nnn
 
 # nnn plugins
+[[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 # PCManFM

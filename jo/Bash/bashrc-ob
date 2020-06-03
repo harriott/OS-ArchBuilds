@@ -11,6 +11,7 @@
 alias gpr='gprename &'
 alias rpd='bash $ITstack/onGitHub/rsync-portabledrives/rsync.sh'
 alias pf='pcmanfm & disown'
+alias psci='pscShots=/home/jo/Arch/AUR/pscircle-git-shots;pscLatest="$pscShots/$(date +%Y%m%d%H%M%S).png";pscircle --output=$pscLatest;sxiv -fn $(ls $pscShots | wc -l) $pscShots &'
 
 # cmus
 # ----
@@ -54,7 +55,7 @@ export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/Now/Technos/IT;j:/run
 
 export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
-export NNN_PLUG='c:fzcd;d:dragdrop;g:getplugs;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'
+export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
 export NNN_LOCKER='saidar -c' # not arriving in my case
 
