@@ -3,21 +3,14 @@
 # --------------------
 # Image managing stuff
 # --------------------
-# sourced, ultimately, by ~/.bashrc
+# sourced, ultimately, by  $MACHINE/jo/bashrc
 # (source ~/.bashrc if you've changed something here...)
 
-# Joseph Harriott  http://momentary.eu/  Wed 30 Oct 2019
+# Joseph Harriott  Wed 03 Jun 2020
 
 
-# Lighten an image
-# ----------------
-cl () {
-  inimag=${1%.*}
-  convert $1 -level 0,75% -quality 80 $inimag-l.jpg
-}
-
-# Convert scanned images to jpg with ImageMagick
-# ------------------------------------------------
+# convert scanned images to jpg with ImageMagick
+# ----------------------------------------------
 # (needs cnvt.sh in $PATH and won't work with white-spaces in file names)
 c () {
   bash $Imagey/cnvt.sh $1 "-quality 70"
@@ -41,7 +34,20 @@ jpo () {
   exiftool -r -ext jpg -overwrite_original -orientation=Horizontal -progress -if '$orientation =~ /Rotate/' .
 }
 
-# Sane's scanimage tool
+# copy a directory of sketches darker
+# -----------------------------------
+dsd () {
+  bash $Imagey/gamma03.sh $1
+}
+
+# lighten an image
+# ----------------
+cl () {
+  inimag=${1%.*}
+  convert $1 -level 0,75% -quality 80 $inimag-l.jpg
+}
+
+# SANE's scanimage tool
 # ---------------------
 S () {
   bash $Imagey/Scan.sh $1 $2 $3 $4

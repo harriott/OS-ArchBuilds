@@ -45,10 +45,7 @@ ping -c 3 8.8.8.8
 
 # #=> 2 better mirrorlist
 # pacman -S reflector
-# cd /etc/pacman.d
-# reflector --country France --age 12 --protocol https --sort rate --save mirrorlist
-# cat mirrorlist
-# pacman -Syyuu
+# . 01-when_chroot-reflector.sh
 
 # #=> 3 bootloader
 # 0 GRUB, Network Time Protocol

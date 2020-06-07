@@ -1,11 +1,13 @@
 vim: fdl=0 ft=build fdm=expr:
 
 !! # execute last command
-bc
+bc  # enters an arbitrary precision numeric processing language environment
 cat /proc/cpuinfo
 Ctrl+s  pause output to screen
 Ctrl+q  resume output to screen
 lsusb
+rhash -a --bsd <somefile>
+rhash --list-hashes
 sudo parted -l
 whereis <executable>
 xrandr
@@ -14,7 +16,11 @@ xrandr
 lspci | grep -e VGA -e 3D
 
 # CUPS - when a printer is paused/disabled
-lpstat -p
+lpstat -p -d  # show status of printers, including which is set as default
+
+## HP ENVY 5532 WiFi
+lpoptions -d 553_192_168_43_249  # set as default
+lpoptions -p 553_192_168_43_249 -l  # list options
 sudo cupsenable 553_192_168_43_249
 
 # fonts
@@ -28,15 +34,38 @@ fc-list
 Ctrl+Alt+F2 > root + pw
 
 # imagey
+72 dpi = 18.3 dots per mm
 colorpicker --one-shot --preview
+exiftool <image>
+Pinta can't send to printer...
 
 ## Nomacs
 Alt+m  toggle menu
 f      toggles selected panes
+Alt > Alt A > Exposure > Gamma
+Alt > Alt A > Tiny Planet
+can only fill page for printing
 
 ## sxiv
+can't send to printer
 sxiv -ft *  # opens directly to thumbnails, using fullscreen
 sxiv -r *
+
+## Vimiv
+O  switch focus
+o  toggle the library
+vimiv &
+w  write changes
+
+### tagged file list manipulation
+:tag_remove tagname
+:tag_write tagname
+cat ~/.local/share/vimiv/Tags/tagname | while read i; do mv $i .; done
+rm -r ~/.local/share/vimiv/Tags/tagname
+
+### thumbnails
++/-  size
+t    toggle
 
 # multimedia
 mediainfo --help |moar
@@ -158,11 +187,4 @@ tmux a                  # attach
 tmux a -t myname        # attach to session myname
 tmux kill-server; tmux  # good for resetting
 tmux ls                 # list sessions
-
-# Vimiv
-O  switch focus
-o  toggle the library
-t  toggle thumbnail mode
-vimiv &
-w  write changes
 

@@ -85,6 +85,8 @@ source $email/muttrc-MW-layout
 bind index l noop
 bind index ll limit  # ~p = to me, ~P = from me
 macro index lb "<limit> ~b " "limit by term in message body"
+macro index lB "<limit> ~B " "limit by term in whole message"
+# Esc l -> <show-limit> ==> show currently active limit pattern
 
 # the following two lines allow virtual folders to be populated with Notmuch queries across all of your mail folder
 set nm_default_uri = "notmuch://$mail/"

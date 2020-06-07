@@ -65,6 +65,6 @@ nmsh () {
     nmsh="notmuch show $notmuchsearch"
     echo -en "\e[92m  $nmsh\n"
     eval "$nmsh >> nms.mail"
-    gvim -c "silent! message{ id:" nms.mail  # ready to search for each message
+    gvim -c "silent! /message{ id:" nms.mail  # ready to search for each message
 }
 
