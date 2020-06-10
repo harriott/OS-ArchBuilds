@@ -1,8 +1,5 @@
 # vim: set ft=sh tw=0:
 
-# -------------------
-# File managing stuff
-# -------------------
 # sourced, ultimately, by ~/.bashrc
 # (source ~/.bashrc if you've changed something here...)
 
@@ -23,6 +20,9 @@ PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
 
 # command not found hook
 source /usr/share/doc/pkgfile/command-not-found.bash
+
+# my preferred npm global directory
+export PATH="$HOME/.npm-global/bin:$PATH"
 
 # Samokovarov's  jump
 if [ -s "/usr/bin/jump" ]; then
@@ -55,13 +55,13 @@ fdtsAll () {
 }
 alias fa='fdtsAll'
 
-# find date-time sort Encrypted folder
+# find date-time sort - Encrypted folder
 fdtsEF () {
   eval "find $1* $printfDTsort"
 }
 alias fe='fdtsEF'
 
-# find date-time sort files of a certain type (filename extension)
+# find date-time sort - files of a certain type (filename extension)
 fdtsExt () {
   if [ $1 ]; then
     dtsfile=dts-$1.txt

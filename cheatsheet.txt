@@ -6,6 +6,7 @@ cat /proc/cpuinfo
 Ctrl+s  pause output to screen
 Ctrl+q  resume output to screen
 lsusb
+npm -g list
 rhash -a --bsd <somefile>
 rhash --list-hashes
 sudo parted -l
@@ -39,6 +40,13 @@ colorpicker --one-shot --preview
 exiftool <image>
 Pinta can't send to printer...
 
+# ImageMagick
+convert <people> -paint 9 <people-oil>
+
+## gravity
+-gravity northwest  -> the default
+convert -list gravity
+
 ## Nomacs
 Alt+m  toggle menu
 f      toggles selected panes
@@ -69,7 +77,27 @@ t    toggle
 
 # multimedia
 mediainfo --help |moar
+
+## 16:9 aspect ratio
+854x480
+1280x720 = 720p = "HD Ready"
+
+## mpv
 mpv av://v4l2:/dev/video0
+
+### interactive control
+mouse wheel up/down -> seek forward/backward 10 seconds
+o/O -> show progress
+
+#### playback speed
+BACKSPACE -> reset
+[ and ] -> decrease/increase by 10%
+{ and } -> halve/double
+
+#### seeks
+left/right -> seek 5 seconds forward/backward
+shift left/right -> seek 1 seconds forward/backward
+up/down -> seek 1 minute forward/backward
 
 # networking
 ip l
@@ -152,6 +180,7 @@ sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
 ## file searching
 fd
+find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
 find . -type f | fzy  # for finding something fuzzily fast
 
 ### recursively list symlinks
@@ -168,6 +197,7 @@ as root,  du -sh /boot /etc /home /root /usr
 man hier   #  description of the filesystem hierarchy
 systemctl  #  list running Systemd units
 systemctl --no-pager
+uname -a   #  unix name, includes linux version number
 w          #  list users and load on system
 
 ## monitoring
@@ -183,6 +213,14 @@ termdown -b 10
 # tmux
 resize -s 65 120        # good for half of ViewSonic VX2025wm
 
+## panes
+C-a C-o -> Rotate through the panes
+C-a M-1 -> switch to even-horizontal layout
+C-a M-2 -> switch to even-vertical layout
+C-a M-3 -> switch to main-horizontal layout
+C-a M-4 -> switch to main-vertical layout
+
+## sessions
 tmux a                  # attach
 tmux a -t myname        # attach to session myname
 tmux kill-server; tmux  # good for resetting

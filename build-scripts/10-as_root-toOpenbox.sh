@@ -9,30 +9,20 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 software - android-tools
 # pacman -S android-tools
 
-#=> 0 softwares - documenting
-# Ghostscript
-pacman -S ghostscript
+# #=> 0 softwares - documenting
+# # Ghostscript
+# pacman -S ghostscript
 
-# LibreOffice Fresh
-sudo pacman -S libreoffice-fresh-en-gb
-libreoffice  # first-run of LibreOffice - close it
+# # Pandoc
+# sudo pacman -S pandoc
+# mkdir ~/.pandoc/defaults
 
-# Pandoc
-sudo pacman -S pandoc
-mkdir ~/.pandoc/defaults
-
-# TeX Live
-# ...
-
-# Zathura
-# ...
+# # TeX Live
+# sudo pacman -S texlive-most
 
 #=> 0 softwares - file manage
 # cdrtools
 pacman -S cdrtools
-
-# dragon-drag-and-drop
-# ...
 
 # GVFS
 pacman -S gvfs
@@ -42,10 +32,6 @@ pacman -S gvfs-mtp
 
 # nnn
 pacman -S nnn
-
-# nnn plugins
-[[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
-curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 # PCManFM
 pacman -S pcmanfm

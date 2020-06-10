@@ -100,6 +100,14 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
+# #==> ffmpeg-gl-transition
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/ffmpeg-gl-transition.git
+# cd ffmpeg-gl-transition
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
 # #==> moar
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/moar.git
@@ -109,13 +117,13 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#==> nodejs-ffmpeg-concat
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/nodejs-ffmpeg-concat.git
-cd nodejs-ffmpeg-concat
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #==> nodejs-ffmpeg-concat
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/nodejs-ffmpeg-concat.git
+# cd nodejs-ffmpeg-concat
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #==> pscircle-git
 # cd ~/Arch/AUR
@@ -221,6 +229,17 @@ cd ~
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer
 
-# #=> npm
-# pacman -S npm
+# #=> ffmpeg
+# sudo pacman -S ffmpeg
+
+# #=> npm ffmpeg-concat
+# sudo pacman -S npm
+# mkdir ~/.npm-global
+# npm config set prefix=$HOME/.npm-global
+# npm install npm@latest -g
+# which npm
+# npm install -g ffmpeg-concat
+
+# #=> OpenShot
+# sudo pacman -S openshot
 

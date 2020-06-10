@@ -5,6 +5,22 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+# #=> dragon-drag-and-drop
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/dragon-drag-and-drop.git
+# cd dragon-drag-and-drop
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# #=> LibreOffice Fresh
+# sudo pacman -S libreoffice-fresh-en-gb
+# libreoffice  # first-run of LibreOffice - close it
+
+#=> nnn plugins
+[[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+
 # #=> openbox-themes
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/openbox-themes.git
@@ -29,6 +45,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> qt5-styleplugins
 # cd ~/Arch/AUR
+# sudo rm -r qt5-styleplugins
 # git clone https://aur.archlinux.org/qt5-styleplugins.git
 # cd qt5-styleplugins
 # xdg-open PKGBUILD
@@ -45,9 +62,10 @@ trap read debug  # puts a read request after each executable line
 # #  sed -i s/fusion/cleanlooks/' ~/.config/qt5ct/qt5ct.conf
 # true
 
-#=> sxiv
-sudo pacman -S sxiv
+# #=> sxiv
+# sudo pacman -S sxiv
 
 # #=> Zathura
 # sudo pacman -S zathura-pdf-mupdf
+# ln -fs $ARCHBUILDS/jo/Openbox/zathurarc ~/.config/zathura/zathurarc
 

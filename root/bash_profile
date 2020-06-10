@@ -4,10 +4,8 @@
 # get my  .bashrc  settings working in  Console
 #
 
-[[ -f /root/.bashrc ]] && . /root/.bashrc
-
 export DROPBOX=/mnt/SDSSDA240G/Dropbox
     export ITstack=$DROPBOX/JH/IT_stack
         export ARCHBUILDS=$ITstack/onGitHub/ArchBuilds
-[[ -f $ARCHBUILDS/root/bashrc ]] && . $ARCHBUILDS/root/bashrc
+            [[ -f /root/.bashrc ]] && . /root/.bashrc  # needed for su
 

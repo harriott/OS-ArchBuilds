@@ -3158,6 +3158,39 @@ sudo pacman -Rs nodejs
   :: removing nodejs breaks dependency 'nodejs' required by npm
   :: removing nodejs breaks dependency 'nodejs' required by semver
 sudo pacman -Rs npm
+### installed npm
+npm -g list  got the same list of errors (so they weren't caused by nodejs-ffmpeg-concat)
+# rsnapshot/hourly.14/localhost mistake
+from nnn accidentally began move to Trash of /mnt/WD1001FALS/rsnapshot/hourly.14/localhost
+some files from  home/jo  were trashed, which didn't damage those copies in  hourly.13
+# try ffmpeg-gl-transition
+## try to remove ffmpeg
+sudo pacman -Rs ffmpeg
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: removing ffmpeg breaks dependency 'ffmpeg' required by chromaprint
+  :: removing ffmpeg breaks dependency 'ffmpeg' required by chromium
+  :: removing ffmpeg breaks dependency 'ffmpeg' required by guvcview-common
+  :: removing ffmpeg breaks dependency 'ffmpeg' required by mpv
+  :: removing ffmpeg breaks dependency 'ffmpeg' required by opencv
+  :: removing ffmpeg breaks dependency 'ffmpeg' required by qt5-webengine
+  :: removing ffmpeg breaks dependency 'ffmpeg' required by vlc
+  :: removing ffmpeg breaks dependency 'ffmpeg' required by xine-lib
+## ffmpeg-gl-transition
+JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch/ffmpeg-concat-tmp.md  and I neglected to give my pw,
+  so, in  ~/Arch/AUR/ffmpeg-gl-transition :
+    sudo pacman -U ffmpeg-gl-transition-1:4.2.2-1-x86_64.pkg.tar.xz
+    ...
+    looking for conflicting packages...
+    :: ffmpeg-gl-transition and ffmpeg are in conflict. Remove ffmpeg? [y/N] y
+    Packages (2) ffmpeg-1:4.2.3-4 [removal]  ffmpeg-gl-transition-1:4.2.2-1
+## back to ffmpeg
+sudo pacman -S ffmpeg
+  looking for conflicting packages...
+  :: ffmpeg and ffmpeg-gl-transition are in conflict. Remove ffmpeg-gl-transition? [y/N] y
+  Packages (2) ffmpeg-gl-transition-1:4.2.2-1 [removal]  ffmpeg-1:4.2.3-4
+# dhcpcd.conf.pacnew
+in /etc/: su + root pw  for
+  nvim -O dhcpcd.conf dhcpcd.conf.pacnew   then  diff'd  &  removed the pacnew
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice
