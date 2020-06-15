@@ -3191,6 +3191,7 @@ sudo pacman -S ffmpeg
 # dhcpcd.conf.pacnew
 in /etc/: su + root pw  for
   nvim -O dhcpcd.conf dhcpcd.conf.pacnew   then  diff'd  &  removed the pacnew
+# random shut-down
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

@@ -102,20 +102,30 @@ up/down -> seek 1 minute forward/backward
 # networking
 ip l
 iwctl known-networks list
+latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_10_06_2020.html`
 sudo lshw -c network
+
+## devices
+ip link
+networkctl list
 
 ## email
 echo "hello there" | nmx -s "message sent from neomutt" jharr@ftml.net
+grep -r "Miscov" *
 nmse parlotte date:sat
+thunderbird -addressbook
+
+### URLs unclickable by receiver
+URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
+
+#### email providors
+- orange.fr
+- yahoo!mail
 
 ## firewall-cmd
 sudo firewall-cmd --info-zone=home
 sudo firewall-cmd --info-zone=public
 sudo firewall-cmd --panic-on
-
-## devices
-ip link
-networkctl list
 
 # pass
 pass edit gmail-neomutt
@@ -189,7 +199,11 @@ find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
 ### grepping
 egrep '<someText>|<otherText>'
-rg <someText>         # searches recursively in files
+
+#### ripgrep
+rg -l -ttex '\\input' > rg-tex.txt
+rg -l -ttex verseSettings > rg-tex.txt
+rg <someText>  # searches recursively in files
 rg '<someText>|<otherText>'
 
 # system

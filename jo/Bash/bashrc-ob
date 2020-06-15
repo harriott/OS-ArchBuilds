@@ -58,6 +58,7 @@ export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/Now/Technos/IT;j:/run
 #  t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed
 #  w:$DROPBOX/JH/Then0/Deauram/with
 
+export NNN_COLORS='5723' # good for my tmux in urxvt
 export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
 export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'
@@ -66,7 +67,11 @@ export NNN_LOCKER='saidar -c' # not arriving in my case
 
 # Pandoc my markdown notes
 # ------------------------
-export MD4PDF="$ITstack/onGitHub/md4pdf"
-alias m4p='bash $MD4PDF/GNULinux/m4p.sh'
-alias m4ps='bash $MD4PDF/GNULinux/m4ps.sh'
+for i in {0..1}; do  # setup alternative commands to define the header style
+    setHeadingsSty[$i]="ln -sf $MD4PDF/iih/headings$i.sty ~/texmf/tex/latex/m4p/headings.sty"
+done
+alias m4p="eval ${setHeadingsSty[0]}; bash $MD4PDF/GNULinux/m4p.sh" # a single textnote file
+# recursively compile from many markdowns
+alias m4ps0="eval ${setHeadingsSty[0]}; bash $MD4PDF/GNULinux/m4ps.sh" # for my textnotes
+alias m4ps1="eval ${setHeadingsSty[1]}; bash $MD4PDF/GNULinux/m4ps.sh 0 1" # muted headings
 
