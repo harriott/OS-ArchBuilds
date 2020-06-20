@@ -22,6 +22,6 @@ PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 # find system stuff:
 # ------------------
 fs () {
-	find / -path /home/jo -prune -o -path /mnt -prune -o -path /run/media -prune -o -iname *$1* -print
+	find / -path /home/jo -prune -o -path /mnt -prune -o -path /run/media -prune -o -path /run/user/1000/gvfs -prune -o -iname "*$1*" -print
 }
 

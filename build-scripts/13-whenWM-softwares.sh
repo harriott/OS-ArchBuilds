@@ -108,6 +108,17 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
+# #==> Mapscii
+# cd ~/Arch/AUR
+# sudo rm -r nodejs-mapscii
+# git clone https://aur.archlinux.org/nodejs-mapscii.git
+# cd nodejs-mapscii
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# sudo pacman -Rs nodejs-mapscii
+
 # #==> moar
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/moar.git

@@ -60,11 +60,13 @@ nmse () {
     notmuch search $notmuchsearch
 }
 nmsh () {
-    echo '# vim: set ft=mail tw=0:' > nms.mail
-    echo >> nms.mail
-    nmsh="notmuch show $notmuchsearch"
-    echo -en "\e[92m  $nmsh\n"
-    eval "$nmsh >> nms.mail"
+    echo '# vim: set ft=mail tw=0:' > nms
+    echo >> nms
+    echo -en "\e[92m  opening last nmse in gvim -\n"
+    notmuch show $notmuchsearch >> nms
+    sed -i 's#message}#message}\n#' nms  # adds space after each message
+    tac nms | sed '/Date: /{h;d;};/message{/G' | tac > nms.mail  # moves date to start of message
+    rm nms
     gvim -c "silent! /message{ id:" nms.mail  # ready to search for each message
 }
 

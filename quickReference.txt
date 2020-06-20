@@ -82,6 +82,23 @@ mediainfo --help |moar
 854x480
 1280x720 = 720p = "HD Ready"
 
+## OpenShot
+crossfades are created in overlaps
+
+### Export
+Ctrl+e
+
+### Nikon CoolPix P7700 VGA 640x480
+Target > AVI (mpeg4)
+Video Profile > VGA Widescreen NTSC (854x480)
+
+### Preferences
+Ctrl+Shift+p
+
+#### Default Profile
+defaults to HD 720p 30 fps
+need to Restart OpenShot when changed
+
 ## mpv
 mpv av://v4l2:/dev/video0
 
@@ -111,7 +128,8 @@ networkctl list
 
 ## email
 echo "hello there" | nmx -s "message sent from neomutt" jharr@ftml.net
-grep -r "Miscov" *
+grep -r "Georita" *
+nmse '"Georita Harriott"' date:march..
 nmse parlotte date:sat
 thunderbird -addressbook
 
@@ -151,6 +169,7 @@ alsamixer
 sudo alsactl store
 
 # storage
+7z x <pw'd_zip>
 b <command>  # batman
 cdrecord dev=/dev/sr0 -checkdrive
 
@@ -174,8 +193,11 @@ jump top
 
 ## folder sizes
 br --sizes
-dust
 ncdu
+
+### du
+du -h --max-depth=1  # for a quick list of folder sizes
+dust
 
 ## non-optical
 blkid -o list
@@ -189,6 +211,7 @@ trash-empty
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
 ## file searching
+as root: find / -xdev -iname "*fmtutil.cnf*"
 fd
 find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
 find . -type f | fzy  # for finding something fuzzily fast

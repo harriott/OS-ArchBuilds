@@ -3192,6 +3192,12 @@ sudo pacman -S ffmpeg
 in /etc/: su + root pw  for
   nvim -O dhcpcd.conf dhcpcd.conf.pacnew   then  diff'd  &  removed the pacnew
 # random shut-down
+# /etc/texmf/web2c/fmtutil.cnf.pacnew
+cd /etc/texmf/web2c  for  su + root pw  for
+  nvim -O fmtutil.cnf fmtutil.cnf.pacnew   diff'd  lead me to:
+    mv /etc/texmf/web2c/fmtutil.cnf.pacnew $MACHINE/etc/defaults/k6k-fmtutil.cnf.pacnew
+      chown jo:jo $MACHINE/etc/defaults/k6k-fmtutil.cnf.pacnew
+    cp /etc/texmf/web2c/fmtutil.cnf $MACHINE/etc/defaults/k6j-fmtutil.cnf
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice
