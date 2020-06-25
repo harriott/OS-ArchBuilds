@@ -1,9 +1,10 @@
 #!/usr/bin/perl
 
-# -------------------------
-# sorts nmsh output by date
-# perl nmsh.pl nms.mail
-# -------------------------
+# ----------------------------------------------------
+# sorts nmsh output by date - incredibly useful
+#
+# I call this from my $ARCHBUILDS/jo/Bash/bashrc-email
+# ----------------------------------------------------
 
 use strict;  use warnings;
 use Tie::File;
@@ -39,9 +40,12 @@ my @EALUTSorted = sort @EALunixtime;
 # ----------------------------------
 my $EAL;
 my $EALUTS;
+my @emailAsLines;
 foreach $EALUTS (@EALUTSorted) {
   $EAL = substr($EALUTS,10);
-  push(@emailsSorted, $EAL);
+  # push(@emailsSorted, $EAL);
+  @emailAsLines = split /◙/, $EAL;
+  push(@emailsSorted, @emailAsLines);
 }
 
 @nmsh = @emailsSorted;

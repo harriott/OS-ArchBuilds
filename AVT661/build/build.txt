@@ -188,19 +188,19 @@ cd /mnt/WD1001FALS   for   sudo clamdscan --multiscan --fdpass .
 sudo pacman -Syu  for 13 Packages
 sudo pacman -S ncdu
 ## 190404 Backup
-  mkdir AcerVeritonT661-rsyncBackup
-  Rebooted to  archlinux-2019.04.01-x86_64.iso  CD
-  cd /
-  lsblk -f   indicated:
-  ls mnt
-  mount dev/sda2 mnt
-  ls mnt/home
-  mount dev/sda3 mnt/home
-  ls mnt/mnt/9QG2FFEE
-  mount dev/sdc1 mnt/mnt/9QG2FFEE
-  cd mnt/home/jo/AcerVeritonT661/build
-  bash rsyncBackup.sh
-  reboot  then CD wouldn't eject on press, but system booted into  SDSSDA240G
+mkdir AcerVeritonT661-rsyncBackup
+Rebooted to  archlinux-2019.04.01-x86_64.iso  CD
+cd /
+lsblk -f   indicated:
+ls mnt
+mount dev/sda2 mnt
+ls mnt/home
+mount dev/sda3 mnt/home
+ls mnt/mnt/9QG2FFEE
+mount dev/sdc1 mnt/mnt/9QG2FFEE
+cd mnt/home/jo/AcerVeritonT661/build
+bash rsyncBackup.sh
+reboot  then CD wouldn't eject on press, but system booted into  SDSSDA240G
 # to 190525 Backup
 (redacted for some of my file locations)
 graphics hw, Xorg, Openbox, auracle-git, perl-linux-desktopfiles, obmenu-generator, rxvt-unicode, xterm, 00-keyboard.conf, disable screen blanking, python-html2text, Pacmatic, PCManFM, mimeo, ntfs-3g, udisks2, bashrc-root, bash_profile, no-wait.conf, pkgfile, trash-cli, autojump
@@ -3198,6 +3198,8 @@ cd /etc/texmf/web2c  for  su + root pw  for
     mv /etc/texmf/web2c/fmtutil.cnf.pacnew $MACHINE/etc/defaults/k6k-fmtutil.cnf.pacnew
       chown jo:jo $MACHINE/etc/defaults/k6k-fmtutil.cnf.pacnew
     cp /etc/texmf/web2c/fmtutil.cnf $MACHINE/etc/defaults/k6j-fmtutil.cnf
+# texlive-langchinese
+while running  md4pdf.sh  I got a new complaint: "File `ctexhook.sty' not found."  So
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

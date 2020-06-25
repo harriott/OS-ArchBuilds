@@ -34,6 +34,10 @@ fc-list
 # get at root on tty2
 Ctrl+Alt+F2 > root + pw
 
+# gVim
+gvim --help | mo
+gvim -geom 200  # height parameter is omitted as it's having no effect
+
 # imagey
 72 dpi = 18.3 dots per mm
 colorpicker --one-shot --preview
@@ -126,6 +130,10 @@ sudo lshw -c network
 ip link
 networkctl list
 
+## Dropbox conflicted copies
+find -name "* conflicted copy *"
+find -name "*(Copie en conflit de *"
+
 ## email
 echo "hello there" | nmx -s "message sent from neomutt" jharr@ftml.net
 grep -r "Georita" *
@@ -153,6 +161,12 @@ pass ls
 # PDFs
 pdfimages -h
 pdfinfo <a_pdf_file>  # A5 = 420x595. See GSview for more sizes.
+
+# Plasma
+Ctrl+Alt+Shift+Del -> exit KDE without saving
+Ctrl+Alt+Del       -> logout screen
+Ctrl+Alt+T         -> Konsole
+Win+PageUp/Down    -> maximises or returns to normal a window
 
 # processes
 lsof -i
@@ -190,6 +204,10 @@ gvim -o `f`  # calling upon fzf
 ### jump
 j <fuzzysearch> [<fuzzysear> ...]
 jump top
+
+## Dolphin
+F4        -> Konsole  attached below
+Shift+F4  -> Konsole  in a new window
 
 ## folder sizes
 br --sizes
@@ -248,7 +266,7 @@ termdown --help | moar
 termdown -b 10
 
 # tmux
-resize -s 65 120        # good for half of ViewSonic VX2025wm
+resize -s 65 120  # good for half of ViewSonic VX2025wm
 
 ## panes
 C-a C-o -> Rotate through the panes

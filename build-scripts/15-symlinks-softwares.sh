@@ -22,7 +22,7 @@ ln -s $ITstack/onGitHub/pandoc-templates ~/.pandoc/templates
 #=> for jo's softwares - latex
 
 rm -r ~/texmf/tex/latex/jo
-ln -s $ITstack/forLaTeX ~/texmf/tex/latex/jo
+ln -s $ITstack/CrossPlatform/forLaTeX ~/texmf/tex/latex/jo
 
 mkdir ~/texmf/tex/latex/m4p
 

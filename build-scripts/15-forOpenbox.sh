@@ -17,22 +17,9 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S libreoffice-fresh-en-gb
 # libreoffice  # first-run of LibreOffice - close it
 
-#=> nnn plugins
-[[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
-curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
-
-# #=> openbox-themes
-# cd ~/Arch/AUR
-# git clone https://aur.archlinux.org/openbox-themes.git
-# cd openbox-themes
-# xdg-open PKGBUILD
-# makepkg -sic
-# # Openbox Loma theme tweak for active window
-# mkdir ~/.local/share/themes
-# cp -r /usr/share/themes/Loma ~/.local/share/themes/LomaJH
-# sed -i '/window.active.border.color:/ s/#000000/#FF8000/' ~/.local/share/themes/LomaJH/openbox-3/themerc
-# sed -i '/^border.width:/ s/1/2/' ~/.local/share/themes/LomaJH/openbox-3/themerc
-# cd ~
+# #=> nnn plugins
+# [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
+# curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
 # #=> qimgv-git
 # cd ~/Arch/AUR

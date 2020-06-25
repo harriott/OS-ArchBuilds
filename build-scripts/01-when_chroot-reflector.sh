@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
+# vim: fdc=1 fdl=1 fdm=expr ft=shbuild:
 
 # to be sourced from a parent build script
 

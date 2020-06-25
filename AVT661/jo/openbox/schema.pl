@@ -2,6 +2,9 @@
 
 # obmenu-generator - schema file
 
+# AUR package reports:
+# "The schema file has been installed as: /etc/xdg/obmenu-generator/schema.pl"
+
 =for comment
 
     item:      add an item inside the menu               {item => ["command", "label", "icon"]},
@@ -32,7 +35,7 @@ our $SCHEMA = [
     #          COMMAND                 LABEL              ICON
     {item => ['xdg-open .',       'File Manager',         'system-file-manager']},
     {item => ['xterm',            'xterm',                'utilities-terminal']},
-    {item => ['urxvt',            'rxvt-unicode',         'terminal']},
+    {item => ['urxvt',            'rxvt-unicode',         'utilities-terminal']},
   # {item => ['xdg-open http://', 'Web Browser',          'web-browser']},
     {item => ['xdg-open http://', 'chromium',             'web-browser']},
   # {item => ['thunderbird',      'Mail',                 'web-browser']},

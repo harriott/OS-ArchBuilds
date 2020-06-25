@@ -317,6 +317,12 @@ reboot
 ## frequently laggy and using all of CPU...
 ## Xresources
 ~/.Xresources  ain't there!
+## reboot into dj KDE
+Réseaux > Moto G (4) 1367 > pw  wasn't found, but logging in on TTY2 as jo got Wifi going in dj
+Dropbox updated itself
+## as jo, Updates
+this question was repeated 16 times:
+  :: Importer la clé PGP 3B94A80E50A477C7, « Jan Alexander Steffens (heftig) <heftig@archlinux.org> » ? [O/n]
 # physical configuration
 HD103SJ
 Logitech Wireless Mouse M525

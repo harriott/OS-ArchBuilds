@@ -21,3 +21,8 @@ trap read debug  # puts a read request after each executable line
 
 # now you need to run your  clones.sh
 
+# #=> time correction
+xdg-open http://time.is/ # to see how much stray
+sudo ntpd -qg
+sudo hwclock --systohc
+

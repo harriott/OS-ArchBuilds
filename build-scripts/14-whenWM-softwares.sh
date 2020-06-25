@@ -72,15 +72,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-# #==> Dropbox
-# # only once there's a browser, and preferably after LastPass
-# cd ~/Arch/AUR
-# sudo rm -r dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#==> Dropbox
+# only once there's a browser, and preferably after LastPass
+cd ~/Arch/AUR
+sudo rm -r dropbox
+git clone https://aur.archlinux.org/dropbox.git
+cd dropbox
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #==> Dust
 # # (after Rust Toolchain)
@@ -242,6 +242,9 @@ trap read debug  # puts a read request after each executable line
 
 # #=> ffmpeg
 # sudo pacman -S ffmpeg
+
+# #=> Perl modules for JSON
+# sudo pacman -S perl-json perl-json-parse perl-json-xs
 
 # #=> npm ffmpeg-concat
 # sudo pacman -S npm

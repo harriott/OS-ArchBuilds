@@ -92,17 +92,25 @@ mount /dev/sdc1 /mnt   cd /mnt/ArchBuilds/build-root-standalone  for  1-as_chroo
 XA2 tethered   ping -c 3 8.8.8.8  shows it's connected
 #### check for dhcpcd
 pacman -Qs dhcpcd  shows it ain't there...
+### mount K8GBDT100
+lsblk -l  indicated:  mount /dev/sdb1 /bs   cd /bs/ArchBuilds/build-scripts
+### (having accidentally set it on) Numlock off in getty
+bash 03-as_root-Numlock_in_getty.sh
+### root Bash configuration
+bash 02-configure_root_bashrc.sh
+### get online
+XA2 tethered   ping -c 3 8.8.8.8  shows it's connected
+### updates
+bash 03-as_root-updates.sh
+  this question was repeated 5 times:
+    :: Importer la clé PGP 3B94A80E50A477C7, « Jan Alexander Steffens (heftig) <heftig@archlinux.org> » ? [O/n]
+reboot for new kernel
+### prepare for jo
+lsblk -l  indicated:  mount /dev/sdb1 /bs   cd /bs/ArchBuilds/build-scripts
+bash 04-as_root-prepare_for_jo.sh
+# mount rest of WD30EZRZ
+bash 04-as_root-fstab.sh
 ### waiting
-#### (having accidentally set it on) Numlock off in getty
-build-root-standalone/2-as_root-Numlock.sh
-#### root Bash configuration
-bash 1-symlinks_for_root_bashrc.sh
-#### updates
-build-root-standalone/3-when_jo-0-updates.sh
-#### build-root-standalone/4-when_jo-0-before_desktop.sh
-#### 2-as_root-prepare_for_jo.sh
-mount /dev/sdb1 /mnt   cd /mnt/ArchBuilds/build-root-standalone   for
-  bash build-root-standalone/2-as_root-prepare_for_jo.sh
 # GIGABYTE UEFI DualBIOS
 easily entered by Del fairly quickly at start
 Logitech MX 610 Laser Cordless Mouse & Perixx PERIBOARD-407W keyboard function normally

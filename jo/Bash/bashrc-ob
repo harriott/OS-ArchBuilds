@@ -25,6 +25,17 @@ alias m='cmus'
 # update library
 alias uc='bash $MACHINE/jo/Music/cmusUpdateLibrary.sh'
 
+# convert a FM json
+# --------------
+cfmj()
+{
+    if [ -s $1 ]; then
+        bn=${1%.json}
+        cp $1 $bn.md
+        perl $ITstack/onGitHub/misc/tools/FM-json-md.pl $bn.md
+    fi
+}
+
 # nnn
 # ---
 
@@ -75,7 +86,7 @@ m4p() # a single TextNote file
     eval ${setHeadingsSty[0]}
     export headingtoodeep=######
     export m4pfont=0
-    bash $MD4PDF/GNULinux/m4p.sh
+    bash $MD4PDF/GNULinux/m4p.sh $1 $2
 }
 # recursively compile from many markdowns
 m4ps0() # my TextNotes

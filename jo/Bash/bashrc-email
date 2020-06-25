@@ -69,6 +69,6 @@ nmsh () {
     rm nms
     sed -i '//d' nms.mail  # finally remove unneeded lines
     perl $email/nmsh-sort.pl nms.mail
-    # gvim nms.mail
+    gvim nms.mail
 }
 

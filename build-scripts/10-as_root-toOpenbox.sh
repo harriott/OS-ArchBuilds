@@ -18,7 +18,7 @@ trap read debug  # puts a read request after each executable line
 # mkdir ~/.pandoc/defaults
 
 # # TeX Live
-# sudo pacman -S texlive-most
+# sudo pacman -S texlive-most texlive-langchinese
 
 #=> 0 softwares - file manage
 # cdrtools
@@ -118,9 +118,6 @@ pacman -S gsimplecal
 # Openbox & tint2
 pacman -S openbox tint2
 # need to  nvim ~/.config/tint2/tint2rc $ARCHBUILDS/jo/tint2rc  and pull over my tweaks
-
-# obmenu-generator
-# ...
 
 # openbox/importScreenshot.sh
 # ...

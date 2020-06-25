@@ -6,6 +6,8 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+ARCHBUILDS=/bs/ArchBuilds
+
 # #=> 0 internet check
 # systemctl status NetworkManager.service
 # true
@@ -24,133 +26,139 @@ trap read debug  # puts a read request after each executable line
 # mkdir /etc/systemd/system/dhcpcd@.service.d
 # cp $ARCHBUILDS/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
 
-#=> 1 have boot messages stay on tty1
-cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
+# #=> 1 have boot messages stay on tty1
+# cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
 
-#=> 1 softwares - info
-# htop
-pacman -S htop
+# #=> 1 linux headers
+# # for *8192eu*
+# pacman -S linux-headers
+# # - don't forget to  reboot !
+# true
 
-# iotop
-pacman -S iotop
+# #=> 1 softwares - appmenu-gtk-module 0
+# # for *8192eu*
+# pacman -S appmenu-gtk-module
+# true
 
-# lshw
-pacman -S lshw
+# #=> 1 softwares - appmenu-gtk-module 1
+# pacman -Rs appmenu-gtk-module
+# true
 
-# lsof
-pacman -S lsof
+# #=> 1 softwares - dkms
+# # for *8192eu*
+# pacman -S dkms
+# # - don't forget to  reboot !
+# true
 
-# man-db
-pacman -S man-db
+# #=> 1 softwares - info
+# # htop
+# pacman -S htop
 
-# man-pages
-pacman -S man-pages
+# # iotop
+# pacman -S iotop
 
-# Neofetch
-pacman -S neofetch
+# # lshw
+# pacman -S lshw
 
-# sysstat
-pacman -S sysstat
+# # lsof
+# pacman -S lsof
 
-#=> 1 softwares - networking
-# iNet Wireless Daemon
-pacman -S iwd
-systemctl enable iwd.service --now
-systemctl status iwd.service
-true
+# # man-db
+# pacman -S man-db
 
-# Wget
-pacman -S wget
+# # man-pages
+# pacman -S man-pages
 
-#=> 1 softwares - file manage
-# bat
-pacman -S bat
+# # Neofetch
+# pacman -S neofetch
 
-# broot
-pacman -S broot
+# # sysstat
+# pacman -S sysstat
 
-# exa
-pacman -S exa
+# #=> 1 softwares - networking
+# # iNet Wireless Daemon
+# pacman -S iwd
+# systemctl enable iwd.service --now
+# systemctl status iwd.service
+# true
 
-# fd
-pacman -S fd
+# # Wget
+# pacman -S wget
 
-# fzf
-pacman -S fzf
+# #=> 1 softwares - file manage
+# # bat
+# pacman -S bat
 
-# mlocate
-pacman -S mlocate
-updatedb
+# # broot
+# pacman -S broot
 
-# ncdu
-pacman -S ncdu
+# # exa
+# pacman -S exa
 
-# p7zip
-pacman -S p7zip
+# # fd
+# pacman -S fd
 
-# rhash
-pacman -S rhash
+# # fzf
+# pacman -S fzf
 
-# ripgrep
-pacman -S ripgrep
+# # mlocate
+# pacman -S mlocate
+# updatedb
 
-# rsync
-pacman -S rsync
+# # ncdu
+# pacman -S ncdu
 
-# trash-cli
-pacman -S trash-cli
+# # p7zip
+# pacman -S p7zip
 
-# tree
-pacman -S tree
+# # rhash
+# pacman -S rhash
 
-#=> 1 softwares - system
-# appmenu-gtk-module - for *8192eu*
-pacman -S appmenu-gtk-module
-pacman -Rs appmenu-gtk-module
-true
+# # ripgrep
+# pacman -S ripgrep
 
-# Bashtop
-sudo pacman -S bashtop
+# # rsync
+# pacman -S rsync
 
-# dkms - for *8192eu*
-pacman -S dkms
-# - don't forget to  reboot !
-true
+# # trash-cli
+# pacman -S trash-cli
 
-# fcron
-pacman -S fcron
-systemctl enable fcron.service
+# # tree
+# pacman -S tree
 
-# glances
-pacman -S glances
+# #=> 1 softwares - system
+# # Bashtop
+# sudo pacman -S bashtop
 
-# linux headers - for *8192eu*
-pacman -S linux-headers
-# - don't forget to  reboot !
-true
+# # fcron
+# pacman -S fcron
+# systemctl enable fcron.service
 
-# meson, for auracle later
-pacman -S meson
+# # glances
+# pacman -S glances
 
-# NTFS-3G
-pacman -S ntfs-3g
+# # meson, for auracle later
+# pacman -S meson
 
-# pacman-contrib, for paccache
-pacman -S pacman-contrib
+# # NTFS-3G
+# pacman -S ntfs-3g
 
-# pacutils
-pacman -S pacutils
+# # pacman-contrib, for paccache
+# pacman -S pacman-contrib
 
-# pkgfile
-pacman -S pkgfile
-pkgfile -u
-systemctl enable pkgfile-update.timer
-systemctl list-timers
+# # pacutils
+# pacman -S pacutils
 
-# pkgstats
-pacman -S pkgstats
+# # pkgfile - for finding possible packages
+# pacman -S pkgfile
+# pkgfile -u
+# systemctl enable pkgfile-update.timer --now
+# systemctl list-timers
 
-# #=> 1 swappinness
+# # pkgstats
+# pacman -S pkgstats
+
+# #=> 1 swappinness to 10
 # # check that the default is 60
 # cat /sys/fs/cgroup/memory/memory.swappiness
 # # show that  /etc/sysctl.d  is empty
@@ -159,17 +167,17 @@ pacman -S pkgstats
 # echo "vm.swappiness=10" > /etc/sysctl.d/99-sysctl.conf
 # ls /etc/sysctl.d
 
-# #=> 1 Users
-# # activate wheel group
-# sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
-# grep wheel /etc/sudoers
-# # check that  /etc/sudoers  parses OK
-# visudo -c -f /etc/sudoers
+#=> 1 Users
+# activate wheel group
+sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
+grep wheel /etc/sudoers
+# check that  /etc/sudoers  parses OK
+visudo -c -f /etc/sudoers
 
-# # User jo, creating the home directory and adding to group wheel
-# useradd -m -G wheel jo
-# until passwd jo; do echo "try again"; done
-# cat /etc/passwd
+# User jo, creating the home directory and adding to group wheel
+useradd -m -G wheel jo
+until passwd jo; do echo "try again"; done
+cat /etc/passwd
 
 #=> 2 end
 # you're ready to reboot and login to jo

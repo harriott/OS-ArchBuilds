@@ -15,9 +15,9 @@ trap read debug  # puts a read request after each executable line
 
 #=> Updates
 sudo pacman -Syu
-# sudo pacman -Syyuu
 # reboot if kernel updated !
 sudo find /etc -type f -name "*pacnew"
+sudo paccache -r  # reduce the pacman cache
 auracle sync
 true
 
