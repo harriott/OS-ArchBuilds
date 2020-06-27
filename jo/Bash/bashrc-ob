@@ -9,7 +9,7 @@
 # Joseph Harriott
 
 alias gpr='gprename &'
-alias rpd='bash $ITstack/onGitHub/rsync-portabledrives/rsync.sh'
+alias rpd='bash $onGH/rsync-portabledrives/rsync.sh'
 alias psci='pscShots=/home/jo/Arch/AUR/pscircle-git-shots;pscLatest="$pscShots/$(date +%Y%m%d%H%M%S).png";pscircle --output=$pscLatest;sxiv -fn $(ls $pscShots | wc -l) $pscShots &'
 
 # PCManFM
@@ -32,7 +32,7 @@ cfmj()
     if [ -s $1 ]; then
         bn=${1%.json}
         cp $1 $bn.md
-        perl $ITstack/onGitHub/misc/tools/FM-json-md.pl $bn.md
+        perl $onGH/misc/tools/FM-json-md.pl $bn.md
     fi
 }
 

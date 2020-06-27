@@ -5,6 +5,8 @@
 #
 
 export DROPBOX=/mnt/SDSSDA240G/Dropbox
+
+[[ -f 
     export ITstack=$DROPBOX/JH/IT_stack
         export ARCHBUILDS=$ITstack/onGitHub/ArchBuilds
 

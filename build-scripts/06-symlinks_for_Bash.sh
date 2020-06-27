@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdm=expr fdc=1 fdl=1 ft=shbuild:
 
-# can be run alone, but I source this from  .../<user>/build.sh
+ARCHBUILDS=/bs/ArchBuilds
 
 # sort these lists by last use of "~":  :sort /,*\~/
 

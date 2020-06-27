@@ -17,7 +17,7 @@ ln -sf $MD4PDF/defaults.yaml                     ~/.pandoc/defaults/md4pdf.yaml
 ln -sf $MD4PDF/defaults-toc.yaml                 ~/.pandoc/defaults/md4pdfToC.yaml
 
 rm -r ~/.pandoc/templates
-ln -s $ITstack/onGitHub/pandoc-templates ~/.pandoc/templates
+ln -s $onGH/pandoc-templates ~/.pandoc/templates
 
 #=> for jo's softwares - latex
 

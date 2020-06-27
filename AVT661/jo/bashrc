@@ -7,8 +7,8 @@
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
-alias rs0='bash $ITstack/onGitHub/rsync-portabledrives/rync-Dr0.sh'
-alias rs1='bash $ITstack/onGitHub/rsync-portabledrives/rync-Dr1.sh'
+alias rs0='bash $onGH/rsync-portabledrives/rync-Dr0.sh'
+alias rs1='bash $onGH/rsync-portabledrives/rync-Dr1.sh'
 
 export BFG=/mnt/9QG2FFEE/Share-IT-Copied/CrossPlatform/Encoding/Git/bfg-1.13.0.jar
 

@@ -184,7 +184,6 @@ sudo alsactl store
 
 # storage
 7z x <pw'd_zip>
-b <command>  # batman
 cdrecord dev=/dev/sr0 -checkdrive
 
 ## directory structures
@@ -249,11 +248,13 @@ rg '<someText>|<otherText>'
 
 # system
 as root,  du -sh /boot /etc /home /root /usr
-man hier   #  description of the filesystem hierarchy
-systemctl  #  list running Systemd units
+b <command>  # batman
+man hier     # description of the filesystem hierarchy
+systemctl    # list running Systemd units
 systemctl --no-pager
-uname -a   #  unix name, includes linux version number
-w          #  list users and load on system
+uname -a     # unix name, includes linux version number
+w            # list users and load on system
+xset q       # shows a variety of IO settings
 
 ## monitoring
 bashtop

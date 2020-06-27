@@ -27,8 +27,9 @@ set tmpdir = ~/.cache/mutt/tmp  # as a precaution agains power cuts
 auto_view text/html  # automatically show html (mailcap uses w3m)
 auto_view application/pgp-encrypted
 alternative_order text/plain text/enriched text/html
-bind index,pager g noop
-bind index \Cf noop
+bind index,pager g noop  # releasing from <group-reply> because I use g in my account muttrc's
+bind index \Cf noop  # disable <forget-passphrase>
+# G "retrieve mail from POP server" doesn't seem to need clearing
 
 set menu_scroll # smoother movement
 unset confirmappend # don't ask of confirmation when moving emails
@@ -43,6 +44,7 @@ unset confirmappend # don't ask of confirmation when moving emails
 #  N ==> toggle New mark
 #  T -> tag-pattern ==> tag messages matching a pattern
 #   T > .* ==> tags all in a folder
+#   T > ~N ==> tags all marked as new in a folder
 #  U ==> undo deletion
 #  [ -> <half-up>
 #  ] -> <half-down>

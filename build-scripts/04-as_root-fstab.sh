@@ -1,7 +1,10 @@
 #!/bin/bash
 # vim: fdm=expr fdc=1 ft=shbuild:
 
-# to be sourced from a parent build script
+set -v  # prints each statement here, including comments
+trap read debug  # puts a read request after each executable line
+
+ARCHBUILDS=/bs/ArchBuilds
 
 # #=> fstab for HD103SJ
 # # add HD103SJ to fstab
@@ -13,9 +16,9 @@
 
 #=> mount rest of WD30EZRZ
 # lsblk -f  indicated
-mkfs.ext4 -L WD30EZRZ-1 /dev/sda5
+e2label /dev/sda5 WD30EZRZ-1
 lsblk -rno LABEL /dev/sda5  # check
-mkfs.ext4 -L WD30EZRZ-2 /dev/sda6
+e2label /dev/sda6 WD30EZRZ-2
 lsblk -rno LABEL /dev/sda6  # check
 blkid  # confirmation
 mkdir /mnt/WD30EZRZ-1

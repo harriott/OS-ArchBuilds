@@ -7,6 +7,9 @@
 # pacman -S kde-applications plasma
 # # phonon-qt5
 
+# # sshfs (for KDE Connect)
+# pacman -S sshfs
+
 # #=> KDE 1 Partition Manager
 # # (it's not in Discover...)
 # pacman -S partitionmanager

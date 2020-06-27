@@ -108,8 +108,10 @@ reboot for new kernel
 ### prepare for jo
 lsblk -l  indicated:  mount /dev/sdb1 /bs   cd /bs/ArchBuilds/build-scripts
 bash 04-as_root-prepare_for_jo.sh
-# mount rest of WD30EZRZ
+### mount rest of WD30EZRZ
 bash 04-as_root-fstab.sh
+### to X
+bash 05-as_root-when_jo-to_X.sh
 ### waiting
 # GIGABYTE UEFI DualBIOS
 easily entered by Del fairly quickly at start
