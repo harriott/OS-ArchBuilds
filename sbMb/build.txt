@@ -112,6 +112,13 @@ bash 04-as_root-prepare_for_jo.sh
 bash 04-as_root-fstab.sh
 ### to X
 bash 05-as_root-when_jo-to_X.sh
+## booted to jo
+### mount K8GBDT100
+sudo mount -t vfat -o uid=1000,gid=1000 /dev/sdb1 /bs  # writeable as jo
+stat -c '%n %a %G %U' /bs/*
+cd /bs/ArchBuilds/build-scripts
+
+bash 
 ### waiting
 # GIGABYTE UEFI DualBIOS
 easily entered by Del fairly quickly at start

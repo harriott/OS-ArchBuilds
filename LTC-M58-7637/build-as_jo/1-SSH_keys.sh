@@ -17,6 +17,6 @@ trap read debug  # puts a read request after each executable line
 # cp $( dirname "${BASH_SOURCE[0]}" )/id_rsa-deauram ~/.ssh/id_rsa
 # cp $( dirname "${BASH_SOURCE[0]}" )/id_rsa-deauram.pub ~/.ssh/id_rsa.pub
 
-# ssh/id_rsa permission
+# # ssh/id_rsa permission
 # chmod 600 ~/.ssh/id_rsa
 

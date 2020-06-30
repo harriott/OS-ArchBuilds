@@ -185,6 +185,7 @@ sudo alsactl store
 # storage
 7z x <pw'd_zip>
 cdrecord dev=/dev/sr0 -checkdrive
+git version
 
 ## directory structures
 br                    # broot
@@ -249,6 +250,7 @@ rg '<someText>|<otherText>'
 # system
 as root,  du -sh /boot /etc /home /root /usr
 b <command>  # batman
+id jo        # show uid, gid, and groups for jo
 man hier     # description of the filesystem hierarchy
 systemctl    # list running Systemd units
 systemctl --no-pager

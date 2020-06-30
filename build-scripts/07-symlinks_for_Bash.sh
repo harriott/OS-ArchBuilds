@@ -1,7 +1,9 @@
 #!/bin/bash
 # vim: fdm=expr fdc=1 fdl=1 ft=shbuild:
 
-ARCHBUILDS=/bs/ArchBuilds
+ARCHBUILDS=~/Arch/ArchBuilds
+    export machineName=sbMb
+        export MACHINE=$ARCHBUILDS/$machineName
 
 # sort these lists by last use of "~":  :sort /,*\~/
 

@@ -1,13 +1,10 @@
 #!/bin/bash
 # vim: fdm=expr fdc=1 ft=shbuild:
 
-# bash build.sh
-
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> make AUR directory
-mkdir ~/Arch
 mkdir ~/Arch/AUR
 
 #=> rsnapshot conf, for first run

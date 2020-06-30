@@ -6,7 +6,7 @@
 
 export DROPBOX=/mnt/SDSSDA240G/Dropbox
     export ITstack=$DROPBOX/JH/IT_stack
-        export ARCHBUILDS=$ITstack/onGitHub/ArchBuilds
+        export ARCHBUILDS=$onGH/ArchBuilds
 
 [[ -f /root/.bashrc ]] && . /root/.bashrc  # needed for su
 
