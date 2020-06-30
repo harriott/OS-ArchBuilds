@@ -2,8 +2,7 @@
 # vim: fdm=expr fdc=1 fdl=1 ft=shbuild:
 
 ARCHBUILDS=~/Arch/ArchBuilds
-    export machineName=sbMb
-        export MACHINE=$ARCHBUILDS/$machineName
+    MACHINE=$ARCHBUILDS/sbMb
 
 # sort these lists by last use of "~":  :sort /,*\~/
 
