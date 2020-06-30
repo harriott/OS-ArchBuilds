@@ -9,10 +9,14 @@
 ps aux | grep $USER | grep -v grep | grep "/usr/lib/Xorg" >& /dev/null
 EXITSTATUS=$?
 if [ $EXITSTATUS -eq 1 ]; then
-    flashline='echo -e "\\n\\e[5;30;47m-----------------------------------------------------\\e[0m"'
+    echo -e "\\n\\e[5;30;47m---startx--------------------------------------------\\e[0m"
+    echo -e "\\n\\e[5;30;47m-----------startx------------------------------------\\e[0m"
+    echo -e "\\n\\e[5;30;47m-------------------startx----------------------------\\e[0m"
+    echo -e "\\n\\e[5;30;47m---------------------------startx--------------------\\e[0m"
+    echo -e "\\n\\e[5;30;47m-----------------------------------startx------------\\e[0m"
+    echo -e "\\n\\e[5;30;47m-------------------------------------------startx----\\e[0m"
     for x in {0..3}; do eval "$flashline"; done
-    if (read -rsn1 -t8 -p"Going to startx in 8 seconds, press any key to abort: "); then
-        for x in {0..3}; do eval "$flashline"; done
+    if (read -rsn1 -t8 -p"\nGoing to startx in 8 seconds, press any key to abort: "); then
         echo -e "\nOkay, \e[1mstartx\e[0m yourself when ready..."
     else
         [[ -z $DISPLAY ]] && startx
