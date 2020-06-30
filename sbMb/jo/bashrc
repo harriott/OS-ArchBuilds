@@ -11,14 +11,14 @@ alias rs0='bash $onGH/rsync-portabledrives/rync-Dr0.sh'
 alias rs1='bash $onGH/rsync-portabledrives/rync-Dr1.sh'
 
 brcConsole () {
-    # 1 useful everywhere
+    # bashrc 1 - useful everywhere
     source $ARCHBUILDS/Bash/bashrc-generic
-    # 2 useful also in Console
+    # bashrc 2 - useful also in Console
     source $ARCHBUILDS/jo/Bash/bashrc-console
 }
 if [[ $ARCHBUILDS ]]; then
     brcConsole
-    # 3 useful only for my personal account
+    # bashrc 3 - useful only for my personal account
     source $ARCHBUILDS/jo/Bash/bashrc-email
     source $ARCHBUILDS/jo/Bash/bashrc-images
     source $ARCHBUILDS/jo/Bash/bashrc-ob
@@ -26,27 +26,4 @@ else
     ARCHBUILDS=~/Arch/ArchBuilds
     [[ -d $ARCHBUILDS ]] && brcConsole
 fi
-
-# NETGEAR WG111v2
-doup () {
-  sudo ip link set wlwg111v2 down
-  sudo ip link set wlwg111v2 up
-}
-alias d='doup'
-alias i='iwctl station wlwg111v2 get-networks'
-
-
-# added by scripts
-# ----------------
-
-# virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
-
-# auto-added by $ cpan
-PATH="/home/jo/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/jo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/jo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/jo/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/jo/perl5"; export PERL_MM_OPT;
 
