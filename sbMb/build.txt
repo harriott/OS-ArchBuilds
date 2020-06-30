@@ -116,9 +116,10 @@ bash 05-as_root-when_jo-to_X.sh
 ### mount K8GBDT100
 sudo mount -t vfat -o uid=1000,gid=1000 /dev/sdb1 /bs  # writeable as jo
 stat -c '%n %a %G %U' /bs/*
-cd /bs/ArchBuilds/build-scripts
-
-bash 
+### git clone ArchBuilds
+bash 06-git.sh
+### symlinks
+bash 07-symlinks_for_Bash.sh
 ### waiting
 # GIGABYTE UEFI DualBIOS
 easily entered by Del fairly quickly at start
