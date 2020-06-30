@@ -41,6 +41,7 @@ export VISUAL=nvim
 # ---
 alias ga='git add'
 alias gis='git status -u'
+export BFG=$ITstack/CrossPlatform/bfg-1.13.0.jar
 gic () {
     git commit -m "$1"
 }

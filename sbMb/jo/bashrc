@@ -10,18 +10,21 @@
 alias rs0='bash $onGH/rsync-portabledrives/rync-Dr0.sh'
 alias rs1='bash $onGH/rsync-portabledrives/rync-Dr1.sh'
 
-# backup destination for  mwBackup.sh
-muttBasckupDestination=/mnt/9QG2FFEE/Share/More/mw-AVT661
-
-if [[ $ARCHBUILDS ]]; then
+brcConsole () {
     # 1 useful everywhere
     source $ARCHBUILDS/Bash/bashrc-generic
     # 2 useful also in Console
     source $ARCHBUILDS/jo/Bash/bashrc-console
+}
+if [[ $ARCHBUILDS ]]; then
+    brcConsole
     # 3 useful only for my personal account
     source $ARCHBUILDS/jo/Bash/bashrc-email
     source $ARCHBUILDS/jo/Bash/bashrc-images
     source $ARCHBUILDS/jo/Bash/bashrc-ob
+else
+    ARCHBUILDS=~/Arch/ArchBuilds
+    [[ -d $ARCHBUILDS ]] && brcConsole
 fi
 
 # NETGEAR WG111v2
