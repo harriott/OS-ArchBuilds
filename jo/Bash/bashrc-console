@@ -24,11 +24,6 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 # my preferred npm global directory
 export PATH="$HOME/.npm-global/bin:$PATH"
 
-# Samokovarov's  jump
-if [ -s "/usr/bin/jump" ]; then
-    eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
-fi
-
 # System, for GnuPG
 export GPG_TTY=$(tty)
 
@@ -36,6 +31,18 @@ export GPG_TTY=$(tty)
 export EDITOR=nvim
 export VISUAL=nvim
 
+
+# -----------
+# file manage
+# -----------
+
+alias rs0='bash $onGH/rsync-portabledrives/rync-Dr0.sh'
+alias rs1='bash $onGH/rsync-portabledrives/rync-Dr1.sh'
+
+# Samokovarov's  jump
+if [ -s "/usr/bin/jump" ]; then
+    eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
+fi
 
 # Git
 # ---

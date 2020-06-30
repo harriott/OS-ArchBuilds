@@ -7,22 +7,20 @@
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
-alias rs0='bash $onGH/rsync-portabledrives/rync-Dr0.sh'
-alias rs1='bash $onGH/rsync-portabledrives/rync-Dr1.sh'
-
+# the following source commands are tweaked for each Bash case
 brcConsole () {
-    # bashrc 1 - useful everywhere
+    # bashrc 1 - useful everywhere, including root
     source $ARCHBUILDS/Bash/bashrc-generic
-    # bashrc 2 - useful also in Console
+    # bashrc 2 - useful also in Console as user
     source $ARCHBUILDS/jo/Bash/bashrc-console
 }
-if [[ $ARCHBUILDS ]]; then
+if [[ $ARCHBUILDS ]]; then  # it's been defined in ~/.xinitrc
     brcConsole
-    # bashrc 3 - useful only for my personal account
+    # bashrc 3 - useful only for jo
     source $ARCHBUILDS/jo/Bash/bashrc-email
     source $ARCHBUILDS/jo/Bash/bashrc-images
     source $ARCHBUILDS/jo/Bash/bashrc-ob
-else
+else                        # try a local cache
     ARCHBUILDS=~/Arch/ArchBuilds
     [[ -d $ARCHBUILDS ]] && brcConsole
 fi
