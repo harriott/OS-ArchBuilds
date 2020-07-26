@@ -42,12 +42,15 @@ gvim -geom 200  # height parameter is omitted as it's having no effect
 72 dpi = 18.3 dots per mm
 colorpicker --one-shot --preview
 exiftool <image>
+gswin64c -dSAFER -sDEVICE=png16m -r400 -dFirstPage=1 -dLastPage=1 -o output.png input.pdf
 Pinta can't send to printer...
 
-# ImageMagick
+## ImageMagick
+convert -flatten transparent.png white_background.png
 convert <people> -paint 9 <people-oil>
+for i in $(ls); do convert -resize 50% $i r$i; done
 
-## gravity
+### gravity
 -gravity northwest  -> the default
 convert -list gravity
 
@@ -121,9 +124,11 @@ shift left/right -> seek 1 seconds forward/backward
 up/down -> seek 1 minute forward/backward
 
 # networking
+Chrome: Ctrl+u => view page source in new tab
 ip l
 iwctl known-networks list
 latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_10_06_2020.html`
+sudo iptraf-ng
 sudo lshw -c network
 
 ## devices

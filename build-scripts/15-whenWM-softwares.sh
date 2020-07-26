@@ -72,15 +72,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-# #==> Dropbox
-# # only once there's a browser, and preferably after LastPass
-# cd ~/Arch/AUR
-# sudo rm -r dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#==> Dropbox
+# only once there's a browser, and preferably after LastPass
+cd ~/Arch/AUR
+sudo rm -r dropbox
+git clone https://aur.archlinux.org/dropbox.git
+cd dropbox
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #==> Dust
 # # (after Rust Toolchain)
@@ -210,24 +210,24 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#==> xbindkeys
-# for mouse middle click
-cd ~/Arch/AUR
-sudo rm -r xbindkeys
-git clone https://aur.archlinux.org/xbindkeys.git
-cd xbindkeys
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #==> xbindkeys
+# # for mouse middle click
+# cd ~/Arch/AUR
+# sudo rm -r xbindkeys
+# git clone https://aur.archlinux.org/xbindkeys.git
+# cd xbindkeys
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
-#==> Zoom
-cd ~/Arch/AUR
-sudo rm -r zoom
-git clone https://aur.archlinux.org/zoom.git
-cd zoom
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #==> Zoom
+# cd ~/Arch/AUR
+# sudo rm -r zoom
+# git clone https://aur.archlinux.org/zoom.git
+# cd zoom
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> AUR 2 settings
 
@@ -243,6 +243,10 @@ cd ~
 
 # #=> ffmpeg
 # sudo pacman -S ffmpeg
+
+# #=> gucharmap
+# sudo pacman -S gucharmap
+# # Accessories > Character Map > View > By Unicode Block
 
 # #=> Perl modules for JSON
 # sudo pacman -S perl-json perl-json-parse perl-json-xs

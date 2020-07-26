@@ -20,151 +20,126 @@ trap read debug  # puts a read request after each executable line
 # # TeX Live
 # sudo pacman -S texlive-most texlive-langchinese
 
-#=> 0 softwares - file manage
-# cdrtools
-pacman -S cdrtools
+# #=> 0 softwares - file manage
+# # cdrtools
+# pacman -S cdrtools
 
-# GVFS
-pacman -S gvfs
+# # GVFS
+# pacman -S gvfs
 
-# gvfs-mtp - for accessing phone memory
-pacman -S gvfs-mtp
+# # gvfs-mtp - for accessing phone memory
+# pacman -S gvfs-mtp
 
-# nnn
-pacman -S nnn
+# # nnn
+# pacman -S nnn
 
-# PCManFM
-pacman -S pcmanfm
-# ...
+#=> 0 softwares - iptraf-ng
+pacman -S iptraf-ng
 
-#=> 0 softwares - multimedia
-# Cmus
-pacman -S cmus
+# #=> 0 softwares - multimedia
+# # Cmus
+# pacman -S cmus
 
-# espeak-ng-espeak & termdown
-pacman -S espeak-ng-espeak termdown
+# # espeak-ng-espeak & termdown
+# pacman -S espeak-ng-espeak termdown
 
-# gphoto2
-pacman -S gphoto2
+# # iscan
+# # ...
 
-# iscan
-# ...
+# # pulsemixer
+# sudo pacman -S pulsemixer
 
-# nomacs
-# ...
+# #=> 0 softwares - networking
+# # iw
+# pacman -S iw
 
-# Pinta
-pacman -S pinta
+# # iwd
+# pacman -S iwd
+# systemctl enable iwd.service
+# systemctl start iwd.service
+# systemctl status iwd.service
 
-# PNMixer
-# ...
+# # lynx
+# pacman -S lynx
 
-# pulsemixer
-sudo pacman -S pulsemixer
+# # mailcap
+# pacmatic -S mailcap
 
-# qimgv-git
-# ...
+# # Transmission
+# pacman -S transmission-qt
 
-# SANE
-# ...
+# #=> 0 softwares - Openbox environment
+# # configure Openbox
+# pacman -S lxappearance-obconf obconf
 
-#=> 0 softwares - networking
-# iw
-pacman -S iw
+# # CopyQ
+# # ...
 
-# iwd
-pacman -S iwd
-systemctl enable iwd.service
-systemctl start iwd.service
-systemctl status iwd.service
+# # Dunst
+# pacman -S dunst
 
-# lynx
-pacman -S lynx
+# # galculator
+# # ...
 
-# mailcap
-pacmatic -S mailcap
+# # Gmrun
+# pacman -S gmrun
 
-# Thunderbird
-# ...
+# # GnuPG for pinentry
+# # ...
 
-# Transmission
-pacman -S transmission-qt
+# # gsimplecal
+# pacman -S gsimplecal
 
-# youtube-dl
-pacman -S youtube-dl
+# # Openbox & tint2
+# pacman -S openbox tint2
+# # need to  nvim ~/.config/tint2/tint2rc $ARCHBUILDS/jo/tint2rc  and pull over my tweaks
 
-#=> 0 softwares - Openbox environment
-# configure Openbox
-pacman -S lxappearance-obconf obconf
+# # openbox/importScreenshot.sh
+# # ...
 
-# CopyQ
-# ...
+# # perl-linux-desktopfiles
+# # ...
 
-# Dunst
-pacman -S dunst
+# #=> 0 softwares - system
+# # Bluefish
+# # ...
 
-# galculator
-# ...
+# # Conky
+# # ...
 
-# Gmrun
-pacman -S gmrun
+# # fcron
+# pacman -S fcron
 
-# GnuPG for pinentry
-# ...
+# # figlet
+# # ...
 
-# gsimplecal
-pacman -S gsimplecal
+# # mimeo
+# # ...
 
-# Openbox & tint2
-pacman -S openbox tint2
-# need to  nvim ~/.config/tint2/tint2rc $ARCHBUILDS/jo/tint2rc  and pull over my tweaks
+# # rebind Mouse middle key
+# # ...
 
-# openbox/importScreenshot.sh
-# ...
+# # sysstat
+# pacman -S sysstat
 
-# perl-linux-desktopfiles
-# ...
+# # tmux
+# # ...
 
-#=> 0 softwares - system
-# Bluefish
-# ...
+# # urlview
+# # ...
 
-# Conky
-# ...
+# # virtualenvwrapper
+# # ...
 
-# fcron
-pacman -S fcron
+# # xvt-perls
+# # ...
 
-# figlet
-# ...
-
-# mimeo
-# ...
-
-# rebind Mouse middle key
-# ...
-
-# sysstat
-pacman -S sysstat
-
-# tmux
-# ...
-
-# urlview
-# ...
-
-# virtualenvwrapper
-# ...
-
-# xvt-perls
-# ...
-
-#=> 1 LibreOffice Configuration
-true  # ensure that LibreOffice is not running
-uc0=~/.config/libreoffice/4/user
-    rm -r $uc0/config
-    rm $uc0/registrymodifications.xcu
-uc1=$ITstack/OpenOffice/LibreOffice/j9o-HPP-user
-    cp -r $uc1/config $uc0/config
-    cp $uc1/registrymodifications.xcu $uc0/registrymodifications.xcu
+# #=> 1 LibreOffice Configuration
+# true  # ensure that LibreOffice is not running
+# uc0=~/.config/libreoffice/4/user
+#     rm -r $uc0/config
+#     rm $uc0/registrymodifications.xcu
+# uc1=$ITstack/OpenOffice/LibreOffice/j9o-HPP-user
+#     cp -r $uc1/config $uc0/config
+#     cp $uc1/registrymodifications.xcu $uc0/registrymodifications.xcu
 

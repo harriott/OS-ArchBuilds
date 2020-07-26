@@ -3200,6 +3200,19 @@ cd /etc/texmf/web2c  for  su + root pw  for
     cp /etc/texmf/web2c/fmtutil.cnf $MACHINE/etc/defaults/k6j-fmtutil.cnf
 # texlive-langchinese
 while running  md4pdf.sh  I got a new complaint: "File `ctexhook.sty' not found."  So
+# Updates
+bash 17-updates-tests.sh
+  :: Replace bind-tools with extra/bind? [Y/n]
+# /etc/sudoers
+## backup
+sudo cp /etc/sudoers $MACHINE/etc/defaults/k7q-sudoers
+sudo chown jo:jo $MACHINE/etc/defaults/k7q-sudoers
+## change pacnew
+cd /etc/  for  su + root pw  for
+nvim -O sudoers sudoers.pacnew   & diff'd over my changes
+visudo -c -f /etc/sudoers.pacnew   got me "/etc/sudoers.pacnew: parsed OK"
+cp /etc/sudoers.pacnew /etc/sudoers
+rm /etc/sudoers.pacnew
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

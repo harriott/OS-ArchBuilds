@@ -121,6 +121,9 @@ bash 06-git.sh
 ### symlinks
 bash 07-symlinks_for_Bash.sh
 ### waiting
+for SSD
+#### rsnapshot
+bash 08-beforeWM.sh
 # GIGABYTE UEFI DualBIOS
 easily entered by Del fairly quickly at start
 Logitech MX 610 Laser Cordless Mouse & Perixx PERIBOARD-407W keyboard function normally
@@ -135,6 +138,7 @@ Logitech MX 610 Laser Cordless Mouse
 Perixx PERIBOARD-407W keyboard
 ## drives
 HP DH-16A1L DVD drive  in 2nd large bay from top, & on  SATA1
+ST3320620AS 9QF57J6Q  resting on middle tray, & on  SATA3
 Western Digital Blue WD30EZRZ 3 To SATA 600  in top large bay, & on  SATA0
 ## motherboard
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0

@@ -44,7 +44,7 @@ magx () {
     mas -a $GNULE/aliases-gmx-mag -p "$mail/gmx/$folder/cur"
   done
 }
-magl () {
+magl () { # failing...
   for folder in Archive LPD Waiting; do
     mas -a $GNULE/aliases-live-mag -p "$mail/live/$folder/cur"
   done

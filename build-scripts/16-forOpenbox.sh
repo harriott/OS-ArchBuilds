@@ -13,6 +13,9 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
+#=> gphoto2
+pacman -S gphoto2
+
 # #=> LibreOffice Fresh
 # sudo pacman -S libreoffice-fresh-en-gb
 # libreoffice  # first-run of LibreOffice - close it
@@ -20,6 +23,19 @@ trap read debug  # puts a read request after each executable line
 # #=> nnn plugins
 # [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
 # curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+
+#=> nomacs
+# ...
+
+#=> PCManFM
+pacman -S pcmanfm
+# ...
+
+#=> Pinta
+pacman -S pinta
+
+#=> PNMixer
+# ...
 
 # #=> qimgv-git
 # cd ~/Arch/AUR
@@ -49,8 +65,17 @@ trap read debug  # puts a read request after each executable line
 # #  sed -i s/fusion/cleanlooks/' ~/.config/qt5ct/qt5ct.conf
 # true
 
+#=> SANE
+# ...
+
 # #=> sxiv
 # sudo pacman -S sxiv
+
+#=> Thunderbird
+# ...
+
+#=> youtube-dl
+pacman -S youtube-dl
 
 # #=> Zathura
 # sudo pacman -S zathura-pdf-mupdf
