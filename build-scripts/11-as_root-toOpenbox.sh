@@ -33,8 +33,14 @@ trap read debug  # puts a read request after each executable line
 # # nnn
 # pacman -S nnn
 
-#=> 0 softwares - iptraf-ng
-pacman -S iptraf-ng
+# #=> 0 softwares - gtop
+# pacman -S gtop
+
+#=> 0 softwares - cmatrix
+pacman -S cmatrix
+
+# #=> 0 softwares - iptraf-ng
+# pacman -S iptraf-ng
 
 # #=> 0 softwares - multimedia
 # # Cmus

@@ -266,6 +266,7 @@ xset q       # shows a variety of IO settings
 ## monitoring
 bashtop
 glances
+gtop
 htop
 saidar -c
 
