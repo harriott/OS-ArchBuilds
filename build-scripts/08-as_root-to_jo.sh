@@ -38,11 +38,11 @@ trap read debug  # puts a read request after each executable line
 
 # # NetworkManager
 # pacman -S networkmanager
+# systemctl enable NetworkManager.service --now
 
 #=> 1 softwares - networking 2
 # NetworkManager
-systemctl enable NetworkManager.service --now
-systemctl status NetworkManager.service
+systemctl status NetworkManager.service | cat
 true
 
 # Wget
