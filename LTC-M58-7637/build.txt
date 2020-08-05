@@ -224,7 +224,7 @@ restored manually
 ### appmenu-gtk-module dkms linux-headers
 ### 8192eu-dkms
 $ pqs rtl8192eu
-local/8192eu-dkms 100.3575500-1
+  local/8192eu-dkms 100.3575500-1
     Driver for the Realtek 8192eu chipset (DKMS)
 lsmod | grep 8192eu
   8192eu    1585152  0

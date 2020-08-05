@@ -1,149 +1,72 @@
 vim: fdl=0 ft=build fdm=expr:
 
-# boot to archlinux-2020.04.01-x86_64.iso on KSE98GB
-UEFI KingstonDataTraveler 3.0PMAP
-ready on up-arrow to select Arch Linux archiso x86_64 UEFI CD
-## USB2
-can see my Seagate Expansion 500GB
-can see my Toshiba Canvio Basics HDTB330EK3CA
-## USB3
-can't see my Toshiba Canvio Basics HDTB330EK3CA
-## XHCI Hand-off Disabled
-boot hangs at  Created slice system-dhcpcd.slice
-# boot to Knoppix v8.6.1 DVD
-## P1 ATAPI DVD A DH16A1L
-keyboard and mouse dead
-### EHCI Hand-off Enabled
-got quickly into the Knoppix boot screen, then took time to fire up KDE
-## UEFI - no luck
-# boot to Knoppix v8.6.1 USB, EHCI Hand-off Enabled
-## UEFI USB MassStorage Device
-got quickly through to KDE
-sound from rear green 3.5 mm socket, but not from front speaker
-### USB2
-can see my Seagate Expansion 500GB
-### USB3
-can't see my Toshiba Canvio Basics HDTB330EK3CA
-# boot to K8GBDTIG3 containing linuxmint-19.3-xfce-64bit.iso
-F12 repeatedly at start
-## PMAP
-KingstonDataTraveler G3 PMAP
-- got in, keyboard could select boot choice but, once live, keyboard & mouse dead
-### IOMMU Enabled
-- got in, keyboard could select boot choice but loads of errors, then
-  (initramfs) Unable to find a medium containing file system
-same when booting Mint in compatibility mode
-### Mint in compatibility mode
-(initramfs) Unable to find a medium containing file system
-## UEFI
-UEFI KingstonDataTraveler G3 PMAP
-- got in, keyboard could select boot choice but, once live, keyboard & mouse dead
-### EHCI Hand-off Enabled
-(initramfs) Unable to find a medium containing file system
-### IOMMU Enabled
-got in, keyboard could select boot choice but loads of errors, then
-  (initramfs) Unable to find a medium containing file system
-same when booting Mint in compatibility mode
-### Mint in compatibility mode
-(initramfs) Unable to find a medium containing file system
 # build
 ## Arch install - from the ISO
-get online, as in  0-XA2.sh
-cd /mnt; mkdir mnt
-### create new GPT
-gdisk /dev/sda > o (create a new empty GUID partition table GPT & new protective MBR) y
-  w   for  gdisk /dev/sda  (MBR: protection  GPT: present)
-### create partitions
-gdisk /dev/sda
-  n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +260m >
-    ef00 (EFI system partition)
-  n > Partition number (defaults to 2) > First sector (defaults to 534527) > +60g > Hex code >
-    8304 Linux x86-64 root (/)
-  n > Partition number (defaults to 3) > First sector (defaults to the sector after partition 2) >
-    +4g > 8200 (Linux swap)
-  n > Partition number (defaults to 4) > First sector (defaults to the sector after partition 3) >
-    +60g > Hex code > 8302 (Linux home)
-  n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 4) >
-    +600g > 8300 (Linux filesystem)
-  n > Partition number (defaults to 6) > First sector (defaults to the sector after partition 5) >
-    Enter > 8300 (Linux filesystem)
-  w
-### mount K8GBDT100 for pacstrap
-mkdir /bs   mount /dev/sdc1 /bs   cd /bs/ArchBuilds/sbMb
-#### remount K8GBDT100
-cd /mnt   umount /dev/sdc1
-mount /dev/sdc1 /bs   cd /bs/ArchBuilds/sbMb  for
-  bash 0-XA2.sh
-  bash 0-to_chroot.sh
-##### error due to dhcpcd in the pacstrap line
-checking package integrity  Error: linux-firmware: signature from Laurent Carlier is invalid
-##### error again due to dhcpcd in the pacstrap line
-checking package integrity  Error: linux: signature from Jan Alexander Steffens is invalid
-##### unplug K8GBDT100
-### chroot after power outage
-rebooted to archlinux-2020.04.01-x86_64.iso on KSE98GB
-#### mount K8GBDT100
-mkdir /bs   mount /dev/sdc1 /bs   cd /bs/ArchBuilds/sbMb  for
-  bash 0-XA2.sh
-  bash 0-to_chroot.sh
-mount /dev/sdc1 /mnt   cd /mnt/ArchBuilds/build-root-standalone  for  1-as_chroot-bootloader.sh
-## booted with GRUB - logged in as root
-### get online
-XA2 tethered   ping -c 3 8.8.8.8  shows it's connected
-#### check for dhcpcd
-pacman -Qs dhcpcd  shows it ain't there...
-### mount K8GBDT100
-lsblk -l  indicated:  mount /dev/sdb1 /bs   cd /bs/ArchBuilds/build-scripts
-### (having accidentally set it on) Numlock off in getty
-bash 03-as_root-Numlock_in_getty.sh
-### root Bash configuration
-bash 02-configure_root_bashrc.sh
-### get online
-XA2 tethered   ping -c 3 8.8.8.8  shows it's connected
-### updates
-bash 03-as_root-updates.sh
-  this question was repeated 5 times:
-    :: Importer la clé PGP 3B94A80E50A477C7, « Jan Alexander Steffens (heftig) <heftig@archlinux.org> » ? [O/n]
-reboot for new kernel
-### prepare for jo
-lsblk -l  indicated:  mount /dev/sdb1 /bs   cd /bs/ArchBuilds/build-scripts
-bash 04-as_root-prepare_for_jo.sh
-### mount rest of WD30EZRZ
-bash 04-as_root-fstab.sh
-### to X
-bash 05-as_root-when_jo-to_X.sh
-## booted to jo
-### mount K8GBDT100
-sudo mount -t vfat -o uid=1000,gid=1000 /dev/sdb1 /bs  # writeable as jo
-stat -c '%n %a %G %U' /bs/*
-### git clone ArchBuilds
-bash 06-git.sh
-### symlinks
-bash 07-symlinks_for_Bash.sh
-### waiting
-for SSD
-#### rsnapshot
-bash 08-beforeWM.sh
-# GIGABYTE UEFI DualBIOS
-easily entered by Del fairly quickly at start
-Logitech MX 610 Laser Cordless Mouse & Perixx PERIBOARD-407W keyboard function normally
-## BIOS Features
-Full Screen LOGO > Disabled
-### when only DVD
-Boot Option #1 > UEFI ATAPI DVD A DH16A1L
-Boot Option #2 >   P1 ATAPI DVD A DH16A1L
+### ARCH_202008 - SQUASHFS errors
+K16GB500 loaded with archlinux-2020.08.01-x86_64.iso  in lowest socket, 2nd from top of box
+Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 > UEFI: KingstonDT R500 PMAP
+#### IOMMU snags at boot
+several "...AMD-Vi: Event logged [IO_PAGE_FAULT..."  can be reviewed with  journalctl -b
+#### USB Port
+lsusb  reports Bus 003 Device 004: ... Kingston Technology Data Traveller G3
+#### attempt to connect with TL-WN821N
+##### iwctl
+device list   shows   wlan0
+###### try Moto G (4) 1367
+station wlan0 get-networks   listed   Moto G (4) 1367   among others, and live updates
+station wlan0 connect 'Moto G (4) 1367' > Passphrase  got me "Operation failed"
+###### try Xperia XA2_b31f
+station wlan0 scan  for
+  station wlan0 get-networks   listed  Xperia XA2_b31f
+station wlan0 connect "Xperia XA2_b31f" > Passphrase  got me "Operation failed"
+##### check for faulty rtl8xxxu
+lsmod | grep rtl8   shows it to be there
+#### prepare the bootable disk
+lsblk  shows SD480GSSDPlus is /dev/sdd
+  gdisk /dev/sdd > o (create a new empty GUID partition table GPT & new protective MBR) y
+    w   for  gdisk /dev/sdd  (MBR: protection  GPT: present)
+##### create partitions
+n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
+  ef00 (EFI system partition)
+n > Partition number (defaults to 2) > First sector (defaults to 1128448) > +60g > Hex code >
+  8304 Linux x86-64 root (/)
+n > Partition number (defaults to 3) > First sector (defaults to the sector after partition 2) >
+  +4g > 8200 (Linux swap)
+n > Partition number (defaults to 4) > First sector (defaults to the sector after partition 3) >
+  +60g > Hex code > 8302 (Linux home)
+n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 5) >
+  Enter > Enter > 8300 (Linux filesystem)
+w
+#### repositioned hd's
+#### no write-back cache on K16GB500
+so occasionally getting "...No Caching mode page found..."
+#### failed to mount K16GB500 for pacstrap
+mkdir /bs   mount /dev/sdg1 /bs  got me SQUASHFS error "unknown filesystem type vfat"
+reboot  got me a load of SQUASHFS errors
+### ARCH_202008
+K8GBDTIG3 loaded with archlinux-2020.08.01-x86_64.iso  in lowest socket, 2nd from top of box
+Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 >
+  UEFI: KingstonDataTraveller G3 PMAP
+
+mkdir /bs   mount /dev/sdg1 /bs   cd /bs/ArchBuilds/sbMb
 # physical configuration
+TL-WN821N
 ## cbh
 Logitech MX 610 Laser Cordless Mouse
 Perixx PERIBOARD-407W keyboard
 ## drives
-HP DH-16A1L DVD drive  in 2nd large bay from top, & on  SATA1
-ST3320620AS 9QF57J6Q  resting on middle tray, & on  SATA3
-Western Digital Blue WD30EZRZ 3 To SATA 600  in top large bay, & on  SATA0
+SATA0: SD480GSSDPlus resting in lower half of removable caddy
+SATA1: HP DH-16A1L DVD drive  in 2nd large bay from top
+SATA2: Western Digital Blue WD30EZRZ  in top large bay
+SATA3:
+SATA4: ST3320418AS in middle tray of removable caddy
+SATA5: ST3320620AS 9QF57J6Q  resting on middle tray
 ## motherboard
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
   AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
   HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
+### BIOS Features
+Peripherals > EHCI Hand-off Disabled [ IOMMU Controller  XHCI Hand-off ] > Enabled
 ### graphics
 Acer GF-7300SE-N-A3 nVidia GeForce 7300 graphics card  on  PCIEX16
 ASUSA EN6200LE TC256 nVidia GeForce 6200  on  PCIEX4

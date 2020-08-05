@@ -72,15 +72,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#==> Dropbox
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-sudo rm -r dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #==> Dropbox
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# sudo rm -r dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #==> Dust
 # # (after Rust Toolchain)
@@ -135,6 +135,24 @@ cd ~
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
+
+# #==> perl-clone-pp
+# cd ~/Arch/AUR
+# sudo rm -r perl-clone-pp
+# git clone https://aur.archlinux.org/perl-clone-pp.git
+# cd perl-clone-pp
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+#==> perl-data-printer
+cd ~/Arch/AUR
+sudo rm -r perl-data-printer
+git clone https://aur.archlinux.org/perl-data-printer.git
+cd perl-data-printer
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #==> pscircle-git
 # cd ~/Arch/AUR

@@ -22,7 +22,7 @@ source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh
 # rm -r ~/.cache/mutt/fm/* $mail/fm/*
-mailboxes "=Archive" "=Cafezoide" "=Deauram" "=Drafts" "=Friends" "=INBOX" "=Junk\ Mail" "=Sent\ Items" "=Trash" "=Waiting" "=Work"
+mailboxes "=Archive" "=Deauram" "=Drafts" "=Friends" "=INBOX" "=Junk\ Mail" "=Sent\ Items" "=Trash" "=Waiting" "=Work"
 virtual-mailboxes "All" "notmuch://?query=tag:fm"
 
 # tweak the default status line to show  "->fm":
@@ -35,9 +35,6 @@ macro index,pager Ga "<save-message>=Archive<enter>" "move mail to Archive"
 
 macro index,pager gf "<change-folder>=Friends<enter>" "go to Friends"
 macro index,pager Gf "<save-message>=Friends<enter>" "move mail to Friends"
-
-macro index,pager gz "<change-folder>=Cafezoide<enter>" "go to Cafezoide"
-macro index,pager Gz "<save-message>=Cafezoide<enter>" "move mail to Cafezoide"
 
 macro index,pager gd "<change-folder>=Deauram<enter>" "go to Deauram"
 macro index,pager Gd "<save-message>=Deauram<enter>" "move mail to Deauram"

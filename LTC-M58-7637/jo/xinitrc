@@ -20,7 +20,7 @@ export DROPBOX=/home/jo/Dropbox   # keep this capitalised for finding it without
         export onGH=$ITstack/onGitHub
             export ARCHBUILDS=$onGH/ArchBuilds
                 export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
-                export machineName=LTC-M58-7637
+                export machineName=LTC-M58-7637  # for ~/.vim/pack/ArchLinux/lists.sh
                     export MACHINE=$ARCHBUILDS/$machineName
                 export Imagey=$ARCHBUILDS/jo/Bash/Imagey
 

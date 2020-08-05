@@ -3213,6 +3213,15 @@ nvim -O sudoers sudoers.pacnew   & diff'd over my changes
 visudo -c -f /etc/sudoers.pacnew   got me "/etc/sudoers.pacnew: parsed OK"
 cp /etc/sudoers.pacnew /etc/sudoers
 rm /etc/sudoers.pacnew
+# Updates
+bash 17-updates-tests.sh
+  Warn about old perl modules
+  WARNING: '/usr/lib/perl5/5.30' contains data from at least 2 packages which will NOT be used by the installed perl interpreter.
+   -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.30'
+$ pacman -Qqo '/usr/lib/perl5/5.30'
+  perl-clone-pp
+  perl-data-printer
+so re-installed them
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

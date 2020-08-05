@@ -13,7 +13,7 @@ set folder = "$mail/live"
 set header_cache = /home/jo/.cache/mutt/live/headers
 set message_cachedir = /home/jo/.cache/mutt/live/bodies
 
-set spoolfile = "+Inbox"
+set spoolfile = "+INBOX"
 set record = "+Sent"
 set trash = "+Deleted"
 
@@ -23,7 +23,7 @@ source $alias_file
 # if you make changes here, you probably need to clear your folders, and start afresh
 # rm -r ~/.cache/mutt/live/* ~/.local/share/mail/live/*
 # and fix  ~/.mbsyncrc  to correspond
-mailboxes "=Archive" "=Deleted" "=Drafts" "=Inbox" "=Junk" "=Sent" "=LPD" "=Waiting"
+mailboxes "=Archive" "=Deleted" "=Drafts" "=INBOX" "=Junk" "=Sent" "=LPD" "=Waiting"
 # - any errors here will trigger others
 virtual-mailboxes "All" "notmuch://?query=tag:live"
 
@@ -41,8 +41,8 @@ macro index,pager Gd "<save-message>=Deleted<enter>" "move mail to Deleted"
 macro index,pager gr "<change-folder>=Drafts<enter>" "go to dRafts"
 macro index,pager Gr "<save-message>=Drafts<enter>" "move mail to dRafts"
 
-macro index,pager gi "<change-folder>=Inbox<enter>" "go to Inbox"
-macro index,pager Gi "<save-message>=Inbox<enter>" "move mail to Inbox"
+macro index,pager gi "<change-folder>=INBOX<enter>" "go to INBOX"
+macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to INBOX"
 
 macro index,pager gj "<change-folder>=Junk<enter>" "go to Junk"
 macro index,pager Gj "<save-message>=Junk<enter>" "move mail to Junk"

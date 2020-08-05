@@ -16,6 +16,10 @@ xrandr
 # check graphics card
 lspci | grep -e VGA -e 3D
 
+# CMatrix
+cmatrix -u 9 -C blue
+man cmatrix
+
 # CUPS - when a printer is paused/disabled
 lpstat -p -d  # show status of printers, including which is set as default
 
@@ -48,6 +52,9 @@ Pinta can't send to printer...
 ## ImageMagick
 convert -flatten transparent.png white_background.png
 convert <people> -paint 9 <people-oil>
+for i in $(ls); do convert -resize 10% $i r$i; done
+for i in $(ls); do convert -resize 15% $i r$i; done
+for i in $(ls); do convert -resize 25% $i r$i; done
 for i in $(ls); do convert -resize 50% $i r$i; done
 
 ### gravity
@@ -254,6 +261,8 @@ rg '<someText>|<otherText>'
 
 # system
 as root,  du -sh /boot /etc /home /root /usr
+as root,  journalctl -b  # review the startup messages
+
 b <command>  # batman
 id jo        # show uid, gid, and groups for jo
 man hier     # description of the filesystem hierarchy
