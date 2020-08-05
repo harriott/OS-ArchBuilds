@@ -7,8 +7,6 @@ trap read debug  # puts a read request after each executable line
 ARCHBUILDS=/ArchBuilds
 
 #=> 0 internet check
-systemctl status NetworkManager.service
-true
 ping -c 3 8.8.8.8
 
 #=> 1 after Grub
@@ -78,6 +76,12 @@ pacman -S sysstat
 pacman -S iwd
 systemctl enable iwd.service --now
 systemctl status iwd.service
+true
+
+# NetworkManager
+pacman -S networkmanager
+systemctl enable networkmanager --now
+systemctl status NetworkManager.service
 true
 
 # Wget

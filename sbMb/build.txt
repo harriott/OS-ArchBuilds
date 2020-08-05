@@ -71,6 +71,8 @@ dmesg | grep "EFI v"  reported "EFI v2.31"
 mount /dev/sde1 /mnt   cd /mnt/ArchBuilds/build-scripts
 bash 03-git_and_root_bashrc.sh
 relogged into root
+cd /ArchBuilds  for  git fetch  then  git merge
+cd /build-scripts  for  bash 06-as_root-prepare_for_jo.sh
 # physical configuration
 TL-WN821N
 ## cbh
