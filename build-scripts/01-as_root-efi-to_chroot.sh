@@ -8,7 +8,7 @@ trap read debug  # puts a read request after each executable line
 loadkeys uk
 
 # verify UEFI boot mode
-ls /sys/firmware/efi/efivars
+ls /sys/firmware/efi/efivars  # shouldn't be empty
 
 # check the bootable disk, already partitioned with  gdisk
 gdisk -l /dev/sda
@@ -27,9 +27,6 @@ swapon /dev/sda3
 swapon -s  # should show /dev/sda2 has Priority -2
 
 # /home
-mkfs.ext4 /dev/sda4
-
-# /
 mkfs.ext4 /dev/sda4
 
 #=> 2 mount /
@@ -56,14 +53,13 @@ mkfs.ext4 /dev/sda5
 #=> 6 update the system clock
 timedatectl set-ntp true
 
-#=> 7 install essential stuff & generate fstab
-# 1 install the base packages
+#=> 7 install essential stuff
 pacstrap /mnt base linux linux-firmware
 
-# 2 genfstab
+#=> 8 generate fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 
-#=> 8 change root
+#=> 9 change root
 arch-chroot /mnt  # kills this script
 

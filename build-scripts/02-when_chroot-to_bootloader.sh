@@ -41,7 +41,8 @@ echo sbMb > /etc/hostname
 # /etc/hosts
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
-echo "127.0.1.1 avt661.localdomain avt661" >> /etc/hosts
+# echo "127.0.1.1 avt661.localdomain avt661" >> /etc/hosts
+echo "127.0.1.1 sbMb.localdomain sbMb" >> /etc/hosts
 
 #=> 2 better mirrorlist
 pacman -S reflector
@@ -53,7 +54,7 @@ pacman -S efibootmgr grub ntp
 
 # 1 Microcode
 pacman -S amd-ucode
-pacman -S intel-ucode
+# pacman -S intel-ucode
 
 #=> 4 bootloader
 # 2 install GRUB
