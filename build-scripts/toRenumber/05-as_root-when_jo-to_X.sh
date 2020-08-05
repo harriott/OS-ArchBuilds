@@ -102,9 +102,6 @@ ARCHBUILDS=/bs/ArchBuilds
 # # fzy
 # pacman -S fzy
 
-# # Git
-# pacman -S git
-
 # # rsnapshot install
 # pacman -S rsnapshot
 

@@ -8,45 +8,46 @@ trap read debug  # puts a read request after each executable line
 
 ping -c 3 8.8.8.8
 
-#=> 0 time
-# time zone
-ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+# #=> 0 time
+# # time zone
+# ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
-# system clock
-timedatectl set-ntp true
-timedatectl status
-# doesn't show local correction
+# # system clock
+# timedatectl set-ntp true
+# timedatectl status
+# # doesn't show local correction
 
-# hardware clock
-hwclock --systohc
+# # hardware clock
+# hwclock --systohc
 
-#=> 0 locale (GB or Fr)
-# locale
-sed -i 's/^#en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
-sed -i 's/^#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
-sed -i 's/^#fr_FR.UTF-8/fr_FR.UTF-8/' /etc/locale.gen
-cat /etc/locale.gen | grep -v '^#'
-locale-gen
-cat /etc/locale.conf  # shows it ain't there
-# echo LANG=fr_FR.UTF-8 > /etc/locale.conf
-echo LANG=en_GB.UTF-8 > /etc/locale.conf
-cat /etc/vconsole.conf  # shows it ain't there
-# echo KEYMAP=fr > /etc/vconsole.conf
-echo KEYMAP=uk > /etc/vconsole.conf
+# #=> 0 locale (GB or Fr)
+# # locale
+# sed -i 's/^#en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
+# sed -i 's/^#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+# sed -i 's/^#fr_FR.UTF-8/fr_FR.UTF-8/' /etc/locale.gen
+# cat /etc/locale.gen | grep -v '^#'
+# locale-gen
+# cat /etc/locale.conf  # shows it ain't there
+# # echo LANG=fr_FR.UTF-8 > /etc/locale.conf
+# echo LANG=en_GB.UTF-8 > /etc/locale.conf
+# cat /etc/vconsole.conf  # shows it ain't there
+# # echo KEYMAP=fr > /etc/vconsole.conf
+# echo KEYMAP=uk > /etc/vconsole.conf
 
-#=> 1 host
-# cat /etc/hostname   shows it ain't there
-# echo ltcm58 > /etc/hostname
-echo sbMb > /etc/hostname
-# /etc/hosts
-echo "127.0.0.1 localhost" >> /etc/hosts
-echo "::1       localhost" >> /etc/hosts
-# echo "127.0.1.1 avt661.localdomain avt661" >> /etc/hosts
-echo "127.0.1.1 sbMb.localdomain sbMb" >> /etc/hosts
+# #=> 1 host
+# cat /etc/hostname  # shows it ain't there
+# # echo ltcm58 > /etc/hostname
+# echo sbMb > /etc/hostname
+# # /etc/hosts
+# echo "127.0.0.1 localhost" >> /etc/hosts
+# echo "::1       localhost" >> /etc/hosts
+# # echo "127.0.1.1 avt661.localdomain avt661" >> /etc/hosts
+# echo "127.0.1.1 sbMb.localdomain sbMb" >> /etc/hosts
+# cat /etc/hosts
 
-#=> 2 better mirrorlist
-pacman -S reflector
-. 01-when_chroot-reflector.sh
+# #=> 2 better mirrorlist
+# pacman -S reflector
+# . 02-when_chroot-reflector.sh
 
 #=> 3 bootloader
 # 0 GRUB, Network Time Protocol
@@ -66,6 +67,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 #=> 5 final tweaks
 # dhcpcd
 pacman -S dhcpcd
+
+# lsusb
+pacman -S usbutils
 
 # udisks
 pacman -S udisks2

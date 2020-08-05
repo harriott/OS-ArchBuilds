@@ -40,20 +40,33 @@ w
 #### repositioned hd's
 #### no write-back cache on K16GB500
 so occasionally getting "...No Caching mode page found..."
-#### failed to mount K16GB500 for pacstrap
+#### failed to mount K8GBDT100 for pacstrap
 mkdir /bs   mount /dev/sdg1 /bs  got me SQUASHFS error "unknown filesystem type vfat"
 reboot  got me a load of SQUASHFS errors
-### ARCH_202008
+### ARCH_202008 to chroot
 K8GBDTIG3 loaded with archlinux-2020.08.01-x86_64.iso  in lowest socket, 2nd from top of box
 Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 >
   UEFI: KingstonDataTraveller G3 PMAP
+#### K8GBDT100
 mkdir /bs   mount /dev/sdf1 /bs   cd /bs/ArchBuilds/build-scripts
 bash 00-AndroidTethers.sh  worked, but with some "ps_bpf_recvmsg: Invalid argument"
 bash 01-as_root-efi-to_chroot.sh
   curl... signature from Felix... Invalid... PGP signature
+#### finish manually
 pacstrap /mnt base linux linux-firmware
   perl: warning: Setting locale failed
+...
+### to bootloader
+#### K8GBDT100
+mount /dev/sdg1 /mnt   cd /mnt/ArchBuilds/build-scripts
 bash 02-when_chroot-to_bootloader.sh
+bash 02-when_chroot-reflector.sh
+cd /  for  umount /dev/sdg1  "target is busy"  so  umount -l /dev/sdg1
+mount /dev/sdh1 /mnt   cd /mnt/ArchBuilds/build-scripts
+#### reboot to root
+Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 > GRUB (PO: SanDisk SSD PLUS 480GB)
+root pw
+dmesg | grep "EFI v"  reported "EFI v2.31"
 # physical configuration
 TL-WN821N
 ## cbh
