@@ -12,6 +12,7 @@ pacman -S git
 #==> 2 clone ArchBuilds
 cd /
 git clone https://github.com/harriott/ArchBuilds.git
+ls /ArchBuilds
 
 #=> root Bash
 
@@ -22,6 +23,8 @@ cp $ARCHBUILDS/root/bash_profile   /root/.bash_profile  # sources  bashrc
 cp $ARCHBUILDS/root/bashrc         /root/.bashrc        # sources  bashrc-generic
 cp $ARCHBUILDS/Bash/bashrc-generic /root/.bashrc-generic
 cp $ARCHBUILDS/Bash/inputrc        /root/.inputrc
+
+ls -a /root
 
 # #==> 1 deconfigure root Bash once Dropbox
 

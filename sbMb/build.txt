@@ -63,10 +63,14 @@ bash 02-when_chroot-to_bootloader.sh
 bash 02-when_chroot-reflector.sh
 cd /  for  umount /dev/sdg1  "target is busy"  so  umount -l /dev/sdg1
 mount /dev/sdh1 /mnt   cd /mnt/ArchBuilds/build-scripts
-#### reboot to root
+### reboot to root
 Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 > GRUB (PO: SanDisk SSD PLUS 480GB)
 root pw
 dmesg | grep "EFI v"  reported "EFI v2.31"
+#### K8GBDT100
+mount /dev/sde1 /mnt   cd /mnt/ArchBuilds/build-scripts
+bash 03-git_and_root_bashrc.sh
+relogged into root
 # physical configuration
 TL-WN821N
 ## cbh
