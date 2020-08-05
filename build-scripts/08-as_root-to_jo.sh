@@ -41,7 +41,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> 1 softwares - networking 2
 # NetworkManager
-systemctl enable networkmanager.service --now
+systemctl enable NetworkManager.service --now
 systemctl status NetworkManager.service
 true
 
