@@ -4,41 +4,44 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 1 softwares - info
-# htop
-pacman -S htop
+# #=> 1 softwares - info
+# # htop
+# pacman -S htop
 
-# iotop
-pacman -S iotop
+# # iotop
+# pacman -S iotop
 
-# lshw
-pacman -S lshw
+# # lshw
+# pacman -S lshw
 
-# lsof
-pacman -S lsof
+# # lsof
+# pacman -S lsof
 
-# man-db
-pacman -S man-db
+# # man-db
+# pacman -S man-db
 
-# man-pages
-pacman -S man-pages
+# # man-pages
+# pacman -S man-pages
 
-# Neofetch
-pacman -S neofetch
+# # Neofetch
+# pacman -S neofetch
 
-# sysstat
-pacman -S sysstat
+# # sysstat
+# pacman -S sysstat
 
-#=> 1 softwares - networking
-# iNet Wireless Daemon
-pacman -S iwd
-systemctl enable iwd.service --now
-systemctl status iwd.service
-true
+# #=> 1 softwares - networking 1
+# # iNet Wireless Daemon
+# pacman -S iwd
+# systemctl enable iwd.service --now
+# systemctl status iwd.service
+# true
 
+# # NetworkManager
+# pacman -S networkmanager
+
+#=> 1 softwares - networking 2
 # NetworkManager
-pacman -S networkmanager
-systemctl enable networkmanager --now
+systemctl enable networkmanager.service --now
 systemctl status NetworkManager.service
 true
 
