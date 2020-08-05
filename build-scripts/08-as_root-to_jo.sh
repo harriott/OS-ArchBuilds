@@ -54,6 +54,7 @@ pacman -S bat
 
 # broot
 pacman -S broot
+broot # to generate br command
 
 # exa
 pacman -S exa

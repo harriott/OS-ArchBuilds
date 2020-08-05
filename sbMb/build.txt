@@ -73,6 +73,17 @@ bash 03-git_and_root_bashrc.sh
 relogged into root
 cd /ArchBuilds  for  git fetch  then  git merge
 cd /build-scripts  for  bash 06-as_root-prepare_for_jo.sh
+#### repartition WD30EZRZ
+lsblk  indicated  parted /dev/sde
+  print
+  mklabel gpt > y
+  mkpart primary 0% 100%
+  print
+  quit
+lsblk  indicated  mkfs.ext4 -L WD30EZRZ /dev/sde1
+#### label the end of SD480GSSDPlus
+lsblk  indicated  e2label /dev/sda5 SD480GSSDPlus
+lsblk -f
 # physical configuration
 TL-WN821N
 ## cbh
