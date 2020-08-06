@@ -4,10 +4,10 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# sudo bash -E <this_script>
+ARCHBUILDS=~/ArchBuilds
 
 # #=> when rsnapshot conf
-# # rsnapshot 2 timers
+# rsnapshot timers
 for systemdUnit in $ARCHBUILDS/etc/systemd/rsnapshot*; do
     cp $systemdUnit /etc/systemd/system/${systemdUnit##/*/}
 done

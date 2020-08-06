@@ -112,6 +112,7 @@ bash 13-symlinks_for_Bash.sh
 lsblk -f  indicated  sudo mount /dev/sde1 /mm
 sudo mount -t vfat -o uid=1000,gid=1000 /dev/sde1 /mm  # writeable as jo
 #### 14-beforeWM.sh
+#### 15-as_root-rsnapshot_automated.sh
 # physical configuration
 TL-WN821N
 ## cbh
