@@ -45,14 +45,7 @@ true
 # sudo sed -i 's#/mnt/9QG2FFEE ##' /etc/updatedb.conf
 # sudo sed -i 's#/mnt/HD103SJ ##' /etc/updatedb.conf
 
-# #===> root bashrc
-# cp $ARCHBUILDS/root/bashrc /root/.bashrc  # copying it so that broot can ammend it
-
 # #===> softwares - appearance
-
-# #===> softwares - file manage
-# # rsnapshot 1 install
-# pacman -S rsnapshot
 
 # #===> softwares - networking
 # pacman -S thunderbird-i18n-en-gb

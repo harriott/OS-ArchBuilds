@@ -4,20 +4,23 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+ARCHBUILDS=~/ArchBuilds
+    MACHINE=$ARCHBUILDS/sbMb
+
 #=> make AUR directory
 mkdir -p ~/Arch/AUR
 
-# #=> grab default rsnapshot conf
-# cp /etc/rsnapshot.conf /bs/k6u-rsnapshot.conf
+#=> grab default rsnapshot conf
+cp /etc/rsnapshot.conf /mm/k86-rsnapshot.conf
 
 #=> rsnapshot conf, for first run
 # my configuration
-mkdir /mnt/HD103SJ/rsnapshot
+mkdir /mnt/WD30EZRZ/rsnapshot
 sudo cp $MACHINE/etc/rsnapshot.conf /etc/rsnapshot.conf
 
 # check
 rsnapshot configtest
-# simulate first run
+# test
 rsnapshot -t hourly
-# now need to  sudo rsnapshot hourly  and monitor progress with  du -sh rsnapshot
+# now can  sudo rsnapshot hourly  and monitor progress with  du -sh rsnapshot
 

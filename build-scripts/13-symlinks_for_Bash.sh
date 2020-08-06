@@ -16,5 +16,5 @@ $action $ARCHBUILDS/Bash/inputrc         ~/.inputrc
 $action $ARCHBUILDS/jo/xbindkeysrc       ~/.xbindkeysrc
 
 find ~ -type l -ls
-reboot  # don't allow startx!
+echo "now  reboot  (and don't allow startx!)"
 
