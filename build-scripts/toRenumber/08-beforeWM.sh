@@ -4,8 +4,8 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> make AUR directory
-# mkdir ~/Arch/AUR
+#=> make AUR directory
+mkdir -p ~/Arch/AUR
 
 # #=> grab default rsnapshot conf
 # cp /etc/rsnapshot.conf /bs/k6u-rsnapshot.conf

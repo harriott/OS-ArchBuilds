@@ -9,50 +9,11 @@ ARCHBUILDS=/ArchBuilds
 #=> 0 to X
 # really needed
 
-# #==> allow dhcpcd without pw
-# bash -c "cat $ARCHBUILDS/etc/sudoers-dhcpcd >> /etc/sudoers"
-# visudo -c -f /etc/sudoers
-# cat /etc/sudoers
-
-# #==> ClamAV
-# pacman -S clamav
-# freshclam  # takes a long time!
-
-# #===> ClamAV empty sock file
-# # as freshclam triggered warning "Clamd was NOT notified"
-# touch /run/clamav/clamd.ctl
-# chown clamav:clamav /run/clamav/clamd.ctl
-# freshclam
-
-# # #===> freshclam daemon
-# # systemctl enable clamav-freshclam.service --now
-
-# #===> testing ClamAV
-# # first turn off debug
-# trap - debug
-# #  be patient after the curl
-# curl https://secure.eicar.org/eicar.com.txt | clamscan -
-# trap read debug
-
-# #==> Firewalld 0
-# pacman -S firewalld
-# systemctl enable firewalld --now
-
-# # active zone
-# firewall-cmd --set-default-zone=home
-# # open UDP port 5353 (needed later for Avahi)
-# firewall-cmd --permanent --zone=home --add-port 5353/udp
-
-#==> Firewalld 1
+#==> Firewalld check
 firewall-cmd --info-zone=home  # essential for the ports
 
 # check firewalld
 firewall-cmd --state
-
-# #==> Firewalld 2 ports for KDE Connect
-# firewall-cmd --zone=home --permanent --add-port=1714-1764/tcp
-# firewall-cmd --zone=home --permanent --add-port=1714-1764/udp
-# systemctl restart firewalld.service
 
 #==> hard drives
 stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
@@ -84,7 +45,7 @@ pacman -S xsel
 cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
 
 #==> softwares - appearance
-pacman -S hicolor-icon-theme  # possibly already there
+pacman -S hicolor-icon-theme
 
 # Ubuntu font family
 pacman -S ttf-ubuntu-font-family

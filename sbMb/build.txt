@@ -63,17 +63,17 @@ bash 02-when_chroot-to_bootloader.sh
 bash 02-when_chroot-reflector.sh
 cd /  for  umount /dev/sdg1  "target is busy"  so  umount -l /dev/sdg1
 mount /dev/sdh1 /mnt   cd /mnt/ArchBuilds/build-scripts
-### reboot to root
+## reboot to root
 Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 > GRUB (PO: SanDisk SSD PLUS 480GB)
 root pw
 dmesg | grep "EFI v"  reported "EFI v2.31"
-#### K8GBDT100
+### K8GBDT100
 mount /dev/sde1 /mnt   cd /mnt/ArchBuilds/build-scripts
 bash 03-git_and_root_bashrc.sh
 relogged into root
 cd /ArchBuilds  for  git fetch  then  git merge
 cd /build-scripts  for  bash 06-as_root-to_....sh
-#### repartition WD30EZRZ
+### repartition WD30EZRZ
 lsblk  indicated  parted /dev/sde
   print
   mklabel gpt > y
@@ -81,18 +81,26 @@ lsblk  indicated  parted /dev/sde
   print
   quit
 lsblk  indicated  mkfs.ext4 -L WD30EZRZ /dev/sde1
-#### label the end of SD480GSSDPlus
+### label the end of SD480GSSDPlus
 lsblk  indicated  e2label /dev/sda5 SD480GSSDPlus
 lsblk -f
-#### repartition ST3320418AS
+### repartition ST3320418AS
   print
   mklabel gpt > y
   mkpart primary 0% 100%
 lsblk  indicated  mkfs.ext4 -L ST3320418AS /dev/sdc1
-#### remove RAID signature from 9QF57J6Q
+### remove RAID signature from 9QF57J6Q
 dmraid -r   reports  "/dev/sdd: isw..."   removed with  dmraid -r -E /dev/sdd
-#### 09-as_root-fstab.sh
-#### 10-as_root-when_jo-to_X.sh
+### 09-as_root-fstab.sh
+### 10-as_root-when_jo-to_X.sh
+## configuring jo
+### manual mount point
+sudo mkdir mm
+### SSH keys
+lsblk -f  indicated  sudo mount /dev/sde1 /mm
+mv /ArchBuilds ~
+sudo chown -R jo:jo ArchBuilds
+bash 12-git.sh
 # physical configuration
 TL-WN821N
 ## cbh
