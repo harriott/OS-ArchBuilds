@@ -4,7 +4,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-ARCHBUILDS=~/ArchBuilds
+ARCHBUILDS=/home/jo/ArchBuilds
 
 # #=> when rsnapshot conf
 # rsnapshot timers
