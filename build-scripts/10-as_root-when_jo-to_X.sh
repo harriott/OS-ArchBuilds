@@ -54,7 +54,12 @@ firewall-cmd --state
 
 #==> hard drives
 stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
-chown jo:jo /mnt/WD30EZRZ-1 /mnt/WD30EZRZ-2  # make writable for jo
+
+# make writable for jo
+chown jo:jo /mnt/9QF57J6Q
+chown jo:jo /mnt/SD480GSSDPlus
+chown jo:jo /mnt/ST3320418AS
+chown jo:jo /mnt/WD30EZRZ
 
 #==> prepare for X
 # Xorg
@@ -72,25 +77,25 @@ pacman -S xsel
 #=> 1 when X
 # wanted
 
-# #==> monitor settings
-# # disable DPMS
-# cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
+#==> monitor settings
+# disable DPMS
+cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
 
-# #==> softwares - appearance
-# pacman -S hicolor-icon-theme  # probably already there
+#==> softwares - appearance
+pacman -S hicolor-icon-theme  # possibly already there
 
-# # Ubuntu font family
-# pacman -S ttf-ubuntu-font-family
+# Ubuntu font family
+pacman -S ttf-ubuntu-font-family
 
-# #==> softwares - AV
-# # AlsaUtils
-# pacman -S alsa-utils
+#==> softwares - AV
+# AlsaUtils
+pacman -S alsa-utils
 
-# # mediainfo
-# pacman -S mediainfo
+# mediainfo
+pacman -S mediainfo
 
-# # PulseAudio
-# pacman -S pulsemixer
+# PulseAudio
+pacman -S pulsemixer
 
 # #==> softwares - AV remove PulseAudio
 # # removal step 1 (also removes pulseaudio-alsa)
@@ -98,31 +103,31 @@ pacman -S xsel
 # # removal step 1 (also removes pulseaudio)
 # pacman -Rs pulsemixer
 
-# #==> softwares - file manage
-# # fzy
-# pacman -S fzy
+#==> softwares - file manage
+# fzy
+pacman -S fzy
 
-# # rsnapshot install
-# pacman -S rsnapshot
+# rsnapshot install
+pacman -S rsnapshot
 
-# # shfmt (for bat-extras-git)
-# pacman -S shfmt
+# shfmt (for bat-extras-git)
+pacman -S shfmt
 
-# #==> softwares - networking
-# # DNS Lookup utility
-# pacman -S bind-tools
+#==> softwares - networking
+# DNS Lookup utility
+pacman -S bind-tools
 
-# # Chromium
-# pacman -S chromium
+# Chromium
+pacman -S chromium
 
-# # LastPass CLI
-# pacman -S lastpass-cli
+# LastPass CLI
+pacman -S lastpass-cli
 
-# # NeoMutt
-# pacman -S neomutt
+# NeoMutt
+pacman -S neomutt
 
-# # Secure Shell
-# pacman -S openssh
+# Secure Shell
+pacman -S openssh
 
 #==> softwares - pdfsam
 # brings in jdk-openjdk
@@ -159,9 +164,9 @@ pacman -S shellcheck  # brings in Haskell
 # for mouse middle click
 pacman -S xautomation
 
-# #=> 2 automatic login to virtual console
-# ls /etc/systemd/system
-# mkdir /etc/systemd/system/getty@tty1.service.d
-# cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
-# reboot
+#=> 2 automatic login to virtual console
+ls /etc/systemd/system
+mkdir /etc/systemd/system/getty@tty1.service.d
+cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
+reboot
 

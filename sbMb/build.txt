@@ -72,7 +72,7 @@ mount /dev/sde1 /mnt   cd /mnt/ArchBuilds/build-scripts
 bash 03-git_and_root_bashrc.sh
 relogged into root
 cd /ArchBuilds  for  git fetch  then  git merge
-cd /build-scripts  for  bash 06-as_root-prepare_for_jo.sh
+cd /build-scripts  for  bash 06-as_root-to_....sh
 #### repartition WD30EZRZ
 lsblk  indicated  parted /dev/sde
   print
@@ -84,6 +84,15 @@ lsblk  indicated  mkfs.ext4 -L WD30EZRZ /dev/sde1
 #### label the end of SD480GSSDPlus
 lsblk  indicated  e2label /dev/sda5 SD480GSSDPlus
 lsblk -f
+#### repartition ST3320418AS
+  print
+  mklabel gpt > y
+  mkpart primary 0% 100%
+lsblk  indicated  mkfs.ext4 -L ST3320418AS /dev/sdc1
+#### remove RAID signature from 9QF57J6Q
+dmraid -r   reports  "/dev/sdd: isw..."   removed with  dmraid -r -E /dev/sdd
+#### 09-as_root-fstab.sh
+#### 10-as_root-when_jo-to_X.sh
 # physical configuration
 TL-WN821N
 ## cbh
