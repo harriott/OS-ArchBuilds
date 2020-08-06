@@ -9,45 +9,47 @@ ARCHBUILDS=/ArchBuilds
 #=> 0 to X
 # really needed
 
-#==> allow dhcpcd without pw
-bash -c "cat $ARCHBUILDS/etc/sudoers-dhcpcd >> /etc/sudoers"
-visudo -c -f /etc/sudoers
-cat /etc/sudoers
+# #==> allow dhcpcd without pw
+# bash -c "cat $ARCHBUILDS/etc/sudoers-dhcpcd >> /etc/sudoers"
+# visudo -c -f /etc/sudoers
+# cat /etc/sudoers
 
-#==> ClamAV
-pacman -S clamav
-freshclam  # takes a long time!
+# #==> ClamAV
+# pacman -S clamav
+# freshclam  # takes a long time!
 
-#===> ClamAV empty sock file
-# as freshclam triggered warning "Clamd was NOT notified"
-touch /run/clamav/clamd.ctl
-chown clamav:clamav /run/clamav/clamd.ctl
-freshclam
+# #===> ClamAV empty sock file
+# # as freshclam triggered warning "Clamd was NOT notified"
+# touch /run/clamav/clamd.ctl
+# chown clamav:clamav /run/clamav/clamd.ctl
+# freshclam
 
-# #===> freshclam daemon
-# systemctl enable clamav-freshclam.service --now
+# # #===> freshclam daemon
+# # systemctl enable clamav-freshclam.service --now
 
-#===> testing ClamAV
-# first turn off debug
-trap - debug
-#  be patient after the curl
-curl https://secure.eicar.org/eicar.com.txt | clamscan -
-trap read debug
+# #===> testing ClamAV
+# # first turn off debug
+# trap - debug
+# #  be patient after the curl
+# curl https://secure.eicar.org/eicar.com.txt | clamscan -
+# trap read debug
 
-#==> Firewalld
-pacman -S firewalld
-systemctl enable firewalld --now
+# #==> Firewalld 0
+# pacman -S firewalld
+# systemctl enable firewalld --now
 
-# active zone
-firewall-cmd --set-default-zone=home
-# open UDP port 5353 (needed later for Avahi)
-firewall-cmd --permanent --zone=home --add-port 5353/udp
+# # active zone
+# firewall-cmd --set-default-zone=home
+# # open UDP port 5353 (needed later for Avahi)
+# firewall-cmd --permanent --zone=home --add-port 5353/udp
+
+#==> Firewalld 1
 firewall-cmd --info-zone=home  # essential for the ports
 
 # check firewalld
 firewall-cmd --state
 
-# #==> Firewalld - ports for KDE Connect
+# #==> Firewalld 2 ports for KDE Connect
 # firewall-cmd --zone=home --permanent --add-port=1714-1764/tcp
 # firewall-cmd --zone=home --permanent --add-port=1714-1764/udp
 # systemctl restart firewalld.service
