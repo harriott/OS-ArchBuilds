@@ -1,6 +1,6 @@
 # vim: set ft=sh tw=0:
 
-# ~/.bashrc in an Arch install on my Acer Veriton T661 system
+# ~/.bashrc in an Arch install on my sprayed brown Multivision box system
 
 # Joseph Harriott
 # source ~/.bashrc if you've changed something here...
@@ -21,7 +21,7 @@ if [[ $ARCHBUILDS ]]; then  # it's been defined in ~/.xinitrc
     source $ARCHBUILDS/jo/Bash/bashrc-images
     source $ARCHBUILDS/jo/Bash/bashrc-ob
 else                        # try a local cache
-    ARCHBUILDS=~/Arch/ArchBuilds
+    ARCHBUILDS=~/ArchBuilds
     [[ -d $ARCHBUILDS ]] && brcConsole
 fi
 

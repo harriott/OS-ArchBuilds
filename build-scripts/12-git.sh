@@ -9,6 +9,7 @@ mkdir ~/.ssh
 cp /mm/id_rsa-trohib ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
 cp /mm/id_rsa-trohib.pub ~/.ssh/id_rsa.pub
+ls -l ~/.ssh
 
 #=> 1 first SSH to GitHub
 ssh -T git@github.com  # "yes"
