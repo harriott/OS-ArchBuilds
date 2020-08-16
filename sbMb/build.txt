@@ -114,6 +114,11 @@ sudo mount -t vfat -o uid=1000,gid=1000 /dev/sde1 /mm  # writeable as jo
 #### 14-beforeWM.sh
 #### 15-as_root-rsnapshot_automated.sh
 #### checked /mnt/WD30EZRZ/rsnapshot/ contents
+#### some symlinks
+##### mount K8GBDT100 writeable
+lsblk -f  indicated  sudo mount /dev/sde1 /mm
+sudo mount -t vfat -o uid=1000,gid=1000 /dev/sde1 /mm  # writeable as jo
+
 # physical configuration
 TL-WN821N
 ## cbh

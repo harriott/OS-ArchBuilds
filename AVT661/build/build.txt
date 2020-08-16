@@ -3222,6 +3222,9 @@ $ pacman -Qqo '/usr/lib/perl5/5.30'
   perl-clone-pp
   perl-data-printer
 so re-installed them
+# Openbox
+obmenu-generator  File Manager  became  nnn  (&  xdg-open .  opened  nnn), so
+  mimeo --add inode/directory pcmanfm.desktop
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice
