@@ -82,15 +82,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-# #==> Dust
-# # (after Rust Toolchain)
-# cd ~/Arch/AUR
-# sudo rm -r dust
-# git clone https://aur.archlinux.org/dust.git
-# cd dust
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#==> Dust
+# (after Rust Toolchain)
+cd ~/Arch/AUR
+sudo rm -r dust
+git clone https://aur.archlinux.org/dust.git
+cd dust
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #==> Fangfrisch
 # cd ~/Arch/AUR
@@ -145,11 +145,19 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#==> perl-data-printer
+# #==> perl-data-printer
+# cd ~/Arch/AUR
+# sudo rm -r perl-data-printer
+# git clone https://aur.archlinux.org/perl-data-printer.git
+# cd perl-data-printer
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+#==> Pinta
 cd ~/Arch/AUR
-sudo rm -r perl-data-printer
-git clone https://aur.archlinux.org/perl-data-printer.git
-cd perl-data-printer
+git clone https://aur.archlinux.org/pinta.git
+cd pinta
 xdg-open PKGBUILD
 makepkg -sic
 cd ~
@@ -238,14 +246,14 @@ cd ~
 # makepkg -sic
 # cd ~
 
-# #==> Zoom
-# cd ~/Arch/AUR
-# sudo rm -r zoom
-# git clone https://aur.archlinux.org/zoom.git
-# cd zoom
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#==> Zoom
+cd ~/Arch/AUR
+sudo rm -r zoom
+git clone https://aur.archlinux.org/zoom.git
+cd zoom
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> AUR 2 settings
 

@@ -1,14 +1,11 @@
 #!/bin/bash
 # vim: fdm=expr fdc=1 fdl=1 ft=shbuild:
 
-# bash -x <thisfile>.sh
+MACHINE=$ARCHBUILDS/sbMb
 
-# sort these lists by last use of "~":  :sort /,*\~/
-
-#=> for jo - get going
+# sort this list by last use of "~":  :sort /,*\~/
 
 ln -sf $ARCHBUILDS/jo/Vim/init.vim    ~/.config/nvim/init.vim
-ln -sf $ITstack/gitconfig             ~/.gitconfig
 ln -sf $ARCHBUILDS/jo/Vim/gvimrc      ~/.gvimrc
 ln -sf $ARCHBUILDS/jo/Vim/vimrc       ~/.vimrc
 ln -sf $MACHINE/jo/xinitrc            ~/.xinitrc
