@@ -242,8 +242,10 @@ sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
 ## file searching
 as root: find / -xdev -iname "*fmtutil.cnf*"
-fd
+fd  # by sharkdp
 find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
+find . -type d -name .git
+find . -type f -name .gitignore
 find . -type f | fzy  # for finding something fuzzily fast
 
 ### recursively list symlinks
@@ -254,6 +256,7 @@ find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 egrep '<someText>|<otherText>'
 
 #### ripgrep
+for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
 rg -l -ttex '\\input' > rg-tex.txt
 rg -l -ttex verseSettings > rg-tex.txt
 rg <someText>  # searches recursively in files

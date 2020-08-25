@@ -81,3 +81,7 @@ up(){
 alias bt='bashtop'
 alias gl='glances'
 
+# virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
+

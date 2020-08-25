@@ -82,20 +82,28 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#==> Dust
-# (after Rust Toolchain)
-cd ~/Arch/AUR
-sudo rm -r dust
-git clone https://aur.archlinux.org/dust.git
-cd dust
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #==> Dust
+# # (after Rust Toolchain)
+# cd ~/Arch/AUR
+# sudo rm -r dust
+# git clone https://aur.archlinux.org/dust.git
+# cd dust
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #==> Fangfrisch
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/python-fangfrisch.git
 # cd python-fangfrisch
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# #==> figlet-fonts
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/figlet-fonts.git
+# cd figlet-fonts
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
@@ -154,18 +162,26 @@ cd ~
 # makepkg -sic
 # cd ~
 
-#==> Pinta
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/pinta.git
-cd pinta
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #==> Pinta
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/pinta.git
+# cd pinta
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #==> pscircle-git
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/pscircle-git.git
 # cd pscircle-git
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# #==> quickviewer
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/quickviewer.git
+# cd quickviewer
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
@@ -237,23 +253,16 @@ cd ~
 # cd ~
 
 # #==> xbindkeys
-# # for mouse middle click
+# sudo pacman -S xbindkeys
+
+# #==> Zoom
 # cd ~/Arch/AUR
-# sudo rm -r xbindkeys
-# git clone https://aur.archlinux.org/xbindkeys.git
-# cd xbindkeys
+# sudo rm -r zoom
+# git clone https://aur.archlinux.org/zoom.git
+# cd zoom
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
-
-#==> Zoom
-cd ~/Arch/AUR
-sudo rm -r zoom
-git clone https://aur.archlinux.org/zoom.git
-cd zoom
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
 
 # #=> AUR 2 settings
 
@@ -270,12 +279,15 @@ cd ~
 # #=> ffmpeg
 # sudo pacman -S ffmpeg
 
+# #=> Firefox
+# sudo pacman -S firefox
+
+# #=> gifski
+# sudo pacman -S gifski
+
 # #=> gucharmap
 # sudo pacman -S gucharmap
 # # Accessories > Character Map > View > By Unicode Block
-
-# #=> Perl modules for JSON
-# sudo pacman -S perl-json perl-json-parse perl-json-xs
 
 # #=> npm ffmpeg-concat
 # sudo pacman -S npm
@@ -287,4 +299,10 @@ cd ~
 
 # #=> OpenShot
 # sudo pacman -S openshot
+
+# #=> peek
+# sudo pacman -S peek
+
+# #=> Perl modules for JSON
+# sudo pacman -S perl-json perl-json-parse perl-json-xs
 

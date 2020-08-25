@@ -5,7 +5,22 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> dragon-drag-and-drop
+# #=> 0 Pádraig Brady's key for coreutils
+# # for advcp
+# gpg --recv-keys 6C37DC12121A5006BC1DB804DF6FD971306037D9
+
+#=> 1 advcp
+# for nnn -r
+cd ~/Arch/AUR
+sudo rm -r advcp
+git clone https://aur.archlinux.org/advcp.git
+cd advcp
+xdg-open PKGBUILD
+# requires Pádraig Brady's key
+makepkg -sic
+cd ~
+
+# #=> 1 dragon-drag-and-drop
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/dragon-drag-and-drop.git
 # cd dragon-drag-and-drop
@@ -13,31 +28,44 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#=> gphoto2
-pacman -S gphoto2
+# #=> 1 gphoto2
+# pacman -S gphoto2
 
-# #=> LibreOffice Fresh
+# #=> 1 LibreOffice Fresh
 # sudo pacman -S libreoffice-fresh-en-gb
 # libreoffice  # first-run of LibreOffice - close it
 
-# #=> nnn plugins
+# #=> 1 mimeo
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/mimeo.git
+# cd mimeo
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# #=> 1 nnn plugins
 # [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
 # curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
-#=> nomacs
-# ...
+# #=> 1 nomacs
+# # ...
 
-#=> PCManFM
-pacman -S pcmanfm
-# ...
+# #=> 1 PCManFM
+# pacman -S pcmanfm
+# # ...
 
-#=> Pinta
-pacman -S pinta
+# #=> 1 perl-linux-desktopfiles
 
-#=> PNMixer
-# ...
+# #=> 1 Pinta
+# pacman -S pinta
 
-# #=> qimgv-git
+# #=> 1 PNMixer
+# # ...
+
+# #=> 1 qimgv-git
+# sudo pacman -Rs qimgv-git
+
+# #=> 1 qimgv-git
 # cd ~/Arch/AUR
 # sudo rm -r qimgv-git
 # git clone https://aur.archlinux.org/qimgv-git.git
@@ -46,7 +74,7 @@ pacman -S pinta
 # makepkg -sic
 # cd ~
 
-# #=> qt5-styleplugins
+# #=> 1 qt5-styleplugins
 # cd ~/Arch/AUR
 # sudo rm -r qt5-styleplugins
 # git clone https://aur.archlinux.org/qt5-styleplugins.git
@@ -55,29 +83,53 @@ pacman -S pinta
 # makepkg -sic
 # cd ~
 
-# #=> qpdfview
+# #=> 1 qpdfview
 # sudo pacman -S qpdfview
 
-# #=> qt5ct
+# #=> 1 qt5ct
 # sudo pacman -S qt5ct
 # grep QT_QPA_PLATFORMTHEME=qt5ct ~/.xinitrc
 # # now need to  Menu > Settings > Qt5 Settings > Style > cleanlooks
 # #  sed -i s/fusion/cleanlooks/' ~/.config/qt5ct/qt5ct.conf
 # true
 
-#=> SANE
-# ...
+# #=> 1 SANE
+# # ...
 
-# #=> sxiv
+# #=> 1 sxiv
 # sudo pacman -S sxiv
 
-#=> Thunderbird
-# ...
+# #=> 1 Thunderbird
+# # ...
 
-#=> youtube-dl
-pacman -S youtube-dl
+# #=> 1 tmux-bash-completion-git
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/tmux-bash-completion-git.git
+# cd tmux-bash-completion-git
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
-# #=> Zathura
+# #=> 1 urlview
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/urlview.git
+# cd urlview
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# #=> 1 xdg-utils-mimeo
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/xdg-utils-mimeo.git
+# cd xdg-utils-mimeo
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
+# #=> 1 youtube-dl
+# pacman -S youtube-dl
+
+# #=> 1 Zathura
 # sudo pacman -S zathura-pdf-mupdf
 # ln -fs $ARCHBUILDS/jo/Openbox/zathurarc ~/.config/zathura/zathurarc
 

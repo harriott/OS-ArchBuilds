@@ -12,5 +12,5 @@ ln -sf $Openbox/zathurarc                              ~/.config/zathura/zathura
 ln -sf $Openbox/cmus_notify.sh                         ~/.local/share/cmus_notify.sh
 ln -sf $tmux/tmux.conf                                 ~/.tmux.conf
 
-rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls                      ~/.urxvt/ext
+rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
 

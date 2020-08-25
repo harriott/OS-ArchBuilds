@@ -42,6 +42,7 @@ our $SCHEMA = [
     {item => ['thunderbird',      'Thunderbird',          'web-browser']},
     {item => ['gmrun',            'Run command',          'system-run']},
     {item => ['falkon',           'Falkon',               'web-browser']},
+    {item => ['firefox',          'Firefox',              'web-browser']},
     {item => ['gvim',             'gVim',                 'terminal']},
     {item => ['opera',            'opera',                'web-browser']},
     {item => ['quodlibet',        'Quod Libet',           'web-browser']},

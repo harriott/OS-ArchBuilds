@@ -36,14 +36,6 @@ doup () {
 alias d='doup'
 alias i='iwctl station wlwg111v2 get-networks'
 
-
-# added by scripts
-# ----------------
-
-# virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
-
 # auto-added by $ cpan
 PATH="/home/jo/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/jo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

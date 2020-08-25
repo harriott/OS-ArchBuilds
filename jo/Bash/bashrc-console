@@ -1,4 +1,4 @@
-# vim: set ft=sh tw=0:
+# vim: set ft=sh sw=2 tw=0:
 
 # sourced, ultimately, by ~/.bashrc
 # (source ~/.bashrc if you've changed something here...)
@@ -57,38 +57,61 @@ gic () {
 # time-sorted lists of files
 # --------------------------
 
-# find all types of files
+# all types of files
 fdtsAll () {
   eval "find * $printfDTsort"
+echo "$printfDTsort"
 }
 alias fa='fdtsAll'
 
-# find date-time sort - Encrypted folder
-fdtsEF () {
-  eval "find $1* $printfDTsort"
+# common functionality
+fdtsKS () {
+  echo "vim: nowrap tw=0:" > $2
+  echo "" >> $2
+  echo $PWD >> $2
+  eval "find -iname \"$1\" $printfDTsort >> $2"
+  echo "" >> $2
+  echo "results are in $2"
 }
-alias fe='fdtsEF'
+ctfp () {
+  # corrects to full path
+  sed -i "s| \.| $PWD|" $1
+}
 
-# find date-time sort - files of a certain type (filename extension)
+# files of a certain type (filename extension)
 fdtsExt () {
   if [ $1 ]; then
-    dtsfile=dts-$1.txt
-    echo "vim: nowrap tw=0:" > $dtsfile
-    echo "" >> $dtsfile
-    echo $PWD >> $dtsfile
-    eval "find -iname \*.$1 $printfDTsort >> $dtsfile"
-    echo "" >> $dtsfile
-    if [ $1 = "tex" ] || [ $1 = "txt" ]; then
-      sed -i "s| \.| $PWD|" $dtsfile
+    if [ $1 = "gitignore" ]; then
+      search=.$1
+    else
+      search='\*.$1'
     fi
-    echo "results are in $dtsfile"
+    dtsfile=dts-$1.txt
+    eval "fdtsKS $search $dtsfile"
+    [[ $1 = @(gitignore|pl|tex|txt) ]] && ctfp $dtsfile
   else
     echo "^ need a file type (= filename extension)"
   fi
 }
 alias fx='fdtsExt'
 
-printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
+# files with keystring in name
+fdtsKeyString () {
+  if [ $1 ]; then
+    dtsfile=dts-$1.txt
+    search='\*$1\*'
+    eval "fdtsKS $search $dtsfile"
+  fi
+}
+alias fk=fdtsKeyString
+
+# in my Encrypted folder
+fdtsEF () {
+  eval "find $1* $printfDTsort"
+}
+alias fe='fdtsEF'
+
+export printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
 
 
 # trash-cli

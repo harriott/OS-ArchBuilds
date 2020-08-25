@@ -3,6 +3,7 @@
 # commands for syncing mailboxes
 source $GNULE/emailAddresses
 nmnew () { echo "notmuch new:"; notmuch new; }
+msj () { mbsync czj   ; nmnew ; echo "nmTags-czj.sh"   ; bash $email/nmTags-czj.sh   ; }
 msp () { mbsync czp   ; nmnew ; echo "nmTags-czp.sh"   ; bash $email/nmTags-czp.sh   ; }
 msf () { mbsync fm    ; nmnew ; echo "nmTags-fm.sh"    ; bash $email/nmTags-fm.sh    ; }
 msg () { mbsync gmail ; nmnew ; echo "nmTags-gmail.sh" ; bash $email/nmTags-gmail.sh ; }
@@ -10,6 +11,7 @@ msx () { mbsync gmx   ; nmnew ; echo "nmTags-gmx.sh"   ; bash $email/nmTags-gmx.
 msl () { mbsync live  ; nmnew ; echo "nmTags-live.sh"  ; bash $email/nmTags-live.sh  ; }
 mst () { mbsync tj    ; nmnew ; echo "nmTags-tj.sh"    ; bash $email/nmTags-tj.sh    ; }
 alias ms='
+echo -e "\e[1m\e[95m-- czj   --\e[0m"; msj;
 echo -e "\e[1m\e[95m-- czp   --\e[0m"; msp;
 echo -e "\e[1m\e[95m-- fm    --\e[0m"; msf;
 echo -e "\e[1m\e[95m-- gmail --\e[0m"; msg;
@@ -19,6 +21,7 @@ echo -e "\e[1m\e[95m-- tj    --\e[0m"; mst;
 '
 
 # commands for reading mailboxes
+alias nmj='neomutt -F $email/muttrc-account_czj'
 alias nmp='neomutt -F $email/muttrc-account_czp'
 alias nmf='neomutt -F $email/muttrc-account_ftml'
 alias nmg='neomutt -F $email/muttrc-account_gmail'

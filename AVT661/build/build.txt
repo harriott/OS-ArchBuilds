@@ -3118,6 +3118,7 @@ Ctrl+P (= File > Preferences) > Appearance > Forest
 # Qt5 theme - for better tab differentiation in CopyQ
 sudo pacman -S qt5ct  then, having set the variable,  Menu > Settings > Qt5 Settings
 sudo pacman -S qt5-styleplugins
+Menu > Settings > Qt5 Settings > Appearance > Style > cleanlooks
 # CopyQ exit
 Ctrl+P (= File > Preferences) > General > Confirm application exit off
 # Fujitsu ScenicView E19W-5 LCD monitor
@@ -3225,6 +3226,22 @@ so re-installed them
 # Openbox
 obmenu-generator  File Manager  became  nnn  (&  xdg-open .  opened  nnn), so
   mimeo --add inode/directory pcmanfm.desktop
+# sound failed, so reboot
+got me "systemd[1]: Freezing execution." fixed by a hard shutdown
+# Updates
+bash 17-updates-tests.sh
+  ==> WARNING: Possibly missing firmware for module: aic94xx
+  ==> WARNING: Possibly missing firmware for module: wd719x
+  ==> WARNING: Possibly missing firmware for module: xhci_pci
+# Firefox Profile
+ran it to populate  /.mozilla/firefox/9fx6yhoz.default-release  which I then repopulated from
+  JH/Now/Essential/FirefoxProfile/k8k-HPP-o8ozsyvj.default.7z
+# qimgv not launching
+# /etc/locale.gen.pacnew
+cd /etc/  for  su + root pw  for
+nvim -O locale.gen locale.gen.pacnew   & diff'd over my changes
+visudo -c -f /etc/locale.gen.pacnew  got me "/etc/locale.gen.pacnew: parsed OK"
+rm /etc/locale.gen.pacnew
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice
@@ -3250,7 +3267,6 @@ in  ~/Arch/AUR/ :  bash -x AURclones.sh
 ## DVD Shrink
 ## Perl modules
 ## Calibre
-## Firefox
 ## PTP camera
 ## LPD-rapport.cls
 ## Minecraft

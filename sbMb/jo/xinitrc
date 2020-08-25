@@ -1,0 +1,80 @@
+#!/bin/sh
+
+# JH note:
+#  symlink this to  ~/.xinitrc  so that it is used instead of the default
+#  I built this from default, with my additions marked JH.
+#  Each machine needs its own version of this configuration file.
+
+# copied from the default  /etc/X11/xinit/xinitrc
+# -----------------------------------------------
+userresources=$HOME/.Xresources
+usermodmap=$HOME/.Xmodmap
+sysresources=/etc/X11/xinit/.Xresources
+sysmodmap=/etc/X11/xinit/.Xmodmap
+
+# JH additions
+# ------------
+# defined here so they can be accessed by  $MACHINE/jo/Openbox/autostart  & by  gvim
+# kill tmux sessions if you've made changes here
+export DROPBOX=/mnt/SD480GSSDPlus/Dropbox   # keep this capitalised for finding it without need for $
+    export ITstack=$DROPBOX/JH/IT_stack
+        export onGH=$ITstack/onGitHub
+            export ARCHBUILDS=$onGH/ArchBuilds
+                export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
+                export Imagey=$ARCHBUILDS/jo/Bash/Imagey
+                export machineName=sbMb  # for ~/.vim/pack/ArchLinux/lists.sh
+                    export MACHINE=$ARCHBUILDS/$machineName
+                export Openbox=$ARCHBUILDS/jo/Openbox
+                    export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
+                    export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
+            export MD4PDF=$onGH/md4pdf
+        export GNULE=$ITstack/email-GNULinux  # where I keep private configurations
+
+userresources=$MACHINE/jo/Xresources  # space after the = for vim gf
+
+# copied from the default  /etc/X11/xinit/xinitrc
+# -----------------------------------------------
+# merge in defaults and keymaps
+
+if [ -f $sysresources ]; then
+    xrdb -merge $sysresources
+fi
+
+if [ -f $sysmodmap ]; then
+    xmodmap $sysmodmap
+fi
+
+if [ -f "$userresources" ]; then
+    xrdb -merge "$userresources"
+fi
+
+if [ -f "$usermodmap" ]; then
+    xmodmap "$usermodmap"
+fi
+
+# start some nice programs
+
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+ for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+  [ -x "$f" ] && . "$f"
+ done
+ unset f
+fi
+
+# twm &
+# xclock -geometry 50x50-1+1 &
+# xterm -geometry 80x50+494+51 &
+# xterm -geometry 80x20+494-0 &
+# exec xterm -geometry 80x66+0+0 -name login
+
+# JH additions
+# ------------
+
+# stop the 600s screensaver
+xset s off
+
+# lastly, Openbox
+export QT_QPA_PLATFORMTHEME=qt5ct # QPA set here so qt5ct works from Menu too
+xbindkeys  # must be before launching Openbox
+exec openbox-session
+
