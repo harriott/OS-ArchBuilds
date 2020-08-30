@@ -3240,8 +3240,17 @@ ran it to populate  /.mozilla/firefox/9fx6yhoz.default-release  which I then rep
 # /etc/locale.gen.pacnew
 cd /etc/  for  su + root pw  for
 nvim -O locale.gen locale.gen.pacnew   & diff'd over my changes
-visudo -c -f /etc/locale.gen.pacnew  got me "/etc/locale.gen.pacnew: parsed OK"
 rm /etc/locale.gen.pacnew
+# /etc/nsswitch.conf.pacnew
+cd /etc/  for  su + root pw  for
+## accidentally deleted it
+(with  rm /etc/nsswitch.conf)
+### fix
+cp /mnt/WD1001FALS/rsnapshot/hourly.0/localhost/etc/nsswitch.conf /etc/nsswitch.conf
+nvim -O nsswitch.conf nsswitch.conf.pacnew   & diff'd over my changes
+cat nsswitch.conf
+### correctly remove the pacnew
+rm /etc/nsswitch.conf.pacnew
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

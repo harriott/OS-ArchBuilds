@@ -61,7 +61,7 @@ nmse () {
     notmuchsearch="$1 $2 $3 $4 $5 $6 $7 $8 $9"
     echo $notmuchsearch
     notmuch search $notmuchsearch
-}
+} # gets a quick list of the relevant emails
 nmsh () {
     echo '# vim: set ft=mail tw=0:' > nms
     echo >> nms
@@ -72,6 +72,6 @@ nmsh () {
     rm nms
     sed -i '//d' nms.mail  # finally remove unneeded lines
     perl $email/nmsh-sort.pl nms.mail
-    gvim nms.mail
-}
+    gvim nms.mail # the results, in the working directory
+} # shows the relevant emails
 

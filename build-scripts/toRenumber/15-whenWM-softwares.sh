@@ -289,6 +289,10 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S gucharmap
 # # Accessories > Character Map > View > By Unicode Block
 
+#=> java-commons-lang
+# for pdftk's functions
+sudo pacman -S java-commons-lang
+
 # #=> npm ffmpeg-concat
 # sudo pacman -S npm
 # mkdir ~/.npm-global
@@ -299,6 +303,9 @@ trap read debug  # puts a read request after each executable line
 
 # #=> OpenShot
 # sudo pacman -S openshot
+
+# #=> pdftk
+# sudo pacman -S pdftk
 
 # #=> peek
 # sudo pacman -S peek
