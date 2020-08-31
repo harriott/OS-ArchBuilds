@@ -20,6 +20,9 @@ makepkg -sic
 # now diff against the default
 nvim -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
 
+#=> 1 xinitrc
+ln -sf $MACHINE/jo/xinitrc ~/.xinitrc
+
 # #=> openbox-themes
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/openbox-themes.git
