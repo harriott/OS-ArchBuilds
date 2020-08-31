@@ -5,7 +5,6 @@
 
 #=> symlinks for softares in my Openbox build
 
-ln -sf $Openbox/Xresources/Xresources                  ~/.Xresources
 ln -sf $Openbox/cmus-rc.conf                           ~/.config/cmus/rc
 ln -sf $Openbox/dunstrc                                ~/.config/dunst/dunstrc
 ln -sf $Openbox/zathurarc                              ~/.config/zathura/zathurarc

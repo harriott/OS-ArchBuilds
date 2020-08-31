@@ -11,10 +11,11 @@ ARCHBUILDS=~/ArchBuilds
 #=> 1 symlinks for Openbox itself
 # sort this list by last use of "~":  :sort /,*\~/
 
-ln -sf $MACHINE/jo/openbox/schema.pl ~/.config/obmenu-generator/schema.pl
-ln -sf $MACHINE/jo/openbox/autostart ~/.config/openbox/autostart
-ln -sf $Openbox/openbox/menu.xml     ~/.config/openbox/menu.xml
-ln -sf $Openbox/openbox/rc.xml       ~/.config/openbox/rc.xml
+ln -sf $MACHINE/jo/openbox/schema.pl  ~/.config/obmenu-generator/schema.pl
+ln -sf $MACHINE/jo/openbox/autostart  ~/.config/openbox/autostart
+ln -sf $Openbox/openbox/menu.xml      ~/.config/openbox/menu.xml
+ln -sf $Openbox/openbox/rc.xml        ~/.config/openbox/rc.xml
+ln -sf $Openbox/Xresources/Xresources ~/.Xresources
 
 #=> 1 xinitrc
 ln -sf $MACHINE/jo/xinitrc ~/.xinitrc
