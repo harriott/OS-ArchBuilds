@@ -3239,8 +3239,8 @@ ran it to populate  /.mozilla/firefox/9fx6yhoz.default-release  which I then rep
 # qimgv not launching
 # /etc/locale.gen.pacnew
 cd /etc/  for  su + root pw  for
-nvim -O locale.gen locale.gen.pacnew   & diff'd over my changes
-rm /etc/locale.gen.pacnew
+nvim -O locale.gen locale.gen.pacnew   & diff'd over changes
+rm /locale.gen.pacnew
 # /etc/nsswitch.conf.pacnew
 cd /etc/  for  su + root pw  for
 ## accidentally deleted it

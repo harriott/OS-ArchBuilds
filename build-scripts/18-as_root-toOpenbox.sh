@@ -1,17 +1,10 @@
 #!/bin/bash
 # vim: fdm=expr fdc=1 ft=shbuild:
 
-# bash <thisfile>.sh
+# sudo bash <thisfile>.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
-
-#=> configure GnuPG for pinentry
-# gpg-agent.conf symlink for passphrase
-ln -s $ARCHBUILDS/jo/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-
-# pinentry
-export GPG_TTY=$(tty)
 
 #=> software - android-tools
 pacman -S android-tools
