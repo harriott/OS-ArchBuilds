@@ -14,20 +14,6 @@ Xft.rgba: rgb
 ! rxvt-unicode:
 ! -------------
 
-! colorschemes:
-! comments here cant handle apostrophes
-! #include cant handle variables in the paths
-! I havent yet found a scheme that can usefully list colourised NTFS directories
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/BastianRieck"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/gruvbox-urxvt256"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/Falcon"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-base16"
-#include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-gruvbox"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/myURxvtSolarizedLight"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/TomorrowNight"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/XresourceTomorrow"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/XresourceTomorrowNight"
-
 ! default terminal wide enough for  ip l :
 URxvt.geometry: 115x24
 

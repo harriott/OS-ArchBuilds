@@ -1,7 +1,7 @@
 # vim: set ft=sh tw=0:
 
 # commands for syncing mailboxes
-source $GNULE/emailAddresses
+[[ -d $GNULE ]] && source $GNULE/emailAddresses
 nmnew () { echo "notmuch new:"; notmuch new; }
 msj () { mbsync czj   ; nmnew ; echo "nmTags-czj.sh"   ; bash $email/nmTags-czj.sh   ; }
 msp () { mbsync czp   ; nmnew ; echo "nmTags-czp.sh"   ; bash $email/nmTags-czp.sh   ; }

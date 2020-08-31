@@ -1,0 +1,19 @@
+
+! #include cant handle variables in the paths, so  they're set here
+
+! generic Xresources
+! ------------------
+! provisional - comment out when Dropbox is up:
+#include "/home/jo/ArchBuilds/jo/Openbox/Xresources/Xresources"
+
+#include "/mnt/SD480GSSDPlus/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/Xresources"
+
+! rxvt-unicode colorschemes:
+! --------------------------
+! I havent yet found a scheme that can usefully list colourised NTFS directories
+
+! provisional - comment out when Dropbox is up:
+#include "/home/jo/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-gruvbox"
+
+#include "/mnt/SD480GSSDPlus/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-gruvbox"
+
