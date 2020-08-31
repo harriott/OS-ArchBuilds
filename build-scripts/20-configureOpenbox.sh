@@ -6,12 +6,13 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 $MACHINE
-ARCHBUILDS=~/ArchBuilds
-    MACHINE=$ARCHBUILDS/sbMb
+# #=> 0 $MACHINE
+# ARCHBUILDS=~/ArchBuilds
+#     MACHINE=$ARCHBUILDS/sbMb
 
-# #=> 0 ~/.config/openbox
+# #=> 0 Openbox configuration folders
 # mkdir ~/.config/openbox
+mkdir ~/.config/obmenu-generator
 
 # #=> 0 openbox-themes
 # cd ~/Arch/AUR
@@ -31,28 +32,28 @@ ARCHBUILDS=~/ArchBuilds
 # cp $ARCHBUILDS/jo/Openbox/openbox/importScreenshot.sh ~/.config/openbox/importScreenshot.sh
 # chmod 755 ~/.config/openbox/importScreenshot.sh
 
-#=> 1 perl-data-dump
-# for  obmenu-generator
-sudo pacman -S perl-data-dump
+# #=> 1 perl-data-dump
+# # for  obmenu-generator
+# sudo pacman -S perl-data-dump
 
-#=> 1 perl-linux-desktopfiles
-# for  obmenu-generator
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/perl-linux-desktopfiles.git
-cd perl-linux-desktopfiles
-[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-makepkg -sic
+# #=> 1 perl-linux-desktopfiles
+# # for  obmenu-generator
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/perl-linux-desktopfiles.git
+# cd perl-linux-desktopfiles
+# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+# makepkg -sic
 
-#=> 2 obmenu-generator
-cd ~/Arch/AUR
-[[ -d obmenu-generator ]] && sudo rm -r obmenu-generator
-git clone https://aur.archlinux.org/obmenu-generator.git
-cd obmenu-generator
-[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-makepkg -sic
-if [[ -d $DROPBOX ]]; then # assume that my Dropbox is up
-    gvim -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
-else
-    cp /etc/xdg/obmenu-generator/schema.pl /mm/k8v-schema.pl # diff against this later
-fi
+# #=> 2 obmenu-generator
+# cd ~/Arch/AUR
+# [[ -d obmenu-generator ]] && sudo rm -r obmenu-generator
+# git clone https://aur.archlinux.org/obmenu-generator.git
+# cd obmenu-generator
+# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+# makepkg -sic
+# if [[ -d $DROPBOX ]]; then # assume that my Dropbox is up
+#     gvim -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
+# else
+#     cp /etc/xdg/obmenu-generator/schema.pl /mm/k8v-schema.pl # diff against this later
+# fi
 
