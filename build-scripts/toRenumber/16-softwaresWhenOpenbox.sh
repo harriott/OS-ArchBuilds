@@ -58,8 +58,6 @@ cd ~
 # pacman -S pcmanfm
 # # ...
 
-# #=> 1 perl-linux-desktopfiles
-
 # #=> 1 Pinta
 # pacman -S pinta
 
