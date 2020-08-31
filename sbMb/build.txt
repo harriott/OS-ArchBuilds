@@ -129,7 +129,8 @@ gpg --list-keys
   gpg: keybox '/home/jo/.gnupg/pubring.kbx' created
   gpg: /home/jo/.gnupg/trustdb.gpg: trustdb created
 ## Openbox
-18-as_root-toOpenbox.sh
+bash 18-GnuPG+pandoc.sh
+bash 18-as_root-toOpenbox.sh
 # physical configuration
 TL-WN821N
 ## cbh

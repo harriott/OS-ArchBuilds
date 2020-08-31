@@ -14,10 +14,10 @@ trap read debug  # puts a read request after each executable line
 # pacman -S ghostscript
 
 # Pandoc
-# sudo pacman -S pandoc
+# pacman -S pandoc
 
 # TeX Live
-sudo pacman -S texlive-most texlive-langchinese
+pacman -S texlive-most texlive-langchinese
 
 #=> softwares - file manage
 # cdrtools
@@ -52,7 +52,7 @@ pacman -S espeak-ng-espeak termdown
 pacman -S iscan
 
 # pulsemixer
-sudo pacman -S pulsemixer
+pacman -S pulsemixer
 
 #=> softwares - networking
 # iw
@@ -78,13 +78,13 @@ pacman -S transmission-qt
 pacman -S lxappearance-obconf obconf
 
 # CopyQ
-sudo pacman -S copyq
+pacman -S copyq
 
 # Dunst
 pacman -S dunst
 
 # galculator
-sudo pacman -S galculator
+pacman -S galculator
 
 # Gmrun
 pacman -S gmrun
