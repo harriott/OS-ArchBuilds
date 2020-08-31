@@ -9,66 +9,66 @@ trap read debug  # puts a read request after each executable line
 # #=> software - android-tools
 # pacman -S android-tools
 
-#=> softwares - documenting
-# Ghostscript
+# #=> softwares - documenting
+# # Ghostscript
 # pacman -S ghostscript
 
-# Pandoc
+# # Pandoc
 # pacman -S pandoc
 
-# TeX Live
-pacman -S texlive-most texlive-langchinese
+# # TeX Live
+# pacman -S texlive-most texlive-langchinese  # select all
 
-#=> softwares - file manage
-# cdrtools
-pacman -S cdrtools
+# #=> softwares - file manage
+# # cdrtools
+# pacman -S cdrtools
 
-# GVFS
-pacman -S gvfs
+# # GVFS
+# pacman -S gvfs
 
-# gvfs-mtp - for accessing phone memory
-pacman -S gvfs-mtp
+# # gvfs-mtp - for accessing phone memory
+# pacman -S gvfs-mtp
 
-# nnn
-pacman -S nnn
+# # nnn
+# pacman -S nnn
 
-#=> softwares - gtop
-pacman -S gtop
+# #=> softwares - gtop
+# pacman -S gtop
 
-#=> softwares - cmatrix
-pacman -S cmatrix
+# #=> softwares - cmatrix
+# pacman -S cmatrix
 
-#=> softwares - iptraf-ng
-pacman -S iptraf-ng
+# #=> softwares - iptraf-ng
+# pacman -S iptraf-ng
 
-#=> softwares - multimedia
-# Cmus
-pacman -S cmus
+# #=> softwares - multimedia
+# # Cmus
+# pacman -S cmus
 
-# espeak-ng-espeak & termdown
-pacman -S espeak-ng-espeak termdown
+# # espeak-ng-espeak & termdown
+# pacman -S espeak-ng-espeak termdown
 
-# iscan
-pacman -S iscan
+# # iscan
+# pacman -S iscan
 
-# pulsemixer
-pacman -S pulsemixer
+# # pulsemixer
+# pacman -S pulsemixer
 
-#=> softwares - networking
-# iw
-pacman -S iw
+# #=> softwares - networking 1
+# # iw
+# pacman -S iw
 
-# iwd
-pacman -S iwd
-systemctl enable iwd.service
-systemctl start iwd.service
-systemctl status iwd.service
+# # iwd
+# pacman -S iwd
+# systemctl enable iwd.service --now
+# systemctl status iwd.service
 
-# lynx
-pacman -S lynx
+# # lynx
+# pacman -S lynx
 
+#=> softwares - networking 2
 # mailcap
-pacmatic -S mailcap
+pacman -S mailcap
 
 # Transmission
 pacman -S transmission-qt
