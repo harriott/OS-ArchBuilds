@@ -5,7 +5,7 @@
 if [ -d $DROPBOX ]; then # assume that my Dropbox is up
     [[ -s ~/.gitconfig ]] && rm ~/.gitconfig
     ln -sf $ARCHBUILDS/jo/gitconfig ~/.gitconfig
-elif
+else
     # use my  $ITstack/gitconfig  from a removable drive
     cp /mm/gitconfig ~/.gitconfig
 fi
