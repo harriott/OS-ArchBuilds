@@ -20,6 +20,7 @@ export DROPBOX=/mnt/SD480GSSDPlus/Dropbox   # keep this capitalised for finding 
     export ITstack=$DROPBOX/JH/IT_stack
         export onGH=$ITstack/onGitHub
             export ARCHBUILDS=$onGH/ArchBuilds
+            export ARCHBUILDS=$HOME/ArchBuilds # provisional - comment out once Dropbox is up
                 export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
                 export Imagey=$ARCHBUILDS/jo/Bash/Imagey
                 export machineName=sbMb  # for ~/.vim/pack/ArchLinux/lists.sh
