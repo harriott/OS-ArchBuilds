@@ -97,17 +97,6 @@ trap read debug  # puts a read request after each executable line
 # # Openbox & tint2
 # pacman -S openbox tint2
 
-#=> softwares - Openbox environment 2
-# 1 ~/.config/openbox
-mkdir ~/.config/openbox
-
-# 2 importScreenshot.sh
-cp $ARCHBUILDS/jo/Openbox/openbox/importScreenshot.sh /home/jo/.config/openbox/importScreenshot.sh
-chmod 755 /home/jo/.config/openbox/importScreenshot.sh
-
-# 2 rc.xml
-cp $ARCHBUILDS/jo/Openbox/openbox/rc.xml /home/jo/.config/openbox/rc.xml
-
 #=> softwares - system
 # Bluefish
 pacman -S bluefish
