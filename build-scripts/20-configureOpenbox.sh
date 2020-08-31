@@ -10,14 +10,15 @@ trap read debug  # puts a read request after each executable line
 ARCHBUILDS=~/ArchBuilds
     MACHINE=$ARCHBUILDS/sbMb
 
-#=> 0 ~/.config/openbox
-mkdir ~/.config/openbox
+# #=> 0 ~/.config/openbox
+# mkdir ~/.config/openbox
 
 #=> 0 openbox-themes
 cd ~/Arch/AUR
+[[ -d obmenu-themes ]] && sudo rm -r obmenu-themes
 git clone https://aur.archlinux.org/openbox-themes.git
 cd openbox-themes
-cat PKGBUILD | less
+[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
 makepkg -sic
 
 # Openbox Loma theme tweak for active window
@@ -35,7 +36,7 @@ cd ~/Arch/AUR
 [[ -d obmenu-generator ]] && sudo rm -r obmenu-generator
 git clone https://aur.archlinux.org/obmenu-generator.git
 cd obmenu-generator
-cat PKGBUILD | less
+[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
 makepkg -sic
 if [[ -d $DROPBOX ]]; then # assume that my Dropbox is up
     gvim -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
