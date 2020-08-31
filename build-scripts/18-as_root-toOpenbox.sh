@@ -3,6 +3,8 @@
 
 # sudo bash <thisfile>.sh
 
+ARCHBUILDS=/home/jo/ArchBuilds
+
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
@@ -66,42 +68,44 @@ trap read debug  # puts a read request after each executable line
 # # lynx
 # pacman -S lynx
 
-#=> softwares - networking 2
-# mailcap
-pacman -S mailcap
+# #=> softwares - networking 2
+# # mailcap
+# pacman -S mailcap
 
-# Transmission
-pacman -S transmission-qt
+# # Transmission
+# pacman -S transmission-qt
 
-#=> softwares - Openbox environment
-# configure Openbox
-pacman -S lxappearance-obconf obconf
+# #=> softwares - Openbox environment 1
+# # configure Openbox
+# pacman -S lxappearance-obconf obconf
 
-# CopyQ
-pacman -S copyq
+# # CopyQ
+# pacman -S copyq
 
-# Dunst
-pacman -S dunst
+# # Dunst
+# pacman -S dunst
 
-# galculator
-pacman -S galculator
+# # galculator
+# pacman -S galculator
 
-# Gmrun
-pacman -S gmrun
+# # Gmrun
+# pacman -S gmrun
 
-# gsimplecal
-pacman -S gsimplecal
+# # gsimplecal
+# pacman -S gsimplecal
 
-# Openbox & tint2
-pacman -S openbox tint2
-# Now pull over my tweaks:
-# nvim ~/.config/tint2/tint2rc $ARCHBUILDS/jo/Openbox/tint2rc
+# # Openbox & tint2
+# pacman -S openbox tint2
 
-# openbox/importScreenshot.sh
+#=> softwares - Openbox environment 2
+# 1 ~/.config/openbox
+mkdir ~/.config/openbox
+
+# 2 importScreenshot.sh
 cp $ARCHBUILDS/jo/Openbox/openbox/importScreenshot.sh /home/jo/.config/openbox/importScreenshot.sh
 chmod 755 /home/jo/.config/openbox/importScreenshot.sh
 
-# rc.xml
+# 2 rc.xml
 cp $ARCHBUILDS/jo/Openbox/openbox/rc.xml /home/jo/.config/openbox/rc.xml
 
 #=> softwares - system

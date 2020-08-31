@@ -2,23 +2,29 @@
 # vim: fdm=expr fdc=1 ft=shbuild:
 
 # bash <thisfile>.sh
+
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> obmenu-generator
+#=> 0 $MACHINE
+ARCHBUILDS=~/ArchBuilds
+    MACHINE=$ARCHBUILDS/sbMb
+
+#=> 1 obmenu-generator
 cd ~/Arch/AUR
 sudo rm -r obmenu-generator
 git clone https://aur.archlinux.org/obmenu-generator.git
 cd obmenu-generator
-xdg-open PKGBUILD
+cat PKGBUILD | less
 makepkg -sic
-gvim -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl -geom 200
+# now diff against the default
+nvim -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
 
 # #=> openbox-themes
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/openbox-themes.git
 # cd openbox-themes
-# xdg-open PKGBUILD
+# cat PKGBUILD | less
 # makepkg -sic
 
 # # Openbox Loma theme tweak for active window

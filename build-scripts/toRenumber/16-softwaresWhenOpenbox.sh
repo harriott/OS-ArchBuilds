@@ -9,6 +9,10 @@ trap read debug  # puts a read request after each executable line
 # # for advcp
 # gpg --recv-keys 6C37DC12121A5006BC1DB804DF6FD971306037D9
 
+#=> 0 tint2rc
+mv ~/.config/tint2/tint2rc $ARCHBUILDS/jo/Openbox/k8v-tint2rc
+cp $ARCHBUILDS/jo/Openbox/tint2rc ~/.config/tint2/tint2rc
+
 #=> 1 advcp
 # for nnn -r
 cd ~/Arch/AUR

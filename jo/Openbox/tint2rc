@@ -31,6 +31,7 @@ background_color_pressed = #555555 4
 border_color_pressed = #eaeaea 44
 
 # Background 3: Active task
+# wider and brighter border - JH
 rounded = 4
 border_width = 2
 border_sides = TBLR
@@ -168,7 +169,7 @@ clock_padding = 2 0
 clock_background_id = 0
 clock_tooltip = 
 clock_tooltip_timezone = 
-  # left-click needs to be empty to avoid seizure of gsimplecal on double-click:
+# left-click needs to be empty to avoid seizure of gsimplecal on double-click - JH
 clock_lclick_command = 
   clock_rclick_command = gsimplecal &
   clock_mclick_command = gsimplecal &
