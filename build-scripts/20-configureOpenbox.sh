@@ -15,7 +15,7 @@ ARCHBUILDS=~/ArchBuilds
 
 #=> 0 openbox-themes
 cd ~/Arch/AUR
-[[ -d obmenu-themes ]] && sudo rm -r obmenu-themes
+[[ -d openbox-themes ]] && sudo rm -r openbox-themes
 git clone https://aur.archlinux.org/openbox-themes.git
 cd openbox-themes
 [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
