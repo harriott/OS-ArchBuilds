@@ -15,7 +15,6 @@ trap read debug  # puts a read request after each executable line
 
 # Pandoc
 # sudo pacman -S pandoc
-mkdir -p ~/.pandoc/defaults
 
 # TeX Live
 sudo pacman -S texlive-most texlive-langchinese
