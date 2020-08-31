@@ -6,16 +6,16 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> software - android-tools
-pacman -S android-tools
+# #=> software - android-tools
+# pacman -S android-tools
 
 #=> softwares - documenting
 # Ghostscript
-pacman -S ghostscript
+# pacman -S ghostscript
 
 # Pandoc
-sudo pacman -S pandoc
-mkdir ~/.pandoc/defaults
+# sudo pacman -S pandoc
+mkdir -p ~/.pandoc/defaults
 
 # TeX Live
 sudo pacman -S texlive-most texlive-langchinese
