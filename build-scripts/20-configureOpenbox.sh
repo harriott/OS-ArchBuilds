@@ -12,7 +12,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> 0 Openbox configuration folders
 # mkdir ~/.config/openbox
-mkdir ~/.config/obmenu-generator
+# mkdir ~/.config/obmenu-generator
 
 # #=> 0 openbox-themes
 # cd ~/Arch/AUR
