@@ -273,7 +273,7 @@ sudo pacman -S rxvt-unicode xterm  for 8 packages
 ## Keyboard in X
 is US
 ### generate 00-keyboard.conf
-sudo bash -x $DROPBOX/$AVT661/build/steps/generateKeyboardConf.sh  - generated  /etc/X11/xorg.conf.d/00-keyboard.conf  &  restarting Openbox got the mapping
+sudo bash -x $MACHINE/build/steps/generateKeyboardConf.sh  - generated  /etc/X11/xorg.conf.d/00-keyboard.conf  &  restarting Openbox got the mapping
 ## disable screen blanking
 ### disable DPMS
 sudo cp ~/AcerVeritonT661/configFiles/10-monitor.conf /etc/X11/xorg.conf.d/
@@ -3251,6 +3251,12 @@ nvim -O nsswitch.conf nsswitch.conf.pacnew   & diff'd over my changes
 cat nsswitch.conf
 ### correctly remove the pacnew
 rm /etc/nsswitch.conf.pacnew
+# keyboard
+setxkbmap -print -verbose 10
+  model:      logitech_base
+  layout:     gb
+  ...
+  geometry:   pc(pc104)
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

@@ -172,7 +172,6 @@ pass ls
 
 # PDFs
 pdfimages -h
-pdftk in.pdf burst  # breaks into individual pages
 
 ## C5 printing
 LibreOffice Writer gets it right
@@ -181,6 +180,10 @@ Ubuntu's qpdfview gets it almost right
 ### fails
 Firefox can't figure it's portrait
 Zathura prints as Print Page Setup default (normally A4)
+
+## pdftk
+pdftk in.pdf burst                # breaks into individual pages
+pdftk in*.pdf cat output out.pdf  # concatenate a sequence of PDFs
 
 ## sizes
 1 PostScript point ≙ 0.3528 mm

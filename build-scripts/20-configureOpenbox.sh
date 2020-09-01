@@ -28,6 +28,15 @@ mkdir ~/.config/obmenu-generator
 # sed -i '/window.active.border.color:/ s/#000000/#FF8000/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 # sed -i '/^border.width:/ s/1/2/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 
+#=> 0 xorg-xkbprint
+cd ~/Arch/AUR
+# sudo rm -r xorg-xkbprint
+git clone https://aur.archlinux.org/xorg-xkbprint.git
+cd xorg-xkbprint
+[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+makepkg -sic
+cd ~
+
 # #=> 1 importScreenshot.sh
 # cp $ARCHBUILDS/jo/Openbox/openbox/importScreenshot.sh ~/.config/openbox/importScreenshot.sh
 # chmod 755 ~/.config/openbox/importScreenshot.sh

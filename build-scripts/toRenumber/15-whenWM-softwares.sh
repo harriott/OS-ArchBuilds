@@ -61,15 +61,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#=> Dropbox
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-sudo rm -r dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #=> Dropbox
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# sudo rm -r dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> Dust
 # # (after Rust Toolchain)
@@ -288,12 +288,12 @@ cd ~
 # #=> xbindkeys
 # sudo pacman -S xbindkeys
 
-# #=> Zoom
-# cd ~/Arch/AUR
-# sudo rm -r zoom
-# git clone https://aur.archlinux.org/zoom.git
-# cd zoom
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> Zoom
+cd ~/Arch/AUR
+sudo rm -r zoom
+git clone https://aur.archlinux.org/zoom.git
+cd zoom
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
