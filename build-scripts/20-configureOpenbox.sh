@@ -30,7 +30,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> 0 xorg-xkbprint
 cd ~/Arch/AUR
-# sudo rm -r xorg-xkbprint
+sudo rm -r xorg-xkbprint
 git clone https://aur.archlinux.org/xorg-xkbprint.git
 cd xorg-xkbprint
 [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
