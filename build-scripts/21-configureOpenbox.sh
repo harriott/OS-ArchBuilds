@@ -28,14 +28,21 @@ trap read debug  # puts a read request after each executable line
 # sed -i '/window.active.border.color:/ s/#000000/#FF8000/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 # sed -i '/^border.width:/ s/1/2/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 
-#=> 0 xorg-xkbprint
-cd ~/Arch/AUR
-sudo rm -r xorg-xkbprint
-git clone https://aur.archlinux.org/xorg-xkbprint.git
-cd xorg-xkbprint
-[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-makepkg -sic
-cd ~
+# #=> 0 xorg-xkbprint
+# cd ~/Arch/AUR
+# sudo rm -r xorg-xkbprint
+# git clone https://aur.archlinux.org/xorg-xkbprint.git
+# cd xorg-xkbprint
+# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+# makepkg -sic
+# cd ~
+
+#=> 1 grab keyboard maps
+if [ -w /mm ]; then
+    for i in {1..3}; do
+        xkbprint -ll $i :0.0 -o - | ps2pdf - > /mm/xkbprint/shift_level_$i.pdf
+    done
+fi
 
 # #=> 1 importScreenshot.sh
 # cp $ARCHBUILDS/jo/Openbox/openbox/importScreenshot.sh ~/.config/openbox/importScreenshot.sh
