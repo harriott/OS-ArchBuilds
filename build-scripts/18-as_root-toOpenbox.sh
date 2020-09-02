@@ -8,22 +8,13 @@ ARCHBUILDS=/home/jo/ArchBuilds
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> auracle-git
-cd ~/Arch/AUR
-sudo rm -r auracle-git
-git clone https://aur.archlinux.org/auracle-git.git
-cd auracle-git
-# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-makepkg -sic
-cd ~
+#=> 0 pkgconf
+pacman -S pkgconf
 
-# #=> pkgconf
-# pacman -S pkgconf
-
-# #=> software - android-tools
+# #=> 0 software - android-tools
 # pacman -S android-tools
 
-# #=> softwares - documenting
+# #=> 0 softwares - documenting
 # # Ghostscript
 # pacman -S ghostscript
 
@@ -33,7 +24,7 @@ cd ~
 # # TeX Live
 # pacman -S texlive-most texlive-langchinese  # select all
 
-# #=> softwares - file manage
+# #=> 0 softwares - file manage
 # # cdrtools
 # pacman -S cdrtools
 
@@ -46,16 +37,16 @@ cd ~
 # # nnn
 # pacman -S nnn
 
-# #=> softwares - gtop
+# #=> 0 softwares - gtop
 # pacman -S gtop
 
-# #=> softwares - cmatrix
+# #=> 0 softwares - cmatrix
 # pacman -S cmatrix
 
-# #=> softwares - iptraf-ng
+# #=> 0 softwares - iptraf-ng
 # pacman -S iptraf-ng
 
-# #=> softwares - multimedia
+# #=> 0 softwares - multimedia
 # # Cmus
 # pacman -S cmus
 
@@ -68,7 +59,7 @@ cd ~
 # # pulsemixer
 # pacman -S pulsemixer
 
-# #=> softwares - networking 1
+# #=> 0 softwares - networking 1
 # # iw
 # pacman -S iw
 
@@ -80,14 +71,14 @@ cd ~
 # # lynx
 # pacman -S lynx
 
-# #=> softwares - networking 2
+# #=> 0 softwares - networking 2
 # # mailcap
 # pacman -S mailcap
 
 # # Transmission
 # pacman -S transmission-qt
 
-# #=> softwares - Openbox environment 1
+# #=> 0 softwares - Openbox environment 1
 # # configure Openbox
 # pacman -S lxappearance-obconf obconf
 
@@ -109,7 +100,7 @@ cd ~
 # # Openbox & tint2
 # pacman -S openbox tint2
 
-# #=> softwares - system
+# #=> 0 softwares - system
 # # Bluefish
 # pacman -S bluefish
 
@@ -127,4 +118,13 @@ cd ~
 
 # # xvt-perls
 # pacman -S urxvt-perls
+
+#=> 1 auracle-git
+cd ~/Arch/AUR
+[[ -d auracle-git ]] && sudo rm -r auracle-git
+git clone https://aur.archlinux.org/auracle-git.git
+cd auracle-git
+[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+makepkg -sic
+cd ~
 
