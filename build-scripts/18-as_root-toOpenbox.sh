@@ -8,13 +8,13 @@ ARCHBUILDS=/home/jo/ArchBuilds
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 pkgconf
+#=> pkgconf
 pacman -S pkgconf
 
-# #=> 0 software - android-tools
+# #=> software - android-tools
 # pacman -S android-tools
 
-# #=> 0 softwares - documenting
+# #=> softwares - documenting
 # # Ghostscript
 # pacman -S ghostscript
 
@@ -24,7 +24,7 @@ pacman -S pkgconf
 # # TeX Live
 # pacman -S texlive-most texlive-langchinese  # select all
 
-# #=> 0 softwares - file manage
+# #=> softwares - file manage
 # # cdrtools
 # pacman -S cdrtools
 
@@ -37,16 +37,16 @@ pacman -S pkgconf
 # # nnn
 # pacman -S nnn
 
-# #=> 0 softwares - gtop
+# #=> softwares - gtop
 # pacman -S gtop
 
-# #=> 0 softwares - cmatrix
+# #=> softwares - cmatrix
 # pacman -S cmatrix
 
-# #=> 0 softwares - iptraf-ng
+# #=> softwares - iptraf-ng
 # pacman -S iptraf-ng
 
-# #=> 0 softwares - multimedia
+# #=> softwares - multimedia
 # # Cmus
 # pacman -S cmus
 
@@ -59,7 +59,7 @@ pacman -S pkgconf
 # # pulsemixer
 # pacman -S pulsemixer
 
-# #=> 0 softwares - networking 1
+# #=> softwares - networking 1
 # # iw
 # pacman -S iw
 
@@ -71,14 +71,14 @@ pacman -S pkgconf
 # # lynx
 # pacman -S lynx
 
-# #=> 0 softwares - networking 2
+# #=> softwares - networking 2
 # # mailcap
 # pacman -S mailcap
 
 # # Transmission
 # pacman -S transmission-qt
 
-# #=> 0 softwares - Openbox environment 1
+# #=> softwares - Openbox environment 1
 # # configure Openbox
 # pacman -S lxappearance-obconf obconf
 
@@ -100,7 +100,7 @@ pacman -S pkgconf
 # # Openbox & tint2
 # pacman -S openbox tint2
 
-# #=> 0 softwares - system
+# #=> softwares - system
 # # Bluefish
 # pacman -S bluefish
 
@@ -118,13 +118,4 @@ pacman -S pkgconf
 
 # # xvt-perls
 # pacman -S urxvt-perls
-
-#=> 1 auracle-git
-cd ~/Arch/AUR
-[[ -d auracle-git ]] && sudo rm -r auracle-git
-git clone https://aur.archlinux.org/auracle-git.git
-cd auracle-git
-[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-makepkg -sic
-cd ~
 
