@@ -8,6 +8,9 @@ ARCHBUILDS=/home/jo/ArchBuilds
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> pkgconf
+pacman -S pkgconf
+
 # #=> software - android-tools
 # pacman -S android-tools
 
@@ -97,22 +100,22 @@ trap read debug  # puts a read request after each executable line
 # # Openbox & tint2
 # pacman -S openbox tint2
 
-#=> softwares - system
-# Bluefish
-pacman -S bluefish
+# #=> softwares - system
+# # Bluefish
+# pacman -S bluefish
 
-# Conky
-pacman -S conky
+# # Conky
+# pacman -S conky
 
-# fcron
-pacman -S fcron
+# # fcron
+# pacman -S fcron
 
-# sysstat
-pacman -S sysstat
+# # sysstat
+# pacman -S sysstat
 
-# python-virtualenvwrapper
-pacman -S python-virtualenvwrapper
+# # python-virtualenvwrapper
+# pacman -S python-virtualenvwrapper
 
-# xvt-perls
-pacman -S urxvt-perls
+# # xvt-perls
+# pacman -S urxvt-perls
 
