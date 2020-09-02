@@ -8,8 +8,17 @@ ARCHBUILDS=/home/jo/ArchBuilds
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> pkgconf
-pacman -S pkgconf
+#=> auracle-git
+cd ~/Arch/AUR
+sudo rm -r auracle-git
+git clone https://aur.archlinux.org/auracle-git.git
+cd auracle-git
+# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+makepkg -sic
+cd ~
+
+# #=> pkgconf
+# pacman -S pkgconf
 
 # #=> software - android-tools
 # pacman -S android-tools

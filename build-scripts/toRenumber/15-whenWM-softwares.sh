@@ -26,15 +26,6 @@ trap read debug  # puts a read request after each executable line
 # reboot !
 # true
 
-# #=> auracle-git
-# cd ~/Arch/AUR
-# sudo rm -r auracle-git
-# git clone https://aur.archlinux.org/auracle-git.git
-# cd auracle-git
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
-
 # #=> bat-extras-git
 # cd ~/Arch/AUR
 # sudo rm -r bat-extras-git
