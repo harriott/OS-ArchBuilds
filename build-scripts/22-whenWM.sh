@@ -10,8 +10,11 @@ trap read debug  # puts a read request after each executable line
 cd ~
 git clone git@github.com:harriott/vimfiles.git
 mv vimfiles .vim
-# don't forget to go to  .vim/pack/ArchLinux  and run your  clones.sh
-true
+cd .vim
+git remote rename origin gh
+cd pack/ArchLinux/sbMb
+bash clones.sh
+cd ~
 
 #=> grab keyboard maps
 if [ -w /mm ]; then
@@ -20,9 +23,4 @@ if [ -w /mm ]; then
         xkbprint -ll $i :0.0 -o - | ps2pdf - > /mm/xkbprint/shift_level_$i.pdf
     done
 fi
-
-# #=> time correction
-# xdg-open http://time.is/ # to see how much stray
-# sudo ntpd -qg
-# sudo hwclock --systohc
 
