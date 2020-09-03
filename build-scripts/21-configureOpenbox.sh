@@ -6,6 +6,9 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> 0 generate 00-keyboard.conf
+localectl --no-convert set-x11-keymap gb pc105
+
 # #=> 0 $MACHINE
 # ARCHBUILDS=~/ArchBuilds
 #     MACHINE=$ARCHBUILDS/sbMb
@@ -36,13 +39,6 @@ trap read debug  # puts a read request after each executable line
 # [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
 # makepkg -sic
 # cd ~
-
-#=> 1 grab keyboard maps
-if [ -w /mm ]; then
-    for i in {1..3}; do
-        xkbprint -ll $i :0.0 -o - | ps2pdf - > /mm/xkbprint/shift_level_$i.pdf
-    done
-fi
 
 # #=> 1 importScreenshot.sh
 # cp $ARCHBUILDS/jo/Openbox/openbox/importScreenshot.sh ~/.config/openbox/importScreenshot.sh

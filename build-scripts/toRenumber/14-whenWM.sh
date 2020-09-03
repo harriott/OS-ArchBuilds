@@ -13,8 +13,16 @@ mv vimfiles .vim
 # don't forget to go to  .vim/pack/ArchLinux  and run your  clones.sh
 true
 
-#=> time correction
-xdg-open http://time.is/ # to see how much stray
-sudo ntpd -qg
-sudo hwclock --systohc
+#=> grab keyboard maps
+if [ -w /mm ]; then
+    mkdir /mm/xkbprint
+    for i in {1..3}; do
+        xkbprint -ll $i :0.0 -o - | ps2pdf - > /mm/xkbprint/shift_level_$i.pdf
+    done
+fi
+
+# #=> time correction
+# xdg-open http://time.is/ # to see how much stray
+# sudo ntpd -qg
+# sudo hwclock --systohc
 

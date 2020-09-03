@@ -9,7 +9,8 @@ git rev-parse --show-toplevel => print the top level directory of the current re
 lsusb
 npm -g list
 rhash -a --bsd <somefile>
-rhash --list-hashes
+rhash --list-hashes => list names of all supported hashes
+rhash --sha256 <file>
 sudo parted -l
 whereis <executable>
 xrandr

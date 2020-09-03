@@ -112,6 +112,9 @@ trap read debug  # puts a read request after each executable line
 # #=> gifski
 # sudo pacman -S gifski
 
+#=> gnome-disk-utility
+sudo pacman -S gnome-disk-utility
+
 # #=> gucharmap
 # sudo pacman -S gucharmap
 # # Accessories > Character Map > View > By Unicode Block
@@ -279,12 +282,12 @@ trap read debug  # puts a read request after each executable line
 # #=> xbindkeys
 # sudo pacman -S xbindkeys
 
-#=> Zoom
-cd ~/Arch/AUR
-sudo rm -r zoom
-git clone https://aur.archlinux.org/zoom.git
-cd zoom
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #=> Zoom
+# cd ~/Arch/AUR
+# sudo rm -r zoom
+# git clone https://aur.archlinux.org/zoom.git
+# cd zoom
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
