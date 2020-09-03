@@ -98,6 +98,23 @@ mediainfo --help |moar
 854x480
 1280x720 = 720p = "HD Ready"
 
+## cmus
+,        seek -1m
+.        seek +1m
+^C       echo Type :quit<enter> to exit cmus.
+^L       refresh
+^R       toggle repeat_current
+C        toggle continue
+P        win-mv-before
+b        player-next
+e        win-add-q
+h, left  seek -5
+l, right seek +5
+p        win-mv-after
+r        toggle repeat
+v        player-stop
+z        player-prev
+
 ## OpenShot
 crossfades are created in overlaps
 

@@ -137,8 +137,12 @@ bash 21-configureOpenbox.sh
 bash 22-Openbox-symlinks.sh
 bash 22-whenWM.sh
 ## chromium won't render
+chromium --disable-gpu  always works
+somehow  wayland  is there
+### xf86-video-nouveau first
 sudo pacman -Rs chromium   removed a load
 sudo pacman -S mesa xf86-video-nouveau   then   reboot
+sudo pacman -S chromium   added a load
 # physical configuration
 TL-WN821N
 ## cbh
@@ -148,7 +152,11 @@ Perixx PERIBOARD-407W keyboard
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
   AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
   HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
-### BIOS Features
+### startup
+Del  gets into BIOS
+F12  gets a choice of boot media
+#### BIOS Features
 Peripherals > EHCI Hand-off Disabled [ IOMMU Controller  XHCI Hand-off ] > Enabled
 ### graphics
 Acer GF-7300SE-N-A3 nVidia GeForce 7300 graphics card  on  PCIEX16
+  KNOPPIX v8.6.1 > chromium works fine

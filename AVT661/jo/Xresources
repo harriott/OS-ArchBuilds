@@ -1,5 +1,5 @@
 
-! #include cant handle variables in the paths, so  they're set here
+! #include cant handle variables in the paths, so  theyre set here
 
 ! generic Xresources
 #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/Xresources"

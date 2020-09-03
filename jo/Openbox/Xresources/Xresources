@@ -11,6 +11,7 @@ Xft.rgba: rgb
 ! ------------
 
 ! After changes here, either quit & restart X or  xrdb ~/.Xresources
+! apostrophes in comments can trigger warnings, so dont use them
 
 ! rxvt-unicode:
 ! -------------

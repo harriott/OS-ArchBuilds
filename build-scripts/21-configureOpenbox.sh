@@ -17,11 +17,20 @@ trap read debug  # puts a read request after each executable line
 # # for NVIDEA (mesa might've been there already)
 # sudo pacman -S mesa xf86-video-nouveau  # will need to reboot
 
-#=> 0 Nouveau remove
-sudo pacman -Rs xf86-video-nouveau  # will need to reboot
+# #=> 0 Nouveau remove
+# sudo pacman -Rs xf86-video-nouveau  # will need to reboot
 
 # #=> 0 NVIDIA install
 # sudo pacman -S nvidia  # will need to reboot
+
+#=> 0 NVIDIA install
+cd ~/Arch/AUR
+[[ -d nvidia-beta ]] && sudo rm -r nvidia-beta
+git clone https://aur.archlinux.org/nvidia-beta.git
+cd nvidia-beta
+[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+makepkg -sic
+cd ~
 
 # #=> 0 Openbox configuration folders
 # mkdir ~/.config/openbox
