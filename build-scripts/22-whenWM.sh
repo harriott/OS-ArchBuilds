@@ -6,15 +6,15 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> configure gVim
-cd ~
-git clone git@github.com:harriott/vimfiles.git
-mv vimfiles .vim
-cd .vim
-git remote rename origin gh
-cd pack/ArchLinux/sbMb
-bash clones.sh
-cd ~
+# #=> configure gVim
+# cd ~
+# git clone git@github.com:harriott/vimfiles.git
+# mv vimfiles .vim
+# cd .vim
+# git remote rename origin gh
+# cd pack/ArchLinux/sbMb
+# bash clones.sh
+# cd ~
 
 #=> grab keyboard maps
 if [ -w /mm ]; then
