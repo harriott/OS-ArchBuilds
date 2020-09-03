@@ -151,4 +151,3 @@ Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16
 Peripherals > EHCI Hand-off Disabled [ IOMMU Controller  XHCI Hand-off ] > Enabled
 ### graphics
 Acer GF-7300SE-N-A3 nVidia GeForce 7300 graphics card  on  PCIEX16
-ASUSA EN6200LE TC256 nVidia GeForce 6200  on  PCIEX4

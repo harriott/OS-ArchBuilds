@@ -13,9 +13,15 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 generate 00-keyboard.conf
 # sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
 
-#=> 0 Nouveau
-# for NVIDEA
-sudo pacman -S mesa xf86-video-nouveau  # will need to reboot
+# #=> 0 Nouveau install
+# # for NVIDEA
+# sudo pacman -S mesa xf86-video-nouveau  # will need to reboot
+
+#=> 0 Nouveau remove
+sudo pacman -Rs mesa xf86-video-nouveau  # will need to reboot
+
+# #=> 0 NVIDIA install
+# sudo pacman -S nvidia  # will need to reboot
 
 # #=> 0 Openbox configuration folders
 # mkdir ~/.config/openbox
