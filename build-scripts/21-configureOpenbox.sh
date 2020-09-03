@@ -6,12 +6,16 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 generate 00-keyboard.conf
-sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
-
 # #=> 0 $MACHINE
 # ARCHBUILDS=~/ArchBuilds
 #     MACHINE=$ARCHBUILDS/sbMb
+
+# #=> 0 generate 00-keyboard.conf
+# sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
+
+#=> 0 Nouveau
+# for NVIDEA
+sudo pacman -S xf86-video-intel  # will need to reboot
 
 # #=> 0 Openbox configuration folders
 # mkdir ~/.config/openbox
