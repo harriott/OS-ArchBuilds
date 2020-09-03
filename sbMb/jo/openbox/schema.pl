@@ -32,22 +32,22 @@ my $editor = $CONFIG->{editor};
 
 our $SCHEMA = [
 
-    #          COMMAND                 LABEL              ICON
-    {item => ['xdg-open .',       'File Manager',         'system-file-manager']},
-    {item => ['xterm',            'xterm',                'utilities-terminal']},
-    {item => ['urxvt',            'rxvt-unicode',         'utilities-terminal']},
-  # {item => ['xdg-open http://', 'Web Browser',          'web-browser']},
-    {item => ['xdg-open http://', 'chromium',             'web-browser']},
-  # {item => ['thunderbird',      'Mail',                 'web-browser']},
-    {item => ['thunderbird',      'Thunderbird',          'web-browser']},
-    {item => ['gmrun',            'Run command',          'system-run']},
-    {item => ['falkon',           'Falkon',               'web-browser']},
-    {item => ['firefox',          'Firefox',              'web-browser']},
-    {item => ['gvim',             'gVim',                 'terminal']},
-    {item => ['opera',            'opera',                'web-browser']},
-    {item => ['quodlibet',        'Quod Libet',           'web-browser']},
-    {item => ['picard',           'MusicBrainz Picard',   'web-browser']},
-    {item => ['zoom',             'Zoom',                 'web-browser']},
+    #          COMMAND                 LABEL                ICON
+    {item => ['xdg-open .',       'File Manager',           'system-file-manager']},
+    {item => ['xterm',            'xterm',                  'utilities-terminal']},
+    {item => ['urxvt',            'rxvt-unicode',           'utilities-terminal']},
+  # {item => ['xdg-open http://', 'Web Browser',            'web-browser']},
+    {item => ['xdg-open http://', 'chromium --disable-gpu', 'web-browser']},
+  # {item => ['thunderbird',      'Mail',                   'web-browser']},
+    {item => ['thunderbird',      'Thunderbird',            'web-browser']},
+    {item => ['gmrun',            'Run command',            'system-run']},
+    {item => ['falkon',           'Falkon',                 'web-browser']},
+    {item => ['firefox',          'Firefox',                'web-browser']},
+    {item => ['gvim',             'gVim',                   'terminal']},
+    {item => ['opera',            'opera',                  'web-browser']},
+    {item => ['quodlibet',        'Quod Libet',             'web-browser']},
+    {item => ['picard',           'MusicBrainz Picard',     'web-browser']},
+    {item => ['zoom',             'Zoom',                   'web-browser']},
 
     {sep => 'Categories'},
 

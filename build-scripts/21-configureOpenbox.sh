@@ -23,23 +23,24 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 NVIDIA install
 # sudo pacman -S nvidia  # will need to reboot
 
-#=> 0 NVIDIA beta install 0
-cd ~/Arch/AUR
-[[ -d nvidia-utils-beta ]] && sudo rm -r nvidia-utils-beta
-git clone https://aur.archlinux.org/nvidia-utils-beta.git
-cd nvidia-utils-beta
-[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-makepkg -sic
-cd ~
+# #=> 0 NVIDIA beta install 0
+# # required by nvidia-beta
+# cd ~/Arch/AUR
+# [[ -d nvidia-utils-beta ]] && sudo rm -r nvidia-utils-beta
+# git clone https://aur.archlinux.org/nvidia-utils-beta.git
+# cd nvidia-utils-beta
+# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+# makepkg -sic
+# cd ~
 
-#=> 0 NVIDIA beta install 1
-cd ~/Arch/AUR
-[[ -d nvidia-beta ]] && sudo rm -r nvidia-beta
-git clone https://aur.archlinux.org/nvidia-beta.git
-cd nvidia-beta
-[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-makepkg -sic
-cd ~
+# #=> 0 NVIDIA beta install 1
+# cd ~/Arch/AUR
+# [[ -d nvidia-beta ]] && sudo rm -r nvidia-beta
+# git clone https://aur.archlinux.org/nvidia-beta.git
+# cd nvidia-beta
+# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+# makepkg -sic
+# cd ~
 
 # #=> 0 Openbox configuration folders
 # mkdir ~/.config/openbox
