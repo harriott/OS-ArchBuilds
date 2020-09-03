@@ -15,7 +15,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> 0 Nouveau
 # for NVIDEA
-sudo pacman -S xf86-video-nouveau  # will need to reboot
+sudo pacman -S mesa xf86-video-nouveau  # will need to reboot
 
 # #=> 0 Openbox configuration folders
 # mkdir ~/.config/openbox
