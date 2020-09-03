@@ -131,18 +131,19 @@ gpg --list-keys
 ## Openbox
 bash 18-GnuPG+pandoc.sh
 bash 18-as_root-toOpenbox.sh
+bash 19-prepare_forSoftwares.sh
+bash 20-gitconfig.sh
+bash 21-configureOpenbox.sh
+bash 22-Openbox-symlinks.sh
+bash 22-whenWM.sh
+## chromium won't render
+sudo pacman -Rs chromium   removed a load
+sudo pacman -S mesa xf86-video-nouveau   then   reboot
 # physical configuration
 TL-WN821N
 ## cbh
 Logitech MX 610 Laser Cordless Mouse
 Perixx PERIBOARD-407W keyboard
-## drives
-SATA0: SD480GSSDPlus resting in lower half of removable caddy
-SATA1: HP DH-16A1L DVD drive  in 2nd large bay from top
-SATA2: Western Digital Blue WD30EZRZ  in top large bay
-SATA3:
-SATA4: ST3320418AS in middle tray of removable caddy
-SATA5: ST3320620AS 9QF57J6Q  resting on middle tray
 ## motherboard
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
   AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU

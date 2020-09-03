@@ -1,5 +1,5 @@
 
-! #include cant handle variables in the paths, so  they're set here
+! #include cant handle variables in the paths, so  theyre set here
 ! any errors here silently terminate the parsing
 
 ! generic Xresources

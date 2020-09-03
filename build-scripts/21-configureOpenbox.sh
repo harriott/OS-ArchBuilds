@@ -14,11 +14,11 @@ trap read debug  # puts a read request after each executable line
 # sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
 
 # #=> 0 Nouveau install
-# # for NVIDEA
+# # for NVIDEA (mesa might've been there already)
 # sudo pacman -S mesa xf86-video-nouveau  # will need to reboot
 
 #=> 0 Nouveau remove
-sudo pacman -Rs mesa xf86-video-nouveau  # will need to reboot
+sudo pacman -Rs xf86-video-nouveau  # will need to reboot
 
 # #=> 0 NVIDIA install
 # sudo pacman -S nvidia  # will need to reboot
