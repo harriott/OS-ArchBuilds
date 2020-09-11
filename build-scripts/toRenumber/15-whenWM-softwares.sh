@@ -6,6 +6,8 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
+
 # #=> 8192eu 0 8192eu-dkms - install
 # # needs  appmenu-gtk-module dkms linux-headers
 # cd ~/Arch/AUR
@@ -52,6 +54,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
+#=> diskonaut
+cd ~/Arch/AUR
+rAUR diskonaut
+git clone https://aur.archlinux.org/diskonaut.git
+cd diskonaut
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
+
 # #=> Dropbox
 # # only once there's a browser, and preferably after LastPass
 # cd ~/Arch/AUR
@@ -62,15 +73,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-# #=> Dust
-# # (after Rust Toolchain)
-# cd ~/Arch/AUR
-# sudo rm -r dust
-# git clone https://aur.archlinux.org/dust.git
-# cd dust
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> Dust
+# (after Rust Toolchain)
+cd ~/Arch/AUR
+rAUR dust
+git clone https://aur.archlinux.org/dust.git
+cd dust
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> Fangfrisch 1 AUR
 # cd ~/Arch/AUR
@@ -112,8 +123,8 @@ trap read debug  # puts a read request after each executable line
 # #=> gifski
 # sudo pacman -S gifski
 
-#=> gnome-disk-utility
-sudo pacman -S gnome-disk-utility
+# #=> gnome-disk-utility
+# sudo pacman -S gnome-disk-utility
 
 # #=> gucharmap
 # sudo pacman -S gucharmap

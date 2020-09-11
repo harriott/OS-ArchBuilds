@@ -143,6 +143,14 @@ somehow  wayland  is there
 sudo pacman -Rs chromium   removed a load
 sudo pacman -S mesa xf86-video-nouveau   then   reboot
 sudo pacman -S chromium   added a load
+## CopyQ
+CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
+  Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
+  Shortcuts > Show/hide main window > Win+P (= Meta+P)
+  Appearance > Theme > forest
+## Chromium
+logged in, and LastPass
+## failed again to connect to Moto G (4) 1367 with TL-WN821N
 # physical configuration
 TL-WN821N
 ## cbh
@@ -160,3 +168,5 @@ Peripherals > EHCI Hand-off Disabled [ IOMMU Controller  XHCI Hand-off ] > Enabl
 ### graphics
 Acer GF-7300SE-N-A3 nVidia GeForce 7300 graphics card  on  PCIEX16
   KNOPPIX v8.6.1 > chromium works fine
+### USB headers
+Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB2

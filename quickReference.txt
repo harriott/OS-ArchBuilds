@@ -231,6 +231,7 @@ sudo alsactl store
 # storage
 7z x <pw'd_zip>
 cdrecord dev=/dev/sr0 -checkdrive
+diskonaut
 git version
 
 ## broot
@@ -286,6 +287,12 @@ find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
 find . -type d -name .git
 find . -type f -name .gitignore
 find . -type f | fzy  # for finding something fuzzily fast
+
+### mlocate
+b locate
+locate -c
+locate -h
+sudo updatedb
 
 ### recursively list symlinks
 find . -type l -ls

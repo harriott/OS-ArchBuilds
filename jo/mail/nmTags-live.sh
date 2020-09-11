@@ -14,9 +14,6 @@ notmuch tag +live -- 'folder:/live\/.*/ and not tag:live' # add live tags to all
 # live/Archive:
 notmuch tag +archive -- folder:live/Archive and not tag:archive
 
-# live/LPD:
-notmuch tag +lpd -- folder:live/LPD and not tag:lpd
-
 # live/Waiting:
 notmuch tag +waiting -- folder:live/Waiting and not tag:waiting
 

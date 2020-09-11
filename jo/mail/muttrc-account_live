@@ -23,7 +23,7 @@ source $alias_file
 # if you make changes here, you probably need to clear your folders, and start afresh
 # rm -r ~/.cache/mutt/live/* ~/.local/share/mail/live/*
 # and fix  ~/.mbsyncrc  to correspond
-mailboxes "=Archive" "=Deleted" "=Drafts" "=INBOX" "=Junk" "=Sent" "=LPD" "=Waiting"
+mailboxes "=Archive" "=Deleted" "=Drafts" "=INBOX" "=Junk" "=Sent" "=Waiting"
 # - any errors here will trigger others
 virtual-mailboxes "All" "notmuch://?query=tag:live"
 
@@ -46,9 +46,6 @@ macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to INBOX"
 
 macro index,pager gj "<change-folder>=Junk<enter>" "go to Junk"
 macro index,pager Gj "<save-message>=Junk<enter>" "move mail to Junk"
-
-macro index,pager gp "<change-folder>=LPD<enter>" "go to LPD"
-macro index,pager Gp "<save-message>=LPD<enter>" "move mail to LPD"
 
 macro index,pager gs "<change-folder>=Sent<enter>" "go to Sent"
 macro index,pager Gs "<save-message>=Sent<enter>" "move mail to Sent"

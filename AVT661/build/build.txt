@@ -447,10 +447,10 @@ sudo pacman -S copyq   12 Packages
 ### inbuilt Autostart not functional
 CopyQ > Ctrl+P > Autostart   reboot  took too long so hard restart
 CopyQ > Ctrl+P > Autostart off-ticked
+~/.config/openbox/autostart  Updated   Exit Openbox for  startx
 ### CopyQ > Ctrl+P
 Items > Text > HTML off-ticked
 Items > Text > Maximum number of lines > 2
-~/.config/openbox/autostart  Updated   Exit Openbox for  startx
 ## gVim
 sudo pacman -S gvim vim-airline vim-bufexplorer vim-ctrlp vim-easymotion vim-fugitive vim-gitgutter
   got me  11 Packages, including  vim-airline-themes

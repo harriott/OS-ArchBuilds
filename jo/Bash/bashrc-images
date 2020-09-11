@@ -24,7 +24,10 @@ cr () {
 crg () {
   bash $Imagey/cnvt.sh $1 "-colorspace gray -resize" $2
 }
-cll () {
+cld () { # darken, and slightly reduce filesize
+  bash $Imagey/cnvt.sh $1 "-level 25%,100%,.5 -quality 50"
+}
+clm () { # lose lighter stuff, darken, and slightly reduce filesize
   bash $Imagey/cnvt.sh $1 "-level 25%,75%,.5 -quality 50"
 }
 
