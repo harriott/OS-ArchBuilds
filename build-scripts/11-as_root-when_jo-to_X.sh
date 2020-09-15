@@ -100,6 +100,9 @@ pacman -S pdfsam
 # espeak-ng-espeak & termdown
 pacman -S espeak-ng-espeak termdown
 
+# moreutils
+pacman -S moreutils
+
 # my system backup script
 cp -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh  # convert to symlink later
 

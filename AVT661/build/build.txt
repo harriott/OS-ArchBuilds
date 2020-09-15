@@ -3257,6 +3257,8 @@ setxkbmap -print -verbose 10
   layout:     gb
   ...
   geometry:   pc(pc104)
+# device wg111v2 not found, so reboot
+got me "systemd[1]: Freezing execution." fixed by a hard shutdown
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
+# vim: fdm=expr fdc=1 ft=sh.shbuild:
 
 # bash <this_script>
 
@@ -54,14 +54,14 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # makepkg -sic
 # cd ~
 
-#=> diskonaut
-cd ~/Arch/AUR
-rAUR diskonaut
-git clone https://aur.archlinux.org/diskonaut.git
-cd diskonaut
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #=> diskonaut
+# cd ~/Arch/AUR
+# rAUR diskonaut
+# git clone https://aur.archlinux.org/diskonaut.git
+# cd diskonaut
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> Dropbox
 # # only once there's a browser, and preferably after LastPass
@@ -73,15 +73,15 @@ cd ~
 # makepkg -sic
 # cd ~
 
-#=> Dust
-# (after Rust Toolchain)
-cd ~/Arch/AUR
-rAUR dust
-git clone https://aur.archlinux.org/dust.git
-cd dust
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #=> Dust
+# # (after Rust Toolchain)
+# cd ~/Arch/AUR
+# rAUR dust
+# git clone https://aur.archlinux.org/dust.git
+# cd dust
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> Fangfrisch 1 AUR
 # cd ~/Arch/AUR
@@ -281,6 +281,15 @@ cd ~
 # makepkg -sic
 # cd ~
 
+#=> vim-table-mode
+cd ~/Arch/AUR
+rAUR vim-table-mode
+git clone https://aur.archlinux.org/vim-table-mode.git
+cd vim-table-mode
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
+
 # #=> vim-undotree
 # cd ~/Arch/AUR
 # sudo rm -r vim-undotree
@@ -293,12 +302,12 @@ cd ~
 # #=> xbindkeys
 # sudo pacman -S xbindkeys
 
-# #=> Zoom
-# cd ~/Arch/AUR
-# sudo rm -r zoom
-# git clone https://aur.archlinux.org/zoom.git
-# cd zoom
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> Zoom
+cd ~/Arch/AUR
+sudo rm -r zoom
+git clone https://aur.archlinux.org/zoom.git
+cd zoom
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 

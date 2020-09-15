@@ -9,20 +9,20 @@ trap read debug  # puts a read request after each executable line
 # # for advcp
 # gpg --recv-keys 6C37DC12121A5006BC1DB804DF6FD971306037D9
 
-#=> 0 tint2rc
-mv ~/.config/tint2/tint2rc $ARCHBUILDS/jo/Openbox/k8v-tint2rc
-cp $ARCHBUILDS/jo/Openbox/tint2rc ~/.config/tint2/tint2rc
+# #=> 0 tint2rc
+# mv ~/.config/tint2/tint2rc $ARCHBUILDS/jo/Openbox/k8v-tint2rc
+# cp $ARCHBUILDS/jo/Openbox/tint2rc ~/.config/tint2/tint2rc
 
-#=> 1 advcp
-# for nnn -r
-cd ~/Arch/AUR
-sudo rm -r advcp
-git clone https://aur.archlinux.org/advcp.git
-cd advcp
-xdg-open PKGBUILD
-# requires Pádraig Brady's key
-makepkg -sic
-cd ~
+# #=> 1 advcp
+# # for nnn -r
+# cd ~/Arch/AUR
+# sudo rm -r advcp
+# git clone https://aur.archlinux.org/advcp.git
+# cd advcp
+# xdg-open PKGBUILD
+# # requires Pádraig Brady's key
+# makepkg -sic
+# cd ~
 
 # #=> 1 dragon-drag-and-drop
 # cd ~/Arch/AUR
@@ -76,14 +76,14 @@ cd ~
 # makepkg -sic
 # cd ~
 
-# #=> 1 qt5-styleplugins
-# cd ~/Arch/AUR
-# sudo rm -r qt5-styleplugins
-# git clone https://aur.archlinux.org/qt5-styleplugins.git
-# cd qt5-styleplugins
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> 1 qt5-styleplugins
+cd ~/Arch/AUR
+sudo rm -r qt5-styleplugins
+git clone https://aur.archlinux.org/qt5-styleplugins.git
+cd qt5-styleplugins
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> 1 qpdfview
 # sudo pacman -S qpdfview

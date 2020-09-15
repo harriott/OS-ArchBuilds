@@ -5,24 +5,34 @@
 
 # sort these lists by last use of "~":  :sort /,*\~/
 
-#=> for jo's softwares
+# #=> for jo's softwares
 
-ln -sf $ARCHBUILDS/jo/gpg-agent.conf             ~/.gnupg/gpg-agent.conf
-ln -sf $MACHINE/jo/SSHconfig                     ~/.ssh/config
+# ln -sf $ARCHBUILDS/jo/gpg-agent.conf             ~/.gnupg/gpg-agent.conf
+# ln -sf $MACHINE/jo/SSHconfig                     ~/.ssh/config
 
-ln -sf $GNULE/notmuch-config                     ~/.notmuch-config
-ln -sf $ITstack/email-Thunderbird/Cafézoïde.csv  ~/.thunderbird/Cafézoïde.csv
+# ln -sf $GNULE/notmuch-config                     ~/.notmuch-config
+# ln -sf $ITstack/email-Thunderbird/Cafézoïde.csv  ~/.thunderbird/Cafézoïde.csv
 
-ln -sf $MD4PDF/defaults.yaml                     ~/.pandoc/defaults/md4pdf.yaml
-ln -sf $MD4PDF/defaults-toc.yaml                 ~/.pandoc/defaults/md4pdfToC.yaml
+# rm -r ~/.pandoc/templates
+# ln -s $onGH/pandoc-templates ~/.pandoc/templates
 
-rm -r ~/.pandoc/templates
-ln -s $onGH/pandoc-templates ~/.pandoc/templates
+# rm -r ~/.pandoc/templates
+# ln -s $onGH/pandoc-templates ~/.pandoc/templates
 
-#=> for jo's softwares - latex
+#=> for jo's Vim
 
-rm -r ~/texmf/tex/latex/jo
-ln -s $ITstack/CrossPlatform/forLaTeX ~/texmf/tex/latex/jo
+sudo rm -r ~/.vim
+ln -s $ITstack/vimfiles ~/.vim
 
-mkdir ~/texmf/tex/latex/m4p
+# #=> for jo's softwares - LaTeX
+
+# rm -r ~/texmf/tex/latex/jo
+# ln -s $ITstack/CrossPlatform/forLaTeX ~/texmf/tex/latex/jo
+
+# #==> for jo's softwares - for Pandoc
+
+# ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
+# ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
+
+# mkdir ~/texmf/tex/latex/m4p
 

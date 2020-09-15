@@ -5,7 +5,6 @@ bc  # enters an arbitrary precision numeric processing language environment
 cat /proc/cpuinfo
 Ctrl+s  pause output to screen
 Ctrl+q  resume output to screen
-git rev-parse --show-toplevel => print the top level directory of the current repository
 lsusb
 npm -g list
 rhash -a --bsd <somefile>
@@ -14,9 +13,6 @@ rhash --sha256 <file>
 sudo parted -l
 whereis <executable>
 xrandr
-
-# check graphics card
-lspci | grep -e VGA -e 3D
 
 # CMatrix
 cmatrix -u 9 -C blue
@@ -45,7 +41,6 @@ gvim --help | mo
 gvim -geom 200  # height parameter is omitted as it's having no effect
 
 # imagey
-72 dpi = 18.3 dots per mm
 colorpicker --one-shot --preview
 exiftool <image>
 gswin64c -dSAFER -sDEVICE=png16m -r400 -dFirstPage=1 -dLastPage=1 -o output.png input.pdf
@@ -150,7 +145,6 @@ shift left/right -> seek 1 seconds forward/backward
 up/down -> seek 1 minute forward/backward
 
 # networking
-Chrome: Ctrl+u => view page source in new tab
 ip l
 iwctl known-networks list
 latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_10_06_2020.html`
@@ -168,9 +162,12 @@ find -name "*(Copie en conflit de *"
 ## email
 echo "hello there" | nmx -s "message sent from neomutt" jharr@ftml.net
 grep -r "Georita" *
+thunderbird -addressbook
+
+### notmuch search
 nmse '"Georita Harriott"' date:march..
 nmse parlotte date:sat
-thunderbird -addressbook
+notmuch search tag:fm | wc -l
 
 ### URLs unclickable by receiver
 URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
@@ -205,7 +202,7 @@ pdftk in.pdf burst                # breaks into individual pages
 pdftk in*.pdf cat output out.pdf  # concatenate a sequence of PDFs
 
 ## sizes
-1 PostScript point ≙ 0.3528 mm
+1 PostScript point = 0.3528 mm
 pdfinfo <a_pdf_file>  # A5 = 420x595. See GSview for more sizes.
 
 # Plasma
@@ -230,9 +227,9 @@ sudo alsactl store
 
 # storage
 7z x <pw'd_zip>
+"rsync manual"
 cdrecord dev=/dev/sr0 -checkdrive
 diskonaut
-git version
 
 ## broot
 F5 => refresh
@@ -278,6 +275,10 @@ sudo parted -l
 ### Trash
 trash-empty
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
+
+## file counts
+isutf8 **/* | wc -l  # non UTF-8 files (fails when too many)
+ls **/* | wc -l      # all of the files
 
 ## file searching
 as root: find / -xdev -iname "*fmtutil.cnf*"
@@ -325,6 +326,9 @@ systemctl --no-pager
 uname -a     # unix name, includes linux version number
 w            # list users and load on system
 xset q       # shows a variety of IO settings
+
+## check graphics card
+lspci | grep -e VGA -e 3D
 
 ## monitoring
 bashtop
