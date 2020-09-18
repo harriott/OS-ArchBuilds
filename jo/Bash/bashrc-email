@@ -1,35 +1,10 @@
-# vim: set ft=sh tw=0:
+# vim: fdm=expr fdc=1 ft=sh.shfold tw=0:
 
-# commands for syncing mailboxes
-[[ -d $GNULE ]] && source $GNULE/emailAddresses
-nmnew () { echo "notmuch new:"; notmuch new; }
-msj () { mbsync czj   ; nmnew ; echo "nmTags-czj.sh"   ; bash $email/nmTags-czj.sh   ; }
-msp () { mbsync czp   ; nmnew ; echo "nmTags-czp.sh"   ; bash $email/nmTags-czp.sh   ; }
-msf () { mbsync fm    ; nmnew ; echo "nmTags-fm.sh"    ; bash $email/nmTags-fm.sh    ; }
-msg () { mbsync gmail ; nmnew ; echo "nmTags-gmail.sh" ; bash $email/nmTags-gmail.sh ; }
-msx () { mbsync gmx   ; nmnew ; echo "nmTags-gmx.sh"   ; bash $email/nmTags-gmx.sh   ; }
-msl () { mbsync live  ; nmnew ; echo "nmTags-live.sh"  ; bash $email/nmTags-live.sh  ; }
-mst () { mbsync tj    ; nmnew ; echo "nmTags-tj.sh"    ; bash $email/nmTags-tj.sh    ; }
-alias ms='
-echo -e "\e[1m\e[95m-- czj   --\e[0m"; msj;
-echo -e "\e[1m\e[95m-- czp   --\e[0m"; msp;
-echo -e "\e[1m\e[95m-- fm    --\e[0m"; msf;
-echo -e "\e[1m\e[95m-- gmail --\e[0m"; msg;
-echo -e "\e[1m\e[95m-- gmx   --\e[0m"; msx;
-echo -e "\e[1m\e[95m-- live  --\e[0m"; msl;
-echo -e "\e[1m\e[95m-- tj    --\e[0m"; mst;
-'
+#=> backup my Mutt Wizard files
+alias mwb='bash $email/mwBackup.sh'
 
-# commands for reading mailboxes
-alias nmj='neomutt -F $email/muttrc-account_czj'
-alias nmp='neomutt -F $email/muttrc-account_czp'
-alias nmf='neomutt -F $email/muttrc-account_ftml'
-alias nmg='neomutt -F $email/muttrc-account_gmail'
-alias nml='neomutt -F $email/muttrc-account_live'
-alias nmt='neomutt -F $email/muttrc-account_tj'
-alias nmx='neomutt -F $email/muttrc-account_gmx'
-
-# commands to grab mutt-alias (can be slow)
+#=> mutt-aliases
+# (can be slow)
 alias mas='bash ~/mutt-alias.sh/mutt-alias.sh'
 export mail=/home/jo/.local/share/mail  # used also in  muttrc-*
 magf () {
@@ -53,10 +28,16 @@ magl () { # failing...
   done
 }
 
-# command to backup my Mutt Wizard files
-alias mwb='bash $email/mwBackup.sh'
+#=> neomutt - view mail
+alias nmj='neomutt -F $email/muttrc-account_czj'
+alias nmp='neomutt -F $email/muttrc-account_czp'
+alias nmf='neomutt -F $email/muttrc-account_ftml'
+alias nmg='neomutt -F $email/muttrc-account_gmail'
+alias nml='neomutt -F $email/muttrc-account_live'
+alias nmt='neomutt -F $email/muttrc-account_tj'
+alias nmx='neomutt -F $email/muttrc-account_gmx'
 
-# notmuch searching:
+#=> notmuch search
 nmse () {
     notmuchsearch="$1 $2 $3 $4 $5 $6 $7 $8 $9"
     echo $notmuchsearch
@@ -65,13 +46,33 @@ nmse () {
 nmsh () {
     echo '# vim: set ft=mail tw=0:' > nms
     echo >> nms
-    echo -en "\e[92m  opening last nmse in gvim -\n"
+    echo -en "\e[92m  saving last nmse in nms.mail\n"
     notmuch show $notmuchsearch >> nms
     sed -i 's#message}#message}\n#' nms  # adds space after each message
     tac nms | sed '/Date: /{h;d;};/message{/G' | tac > nms.mail  # moves date to start of message
     rm nms
     sed -i '//d' nms.mail  # finally remove unneeded lines
     perl $email/nmsh-sort.pl nms.mail
-    gvim nms.mail # the results, in the working directory
+    [[ $DISPLAY ]] && gvc nms.mail # open it in gVim only if safe to do so
 } # shows the relevant emails
+
+#=> sync & tag mail
+[[ -d $GNULE ]] && source $GNULE/emailAddresses
+nmnew () { echo "notmuch new:"; notmuch new; }
+msj () { mbsync czj   ; nmnew ; echo "nmTags-czj.sh"   ; bash $email/nmTags-czj.sh   ; }
+msp () { mbsync czp   ; nmnew ; echo "nmTags-czp.sh"   ; bash $email/nmTags-czp.sh   ; }
+msf () { mbsync fm    ; nmnew ; echo "nmTags-fm.sh"    ; bash $email/nmTags-fm.sh    ; }
+msg () { mbsync gmail ; nmnew ; echo "nmTags-gmail.sh" ; bash $email/nmTags-gmail.sh ; }
+msx () { mbsync gmx   ; nmnew ; echo "nmTags-gmx.sh"   ; bash $email/nmTags-gmx.sh   ; }
+msl () { mbsync live  ; nmnew ; echo "nmTags-live.sh"  ; bash $email/nmTags-live.sh  ; }
+mst () { mbsync tj    ; nmnew ; echo "nmTags-tj.sh"    ; bash $email/nmTags-tj.sh    ; }
+alias ms='
+echo -e "\e[1m\e[95m-- czj   --\e[0m"; msj;
+echo -e "\e[1m\e[95m-- czp   --\e[0m"; msp;
+echo -e "\e[1m\e[95m-- fm    --\e[0m"; msf;
+echo -e "\e[1m\e[95m-- gmail --\e[0m"; msg;
+echo -e "\e[1m\e[95m-- gmx   --\e[0m"; msx;
+echo -e "\e[1m\e[95m-- live  --\e[0m"; msl;
+echo -e "\e[1m\e[95m-- tj    --\e[0m"; mst;
+'
 

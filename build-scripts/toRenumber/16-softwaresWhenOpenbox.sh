@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
+# vim: fdm=expr fdc=1 ft=sh.shfold:
 
 # bash <thisfile>.sh
 set -v  # prints each statement here, including comments
@@ -47,6 +47,9 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
+#=> 1 mpv
+sudo pacman -S mpv
+
 # #=> 1 nnn plugins
 # [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
 # curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
@@ -64,10 +67,7 @@ trap read debug  # puts a read request after each executable line
 # #=> 1 PNMixer
 # # ...
 
-# #=> 1 qimgv-git
-# sudo pacman -Rs qimgv-git
-
-# #=> 1 qimgv-git
+# #=> 1 qimgv-git 0 install
 # cd ~/Arch/AUR
 # sudo rm -r qimgv-git
 # git clone https://aur.archlinux.org/qimgv-git.git
@@ -76,14 +76,17 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#=> 1 qt5-styleplugins
-cd ~/Arch/AUR
-sudo rm -r qt5-styleplugins
-git clone https://aur.archlinux.org/qt5-styleplugins.git
-cd qt5-styleplugins
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #=> 1 qimgv-git 1 remove
+# sudo pacman -Rs qimgv-git
+
+# #=> 1 qt5-styleplugins
+# cd ~/Arch/AUR
+# sudo rm -r qt5-styleplugins
+# git clone https://aur.archlinux.org/qt5-styleplugins.git
+# cd qt5-styleplugins
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> 1 qpdfview
 # sudo pacman -S qpdfview

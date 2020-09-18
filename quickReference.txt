@@ -87,7 +87,8 @@ rm -r ~/.local/share/vimiv/Tags/tagname
 t    toggle
 
 # multimedia
-mediainfo --help |moar
+mediainfo --help | moar
+mediainfo <avfile> | grep Encoded
 
 ## 16:9 aspect ratio
 854x480
@@ -131,6 +132,7 @@ need to Restart OpenShot when changed
 mpv av://v4l2:/dev/video0
 
 ### interactive control
+f -> toggle fullscreen
 mouse wheel up/down -> seek forward/backward 10 seconds
 o/O -> show progress
 
@@ -229,7 +231,6 @@ sudo alsactl store
 7z x <pw'd_zip>
 "rsync manual"
 cdrecord dev=/dev/sr0 -checkdrive
-diskonaut
 
 ## broot
 F5 => refresh
@@ -307,15 +308,16 @@ for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my Gi
 rg -l -ttex '\\input' > rg-tex.txt
 rg -l -ttex verseSettings > rg-tex.txt
 rg <someText>  # searches recursively in files
+rg 'sometext' --no-ignore  # allows searching into gitignored places
 rg '<someText>|<otherText>'
 
 ## sizes
+diskonaut -h
 du -h --max-depth=1  # for a quick list of folder sizes
 dust
 ncdu
 
 # system
-as root,  du -sh /boot /etc /home /root /usr
 as root,  journalctl -b  # review the startup messages
 
 b <command>  # batman
@@ -336,6 +338,10 @@ glances
 gtop
 htop
 saidar -c
+
+## root storage sizes as root
+du -sh /boot /etc /home /root /usr
+ncdu -x
 
 # termdown
 termdown --help | moar

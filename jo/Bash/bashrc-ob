@@ -1,32 +1,23 @@
-# vim: set ft=sh tw=0:
-
-# -------------------
-# configurations when in Openbox
-# -------------------
-# sourced, ultimately, by ~/.bashrc
-# (source ~/.bashrc if you've changed something here...)
+# vim: fdm=expr fdc=1 ft=sh.shfold tw=0:
 
 # Joseph Harriott
+
+# ------------------------------
+# configurations when in Openbox
+# ------------------------------
+# source ~/.bashrc if you've changed something here...
 
 alias gpr='gprename &'
 alias rpd='bash $onGH/rsync-portabledrives/rsync.sh'
 alias psci='pscShots=/home/jo/Arch/AUR/pscircle-git-shots;pscLatest="$pscShots/$(date +%Y%m%d%H%M%S).png";pscircle --output=$pscLatest;sxiv -fn $(ls $pscShots | wc -l) $pscShots &'
 
-# PCManFM
-pf () {
-    nohup pcmanfm &
-    sleep 2; rm nohup.out
-}
-
-# cmus
-# ----
+#=> cmus
 alias m='cmus'
 
 # update library
 alias uc='bash $MACHINE/jo/Music/cmusUpdateLibrary.sh'
 
-# convert a FM json
-# --------------
+#=> convert a FM json
 cfmj()
 {
     if [ -s $1 ]; then
@@ -36,9 +27,7 @@ cfmj()
     fi
 }
 
-# nnn
-# ---
-
+#=> nnn
 [ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
 
 # cd on quit
@@ -76,8 +65,7 @@ export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uid
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
 export NNN_LOCKER='saidar -c' # not arriving in my case
 
-# Pandoc my markdown notes
-# ------------------------
+#=> Pandoc my markdown notes
 for i in {0..1}; do  # setup alternative commands to define the header style
     setHeadingsSty[$i]="ln -sf $MD4PDF/iih/headings$i.sty ~/texmf/tex/latex/m4p/headings.sty"
 done
@@ -102,5 +90,11 @@ m4ps1() # muted headings
     export headingtoodeep=####
     export m4pfont=1
     bash $MD4PDF/GNULinux/m4ps.sh 0 1
+}
+
+#=> PCManFM
+pf () {
+    nohup pcmanfm &
+    sleep 2; rm nohup.out
 }
 

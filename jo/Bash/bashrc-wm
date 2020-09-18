@@ -1,16 +1,18 @@
-# vim: set ft=sh tw=0:
+# vim: fdm=expr fdc=1 ft=sh.shfold tw=0:
 
-# --------------------
-# Image managing stuff
-# --------------------
-# sourced, ultimately, by  $MACHINE/jo/bashrc
-# (source ~/.bashrc if you've changed something here...)
+#=> gVim cautious
+gvc () {
+    textfilefullpath=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
+    vimswapfile=${textfilefullpath//\//%}.swp
+    vimswapfilepath=~/.vimswap/$vimswapfile
+    if [[ -f $vimswapfilepath ]]; then
+       echo "$vimswapfilepath exists"
+    else
+       gvim $1
+    fi
+} # opens the file in gVim only if there's no swap file present for it
 
-# Joseph Harriott  Wed 03 Jun 2020
-
-
-# convert scanned images to jpg with ImageMagick
-# ----------------------------------------------
+#=> imagey - convert scanned images to jpg with ImageMagick
 # (needs cnvt.sh in $PATH and won't work with white-spaces in file names)
 c () {
   bash $Imagey/cnvt.sh $1 "-quality 70"
@@ -31,27 +33,25 @@ clm () { # lose lighter stuff, darken, and slightly reduce filesize
   bash $Imagey/cnvt.sh $1 "-level 25%,75%,.5 -quality 50"
 }
 
+#=> imagey - copy a directory of sketches darker
+dsd () {
+  bash $Imagey/gamma03.sh $1
+}
+
+#=> imagey - jpeg orientation
 # Recursively find all *.jpg (- that's case insensitive) files in the current directory
 # and set  -orientation=Horizontal   if necessary.
 jpo () {
   exiftool -r -ext jpg -overwrite_original -orientation=Horizontal -progress -if '$orientation =~ /Rotate/' .
 }
 
-# copy a directory of sketches darker
-# -----------------------------------
-dsd () {
-  bash $Imagey/gamma03.sh $1
-}
-
-# lighten an image
-# ----------------
+#=> imagey - lighten an image
 cl () {
   inimag=${1%.*}
   convert $1 -level 0,75% -quality 80 $inimag-l.jpg
 }
 
-# SANE's scanimage tool
-# ---------------------
+#=> imagey - SANE's scanimage tool
 S () {
   bash $Imagey/Scan.sh $1 $2 $3 $4
 }
