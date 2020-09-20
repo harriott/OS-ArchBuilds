@@ -1,51 +1,19 @@
-# vim: set ft=sh sw=2 tw=0:
+# vim: fdm=expr fdc=1 ft=sh.shfold sw=2:
 
 # sourced, ultimately, by ~/.bashrc
 # (source ~/.bashrc if you've changed something here...)
 
+# -----------------------------------------------------------
 # These are more settings that can also be useful in Console.
+# -----------------------------------------------------------
 
-# Joseph Harriott  http://momentary.eu/
+# Joseph Harriott - Sat 19 Sep 2020
 
-
-# bigger command history
-export HISTFILESIZE=10000
-export HISTSIZE=1000
-
-# a colorised (bold blue) prompt, with git support
-source /usr/share/git/completion/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
-
-# command not found hook
-source /usr/share/doc/pkgfile/command-not-found.bash
-
-# my preferred npm global directory
-export PATH="$HOME/.npm-global/bin:$PATH"
-
-# System, for GnuPG
-export GPG_TTY=$(tty)
-
-# for tmux
-export EDITOR=nvim
-export VISUAL=nvim
-
-
-# -----------
-# file manage
-# -----------
-
+#=> file manage
 alias rs0='bash $onGH/rsync-portabledrives/rync-Dr0.sh'
 alias rs1='bash $onGH/rsync-portabledrives/rync-Dr1.sh'
 
-# Samokovarov's  jump
-if [ -s "/usr/bin/jump" ]; then
-    eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
-fi
-
-# Git
-# ---
+#==> Git
 alias ga='git add'
 alias gis='git status -u'
 export BFG=$ITstack/CrossPlatform/bfg-1.13.0.jar
@@ -53,32 +21,39 @@ gic () {
     git commit -m "$1"
 }
 
+#==> quick-check my Encrypted folders
+alias fe='fdtsEncryptedChanges'
 
-# time-sorted lists of files
-# --------------------------
-
-# all types of files
-fdtsAll () {
-  eval "find * $printfDTsort"
-echo "$printfDTsort"
+fdtsEncryptedChanges () {
+  Encrypted=/mnt/SDSSDA240G/Encrypted
+  if [ "$PWD" != $Encrypted ]; then
+    cd /mnt/SDSSDA240G/Encrypted
+    pwd
+  fi
+  f7z="find .  -iname \"Digital0*.7z\""
+  Digital07z=$(eval "$f7z")
+  if [ $Digital07z ]; then
+    eval "find .  -iname \"Digital0*.7z\" $printfDTsort"
+    eval "find -path \"./Digital0*\" -newer $Digital07z $printfDTsort"
+  fi
 }
+
+#==> Samokovarov's  jump
+if [ -s "/usr/bin/jump" ]; then
+    eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
+fi
+
+#==> time-sorted lists of files - all
 alias fa='fdtsAll'
 
-# common functionality
-fdtsKS () {
-  echo "vim: nowrap tw=0:" > $2
-  echo "" >> $2
-  echo $PWD >> $2
-  eval "find -iname \"$1\" $printfDTsort >> $2"
-  echo "" >> $2
-  echo "results are in $2"
-}
-ctfp () {
-  # corrects to full path
-  sed -i "s| \.| $PWD|" $1
+fdtsAll () {
+  eval "find * $printfDTsort"
+  echo "$printfDTsort"
 }
 
-# files of a certain type (filename extension)
+#==> time-sorted lists of files - by extension
+alias fx='fdtsExt'
+
 fdtsExt () {
   if [ $1 ]; then
     if [ $1 = "gitignore" ]; then
@@ -93,9 +68,10 @@ fdtsExt () {
     echo "^ need a file type (= filename extension)"
   fi
 }
-alias fx='fdtsExt'
 
-# files with keystring in name
+#==> time-sorted lists of files - by keystring
+alias fk=fdtsKeyString
+
 fdtsKeyString () {
   if [ $1 ]; then
     dtsfile=dts-$1.txt
@@ -103,19 +79,56 @@ fdtsKeyString () {
     eval "fdtsKS $search $dtsfile"
   fi
 }
-alias fk=fdtsKeyString
 
-# in my Encrypted folder
-fdtsEF () {
-  eval "find $1* $printfDTsort"
+#==> time-sorted lists of files - common functionality
+ctfp () {
+  # corrects to full path
+  sed -i "s| \.| $PWD|" $1
 }
-alias fe='fdtsEF'
 
 export printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
 
+fdtsKS () {
+  echo "vim: nowrap tw=0:" > $2
+  echo "" >> $2
+  echo $PWD >> $2
+  eval "find -iname \"$1\" $printfDTsort >> $2"
+  echo "" >> $2
+  echo "results are in $2"
+} # $1 being the keystring
 
-# trash-cli
-# ---------
+#==> time-sorted lists of files - in my Encrypted folder
+# alias fe='fdtsEF'
+
+fdtsEF () {
+  eval "find $1* $printfDTsort"
+}
+
+#==> trash-cli
 alias tl='trash-list'
 alias tre='trash-restore'
+
+#=> interface
+# bigger command history
+export HISTFILESIZE=10000
+export HISTSIZE=1000
+
+# a colorised (bold blue) prompt, with git support
+source /usr/share/git/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
+
+# command not found hook
+source /usr/share/doc/pkgfile/command-not-found.bash
+
+# for tmux
+export EDITOR=nvim
+export VISUAL=nvim
+
+#=> my preferred npm global directory
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+#=> System, for GnuPG
+export GPG_TTY=$(tty)
 

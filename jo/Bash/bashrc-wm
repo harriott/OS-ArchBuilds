@@ -1,5 +1,7 @@
 # vim: fdm=expr fdc=1 ft=sh.shfold tw=0:
 
+# stuff that's useful when a Window Manager is installed
+
 #=> gVim cautious
 gvc () {
     textfilefullpath=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
