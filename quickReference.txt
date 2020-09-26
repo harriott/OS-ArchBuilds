@@ -1,8 +1,6 @@
 vim: fdl=0 ft=build fdm=expr:
 
-!! # execute last command
 bc  # enters an arbitrary precision numeric processing language environment
-cat /proc/cpuinfo
 Ctrl+s  pause output to screen
 Ctrl+q  resume output to screen
 lsusb
@@ -14,9 +12,13 @@ sudo parted -l
 whereis <executable>
 xrandr
 
-# CMatrix
-cmatrix -u 9 -C blue
-man cmatrix
+# Bash
+!! # execute last command
+
+## ANSI escape sequences
+for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
+"nachoparker"
+tput bold; echo hello
 
 # CUPS - when a printer is paused/disabled
 lpstat -p -d  # show status of printers, including which is set as default
@@ -32,6 +34,13 @@ In a folder of possible fonts, to check if any are already installed:
 
 fc-list
 /usr/share/fonts>$ fd -L consolas
+
+# fun
+tint
+
+## CMatrix
+cmatrix -u 9 -C blue
+man cmatrix
 
 # get at root on tty2
 Ctrl+Alt+F2 > root + pw
@@ -233,6 +242,7 @@ sudo alsactl store
 cdrecord dev=/dev/sr0 -checkdrive
 
 ## broot
+b broot
 F5 => refresh
 
 ### run
@@ -249,6 +259,7 @@ br -s => br --sizes
 <directory>  # cd <directory>  ( shopt autocd )
 
 ### exa
+b exa
 e
 e -la  # for permissions and symlinks
 e -T   # for tree
@@ -283,12 +294,16 @@ ls **/* | wc -l      # all of the files
 
 ## file searching
 as root: find / -xdev -iname "*fmtutil.cnf*"
-fd  # by sharkdp
-fd -I => fd --no-ignore => do not respect .(git|fd)ignore files
 find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
 find . -type d -name .git
 find . -type f -name .gitignore
 find . -type f | fzy  # for finding something fuzzily fast
+
+### fd
+b fd
+fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
+fd -I => fd --no-ignore => do not respect .(git|fd)ignore files
+"sharkdp"
 
 ### mlocate
 b locate
@@ -296,7 +311,10 @@ locate -c
 locate -h
 sudo updatedb
 
-### recursively list symlinks
+### list symlinks
+find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
+
+#### recursively
 find . -type l -ls
 find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
@@ -320,6 +338,8 @@ ncdu
 # system
 as root,  journalctl -b  # review the startup messages
 
+cat /proc/cpuinfo
+
 b <command>  # batman
 id jo        # show uid, gid, and groups for jo
 man hier     # description of the filesystem hierarchy
@@ -332,6 +352,10 @@ xset q       # shows a variety of IO settings
 ## check graphics card
 lspci | grep -e VGA -e 3D
 
+## decode key-presses
+sudo showkey  # keycodes
+xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'  # scancodes
+
 ## monitoring
 bashtop
 glances
@@ -341,6 +365,7 @@ saidar -c
 
 ## root storage sizes as root
 du -sh /boot /etc /home /root /usr
+du -shx
 ncdu -x
 
 # termdown

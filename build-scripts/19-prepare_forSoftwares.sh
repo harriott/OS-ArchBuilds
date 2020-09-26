@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
+# vim: fdm=expr fdl=1 ft=sh.shfold:
 
 # bash <thisfile>.sh
 
@@ -34,7 +34,7 @@ cd ~
 
 # #=> 1 configure GnuPG for pinentry
 # # gpg-agent.conf symlink for passphrase
-# ln -s $ARCHBUILDS/jo/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+# ln -sf $ARCHBUILDS/jo/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 # # pinentry
 # export GPG_TTY=$(tty)

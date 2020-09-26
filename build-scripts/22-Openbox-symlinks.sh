@@ -1,11 +1,12 @@
-#!/bin/bash
-# vim: fdm=expr fdl=1 ft=shbuild:
+#!/bin/bash # vim: fdm=expr fdl=1 ft=shbuild:
 
 # bash <thisfile>.sh  to fix my Openbox install
 
 #=> 0 $MACHINE
 ARCHBUILDS=~/ArchBuilds
-    MACHINE=$ARCHBUILDS/sbMb
+ARCHBUILDS=/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds
+    MACHINE=$ARCHBUILDS/AVT661
+    # MACHINE=$ARCHBUILDS/sbMb
     Openbox=$ARCHBUILDS/jo/Openbox
 
 #=> 1 symlinks for Openbox itself

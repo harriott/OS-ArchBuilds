@@ -1,38 +1,33 @@
 #!/bin/bash
-# vim: fdm=expr fdl=1 ft=shbuild:
+# vim: fdm=expr fdl=1 ft=sh.shfold:
 
 # bash <thisfile>
 
 # sort these lists by last use of "~":  :sort /,*\~/
 
-# #=> for jo's softwares
-
-# ln -sf $ARCHBUILDS/jo/gpg-agent.conf             ~/.gnupg/gpg-agent.conf
-# ln -sf $MACHINE/jo/SSHconfig                     ~/.ssh/config
-
+# #=> email config
 # ln -sf $GNULE/notmuch-config                     ~/.notmuch-config
-# ln -sf $ITstack/email-Thunderbird/Cafézoïde.csv  ~/.thunderbird/Cafézoïde.csv
+# ln -sf $ITstack/CrossPlatform/email-Thunderbird/Cafézoïde.csv  ~/.thunderbird/Cafézoïde.csv
 
-# rm -r ~/.pandoc/templates
-# ln -s $onGH/pandoc-templates ~/.pandoc/templates
-
-# rm -r ~/.pandoc/templates
-# ln -s $onGH/pandoc-templates ~/.pandoc/templates
-
-#=> for jo's Vim
-
-sudo rm -r ~/.vim
-ln -s $ITstack/vimfiles ~/.vim
-
-# #=> for jo's softwares - LaTeX
-
+# #=> LaTeX
 # rm -r ~/texmf/tex/latex/jo
 # ln -s $ITstack/CrossPlatform/forLaTeX ~/texmf/tex/latex/jo
 
-# #==> for jo's softwares - for Pandoc
+# #=> for my m4p scripts
+# mkdir ~/texmf/tex/latex/m4p  # referred to in $ARCHBUILDS/jo/Bash/bashrc-ob
 
-# ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
-# ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
+#=> Pandoc defaults
+ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
+ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 
-# mkdir ~/texmf/tex/latex/m4p
+# #=> Pandoc templates
+# rm -r ~/.pandoc/templates
+# ln -s $onGH/pandoc-templates ~/.pandoc/templates
+
+# #=> SSH config
+# ln -sf $MACHINE/jo/SSHconfig                     ~/.ssh/config
+
+# #=> Vim
+# sudo rm -r ~/.vim
+# ln -s $ITstack/vimfiles ~/.vim
 

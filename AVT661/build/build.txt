@@ -3259,6 +3259,27 @@ setxkbmap -print -verbose 10
   geometry:   pc(pc104)
 # device wg111v2 not found, so reboot
 got me "systemd[1]: Freezing execution." fixed by a hard shutdown
+# iwctl Jo-XA10
+device list   shows   wlwg111v2
+station wlwg111v2 get-networks   listed   Jo-XA10   among others, and live updates
+(should be double quotes) station wlwg111v2 connect 'Jo-XA10' > Passphrase
+# Xperia XA2
+## iwctl
+station wlwg111v2 get-networks   listed   Xperia XA2_b31f   among others
+station wlwg111v2 connect 'Xperia XA2_b31f'  got me "Operation failed"
+  station wlwg111v2 connect 'Xperia XA2_b31f' > Passphrase
+## ipv4 not working
+ping 8.8.4.4  was getting me "Destination Net Unreachable" while ping google.com & chromium online
+iwctl known-networks 'Moto G (4) 1367' forget
+iwctl known-networks 'Xperia XA2_b31f' forget
+iwctl station wlwg111v2 connect Jo-XA2
+iwctl station wlwg111v2 get-networks
+not improved by switching off VoLTE
+ping -c 3 google.com  reports "64 bytes from par10s29-in-x0e.1e100.net (2a00:1450:4007:80f::200e): icmp_seq=1 ttl=115 time=60.2 ms"
+# right Shift-D not working, even in console
+fixed by a reboot
+then it came back, fixed by briefly running xev
+then it came back, not fixed by running xev
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

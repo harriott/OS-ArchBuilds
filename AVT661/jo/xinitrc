@@ -19,6 +19,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 export DROPBOX=/mnt/SDSSDA240G/Dropbox   # keep this capitalised for finding it without need for $
     export ITstack=$DROPBOX/JH/IT_stack
         export onGH=$ITstack/onGitHub
+        export onGH=$DROPBOX/JH/Sh-81A4/ITS-onGitHub
             export ARCHBUILDS=$onGH/ArchBuilds
                 export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
                 export Imagey=$ARCHBUILDS/jo/Bash/Imagey
@@ -28,7 +29,7 @@ export DROPBOX=/mnt/SDSSDA240G/Dropbox   # keep this capitalised for finding it 
                     export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
                     export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
             export MD4PDF=$onGH/md4pdf
-        export GNULE=$ITstack/email-GNULinux  # where I keep private configurations
+        export GNULE=$ITstack/unix_like/email-GNULinux  # where I keep private configurations
 
 userresources=$MACHINE/jo/Xresources  # space after the = for vim gf
 

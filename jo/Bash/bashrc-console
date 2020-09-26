@@ -7,7 +7,7 @@
 # These are more settings that can also be useful in Console.
 # -----------------------------------------------------------
 
-# Joseph Harriott - Sat 19 Sep 2020
+# Joseph Harriott - Thu 24 Sep 2020
 
 #=> file manage
 alias rs0='bash $onGH/rsync-portabledrives/rync-Dr0.sh'
@@ -21,21 +21,26 @@ gic () {
     git commit -m "$1"
 }
 
-#==> quick-check my Encrypted folders
+#==> quick-check my Encrypted directories
 alias fe='fdtsEncryptedChanges'
 
 fdtsEncryptedChanges () {
-  Encrypted=/mnt/SDSSDA240G/Encrypted
-  if [ "$PWD" != $Encrypted ]; then
-    cd /mnt/SDSSDA240G/Encrypted
+  if [ "$PWD" != ${Encrypted[0]} ]; then
+    cd ${Encrypted[0]}
     pwd
   fi
-  f7z="find .  -iname \"Digital0*.7z\""
-  Digital07z=$(eval "$f7z")
-  if [ $Digital07z ]; then
-    eval "find .  -iname \"Digital0*.7z\" $printfDTsort"
-    eval "find -path \"./Digital0*\" -newer $Digital07z $printfDTsort"
-  fi
+  for i in ${!Encrypted[@]}; do
+    if [ $i -gt 0 ]; then
+      f7z="find . -iname \"${Encrypted[$i]}*.7z\" | sort | tail -1"
+      ed7z=$(eval "$f7z")
+      if [ $ed7z ]; then
+        tput setaf 5
+        eval "find . -iname \"${Encrypted[$i]}*.7z\" $printfDTsort"
+        tput setaf 7
+        eval "find -path \"./${Encrypted[$i]}*\" -newer $ed7z $printfDTsort"
+      fi
+    fi
+  done
 }
 
 #==> Samokovarov's  jump

@@ -5,10 +5,10 @@
 #
 
 export DROPBOX=/mnt/SDSSDA240G/Dropbox
-
-[[ -f 
     export ITstack=$DROPBOX/JH/IT_stack
         export ARCHBUILDS=$ITstack/onGitHub/ArchBuilds
+        export onGH=$DROPBOX/JH/Sh-81A4/ITS-onGitHub
+            export ARCHBUILDS=$onGH/ArchBuilds
 
 [[ -f /root/.bashrc ]] && . /root/.bashrc  # needed for su
 

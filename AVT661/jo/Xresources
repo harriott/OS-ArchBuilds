@@ -2,17 +2,17 @@
 ! #include cant handle variables in the paths, so  theyre set here
 
 ! generic Xresources
-#include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/Xresources"
+#include "/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds/jo/Openbox/Xresources/Xresources"
 
 ! rxvt-unicode colorschemes:
 ! I havent yet found a scheme that can usefully list colourised NTFS directories
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/BastianRieck"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/gruvbox-urxvt256"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/Falcon"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-base16"
-#include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-gruvbox"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/myURxvtSolarizedLight"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/TomorrowNight"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/XresourceTomorrow"
-! #include "/mnt/SDSSDA240G/Dropbox/JH/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/XresourceTomorrowNight"
+! #include "/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/BastianRieck"
+! #include "/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/gruvbox-urxvt256"
+! #include "/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/Falcon"
+! #include "/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-base16"
+#include "/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-gruvbox"
+! #include "/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/myURxvtSolarizedLight"
+! #include "/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/TomorrowNight"
+! #include "/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/XresourceTomorrow"
+! #include "/mnt/SDSSDA240G/Dropbox/JH/Sh-81A4/ITS-onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/XresourceTomorrowNight"
 

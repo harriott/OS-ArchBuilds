@@ -2,6 +2,10 @@
 
 # stuff that's useful when a Window Manager is installed
 
+fv () {
+    find $Vs -type f -name "*$1*"
+} # fv 'Dog Vision'
+
 #=> gVim cautious
 gvc () {
     textfilefullpath=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")

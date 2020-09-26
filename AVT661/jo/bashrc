@@ -1,4 +1,4 @@
-# vim: set ft=sh tw=0:
+# vim: fdm=expr fdc=1 ft=sh.shfold sw=2:
 
 # ~/.bashrc in an Arch install on my Acer Veriton T661 system
 
@@ -10,7 +10,15 @@
 # backup destination for  mwBackup.sh
 muttBasckupDestination=/mnt/9QG2FFEE/Share/More/mw-AVT661
 
-# the following source commands are tweaked for each Bash case
+#=> auto-added by $ cpan
+PATH="/home/jo/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/jo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/jo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/jo/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/jo/perl5"; export PERL_MM_OPT;
+
+#=> more of my bashrc
+# the following source commands are tweaked for each installation
 brcConsole () {
     # bashrc 1 - useful everywhere, including root
     source $ARCHBUILDS/Bash/bashrc-generic
@@ -28,7 +36,7 @@ else                        # try a local cache
     [[ -d $ARCHBUILDS ]] && brcConsole
 fi
 
-# NETGEAR WG111v2
+#=> NETGEAR WG111v2
 doup () {
   sudo ip link set wlwg111v2 down
   sudo ip link set wlwg111v2 up
@@ -36,10 +44,11 @@ doup () {
 alias d='doup'
 alias i='iwctl station wlwg111v2 get-networks'
 
-# auto-added by $ cpan
-PATH="/home/jo/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/jo/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/jo/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/jo/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/jo/perl5"; export PERL_MM_OPT;
+#=> system-specific directories
+
+# my Encrypted directories
+Encrypted=(/mnt/SDSSDA240G/Encrypted Digital0 Secure0 Secure1 Stack TP)
+
+# my video store
+Vs=/run/media/jo/TOSHIBA/Vs
 

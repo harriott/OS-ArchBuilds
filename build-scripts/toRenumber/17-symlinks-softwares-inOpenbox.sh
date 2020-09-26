@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdl=1 ft=shbuild:
+# vim: fdm=expr fdl=1 ft=sh.shfold:
 
 # bash <thisfile>.sh  to fix my Openbox install
 

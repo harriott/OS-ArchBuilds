@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 fdl=1 ft=shbuild:
+# vim: fdm=expr fdc=1 fdl=1 ft=sh.shfold:
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line

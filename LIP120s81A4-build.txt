@@ -1,0 +1,8 @@
+vim: fdl=0 ft=build fdm=expr:
+
+Lenovo IdeaPad 120s 81A4 = LIP120s81A4
+
+# physical configuration
+SDEP128G in microSD slot
+# proposal
+/ on the 32GB eMMC except /home /usr on SDEP128G

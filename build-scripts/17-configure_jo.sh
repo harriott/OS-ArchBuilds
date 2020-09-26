@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 fdl=1 ft=shbuild:
+# vim: fdm=expr fdc=1 fdl=1 ft=sh.shfold:
 
 #=> 0 $MACHINE
 [[ $ARCHBUILDS ]] || ARCHBUILDS=~/ArchBuilds

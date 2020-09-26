@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=sh.shbuild:
+# vim: fdm=expr fdc=1 ft=sh.shfold:
 
 # bash <this_script>
 
@@ -63,15 +63,15 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # makepkg -sic
 # cd ~
 
-# #=> Dropbox
-# # only once there's a browser, and preferably after LastPass
-# cd ~/Arch/AUR
-# sudo rm -r dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> Dropbox
+# only once there's a browser, and preferably after LastPass
+cd ~/Arch/AUR
+sudo rm -r dropbox
+git clone https://aur.archlinux.org/dropbox.git
+cd dropbox
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> Dust
 # # (after Rust Toolchain)
@@ -241,6 +241,14 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # makepkg -sic
 # cd ~
 
+# #=> tint-tetris
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/tint-tetris.git
+# cd tint-tetris
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
 # #=> vim Calendar
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/vim-calendar-git.git
@@ -281,14 +289,14 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # makepkg -sic
 # cd ~
 
-#=> vim-table-mode
-cd ~/Arch/AUR
-rAUR vim-table-mode
-git clone https://aur.archlinux.org/vim-table-mode.git
-cd vim-table-mode
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #=> vim-table-mode
+# cd ~/Arch/AUR
+# rAUR vim-table-mode
+# git clone https://aur.archlinux.org/vim-table-mode.git
+# cd vim-table-mode
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> vim-undotree
 # cd ~/Arch/AUR

@@ -1,29 +1,48 @@
-# vim: set ft=sh tw=0:
+# vim: fdm=expr fdc=1 ft=sh.shfold sw=2:
 
 # Joseph Harriott
 # Bash configurations that are also useful in Console and as root.
 # To be sourced by the parent  ~/.bashrc
-# source ~/.bashrc if you've changed something here...
 
 
 alias b='batman'
 alias mo='moar'
 
-# command history
+#=> colours
+source $ARCHBUILDS/Bash/xcol.sh
+
+#==> nachoparker
+#normal=$(tput sgr0)                      # normal text
+normal=$'\e[0m'                           # (works better sometimes)
+bold=$(tput bold)                         # make colors bold/bright
+red="$bold$(tput setaf 1)"                # bright red text
+green=$(tput setaf 2)                     # dim green text
+fawn=$(tput setaf 3); beige="$fawn"       # dark yellow text
+yellow="$bold$fawn"                       # bright yellow text
+darkblue=$(tput setaf 4)                  # dim blue text
+blue="$bold$darkblue"                     # bright blue text
+purple=$(tput setaf 5); magenta="$purple" # magenta text
+pink="$bold$purple"                       # bright magenta text
+darkcyan=$(tput setaf 6)                  # dim cyan text
+cyan="$bold$darkcyan"                     # bright cyan text
+gray=$(tput setaf 7)                      # dim white text
+darkgray="$bold"$(tput setaf 0)           # bold black = dark gray text
+white="$bold$gray"                        # bright white text
+
+#=> command history
 alias h='history'
 export HISTCONTROL=ignoreboth:erasedups
 export HISTIGNORE='?:??'
 PROMPT_COMMAND='history -a' # Samokovarov's  jump  later tweaks this
 shopt -s histappend
 
-# Internetish
+#=> internetish
 alias p='ping -c 3 8.8.8.8'
+alias pg='ping -c 3 -n google.com'
 alias pqs='pacman -Qs'
 alias wp='curl wttr.in/Paris'  # weather
 
-
-# better file managing
-# --------------------
+#=> better file managing
 alias e='exa'
 alias l='ls --color=auto'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
@@ -32,7 +51,7 @@ alias sm="stat -c '%y %n'"
 
 shopt -s autocd dotglob extglob globstar nullglob
 
-# broot
+#==> broot
 if [ -s "/usr/bin/broot" ]; then
     if [ -s "/usr/bin/moar" ]; then
       export PAGER=moar
@@ -44,12 +63,12 @@ if [ -s "/usr/bin/broot" ]; then
     source ~/.config/broot/launcher/bash/br
 fi
 
-# count filetypes
+#==> count filetypes
 cft(){
   find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
 }
 
-# fzf
+#==> fzf
 if [ -s "/usr/share/fzf" ]; then
     # alias f="fzf --preview 'bat --color=always {} | head -500'"
     alias f="fzf --preview 'bat --color=always {}'"
@@ -57,12 +76,12 @@ if [ -s "/usr/share/fzf" ]; then
     source /usr/share/fzf/completion.bash
 fi
 
-# locate directories
+#==> locate directories
 locd () {
     locate $1 | xargs -I {} bash -c 'if [ -d "{}" ]; then echo {}; fi'
 }
 
-# move up [n] directories
+#==> move up [n] directories
 up(){
   local dir=""
   limit=$1
@@ -77,11 +96,11 @@ up(){
   cd $dir
 }
 
-# system monitoring
+#==> system monitoring
 alias bt='bashtop'
 alias gl='glances'
 
-# virtualenvwrapper
+#==> virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
 [[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
 
