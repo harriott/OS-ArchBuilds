@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
+# vim: fdm=expr ft=sh.shfold:
 
 # sudo bash <thisfile>.sh
 

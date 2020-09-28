@@ -1,9 +1,11 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
+# vim: fdm=expr fdl=1 ft=sh.shfold:
 
 # bash <thisfile>
 
 #=> for fonts
 
-[[ /usr/share/fonts/copiedForArch ]] && rm -r /usr/share/fonts/copiedForArch; ln -s $ITstack/fonts-copiedForArch /usr/share/fonts/copiedForArch
+cfA=/usr/share/fonts/copiedForArch
+Technos=/mnt/SDSSDA240G/Dropbox/JH/Technos
+[[ $cfA ]] && rm -r $cfA; ln -s $Technos/IT0-fonts-copiedForArch $cfA
 

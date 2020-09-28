@@ -1,12 +1,15 @@
-# vim: set ft=sh tw=0:
+# vim: set ft=sh:
 #
 # ~/.bash_profile
 # get my  .bashrc  settings working in  Console
 #
 
-export DROPBOX=/mnt/SDSSDA240G/Dropbox
-    export ITstack=$DROPBOX/JH/IT_stack
-        export ARCHBUILDS=$onGH/ArchBuilds
+# this should be sourced from a system-dependent parent which defines $ARCHBUILDS
 
-[[ -f /root/.bashrc ]] && . /root/.bashrc  # needed for su
+# bashrc is desired for su
+if [ -f /root/.bashrc ]; then
+    . /root/.bashrc
+elif [ -f $ARCHBUILDS/root/bashrc ]; then
+    . $ARCHBUILDS/root/bashrc
+fi
 

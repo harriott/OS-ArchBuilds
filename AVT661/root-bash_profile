@@ -1,14 +1,13 @@
-# vim: set ft=sh tw=0:
+# vim: fdl=1 fdm=expr ft=sh.shfold:
 #
 # ~/.bash_profile
 # get my  .bashrc  settings working in  Console
 #
+# for some reason changes here are only implemented after a reboot
 
-export DROPBOX=/mnt/SDSSDA240G/Dropbox
-    export ITstack=$DROPBOX/JH/IT_stack
-        export ARCHBUILDS=$ITstack/onGitHub/ArchBuilds
-        export onGH=$DROPBOX/JH/Sh-81A4/ITS-onGitHub
-            export ARCHBUILDS=$onGH/ArchBuilds
+#=> 0 $ARCHBUILDS
+export ARCHBUILDS=/mnt/SDSSDA240G/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
 
-[[ -f /root/.bashrc ]] && . /root/.bashrc  # needed for su
+#=> 1 move on to generic bash_profile
+[[ -f $ARCHBUILDS/root/bash_profile ]] && . $ARCHBUILDS/root/bash_profile
 

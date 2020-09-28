@@ -3280,6 +3280,8 @@ ping -c 3 google.com  reports "64 bytes from par10s29-in-x0e.1e100.net (2a00:145
 fixed by a reboot
 then it came back, fixed by briefly running xev
 then it came back, not fixed by running xev
+# http:// sites becaeme unavailable in all browsers
+cured by a reboot
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

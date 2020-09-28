@@ -1,4 +1,4 @@
-# vim: fdm=expr fdc=1 ft=sh.shfold tw=0:
+# vim: fdm=expr ft=sh.shfold tw=0:
 
 # Joseph Harriott
 
@@ -45,14 +45,14 @@ n()
     fi
 }
 
-export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/Now/Technos/IT;j:/run/media/jo;l:$DROPBOX/JH/Work/ST/LPD/IdF;m:$DROPBOX/CAMusic;r:$DROPBOX/JH/Copied/Practical0/France/Places/IdF/Transport/RATP;s:$DROPBOX/JH/CforWork/Education/Science-Engineering;t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$DROPBOX/JH/Then0/Deauram/with"
+export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/Technos/IT1;j:/run/media/jo;l:$DROPBOX/JH/Work/ST/LPD/IdF;m:$DROPBOX/CAM-toSort;r:$DROPBOX/JH/Copied/Practical0/France/Places/IdF/Transport/RATP;s:$DROPBOX/JH/CforWork/Education/Science-Engineering;t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$DROPBOX/JH/Then0/Deauram/with"
 #  only first 10 get loaded correctly
 #
 #  a:/home/jo/.local/share/mail
-#  i:$DROPBOX/JH/Now/Technos/IT
+#  i:$DROPBOX/JH/Technos/IT1
 #  j:/run/media/jo
 #  l:$DROPBOX/JH/Work/ST/LPD/IdF
-#  m:$DROPBOX/CAMusic
+#  m:$DROPBOX/CAM-toSort
 #  r:$DROPBOX/JH/Copied/Practical0/France/Places/IdF/Transport/RATP
 #  s:$DROPBOX/JH/CforWork/Education/Science-Engineering
 #  t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed

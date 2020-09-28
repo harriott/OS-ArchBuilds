@@ -17,19 +17,19 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # defined here so they can be accessed by  $MACHINE/jo/Openbox/autostart  & by  gvim
 # kill tmux sessions if you've made changes here
 export DROPBOX=/mnt/SDSSDA240G/Dropbox   # keep this capitalised for finding it without need for $
-    export ITstack=$DROPBOX/JH/IT_stack
-        export onGH=$ITstack/onGitHub
-        export onGH=$DROPBOX/JH/Sh-81A4/ITS-onGitHub
-            export ARCHBUILDS=$onGH/ArchBuilds
-                export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
-                export Imagey=$ARCHBUILDS/jo/Bash/Imagey
-                export machineName=AVT661  # for ~/.vim/pack/ArchLinux/lists.sh
-                    export MACHINE=$ARCHBUILDS/$machineName
-                export Openbox=$ARCHBUILDS/jo/Openbox
-                    export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
-                    export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
-            export MD4PDF=$onGH/md4pdf
+    export ITstack=$DROPBOX/JH/core/IT_stack
         export GNULE=$ITstack/unix_like/email-GNULinux  # where I keep private configurations
+    export onGH=$DROPBOX/JH/core/IT_stack/onGitHub
+        export ARCHBUILDS=$onGH/ArchBuilds
+            export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
+            export Imagey=$ARCHBUILDS/jo/Bash/Imagey
+            export machineName=AVT661  # for ~/.vim/pack/ArchLinux/lists.sh
+                export MACHINE=$ARCHBUILDS/$machineName
+            export Openbox=$ARCHBUILDS/jo/Openbox
+                export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
+                export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
+        export MD4PDF=$onGH/md4pdf
+    export Technos=/mnt/SDSSDA240G/Dropbox/JH/Technos  # for fonts
 
 userresources=$MACHINE/jo/Xresources  # space after the = for vim gf
 

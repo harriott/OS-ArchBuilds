@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
+# vim: fdm=expr ft=sh.shfold:
 
 # sed -n '5p' build.sh
 # script build-$(date "+%y%m%d-%H%M")

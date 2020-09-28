@@ -14,6 +14,7 @@ xrandr
 
 # Bash
 !! # execute last command
+<somecommand> | xcol <keyword1> <keyword2> ... # for highlighting
 
 ## ANSI escape sequences
 for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
@@ -302,7 +303,8 @@ find . -type f | fzy  # for finding something fuzzily fast
 ### fd
 b fd
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
-fd -I => fd --no-ignore => do not respect .(git|fd)ignore files
+fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
+fd -I  # fd --no-ignore => do not respect .(git|fd)ignore files
 "sharkdp"
 
 ### mlocate
