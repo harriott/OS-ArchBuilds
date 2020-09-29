@@ -3,7 +3,7 @@
 # Joseph Harriott, Wed 14 Jun 2017
 # convert images to jpg with ImageMagick
 
-# this is normally called from one of my aliases defined in  $ARCHBUILDS/jo/Bash/bashrc-images,
+# this is normally called from one of my aliases defined in  $Bash/bashrc-wm,
 # but can: find * -exec bash /usr/local/bin/cnvt.sh {} \;
 
 inimag=${1%.*}

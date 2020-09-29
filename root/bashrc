@@ -1,7 +1,7 @@
 # vim: set ft=sh tw=0:
 
 # Joseph Harriott
-# source /root/.bashrc   if you've changed something here...
+# symlink this to  /root/.bashrc  it will be sourced directly by  su
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 

@@ -119,3 +119,6 @@ pacman -S pkgconf
 # # xvt-perls
 # pacman -S urxvt-perls
 
+# # xdotool
+# pacman -S xdotool
+

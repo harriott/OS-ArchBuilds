@@ -92,7 +92,7 @@ pacman -S tree
 
 #=> 1 softwares - system
 # Bashtop
-sudo pacman -S bashtop
+pacman -S bashtop
 
 # fcron
 pacman -S fcron

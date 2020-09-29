@@ -17,9 +17,23 @@ xrandr
 <somecommand> | xcol <keyword1> <keyword2> ... # for highlighting
 
 ## ANSI escape sequences
-for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
+> ''\e[0;34m'' = Blue
+> ''\e[1;34m'' = Bold Blue
+
+### tput
 "nachoparker"
 tput bold; echo hello
+
+#### cat --show-nonprinting
+for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
+tput setaf 95; tput setaf 95 | cat -v; echo =95
+
+## substitute user identity
+su -  # login shell
+
+## Login shell?
+echo $0  # "-bash" = login shell, "bash" = non-login shell
+shopt login_shell
 
 # CUPS - when a printer is paused/disabled
 lpstat -p -d  # show status of printers, including which is set as default

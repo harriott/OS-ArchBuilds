@@ -3,7 +3,7 @@
 # Joseph Harriott, Wed 03 Jun 2020
 # darken sketches with ImageMagick
 
-# this is called from one of my aliases defined in  $ARCHBUILDS/jo/Bash/bashrc-images
+# this is called from one of my aliases defined in  $Bash/bashrc-wm
 
 if [[ -d $1 ]]; then
     [[ -d $1-gamma03 ]] && rm -r $1-gamma03

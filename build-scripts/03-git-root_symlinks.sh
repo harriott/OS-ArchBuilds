@@ -19,8 +19,8 @@ export ARCHBUILDS=/ArchBuilds  # provisional
 export ARCHBUILDS=/mnt/SDSSDA240G/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
 
 #=> 1 root symlinks 1 symlinks
-ln -sf $ARCHBUILDS/AVT661/root-bash_profile /root/.bash_profile
-# - sources root bashrc, which sources bashrc-generic
+ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
+ln -sf $ARCHBUILDS/root/bashrc /root/.bashrc  # sources bashrc-generic
 
 ln -sf $ARCHBUILDS/Bash/inputrc /root/.inputrc
 

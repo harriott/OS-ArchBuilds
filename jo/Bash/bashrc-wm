@@ -19,7 +19,7 @@ gvc () {
 } # opens the file in gVim only if there's no swap file present for it
 
 #=> imagey - convert scanned images to jpg with ImageMagick
-# (needs cnvt.sh in $PATH and won't work with white-spaces in file names)
+# (won't work with white-spaces in file names)
 c () {
   bash $Imagey/cnvt.sh $1 "-quality 70"
 }

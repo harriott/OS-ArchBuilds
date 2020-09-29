@@ -19,7 +19,7 @@ rm -r ~/texmf/tex/latex/jo
 ln -s $ITstack/CrossPlatform/forLaTeX ~/texmf/tex/latex/jo
 
 # #=> for my m4p scripts
-# mkdir ~/texmf/tex/latex/m4p  # referred to in $ARCHBUILDS/jo/Bash/bashrc-ob
+# mkdir ~/texmf/tex/latex/m4p  # referred to in $Bash/bashrc-ob
 
 #=> Pandoc defaults
 MD4PDF=$onGH/md4pdf

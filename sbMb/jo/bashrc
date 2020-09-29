@@ -12,14 +12,14 @@ brcConsole () {
     # bashrc 1 - useful everywhere, including root
     source $ARCHBUILDS/Bash/bashrc-generic
     # bashrc 2 - useful also in Console as user
-    source $ARCHBUILDS/jo/Bash/bashrc-console
+    source $Bash/bashrc-console
 }
 if [[ $ARCHBUILDS ]]; then  # it's been defined in ~/.xinitrc
     brcConsole
     # bashrc 3 - useful only for jo
-    source $ARCHBUILDS/jo/Bash/bashrc-email
-    source $ARCHBUILDS/jo/Bash/bashrc-images
-    source $ARCHBUILDS/jo/Bash/bashrc-ob
+    source $Bash/bashrc-email
+    source $Bash/bashrc-images
+    source $Bash/bashrc-ob
 else                        # try a local cache
     ARCHBUILDS=~/ArchBuilds
     [[ -d $ARCHBUILDS ]] && brcConsole

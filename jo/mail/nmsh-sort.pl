@@ -3,7 +3,7 @@
 # ----------------------------------------------------
 # sorts nmsh output by date - incredibly useful
 #
-# I call this from my $ARCHBUILDS/jo/Bash/bashrc-email
+# I call this from my $Bash/bashrc-email
 # ----------------------------------------------------
 
 use strict;  use warnings;

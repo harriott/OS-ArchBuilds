@@ -24,6 +24,7 @@ gic () {
 #==> quick-check my Encrypted directories
 alias fe='fdtsEncryptedChanges'
 
+# array "Encrypted" is defined in $MACHINE/jo/bashrc
 fdtsEncryptedChanges () {
   if [ "$PWD" != ${Encrypted[0]} ]; then
     cd ${Encrypted[0]}

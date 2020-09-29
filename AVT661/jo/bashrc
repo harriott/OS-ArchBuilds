@@ -23,14 +23,14 @@ brcConsole () {
     # bashrc 1 - useful everywhere, including root
     source $ARCHBUILDS/Bash/bashrc-generic
     # bashrc 2 - useful also in Console as user
-    source $ARCHBUILDS/jo/Bash/bashrc-console
+    source $Bash/bashrc-console
 }
 if [[ $ARCHBUILDS ]]; then  # it's been defined in ~/.xinitrc
     brcConsole
     # bashrc 3 - useful only for jo
-    source $ARCHBUILDS/jo/Bash/bashrc-email
-    source $ARCHBUILDS/jo/Bash/bashrc-wm
-    source $ARCHBUILDS/jo/Bash/bashrc-ob
+    source $Bash/bashrc-email
+    source $Bash/bashrc-wm
+    source $Bash/bashrc-ob
 else                        # try a local cache
     ARCHBUILDS=~/Arch/ArchBuilds
     [[ -d $ARCHBUILDS ]] && brcConsole
@@ -46,8 +46,8 @@ alias i='iwctl station wlwg111v2 get-networks'
 
 #=> system-specific directories
 
-# my Encrypted directories
-Encrypted=(/mnt/SDSSDA240G/Encrypted Digital0 Secure0 Secure1 Stack TP)
+# my Encrypted directories - for command  fe  defined in  $Bash/bashrc-console
+Encrypted=(/mnt/SDSSDA240G/Encrypted Digital0 Digital1 Secure0 Secure1 Stack TP)
 
 # my video store
 Vs=/run/media/jo/TOSHIBA/Vs

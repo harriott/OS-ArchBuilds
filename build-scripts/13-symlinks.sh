@@ -15,10 +15,10 @@ action='ln -sf'
 
 # sort this list by last use of "~":  :sort /,*\~/
 
-$action $ARCHBUILDS/jo/Bash/bash_profile ~/.bash_profile
-$action $MACHINE/jo/bashrc               ~/.bashrc
-$action $ARCHBUILDS/Bash/inputrc         ~/.inputrc
-$action $ARCHBUILDS/jo/xbindkeysrc       ~/.xbindkeysrc
+$action $Bash/bash_profile         ~/.bash_profile
+$action $MACHINE/jo/bashrc         ~/.bashrc
+$action $ARCHBUILDS/Bash/inputrc   ~/.inputrc
+$action $ARCHBUILDS/jo/xbindkeysrc ~/.xbindkeysrc
 
 #=> 2 if first build
 find ~ -mindepth 1 -maxdepth 1 -type l -ls

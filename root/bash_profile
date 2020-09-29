@@ -4,12 +4,7 @@
 # get my  .bashrc  settings working in  Console
 #
 
-# this should be sourced from a system-dependent parent which defines $ARCHBUILDS
+# this is only here incase you  su -
 
-# bashrc is desired for su
-if [ -f /root/.bashrc ]; then
-    . /root/.bashrc
-elif [ -f $ARCHBUILDS/root/bashrc ]; then
-    . $ARCHBUILDS/root/bashrc
-fi
+[[ -f /root/.bashrc ]] && . /root/.bashrc  # desired for su
 

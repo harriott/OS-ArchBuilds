@@ -17,7 +17,7 @@ ARCHBUILDS=/mnt/SDSSDA240G/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
 
 #=> 1 symlinks
 ln -sf $ARCHBUILDS/jo/bash_history.sh ~/Arch/bash_history.sh
-ln -sf $MACHINE/jo/gitconfig ~/.gitconfig
+ln -sf $MACHINE/jo/gitconfig ~/.gitconfig # points to $ITstack/gitconfig
 ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 
 # sort these lists by last use of "~":  :sort /,*\~/

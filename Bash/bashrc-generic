@@ -11,23 +11,31 @@ alias mo='moar'
 #=> colours
 source $ARCHBUILDS/Bash/xcol.sh
 
-#==> nachoparker
-#normal=$(tput sgr0)                      # normal text
-normal=$'\e[0m'                           # (works better sometimes)
-bold=$(tput bold)                         # make colors bold/bright
-red="$bold$(tput setaf 1)"                # bright red text
-green=$(tput setaf 2)                     # dim green text
-fawn=$(tput setaf 3); beige="$fawn"       # dark yellow text
-yellow="$bold$fawn"                       # bright yellow text
-darkblue=$(tput setaf 4)                  # dim blue text
-blue="$bold$darkblue"                     # bright blue text
-purple=$(tput setaf 5); magenta="$purple" # magenta text
-pink="$bold$purple"                       # bright magenta text
-darkcyan=$(tput setaf 6)                  # dim cyan text
-cyan="$bold$darkcyan"                     # bright cyan text
-gray=$(tput setaf 7)                      # dim white text
-darkgray="$bold"$(tput setaf 0)           # bold black = dark gray text
-white="$bold$gray"                        # bright white text
+#==> tput foreground
+tpfn=$'\e[0m' # normal
+tpfb=$(tput bold)
+
+#===> normal colours
+tpf0=$(tput setaf 0) # black
+tpf1=$(tput setaf 1) # red
+tpf2=$(tput setaf 2) # green
+tpf3=$(tput setaf 3) # yellow
+tpf4=$(tput setaf 4) # blue
+tpf5=$(tput setaf 5) # magenta
+tpf6=$(tput setaf 6) # cyan
+tpf7=$(tput setaf 7) # white
+# echo "${tpf0}black ${tpf1}red ${tpf2}green ${tpf3}yellow ${tpf4}blue ${tpf5}magenta ${tpf6}cyan ${tpf7}white${normal}"
+
+#===> bold colours
+tpf0b="$tpfb$tpf0" # bold black
+tpf1b="$tpfb$tpf1" # bold red
+tpf2b="$tpfb$tpf2" # bold green
+tpf3b="$tpfb$tpf3" # bold yellow
+tpf4b="$tpfb$tpf4" # bold blue
+tpf5b="$tpfb$tpf5" # bold magenta
+tpf6b="$tpfb$tpf6" # bold cyan
+tpf7b="$tpfb$tpf7" # bold white
+# echo "${tpf0b}black ${tpf1b}red ${tpf2b}green ${tpf3b}yellow ${tpf4b}blue ${tpf5b}magenta ${tpf6b}cyan ${tpf7b}white${normal}"
 
 #=> command history
 alias h='history'

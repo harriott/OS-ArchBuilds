@@ -3282,6 +3282,19 @@ then it came back, fixed by briefly running xev
 then it came back, not fixed by running xev
 # http:// sites becaeme unavailable in all browsers
 cured by a reboot
+# su -
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/premkproject
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/postmkproject
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/initialize
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/premkvirtualenv
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/postmkvirtualenv
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/prermvirtualenv
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/postrmvirtualenv
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/predeactivate
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/postdeactivate
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/preactivate
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/postactivate
+virtualenvwrapper.user_scripts creating /root/.virtualenvs/get_env_details
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice
