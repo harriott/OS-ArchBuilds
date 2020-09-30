@@ -12,30 +12,31 @@ alias mo='moar'
 source $ARCHBUILDS/Bash/xcol.sh
 
 #==> tput foreground
-tpfn=$'\e[0m' # normal
-tpfb=$(tput bold)
+# inspired by nachoparker
+export tpfn=$'\e[0m' # normal
+export tpfb=$(tput bold)
 
 #===> normal colours
-tpf0=$(tput setaf 0) # black
-tpf1=$(tput setaf 1) # red
-tpf2=$(tput setaf 2) # green
-tpf3=$(tput setaf 3) # yellow
-tpf4=$(tput setaf 4) # blue
-tpf5=$(tput setaf 5) # magenta
-tpf6=$(tput setaf 6) # cyan
-tpf7=$(tput setaf 7) # white
-# echo "${tpf0}black ${tpf1}red ${tpf2}green ${tpf3}yellow ${tpf4}blue ${tpf5}magenta ${tpf6}cyan ${tpf7}white${normal}"
+export tpf0=$(tput setaf 0) # black
+export tpf1=$(tput setaf 1) # red
+export tpf2=$(tput setaf 2) # green
+export tpf3=$(tput setaf 3) # yellow
+export tpf4=$(tput setaf 4) # blue
+export tpf5=$(tput setaf 5) # magenta
+export tpf6=$(tput setaf 6) # cyan
+export tpf7=$(tput setaf 7) # white
+# echo "${tpf0}black ${tpf1}red ${tpf2}green ${tpf3}yellow ${tpf4}blue ${tpf5}magenta ${tpf6}cyan ${tpf7}white${tpfn}"
 
 #===> bold colours
-tpf0b="$tpfb$tpf0" # bold black
-tpf1b="$tpfb$tpf1" # bold red
-tpf2b="$tpfb$tpf2" # bold green
-tpf3b="$tpfb$tpf3" # bold yellow
-tpf4b="$tpfb$tpf4" # bold blue
-tpf5b="$tpfb$tpf5" # bold magenta
-tpf6b="$tpfb$tpf6" # bold cyan
-tpf7b="$tpfb$tpf7" # bold white
-# echo "${tpf0b}black ${tpf1b}red ${tpf2b}green ${tpf3b}yellow ${tpf4b}blue ${tpf5b}magenta ${tpf6b}cyan ${tpf7b}white${normal}"
+export tpf0b="$tpfb$tpf0" # bold black
+export tpf1b="$tpfb$tpf1" # bold red
+export tpf2b="$tpfb$tpf2" # bold green
+export tpf3b="$tpfb$tpf3" # bold yellow
+export tpf4b="$tpfb$tpf4" # bold blue
+export tpf5b="$tpfb$tpf5" # bold magenta
+export tpf6b="$tpfb$tpf6" # bold cyan
+export tpf7b="$tpfb$tpf7" # bold white
+# echo "${tpf0b}black ${tpf1b}red ${tpf2b}green ${tpf3b}yellow ${tpf4b}blue ${tpf5b}magenta ${tpf6b}cyan ${tpf7b}white${tpfn}"
 
 #=> command history
 alias h='history'

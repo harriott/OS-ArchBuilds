@@ -89,6 +89,10 @@ Alt > Alt A > Exposure > Gamma
 Alt > Alt A > Tiny Planet
 can only fill page for printing
 
+## scanning
+S 55n 3 <imagefilename> <scanheight>
+see $Imagey/Scan.sh
+
 ## sxiv
 can't send to printer
 sxiv -ft *  # opens directly to thumbnails, using fullscreen

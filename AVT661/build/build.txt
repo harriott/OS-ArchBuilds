@@ -3295,6 +3295,11 @@ virtualenvwrapper.user_scripts creating /root/.virtualenvs/postdeactivate
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/preactivate
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/postactivate
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/get_env_details
+# clamd.conf
+cd /etc/clamav
+  diff -y --suppress-common-lines clamd.conf clamd.conf.pacnew  reported differences, so
+    nvim -O clamd.conf clamd.conf.pacnew   & diff'd over my changes
+      clamd.conf.pacnew  had  MaxDirectoryRecursion 20
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice
