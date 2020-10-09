@@ -5,7 +5,7 @@
 
 # this is developed to my preferences from  accounts/2-fm.muttrc  which was created by  Mutt Wizard
 #  mbsync gmx   using ~/.mbsyncrc
-#  msmtp  uses settings put by  Mutt Wizard  into  ~/.config/msmtp/config
+#  msmtp  uses settings in  ~/.config/msmtp/config
 
 set from = $gmx
 set sendmail = "msmtp -a gmx"

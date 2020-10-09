@@ -8,6 +8,11 @@ trap read debug  # puts a read request after each executable line
 
 rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 
+#=> Google API python toolchain
+sudo pacman -S python-google-api-python-client
+sudo pacman -S python-google-auth-httplib2
+sudo pacman -S python-google-auth-oauthlib
+
 # #=> 8192eu 0 8192eu-dkms - install
 # # needs  appmenu-gtk-module dkms linux-headers
 # cd ~/Arch/AUR

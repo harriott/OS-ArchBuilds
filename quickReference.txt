@@ -17,8 +17,10 @@ xrandr
 <somecommand> | xcol <keyword1> <keyword2> ... # for highlighting
 
 ## ANSI escape sequences
-> ''\e[0;34m'' = Blue
-> ''\e[1;34m'' = Bold Blue
+$ARCHBUILDS/Bash/bashrc-generic
+\e[0;34m = Blue
+\e[1;34m = Bold Blue
+echo -e "\e[1m\e[95m[1m[95m\e[0m"
 
 ### tput
 "nachoparker"
@@ -190,14 +192,17 @@ find -name "* conflicted copy *"
 find -name "*(Copie en conflit de *"
 
 ## email
-echo "hello there" | nmx -s "message sent from neomutt" jharr@ftml.net
+$Bash/bashrc-email
+echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment>
 grep -r "Georita" *
 thunderbird -addressbook
 
 ### notmuch search
-nmse '"Georita Harriott"' date:march..
+nmse '"Georita Harriott"' date:march..  # searches from March
 nmse parlotte date:sat
 notmuch search tag:fm | wc -l
+notmuch search tag:gmail | wc -l
+notmuch search tag:trohib | wc -l
 
 ### URLs unclickable by receiver
 URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
@@ -212,9 +217,12 @@ sudo firewall-cmd --info-zone=public
 sudo firewall-cmd --panic-on
 
 # pass
+pass
 pass edit gmail-neomutt
 pass gmail-neomutt
 pass ls
+pass(1)
+pass troh/GmailAPI/token-expire
 
 # PDFs
 pdfimages -h
@@ -242,6 +250,7 @@ Ctrl+Alt+T         -> Konsole
 Win+PageUp/Down    -> maximises or returns to normal a window
 
 # processes
+fcrontab -l
 lsof -i
 pkill zoom
 pgrep
@@ -285,12 +294,16 @@ e -T   # for tree
 
 ### fzf
 Alt+c   # to change directory
+b fzf
 Ctrl+t  # puts node selection onto command line
 gvim -o `f`  # calling upon fzf
 
-### jump
-j <fuzzysearch> [<fuzzysear> ...]
-jump top
+### Samokovarov's jump
+b jump
+j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
+jump clean
+jump top | moar
+jump --help
 
 ## Dolphin
 F4        -> Konsole  attached below
@@ -322,8 +335,9 @@ find . -type f | fzy  # for finding something fuzzily fast
 b fd
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
+fd -H  # fd --hidden
 fd -I  # fd --no-ignore => do not respect .(git|fd)ignore files
-"sharkdp"
+sharkdp/fd
 
 ### mlocate
 b locate

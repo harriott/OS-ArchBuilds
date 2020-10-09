@@ -13,6 +13,7 @@ set sort_alias = alias
 set reverse_alias = yes
 
 set postponed = "+Drafts"
+set delete = yes  # default was ask-yes
 
 macro index,pager gw "<change-folder>=Waiting<enter>" "go to Waiting"
 macro index,pager Gw "<save-message>=Waiting<enter>" "move mail to Waiting"

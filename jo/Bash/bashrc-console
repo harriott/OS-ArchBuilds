@@ -46,7 +46,7 @@ fdtsEncryptedChanges () {
 
 #==> Samokovarov's  jump
 if [ -s "/usr/bin/jump" ]; then
-    eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
+  eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
 fi
 
 #==> time-sorted lists of files - all

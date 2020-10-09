@@ -3,31 +3,31 @@
 # my preferred configuration file for accessing  Fastmail
 # I prefer to call this through an alias in my  ~/.bashrc
 
-#  mbsync czp   using ~/.mbsyncrc
+#  mbsync cz   using ~/.mbsyncrc
 #  msmtp  uses settings in  ~/.config/msmtp/config
 
-set from = $czp  # defined in my  $GNULE/mymuttrcAddresses
-set sendmail = "msmtp -a czp"
-set folder = "$mail/czp"
-set header_cache = /home/jo/.cache/mutt/czp/headers
-set message_cachedir = /home/jo/.cache/mutt/czp/bodies
+set from = $cz  # defined in my  $GNULE/mymuttrcAddresses
+set sendmail = "msmtp -a cz"
+set folder = "$mail/cz"
+set header_cache = /home/jo/.cache/mutt/cz/headers
+set message_cachedir = /home/jo/.cache/mutt/cz/bodies
 
 set spoolfile = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+[Gmail].Bin"
 
-set alias_file = "$GNULE/aliases-czp"
+set alias_file = "$GNULE/aliases-cz"
 source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh
-# rm -r ~/.cache/mutt/czp/* ~/.local/share/mail/czp/*
+# rm -r ~/.cache/mutt/cz/* ~/.local/share/mail/cz/*
 # and fix  ~/.mbsyncrc  to correspond
-mailboxes "=Archives" "=[Gmail].All\ Mail" "=[Gmail].Bin" "=[Gmail].Drafts" "=[Gmail].Sent\ Mail" "=[Gmail].Spam" "=INBOX"
+mailboxes "=Archives" "=[Gmail].All\ Mail" "=[Gmail].Bin" "=[Gmail].Drafts" "=[Gmail].Sent\ Mail" "=[Gmail].Spam" "=INBOX" "=Waiting"
 # - any errors here will trigger others
-virtual-mailboxes "All" "notmuch://?query=tag:czp"
+virtual-mailboxes "All" "notmuch://?query=tag:cz"
 
-# tweak the default status line to show  "->czp":
-set status_format=" -%r-NeoMutt->czp: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
+# tweak the default status line to show  "->cz":
+set status_format=" -%r-NeoMutt->cz: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
 
 source $email/muttrc-all
 set realname = "Cafézoïde Parlotte"

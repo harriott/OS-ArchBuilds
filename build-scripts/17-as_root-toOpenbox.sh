@@ -107,9 +107,6 @@ pacman -S pkgconf
 # # Conky
 # pacman -S conky
 
-# # fcron
-# pacman -S fcron
-
 # # sysstat
 # pacman -S sysstat
 

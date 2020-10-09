@@ -5,7 +5,7 @@
 
 # this is developed to my preferences from  accounts/2-fm.muttrc  which was created by  Mutt Wizard
 #  mbsync fm   using ~/.mbsyncrc
-#  msmtp  uses settings put by  Mutt Wizard  into  ~/.config/msmtp/config
+#  msmtp  uses settings in  ~/.config/msmtp/config
 
 set from = $fm  # defined in my  $GNULE/mymuttrcAddresses
 set sendmail = "msmtp -a fm"
@@ -24,10 +24,10 @@ source $alias_file
 # rm -r ~/.cache/mutt/fm/* $mail/fm/*
 mailboxes "=Archive" "=Deauram" "=Drafts" "=Friends" "=INBOX" "=Junk\ Mail" "=Sent\ Items" "=Trash" "=Waiting" "=Work"
 virtual-mailboxes "All" "notmuch://?query=tag:fm"
-virtual-mailboxes "Aude" "notmuch://?query=Aude"
 
 # tweak the default status line to show  "->fm":
 set status_format=" -%r-NeoMutt->fm: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
+# - using %D as discussed in superuser 1590169
 
 source $email/muttrc-all
 

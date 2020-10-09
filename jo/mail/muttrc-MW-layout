@@ -11,11 +11,11 @@ set pager_index_lines=1
 
 # Sidebar mappings
 set sidebar_visible = yes
-set sidebar_width = 20
+set sidebar_width = 22
 set sidebar_short_path = yes
 set sidebar_next_new_wrap = yes
 set mail_check_stats
-set sidebar_format = '%B%?F? [%F]?%* %?N?%N/? %?S?%S?'
+set sidebar_format = '%D%?F? [%F]?%* %?N?%N/? %?S?%S?'
 bind index,pager B sidebar-toggle-visible
 
 # Default index colors:

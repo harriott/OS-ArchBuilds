@@ -1,4 +1,4 @@
-# vim: fdm=expr fdc=1 ft=sh.shfold sw=2:
+# vim: fdm=expr ft=sh.shfold sw=2:
 
 # Joseph Harriott
 # Bash configurations that are also useful in Console and as root.

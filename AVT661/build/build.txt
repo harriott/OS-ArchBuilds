@@ -3280,7 +3280,7 @@ ping -c 3 google.com  reports "64 bytes from par10s29-in-x0e.1e100.net (2a00:145
 fixed by a reboot
 then it came back, fixed by briefly running xev
 then it came back, not fixed by running xev
-# http:// sites becaeme unavailable in all browsers
+# https:// sites becaeme unavailable in all browsers
 cured by a reboot
 # su -
 virtualenvwrapper.user_scripts creating /root/.virtualenvs/premkproject
@@ -3300,6 +3300,22 @@ cd /etc/clamav
   diff -y --suppress-common-lines clamd.conf clamd.conf.pacnew  reported differences, so
     nvim -O clamd.conf clamd.conf.pacnew   & diff'd over my changes
       clamd.conf.pacnew  had  MaxDirectoryRecursion 20
+# right Shift-D not working again, even in console
+plugging in Perixx PERIBOARD-407W keyboard via D-Link DUB-H7 7 got it working again
+# https:// sites becaeme unavailable in all browsers
+cured by cycling XA2's hotspot
+# right Shift-D not working again
+Perixx PERIBOARD-407W keyboard via D-Link DUB-H7 7 was working,
+  so took Logitech Ultra-Flat out of service
+# mouse
+Logitech Cordless Desktop EX 110 Mouse unplugged from USB
+Logitech Wireless Mouse M525 plugged into USB  reboot
+# sound failed
+fix was to unplug Logitech Webcam C200 for boot
+# moved Thunderbird Profile
+in  ~/.thunderbird/profiles.ini [Profile0] section:
+  IsRelative=0
+  Path=3df0pcma.default-release  changed to  /mnt/SDSSDA240G/Dropbox/JH/TP.default-release
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

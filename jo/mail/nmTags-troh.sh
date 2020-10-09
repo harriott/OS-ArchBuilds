@@ -11,7 +11,7 @@
 #  notmuch tag -gmail -- "*"
 #  notmuch tag -lpd -- tag:gmail
 
-notmuch tag +gmail -- 'folder:/gmail\/.*/ and not tag:gmail' # add gmail tags to all
+notmuch tag +trohib -- 'folder:/gmail\/.*/ and not tag:trohib' # add trohib tags to all
 notmuch tag -inbox -- 'folder:/gmail\/[^I]/ and tag:inbox' # remove unneeded inbox tags
 
 # individual folder tags:
