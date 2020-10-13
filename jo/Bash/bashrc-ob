@@ -69,6 +69,14 @@ export NNN_LOCKER='saidar -c' # not arriving in my case
 for i in {0..1}; do  # setup alternative commands to define the header style
     setHeadingsSty[$i]="ln -sf $MD4PDF/iih/headings$i.sty ~/texmf/tex/latex/m4p/headings.sty"
 done
+
+mt() # do my TextNotes
+{
+    cd $DROPBOX/JH/core/TextNotes
+    pwd
+    m4ps0
+}
+
 m4p() # a single TextNote file
 {
     eval ${setHeadingsSty[0]}
@@ -76,6 +84,7 @@ m4p() # a single TextNote file
     export m4pfont=0
     bash $MD4PDF/GNULinux/m4p.sh $1 $2
 }
+
 # recursively compile from many markdowns
 m4ps0() # my TextNotes
 {
@@ -84,6 +93,7 @@ m4ps0() # my TextNotes
     export m4pfont=0
     bash $MD4PDF/GNULinux/m4ps.sh
 }
+
 m4ps1() # muted headings
 {
     eval ${setHeadingsSty[1]}

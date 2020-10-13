@@ -9,12 +9,13 @@ rhash -a --bsd <somefile>
 rhash --list-hashes => list names of all supported hashes
 rhash --sha256 <file>
 sudo parted -l
-whereis <executable>
+wcsf=$(wc -l <samplefile>); echo $wcsf
 xrandr
 
 # Bash
 !! # execute last command
 <somecommand> | xcol <keyword1> <keyword2> ... # for highlighting
+[ -s "filename" ]  # true if file not zero-size
 
 ## ANSI escape sequences
 $ARCHBUILDS/Bash/bashrc-generic
@@ -292,12 +293,6 @@ e
 e -la  # for permissions and symlinks
 e -T   # for tree
 
-### fzf
-Alt+c   # to change directory
-b fzf
-Ctrl+t  # puts node selection onto command line
-gvim -o `f`  # calling upon fzf
-
 ### Samokovarov's jump
 b jump
 j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
@@ -308,6 +303,30 @@ jump --help
 ## Dolphin
 F4        -> Konsole  attached below
 Shift+F4  -> Konsole  in a new window
+
+## fzf
+Alt+c   # to change directory
+b fzf
+cat $(fzf)
+cd [directory/][fuzzy_pattern]**<tab>
+Ctrl+t  # puts node selection onto command line
+f
+gvim -o `f`  # calling upon fzf
+kill -9 <tab>
+ls -l $(fzf -m)
+unalias **<tab>
+
+### Search syntax
+Token    -  Match type                  -  Description
+sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
+'wild    -  exact-match (quoted)        -  Items that include wild
+^music   -  prefix-exact-match          -  Items that start with music
+.mp3$    -  suffix-exact-match          -  Items that end with .mp3
+!fire    -  inverse-exact-match         -  Items that do not include fire
+!^music  -  inverse-prefix-exact-match  -  Items that do not start with music
+!.mp3$   -  inverse-suffix-exact-match  -  Items that do not end with .mp3
+
+| OR
 
 ## non-optical
 blkid -o list
@@ -373,6 +392,7 @@ ncdu
 as root,  journalctl -b  # review the startup messages
 
 cat /proc/cpuinfo
+whereis <executable>
 
 b <command>  # batman
 id jo        # show uid, gid, and groups for jo

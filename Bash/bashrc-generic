@@ -79,10 +79,12 @@ cft(){
 
 #==> fzf
 if [ -s "/usr/share/fzf" ]; then
-    # alias f="fzf --preview 'bat --color=always {} | head -500'"
-    alias f="fzf --preview 'bat --color=always {}'"
-    source /usr/share/fzf/key-bindings.bash
-    source /usr/share/fzf/completion.bash
+  # alias f="fzf --preview 'bat --color=always {} | head -500'"
+  alias f="fzf --preview 'bat --color=always {}'"
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  source /usr/share/fzf/key-bindings.bash
+  source /usr/share/fzf/completion.bash
 fi
 
 #==> locate directories

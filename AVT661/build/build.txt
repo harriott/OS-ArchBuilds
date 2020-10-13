@@ -3316,6 +3316,7 @@ fix was to unplug Logitech Webcam C200 for boot
 in  ~/.thunderbird/profiles.ini [Profile0] section:
   IsRelative=0
   Path=3df0pcma.default-release  changed to  /mnt/SDSSDA240G/Dropbox/JH/TP.default-release
+    contents of  ~/.thunderbird/3df0pcma.default-release  moved in there
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice
