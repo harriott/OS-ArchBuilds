@@ -1,0 +1,220 @@
+vim: ft=build fdm=expr:
+
+commands here are tailored to my Arch install, see also $onGH/misc/GNULinuxQR.txt
+
+latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_10_06_2020.html`
+
+# Bash - ANSI escape sequences
+$ARCHBUILDS/Bash/bashrc-generic
+\e[0;34m = Blue
+\e[1;34m = Bold Blue
+echo -e "\e[1m\e[95m[1m[95m\e[0m"
+
+## tput
+"nachoparker"
+tput bold; echo hello
+
+### cat --show-nonprinting
+for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
+tput setaf 95; tput setaf 95 | cat -v; echo =95
+
+# CUPS - when a printer is paused/disabled
+lpstat -p -d  # show status of printers, including which is set as default
+
+## HP ENVY 5532 WiFi
+lpoptions -d 553_192_168_43_249  # set as default
+lpoptions -p 553_192_168_43_249 -l  # list options
+sudo cupsenable 553_192_168_43_249
+
+# fonts
+In a folder of possible fonts, to check if any are already installed:
+  for font in $(ls); do fc-list $font; done
+
+/usr/share/fonts>$ fd -L consolas
+fc-list | grep ubuntu
+fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf
+fontpreview -h
+
+# fun
+tint  # tetris
+
+## CMatrix
+cmatrix -u 9 -C blue
+man cmatrix
+
+# gVim
+gvim --help | mo
+gvim -geom 200  # height parameter is omitted as it's having no effect
+
+# imagey - scanimage
+S 55n 3 <imagefilename> <scanheight>
+see $Imagey/Scan.sh
+
+# multimedia
+mediainfo --help | moar
+mediainfo <avfile> | grep Encoded
+
+# networking - Dropbox conflicted copies
+find -name "* conflicted copy *"
+find -name "*(Copie en conflit de *"
+
+# networking - email
+$Bash/bashrc-email
+echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment>
+grep -r "Georita" *
+
+## notmuch search
+nmse '"Georita Harriott"' date:march..  # searches from March
+nmse parlotte date:sat
+notmuch search tag:fm | wc -l
+notmuch search tag:gmail | wc -l
+notmuch search tag:trohib | wc -l
+
+## providors
+- orange.fr
+- yahoo!mail
+
+## URLs unclickable by receiver
+URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
+
+# pass
+pass
+pass edit gmail-neomutt
+pass gmail-neomutt
+pass ls
+pass(1)
+pass troh/GmailAPI/token-expire
+
+# storage
+"rsync manual"
+
+## broot
+b broot
+F5 => refresh
+
+### run
+br
+br -c :count
+br -d => br --dates => the last modified date
+br -g => br --show-git-info
+br -h => br --hidden
+br -i => br --show-gitignored
+br -p => br --permissions
+br -s => br --sizes
+
+## directory structures
+<directory>  # cd <directory>  ( shopt autocd )
+
+### exa
+b exa
+e
+e -la  # for permissions and symlinks
+e -T   # for tree
+
+### Samokovarov's jump
+b jump
+j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
+jump clean
+jump top | moar
+jump --help
+
+## fzf
+Alt+c   # to change directory
+b fzf
+cat $(fzf)
+cd [directory/][fuzzy_pattern]**<tab>
+Ctrl+t  # puts node selection onto command line
+f
+gvim -o `f`  # calling upon fzf
+kill -9 <tab>
+ls -l $(fzf -m)
+unalias **<tab>
+
+### Search syntax
+Token    -  Match type                  -  Description
+sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
+'wild    -  exact-match (quoted)        -  Items that include wild
+^music   -  prefix-exact-match          -  Items that start with music
+.mp3$    -  suffix-exact-match          -  Items that end with .mp3
+!fire    -  inverse-exact-match         -  Items that do not include fire
+!^music  -  inverse-prefix-exact-match  -  Items that do not start with music
+!.mp3$   -  inverse-suffix-exact-match  -  Items that do not end with .mp3
+
+| OR
+
+## non-optical
+$DROPBOX/JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch > rg -ttxt ft=bbcode > forum.txt
+
+### Trash
+trash-empty
+sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
+
+## file searching
+as root: find / -xdev -iname "*fmtutil.cnf*"
+find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
+find . -type d -name .git
+find . -type f -name .gitignore
+find . -type f | fzy  # for finding something fuzzily fast
+
+### fd
+b fd
+fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
+fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
+fd -H  # fd --hidden
+fd -I  # fd --no-ignore => do not respect .(git|fd)ignore files
+sharkdp/fd
+
+### mlocate
+b locate
+locate -c
+locate -h
+sudo updatedb
+
+### list symlinks
+find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
+
+#### recursively
+find . -type l -ls
+find ~ -path '*/.virtualenvs' -prune -o -type l -ls
+
+### grepping
+egrep '<someText>|<otherText>'
+
+#### ripgrep
+for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
+rg -l -ttex '\\input' > rg-tex.txt
+rg -l -ttex verseSettings > rg-tex.txt
+rg <someText>  # searches recursively in files
+rg 'sometext' --no-ignore  # allows searching into gitignored places
+rg '<someText>|<otherText>'
+
+# system
+cat /proc/cpuinfo
+
+b <command>  # batman
+id jo        # show uid, gid, and groups for jo
+
+## as root
+du -sh /boot /etc /home /root /usr
+journalctl -b  # review the startup messages
+
+# termdown
+termdown --help | moar
+termdown -b 10
+
+# tmux
+resize -s 65 120  # good for half of ViewSonic VX2025wm
+
+## panes
+C-a C-o -> Rotate through the panes
+C-a M-1 -> switch to even-horizontal layout
+C-a M-2 -> switch to even-vertical layout
+C-a M-3 -> switch to main-horizontal layout
+C-a M-4 -> switch to main-vertical layout
+
+## sessions
+tmux a                  # attach
+tmux a -t myname        # attach to session myname
+tmux kill-server; tmux  # good for resetting
+tmux ls                 # list sessions
+

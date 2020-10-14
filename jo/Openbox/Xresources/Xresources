@@ -7,21 +7,20 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 ! ------------
+! ------------
 ! My additions
 ! ------------
+! ------------
 
-! After changes here, either quit & restart X or  xrdb ~/.Xresources
+! After changes here, either quit & restart X or  ! xrdb $MACHINE/jo/Xresources
 ! apostrophes in comments can trigger warnings, so dont use them
 
-! rxvt-unicode:
-! -------------
+! ------------
+! rxvt-unicode
+! ------------
 
 ! default terminal wide enough for  ip l :
 URxvt.geometry: 115x24
-
-! font :
-URxvt.font:     xft:ubuntu mono:size=10
-URxvt.boldFont: xft:ubuntu mono:bold:size=10
 
 ! A large scrollback buffer (over 8x the default):
 URxvt.saveLines: 8192
@@ -39,4 +38,31 @@ URxvt.keysym.M-e:         perl:keyboard-select:activate
 URxvt.keysym.M-s:         perl:keyboard-select:search
 URxvt.matcher.button:     1
 URxvt.clipboard.autocopy: true
+
+! font
+! ----
+! I dont know how to test  URxvt.boldFont
+
+! Consolas
+! URxvt.font: xft:consolas:size=10 ! seems to be the minimum size
+
+! Hack - very nice, about 20% shorter than Ubuntu 10, and muted
+! URxvt.letterSpace: -1
+! URxvt.font:     xft:hack:size=8
+! URxvt.boldFont: xft:hack:bold:size=10
+
+! Liberation - a mess...
+! URxvt.letterSpace: -4
+! URxvt.font:     xft:liberation:size=10
+
+! Ubuntu - my preferred
+URxvt.letterSpace: -1 ! preferred now
+URxvt.font:     xft:ubuntumono:size=10
+! URxvt.font:     xft:ubuntu mono:size=10  ! is a mess
+URxvt.boldFont: xft:ubuntumono:bold:size=10
+
+! Adobe
+! URxvt.letterSpace: -1
+! URxvt.font: xft:sourcecodepro:size=9
+! - a tiny bit taller than Ubuntu 10
 

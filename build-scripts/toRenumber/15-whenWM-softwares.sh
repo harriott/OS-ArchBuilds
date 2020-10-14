@@ -8,10 +8,10 @@ trap read debug  # puts a read request after each executable line
 
 rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 
-#=> Google API python toolchain
-sudo pacman -S python-google-api-python-client
-sudo pacman -S python-google-auth-httplib2
-sudo pacman -S python-google-auth-oauthlib
+# #=> Google API python toolchain
+# sudo pacman -S python-google-api-python-client
+# sudo pacman -S python-google-auth-httplib2
+# sudo pacman -S python-google-auth-oauthlib
 
 # #=> 8192eu 0 8192eu-dkms - install
 # # needs  appmenu-gtk-module dkms linux-headers
@@ -68,15 +68,15 @@ sudo pacman -S python-google-auth-oauthlib
 # makepkg -sic
 # cd ~
 
-# #=> Dropbox
-# # only once there's a browser, and preferably after LastPass
-# cd ~/Arch/AUR
-# sudo rm -r dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> Dropbox
+# only once there's a browser, and preferably after LastPass
+cd ~/Arch/AUR
+sudo rm -r dropbox
+git clone https://aur.archlinux.org/dropbox.git
+cd dropbox
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> Dust
 # # (after Rust Toolchain)
@@ -124,6 +124,14 @@ sudo pacman -S python-google-auth-oauthlib
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
+
+#=> fontpreview-git
+cd ~/Arch/AUR
+git clone https://aur.archlinux.org/fontpreview-git.git
+cd fontpreview-git
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> gifski
 # sudo pacman -S gifski

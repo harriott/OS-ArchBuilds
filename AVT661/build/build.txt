@@ -3317,6 +3317,10 @@ in  ~/.thunderbird/profiles.ini [Profile0] section:
   IsRelative=0
   Path=3df0pcma.default-release  changed to  /mnt/SDSSDA240G/Dropbox/JH/TP.default-release
     contents of  ~/.thunderbird/3df0pcma.default-release  moved in there
+# Updates
+16-updates-tests.sh
+  :: Replace pygobject-devel with extra/python-gobject? [Y/n]
+  :: Replace xorg-luit with extra/luit? [Y/n]
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice
