@@ -3122,6 +3122,7 @@ Menu > Settings > Qt5 Settings > Appearance > Style > cleanlooks
 # CopyQ exit
 Ctrl+P (= File > Preferences) > General > Confirm application exit off
 # Fujitsu ScenicView E19W-5 LCD monitor
+wide 1440x900 = 16:10
 # removed MW
 # qpdfview
 sudo pacman -S qpdfview

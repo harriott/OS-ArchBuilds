@@ -152,6 +152,7 @@ CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 
 logged in, and LastPass
 ## failed again to connect to Moto G (4) 1367 with TL-WN821N
 # physical configuration
+Mirai DML-519W100 - wide 1440x900 = 16:10
 TL-WN821N
 ## cbh
 Logitech MX 610 Laser Cordless Mouse
