@@ -4,6 +4,9 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> 0 get misc
+git clone git@github.com:harriott/misc.git  # .git/config > %s//gh/
+
 #=> 0 SSH keys
 mkdir ~/.ssh
 cp /mm/id_rsa-trohib ~/.ssh/id_rsa
