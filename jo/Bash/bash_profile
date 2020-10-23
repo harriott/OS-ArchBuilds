@@ -23,3 +23,5 @@ if [ $EXITSTATUS -eq 1 ]; then
     fi
 fi
 
+
+source /home/jo/.config/broot/launcher/bash/br
