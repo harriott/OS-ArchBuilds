@@ -1,4 +1,4 @@
-# vim: fdm=expr fdc=1 ft=sh.shfold tw=0:
+# vim: fdm=expr ft=sh.shfold tw=0:
 
 # $GNULE/msmtpConfig-backup  has tests for sends
 
@@ -10,11 +10,11 @@ alias mwb='bash $email/mwBackup.sh'
 alias mas='bash ~/mutt-alias.sh/mutt-alias.sh'
 export mail=/home/jo/.local/share/mail  # used also in  muttrc-*
 magf () {
-  for folder in Archive Cafezoide Deauram Friends Waiting Work; do
+  for folder in Archive Deauram Friends Waiting Work; do
     mas -a $GNULE/aliases-fm-mag -p "$mail/fm/$folder/cur"
   done
 }
-magg () {
+magt () {
   for folder in Archives Waiting; do
     mas -a $GNULE/aliases-troh-mag -p "$mail/troh/$folder/cur"
   done
@@ -34,7 +34,6 @@ magl () { # failing...
 alias nmf='neomutt -F $email/muttrc-account_ftml'
 alias nmj='neomutt -F $email/muttrc-account_tj'
 alias nml='neomutt -F $email/muttrc-account_live'
-alias nmp='neomutt -F $email/muttrc-account_czp'
 alias nmt='neomutt -F $email/muttrc-account_troh'
 alias nmx='neomutt -F $email/muttrc-account_gmx'
 alias nmz='neomutt -F $email/muttrc-account_cz'

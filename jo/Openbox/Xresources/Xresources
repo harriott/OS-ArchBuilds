@@ -58,7 +58,7 @@ URxvt.clipboard.autocopy: true
 ! Ubuntu - my preferred
 URxvt.letterSpace: -1 ! preferred now
 URxvt.font:     xft:ubuntumono:size=10
-! URxvt.font:     xft:ubuntu mono:size=10  ! is a mess
+! URxvt.font:   xft:ubuntu mono:size=10  ! is a mess
 URxvt.boldFont: xft:ubuntumono:bold:size=10
 
 ! Adobe

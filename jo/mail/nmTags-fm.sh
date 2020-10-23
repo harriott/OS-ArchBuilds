@@ -13,9 +13,6 @@ notmuch tag -inbox -- 'folder:/fm\/[^I]/ and tag:inbox' # remove unneeded inbox 
 # fm/Archive:
 notmuch tag +archive -- folder:fm/Archive and not tag:archive
 
-# fm/Cafezoide:
-notmuch tag +cafezoide -- folder:fm/Cafezoide and not tag:cafezoide
-
 # fm/Deauram:
 notmuch tag +deauram -- folder:fm/Deauram and not tag:deauram
 

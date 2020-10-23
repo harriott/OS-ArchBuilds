@@ -185,8 +185,9 @@ for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my Gi
 rg -l -ttex '\\input' > rg-tex.txt
 rg -l -ttex verseSettings > rg-tex.txt
 rg <someText>  # searches recursively in files
-rg 'sometext' --no-ignore  # allows searching into gitignored places
+rg '\$ITstack'
 rg '<someText>|<otherText>'
+rg 'sometext' --no-ignore  # allows searching into gitignored places
 
 # system
 cat /proc/cpuinfo
