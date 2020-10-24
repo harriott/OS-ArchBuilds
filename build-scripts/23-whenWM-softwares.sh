@@ -45,11 +45,14 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # #=> chromium-widevine
 # cd ~/Arch/AUR
 # sudo rm -r chromium-widevine
+
 # git clone https://aur.archlinux.org/chromium-widevine.git
 # cd chromium-widevine
 # xdg-open PKGBUILD
 # makepkg -sic
 # cd ~
+
+# sudo pacman -Rs chromium-widevine
 
 # #=> colorpicker
 # cd ~/Arch/AUR
@@ -68,15 +71,15 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # makepkg -sic
 # cd ~
 
-#=> Dropbox
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-sudo rm -r dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #=> Dropbox
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# sudo rm -r dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> Dust
 # # (after Rust Toolchain)
