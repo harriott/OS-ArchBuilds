@@ -5,47 +5,40 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 Pádraig Brady's key for coreutils
-# # for advcp
-# gpg --recv-keys 6C37DC12121A5006BC1DB804DF6FD971306037D9
+#=> 0 Pádraig Brady's key for coreutils
+# for advcp
+gpg --recv-keys 6C37DC12121A5006BC1DB804DF6FD971306037D9
 
-# #=> 0 tint2rc
-# mv ~/.config/tint2/tint2rc $ARCHBUILDS/jo/Openbox/k8v-tint2rc
-# cp $ARCHBUILDS/jo/Openbox/tint2rc ~/.config/tint2/tint2rc
+#=> 0 tint2rc
+mv ~/.config/tint2/tint2rc $Openbox/kao-tint2rc
+gvim -O $Openbox/kao-tint2rc $Openbox/tint2rc
+cp $Openbox/tint2rc ~/.config/tint2/tint2rc
 
-# #=> 1 advcp
-# # for nnn -r
-# cd ~/Arch/AUR
-# sudo rm -r advcp
-# git clone https://aur.archlinux.org/advcp.git
-# cd advcp
-# xdg-open PKGBUILD
-# # requires Pádraig Brady's key
-# makepkg -sic
-# cd ~
+#=> 1 advcp
+# for nnn -r
+cd ~/Arch/AUR
+sudo rm -r advcp
+git clone https://aur.archlinux.org/advcp.git
+cd advcp
+xdg-open PKGBUILD
+# requires Pádraig Brady's key
+makepkg -sic
+cd ~
 
-# #=> 1 dragon-drag-and-drop
-# cd ~/Arch/AUR
-# git clone https://aur.archlinux.org/dragon-drag-and-drop.git
-# cd dragon-drag-and-drop
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> 1 dragon-drag-and-drop
+cd ~/Arch/AUR
+git clone https://aur.archlinux.org/dragon-drag-and-drop.git
+cd dragon-drag-and-drop
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
-# #=> 1 gphoto2
-# pacman -S gphoto2
+#=> 1 gphoto2
+pacman -S gphoto2
 
-# #=> 1 LibreOffice Fresh
-# sudo pacman -S libreoffice-fresh-en-gb
-# libreoffice  # first-run of LibreOffice - close it
-
-# #=> 1 mimeo
-# cd ~/Arch/AUR
-# git clone https://aur.archlinux.org/mimeo.git
-# cd mimeo
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> 1 LibreOffice Fresh
+sudo pacman -S libreoffice-fresh-en-gb
+libreoffice  # first-run of LibreOffice - close it
 
 #=> 1 mpv
 sudo pacman -S mpv
@@ -123,18 +116,18 @@ sudo pacman -S mpv
 # makepkg -sic
 # cd ~
 
-# #=> 1 xdg-utils-mimeo
-# cd ~/Arch/AUR
-# git clone https://aur.archlinux.org/xdg-utils-mimeo.git
-# cd xdg-utils-mimeo
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
-
 # #=> 1 youtube-dl
 # pacman -S youtube-dl
 
 # #=> 1 Zathura
 # sudo pacman -S zathura-pdf-mupdf
-# ln -fs $ARCHBUILDS/jo/Openbox/zathurarc ~/.config/zathura/zathurarc
+# ln -fs $Openbox/zathurarc ~/.config/zathura/zathurarc
+
+#=> 2 LibreOffice configuration
+uc0=~/.config/libreoffice/4/user
+    rm -r $uc0/config
+    rm $uc0/registrymodifications.xcu
+uc1=$ITstack/OpenOffice/LibreOffice/j9o-HPP-user
+    cp -r $uc1/config $uc0/config
+    cp $uc1/registrymodifications.xcu $uc0/registrymodifications.xcu
 
