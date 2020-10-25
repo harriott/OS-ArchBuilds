@@ -7,6 +7,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> 0 handlr-bin
 cd ~/Arch/AUR
+sudo rm -r handlr-bin
 git clone https://aur.archlinux.org/handlr-bin.git
 cd handlr-bin
 xdg-open PKGBUILD
@@ -17,7 +18,7 @@ cd ~
 cd ~/Arch/AUR
 git clone https://aur.archlinux.org/xdg-utils-handlr.git
 cd xdg-utils-handlr
-xdg-open PKGBUILD
+gvim PKGBUILD
 makepkg -sic
 cd ~
 
