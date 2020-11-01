@@ -10,7 +10,7 @@ cd ~/Arch/AUR
 sudo rm -r handlr-bin
 git clone https://aur.archlinux.org/handlr-bin.git
 cd handlr-bin
-xdg-open PKGBUILD
+xdg-open PKGBUILD &
 makepkg -sic
 cd ~
 

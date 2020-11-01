@@ -5,25 +5,10 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 Pádraig Brady's key for coreutils
-# for advcp
-gpg --recv-keys 6C37DC12121A5006BC1DB804DF6FD971306037D9
-
 #=> 0 tint2rc
 mv ~/.config/tint2/tint2rc $Openbox/kao-tint2rc
 gvim -O $Openbox/kao-tint2rc $Openbox/tint2rc
 cp $Openbox/tint2rc ~/.config/tint2/tint2rc
-
-#=> 1 advcp
-# for nnn -r
-cd ~/Arch/AUR
-sudo rm -r advcp
-git clone https://aur.archlinux.org/advcp.git
-cd advcp
-xdg-open PKGBUILD
-# requires Pádraig Brady's key
-makepkg -sic
-cd ~
 
 #=> 1 dragon-drag-and-drop
 cd ~/Arch/AUR
@@ -43,62 +28,61 @@ libreoffice  # first-run of LibreOffice - close it
 #=> 1 mpv
 sudo pacman -S mpv
 
-# #=> 1 nnn plugins
-# [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
-# curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+#=> 1 nomacs
+sudo pacman -S nomacs
+# now run it for  Ctrl+Shift+p > Close on ESC
 
-# #=> 1 nomacs
-# # ...
+#=> 1 PCManFM
+pacman -S pcmanfm
+# now run it to set some of my preferences:  Edit > Preferences >
+#  Terminal emulator:  Advanced > Terminal > urxvt
+#  Trash: Confirm before moving files into "trash can"   off-ticked
+#  Volume Management > Show available options  off-ticked
 
-# #=> 1 PCManFM
-# pacman -S pcmanfm
-# # ...
+#=> 1 Pinta
+pacman -S pinta
 
-# #=> 1 Pinta
-# pacman -S pinta
+#=> 1 PNMixer
+cd ~/Arch/AUR
+git clone https://aur.archlinux.org/pnmixer.git
+cd pnmixer
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
+# now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 
-# #=> 1 PNMixer
-# # ...
+#=> 1 qt5-styleplugins
+# for qt5ct - allows fix of narrow fonts in XnViewMP
 
-# #=> 1 qimgv-git 0 install
-# cd ~/Arch/AUR
-# sudo rm -r qimgv-git
-# git clone https://aur.archlinux.org/qimgv-git.git
-# cd qimgv-git
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+cd ~/Arch/AUR
+sudo rm -r qt5-styleplugins
+git clone https://aur.archlinux.org/qt5-styleplugins.git
+cd qt5-styleplugins
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
-# #=> 1 qimgv-git 1 remove
-# sudo pacman -Rs qimgv-git
+#=> 1 qpdfview
+sudo pacman -S qpdfview
 
-# #=> 1 qt5-styleplugins
-# cd ~/Arch/AUR
-# sudo rm -r qt5-styleplugins
-# git clone https://aur.archlinux.org/qt5-styleplugins.git
-# cd qt5-styleplugins
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> 1 qt5ct
+# - Qt5 theme - allows better tab differentiation in CopyQ
 
-# #=> 1 qpdfview
-# sudo pacman -S qpdfview
+sudo pacman -S qt5ct
+grep QT_QPA_PLATFORMTHEME=qt5ct ~/.xinitrc
+# now need to  Menu > Settings > Qt5 Settings > Style > cleanlooks
+sed -i 's/fusion/cleanlooks/' ~/.config/qt5ct/qt5ct.conf
 
-# #=> 1 qt5ct
-# sudo pacman -S qt5ct
-# grep QT_QPA_PLATFORMTHEME=qt5ct ~/.xinitrc
-# # now need to  Menu > Settings > Qt5 Settings > Style > cleanlooks
-# #  sed -i s/fusion/cleanlooks/' ~/.config/qt5ct/qt5ct.conf
-# true
+#=> 1 SANE
+sudo pacman -S sane
 
-# #=> 1 SANE
-# # ...
+#=> 1 sxiv
+sudo pacman -S sxiv
 
-# #=> 1 sxiv
-# sudo pacman -S sxiv
-
-# #=> 1 Thunderbird
-# # ...
+#=> 1 Thunderbird
+sudo pacman -S thunderbird-i18n-en-gb
+thunderbird  # generates a dummy Profile, not to be hereafter used
+sed -i 's/IsRelative=0/IsRelative=1/' ~/.thunderbird/profiles.ini
 
 # #=> 1 tmux-bash-completion-git
 # cd ~/Arch/AUR

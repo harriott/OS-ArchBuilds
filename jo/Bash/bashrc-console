@@ -103,13 +103,6 @@ fdtsKS () {
   echo "results are in $2"
 } # $1 being the keystring
 
-#==> time-sorted lists of files - in my Encrypted folder
-# alias fe='fdtsEF'
-
-fdtsEF () {
-  eval "find $1* $printfDTsort"
-}
-
 #==> trash-cli
 alias tl='trash-list'
 alias tre='trash-restore'

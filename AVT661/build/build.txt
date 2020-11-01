@@ -673,7 +673,7 @@ in  ~/Arch/AUR/
   bash -x $DROPBOX/$AVT661/build/AURclones.sh
 having checked the PKGBUILD,  cd pnmixer   for   makepkg -sic   Packages (1) libnotify-0.7.8-1
   Packages (3) jsoncpp-1.9.1-1  libuv-1.31.0-1  cmake-3.15.3-2   Packages (1) pnmixer-gtk3-0.7.2-2
-Multimedia > PNMixer > Preferences > View > Draw
+Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 (to get sound out of front socket) alsamixer > Headphone > 100
 ## LibreOffice Fresh
 sudo pacman -S libreoffice-fresh-en-gb   Packages (39) boost-libs-1.69.0-2  clucene-2.3.3.4-10  harfbuzz-icu-2.6.1-1  hunspell-1.7.0-2  hyphen-2.8.8-2  libabw-0.1.3-1  libcdr-0.1.5-2  libcmis-0.5.2-2  libe-book-0.1.3-5  libepubgen-0.1.1-1  libetonyek-0.1.9-1  libexttextcat-3.4.5-1  libfreehand-0.1.2-2  libixion-0.14.1-2  liblangtag-0.6.2-2  libmspub-0.1.4-5  libmwaw-0.3.15-1  libnumbertext-1.0.5-1  libodfgen-0.1.7-1  liborcus-0.14.1-2  libpagemaker-0.0.4-1  libqxp-0.0.2-2  libreoffice-fresh-6.3.1-1  librevenge-0.0.4-2  libstaroffice-0.0.6-1  libtommath-1.1.0-1  libvisio-0.1.7-1  libwpd-0.10.3-1  libwpg-0.3.3-1  libwps-0.4.10-1  libzmf-0.0.2-6  lpsolve-5.5.2.5-3  neon-0.30.2-3  poppler-0.80.0-1  raptor-2.0.15-11  rasqal-1:0.9.33-2  redland-1:1.0.17-7  xmlsec-1.2.28-1  libreoffice-fresh-en-gb-6.3.1-1
@@ -3322,6 +3322,20 @@ in  ~/.thunderbird/profiles.ini [Profile0] section:
 16-updates-tests.sh
   :: Replace pygobject-devel with extra/python-gobject? [Y/n]
   :: Replace xorg-luit with extra/luit? [Y/n]
+# virtualenv sedparse
+mkvirtualenv sedparse
+  created virtual environment CPython3.8.6.final.0-64 in 872ms
+    creator CPython3Posix(dest=/home/jo/.virtualenvs/sedparse, clear=False, global=False)
+    seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/jo/.local/share/virtualenv)
+      added seed packages: pip==20.2.3, setuptools==50.3.0, wheel==0.35.1
+    activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+  virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/sedparse/bin/predeactivate
+  virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/sedparse/bin/postdeactivate
+  virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/sedparse/bin/preactivate
+  virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/sedparse/bin/postactivate
+  virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/sedparse/bin/get_env_details
+deactivate sedparse
+rmvirtualenv sedparse
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

@@ -8,10 +8,13 @@ trap read debug  # puts a read request after each executable line
 
 rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 
-# #=> Google API python toolchain
-# sudo pacman -S python-google-api-python-client
-# sudo pacman -S python-google-auth-httplib2
-# sudo pacman -S python-google-auth-oauthlib
+# #=> aur-out-of-date
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/aur-out-of-date.git
+# cd aur-out-of-date
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> 8192eu 0 8192eu-dkms - install
 # # needs  appmenu-gtk-module dkms linux-headers
@@ -142,6 +145,11 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # #=> gnome-disk-utility
 # sudo pacman -S gnome-disk-utility
 
+# #=> Google API python toolchain
+# sudo pacman -S python-google-api-python-client
+# sudo pacman -S python-google-auth-httplib2
+# sudo pacman -S python-google-auth-oauthlib
+
 # #=> gucharmap
 # sudo pacman -S gucharmap
 # # Accessories > Character Map > View > By Unicode Block
@@ -257,6 +265,14 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # makepkg -sic
 # cd ~
 
+# #=> sedsed-git
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/sedsed-git.git
+# cd sedsed-git
+# xdg-open PKGBUILD
+# makepkg -sic
+# cd ~
+
 # #=> tint-tetris
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/tint-tetris.git
@@ -326,12 +342,12 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # #=> xbindkeys
 # sudo pacman -S xbindkeys
 
-# #=> Zoom
-# cd ~/Arch/AUR
-# sudo rm -r zoom
-# git clone https://aur.archlinux.org/zoom.git
-# cd zoom
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> Zoom
+cd ~/Arch/AUR
+sudo rm -r zoom
+git clone https://aur.archlinux.org/zoom.git
+cd zoom
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
