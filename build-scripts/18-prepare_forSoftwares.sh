@@ -11,6 +11,7 @@ mkdir ~/Arch/AURdev-clone
 mkdir ~/Arch/AURdev-make
 
 # #=> 0 Dropbox public key
+# gpg --list-keys
 # gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
 
 # #=> 0 GnuPG directory
