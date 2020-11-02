@@ -5,10 +5,10 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 Pádraig Brady's key for coreutils
-# for advcp
-gpg --list-keys
-gpg --recv-keys 6C37DC12121A5006BC1DB804DF6FD971306037D9
+# #=> 0 Pádraig Brady's key for coreutils
+# # for advcp
+# gpg --list-keys
+# gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9
 
 #=> 1 advcp
 # for nnn -r
