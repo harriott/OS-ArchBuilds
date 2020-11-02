@@ -18,7 +18,6 @@ cd advcp
 xdg-open PKGBUILD
 # requires Pádraig Brady's key
 makepkg -sic
-cd ~
 
 # #=> 1 nnn plugins
 # [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*

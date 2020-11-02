@@ -46,6 +46,7 @@ PROMPT_COMMAND='history -a' # Samokovarov's  jump  later tweaks this
 shopt -s histappend
 
 #=> internetish
+alias css='cht.sh --shell'
 alias p='ping -c 3 8.8.8.8'
 alias pg='ping -c 3 -n google.com'
 alias pqs='pacman -Qs'
