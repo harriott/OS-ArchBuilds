@@ -6,12 +6,9 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 AURdev-clone
-cd ~/Arch/AURdev-clone
-git clone https://aur.archlinux.org/auracle-git.git
-cd auracle-git
-[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-makepkg -sic
+#=> 0 AURdev
+mkdir ~/Arch/AURdev-clone
+mkdir ~/Arch/AURdev-make
 
 # #=> 0 Dropbox public key
 # gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
