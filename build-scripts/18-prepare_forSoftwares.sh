@@ -6,14 +6,12 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 auracle-git
-# cd ~/Arch/AUR
-# [[ -d auracle-git ]] && sudo rm -r auracle-git
-# git clone https://aur.archlinux.org/auracle-git.git
-# cd auracle-git
-# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-# makepkg -sic
-# cd ~
+#=> 0 AURdev-clone
+cd ~/Arch/AURdev-clone
+git clone https://aur.archlinux.org/auracle-git.git
+cd auracle-git
+[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+makepkg -sic
 
 # #=> 0 Dropbox public key
 # gpg --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
@@ -37,4 +35,7 @@ trap read debug  # puts a read request after each executable line
 # export GPG_TTY=$(tty)
 
 # # >>> set symlink >>> gpg-agent.conf for passphrase
+
+# #=> 2 auracle-git
+# true # now install auracle-git
 

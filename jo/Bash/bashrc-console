@@ -17,9 +17,7 @@ alias rs1='bash $onGH/rsync-portabledrives/rync-Dr1.sh'
 alias ga='git add'
 alias gis='git status -u'
 export BFG=$ITstack/CrossPlatform/bfg-1.13.0.jar
-gic () {
-    git commit -m "$1"
-}
+gic () { git commit -m "$1"; }
 
 #==> quick-check my Encrypted directories
 alias fe='fdtsEncryptedChanges'
@@ -128,6 +126,11 @@ export VISUAL=nvim
 #=> my preferred npm global directory
 export PATH="$HOME/.npm-global/bin:$PATH"
 
-#=> System, for GnuPG
+#=> system
+# correct TTY for GnuPG
 export GPG_TTY=$(tty)
+
+# "Get Clone To Make" - for my building of AUR development packages
+gctm(){ cd $HOME/Arch/AURdev-make; sudo rm -r $1; cp -r ../AURdev-clone/$1 $1; cd $1; }
+export -f gctm
 

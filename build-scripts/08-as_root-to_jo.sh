@@ -92,7 +92,7 @@ pacman -S tree
 
 #=> 1 softwares - system
 # Bashtop
-pacman -S bashtop
+pacman -S bashtop  # later superseded by AUR bpytop
 
 # fcron
 pacman -S fcron

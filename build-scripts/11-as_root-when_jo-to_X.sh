@@ -44,6 +44,10 @@ pacman -S xsel
 # disable DPMS
 cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
 
+# #==> python-pew
+# pacman -S python-pew
+# pacman -Rs python-pew
+
 #==> softwares - appearance
 pacman -S hicolor-icon-theme
 

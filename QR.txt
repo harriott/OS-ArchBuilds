@@ -4,6 +4,8 @@ commands here are tailored to my Arch install, see also $onGH/misc/GNULinuxQR.tx
 
 latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_10_06_2020.html`
 
+sudo pacman -Rs <packagetoremove>
+
 # Bash - ANSI escape sequences
 $ARCHBUILDS/Bash/bashrc-generic
 \e[0;34m = Blue
@@ -194,6 +196,20 @@ cat /proc/cpuinfo
 
 b <command>  # batman
 id jo        # show uid, gid, and groups for jo
+
+## BpyTOP
+bpytop  # supersedes  bashtop
+
+### keybinds
+h = F1
+
+#### sorting columns
+b = left = previous
+n = right = next
+
+#### tree view
+e toggles it
+spacebar toggles open/closed a branch
 
 ## as root
 du -sh /boot /etc /home /root /usr

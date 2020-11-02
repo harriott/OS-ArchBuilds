@@ -1617,6 +1617,7 @@ in  ~/Arch/AUR/:  tweaked  AURclones.sh  for  bash -x AURclones.sh
 having checked the PKGBUILD,  cd urlview    for   makepkg -sic
 ### tmux.conf symlink reset
 ln -sf $DROPBOX/$AVT661/home-jo/tmux/tmux.conf ~/.tmux.conf
+ln -sf $machine/home-jo/tmux/tmux.conf ~/.tmux.conf
 ### urlview set default pages to chromium
 sudo sed -i 's#X11R6/bin/netscape#bin/chromium#' /etc/urlview/url_handler.sh
 sudo sed -i 's#lynx:XT /usr/bin/chromium:XW#chromium:XW /usr/bin/lynx:XT#' /etc/urlview/url_handler.sh
@@ -3322,7 +3323,8 @@ in  ~/.thunderbird/profiles.ini [Profile0] section:
 16-updates-tests.sh
   :: Replace pygobject-devel with extra/python-gobject? [Y/n]
   :: Replace xorg-luit with extra/luit? [Y/n]
-# virtualenv sedparse
+# sedsed
+## virtualenv sedparse
 mkvirtualenv sedparse
   created virtual environment CPython3.8.6.final.0-64 in 872ms
     creator CPython3Posix(dest=/home/jo/.virtualenvs/sedparse, clear=False, global=False)
@@ -3336,6 +3338,13 @@ mkvirtualenv sedparse
   virtualenvwrapper.user_scripts creating /home/jo/.virtualenvs/sedparse/bin/get_env_details
 deactivate sedparse
 rmvirtualenv sedparse
+### virtualenv sedparse
+mkvirtualenv sedparse
+workon sedparse
+pip install sedparse
+fd -H sedparse ~
+pip install sedsed
+fd -H sedsed ~
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

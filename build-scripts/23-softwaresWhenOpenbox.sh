@@ -82,17 +82,19 @@ sudo pacman -S sxiv
 #=> 1 Thunderbird
 sudo pacman -S thunderbird-i18n-en-gb
 thunderbird  # generates a dummy Profile, not to be hereafter used
-sed -i 's/IsRelative=0/IsRelative=1/' ~/.thunderbird/profiles.ini
+sed -i '/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s/Path=.*/Path=\/mnt\/SDSSDA240G\/Dropbox\/JH\/TP\.default-release/ }' ~/.thunderbird/profiles.ini  # requires Thunderbird not to be running
 
-# #=> 1 tmux-bash-completion-git
-# cd ~/Arch/AUR
-# git clone https://aur.archlinux.org/tmux-bash-completion-git.git
-# cd tmux-bash-completion-git
-# xdg-open PKGBUILD
-# makepkg -sic
-# cd ~
+#=> 1 tmux-bash-completion-git
+cd ~/Arch/AUR
+git clone https://aur.archlinux.org/tmux-bash-completion-git.git
+cd tmux-bash-completion-git
+xdg-open PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> 1 urlview
+# # creates a numbered list of url's in a resource
+
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/urlview.git
 # cd urlview
@@ -100,12 +102,12 @@ sed -i 's/IsRelative=0/IsRelative=1/' ~/.thunderbird/profiles.ini
 # makepkg -sic
 # cd ~
 
-# #=> 1 youtube-dl
-# pacman -S youtube-dl
+#=> 1 youtube-dl
+pacman -S youtube-dl
 
-# #=> 1 Zathura
-# sudo pacman -S zathura-pdf-mupdf
-# ln -fs $Openbox/zathurarc ~/.config/zathura/zathurarc
+#=> 1 Zathura
+sudo pacman -S zathura-pdf-mupdf
+ln -fs $Openbox/zathurarc ~/.config/zathura/zathurarc
 
 #=> 2 LibreOffice configuration
 uc0=~/.config/libreoffice/4/user
