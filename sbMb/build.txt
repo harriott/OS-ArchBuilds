@@ -153,6 +153,10 @@ logged in, and LastPass
 ## failed again to connect to Moto G (4) 1367 with TL-WN821N
 ## ~/.vimswap
 created
+## gpg access to keyservers gone
+gpg: keyserver receive failed: General error
+not fixed by  killall dirmngr
+gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9
 # handlr-bin
 :: xdg-utils-handlr and xdg-utils are in conflict. Remove xdg-utils? [y/N] y
 # physical configuration
