@@ -34,12 +34,12 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # reboot !
 # true
 
-#=> bat-extras-git
-cd ~/Arch/AURdev-clone
-git clone https://aur.archlinux.org/bat-extras-git.git
-gctm bat-extras-git
-gvim PKGBUILD
-makepkg -sic
+# #=> bat-extras-git
+# cd ~/Arch/AURdev-clone
+# git clone https://aur.archlinux.org/bat-extras-git.git
+# gctm bat-extras-git
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> bpytop
 # # supersedes Bashtop
@@ -223,9 +223,9 @@ makepkg -sic
 # makepkg -sic
 
 # #=> pscircle-git
-# cd ~/Arch/AUR
+# cd ~/Arch/AURdev-clone
 # git clone https://aur.archlinux.org/pscircle-git.git
-# cd pscircle-git
+# gctm pscircle-git
 # gvim PKGBUILD
 # makepkg -sic
 
@@ -266,9 +266,9 @@ makepkg -sic
 # makepkg -sic
 
 # #=> vim Calendar
-# cd ~/Arch/AUR
+# cd ~/Arch/AURdev-clone
 # git clone https://aur.archlinux.org/vim-calendar-git.git
-# cd vim-calendar-git
+# gctm vim-calendar-git
 # gvim PKGBUILD
 # makepkg -sic
 

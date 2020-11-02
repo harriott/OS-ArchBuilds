@@ -3345,6 +3345,8 @@ pip install sedparse
 fd -H sedparse ~
 pip install sedsed
 fd -H sedsed ~
+# qimgv-git
+I seem to've uninstalled...
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice
