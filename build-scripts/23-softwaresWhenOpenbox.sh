@@ -6,8 +6,8 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 0 tint2rc
-mv ~/.config/tint2/tint2rc $Openbox/kao-tint2rc
-gvim -O $Openbox/kao-tint2rc $Openbox/tint2rc
+mv ~/.config/tint2/tint2rc ~/Arch/tint2rc-kb3
+gvim -geometry 200x55 -O ~/Arch/tint2rc-kb3 $Openbox/tint2rc
 cp $Openbox/tint2rc ~/.config/tint2/tint2rc
 
 #=> 1 dragon-drag-and-drop

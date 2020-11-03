@@ -125,12 +125,15 @@ Alt+c   # to change directory
 b fzf
 cat $(fzf)
 cd [directory/][fuzzy_pattern]**<tab>
-Ctrl+t  # puts node selection onto command line
 f
 gvim -o `f`  # calling upon fzf
 kill -9 <tab>
 ls -l $(fzf -m)
 unalias **<tab>
+
+## Ctrl+t
+cd ctrl+t  # then fuzzy search for a file, hit enter, backspace to the file's directory, Enter
+puts node selection onto command line
 
 ### Search syntax
 Token    -  Match type                  -  Description
@@ -162,8 +165,9 @@ find . -type f | fzy  # for finding something fuzzily fast
 b fd
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
-fd -H  # fd --hidden
-fd -I  # fd --no-ignore => do not respect .(git|fd)ignore files
+fd -H  # --hidden
+fd -I  # --no-ignore => do not respect .(git|fd)ignore files
+fd -I -e pdf  # finds pdf's when they're gitignored
 sharkdp/fd
 
 ### mlocate
