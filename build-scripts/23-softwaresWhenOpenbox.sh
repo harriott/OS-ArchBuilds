@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=sh.shfold:
+# vim: fdm=expr ft=sh.shfold:
 
 # bash <thisfile>.sh
 set -v  # prints each statement here, including comments
@@ -20,10 +20,6 @@ cd ~
 
 #=> 1 gphoto2
 pacman -S gphoto2
-
-#=> 1 LibreOffice Fresh
-sudo pacman -S libreoffice-fresh-en-gb
-libreoffice  # first-run of LibreOffice - close it
 
 #=> 1 mpv
 sudo pacman -S mpv
@@ -79,11 +75,6 @@ sudo pacman -S sane
 #=> 1 sxiv
 sudo pacman -S sxiv
 
-#=> 1 Thunderbird
-sudo pacman -S thunderbird-i18n-en-gb
-thunderbird  # generates a dummy Profile, not to be hereafter used
-sed -i '/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s/Path=.*/Path=\/mnt\/SDSSDA240G\/Dropbox\/JH\/TP\.default-release/ }' ~/.thunderbird/profiles.ini  # requires Thunderbird not to be running
-
 #=> 1 tmux-bash-completion-git
 cd ~/Arch/AUR
 git clone https://aur.archlinux.org/tmux-bash-completion-git.git
@@ -102,18 +93,7 @@ cd ~
 # makepkg -sic
 # cd ~
 
-#=> 1 youtube-dl
-pacman -S youtube-dl
-
 #=> 1 Zathura
 sudo pacman -S zathura-pdf-mupdf
 ln -fs $Openbox/zathurarc ~/.config/zathura/zathurarc
-
-#=> 2 LibreOffice configuration
-uc0=~/.config/libreoffice/4/user
-    rm -r $uc0/config
-    rm $uc0/registrymodifications.xcu
-uc1=$ITstack/OpenOffice/LibreOffice/j9o-HPP-user
-    cp -r $uc1/config $uc0/config
-    cp $uc1/registrymodifications.xcu $uc0/registrymodifications.xcu
 

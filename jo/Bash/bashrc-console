@@ -7,7 +7,7 @@
 # These are more settings that can also be useful in Console.
 # -----------------------------------------------------------
 
-# Joseph Harriott - Thu 24 Sep 2020
+# Joseph Harriott
 
 #=> file manage
 alias rs0='bash $onGH/rsync-portabledrives/rync-Dr0.sh'
@@ -119,7 +119,7 @@ PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
 # command not found hook
 source /usr/share/doc/pkgfile/command-not-found.bash
 
-# for tmux
+# for nnn & tmux
 export EDITOR=nvim
 export VISUAL=nvim
 

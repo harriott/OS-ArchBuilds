@@ -57,11 +57,11 @@ export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/Technos/IT1;j:/run/me
 #  s:$DROPBOX/JH/CforWork/Education/Science-Engineering
 #  t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed
 #  w:$DROPBOX/JH/Then0/Deauram/with
-
+#
 export NNN_COLORS='5723' # good for my tmux in urxvt
 export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
-export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'
+export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'  # quit treeview's nvim with ZQ
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
 export NNN_LOCKER='saidar -c' # not arriving in my case
 

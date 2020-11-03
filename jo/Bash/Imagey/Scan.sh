@@ -13,7 +13,7 @@
 #  3 is good for HP ENVY 5532
 #  when empty, triggers an attempt to log HP ENVY 5532 network address
 # $3 is the desired tiff basename
-# $4 optionally limits scan height
+# $4 optionally limit, in mm, of scan height (max 297 for ENVY 5532)
 
 if [ $1 = "248" ] ; then
   siPrefix="scanimage --format=tiff -p --resolution"

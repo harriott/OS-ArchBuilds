@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=sh.shfold:
+# vim: fdm=expr ft=sh.shfold:
 
 # bash <this_script>
 
@@ -325,6 +325,9 @@ makepkg -sic
 
 # #=> xbindkeys
 # sudo pacman -S xbindkeys
+
+#=> 1 youtube-dl
+pacman -S youtube-dl
 
 # #=> Zoom
 # cd ~/Arch/AUR
