@@ -215,6 +215,10 @@ n = right = next
 e toggles it
 spacebar toggles open/closed a branch
 
+## mimeapps
+handlr list
+/home/jo/.config/mimeapps.list
+
 ## as root
 du -sh /boot /etc /home /root /usr
 journalctl -b  # review the startup messages
