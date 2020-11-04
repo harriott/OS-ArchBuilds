@@ -6,14 +6,7 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 0 tint2rc
-gvim -geometry 200x55 -O /etc/xdg/tint2/tint2rc $rcd -c "windo difft"
-rcb=~/Arch/tint2rc-kb4
-rcd=~/.config/tint2/tint2rc
-cp $rcd $rcb
-diff $rcb $Openbox/tint2rc
-gvim -geometry 200x55 -O $rcb $Openbox/tint2rc -c "windo difft"
-gvim -geometry 200x55 -O $rcd $Openbox/tint2rc -c "windo difft"
-cp $Openbox/tint2rc $rcd
+gvim -geometry 200x55 -O ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"  # should also be done if  tint2  has been updated
 
 #=> 1 dragon-drag-and-drop
 cd ~/Arch/AUR
