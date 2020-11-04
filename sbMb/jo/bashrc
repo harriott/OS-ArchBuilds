@@ -18,7 +18,7 @@ if [[ $ARCHBUILDS ]]; then  # it's been defined in ~/.xinitrc
     brcConsole
     # bashrc 3 - useful only for jo
     source $Bash/bashrc-email
-    source $Bash/bashrc-images
+    source $Bash/bashrc-wm
     source $Bash/bashrc-ob
 else                        # try a local cache
     ARCHBUILDS=~/ArchBuilds

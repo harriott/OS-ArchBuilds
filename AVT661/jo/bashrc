@@ -32,7 +32,7 @@ if [[ $ARCHBUILDS ]]; then  # it's been defined in ~/.xinitrc
     source $Bash/bashrc-wm
     source $Bash/bashrc-ob
 else                        # try a local cache
-    ARCHBUILDS=~/Arch/ArchBuilds
+    ARCHBUILDS=~/ArchBuilds
     [[ -d $ARCHBUILDS ]] && brcConsole
 fi
 

@@ -6,9 +6,14 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 0 tint2rc
-mv ~/.config/tint2/tint2rc ~/Arch/tint2rc-kb3
-gvim -geometry 200x55 -O ~/Arch/tint2rc-kb3 $Openbox/tint2rc
-cp $Openbox/tint2rc ~/.config/tint2/tint2rc
+gvim -geometry 200x55 -O /etc/xdg/tint2/tint2rc $rcd -c "windo difft"
+rcb=~/Arch/tint2rc-kb4
+rcd=~/.config/tint2/tint2rc
+cp $rcd $rcb
+diff $rcb $Openbox/tint2rc
+gvim -geometry 200x55 -O $rcb $Openbox/tint2rc -c "windo difft"
+gvim -geometry 200x55 -O $rcd $Openbox/tint2rc -c "windo difft"
+cp $Openbox/tint2rc $rcd
 
 #=> 1 dragon-drag-and-drop
 cd ~/Arch/AUR
@@ -49,7 +54,6 @@ cd ~
 
 #=> 1 qt5-styleplugins
 # for qt5ct - allows fix of narrow fonts in XnViewMP
-
 cd ~/Arch/AUR
 sudo rm -r qt5-styleplugins
 git clone https://aur.archlinux.org/qt5-styleplugins.git
@@ -63,7 +67,6 @@ sudo pacman -S qpdfview
 
 #=> 1 qt5ct
 # - Qt5 theme - allows better tab differentiation in CopyQ
-
 sudo pacman -S qt5ct
 grep QT_QPA_PLATFORMTHEME=qt5ct ~/.xinitrc
 # now need to  Menu > Settings > Qt5 Settings > Style > cleanlooks
@@ -76,16 +79,15 @@ sudo pacman -S sane
 sudo pacman -S sxiv
 
 #=> 1 tmux-bash-completion-git
-cd ~/Arch/AUR
+cd ~/Arch/AURdev-clone
 git clone https://aur.archlinux.org/tmux-bash-completion-git.git
-cd tmux-bash-completion-git
-xdg-open PKGBUILD
+gctm tmux-bash-completion-git
+gvim PKGBUILD
 makepkg -sic
 cd ~
 
 # #=> 1 urlview
 # # creates a numbered list of url's in a resource
-
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/urlview.git
 # cd urlview
