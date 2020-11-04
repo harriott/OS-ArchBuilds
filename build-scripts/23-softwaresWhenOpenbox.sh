@@ -5,19 +5,19 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 tint2rc
-gvim -geometry 200x55 -O ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"  # should also be done if  tint2  has been updated
+# #=> 0 tint2rc
+# gvim -geometry 200x55 -O ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"  # should also be done if  tint2  has been updated
 
-#=> 1 dragon-drag-and-drop
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/dragon-drag-and-drop.git
-cd dragon-drag-and-drop
-xdg-open PKGBUILD
-makepkg -sic
-cd ~
+# #=> 1 dragon-drag-and-drop
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/dragon-drag-and-drop.git
+# cd dragon-drag-and-drop
+# gvim PKGBUILD
+# makepkg -sic
+# cd ~
 
 #=> 1 gphoto2
-pacman -S gphoto2
+sudo pacman -S gphoto2
 
 #=> 1 mpv
 sudo pacman -S mpv
@@ -27,20 +27,20 @@ sudo pacman -S nomacs
 # now run it for  Ctrl+Shift+p > Close on ESC
 
 #=> 1 PCManFM
-pacman -S pcmanfm
+sudo pacman -S pcmanfm
 # now run it to set some of my preferences:  Edit > Preferences >
 #  Terminal emulator:  Advanced > Terminal > urxvt
 #  Trash: Confirm before moving files into "trash can"   off-ticked
 #  Volume Management > Show available options  off-ticked
 
 #=> 1 Pinta
-pacman -S pinta
+sudo pacman -S pinta
 
 #=> 1 PNMixer
 cd ~/Arch/AUR
 git clone https://aur.archlinux.org/pnmixer.git
 cd pnmixer
-xdg-open PKGBUILD
+gvim PKGBUILD
 makepkg -sic
 cd ~
 # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
@@ -51,7 +51,7 @@ cd ~/Arch/AUR
 sudo rm -r qt5-styleplugins
 git clone https://aur.archlinux.org/qt5-styleplugins.git
 cd qt5-styleplugins
-xdg-open PKGBUILD
+gvim PKGBUILD
 makepkg -sic
 cd ~
 
@@ -84,7 +84,7 @@ cd ~
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/urlview.git
 # cd urlview
-# xdg-open PKGBUILD
+# gvim PKGBUILD
 # makepkg -sic
 # cd ~
 
