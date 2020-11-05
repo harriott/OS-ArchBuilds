@@ -8,58 +8,32 @@ trap read debug  # puts a read request after each executable line
 
 rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 
+#=> 8192eu 1 blacklist rtl8xxxu
+echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
+
 # #=> aur-out-of-date
+# # Not useful to me...
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/aur-out-of-date.git
 # cd aur-out-of-date
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> 8192eu 0 8192eu-dkms - install
-# # needs  appmenu-gtk-module dkms linux-headers
-# cd ~/Arch/AUR
-# rm -fr 8192eu-dkms # (-f is needed for some weird files therein)
-# git clone https://aur.archlinux.org/8192eu-dkms.git
-# cd 8192eu-dkms
-# gvim PKGBUILD
-# makepkg -sic
-# # reboot !
-# true
+#=> bat-extras-git
+cd ~/Arch/AURdev-clone
+git clone https://aur.archlinux.org/bat-extras-git.git
+gctm bat-extras-git
+gvim PKGBUILD
+makepkg -sic
 
-# #=> 8192eu 1 blacklist rtl8xxxu
-# echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
-
-# #=> 8192eu 2 8192eu-dkms - remove
-# sudo pacman -Rs 8192eu-dkms
-# reboot !
-# true
-
-# #=> bat-extras-git
-# cd ~/Arch/AURdev-clone
-# git clone https://aur.archlinux.org/bat-extras-git.git
-# gctm bat-extras-git
-# gvim PKGBUILD
-# makepkg -sic
-
-# #=> bpytop
-# # supersedes Bashtop
-# cd ~/Arch/AUR
-# sudo rm -r bpytop
-# git clone https://aur.archlinux.org/bpytop.git
-# cd bpytop
-# gvim PKGBUILD
-# makepkg -sic
-
-# #=> chromium-widevine
-# cd ~/Arch/AUR
-# sudo rm -r chromium-widevine
-
-# git clone https://aur.archlinux.org/chromium-widevine.git
-# cd chromium-widevine
-# gvim PKGBUILD
-# makepkg -sic
-
-# sudo pacman -Rs chromium-widevine
+#=> bpytop
+# supersedes  Bashtop
+cd ~/Arch/AUR
+rAUR bpytop
+git clone https://aur.archlinux.org/bpytop.git
+cd bpytop
+gvim PKGBUILD
+makepkg -sic
 
 #=> cht.sh-git
 cd ~/Arch/AURdev-clone
@@ -68,38 +42,38 @@ gctm cht.sh-git
 gvim PKGBUILD
 makepkg -sic
 
-# #=> colorpicker
-# cd ~/Arch/AUR
-# git clone https://aur.archlinux.org/colorpicker.git
-# cd colorpicker
-# gvim PKGBUILD
-# makepkg -sic
+#=> colorpicker
+cd ~/Arch/AUR
+git clone https://aur.archlinux.org/colorpicker.git
+cd colorpicker
+gvim PKGBUILD
+makepkg -sic
 
-# #=> diskonaut
-# cd ~/Arch/AUR
-# rAUR diskonaut
-# git clone https://aur.archlinux.org/diskonaut.git
-# cd diskonaut
-# gvim PKGBUILD
-# makepkg -sic
+#=> diskonaut
+cd ~/Arch/AUR
+rAUR diskonaut
+git clone https://aur.archlinux.org/diskonaut.git
+cd diskonaut
+gvim PKGBUILD
+makepkg -sic
 
-# #=> Dropbox
-# # only once there's a browser, and preferably after LastPass
-# cd ~/Arch/AUR
-# sudo rm -r dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# gvim PKGBUILD
-# makepkg -sic
+#=> Dropbox
+# only once there's a browser, and preferably after LastPass
+cd ~/Arch/AUR
+rAUR dropbox
+git clone https://aur.archlinux.org/dropbox.git
+cd dropbox
+gvim PKGBUILD
+makepkg -sic
 
-# #=> Dust
-# # (after Rust Toolchain)
-# cd ~/Arch/AUR
-# rAUR dust
-# git clone https://aur.archlinux.org/dust.git
-# cd dust
-# gvim PKGBUILD
-# makepkg -sic
+#=> Dust
+# (after Rust Toolchain)
+cd ~/Arch/AUR
+rAUR dust
+git clone https://aur.archlinux.org/dust.git
+cd dust
+gvim PKGBUILD
+makepkg -sic
 
 # #=> Fangfrisch 1 AUR
 # cd ~/Arch/AUR
@@ -163,7 +137,7 @@ makepkg -sic
 
 # #=> Mapscii
 # cd ~/Arch/AUR
-# sudo rm -r nodejs-mapscii
+# rAUR nodejs-mapscii
 # git clone https://aur.archlinux.org/nodejs-mapscii.git
 # cd nodejs-mapscii
 # gvim PKGBUILD
@@ -174,7 +148,7 @@ makepkg -sic
 # #=> moar
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/moar.git
-# sudo rm -r moar
+# rAUR moar
 # cd moar
 # gvim PKGBUILD
 # makepkg -sic
@@ -208,7 +182,7 @@ makepkg -sic
 
 # #=> perl-clone-pp
 # cd ~/Arch/AUR
-# sudo rm -r perl-clone-pp
+# rAUR perl-clone-pp
 # git clone https://aur.archlinux.org/perl-clone-pp.git
 # cd perl-clone-pp
 # gvim PKGBUILD
@@ -216,7 +190,7 @@ makepkg -sic
 
 # #=> perl-data-printer
 # cd ~/Arch/AUR
-# sudo rm -r perl-data-printer
+# rAUR perl-data-printer
 # git clone https://aur.archlinux.org/perl-data-printer.git
 # cd perl-data-printer
 # gvim PKGBUILD
@@ -245,7 +219,7 @@ makepkg -sic
 
 # #=> rtl8192eu
 # cd ~/Arch/AUR
-# sudo rm -r rtl8192eu
+# rAUR rtl8192eu
 # git clone https://aur.archlinux.org/rtl8192eu.git
 # cd rtl8192eu
 # gvim PKGBUILD
@@ -317,7 +291,7 @@ makepkg -sic
 
 # #=> vim-undotree
 # cd ~/Arch/AUR
-# sudo rm -r vim-undotree
+# rAUR vim-undotree
 # git clone https://aur.archlinux.org/vim-undotree.git
 # cd vim-undotree
 # gvim PKGBUILD
@@ -331,7 +305,7 @@ pacman -S youtube-dl
 
 # #=> Zoom
 # cd ~/Arch/AUR
-# sudo rm -r zoom
+# rAUR zoom
 # git clone https://aur.archlinux.org/zoom.git
 # cd zoom
 # gvim PKGBUILD
