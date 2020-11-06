@@ -62,7 +62,8 @@ find -name "*(Copie en conflit de *"
 
 # networking - email
 $Bash/bashrc-email
-echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment>
+$email/muttrc-MW
+echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 grep -r "Georita" *
 
 ## notmuch search

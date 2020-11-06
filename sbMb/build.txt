@@ -165,6 +165,8 @@ handlr open .   got me  no handlers found for 'inode/directory'
 iwctl device list
 iwctl station wlan0 get-networks
 station wlan0 connect 'Jo-XA2' > Passphrase  got me "Operation failed"
+### 8192eu-dkms
+24-8192eu-dkms.sh
 # physical configuration
 Mirai DML-519W100 - wide 1440x900 = 16:10
 TL-WN821N

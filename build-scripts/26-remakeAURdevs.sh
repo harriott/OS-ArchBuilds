@@ -16,6 +16,13 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
+#=> cht.sh-git
+# pqs cht.sh-git
+#  - check against upstream commits: https://github.com/chubin/cheat.sh/commits/master
+gctm cht.sh-git
+gvim PKGBUILD
+makepkg -sic
+
 # #=> fontpreview-git
 # # pqs fontpreview-git
 # #  - check against upstream commits: https://github.com/sdushantha/fontpreview/commits/master
@@ -30,11 +37,4 @@ trap read debug  # puts a read request after each executable line
 # #=> qimgv-git
 # # pqs qimgv-git
 # #  - check against upstream commits: https://github.com/easymodo/qimgv/commits/master
-
-#=> cht.sh-git
-# pqs cht.sh-git
-#  - check against upstream commits: https://github.com/chubin/cheat.sh/commits/master
-gctm cht.sh-git
-gvim PKGBUILD
-makepkg -sic
 
