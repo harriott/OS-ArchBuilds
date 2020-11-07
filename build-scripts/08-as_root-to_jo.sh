@@ -4,6 +4,29 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+# #=> 1 iwd 1
+# # iNet Wireless Daemon
+# pacman -S iwd
+# systemctl enable iwd.service --now
+# systemctl status iwd.service
+# true
+
+#=> 1 iwd 2 stop
+systemctl stop iwd.service
+true
+
+#=> 1 iwd 3 disable
+systemctl disable iwd.service
+true
+
+# #=> 1 NetworkManager 1 install
+# pacman -S networkmanager
+# systemctl enable NetworkManager.service --now
+
+#=> 1 NetworkManager 2 status
+systemctl status NetworkManager.service | cat
+true
+
 # #=> 1 softwares - info
 # # htop
 # pacman -S htop
@@ -28,25 +51,6 @@ trap read debug  # puts a read request after each executable line
 
 # # sysstat
 # pacman -S sysstat
-
-# #=> 1 softwares - networking 1
-# # iNet Wireless Daemon
-# pacman -S iwd
-# systemctl enable iwd.service --now
-# systemctl status iwd.service
-# true
-
-# # NetworkManager
-# pacman -S networkmanager
-# systemctl enable NetworkManager.service --now
-
-#=> 1 softwares - networking 2
-# NetworkManager
-systemctl status NetworkManager.service | cat
-true
-
-# Wget
-pacman -S wget
 
 #=> 1 softwares - file manage
 # bat
@@ -122,6 +126,9 @@ systemctl list-timers
 # pkgstats
 pacman -S pkgstats
 
+#=> 1 softwares - Wget
+pacman -S wget
+
 #=> 1 swappiness to 10
 # check that the default is 60
 cat /sys/fs/cgroup/memory/memory.swappiness
@@ -143,6 +150,6 @@ useradd -m -G wheel jo
 until passwd jo; do echo "try again"; done
 cat /etc/passwd
 
-#=> 2 end
+#=> 3 end
 # you're ready to reboot and login to jo
 

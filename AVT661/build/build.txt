@@ -1146,7 +1146,7 @@ turned off  Xperia XA2_b31f  then on again, but no connection and it's not liste
 systemctl status dhcpcd@wlp0s26f7u5
 sudo systemctl stop dhcpcd@wlp0s26f7u5
 sudo systemctl disable dhcpcd@wlp0s26f7u5
-unplugged & replugged  NETGEAR WG111v2 in heighest off board back USB port
+unplugged & replugged  NETGEAR WG111v2 in highest off board back USB port
   ip link   reports it as  wlan0
 sudo systemctl enable dhcpcd@wlan0   got me a symlink
 systemctl status dhcpcd@wlan0
@@ -3347,6 +3347,20 @@ pip install sedsed
 fd -H sedsed ~
 # qimgv-git
 I seem to've uninstalled...
+# tether Sony Xperias via D-Link DUB-H7
+ip l  shows  XA2  to be  enp0s26f7u4u3 DOWN, so  sudo ip l set enp0s26f7u4u3 up
+  got  ping -c 3 -n google.com  working, but no connection to https://...
+switched to X10II, which required  sudo dhcpcd enp0s26f7u4u3  for pings &  https://  to work
+# iwd XA2
+iwctl --passphrase=a33a0183b2 station wlwg111v2 connect Jo-XA2
+# NetworkManager NETGEAR WG111v2
+sudo systemctl stop iwd.service
+nmcli device
+nmcli device wifi list
+nmcli device wifi connect Jo-XA2 password a33a0183b2
+  Device 'wlwg111v2' successfully activated with '4d86c8e5-3714-489f-a3d8-49a8848ebd72'.
+  got my  pg  working, & connection to https://...
+nmcli connection delete Jo-XA2
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

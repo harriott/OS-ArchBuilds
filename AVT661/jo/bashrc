@@ -1,4 +1,4 @@
-# vim: fdm=expr fdc=1 ft=sh.shfold sw=2:
+# vim: fdm=expr ft=sh.shfold sw=2:
 
 # ~/.bashrc in an Arch install on my Acer Veriton T661 system
 
@@ -36,13 +36,17 @@ else                        # try a local cache
     [[ -d $ARCHBUILDS ]] && brcConsole
 fi
 
-#=> NETGEAR WG111v2
-doup () {
-  sudo ip link set wlwg111v2 down
-  sudo ip link set wlwg111v2 up
-}
-alias d='doup'
-alias i='iwctl station wlwg111v2 get-networks'
+# #=> iwd NETGEAR WG111v2
+# doup () {
+#   sudo ip link set wlwg111v2 down
+#   sudo ip link set wlwg111v2 up
+# } # often needed...
+# alias d='doup'
+
+# alias i='iwctl station wlwg111v2 get-networks'
+
+# # sudo dhcpcd wlwg111v2  # might be needed
+# # sudo dhcpcd -k wlwg111v2
 
 #=> system-specific directories
 

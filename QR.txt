@@ -56,28 +56,33 @@ see $Imagey/Scan.sh
 mediainfo --help | moar
 mediainfo <avfile> | grep Encoded
 
-# networking - Dropbox conflicted copies
+# networking
+sudo dhcpcd wlwg111v2
+sudo ls /etc/NetworkManager/system-connections/
+sudo ls /var/lib/dhcpcd/
+
+## Dropbox conflicted copies
 find -name "* conflicted copy *"
 find -name "*(Copie en conflit de *"
 
-# networking - email
+## email
 $Bash/bashrc-email
 $email/muttrc-MW
 echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 grep -r "Georita" *
 
-## notmuch search
+### notmuch search
 nmse '"Georita Harriott"' date:march..  # searches from March
 nmse parlotte date:sat
 notmuch search tag:fm | wc -l
 notmuch search tag:gmail | wc -l
 notmuch search tag:trohib | wc -l
 
-## providors
+### providors
 - orange.fr
 - yahoo!mail
 
-## URLs unclickable by receiver
+### URLs unclickable by receiver
 URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
 
 # pass

@@ -164,11 +164,23 @@ handlr open .   got me  no handlers found for 'inode/directory'
 ## attempt to connect with TL-WN821N
 iwctl device list
 iwctl station wlan0 get-networks
-station wlan0 connect 'Jo-XA2' > Passphrase  got me "Operation failed"
+iwctl station wlan0 connect 'Jo-XA2' > Passphrase  got me "Operation failed"
 ### 8192eu-dkms
 24-8192eu-dkms.sh
 ### blacklisted rtl8xxxu
 could then connect to XA2, but  "ping: google.com: Temporary failure in name resolution"
+## connect with USB WiFi
+### NETGEAR WG111v2
+nmcli device
+nmcli device wifi list
+nmcli device wifi connect Jo-XA2 password a33a0183b2
+  got  ping -c 3 -n google.com  working, & connection to https://...
+### switched back to TL-WN821N
+nmcli connection delete Jo-XA2
+nmcli device wifi connect Jo-XA2 password a33a0183b2
+  got  ping -c 3 -n google.com  working, & connection to https://...
+  and reconnected automatically after the hotspot had been off for a while
+  after a reboot, needed to pull it up with the UUID of Jo-XA2
 # physical configuration
 Mirai DML-519W100 - wide 1440x900 = 16:10
 TL-WN821N

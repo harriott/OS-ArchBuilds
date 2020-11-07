@@ -9,12 +9,6 @@ trap read debug  # puts a read request after each executable line
 # gctm is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 
-# #=> 8192eu 1 blacklist rtl8xxxu
-# echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
-
-#=> systemd-resolved
-sudo systemctl enable systemd-resolved.service --now
-
 # #=> bat-extras-git
 # cd ~/Arch/AURdev-clone
 # git clone https://aur.archlinux.org/bat-extras-git.git
@@ -23,7 +17,7 @@ sudo systemctl enable systemd-resolved.service --now
 # makepkg -sic
 
 # #=> bpytop
-# supersedes  Bashtop
+# # supersedes  Bashtop
 # cd ~/Arch/AUR
 # rAUR bpytop
 # git clone https://aur.archlinux.org/bpytop.git
