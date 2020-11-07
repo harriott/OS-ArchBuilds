@@ -56,34 +56,34 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> Dust
-# (after Rust Toolchain)
-cd ~/Arch/AUR
-rAUR dust
-git clone https://aur.archlinux.org/dust.git
-cd dust
-gvim PKGBUILD
-makepkg -sic
+# #=> Dust
+# # (after Rust Toolchain)
+# cd ~/Arch/AUR
+# rAUR dust
+# git clone https://aur.archlinux.org/dust.git
+# cd dust
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> Fangfrisch 1 AUR
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/python-fangfrisch.git
-cd python-fangfrisch
-gvim PKGBUILD
-makepkg -sic
+# #=> Fangfrisch 1 AUR
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/python-fangfrisch.git
+# cd python-fangfrisch
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> Fangfrisch 2 settings
-# 1 create database structure
-sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
+# #=> Fangfrisch 2 settings
+# # 1 create database structure
+# sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
 
-# 2 enable systemd timer
-sudo systemctl enable fangfrisch.timer --now
+# # 2 enable systemd timer
+# sudo systemctl enable fangfrisch.timer --now
 
-#=> ffmpeg
-sudo pacman -S ffmpeg
+# #=> ffmpeg
+# sudo pacman -S ffmpeg
 
 #=> figlet-fonts
-brings in figlet
+# brings in figlet
 cd ~/Arch/AUR
 git clone https://aur.archlinux.org/figlet-fonts.git
 cd figlet-fonts
