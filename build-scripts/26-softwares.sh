@@ -82,43 +82,43 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # #=> ffmpeg
 # sudo pacman -S ffmpeg
 
-#=> figlet-fonts
-# brings in figlet
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/figlet-fonts.git
-cd figlet-fonts
-gvim PKGBUILD
-makepkg -sic
+# #=> figlet-fonts
+# # brings in figlet
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/figlet-fonts.git
+# cd figlet-fonts
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> Firefox
-sudo pacman -S firefox
+# #=> Firefox
+# sudo pacman -S firefox
 
-#=> fontpreview-git
-cd ~/Arch/AURdev-clone
-git clone https://aur.archlinux.org/fontpreview-git.git
-gctm fontpreview-git
-gvim PKGBUILD
-makepkg -sic
+# #=> fontpreview-git
+# cd ~/Arch/AURdev-clone
+# git clone https://aur.archlinux.org/fontpreview-git.git
+# gctm fontpreview-git
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> gifski
-sudo pacman -S gifski  # (for making animated GIFs)
+# #=> gifski
+# sudo pacman -S gifski  # (for making animated GIFs)
 
-#=> gnome-disk-utility
-sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
+# #=> gnome-disk-utility
+# sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
 
-#=> Google API python toolchain
-sudo pacman -S python-google-api-python-client
-sudo pacman -S python-google-auth-httplib2
-sudo pacman -S python-google-auth-oauthlib
+# #=> Google API python toolchain
+# sudo pacman -S python-google-api-python-client
+# sudo pacman -S python-google-auth-httplib2
+# sudo pacman -S python-google-auth-oauthlib
 
-#=> gucharmap
-sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode Block)
+# #=> gucharmap
+# sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode Block)
 
-#=> java-commons-lang
-sudo pacman -S java-commons-lang  # (for pdftk's functions)
+# #=> java-commons-lang
+# sudo pacman -S java-commons-lang  # (for pdftk's functions)
 
-#=> languagetool
-sudo pacman -S languagetool
+# #=> LanguageTool
+# sudo pacman -S languagetool
 
 #=> moar
 cd ~/Arch/AUR
