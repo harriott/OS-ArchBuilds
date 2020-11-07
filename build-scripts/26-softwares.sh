@@ -25,19 +25,19 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> cht.sh-git
-cd ~/Arch/AURdev-clone
-git clone https://aur.archlinux.org/cht.sh-git.git
-gctm cht.sh-git
-gvim PKGBUILD
-makepkg -sic
+# #=> cht.sh-git
+# cd ~/Arch/AURdev-clone
+# git clone https://aur.archlinux.org/cht.sh-git.git
+# gctm cht.sh-git
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> colorpicker
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/colorpicker.git
-cd colorpicker
-gvim PKGBUILD
-makepkg -sic
+# #=> colorpicker
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/colorpicker.git
+# cd colorpicker
+# gvim PKGBUILD
+# makepkg -sic
 
 #=> diskonaut
 cd ~/Arch/AUR
