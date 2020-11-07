@@ -167,6 +167,8 @@ iwctl station wlan0 get-networks
 station wlan0 connect 'Jo-XA2' > Passphrase  got me "Operation failed"
 ### 8192eu-dkms
 24-8192eu-dkms.sh
+### blacklisted rtl8xxxu
+could then connect to XA2, but  "ping: google.com: Temporary failure in name resolution"
 # physical configuration
 Mirai DML-519W100 - wide 1440x900 = 16:10
 TL-WN821N

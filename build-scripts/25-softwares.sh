@@ -6,26 +6,30 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+# gctm is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 
-#=> 8192eu 1 blacklist rtl8xxxu
-echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
+# #=> 8192eu 1 blacklist rtl8xxxu
+# echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
 
-#=> bat-extras-git
-cd ~/Arch/AURdev-clone
-git clone https://aur.archlinux.org/bat-extras-git.git
-gctm bat-extras-git
-gvim PKGBUILD
-makepkg -sic
+#=> systemd-resolved
+sudo systemctl enable systemd-resolved.service --now
 
-#=> bpytop
+# #=> bat-extras-git
+# cd ~/Arch/AURdev-clone
+# git clone https://aur.archlinux.org/bat-extras-git.git
+# gctm bat-extras-git
+# gvim PKGBUILD
+# makepkg -sic
+
+# #=> bpytop
 # supersedes  Bashtop
-cd ~/Arch/AUR
-rAUR bpytop
-git clone https://aur.archlinux.org/bpytop.git
-cd bpytop
-gvim PKGBUILD
-makepkg -sic
+# cd ~/Arch/AUR
+# rAUR bpytop
+# git clone https://aur.archlinux.org/bpytop.git
+# cd bpytop
+# gvim PKGBUILD
+# makepkg -sic
 
 #=> cht.sh-git
 cd ~/Arch/AURdev-clone
