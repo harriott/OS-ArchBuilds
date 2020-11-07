@@ -181,6 +181,8 @@ nmcli device wifi connect Jo-XA2 password a33a0183b2
   got  ping -c 3 -n google.com  working, & connection to https://...
   and reconnected automatically after the hotspot had been off for a while
   after a reboot, needed to pull it up with the UUID of Jo-XA2
+## Dropbox
+Preferences > Sync > [ Selective > off-ticked all   Move > /mnt/SD480GSSDPlus/ ]
 # physical configuration
 Mirai DML-519W100 - wide 1440x900 = 16:10
 TL-WN821N
@@ -191,6 +193,11 @@ Perixx PERIBOARD-407W keyboard
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
   AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
   HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
+### disks
+SD480GSSDPlus
+ST3320418AS
+ST3320620AS 9QF57J6Q on middle shelf
+WD30EZRZ
 ### startup
 Del  gets into BIOS
 F12  gets a choice of boot media

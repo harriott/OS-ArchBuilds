@@ -32,7 +32,7 @@ sudo cupsenable 553_192_168_43_249
 In a folder of possible fonts, to check if any are already installed:
   for font in $(ls); do fc-list $font; done
 
-/usr/share/fonts>$ fd -L consolas
+/usr/share/fonts> $ fd -L consolas
 fc-list | grep ubuntu
 fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf
 fontpreview -h

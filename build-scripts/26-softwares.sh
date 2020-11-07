@@ -39,22 +39,22 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> diskonaut
-cd ~/Arch/AUR
-rAUR diskonaut
-git clone https://aur.archlinux.org/diskonaut.git
-cd diskonaut
-gvim PKGBUILD
-makepkg -sic
+# #=> diskonaut
+# cd ~/Arch/AUR
+# rAUR diskonaut
+# git clone https://aur.archlinux.org/diskonaut.git
+# cd diskonaut
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> Dropbox
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-rAUR dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-gvim PKGBUILD
-makepkg -sic
+# #=> Dropbox
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# rAUR dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# gvim PKGBUILD
+# makepkg -sic
 
 #=> Dust
 # (after Rust Toolchain)
