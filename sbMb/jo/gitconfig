@@ -1,0 +1,10 @@
+# vim: ft=gitconfig
+
+# This file should be symlinked to  ~/.gitconfig
+
+# This is Git's per-user configuration file, as for Arch.
+# Its contents are referred to as needed by Git, making changes saved here instantaneous.
+
+[include]
+	path = /mnt/SDSSDA240G/Dropbox/JH/core/IT_stack/gitconfig
+

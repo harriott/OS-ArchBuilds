@@ -3357,10 +3357,25 @@ iwctl --passphrase=a33a0183b2 station wlwg111v2 connect Jo-XA2
 sudo systemctl stop iwd.service
 nmcli device
 nmcli device wifi list
+nmcli device wifi list
+## to Jo-XA2
 nmcli device wifi connect Jo-XA2 password a33a0183b2
   Device 'wlwg111v2' successfully activated with '4d86c8e5-3714-489f-a3d8-49a8848ebd72'.
   got my  pg  working, & connection to https://...
+### after a reboot
 nmcli connection delete Jo-XA2
+nmcli device wifi connect Jo-XA2 password a33a0183b2
+## to Jo-X10II
+nmcli device wifi connect Jo-X10II password a33a0183e10
+  got my  p  working, & connection to https://...
+# CopyQ ready for Pasting
+F6 > ready for Pasting > Save Selected > CopyQ-readyforPasting
+  then moved  CopyQ-readyforPasting.ini  over to  $ARCHBUILDS/jo/CopyQ-readyforPasting.ini
+# system seized
+Such that even front reset button wasn't detected. Replugged the power.
+# clamscan
+sudo clamscan -r --exclude-dir='^/run/media/jo|^/mnt|^/sys|^/var/lib/clamav' / 2>&1 | tee ~/Arch/clamscan.log
+gvim -c "silent! / FOUND$" -geom 200 ~/Arch/clamscan.log
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

@@ -6,9 +6,6 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> Chromium --disable-gpu
-ln -sf $MACHINE/jo/chromium-flags.conf ~/.config/chromium-flags.conf
-
 # #=> configure gVim
 # cd ~
 # git clone git@github.com:harriott/vimfiles.git

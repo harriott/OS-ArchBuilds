@@ -21,6 +21,7 @@ for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # CUPS - when a printer is paused/disabled
+lp -o fit-to-page -o orientation-requested=4 <alandscapeimage>
 lpstat -p -d  # show status of printers, including which is set as default
 
 ## HP ENVY 5532 WiFi
@@ -97,7 +98,7 @@ pass troh/GmailAPI/token-expire
 "rsync manual"
 
 ## broot
-b broot
+bm broot
 F5 => refresh
 
 ### run

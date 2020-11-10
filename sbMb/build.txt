@@ -169,7 +169,7 @@ iwctl station wlan0 connect 'Jo-XA2' > Passphrase  got me "Operation failed"
 24-8192eu-dkms.sh
 ### blacklisted rtl8xxxu
 could then connect to XA2, but  "ping: google.com: Temporary failure in name resolution"
-## connect with USB WiFi
+## NM connect with USB WiFi to Jo-XA2
 ### NETGEAR WG111v2
 nmcli device
 nmcli device wifi list
@@ -183,6 +183,25 @@ nmcli device wifi connect Jo-XA2 password a33a0183b2
   after a reboot, needed to pull it up with the UUID of Jo-XA2
 ## Dropbox
 Preferences > Sync > [ Selective > off-ticked all   Move > /mnt/SD480GSSDPlus/ ]
+Doesn't seem to run or keep running...
+## NM to Jo-X10II
+nmcli device wifi connect Jo-X10II password a33a0183e10
+  got my  p  working, & connection to https://...
+## system seized
+clock stuck at 3h, no CBH, so hard reboot
+systemctl status firewalld
+  WARNING: ipset not usable, disabling ipset usage in firewall
+  WARNING: ebtables-restore and ebtables are missing, disabling bridge firewall.
+## clamscan
+sudo clamscan -r --exclude-dir='/mnt|/sys' / 2>&1 | tee ~/Arch/clamscan.txt
+gvim -c "silent! / FOUND$" -geom 200 ~/Arch/clamscan.txt
+sudo freshclam
+  ...
+  WARNING: Clamd was NOT notified: Can't connect to clamd through /run/clamav/clamd.ctl: No such file or directory
+fixed with empty sock file
+## system seized again
+my best guess it's related to  8192eu-dkms  so removed it
+removing  dkms  broke a few things, so I re-installed it
 # physical configuration
 Mirai DML-519W100 - wide 1440x900 = 16:10
 TL-WN821N

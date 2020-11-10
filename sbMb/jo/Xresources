@@ -1,3 +1,4 @@
+! I call this from my ~/.xinitrc
 
 ! #include cant handle variables in the paths, so  theyre set here
 ! any errors here silently terminate the parsing

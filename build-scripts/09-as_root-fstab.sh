@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdc=1 fdl=1 fdm=expr ft=shbuild:
+# vim: fdm=expr fdl=1 ft=sh.shfold:
 
 drives=(
   '9QF57J6Q' \

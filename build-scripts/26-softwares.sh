@@ -120,76 +120,76 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # #=> LanguageTool
 # sudo pacman -S languagetool
 
-#=> moar
-cd ~/Arch/AUR
-rAUR moar
-git clone https://aur.archlinux.org/moar.git
-cd moar
-gvim PKGBUILD
-makepkg -sic
+# #=> moar
+# cd ~/Arch/AUR
+# rAUR moar
+# git clone https://aur.archlinux.org/moar.git
+# cd moar
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> OpenShot
-sudo pacman -S openshot
+# #=> OpenShot
+# sudo pacman -S openshot
 
-#=> pdftk
-sudo pacman -S pdftk
+# #=> pdftk
+# sudo pacman -S pdftk
 
-#=> peek
-sudo pacman -S peek  # (GIF Screen Recorder)
+# #=> peek
+# sudo pacman -S peek  # (GIF Screen Recorder)
 
-#=> Perl modules for JSON
-sudo pacman -S perl-json perl-json-parse perl-json-xs
+# #=> Perl modules for JSON
+# sudo pacman -S perl-json perl-json-parse perl-json-xs
 
-#=> perl-clone-pp
-# Can't find why I needed this...
-cd ~/Arch/AUR
-rAUR perl-clone-pp
-git clone https://aur.archlinux.org/perl-clone-pp.git
-cd perl-clone-pp
-gvim PKGBUILD
-makepkg -sic
+# #=> perl-clone-pp
+# # Can't find why I needed this...
+# cd ~/Arch/AUR
+# rAUR perl-clone-pp
+# git clone https://aur.archlinux.org/perl-clone-pp.git
+# cd perl-clone-pp
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> perl-data-printer
-cd ~/Arch/AUR
-rAUR perl-data-printer
-git clone https://aur.archlinux.org/perl-data-printer.git
-cd perl-data-printer
-gvim PKGBUILD
-makepkg -sic
+# #=> perl-data-printer
+# cd ~/Arch/AUR
+# rAUR perl-data-printer
+# git clone https://aur.archlinux.org/perl-data-printer.git
+# cd perl-data-printer
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> Pinta
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/pinta.git
-cd pinta
-gvim PKGBUILD
-makepkg -sic
+# #=> Pinta
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/pinta.git
+# cd pinta
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> pscircle-git
-cd ~/Arch/AURdev-clone
-git clone https://aur.archlinux.org/pscircle-git.git
-gctm pscircle-git
-gvim PKGBUILD
-makepkg -sic
+# #=> pscircle-git
+# cd ~/Arch/AURdev-clone
+# git clone https://aur.archlinux.org/pscircle-git.git
+# gctm pscircle-git
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> Samokovarov's jump
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/jump.git
-cd jump
-gvim PKGBUILD
-makepkg -sic
+# #=> Samokovarov's jump
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/jump.git
+# cd jump
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> tint-tetris
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/tint-tetris.git
-cd tint-tetris
-gvim PKGBUILD
-makepkg -sic
+# #=> tint-tetris
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/tint-tetris.git
+# cd tint-tetris
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> xbindkeys
-sudo pacman -S xbindkeys
+# #=> xbindkeys
+# sudo pacman -S xbindkeys
 
 #=> youtube-dl
-pacman -S youtube-dl
+sudo pacman -S youtube-dl
 
 #=> Zoom
 cd ~/Arch/AUR
