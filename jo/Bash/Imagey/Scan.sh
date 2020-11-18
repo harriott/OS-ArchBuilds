@@ -26,7 +26,7 @@ elif [ $1 = "55n" ] || [ $1 = "55u" ] ; then
       device="--device $(awk 'END{print $3}' $n5log)"
     else
       echo 'grabbing HP ENVY 5532 network address to network5532.log ...'
-      siL="$(scanimage -L | grep net | awk '{ print $2 }' )"
+      siL="$(scanimage -L | grep net | awk '{ print $2 }' )"  # fails when multi-line
       if [ $siL ] ; then
         echo "$(date "+%F %H:%M:%S") ${siL/\`/\'}" >> $n5log
       else

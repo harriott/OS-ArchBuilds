@@ -1,12 +1,10 @@
 #!/bin/bash
-# vim: fdm=expr fdl=1 ft=shbuild:
+# vim: fdm=expr fdl=1 ft=sh.shfold:
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-ARCHBUILDS=/home/jo/ArchBuilds
-
-# #=> when rsnapshot conf
+#=> when rsnapshot conf
 # rsnapshot timers
 for systemdUnit in $ARCHBUILDS/etc/systemd/rsnapshot*; do
     cp $systemdUnit /etc/systemd/system/${systemdUnit##/*/}

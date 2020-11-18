@@ -34,6 +34,7 @@ magl () { # failing...
 alias nmf='neomutt -F $email/muttrc-account_ftml'
 alias nmj='neomutt -F $email/muttrc-account_tj'
 alias nml='neomutt -F $email/muttrc-account_live'
+alias nmp='neomutt -F $email/muttrc-account_parl'
 alias nmt='neomutt -F $email/muttrc-account_troh'
 alias nmx='neomutt -F $email/muttrc-account_gmx'
 alias nmz='neomutt -F $email/muttrc-account_cz'
@@ -66,6 +67,7 @@ nmnew () { echo "notmuch new:"; notmuch new; }
 msf () { mbsync fm   ; nmnew ; echo "nmTags-fm.sh"   ; bash $email/nmTags-fm.sh   ; }
 msj () { mbsync tj   ; nmnew ; echo "nmTags-tj.sh"   ; bash $email/nmTags-tj.sh   ; }
 msl () { mbsync live ; nmnew ; echo "nmTags-live.sh" ; bash $email/nmTags-live.sh ; }
+msp () { mbsync parl ; nmnew ; echo "nmTags-parl.sh" ; bash $email/nmTags-parl.sh ; }
 mst () { mbsync troh ; nmnew ; echo "nmTags-troh.sh" ; bash $email/nmTags-troh.sh ; }
 msx () { mbsync gmx  ; nmnew ; echo "nmTags-gmx.sh"  ; bash $email/nmTags-gmx.sh  ; }
 msz () { mbsync cz   ; nmnew ; echo "nmTags-cz.sh"   ; bash $email/nmTags-cz.sh   ; }
@@ -74,6 +76,7 @@ alias ms='
 echo -e "${tpf2b}-- fm   --${tpfn}"; msf;
 echo -e "${tpf2b}-- tj   --${tpfn}"; msj;
 echo -e "${tpf2b}-- live --${tpfn}"; msl;
+echo -e "${tpf2b}-- parl --${tpfn}"; msl;
 echo -e "${tpf2b}-- troh --${tpfn}"; mst;
 echo -e "${tpf2b}-- gmx  --${tpfn}"; msx;
 echo -e "${tpf2b}-- cz   --${tpfn}"; msz;

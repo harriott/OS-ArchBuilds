@@ -10,6 +10,9 @@ trap read debug  # puts a read request after each executable line
 # ARCHBUILDS=~/ArchBuilds
 #     MACHINE=$ARCHBUILDS/sbMb
 
+#=> 0 for Dunst
+mkdir -p ~/.config/dunst
+
 # #=> 0 generate 00-keyboard.conf
 # sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
 
@@ -59,6 +62,9 @@ trap read debug  # puts a read request after each executable line
 # cp -r /usr/share/themes/Loma ~/.local/share/themes/LomaJH
 # sed -i '/window.active.border.color:/ s/#000000/#FF8000/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 # sed -i '/^border.width:/ s/1/2/' ~/.local/share/themes/LomaJH/openbox-3/themerc
+
+#=> 0 for urxvt
+mkdir -p ~/.urxvt
 
 # #=> 0 xorg-xkbprint
 # cd ~/Arch/AUR

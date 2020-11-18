@@ -10,6 +10,7 @@ sudo pacman -Rs <packagetoremove>
 $ARCHBUILDS/Bash/bashrc-generic
 \e[0;34m = Blue
 \e[1;34m = Bold Blue
+echo ${my_array[@]}
 echo -e "\e[1m\e[95m[1m[95m\e[0m"
 
 ## tput
@@ -20,11 +21,13 @@ tput bold; echo hello
 for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
 
-# CUPS - when a printer is paused/disabled
+# CUPS
 lp -o fit-to-page -o orientation-requested=4 <alandscapeimage>
+
+## when a printer is paused/disabled
 lpstat -p -d  # show status of printers, including which is set as default
 
-## HP ENVY 5532 WiFi
+### HP ENVY 5532 WiFi
 lpoptions -d 553_192_168_43_249  # set as default
 lpoptions -p 553_192_168_43_249 -l  # list options
 sudo cupsenable 553_192_168_43_249
@@ -58,6 +61,7 @@ mediainfo --help | moar
 mediainfo <avfile> | grep Encoded
 
 # networking
+cat /etc/hostname
 sudo dhcpcd wlwg111v2
 sudo ls /etc/NetworkManager/system-connections/
 sudo ls /var/lib/dhcpcd/
@@ -87,11 +91,8 @@ notmuch search tag:trohib | wc -l
 URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
 
 # pass
-pass
 pass edit gmail-neomutt
 pass gmail-neomutt
-pass ls
-pass(1)
 pass troh/GmailAPI/token-expire
 
 # storage
@@ -204,6 +205,7 @@ rg 'sometext' --no-ignore  # allows searching into gitignored places
 
 # system
 cat /proc/cpuinfo
+dunstify -u critical "Read this now!"
 
 b <command>  # batman
 id jo        # show uid, gid, and groups for jo

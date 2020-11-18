@@ -11,13 +11,13 @@ trap read debug  # puts a read request after each executable line
 # systemctl status iwd.service
 # true
 
-#=> 1 iwd 2 stop
-systemctl stop iwd.service
-true
+# #=> 1 iwd 2 stop
+# systemctl stop iwd.service
+# true
 
-#=> 1 iwd 3 disable
-systemctl disable iwd.service
-true
+# #=> 1 iwd 3 disable
+# systemctl disable iwd.service
+# true
 
 # #=> 1 NetworkManager 1 install
 # pacman -S networkmanager
@@ -26,6 +26,14 @@ true
 #=> 1 NetworkManager 2 status
 systemctl status NetworkManager.service | cat
 true
+
+#=> 1 openbsd-netcat
+pacman -S openbsd-netcat
+
+#=> 1 rkhunter
+pacman -S rkhunter
+rkhunter --propupd
+rkhunter -C
 
 # #=> 1 softwares - info
 # # htop

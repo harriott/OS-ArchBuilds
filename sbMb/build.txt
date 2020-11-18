@@ -202,8 +202,12 @@ fixed with empty sock file
 ## system seized again
 my best guess it's related to  8192eu-dkms  so removed it
 removing  dkms  broke a few things, so I re-installed it
+## Updates
+==> WARNING: Possibly missing firmware for module: wd719x
+==> WARNING: Possibly missing firmware for module: aic94xx
+==> WARNING: Possibly missing firmware for module: xhci_pci
 # physical configuration
-Mirai DML-519W100 - wide 1440x900 = 16:10
+Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0
 TL-WN821N
 ## cbh
 Logitech MX 610 Laser Cordless Mouse
@@ -217,13 +221,13 @@ SD480GSSDPlus
 ST3320418AS
 ST3320620AS 9QF57J6Q on middle shelf
 WD30EZRZ
+### graphics
+Acer GF-7300SE-N-A3 nVidia GeForce 7300 graphics card  on  PCIEX16
+  KNOPPIX v8.6.1 > chromium works fine
 ### startup
 Del  gets into BIOS
 F12  gets a choice of boot media
 #### BIOS Features
 Peripherals > EHCI Hand-off Disabled [ IOMMU Controller  XHCI Hand-off ] > Enabled
-### graphics
-Acer GF-7300SE-N-A3 nVidia GeForce 7300 graphics card  on  PCIEX16
-  KNOPPIX v8.6.1 > chromium works fine
 ### USB headers
 Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB2

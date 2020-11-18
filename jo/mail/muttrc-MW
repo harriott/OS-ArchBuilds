@@ -29,7 +29,7 @@ auto_view application/pgp-encrypted
 alternative_order text/plain text/enriched text/html
 bind index,pager g noop  # releasing from <group-reply> because I use g in my account muttrc's
 bind index \Cf noop  # disable <forget-passphrase>
-# G "retrieve mail from POP server" doesn't seem to need clearing
+bind index G noop  # precautionary release from <fetch-mail>
 
 set menu_scroll # smoother movement
 unset confirmappend # don't ask of confirmation when moving emails

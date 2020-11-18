@@ -120,13 +120,13 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # #=> LanguageTool
 # sudo pacman -S languagetool
 
-# #=> moar
-# cd ~/Arch/AUR
-# rAUR moar
-# git clone https://aur.archlinux.org/moar.git
-# cd moar
-# gvim PKGBUILD
-# makepkg -sic
+#=> moar
+cd ~/Arch/AUR
+rAUR moar
+git clone https://aur.archlinux.org/moar.git
+cd moar
+gvim PKGBUILD
+makepkg -sic
 
 # #=> OpenShot
 # sudo pacman -S openshot
@@ -188,8 +188,8 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # #=> xbindkeys
 # sudo pacman -S xbindkeys
 
-#=> youtube-dl
-sudo pacman -S youtube-dl
+# #=> youtube-dl
+# sudo pacman -S youtube-dl
 
 #=> Zoom
 cd ~/Arch/AUR

@@ -6,8 +6,8 @@
 
 # check the effects with  notmuch dump
 
-# notmuch search tag:czj | wc -l
-# notmuch tag -czj -- "*"
+# notmuch search tag:cz | wc -l
+# notmuch tag -cz -- "*"
 
 notmuch tag -inbox -- 'folder:/cz\/[^I]/ and tag:inbox' # remove unneeded inbox tags
 notmuch tag +cz -- 'folder:/cz\/.*/ and not tag:cz' # add cz tags to all

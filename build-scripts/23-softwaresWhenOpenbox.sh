@@ -95,5 +95,4 @@ trap read debug  # puts a read request after each executable line
 #=> 1 Zathura
 sudo pacman -S zathura-pdf-mupdf
 mkdir ~/.config/zathura
-ln -fs $Openbox/zathurarc ~/.config/zathura/zathurarc
 

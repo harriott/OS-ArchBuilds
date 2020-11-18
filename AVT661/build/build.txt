@@ -3376,6 +3376,12 @@ Such that even front reset button wasn't detected. Replugged the power.
 # clamscan
 sudo clamscan -r --exclude-dir='^/run/media/jo|^/mnt|^/sys|^/var/lib/clamav' / 2>&1 | tee ~/Arch/clamscan.log
 gvim -c "silent! / FOUND$" -geom 200 ~/Arch/clamscan.log
+# rkhunter
+sudo rkhunter --check
+sudo cp /var/log/rkhunter.log ~/Arch/rkhunter-kbb.log
+chown jo:jo ~/Arch/rkhunter-kbb.log  (sudo chmod 644 ~/Arch/rkhunter-kbb.log  not necessary)
+# system seized
+was able to power off with front button
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

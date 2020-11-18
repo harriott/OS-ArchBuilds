@@ -1,12 +1,12 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
-# my preferred configuration file for accessing  Fastmail
+# my preferred configuration file for accessing this Gmail account
 # I prefer to call this through an alias in my  ~/.bashrc
 
 #  mbsync cz   using ~/.mbsyncrc
 #  msmtp  uses settings in  ~/.config/msmtp/config
 
-set from = $cz  # defined in my  $GNULE/mymuttrcAddresses
+set from = $cz  # defined in my  $GNULE/emailAddresses
 set sendmail = "msmtp -a cz"
 set folder = "$mail/cz"
 set header_cache = /home/jo/.cache/mutt/cz/headers
@@ -23,7 +23,7 @@ source $alias_file
 # rm -r ~/.cache/mutt/cz/* ~/.local/share/mail/cz/*
 # and fix  ~/.mbsyncrc  to correspond
 mailboxes "=Archives" "=[Gmail].All\ Mail" "=[Gmail].Bin" "=[Gmail].Drafts" "=[Gmail].Sent\ Mail" "=[Gmail].Spam" "=INBOX" "=Waiting"
-# - any errors here will trigger others
+#  - any errors here will trigger others
 virtual-mailboxes "All" "notmuch://?query=tag:cz"
 
 # tweak the default status line to show  "->cz":
