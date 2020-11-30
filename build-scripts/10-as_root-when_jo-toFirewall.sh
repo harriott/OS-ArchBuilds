@@ -26,12 +26,11 @@ systemctl status clamav-freshclam.service
 #=> ClamAV 3 freshclam daemon - stop
 systemctl stop clamav-freshclam.service
 
-# #=> ClamAV 3 test
-# # first turn off debug
-# trap - debug
-# #  be patient after the curl
-# curl https://secure.eicar.org/eicar.com.txt | clamscan -
-# trap read debug
+#=> ClamAV 3 test
+trap - debug  # first turn off debug
+#  be patient after the curl
+curl https://secure.eicar.org/eicar.com.txt | clamscan -
+trap read debug
 
 # #=> Firewalld 0
 # # 1 get & enable

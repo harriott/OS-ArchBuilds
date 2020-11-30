@@ -3,10 +3,29 @@
 # based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
 # general settings for neomutt
 
-set mailcap_path = $email/mailcap-MW
+set mailcap_path = $email/mailcap-MWa
+
+# the index
 set date_format="%y/%m/%d %H:%M"
-set index_format="%2C %zs %?X?A& ? %D %-15.15F %s (%-4.4c)"
+#
+set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
+# useful message status flags:
+#  D = deleted (marked for deletion)
+#  N = new
+#  r = replied
+#  ! = flagged
+#  * = tagged
+#
+# useful message recipient flags:
+#  + = to you and you only
+#  T = to you, but also to or CC'ed to others
+#  C = CC'ed to you
+#  F = from you
+#  L = sent to a subscribed mailing list
+#  R = has your address in the Reply-To field
+#
 # set sort = 'reverse-date'
+
 set smtp_authenticators = 'gssapi:login'
 # set query_command = "abook --mutt-query '%s'"
 set rfc2047_parameters = yes
@@ -38,7 +57,7 @@ unset confirmappend # don't ask of confirmation when moving emails
 #  $ ==> sync changes
 #  * or <End> -> <last-entry> ==> jump to the last entry
 #  / ~F ==> find flagged message
-#  ; tag-prefix ==> apply next function to tagged messages
+#  ; (= tag-prefix) ==> apply next function to tagged messages
 #  = or <Home> -> <first-entry> ==> jump to the first entry
 #  B ==> toggle sidebar
 #  N ==> toggle New mark
@@ -80,13 +99,15 @@ bind pager [ half-up
 bind pager = previous-line
 
 # Layout:
-source $email/muttrc-MW-layout
+source $email/muttrc-MWa-layout
 
 # Searching
 # ---------
 
 bind index l noop
 bind index ll limit  # ~p = to me, ~P = from me
+#  ~C <textinsendlist>
+#  ~f <textinfrom>
 macro index lb "<limit> ~b " "limit by term in message body"
 macro index lB "<limit> ~B " "limit by term in whole message"
 # Esc l -> <show-limit> ==> show currently active limit pattern

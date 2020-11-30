@@ -206,6 +206,10 @@ removing  dkms  broke a few things, so I re-installed it
 ==> WARNING: Possibly missing firmware for module: wd719x
 ==> WARNING: Possibly missing firmware for module: aic94xx
 ==> WARNING: Possibly missing firmware for module: xhci_pci
+## Dropbox didn't start
+fixed by making  ~/.dropbox-dist  unwriteable
+## Thunderbird Profile
+Thunderbird > Start
 # physical configuration
 Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0
 TL-WN821N

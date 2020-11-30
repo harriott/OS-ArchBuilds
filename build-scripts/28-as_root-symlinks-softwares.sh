@@ -12,6 +12,7 @@
 #=> for fonts
 cfA=/usr/share/fonts/copiedForArch
 [[ $cfA ]] && rm -r $cfA; ln -s $Technos/IT0-fonts-copiedForArch $cfA
+e -la /usr/share/fonts
 
 #=> Vim
 rm -r ~/.vim; ln -s $ITstack/vimfiles ~/.vim

@@ -12,9 +12,11 @@ libreoffice  # first-run of LibreOffice - close it
 #=> 0 Thunderbird
 sudo pacman -S thunderbird-i18n-en-gb
 thunderbird  # generates a dummy Profile, not to be hereafter used
-sed -i '/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s/Path=.*/Path=\/mnt\/SDSSDA240G\/Dropbox\/JH\/TP\.default-release/ }' ~/.thunderbird/profiles.ini  # requires Thunderbird not to be running
+sed -i '/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s/Path=.*/Path=\/mnt\/SD480GSSDPlus\/Dropbox\/JH\/TP\.default-release/ }' ~/.thunderbird/profiles.ini  # requires Thunderbird not to be running
+thunderbird  # (default-release) > Start
 
 #=> 1 LibreOffice configuration
+trap - debug  # turn off debug
 uc0=~/.config/libreoffice/4/user
     rm -r $uc0/config
     rm $uc0/registrymodifications.xcu

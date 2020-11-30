@@ -17,6 +17,7 @@
 
 # #=> 0 Git
 # ln -sf $MACHINE/jo/gitconfig ~/.gitconfig  # points to $ITstack/gitconfig
+# ln -sf $ARCHBUILDS/jo/gitconfig ~/.gitconfig  # points to $ITstack/gitconfig
 
 # find ~ -mindepth 1 -maxdepth 1 -type l -ls  # visual check
 

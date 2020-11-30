@@ -22,15 +22,26 @@ for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # CUPS
-lp -o fit-to-page -o orientation-requested=4 <alandscapeimage>
-
-## when a printer is paused/disabled
+-o orientation-requested=3 - portrait orientation (no rotation)
+-o orientation-requested=4 - landscape orientation (90 degrees)
+-o orientation-requested=5 - reverse landscape or seascape orientation (270 degrees)
+-o orientation-requested=6 - reverse portrait or upside-down orientation (180 degrees)
+"Command-Line Printing and Options"
+hp-setup -h
+lp -o fit-to-page <image>
 lpstat -p -d  # show status of printers, including which is set as default
+lpstat -s  # status
+sudo systemctl status cups.service
 
-### HP ENVY 5532 WiFi
+## HP ENVY 5532 WiFi
+lpoptions -d ENVY_5530_2  # set as default
+lpoptions -p ENVY_5530_2 -l  # list options
+sudo cupsenable ENVY_5530_2  # if it's paused
+
+### 249
 lpoptions -d 553_192_168_43_249  # set as default
 lpoptions -p 553_192_168_43_249 -l  # list options
-sudo cupsenable 553_192_168_43_249
+sudo cupsenable 553_192_168_43_249  # if it's paused
 
 # fonts
 In a folder of possible fonts, to check if any are already installed:
@@ -61,6 +72,7 @@ mediainfo --help | moar
 mediainfo <avfile> | grep Encoded
 
 # networking
+bm firewall-cmd
 cat /etc/hostname
 sudo dhcpcd wlwg111v2
 sudo ls /etc/NetworkManager/system-connections/
@@ -72,9 +84,12 @@ find -name "*(Copie en conflit de *"
 
 ## email
 $Bash/bashrc-email
-$email/muttrc-MW
-echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 grep -r "Georita" *
+
+### mutt
+$email/muttrc-MWa
+echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
+F => toggle important flag (= Star in Gmail)
 
 ### notmuch search
 nmse '"Georita Harriott"' date:march..  # searches from March
@@ -116,21 +131,21 @@ br -s => br --sizes
 <directory>  # cd <directory>  ( shopt autocd )
 
 ### exa
-b exa
+bm exa
 e
 e -la  # for permissions and symlinks
 e -T   # for tree
 
 ### Samokovarov's jump
-b jump
+bm jump
 j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
-jump clean
+jump clean  # I have in fcrontab
 jump top | moar
 jump --help
 
 ## fzf
 Alt+c   # to change directory
-b fzf
+bm fzf
 cat $(fzf)
 cd [directory/][fuzzy_pattern]**<tab>
 f
@@ -208,7 +223,6 @@ cat /proc/cpuinfo
 dunstify -u critical "Read this now!"
 
 b <command>  # batman
-id jo        # show uid, gid, and groups for jo
 
 ## BpyTOP
 bpytop  # supersedes  bashtop
@@ -223,6 +237,10 @@ n = right = next
 #### tree view
 e toggles it
 spacebar toggles open/closed a branch
+
+## groups
+cat /etc/group  # list all groups on the system
+id jo        # show uid, gid, and groups for jo
 
 ## mimeapps
 handlr list

@@ -28,6 +28,6 @@ obmenu-generator &
 pnmixer &
 redshift-gtk -l 48.8646:2.3984 &
 tint2 &
-urxvt -geometry 92x55+0+0 & # from left of a 1440x900 screen, allowing room for 106 column gVim
+urxvt -geometry 92x54+0+0 & # from left of a 1440x900 screen, allowing room for 106 column gVim
 # urxvt -geometry 120x63+0+0 & # to fill up from left of a 1280x1024 screen
 # urxvt -geometry 120x65+0+0 & # to fill up left half of a 1680x1050 screen

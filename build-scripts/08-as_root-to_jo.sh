@@ -102,6 +102,13 @@ pacman -S trash-cli
 # tree
 pacman -S tree
 
+#=> 1 softwares - networking
+# isync
+pacman -S isync  # for mbsync
+
+# tcpdump
+pacman -S tcpdump  # for packet analysis
+
 #=> 1 softwares - system
 # Bashtop
 pacman -S bashtop  # later superseded by AUR bpytop

@@ -1,4 +1,5 @@
 #!/bin/bash
+# vim: sw=2:
 
 # Joseph Harriott
 
@@ -26,11 +27,14 @@ elif [ $1 = "55n" ] || [ $1 = "55u" ] ; then
       device="--device $(awk 'END{print $3}' $n5log)"
     else
       echo 'grabbing HP ENVY 5532 network address to network5532.log ...'
-      siL="$(scanimage -L | grep net | awk '{ print $2 }' )"  # fails when multi-line
-      if [ $siL ] ; then
-        echo "$(date "+%F %H:%M:%S") ${siL/\`/\'}" >> $n5log
+      mapfile -t siL < <(scanimage -L | grep net | awk '{ print $2 }' )
+      if [ "$siL" ] ; then
+        echo "$(date "+%F %H:%M:%S") ${siL[0]/\`/\'}" >> $n5log
+        if [ "${siL[1]}" ] ; then
+          echo "$(date "+%F %H:%M:%S") ${siL[1]/\`/\'}" >> $n5log
+        fi # a 2nd address was discovered
       else
-        echo -e "\e[1m\e[95m can't find a network address \e[0m"
+        echo "${tpf5b}can't find a network address${tpfn}"
       fi
     fi
   fi

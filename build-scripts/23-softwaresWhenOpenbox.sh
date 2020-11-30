@@ -49,15 +49,15 @@ trap read debug  # puts a read request after each executable line
 # # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 # true
 
-# #=> 1 qt5-styleplugins
-# # for qt5ct - allows fix of narrow fonts in XnViewMP
-# cd ~/Arch/AUR
-# sudo rm -r qt5-styleplugins
-# git clone https://aur.archlinux.org/qt5-styleplugins.git
-# cd qt5-styleplugins
-# gvim PKGBUILD
-# makepkg -sic
-# cd ~
+#=> 1 qt5-styleplugins
+# for qt5ct - allows fix of narrow fonts in XnViewMP
+cd ~/Arch/AUR
+sudo rm -r qt5-styleplugins
+git clone https://aur.archlinux.org/qt5-styleplugins.git
+cd qt5-styleplugins
+gvim PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> 1 qpdfview
 # sudo pacman -S qpdfview
@@ -92,7 +92,7 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#=> 1 Zathura
-sudo pacman -S zathura-pdf-mupdf
-mkdir ~/.config/zathura
+# #=> 1 Zathura
+# sudo pacman -S zathura-pdf-mupdf
+# mkdir ~/.config/zathura
 

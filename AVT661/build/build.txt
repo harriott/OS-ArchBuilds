@@ -3382,6 +3382,79 @@ sudo cp /var/log/rkhunter.log ~/Arch/rkhunter-kbb.log
 chown jo:jo ~/Arch/rkhunter-kbb.log  (sudo chmod 644 ~/Arch/rkhunter-kbb.log  not necessary)
 # system seized
 was able to power off with front button
+# CUPS
+lpstat -p -d
+  lpstat: Bad file descriptor
+  no system default destination
+lpstat -t
+  scheduler is not running
+  no system default destination
+  lpstat: Bad file descriptor
+  lpstat: Bad file descriptor
+  lpstat: Bad file descriptor
+  lpstat: Bad file descriptor
+  lpstat: Bad file descriptor
+http://localhost:631/printers/  " This site can’t be reached - localhost refused to connect."
+## check cupsd.conf
+sudo cp /etc/cups/cupsd.conf $MACHINE/etc/kbn-cupsd.conf
+sudo chown jo:jo $MACHINE/etc/kbn-cupsd.conf
+sudo cp /etc/cups/cupsd.conf.default $MACHINE/etc/kbn-cupsd.conf.default
+sudo chown jo:jo $MACHINE/etc/kbn-cupsd.conf.default
+but they're identical...
+## CUPS service
+sudo systemctl status org.cups.cupsd.service  "Unit org.cups.cupsd.service could not be found."
+systemctl | grep cups  shows nothing enabled...
+sudo systemctl enable cups.service --now   got back connective routes
+sudo systemctl status cups.service
+gpasswd -a jo cups
+## HP ENVY 5532 WiFi
+IP Address had changed to 192.168.43.250
+sudo hp-setup -u (= Device Discovery) > Advanced Options > Manual Discovery >
+  USB bus ID:device ID (bbb:ddd): > 192.168.43.250 > Next >
+  Would you like to install another print queue for this device ? > Yes > Printer name >
+  [ ENVY_5530_2  Sent test page ] > Add Printer (takes a while)
+lpstat -s
+  system default destination: 553_192_168_43_249
+  device for 553_192_168_43_249: hp:/net/ENVY_5530_series?ip=192.168.43.249
+  device for Envy5532: usb://HP/ENVY%205530%20series?serial=CN4CO463K5067B
+  device for ENVY_5530: hp:/usb/ENVY_5530_series?serial=CN4CO463K5067B
+  device for ENVY_5530_2: hp:/net/ENVY_5530_series?ip=192.168.43.250
+# no system sound card
+cat /proc/asound/cards "--- no soundcards ---"
+# SSH
+## sshd_config
+sudo cp /etc/ssh/sshd_config $MACHINE/etc/defaults/kbt-sshd_config
+sudo chown jo:jo $MACHINE/etc/defaults/kbt-sshd_config
+sudo cp $MACHINE/etc/sshd_config /etc/ssh/sshd_config
+## sshd.service
+sudo systemctl enable sshd.service --now
+sudo systemctl restart sshd.service
+sudo systemctl status sshd.service
+## connect to self
+### on default Port 22
+ssh localhost
+  The authenticity of host 'localhost (::1)' can't be established.
+  RSA key fingerprint is SHA256:EL6I6EqB67lfW8jaNPKqD7QmCagCGCjR6CdbRCtXBE4.
+  Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+  Warning: Permanently added 'localhost' (RSA) to the list of known hosts.
+### on my preferred Port 39576
+ssh -p 39576 localhost   then configured this Port in  ~/.ssh/config, allowing  ssh localhost
+### authorized_keys
+ssh-copy-id -i ~/.ssh/id_rsa-trohib -p 39576 localhost
+  /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/jo/.ssh/id_rsa-trohib.pub"
+  /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+  /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+  jo@localhost's password: 
+  Number of key(s) added: 1
+  Now try logging into the machine, with:   "ssh -p '39576' 'localhost'"
+  and check to make sure that only the key(s) you wanted were added.
+- successfully copied  ~/.ssh/id_rsa-trohib.pub  to  ~/.ssh/authorized_keys
+# gpg --search-key
+gpg --search-key 13F327EF  General error
+gpg --keyserver keys.gnupg.net --search-key 13F327EF
+  (1) Joseph Harriott (sprbMb Arch) <jharr@ftml.net>
+      Joseph Harriott (sprbMb Arch) <trohib@gmail.com>
+        2048 bit RSA key 842A4DEE13F327EF, created: 2015-05-18, expires: 2016-05-17 (expired)
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

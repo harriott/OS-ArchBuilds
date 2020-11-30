@@ -7,6 +7,9 @@
 #=> CopyQ - ready for Pasting
 CopyQ > F6 > Load > $ARCHBUILDS/jo/CopyQ-readyforPasting.ini
 
+#=> for *mutt
+mkdir ~/.local/share/mail
+
 #=> for my m4p scripts
 mkdir ~/texmf/tex/latex/m4p  # needed for Pandoc in $Bash/bashrc-ob
 
@@ -20,7 +23,4 @@ mkdir -p ~/texmf/tex/latex
 
 # #=> neovim configuration directory
 # mkdir ~/.config/nvim
-
-#=> provisional gitconfig
-cp /mm/gitconfig ~/.gitconfig
 

@@ -47,14 +47,17 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox
-# # only once there's a browser, and preferably after LastPass
-# cd ~/Arch/AUR
-# rAUR dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# gvim PKGBUILD
-# makepkg -sic
+#=> Dropbox 0 install
+# only once there's a browser, and preferably after LastPass
+cd ~/Arch/AUR
+rAUR dropbox
+git clone https://aur.archlinux.org/dropbox.git
+cd dropbox
+gvim PKGBUILD
+makepkg -sic
+
+#=> Dropbox 1 dropbox-dist folder
+install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
 
 # #=> Dust
 # # (after Rust Toolchain)
@@ -67,6 +70,7 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 
 # #=> Fangfrisch 1 AUR
 # cd ~/Arch/AUR
+# rAUR python-fangfrisch
 # git clone https://aur.archlinux.org/python-fangfrisch.git
 # cd python-fangfrisch
 # gvim PKGBUILD
@@ -127,6 +131,7 @@ git clone https://aur.archlinux.org/moar.git
 cd moar
 gvim PKGBUILD
 makepkg -sic
+true
 
 # #=> OpenShot
 # sudo pacman -S openshot
@@ -185,17 +190,26 @@ makepkg -sic
 # gvim PKGBUILD
 # makepkg -sic
 
+#=> tspreed
+cd ~/Arch/AUR
+rAUR tspreed
+git clone https://aur.archlinux.org/tspreed.git
+cd tspreed
+gvim PKGBUILD
+makepkg -sic
+true
+
 # #=> xbindkeys
 # sudo pacman -S xbindkeys
 
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-#=> Zoom
-cd ~/Arch/AUR
-rAUR zoom
-git clone https://aur.archlinux.org/zoom.git
-cd zoom
-gvim PKGBUILD
-makepkg -sic
+# #=> Zoom
+# cd ~/Arch/AUR
+# rAUR zoom
+# git clone https://aur.archlinux.org/zoom.git
+# cd zoom
+# gvim PKGBUILD
+# makepkg -sic
 
