@@ -13,7 +13,7 @@
 ln -sf $GNULE/notmuch-config ~/.notmuch-config
 
 #=> LaTeX
-ln -s $ITstack/CrossPlatform/forLaTeX ~/texmf/tex/latex/jo
+ln -s $CrossPlatform/forLaTeX ~/texmf/tex/latex/jo
 
 #=> Pandoc defaults
 ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
@@ -24,6 +24,7 @@ ln -s $onGH/pandoc-templates ~/.pandoc/templates
 
 #=> SSH config
 ln -sf $MACHINE/jo/SSHconfig ~/.ssh/config
+ln -sf $CrossPlatform/SSHconfig/AVT661 ~/.ssh/config
 
 #=> softares in my Openbox build
 

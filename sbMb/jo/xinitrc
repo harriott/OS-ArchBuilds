@@ -18,7 +18,9 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # kill tmux sessions if you've made changes here
 export DROPBOX=/mnt/SD480GSSDPlus/Dropbox   # keep this capitalised for finding it without need for $
     export ITstack=$DROPBOX/JH/core/IT_stack
-        export GNULE=$ITstack/unix_like/email-GNULinux  # where I keep private configurations
+        # two private configurations:
+        export CrossPlatform=$ITstack/CrossPlatform
+        export GNULE=$ITstack/unix_like/email-GNULinux
     export onGH=$DROPBOX/JH/core/IT_stack/onGitHub
         export ARCHBUILDS=$HOME/ArchBuilds # provisional
         export ARCHBUILDS=$onGH/ArchBuilds # once Dropbox is up
