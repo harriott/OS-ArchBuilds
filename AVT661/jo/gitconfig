@@ -6,5 +6,5 @@
 # Its contents are referred to as needed by Git, making changes saved here instantaneous.
 
 [include]
-	path = /mnt/SDSSDA240G/Dropbox/JH/core/IT_stack/gitconfig
+	path = /mnt/SDSSDA240G/Dropbox/JH/core/IT_stack/gitconfig  # - no variables
 
