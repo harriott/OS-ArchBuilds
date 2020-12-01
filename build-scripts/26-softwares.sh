@@ -47,17 +47,17 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> Dropbox 0 install
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-rAUR dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-gvim PKGBUILD
-makepkg -sic
+# #=> Dropbox 0 install
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# rAUR dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> Dropbox 1 dropbox-dist folder
-install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
+# #=> Dropbox 1 dropbox-dist folder
+# install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
 
 # #=> Dust
 # # (after Rust Toolchain)
@@ -124,14 +124,23 @@ install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch instal
 # #=> LanguageTool
 # sudo pacman -S languagetool
 
-#=> moar
+#=> lohit-fonts
 cd ~/Arch/AUR
-rAUR moar
-git clone https://aur.archlinux.org/moar.git
-cd moar
+rAUR lohit-fonts
+git clone https://aur.archlinux.org/lohit-fonts.git
+cd lohit-fonts
 gvim PKGBUILD
 makepkg -sic
 true
+
+# #=> moar
+# cd ~/Arch/AUR
+# rAUR moar
+# git clone https://aur.archlinux.org/moar.git
+# cd moar
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
 # #=> OpenShot
 # sudo pacman -S openshot
@@ -190,14 +199,14 @@ true
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> tspreed
-cd ~/Arch/AUR
-rAUR tspreed
-git clone https://aur.archlinux.org/tspreed.git
-cd tspreed
-gvim PKGBUILD
-makepkg -sic
-true
+# #=> tspreed
+# cd ~/Arch/AUR
+# rAUR tspreed
+# git clone https://aur.archlinux.org/tspreed.git
+# cd tspreed
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
 # #=> xbindkeys
 # sudo pacman -S xbindkeys

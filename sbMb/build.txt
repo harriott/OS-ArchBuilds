@@ -210,6 +210,21 @@ removing  dkms  broke a few things, so I re-installed it
 fixed by making  ~/.dropbox-dist  unwriteable
 ## Thunderbird Profile
 Thunderbird > Start
+## system seized again
+hard shutdown
+## SSH connect to self
+ssh localhost
+  The authenticity of host '[localhost]:39576 ([::1]:39576)' can't be established.
+  ED25519 key fingerprint is SHA256:LRPSooOUrAH2BKBzyKe7xdBJPR5B3QsMJvM9Y1vwkqQ.
+  Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+  Warning: Permanently added '[localhost]:39576' (ED25519) to the list of known hosts.
+  jo@localhost: Permission denied (publickey).
+## SSH authorized_keys
+temorarily allowed password login in  /etc/ssh/sshd_config  for
+  ssh-copy-id -i ~/.ssh/id_ed25519-for_sbMb localhost
+### id_ed25519-forAVT661
+temporarily added the keys to  ~/.ssh  for
+  ssh-copy-id -f -i ~/.ssh/id_ed25519-forAVT661 localhost
 # physical configuration
 Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0
 TL-WN821N

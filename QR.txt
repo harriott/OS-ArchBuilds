@@ -44,13 +44,14 @@ lpoptions -p 553_192_168_43_249 -l  # list options
 sudo cupsenable 553_192_168_43_249  # if it's paused
 
 # fonts
-In a folder of possible fonts, to check if any are already installed:
-  for font in $(ls); do fc-list $font; done
-
-/usr/share/fonts> $ fd -L consolas
+cd /usr/share/fonts
 fc-list | grep ubuntu
 fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf
 fontpreview -h
+/usr/share/fonts> $ fd -L consolas
+
+In a folder of possible fonts, to check if any are already installed:
+  for font in $(ls); do fc-list $font; done
 
 # fun
 tint  # tetris

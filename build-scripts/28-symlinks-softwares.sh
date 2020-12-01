@@ -23,8 +23,21 @@ ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 ln -s $onGH/pandoc-templates ~/.pandoc/templates
 
 #=> SSH config
-ln -sf $MACHINE/jo/SSHconfig ~/.ssh/config
 ln -sf $CrossPlatform/SSHconfig/AVT661 ~/.ssh/config
+ln -sf $CrossPlatform/SSHconfig/sbMb ~/.ssh/config
+
+#=> sshd 0 sshd_config
+sudo cp $CrossPlatform/sshd_config/sbMb /etc/ssh/sshd_config
+
+#=> sshd 1 sshd.service 0 test
+sshd -t  # before restarting service
+
+#=> sshd 1 sshd.service 1 enable
+sudo systemctl enable sshd.service --now
+sudo systemctl status sshd.service
+
+#=> sshd 1 sshd.service 2 restart
+sudo systemctl restart sshd.service
 
 #=> softares in my Openbox build
 

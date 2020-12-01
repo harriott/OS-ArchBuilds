@@ -3425,7 +3425,7 @@ cat /proc/asound/cards "--- no soundcards ---"
 ## sshd_config
 sudo cp /etc/ssh/sshd_config $MACHINE/etc/defaults/kbt-sshd_config
 sudo chown jo:jo $MACHINE/etc/defaults/kbt-sshd_config
-sudo cp $MACHINE/etc/sshd_config /etc/ssh/sshd_config
+sudo cp $CrossPlatform/sshd_config/sbMb /etc/ssh/sshd_config
 ## sshd.service
 sudo systemctl enable sshd.service --now
 sudo systemctl restart sshd.service
@@ -3439,7 +3439,8 @@ ssh localhost
   Warning: Permanently added 'localhost' (RSA) to the list of known hosts.
 ### on my preferred Port 39576
 ssh -p 39576 localhost   then configured this Port in  ~/.ssh/config, allowing  ssh localhost
-### authorized_keys
+## authorized_keys
+### id_rsa-trohib
 ssh-copy-id -i ~/.ssh/id_rsa-trohib -p 39576 localhost
   /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/home/jo/.ssh/id_rsa-trohib.pub"
   /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
@@ -3449,6 +3450,17 @@ ssh-copy-id -i ~/.ssh/id_rsa-trohib -p 39576 localhost
   Now try logging into the machine, with:   "ssh -p '39576' 'localhost'"
   and check to make sure that only the key(s) you wanted were added.
 - successfully copied  ~/.ssh/id_rsa-trohib.pub  to  ~/.ssh/authorized_keys
+  which has permission 600
+### id_ed25519-forAVT661
+ssh-copy-id -f -i ~/.ssh/id_ed25519-forAVT661 localhost
+ssh localhost
+  The authenticity of host '[localhost]:39576 ([::1]:39576)' can't be established.
+  ED25519 key fingerprint is SHA256:QbLvBCqGO/ZzqwXWEhCpnflWkQODuKbHJwDE9MVClu0.
+  Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+  Warning: Permanently added '[localhost]:39576' (ED25519) to the list of known hosts.
+### id_ed25519-for_sbMb
+ssh-copy-id -f -i ~/.ssh/id_ed25519-for_sbMb localhost
+then removed the keys from  ~/.ssh
 # gpg --search-key
 gpg --search-key 13F327EF  General error
 gpg --keyserver keys.gnupg.net --search-key 13F327EF
