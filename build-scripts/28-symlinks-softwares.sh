@@ -39,6 +39,9 @@ sudo systemctl status sshd.service
 #=> sshd 1 sshd.service 2 restart
 sudo systemctl restart sshd.service
 
+#=> sshd 1 sshd.service 3 disable
+sudo systemctl disable sshd.service --now
+
 #=> softares in my Openbox build
 
 ln -sf $Openbox/cmus-rc.conf   ~/.config/cmus/rc

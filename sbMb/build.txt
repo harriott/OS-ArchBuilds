@@ -225,6 +225,9 @@ temorarily allowed password login in  /etc/ssh/sshd_config  for
 ### id_ed25519-forAVT661
 temporarily added the keys to  ~/.ssh  for
   ssh-copy-id -f -i ~/.ssh/id_ed25519-forAVT661 localhost
+## import 13F327EF
+in  /mnt/SD480GSSDPlus/Encrypted/Secure1/GnuPG/13F327EF
+  gpg --import sprbMb-Arch-private.asc
 # physical configuration
 Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0
 TL-WN821N

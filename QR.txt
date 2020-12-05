@@ -6,6 +6,11 @@ latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_
 
 sudo pacman -Rs <packagetoremove>
 
+# HP Linux Imaging and Printing
+hp-levels  # takes a little while to show the ink levels
+hp-systray & disown  # HPLIP Status Service tray icon
+hp-toolbox  # HP Device Manager
+
 # Bash - ANSI escape sequences
 $ARCHBUILDS/Bash/bashrc-generic
 \e[0;34m = Blue
@@ -44,14 +49,22 @@ lpoptions -p 553_192_168_43_249 -l  # list options
 sudo cupsenable 553_192_168_43_249  # if it's paused
 
 # fonts
-cd /usr/share/fonts
+cd /usr/share/fonts; $ fd -L consolas
+
+## Fontconfig
+cd /etc/fonts  # to explore the configuration files
+fc-cache -f
 fc-list | grep ubuntu
+
+### fc-scan
 fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf
-fontpreview -h
-/usr/share/fonts> $ fd -L consolas
 
 In a folder of possible fonts, to check if any are already installed:
   for font in $(ls); do fc-list $font; done
+
+## fontpreview
+fontpreview -h
+uses fzf
 
 # fun
 tint  # tetris
