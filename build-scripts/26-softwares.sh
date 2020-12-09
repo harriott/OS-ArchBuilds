@@ -6,8 +6,11 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# gctm is defined in $ARCHBUILDS/jo/Bash/bashrc-console
-rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
+# AUR development packages:
+#  gctm  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+#  use  $ARCHBUILDS/build-scripts/27-remakeAURdevs.sh  to later update them
+
+# rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 
 # #=> bat-extras-git
 # cd ~/Arch/AURdev-clone
@@ -31,6 +34,15 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # gctm cht.sh-git
 # gvim PKGBUILD
 # makepkg -sic
+
+#=> clamav-unofficial-sigs
+cd ~/Arch/AURdev-clone
+rAUR clamav-unofficial-sigs
+git clone https://aur.archlinux.org/clamav-unofficial-sigs.git
+cd clamav-unofficial-sigs
+gvim PKGBUILD
+makepkg -sic
+true
 
 # #=> colorpicker
 # cd ~/Arch/AUR
@@ -124,20 +136,43 @@ rAUR () { [[ -d $1 ]] && sudo rm -r $1; }
 # #=> LanguageTool
 # sudo pacman -S languagetool
 
-#=> lohit-fonts
-cd ~/Arch/AUR
-rAUR lohit-fonts
-git clone https://aur.archlinux.org/lohit-fonts.git
-cd lohit-fonts
-gvim PKGBUILD
-makepkg -sic
-true
+# #=> lohit-fonts
+# cd ~/Arch/AUR
+# rAUR lohit-fonts
+# git clone https://aur.archlinux.org/lohit-fonts.git
+# cd lohit-fonts
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
-# #=> moar
+# #=> moar 0 install
 # cd ~/Arch/AUR
 # rAUR moar
 # git clone https://aur.archlinux.org/moar.git
 # cd moar
+# gvim PKGBUILD
+# makepkg -sic
+# true
+
+#=> moar 1 remove
+cd ~/Arch/AUR
+rAUR moar
+sudo pacman -Rs moar
+
+#=> moar-git
+cd ~/Arch/AURdev-clone
+rAUR moar-git
+git clone https://aur.archlinux.org/moar-git.git
+cd moar-git
+gvim PKGBUILD
+makepkg -sic
+true
+
+# #=> mimeo
+# cd ~/Arch/AUR
+# rAUR mimeo
+# git clone https://aur.archlinux.org/mimeo.git
+# cd mimeo
 # gvim PKGBUILD
 # makepkg -sic
 # true

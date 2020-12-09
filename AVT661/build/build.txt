@@ -3470,6 +3470,8 @@ gpg --keyserver keys.gnupg.net --search-key 13F327EF
 # HP ENVY 5532 WiFi
 IP Address had changed back to 192.168.43.249  but  scanimage -L  still finding old addresses
 hp-toolbox > Delete > [ ENVY_5530  ENVY_5530_2 ] > [ root  root pw ]
+# chromium not firing
+xdg-open http://  gets me "/usr/bin/python3: No module named Mimeo"
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

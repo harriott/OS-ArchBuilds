@@ -127,10 +127,12 @@ export VISUAL=nvim
 export PATH="$HOME/.npm-global/bin:$PATH"
 
 #=> system
-# correct TTY for GnuPG
-export GPG_TTY=$(tty)
+export GPG_TTY=$(tty)  # correct TTY for GnuPG
 
 # "Get Clone To Make" - for my building of AUR development packages
 gctm(){ cd $HOME/Arch/AURdev-make; sudo rm -r $1; cp -r ../AURdev-clone/$1 $1; cd $1; }
 export -f gctm
+
+# remove an AUR repository if it's there
+rAUR(){ [[ -d $1 ]] && sudo rm -r $1; }; export -f rAUR
 

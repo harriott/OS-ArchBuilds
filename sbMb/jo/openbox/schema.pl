@@ -32,7 +32,7 @@ my $editor = $CONFIG->{editor};
 
 our $SCHEMA = [
 
-    #          COMMAND                   LABEL                     ICON
+    #          COMMAND                 LABEL                     ICON
     {item => ['xdg-open .',       'File Manager',       'system-file-manager']},
     {item => ['xterm',            'xterm',              'utilities-terminal']},
     {item => ['urxvt',            'rxvt-unicode',       'utilities-terminal']},

@@ -10,8 +10,8 @@ trap read debug  # puts a read request after each executable line
 # ARCHBUILDS=~/ArchBuilds
 #     MACHINE=$ARCHBUILDS/sbMb
 
-#=> 0 for Dunst
-mkdir -p ~/.config/dunst
+# #=> 0 for Dunst
+# mkdir -p ~/.config/dunst
 
 # #=> 0 generate 00-keyboard.conf
 # sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
@@ -29,7 +29,7 @@ mkdir -p ~/.config/dunst
 # #=> 0 NVIDIA beta install 0
 # # required by nvidia-beta
 # cd ~/Arch/AUR
-# [[ -d nvidia-utils-beta ]] && sudo rm -r nvidia-utils-beta
+# rAUR nvidia-utils-beta
 # git clone https://aur.archlinux.org/nvidia-utils-beta.git
 # cd nvidia-utils-beta
 # [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
@@ -38,7 +38,7 @@ mkdir -p ~/.config/dunst
 
 # #=> 0 NVIDIA beta install 1
 # cd ~/Arch/AUR
-# [[ -d nvidia-beta ]] && sudo rm -r nvidia-beta
+# rAUR nvidia-beta
 # git clone https://aur.archlinux.org/nvidia-beta.git
 # cd nvidia-beta
 # [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
@@ -51,7 +51,7 @@ mkdir -p ~/.config/dunst
 
 # #=> 0 openbox-themes
 # cd ~/Arch/AUR
-# [[ -d openbox-themes ]] && sudo rm -r openbox-themes
+# rAUR openbox-themes
 # git clone https://aur.archlinux.org/openbox-themes.git
 # cd openbox-themes
 # [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
@@ -63,8 +63,8 @@ mkdir -p ~/.config/dunst
 # sed -i '/window.active.border.color:/ s/#000000/#FF8000/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 # sed -i '/^border.width:/ s/1/2/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 
-#=> 0 for urxvt
-mkdir -p ~/.urxvt
+# #=> 0 for urxvt
+# mkdir -p ~/.urxvt
 
 # #=> 0 xorg-xkbprint
 # cd ~/Arch/AUR
@@ -91,16 +91,16 @@ mkdir -p ~/.urxvt
 # [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
 # makepkg -sic
 
-# #=> 2 obmenu-generator
-# cd ~/Arch/AUR
-# [[ -d obmenu-generator ]] && sudo rm -r obmenu-generator
-# git clone https://aur.archlinux.org/obmenu-generator.git
-# cd obmenu-generator
-# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-# makepkg -sic
-# if [[ -d $DROPBOX ]]; then # assume that my Dropbox is up
-#     gvim -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
-# else
-#     cp /etc/xdg/obmenu-generator/schema.pl /mm/k8v-schema.pl # diff against this later
-# fi
+#=> 2 obmenu-generator
+cd ~/Arch/AUR
+rAUR obmenu-generator
+git clone https://aur.archlinux.org/obmenu-generator.git
+cd obmenu-generator
+[[ $DISPLAY ]] && gvim PKGBUILD # or check it online
+makepkg -sic
+if [[ -d $DROPBOX ]]; then # assume that my Dropbox is up
+    gvim -geom 200 -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
+else
+    cp /etc/xdg/obmenu-generator/schema.pl /mm/k8v-schema.pl # diff against this later
+fi
 

@@ -16,6 +16,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # ------------
 # defined here so they can be accessed by  $MACHINE/jo/Openbox/autostart  & by  gvim
 # kill tmux sessions if you've made changes here
+export machine=sbMb
 export Storage=/mnt/SD480GSSDPlus  # where I keep stuff
     export DROPBOX=$Storage/Dropbox   # keep this capitalised for finding it without need for $
         export ITstack=$DROPBOX/JH/core/IT_stack
@@ -28,7 +29,7 @@ export Storage=/mnt/SD480GSSDPlus  # where I keep stuff
                 export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
                 export Bash=$ARCHBUILDS/jo/Bash
                     export Imagey=$Bash/Imagey
-                    export MACHINE=$ARCHBUILDS/sbMb
+                    export MACHINE=$ARCHBUILDS/$machine
                 export Openbox=$ARCHBUILDS/jo/Openbox
                     export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
                     export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
