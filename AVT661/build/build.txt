@@ -1298,7 +1298,7 @@ keyserver.ubuntu.com has address 162.213.33.9
 #### re-enable systemd-resolved
 sudo systemctl enable systemd-resolved.service   got me 2 symlinks
 reboot
-#### back to NETGEAR WG111v2 in heighest off board back USB port
+#### back to NETGEAR WG111v2 in highest off board back USB port
 both host & gpg connecting as expected
 ## gpg access to keyservers gone again - fix resolv.conf
 sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf   got it working
@@ -3352,19 +3352,18 @@ ip l  shows  XA2  to be  enp0s26f7u4u3 DOWN, so  sudo ip l set enp0s26f7u4u3 up
   got  ping -c 3 -n google.com  working, but no connection to https://...
 switched to X10II, which required  sudo dhcpcd enp0s26f7u4u3  for pings &  https://  to work
 # iwd XA2
-iwctl --passphrase=a33a0183b2 station wlwg111v2 connect Jo-XA2
+iwctl --passphrase=<pw> station wlwg111v2 connect Jo-XA2
 # NetworkManager NETGEAR WG111v2
 sudo systemctl stop iwd.service
 nmcli device
 nmcli device wifi list
-nmcli device wifi list
 ## to Jo-XA2
-nmcli device wifi connect Jo-XA2 password a33a0183b2
+nmcli device wifi connect Jo-XA2 password <pw>
   Device 'wlwg111v2' successfully activated with '4d86c8e5-3714-489f-a3d8-49a8848ebd72'.
   got my  pg  working, & connection to https://...
 ### after a reboot
 nmcli connection delete Jo-XA2
-nmcli device wifi connect Jo-XA2 password a33a0183b2
+nmcli device wifi connect Jo-XA2 password <pw>
 ## to Jo-X10II
 nmcli device wifi connect Jo-X10II password a33a0183e10
   got my  p  working, & connection to https://...
@@ -3470,8 +3469,12 @@ gpg --keyserver keys.gnupg.net --search-key 13F327EF
 # HP ENVY 5532 WiFi
 IP Address had changed back to 192.168.43.249  but  scanimage -L  still finding old addresses
 hp-toolbox > Delete > [ ENVY_5530  ENVY_5530_2 ] > [ root  root pw ]
-# chromium not firing
+ chromium not firing
 xdg-open http://  gets me "/usr/bin/python3: No module named Mimeo"
+# NETGEAR WG111v2 plugged into top 2nd from right
+NetworkManager connected to XA2
+# refused to restart
+Even when I'd disconnected everything. Scrapped it.
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

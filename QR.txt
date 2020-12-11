@@ -53,7 +53,7 @@ cd /usr/share/fonts; $ fd -L consolas
 
 ## Fontconfig
 cd /etc/fonts  # to explore the configuration files
-fc-cache -f
+fc-cache -f  # regenerates the cache
 fc-list | grep ubuntu
 
 ### fc-scan
@@ -192,10 +192,11 @@ fd -I -e pdf  # finds pdf's when they're gitignored
 sharkdp/fd
 
 ## mlocate
-b locate
-locate -c
+bm locate
+locate -c <target>  # --count
 locate -h
 sudo updatedb
+systemctl status updatedb.timer
 
 ## list symlinks
 find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory

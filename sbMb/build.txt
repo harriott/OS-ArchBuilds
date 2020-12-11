@@ -228,21 +228,52 @@ temporarily added the keys to  ~/.ssh  for
 ## import 13F327EF
 in  /mnt/SD480GSSDPlus/Encrypted/Secure1/GnuPG/13F327EF
   gpg --import sprbMb-Arch-private.asc
+## NETGEAR WG111v2 in highest 2nd from top back USB port
+nmcli device  reports it as  wlan0
+nmcli device wifi list
+## Time 45.1s slow
+as revealed by   http://time.is/
+sudo ntpd -qg
+sudo hwclock --systohc
+## mlocate path allowing /mnt/SD480GSSDPlus/
+cp /etc/updatedb.conf $MACHINE/etc/defaults/kca-updatedb.conf
+sed 's#/mnt#/mnt/9QF57J6Q /mnt/ST3320418AS /mnt/WD30EZRZ#' /etc/updatedb.conf > $MACHINE/etc/kca-updatedb.conf
+sudo cp $MACHINE/etc/kca-updatedb.conf /etc/updatedb.conf
+sudo updatedb  - was blisteringly fast!
+## HP ENVY 5532 by WiFi
+hp-setup -i 192.168.43.249 > ENVY_5532
+  Found PPD file: drv:///hp/hpcups.drv/hp-envy_5530_series.ppd
+  I gave no location or information
+  test page succeeded
+scanimage -L
+## 9QF57J6Q & ST3320418AS failing to mount
+causing the system to seize
+  I got into maintenance mode with my root pw and commented them out in /etc/fstab
+## fix USB lags
+cp /etc/default/grub $MACHINE/etc/defaults/kca-default_grub
+sudo cp $MACHINE/etc/kca-default_grub /etc/default/grub
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+## swapped 9QF57J6Q for WD1001FALS
+sudo cp $MACHINE/etc/fstab/kca /etc/fstab
+sudo rm -r /mnt/9QF57J6Q
 # physical configuration
-Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0
 TL-WN821N
 ## cbh
 Logitech MX 610 Laser Cordless Mouse
 Perixx PERIBOARD-407W keyboard
+## monitor
+Fujitsu ScenicView E19W-5 LCD monitor - wide 1440x900 = 16:10
+(Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0)
 ## motherboard
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
   AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
   HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
 ### disks
-SD480GSSDPlus
-ST3320418AS
-ST3320620AS 9QF57J6Q on middle shelf
-WD30EZRZ
+SATA0: SD480GSSDPlus resting in 4th 3½" bay from top
+SATA1: DVD drive in 2nd 5¼" bay from top
+SATA2: WD30EZRZ in 1st 5¼" bay from top
+SATA4: ST3320418AS in 2nd 3½" bay from top
+SATA5: WD1001FALS in a plastic holder, 4th 5¼" tray down
 ### graphics
 Acer GF-7300SE-N-A3 nVidia GeForce 7300 graphics card  on  PCIEX16
   KNOPPIX v8.6.1 > chromium works fine

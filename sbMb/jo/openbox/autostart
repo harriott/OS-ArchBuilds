@@ -20,7 +20,7 @@
 conky -c $ARCHBUILDS/jo/Openbox/conky.conf
 copyq & # because CopyQ's internal Autostart doesn't work
 dropbox &
-gvim &
+gvim -geometry +670+0 &
 # hp-systray & disown   doesn't launch...
 # htop &  snags...
 obmenu-generator &

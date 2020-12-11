@@ -35,14 +35,14 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> clamav-unofficial-sigs
-cd ~/Arch/AURdev-clone
-rAUR clamav-unofficial-sigs
-git clone https://aur.archlinux.org/clamav-unofficial-sigs.git
-cd clamav-unofficial-sigs
-gvim PKGBUILD
-makepkg -sic
-true
+# #=> clamav-unofficial-sigs
+# cd ~/Arch/AURdev-clone
+# rAUR clamav-unofficial-sigs
+# git clone https://aur.archlinux.org/clamav-unofficial-sigs.git
+# cd clamav-unofficial-sigs
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
 # #=> colorpicker
 # cd ~/Arch/AUR
@@ -130,6 +130,9 @@ true
 # #=> gucharmap
 # sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode Block)
 
+#=> HPLIP
+sudo pacman -S hplip
+
 # #=> java-commons-lang
 # sudo pacman -S java-commons-lang  # (for pdftk's functions)
 
@@ -154,19 +157,19 @@ true
 # makepkg -sic
 # true
 
-#=> moar 1 remove
-cd ~/Arch/AUR
-rAUR moar
-sudo pacman -Rs moar
+# #=> moar 1 remove
+# cd ~/Arch/AUR
+# rAUR moar
+# sudo pacman -Rs moar
 
-#=> moar-git
-cd ~/Arch/AURdev-clone
-rAUR moar-git
-git clone https://aur.archlinux.org/moar-git.git
-cd moar-git
-gvim PKGBUILD
-makepkg -sic
-true
+# #=> moar-git
+# cd ~/Arch/AURdev-clone
+# rAUR moar-git
+# git clone https://aur.archlinux.org/moar-git.git
+# cd moar-git
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
 # #=> mimeo
 # cd ~/Arch/AUR
@@ -242,6 +245,9 @@ true
 # gvim PKGBUILD
 # makepkg -sic
 # true
+
+# #=> ttf-croscore
+# sudo pacman -S ttf-croscore
 
 # #=> xbindkeys
 # sudo pacman -S xbindkeys

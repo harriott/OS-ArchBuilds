@@ -8,6 +8,10 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 tint2rc
 # gvim -geometry 200x55 -O ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"  # should also be done if  tint2  has been updated
 
+#=> CUPS service
+sudo pacman -S cups
+sudo systemctl enable cups.service --now
+
 # #=> 1 dragon-drag-and-drop
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/dragon-drag-and-drop.git
@@ -49,15 +53,15 @@ trap read debug  # puts a read request after each executable line
 # # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 # true
 
-#=> 1 qt5-styleplugins
-# for qt5ct - allows fix of narrow fonts in XnViewMP
-cd ~/Arch/AUR
-sudo rm -r qt5-styleplugins
-git clone https://aur.archlinux.org/qt5-styleplugins.git
-cd qt5-styleplugins
-gvim PKGBUILD
-makepkg -sic
-cd ~
+# #=> 1 qt5-styleplugins
+# # for qt5ct - allows fix of narrow fonts in XnViewMP
+# cd ~/Arch/AUR
+# sudo rm -r qt5-styleplugins
+# git clone https://aur.archlinux.org/qt5-styleplugins.git
+# cd qt5-styleplugins
+# gvim PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> 1 qpdfview
 # sudo pacman -S qpdfview
