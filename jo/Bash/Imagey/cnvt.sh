@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Joseph Harriott, Wed 14 Jun 2017
+# Joseph Harriott, Mon 14 Dec 2020
 # convert images to jpg with ImageMagick
 
 # this is normally called from one of my aliases defined in  $Bash/bashrc-wm,
@@ -8,6 +8,6 @@
 
 inimag=${1%.*}
 intype=${1##*.}
-if convert $1 $2 $3 $inimag.jpg; then
+if gm convert $1 $2 $3 $inimag.jpg; then
 	if [ "$intype" != "jpg" ]; then gio trash $1; fi
 fi

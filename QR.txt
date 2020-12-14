@@ -120,6 +120,8 @@ notmuch search tag:trohib | wc -l
 URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
 
 # Openbox
+$MACHINE/jo/openbox/schema.pl
+$Openbox/openbox/rc.xml
 Alt+Space => show client menu for active window
 Ctrl+Alt+arrows => move to desktop
 Shift+Alt+arrows => move to desktop, bringing current window along
@@ -129,11 +131,14 @@ pass edit gmail-neomutt
 pass gmail-neomutt
 pass troh/GmailAPI/token-expire
 
-# storage - broot
+# storage
+journalctl -u rsnapshot@hourly | moar
+
+## broot
 bm broot
 F5 => refresh
 
-## run
+### run
 br
 br -c :count
 br -d => br --dates => the last modified date
@@ -143,11 +148,11 @@ br -i => br --show-gitignored
 br -p => br --permissions
 br -s => br --sizes
 
-# storage - Ctrl+t
+## Ctrl+t
 cd ctrl+t  # then fuzzy search for a file, hit enter, backspace to the file's directory, Enter
 puts node selection onto command line
 
-## Search syntax
+### Search syntax
 Token    -  Match type                  -  Description
 sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
 'wild    -  exact-match (quoted)        -  Items that include wild
@@ -159,30 +164,30 @@ sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
 
 | OR
 
-# storage - directory structures
+## directory structures
 <directory>  # cd <directory>  ( shopt autocd )
 
-## exa
+### exa
 bm exa
 e
 e -la  # for permissions and symlinks
 e -T   # for tree
 
-## Samokovarov's jump
+### Samokovarov's jump
 bm jump
 j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
 jump clean  # I have in fcrontab
 jump top | moar
 jump --help
 
-# storage - file searching
+## file searching
 as root: find / -xdev -iname "*fmtutil.cnf*"
 find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
 find . -type d -name .git
 find . -type f -name .gitignore
 find . -type f | fzy  # for finding something fuzzily fast
 
-## fd
+### fd
 b fd
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
@@ -191,33 +196,34 @@ fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
 sharkdp/fd
 
-## mlocate
+### mlocate
 bm locate
 locate -c <target>  # --count
 locate -h
 sudo updatedb
 systemctl status updatedb.timer
 
-## list symlinks
+### list symlinks
 find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
 
-### recursively
+#### recursively
 find . -type l -ls
 find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
-## grepping
+### grepping
 egrep '<someText>|<otherText>'
 
-### ripgrep
+#### ripgrep
 for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
 rg -l -ttex '\\input' > rg-tex.txt
 rg -l -ttex verseSettings > rg-tex.txt
+rg -tmd '\$SE'
 rg <someText>  # searches recursively in files
 rg '\$ITstack'
 rg '<someText>|<otherText>'
 rg 'sometext' --no-ignore  # allows searching into gitignored places
 
-# storage - fzf
+## fzf
 Alt+c   # to change directory
 bm fzf
 cat $(fzf)
@@ -228,22 +234,21 @@ kill -9 <tab>
 ls -l $(fzf -m)
 unalias **<tab>
 
-# storage - non-optical
+## non-optical
 $DROPBOX/JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch > rg -ttxt ft=bbcode > forum.txt
 
-## Trash
+### Trash
 trash-empty
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
-# storage - rsync
+## rsync
 log: > = the item is received
 "rsync manual"
 
 # system
+bm <command>  # batman
 cat /proc/cpuinfo
 dunstify -u critical "Read this now!"
-
-b <command>  # batman
 
 ## BpyTOP
 bpytop  # supersedes  bashtop

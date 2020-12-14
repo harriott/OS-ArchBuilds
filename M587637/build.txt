@@ -1,0 +1,15 @@
+vim: fdl=0 ft=build:
+
+Lenovo ThinkCentre M58 type 7637 - M587637
+
+# build
+## mature Arch install from HPC8200 on SDSSDA240G
+## waiting
+### SDSSDA240G only
+sudo cp $MACHINE/etc/fstab/kca /etc/fstab
+# physical configuration
+ViewSonic VA1616w 1366x768
+SDSSDA240G  in  LogiLink 2.5" HDD Mounting Bracket
+## cbh
+MX 610 Laser
+Perixx PERIBOARD-407W keyboard

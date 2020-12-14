@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdl=1 ft=sh.shfold:
+# vim: fdl=1 ft=sh.shfold:
 
 # bash <thisfile>
 
@@ -11,9 +11,9 @@
 
 #=> for fonts
 cfA=/usr/share/fonts/copiedForArch
-[[ $cfA ]] && rm -r $cfA; ln -s $Technos/IT0-fonts-copiedForArch $cfA
-e -la /usr/share/fonts
+[[ $cfA ]] && rm -r $cfA; ln -s $IThandy/fonts-forArch $cfA
+exa -la /usr/share/fonts
 
-#=> Vim
-rm -r ~/.vim; ln -s $ITstack/vimfiles ~/.vim
+# #=> Vim
+# rm -r ~/.vim; ln -s $ITstack/vimfiles ~/.vim
 

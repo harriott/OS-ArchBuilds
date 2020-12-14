@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr ft=sh.shfold:
+# vim: ft=sh.shfold:
 
 # bash <this_script>
 
@@ -106,6 +106,9 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
+# #=> Falkon
+# sudo pacman -S falkon
+
 # #=> Firefox
 # sudo pacman -S firefox
 
@@ -130,14 +133,21 @@ trap read debug  # puts a read request after each executable line
 # #=> gucharmap
 # sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode Block)
 
-#=> HPLIP
-sudo pacman -S hplip
+# #=> GraphicsMagick
+# sudo pacman -S graphicsmagick
+
+# #=> HPLIP
+# sudo pacman -S hplip
 
 # #=> java-commons-lang
 # sudo pacman -S java-commons-lang  # (for pdftk's functions)
 
 # #=> LanguageTool
 # sudo pacman -S languagetool
+
+# #=> libgphoto2
+# sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
+# sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
 
 # #=> lohit-fonts
 # cd ~/Arch/AUR

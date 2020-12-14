@@ -1,14 +1,13 @@
 #!/bin/bash
-# vim: fdm=expr ft=sh.shfold:
+# vim: ft=sh.shfold:
 
 # bash <thisfile>.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 $MACHINE
-# ARCHBUILDS=~/ArchBuilds
-#     MACHINE=$ARCHBUILDS/sbMb
+# #=> 0 ATI install
+# sudo pacman -S xf86-video-ati  # should probably reboot
 
 # #=> 0 for Dunst
 # mkdir -p ~/.config/dunst
@@ -17,7 +16,7 @@ trap read debug  # puts a read request after each executable line
 # sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
 
 # #=> 0 Nouveau install
-# # for NVIDEA (mesa might've been there already)
+# # for NVIDIA (mesa might've been there already)
 # sudo pacman -S mesa xf86-video-nouveau  # will need to reboot
 
 # #=> 0 Nouveau remove
@@ -75,9 +74,16 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
+#=> 0 xrandr
+sudo pacman -S xorg-xrandr
+
 # #=> 1 importScreenshot.sh
 # cp $ARCHBUILDS/jo/Openbox/openbox/importScreenshot.sh ~/.config/openbox/importScreenshot.sh
 # chmod 755 ~/.config/openbox/importScreenshot.sh
+
+#=> 1 libva-mesa-driver
+# for  VA-API
+sudo pacman -S libva-mesa-driver
 
 # #=> 1 perl-data-dump
 # # for  obmenu-generator
@@ -91,16 +97,16 @@ trap read debug  # puts a read request after each executable line
 # [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
 # makepkg -sic
 
-#=> 2 obmenu-generator
-cd ~/Arch/AUR
-rAUR obmenu-generator
-git clone https://aur.archlinux.org/obmenu-generator.git
-cd obmenu-generator
-[[ $DISPLAY ]] && gvim PKGBUILD # or check it online
-makepkg -sic
-if [[ -d $DROPBOX ]]; then # assume that my Dropbox is up
-    gvim -geom 200 -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
-else
-    cp /etc/xdg/obmenu-generator/schema.pl /mm/k8v-schema.pl # diff against this later
-fi
+# #=> 2 obmenu-generator
+# cd ~/Arch/AUR
+# rAUR obmenu-generator
+# git clone https://aur.archlinux.org/obmenu-generator.git
+# cd obmenu-generator
+# [[ $DISPLAY ]] && gvim PKGBUILD # or check it online
+# makepkg -sic
+# if [[ -d $DROPBOX ]]; then # assume that my Dropbox is up
+#     gvim -geom 200 -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
+# else
+#     cp /etc/xdg/obmenu-generator/schema.pl /mm/k8v-schema.pl # diff against this later
+# fi
 

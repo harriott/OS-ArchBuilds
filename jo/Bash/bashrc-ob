@@ -1,4 +1,4 @@
-# vim: fdm=expr ft=sh.shfold tw=0:
+# vim: ft=sh.shfold tw=0:
 
 # Joseph Harriott
 
@@ -15,7 +15,7 @@ alias psci='pscShots=/home/jo/Arch/AUR/pscircle-git-shots;pscLatest="$pscShots/$
 alias m='cmus'
 
 # update library
-alias uc='bash $MACHINE/jo/Music/cmusUpdateLibrary.sh'
+alias uc='bash $MACHINE/jo/cmusUpdateLibrary.sh'
 
 #=> convert a FM json
 cfmj()
@@ -70,7 +70,7 @@ export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
 export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'  # quit treeview's nvim with ZQ
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
-export NNN_LOCKER='saidar -c' # not arriving in my case
+export NNN_LOCKER='saidar -c' # for 0
 
 #=> Pandoc my markdown notes
 for i in {0..1}; do  # setup alternative commands to define the header style
@@ -81,7 +81,8 @@ mt() # do my TextNotes
 {
     cd $DROPBOX/JH/core/TextNotes
     pwd
-    m4ps0
+    export m4psGo=1
+    m4ps0 0
 }
 
 m4p() # a single TextNote file
@@ -98,7 +99,7 @@ m4ps0() # my TextNotes
     eval ${setHeadingsSty[0]}
     export headingtoodeep=######
     export m4pfont=0
-    bash $MD4PDF/GNULinux/m4ps.sh
+    bash $MD4PDF/GNULinux/m4ps.sh $1 $2
 }
 
 m4ps1() # muted headings

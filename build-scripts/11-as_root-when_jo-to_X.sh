@@ -125,7 +125,7 @@ pacman -S flake8
 pacman -S neovim python-pynvim
 
 # Packages
-pacman -S vim-ale vim-airline vim-bufexplorer vim-ctrlp vim-easymotion vim-gitgutter vim-nerdcommenter vim-supertab vim-surround vim-syntastic vim-tabular
+pacman -S vim-nerdcommenter vim-supertab vim-surround vim-syntastic vim-tabular
 
 # ShellCheck (for bash linting in xVim)
 pacman -S shellcheck  # brings in Haskell

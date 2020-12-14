@@ -12,10 +12,9 @@ trap read debug  # puts a read request after each executable line
 # git clone https://github.com/harriott/ArchBuilds.git
 # ls /ArchBuilds
 
-#=> 1 root symlinks 0 $ARCHBUILDS
-export ARCHBUILDS=/ArchBuilds  # provisional
+#=> 1 root symlinks
+# - needs to be run from root, not from sudo
 
-#=> 1 root symlinks 1 symlinks
 ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
 ln -sf $ARCHBUILDS/root/bashrc /root/.bashrc  # sources bashrc-generic
 

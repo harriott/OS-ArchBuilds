@@ -1,0 +1,6 @@
+[Match]
+MACAddress=00:0F:B5:CD:3E:6A
+
+[Link]
+Description=NETGEAR WG111v2
+Name=wlwg111v2

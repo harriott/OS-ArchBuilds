@@ -20,9 +20,6 @@ sudo systemctl enable cups.service --now
 # makepkg -sic
 # cd ~
 
-# #=> 1 gphoto2
-# sudo pacman -S gphoto2
-
 # #=> 1 mpv
 # sudo pacman -S mpv
 

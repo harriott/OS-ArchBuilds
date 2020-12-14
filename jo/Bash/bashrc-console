@@ -22,7 +22,7 @@ gic () { git commit -m "$1"; }
 #==> quick-check my Encrypted directories
 alias fe='fdtsEncryptedChanges'
 
-Encrypted=($Storage/Encrypted Digital0 Digital1 Secure0 Secure1 Stack TP)
+Encrypted=($Storage/Encrypted Digital0 Digital1 Secure0 Secure1 Stack SST)
 fdtsEncryptedChanges () {
   if [ "$PWD" != ${Encrypted[0]} ]; then
     cd ${Encrypted[0]}

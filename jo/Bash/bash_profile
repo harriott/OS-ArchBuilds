@@ -18,6 +18,8 @@ if [ $EXITSTATUS -eq 1 ]; then
     for x in {0..3}; do eval "$flashline"; done
     if (read -rsn1 -t8 -p"Going to startx in 8 seconds, press any key to abort: "); then
         echo -e "\nOkay, \e[1mstartx\e[0m yourself when ready..."
+        . ~/.xinitrc-exports
+        . ~/.bashrc-ob
     else
         [[ -z $DISPLAY ]] && startx
     fi

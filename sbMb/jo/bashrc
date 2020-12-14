@@ -1,4 +1,4 @@
-# vim: fdm=expr ft=sh.shfold sw=2:
+# vim: fdl=1 ft=sh.shfold sw=2:
 
 # ~/.bashrc in an Arch install on my sprayed brown Multivision box system
 
@@ -8,6 +8,5 @@
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
 #=> load the rest of my bashrc
-[[ $ARCHBUILDS ]] || ARCHBUILDS=~/ArchBuilds
-[[ -d $ARCHBUILDS ]] && source $Bash/bashrc-ob
+. ~/.bashrc-ob
 

@@ -8,6 +8,7 @@ non present drives configured in  /etc/fstab  failed - offered maintenance mode
   nvim /etc/fstab  and commented out my extra disks
 15-as_root-rsnapshot_automated.sh  to  disable  timers
 systemctl disable dhcpcd@enp0s25
+sudo blkid > ~/Arch/kcb-HPC8200-blkid
 # physical configuration
 Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0
 ## cbh

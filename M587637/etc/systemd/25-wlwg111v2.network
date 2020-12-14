@@ -1,0 +1,5 @@
+[Match]
+Name=wlwg111v2
+
+[Network]
+DHCP=ipv4

@@ -16,7 +16,8 @@ ARCHBUILDS=~/ArchBuilds
 
 # #=> 1 rsnapshot conf, for first run
 # my configuration
-# mkdir /mnt/WD30EZRZ/rsnapshot
+# # mkdir /mnt/WD30EZRZ/rsnapshot
+# mkdir /mnt/WD1001FALS/rsnapshot
 # sudo cp $MACHINE/etc/rsnapshot.conf /etc/rsnapshot.conf
 
 #=> 2 test rsnapshot conf

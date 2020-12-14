@@ -3,7 +3,7 @@
 
 # bash <this_script>
 
-xdg-open http://time.is/ # to see how much stray
+# check  http://time.is/  to see how much stray
 sudo ntpd -qg
 sudo hwclock --systohc
 

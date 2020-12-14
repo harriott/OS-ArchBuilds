@@ -1,4 +1,4 @@
-vim: fdl=0 ft=build fdm=expr:
+vim: fdl=0 ft=build:
 
 # build
 ## Arch install - from the ISO
@@ -173,11 +173,11 @@ could then connect to XA2, but  "ping: google.com: Temporary failure in name res
 ### NETGEAR WG111v2
 nmcli device
 nmcli device wifi list
-nmcli device wifi connect Jo-XA2 password a33a0183b2
+nmcli device wifi connect Jo-XA2 password <pw>
   got  ping -c 3 -n google.com  working, & connection to https://...
 ### switched back to TL-WN821N
 nmcli connection delete Jo-XA2
-nmcli device wifi connect Jo-XA2 password a33a0183b2
+nmcli device wifi connect Jo-XA2 password <pw>
   got  ping -c 3 -n google.com  working, & connection to https://...
   and reconnected automatically after the hotspot had been off for a while
   after a reboot, needed to pull it up with the UUID of Jo-XA2
@@ -239,7 +239,7 @@ sudo hwclock --systohc
 cp /etc/updatedb.conf $MACHINE/etc/defaults/kca-updatedb.conf
 sed 's#/mnt#/mnt/9QF57J6Q /mnt/ST3320418AS /mnt/WD30EZRZ#' /etc/updatedb.conf > $MACHINE/etc/kca-updatedb.conf
 sudo cp $MACHINE/etc/kca-updatedb.conf /etc/updatedb.conf
-sudo updatedb  - was blisteringly fast!
+sudo updatedb
 ## HP ENVY 5532 by WiFi
 hp-setup -i 192.168.43.249 > ENVY_5532
   Found PPD file: drv:///hp/hpcups.drv/hp-envy_5530_series.ppd
@@ -256,10 +256,37 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ## swapped 9QF57J6Q for WD1001FALS
 sudo cp $MACHINE/etc/fstab/kca /etc/fstab
 sudo rm -r /mnt/9QF57J6Q
+### remove WD1001FALS from mlocate path
+cp /etc/updatedb.conf $MACHINE/etc/defaults/kcb-updatedb.conf
+  added in  /mnt/WD1001FALS
+sudo cp $MACHINE/etc/kcb-updatedb.conf /etc/updatedb.conf
+sudo updatedb
+## Logitech cordless mice
+MX 610 Laser glitchy
+Wireless Mouse M525 works fine
+## system spontaneously rebooted
+deleting all of /run/media/jo/ST3500413AS/kca-AVT661-rsnapshot-hourly.21-mnt
+## homed.conf
+sudo nvim -o /etc/systemd/homed.conf /etc/systemd/homed.conf.pacnew
+  /etc/systemd/homed.conf.pacnew  proposed  #DefaultFileSystemType=btrfs
+sudo rm /etc/systemd/homed.conf.pacnew
+## gVim lagging
+sudo pacman -Rs vim-ale
+sudo pacman -Rs vim-airline
+sudo pacman -Rs vim-bufexplorer
+sudo pacman -Rs vim-ctrlp
+sudo pacman -Rs vim-easymotion
+sudo pacman -Rs vim-gitgutter
+## switched from nouveau to ATI
+## remove reference to ST3320418AS
+sudo rm -r /mnt/ST3320418AS
+## rsnapshot.conf points to WD1001FALS
+## system seized
+## system seized
 # physical configuration
 TL-WN821N
 ## cbh
-Logitech MX 610 Laser Cordless Mouse
+Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard
 ## monitor
 Fujitsu ScenicView E19W-5 LCD monitor - wide 1440x900 = 16:10
@@ -269,14 +296,14 @@ Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16
   AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
   HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
 ### disks
-SATA0: SD480GSSDPlus resting in 4th 3½" bay from top
+SATA0: SD480GSSDPlus resting in middle of 3½" bays
 SATA1: DVD drive in 2nd 5¼" bay from top
 SATA2: WD30EZRZ in 1st 5¼" bay from top
-SATA4: ST3320418AS in 2nd 3½" bay from top
+SATA3: ST3500413AS in bottom 3½" bay
+SATA4: HD103SJ in top 3½" bay
 SATA5: WD1001FALS in a plastic holder, 4th 5¼" tray down
-### graphics
-Acer GF-7300SE-N-A3 nVidia GeForce 7300 graphics card  on  PCIEX16
-  KNOPPIX v8.6.1 > chromium works fine
+### graphics - NVIDIA
+ASUS C027PI rev2.00 Radeon HD 5450  on  PCIEX16
 ### startup
 Del  gets into BIOS
 F12  gets a choice of boot media
