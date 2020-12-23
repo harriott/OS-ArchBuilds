@@ -14,13 +14,13 @@ xdg-open PKGBUILD &
 makepkg -sic
 cd ~
 
-#=> 1 xdg-utils-handlr
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/xdg-utils-handlr.git
-cd xdg-utils-handlr
-gvim PKGBUILD
-makepkg -sic
-cd ~
+# #=> 1 xdg-utils-handlr
+# cd ~/Arch/AUR
+# git clone https://aur.archlinux.org/xdg-utils-handlr.git
+# cd xdg-utils-handlr
+# gvim PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> 0 mimeo
 # cd ~/Arch/AUR

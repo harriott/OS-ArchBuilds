@@ -229,6 +229,18 @@
         <wrap>no</wrap>
       </action>
     </keybind>
+    <!-- move the window to monitor 1 - JH -->
+    <keybind key="W-1">
+      <action name="MoveResizeTo">
+        <monitor>1</monitor>
+      </action>
+    </keybind>
+    <!-- move the window to monitor  - JH -->
+    <keybind key="W-2">
+      <action name="MoveResizeTo">
+        <monitor>2</monitor>
+      </action>
+    </keybind>
     <keybind key="W-F1">
       <action name="GoToDesktop">
         <to>1</to>

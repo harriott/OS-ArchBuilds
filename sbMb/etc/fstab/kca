@@ -1,3 +1,4 @@
+# vim: fdl=1 ft=fstab:
 # Static information about the filesystems.
 # See fstab(5) for details.
 
@@ -14,7 +15,8 @@ UUID=fc749f96-89db-49ef-ae2c-a92350122ec6	/home     	ext4      	rw,relatime	0 2
 # /dev/sda3
 UUID=7e12d7e4-14cc-41e8-90cb-f57e0780ce9c	none      	swap      	defaults  	0 0
 
-LABEL=WD1001FALS /mnt/WD1001FALS  ext4  defaults  0  2
+LABEL=HD103SJ /mnt/HD103SJ  ext4  defaults  0  2
 LABEL=SD480GSSDPlus /mnt/SD480GSSDPlus  ext4  defaults  0  2
-# LABEL=ST3320418AS /mnt/ST3320418AS  ext4  defaults  0  2
+LABEL=ST3500413AS /mnt/ST3500413AS  ext4  defaults  0  2
+LABEL=WD1001FALS /mnt/WD1001FALS  ext4  defaults  0  2
 LABEL=WD30EZRZ /mnt/WD30EZRZ  ext4  defaults  0  2

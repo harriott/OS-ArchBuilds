@@ -42,7 +42,7 @@ pacman -S xsel
 
 #==> monitor settings
 # disable DPMS
-cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/
+cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
 
 # #==> python-pew
 # pacman -S python-pew

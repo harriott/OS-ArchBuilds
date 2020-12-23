@@ -19,6 +19,14 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
+#=> bfg
+cd ~/Arch/AUR
+rAUR bfg
+git clone https://aur.archlinux.org/bfg.git
+cd bfg
+gvim PKGBUILD
+makepkg -sic
+
 # #=> bpytop
 # # supersedes  Bashtop
 # cd ~/Arch/AUR
@@ -190,6 +198,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
+# #=> MusicBrainz Picard
+# sudo pacman -S picard
+# # Options > Options > User Interface > Show a quit confirmation  off
+# true
+
 # #=> OpenShot
 # sudo pacman -S openshot
 
@@ -233,6 +246,9 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
+# #=> Quod Libet
+# sudo pacman -S quodlibet
+
 # #=> Samokovarov's jump
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/jump.git
@@ -247,14 +263,14 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> tspreed
-# cd ~/Arch/AUR
-# rAUR tspreed
-# git clone https://aur.archlinux.org/tspreed.git
-# cd tspreed
-# gvim PKGBUILD
-# makepkg -sic
-# true
+#=> tspreed
+cd ~/Arch/AUR
+rAUR tspreed
+git clone https://aur.archlinux.org/tspreed.git
+cd tspreed
+gvim PKGBUILD
+makepkg -sic
+true
 
 # #=> ttf-croscore
 # sudo pacman -S ttf-croscore

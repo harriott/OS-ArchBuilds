@@ -107,7 +107,7 @@ fi
 
 #==> locate directories
 locd () {
-    locate $1 | xargs -I {} bash -c 'if [ -d "{}" ]; then echo {}; fi'
+    locate -0 -b -A "$@" | xargs -0 -I {} bash -c '[ -d "{}" ] && echo "{}"'
 }
 
 #==> move up [n] directories

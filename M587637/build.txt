@@ -4,6 +4,8 @@ Lenovo ThinkCentre M58 type 7637 - M587637
 
 # build
 ## mature Arch install from HPC8200 on SDSSDA240G
+## 9QG2FFEE as USB drive
+sudo chown jo:jo /mnt/9QG2FFEE
 ## waiting
 ### SDSSDA240G only
 sudo cp $MACHINE/etc/fstab/kca /etc/fstab

@@ -283,6 +283,28 @@ sudo rm -r /mnt/ST3320418AS
 ## rsnapshot.conf points to WD1001FALS
 ## system seized
 ## system seized
+## restore ST3500413AS
+sudo mkdir /mnt/ST3500413AS
+sudo cp $MACHINE/etc/fstab/kca /etc/fstab
+sudo chown jo:jo /mnt/ST3500413AS
+## system seized
+## system seized
+## HD103SJ installed
+sudo mkdir /mnt/HD103SJ
+sudo cp $MACHINE/etc/fstab/kca /etc/fstab
+reboot
+sudo chown jo:jo /mnt/HD103SJ
+## xdg-open .txt
+handlr get .txt  returns  vim.desktop  - which was why nnn was freezing, so
+  handlr set .txt gvim.desktop
+## system rebooted itself
+## system seized
+## system rebooted itself
+## remove WD1001FALS from mlocate path
+sudo cp $MACHINE/etc/kcm-updatedb.conf /etc/updatedb.conf
+sudo updatedb
+## Zathura not opening pdf's
+zathura-pdf-mupdf 0.3.6-3  fixed by  zathura-pdf-mupdf 0.3.6-4
 # physical configuration
 TL-WN821N
 ## cbh

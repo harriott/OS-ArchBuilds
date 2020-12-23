@@ -1,9 +1,19 @@
 # vim: set ft=sh tw=0:
 #
-# my generic  bash_profile
-# ------------------------
+# my generic  ~/.bash_profile
+# ---------------------------
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+# source ~/.exports  # these settings carry through to X
+# defined here so they can be accessed pre-X, by $MACHINE/jo/Openbox/autostart, & by gvim
+# kill tmux sessions if you've made changes here
+source ~/.export-machine
+source ~/.export-storage
+
+# Useful before X:
+  source ~/.bashrc-generic  # useful everywhere, including root
+  source ~/.bashrc-console  # useful also in Console as user
+# This is commented out because I keep bashrc just for instances in X:
+#  [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # first test that X hasn't launched for this user
 ps aux | grep $USER | grep -v grep | grep "/usr/lib/Xorg" >& /dev/null
@@ -18,8 +28,6 @@ if [ $EXITSTATUS -eq 1 ]; then
     for x in {0..3}; do eval "$flashline"; done
     if (read -rsn1 -t8 -p"Going to startx in 8 seconds, press any key to abort: "); then
         echo -e "\nOkay, \e[1mstartx\e[0m yourself when ready..."
-        . ~/.xinitrc-exports
-        . ~/.bashrc-ob
     else
         [[ -z $DISPLAY ]] && startx
     fi

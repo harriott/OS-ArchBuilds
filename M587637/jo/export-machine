@@ -1,0 +1,11 @@
+#!/bin/sh
+# vim: fdl=1 ft=sh.shfold:
+
+# sourced by  $Bash/bash_profile
+# symlink this to  ~/.export-machine
+
+export machine=M587637
+export Storage=/mnt/SDSSDA240G  # where I keep stuff
+export urxvtGeometry='81x46+0+0'  # used in  $Openbox/openbox/urxvtl.sh
+# - from left of a 1366x768 screen, allowing room for 106 column gVim
+

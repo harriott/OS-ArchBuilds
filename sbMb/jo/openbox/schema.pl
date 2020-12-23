@@ -1,5 +1,4 @@
 #!/usr/bin/perl
-# vim: set fdl=2:
 
 # obmenu-generator - schema file
 
@@ -30,6 +29,8 @@ require "$ENV{HOME}/.config/obmenu-generator/config.pl";
 
 ## Text editor
 my $editor = $CONFIG->{editor};
+
+# symlinked to  ~/.config/obmenu-generator/schema.pl
 
 our $SCHEMA = [
 

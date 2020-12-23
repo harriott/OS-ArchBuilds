@@ -1,13 +1,12 @@
 #!/bin/sh
+# vim: fdl=1 ft=sh.shfold:
 
-# sourced by  ~/.xinitrc
-# symlink this to  ~/.xinitrc-exports
+# sourced by  $Bash/bash_profile
+# symlink this to  ~/.exports
 # Each machine needs its own version of this configuration file.
 
-# defined here so they can be accessed by  $MACHINE/jo/Openbox/autostart  & by  gvim
-# kill tmux sessions if you've made changes here
-export machine=sbMb
-export Storage=/mnt/SD480GSSDPlus  # where I keep stuff
+export machine=M587637
+export Storage=/mnt/SDSSDA240G  # where I keep stuff
     export DROPBOX=$Storage/Dropbox   # keep this capitalised for finding it without need for $
         export ITstack=$DROPBOX/JH/core/IT_stack
             # two private configurations:
@@ -27,3 +26,6 @@ export Storage=/mnt/SD480GSSDPlus  # where I keep stuff
         export IT1=$DROPBOX/JH/Technos/IT1  # for notes
         export IThandy=$DROPBOX/JH/Copied/IT-handy  # for fonts
         export ITHD=$DROPBOX/JH/Technos/IT0-HD  # $ITHD/diskUsage.txt
+        export SE=$DROPBOX/JH/CforWork/Education/Science-Engineering  # used in my TextNotes
+export urxvtGeometry='81x46+0+0'  # used in  $Openbox/openbox/urxvtl.sh
+# - from left of a 1366x768 screen, allowing room for 106 column gVim

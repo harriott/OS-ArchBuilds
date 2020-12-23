@@ -30,6 +30,9 @@ true
 #=> 1 openbsd-netcat
 pacman -S openbsd-netcat
 
+#=> 1 pass
+pacman -S pass
+
 #=> 1 rkhunter
 pacman -S rkhunter
 rkhunter --propupd
@@ -131,6 +134,9 @@ pacman -S pacman-contrib
 
 # pacutils
 pacman -S pacutils
+
+# Pipe Viewer
+pacman -S pv
 
 # pkgfile - for finding possible packages
 pacman -S pkgfile

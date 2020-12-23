@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: set et tw=0:
 
 # Take a time-stamped fullscreenshot using ImageMagick
 # ----------------------------------------------------

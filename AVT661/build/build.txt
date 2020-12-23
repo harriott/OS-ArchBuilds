@@ -3475,6 +3475,9 @@ xdg-open http://  gets me "/usr/bin/python3: No module named Mimeo"
 NetworkManager connected to XA2
 # refused to restart
 Even when I'd disconnected everything. Scrapped it.
+# xdg-open .txt
+xdg-mime query filetype PacmanKeys.txt  returns  text/plain
+so  xdg-mime query default text/plain  returns  gvim.desktop
 # waiting
 ## texlive-localmanager-git
 ## an rtf set to Open with LibreOffice

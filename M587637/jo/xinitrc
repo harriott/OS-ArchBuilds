@@ -14,8 +14,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # JH additions
 # ------------
-. ~/.xinitrc-exports
-
 userresources=$MACHINE/jo/Xresources  # space after the = for vim gf
 
 # copied from the default  /etc/X11/xinit/xinitrc

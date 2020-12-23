@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdl=1 ft=sh.shfold:
+# vim: ft=sh.shfold:
 
 # bash <thisfile>
 
@@ -15,6 +15,12 @@ ln -sf $GNULE/notmuch-config ~/.notmuch-config
 #=> LaTeX
 ln -s $CrossPlatform/forLaTeX ~/texmf/tex/latex/jo
 
+#=> sbMb dual monitors 0
+sudo cp $MACHINE/etc/20-monitor.conf /etc/X11/xorg.conf.d/20-monitor.conf
+
+#=> sbMb dual monitors 1
+sudo rm /etc/X11/xorg.conf.d/20-monitor.conf
+
 #=> Pandoc defaults
 ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
 ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
@@ -23,10 +29,11 @@ ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 ln -s $onGH/pandoc-templates ~/.pandoc/templates
 
 #=> SSH config
-ln -sf $CrossPlatform/SSHconfig/AVT661 ~/.ssh/config
+ln -sf $CrossPlatform/SSHconfig/M587637 ~/.ssh/config
 ln -sf $CrossPlatform/SSHconfig/sbMb ~/.ssh/config
 
 #=> sshd 0 sshd_config
+sudo cp $CrossPlatform/sshd_config/M587637 /etc/ssh/sshd_config
 sudo cp $CrossPlatform/sshd_config/sbMb /etc/ssh/sshd_config
 
 #=> sshd 1 sshd.service 0 test

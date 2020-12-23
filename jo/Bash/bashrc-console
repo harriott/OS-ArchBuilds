@@ -1,4 +1,4 @@
-# vim: fdm=expr ft=sh.shfold sw=2:
+# vim: ft=sh.shfold sw=2:
 
 # sourced, ultimately, by ~/.bashrc
 # (source ~/.bashrc if you've changed something here...)
@@ -12,6 +12,7 @@
 #=> file manage
 alias rs0='bash $onGH/rsync-portabledrives/rync-Dr0.sh'
 alias rs1='bash $onGH/rsync-portabledrives/rync-Dr1.sh'
+alias rsP='bash $onGH/rsync-portabledrives/rync-Pref.sh' # only useful in sbMb
 
 #==> Git
 alias ga='git add'
@@ -121,7 +122,7 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 
 # for nnn & tmux
 export EDITOR=nvim
-export VISUAL=nvim
+export VISUAL=gvim
 
 #=> my preferred npm global directory
 export PATH="$HOME/.npm-global/bin:$PATH"

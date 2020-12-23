@@ -17,8 +17,12 @@
 #
 #xfce-mcs-manager &
 
+# my additions
+# ------------
+# this file is symlinked to  ~/.config/openbox/autostart
+
 conky -c $ARCHBUILDS/jo/Openbox/conky.conf
-copyq & # because CopyQ's internal Autostart doesn't work
+copyq &  # because CopyQ's internal Autostart doesn't work
 dropbox &
 gvim -geometry +670+0 &
 # hp-systray & disown   doesn't launch...

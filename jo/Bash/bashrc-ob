@@ -27,13 +27,6 @@ cfmj()
     fi
 }
 
-#=> load the other parts of my bashrc
-source $ARCHBUILDS/Bash/bashrc-generic  # useful everywhere, including root
-source $Bash/bashrc-console  # useful also in Console as user
-# useful only for jo
-  source $Bash/bashrc-email
-  source $Bash/bashrc-wm
-
 #=> nnn
 [ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
 
@@ -52,6 +45,8 @@ n()
     fi
 }
 
+# ~/.config/nnn/.selection
+
 export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/Technos/IT1;j:/run/media/jo;l:$DROPBOX/JH/Work/ST/LPD/IdF;m:$DROPBOX/CAM-toSort;r:$DROPBOX/JH/Copied/France/Places/IdF/Transport/RATP;s:$DROPBOX/JH/CforWork/Education/Science-Engineering;t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$DROPBOX/JH/Then0/Deauram/with"
 #  only first 10 get loaded correctly
 #
@@ -66,7 +61,6 @@ export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/Technos/IT1;j:/run/me
 #  w:$DROPBOX/JH/Then0/Deauram/with
 #
 export NNN_COLORS='5723' # good for my tmux in urxvt
-export NNN_COPIER="/home/jo/.config/nnn/copier.sh"
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context
 export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'  # quit treeview's nvim with ZQ
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
