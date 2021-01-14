@@ -10,9 +10,8 @@
 # Joseph Harriott
 
 #=> file manage
-alias rs0='bash $onGH/rsync-portabledrives/rync-Dr0.sh'
-alias rs1='bash $onGH/rsync-portabledrives/rync-Dr1.sh'
-alias rsP='bash $onGH/rsync-portabledrives/rync-Pref.sh' # only useful in sbMb
+alias rs0='bash $onGH/rsync-portabledrives/rsync-Dr0.sh'
+alias rs1='bash $onGH/rsync-portabledrives/rsync-Dr1.sh'
 
 #==> Git
 alias ga='git add'
@@ -42,6 +41,10 @@ fdtsEncryptedChanges () {
     fi
   done
 }
+
+#==> only useful in sbMb
+alias rsM='bash $onGH/rsync-portabledrives/rsync-Music.sh'
+alias rsVP='bash $onGH/rsync-portabledrives/rsync-VsPref.sh'
 
 #==> Samokovarov's  jump
 if [ -s "/usr/bin/jump" ]; then

@@ -19,13 +19,13 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> bfg
-cd ~/Arch/AUR
-rAUR bfg
-git clone https://aur.archlinux.org/bfg.git
-cd bfg
-gvim PKGBUILD
-makepkg -sic
+# #=> bfg
+# cd ~/Arch/AUR
+# rAUR bfg
+# git clone https://aur.archlinux.org/bfg.git
+# cd bfg
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> bpytop
 # # supersedes  Bashtop
@@ -43,14 +43,14 @@ makepkg -sic
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> clamav-unofficial-sigs
-# cd ~/Arch/AURdev-clone
-# rAUR clamav-unofficial-sigs
-# git clone https://aur.archlinux.org/clamav-unofficial-sigs.git
-# cd clamav-unofficial-sigs
-# gvim PKGBUILD
-# makepkg -sic
-# true
+#=> clamav-unofficial-sigs
+cd ~/Arch/AURdev-clone
+rAUR clamav-unofficial-sigs
+git clone https://aur.archlinux.org/clamav-unofficial-sigs.git
+cd clamav-unofficial-sigs
+gvim PKGBUILD
+makepkg -sic
+true
 
 # #=> colorpicker
 # cd ~/Arch/AUR
@@ -106,7 +106,7 @@ makepkg -sic
 # #=> ffmpeg
 # sudo pacman -S ffmpeg
 
-# #=> figlet-fonts
+# #=> fonts - figlet-fonts
 # # brings in figlet
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/figlet-fonts.git
@@ -114,18 +114,30 @@ makepkg -sic
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> Falkon
-# sudo pacman -S falkon
-
-# #=> Firefox
-# sudo pacman -S firefox
-
-# #=> fontpreview-git
+# #=> fonts - fontpreview-git
 # cd ~/Arch/AURdev-clone
 # git clone https://aur.archlinux.org/fontpreview-git.git
 # gctm fontpreview-git
 # gvim PKGBUILD
 # makepkg -sic
+
+# #=> fonts - lohit-fonts
+# cd ~/Arch/AUR
+# rAUR lohit-fonts
+# git clone https://aur.archlinux.org/lohit-fonts.git
+# cd lohit-fonts
+# gvim PKGBUILD
+# makepkg -sic
+# true
+
+# #=> fonts - ttf-dejavu
+# sudo pacman -S ttf-dejavu
+
+# #=> Falkon
+# sudo pacman -S falkon
+
+# #=> Firefox
+# sudo pacman -S firefox
 
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
@@ -156,15 +168,6 @@ makepkg -sic
 # #=> libgphoto2
 # sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
 # sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
-
-# #=> lohit-fonts
-# cd ~/Arch/AUR
-# rAUR lohit-fonts
-# git clone https://aur.archlinux.org/lohit-fonts.git
-# cd lohit-fonts
-# gvim PKGBUILD
-# makepkg -sic
-# true
 
 # #=> moar 0 install
 # cd ~/Arch/AUR
@@ -202,6 +205,18 @@ makepkg -sic
 # sudo pacman -S picard
 # # Options > Options > User Interface > Show a quit confirmation  off
 # true
+
+#=> nodejs-mapscii 0 install
+cd ~/Arch/AUR
+rAUR nodejs-mapscii
+git clone https://aur.archlinux.org/nodejs-mapscii.git
+cd nodejs-mapscii
+gvim PKGBUILD
+makepkg -sic
+true
+
+#=> nodejs-mapscii 1 remove
+sudo pacman -Rs nodejs-mapscii
 
 # #=> OpenShot
 # sudo pacman -S openshot
@@ -263,14 +278,14 @@ makepkg -sic
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> tspreed
-cd ~/Arch/AUR
-rAUR tspreed
-git clone https://aur.archlinux.org/tspreed.git
-cd tspreed
-gvim PKGBUILD
-makepkg -sic
-true
+# #=> tspreed
+# cd ~/Arch/AUR
+# rAUR tspreed
+# git clone https://aur.archlinux.org/tspreed.git
+# cd tspreed
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
 # #=> ttf-croscore
 # sudo pacman -S ttf-croscore

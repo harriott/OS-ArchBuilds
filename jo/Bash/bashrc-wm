@@ -3,7 +3,11 @@
 # stuff that's useful when a Window Manager is installed
 
 fv () {
-    find $Vs -type f -name "*$1*"
+    # find $Vs -type f -name "*$1*"
+    Vss=($(find . -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
+    for Vs in "${Vss[@]}"; do
+        find $Vs -type f -name "*$1*"
+    done
 } # fv 'Dog Vision'
 
 #=> gVim cautious

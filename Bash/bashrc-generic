@@ -23,7 +23,7 @@ export tpfb=$(tput bold)
 #===> normal colours
 export tpf0=$(tput setaf 0) # black
 export tpf1=$(tput setaf 1) # red
-export tpf2=$(tput setaf 2) # green
+export tpf2=$(tput setaf 2) # green, slightly duller than  echo -e '\e[92m  green'
 export tpf3=$(tput setaf 3) # yellow
 export tpf4=$(tput setaf 4) # blue
 export tpf5=$(tput setaf 5) # magenta

@@ -40,7 +40,7 @@ lpstat -s  # status
 sudo systemctl status cups.service
 
 ## HP ENVY 5532 WiFi
-lpoptions -d ENVY_5530_2  # set as default
+lpoptions -d ENVY_5532  # set as default
 lpoptions -p ENVY_5530_2 -l  # list options
 sudo cupsenable ENVY_5532  # if it's paused
 
@@ -83,13 +83,14 @@ S 55n 3 <imagefilename> <scanheight>
 see $Imagey/Scan.sh
 
 # multimedia
-mediainfo --help | moar
+mediainfo -h | moar
 mediainfo <avfile> | grep Encoded
 
 # networking
 bm firewall-cmd
 cat /etc/hostname
 sudo dhcpcd wlwg111v2
+sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
 sudo ls /etc/NetworkManager/system-connections/
 sudo ls /var/lib/dhcpcd/
 

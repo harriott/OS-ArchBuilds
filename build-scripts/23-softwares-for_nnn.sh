@@ -1,7 +1,10 @@
 #!/bin/bash
-# vim: fdm=expr ft=sh.shfold:
+# vim: ft=sh.shfold:
 
 # bash <thisfile>.sh
+
+# rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
@@ -18,15 +21,15 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> 1 advcp
-# # for nnn -r
-# cd ~/Arch/AUR
-# sudo rm -r advcp
-# git clone https://aur.archlinux.org/advcp.git
-# cd advcp
-# gvim PKGBUILD
-# # requires Pádraig Brady's key
-# makepkg -sic
+#=> 1 advcp
+# for nnn -r
+cd ~/Arch/AUR
+rAUR advcp
+git clone https://aur.archlinux.org/advcp.git
+cd advcp
+gvim PKGBUILD
+# requires Pádraig Brady's key
+makepkg -sic
 
 # #=> 1 nnn plugins
 # [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*

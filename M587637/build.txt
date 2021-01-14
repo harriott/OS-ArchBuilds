@@ -4,8 +4,12 @@ Lenovo ThinkCentre M58 type 7637 - M587637
 
 # build
 ## mature Arch install from HPC8200 on SDSSDA240G
+## echo ltcm58 > /etc/hostname
 ## 9QG2FFEE as USB drive
 sudo chown jo:jo /mnt/9QG2FFEE
+## NetworkManager Jo-X10II pw changed
+nmcli connection show
+nmcli device wifi connect Jo-X10II password <pw>
 ## waiting
 ### SDSSDA240G only
 sudo cp $MACHINE/etc/fstab/kca /etc/fstab

@@ -305,6 +305,33 @@ sudo cp $MACHINE/etc/kcm-updatedb.conf /etc/updatedb.conf
 sudo updatedb
 ## Zathura not opening pdf's
 zathura-pdf-mupdf 0.3.6-3  fixed by  zathura-pdf-mupdf 0.3.6-4
+## system seized
+## system seized
+## update GnuPG key 13F327EF
+gpg --edit-key 13F327EF > 1 > 2 > expire > 2y > trust
+gpg --with-keygrip -K  shows keygrips didn't change
+gpg -ao sprbMbArch-kcp-public.asc --export jharr
+gpg -ao sprbMbArch-kcp-private.asc --export-secret-keys jharr
+gpg --send-keys 13F327EF
+## TL-WN725N
+nmcli device  reports  wlan0 disconnected
+nmcli connection show
+nmcli connection delete Jo-XA2
+nmcli device wifi connect Jo-XA2 password <pw>
+nmcli connection delete Jo-X10II
+## system rebooted itself
+## NetworkManager Jo-X10II pw changed
+nmcli connection show
+sudo grep -r '^psk=' /etc/NetworkManager/system-connections/   shows it's outdated
+nmcli connection delete Jo-X10II
+nmcli device wifi connect Jo-X10II password <pw>
+## system seized
+## system seized
+## system seized
+## jo's pw became unaccepted
+fixed by a reboot
+## system seized
+after hard reboot  $HOME/.cache/ctrlp/mru/cache.txt  was empty...
 # physical configuration
 TL-WN821N
 ## cbh

@@ -1,4 +1,4 @@
-vim: fdl=0 ft=build fdm=expr:
+vim: fdl=0 ft=build:
 
 Acer Veriton T661 - AVT661
 

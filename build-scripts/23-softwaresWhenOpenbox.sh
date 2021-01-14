@@ -1,16 +1,18 @@
 #!/bin/bash
-# vim: fdm=expr ft=sh.shfold:
+# vim: ft=sh.shfold:
 
 # bash <thisfile>.sh
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+# rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+
 # #=> 0 tint2rc
 # gvim -geometry 200x55 -O ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"  # should also be done if  tint2  has been updated
 
-#=> CUPS service
-sudo pacman -S cups
-sudo systemctl enable cups.service --now
+# #=> CUPS service
+# sudo pacman -S cups
+# sudo systemctl enable cups.service --now
 
 # #=> 1 dragon-drag-and-drop
 # cd ~/Arch/AUR
@@ -50,15 +52,15 @@ sudo systemctl enable cups.service --now
 # # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 # true
 
-# #=> 1 qt5-styleplugins
-# # for qt5ct - allows fix of narrow fonts in XnViewMP
-# cd ~/Arch/AUR
-# sudo rm -r qt5-styleplugins
-# git clone https://aur.archlinux.org/qt5-styleplugins.git
-# cd qt5-styleplugins
-# gvim PKGBUILD
-# makepkg -sic
-# cd ~
+#=> 1 qt5-styleplugins
+# for qt5ct - allows fix of narrow fonts in XnViewMP
+cd ~/Arch/AUR
+rAUR qt5-styleplugins
+git clone https://aur.archlinux.org/qt5-styleplugins.git
+cd qt5-styleplugins
+gvim PKGBUILD
+makepkg -sic
+cd ~
 
 # #=> 1 qpdfview
 # sudo pacman -S qpdfview
