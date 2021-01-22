@@ -332,14 +332,25 @@ nmcli device wifi connect Jo-X10II password <pw>
 fixed by a reboot
 ## system seized
 after hard reboot  $HOME/.cache/ctrlp/mru/cache.txt  was empty...
+## system seized
+## nomacs Settings
+Advanced > Save Exif Orientation  off-ticked
+## system seized
+ASUS C027PI DVI failed on reboot
+## system seized
+## xdg-open .md
+handlr get .md  returns  no handlers found for text/markdown
+  handlr set .md gvim.desktop
+## system seized
+## system rebooted itself
 # physical configuration
 TL-WN821N
 ## cbh
 Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard
 ## monitor
-Fujitsu ScenicView E19W-5 LCD monitor - wide 1440x900 = 16:10
-(Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0)
+DVI: Fujitsu ScenicView E19W-5 LCD monitor - wide 1440x900 = 16:10
+VGA: Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0)
 ## motherboard
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
   AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU

@@ -19,7 +19,13 @@ alias gis='git status -u'
 export BFG=$ITstack/CrossPlatform/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
-#==> quick-check my Encrypted directories
+#==> my Encrypted directories
+#  fa | grep Digital0
+#  fa | grep Secure0
+#  fa | grep Secure1
+#  fa | grep Stack
+
+#===> quick-check
 alias fe='fdtsEncryptedChanges'
 
 Encrypted=($Storage/Encrypted Digital0 Digital1 Secure0 Secure1 Stack SST)
@@ -36,7 +42,7 @@ fdtsEncryptedChanges () {
         tput setaf 5
         eval "find . -iname \"${Encrypted[$i]}*.7z\" $printfDTsort"
         tput setaf 7
-        eval "find -path \"./${Encrypted[$i]}*\" -newer $ed7z $printfDTsort"
+        eval "find -path \"./${Encrypted[$i]}*\" -newer $ed7z $printfDTsort"  # fails to detect change of year
       fi
     fi
   done

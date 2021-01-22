@@ -78,7 +78,12 @@ man cmatrix
 gvim --help | mo
 gvim -geom 200  # height parameter is omitted as it's having no effect
 
-# imagey - scanimage
+# imagey
+jpo  # defined in my $Bash/bashrc-wm
+rm -r ~/.cache/sxiv/*
+rm -r ~/.thumbnails/normal/*
+
+## scanimage
 S 55n 3 <imagefilename> <scanheight>
 see $Imagey/Scan.sh
 

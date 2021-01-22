@@ -43,14 +43,14 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> clamav-unofficial-sigs
-cd ~/Arch/AURdev-clone
-rAUR clamav-unofficial-sigs
-git clone https://aur.archlinux.org/clamav-unofficial-sigs.git
-cd clamav-unofficial-sigs
-gvim PKGBUILD
-makepkg -sic
-true
+# #=> clamav-unofficial-sigs
+# cd ~/Arch/AURdev-clone
+# rAUR clamav-unofficial-sigs
+# git clone https://aur.archlinux.org/clamav-unofficial-sigs.git
+# cd clamav-unofficial-sigs
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
 # #=> colorpicker
 # cd ~/Arch/AUR
@@ -79,14 +79,14 @@ true
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
 
-# #=> Dust
-# # (after Rust Toolchain)
-# cd ~/Arch/AUR
-# rAUR dust
-# git clone https://aur.archlinux.org/dust.git
-# cd dust
-# gvim PKGBUILD
-# makepkg -sic
+#=> Dust
+# (after Rust Toolchain)
+cd ~/Arch/AUR
+rAUR dust
+git clone https://aur.archlinux.org/dust.git
+cd dust
+gvim PKGBUILD
+makepkg -sic
 
 # #=> Fangfrisch 1 AUR
 # cd ~/Arch/AUR
@@ -206,20 +206,28 @@ true
 # # Options > Options > User Interface > Show a quit confirmation  off
 # true
 
-#=> nodejs-mapscii 0 install
-cd ~/Arch/AUR
-rAUR nodejs-mapscii
-git clone https://aur.archlinux.org/nodejs-mapscii.git
-cd nodejs-mapscii
-gvim PKGBUILD
-makepkg -sic
-true
+# #=> nodejs-mapscii 0 install
+# cd ~/Arch/AUR
+# rAUR nodejs-mapscii
+# git clone https://aur.archlinux.org/nodejs-mapscii.git
+# cd nodejs-mapscii
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
-#=> nodejs-mapscii 1 remove
-sudo pacman -Rs nodejs-mapscii
+# #=> nodejs-mapscii 1 remove
+# sudo pacman -Rs nodejs-mapscii
 
 # #=> OpenShot
 # sudo pacman -S openshot
+
+# #=> PDFsam
+# cd ~/Arch/AUR
+# rAUR pdfsam
+# git clone https://aur.archlinux.org/pdfsam.git
+# cd pdfsam
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -244,6 +252,17 @@ sudo pacman -Rs nodejs-mapscii
 # rAUR perl-data-printer
 # git clone https://aur.archlinux.org/perl-data-printer.git
 # cd perl-data-printer
+# gvim PKGBUILD
+# makepkg -sic
+
+# #=> perl-image-exiftool
+# sudo pacman -S perl-image-exiftool
+
+# #=> PhotoCollage
+# cd ~/Arch/AUR
+# rAUR photocollage
+# git clone https://aur.archlinux.org/photocollage.git
+# cd photocollage
 # gvim PKGBUILD
 # makepkg -sic
 
@@ -289,6 +308,9 @@ sudo pacman -Rs nodejs-mapscii
 
 # #=> ttf-croscore
 # sudo pacman -S ttf-croscore
+
+# #=> Vimiv
+# sudo pacman -S vimiv
 
 # #=> xbindkeys
 # sudo pacman -S xbindkeys

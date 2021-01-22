@@ -7,6 +7,8 @@
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
+export VsLocation=/mnt/WD30EZRZ  # path to my video store
+
 #=> load the rest of my bashrc
 source $ARCHBUILDS/Bash/bashrc-generic  # useful everywhere, including root
 source $Bash/bashrc-console  # useful also in Console as user
