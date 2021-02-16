@@ -343,6 +343,22 @@ handlr get .md  returns  no handlers found for text/markdown
   handlr set .md gvim.desktop
 ## system seized
 ## system rebooted itself
+## system rebooted itself
+## system seized
+## system seized
+## system slowed down to a crawl
+## system rebooted itself
+## system seized
+## HP Device Settings
+Print Settings > General > Media Size > A4 210x297mm
+sudo /etc/papersize
+echo "a4" | sudo tee -a /etc/papersize
+## chromium print to A4
+Ctrl+P > More settings > A4 210x297mm
+ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
+## HP Device Manager Default Printer
+hp-toolbox > Printer Control > Default Printer
+## system rebooted itself
 # physical configuration
 TL-WN821N
 ## cbh

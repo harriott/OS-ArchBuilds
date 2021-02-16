@@ -90,6 +90,9 @@ pacman -S chromium
 # LastPass CLI
 pacman -S lastpass-cli
 
+# msmtp-mta
+pacman -S msmtp-mta
+
 # NeoMutt
 pacman -S neomutt
 

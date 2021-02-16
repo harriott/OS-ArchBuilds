@@ -1,4 +1,4 @@
-vim: ft=build fdm=expr:
+vim: ft=build:
 
 commands here are tailored to my Arch install, see also $onGH/misc/GNULinuxQR.txt
 
@@ -26,28 +26,6 @@ tput bold; echo hello
 ### cat --show-nonprinting
 for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
-
-# CUPS
--o orientation-requested=3 - portrait orientation (no rotation)
--o orientation-requested=4 - landscape orientation (90 degrees)
--o orientation-requested=5 - reverse landscape or seascape orientation (270 degrees)
--o orientation-requested=6 - reverse portrait or upside-down orientation (180 degrees)
-"Command-Line Printing and Options"
-hp-setup -h
-lp -o fit-to-page <image>
-lpstat -p -d  # show status of printers, including which is set as default
-lpstat -s  # status
-sudo systemctl status cups.service
-
-## HP ENVY 5532 WiFi
-lpoptions -d ENVY_5532  # set as default
-lpoptions -p ENVY_5530_2 -l  # list options
-sudo cupsenable ENVY_5532  # if it's paused
-
-### 249
-lpoptions -d 553_192_168_43_249  # set as default
-lpoptions -p 553_192_168_43_249 -l  # list options
-sudo cupsenable 553_192_168_43_249  # if it's paused
 
 # fonts
 cd /usr/share/fonts; $ fd -L consolas
@@ -95,9 +73,13 @@ mediainfo <avfile> | grep Encoded
 bm firewall-cmd
 cat /etc/hostname
 sudo dhcpcd wlwg111v2
+sudo ls /var/lib/dhcpcd/
+
+## NetworkManager
+nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
+nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
 sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
 sudo ls /etc/NetworkManager/system-connections/
-sudo ls /var/lib/dhcpcd/
 
 ## Dropbox conflicted copies
 find -name "* conflicted copy *"
@@ -109,6 +91,7 @@ grep -r "Georita" *
 
 ### mutt
 $email/muttrc-MWa
+$email/muttrc-account_ftml
 echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 F => toggle important flag (= Star in Gmail)
 
@@ -132,12 +115,58 @@ $Openbox/openbox/rc.xml
 Alt+Space => show client menu for active window
 Ctrl+Alt+arrows => move to desktop
 Shift+Alt+arrows => move to desktop, bringing current window along
+Win+1 => move the window to monitor 1
+Win+2 => move the window to monitor 2
 
 # pass
 pass edit gmail-neomutt
 pass gmail-neomutt
 pass troh/GmailAPI/token-expire
 ~/.password-store
+
+# printing - CUPS
+"Command-Line Printing and Options" http://localhost:631/help/options.html
+lpadmin
+lpq  # show printer queue status
+lpstat -p -d  # show status of printers, including which is set as default
+lpstat -s  # status
+sudo systemctl status cups.service
+
+## cancel print jobs
+cancel -a
+lprm
+
+## HP ENVY 5532 WiFi
+lpoptions -d ENVY_5532  # set as default
+lpoptions -p ENVY_5532 -l  # list options
+lpoptions -p Envy5532 -o PageSize=A4
+sudo cupsenable ENVY_5532  # if it's paused
+
+### 249
+lpoptions -d 553_192_168_43_249  # set as default
+lpoptions -p 553_192_168_43_249 -l  # list options
+sudo cupsenable 553_192_168_43_249  # if it's paused
+
+## lp
+lp -o fit-to-page <image>
+
+### orientation
+automatically selects the best orientation for filling the page
+
+#### specify
+-o orientation-requested=3 - portrait orientation (no rotation)
+-o orientation-requested=4 - landscape orientation (90 degrees)
+-o orientation-requested=5 - reverse landscape or seascape orientation (270 degrees)
+-o orientation-requested=6 - reverse portrait or upside-down orientation (180 degrees)
+
+# printing - HPLIP
+hp-printsettings  # dialog pop-up
+hp-setup -h
+hp-toolbox  # HP Device Manager
+
+## HP ENVY 5532 WiFi
+hp-levels -p ENVY_5532
+hp-setup -b net 192.168.43.249  # when online
 
 # storage - broot
 bm broot
@@ -201,6 +230,20 @@ fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
 sharkdp/fd
 
+## grepping
+egrep '<someText>|<otherText>'
+
+### ripgrep
+for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
+rg -l -ttex '\\input' > rg-tex.txt
+rg -l -ttex verseSettings > rg-tex.txt
+rg -tmd '\$SE'
+rg <someText>  # searches recursively in files
+rg '\$ITstack'
+rg '<someText>|<otherText>'
+rg 'sometext' --no-ignore  # allows searching into gitignored places
+rg -ttex ^%%
+
 ## mlocate
 bm locate
 locate -c <target>  # --count
@@ -214,19 +257,6 @@ find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
 ### recursively
 find . -type l -ls
 find ~ -path '*/.virtualenvs' -prune -o -type l -ls
-
-## grepping
-egrep '<someText>|<otherText>'
-
-### ripgrep
-for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
-rg -l -ttex '\\input' > rg-tex.txt
-rg -l -ttex verseSettings > rg-tex.txt
-rg -tmd '\$SE'
-rg <someText>  # searches recursively in files
-rg '\$ITstack'
-rg '<someText>|<otherText>'
-rg 'sometext' --no-ignore  # allows searching into gitignored places
 
 # storage - fzf
 Alt+c   # to change directory

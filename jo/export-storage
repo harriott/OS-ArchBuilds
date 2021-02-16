@@ -9,6 +9,7 @@ export DROPBOX=$Storage/Dropbox   # keep this capitalised for finding it without
         # two private configurations:
         export CrossPlatform=$ITstack/CrossPlatform
         export GNULE=$ITstack/unix_like/email-GNULinux
+        export vimfiles=$ITstack/vimfiles
     export onGH=$DROPBOX/JH/core/IT_stack/onGitHub
         export ARCHBUILDS=$HOME/ArchBuilds # provisional
         export ARCHBUILDS=$onGH/ArchBuilds # once Dropbox is up

@@ -13,6 +13,16 @@ nmcli device wifi connect Jo-X10II password <pw>
 ## waiting
 ### SDSSDA240G only
 sudo cp $MACHINE/etc/fstab/kca /etc/fstab
+## /etc/nsswitch.conf.pacnew
+cd /etc/  for  su + root pw  for
+nvim -O nsswitch.conf nsswitch.conf.pacnew   & diff'd over my changes
+cat nsswitch.conf
+rm /etc/nsswitch.conf.pacnew
+## homed.conf
+su + root pw  for
+  nvim -o /etc/systemd/homed.conf /etc/systemd/homed.conf.pacnew
+    /etc/systemd/homed.conf.pacnew  proposed  #DefaultFileSystemType=btrfs
+  rm /etc/systemd/homed.conf.pacnew
 # physical configuration
 ViewSonic VA1616w 1366x768
 SDSSDA240G  in  LogiLink 2.5" HDD Mounting Bracket

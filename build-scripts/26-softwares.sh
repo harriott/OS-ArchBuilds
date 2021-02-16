@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: ft=sh.shfold:
+# vim: fdm=expr:
 
 # bash <this_script>
 
@@ -67,26 +67,26 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox 0 install
-# # only once there's a browser, and preferably after LastPass
-# cd ~/Arch/AUR
-# rAUR dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# gvim PKGBUILD
-# makepkg -sic
+#=> Dropbox 0 (re)install
+# only once there's a browser, and preferably after LastPass
+cd ~/Arch/AUR
+rAUR dropbox
+git clone https://aur.archlinux.org/dropbox.git
+cd dropbox
+gvim PKGBUILD
+makepkg -sic
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
 
-#=> Dust
-# (after Rust Toolchain)
-cd ~/Arch/AUR
-rAUR dust
-git clone https://aur.archlinux.org/dust.git
-cd dust
-gvim PKGBUILD
-makepkg -sic
+# #=> Dust
+# # (after Rust Toolchain)
+# cd ~/Arch/AUR
+# rAUR dust
+# git clone https://aur.archlinux.org/dust.git
+# cd dust
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> Fangfrisch 1 AUR
 # cd ~/Arch/AUR
@@ -201,6 +201,10 @@ makepkg -sic
 # makepkg -sic
 # true
 
+# #=> msmtprc
+# cp -f $GNULE/msmtpConfig-backup ~/.msmtprc
+# chmod 600 ~/.msmtprc
+
 # #=> MusicBrainz Picard
 # sudo pacman -S picard
 # # Options > Options > User Interface > Show a quit confirmation  off
@@ -280,6 +284,9 @@ makepkg -sic
 # gvim PKGBUILD
 # makepkg -sic
 
+# #=> Python 2
+# sudo pacman -S python2  # needed for  oauth2.py
+
 # #=> Quod Libet
 # sudo pacman -S quodlibet
 
@@ -318,11 +325,11 @@ makepkg -sic
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-# #=> Zoom
-# cd ~/Arch/AUR
-# rAUR zoom
-# git clone https://aur.archlinux.org/zoom.git
-# cd zoom
-# gvim PKGBUILD
-# makepkg -sic
+#=> Zoom
+cd ~/Arch/AUR
+rAUR zoom
+git clone https://aur.archlinux.org/zoom.git
+cd zoom
+gvim PKGBUILD
+makepkg -sic
 

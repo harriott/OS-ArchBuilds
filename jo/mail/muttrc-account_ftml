@@ -1,4 +1,4 @@
-# muttrc-*  filetypes are set in  plugin/buffers.vim
+# muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
 
 # my preferred configuration file for accessing  Fastmail
 # I prefer to call this through an alias in my  ~/.bashrc

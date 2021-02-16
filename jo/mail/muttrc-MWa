@@ -3,6 +3,7 @@
 # based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
 # general settings for neomutt
 
+set editor = 'nvim'
 set mailcap_path = $email/mailcap-MWa
 
 # the index
@@ -52,6 +53,7 @@ bind index G noop  # precautionary release from <fetch-mail>
 
 set menu_scroll # smoother movement
 unset confirmappend # don't ask of confirmation when moving emails
+unset signature
 
 # Useful key bindings for the index
 #  $ ==> sync changes
