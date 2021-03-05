@@ -359,6 +359,29 @@ ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
 ## HP Device Manager Default Printer
 hp-toolbox > Printer Control > Default Printer
 ## system rebooted itself
+## SANE pacnews
+sudo nvim -o /etc/sane.d/canon_lide70.conf /etc/sane.d/canon_lide70.conf.pacnew
+sudo nvim -o /etc/sane.d/escl.conf /etc/sane.d/escl.conf.pacnew
+## xdg-open .kdbx
+handlr get .kdbx
+  no handlers found for 'application/x-keepass2'
+  handlr set .kdbx org.keepassxc.KeePassXC.desktop
+## Enchant
+unclear how it got installed...
+## pacnews
+sudo nvim -o /etc/default/grub /etc/default/grub.pacnew
+sudo rm /etc/sane.d/canon_lide70.conf.pacnew /etc/sane.d/escl.conf.pacnew /etc/default/grub.pacnew
+## attempt to get languagetool-commandline.jar working
+sudo archlinux-java set java-11-openjdk
+sudo archlinux-java set java-15-openjdk
+## LanguageTool
+sudo cp -R /mnt/ST3500413AS/Share/IT-Copied/CrossPlatform/LanguageTool-5.2 /usr/share/java/LanguageTool-5.2
+java -jar /usr/share/java/LanguageTool-5.2/languagetool-commandline.jar -h
+## Spotify
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
+  gpg: key D1742AD60D811D58: public key "Spotify Public Repository Signing Key <tux@spotify.com>" imported
+  gpg: Total number processed: 1
+  gpg:               imported: 1
 # physical configuration
 TL-WN821N
 ## cbh

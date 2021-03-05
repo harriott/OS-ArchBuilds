@@ -16,4 +16,5 @@ exa -la /usr/share/fonts
 
 # #=> Vim
 # rm -r ~/.vim; ln -s $ITstack/vimfiles ~/.vim
+rm -r ~/.vim; ln -s $onGH/vimfiles ~/.vim
 

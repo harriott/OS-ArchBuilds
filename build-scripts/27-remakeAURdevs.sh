@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: fdm=expr fdl=1 ft=sh.shfold:
 
 # bash <thisfile>.sh
 
@@ -8,12 +7,15 @@ PQ(){ pacman -Qs $1; }
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> auracle-git
-# PQ auracle-git
-# # - check against upstream commits: https://github.com/falconindy/auracle/commits/master
-# gctm auracle-git
-# gvim PKGBUILD
-# makepkg -sic
+#=> auracle-git
+PQ auracle-git
+xdg-open https://github.com/falconindy/auracle/commits/master
+read -p "Is an update of auracle-git needed?" cnfrm
+if [ $cnfrm ] && [ $cnfrm = "y" ]; then
+    gctm auracle-git
+    gvim PKGBUILD
+    makepkg -sic
+fi
 
 # #=> bat-extras-git
 # PQ bat-extras-git
@@ -47,8 +49,4 @@ trap read debug  # puts a read request after each executable line
 # gctm pscircle-git
 # gvim PKGBUILD
 # makepkg -sic
-
-# #=> qimgv-git
-# PQ qimgv-git
-# #  - check against upstream commits: https://github.com/easymodo/qimgv/commits/master
 

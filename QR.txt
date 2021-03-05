@@ -232,6 +232,7 @@ sharkdp/fd
 
 ## grepping
 egrep '<someText>|<otherText>'
+grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
 
 ### ripgrep
 for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
@@ -245,6 +246,7 @@ rg 'sometext' --no-ignore  # allows searching into gitignored places
 rg -ttex ^%%
 
 ## mlocate
+/etc/updatedb.conf
 bm locate
 locate -c <target>  # --count
 locate -h

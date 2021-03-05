@@ -15,7 +15,9 @@ trap read debug  # puts a read request after each executable line
 sudo pacman -Syu
 # reboot if kernel updated !
 sudo find /etc -type f -name "*pacnew"
-echo "^ ^ ^ ^ ^ ^ - pacnews ?"
+true
+# "^ ^ ^ ^ ^ ^ - pacnews ?"
+true
 sudo paccache -r  # reduce the pacman cache
 
 #=> 1 AURs

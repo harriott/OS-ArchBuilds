@@ -28,7 +28,7 @@ gic () { git commit -m "$1"; }
 #===> quick-check
 alias fe='fdtsEncryptedChanges'
 
-Encrypted=($Storage/Encrypted Digital0 Digital1 Secure0 Secure1 Stack SST)
+Encrypted=($Storage/Encrypted Digital0 Digital1 Secure0 Secure1 SHG Stack)
 fdtsEncryptedChanges () {
   if [ "$PWD" != ${Encrypted[0]} ]; then
     cd ${Encrypted[0]}
@@ -67,15 +67,17 @@ fdtsAll () {
 
 #==> time-sorted lists of files - by extension
 alias fx='fdtsExt'
+# fx gitignore
 
 fdtsExt () {
   if [ $1 ]; then
     if [ $1 = "gitignore" ]; then
+      dtsfile=dts-$1-all.txt
       search=.$1
     else
+      dtsfile=dts-$1.txt
       search='\*.$1'
     fi
-    dtsfile=dts-$1.txt
     eval "fdtsKS $search $dtsfile"
     [[ $1 = @(gitignore|pl|tex|txt) ]] && ctfp $dtsfile
   else

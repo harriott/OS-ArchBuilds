@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: fdm=expr:
 
 # bash <this_script>
 
@@ -12,20 +11,21 @@ trap read debug  # puts a read request after each executable line
 
 # rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 
-# #=> bat-extras-git
-# cd ~/Arch/AURdev-clone
-# git clone https://aur.archlinux.org/bat-extras-git.git
-# gctm bat-extras-git
-# gvim PKGBUILD
-# makepkg -sic
+#=> bat-extras-git
+cd ~/Arch/AURdev-clone
+rAUR bat-extras-git
+git clone https://aur.archlinux.org/bat-extras-git.git
+gctm bat-extras-git
+gvim PKGBUILD
+makepkg -sic
 
-# #=> bfg
-# cd ~/Arch/AUR
-# rAUR bfg
-# git clone https://aur.archlinux.org/bfg.git
-# cd bfg
-# gvim PKGBUILD
-# makepkg -sic
+#=> bfg
+cd ~/Arch/AUR
+rAUR bfg
+git clone https://aur.archlinux.org/bfg.git
+cd bfg
+gvim PKGBUILD
+makepkg -sic
 
 # #=> bpytop
 # # supersedes  Bashtop
@@ -67,14 +67,14 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-rAUR dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-gvim PKGBUILD
-makepkg -sic
+# #=> Dropbox 0 (re)install
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# rAUR dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -162,6 +162,9 @@ makepkg -sic
 # #=> java-commons-lang
 # sudo pacman -S java-commons-lang  # (for pdftk's functions)
 
+# #=> keepassxc
+# sudo pacman -S keepassxc
+
 # #=> LanguageTool
 # sudo pacman -S languagetool
 
@@ -225,13 +228,13 @@ makepkg -sic
 # #=> OpenShot
 # sudo pacman -S openshot
 
-# #=> PDFsam
-# cd ~/Arch/AUR
-# rAUR pdfsam
-# git clone https://aur.archlinux.org/pdfsam.git
-# cd pdfsam
-# gvim PKGBUILD
-# makepkg -sic
+#=> PDFsam
+cd ~/Arch/AUR
+rAUR pdfsam
+git clone https://aur.archlinux.org/pdfsam.git
+cd pdfsam
+gvim PKGBUILD
+makepkg -sic
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -290,10 +293,19 @@ makepkg -sic
 # #=> Quod Libet
 # sudo pacman -S quodlibet
 
-# #=> Samokovarov's jump
+#=> Samokovarov's jump
+cd ~/Arch/AUR
+rAUR jump
+git clone https://aur.archlinux.org/jump.git
+cd jump
+gvim PKGBUILD
+makepkg -sic
+
+# #=> Spotify
 # cd ~/Arch/AUR
-# git clone https://aur.archlinux.org/jump.git
-# cd jump
+# rAUR spotify
+# git clone https://aur.archlinux.org/spotify.git
+# cd spotify
 # gvim PKGBUILD
 # makepkg -sic
 

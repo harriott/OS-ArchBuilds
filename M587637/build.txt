@@ -23,6 +23,11 @@ su + root pw  for
   nvim -o /etc/systemd/homed.conf /etc/systemd/homed.conf.pacnew
     /etc/systemd/homed.conf.pacnew  proposed  #DefaultFileSystemType=btrfs
   rm /etc/systemd/homed.conf.pacnew
+## pacnews
+sudo nvim -o /etc/sane.d/canon_lide70.conf /etc/sane.d/canon_lide70.conf.pacnew
+sudo nvim -o /etc/sane.d/escl.conf /etc/sane.d/escl.conf.pacnew
+sudo nvim -o /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew
+sudo rm /etc/sane.d/canon_lide70.conf.pacnew /etc/sane.d/escl.conf.pacnew /etc/clamav/clamd.conf.pacnew
 # physical configuration
 ViewSonic VA1616w 1366x768
 SDSSDA240G  in  LogiLink 2.5" HDD Mounting Bracket

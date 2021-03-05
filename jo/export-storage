@@ -1,28 +1,29 @@
 #!/bin/sh
-# vim: fdl=1 ft=sh.shfold:
+# vim: ft=sh:
 
 # sourced by  $Bash/bash_profile
 # symlink this to  ~/.export-storage
 
+export ARCHBUILDS=$HOME/ArchBuilds  # provisional
 export DROPBOX=$Storage/Dropbox   # keep this capitalised for finding it without need for $
     export ITstack=$DROPBOX/JH/core/IT_stack
         # two private configurations:
         export CrossPlatform=$ITstack/CrossPlatform
         export GNULE=$ITstack/unix_like/email-GNULinux
-        export vimfiles=$ITstack/vimfiles
-    export onGH=$DROPBOX/JH/core/IT_stack/onGitHub
-        export ARCHBUILDS=$HOME/ArchBuilds # provisional
-        export ARCHBUILDS=$onGH/ArchBuilds # once Dropbox is up
-            export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
-            export Bash=$ARCHBUILDS/jo/Bash
-                export Imagey=$Bash/Imagey
-                export MACHINE=$ARCHBUILDS/$machine
-            export Openbox=$ARCHBUILDS/jo/Openbox
-                export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
-                export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
-        export MD4PDF=$onGH/md4pdf
+        export onGH=$ITstack/onGitHub
+            export ARCHBUILDS=$onGH/ArchBuilds # once Dropbox is up
+                export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
+                export Bash=$ARCHBUILDS/jo/Bash
+                    export Imagey=$Bash/Imagey
+                    export MACHINE=$ARCHBUILDS/$machine
+                export Openbox=$ARCHBUILDS/jo/Openbox
+                    export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
+                    export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
+            export MD4PDF=$onGH/md4pdf
+            export vimfiles=$onGH/vimfiles
+        # export vimfiles=$ITstack/vimfiles
     export IT1=$DROPBOX/JH/Technos/IT1  # for notes
     export IThandy=$DROPBOX/JH/Copied/IT-handy  # for fonts
-    export ITHD=$DROPBOX/JH/Technos/IT0-HD  # $ITHD/diskUsage.txt
+    export ITP=$DROPBOX/JH/Technos/IT0-Partitionable  # $ITP/diskUsage.txt
     export SE=$DROPBOX/JH/CforWork/Education/Science-Engineering  # used in my TextNotes
 

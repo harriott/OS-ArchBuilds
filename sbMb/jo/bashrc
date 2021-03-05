@@ -1,4 +1,4 @@
-# vim: fdl=1 ft=sh.shfold sw=2:
+# vim: fdl=1 ft=sh sw=2:
 
 # ~/.bashrc in an Arch install on my sprayed brown Multivision box system
 
@@ -8,6 +8,10 @@
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
 export VsLocation=/mnt/WD30EZRZ  # path to my video store
+
+fS () {
+  find /mnt/ST3500413AS/Share -type f -name "*$1*"
+}
 
 #=> load the rest of my bashrc
 source $ARCHBUILDS/Bash/bashrc-generic  # useful everywhere, including root
