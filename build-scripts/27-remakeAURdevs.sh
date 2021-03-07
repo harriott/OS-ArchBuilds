@@ -4,49 +4,52 @@
 
 PQ(){ pacman -Qs $1; }
 
-set -v  # prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
+updateMaybe()
+{
+    read -p "    - so is an update of $1 needed? " cnfrm
+    if [ $cnfrm ] && [ $cnfrm = "y" ]; then
+        gctm $1
+        gvim PKGBUILD
+        read -p "    - is the PKGBUILD good? "
+        makepkg -sic
+    fi
+}
+xdgo()
+{
+    if [ $machine = "M587637" ]; then
+        xdg-open $1 >/dev/null 2>&1  # because chromium error reports
+    else
+        xdg-open $1
+    fi
+}
 
 #=> auracle-git
 PQ auracle-git
-xdg-open https://github.com/falconindy/auracle/commits/master
-read -p "Is an update of auracle-git needed?" cnfrm
-if [ $cnfrm ] && [ $cnfrm = "y" ]; then
-    gctm auracle-git
-    gvim PKGBUILD
-    makepkg -sic
-fi
+xdgo https://github.com/falconindy/auracle/commits/master
+updateMaybe auracle-git
 
-# #=> bat-extras-git
-# PQ bat-extras-git
-# #  - check against upstream commits: https://github.com/eth-p/bat-extras/commits/master
-# gctm bat-extras-git
-# gvim PKGBUILD
-# makepkg -sic
+#=> bat-extras-git
+PQ bat-extras-git
+xdgo https://github.com/eth-p/bat-extras/commits/master
+updateMaybe bat-extras-git
 
-# #=> cht.sh-git
-# PQ cht.sh-git
-# #  - check against upstream commits: https://github.com/chubin/cheat.sh/commits/master
-# gctm cht.sh-git
-# gvim PKGBUILD
-# makepkg -sic
+#=> cht.sh-git
+PQ cht.sh-git
+xdgo https://github.com/chubin/cheat.sh/commits/master
+updateMaybe cht.sh-git
 
-# #=> fontpreview-git
-# PQ fontpreview-git
-# #  - check against upstream commits: https://github.com/sdushantha/fontpreview/commits/master
+#=> fontpreview-git
+PQ fontpreview-git
+xdgo https://github.com/sdushantha/fontpreview/commits/master
+updateMaybe fontpreview-git
 
-# #=> moar-git
-# PQ moar-git
-# # #  - check against upstream commits: https://github.com/walles/moar/commits/master
-# gctm moar-git
-# gvim PKGBUILD
-# makepkg -sic
-# true
+#=> moar-git
+PQ moar-git
+xdgo https://github.com/walles/moar/commits/master
+updateMaybe moar-git
 
-# #=> pscircle-git
-# PQ pscircle-git
-# #  - check against upstream commits: https://gitlab.com/mildlyparallel/pscircle/-/commits/master/
-# gctm pscircle-git
-# gvim PKGBUILD
-# makepkg -sic
+#=> pscircle-git
+PQ pscircle-git
+xdgo https://gitlab.com/mildlyparallel/pscircle/-/commits/master/
+updateMaybe pscircle-git
 

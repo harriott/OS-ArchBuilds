@@ -1,4 +1,4 @@
-vim: fdl=0 ft=build:
+vim: ft=build:
 
 Lenovo ThinkCentre M58 type 7637 - M587637
 
@@ -28,6 +28,67 @@ sudo nvim -o /etc/sane.d/canon_lide70.conf /etc/sane.d/canon_lide70.conf.pacnew
 sudo nvim -o /etc/sane.d/escl.conf /etc/sane.d/escl.conf.pacnew
 sudo nvim -o /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew
 sudo rm /etc/sane.d/canon_lide70.conf.pacnew /etc/sane.d/escl.conf.pacnew /etc/clamav/clamd.conf.pacnew
+## libva error
+xdg-open https://github.com
+  libva error: /usr/lib/dri/iHD_drv_video.so init failed
+### KMS attempted fix for libva error
+sudo sed -i 's/^MODULES=()/MODULES=(i915)/' /etc/mkinitcpio.conf
+reboot
+sudo sed -i 's/^MODULES=(i915)/MODULES=()/' /etc/mkinitcpio.conf
+reboot
+### libva-intel-driver
+sudo pacman -Rs intel-media-driver
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: removing intel-media-driver breaks dependency 'intel-media-driver' required by intel-media-sdk
+sudo pacman -S libva-intel-driver
+#### see if intel-media-sdk changes
+sudo pacman -Rs intel-media-sdk
+  :: ffmpeg optionally requires intel-media-sdk: Intel QuickSync support
+  :: libva optionally requires intel-media-driver: backend for Intel GPUs (>= Broadwell)
+  Packages (3) intel-gmmlib-20.4.1-1  intel-media-driver-20.4.5-1  intel-media-sdk-20.5.1-1
+sudo pacman -S intel-media-sdk
+  Packages (3) intel-gmmlib-20.4.1-1  intel-media-driver-20.4.5-1  intel-media-sdk-20.5.1-1
+### libva-utils
+vainfo
+  libva error: /usr/lib/dri/iHD_drv_video.so init failed
+echo $LIBVA_DRIVER_NAME
+#### iHD
+export LIBVA_DRIVER_NAME=iHD
+vainfo
+  libva error: /usr/lib/dri/iHD_drv_video.so init failed
+#### i965
+export LIBVA_DRIVER_NAME=i965
+vainfo
+  vainfo: VA-API version: 1.10 (libva 2.10.0)
+  vainfo: Driver version: Intel i965 driver for Intel(R) Q45/Q43 - 2.4.1
+  vainfo: Supported profile and entrypoints
+        VAProfileMPEG2Simple            : VAEntrypointVLD
+        VAProfileMPEG2Main              : VAEntrypointVLD
+## chromium snags
+xdg-open http://time.is/
+  InitializeSandbox() called with multiple threads in process gpu-process.
+rm -rf ~/.cache/chromium   didn't fix it
+chromium --use-gl=desktop   didn't help
+chrome://gpu  reports  Video Decode: Software only. Hardware acceleration disabled
+### flags
+chromium --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy
+  chrome://gpu  still reports  Video Decode: Software only. Hardware acceleration disabled
+chromium --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --disable-gpu-driver-bug-workarounds
+  chrome://gpu  still reports  Video Decode: Software only. Hardware acceleration disabled
+chromium --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --disable-gpu-driver-bug-workarounds --use-gl=desktop
+  chrome://gpu  still reports  Video Decode: Software only. Hardware acceleration disabled
+### GPU driver
+chromium --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --disable-gpu-driver-bug-workarounds --use-gl=desktop --enable-accelerated-video-decode
+  chrome://gpu  still reports  Video Decode: Software only. Hardware acceleration disabled
+### MESA_GLSL_CACHE_DISABLE
+echo $MESA_GLSL_CACHE_DISABLE
+export MESA_GLSL_CACHE_DISABLE=true  in bashrc
+xdg-open http://time.is/
+  Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+chromium --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --disable-gpu-driver-bug-workarounds --use-gl=desktop --enable-accelerated-video-decode
+  Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
+  chrome://gpu  still reports  Video Decode: Software only. Hardware acceleration disabled
+chromium chrome://gpu
 # physical configuration
 ViewSonic VA1616w 1366x768
 SDSSDA240G  in  LogiLink 2.5" HDD Mounting Bracket

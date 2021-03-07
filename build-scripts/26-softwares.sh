@@ -11,21 +11,21 @@ trap read debug  # puts a read request after each executable line
 
 # rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 
-#=> bat-extras-git
-cd ~/Arch/AURdev-clone
-rAUR bat-extras-git
-git clone https://aur.archlinux.org/bat-extras-git.git
-gctm bat-extras-git
-gvim PKGBUILD
-makepkg -sic
+# #=> bat-extras-git
+# cd ~/Arch/AURdev-clone
+# rAUR bat-extras-git
+# git clone https://aur.archlinux.org/bat-extras-git.git
+# gctm bat-extras-git
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> bfg
-cd ~/Arch/AUR
-rAUR bfg
-git clone https://aur.archlinux.org/bfg.git
-cd bfg
-gvim PKGBUILD
-makepkg -sic
+# #=> bfg
+# cd ~/Arch/AUR
+# rAUR bfg
+# git clone https://aur.archlinux.org/bfg.git
+# cd bfg
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> bpytop
 # # supersedes  Bashtop
@@ -116,6 +116,7 @@ makepkg -sic
 
 # #=> fonts - fontpreview-git
 # cd ~/Arch/AURdev-clone
+# rAUR fontpreview-git
 # git clone https://aur.archlinux.org/fontpreview-git.git
 # gctm fontpreview-git
 # gvim PKGBUILD
@@ -172,14 +173,16 @@ makepkg -sic
 # sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
 # sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
 
+#=> libva-utils
+sudo pacman -S libva-utils
+
 # #=> moar 0 install
-# cd ~/Arch/AUR
-# rAUR moar
+# cd ~/Arch/AURdev-clone
+# rAUR moar.git
 # git clone https://aur.archlinux.org/moar.git
-# cd moar
+# gctm moar.git
 # gvim PKGBUILD
 # makepkg -sic
-# true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
@@ -228,13 +231,13 @@ makepkg -sic
 # #=> OpenShot
 # sudo pacman -S openshot
 
-#=> PDFsam
-cd ~/Arch/AUR
-rAUR pdfsam
-git clone https://aur.archlinux.org/pdfsam.git
-cd pdfsam
-gvim PKGBUILD
-makepkg -sic
+# #=> PDFsam
+# cd ~/Arch/AUR
+# rAUR pdfsam
+# git clone https://aur.archlinux.org/pdfsam.git
+# cd pdfsam
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -293,13 +296,13 @@ makepkg -sic
 # #=> Quod Libet
 # sudo pacman -S quodlibet
 
-#=> Samokovarov's jump
-cd ~/Arch/AUR
-rAUR jump
-git clone https://aur.archlinux.org/jump.git
-cd jump
-gvim PKGBUILD
-makepkg -sic
+# #=> Samokovarov's jump
+# cd ~/Arch/AUR
+# rAUR jump
+# git clone https://aur.archlinux.org/jump.git
+# cd jump
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> Spotify
 # cd ~/Arch/AUR
@@ -337,11 +340,11 @@ makepkg -sic
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-#=> Zoom
-cd ~/Arch/AUR
-rAUR zoom
-git clone https://aur.archlinux.org/zoom.git
-cd zoom
-gvim PKGBUILD
-makepkg -sic
+# #=> Zoom
+# cd ~/Arch/AUR
+# rAUR zoom
+# git clone https://aur.archlinux.org/zoom.git
+# cd zoom
+# gvim PKGBUILD
+# makepkg -sic
 

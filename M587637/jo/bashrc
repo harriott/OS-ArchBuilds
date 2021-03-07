@@ -6,6 +6,8 @@
 # source ~/.bashrc if you've changed something here...
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
+export LIBVA_DRIVER_NAME=i965
+export MESA_GLSL_CACHE_DISABLE=true
 
 #=> auto-added by $ cpan
 PATH="/home/jo/perl5/bin${PATH:+:${PATH}}"; export PATH;

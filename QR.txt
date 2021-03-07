@@ -250,6 +250,7 @@ rg -ttex ^%%
 bm locate
 locate -c <target>  # --count
 locate -h
+locate -r '\.conf$'
 sudo updatedb
 systemctl status updatedb.timer
 
@@ -314,6 +315,8 @@ id jo        # show uid, gid, and groups for jo
 
 ## mimeapps
 handlr list
+
+### mimeo
 /home/jo/.config/mimeapps.list
 
 ## as root
