@@ -67,14 +67,14 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox 0 (re)install
-# # only once there's a browser, and preferably after LastPass
-# cd ~/Arch/AUR
-# rAUR dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# gvim PKGBUILD
-# makepkg -sic
+#=> Dropbox 0 (re)install
+# only once there's a browser, and preferably after LastPass
+cd ~/Arch/AUR
+rAUR dropbox
+git clone https://aur.archlinux.org/dropbox.git
+cd dropbox
+gvim PKGBUILD
+makepkg -sic
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -143,6 +143,15 @@ trap read debug  # puts a read request after each executable line
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
 
+# #=> google-chrome
+# cd ~/Arch/AUR
+# rAUR google-chrome
+# git clone https://aur.archlinux.org/google-chrome.git
+# cd google-chrome
+# gvim PKGBUILD
+# makepkg -sic
+# true
+
 # #=> gnome-disk-utility
 # sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
 
@@ -173,8 +182,8 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
 # sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
 
-#=> libva-utils
-sudo pacman -S libva-utils
+# #=> libva-utils
+# sudo pacman -S libva-utils
 
 # #=> moar 0 install
 # cd ~/Arch/AURdev-clone
@@ -231,13 +240,13 @@ sudo pacman -S libva-utils
 # #=> OpenShot
 # sudo pacman -S openshot
 
-# #=> PDFsam
-# cd ~/Arch/AUR
-# rAUR pdfsam
-# git clone https://aur.archlinux.org/pdfsam.git
-# cd pdfsam
-# gvim PKGBUILD
-# makepkg -sic
+#=> PDFsam
+cd ~/Arch/AUR
+rAUR pdfsam
+git clone https://aur.archlinux.org/pdfsam.git
+cd pdfsam
+gvim PKGBUILD
+makepkg -sic
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -257,13 +266,13 @@ sudo pacman -S libva-utils
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> perl-data-printer
-# cd ~/Arch/AUR
-# rAUR perl-data-printer
-# git clone https://aur.archlinux.org/perl-data-printer.git
-# cd perl-data-printer
-# gvim PKGBUILD
-# makepkg -sic
+#=> perl-data-printer
+cd ~/Arch/AUR
+rAUR perl-data-printer
+git clone https://aur.archlinux.org/perl-data-printer.git
+cd perl-data-printer
+gvim PKGBUILD
+makepkg -sic
 
 # #=> perl-image-exiftool
 # sudo pacman -S perl-image-exiftool

@@ -2,7 +2,7 @@
 # See https://gitlab.com/o9000/tint2/wikis/Configure for 
 # full documentation of the configuration options.
 #
-#  cp ~/.config/tint2/tint2rc $ARCHBUILDS/jo/tint2rc  # JH
+#  cp ~/.config/tint2/tint2rc $Openbox/tint2rc  # JH
 #
 #-------------------------------------
 # Gradients
@@ -104,6 +104,8 @@ taskbar_always_show_all_desktop_tasks = 0
 taskbar_name_padding = 4 2
 taskbar_name_background_id = 0
 taskbar_name_active_background_id = 0
+taskbar_name_font = 8
+# - less obtrusive desktop label - JH
 taskbar_name_font_color = #e3e3e3 100
 taskbar_name_active_font_color = #ffffff 100
 taskbar_distribute_size = 0
@@ -156,7 +158,8 @@ launcher_item_app = tint2conf.desktop
 # launcher_item_app = firefox.desktop
 launcher_item_app = iceweasel.desktop
 launcher_item_app = chromium-browser.desktop
-launcher_item_app = google-chrome.desktop
+# launcher_item_app = google-chrome.desktop
+# commented some out JH
 
 #-------------------------------------
 # Clock

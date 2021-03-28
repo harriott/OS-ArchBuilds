@@ -89,6 +89,28 @@ chromium --ignore-gpu-blocklist --enable-gpu-rasterization --enable-zero-copy --
   Failed to call method: org.freedesktop.DBus.Properties.Get: object_path= /org/freedesktop/UPower: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.UPower was not provided by any .service files
   chrome://gpu  still reports  Video Decode: Software only. Hardware acceleration disabled
 chromium chrome://gpu
+## homed.conf
+su + root pw  for
+  nvim -o /etc/systemd/homed.conf /etc/systemd/homed.conf.pacnew -c 'windo difft'
+  rm /etc/systemd/homed.conf.pacnew
+## removed redundant Vim packages
+sudo pacman -Rs vim-airline
+sudo pacman -Rs vim-bufexplorer
+sudo pacman -Rs vim-ctrlp
+sudo pacman -Rs vim-easymotion
+sudo pacman -Rs vim-gitgutter
+sudo pacman -Rs vim-nerdcommenter
+sudo pacman -Rs vim-repeat
+sudo pacman -Rs vim-supertab
+sudo pacman -Rs vim-surround
+sudo pacman -Rs vim-syntastic
+sudo pacman -Rs vim-tabular
+## remove aur-out-of-date
+sudo pacman -Rs aur-out-of-date
+## updatedb.conf
+sudo nvim -o /etc/updatedb.conf /etc/updatedb.conf.pacnew -c 'windo difft'
+sudo rm /etc/updatedb.conf.pacnew
+
 # physical configuration
 ViewSonic VA1616w 1366x768
 SDSSDA240G  in  LogiLink 2.5" HDD Mounting Bracket

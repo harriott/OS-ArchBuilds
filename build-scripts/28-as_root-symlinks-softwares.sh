@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdl=1 ft=sh.shfold:
+# vim: fdl=1:
 
 # bash <thisfile>
 
@@ -9,12 +9,8 @@
 
 # sort these lists by last use of "~":  :sort /,*\~/
 
-#=> for fonts
-cfA=/usr/share/fonts/copiedForArch
-[[ $cfA ]] && rm -r $cfA; ln -s $IThandy/fonts-forArch $cfA
-exa -la /usr/share/fonts
-
-# #=> Vim
-# rm -r ~/.vim; ln -s $ITstack/vimfiles ~/.vim
-rm -r ~/.vim; ln -s $onGH/vimfiles ~/.vim
+# #=> for fonts
+# cfA=/usr/share/fonts/copiedForArch
+# [[ $cfA ]] && rm -r $cfA; ln -s $IThandy/fonts-forArch $cfA
+# exa -la /usr/share/fonts
 

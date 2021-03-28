@@ -7,11 +7,6 @@ latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_
 sudo pacman -Rs <packagetoremove>
 xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
-# HP Linux Imaging and Printing
-hp-levels  # takes a little while to show the ink levels
-hp-systray & disown  # HPLIP Status Service tray icon
-hp-toolbox  # HP Device Manager
-
 # Bash - ANSI escape sequences
 $ARCHBUILDS/Bash/bashrc-generic
 \e[0;34m = Blue
@@ -26,6 +21,24 @@ tput bold; echo hello
 ### cat --show-nonprinting
 for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
+
+# fcron
+systemctl status fcron.service
+
+## fcrontab
+fcrontab -l
+VISUAL=''; fcrontab -e  # then make your changes
+
+### lines
+@ 20 bash ~/Arch/bash_history.sh
+@ 20 jump clean
+
+### spool directory
+/var/spool/fcron
+
+#### check the crontabs therein
+cat jo.orig
+cat systab.orig  # contains bootrun tabs to catch
 
 # fonts
 cd /usr/share/fonts; $ fd -L consolas
@@ -52,9 +65,10 @@ tint  # tetris
 cmatrix -u 9 -C blue
 man cmatrix
 
-# gVim
-gvim --help | mo
-gvim -geom 200  # height parameter is omitted as it's having no effect
+# HP Linux Imaging and Printing
+hp-levels  # takes a little while to show the ink levels
+hp-systray & disown  # HPLIP Status Service tray icon
+hp-toolbox  # HP Device Manager
 
 # imagey
 jpo  # defined in my $Bash/bashrc-wm
@@ -68,6 +82,7 @@ see $Imagey/Scan.sh
 # multimedia
 mediainfo -h | moar
 mediainfo <avfile> | grep Encoded
+pkill quodlibet
 
 # networking
 bm firewall-cmd
@@ -110,13 +125,23 @@ notmuch search tag:trohib | wc -l
 URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
 
 # Openbox
-$MACHINE/jo/openbox/schema.pl
+$Openbox/openbox/schema.pl
 $Openbox/openbox/rc.xml
 Alt+Space => show client menu for active window
 Ctrl+Alt+arrows => move to desktop
 Shift+Alt+arrows => move to desktop, bringing current window along
 Win+1 => move the window to monitor 1
 Win+2 => move the window to monitor 2
+
+# pagers
+moar <file>  # ? lists the limited commands
+
+## less
+less <file>
+
+### commands
+h -> help
+j,k -> down/up
 
 # pass
 pass edit gmail-neomutt
@@ -222,7 +247,7 @@ find . -type f -name .gitignore
 find . -type f | fzy  # for finding something fuzzily fast
 
 ## fd
-b fd
+bm fd
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
 fd -H  # --hidden
@@ -235,6 +260,7 @@ egrep '<someText>|<otherText>'
 grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
 
 ### ripgrep
+bm rg
 for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
 rg -l -ttex '\\input' > rg-tex.txt
 rg -l -ttex verseSettings > rg-tex.txt
@@ -251,6 +277,7 @@ bm locate
 locate -c <target>  # --count
 locate -h
 locate -r '\.conf$'
+locate -r '\.json$' | moar
 sudo updatedb
 systemctl status updatedb.timer
 
@@ -284,7 +311,11 @@ sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
 # storage - rsnapshot
 $MACHINE/etc/rsnapshot.conf
-journalctl -u rsnapshot@hourly | moar
+
+## checking
+journalctl -u rsnapshot@daily
+journalctl -u rsnapshot@hourly
+systemctl status rsnapshot-hourly.timer
 
 # storage - rsync
 log: > = the item is received
@@ -294,6 +325,7 @@ log: > = the item is received
 bm <command>  # batman
 cat /proc/cpuinfo
 dunstify -u critical "Read this now!"
+sudo du -sh /boot /etc /home /root /usr
 
 ## BpyTOP
 bpytop  # supersedes  bashtop
@@ -319,13 +351,26 @@ handlr list
 ### mimeo
 /home/jo/.config/mimeapps.list
 
-## as root
-du -sh /boot /etc /home /root /usr
-journalctl -b  # review the startup messages
+## systemd
+journalctl --list-boots
+
+### messages, paged
+journalctl -b  # for this boot
+journalctl -b -1  # for previous boot
+journalctl -b -1 -e  # shows end of  -n1000
+journalctl -b -1 -r  # newest first
 
 # termdown
 termdown --help | moar
 termdown -b 10
+
+# text-wrangling
+echo $EDITOR
+echo $VISUAL
+
+## gVim
+gvim --help | mo
+gvim -geom 200  # height parameter is omitted as it's having no effect
 
 # tmux
 resize -s 65 120  # good for half of ViewSonic VX2025wm

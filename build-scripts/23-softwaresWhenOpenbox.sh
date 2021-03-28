@@ -7,8 +7,9 @@ trap read debug  # puts a read request after each executable line
 
 # rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 
-# #=> 0 tint2rc
-# gvim -geometry 200x55 -O ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"  # should also be done if  tint2  has been updated
+#=> 0 tint2rc
+gvim -geometry 200x55 -O ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"  # should also be done if  tint2  has been updated
+killall -SIGUSR1 tint2  # reloads tint2rc
 
 # #=> CUPS service
 # sudo pacman -S cups
@@ -52,15 +53,15 @@ trap read debug  # puts a read request after each executable line
 # # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 # true
 
-#=> 1 qt5-styleplugins
-# for qt5ct - allows fix of narrow fonts in XnViewMP
-cd ~/Arch/AUR
-rAUR qt5-styleplugins
-git clone https://aur.archlinux.org/qt5-styleplugins.git
-cd qt5-styleplugins
-gvim PKGBUILD
-makepkg -sic
-cd ~
+# #=> 1 qt5-styleplugins
+# # for qt5ct - allows fix of narrow fonts in XnViewMP
+# cd ~/Arch/AUR
+# rAUR qt5-styleplugins
+# git clone https://aur.archlinux.org/qt5-styleplugins.git
+# cd qt5-styleplugins
+# gvim PKGBUILD
+# makepkg -sic
+# cd ~
 
 # #=> 1 qpdfview
 # sudo pacman -S qpdfview

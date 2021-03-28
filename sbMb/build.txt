@@ -1,4 +1,4 @@
-vim: fdl=0 ft=build:
+vim: ft=build:
 
 # build
 ## Arch install - from the ISO
@@ -281,14 +281,10 @@ sudo pacman -Rs vim-gitgutter
 ## remove reference to ST3320418AS
 sudo rm -r /mnt/ST3320418AS
 ## rsnapshot.conf points to WD1001FALS
-## system seized
-## system seized
 ## restore ST3500413AS
 sudo mkdir /mnt/ST3500413AS
 sudo cp $MACHINE/etc/fstab/kca /etc/fstab
 sudo chown jo:jo /mnt/ST3500413AS
-## system seized
-## system seized
 ## HD103SJ installed
 sudo mkdir /mnt/HD103SJ
 sudo cp $MACHINE/etc/fstab/kca /etc/fstab
@@ -297,16 +293,11 @@ sudo chown jo:jo /mnt/HD103SJ
 ## xdg-open .txt
 handlr get .txt  returns  vim.desktop  - which was why nnn was freezing, so
   handlr set .txt gvim.desktop
-## system rebooted itself
-## system seized
-## system rebooted itself
 ## remove WD1001FALS from mlocate path
 sudo cp $MACHINE/etc/kcm-updatedb.conf /etc/updatedb.conf
 sudo updatedb
 ## Zathura not opening pdf's
 zathura-pdf-mupdf 0.3.6-3  fixed by  zathura-pdf-mupdf 0.3.6-4
-## system seized
-## system seized
 ## update GnuPG key 13F327EF
 gpg --edit-key 13F327EF > 1 > 2 > expire > 2y > trust
 gpg --with-keygrip -K  shows keygrips didn't change
@@ -319,36 +310,21 @@ nmcli connection show
 nmcli connection delete Jo-XA2
 nmcli device wifi connect Jo-XA2 password <pw>
 nmcli connection delete Jo-X10II
-## system rebooted itself
 ## NetworkManager Jo-X10II pw changed
 nmcli connection show
 sudo grep -r '^psk=' /etc/NetworkManager/system-connections/   shows it's outdated
 nmcli connection delete Jo-X10II
 nmcli device wifi connect Jo-X10II password <pw>
-## system seized
-## system seized
-## system seized
 ## jo's pw became unaccepted
 fixed by a reboot
-## system seized
 after hard reboot  $HOME/.cache/ctrlp/mru/cache.txt  was empty...
-## system seized
 ## nomacs Settings
 Advanced > Save Exif Orientation  off-ticked
-## system seized
 ASUS C027PI DVI failed on reboot
-## system seized
 ## xdg-open .md
 handlr get .md  returns  no handlers found for text/markdown
   handlr set .md gvim.desktop
-## system seized
-## system rebooted itself
-## system rebooted itself
-## system seized
-## system seized
 ## system slowed down to a crawl
-## system rebooted itself
-## system seized
 ## HP Device Settings
 Print Settings > General > Media Size > A4 210x297mm
 sudo /etc/papersize
@@ -358,7 +334,6 @@ Ctrl+P > More settings > A4 210x297mm
 ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
 ## HP Device Manager Default Printer
 hp-toolbox > Printer Control > Default Printer
-## system rebooted itself
 ## SANE pacnews
 sudo nvim -o /etc/sane.d/canon_lide70.conf /etc/sane.d/canon_lide70.conf.pacnew
 sudo nvim -o /etc/sane.d/escl.conf /etc/sane.d/escl.conf.pacnew
@@ -382,6 +357,9 @@ curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import 
   gpg: key D1742AD60D811D58: public key "Spotify Public Repository Signing Key <tux@spotify.com>" imported
   gpg: Total number processed: 1
   gpg:               imported: 1
+## can't Sign in to chromium
+chromium > History > Tabs from other devices > Sign in
+  404. That’s an error. The requested URL was not found on this server. That’s all we know.
 # physical configuration
 TL-WN821N
 ## cbh
@@ -410,3 +388,8 @@ F12  gets a choice of boot media
 Peripherals > EHCI Hand-off Disabled [ IOMMU Controller  XHCI Hand-off ] > Enabled
 ### USB headers
 Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB2
+# system seizures
+journalctl -b -1 -r  shows no snags, so thinking it's hw
+## system seizures
+less often: random reboots
+regularly: clock stuck, no CBH, so hard reboot

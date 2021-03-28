@@ -6,6 +6,8 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+# rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+
 # #=> 0 ATI install
 # sudo pacman -S xf86-video-ati  # should probably reboot
 
@@ -33,7 +35,6 @@ trap read debug  # puts a read request after each executable line
 # cd nvidia-utils-beta
 # [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
 # makepkg -sic
-# cd ~
 
 # #=> 0 NVIDIA beta install 1
 # cd ~/Arch/AUR
@@ -42,7 +43,6 @@ trap read debug  # puts a read request after each executable line
 # cd nvidia-beta
 # [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
 # makepkg -sic
-# cd ~
 
 # #=> 0 Openbox configuration folders
 # mkdir ~/.config/openbox
@@ -65,25 +65,24 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 for urxvt
 # mkdir -p ~/.urxvt
 
-# #=> 0 xorg-xkbprint
-# cd ~/Arch/AUR
-# sudo rm -r xorg-xkbprint
-# git clone https://aur.archlinux.org/xorg-xkbprint.git
-# cd xorg-xkbprint
-# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-# makepkg -sic
-# cd ~
+#=> 0 xorg-xkbprint
+cd ~/Arch/AUR
+rAUR xorg-xkbprint
+git clone https://aur.archlinux.org/xorg-xkbprint.git
+cd xorg-xkbprint
+[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+makepkg -sic
 
-#=> 0 xrandr
-sudo pacman -S xorg-xrandr
+# #=> 0 xrandr
+# sudo pacman -S xorg-xrandr
 
 # #=> 1 importScreenshot.sh
 # cp $ARCHBUILDS/jo/Openbox/openbox/importScreenshot.sh ~/.config/openbox/importScreenshot.sh
 # chmod 755 ~/.config/openbox/importScreenshot.sh
 
-#=> 1 libva-mesa-driver
-# for  VA-API
-sudo pacman -S libva-mesa-driver
+# #=> 1 libva-mesa-driver
+# # for  VA-API
+# sudo pacman -S libva-mesa-driver
 
 # #=> 1 perl-data-dump
 # # for  obmenu-generator

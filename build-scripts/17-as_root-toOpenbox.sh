@@ -59,6 +59,9 @@ pacman -S pkgconf
 # # pulsemixer
 # pacman -S pulsemixer
 
+#=> softwares - bluetooth
+pacman -S bluez bluez-utils
+
 # #=> softwares - networking 1
 # # iw
 # pacman -S iw

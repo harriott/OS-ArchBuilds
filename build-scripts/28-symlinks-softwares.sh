@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: fdc=1 fdm=expr:
 
 # bash <thisfile>
 
@@ -58,4 +57,7 @@ ln -sf $Openbox/cmus_notify.sh ~/.local/share/cmus_notify.sh
 ln -sf $tmux/tmux.conf         ~/.tmux.conf
 
 rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
+
+#=> Vim
+rm -r ~/.vim; ln -s $vimfiles ~/.vim
 
