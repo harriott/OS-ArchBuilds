@@ -59,8 +59,8 @@ pacman -S pkgconf
 # # pulsemixer
 # pacman -S pulsemixer
 
-#=> softwares - bluetooth
-pacman -S bluez bluez-utils
+# #=> softwares - bluetooth
+# pacman -S bluez bluez-utils
 
 # #=> softwares - networking 1
 # # iw
@@ -103,22 +103,28 @@ pacman -S bluez bluez-utils
 # # Openbox & tint2
 # pacman -S openbox tint2
 
-# #=> softwares - system
-# # Bluefish
-# pacman -S bluefish
+#=> softwares - system
+# Bluefish
+pacman -S bluefish
 
-# # Conky
-# pacman -S conky
+# Conky
+pacman -S conky
 
-# # sysstat
-# pacman -S sysstat
+# exFAT utilities
+pacman -S exfatprogs
 
-# # python-virtualenvwrapper
-# pacman -S python-virtualenvwrapper
+# lm_sensors
+pacman -S lm_sensors
 
-# # xvt-perls
-# pacman -S urxvt-perls
+# python-virtualenvwrapper
+pacman -S python-virtualenvwrapper
 
-# # xdotool
-# pacman -S xdotool
+# sysstat
+pacman -S sysstat
+
+# xvt-perls
+pacman -S urxvt-perls
+
+# xdotool
+pacman -S xdotool
 

@@ -2,8 +2,6 @@ vim: ft=build:
 
 commands here are tailored to my Arch install, see also $onGH/misc/GNULinuxQR.txt
 
-latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_10_06_2020.html`
-
 sudo pacman -Rs <packagetoremove>
 xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
@@ -23,7 +21,7 @@ for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # fcron
-systemctl status fcron.service
+systemctl status fcron.service  # showing recent events
 
 ## fcrontab
 fcrontab -l
@@ -65,11 +63,6 @@ tint  # tetris
 cmatrix -u 9 -C blue
 man cmatrix
 
-# HP Linux Imaging and Printing
-hp-levels  # takes a little while to show the ink levels
-hp-systray & disown  # HPLIP Status Service tray icon
-hp-toolbox  # HP Device Manager
-
 # imagey
 jpo  # defined in my $Bash/bashrc-wm
 rm -r ~/.cache/sxiv/*
@@ -81,12 +74,12 @@ see $Imagey/Scan.sh
 
 # multimedia
 mediainfo -h | moar
-mediainfo <avfile> | grep Encoded
 pkill quodlibet
 
 # networking
 bm firewall-cmd
 cat /etc/hostname
+latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_10_06_2020.html`
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
 
@@ -149,55 +142,29 @@ pass gmail-neomutt
 pass troh/GmailAPI/token-expire
 ~/.password-store
 
-# printing - CUPS
-"Command-Line Printing and Options" http://localhost:631/help/options.html
-lpadmin
-lpq  # show printer queue status
-lpstat -p -d  # show status of printers, including which is set as default
-lpstat -s  # status
-sudo systemctl status cups.service
-
-## cancel print jobs
-cancel -a
-lprm
-
-## HP ENVY 5532 WiFi
+# printing - CUPS - HP ENVY 5532 WiFi
 lpoptions -d ENVY_5532  # set as default
 lpoptions -p ENVY_5532 -l  # list options
 lpoptions -p Envy5532 -o PageSize=A4
 sudo cupsenable ENVY_5532  # if it's paused
 
-### 249
+## 249
 lpoptions -d 553_192_168_43_249  # set as default
 lpoptions -p 553_192_168_43_249 -l  # list options
 sudo cupsenable 553_192_168_43_249  # if it's paused
 
-## lp
-lp -o fit-to-page <image>
-
-### orientation
-automatically selects the best orientation for filling the page
-
-#### specify
--o orientation-requested=3 - portrait orientation (no rotation)
--o orientation-requested=4 - landscape orientation (90 degrees)
--o orientation-requested=5 - reverse landscape or seascape orientation (270 degrees)
--o orientation-requested=6 - reverse portrait or upside-down orientation (180 degrees)
-
-# printing - HPLIP
-hp-printsettings  # dialog pop-up
-hp-setup -h
-hp-toolbox  # HP Device Manager
-
-## HP ENVY 5532 WiFi
+# printing - HPLIP - HP ENVY 5532 WiFi
 hp-levels -p ENVY_5532
 hp-setup -b net 192.168.43.249  # when online
 
-# storage - broot
+# storage
+/proc/filesystems - those supported by the kernel
+
+## broot
 bm broot
 F5 => refresh
 
-## run
+### run
 br
 br -c :count
 br -d => br --dates => the last modified date
@@ -207,11 +174,11 @@ br -i => br --show-gitignored
 br -p => br --permissions
 br -s => br --sizes
 
-# storage - Ctrl+t
+## Ctrl+t
 cd ctrl+t  # then fuzzy search for a file, hit enter, backspace to the file's directory, Enter
 puts node selection onto command line
 
-## Search syntax
+### Search syntax
 Token    -  Match type                  -  Description
 sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
 'wild    -  exact-match (quoted)        -  Items that include wild
@@ -223,30 +190,30 @@ sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
 
 | OR
 
-# storage - directory structures
+## directory structures
 <directory>  # cd <directory>  ( shopt autocd )
 
-## exa
+### exa
 bm exa
 e
 e -la  # for permissions and symlinks
 e -T   # for tree
 
-## Samokovarov's jump
+### Samokovarov's jump
 bm jump
 j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
 jump clean  # I have in fcrontab
 jump top | moar
 jump --help
 
-# storage - file searching
+## file searching
 as root: find / -xdev -iname "*fmtutil.cnf*"
 find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
 find . -type d -name .git
 find . -type f -name .gitignore
 find . -type f | fzy  # for finding something fuzzily fast
 
-## fd
+### fd
 bm fd
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
@@ -255,23 +222,28 @@ fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
 sharkdp/fd
 
-## grepping
+### grepping
 egrep '<someText>|<otherText>'
 grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
 
-### ripgrep
+#### ripgrep
 bm rg
 for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
-rg -l -ttex '\\input' > rg-tex.txt
-rg -l -ttex verseSettings > rg-tex.txt
 rg -tmd '\$SE'
 rg <someText>  # searches recursively in files
 rg '\$ITstack'
 rg '<someText>|<otherText>'
 rg 'sometext' --no-ignore  # allows searching into gitignored places
+
+##### TeX files
+rg -l -ttex '\\input' > rg-tex.txt
+rg -l -ttex '\\parskip' > rg-tex.txt
+rg -l -ttex verseSettings > rg-tex.txt
+rg -ttex '\{geometry}'
+rg -ttex '\\parindent'
 rg -ttex ^%%
 
-## mlocate
+### mlocate
 /etc/updatedb.conf
 bm locate
 locate -c <target>  # --count
@@ -281,14 +253,14 @@ locate -r '\.json$' | moar
 sudo updatedb
 systemctl status updatedb.timer
 
-## list symlinks
+### list symlinks
 find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
 
-### recursively
+#### recursively
 find . -type l -ls
 find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
-# storage - fzf
+## fzf
 Alt+c   # to change directory
 bm fzf
 cat $(fzf)
@@ -299,25 +271,25 @@ kill -9 <tab>
 ls -l $(fzf -m)
 unalias **<tab>
 
-# storage - mkfs.ext4
+## mkfs.ext4
 /etc/mke2fs.conf  has bytes-per-inode ratios for usage types. A side-by-side comparison of  df -h  &  df -hi  suggests I should try  mkfs.ext4 -T huge /dev/<device>
 
-# storage - non-optical
+## non-optical
 $DROPBOX/JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch > rg -ttxt ft=bbcode > forum.txt
 
-## Trash
+### Trash
 trash-empty
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
-# storage - rsnapshot
+## rsnapshot
 $MACHINE/etc/rsnapshot.conf
 
-## checking
+### checking
 journalctl -u rsnapshot@daily
 journalctl -u rsnapshot@hourly
 systemctl status rsnapshot-hourly.timer
 
-# storage - rsync
+## rsync
 log: > = the item is received
 "rsync manual"
 
@@ -325,7 +297,8 @@ log: > = the item is received
 bm <command>  # batman
 cat /proc/cpuinfo
 dunstify -u critical "Read this now!"
-sudo du -sh /boot /etc /home /root /usr
+sudo !!
+sudo du -h --max-depth=1
 
 ## BpyTOP
 bpytop  # supersedes  bashtop
@@ -350,6 +323,11 @@ handlr list
 
 ### mimeo
 /home/jo/.config/mimeapps.list
+
+## sizes
+sudo du -h --max-depth=1 /usr
+sudo du -h --max-depth=1 /usr/share
+sudo du -sh /boot /etc /home /root /usr
 
 ## systemd
 journalctl --list-boots

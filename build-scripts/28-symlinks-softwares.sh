@@ -12,7 +12,7 @@
 ln -sf $GNULE/notmuch-config ~/.notmuch-config
 
 #=> LaTeX
-ln -s $CrossPlatform/forLaTeX ~/texmf/tex/latex/jo
+ln -sf $CrossPlatform/LaTeX/jo ~/texmf/tex/latex/jo
 
 #=> sbMb dual monitors 0
 sudo cp $MACHINE/etc/20-monitor.conf /etc/X11/xorg.conf.d/20-monitor.conf

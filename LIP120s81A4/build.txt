@@ -1,0 +1,34 @@
+vim: ft=build:
+
+# build
+## Arch install - from the ISO
+booted to archlinux-2021.04.01-x86_64.iso on KDT100G3C
+  Arch Linux install medium (x86_64, UEFI)
+K8GBDTIG3 loaded with  ArchBuilds
+mkdir /bs   mount /dev/sdb /bs   cd /bs/ArchBuilds/build-scripts
+
+# physical configuration
+Lenovo IdeaPad 120s 81A4 = LIP120s81A4
+# before Git, prepare K8GBDTIG3
+rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
+cp -f $ITstack/unix_like/LIP120s81A4-iwctl.sh /run/media/jo/K8GBDTIG3
+# prepare the bootable disk
+lsblk
+  mmcblk0 29.1G divided into 4
+  mmcblk0boot0 4M
+  mmcblk0boot1 4M
+
+  gdisk /dev/sdd > o (create a new empty GUID partition table GPT & new protective MBR) y
+    w   for  gdisk /dev/sdd  (MBR: protection  GPT: present)
+##### create partitions
+n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
+  ef00 (EFI system partition)
+n > Partition number (defaults to 2) > First sector (defaults to 1128448) > +60g > Hex code >
+  8304 Linux x86-64 root (/)
+n > Partition number (defaults to 3) > First sector (defaults to the sector after partition 2) >
+  +4g > 8200 (Linux swap)
+n > Partition number (defaults to 4) > First sector (defaults to the sector after partition 3) >
+  +60g > Hex code > 8302 (Linux home)
+n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 5) >
+  Enter > Enter > 8300 (Linux filesystem)
+w

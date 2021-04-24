@@ -71,6 +71,9 @@ pacman -S bat
 pacman -S broot
 broot # to generate br command
 
+# dvd+rw-tools
+sudo pacman -S dvd+rw-tools
+
 # exa
 pacman -S exa
 

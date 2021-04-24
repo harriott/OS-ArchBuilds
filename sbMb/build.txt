@@ -360,6 +360,14 @@ curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import 
 ## can't Sign in to chromium
 chromium > History > Tabs from other devices > Sign in
   404. That’s an error. The requested URL was not found on this server. That’s all we know.
+## updatedb.conf.pacnew
+sudo nvim -o /etc/updatedb.conf /etc/updatedb.conf.pacnew
+sudo rm /etc/updatedb.conf.pacnew
+## Transmission
+Preferences > Desktop > Play a sound > offticked
+## public key of Klaus Knopper
+gpg --keyserver pool.sks-keyservers.net --search-keys "Klaus Knopper" > 5
+  gpg: key 3798E3D757E37087: public key "Klaus Knopper <knopper@knopper.net>" imported
 # physical configuration
 TL-WN821N
 ## cbh
@@ -374,7 +382,7 @@ Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16
   HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
 ### disks
 SATA0: SD480GSSDPlus resting in middle of 3½" bays
-SATA1: DVD drive in 2nd 5¼" bay from top
+SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
 SATA2: WD30EZRZ in 1st 5¼" bay from top
 SATA3: ST3500413AS in bottom 3½" bay
 SATA4: HD103SJ in top 3½" bay
@@ -391,5 +399,6 @@ Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB2
 # system seizures
 journalctl -b -1 -r  shows no snags, so thinking it's hw
 ## system seizures
+happens when system is underload, but also sometimes when not heavily loaded
 less often: random reboots
 regularly: clock stuck, no CBH, so hard reboot

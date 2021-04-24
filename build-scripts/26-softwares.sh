@@ -11,13 +11,13 @@ trap read debug  # puts a read request after each executable line
 
 # rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 
-# #=> bat-extras-git
-# cd ~/Arch/AURdev-clone
-# rAUR bat-extras-git
-# git clone https://aur.archlinux.org/bat-extras-git.git
-# gctm bat-extras-git
-# gvim PKGBUILD
-# makepkg -sic
+#=> bat-extras-git
+cd ~/Arch/AURdev-clone
+rAUR bat-extras-git
+git clone https://aur.archlinux.org/bat-extras-git.git
+gctm bat-extras-git
+gvim PKGBUILD
+makepkg -sic
 
 # #=> bfg
 # cd ~/Arch/AUR
@@ -240,13 +240,13 @@ makepkg -sic
 # #=> OpenShot
 # sudo pacman -S openshot
 
-#=> PDFsam
-cd ~/Arch/AUR
-rAUR pdfsam
-git clone https://aur.archlinux.org/pdfsam.git
-cd pdfsam
-gvim PKGBUILD
-makepkg -sic
+# #=> PDFsam
+# cd ~/Arch/AUR
+# rAUR pdfsam
+# git clone https://aur.archlinux.org/pdfsam.git
+# cd pdfsam
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -266,13 +266,13 @@ makepkg -sic
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> perl-data-printer
-cd ~/Arch/AUR
-rAUR perl-data-printer
-git clone https://aur.archlinux.org/perl-data-printer.git
-cd perl-data-printer
-gvim PKGBUILD
-makepkg -sic
+# #=> perl-data-printer
+# cd ~/Arch/AUR
+# rAUR perl-data-printer
+# git clone https://aur.archlinux.org/perl-data-printer.git
+# cd perl-data-printer
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> perl-image-exiftool
 # sudo pacman -S perl-image-exiftool
@@ -328,14 +328,14 @@ makepkg -sic
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> tspreed
-# cd ~/Arch/AUR
-# rAUR tspreed
-# git clone https://aur.archlinux.org/tspreed.git
-# cd tspreed
-# gvim PKGBUILD
-# makepkg -sic
-# true
+#=> tspreed
+cd ~/Arch/AUR
+rAUR tspreed
+git clone https://aur.archlinux.org/tspreed.git
+cd tspreed
+gvim PKGBUILD
+makepkg -sic
+true
 
 # #=> ttf-croscore
 # sudo pacman -S ttf-croscore
@@ -349,11 +349,11 @@ makepkg -sic
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-# #=> Zoom
-# cd ~/Arch/AUR
-# rAUR zoom
-# git clone https://aur.archlinux.org/zoom.git
-# cd zoom
-# gvim PKGBUILD
-# makepkg -sic
+#=> Zoom
+cd ~/Arch/AUR
+rAUR zoom
+git clone https://aur.archlinux.org/zoom.git
+cd zoom
+gvim PKGBUILD
+makepkg -sic
 

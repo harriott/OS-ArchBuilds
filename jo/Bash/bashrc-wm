@@ -2,6 +2,16 @@
 
 # stuff that's useful when a Window Manager is installed
 
+aet () {
+  export a="$1"
+  trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
+  duration=$(ffprobe -i "$a" -show_format -v quiet | sed -n 's/duration=//p')
+  trimmed=$(echo "$duration-$trim" | bc)
+  ffmpeg -i "$a" -c copy -t $trimmed -y "t$a"
+  mpv --start=-3 "t$a"
+} # aet <anAudioFileToTrimOffEnd> <trimIfGreaterThan1second>
+# mv "t$a" "$a"
+
 fv () {
     # find $Vs -type f -name "*$1*"
     Vss=($(find $VsLocation -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
