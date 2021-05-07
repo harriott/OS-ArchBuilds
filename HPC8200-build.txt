@@ -1,4 +1,4 @@
-vim: fdl=0 ft=build:
+vim: ft=build:
 
 HP Compaq 8200 XY129ET CZC202CC0K - HPC8200
 
@@ -10,6 +10,7 @@ non present drives configured in  /etc/fstab  failed - offered maintenance mode
 systemctl disable dhcpcd@enp0s25
 sudo blkid > ~/Arch/kcb-HPC8200-blkid
 # physical configuration
+Acer GF-7300SE-N-A3 in  X4PCIEXP slot
 Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0
 ## cbh
 Perixx PERIBOARD-407W keyboard

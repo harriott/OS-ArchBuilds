@@ -20,6 +20,24 @@ fv () {
     done
 } # fv 'Dog Vision'
 
+otl () {
+  cd $OTL
+  s="sectionHeadings.md"
+  > $s
+  for f in **/*.tex; do
+    echo '' >> $s
+    echo "# ${f%.tex}" >> $s
+    echo "\$OTL/$f" >> $s
+    echo '' >> $s
+    sed -e '/section{/!d' $f >> $s
+  done
+  echo '' >> $s
+  sed -i 's/\\section{/    /' $s
+  sed -i 's/\\subsection{/        /' $s
+  sed -i 's/\\subsubsection{/            /' $s
+  sed -i 's/}//' $s
+}
+
 #=> gVim cautious
 gvc () {
     textfilefullpath=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")

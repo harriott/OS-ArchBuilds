@@ -110,7 +110,9 @@ sudo pacman -Rs aur-out-of-date
 ## updatedb.conf
 sudo nvim -o /etc/updatedb.conf /etc/updatedb.conf.pacnew -c 'windo difft'
 sudo rm /etc/updatedb.conf.pacnew
-
+## clamd.conf
+sudo nvim -o /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
+sudo rm /etc/clamav/clamd.conf.pacnew
 # physical configuration
 ViewSonic VA1616w 1366x768
 SDSSDA240G  in  LogiLink 2.5" HDD Mounting Bracket

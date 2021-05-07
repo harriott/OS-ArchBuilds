@@ -126,6 +126,9 @@ systemctl enable fcron.service
 # glances
 pacman -S glances
 
+# Mesa demos
+pacman -S mesa-demos
+
 # meson, for auracle later
 pacman -S meson
 

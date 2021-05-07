@@ -1,26 +1,42 @@
 vim: ft=build:
 
+Lenovo IdeaPad 120s 81A4 = LIP120s81A4
+
 # build
 ## Arch install - from the ISO
 booted to archlinux-2021.04.01-x86_64.iso on KDT100G3C
   Arch Linux install medium (x86_64, UEFI)
-K8GBDTIG3 loaded with  ArchBuilds
-mkdir /bs   mount /dev/sdb /bs   cd /bs/ArchBuilds/build-scripts
-
-# physical configuration
-Lenovo IdeaPad 120s 81A4 = LIP120s81A4
-# before Git, prepare K8GBDTIG3
-rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
-cp -f $ITstack/unix_like/LIP120s81A4-iwctl.sh /run/media/jo/K8GBDTIG3
-# prepare the bootable disk
-lsblk
+## prepare the bootable disk
+lsblk shows
   mmcblk0 29.1G divided into 4
   mmcblk0boot0 4M
   mmcblk0boot1 4M
+gdisk /dev/mmcblk0 >
+  (o (clear out all partition data) > y would've probably been enough)
+  x (extra functionality) > z (Zap) > y > y
+lsblk shows
+  mmcblk0 29.1G divided into 4
+  mmcblk0boot0 4M
+  mmcblk0boot1 4M
+lsblk -f
+### check in Knoppix
+halt -p
+booted straight into Knoppix v9.1 on KDTG311281
+Menu > Accessories > Disks  showed
+  SD Card DF4032 31GB /dev/mmcblk0
+  /dev/mmcblk0boot0 4.2MB Unkown
+  /dev/mmcblk0boot1 4.2MB Unkown
+PCManFM can see but not enter into the mmcblk0bootx's
+## proposal
+/ on the 32GB eMMC except /home /usr on SDEP128G
+## waiting
+
+K8GBDTIG3 loaded with  ArchBuilds
+mkdir /bs   mount /dev/sdb /bs   cd /bs/ArchBuilds/build-scripts
 
   gdisk /dev/sdd > o (create a new empty GUID partition table GPT & new protective MBR) y
     w   for  gdisk /dev/sdd  (MBR: protection  GPT: present)
-##### create partitions
+### create partitions
 n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
   ef00 (EFI system partition)
 n > Partition number (defaults to 2) > First sector (defaults to 1128448) > +60g > Hex code >
@@ -32,3 +48,9 @@ n > Partition number (defaults to 4) > First sector (defaults to the sector afte
 n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 5) >
   Enter > Enter > 8300 (Linux filesystem)
 w
+# physical configuration
+F2 at boot for Phoenix SecureCore Technology Setup
+SDEP128G in microSD slot
+# before Git, prepare K8GBDTIG3
+rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
+cp -f $ITstack/unix_like/LIP120s81A4-iwctl.sh /run/media/jo/K8GBDTIG3

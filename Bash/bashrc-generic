@@ -1,16 +1,17 @@
-# vim: ft=sh.shfold sw=2:
+# vim: ft=sh sw=2:
 
 # Joseph Harriott
 # Bash configurations that are also useful in Console and as root.
-# To be sourced by the parent  ~/.bashrc
-
+# sourced by  $Bash/bash_profile  &  $MACHINE/jo/bashrc
 
 alias bm='batman'
-export BAT_PAGER=moar
+  export BAT_PAGER=moar
 
 alias mo='moar'
 
 export PAGER=less
+
+if [ $TERM != 'screen-256color' ]; then neofetch; fi
 
 #=> colours
 source $ARCHBUILDS/Bash/xcol.sh

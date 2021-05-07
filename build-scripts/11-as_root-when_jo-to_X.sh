@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: fdm=expr ft=sh.shfold:
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -57,6 +56,10 @@ pacman -S ttf-ubuntu-font-family
 #==> softwares - AV
 # AlsaUtils
 pacman -S alsa-utils
+
+# GStreamer Plug-ins
+# gst-plugins-base
+pacman -S gst-libav gst-plugins-good gst-plugins-ugly
 
 # mediainfo
 pacman -S mediainfo

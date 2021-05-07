@@ -11,13 +11,13 @@ trap read debug  # puts a read request after each executable line
 
 # rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 
-#=> bat-extras-git
-cd ~/Arch/AURdev-clone
-rAUR bat-extras-git
-git clone https://aur.archlinux.org/bat-extras-git.git
-gctm bat-extras-git
-gvim PKGBUILD
-makepkg -sic
+# #=> bat-extras-git
+# cd ~/Arch/AURdev-clone
+# rAUR bat-extras-git
+# git clone https://aur.archlinux.org/bat-extras-git.git
+# gctm bat-extras-git
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> bfg
 # cd ~/Arch/AUR
@@ -67,14 +67,14 @@ makepkg -sic
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-rAUR dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-gvim PKGBUILD
-makepkg -sic
+# #=> Dropbox 0 (re)install
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# rAUR dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# gvim PKGBUILD
+# makepkg -sic
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -122,14 +122,16 @@ makepkg -sic
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> fonts - lohit-fonts
-# cd ~/Arch/AUR
-# rAUR lohit-fonts
-# git clone https://aur.archlinux.org/lohit-fonts.git
-# cd lohit-fonts
-# gvim PKGBUILD
-# makepkg -sic
-# true
+#=> fonts - gnu-free-fonts
+sudo pacman -S gnu-free-fonts
+
+#=> fonts - lohit-fonts
+cd ~/Arch/AUR
+rAUR lohit-fonts
+git clone https://aur.archlinux.org/lohit-fonts.git
+cd lohit-fonts
+gvim -c "silent! /_fhosted" PKGBUILD
+makepkg -sic
 
 # #=> fonts - ttf-dejavu
 # sudo pacman -S ttf-dejavu
@@ -154,6 +156,15 @@ makepkg -sic
 
 # #=> gnome-disk-utility
 # sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
+
+# #=> gst123
+# cd ~/Arch/AUR
+# rAUR gst123
+# git clone https://aur.archlinux.org/gst123.git
+# cd gst123
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Google API python toolchain
 # sudo pacman -S python-google-api-python-client
@@ -185,28 +196,6 @@ makepkg -sic
 # #=> libva-utils
 # sudo pacman -S libva-utils
 
-# #=> moar 0 install
-# cd ~/Arch/AURdev-clone
-# rAUR moar.git
-# git clone https://aur.archlinux.org/moar.git
-# gctm moar.git
-# gvim PKGBUILD
-# makepkg -sic
-
-# #=> moar 1 remove
-# cd ~/Arch/AUR
-# rAUR moar
-# sudo pacman -Rs moar
-
-# #=> moar-git
-# cd ~/Arch/AURdev-clone
-# rAUR moar-git
-# git clone https://aur.archlinux.org/moar-git.git
-# cd moar-git
-# gvim PKGBUILD
-# makepkg -sic
-# true
-
 # #=> mimeo
 # cd ~/Arch/AUR
 # rAUR mimeo
@@ -216,13 +205,28 @@ makepkg -sic
 # makepkg -sic
 # true
 
+# #=> moar remove
+# cd ~/Arch/AUR
+# rAUR moar
+# sudo pacman -Rs moar
+
+# #=> moar-git 0 install
+# cd ~/Arch/AURdev-clone
+# rAUR moar-git
+# git clone https://aur.archlinux.org/moar-git.git
+# gctm moar-git
+# gvim -c "silent! /url" PKGBUILD
+# makepkg -sic
+
 # #=> msmtprc
 # cp -f $GNULE/msmtpConfig-backup ~/.msmtprc
 # chmod 600 ~/.msmtprc
 
 # #=> MusicBrainz Picard
-# sudo pacman -S picard
-# # Options > Options > User Interface > Show a quit confirmation  off
+# sudo pacman -S chromaprint picard
+# # Options > Options > [ General > Check for updates  offticked
+# #   Fingerprinting > Fingerprint calculator > /usr/bin/fpcalc
+# #   User Interface > Show a quit confirmation  off ]
 # true
 
 # #=> nodejs-mapscii 0 install
@@ -328,14 +332,14 @@ makepkg -sic
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> tspreed
-cd ~/Arch/AUR
-rAUR tspreed
-git clone https://aur.archlinux.org/tspreed.git
-cd tspreed
-gvim PKGBUILD
-makepkg -sic
-true
+# #=> tspreed
+# cd ~/Arch/AUR
+# rAUR tspreed
+# git clone https://aur.archlinux.org/tspreed.git
+# cd tspreed
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
 # #=> ttf-croscore
 # sudo pacman -S ttf-croscore
@@ -349,11 +353,11 @@ true
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-#=> Zoom
-cd ~/Arch/AUR
-rAUR zoom
-git clone https://aur.archlinux.org/zoom.git
-cd zoom
-gvim PKGBUILD
-makepkg -sic
+# #=> Zoom
+# cd ~/Arch/AUR
+# rAUR zoom
+# git clone https://aur.archlinux.org/zoom.git
+# cd zoom
+# gvim PKGBUILD
+# makepkg -sic
 

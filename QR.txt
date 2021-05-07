@@ -44,6 +44,7 @@ cd /usr/share/fonts; $ fd -L consolas
 ## Fontconfig
 cd /etc/fonts  # to explore the configuration files
 fc-cache -f  # regenerates the cache
+fc-list | grep Lohit
 fc-list | grep ubuntu
 
 ### fc-scan
@@ -63,6 +64,10 @@ tint  # tetris
 cmatrix -u 9 -C blue
 man cmatrix
 
+# graphics card details
+lspci -vnn | grep VGA -A 12 | xcol Radeon size VGA
+sudo lshw -C display | xcol Radeon size VGA
+
 # imagey
 jpo  # defined in my $Bash/bashrc-wm
 rm -r ~/.cache/sxiv/*
@@ -73,6 +78,7 @@ S 55n 3 <imagefilename> <scanheight>
 see $Imagey/Scan.sh
 
 # multimedia
+for t in *.mp3; do aet "$t" 3; done
 mediainfo -h | moar
 pkill quodlibet
 
@@ -120,11 +126,16 @@ URLs (such as in an email sent from mutt) unclickable - so better to send to the
 # Openbox
 $Openbox/openbox/schema.pl
 $Openbox/openbox/rc.xml
+$Openbox/tint2rc
 Alt+Space => show client menu for active window
 Ctrl+Alt+arrows => move to desktop
 Shift+Alt+arrows => move to desktop, bringing current window along
 Win+1 => move the window to monitor 1
 Win+2 => move the window to monitor 2
+
+# package database locked
+pgrep pacman  # to ensure it's not running
+sudo rm /var/lib/pacman/db.lck  # delete the stale lock
 
 # pagers
 moar <file>  # ? lists the limited commands
@@ -144,7 +155,7 @@ pass troh/GmailAPI/token-expire
 
 # printing - CUPS - HP ENVY 5532 WiFi
 lpoptions -d ENVY_5532  # set as default
-lpoptions -p ENVY_5532 -l  # list options
+lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 lpoptions -p Envy5532 -o PageSize=A4
 sudo cupsenable ENVY_5532  # if it's paused
 
@@ -213,6 +224,10 @@ find . -type d -name .git
 find . -type f -name .gitignore
 find . -type f | fzy  # for finding something fuzzily fast
 
+### for configuration files
+fd -I -e conf
+find . -type f -name "*.conf"
+
 ### fd
 bm fd
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
@@ -225,15 +240,18 @@ sharkdp/fd
 ### grepping
 egrep '<someText>|<otherText>'
 grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
+grep -ri --include "*.conf" '#=> ' .
 
 #### ripgrep
 bm rg
 for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
-rg -tmd '\$SE'
-rg <someText>  # searches recursively in files
 rg '\$ITstack'
 rg '<someText>|<otherText>'
 rg 'sometext' --no-ignore  # allows searching into gitignored places
+rg -ttex '\\subsubsection\{'
+rg -tmd '\$SE'
+rg -ttxt -l --sort modified 'ft=bbcode' > dts-bbcode_ft.txt
+rg <someText>  # searches recursively in files
 
 ##### TeX files
 rg -l -ttex '\\input' > rg-tex.txt
@@ -338,7 +356,12 @@ journalctl -b -1  # for previous boot
 journalctl -b -1 -e  # shows end of  -n1000
 journalctl -b -1 -r  # newest first
 
-# termdown
+# terminals
+Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2
+echo $TERM
+neofetch
+
+## termdown
 termdown --help | moar
 termdown -b 10
 

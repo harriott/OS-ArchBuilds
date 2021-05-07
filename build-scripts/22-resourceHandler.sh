@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=sh.shfold:
 
 # bash <thisfile>.sh
 set -v  # prints each statement here, including comments

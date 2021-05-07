@@ -1,7 +1,7 @@
 # vim: ft=sh sw=2:
 
-# sourced, ultimately, by ~/.bashrc
-# (source ~/.bashrc if you've changed something here...)
+# sourced by  $Bash/bash_profile  &  $MACHINE/jo/bashrc
+# useful also in Console as user
 
 # -----------------------------------------------------------
 # These are more settings that can also be useful in Console.
@@ -10,8 +10,8 @@
 # Joseph Harriott
 
 #=> file manage
-alias rs0='bash $onGH/rsync-portabledrives/rsync-Dr0.sh'
-alias rs1='bash $onGH/rsync-portabledrives/rsync-Dr1.sh'
+alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
+alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
 
 #==> Git
 alias ga='git add'
@@ -49,8 +49,10 @@ fdtsEncryptedChanges () {
 }
 
 #==> only useful in sbMb
-alias rsM='bash $onGH/rsync-portabledrives/rsync-Music.sh'
-alias rsVP='bash $onGH/rsync-portabledrives/rsync-VsPref.sh'
+if [ $machine = 'sbMb' ]; then
+  alias rsM='bash $onGH/rsync-portabledrives/rsync-Music.sh'
+  alias rsVP='bash $onGH/rsync-portabledrives/rsync-VsPref.sh'
+fi
 
 #==> Samokovarov's  jump
 if [ -s "/usr/bin/jump" ]; then
@@ -85,12 +87,18 @@ fdtsExt () {
   fi
 }
 
-#==> time-sorted lists of files - by keystring
+#==> time-sorted lists of files - bbcode
+fdtsbbcode () {
+  dtsfile=dts-bbcode.txt
+  eval "fdtsKS 'ft=bbcode' $dtsfile"
+}
+
+#==> time-sorted lists of files - by keystring in name
 alias fk=fdtsKeyString
 
 fdtsKeyString () {
   if [ $1 ]; then
-    dtsfile=dts-$1.txt
+    dtsfile=dts-$1_in_name.txt
     search='\*$1\*'
     eval "fdtsKS $search $dtsfile"
   fi

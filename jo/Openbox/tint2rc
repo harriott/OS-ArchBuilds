@@ -33,7 +33,7 @@ border_color_pressed = #eaeaea 44
 # Background 3: Active task
 # wider and brighter border - JH
 rounded = 4
-border_width = 2
+border_width = 3
 border_sides = TBLR
 background_color = #777777 20
 border_color = #00ff00 40
@@ -106,7 +106,7 @@ taskbar_name_background_id = 0
 taskbar_name_active_background_id = 0
 taskbar_name_font = 8
 # - less obtrusive desktop label - JH
-taskbar_name_font_color = #e3e3e3 100
+taskbar_name_font_color = #e3e3e3 50
 taskbar_name_active_font_color = #ffffff 100
 taskbar_distribute_size = 0
 taskbar_sort_order = none

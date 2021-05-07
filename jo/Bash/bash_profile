@@ -3,11 +3,11 @@
 # my generic  ~/.bash_profile
 # ---------------------------
 
-# source ~/.exports  # these settings carry through to X
 # defined here so they can be accessed pre-X, by $MACHINE/jo/Openbox/autostart, & by gvim
 # kill tmux sessions if you've made changes here
 source ~/.export-machine
 source ~/.export-storage
+# - carries through to X
 
 # Useful before X:
   source ~/.bashrc-generic  # useful everywhere, including root
@@ -33,5 +33,4 @@ if [ $EXITSTATUS -eq 1 ]; then
     fi
 fi
 
-
-source /home/jo/.config/broot/launcher/bash/br
+source /home/jo/.config/broot/launcher/bash/br  # - carries through to X

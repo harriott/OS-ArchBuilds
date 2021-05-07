@@ -21,7 +21,7 @@
 # ------------
 # this file is symlinked to  ~/.config/openbox/autostart
 
-conky -c $ARCHBUILDS/jo/Openbox/conky.conf
+conky -c $ARCHBUILDS/jo/Openbox/conkyrc
 copyq & # because CopyQ's internal Autostart doesn't work
 dropbox &
 gvim -geometry +670+0 &

@@ -368,7 +368,26 @@ Preferences > Desktop > Play a sound > offticked
 ## public key of Klaus Knopper
 gpg --keyserver pool.sks-keyservers.net --search-keys "Klaus Knopper" > 5
   gpg: key 3798E3D757E37087: public key "Klaus Knopper <knopper@knopper.net>" imported
+## Updates
+reboot  got stuck on "Loading initial ramdisk ..." fixed by hard reboot
+## anticapitalista’s key
+gpg --keyserver hkps://keys.gnupg.net --recv-keys 4A0C4F9C
+  gpg: key A80582E000067FDD: public key "anticapitalista <antix@operamail.com>" imported
+  gpg: Total number processed: 1
+  gpg:               imported: 1
+gpg --fingerprint 4A0C4F9C
+  pub   rsa2048 2013-10-16 [SC]
+        30AA 418A 0C72 3D93 7B50  A986 A805 82E0 0006 7FDD
+  uid           [ unknown] anticapitalista <antix@operamail.com>
+  sub   rsa2048 2013-10-16 [E]
+  sub   rsa4096 2016-02-26 [S]
+gpg --delete-key anticapitalista
+gpg --keyserver hkps://keys.gnupg.net --recv-keys 30AA418A0C723D937B50A986A80582E000067FDD
+gpg: key A80582E000067FDD: public key "anticapitalista <antix@operamail.com>" imported
+  gpg: Total number processed: 1
+  gpg:               imported: 1
 # physical configuration
+Antec Neo HE550
 TL-WN821N
 ## cbh
 Logitech Wireless Mouse M525 works fine
