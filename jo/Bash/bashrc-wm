@@ -10,6 +10,12 @@ aet () {
   ffmpeg -i "$a" -c copy -t $trimmed -y "t$a"
   mpv --start=-3 "t$a"
 } # aet <anAudioFileToTrimOffEnd> <trimIfGreaterThan1second>
+abt () {
+  export a="$1"
+  trim=1
+  ffmpeg -ss $trim -i "$a" -c copy -y "t$a"
+  mpv --end=3 "t$a"
+} # abt <anAudioFileToTrimOffBeginning>
 # mv "t$a" "$a"
 
 fv () {
@@ -20,14 +26,14 @@ fv () {
     done
 } # fv 'Dog Vision'
 
-otl () {
-  cd $OTL
+ltx () {
+  cd $LTX
   s="sectionHeadings.md"
   > $s
   for f in **/*.tex; do
     echo '' >> $s
     echo "# ${f%.tex}" >> $s
-    echo "\$OTL/$f" >> $s
+    echo "\$LTX/$f" >> $s
     echo '' >> $s
     sed -e '/section{/!d' $f >> $s
   done

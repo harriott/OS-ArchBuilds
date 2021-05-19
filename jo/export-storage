@@ -21,9 +21,10 @@ export DROPBOX=$Storage/Dropbox   # keep this capitalised for finding it without
             export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
         export MD4PDF=$onGH/md4pdf
         export vimfiles=$onGH/vimfiles
-    export OTL=$core/TextNotes/OutThereLTX
+    export LTX=$core/TextNotes/LTX
   export IT1=$DROPBOX/JH/Technos/IT1  # for notes
   export IThandy=$DROPBOX/JH/Copied/IT-handy  # for fonts
   export ITP=$DROPBOX/JH/Technos/IT0-Partitionable  # $ITP/diskUsage.txt
   export SE=$DROPBOX/JH/CforWork/Education/Science-Engineering  # used in my TextNotes
+export PAPERSIZE=A4
 

@@ -154,10 +154,10 @@ pass troh/GmailAPI/token-expire
 ~/.password-store
 
 # printing - CUPS - HP ENVY 5532 WiFi
-lpoptions -d ENVY_5532  # set as default
+lpoptions -d ENVY_5530  # set as default
 lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 lpoptions -p Envy5532 -o PageSize=A4
-sudo cupsenable ENVY_5532  # if it's paused
+sudo cupsenable ENVY_5530  # if it's paused
 
 ## 249
 lpoptions -d 553_192_168_43_249  # set as default
@@ -250,6 +250,7 @@ rg '<someText>|<otherText>'
 rg 'sometext' --no-ignore  # allows searching into gitignored places
 rg -ttex '\\subsubsection\{'
 rg -tmd '\$SE'
+rg -tmd '\{TNW}'
 rg -ttxt -l --sort modified 'ft=bbcode' > dts-bbcode_ft.txt
 rg <someText>  # searches recursively in files
 
@@ -259,6 +260,7 @@ rg -l -ttex '\\parskip' > rg-tex.txt
 rg -l -ttex verseSettings > rg-tex.txt
 rg -ttex '\{geometry}'
 rg -ttex '\\parindent'
+rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
 rg -ttex ^%%
 
 ### mlocate
@@ -279,6 +281,7 @@ find . -type l -ls
 find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
 ## fzf
+<someCommand> Ctrl-t - gets the selected node on the command-line
 Alt+c   # to change directory
 bm fzf
 cat $(fzf)

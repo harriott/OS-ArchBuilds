@@ -386,6 +386,18 @@ gpg --keyserver hkps://keys.gnupg.net --recv-keys 30AA418A0C723D937B50A986A80582
 gpg: key A80582E000067FDD: public key "anticapitalista <antix@operamail.com>" imported
   gpg: Total number processed: 1
   gpg:               imported: 1
+## F-Droid keys
+$ gpg --recv-keys 41e7044e1dba2e89
+gpg: key 41E7044E1DBA2E89: public key "F-Droid <admin@f-droid.org>" imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+## HP ENVY 5532 IP Address changed to 250
+was 192.168.43.249, somehow became 192.168.43.250
+hp-setup 192.168.43.250 > Next > Add Printer
+HP Device Manager > selected old HP Envy 5530 Series icon > Remove Device
+HP Envy 5530 Series icon > Printer Control > Set as Default
+### set as CUPS default
+lpoptions -d ENVY_5530
 # physical configuration
 Antec Neo HE550
 TL-WN821N
