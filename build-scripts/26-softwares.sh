@@ -122,16 +122,16 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> fonts - gnu-free-fonts
-sudo pacman -S gnu-free-fonts
+# #=> fonts - gnu-free-fonts
+# sudo pacman -S gnu-free-fonts
 
-#=> fonts - lohit-fonts
-cd ~/Arch/AUR
-rAUR lohit-fonts
-git clone https://aur.archlinux.org/lohit-fonts.git
-cd lohit-fonts
-gvim -c "silent! /_fhosted" PKGBUILD
-makepkg -sic
+# #=> fonts - lohit-fonts
+# cd ~/Arch/AUR
+# rAUR lohit-fonts
+# git clone https://aur.archlinux.org/lohit-fonts.git
+# cd lohit-fonts
+# gvim -c "silent! /_fhosted" PKGBUILD
+# makepkg -sic
 
 # #=> fonts - ttf-dejavu
 # sudo pacman -S ttf-dejavu
@@ -145,14 +145,14 @@ makepkg -sic
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
 
-# #=> google-chrome
-# cd ~/Arch/AUR
-# rAUR google-chrome
-# git clone https://aur.archlinux.org/google-chrome.git
-# cd google-chrome
-# gvim PKGBUILD
-# makepkg -sic
-# true
+#=> google-chrome
+cd ~/Arch/AUR
+rAUR google-chrome
+git clone https://aur.archlinux.org/google-chrome.git
+cd google-chrome
+gvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> gnome-disk-utility
 # sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
@@ -210,13 +210,13 @@ makepkg -sic
 # rAUR moar
 # sudo pacman -Rs moar
 
-# #=> moar-git 0 install
-# cd ~/Arch/AURdev-clone
-# rAUR moar-git
-# git clone https://aur.archlinux.org/moar-git.git
-# gctm moar-git
-# gvim -c "silent! /url" PKGBUILD
-# makepkg -sic
+#=> moar-git 0 install
+cd ~/Arch/AURdev-clone
+rAUR moar-git
+git clone https://aur.archlinux.org/moar-git.git
+gctm moar-git
+gvim -c "silent! /walles" PKGBUILD
+makepkg -sic
 
 # #=> msmtprc
 # cp -f $GNULE/msmtpConfig-backup ~/.msmtprc
@@ -250,6 +250,7 @@ makepkg -sic
 # git clone https://aur.archlinux.org/pdfsam.git
 # cd pdfsam
 # gvim PKGBUILD
+# gvim -c "silent! /torakiki" PKGBUILD
 # makepkg -sic
 
 # #=> pdftk
@@ -353,11 +354,11 @@ makepkg -sic
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-# #=> Zoom
-# cd ~/Arch/AUR
-# rAUR zoom
-# git clone https://aur.archlinux.org/zoom.git
-# cd zoom
-# gvim PKGBUILD
-# makepkg -sic
+#=> Zoom
+cd ~/Arch/AUR
+rAUR zoom
+git clone https://aur.archlinux.org/zoom.git
+cd zoom
+gvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

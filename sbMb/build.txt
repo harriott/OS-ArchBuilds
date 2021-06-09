@@ -398,6 +398,17 @@ HP Device Manager > selected old HP Envy 5530 Series icon > Remove Device
 HP Envy 5530 Series icon > Printer Control > Set as Default
 ### set as CUPS default
 lpoptions -d ENVY_5530
+## Updates
+YouTubes weren't loading in chromium
+:: Replace gmock with community/gtest? [Y/n]
+## HP ENVY 5532 IP Address changed to 249
+was 192.168.43.250, somehow became 192.168.43.249
+hp-setup 192.168.43.249 > Next > Next > ENVY_5530_249 (this ain't seen in HP Device Manager) >
+  Add Printer
+hp-toolbox (= HP Device Manager) > selected old HP Envy 5530 Series icon > Remove Device
+HP Envy 5530 Series icon > Printer Control > Set as Default
+### set as CUPS default
+lpoptions -d ENVY_5530
 # physical configuration
 Antec Neo HE550
 TL-WN821N

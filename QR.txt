@@ -82,6 +82,15 @@ for t in *.mp3; do aet "$t" 3; done
 mediainfo -h | moar
 pkill quodlibet
 
+## cmus
+$Openbox/cmus-rc.conf
+
+### kill
+kill -9 "$(pidof cmus)"
+
+#### manually
+get the PIDs  ps ax | grep cmus  then for each  kill -9 PID
+
 # networking
 bm firewall-cmd
 cat /etc/hostname
@@ -124,14 +133,18 @@ notmuch search tag:trohib | wc -l
 URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
 
 # Openbox
+$Openbox/openbox/autostart
 $Openbox/openbox/schema.pl
 $Openbox/openbox/rc.xml
-$Openbox/tint2rc
 Alt+Space => show client menu for active window
 Ctrl+Alt+arrows => move to desktop
 Shift+Alt+arrows => move to desktop, bringing current window along
 Win+1 => move the window to monitor 1
 Win+2 => move the window to monitor 2
+
+## tint2
+$Openbox/tint2rc
+killall -SIGUSR1 tint2  # reloads
 
 # package database locked
 pgrep pacman  # to ensure it's not running
@@ -377,7 +390,10 @@ gvim --help | mo
 gvim -geom 200  # height parameter is omitted as it's having no effect
 
 # tmux
+$tmux/tmux.conf
+C-a w -> choose window from a list
 resize -s 65 120  # good for half of ViewSonic VX2025wm
+tmux list-keys | mo
 
 ## panes
 C-a C-o -> Rotate through the panes
@@ -387,10 +403,4 @@ C-a M-3 -> switch to main-horizontal layout
 C-a M-4 -> switch to main-vertical layout
 C-a { = swap-pane -U
 C-a } = swap-pane -D
-
-## sessions
-tmux a                  # attach
-tmux a -t myname        # attach to session myname
-tmux kill-server; tmux  # good for resetting
-tmux ls                 # list sessions
 
