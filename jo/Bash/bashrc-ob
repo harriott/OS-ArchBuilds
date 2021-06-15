@@ -14,6 +14,10 @@ alias psci='pscShots=/home/jo/Arch/AUR/pscircle-git-shots;pscLatest="$pscShots/$
 #=> cmus
 alias m='cmus'
 
+k() {
+    kill -9 "$(pidof cmus)"
+}
+
 # update library
 alias uc='bash $MACHINE/jo/cmusUpdateLibrary.sh'
 
