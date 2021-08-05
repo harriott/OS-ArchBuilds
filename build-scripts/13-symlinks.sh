@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdl=1 ft=sh.shfold sw=2:
+# vim: fdl=1 sw=2:
 
 # logged in as user
 
@@ -19,16 +19,16 @@
 # ln -sf $ARCHBUILDS/jo/bash_history.sh  ~/Arch/bash_history.sh
 
 #=> 0 Git
-ln -sf $MACHINE/jo/gitconfig ~/.gitconfig  # points to $ITstack/gitconfig
+# ln -sf $MACHINE/jo/gitconfig ~/.gitconfig  # points to $ITstack/gitconfig
 
 # #=> 0 vims
-# ln -sf $ARCHBUILDS/jo/Vim/gvimrc ~/.gvimrc
+ln -sf $MACHINE/jo/gvimrc ~/.gvimrc
 # ln -sf $ARCHBUILDS/jo/Vim/vimrc  ~/.vimrc
 
 # ln -sf $ARCHBUILDS/jo/Vim/init.vim ~/.config/nvim/init.vim
 
 #=> 1 visual check
-find ~ -mindepth 1 -maxdepth 3 -type l -ls
+# find ~ -mindepth 1 -maxdepth 3 -type l -ls
 
 # #=> 1 if first build
 # echo "now  reboot  (and don't allow startx!)"

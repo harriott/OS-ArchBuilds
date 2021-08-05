@@ -14,18 +14,18 @@ ln -sf $GNULE/notmuch-config ~/.notmuch-config
 #=> LaTeX
 ln -sf $CrossPlatform/LaTeX/jo ~/texmf/tex/latex/jo
 
-#=> sbMb dual monitors 0
-sudo cp $MACHINE/etc/20-monitor.conf /etc/X11/xorg.conf.d/20-monitor.conf
-
-#=> sbMb dual monitors 1
-sudo rm /etc/X11/xorg.conf.d/20-monitor.conf
-
 #=> Pandoc defaults
 ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
 ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 
 #=> Pandoc templates
 ln -s $onGH/pandoc-templates ~/.pandoc/templates
+
+#=> sbMb dual monitors 0
+sudo cp $MACHINE/etc/20-monitor.conf /etc/X11/xorg.conf.d/20-monitor.conf
+
+#=> sbMb dual monitors 1
+sudo rm /etc/X11/xorg.conf.d/20-monitor.conf
 
 #=> SSH config
 ln -sf $CrossPlatform/SSHconfig/M587637 ~/.ssh/config

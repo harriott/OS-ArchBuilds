@@ -45,6 +45,7 @@ our $SCHEMA = [
     {item => ['falkon',               'Falkon',             'web-browser']},
     {item => ['firefox',              'Firefox',            'web-browser']},
     {item => ['google-chrome-stable', 'Google Chrome',      'web-browser']},
+    {item => ['obs',                  'OBS Studio',         'web-browser']},
     {item => ['opera',                'opera',              'web-browser']},
   # {item => ['thunderbird',          'Mail',               'web-browser']},
     {item => ['thunderbird',          'Thunderbird',        'web-browser']},

@@ -113,9 +113,79 @@ sudo rm /etc/updatedb.conf.pacnew
 ## clamd.conf
 sudo nvim -o /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
 sudo rm /etc/clamav/clamd.conf.pacnew
+## remove vim-ale package
+sudo pacman -Rs vim-ale
+## Updates
+  :: Replace gmock with community/gtest? [Y/n]
+  :: Replace jack with extra/jack2? [Y/n]
+  ...
+  :: Import PGP key E0959FEA8B550539, "George Rawlinson <grawlinson@archlinux.org>"? [Y/n]
+  ...
+  auracle: error while loading shared libraries: libalpm.so.12: cannot open shared object file: No such file or directory
+reboot
+## firewalld.conf.pacnew
+cd /etc/firewalld/  for  su + root pw  for
+  nvim -o firewalld.conf firewalld.conf.pacnew   then  diff'd
+  rm firewalld.conf.pacnew
+reboot
+### check firewalld
+sudo firewall-cmd --state
+  running
+sudo firewall-cmd --info-zone=home
+  home (active)
+    target: default
+    icmp-block-inversion: no
+    interfaces: enp0s25 wlan0
+    sources: 
+    services: dhcpv6-client mdns samba-client ssh
+    ports: 5353/udp
+    protocols: 
+    forward: no
+    masquerade: no
+    forward-ports: 
+    source-ports: 
+    icmp-blocks: 
+    rich rules: 
+## auracle needs rebuilding
+  auracle: error while loading shared libraries: libalpm.so.12: cannot open shared object file: No such file or directory
+## remove libglade
+sudo pacman -Rs libglade
+## firewalld.conf.pacnew
+cd /etc/firewalld/  for  su + root pw  for
+  nvim -o firewalld.conf firewalld.conf.pacnew   then  diff'd
+  rm firewalld.conf.pacnew
+reboot
+### check firewalld
+sudo firewall-cmd --state
+  running
+sudo firewall-cmd --info-zone=home
+  home (active)
+    target: default
+    icmp-block-inversion: no
+    interfaces: enp0s25 wlan0
+    sources: 
+    services: dhcpv6-client mdns samba-client ssh
+    ports: 5353/udp
+    protocols: 
+    forward: no
+    masquerade: no
+    forward-ports: 
+    source-ports: 
+    icmp-blocks: 
+    rich rules:
+## cmus-notify
+makepkg -sic
+  /usr/bin/python: No module named pip
+### pip
+pip --version
+### cmus-notify
+cmus_notify -h
 # physical configuration
-ViewSonic VA1616w 1366x768
+Fujitsu E19W5 1440x900
 SDSSDA240G  in  LogiLink 2.5" HDD Mounting Bracket
 ## cbh
 MX 610 Laser
 Perixx PERIBOARD-407W keyboard
+# waiting
+## Pacman ParallelDownloads
+sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 4/' /etc/pacman.conf

@@ -363,7 +363,7 @@
     <!-- Keybinding for gVim - JH -->
     <keybind key="W-g">
       <action name="Execute">
-        <command>gvim -geometry +670+0</command>
+        <command>gvim -geometry +760+0</command>
       </action>
     </keybind>
     <!-- Keybinding for global Menu - JH -->

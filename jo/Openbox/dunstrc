@@ -1,5 +1,6 @@
 # vim: set et:
 
+# this file should be symlinked to  ~/.config/dunst/dunstrc
 # $ eval $(dbus-launch)   if you make changes here
 # test with  dunstify "First test message."; dunstify "Second test message, which is longer."
 

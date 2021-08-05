@@ -43,14 +43,27 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> clamav-unofficial-sigs
+# #=> clamav-unofficial-sigs 0 install
 # cd ~/Arch/AURdev-clone
 # rAUR clamav-unofficial-sigs
 # git clone https://aur.archlinux.org/clamav-unofficial-sigs.git
 # cd clamav-unofficial-sigs
-# gvim PKGBUILD
+# gvim -c "silent! extremeshok" PKGBUILD
 # makepkg -sic
-# true
+# sudo systemctl enable clamav-unofficial-sigs.timer
+
+# #=> clamav-unofficial-sigs 1 remove
+# sudo systemctl disable clamav-unofficial-sigs.timer
+# sudo pacman -Rs clamav-unofficial-sigs
+
+#=> cmus-notify
+cd ~/Arch/AUR
+rAUR cmus-notify
+git clone https://aur.archlinux.org/cmus-notify.git
+cd cmus-notify
+gvim -c "silent! /AntoineGagne" PKGBUILD
+makepkg -sic
+true
 
 # #=> colorpicker
 # cd ~/Arch/AUR
@@ -73,7 +86,7 @@ trap read debug  # puts a read request after each executable line
 # rAUR dropbox
 # git clone https://aur.archlinux.org/dropbox.git
 # cd dropbox
-# gvim PKGBUILD
+# gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
 # makepkg -sic
 
 # #=> Dropbox 1 dropbox-dist folder
@@ -85,7 +98,7 @@ trap read debug  # puts a read request after each executable line
 # rAUR dust
 # git clone https://aur.archlinux.org/dust.git
 # cd dust
-# gvim PKGBUILD
+# gvim -c "silent! /https:\/\/github.com\/bootandy\/" PKGBUILD
 # makepkg -sic
 
 # #=> Fangfrisch 1 AUR
@@ -93,7 +106,7 @@ trap read debug  # puts a read request after each executable line
 # rAUR python-fangfrisch
 # git clone https://aur.archlinux.org/python-fangfrisch.git
 # cd python-fangfrisch
-# gvim PKGBUILD
+# gvim -c "silent! /rseichter" PKGBUILD
 # makepkg -sic
 
 # #=> Fangfrisch 2 settings
@@ -145,14 +158,14 @@ trap read debug  # puts a read request after each executable line
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
 
-#=> google-chrome
-cd ~/Arch/AUR
-rAUR google-chrome
-git clone https://aur.archlinux.org/google-chrome.git
-cd google-chrome
-gvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> google-chrome
+# cd ~/Arch/AUR
+# rAUR google-chrome
+# git clone https://aur.archlinux.org/google-chrome.git
+# cd google-chrome
+# gvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> gnome-disk-utility
 # sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
@@ -210,13 +223,13 @@ true
 # rAUR moar
 # sudo pacman -Rs moar
 
-#=> moar-git 0 install
-cd ~/Arch/AURdev-clone
-rAUR moar-git
-git clone https://aur.archlinux.org/moar-git.git
-gctm moar-git
-gvim -c "silent! /walles" PKGBUILD
-makepkg -sic
+# #=> moar-git 0 install
+# cd ~/Arch/AURdev-clone
+# rAUR moar-git
+# git clone https://aur.archlinux.org/moar-git.git
+# gctm moar-git
+# gvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
 
 # #=> msmtprc
 # cp -f $GNULE/msmtpConfig-backup ~/.msmtprc
@@ -241,6 +254,9 @@ makepkg -sic
 # #=> nodejs-mapscii 1 remove
 # sudo pacman -Rs nodejs-mapscii
 
+# #=> OBS Studio
+# sudo pacman -S obs-studio
+
 # #=> OpenShot
 # sudo pacman -S openshot
 
@@ -263,12 +279,13 @@ makepkg -sic
 # sudo pacman -S perl-json perl-json-parse perl-json-xs
 
 # #=> perl-clone-pp
-# # Can't find why I needed this...
+# #  for  perl-data-printer
 # cd ~/Arch/AUR
 # rAUR perl-clone-pp
 # git clone https://aur.archlinux.org/perl-clone-pp.git
 # cd perl-clone-pp
 # gvim PKGBUILD
+# gvim -c "silent! /NEILB" PKGBUILD
 # makepkg -sic
 
 # #=> perl-data-printer
@@ -276,7 +293,7 @@ makepkg -sic
 # rAUR perl-data-printer
 # git clone https://aur.archlinux.org/perl-data-printer.git
 # cd perl-data-printer
-# gvim PKGBUILD
+# gvim -c "silent! /GARU" PKGBUILD
 # makepkg -sic
 
 # #=> perl-image-exiftool
@@ -296,6 +313,9 @@ makepkg -sic
 # cd pinta
 # gvim PKGBUILD
 # makepkg -sic
+
+# #=> pip
+# sudo pacman -S python-pip
 
 # #=> pscircle-git
 # cd ~/Arch/AURdev-clone
@@ -354,11 +374,11 @@ makepkg -sic
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-#=> Zoom
-cd ~/Arch/AUR
-rAUR zoom
-git clone https://aur.archlinux.org/zoom.git
-cd zoom
-gvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# cd ~/Arch/AUR
+# rAUR zoom
+# git clone https://aur.archlinux.org/zoom.git
+# cd zoom
+# gvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

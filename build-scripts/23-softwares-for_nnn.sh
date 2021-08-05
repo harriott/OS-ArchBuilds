@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: ft=sh.shfold:
 
 # bash <thisfile>.sh
 
@@ -21,17 +20,17 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> 1 advcp
-# for nnn -r
-cd ~/Arch/AUR
-rAUR advcp
-git clone https://aur.archlinux.org/advcp.git
-cd advcp
-gvim PKGBUILD
-# requires Pádraig Brady's key
-makepkg -sic
+# #=> 1 advcp
+# # for nnn -r
+# cd ~/Arch/AUR
+# rAUR advcp
+# git clone https://aur.archlinux.org/advcp.git
+# cd advcp
+# gvim PKGBUILD
+# # requires Pádraig Brady's key
+# makepkg -sic
 
 # #=> 1 nnn plugins
-# [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
-# curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+[[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 

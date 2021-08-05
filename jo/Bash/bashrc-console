@@ -9,6 +9,24 @@
 
 # Joseph Harriott
 
+#=> Bash interface
+# bigger command history
+export HISTFILESIZE=10000
+export HISTSIZE=1000
+
+# a colorised (bold blue) prompt, with git support
+source /usr/share/git/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
+
+# command not found hook
+source /usr/share/doc/pkgfile/command-not-found.bash
+
+# for nnn & tmux
+export EDITOR=nvim
+export VISUAL=gvim
+
 #=> file manage
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
@@ -124,24 +142,6 @@ fdtsKS () {
 #==> trash-cli
 alias tl='trash-list'
 alias tre='trash-restore'
-
-#=> Bash interface
-# bigger command history
-export HISTFILESIZE=10000
-export HISTSIZE=1000
-
-# a colorised (bold blue) prompt, with git support
-source /usr/share/git/completion/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
-
-# command not found hook
-source /usr/share/doc/pkgfile/command-not-found.bash
-
-# for nnn & tmux
-export EDITOR=nvim
-export VISUAL=gvim
 
 #=> my preferred npm global directory
 export PATH="$HOME/.npm-global/bin:$PATH"

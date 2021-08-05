@@ -76,14 +76,6 @@ for i in {0..1}; do  # setup alternative commands to define the header style
     setHeadingsSty[$i]="ln -sf $MD4PDF/iih/headings$i.sty ~/texmf/tex/latex/m4p/headings.sty"
 done
 
-mt() # do my TextNotes
-{
-    cd $DROPBOX/JH/core/TextNotes
-    pwd
-    export m4psGo=1
-    m4ps0 0
-}
-
 m4p() # a single TextNote file
 {
     eval ${setHeadingsSty[0]}
@@ -107,6 +99,17 @@ m4ps1() # muted headings
     export headingtoodeep=####
     export m4pfont=1
     bash $MD4PDF/GNULinux/m4ps.sh 0 1
+}
+
+mt() # do my TextNotes
+{
+    cd $DROPBOX/JH/core/TextNotes
+    pwd
+    m4ps0 0
+    cd ../TN-OT-V-N-E-A-B-Nephrozoa
+    pwd
+    m4ps0 0
+    cd ..
 }
 
 #=> PCManFM

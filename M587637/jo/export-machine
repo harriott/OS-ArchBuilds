@@ -1,11 +1,13 @@
 #!/bin/sh
-# vim: fdl=1:
 
 # sourced by  $Bash/bash_profile
 # symlink this to  ~/.export-machine
 
 export machine=M587637
 export Storage=/mnt/SDSSDA240G  # where I keep stuff
-export urxvtGeometry='81x46+0+0'  # used in  $Openbox/openbox/urxvtl.sh
-# - from left of a 1366x768 screen, allowing room for 106 column gVim
+
+# Used in  $Openbox/openbox/urxvtl.sh
+# open urxvt from left of screen, allowing room for 106 column gVim
+# export urxvtGeometry='81x46+0+0'  # 1366x768 screen
+export urxvtGeometry='92x54+0+0'  # 1440x900 screen
 

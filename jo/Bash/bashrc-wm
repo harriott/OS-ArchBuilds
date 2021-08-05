@@ -18,6 +18,8 @@ abt () {
 } # abt <anAudioFileToTrimOffBeginning>
 # mv "t$a" "$a"
 
+alias xc="zathura -P 38 $IThandy/TeX/LaTeX/Appearance/xcolor.pdf &"
+
 fv () {
     # find $Vs -type f -name "*$1*"
     Vss=($(find $VsLocation -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
@@ -42,6 +44,10 @@ ltx () {
   sed -i 's/\\subsection{/        /' $s
   sed -i 's/\\subsubsection{/            /' $s
   sed -i 's/}//' $s
+}
+
+frames () {
+  ffmpeg -i $1 -vcodec copy -f rawvideo -y /dev/null 2>&1
 }
 
 #=> gVim cautious

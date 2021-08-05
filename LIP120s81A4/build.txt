@@ -27,6 +27,8 @@ Menu > Accessories > Disks  showed
   /dev/mmcblk0boot0 4.2MB Unkown
   /dev/mmcblk0boot1 4.2MB Unkown
 PCManFM can see but not enter into the mmcblk0bootx's
+## ARCH_202107 to chroot
+K16GBDTG2  with  archlinux-2021.07.01-x86_64.iso
 ## proposal
 / on the 32GB eMMC except /home /usr on SDEP128G
 ## waiting
@@ -51,6 +53,6 @@ w
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
 SDEP128G in microSD slot
-# before Git, prepare K8GBDTIG3
+# before Dropbox, prepare KDTG311282
 rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
 cp -f $ITstack/unix_like/LIP120s81A4-iwctl.sh /run/media/jo/K8GBDTIG3

@@ -1,7 +1,8 @@
 #!/bin/bash
-# vim: fdm=expr fdl=1 ft=sh.shfold:
 
 # bash <thisfile>.sh
+
+#  gctm  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -37,8 +38,8 @@ trap read debug  # puts a read request after each executable line
 cd ~/Arch/AURdev-clone
 rAUR auracle-git
 git clone https://aur.archlinux.org/auracle-git.git
-cd auracle-git
-gvim PKGBUILD
+gctm auracle-git
+gvim -c "silent! /falconindy" PKGBUILD
 makepkg -sic
 true
 

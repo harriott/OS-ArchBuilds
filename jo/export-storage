@@ -20,6 +20,7 @@ export DROPBOX=$Storage/Dropbox   # keep this capitalised for finding it without
             export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
             export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
         export MD4PDF=$onGH/md4pdf
+        export MSWin10=$onGH/MSWin10  # for notes
         export vimfiles=$onGH/vimfiles
     export LTX=$core/TextNotes/LTX
   export IT1=$DROPBOX/JH/Technos/IT1  # for notes

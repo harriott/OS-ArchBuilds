@@ -5,21 +5,6 @@ commands here are tailored to my Arch install, see also $onGH/misc/GNULinuxQR.tx
 sudo pacman -Rs <packagetoremove>
 xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
-# Bash - ANSI escape sequences
-$ARCHBUILDS/Bash/bashrc-generic
-\e[0;34m = Blue
-\e[1;34m = Bold Blue
-echo ${my_array[@]}
-echo -e "\e[1m\e[95m[1m[95m\e[0m"
-
-## tput
-"nachoparker"
-tput bold; echo hello
-
-### cat --show-nonprinting
-for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
-tput setaf 95; tput setaf 95 | cat -v; echo =95
-
 # fcron
 systemctl status fcron.service  # showing recent events
 
@@ -146,14 +131,17 @@ Win+2 => move the window to monitor 2
 $Openbox/tint2rc
 killall -SIGUSR1 tint2  # reloads
 
-# package database locked
+# packages
+pacman -Qdt  # lists all orphans
+
+## package database locked
 pgrep pacman  # to ensure it's not running
 sudo rm /var/lib/pacman/db.lck  # delete the stale lock
 
 # pagers
 moar <file>  # ? lists the limited commands
 
-## less
+## less pager
 less <file>
 
 ### commands
@@ -181,7 +169,27 @@ sudo cupsenable 553_192_168_43_249  # if it's paused
 hp-levels -p ENVY_5532
 hp-setup -b net 192.168.43.249  # when online
 
+# scripting
+kill -9 "$(pidof perl)"
+
+## Bash - ANSI escape sequences
+$ARCHBUILDS/Bash/bashrc-generic
+\e[0;34m = Blue
+\e[1;34m = Bold Blue
+echo ${my_array[@]}
+echo -e "\e[1m\e[95m[1m[95m\e[0m"
+
+### tput
+"nachoparker"
+tput bold; echo hello
+
+#### cat --show-nonprinting
+for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
+tput setaf 95; tput setaf 95 | cat -v; echo =95
+
 # storage
+gio trash --empty  # empties all .Trash-1000
+gio trash --list  # lists trash by locations
 /proc/filesystems - those supported by the kernel
 
 ## broot
@@ -260,12 +268,17 @@ bm rg
 for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
 rg '\$ITstack'
 rg '<someText>|<otherText>'
-rg 'sometext' --no-ignore  # allows searching into gitignored places
+rg --no-ignore 'sometext'  # allows searching into gitignored places
 rg -ttex '\\subsubsection\{'
 rg -tmd '\$SE'
 rg -tmd '\{TNW}'
 rg -ttxt -l --sort modified 'ft=bbcode' > dts-bbcode_ft.txt
+rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 rg <someText>  # searches recursively in files
+
+##### in vimfiles
+rg --no-ignore '\$MSwin10'
+rg --no-ignore '\$onGH'
 
 ##### TeX files
 rg -l -ttex '\\input' > rg-tex.txt
@@ -300,6 +313,7 @@ bm fzf
 cat $(fzf)
 cd [directory/][fuzzy_pattern]**<tab>
 f
+FZF_DEFAULT_COMMAND
 gvim -o `f`  # calling upon fzf
 kill -9 <tab>
 ls -l $(fzf -m)

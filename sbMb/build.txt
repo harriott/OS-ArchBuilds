@@ -409,6 +409,44 @@ hp-toolbox (= HP Device Manager) > selected old HP Envy 5530 Series icon > Remov
 HP Envy 5530 Series icon > Printer Control > Set as Default
 ### set as CUPS default
 lpoptions -d ENVY_5530
+## auracle needs rebuilding
+auracle: error while loading shared libraries: libalpm.so.12: cannot open shared object file: No such file or directory
+## Updates
+pacman -Qqo '/usr/lib/perl5/5.32'
+  perl-clone-pp
+  perl-data-printer
+so re-installed them
+## firewalld.conf.pacnew
+in /etc/firewalld/: su + root pw  for
+  nvim -o firewalld.conf firewalld.conf.pacnew   then  diff'd
+  rm firewalld.conf.pacnew
+reboot
+### check firewalld
+sudo firewall-cmd --state
+  running
+sudo firewall-cmd --info-zone=home
+  home (active)
+    target: default
+    icmp-block-inversion: no
+    interfaces: wlan0
+    sources: 
+    services: dhcpv6-client mdns samba-client ssh
+    ports: 5353/udp
+    protocols: 
+    forward: no
+    masquerade: no
+    forward-ports: 
+    source-ports: 
+    icmp-blocks: 
+    rich rules: 
+## OBS Studio Settings
+Hotkeys > [ Start Recording  Stop Recording ] > Win+Space (= Super + Space)
+Output > Recording > Encoder > x264 low CPU usage
+Video > Common FPS Values > 30
+## hard reboot after seizure
+stuck on  Loading initial ramdisk ...
+## Pacman ParallelDownloads
+sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 16/' /etc/pacman.conf
 # physical configuration
 Antec Neo HE550
 TL-WN821N
@@ -416,8 +454,7 @@ TL-WN821N
 Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard
 ## monitor
-DVI: Fujitsu ScenicView E19W-5 LCD monitor - wide 1440x900 = 16:10
-VGA: Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0)
+DVI: Philips 221V2 - wide 1920x1080 = 16:9
 ## motherboard
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
   AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
@@ -441,6 +478,6 @@ Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB2
 # system seizures
 journalctl -b -1 -r  shows no snags, so thinking it's hw
 ## system seizures
-happens when system is underload, but also sometimes when not heavily loaded
+happens when system is under load, but also sometimes when not heavily loaded
 less often: random reboots
 regularly: clock stuck, no CBH, so hard reboot

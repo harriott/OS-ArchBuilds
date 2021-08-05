@@ -6,6 +6,9 @@
 
 export machine=sbMb
 export Storage=/mnt/SD480GSSDPlus  # where I keep stuff
-export urxvtGeometry='92x54+0+0'  # used in  $Openbox/openbox/urxvtl.sh
-# - from left of a 1440x900 screen, allowing room for 106 column gVim
+
+# Used in  $Openbox/openbox/urxvtl.sh
+# open urxvt from left of screen, allowing room for 106 column gVim
+# export urxvtGeometry='92x54+0+0'  # 1440x900 screen
+export urxvtGeometry='105x67+0+0'  # 1920x1080 screen:  urxvt -geometry '105x67+0+0' &
 
