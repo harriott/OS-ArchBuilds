@@ -25,25 +25,25 @@ xdgo()
     fi
 }
 
-# #=> auracle-git
-# PQ auracle-git
-# xdgo https://github.com/falconindy/auracle/commits/master
-# updateMaybe auracle-git falconindy
+#=> auracle-git
+PQ auracle-git
+xdgo https://github.com/falconindy/auracle/commits/master
+updateMaybe auracle-git falconindy
 
-# #=> bat-extras-git
-# PQ bat-extras-git
-# xdgo https://github.com/eth-p/bat-extras/commits/master
-# updateMaybe bat-extras-git
+#=> bat-extras-git
+PQ bat-extras-git
+xdgo https://github.com/eth-p/bat-extras/commits/master
+updateMaybe bat-extras-git
 
-# #=> cht.sh-git
-# PQ cht.sh-git
-# xdgo https://github.com/chubin/cheat.sh/commits/master
-# updateMaybe cht.sh-git
+#=> cht.sh-git
+PQ cht.sh-git
+xdgo https://github.com/chubin/cheat.sh/commits/master
+updateMaybe cht.sh-git
 
-# #=> fontpreview-git
-# PQ fontpreview-git
-# xdgo https://github.com/sdushantha/fontpreview/commits/master
-# updateMaybe fontpreview-git
+#=> fontpreview-git
+PQ fontpreview-git
+xdgo https://github.com/sdushantha/fontpreview/commits/master
+updateMaybe fontpreview-git
 
 #=> moar-git
 PQ moar-git

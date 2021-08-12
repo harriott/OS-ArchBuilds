@@ -62,6 +62,8 @@ unset signature
 #  ; (= tag-prefix) ==> apply next function to tagged messages
 #  = or <Home> -> <first-entry> ==> jump to the first entry
 #  B ==> toggle sidebar
+#  J ==> next message
+#  K ==> previous message
 #  N ==> toggle New mark
 #  T -> tag-pattern ==> tag messages matching a pattern
 #   T > .* ==> tags all in a folder

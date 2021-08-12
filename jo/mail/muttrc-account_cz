@@ -30,7 +30,7 @@ virtual-mailboxes "All" "notmuch://?query=tag:cz"
 set status_format=" -%r-NeoMutt->cz: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
 
 source $email/muttrc-all
-set realname = "Cafézoïde Parlotte"
+set realname = "Joseph @ Cafézoïde"
 
 macro index,pager ga "<change-folder>=Archives<enter>" "go to Archives"
 macro index,pager Ga "<save-message>=Archives<enter>" "move mail to Archives"

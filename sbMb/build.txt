@@ -447,8 +447,37 @@ Video > Common FPS Values > 30
 stuck on  Loading initial ramdisk ...
 ## Pacman ParallelDownloads
 sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 16/' /etc/pacman.conf
+## fit ST4000VN008
+sudo cp $MACHINE/etc/fstab/l8f /etc/fstab $bf
+sudo rm -r /mnt/ST3500413AS
+sudo chown jo:jo /mnt/ST4000VN008
+## Updates
+  :: Replace jack with extra/jack2? [Y/n]
+## firewalld.conf.pacnew
+cd /etc/firewalld/  for  su + root pw  for
+  nvim -o firewalld.conf firewalld.conf.pacnew   then  diff'd
+  rm firewalld.conf.pacnew
+reboot
+### check firewalld
+sudo firewall-cmd --state
+  running
+sudo firewall-cmd --info-zone=home
+  home (active)
+    target: default
+    icmp-block-inversion: no
+    interfaces: wlan0
+    sources: 
+    services: dhcpv6-client mdns samba-client ssh
+    ports: 5353/udp
+    protocols: 
+    forward: no
+    masquerade: no
+    forward-ports: 
+    source-ports: 
+    icmp-blocks: 
+    rich rules:
 # physical configuration
-Antec Neo HE550
+D-Link DUB-H7
 TL-WN821N
 ## cbh
 Logitech Wireless Mouse M525 works fine
@@ -456,6 +485,7 @@ Perixx PERIBOARD-407W keyboard
 ## monitor
 DVI: Philips 221V2 - wide 1920x1080 = 16:9
 ## motherboard
+Antec Neo HE550
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
   AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
   HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
@@ -463,7 +493,7 @@ Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16
 SATA0: SD480GSSDPlus resting in middle of 3½" bays
 SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
 SATA2: WD30EZRZ in 1st 5¼" bay from top
-SATA3: ST3500413AS in bottom 3½" bay
+SATA3: ST4000VN008 in bottom 3½" bay
 SATA4: HD103SJ in top 3½" bay
 SATA5: WD1001FALS in a plastic holder, 4th 5¼" tray down
 ### graphics - NVIDIA

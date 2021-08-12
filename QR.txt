@@ -50,6 +50,7 @@ cmatrix -u 9 -C blue
 man cmatrix
 
 # graphics card details
+glxinfo
 lspci -vnn | grep VGA -A 12 | xcol Radeon size VGA
 sudo lshw -C display | xcol Radeon size VGA
 
@@ -63,6 +64,7 @@ S 55n 3 <imagefilename> <scanheight>
 see $Imagey/Scan.sh
 
 # multimedia
+~/.config/obs-studio/logs
 for t in *.mp3; do aet "$t" 3; done
 mediainfo -h | moar
 pkill quodlibet
@@ -150,7 +152,7 @@ j,k -> down/up
 
 # pass
 pass edit gmail-neomutt
-pass gmail-neomutt
+pass cz
 pass troh/GmailAPI/token-expire
 ~/.password-store
 
@@ -333,13 +335,9 @@ sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 $MACHINE/etc/rsnapshot.conf
 
 ### checking
-journalctl -u rsnapshot@daily
-journalctl -u rsnapshot@hourly
+journalctl -u rsnapshot@daily -r
+journalctl -u rsnapshot@hourly -r
 systemctl status rsnapshot-hourly.timer
-
-## rsync
-log: > = the item is received
-"rsync manual"
 
 # system
 bm <command>  # batman
@@ -398,6 +396,11 @@ termdown -b 10
 # text-wrangling
 echo $EDITOR
 echo $VISUAL
+
+## CopyQ
+bm copyq
+pkill copyq
+~/.local/share/copyq/copyq/copyq.log
 
 ## gVim
 gvim --help | mo

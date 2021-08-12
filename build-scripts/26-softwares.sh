@@ -56,14 +56,14 @@ trap read debug  # puts a read request after each executable line
 # sudo systemctl disable clamav-unofficial-sigs.timer
 # sudo pacman -Rs clamav-unofficial-sigs
 
-#=> cmus-notify
-cd ~/Arch/AUR
-rAUR cmus-notify
-git clone https://aur.archlinux.org/cmus-notify.git
-cd cmus-notify
-gvim -c "silent! /AntoineGagne" PKGBUILD
-makepkg -sic
-true
+# #=> cmus-notify
+# cd ~/Arch/AUR
+# rAUR cmus-notify
+# git clone https://aur.archlinux.org/cmus-notify.git
+# cd cmus-notify
+# gvim -c "silent! /AntoineGagne" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> colorpicker
 # cd ~/Arch/AUR
@@ -209,6 +209,9 @@ true
 # #=> libva-utils
 # sudo pacman -S libva-utils
 
+#=> mesa-demos
+sudo pacman -S mesa-demos
+
 # #=> mimeo
 # cd ~/Arch/AUR
 # rAUR mimeo
@@ -254,8 +257,12 @@ true
 # #=> nodejs-mapscii 1 remove
 # sudo pacman -Rs nodejs-mapscii
 
-# #=> OBS Studio
+# #=> OBS Studio 0 install
 # sudo pacman -S obs-studio
+
+#=> OBS Studio 0 remove
+sudo pacman -Rs obs-studio
+rm -r ~/.config/obs-studio
 
 # #=> OpenShot
 # sudo pacman -S openshot
@@ -265,7 +272,6 @@ true
 # rAUR pdfsam
 # git clone https://aur.archlinux.org/pdfsam.git
 # cd pdfsam
-# gvim PKGBUILD
 # gvim -c "silent! /torakiki" PKGBUILD
 # makepkg -sic
 

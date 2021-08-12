@@ -180,6 +180,41 @@ makepkg -sic
 pip --version
 ### cmus-notify
 cmus_notify -h
+## OBS Studio attempt
+attempt to run got me "Failed to initialize video. Your GPU may not be supported or your graphics drivers may need to be updated."
+### graphics card checks
+pqs xf86-video-intel
+#### glxinfo
+  Extended renderer info (GLX_MESA_query_renderer):
+    Vendor: Intel Open Source Technology Center (0x8086)
+    Device: Mesa DRI Intel(R) Q45/Q43 (ELK) (0x2e12)
+    Version: 21.1.6
+    Accelerated: yes
+    Video memory: 1536MB
+#### vertical fps check
+glxgears  got me around 60fps
+  Running synchronized to the vertical refresh.  The framerate should be approximately the same as the monitor refresh rate.
+vblank_mode=0 glxgears  got me around 1580fps
+### obs-studio logs
+  CPU Name: Pentium(R) Dual-Core  CPU      E5400  @ 2.70GHz
+  CPU Speed: 2693.328MHz
+  Physical Cores: 2, Logical Cores: 2
+  Physical Memory: 3236MB Total, 2227MB Free
+  Kernel Version: Linux 5.13.9-arch1-1
+  Distribution: "Arch Linux" Unknown
+  Session Type: tty
+  Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.20.13
+  Portable mode: false
+  OBS 27.0.1-2 (linux)
+  ...
+  Initializing OpenGL...
+  X Error: GLXBadFBConfig, Major opcode: 152, Minor opcode: 0, Serial: 31
+  Failed to create OpenGL context.
+  Failed to create context!
+  device_create (GL) failed
+  Failed to initialize video.  Your GPU may not be supported, or your graphics drivers may need to be updated.
+### remove OBS Studio
+  :: chromium optionally requires pipewire: WebRTC desktop sharing under Wayland
 # physical configuration
 Fujitsu E19W5 1440x900
 SDSSDA240G  in  LogiLink 2.5" HDD Mounting Bracket
