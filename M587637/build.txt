@@ -215,6 +215,14 @@ vblank_mode=0 glxgears  got me around 1580fps
   Failed to initialize video.  Your GPU may not be supported, or your graphics drivers may need to be updated.
 ### remove OBS Studio
   :: chromium optionally requires pipewire: WebRTC desktop sharing under Wayland
+## Updates
+:: Import PGP key A85E811EB4CA2E08, "Caleb Maclennan <alerque@archlinux.org>"? [Y/n] 
+### diskonaut won't make
+$ rustup default  returned  stable-x86_64-unknown-linux-gnu (default)
+#### rustup update
+stable-x86_64-unknown-linux-gnu updated - rustc 1.54.0 (a178d0322 2021-07-26) (from rustc 1.41.0 (5e1a79984 2020-01-27))
+#### rustc -V
+rustc 1.54.0 (a178d0322 2021-07-26)
 # physical configuration
 Fujitsu E19W5 1440x900
 SDSSDA240G  in  LogiLink 2.5" HDD Mounting Bracket

@@ -9,6 +9,8 @@ trap read debug  # puts a read request after each executable line
 for systemdUnit in $ARCHBUILDS/etc/systemd/rsnapshot*; do
     cp $systemdUnit /etc/systemd/system/${systemdUnit##/*/}
 done
+# eg $ARCHBUILDS/etc/systemd/rsnapshot-hourly.timer
+
 systemctl enable --now rsnapshot-hourly.timer
 systemctl enable --now rsnapshot-daily.timer
 systemctl enable --now rsnapshot-weekly.timer

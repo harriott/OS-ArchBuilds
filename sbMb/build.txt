@@ -439,10 +439,6 @@ sudo firewall-cmd --info-zone=home
     source-ports: 
     icmp-blocks: 
     rich rules: 
-## OBS Studio Settings
-Hotkeys > [ Start Recording  Stop Recording ] > Win+Space (= Super + Space)
-Output > Recording > Encoder > x264 low CPU usage
-Video > Common FPS Values > 30
 ## hard reboot after seizure
 stuck on  Loading initial ramdisk ...
 ## Pacman ParallelDownloads
@@ -476,6 +472,161 @@ sudo firewall-cmd --info-zone=home
     source-ports: 
     icmp-blocks: 
     rich rules:
+## Pacman ParallelDownloads
+(because 16 keeps failing)
+sudo sed -i 's/ParallelDownloads = 16/ParallelDownloads = 8/' /etc/pacman.conf
+sudo sed -i 's/ParallelDownloads = 8/ParallelDownloads = 4/' /etc/pacman.conf
+## rsnapshot failing to start
+df -h /mnt/WD1001FALS  shows it's full
+sudo rm -r /mnt/WD1001FALS/rsnapshot/monthly.6/localhost/*
+sudo rm -r /mnt/WD1001FALS/rsnapshot/monthly.5/localhost/mnt/ST3500413AS/*
+sudo rm -r /mnt/WD1001FALS/rsnapshot/monthly.4/localhost/mnt/ST3500413AS
+sudo rm -r /mnt/WD1001FALS/rsnapshot/monthly.*/localhost/mnt/ST3500413AS
+sudo rm -rv /mnt/WD1001FALS/rsnapshot/weekly.*/localhost/mnt/ST3500413AS
+sudo rm -r /mnt/WD1001FALS/rsnapshot/daily.*/localhost/mnt/ST3500413AS
+sudo rm -r /mnt/WD1001FALS/rsnapshot/hourly.*/localhost/mnt/ST3500413AS
+## recover Thunderbird v78 profile
+cleared out contents of  ~/.thunderbird/xggwhyu0.default-release
+bash $ITstack/CrossPlatform/Thunderbird/LastVersion.sh
+rsync -irtv --delete /mnt/WD1001FALS/rsnapshot/daily.3/localhost/mnt/SD480GSSDPlus/Dropbox/JH/TP.default-release/ $DROPBOX/JH/TP-default-release
+## lm_sensors
+sudo sensors-detect
+  # sensors-detect version 3.6.0+git
+  # Board: Gigabyte Technology Co., Ltd. 970A-DS3P
+  # Kernel: 5.13.10-arch1-1 x86_64
+  # Processor: AMD FX(tm)-8350 Eight-Core Processor (21/2/0)
+  This program will help you determine which kernel modules you need to load to use lm_sensors most effectively. It is generally safe and recommended to accept the default answers to all questions, unless you know what you're doing.
+  Some south bridges, CPUs or memory controllers contain embedded sensors.
+  Do you want to scan for them? This is totally safe. (YES/no):
+    Silicon Integrated Systems SIS5595...                       No
+    VIA VT82C686 Integrated Sensors...                          No
+    VIA VT8231 Integrated Sensors...                            No
+    AMD K8 thermal sensors...                                   No
+    AMD Family 10h thermal sensors...                           No
+    AMD Family 11h thermal sensors...                           No
+    AMD Family 12h and 14h thermal sensors...                   No
+    AMD Family 15h thermal sensors...                           Success!
+        (driver `k10temp')
+    AMD Family 16h thermal sensors...                           No
+    AMD Family 17h thermal sensors...                           No
+    AMD Family 15h power sensors...                             Success!
+        (driver `fam15h_power')
+    AMD Family 16h power sensors...                             No
+    Hygon Family 18h thermal sensors...                         No
+    AMD Family 19h thermal sensors...                           No
+    Intel digital thermal sensor...                             No
+    Intel AMB FB-DIMM thermal sensor...                         No
+    Intel 5500/5520/X58 thermal sensor...                       No
+    VIA C7 thermal sensor...                                    No
+    VIA Nano thermal sensor...                                  No
+  Some Super I/O chips contain embedded sensors. We have to write to standard I/O ports to probe them. This is usually safe.
+  Do you want to scan for Super I/O sensors? (YES/no):
+    Probing for Super-I/O at 0x2e/0x2f
+    Trying family `National Semiconductor/ITE'...               No
+    Trying family `SMSC'...                                     No
+    Trying family `VIA/Winbond/Nuvoton/Fintek'...               No
+    Trying family `ITE'...                                      Yes
+    Found `ITE IT8620E Super IO Sensors'                        Success!
+        (address 0x228, driver `it87')
+    Probing for Super-I/O at 0x4e/0x4f
+    Trying family `National Semiconductor/ITE'...               No
+    Trying family `SMSC'...                                     No
+    Trying family `VIA/Winbond/Nuvoton/Fintek'...               No
+    Trying family `ITE'...                                      No
+  Some systems (mainly servers) implement IPMI, a set of common interfaces through which system health data may be retrieved, amongst other things.  We first try to get the information from SMBIOS. If we don't find it there, we have to read from arbitrary I/O ports to probe for such interfaces. This is normally safe. Do you want to scan for IPMI interfaces? (YES/no):
+  # DMI data unavailable, please consider installing dmidecode 2.7
+  # or later for better results.
+    Probing for `IPMI BMC KCS' at 0xca0...                      No
+    Probing for `IPMI BMC SMIC' at 0xca8...                     No
+  Some hardware monitoring chips are accessible through the ISA I/O ports.  We have to write to arbitrary I/O ports to probe them. This is usually safe though. Yes, you do have ISA I/O ports even if you do not have any ISA slots! Do you want to scan the ISA I/O ports? (yes/NO):
+  Lastly, we can probe the I2C/SMBus adapters for connected hardware monitoring devices. This is the most risky part, and while it works reasonably well on most systems, it has been reported to cause trouble on some systems.
+  Do you want to probe the I2C/SMBus adapters now? (YES/no):
+  Using driver `i2c-piix4' for device 0000:00:14.0: ATI Technologies Inc SB600/SB700/SB800 SMBus Module i2c-dev loaded successfully.
+  Next adapter: SMBus PIIX4 adapter port 0 at 0b00 (i2c-0)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: SMBus PIIX4 adapter port 2 at 0b00 (i2c-1)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: SMBus PIIX4 adapter port 3 at 0b00 (i2c-2)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: SMBus PIIX4 adapter port 4 at 0b00 (i2c-3)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: SMBus PIIX4 adapter port 1 at 0b20 (i2c-4)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: Radeon i2c bit bus 0x90 (i2c-5)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: Radeon i2c bit bus 0x91 (i2c-6)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: Radeon i2c bit bus 0x92 (i2c-7)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: Radeon i2c bit bus 0x93 (i2c-8)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: Radeon i2c bit bus 0x94 (i2c-9)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: Radeon i2c bit bus 0x95 (i2c-10)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: Radeon i2c bit bus 0x96 (i2c-11)
+  Do you want to scan it? (yes/NO/selectively): 
+  Next adapter: Radeon i2c bit bus 0x97 (i2c-12)
+  Do you want to scan it? (yes/NO/selectively): 
+  Now follows a summary of the probes I have just done.
+  Just press ENTER to continue:
+  Driver `it87':
+  * ISA bus, address 0x228
+    Chip `ITE IT8620E Super IO Sensors' (confidence: 9)
+  Driver `fam15h_power' (autoloaded):
+  * Chip `AMD Family 15h power sensors' (confidence: 9)
+  Driver `k10temp' (autoloaded):
+  * Chip `AMD Family 15h thermal sensors' (confidence: 9)
+  Do you want to overwrite /etc/conf.d/lm_sensors? (YES/no): 
+  Unloading i2c-dev... OK
+systemctl status lm_sensors
+## sys > bus > platform > devices
+ls -l /sys/bus/platform/devices/
+  alarmtimer.0.auto -> ../../../devices/pnp0/00:03/rtc/rtc0/alarmtimer.0.auto
+  efi-framebuffer.0 -> ../../../devices/platform/efi-framebuffer.0
+  efivars.0 -> ../../../devices/platform/efivars.0
+  it87.552 -> ../../../devices/platform/it87.552
+  microcode -> ../../../devices/platform/microcode
+  pcspkr -> ../../../devices/platform/pcspkr
+  PNP0103:00 -> ../../../devices/platform/PNP0103:00
+  PNP0800:00 -> ../../../devices/pci0000:00/0000:00:14.3/PNP0800:00
+  PNP0C04:00 -> ../../../devices/pci0000:00/0000:00:14.3/PNP0C04:00
+  PNP0C0C:00 -> ../../../devices/platform/PNP0C0C:00
+  reg-dummy -> ../../../devices/platform/reg-dummy
+  regulatory.0 -> ../../../devices/platform/regulatory.0
+  rtc-efi.0 -> ../../../devices/platform/rtc-efi.0
+  serial8250 -> ../../../devices/platform/serial8250
+  sp5100-tco -> ../../../devices/platform/sp5100-tco
+## Pacman ParallelDownloads
+(because 4 failed)
+sudo sed -i 's/ParallelDownloads = 4/ParallelDownloads = 2/' /etc/pacman.conf
+## Updates
+:: Import PGP key A85E811EB4CA2E08, "Caleb Maclennan <alerque@archlinux.org>"? [Y/n] 
+## accidentally deleted contents of ~
+and so loads of functionality failed
+find a good backup:  l /mnt/WD1001FALS/rsnapshot -l
+check it:  l /mnt/WD1001FALS/rsnapshot/hourly.4/localhost/home/jo -a
+  removed a couple of unwanted OBS recordings
+restore it:  rsync -ai --delete /mnt/WD1001FALS/rsnapshot/hourly.4/localhost/home/jo/ /home/jo
+reboot
+## rust
+### rustup default
+returned  stable-x86_64-unknown-linux-gnu (default)
+### rustc -V
+rustc 1.47.0 (18bf6b4f0 2020-10-07)
+# fcron
+fcrontab -l
+  @ 1 bash ~/Arch/f1t2t3/log.sh
+  @ 10 bash ~/Arch/bash_history.sh
+  @ 20 jump clean
+## temperatures
+ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+# OBS Studio Settings
+Alt+f (= File) > s (= Settings)
+  Output > Recording > Encoder > x264 low CPU usage
+  Hotkeys > [ Start Recording  Stop Recording ] > Win+Space (= Super + Space)
+  Video > [ Output (Scaled) Resolution > 1280x720  Common FPS Values > 30 ]
 # physical configuration
 D-Link DUB-H7
 TL-WN821N

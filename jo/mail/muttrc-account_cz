@@ -22,7 +22,7 @@ source $alias_file
 # if you make changes here, you probably need to clear your folders, and start afresh
 # rm -r ~/.cache/mutt/cz/* ~/.local/share/mail/cz/*
 # and fix  ~/.mbsyncrc  to correspond
-mailboxes "=Archives" "=[Gmail].All\ Mail" "=[Gmail].Bin" "=[Gmail].Drafts" "=[Gmail].Sent\ Mail" "=[Gmail].Spam" "=INBOX" "=Waiting"
+mailboxes "=Archives" "=[Gmail].All\ mail" "=[Gmail].Bin" "=[Gmail].Drafts" "=[Gmail].Sent\ Mail" "=[Gmail].Spam" "=INBOX" "=Waiting"
 #  - any errors here will trigger others
 virtual-mailboxes "All" "notmuch://?query=tag:cz"
 
@@ -30,7 +30,7 @@ virtual-mailboxes "All" "notmuch://?query=tag:cz"
 set status_format=" -%r-NeoMutt->cz: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
 
 source $email/muttrc-all
-set realname = "Joseph @ Cafézoïde"
+set realname = "Joseph - Cafézoïde"
 
 macro index,pager ga "<change-folder>=Archives<enter>" "go to Archives"
 macro index,pager Ga "<save-message>=Archives<enter>" "move mail to Archives"

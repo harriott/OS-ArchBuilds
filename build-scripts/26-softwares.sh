@@ -16,8 +16,9 @@ trap read debug  # puts a read request after each executable line
 # rAUR bat-extras-git
 # git clone https://aur.archlinux.org/bat-extras-git.git
 # gctm bat-extras-git
-# gvim PKGBUILD
+# gvim -c "silent! /eth-p" PKGBUILD
 # makepkg -sic
+# true
 
 # #=> bfg
 # cd ~/Arch/AUR
@@ -48,7 +49,7 @@ trap read debug  # puts a read request after each executable line
 # rAUR clamav-unofficial-sigs
 # git clone https://aur.archlinux.org/clamav-unofficial-sigs.git
 # cd clamav-unofficial-sigs
-# gvim -c "silent! extremeshok" PKGBUILD
+# gvim -c "silent! /extremeshok" PKGBUILD
 # makepkg -sic
 # sudo systemctl enable clamav-unofficial-sigs.timer
 
@@ -77,8 +78,9 @@ trap read debug  # puts a read request after each executable line
 # rAUR diskonaut
 # git clone https://aur.archlinux.org/diskonaut.git
 # cd diskonaut
-# gvim PKGBUILD
+# gvim -c "silent! /imsnif" PKGBUILD
 # makepkg -sic
+# true
 
 # #=> Dropbox 0 (re)install
 # # only once there's a browser, and preferably after LastPass
@@ -88,6 +90,7 @@ trap read debug  # puts a read request after each executable line
 # cd dropbox
 # gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
 # makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -209,8 +212,8 @@ trap read debug  # puts a read request after each executable line
 # #=> libva-utils
 # sudo pacman -S libva-utils
 
-#=> mesa-demos
-sudo pacman -S mesa-demos
+# #=> mesa-demos
+# sudo pacman -S mesa-demos
 
 # #=> mimeo
 # cd ~/Arch/AUR
@@ -226,13 +229,19 @@ sudo pacman -S mesa-demos
 # rAUR moar
 # sudo pacman -Rs moar
 
-# #=> moar-git 0 install
-# cd ~/Arch/AURdev-clone
-# rAUR moar-git
-# git clone https://aur.archlinux.org/moar-git.git
-# gctm moar-git
-# gvim -c "silent! /walles" PKGBUILD
-# makepkg -sic
+#=> moar-git 0 remove
+cd ~/Arch/AUR
+rAUR moar-git
+sudo pacman -Rs moar-git
+
+#=> moar-git 1 install
+cd ~/Arch/AURdev-clone
+rAUR moar-git
+git clone https://aur.archlinux.org/moar-git.git
+gctm moar-git
+gvim -c "silent! /walles" PKGBUILD
+makepkg -sic
+true
 
 # #=> msmtprc
 # cp -f $GNULE/msmtpConfig-backup ~/.msmtprc
@@ -260,9 +269,9 @@ sudo pacman -S mesa-demos
 # #=> OBS Studio 0 install
 # sudo pacman -S obs-studio
 
-#=> OBS Studio 0 remove
-sudo pacman -Rs obs-studio
-rm -r ~/.config/obs-studio
+# #=> OBS Studio 0 remove
+# sudo pacman -Rs obs-studio
+# rm -r ~/.config/obs-studio
 
 # #=> OpenShot
 # sudo pacman -S openshot

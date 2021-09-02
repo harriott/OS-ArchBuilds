@@ -18,7 +18,7 @@ abt () {
 } # abt <anAudioFileToTrimOffBeginning>
 # mv "t$a" "$a"
 
-alias xc="zathura -P 38 $IThandy/TeX/LaTeX/Appearance/xcolor.pdf &"
+alias xc="zathura -P 38 $IThandy/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
 
 fv () {
     # find $Vs -type f -name "*$1*"
@@ -48,7 +48,7 @@ ltx () {
 
 frames () {
   ffmpeg -i $1 -vcodec copy -f rawvideo -y /dev/null 2>&1
-}
+} # $1 mustn't contain spaces...
 
 #=> gVim cautious
 gvc () {

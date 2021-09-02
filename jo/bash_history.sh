@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Joseph Harriott, Sun 28 Mar 2021
+# Joseph Harriott, Mon 23 Aug 2021
 
 # robustly save my BASH history, for finding ancient commands
-# bash ~/Arch/bash_history.sh  - mostly called from fcron
+# fcrontab:  @ 20 bash ~/Arch/bash_history.sh
 
 cat ~/.bash_history >> ~/Arch/bash_history-tmp
 cat ~/Arch/bash_history-tmp | awk '!a[$0]++' | sort > ~/Arch/bash_history

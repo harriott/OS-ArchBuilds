@@ -2,7 +2,7 @@ vim: ft=build:
 
 commands here are tailored to my Arch install, see also $onGH/misc/GNULinuxQR.txt
 
-sudo pacman -Rs <packagetoremove>
+$ITstack/gitconfig
 xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
 # fcron
@@ -10,7 +10,7 @@ systemctl status fcron.service  # showing recent events
 
 ## fcrontab
 fcrontab -l
-VISUAL=''; fcrontab -e  # then make your changes
+VISUAL= fcrontab -e  # then make your changes
 
 ### lines
 @ 20 bash ~/Arch/bash_history.sh
@@ -85,39 +85,44 @@ latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
 
-## NetworkManager
-nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
-nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
-sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
-sudo ls /etc/NetworkManager/system-connections/
-
 ## Dropbox conflicted copies
-find -name "* conflicted copy *"
+find -name "* conflicted copy *" -exec rm -f {} \;
 find -name "*(Copie en conflit de *"
 
 ## email
+default-release:  find -name "* conflicted copy*" -exec rm -f {} \;
+
+### CLI tools
 $Bash/bashrc-email
 grep -r "Georita" *
 
-### mutt
+#### mutt
 $email/muttrc-MWa
 $email/muttrc-account_ftml
 echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 F => toggle important flag (= Star in Gmail)
 
-### notmuch search
+#### notmuch search
 nmse '"Georita Harriott"' date:march..  # searches from March
 nmse parlotte date:sat
 notmuch search tag:fm | wc -l
 notmuch search tag:gmail | wc -l
 notmuch search tag:trohib | wc -l
 
-### providors
+#### providors
 - orange.fr
 - yahoo!mail
 
-### URLs unclickable by receiver
+#### URLs unclickable by receiver
 URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
+
+## NetworkManager
+nmcli connection delete Jo-X10II
+nmcli device wifi connect Jo-X10II password <password>
+nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
+nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
+sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
+sudo ls /etc/NetworkManager/system-connections/
 
 # Openbox
 $Openbox/openbox/autostart
@@ -135,6 +140,7 @@ killall -SIGUSR1 tint2  # reloads
 
 # packages
 pacman -Qdt  # lists all orphans
+sudo pacman -Rs <packagetoremove>
 
 ## package database locked
 pgrep pacman  # to ensure it's not running
@@ -199,6 +205,7 @@ bm broot
 F5 => refresh
 
 ### run
+alt+enter => quit to current directory
 br
 br -c :count
 br -d => br --dates => the last modified date
@@ -261,11 +268,16 @@ fd -I -e pdf  # finds pdf's when they're gitignored
 sharkdp/fd
 
 ### grepping
-egrep '<someText>|<otherText>'
+grep -E '<someText>|<otherText>'
 grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
 grep -ri --include "*.conf" '#=> ' .
 
+#### manual
+bm grep
+man grep | grep egrep | xcol egrep fgrep
+
 #### ripgrep
+batgrep
 bm rg
 for f in $(rg -l -tmd github); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
 rg '\$ITstack'
@@ -310,7 +322,7 @@ find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
 ## fzf
 <someCommand> Ctrl-t - gets the selected node on the command-line
-Alt+c   # to change directory
+Alt+c  # to change directory
 bm fzf
 cat $(fzf)
 cd [directory/][fuzzy_pattern]**<tab>
@@ -322,7 +334,7 @@ ls -l $(fzf -m)
 unalias **<tab>
 
 ## mkfs.ext4
-/etc/mke2fs.conf  has bytes-per-inode ratios for usage types. A side-by-side comparison of  df -h  &  df -hi  suggests I should try  mkfs.ext4 -T huge /dev/<device>
+/etc/mke2fs.conf  has bytes-per-inode ratios for usage types
 
 ## non-optical
 $DROPBOX/JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch > rg -ttxt ft=bbcode > forum.txt
@@ -333,11 +345,26 @@ sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
 ## rsnapshot
 $MACHINE/etc/rsnapshot.conf
+cd /mnt/WD1001FALS/rsnapshot
+sm /mnt/WD1001FALS/rsnapshot/monthly.6
+
+### backup localhost without mnt
+lastMonthly=/mnt/WD1001FALS/rsnapshot/monthly.6/localhost/; month=$(date -r $lastMonthly +%y%m%d); echo $month
+sudo rsync -irtv --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
 
 ### checking
 journalctl -u rsnapshot@daily -r
 journalctl -u rsnapshot@hourly -r
 systemctl status rsnapshot-hourly.timer
+
+### quickly lists all instances of directories
+ls *ly.*/localhost/home/jo/.config/copyq -d  # CopyQ data directory instances
+ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
+ls *ly.*/localhost/mnt/SD480GSSDPlus/Dropbox/CAM* -d
+
+## trash-cli
+$Bash/bashrc-console
+trash-empty
 
 # system
 bm <command>  # batman

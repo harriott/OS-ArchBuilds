@@ -69,6 +69,11 @@ export HISTCONTROL=ignoreboth:erasedups
 PROMPT_COMMAND='history -a' # Samokovarov's  jump  later tweaks this
 shopt -s histappend
 
+#=> f1t2t3 - for sbMb
+if [ $machine = 'sbMb' ]; then
+  alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"
+fi
+
 #=> internetish
 alias css='cht.sh --shell'
 alias p='ping -c 3 8.8.8.8'

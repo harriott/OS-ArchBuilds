@@ -65,13 +65,13 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 for urxvt
 # mkdir -p ~/.urxvt
 
-#=> 0 xorg-xkbprint
-cd ~/Arch/AUR
-rAUR xorg-xkbprint
-git clone https://aur.archlinux.org/xorg-xkbprint.git
-cd xorg-xkbprint
-[[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
-makepkg -sic
+# #=> 0 xorg-xkbprint
+# cd ~/Arch/AUR
+# rAUR xorg-xkbprint
+# git clone https://aur.archlinux.org/xorg-xkbprint.git
+# cd xorg-xkbprint
+# [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
+# makepkg -sic
 
 # #=> 0 xrandr
 # sudo pacman -S xorg-xrandr
@@ -96,16 +96,16 @@ makepkg -sic
 # [[ $DISPLAY ]] && xdg-open PKGBUILD # or check it online
 # makepkg -sic
 
-# #=> 2 obmenu-generator
-# cd ~/Arch/AUR
-# rAUR obmenu-generator
-# git clone https://aur.archlinux.org/obmenu-generator.git
-# cd obmenu-generator
-# [[ $DISPLAY ]] && gvim PKGBUILD # or check it online
-# makepkg -sic
-# if [[ -d $DROPBOX ]]; then # assume that my Dropbox is up
-#     gvim -geom 200 -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
-# else
-#     cp /etc/xdg/obmenu-generator/schema.pl /mm/k8v-schema.pl # diff against this later
-# fi
+#=> 2 obmenu-generator
+cd ~/Arch/AUR
+rAUR obmenu-generator
+git clone https://aur.archlinux.org/obmenu-generator.git
+cd obmenu-generator
+[[ $DISPLAY ]] && gvim PKGBUILD # or check it online
+makepkg -sic
+if [[ -d $DROPBOX ]]; then # assume that my Dropbox is up
+    gvim -geom 200 -O /etc/xdg/obmenu-generator/schema.pl $MACHINE/jo/openbox/schema.pl
+else
+    cp /etc/xdg/obmenu-generator/schema.pl /mm/k8v-schema.pl # diff against this later
+fi
 

@@ -33,3 +33,6 @@ rsnapshot -t hourly
 
 # now can  sudo rsnapshot hourly  and monitor progress with  du -sh rsnapshot
 
+#=> 3 rsnapshot timers
+# - set in  $ARCHBUILDS/build-scripts/15-as_root-rsnapshot_automated.sh
+

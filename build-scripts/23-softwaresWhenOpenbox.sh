@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: ft=sh.shfold:
 
 # bash <thisfile>.sh
 set -v  # prints each statement here, including comments
@@ -11,7 +10,7 @@ trap read debug  # puts a read request after each executable line
 gvim -geometry 200x55 -O ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"  # should also be done if  tint2  has been updated
 killall -SIGUSR1 tint2  # reloads tint2rc
 
-# #=> CUPS service
+# #=> 1 CUPS service
 # sudo pacman -S cups
 # sudo systemctl enable cups.service --now
 

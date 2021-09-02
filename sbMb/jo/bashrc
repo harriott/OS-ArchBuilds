@@ -7,11 +7,7 @@
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
-export VsLocation=/mnt/WD30EZRZ  # path to my video store
-
-fS () {
-  find /mnt/ST3500413AS/Share -type f -name "*$1*"
-}
+export VsLocation=/mnt/ST4000VN008  # path to my video store
 
 #=> load the rest of my bashrc
 source $ARCHBUILDS/Bash/bashrc-generic  # useful everywhere, including root
