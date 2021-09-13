@@ -104,21 +104,6 @@ trap read debug  # puts a read request after each executable line
 # gvim -c "silent! /https:\/\/github.com\/bootandy\/" PKGBUILD
 # makepkg -sic
 
-# #=> Fangfrisch 1 AUR
-# cd ~/Arch/AUR
-# rAUR python-fangfrisch
-# git clone https://aur.archlinux.org/python-fangfrisch.git
-# cd python-fangfrisch
-# gvim -c "silent! /rseichter" PKGBUILD
-# makepkg -sic
-
-# #=> Fangfrisch 2 settings
-# # 1 create database structure
-# sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
-
-# # 2 enable systemd timer
-# sudo systemctl enable fangfrisch.timer --now
-
 # #=> ffmpeg
 # sudo pacman -S ffmpeg
 
@@ -205,6 +190,9 @@ trap read debug  # puts a read request after each executable line
 # #=> LanguageTool
 # sudo pacman -S languagetool
 
+# #=> libappindicator-gtk3
+# sudo pacman -S libappindicator-gtk3  # didn't help with non-captured Dropbox tray icon...
+
 # #=> libgphoto2
 # sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
 # sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
@@ -229,19 +217,19 @@ trap read debug  # puts a read request after each executable line
 # rAUR moar
 # sudo pacman -Rs moar
 
-#=> moar-git 0 remove
-cd ~/Arch/AUR
-rAUR moar-git
-sudo pacman -Rs moar-git
+# #=> moar-git 0 remove
+# cd ~/Arch/AUR
+# rAUR moar-git
+# sudo pacman -Rs moar-git
 
-#=> moar-git 1 install
-cd ~/Arch/AURdev-clone
-rAUR moar-git
-git clone https://aur.archlinux.org/moar-git.git
-gctm moar-git
-gvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar-git 1 install
+# cd ~/Arch/AURdev-clone
+# rAUR moar-git
+# git clone https://aur.archlinux.org/moar-git.git
+# gctm moar-git
+# gvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> msmtprc
 # cp -f $GNULE/msmtpConfig-backup ~/.msmtprc
@@ -294,14 +282,14 @@ true
 # sudo pacman -S perl-json perl-json-parse perl-json-xs
 
 # #=> perl-clone-pp
-# #  for  perl-data-printer
+#  for  perl-data-printer
 # cd ~/Arch/AUR
 # rAUR perl-clone-pp
 # git clone https://aur.archlinux.org/perl-clone-pp.git
 # cd perl-clone-pp
-# gvim PKGBUILD
 # gvim -c "silent! /NEILB" PKGBUILD
 # makepkg -sic
+# true
 
 # #=> perl-data-printer
 # cd ~/Arch/AUR
@@ -310,6 +298,7 @@ true
 # cd perl-data-printer
 # gvim -c "silent! /GARU" PKGBUILD
 # makepkg -sic
+# true
 
 # #=> perl-image-exiftool
 # sudo pacman -S perl-image-exiftool
@@ -342,6 +331,22 @@ true
 # #=> Python 2
 # sudo pacman -S python2  # needed for  oauth2.py
 
+# #=> python-fangfrisch 1 AUR
+# cd ~/Arch/AUR
+# rAUR python-fangfrisch
+# git clone https://aur.archlinux.org/python-fangfrisch.git
+# cd python-fangfrisch
+# gvim -c "silent! /rseichter" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> python-fangfrisch 2 settings
+# # 1 create database structure
+# sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
+
+# # 2 enable systemd timer
+# sudo systemctl enable fangfrisch.timer --now
+
 # #=> Quod Libet
 # sudo pacman -S quodlibet
 
@@ -361,6 +366,9 @@ true
 # gvim PKGBUILD
 # makepkg -sic
 
+# #=> sqlitebrowser
+# sudo pacman -S sqlitebrowser
+
 # #=> tint-tetris
 # cd ~/Arch/AUR
 # git clone https://aur.archlinux.org/tint-tetris.git
@@ -368,12 +376,23 @@ true
 # gvim PKGBUILD
 # makepkg -sic
 
+# #=> tint2 0 remove
+# sudo pacman -Rs tint2
+
+#=> tint2-git
+cd ~/Arch/AUR
+rAUR tint2-git
+git clone https://aur.archlinux.org/tint2-git.git
+cd tint2-git
+gvim -c "silent! /tint2.git" PKGBUILD
+makepkg -sic
+
 # #=> tspreed
 # cd ~/Arch/AUR
 # rAUR tspreed
 # git clone https://aur.archlinux.org/tspreed.git
 # cd tspreed
-# gvim PKGBUILD
+# gvim -c "silent! /n-ivkovic" PKGBUILD
 # makepkg -sic
 # true
 

@@ -614,6 +614,34 @@ reboot
 returned  stable-x86_64-unknown-linux-gnu (default)
 ### rustc -V
 rustc 1.47.0 (18bf6b4f0 2020-10-07)
+## sshd_config.pacnew
+cd /etc/ssh/  for  su + root pw  for
+  nvim -O sshd_config sshd_config.pacnew   then  diff'd
+  rm sshd_config.pacnew
+## GraphicsMagick
+WARNING: '/usr/lib/perl5/5.32' contains data from at least 2 packages which will NOT be used by the installed perl interpreter.
+ -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.32'
+pacman -Qqo '/usr/lib/perl5/5.32'
+  perl-clone-pp
+  perl-data-printer
+so re-installed them
+## OBS Studio install
+got  Video > Base (Canvas) Resolution = 1920x1080 (= screen size)
+## OBS Studio Settings
+Alt+f (= File) > s (= Settings)
+  Output > Recording > Encoder > x264 low CPU usage
+  Hotkeys > [ Start Recording  Stop Recording ] > Win+Space (= Super + Space)
+  Video > [ Output (Scaled) Resolution > 1280x720  Common FPS Values > 30 ]
+## OBS Studio Output Resolution 1920x1080
+Alt+f (= File) > s (= Settings) > Video > Output (Scaled) Resolution > 1920x1080
+## OBS Studio Output Resolution 1536x864
+still getting system seizures after changing thermal grease, so  Alt+f (= File) > s (= Settings)
+  Video > Output (Scaled) Resolution > 1536x864
+## OBS Studio Output Resolution 1440x810
+still getting system seizures, so  Video > Output (Scaled) Resolution > 1440x810
+## OBS Studio Output Resolution 1280x720
+with studio temperature above 20°C still getting system seizures, so
+  Video > Output (Scaled) Resolution > 1280x720
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh
@@ -622,11 +650,6 @@ fcrontab -l
 ## temperatures
 ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
-# OBS Studio Settings
-Alt+f (= File) > s (= Settings)
-  Output > Recording > Encoder > x264 low CPU usage
-  Hotkeys > [ Start Recording  Stop Recording ] > Win+Space (= Super + Space)
-  Video > [ Output (Scaled) Resolution > 1280x720  Common FPS Values > 30 ]
 # physical configuration
 D-Link DUB-H7
 TL-WN821N
@@ -655,7 +678,7 @@ F12  gets a choice of boot media
 #### BIOS Features
 Peripherals > EHCI Hand-off Disabled [ IOMMU Controller  XHCI Hand-off ] > Enabled
 ### USB headers
-Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB2
+Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB3
 # system seizures
 journalctl -b -1 -r  shows no snags, so thinking it's hw
 ## system seizures

@@ -33,7 +33,7 @@ updateMaybe auracle-git falconindy
 #=> bat-extras-git
 PQ bat-extras-git
 xdgo https://github.com/eth-p/bat-extras/commits/master
-updateMaybe bat-extras-git
+updateMaybe bat-extras-git eth-p
 
 #=> cht.sh-git
 PQ cht.sh-git

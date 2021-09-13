@@ -15,5 +15,6 @@ Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0
 ## cbh
 Perixx PERIBOARD-407W keyboard
 ## disks
-SATA0: SDSSDA240G resting in 4th 3½" bay from top
-SATA2: DVD drive in 2nd 5¼" bay from top
+SATA0: ST380013AS in lowest 3½" bay
+SATA1: WD400 in middle 3½" bay
+SATA2: DVD drive in lower 5¼" bay

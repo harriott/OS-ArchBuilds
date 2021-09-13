@@ -24,7 +24,7 @@ fv () {
     # find $Vs -type f -name "*$1*"
     Vss=($(find $VsLocation -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
     for Vs in "${Vss[@]}"; do
-        find $Vs -type f -name "*$1*"
+        find $Vs -iname "*$1*"
     done
 } # fv 'Dog Vision'
 
@@ -45,6 +45,9 @@ ltx () {
   sed -i 's/\\subsubsection{/            /' $s
   sed -i 's/}//' $s
 }
+
+#=> ffmpeg
+alias ffmhb='ffmpeg -hide_banner'
 
 frames () {
   ffmpeg -i $1 -vcodec copy -f rawvideo -y /dev/null 2>&1
