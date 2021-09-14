@@ -598,7 +598,7 @@ ls -l /sys/bus/platform/devices/
   serial8250 -> ../../../devices/platform/serial8250
   sp5100-tco -> ../../../devices/platform/sp5100-tco
 ## Pacman ParallelDownloads
-(because 4 failed)
+(because 4 failed too often)
 sudo sed -i 's/ParallelDownloads = 4/ParallelDownloads = 2/' /etc/pacman.conf
 ## Updates
 :: Import PGP key A85E811EB4CA2E08, "Caleb Maclennan <alerque@archlinux.org>"? [Y/n] 
@@ -642,9 +642,13 @@ still getting system seizures, so  Video > Output (Scaled) Resolution > 1440x810
 ## OBS Studio Output Resolution 1280x720
 with studio temperature above 20°C still getting system seizures, so
   Video > Output (Scaled) Resolution > 1280x720
+## Pacman ParallelDownloads
+(because 2 fails too often)
+sudo sed -i 's/ParallelDownloads = 2/#ParallelDownloads = 2/' /etc/pacman.conf
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh
+  @ 1 cmus-remote --server /run/user/1000/cmus-socket -C 'cd /mnt/SD480GSSDPlus/Dropbox/CAM-toSort0'; cmus-remote --server /run/user/1000/cmus-socket -C 'save -q cmusq'
   @ 10 bash ~/Arch/bash_history.sh
   @ 20 jump clean
 ## temperatures

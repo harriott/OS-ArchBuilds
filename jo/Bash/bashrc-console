@@ -100,10 +100,10 @@ alias fx='fdtsExt'
 fdtsExt () {
   if [ $1 ]; then
     if [ $1 = "gitignore" ]; then
-      dtsfile=dts-$1-all.txt
+      dtsfile=dts-$1-all
       search=.$1
     else
-      dtsfile=dts-$1.txt
+      dtsfile=dts-$1
       search='\*.$1'
     fi
     eval "fdtsKS $search $dtsfile"
