@@ -78,6 +78,7 @@ mount /dev/sda /mnt   cd /mnt/ArchBuilds/build-scripts
 Jo-X10II  tethered into left USB for  dhcpcd enp0s21f0u2
 pacman -S iwd
 pacman -S git  for  bash 03-cloneArchBuilds.sh
+bash 05-iwd-root_symlinks.sh
 
 bash 06-as_root-to_headers.sh
 ## waiting

@@ -5,21 +5,18 @@ trap read debug  # puts a read request after each executable line
 
 ARCHBUILDS=/ArchBuilds
 
-#=> 0 internet check
-ping -c 3 8.8.8.8
-
-#=> 1 after Grub
-# check local time correction
-timedatectl status
-
-# framebuffer, Sudo & Tig
-pacman -S fbset sudo tig
-# display all available frame buffer information
-fbset -i
+# #=> 0 internet check
+# ping -c 3 8.8.8.8
 
 #=> 1 disable dhcpcd wait at start
 mkdir /etc/systemd/system/dhcpcd@.service.d
 cp $ARCHBUILDS/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
+
+#=> 1 frame buffer
+# framebuffer, Sudo & Tig
+pacman -S fbset sudo tig
+# display all available frame buffer information
+fbset -i
 
 #=> 1 have boot messages stay on tty1
 cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
@@ -29,4 +26,11 @@ cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d
 # pacman -S linux-headers
 # # - don't forget to  reboot !
 # reboot
+
+#=> 1 Sudo & Tig
+pacman -S sudo tig
+
+#=> 1 time zone
+# check local time correction
+timedatectl status
 
