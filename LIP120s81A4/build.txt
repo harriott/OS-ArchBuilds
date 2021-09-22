@@ -84,4 +84,5 @@ bash 08-as_root-to_headers.sh
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
 lspci -k | grep 3165 -A 3
+screen is 1366x768
 SDEP128G in microSD slot

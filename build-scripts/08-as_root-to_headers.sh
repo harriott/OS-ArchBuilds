@@ -12,12 +12,13 @@ ARCHBUILDS=/ArchBuilds
 # mkdir /etc/systemd/system/dhcpcd@.service.d
 # cp $ARCHBUILDS/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
 
-#=> 1 frame buffer
-pacman -S fbset
-# display all available frame buffer information
-fbset -i
+# #=> 1 frame buffer
+# pacman -S fbset
+# # display all available frame buffer information
+# fbset -i
 
 #=> 1 have boot messages stay on tty1
+mkdir /etc/systemd/system/getty@tty1.service.d
 cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
 
 # #=> 1 linux headers
