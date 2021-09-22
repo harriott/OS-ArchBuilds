@@ -4,16 +4,21 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 Git 1 install
-# pacman -S git
+#=> 0 Git 1 install
+pacman -S git
 
-# #=> 0 Git 2 clone ArchBuilds
-# cd /
-# git clone https://github.com/harriott/ArchBuilds.git
-# ls /ArchBuilds
+#=> 0 Git 2 clone ArchBuilds
+cd /
+git clone https://github.com/harriott/ArchBuilds.git
+ls /ArchBuilds
+
+#=> 0 iNet wireless daemon
+pacman -S iwd  # allowing an alternative to  NetworkManager + wpa_supplicant
 
 #=> 1 root symlinks
 # - needs to be run from root, not from sudo
+
+ARCHBUILDS=/ArchBuilds
 
 ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
 ln -sf $ARCHBUILDS/root/bashrc /root/.bashrc  # sources bashrc-generic

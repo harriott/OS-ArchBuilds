@@ -6,30 +6,36 @@ trap read debug  # puts a read request after each executable line
 #=> 0 prepare
 loadkeys uk
 
-# verify UEFI boot mode
-ls /sys/firmware/efi/efivars  # shouldn't be empty
+# #==> big SSD
+# EFI=sda1
+# root=sda2
+# swap=sda3
+# home=sda4
 
-# check the bootable disk, already partitioned with  gdisk
-gdisk -l /dev/sda
+#==> flash
+EFI=mmcblk0p1
+root=mmcblk0p3
+swap=mmcblk0p2
+home=mmcblk1p1
 
 #=> 1 format needed partitions
 # EFI
 lsblk -l
-mkfs.fat -F32 /dev/sda1
+mkfs.fat -F32 /dev/$EFI
 
 # /
-mkfs.ext4 /dev/sda2
+mkfs.ext4 /dev/$root
 
 # swap
-mkswap /dev/sda3
-swapon /dev/sda3
-swapon -s  # should show /dev/sda2 has Priority -2
+mkswap /dev/$swap
+swapon /dev/$swap
+swapon -s  # should show /dev/$root has Priority -2
 
 # /home
-mkfs.ext4 /dev/sda4
+mkfs.ext4 /dev/$home
 
 #=> 2 mount /
-mount /dev/sda2 /mnt
+mount /dev/$root /mnt
 
 #=> 3 create permanent mount points
 # EFI
@@ -40,14 +46,14 @@ mount /dev/sda2 /mnt
 
 #=> 4 mount needed partitions
 # EFI
-mount /dev/sda1 /mnt/efi
+mount /dev/$EFI /mnt/efi
 
 # /home
-mount /dev/sda4 /mnt/home
+mount /dev/$home /mnt/home
 
-#=> 5 format extra partition
-mkfs.ext4 /dev/sda5
-# will be implemented later in fstab
+# #=> 5 format extra partition
+# mkfs.ext4 /dev/sda5
+# # will be implemented later in fstab
 
 #=> 6 update the system clock
 timedatectl set-ntp true

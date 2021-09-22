@@ -82,15 +82,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> Dropbox 0 (re)install
-# # only once there's a browser, and preferably after LastPass
-# cd ~/Arch/AUR
-# rAUR dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+# only once there's a browser, and preferably after LastPass
+cd ~/Arch/AUR
+rAUR dropbox
+git clone https://aur.archlinux.org/dropbox.git
+cd dropbox
+gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -254,6 +254,21 @@ trap read debug  # puts a read request after each executable line
 # #=> nodejs-mapscii 1 remove
 # sudo pacman -Rs nodejs-mapscii
 
+# #=> nordvpn-bin 0 install
+# cd ~/Arch/AUR
+# rAUR nordvpn-bin
+# git clone https://aur.archlinux.org/nordvpn-bin.git
+# cd nordvpn-bin
+# gvim -c "silent! /nordvpn" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> nordvpn-bin 1 configure
+# sudo usermod -aG nordvpn jo  # need to re-login
+# true
+# sudo systemctl enable nordvpnd.service --now
+# true
+
 # #=> OBS Studio 0 install
 # sudo pacman -S obs-studio
 
@@ -358,13 +373,14 @@ trap read debug  # puts a read request after each executable line
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> Spotify
-# cd ~/Arch/AUR
-# rAUR spotify
-# git clone https://aur.archlinux.org/spotify.git
-# cd spotify
-# gvim PKGBUILD
-# makepkg -sic
+#=> Spotify
+cd ~/Arch/AUR
+rAUR spotify
+git clone https://aur.archlinux.org/spotify.git
+cd spotify
+gvim PKGBUILD
+gvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
+makepkg -sic
 
 # #=> sqlitebrowser
 # sudo pacman -S sqlitebrowser
@@ -379,13 +395,13 @@ trap read debug  # puts a read request after each executable line
 # #=> tint2 0 remove
 # sudo pacman -Rs tint2
 
-#=> tint2-git
-cd ~/Arch/AUR
-rAUR tint2-git
-git clone https://aur.archlinux.org/tint2-git.git
-cd tint2-git
-gvim -c "silent! /tint2.git" PKGBUILD
-makepkg -sic
+# #=> tint2-git
+# cd ~/Arch/AUR
+# rAUR tint2-git
+# git clone https://aur.archlinux.org/tint2-git.git
+# cd tint2-git
+# gvim -c "silent! /tint2.git" PKGBUILD
+# makepkg -sic
 
 # #=> tspreed
 # cd ~/Arch/AUR

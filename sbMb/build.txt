@@ -1,5 +1,6 @@
 vim: ft=build:
 
+journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 # build
 ## Arch install - from the ISO
 ### ARCH_202008 - SQUASHFS errors
@@ -44,7 +45,7 @@ so occasionally getting "...No Caching mode page found..."
 mkdir /bs   mount /dev/sdg1 /bs  got me SQUASHFS error "unknown filesystem type vfat"
 reboot  got me a load of SQUASHFS errors
 ### ARCH_202008 to chroot
-K8GBDTIG3 loaded with archlinux-2020.08.01-x86_64.iso  in lowest socket, 2nd from top of box
+K8GBDTIG3 loaded with  archlinux-2020.08.01-x86_64.iso  in lowest socket, 2nd from top of box
 Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 >
   UEFI: KingstonDataTraveller G3 PMAP
 #### K8GBDT100
@@ -60,7 +61,6 @@ pacstrap /mnt base linux linux-firmware
 #### K8GBDT100
 mount /dev/sdg1 /mnt   cd /mnt/ArchBuilds/build-scripts
 bash 02-when_chroot-to_bootloader.sh
-bash 02-when_chroot-reflector.sh
 cd /  for  umount /dev/sdg1  "target is busy"  so  umount -l /dev/sdg1
 mount /dev/sdh1 /mnt   cd /mnt/ArchBuilds/build-scripts
 ## reboot to root
@@ -645,10 +645,14 @@ with studio temperature above 20°C still getting system seizures, so
 ## Pacman ParallelDownloads
 (because 2 fails too often)
 sudo sed -i 's/ParallelDownloads = 2/#ParallelDownloads = 2/' /etc/pacman.conf
+## sshd_config.pacnew
+su + root pw  for  cd /etc/ssh/
+  nvim -O sshd_config sshd_config.pacnew   then  diff'd
+  rm sshd_config.pacnew
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh
-  @ 1 cmus-remote --server /run/user/1000/cmus-socket -C 'cd /mnt/SD480GSSDPlus/Dropbox/CAM-toSort0'; cmus-remote --server /run/user/1000/cmus-socket -C 'save -q cmusq'
+  @ 3 bash ~/Arch/cmusqueue.sh
   @ 10 bash ~/Arch/bash_history.sh
   @ 20 jump clean
 ## temperatures
@@ -689,3 +693,4 @@ journalctl -b -1 -r  shows no snags, so thinking it's hw
 happens when system is under load, but also sometimes when not heavily loaded
 less often: random reboots
 regularly: clock stuck, no CBH, so hard reboot
+sometimes orphaned inodes on /dev/sda2

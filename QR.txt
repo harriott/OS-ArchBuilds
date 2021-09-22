@@ -409,6 +409,7 @@ journalctl -b  # for this boot
 journalctl -b -1  # for previous boot
 journalctl -b -1 -e  # shows end of  -n1000
 journalctl -b -1 -r  # newest first
+journalctl -b -g 'EFI v'  # shows EFI version
 
 # terminals
 Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2

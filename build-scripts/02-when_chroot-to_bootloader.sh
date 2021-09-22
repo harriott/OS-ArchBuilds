@@ -1,61 +1,63 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
 
 # to be sourced from a parent build script
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-ping -c 3 8.8.8.8
+# ping -c 3 8.8.8.8
+ping -c 3 -n google.com  # for Jo-XA2
 
-# #=> 0 time
-# # time zone
-# ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
+#=> 0 time
+# time zone
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
-# # system clock
-# timedatectl set-ntp true
-# timedatectl status
-# # doesn't show local correction
+# system clock
+timedatectl set-ntp true
+timedatectl status
+# doesn't show local correction
 
-# # hardware clock
-# hwclock --systohc
+# hardware clock
+hwclock --systohc
 
-# #=> 0 locale (GB or Fr)
-# # locale
-# sed -i 's/^#en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
-# sed -i 's/^#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
-# sed -i 's/^#fr_FR.UTF-8/fr_FR.UTF-8/' /etc/locale.gen
-# cat /etc/locale.gen | grep -v '^#'
-# locale-gen
-# cat /etc/locale.conf  # shows it ain't there
-# # echo LANG=fr_FR.UTF-8 > /etc/locale.conf
-# echo LANG=en_GB.UTF-8 > /etc/locale.conf
-# cat /etc/vconsole.conf  # shows it ain't there
-# # echo KEYMAP=fr > /etc/vconsole.conf
-# echo KEYMAP=uk > /etc/vconsole.conf
+#=> 0 locale (GB or Fr)
+# locale
+sed -i 's/^#en_GB.UTF-8/en_GB.UTF-8/' /etc/locale.gen
+sed -i 's/^#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+sed -i 's/^#fr_FR.UTF-8/fr_FR.UTF-8/' /etc/locale.gen
+cat /etc/locale.gen | grep -v '^#'
+locale-gen
+cat /etc/locale.conf  # shows it ain't there
+# echo LANG=fr_FR.UTF-8 > /etc/locale.conf
+echo LANG=en_GB.UTF-8 > /etc/locale.conf
+cat /etc/vconsole.conf  # shows it ain't there
+# echo KEYMAP=fr > /etc/vconsole.conf
+echo KEYMAP=uk > /etc/vconsole.conf
 
-# #=> 1 host
-# cat /etc/hostname  # shows it ain't there
-# # echo ltcm58 > /etc/hostname
-# echo sbMb > /etc/hostname
-# # /etc/hosts
-# echo "127.0.0.1 localhost" >> /etc/hosts
-# echo "::1       localhost" >> /etc/hosts
-# # echo "127.0.1.1 avt661.localdomain avt661" >> /etc/hosts
-# echo "127.0.1.1 sbMb.localdomain sbMb" >> /etc/hosts
-# cat /etc/hosts
+#=> 1 host
+cat /etc/hostname  # shows it ain't there
+machine=LIP120s81A4
+# machine=ltcm58
+# machine=sbMb
+echo $machine > /etc/hostname
+# /etc/hosts
+echo "127.0.0.1 localhost" >> /etc/hosts
+echo "::1       localhost" >> /etc/hosts
+# echo "127.0.1.1 avt661.localdomain avt661" >> /etc/hosts
+echo "127.0.1.1 $machine.localdomain $machine" >> /etc/hosts
+cat /etc/hosts
 
-# #=> 2 better mirrorlist
-# pacman -S reflector
-# . 02-when_chroot-reflector.sh
+#=> 2 better mirrorlist
+pacman -S reflector
+. 02-when_chroot-reflector.sh
 
 #=> 3 bootloader
 # 0 GRUB, Network Time Protocol
 pacman -S efibootmgr grub ntp
 
 # 1 Microcode
-pacman -S amd-ucode
-# pacman -S intel-ucode
+# pacman -S amd-ucode
+pacman -S intel-ucode
 
 #=> 4 bootloader
 # 2 install GRUB
@@ -67,6 +69,8 @@ grub-mkconfig -o /boot/grub/grub.cfg
 #=> 5 final tweaks
 # dhcpcd
 pacman -S dhcpcd
+
+# iwd
 
 # lsusb
 pacman -S usbutils

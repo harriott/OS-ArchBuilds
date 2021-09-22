@@ -1,8 +1,8 @@
 #!/bin/sh
 # vim: fdl=1 ft=sh:
 
-# sourced by  $Bash/bash_profile
-# symlink this to  ~/.export-machine
+# ln -sf $MACHINE/jo/export-machine ~/.export-machine
+#  which is sourced by  $Bash/bash_profile
 
 export machine=sbMb
 export Storage=/mnt/SD480GSSDPlus  # where I keep stuff

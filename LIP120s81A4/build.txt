@@ -1,12 +1,16 @@
 vim: ft=build:
 
-Lenovo IdeaPad 120s 81A4 = LIP120s81A4
+Lenovo IdeaPad 120s 81A4 = LIP120S-81A4 = LIP120s81A4
 
+# before Dropbox, prepare K8GBDTIG3
+cp -f $ITstack/unix_like/LIP120s81A4-iwctl.sh /run/media/jo/K8GBDTIG3
+rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
 # build
 ## Arch install - from the ISO
-booted to archlinux-2021.04.01-x86_64.iso on KDT100G3C
-  Arch Linux install medium (x86_64, UEFI)
 ## prepare the bootable disk
+booted to  archlinux-2021.04.01-x86_64.iso  on  KDT100G3C
+  Arch Linux install medium (x86_64, UEFI)
+### prepare the bootable disk
 lsblk shows
   mmcblk0 29.1G divided into 4
   mmcblk0boot0 4M
@@ -15,7 +19,7 @@ gdisk /dev/mmcblk0 >
   (o (clear out all partition data) > y would've probably been enough)
   x (extra functionality) > z (Zap) > y > y
 lsblk shows
-  mmcblk0 29.1G divided into 4
+  mmcblk0 29.1G
   mmcblk0boot0 4M
   mmcblk0boot1 4M
 lsblk -f
@@ -27,32 +31,56 @@ Menu > Accessories > Disks  showed
   /dev/mmcblk0boot0 4.2MB Unkown
   /dev/mmcblk0boot1 4.2MB Unkown
 PCManFM can see but not enter into the mmcblk0bootx's
-## ARCH_202107 to chroot
-K16GBDTG2  with  archlinux-2021.07.01-x86_64.iso
 ## proposal
 / on the 32GB eMMC except /home /usr on SDEP128G
+## ARCH_202107 to chroot
+booted to  archlinux-2021.09.01-x86_64.iso  on  K8GBDT100  in left USB socket
+### check booted to UEFI mode
+ls /sys/firmware/efi/efivars  returns a load of files
+### create UEFI & root partitions
+gdisk /dev/mmcblk0 >
+  p
+  o (create a new empty GUID partition table (GPT) y
+  p
+  n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
+    ef00 (EFI system partition)
+  n > Partition number (defaults to 2) > First sector (defaults to 1128448) > Enter >
+    8304 Linux x86-64 root (/)
+  w > y
+gdisk /dev/mmcblk0 -l
+### add in forgotten swap
+gdisk /dev/mmcblk0 >
+  d > 2
+  n > Partition number (defaults to 3) > First sector (defaults to the sector after partition 2) >
+    +4g > 8200 (Linux swap)
+  n > Partition number (defaults to 2) > First sector (defaults to 1128448) > Enter >
+    8304 Linux x86-64 root (/)
+  w > y
+### K8GBDTIG3
+K8GBDTIG3 loaded with  ArchBuilds plugged into right USB socket
+mkdir /bs   mount /dev/sdb /bs   cd /bs   bash LIP120s81A4-iwctl.sh
+  ping -c 3 -n google.com
+cd /bs/ArchBuilds/build-scripts
+bash 01-as_root-efi-to_chroot.sh
+#### to bootloader
+##### K8GBDTIG3
+mount /dev/sdb /mnt
+  cd / for  umount /dev/sdb  to  rsync
+mount /dev/sdc /mnt
+  cd /mnt/ArchBuilds/build-scripts
+bash 02-when_chroot-to_bootloader.sh
+## reboot to root
+root pw
+dmesg | grep 'EFI v'  reported "EFI v2.50 by Phoenix Technologies Ltd"
+### K8GBDTIG3
+K8GBDTIG3 loaded with  ArchBuilds plugged into right USB socket
+mount /dev/sda /mnt   cd /mnt/ArchBuilds/build-scripts
+Jo-X10II  tethered into left USB for  dhcpcd enp0s21f0u2
+pacman -S iwd
+bash 03-git-symlinks-root.sh
+bash 06-as_root-to_headers.sh
 ## waiting
-
-K8GBDTIG3 loaded with  ArchBuilds
-mkdir /bs   mount /dev/sdb /bs   cd /bs/ArchBuilds/build-scripts
-
-  gdisk /dev/sdd > o (create a new empty GUID partition table GPT & new protective MBR) y
-    w   for  gdisk /dev/sdd  (MBR: protection  GPT: present)
-### create partitions
-n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
-  ef00 (EFI system partition)
-n > Partition number (defaults to 2) > First sector (defaults to 1128448) > +60g > Hex code >
-  8304 Linux x86-64 root (/)
-n > Partition number (defaults to 3) > First sector (defaults to the sector after partition 2) >
-  +4g > 8200 (Linux swap)
-n > Partition number (defaults to 4) > First sector (defaults to the sector after partition 3) >
-  +60g > Hex code > 8302 (Linux home)
-n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 5) >
-  Enter > Enter > 8300 (Linux filesystem)
-w
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
+lspci -k | grep 3165 -A 3
 SDEP128G in microSD slot
-# before Dropbox, prepare KDTG311282
-rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
-cp -f $ITstack/unix_like/LIP120s81A4-iwctl.sh /run/media/jo/K8GBDTIG3

@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: fdm=expr fdl=1 ft=sh.shfold:
 
 drives=(
   '9QF57J6Q' \

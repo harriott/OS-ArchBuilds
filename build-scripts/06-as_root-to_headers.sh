@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: fdm=expr ft=sh.shfold:
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -25,9 +24,9 @@ cp $ARCHBUILDS/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no
 #=> 1 have boot messages stay on tty1
 cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
 
-#=> 1 linux headers
-# for *8192eu*
-pacman -S linux-headers
-# - don't forget to  reboot !
-reboot
+# #=> 1 linux headers
+# # for *8192eu*
+# pacman -S linux-headers
+# # - don't forget to  reboot !
+# reboot
 

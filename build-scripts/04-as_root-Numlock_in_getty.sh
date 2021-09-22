@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: fdm=expr ft=sh.shfold:
 
 # to be sourced from a parent build script
 
@@ -13,5 +12,6 @@ trap read debug  # puts a read request after each executable line
 # cat /etc/systemd/system/getty@.service.d/activate-numlock.conf
 
 #=> 1 Numlock off in getty
+# because it didn't work in sbMb
 rm /etc/systemd/system/getty@.service.d/activate-numlock.conf
 
