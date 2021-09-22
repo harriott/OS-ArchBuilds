@@ -8,13 +8,12 @@ ARCHBUILDS=/ArchBuilds
 # #=> 0 internet check
 # ping -c 3 8.8.8.8
 
-#=> 1 disable dhcpcd wait at start
-mkdir /etc/systemd/system/dhcpcd@.service.d
-cp $ARCHBUILDS/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
+# #=> 1 disable dhcpcd wait at start
+# mkdir /etc/systemd/system/dhcpcd@.service.d
+# cp $ARCHBUILDS/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
 
 #=> 1 frame buffer
-# framebuffer, Sudo & Tig
-pacman -S fbset sudo tig
+pacman -S fbset
 # display all available frame buffer information
 fbset -i
 
