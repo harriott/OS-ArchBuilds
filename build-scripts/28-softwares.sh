@@ -82,15 +82,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-rAUR dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# rAUR dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -146,14 +146,14 @@ true
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
 
-# #=> google-chrome
-# cd ~/Arch/AUR
-# rAUR google-chrome
-# git clone https://aur.archlinux.org/google-chrome.git
-# cd google-chrome
-# gvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+cd ~/Arch/AUR
+rAUR google-chrome
+git clone https://aur.archlinux.org/google-chrome.git
+cd google-chrome
+gvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> gnome-disk-utility
 # sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
@@ -378,7 +378,6 @@ cd ~/Arch/AUR
 rAUR spotify
 git clone https://aur.archlinux.org/spotify.git
 cd spotify
-gvim PKGBUILD
 gvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
 makepkg -sic
 

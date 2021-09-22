@@ -18,52 +18,51 @@ trap read debug  # puts a read request after each executable line
 # systemctl disable iwd.service
 # true
 
-# #=> 1 NetworkManager 1 install
-# pacman -S networkmanager
-# systemctl enable NetworkManager.service --now
+#=> 1 NetworkManager 1 install
+pacman -S networkmanager
+systemctl enable NetworkManager.service --now
 
 #=> 1 NetworkManager 2 status
 systemctl status NetworkManager.service | cat
 true
 
-#=> 1 openbsd-netcat
+#=> 1 netcat
 pacman -S openbsd-netcat
 
 #=> 1 pass
 pacman -S pass
 
-#=> 1 rkhunter
+#=> 1 Rootkit Hunter
 pacman -S rkhunter
-rkhunter --propupd
-rkhunter -C
+source 10-as_root-RootkitHunt.sh
 
-# #=> 1 softwares - info
-# # htop
-# pacman -S htop
+#=> 1 softwares - info
+# htop
+pacman -S htop
 
-# # iotop
-# pacman -S iotop
+# iotop
+pacman -S iotop
 
-# # lshw
-# pacman -S lshw
+# lshw
+pacman -S lshw
 
-# # lsof
-# pacman -S lsof
+# lsof
+pacman -S lsof
 
-# # man-db
-# pacman -S man-db
+# man-db
+pacman -S man-db
 
-# # man-pages
-# pacman -S man-pages
+# man-pages
+pacman -S man-pages
 
-# # Neofetch
-# pacman -S neofetch
+# Neofetch
+pacman -S neofetch
 
-# # progress
-# pacman -S progress
+# progress
+pacman -S progress
 
-# # sysstat
-# pacman -S sysstat
+# sysstat
+pacman -S sysstat
 
 #=> 1 softwares - file manage
 # bat
@@ -117,6 +116,9 @@ pacman -S isync  # for mbsync
 # tcpdump
 pacman -S tcpdump  # for packet analysis
 
+# Wget
+pacman -S wget
+
 #=> 1 softwares - system
 # Bashtop
 pacman -S bashtop  # later superseded by AUR bpytop
@@ -154,9 +156,6 @@ systemctl list-timers
 
 # pkgstats
 pacman -S pkgstats
-
-#=> 1 softwares - Wget
-pacman -S wget
 
 #=> 1 swappiness to 10
 # check that the default is 60
