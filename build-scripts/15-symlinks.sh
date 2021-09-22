@@ -23,9 +23,9 @@
 
 # #=> 0 vims
 ln -sf $MACHINE/jo/gvimrc ~/.gvimrc
-# ln -sf $ARCHBUILDS/jo/Vim/vimrc  ~/.vimrc
+ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 
-# ln -sf $ARCHBUILDS/jo/Vim/init.vim ~/.config/nvim/init.vim
+ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
 #=> 1 visual check
 # find ~ -mindepth 1 -maxdepth 3 -type l -ls

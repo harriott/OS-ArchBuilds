@@ -40,7 +40,7 @@ ls /sys/firmware/efi/efivars  returns a load of files
 ### create UEFI & root partitions
 gdisk /dev/mmcblk0 >
   p
-  o (create a new empty GUID partition table (GPT) y
+  o (create a new empty GUID partition table (GPT) > y
   p
   n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
     ef00 (EFI system partition)
@@ -75,11 +75,38 @@ dmesg | grep 'EFI v'  reported "EFI v2.50 by Phoenix Technologies Ltd"
 ### K8GBDTIG3
 K8GBDTIG3 loaded with  ArchBuilds plugged into right USB socket
 mount /dev/sda /mnt   cd /mnt/ArchBuilds/build-scripts
-Jo-X10II  tethered into left USB for  dhcpcd enp0s21f0u2
+Jo-X10II  tethered into left USB for  ip l  which indicated  dhcpcd enp0s21f0u2
 pacman -S iwd
 pacman -S git  for  bash 03-cloneArchBuilds.sh
+### /ArchBuilds
 bash 05-iwd-root_symlinks.sh
 bash 08-as_root-to_headers.sh
+#### to jo
+bash 10-as_root-to_jo.sh
+## reboot to jo
+cd /home  for  sudo chown -R jo:jo jo  got "Operation not permitted"...
+## fix /home
+somehow  SDEP128G  (as mmcblk0p1)  got mounted as  /home  so  userdel -r jo
+### create \home & \usr partitions
+wipefs /dev/mmcblk1  returned "dos"
+mount /dev/mmcblk1p1  reports it to be mounted on /home  so
+  umount /dev/mmcblk1  for  wipefs --all /dev/mmcblk1
+gdisk /dev/mmcblk1 >
+  o (create a new empty GUID partition table (GPT) > y
+  n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +20g >
+    Enter > 8300
+  d
+  n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +20g >
+    8314 Linux x86-64 /usr
+  n > Partition number (defaults to 2) > First sector (defaults to the sector after partition 2) >
+    Enter > Enter > 8302 (Linux home)
+  w > y
+#### reboot into emergency mode
+Dependency failed for /home
+root pw
+##### internet
+iwctl  not working, so
+  Jo-X10II  tethered into left USB for  ip l  which indicated  dhcpcd enp0s21f0u2
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

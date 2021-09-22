@@ -652,6 +652,12 @@ su + root pw  for  cd /etc/ssh/
 ## Update Google Chrome
 ==> NOTE: Custom flags should be put directly in: ~/.config/chrome-flags.conf
 ==> NOTE: The launcher is called: 'google-chrome-stable'
+## nano
+sudo pacman -S nano-syntax-highlighting
+mkdir ~/.config/nano
+cp /etc/nanorc ~/.config/nano/nanorc
+cp ~/.config/nano/nanorc $ARCHBUILDS/jo/textEdit/nanorc
+ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh

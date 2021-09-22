@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdl=1 ft=sh.shfold:
+# vim: fdl=1:
 
 # #=> broot br
 # broot  # to load  br

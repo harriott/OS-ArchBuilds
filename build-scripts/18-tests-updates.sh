@@ -13,7 +13,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> 0 updates
 sudo pacman -Syu
-# reboot if kernel updated !
+# check  nanorc  if  nano  updated & reboot if kernel updated !
 sudo find /etc -type f -name "*pacnew"
 true
 # "^ ^ ^ ^ ^ ^ - pacnews ?"
