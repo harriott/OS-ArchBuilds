@@ -77,7 +77,8 @@ K8GBDTIG3 loaded with  ArchBuilds plugged into right USB socket
 mount /dev/sda /mnt   cd /mnt/ArchBuilds/build-scripts
 Jo-X10II  tethered into left USB for  dhcpcd enp0s21f0u2
 pacman -S iwd
-bash 03-git-symlinks-root.sh
+pacman -S git  for  bash 03-cloneArchBuilds.sh
+
 bash 06-as_root-to_headers.sh
 ## waiting
 # physical configuration
