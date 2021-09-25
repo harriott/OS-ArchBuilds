@@ -5,6 +5,7 @@ Lenovo IdeaPad 120s 81A4 = LIP120S-81A4 = LIP120s81A4
 # before Dropbox, prepare K8GBDTIG3
 cp -f $ITstack/unix_like/LIP120s81A4-iwctl.sh /run/media/jo/K8GBDTIG3
 rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
+rsync -irtv --delete --modify-window=1 $core/ /run/media/jo/K8GBDTIG3/core
 # build
 ## Arch install - from the ISO
 ## prepare the bootable disk
@@ -73,7 +74,7 @@ bash 02-when_chroot-to_bootloader.sh
 root pw
 dmesg | grep 'EFI v'  reported "EFI v2.50 by Phoenix Technologies Ltd"
 ### K8GBDTIG3
-K8GBDTIG3 loaded with  ArchBuilds plugged into right USB socket
+K8GBDTIG3 loaded with  ArchBuilds  plugged into right USB socket
 mount /dev/sda /mnt   cd /mnt/ArchBuilds/build-scripts
 Jo-X10II  tethered into left USB for  ip l  which indicated  dhcpcd enp0s21f0u2
 pacman -S iwd
@@ -115,6 +116,14 @@ mkfs.ext4 /dev/mmcblk0p2
 blkid > blkid  for  nano /etc/fstab  then imported  blkid  and tweaked  /home
 ## reboot to jo
 ### jo nanorc
+### reboot to root for rsyncBackup
+### update /ArchBuilds
+cd /; bash ArchBuilds/build-scripts/03-cloneArchBuilds.sh; cd ArchBuilds/build-scripts
+### K8GBDTIG3
+K8GBDTIG3 loaded with  core  plugged into left USB socket
+#### mount K8GBDTIG3 readable as jo
+sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /mnt
+dhcpcd wlan0
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
