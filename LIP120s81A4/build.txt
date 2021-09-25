@@ -116,13 +116,13 @@ mkfs.ext4 /dev/mmcblk0p2
 blkid > blkid  for  nano /etc/fstab  then imported  blkid  and tweaked  /home
 ## reboot to jo
 ### jo nanorc
-### reboot to root for rsyncBackup
-### update /ArchBuilds
-cd /; bash ArchBuilds/build-scripts/03-cloneArchBuilds.sh; cd ArchBuilds/build-scripts
 ### K8GBDTIG3
 K8GBDTIG3 loaded with  core  plugged into left USB socket
 #### mount K8GBDTIG3 readable as jo
 sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /mnt
+### reboot to root for rsyncBackup
+#### update /ArchBuilds
+cd /; bash ArchBuilds/build-scripts/03-cloneArchBuilds.sh; cd ArchBuilds/build-scripts
 dhcpcd wlan0
 ## waiting
 # physical configuration

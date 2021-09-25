@@ -11,20 +11,33 @@ alias gpr='gprename &'
 alias rpd='bash $onGH/rsync-portabledrives/rsync.sh'
 alias psci='pscShots=/home/jo/Arch/AUR/pscircle-git-shots;pscLatest="$pscShots/$(date +%Y%m%d%H%M%S).png";pscircle --output=$pscLatest;sxiv -fn $(ls $pscShots | wc -l) $pscShots &'
 
+gspdfpng() {
+    if [ -z "$1" ] || [ -z "$2" ] ; then
+        echo "${tpf5}gspdfpng <pdf_basename> <png_basename> [<pagelist>]${tpfn}"
+        return 1
+    fi
+    if [ ! -f "$1.pdf" ]; then
+        echo "${tpf1}$1.pdf not there${tpfn}"; return 1
+    elif [ ! -s "$1.pdf" ] ; then
+        echo "${tpf1}$1.pdf zero size${tpfn}"; return 1
+    fi
+    if [ -z "$3" ]; then
+        pl='1'
+    else
+        pl="$3"
+    fi
+    gs -dSAFER -sDEVICE=png16m -r400 -sPageList=$pl -o $2-%02d.png $1.pdf
+}
+
 #=> cmus
 alias m='cmus'
-
-k()
-{
-    kill -9 "$(pidof cmus)"
-}
+k() { kill -9 "$(pidof cmus)"; }
 
 # update library
 alias uc='bash $MACHINE/jo/cmusUpdateLibrary.sh'
 
 #=> convert a FM json
-cfmj()
-{
+cfmj() {
     if [ -s $1 ]; then
         bn=${1%.json}
         cp $1 $bn.md
