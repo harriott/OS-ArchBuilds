@@ -7,31 +7,28 @@
 # ------------------
 # this is only needed until I've setup  rsnapshot
 
-# run this script from a Live ISO:  bash <path>/rsyncBackup.sh
+# run this script from Knoppix:  bash rsyncBackup.sh
 
-# check system and backup destination
+# query system
 echo "rsync backup of system"
 echo "0 LIP120s81A4"
 echo "1 sbMb"
 read -p "- enter 0 or 1 -> " i
-disk=(
-  LIP120s81A4 KDTG311281 \
-  sbMb WD30EZRZ \
-)
+disk=( LIP120s81A4 sbMb )
 if ! [[ $i == '0' || $i == '1' ]]; then
   echo "must be 0 or 1"
   exit
 fi
-i=$(($i*2))
-s=${disk[$i]}
-d=${disk[$i+1]}
-if [ -d /mnt/$d ]; then
-  backdest=/mnt/$d/$s-system-rsyncBackup
-else
-  echo "you need to mount $d at /mnt/"
-  exit
-fi
-echo $backdest
+system=${disk[$i]}
+echo "you're on $system"
+
+# get backup destination
+read -p 'enter last two characters of backup mount - /media/sdxx ' xx
+media=/media/sd$xx
+echo "backup mount is $media"
+[ -d $media ] || echo "can't find $media" && exit
+backdest=$media/$system-rsyncBackup
+echo "backup directory is $backdest"
 exit
 [ -d $backdest ] || mkdir $backdest
 
