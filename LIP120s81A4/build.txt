@@ -87,7 +87,7 @@ bash 10-as_root-to_jo.sh
 cd /home  for  sudo chown -R jo:jo jo  got "Operation not permitted"...
 ## fix /home
 somehow  SDEP128G  (as mmcblk0p1)  got mounted as  /home  so  userdel -r jo
-### create \home & \usr partitions
+### create \home & \usr partitions on SDEP128G
 wipefs /dev/mmcblk1  returned "dos"
 mount /dev/mmcblk1p1  reports it to be mounted on /home  so
   umount /dev/mmcblk1  for  wipefs --all /dev/mmcblk1
@@ -107,6 +107,14 @@ root pw
 ##### internet
 iwctl  not working, so
   Jo-X10II  tethered into left USB for  ip l  which indicated  dhcpcd enp0s21f0u2
+##### format SDEP128G
+lsblk
+mkfs.ext4 /dev/mmcblk0p1
+mkfs.ext4 /dev/mmcblk0p2
+##### fstab
+blkid > blkid  for  nano /etc/fstab  then imported  blkid  and tweaked  /home
+## reboot to jo
+### jo nanorc
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

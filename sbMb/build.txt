@@ -667,6 +667,12 @@ fcrontab -l
 ## temperatures
 ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+# file-hierarchy - diskusage
+/usr/lib 5.4GB
+/usr/share 4.7GB
+/var/cache/ 8.9GB
+/var/cache/pacman/ 8.6GB
+/var/log/journal/ 2.2 GB
 # physical configuration
 D-Link DUB-H7
 TL-WN821N

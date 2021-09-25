@@ -1,16 +1,14 @@
 #!/bin/bash
-# vim: set et tw=0:
 
-# Full system backup
-# ------------------
+# Full system restore from an rsnapshot
+# -------------------------------------
 
-# Joseph Harriott  Wed 13 May 2020
+# Joseph Harriott  Thu 23 Sep 2021
 
-# run this script from root
+read -p "You are in a rescue environment? " sure
+[ ! $sure ] || [ $sure != "y" ] && exit
 
 # Check, then go:
-echo "Stopping rsnapshot-hourly.timer"
-systemctl stop rsnapshot-hourly.timer
 echo "Snapshot that you wish to restore from: "
 read snapshot
 if [ $snapshot ]; then
@@ -45,9 +43,7 @@ if [ $snapshot ]; then
       # -A => preserve ACLs (implies -p)
       # -X => preserve extended attributes
       # --delete => delete extraneous files from dest dirs
-      [ $snapshot = 'usr' ] || ( echo "- any key to continue"; read pause )
     done
   fi
 fi
-systemctl start rsnapshot-hourly.timer
 

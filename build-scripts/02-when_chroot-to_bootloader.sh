@@ -83,12 +83,13 @@ trap read debug  # puts a read request after each executable line
 # until passwd; do echo 'try again'; done
 
 #=> 6 nano
+ARCHBUILDS=/ArchBuilds
 pacman -S nano-syntax-highlighting
 
-#==> jo nanorc
-mkdir /home/jo/.config/nano
-ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
-nvim -O /home/jo/.config/nano/nanorc /etc/nanorc
+# #==> jo nanorc
+# mkdir /home/jo/.config/nano
+# ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
+# nvim -O /home/jo/.config/nano/nanorc /etc/nanorc
 
 #==> root nanorc
 mkdir ~/.config/nano
