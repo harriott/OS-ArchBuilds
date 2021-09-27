@@ -65,8 +65,6 @@ cd /bs/ArchBuilds/build-scripts
 bash 01-as_root-efi-to_chroot.sh
 #### to bootloader
 ##### K8GBDTIG3
-mount /dev/sdb /mnt
-  cd / for  umount /dev/sdb  to  rsync
 mount /dev/sdc /mnt
   cd /mnt/ArchBuilds/build-scripts
 bash 02-when_chroot-to_bootloader.sh
@@ -120,10 +118,16 @@ blkid > blkid  for  nano /etc/fstab  then imported  blkid  and tweaked  /home
 K8GBDTIG3 loaded with  core  plugged into left USB socket
 #### mount K8GBDTIG3 readable as jo
 sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /mnt
-### reboot to root for rsyncBackup
-#### update /ArchBuilds
+## reboot to root
+### update /ArchBuilds
+#### mount partition KDTG311282 containing  core
+blkid indicates  mount /dev/sda2 /mnt
+bash /mnt/core/IT_stack/unix_like/LIP120s81A4-iwctl.sh  got me online
 cd /; bash ArchBuilds/build-scripts/03-cloneArchBuilds.sh; cd ArchBuilds/build-scripts
-dhcpcd wlan0
+# boot to Knoppix on KDTG311282 for rsyncBackup.sh
+PCManFM  at  /media/sda2/core/IT_stack/onGitHub/ArchBuilds/root > F4  for  bash rsyncBackup.sh
+
+sudo chown -R knoppix:knoppix /dev/sdb1
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

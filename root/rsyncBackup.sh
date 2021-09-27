@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set sw=2:
 
-# Sat 25 Sep 2021
+# Mon 27 Sep 2021
 
 # Full system backup
 # ------------------
@@ -9,38 +9,54 @@
 
 # run this script from Knoppix:  bash rsyncBackup.sh
 
-# query system
+# query machine
 echo "rsync backup of system"
 echo "0 LIP120s81A4"
 echo "1 sbMb"
-read -p "- enter 0 or 1 -> " i
-disk=( LIP120s81A4 sbMb )
-if ! [[ $i == '0' || $i == '1' ]]; then
+read -p "- enter 0 or 1 -> " mi
+disk=(
+  LIP120s81A4 /media/mmcblk0p3 \
+  sbMb ? \
+)
+if ! [[ $mi == '0' || $mi == '1' ]]; then
   echo "must be 0 or 1"
   exit
 fi
-system=${disk[$i]}
-echo "you're on $system"
+mi=$mi*2
+machine=${disk[$mi]}
+echo "you're on $machine"
+
+# check the source mount
+sm=${disk[$mi+1]}
+if [ -d $sm ]; then
+  echo "the following directories will be backed up"
+  find $sm -mindepth 1 -maxdepth 1 -type d
+else
+  echo "$sm ain't there"
+  exit
+fi
 
 # get backup destination
 read -p 'enter last two characters of backup mount - /media/sdxx ' xx
 media=/media/sd$xx
 echo "backup mount is $media"
-[ -d $media ] || echo "can't find $media" && exit
-backdest=$media/$system-rsyncBackup
+if [ ! -d $media ]; then
+  echo "can't find $media"
+  exit
+fi
+backdest=$media/$machine-rsyncBackup
 echo "backup directory is $backdest"
-exit
 [ -d $backdest ] || mkdir $backdest
 
-# prepare the backup destination folder
+# prepare the backup destination directory
 date=$(date "+%F-%H-%M")
-bfolder="$backdest/$date"
-read -p "about to rsync to $bfolder - any key to continue" null
+bd="$backdest/$date"
+read -p "about to rsync to $bd - any key to continue" null
 
 # do the backups
-mkdir $bfolder
+mkdir $bd
 for sysfolder in boot etc home root usr var; do
-  mkdir $bfolder/$sysfolder
-  rsync -aAinvX $mnt/$sysfolder/ $bfolder/$sysfolder 2>&1 | tee $bfolder/$sysfolder.txt
+  mkdir $bd/$sysfolder
+  rsync -aAinvX $sm/$sysfolder/ $bd/$sysfolder 2>&1 | tee $bd/$sysfolder.txt
 done
 
