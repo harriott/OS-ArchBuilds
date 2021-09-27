@@ -8,10 +8,10 @@ rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3
 rsync -irtv --delete --modify-window=1 $core/ /run/media/jo/K8GBDTIG3/core
 # build
 ## Arch install - from the ISO
-## prepare the bootable disk
+### prepare the bootable disk
 booted to  archlinux-2021.04.01-x86_64.iso  on  KDT100G3C
   Arch Linux install medium (x86_64, UEFI)
-### prepare the bootable disk
+#### prepare the bootable disk
 lsblk shows
   mmcblk0 29.1G divided into 4
   mmcblk0boot0 4M
@@ -24,7 +24,7 @@ lsblk shows
   mmcblk0boot0 4M
   mmcblk0boot1 4M
 lsblk -f
-### check in Knoppix
+#### check in Knoppix
 halt -p
 booted straight into Knoppix v9.1 on KDTG311281
 Menu > Accessories > Disks  showed
@@ -32,13 +32,13 @@ Menu > Accessories > Disks  showed
   /dev/mmcblk0boot0 4.2MB Unkown
   /dev/mmcblk0boot1 4.2MB Unkown
 PCManFM can see but not enter into the mmcblk0bootx's
-## proposal
+#### proposal
 / on the 32GB eMMC except /home /usr on SDEP128G
-## ARCH_202107 to chroot
+### ARCH_202109 to chroot
 booted to  archlinux-2021.09.01-x86_64.iso  on  K8GBDT100  in left USB socket
-### check booted to UEFI mode
+#### check booted to UEFI mode
 ls /sys/firmware/efi/efivars  returns a load of files
-### create UEFI & root partitions
+#### create UEFI & root partitions
 gdisk /dev/mmcblk0 >
   p
   o (create a new empty GUID partition table (GPT) > y
@@ -49,7 +49,7 @@ gdisk /dev/mmcblk0 >
     8304 Linux x86-64 root (/)
   w > y
 gdisk /dev/mmcblk0 -l
-### add in forgotten swap
+#### add in forgotten swap
 gdisk /dev/mmcblk0 >
   d > 2
   n > Partition number (defaults to 3) > First sector (defaults to the sector after partition 2) >
@@ -57,14 +57,14 @@ gdisk /dev/mmcblk0 >
   n > Partition number (defaults to 2) > First sector (defaults to 1128448) > Enter >
     8304 Linux x86-64 root (/)
   w > y
-### K8GBDTIG3
+#### K8GBDTIG3
 K8GBDTIG3 loaded with  ArchBuilds plugged into right USB socket
 mkdir /bs   mount /dev/sdb /bs   cd /bs   bash LIP120s81A4-iwctl.sh
   ping -c 3 -n google.com
 cd /bs/ArchBuilds/build-scripts
 bash 01-as_root-efi-to_chroot.sh
-#### to bootloader
-##### K8GBDTIG3
+##### to bootloader
+###### K8GBDTIG3
 mount /dev/sdc /mnt
   cd /mnt/ArchBuilds/build-scripts
 bash 02-when_chroot-to_bootloader.sh
@@ -124,7 +124,12 @@ sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /mnt
 blkid indicates  mount /dev/sda2 /mnt
 bash /mnt/core/IT_stack/unix_like/LIP120s81A4-iwctl.sh  got me online
 cd /; bash ArchBuilds/build-scripts/03-cloneArchBuilds.sh; cd ArchBuilds/build-scripts
-# boot to Knoppix on KDTG311282 for rsyncBackup.sh
+## rsyncBackup.sh
+booted to  archlinux-2021.09.01-x86_64.iso  on  K8GBDT100  in left USB socket
+KDTG311281 in right USB socket
+blkid  indicates  mount /dev/sdb1 /mnt
+
+## boot to Knoppix on KDTG311282 for rsyncBackup.sh
 PCManFM  at  /media/sda2/core/IT_stack/onGitHub/ArchBuilds/root > F4  for  bash rsyncBackup.sh
 
 sudo chown -R knoppix:knoppix /dev/sdb1

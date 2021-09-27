@@ -7,56 +7,41 @@
 # ------------------
 # this is only needed until I've setup  rsnapshot
 
-# run this script from Knoppix:  bash rsyncBackup.sh
+# -----------------------------
+# run this script from Arch ISO
+# -----------------------------
 
-# query machine
-echo "rsync backup of system"
-echo "0 LIP120s81A4"
-echo "1 sbMb"
-read -p "- enter 0 or 1 -> " mi
-disk=(
-  LIP120s81A4 /media/mmcblk0p3 \
-  sbMb ? \
-)
-if ! [[ $mi == '0' || $mi == '1' ]]; then
-  echo "must be 0 or 1"
-  exit
-fi
-mi=$mi*2
-machine=${disk[$mi]}
-echo "you're on $machine"
+# UTC -> CEST:
+#  timedatectl set-timezone Europe/Paris
+
+# WAN, if needed:
+#  bash /mnt/IT_stack/unix_like/LIP120s81A4-iwctl.sh
+
+# LIP120s81A4:
+#  mount a USB drive:  mount /dev/sdxx /mnt
+#  mkdir /as
+#  mount Arch system:  mount /dev/mmcblk0p3 /as
+#  bash /mnt/IT_stack/onGitHub/ArchBuilds/root/rsyncBackup.sh
 
 # check the source mount
-sm=${disk[$mi+1]}
-if [ -d $sm ]; then
+if [ -d /as ]; then
   echo "the following directories will be backed up"
-  find $sm -mindepth 1 -maxdepth 1 -type d
+  find /as -mindepth 1 -maxdepth 1 -type d | grep -E 'boot|etc|home|root|usr|var'
 else
-  echo "$sm ain't there"
+  echo "/as/ ain't there"
   exit
 fi
-
-# get backup destination
-read -p 'enter last two characters of backup mount - /media/sdxx ' xx
-media=/media/sd$xx
-echo "backup mount is $media"
-if [ ! -d $media ]; then
-  echo "can't find $media"
-  exit
-fi
-backdest=$media/$machine-rsyncBackup
-echo "backup directory is $backdest"
-[ -d $backdest ] || mkdir $backdest
 
 # prepare the backup destination directory
+[ -d /mnt/rsyncBackup ] || mkdir /mnt/rsyncBackup
 date=$(date "+%F-%H-%M")
-bd="$backdest/$date"
+bd="/mnt/rsyncBackup/$date"
 read -p "about to rsync to $bd - any key to continue" null
 
 # do the backups
 mkdir $bd
 for sysfolder in boot etc home root usr var; do
   mkdir $bd/$sysfolder
-  rsync -aAinvX $sm/$sysfolder/ $bd/$sysfolder 2>&1 | tee $bd/$sysfolder.txt
+  rsync -aAinvX \as/$sysfolder/ $bd/$sysfolder 2>&1 | tee $bd/$sysfolder.txt
 done
 
