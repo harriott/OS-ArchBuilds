@@ -1,18 +1,21 @@
 #!/bin/bash
 # vim: fdl=1:
 
-#=> 0 iNet wireless daemon
-pacman -S iwd  # allowing an alternative to  NetworkManager + wpa_supplicant
+# #=> 0 iNet wireless daemon - install
+# pacman -S iwd  # allowing an alternative to  NetworkManager + wpa_supplicant
 
-#=> 0 root symlinks
-# - needs to be run from root, not from sudo
+#=> 1 iNet wireless daemon - enable
+systemctl enable iwd.service --now
 
-ARCHBUILDS=/ArchBuilds
+# #=> 0 root symlinks
+# # - needs to be run from root, not from sudo
 
-ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
-ln -sf $ARCHBUILDS/root/bashrc /root/.bashrc  # sources bashrc-generic
+# ARCHBUILDS=/ArchBuilds
 
-ln -sf $ARCHBUILDS/Bash/inputrc /root/.inputrc
+# ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
+# ln -sf $ARCHBUILDS/root/bashrc /root/.bashrc  # sources bashrc-generic
 
-ln -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh
+# ln -sf $ARCHBUILDS/Bash/inputrc /root/.inputrc
+
+# ln -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh
 
