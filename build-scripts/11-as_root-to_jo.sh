@@ -19,6 +19,7 @@ trap read debug  # puts a read request after each executable line
 # true
 
 #=> 0 limit systemd Journal size
+# helpful for  LIP120s81A4
 sudo sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
 
 # #=> 0 NetworkManager 1 install

@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 fdl=1 ft=sh.shfold:
+# vim: fdl=1 sw=2:
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -18,8 +18,14 @@ sudo find /etc -type f -name "*pacnew"
 true
 # "^ ^ ^ ^ ^ ^ - pacnews ?"
 true
-sudo paccache -r  # reduce the pacman cache
 
-#=> 1 AURs
+#=> 1 /var/cache/pacman/pkg
+if [ $machine = "LIP120s81A4" ]; then
+  sudo pacman -Scc  # empty completely
+else
+  sudo paccache -r  # reduce to last 3 versions
+fi
+
+#=> 2 AURs
 auracle sync
 

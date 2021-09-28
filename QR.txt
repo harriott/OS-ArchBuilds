@@ -51,116 +51,7 @@ glxinfo
 lspci -vnn | grep VGA -A 12 | xcol Radeon size VGA
 sudo lshw -C display | xcol Radeon size VGA
 
-# imagey
-jpo  # defined in my $Bash/bashrc-wm
-rm -r ~/.cache/sxiv/*
-rm -r ~/.thumbnails/normal/*
-
-## scanimage
-S 55n 3 <imagefilename> <scanheight>
-see $Imagey/Scan.sh
-
-# multimedia
-~/.config/obs-studio/logs
-for t in *.mp3; do aet "$t" 3; done
-mediainfo -h | moar
-pkill quodlibet
-
-## cmus
-$Openbox/cmus-rc.conf
-pgrep cmus
-
-### kill
-kill -9 "$(pidof cmus)"
-
-#### manually
-get the PIDs  ps ax | grep cmus  then for each  kill -9 PID
-
-# networking
-bm firewall-cmd
-cat /etc/hostname
-latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_10_06_2020.html`
-sudo dhcpcd wlwg111v2
-sudo ls /var/lib/dhcpcd/
-
-## Dropbox conflicted copies
-find -name "* conflicted copy *" -exec rm -f {} \;
-find -name "*(Copie en conflit de *"
-
-## email
-default-release:  find -name "* conflicted copy*" -exec rm -f {} \;
-
-### CLI tools
-$Bash/bashrc-email
-grep -r "Georita" *
-
-#### mutt
-$email/muttrc-MWa
-$email/muttrc-account_ftml
-echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
-F => toggle important flag (= Star in Gmail)
-
-#### notmuch search
-nmse '"Georita Harriott"' date:march..  # searches from March
-nmse parlotte date:sat
-notmuch search tag:fm | wc -l
-notmuch search tag:gmail | wc -l
-notmuch search tag:trohib | wc -l
-
-#### providors
-- orange.fr
-- yahoo!mail
-
-#### URLs unclickable by receiver
-URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
-
-## NetworkManager
-nmcli connection delete Jo-X10II
-nmcli device wifi connect Jo-X10II password <password>
-nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
-nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
-sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
-sudo ls /etc/NetworkManager/system-connections/
-
-# Openbox
-$Openbox/openbox/autostart
-$Openbox/openbox/schema.pl
-$Openbox/openbox/rc.xml
-Alt+Space => show client menu for active window
-Ctrl+Alt+arrows => move to desktop
-Shift+Alt+arrows => move to desktop, bringing current window along
-Win+1 => move the window to monitor 1
-Win+2 => move the window to monitor 2
-
-## tint2
-$Openbox/tint2rc
-killall -SIGUSR1 tint2  # reloads
-
-# packages
-pacman -Qdt  # lists all orphans
-sudo pacman -Rs <packagetoremove>
-
-## package database locked
-pgrep pacman  # to ensure it's not running
-sudo rm /var/lib/pacman/db.lck  # delete the stale lock
-
-# pagers
-moar <file>  # ? lists the limited commands
-
-## less pager
-less <file>
-
-### commands
-h -> help
-j,k -> down/up
-
-# pass
-pass edit gmail-neomutt
-pass cz
-pass troh/GmailAPI/token-expire
-~/.password-store
-
-# printing - CUPS - HP ENVY 5532 WiFi
+# hw - printing - CUPS - HP ENVY 5532 WiFi
 lpoptions -d ENVY_5530  # set as default
 lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 lpoptions -p Envy5532 -o PageSize=A4
@@ -171,29 +62,11 @@ lpoptions -d 553_192_168_43_249  # set as default
 lpoptions -p 553_192_168_43_249 -l  # list options
 sudo cupsenable 553_192_168_43_249  # if it's paused
 
-# printing - HPLIP - HP ENVY 5532 WiFi
+# hw - printing - HPLIP - HP ENVY 5532 WiFi
 hp-levels -p ENVY_5532
 hp-setup -b net 192.168.43.249  # when online
 
-# scripting
-kill -9 "$(pidof perl)"
-
-## Bash - ANSI escape sequences
-$ARCHBUILDS/Bash/bashrc-generic
-\e[0;34m = Blue
-\e[1;34m = Bold Blue
-echo ${my_array[@]}
-echo -e "\e[1m\e[95m[1m[95m\e[0m"
-
-### tput
-"nachoparker"
-tput bold; echo hello
-
-#### cat --show-nonprinting
-for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
-tput setaf 95; tput setaf 95 | cat -v; echo =95
-
-# storage
+# hw - storage
 gio trash --empty  # empties all .Trash-1000
 gio trash --list  # lists trash by locations
 GNU Parted
@@ -365,6 +238,133 @@ ls *ly.*/localhost/mnt/SD480GSSDPlus/Dropbox/CAM* -d
 ## trash-cli
 $Bash/bashrc-console
 trash-empty
+
+# imagey
+jpo  # defined in my $Bash/bashrc-wm
+rm -r ~/.cache/sxiv/*
+rm -r ~/.thumbnails/normal/*
+
+## scanimage
+S 55n 3 <imagefilename> <scanheight>
+see $Imagey/Scan.sh
+
+# multimedia
+~/.config/obs-studio/logs
+for t in *.mp3; do aet "$t" 3; done
+mediainfo -h | moar
+pkill quodlibet
+
+## cmus
+$Openbox/cmus-rc.conf
+pgrep cmus
+
+### kill
+kill -9 "$(pidof cmus)"
+
+#### manually
+get the PIDs  ps ax | grep cmus  then for each  kill -9 PID
+
+# networking
+bm firewall-cmd
+cat /etc/hostname
+latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_10_06_2020.html`
+sudo dhcpcd wlwg111v2
+sudo ls /var/lib/dhcpcd/
+
+## Dropbox conflicted copies
+find -name "* conflicted copy *" -exec rm -f {} \;
+find -name "*(Copie en conflit de *"
+
+## email
+default-release:  find -name "* conflicted copy*" -exec rm -f {} \;
+
+### CLI tools
+$Bash/bashrc-email
+grep -r "Georita" *
+
+#### mutt
+$email/muttrc-MWa
+$email/muttrc-account_ftml
+echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
+F => toggle important flag (= Star in Gmail)
+
+#### notmuch search
+nmse '"Georita Harriott"' date:march..  # searches from March
+nmse parlotte date:sat
+notmuch search tag:fm | wc -l
+notmuch search tag:gmail | wc -l
+notmuch search tag:trohib | wc -l
+
+#### providors
+- orange.fr
+- yahoo!mail
+
+#### URLs unclickable by receiver
+URLs (such as in an email sent from mutt) unclickable - so better to send to them with Thunderbird
+
+## NetworkManager
+nmcli connection delete Jo-X10II
+nmcli device wifi connect Jo-X10II password <password>
+nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
+nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
+sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
+sudo ls /etc/NetworkManager/system-connections/
+
+# Openbox
+$Openbox/openbox/autostart
+$Openbox/openbox/schema.pl
+$Openbox/openbox/rc.xml
+Alt+Space => show client menu for active window
+Ctrl+Alt+arrows => move to desktop
+Shift+Alt+arrows => move to desktop, bringing current window along
+Win+1 => move the window to monitor 1
+Win+2 => move the window to monitor 2
+
+## tint2
+$Openbox/tint2rc
+killall -SIGUSR1 tint2  # reloads
+
+# packages
+pacman -Qdt  # lists all orphans
+sudo pacman -Rs <packagetoremove>
+
+## package database locked
+pgrep pacman  # to ensure it's not running
+sudo rm /var/lib/pacman/db.lck  # delete the stale lock
+
+# pagers
+moar <file>  # ? lists the limited commands
+
+## less pager
+less <file>
+
+### commands
+h -> help
+j,k -> down/up
+
+# pass
+pass edit gmail-neomutt
+pass cz
+pass troh/GmailAPI/token-expire
+~/.password-store
+
+# scripting
+kill -9 "$(pidof perl)"
+
+## Bash - ANSI escape sequences
+$ARCHBUILDS/Bash/bashrc-generic
+\e[0;34m = Blue
+\e[1;34m = Bold Blue
+echo ${my_array[@]}
+echo -e "\e[1m\e[95m[1m[95m\e[0m"
+
+### tput
+"nachoparker"
+tput bold; echo hello
+
+#### cat --show-nonprinting
+for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
+tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # system
 bm <command>  # batman

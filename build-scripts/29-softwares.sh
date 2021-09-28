@@ -373,13 +373,13 @@ true
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> Spotify
-cd ~/Arch/AUR
-rAUR spotify
-git clone https://aur.archlinux.org/spotify.git
-cd spotify
-gvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
-makepkg -sic
+# #=> Spotify
+# cd ~/Arch/AUR
+# rAUR spotify
+# git clone https://aur.archlinux.org/spotify.git
+# cd spotify
+# gvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
+# makepkg -sic
 
 # #=> sqlitebrowser
 # sudo pacman -S sqlitebrowser
@@ -423,11 +423,11 @@ makepkg -sic
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-# #=> Zoom
-# cd ~/Arch/AUR
-# rAUR zoom
-# git clone https://aur.archlinux.org/zoom.git
-# cd zoom
-# gvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+cd ~/Arch/AUR
+rAUR zoom
+git clone https://aur.archlinux.org/zoom.git
+cd zoom
+gvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

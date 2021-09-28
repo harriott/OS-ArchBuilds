@@ -667,6 +667,8 @@ du -sh /var/cache/pacman/pkg
 df -h /  shows it's using  19G
 ###
 journalctl --disk-usage  reports "Archived and active journals take up 2.2G in the file system."
+## symlinks in /usr
+sudo find /usr -type l -ls > $MACHINE/usr-symlinks.txt
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh
