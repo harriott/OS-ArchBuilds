@@ -163,9 +163,9 @@ mkfs.ext4 -L SDEP128G /dev/mmcblk1p1 > y
 cp /mnt/fstab-l9r-4 /etc/fstab  then  reboot  to check it got stuck, so  hard off
 reboot  worked
 ### automount SDEP128G
-bash 12-as_root-extra_drives.sh
-# Rootkit Hunter
-as root  bash 11-as_root-RootkitHunt.sh
+bash 11-as_root-extra_drives.sh
+## Rootkit Hunter
+as root  bash 12-as_root-RootkitHunt.sh
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

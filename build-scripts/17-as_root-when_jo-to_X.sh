@@ -8,20 +8,14 @@ ARCHBUILDS=/ArchBuilds
 #=> 0 to X
 # really needed
 
-#==> Firewalld check
-firewall-cmd --info-zone=home  # essential for the ports
-
-# check firewalld
-firewall-cmd --state
-
 #==> hard drives
 stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
 
 # make writable for jo
-chown jo:jo /mnt/9QF57J6Q
-chown jo:jo /mnt/SD480GSSDPlus
-chown jo:jo /mnt/ST3320418AS
-chown jo:jo /mnt/WD30EZRZ
+# chown jo:jo /mnt/9QF57J6Q
+# chown jo:jo /mnt/SD480GSSDPlus
+# chown jo:jo /mnt/ST3320418AS
+# chown jo:jo /mnt/WD30EZRZ
 
 #==> prepare for X
 # Xorg

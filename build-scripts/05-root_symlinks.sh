@@ -1,12 +1,6 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# #=> 0 iNet wireless daemon - install
-# pacman -S iwd  # allowing an alternative to  NetworkManager + wpa_supplicant
-
-#=> 1 iNet wireless daemon - enable
-sudo systemctl enable iwd.service --now
-
 # #=> 0 root symlinks
 # # - needs to be run from root, not from sudo
 

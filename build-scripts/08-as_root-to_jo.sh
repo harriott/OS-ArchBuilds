@@ -3,42 +3,27 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 iwd 1
-# # iNet Wireless Daemon
-# pacman -S iwd
-# systemctl enable iwd.service --now
-# systemctl status iwd.service
-# true
+# #=> 0 limit systemd Journal size
+# # helpful for  LIP120s81A4
+# sudo sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
 
-# #=> 0 iwd 2 stop
-# systemctl stop iwd.service
-# true
+#=> 0 NetworkManager 1 install
+pacman -S networkmanager
+systemctl enable NetworkManager.service --now
 
-# #=> 0 iwd 3 disable
-# systemctl disable iwd.service
-# true
+#=> 0 NetworkManager 2 status
+systemctl status NetworkManager.service | cat
+true
 
-#=> 0 limit systemd Journal size
-# helpful for  LIP120s81A4
-sudo sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
+#=> 0 netcat
+pacman -S openbsd-netcat
 
-# #=> 0 NetworkManager 1 install
-# pacman -S networkmanager
-# systemctl enable NetworkManager.service --now
+#=> 0 pass
+pacman -S pass
 
-# #=> 0 NetworkManager 2 status
-# systemctl status NetworkManager.service | cat
-# true
-
-# #=> 0 netcat
-# pacman -S openbsd-netcat
-
-# #=> 0 pass
-# pacman -S pass
-
-# #=> 0 Rootkit Hunter
-# pacman -S rkhunter
-# source 00-as_root-RootkitHunt.sh
+#=> 0 Rootkit Hunter
+pacman -S rkhunter
+source 00-as_root-RootkitHunt.sh
 
 # #=> 0 softwares - info
 # # htop

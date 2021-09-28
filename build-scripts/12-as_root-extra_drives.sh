@@ -22,5 +22,6 @@ done
 bf=/home/jo/fstab-l9s
 cp /etc/fstab $bf
 chown jo:jo $bf
+cat $bf
 echo "now reboot"
 
