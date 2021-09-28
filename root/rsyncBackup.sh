@@ -14,19 +14,18 @@
 # UTC -> CEST:
 #  timedatectl set-timezone Europe/Paris
 
-# WAN, if needed:
-#  bash /mnt/IT_stack/unix_like/LIP120s81A4-iwctl.sh
-
 # LIP120s81A4:
 #  mount a USB drive:  mount /dev/sdxx /mnt
-#  mkdir /as
-#  mount Arch system:  mount /dev/mmcblk0p3 /as
+#  mkdir /as /ah
+#  mount Arch system:
+#   mount /dev/mmcblk0p3 /as
+#   mount /dev/mmcblk1p2 /ah
 #  bash /mnt/IT_stack/onGitHub/ArchBuilds/root/rsyncBackup.sh
 
 # check the source mount
 if [ -d /as ]; then
   echo "the following directories will be backed up"
-  find /as -mindepth 1 -maxdepth 1 -type d | grep -E 'boot|etc|home|root|usr|var'
+  find /as -mindepth 1 -maxdepth 1 -type d | grep -E 'boot|etc|home|root|usr|var' | sort
 else
   echo "/as/ ain't there"
   exit
@@ -42,6 +41,9 @@ read -p "about to rsync to $bd - any key to continue" null
 mkdir $bd
 for sysfolder in boot etc home root usr var; do
   mkdir $bd/$sysfolder
-  rsync -aAinvX \as/$sysfolder/ $bd/$sysfolder 2>&1 | tee $bd/$sysfolder.txt
+  rsync -aAivX /as/$sysfolder/ $bd/$sysfolder 2>&1 | tee $bd/$sysfolder.txt
 done
+if [ -d /ah ]; then
+  rsync -aAivX /ah/ $bd/home 2>&1 | tee $bd/home.txt
+fi
 
