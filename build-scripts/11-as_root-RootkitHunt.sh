@@ -6,14 +6,17 @@ if [[ $(id -u) > 0 ]]; then
   exit
 fi
 
-#=> 1 Rootkit Hunter
+#=> 0 Rootkit Hunter
 rkhunter --propupd  # update the file properties database
 rkhunter -C  # --config-check
 rkhunter -c -sk  # --check --skip-keypress
 
-#==> backup the log
-[ -d ~/Arch ] || exit
+#=> 1 backup the log
+A=/home/jo/Arch
+[ -d $A ] || exit
 jHM=$(date "+%j-%H%M")
-cp /var/log/rkhunter.log ~/Arch/rkhunter-$jHM.log
-chown jo:jo ~/Arch/rkhunter-$jHM.log
+l=/home/jo/Arch/rkhunter-$jHM.log
+cp /var/log/rkhunter.log $l
+chown jo:jo $l
+echo "now look in $l"
 

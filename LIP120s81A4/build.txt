@@ -159,6 +159,11 @@ gdisk /dev/mmcblk1 >
 ## format SDEP128G
 lsblk
 mkfs.ext4 -L SDEP128G /dev/mmcblk1p1 > y
+## tidy fstab
+cp /mnt/fstab-l9r-4 /etc/fstab  then  reboot  to check it got stuck, so  hard off
+reboot  worked
+# Rootkit Hunter
+bash 11-as_root-RootkitHunt.sh
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
