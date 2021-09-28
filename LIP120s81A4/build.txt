@@ -145,6 +145,8 @@ rsync -aAivX /as/usr/ /au
 mv /as/usr /as/usrOld
 ### reboot to root fails
 ERROR: Root device mounted successfully, but /sbin/init does not exist.
+## reduce system size
+sudo sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

@@ -3,181 +3,184 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 1 iwd 1
+# #=> 0 iwd 1
 # # iNet Wireless Daemon
 # pacman -S iwd
 # systemctl enable iwd.service --now
 # systemctl status iwd.service
 # true
 
-# #=> 1 iwd 2 stop
+# #=> 0 iwd 2 stop
 # systemctl stop iwd.service
 # true
 
-# #=> 1 iwd 3 disable
+# #=> 0 iwd 3 disable
 # systemctl disable iwd.service
 # true
 
-#=> 1 NetworkManager 1 install
-pacman -S networkmanager
-systemctl enable NetworkManager.service --now
+#=> 0 limit systemd Journal size
+sudo sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
 
-#=> 1 NetworkManager 2 status
-systemctl status NetworkManager.service | cat
-true
+# #=> 0 NetworkManager 1 install
+# pacman -S networkmanager
+# systemctl enable NetworkManager.service --now
 
-#=> 1 netcat
-pacman -S openbsd-netcat
+# #=> 0 NetworkManager 2 status
+# systemctl status NetworkManager.service | cat
+# true
 
-#=> 1 pass
-pacman -S pass
+# #=> 0 netcat
+# pacman -S openbsd-netcat
 
-#=> 1 Rootkit Hunter
-pacman -S rkhunter
-source 10-as_root-RootkitHunt.sh
+# #=> 0 pass
+# pacman -S pass
 
-#=> 1 softwares - info
-# htop
-pacman -S htop
+# #=> 0 Rootkit Hunter
+# pacman -S rkhunter
+# source 00-as_root-RootkitHunt.sh
 
-# iotop
-pacman -S iotop
+# #=> 0 softwares - info
+# # htop
+# pacman -S htop
 
-# lshw
-pacman -S lshw
+# # iotop
+# pacman -S iotop
 
-# lsof
-pacman -S lsof
+# # lshw
+# pacman -S lshw
 
-# man-db
-pacman -S man-db
+# # lsof
+# pacman -S lsof
 
-# man-pages
-pacman -S man-pages
+# # man-db
+# pacman -S man-db
 
-# Neofetch
-pacman -S neofetch
+# # man-pages
+# pacman -S man-pages
 
-# progress
-pacman -S progress
+# # Neofetch
+# pacman -S neofetch
 
-# sysstat
-pacman -S sysstat
+# # progress
+# pacman -S progress
 
-#=> 1 softwares - file manage
-# bat
-pacman -S bat
+# # sysstat
+# pacman -S sysstat
 
-# broot
-pacman -S broot
-broot # to generate br command
+# #=> 0 softwares - file manage
+# # bat
+# pacman -S bat
 
-# dvd+rw-tools
-sudo pacman -S dvd+rw-tools
+# # broot
+# pacman -S broot
+# broot # to generate br command
 
-# exa
-pacman -S exa
+# # dvd+rw-tools
+# sudo pacman -S dvd+rw-tools
 
-# fd
-pacman -S fd
+# # exa
+# pacman -S exa
 
-# fzf
-pacman -S fzf
+# # fd
+# pacman -S fd
 
-# mlocate
-pacman -S mlocate
-updatedb
+# # fzf
+# pacman -S fzf
 
-# ncdu
-pacman -S ncdu
+# # mlocate
+# pacman -S mlocate
+# updatedb
 
-# p7zip
-pacman -S p7zip
+# # ncdu
+# pacman -S ncdu
 
-# rhash
-pacman -S rhash
+# # p7zip
+# pacman -S p7zip
 
-# ripgrep
-pacman -S ripgrep
+# # rhash
+# pacman -S rhash
 
-# rsync
-pacman -S rsync
+# # ripgrep
+# pacman -S ripgrep
 
-# trash-cli
-pacman -S trash-cli
+# # rsync
+# pacman -S rsync
 
-# tree
-pacman -S tree
+# # trash-cli
+# pacman -S trash-cli
 
-#=> 1 softwares - networking
-# isync
-pacman -S isync  # for mbsync
+# # tree
+# pacman -S tree
 
-# tcpdump
-pacman -S tcpdump  # for packet analysis
+# #=> 0 softwares - networking
+# # isync
+# pacman -S isync  # for mbsync
 
-# Wget
-pacman -S wget
+# # tcpdump
+# pacman -S tcpdump  # for packet analysis
 
-#=> 1 softwares - system
-# Bashtop
-pacman -S bashtop  # later superseded by AUR bpytop
+# # Wget
+# pacman -S wget
 
-# fcron
-pacman -S fcron
-systemctl enable fcron.service
+# #=> 0 softwares - system
+# # Bashtop
+# pacman -S bashtop  # later superseded by AUR bpytop
 
-# glances
-pacman -S glances
+# # fcron
+# pacman -S fcron
+# systemctl enable fcron.service
 
-# Mesa demos
-pacman -S mesa-demos
+# # glances
+# pacman -S glances
 
-# meson, for auracle later
-pacman -S meson
+# # Mesa demos
+# pacman -S mesa-demos
 
-# NTFS-3G
-pacman -S ntfs-3g
+# # meson, for auracle later
+# pacman -S meson
 
-# pacman-contrib, for paccache
-pacman -S pacman-contrib
+# # NTFS-3G
+# pacman -S ntfs-3g
 
-# pacutils
-pacman -S pacutils
+# # pacman-contrib, for paccache
+# pacman -S pacman-contrib
 
-# Pipe Viewer
-pacman -S pv
+# # pacutils
+# pacman -S pacutils
 
-# pkgfile - for finding possible packages
-pacman -S pkgfile
-pkgfile -u
-systemctl enable pkgfile-update.timer --now
-systemctl list-timers
+# # Pipe Viewer
+# pacman -S pv
 
-# pkgstats
-pacman -S pkgstats
+# # pkgfile - for finding possible packages
+# pacman -S pkgfile
+# pkgfile -u
+# systemctl enable pkgfile-update.timer --now
+# systemctl list-timers
 
-#=> 1 swappiness to 10
-# check that the default is 60
-cat /sys/fs/cgroup/memory/memory.swappiness
-# show that  /etc/sysctl.d  is empty
-ls /etc/sysctl.d
-# fix lower value, which will become effective after reboot
-echo "vm.swappiness=10" > /etc/sysctl.d/99-sysctl.conf
-ls /etc/sysctl.d
+# # pkgstats
+# pacman -S pkgstats
 
-#=> 1 Users
-# activate wheel group
-sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
-grep wheel /etc/sudoers
-# check that  /etc/sudoers  parses OK
-visudo -c -f /etc/sudoers
+# #=> 0 swappiness to 10
+# # check that the default is 60
+# cat /sys/fs/cgroup/memory/memory.swappiness
+# # show that  /etc/sysctl.d  is empty
+# ls /etc/sysctl.d
+# # fix lower value, which will become effective after reboot
+# echo "vm.swappiness=00" > /etc/sysctl.d/99-sysctl.conf
+# ls /etc/sysctl.d
 
-# User jo, creating the home directory and adding to group wheel
-useradd -m -G wheel jo
-until passwd jo; do echo "try again"; done
-cat /etc/passwd
+# #=> 0 Users
+# # activate wheel group
+# sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
+# grep wheel /etc/sudoers
+# # check that  /etc/sudoers  parses OK
+# visudo -c -f /etc/sudoers
 
-#=> 3 end
+# # User jo, creating the home directory and adding to group wheel
+# useradd -m -G wheel jo
+# until passwd jo; do echo "try again"; done
+# cat /etc/passwd
+
+#=> 1 end
 # you're ready to reboot and login to jo
 

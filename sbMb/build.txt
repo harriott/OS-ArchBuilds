@@ -658,6 +658,15 @@ mkdir ~/.config/nano
 cp /etc/nanorc ~/.config/nano/nanorc
 cp ~/.config/nano/nanorc $ARCHBUILDS/jo/textEdit/nanorc
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
+## system size
+df -h /  shows it's using  25G
+### reduce pacman cache
+sudo paccache -r -k 2  removed 2.7GB
+sudo pacman -Sc  removed unused packages, getting the cache down to 2.9G
+du -sh /var/cache/pacman/pkg
+df -h /  shows it's using  19G
+###
+journalctl --disk-usage  reports "Archived and active journals take up 2.2G in the file system."
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh
