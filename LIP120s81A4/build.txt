@@ -124,18 +124,18 @@ sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /mnt
 blkid indicates  mount /dev/sda2 /mnt
 bash /mnt/core/IT_stack/unix_like/LIP120s81A4-iwctl.sh  got me online
 cd /; bash ArchBuilds/build-scripts/03-cloneArchBuilds.sh; cd ArchBuilds/build-scripts
-## rsyncBackup.sh
+### rsyncBackup.sh
 booted to  archlinux-2021.09.01-x86_64.iso  on  K8GBDT100  in left USB socket
 KDTG311281 in right USB socket
 blkid  indicates  mount /dev/sdb1 /mnt
-## move /usr to mmcblk0p1 - fail
-### mkinitcpio_conf
+### move /usr to mmcblk0p1 - fail
+#### mkinitcpio_conf
 reboot to root  for  bash 09-as_root-move_usr.sh
 grep 'd f' /etc/mkinitcpio.conf
-### fstab
+#### fstab
 ls -l /dev/disk/by-uuid/ > /mnt/UUIDs.txt
 cp /etc/fstab /mnt/fstab
-### copy over /usr
+#### copy over /usr
 booted to  archlinux-2021.09.01-x86_64.iso  on  K8GBDT100  in left USB socket
 mkdir /as
 lsblk indicated  mount /dev/mmcblk1p3 /as
@@ -143,27 +143,29 @@ lsblk indicated  mount /dev/mmcblk1p3 /as
     ls /au  shows it contains  lost+found  so  rm -r /au lost+found
 rsync -aAivX /as/usr/ /au
 mv /as/usr /as/usrOld
-### reboot to root fails
+#### reboot to root fails
 ERROR: Root device mounted successfully, but /sbin/init does not exist.
-## move /home back into /
+### move /home back into /
 nano /etc/fstab  to comment out  /home  reboot
 lsblk  indicates  mount /dev/mmcblk1p2 /mnt
 rsync -aAivX /mnt/ /home
-## repartition SDEP128G
+### repartition SDEP128G
 lsblk  indicates  wipefs /dev/mmcblk1  returned stuff, so
   wipefs --all /dev/mmcblk1
 gdisk /dev/mmcblk1 >
   o (create a new empty GUID partition table (GPT) > y
   n > Partition number (defaults to 1) > First sector (defaults to 2048) > Enter > Enter > 8300
   w > y
-## format SDEP128G
+### format SDEP128G
 lsblk
 mkfs.ext4 -L SDEP128G /dev/mmcblk1p1 > y
-## tidy fstab
+### tidy fstab
 cp /mnt/fstab-l9r-4 /etc/fstab  then  reboot  to check it got stuck, so  hard off
 reboot  worked
+### automount SDEP128G
+bash 12-as_root-extra_drives.sh
 # Rootkit Hunter
-bash 11-as_root-RootkitHunt.sh
+as root  bash 11-as_root-RootkitHunt.sh
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

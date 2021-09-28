@@ -5,7 +5,7 @@
 # pacman -S iwd  # allowing an alternative to  NetworkManager + wpa_supplicant
 
 #=> 1 iNet wireless daemon - enable
-systemctl enable iwd.service --now
+sudo systemctl enable iwd.service --now
 
 # #=> 0 root symlinks
 # # - needs to be run from root, not from sudo

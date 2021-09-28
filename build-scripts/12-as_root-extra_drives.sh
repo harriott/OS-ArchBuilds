@@ -1,20 +1,26 @@
 #!/bin/bash
 
+if [[ $(id -u) > 0 ]]; then
+  echo "Run this as root!"
+  exit
+fi
+
 drives=(
-  '9QF57J6Q' \
+  # '9QF57J6Q' \
   # 'HD103SJ' \
-  'SD480GSSDPlus' \
+  # 'SD480GSSDPlus' \
+  'SDEP128G' \
   # 'ST3320620AS' \
-  'ST3320418AS' \
+  # 'ST3320418AS' \
   # 'WD2000JD' \
-  'WD30EZRZ' \
+  # 'WD30EZRZ' \
   )
 for drive in "${drives[@]}"; do
     mkdir /mnt/$drive
     echo "LABEL=$drive /mnt/$drive  ext4  defaults  0  2" >> /etc/fstab
 done
-bf=/home/jo/k85-fstab
+bf=/home/jo/fstab-l9s
 cp /etc/fstab $bf
 chown jo:jo $bf
-reboot
+echo "now reboot"
 

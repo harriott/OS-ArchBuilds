@@ -2,7 +2,7 @@
 # vim: set fdl=2 sw=2:
 
 if [[ $(id -u) > 0 ]]; then
-  echo "Run this again, as root!"
+  echo "Run this as root!"
   exit
 fi
 
