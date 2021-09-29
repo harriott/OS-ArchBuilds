@@ -47,7 +47,7 @@ conky.config = {
 -- (seems to be limited to 10 processes) no padding:
 -- ${alignc} would only work on the first line of the calendar...
 conky.text = [[
-${color white}$nodename - $sysname $kernel on $$(hostname)
+${color white}$nodename - $sysname $kernel on $machine
 $hr
 ${color lightgrey}${font Arial:pixelsize=44}${time %k:%M}${font Arial:pixelsize=38}${time :%S} $font
 ${color lightgrey}${execpi 1800 DA=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$DA"'\b'/'\1${color orange}'"$DA"'${color lightgrey}'/}

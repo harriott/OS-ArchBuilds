@@ -79,6 +79,7 @@ killall -SIGUSR1 tint2  # reloads tint2rc
 # sudo pacman -S sxiv
 
 # #=> 1 tmux-bash-completion-git
+# (depends on bash-completion)
 # cd ~/Arch/AURdev-clone
 # git clone https://aur.archlinux.org/tmux-bash-completion-git.git
 # gctm tmux-bash-completion-git

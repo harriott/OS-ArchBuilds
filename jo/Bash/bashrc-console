@@ -70,7 +70,7 @@ fdtsEncryptedChanges () {
 #==> only useful in sbMb
 # and not needed as root
 
-if [ $$(hostname) = 'sbMb' ]; then
+if [ $machine = 'sbMb' ]; then
 
   alias rsM='bash $onGH/rsync-portabledrives/rsync-Music.sh'
   alias rsVP='bash $onGH/rsync-portabledrives/rsync-VsPref.sh'

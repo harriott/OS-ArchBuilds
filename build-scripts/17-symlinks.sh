@@ -5,7 +5,7 @@
 
 ARCHBUILDS=$HOME/ArchBuilds
   Bash=$ARCHBUILDS/jo/Bash
-  MACHINE=$ARCHBUILDS/$(hostname)
+  MACHINE=$ARCHBUILDS/$(uname -n)
 
 #=> 0 Bash
 # sort this list by last use of "~":  :sort /,*\~/

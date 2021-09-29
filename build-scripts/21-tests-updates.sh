@@ -20,7 +20,7 @@ true
 true
 
 #=> 1 /var/cache/pacman/pkg
-if [ $$(hostname) = "LIP120s81A4" ]; then
+if [ $machine = "LIP120s81A4" ]; then
   sudo pacman -Scc  # empty completely
 else
   sudo paccache -r  # reduce to last 3 versions

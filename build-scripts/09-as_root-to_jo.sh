@@ -26,6 +26,9 @@ pacman -S rkhunter
 source 00-as_root-RootkitHunt.sh
 
 # #=> 0 softwares - info
+# # Bashtop
+# pacman -S bashtop  # later superseded by AUR bpytop
+
 # # htop
 # pacman -S htop
 
@@ -109,9 +112,6 @@ source 00-as_root-RootkitHunt.sh
 # pacman -S wget
 
 # #=> 0 softwares - system
-# # Bashtop
-# pacman -S bashtop  # later superseded by AUR bpytop
-
 # # fcron
 # pacman -S fcron
 # systemctl enable fcron.service
