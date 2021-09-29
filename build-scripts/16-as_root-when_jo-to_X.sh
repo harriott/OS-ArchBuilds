@@ -84,9 +84,6 @@ pacman -S bind-tools
 # Chromium
 pacman -S chromium
 
-# LastPass CLI
-pacman -S lastpass-cli
-
 # msmtp-mta
 pacman -S msmtp-mta
 
@@ -95,6 +92,9 @@ pacman -S neomutt
 
 # Secure Shell
 pacman -S openssh
+
+# #==> softwares - networking - LastPass CLI
+# pacman -S lastpass-cli
 
 #==> softwares - pdfsam
 # brings in jdk-openjdk
@@ -106,9 +106,6 @@ pacman -S espeak-ng-espeak termdown
 
 # moreutils
 pacman -S moreutils
-
-# my system backup script
-cp -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh  # convert to symlink later
 
 # xterm
 pacman -S xterm
@@ -130,13 +127,15 @@ pacman -S vim-nerdcommenter vim-supertab vim-surround vim-syntastic vim-tabular
 # ShellCheck (for bash linting in xVim)
 pacman -S shellcheck  # brings in Haskell
 
-#==> xautomation
-# for mouse middle click
-pacman -S xautomation
+# #==> xautomation
+# # for mouse middle click
+# pacman -S xautomation
 
 #=> 2 automatic login to virtual console
 ls /etc/systemd/system
 mkdir /etc/systemd/system/getty@tty1.service.d
 cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
-reboot
+
+#=> 3 finish
+echo "now reboot"
 
