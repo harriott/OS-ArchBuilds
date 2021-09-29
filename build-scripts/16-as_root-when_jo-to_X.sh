@@ -14,28 +14,29 @@ stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
 # make writable for jo
 # chown jo:jo /mnt/9QF57J6Q
 # chown jo:jo /mnt/SD480GSSDPlus
-chown jo:jo /mnt/SDEP128G
+# chown jo:jo /mnt/SDEP128G
 # chown jo:jo /mnt/ST3320418AS
 # chown jo:jo /mnt/WD30EZRZ
 
-#==> prepare for X
-# Xorg
-pacman -S xorg-server
+# #==> prepare for X
+# # Xorg
+# pacman -S xorg-server
 
-# xinit
-pacman -S xorg-xinit
+# # xinit
+# pacman -S xorg-xinit
 
-# X settings
-pacman -S xorg-xset
+# # X settings
+# pacman -S xorg-xset
 
-# xsel
-pacman -S xsel
+# # xsel
+# pacman -S xsel
 
 #=> 1 when X
 # wanted
 
 #==> monitor settings
 # disable DPMS
+[ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
 cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
 
 # #==> python-pew
