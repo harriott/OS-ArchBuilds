@@ -122,13 +122,12 @@ ARCHBUILDS=/ArchBuilds
 # #==> Vim - Neovim
 # pacman -S neovim python-pynvim
 
-#==> Vim - ShellCheck
-# (for bash linting in xVim)
-pacman -S shellcheck  # brings in Haskell
+# #==> Vim - ShellCheck
+# # (for bash linting in xVim)
+# pacman -S shellcheck  # brings in Haskell
 
 #=> 2 automatic login to virtual console
-ls /etc/systemd/system
-mkdir /etc/systemd/system/getty@tty1.service.d
+[ -d /etc/systemd/system/getty@tty1.service.d ] || mkdir /etc/systemd/system/getty@tty1.service.d
 cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
 
 #=> 3 finish
