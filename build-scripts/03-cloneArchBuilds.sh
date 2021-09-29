@@ -8,7 +8,7 @@ else
   cd /  # as root
 fi
 # because my config specifies ssh
-  [ -d ArchBuildsOld ] && rm -r ArchBuildsOld
+  [ -d ArchBuildsOld ] && sudo rm -r ArchBuildsOld
   [ -d ArchBuilds ] && mv ArchBuilds ArchBuildsOld
 git clone https://github.com/harriott/ArchBuilds.git
 ls ArchBuilds

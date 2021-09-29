@@ -30,6 +30,7 @@ ln -sf $MACHINE/jo/gitconfig ~/.gitconfig  # points to $ITstack/gitconfig
 ln -sf $MACHINE/jo/gvimrc ~/.gvimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 
+[ -d ~/.config/nvim ] || mkdir -p ~/.config/nvim
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
 #=> 1 visual check

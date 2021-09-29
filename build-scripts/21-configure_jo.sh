@@ -21,6 +21,3 @@ mkdir ~/texmf/tex/latex/m4p  # needed for Pandoc in $Bash/bashrc-ob
 #=> LaTeX
 mkdir -p ~/texmf/tex/latex
 
-# #=> neovim configuration directory
-# mkdir ~/.config/nvim
-
