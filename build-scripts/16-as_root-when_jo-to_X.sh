@@ -34,19 +34,19 @@ stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
 #=> 1 when X
 # wanted
 
-#==> monitor settings
-# disable DPMS
-[ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
-cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
+# #==> monitor settings
+# # disable DPMS
+# [ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
+# cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
 
 # #==> python-pew
 # pacman -S python-pew
 # pacman -Rs python-pew
 
-#==> softwares - appearance
-pacman -S hicolor-icon-theme
+# #==> softwares - appearance - hicolor-icon-theme
+# pacman -S hicolor-icon-theme
 
-# Ubuntu font family
+#==> softwares - appearance - Ubuntu font family
 pacman -S ttf-ubuntu-font-family
 
 #==> softwares - AV
