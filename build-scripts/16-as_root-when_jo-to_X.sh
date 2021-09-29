@@ -8,15 +8,15 @@ ARCHBUILDS=/ArchBuilds
 #=> 0 to X
 # really needed
 
-#==> hard drives
-stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
+# #==> hard drives
+# stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
 
-# make writable for jo
-# chown jo:jo /mnt/9QF57J6Q
-# chown jo:jo /mnt/SD480GSSDPlus
-# chown jo:jo /mnt/SDEP128G
-# chown jo:jo /mnt/ST3320418AS
-# chown jo:jo /mnt/WD30EZRZ
+# # make writable for jo
+# # chown jo:jo /mnt/9QF57J6Q
+# # chown jo:jo /mnt/SD480GSSDPlus
+# # chown jo:jo /mnt/SDEP128G
+# # chown jo:jo /mnt/ST3320418AS
+# # chown jo:jo /mnt/WD30EZRZ
 
 # #==> prepare for X
 # # Xorg
@@ -46,22 +46,22 @@ stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
 # #==> softwares - appearance - hicolor-icon-theme
 # pacman -S hicolor-icon-theme
 
-#==> softwares - appearance - Ubuntu font family
-pacman -S ttf-ubuntu-font-family
+# #==> softwares - appearance - Ubuntu font family
+# pacman -S ttf-ubuntu-font-family
 
-#==> softwares - AV
-# AlsaUtils
-pacman -S alsa-utils
+# #==> softwares - AV
+# # AlsaUtils
+# pacman -S alsa-utils
 
-# GStreamer Plug-ins
-# gst-plugins-base
-pacman -S gst-libav gst-plugins-good gst-plugins-ugly
+# # GStreamer Plug-ins
+# # gst-plugins-base
+# pacman -S gst-libav gst-plugins-good gst-plugins-ugly
 
-# mediainfo
-pacman -S mediainfo
+# # mediainfo
+# pacman -S mediainfo
 
-# PulseAudio
-pacman -S pulsemixer
+# # PulseAudio
+# pacman -S pulsemixer
 
 # #==> softwares - AV remove PulseAudio
 # # removal step 1 (also removes pulseaudio-alsa)
@@ -69,15 +69,15 @@ pacman -S pulsemixer
 # # removal step 1 (also removes pulseaudio)
 # pacman -Rs pulsemixer
 
-#==> softwares - file manage
-# fzy
-pacman -S fzy
+# #==> softwares - file manage
+# # fzy
+# pacman -S fzy
 
-# rsnapshot install
+# # shfmt (for bat-extras-git)
+# pacman -S shfmt
+
+#==> softwares - file manage - rsnapshot install
 pacman -S rsnapshot
-
-# shfmt (for bat-extras-git)
-pacman -S shfmt
 
 #==> softwares - networking
 # DNS Lookup utility
