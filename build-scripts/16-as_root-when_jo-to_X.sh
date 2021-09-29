@@ -98,36 +98,33 @@ ARCHBUILDS=/ArchBuilds
 # #==> softwares - networking - LastPass CLI
 # pacman -S lastpass-cli
 
-#==> softwares - system
-# espeak-ng-espeak & termdown
-pacman -S espeak-ng-espeak termdown
+# #==> softwares - system
+# # espeak-ng-espeak & termdown
+# pacman -S espeak-ng-espeak termdown
 
-# moreutils
-pacman -S moreutils
+# # moreutils
+# pacman -S moreutils
 
-# xterm
-pacman -S xterm
-
-#==> vim
-# 0 gVim
-pacman -S gvim
-
-#===> 1 Vim
-# flake8
-pacman -S flake8
-
-# Neovim
-pacman -S neovim python-pynvim
-
-# Packages
-pacman -S vim-nerdcommenter vim-supertab vim-surround vim-syntastic vim-tabular
-
-# ShellCheck (for bash linting in xVim)
-pacman -S shellcheck  # brings in Haskell
+# # xterm
+# pacman -S xterm
 
 # #==> xautomation
 # # for mouse middle click
 # pacman -S xautomation
+
+#=> 1 when X - vimish
+# wanted
+
+# #==> flake8 & Vim
+# # 0 gVim
+# pacman -S flake8 gvim
+
+# #==> Vim - Neovim
+# pacman -S neovim python-pynvim
+
+#==> Vim - ShellCheck
+# (for bash linting in xVim)
+pacman -S shellcheck  # brings in Haskell
 
 #=> 2 automatic login to virtual console
 ls /etc/systemd/system
