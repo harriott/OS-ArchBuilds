@@ -1,13 +1,15 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# to be sourced from a parent build script
+if [[ $(id -u) > 0 ]]; then
+  echo "Run this as root!"
+  exit
+fi
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 2 better mirrorlist
-# to be run as root
+#=> better mirrorlist
 cd /etc/pacman.d
 reflector --country France --age 12 --protocol https --sort rate --save mirrorlist
 cat mirrorlist
