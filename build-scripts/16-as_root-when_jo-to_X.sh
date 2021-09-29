@@ -14,6 +14,7 @@ stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
 # make writable for jo
 # chown jo:jo /mnt/9QF57J6Q
 # chown jo:jo /mnt/SD480GSSDPlus
+chown jo:jo /mnt/SDEP128G
 # chown jo:jo /mnt/ST3320418AS
 # chown jo:jo /mnt/WD30EZRZ
 
