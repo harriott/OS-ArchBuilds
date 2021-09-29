@@ -5,14 +5,14 @@ trap read debug  # puts a read request after each executable line
 
 ARCHBUILDS=/ArchBuilds
 
-#=> allow dhcpcd without pw
-bash -c "cat $ARCHBUILDS/etc/sudoers-dhcpcd >> /etc/sudoers"
-visudo -c -f /etc/sudoers
-tail -n 2 /etc/sudoers
+# #=> allow dhcpcd without pw
+# bash -c "cat $ARCHBUILDS/etc/sudoers-dhcpcd >> /etc/sudoers"
+# visudo -c -f /etc/sudoers
+# tail -n 2 /etc/sudoers
 
-#=> ClamAV 0 install
-pacman -S clamav
-freshclam  # takes a long time!
+# #=> ClamAV 0 install
+# pacman -S clamav
+# freshclam  # takes a long time!
 
 #=> Firewalld 0
 # 1 get & enable

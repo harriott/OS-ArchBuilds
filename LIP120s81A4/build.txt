@@ -166,6 +166,9 @@ reboot  worked
 bash 11-as_root-extra_drives.sh
 ## Rootkit Hunter
 as root  bash 12-as_root-RootkitHunt.sh
+## to Firewall
+as root  bash 14-as_root-when_jo-toFirewall.sh
+freshclam  didn't complete, so  freshclam   which got me "Clamd was NOT notified"
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
