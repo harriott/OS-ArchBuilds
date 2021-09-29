@@ -4,7 +4,7 @@
 # symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
 # sourced by  $Bash/bash_profile
 
-export Storage=/mnt/SD480GSSDPlus  # where I keep stuff
+export Storage=/mnt/SDEP128G  # where I keep stuff
 
 # Used in  $Openbox/openbox/urxvtl.sh
 # open urxvt from left of screen, allowing room for 106 column gVim

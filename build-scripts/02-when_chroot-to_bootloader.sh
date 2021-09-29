@@ -37,15 +37,16 @@ trap read debug  # puts a read request after each executable line
 
 # #=> 2 host
 # cat /etc/hostname  # shows it ain't there
-# machine=LIP120s81A4
-# # machine=ltcm58
-# # machine=sbMb
-# echo $machine > /etc/hostname
+# hostname=LIP120s81A4
+# hostname=LIP120s81A4
+# # hostname=ltcm58
+# # hostname=sbMb
+# echo $hostname > /etc/hostname
 # # /etc/hosts
 # echo "127.0.0.1 localhost" >> /etc/hosts
 # echo "::1       localhost" >> /etc/hosts
 # # echo "127.0.1.1 avt661.localdomain avt661" >> /etc/hosts
-# echo "127.0.1.1 $machine.localdomain $machine" >> /etc/hosts
+# echo "127.0.1.1 $hostname.localdomain $hostname" >> /etc/hosts
 # cat /etc/hosts
 
 # #=> 3 better mirrorlist

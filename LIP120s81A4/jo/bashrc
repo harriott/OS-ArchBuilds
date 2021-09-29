@@ -1,14 +1,11 @@
-#!/bin/bash
 # vim: fdl=1 ft=sh sw=2:
 
-# ~/.bashrc in an Arch install on my sprayed brown Multivision box system
+# ~/.bashrc in an Arch install on my LIP120s81A4 system
 
 # Joseph Harriott
 # source ~/.bashrc if you've changed something here...
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
-
-export VsLocation=/mnt/ST4000VN008  # path to my video store
 
 #=> load the rest of my bashrc
 source ~/.bashrc-generic  # useful everywhere, including root

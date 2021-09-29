@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: set fdl=2 sw=2:
+# vim: set fdl=1 sw=2:
 
 if [[ $(id -u) > 0 ]]; then
   echo "Run this as root!"

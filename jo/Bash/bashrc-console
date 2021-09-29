@@ -1,3 +1,4 @@
+#!/bin/sh
 # vim: ft=sh sw=2:
 
 # sourced by  $Bash/bash_profile  &  $MACHINE/jo/bashrc
@@ -69,7 +70,7 @@ fdtsEncryptedChanges () {
 #==> only useful in sbMb
 # and not needed as root
 
-if [ $machine = 'sbMb' ]; then
+if [ $$(hostname) = 'sbMb' ]; then
 
   alias rsM='bash $onGH/rsync-portabledrives/rsync-Music.sh'
   alias rsVP='bash $onGH/rsync-portabledrives/rsync-VsPref.sh'

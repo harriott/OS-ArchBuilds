@@ -18,7 +18,7 @@ updateMaybe()
 }
 xdgo()
 {
-    if [ $machine = "M587637" ]; then
+    if [ $$(hostname) = "M587637" ]; then
         xdg-open $1 >/dev/null 2>&1  # because chromium error reports
     else
         xdg-open $1
