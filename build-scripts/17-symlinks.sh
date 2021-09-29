@@ -3,6 +3,10 @@
 
 # logged in as user
 
+ARCHBUILDS=$HOME/ArchBuilds
+  Bash=$ARCHBUILDS/jo/Bash
+  MACHINE=$ARCHBUILDS/$(hostname)
+
 #=> 0 Bash
 # sort this list by last use of "~":  :sort /,*\~/
 
