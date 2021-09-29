@@ -279,13 +279,14 @@ true
 # #=> OpenShot
 # sudo pacman -S openshot
 
-# #=> PDFsam
-# cd ~/Arch/AUR
-# rAUR pdfsam
-# git clone https://aur.archlinux.org/pdfsam.git
-# cd pdfsam
-# gvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic
+#=> PDFsam
+# depends on  jdk-openjdk
+cd ~/Arch/AUR
+rAUR pdfsam
+git clone https://aur.archlinux.org/pdfsam.git
+cd pdfsam
+gvim -c "silent! /torakiki" PKGBUILD
+makepkg -sic
 
 # #=> pdftk
 # sudo pacman -S pdftk

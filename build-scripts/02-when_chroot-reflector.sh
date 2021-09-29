@@ -16,3 +16,5 @@ cat mirrorlist
 pacman -Syyuu
 cd ~
 
+# check  nanorc  if  nano  updated & reboot if kernel updated !
+

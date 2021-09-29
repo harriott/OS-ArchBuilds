@@ -76,31 +76,27 @@ ARCHBUILDS=/ArchBuilds
 # # shfmt (for bat-extras-git)
 # pacman -S shfmt
 
-#==> softwares - file manage - rsnapshot install
-pacman -S rsnapshot
+# #==> softwares - file manage - rsnapshot install
+# pacman -S rsnapshot
 
-#==> softwares - networking
-# DNS Lookup utility
-pacman -S bind-tools
+# #==> softwares - networking
+# # DNS Lookup utility
+# pacman -S bind-tools
 
-# Chromium
-pacman -S chromium
+# # Chromium
+# pacman -S chromium
 
-# msmtp-mta
-pacman -S msmtp-mta
+# # msmtp-mta
+# pacman -S msmtp-mta
 
-# NeoMutt
-pacman -S neomutt
+# # NeoMutt
+# pacman -S neomutt
 
-# Secure Shell
-pacman -S openssh
+# # Secure Shell
+# pacman -S openssh
 
 # #==> softwares - networking - LastPass CLI
 # pacman -S lastpass-cli
-
-#==> softwares - pdfsam
-# brings in jdk-openjdk
-pacman -S pdfsam
 
 #==> softwares - system
 # espeak-ng-espeak & termdown

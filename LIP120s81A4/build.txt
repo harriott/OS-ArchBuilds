@@ -171,7 +171,10 @@ as root  bash 14-as_root-when_jo-toFirewall.sh
 freshclam  didn't complete, so  freshclam   which got me "Clamd was NOT notified"
   as root  bash 14-as_root-when_jo-toFirewall.sh
 ## configure freshclam
-as root  15-as_root-when_jo-configure_freshclam.sh
+as root  bash 15-as_root-when_jo-configure_freshclam.sh
+## to X
+as root  bash 02-when_chroot-reflector.sh
+as root  bash 16-as_root-when_jo-to_X.sh
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
