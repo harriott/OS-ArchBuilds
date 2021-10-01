@@ -367,6 +367,7 @@ for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # system
+bat -A /etc/hosts
 bm <command>  # batman
 cat /proc/cpuinfo
 dunstify -u critical "Read this now!"
@@ -412,7 +413,7 @@ journalctl -b -1 -e  # shows end of  -n1000
 journalctl -b -1 -r  # newest first
 journalctl -b -g 'EFI v'  # shows EFI version
 
-# terminals
+# term
 Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2
 echo $TERM
 neofetch
@@ -420,6 +421,21 @@ neofetch
 ## termdown
 termdown --help | moar
 termdown -b 10
+
+## tmux
+$tmux/tmux.conf
+C-a w -> choose window from a list
+resize -s 65 120  # good for half of ViewSonic VX2025wm
+tmux list-keys | mo
+
+### panes
+C-a C-o -> Rotate through the panes
+C-a M-1 -> switch to even-horizontal layout
+C-a M-2 -> switch to even-vertical layout
+C-a M-3 -> switch to main-horizontal layout
+C-a M-4 -> switch to main-vertical layout
+C-a { = swap-pane -U
+C-a } = swap-pane -D
 
 # text-wrangling
 echo $EDITOR
@@ -433,19 +449,4 @@ pkill copyq
 ## gVim
 gvim --help | mo
 gvim -geom 200  # height parameter is omitted as it's having no effect
-
-# tmux
-$tmux/tmux.conf
-C-a w -> choose window from a list
-resize -s 65 120  # good for half of ViewSonic VX2025wm
-tmux list-keys | mo
-
-## panes
-C-a C-o -> Rotate through the panes
-C-a M-1 -> switch to even-horizontal layout
-C-a M-2 -> switch to even-vertical layout
-C-a M-3 -> switch to main-horizontal layout
-C-a M-4 -> switch to main-vertical layout
-C-a { = swap-pane -U
-C-a } = swap-pane -D
 

@@ -104,7 +104,7 @@ m4ps0() # my TextNotes
     export headingtoodeep=######
     export m4pfont=0
     bash $MD4PDF/GNULinux/m4ps.sh $1 $2
-}
+} # 2nd argument turns off ToC
 
 m4ps1() # muted headings
 {

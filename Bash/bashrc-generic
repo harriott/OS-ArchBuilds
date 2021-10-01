@@ -8,6 +8,7 @@ alias bm='batman'
   export BAT_PAGER=moar
 
 alias mo='moar'
+alias tkt='tmux kill-server; tmux'
 
 export PAGER=less
 

@@ -28,6 +28,9 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 export EDITOR=nvim
 export VISUAL=gvim
 
+# short prompt
+sp (){ PS1='\[\e[1;34m\][\W]\$\[\e[0m\] ';}
+
 #=> file manage
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
