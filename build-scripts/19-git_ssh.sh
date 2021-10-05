@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
+# after  $CrossPlatform/git/remote2.sh
+
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
