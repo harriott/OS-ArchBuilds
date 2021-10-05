@@ -46,6 +46,10 @@ ltx () {
   sed -i 's/}//' $s
 }
 
+#=> CUPS
+alias lpd='lpstat -p -d'
+alias sc5='sudo cupsenable ENVY_5530'
+
 #=> ffmpeg
 alias ffmhb='ffmpeg -hide_banner'
 

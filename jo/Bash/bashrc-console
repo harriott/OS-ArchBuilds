@@ -107,7 +107,7 @@ fdtsExt () {
       dtsfile=dts-$1-all
       search=.$1
     else
-      dtsfile=dts-$1
+      dtsfile=dts-$1.txt
       search='\*.$1'
     fi
     eval "fdtsKS $search $dtsfile"
