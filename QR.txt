@@ -268,9 +268,9 @@ get the PIDs  ps ax | grep cmus  then for each  kill -9 PID
 # networking
 bm firewall-cmd
 cat /etc/hostname
-latest browser bookmarks: `JH/Now/TextNotes/bookmarks/Chromium-AVT661/bookmarks_10_06_2020.html`
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
+xdg-open https://archlinux.org
 
 ## Dropbox conflicted copies
 find -name "* conflicted copy *" -exec rm -f {} \;
