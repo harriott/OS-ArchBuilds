@@ -1,8 +1,13 @@
 #!/bin/bash
 # vim: fdl=1:
 
+if [[ $(id -u) > 0 ]]; then
+  echo "Run this as root!"
+  exit
+fi
+
 #=> 0 before Dropbox
-ARCHBUILDS=$HOME/ArchBuilds
+ARCHBUILDS=/home/jo/ArchBuilds
 
 #=> 1 rsnapshot systemd files
 # rsnapshot timers - when rsnapshot conf
