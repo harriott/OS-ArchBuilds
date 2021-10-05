@@ -4,6 +4,9 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> 0 check configuration
+git config -l
+
 #=> 1 first SSH to GitHub
 ssh -T git@github.com  # "yes"
 cat ~/.ssh/known_hosts
