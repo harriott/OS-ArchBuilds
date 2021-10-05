@@ -19,8 +19,9 @@ mkdir $rsnapshot
 
 #=> 2 test rsnapshot conf
 
-# 0 (empty) Dropbox folder
+# 0 needed locations
 mkdir $Storage/Dropbox
+sudo touch /var/log/rsnapshot
 
 # 1 check
 rsnapshot configtest
