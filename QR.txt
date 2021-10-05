@@ -124,6 +124,7 @@ as root: find / -xdev -iname "*fmtutil.cnf*"
 find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
 find . -type d -name .git
 find . -type f -name .gitignore
+find . -type f -name *.pdf
 find . -type f | fzy  # for finding something fuzzily fast
 
 ### for configuration files
