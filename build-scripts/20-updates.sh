@@ -13,12 +13,16 @@ true
 true
 
 #=> 1 /var/cache/pacman/pkg
+trap - debug  # first turn off debug
 if [ $machine = "LIP120s81A4" ]; then
   sudo pacman -Scc  # empty completely
 else
   sudo paccache -r  # reduce to last 3 versions
 fi
+trap read debug
 
 #=> 2 AURs
-auracle sync
+if pqs auracle > /dev/null 2>&1 ; then
+  auracle sync
+fi  # pqs  defined in  $ARCHBUILDS/Bash/bashrc-generic
 

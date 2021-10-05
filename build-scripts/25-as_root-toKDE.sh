@@ -1,7 +1,4 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
-
-# to be sourced from a parent build script
 
 # #=> KDE 0
 # pacman -S kde-applications plasma

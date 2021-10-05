@@ -328,6 +328,7 @@ killall -SIGUSR1 tint2  # reloads
 # packages
 pacman -Qdt  # lists all orphans
 sudo pacman -Rs <packagetoremove>
+/var/cache/pacman/pkg/
 
 ## package database locked
 pgrep pacman  # to ensure it's not running

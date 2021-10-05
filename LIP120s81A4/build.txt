@@ -178,9 +178,11 @@ as root  bash 16-as_root-when_jo-to_X.sh
 bash 17-symlinks.sh
 bash remote2.sh
 ## get nvim working
+bash 21-vimfiles.sh
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
+KDTG311281  for  rsnapshot
 lspci -k | grep 3165 -A 3
 screen is 1366x768
 SDEP128G in microSD slot

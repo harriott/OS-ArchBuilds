@@ -21,3 +21,6 @@ mkdir ~/texmf/tex/latex/m4p  # needed for Pandoc in $Bash/bashrc-ob
 #=> LaTeX
 mkdir -p ~/texmf/tex/latex
 
+# #=> 0 make AUR directory
+# mkdir -p ~/Arch/AUR
+

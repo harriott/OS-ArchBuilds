@@ -4,6 +4,7 @@
 # symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
 # sourced by  $Bash/bash_profile
 
+export rsnapshot=/mnt/KDTG311281/rsnapshot
 export Storage=/mnt/SDEP128G  # where I keep stuff
 
 # Used in  $Openbox/openbox/urxvtl.sh
