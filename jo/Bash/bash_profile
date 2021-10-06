@@ -3,10 +3,11 @@
 # my generic  ~/.bash_profile
 # ---------------------------
 
-# defined here so they can be accessed pre-X, by $MACHINE/jo/Openbox/autostart, & by gvim
+# defined here so they can be accessed pre-X, by
+#  $ARCHBUILDS/jo/Openbox/openbox/autostart, & by gvim
 # kill tmux sessions if you've made changes here
-source ~/.export-machine
-source ~/.export-storage
+source ~/.export-machine  # defines  $myDrA  &  $Storage
+    source ~/.export-storage
 # - carries through to X
 
 # Useful before X:
