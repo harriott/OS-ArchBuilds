@@ -4,10 +4,6 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 before Dropbox
-ARCHBUILDS=$HOME/ArchBuilds
-  MACHINE=$ARCHBUILDS/$(uname -n)
-
 # #=> 0 grab default rsnapshot conf
 # cp /etc/rsnapshot.conf ~/la5-rsnapshot.conf
 

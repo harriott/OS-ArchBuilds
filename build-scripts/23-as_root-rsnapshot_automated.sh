@@ -6,8 +6,7 @@ if [[ $(id -u) > 0 ]]; then
   exit
 fi
 
-#=> 0 before Dropbox
-ARCHBUILDS=/home/jo/ArchBuilds
+echo $ARCHBUILDS
 
 #=> 1 rsnapshot systemd files
 # rsnapshot timers - when rsnapshot conf

@@ -3,10 +3,11 @@
 
 # logged in as user
 
-#=> 0 before Dropbox
+#=> 0 before ~/.export-storage defined
 ARCHBUILDS=$HOME/ArchBuilds
   Bash=$ARCHBUILDS/jo/Bash
   MACHINE=$ARCHBUILDS/$(uname -n)
+    echo '$MACHINE' "= $MACHINE"
 
 #=> 1 Bash
 # sort this list by last use of "~":  :sort /,*\~/

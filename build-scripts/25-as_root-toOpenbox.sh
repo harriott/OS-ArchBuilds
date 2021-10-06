@@ -2,10 +2,10 @@
 
 # sudo bash <thisfile>.sh
 
-ARCHBUILDS=/home/jo/ArchBuilds
-
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
+
+echo $ARCHBUILDS
 
 #=> pkgconf
 pacman -S pkgconf

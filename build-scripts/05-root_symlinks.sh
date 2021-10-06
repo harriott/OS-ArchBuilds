@@ -1,11 +1,11 @@
 #!/bin/bash
 # vim: fdl=1:
 
-#=> 0 root symlinks
-# - needs to be run from root, not from sudo
+#=> 0 before jo $Bash/bash_profile
 
 ARCHBUILDS=/ArchBuilds
-ARCHBUILDS=/home/jo/ArchBuilds
+
+#=> 2 root symlinks
 
 ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
 ln -sf $ARCHBUILDS/root/bashrc /root/.bashrc  # sources bashrc-generic
