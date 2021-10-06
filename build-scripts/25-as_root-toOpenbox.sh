@@ -13,94 +13,86 @@ pacman -S pkgconf
 # #=> software - android-tools
 # pacman -S android-tools
 
-# #=> softwares - documenting
-# # Ghostscript
-# pacman -S ghostscript
+#=> softwares - documenting
+# Ghostscript
+pacman -S ghostscript
 
-# # Pandoc
-# pacman -S pandoc
+# Pandoc
+pacman -S pandoc
 
-# # TeX Live
-# pacman -S texlive-most texlive-langchinese  # select all
+# TeX Live
+pacman -S texlive-most texlive-langchinese  # select all
 
-# #=> softwares - file manage
-# # cdrtools
-# pacman -S cdrtools
+#=> softwares - file manage
+# cdrtools
+pacman -S cdrtools
 
-# # GVFS
-# pacman -S gvfs
+# GVFS
+pacman -S gvfs
 
-# # gvfs-mtp - for accessing phone memory
-# pacman -S gvfs-mtp
+# gvfs-mtp - for accessing phone memory
+pacman -S gvfs-mtp
 
-# # nnn
-# pacman -S nnn
+# nnn
+pacman -S nnn
 
-# #=> softwares - gtop
-# pacman -S gtop
+#=> softwares - cmatrix
+pacman -S cmatrix
 
-# #=> softwares - cmatrix
-# pacman -S cmatrix
+#=> softwares - multimedia
+# Cmus
+pacman -S cmus
 
-# #=> softwares - iptraf-ng
-# pacman -S iptraf-ng
+# espeak-ng-espeak & termdown
+pacman -S espeak-ng-espeak termdown
 
-# #=> softwares - multimedia
-# # Cmus
-# pacman -S cmus
+# iscan
+pacman -S iscan
 
-# # espeak-ng-espeak & termdown
-# pacman -S espeak-ng-espeak termdown
+# pulsemixer
+pacman -S pulsemixer
 
-# # iscan
-# pacman -S iscan
-
-# # pulsemixer
-# pacman -S pulsemixer
-
-# #=> softwares - bluetooth
-# pacman -S bluez bluez-utils
-
-# #=> softwares - networking 1
-# # iw
+# #=> softwares - networking iw
+# # iw - might be there already
 # pacman -S iw
 
-# # iwd
-# pacman -S iwd
-# systemctl enable iwd.service --now
-# systemctl status iwd.service
+#=> softwares - networking
+# bluetooth
+pacman -S bluez bluez-utils
 
-# # lynx
-# pacman -S lynx
+# iptraf-ng
+pacman -S iptraf-ng
 
-# #=> softwares - networking 2
-# # mailcap
-# pacman -S mailcap
+# lynx
+pacman -S lynx
 
-# # Transmission
-# pacman -S transmission-qt
+# mailcap
+pacman -S mailcap
 
-# #=> softwares - Openbox environment 1
-# # configure Openbox
-# pacman -S lxappearance-obconf obconf
+# Transmission
+pacman -S transmission-qt
 
-# # CopyQ
-# pacman -S copyq
+#=> softwares - Openbox environment 1
+# configure Openbox
+pacman -S lxappearance-obconf obconf
 
-# # Dunst
-# pacman -S dunst
+# CopyQ
+pacman -S copyq
 
-# # galculator
-# pacman -S galculator
+# Dunst
+pacman -S dunst
 
-# # Gmrun
-# pacman -S gmrun
+# galculator
+pacman -S galculator
 
-# # gsimplecal
-# pacman -S gsimplecal
+# Gmrun
+pacman -S gmrun
 
-# # Openbox & tint2
-# pacman -S openbox tint2
+# gsimplecal
+pacman -S gsimplecal
+
+# Openbox & tint2
+pacman -S openbox tint2
 
 #=> softwares - system
 # Bluefish
@@ -111,6 +103,9 @@ pacman -S conky
 
 # exFAT utilities
 pacman -S exfatprogs
+
+# gtop
+pacman -S gtop
 
 # lm_sensors
 pacman -S lm_sensors

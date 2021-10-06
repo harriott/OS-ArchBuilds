@@ -30,6 +30,3 @@ systemctl status rsnapshot-hourly.timer
 # systemctl disable --now rsnapshot-weekly.timer
 # systemctl disable --now rsnapshot-monthly.timer
 
-#=> 3 rsyncSystemRestore
-cp $ARCHBUILDS/build-scripts/24-rsyncSystemRestore.sh $rsnapshot/rsyncSystemRestore.sh
-

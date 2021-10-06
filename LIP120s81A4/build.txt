@@ -176,9 +176,14 @@ as root  bash 15-as_root-when_jo-configure_freshclam.sh
 as root  bash 02-when_chroot-reflector.sh
 as root  bash 16-as_root-when_jo-to_X.sh
 bash 17-symlinks.sh
+bash 18-misc.sh
 bash remote2.sh
+bash 19-git_ssh.sh
 ## get nvim working
 bash 21-vimfiles.sh
+## rsnapshot
+bash 22-rsnapshot.sh
+bash 23-as_root-rsnapshot_automated.sh
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
