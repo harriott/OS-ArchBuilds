@@ -8,6 +8,13 @@ ARCHBUILDS=/ArchBuilds
 # #=> 0 internet check
 # ping -c 3 8.8.8.8
 
+#=> 1 CPU
+# Cpupower
+pacman -S cpupower
+
+# turbostat
+pacman -S turbostat
+
 # #=> 1 disable dhcpcd wait at start
 # mkdir /etc/systemd/system/dhcpcd@.service.d
 # cp $ARCHBUILDS/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
@@ -17,9 +24,9 @@ ARCHBUILDS=/ArchBuilds
 # # display all available frame buffer information
 # fbset -i
 
-#=> 1 have boot messages stay on tty1
-mkdir /etc/systemd/system/getty@tty1.service.d
-cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
+# #=> 1 have boot messages stay on tty1
+# mkdir /etc/systemd/system/getty@tty1.service.d
+# cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
 
 # #=> 1 linux headers
 # # for *8192eu*
@@ -27,10 +34,10 @@ cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d
 # # - don't forget to  reboot !
 # reboot
 
-#=> 1 Sudo & Tig
-pacman -S sudo tig
+# #=> 1 Sudo & Tig
+# pacman -S sudo tig
 
-#=> 1 time zone
-# check local time correction
-timedatectl status
+# #=> 1 time zone
+# # check local time correction
+# timedatectl status
 

@@ -115,22 +115,32 @@ pf () {
 
 #=> pdf
 gspdfpng() {
-    if [ -z "$1" ] || [ -z "$2" ] ; then
+    if [ -z "$1" ] ; then
         echo "${tpf5}gspdfpng <pdf_basename> <png_basename> [<pagelist>]${tpfn}"
         return 1
-    fi
-    if [ ! -f "$1.pdf" ]; then
-        echo "${tpf1}$1.pdf not there${tpfn}"; return 1
-    elif [ ! -s "$1.pdf" ] ; then
-        echo "${tpf1}$1.pdf zero size${tpfn}"; return 1
-    fi
+    fi # reminder of syntax
+    if [[ "$1" =~ ' ' ]] || [[ "$2" =~ ' ' ]]; then
+        echo "${tpf1}can't work with spaces in names${tpfn}"; return 1
+    fi # no spaces
+    pdf=${1%.pdf}; [ $pdf != $1 ] && pp=$pdf.pdf
+    pdf=${1%.PDF}; [ $pdf != $1 ] && pp=$pdf.PDF
+    if [ ! -f "$pp" ]; then
+        echo "${tpf1}$pp not there${tpfn}"; return 1
+    elif [ ! -s "$pp" ] ; then
+        echo "${tpf1}$pp zero size${tpfn}"; return 1
+    fi # check the pdf
+    if [ -z $2 ]; then
+        png=$pdf
+    else
+        png=$2
+    fi # check the png
     if [ -z "$3" ]; then
         pl='1'
     else
         pl="$3"
-    fi
-    gs -dSAFER -sDEVICE=png16m -r400 -sPageList=$pl -o $2-%02d.png $1.pdf
-}
+    fi # check the PageList
+    gs -dSAFER -sDEVICE=png16m -r400 -sPageList=$pl -o $png-%02d.png $pp
+} # for f in `find . -maxdepth 1 -type f -iname "*.pdf"`; do gspdfpng "$f"; done
 
 zr0() {
     sed -i 's/^rotate=\(9\|18\|27\)0/rotate=0/g' ~/.local/share/zathura/history

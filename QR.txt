@@ -51,6 +51,9 @@ glxinfo
 lspci -vnn | grep VGA -A 12 | xcol Radeon size VGA
 sudo lshw -C display | xcol Radeon size VGA
 
+# hw
+cd /sys/devices/system/cpu/cpu0/cpufreq
+
 # hw - printing - CUPS - HP ENVY 5532 WiFi
 lpoptions -d ENVY_5530  # set as default
 lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options

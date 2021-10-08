@@ -184,7 +184,8 @@ bash 21-vimfiles.sh
 ## rsnapshot
 bash 22-rsnapshot.sh
 bash 23-as_root-rsnapshot_automated.sh
-## waiting
+## Cpupower
+## turbostat
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
 KDTG311281  for  rsnapshot

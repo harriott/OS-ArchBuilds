@@ -669,6 +669,23 @@ df -h /  shows it's using  19G
 journalctl --disk-usage  reports "Archived and active journals take up 2.2G in the file system."
 ## symlinks in /usr
 sudo find /usr -type l -ls > $MACHINE/usr-symlinks.txt
+## DualBIOS
+1st System Fan Fail Warning (was  Disabled) Enabled
+2nd System Fan Fail Warning (was  Disabled) Enabled
+### CPU Warning 60°C
+CPU Warning Temperature (was  Disabled) 60°C/140°F
+ffmpeg soon got the buzzer sounding off
+## cpupower
+sudo systemctl enable cpupower.service --now
+cp /etc/default/cpupower $MACHINE/etc/defaults/la7-default_cpupower
+sudo sed -i 's/^#max_freq="3GHz/max_freq="2800Mhz/' /etc/default/cpupower
+systemctl status cpupower.service
+# CPU frequency
+/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+## drivers
+ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
+  acpi-cpufreq.ko.zst          p4-clockmod.ko.zst  powernow-k8.ko.zst
+  amd_freq_sensitivity.ko.zst  pcc-cpufreq.ko.zst  speedstep-lib.ko.zst
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh
@@ -704,19 +721,28 @@ SATA2: WD30EZRZ in 1st 5¼" bay from top
 SATA3: ST4000VN008 in bottom 3½" bay
 SATA4: HD103SJ in top 3½" bay
 SATA5: WD1001FALS in a plastic holder, 4th 5¼" tray down
+### fans
+PWR FAN: unused
+SYS FAN1: lower front pull air in
+SYS FAN2: back push air out
 ### graphics - NVIDIA
 ASUS C027PI rev2.00 Radeon HD 5450  on  PCIEX16
 ### startup
-Del  gets into BIOS
 F12  gets a choice of boot media
-#### BIOS Features
-Peripherals > EHCI Hand-off Disabled [ IOMMU Controller  XHCI Hand-off ] > Enabled
+#### DualBIOS
+Del  gets into BIOS
+##### settings
+BIOS Features > Peripherals > EHCI Hand-off Disabled [ IOMMU Controller  XHCI Hand-off ] > Enabled
+M.I.T > PC Health Status >
+  1st System Fan Fail Warning
+  2nd System Fan Fail Warning
+  CPU Warning Temperature
 ### USB headers
 Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB3
-# system seizures
-journalctl -b -1 -r  shows no snags, so thinking it's hw
-## system seizures
-happens when system is under load, but also sometimes when not heavily loaded
-less often: random reboots
+# random reboots
+happen any time
+# system seizures under load
+happens most when system is under load, but also sometimes when not heavily loaded
+journalctl -b -1 -r  shows no snags
 regularly: clock stuck, no CBH, so hard reboot
 sometimes orphaned inodes on /dev/sda2

@@ -82,15 +82,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-rAUR dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# rAUR dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -254,14 +254,14 @@ true
 # #=> nodejs-mapscii 1 remove
 # sudo pacman -Rs nodejs-mapscii
 
-#=> nordvpn-bin 0 install
-cd ~/Arch/AUR
-rAUR nordvpn-bin
-git clone https://aur.archlinux.org/nordvpn-bin.git
-cd nordvpn-bin
-gvim -c "silent! /nordvpn" PKGBUILD
-makepkg -sic
-true
+# #=> nordvpn-bin 0 install
+# cd ~/Arch/AUR
+# rAUR nordvpn-bin
+# git clone https://aur.archlinux.org/nordvpn-bin.git
+# cd nordvpn-bin
+# gvim -c "silent! /nordvpn" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> nordvpn-bin 1 configure
 # sudo usermod -aG nordvpn jo  # need to re-login
