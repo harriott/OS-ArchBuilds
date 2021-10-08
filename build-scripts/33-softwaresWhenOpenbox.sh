@@ -81,15 +81,6 @@ killall -SIGUSR1 tint2  # reloads tint2rc
 # #=> 1 sxiv
 # sudo pacman -S sxiv
 
-# #=> 1 tmux-bash-completion-git
-# (depends on bash-completion)
-# cd ~/Arch/AURdev-clone
-# git clone https://aur.archlinux.org/tmux-bash-completion-git.git
-# gctm tmux-bash-completion-git
-# gvim PKGBUILD
-# makepkg -sic
-# cd ~
-
 # #=> 1 urlview
 # # creates a numbered list of url's in a resource
 # cd ~/Arch/AUR

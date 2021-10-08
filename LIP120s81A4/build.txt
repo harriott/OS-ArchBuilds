@@ -182,10 +182,11 @@ bash 19-git_ssh.sh
 ## get nvim working
 bash 21-vimfiles.sh
 ## rsnapshot
-bash 22-rsnapshot.sh
-bash 23-as_root-rsnapshot_automated.sh
-## Cpupower
-## turbostat
+bash 23-rsnapshot.sh
+bash 24-as_root-rsnapshot_automated.sh
+## configure jo
+
+bash 25-configure_jo.sh
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
 KDTG311281  for  rsnapshot

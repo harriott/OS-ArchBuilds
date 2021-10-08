@@ -16,6 +16,6 @@ cp /etc/X11/xinit/xinitrc ~/xinitrc-la5
 #=> LaTeX
 mkdir -p ~/texmf/tex/latex
 
-#=> 0 make AUR directory
-mkdir -p ~/Arch/AUR
+#=> make AUR directories
+mkdir ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make
 

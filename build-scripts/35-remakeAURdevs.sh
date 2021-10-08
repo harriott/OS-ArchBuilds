@@ -55,3 +55,8 @@ PQ pscircle-git
 xdgo https://gitlab.com/mildlyparallel/pscircle/-/commits/master/
 updateMaybe pscircle-git
 
+# #=> tmux-bash-completion-git
+# PQ tmux-bash-completion-git
+# xdgo https://github.com/imomaliev/tmux-bash-completion/commits/master
+# updateMaybe tmux-bash-completion-git
+
