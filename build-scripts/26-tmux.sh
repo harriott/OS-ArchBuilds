@@ -4,6 +4,8 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+# gctm  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+
 #=> tmux configuration
 ln -sf $tmux/tmux.conf ~/.tmux.conf
 
@@ -12,7 +14,15 @@ ln -sf $tmux/tmux.conf ~/.tmux.conf
 cd ~/Arch/AURdev-clone
 git clone https://aur.archlinux.org/tmux-bash-completion-git.git
 cd tmux-bash-completion-git
-gctm tmux-bash-completion-git  #  gctm  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+gctm tmux-bash-completion-git
 nvim -c "silent! /imomaliev" PKGBUILD
+makepkg -sic
+
+#=> tmux-fastcopy
+cd ~/Arch/AURdev-clone
+git clone https://aur.archlinux.org/tmux-fastcopy.git
+cd tmux-fastcopy
+gctm tmux-fastcopy
+nvim -c "silent! /abhinav" PKGBUILD
 makepkg -sic
 

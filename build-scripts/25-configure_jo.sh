@@ -11,7 +11,7 @@ mkdir ~/.local/share/mail
 mkdir ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $Bash/bashrc-ob
 
 #=> grab default xinitrc
-cp /etc/X11/xinit/xinitrc ~/xinitrc-la5
+cp /etc/X11/xinit/xinitrc ~/xinitrc-laa
 
 #=> LaTeX
 mkdir -p ~/texmf/tex/latex
