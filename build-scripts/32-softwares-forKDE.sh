@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
 
 # bash <this_script>
 

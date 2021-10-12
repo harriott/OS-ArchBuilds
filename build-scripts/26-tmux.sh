@@ -18,11 +18,14 @@ gctm tmux-bash-completion-git
 nvim -c "silent! /imomaliev" PKGBUILD
 makepkg -sic
 
-#=> tmux-fastcopy
-cd ~/Arch/AURdev-clone
-git clone https://aur.archlinux.org/tmux-fastcopy.git
-cd tmux-fastcopy
-gctm tmux-fastcopy
-nvim -c "silent! /abhinav" PKGBUILD
-makepkg -sic
+# #=> tmux-fastcopy 0 install
+# cd ~/Arch/AURdev-clone
+# git clone https://aur.archlinux.org/tmux-fastcopy.git
+# cd tmux-fastcopy
+# gctm tmux-fastcopy
+# nvim -c "silent! /abhinav" PKGBUILD
+# makepkg -sic
+
+# #=> tmux-fastcopy 1 remove
+# pacman -Rs tmux-fastcopy
 

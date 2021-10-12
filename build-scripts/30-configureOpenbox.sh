@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: ft=sh.shfold:
 
 # bash <thisfile>.sh
 

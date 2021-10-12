@@ -185,7 +185,6 @@ bash 21-vimfiles.sh
 bash 23-rsnapshot.sh
 bash 24-as_root-rsnapshot_automated.sh
 ## configure jo
-
 bash 25-configure_jo.sh
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

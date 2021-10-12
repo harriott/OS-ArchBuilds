@@ -8,13 +8,10 @@ broot  # to load  br
 mkdir ~/.local/share/mail
 
 #=> for my m4p scripts
-mkdir ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $Bash/bashrc-ob
+mkdir -p ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $Bash/bashrc-ob
 
 #=> grab default xinitrc
 cp /etc/X11/xinit/xinitrc ~/xinitrc-laa
-
-#=> LaTeX
-mkdir -p ~/texmf/tex/latex
 
 #=> make AUR directories
 mkdir ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make

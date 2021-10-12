@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: fdm=expr ft=sh.shfold:
 
 # bash <this_script>
 

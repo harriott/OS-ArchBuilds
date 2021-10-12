@@ -138,6 +138,7 @@ find . -type f -name "*.conf"
 bm fd
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
+fd -d1 -td  # depth 1 (current dir), type dir
 fd -H  # --hidden
 fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
@@ -317,18 +318,22 @@ sudo ls /etc/NetworkManager/system-connections/
 # Openbox
 $Openbox/openbox/autostart
 $Openbox/openbox/schema.pl
+
+## rc
 $Openbox/openbox/rc.xml
 Alt+Space => show client menu for active window
 Ctrl+Alt+arrows => move to desktop
 Shift+Alt+arrows => move to desktop, bringing current window along
 Win+1 => move the window to monitor 1
 Win+2 => move the window to monitor 2
+Win+t => last tmux buffer to X11 clipboard
 
 ## tint2
 $Openbox/tint2rc
 killall -SIGUSR1 tint2  # reloads
 
 # packages
+checkupdates
 pacman -Qdt  # lists all orphans
 sudo pacman -Rs <packagetoremove>
 /var/cache/pacman/pkg/
@@ -419,6 +424,7 @@ journalctl -b -1 -r  # newest first
 journalctl -b -g 'EFI v'  # shows EFI version
 
 # term
+Alt+s --> urxvt-searchable-scrollback
 Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2
 echo $TERM
 neofetch
@@ -430,6 +436,7 @@ termdown -b 10
 ## tmux
 $tmux/tmux.conf
 C-a w -> choose window from a list
+C-a [ -> copy-mode
 resize -s 65 120  # good for half of ViewSonic VX2025wm
 tmux list-keys | mo
 
