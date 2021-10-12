@@ -1,8 +1,10 @@
 vim: ft=build:
 
-commands here are tailored to my Arch install, see also $onGH/misc/GNULinuxQR.txt
+commands in this QuickReference work in my Arch install
+ more generally, see $onGH/misc/GNULinuxQR.txt
 
 $ITstack/gitconfig
+copyq help | mo
 gspdfpng
 xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 

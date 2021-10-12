@@ -1,0 +1,19 @@
+vim: ft=build:
+
+Ctrl+P (= Preferences) >
+  General >
+    Wrap long text  off
+    Confirm application exit  off
+  History >
+    Maximum > 2000
+    External editor > gvim -f %1
+  Tray > 25
+  Items > Text >
+    HTML off-ticked
+    Maximum number of lines > 2
+  Appearance > Theme > Forest
+
+cp $ARCHBUILDS/jo/CopyQ/readyforPasting.ini ~/readyforPasting.ini
+ for  CopyQ > F6 > Load > readyforPasting.ini
+rm ~/readyforPasting.ini
+
