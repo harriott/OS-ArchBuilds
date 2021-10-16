@@ -51,7 +51,7 @@ alias lpd='lpstat -p -d'
 alias sc5='sudo cupsenable ENVY_5530'
 
 #=> ffmpeg
-alias ffmhb='ffmpeg -hide_banner'
+alias ffmhb='nice -n 19 ffmpeg -hide_banner'
 
 frames () {
   ffmpeg -i $1 -vcodec copy -f rawvideo -y /dev/null 2>&1

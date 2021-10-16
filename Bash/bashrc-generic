@@ -12,7 +12,7 @@ alias tkt='tmux kill-server > /dev/null 2>&1; tmux'
 
 export PAGER=less
 
-if [ $TERM != 'screen-256color' ]; then neofetch; fi
+[ $TERM == 'screen-256color' ] || neofetch  # won't run in tmux
 
 #=> colours
 source $ARCHBUILDS/Bash/xcol.sh
@@ -86,8 +86,8 @@ alias wp='curl wttr.in/Paris'  # weather
 alias e='exa'
 alias l='ls --color=auto'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
-alias so="stat -c '%a %n'"
-alias sm="stat -c '%y %n'"
+alias so="stat -c '%a %n'"  # octal rights
+alias sm="stat -c '%y %n'"  # modification time
 
 shopt -s autocd dotglob extglob globstar nullglob
 

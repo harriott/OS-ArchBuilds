@@ -22,6 +22,143 @@ VISUAL= fcrontab -e  # then make your changes
 cat jo.orig
 cat systab.orig  # contains bootrun tabs to catch
 
+# file manage - broot
+bm broot
+F5 => refresh
+
+## run
+alt+enter => quit to current directory
+br
+br -c :count
+br -d => br --dates => the last modified date
+br -g => br --show-git-info
+br -h => br --hidden
+br -i => br --show-gitignored
+br -p => br --permissions
+br -s => br --sizes
+
+# file manage - Ctrl+t
+cd ctrl+t  # then fuzzy search for a file, hit enter, backspace to the file's directory, Enter
+puts node selection onto command line
+
+## Search syntax
+Token    -  Match type                  -  Description
+sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
+'wild    -  exact-match (quoted)        -  Items that include wild
+^music   -  prefix-exact-match          -  Items that start with music
+.mp3$    -  suffix-exact-match          -  Items that end with .mp3
+!fire    -  inverse-exact-match         -  Items that do not include fire
+!^music  -  inverse-prefix-exact-match  -  Items that do not start with music
+!.mp3$   -  inverse-suffix-exact-match  -  Items that do not end with .mp3
+
+| OR
+
+# file manage - directory structures
+<directory>  # cd <directory>  ( shopt autocd )
+
+## exa
+bm exa
+e
+e -la  # for permissions and symlinks
+e -T   # for tree
+
+## Samokovarov's jump
+bm jump
+j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
+jump clean  # I have in fcrontab
+jump top | moar
+jump --help
+
+# file manage - file searching
+as root: find / -xdev -iname "*fmtutil.cnf*"
+find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
+find . -type d -name .git
+find . -type f -name .gitignore
+find . -type f -name *.pdf
+find . -type f | fzy  # for finding something fuzzily fast
+
+## for configuration files
+fd -I -e conf
+find . -type f -name "*.conf"
+
+## fd
+bm fd
+fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
+fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
+fd -d1 -td  # depth 1 (current dir), type dir
+fd -H  # --hidden
+fd -I  # --no-ignore => do not respect .(git|fd)ignore files
+fd -I -e pdf  # finds pdf's when they're gitignored
+sharkdp/fd
+
+## grepping
+grep -E '<someText>|<otherText>'
+grep -r --include "*.sh" ' -f ' .
+grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
+grep -ri --include "*.conf" '#=> ' .
+
+### manual
+bm grep
+man grep | grep egrep | xcol egrep fgrep
+
+### ripgrep
+batgrep
+bm rg
+for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
+outer whitespaces get ignored
+rg '\$ITstack'
+rg '<someText>|<otherText>'
+rg --no-ignore 'sometext'  # allows searching into gitignored places
+rg -ttex '\\subsubsection\{'
+rg -tmd '\$SE'
+rg -tmd '\{TNW}'
+rg -ttxt -l --sort modified 'ft=bbcode' > dts-bbcode_ft.txt
+rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
+rg <someText>  # searches recursively in files
+
+#### in vimfiles
+rg --no-ignore '\$MSwin10'
+rg --no-ignore '\$onGH'
+
+#### TeX files
+rg -l -ttex '\\input' > rg-tex.txt
+rg -l -ttex '\\parskip' > rg-tex.txt
+rg -l -ttex verseSettings > rg-tex.txt
+rg -ttex '\{geometry}'
+rg -ttex '\\parindent'
+rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
+rg -ttex ^%%
+
+## mlocate
+/etc/updatedb.conf
+bm locate
+locate -c <target>  # --count
+locate -h
+locate -r '\.conf$'
+locate -r '\.json$' | moar
+sudo updatedb
+systemctl status updatedb.timer
+
+## list symlinks
+find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
+
+### recursively
+find . -type l -ls
+find ~ -path '*/.virtualenvs' -prune -o -type l -ls
+
+# file manage - fzf
+<someCommand> Ctrl-t - gets the selected node on the command-line
+Alt+c  # to change directory
+bm fzf
+cat $(fzf)
+cd [directory/][fuzzy_pattern]**<tab>
+f
+FZF_DEFAULT_COMMAND
+gvim -o `f`  # calling upon fzf
+kill -9 <tab>
+ls -l $(fzf -m)
+unalias **<tab>
+
 # fonts
 cd /usr/share/fonts; $ fd -L consolas
 
@@ -48,203 +185,64 @@ tint  # tetris
 cmatrix -u 9 -C blue
 man cmatrix
 
-# graphics card details
+# hw
+cd /sys/devices/system/cpu/cpu0/cpufreq
+
+## graphics card details
 glxinfo
 lspci -vnn | grep VGA -A 12 | xcol Radeon size VGA
 sudo lshw -C display | xcol Radeon size VGA
 
-# hw
-cd /sys/devices/system/cpu/cpu0/cpufreq
-
-# hw - printing - CUPS - HP ENVY 5532 WiFi
+## printing - CUPS - HP ENVY 5532 WiFi
 lpoptions -d ENVY_5530  # set as default
 lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 lpoptions -p Envy5532 -o PageSize=A4
 sudo cupsenable ENVY_5530  # if it's paused
 
-## 249
-lpoptions -d 553_192_168_43_249  # set as default
-lpoptions -p 553_192_168_43_249 -l  # list options
-sudo cupsenable 553_192_168_43_249  # if it's paused
-
-# hw - printing - HPLIP - HP ENVY 5532 WiFi
+## printing - HPLIP - HP ENVY 5532 WiFi
 hp-levels -p ENVY_5532
 hp-setup -b net 192.168.43.249  # when online
 
-# hw - storage
+## storage
 gio trash --empty  # empties all .Trash-1000
 gio trash --list  # lists trash by locations
 GNU Parted
 /proc/filesystems - those supported by the kernel
 
-## broot
-bm broot
-F5 => refresh
-
-### run
-alt+enter => quit to current directory
-br
-br -c :count
-br -d => br --dates => the last modified date
-br -g => br --show-git-info
-br -h => br --hidden
-br -i => br --show-gitignored
-br -p => br --permissions
-br -s => br --sizes
-
-## Ctrl+t
-cd ctrl+t  # then fuzzy search for a file, hit enter, backspace to the file's directory, Enter
-puts node selection onto command line
-
-### Search syntax
-Token    -  Match type                  -  Description
-sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
-'wild    -  exact-match (quoted)        -  Items that include wild
-^music   -  prefix-exact-match          -  Items that start with music
-.mp3$    -  suffix-exact-match          -  Items that end with .mp3
-!fire    -  inverse-exact-match         -  Items that do not include fire
-!^music  -  inverse-prefix-exact-match  -  Items that do not start with music
-!.mp3$   -  inverse-suffix-exact-match  -  Items that do not end with .mp3
-
-| OR
-
-## directory structures
-<directory>  # cd <directory>  ( shopt autocd )
-
-### exa
-bm exa
-e
-e -la  # for permissions and symlinks
-e -T   # for tree
-
-### Samokovarov's jump
-bm jump
-j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
-jump clean  # I have in fcrontab
-jump top | moar
-jump --help
-
-## file searching
-as root: find / -xdev -iname "*fmtutil.cnf*"
-find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
-find . -type d -name .git
-find . -type f -name .gitignore
-find . -type f -name *.pdf
-find . -type f | fzy  # for finding something fuzzily fast
-
-### for configuration files
-fd -I -e conf
-find . -type f -name "*.conf"
-
-### fd
-bm fd
-fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
-fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
-fd -d1 -td  # depth 1 (current dir), type dir
-fd -H  # --hidden
-fd -I  # --no-ignore => do not respect .(git|fd)ignore files
-fd -I -e pdf  # finds pdf's when they're gitignored
-sharkdp/fd
-
-### grepping
-grep -E '<someText>|<otherText>'
-grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
-grep -ri --include "*.conf" '#=> ' .
-
-#### manual
-bm grep
-man grep | grep egrep | xcol egrep fgrep
-
-#### ripgrep
-batgrep
-bm rg
-for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
-rg '\$ITstack'
-rg '<someText>|<otherText>'
-rg --no-ignore 'sometext'  # allows searching into gitignored places
-rg -ttex '\\subsubsection\{'
-rg -tmd '\$SE'
-rg -tmd '\{TNW}'
-rg -ttxt -l --sort modified 'ft=bbcode' > dts-bbcode_ft.txt
-rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
-rg <someText>  # searches recursively in files
-
-##### in vimfiles
-rg --no-ignore '\$MSwin10'
-rg --no-ignore '\$onGH'
-
-##### TeX files
-rg -l -ttex '\\input' > rg-tex.txt
-rg -l -ttex '\\parskip' > rg-tex.txt
-rg -l -ttex verseSettings > rg-tex.txt
-rg -ttex '\{geometry}'
-rg -ttex '\\parindent'
-rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
-rg -ttex ^%%
-
-### mlocate
-/etc/updatedb.conf
-bm locate
-locate -c <target>  # --count
-locate -h
-locate -r '\.conf$'
-locate -r '\.json$' | moar
-sudo updatedb
-systemctl status updatedb.timer
-
-### list symlinks
-find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
-
-#### recursively
-find . -type l -ls
-find ~ -path '*/.virtualenvs' -prune -o -type l -ls
-
-## fzf
-<someCommand> Ctrl-t - gets the selected node on the command-line
-Alt+c  # to change directory
-bm fzf
-cat $(fzf)
-cd [directory/][fuzzy_pattern]**<tab>
-f
-FZF_DEFAULT_COMMAND
-gvim -o `f`  # calling upon fzf
-kill -9 <tab>
-ls -l $(fzf -m)
-unalias **<tab>
-
-## mkfs.ext4
+### mkfs.ext4
 /etc/mke2fs.conf  has bytes-per-inode ratios for usage types
 
-## non-optical
+### non-optical
 $DROPBOX/JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch > rg -ttxt ft=bbcode > forum.txt
 
-### Trash
+#### Trash
 trash-empty
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
-## rsnapshot
+#### trash-cli
+$Bash/bashrc-console
+trash-empty
+
+### rsnapshot
 $MACHINE/etc/rsnapshot.conf
 cd /mnt/WD1001FALS/rsnapshot
 sm /mnt/WD1001FALS/rsnapshot/monthly.6
 
-### backup localhost without mnt
+#### backup localhost without mnt
 lastMonthly=/mnt/WD1001FALS/rsnapshot/monthly.6/localhost/; month=$(date -r $lastMonthly +%y%m%d); echo $month
 sudo rsync -irtv --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
 
-### checking
+#### checking
+journalctl -r | grep rsnapshot | grep Consumed | xcol daily weekly | mo
 journalctl -u rsnapshot@daily -r
 journalctl -u rsnapshot@hourly -r
 systemctl status rsnapshot-hourly.timer
 
-### quickly lists all instances of directories
+#### quickly lists all instances of directories
 for d in $(ls hourly.*/localhost/home/jo -dtr); do stat -c '%y %n' $d; done  # hourly instances in time order
 ls *ly.*/localhost/home/jo/.config/copyq -d  # CopyQ data directory instances
 ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
 ls *ly.*/localhost/mnt/SD480GSSDPlus/Dropbox/CAM* -d
-
-## trash-cli
-$Bash/bashrc-console
-trash-empty
 
 # imagey
 jpo  # defined in my $Bash/bashrc-wm
@@ -328,7 +326,9 @@ Ctrl+Alt+arrows => move to desktop
 Shift+Alt+arrows => move to desktop, bringing current window along
 Win+1 => move the window to monitor 1
 Win+2 => move the window to monitor 2
+Win+r => Resize
 Win+t => last tmux buffer to X11 clipboard
+Win+u => urxvt
 
 ## tint2
 $Openbox/tint2rc
@@ -417,6 +417,7 @@ sudo du -sh /boot /etc /home /root /usr
 
 ## systemd
 journalctl --list-boots
+journalctl | grep Consumed
 
 ### messages, paged
 journalctl -b  # for this boot
@@ -426,8 +427,6 @@ journalctl -b -1 -r  # newest first
 journalctl -b -g 'EFI v'  # shows EFI version
 
 # term
-Alt+s --> urxvt-searchable-scrollback
-Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2
 echo $TERM
 neofetch
 
@@ -450,6 +449,16 @@ C-a M-3 -> switch to main-horizontal layout
 C-a M-4 -> switch to main-vertical layout
 C-a { = swap-pane -U
 C-a } = swap-pane -D
+
+## urxvt
+Alt+s --> urxvt-searchable-scrollback
+rxvt-unicode
+
+## virtual consoles
+$TERM is set to 'linux'
+can login concurrently to jo
+Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2
+tput works
 
 # text-wrangling
 echo $EDITOR

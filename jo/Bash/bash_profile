@@ -35,3 +35,4 @@ if [ $EXITSTATUS -eq 1 ]; then
 fi
 
 source /home/jo/.config/broot/launcher/bash/br  # - carries through to X
+

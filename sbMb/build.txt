@@ -319,8 +319,8 @@ nmcli device wifi connect Jo-X10II password <pw>
 fixed by a reboot
 after hard reboot  $HOME/.cache/ctrlp/mru/cache.txt  was empty...
 ## nomacs Settings
-Advanced > Save Exif Orientation  off-ticked
-ASUS C027PI DVI failed on reboot
+(C-S-p >) Advanced > Save Exif Orientation  off-ticked
+## ASUS C027PI DVI failed on reboot
 ## xdg-open .md
 handlr get .md  returns  no handlers found for text/markdown
   handlr set .md gvim.desktop
@@ -680,6 +680,18 @@ sudo systemctl enable cpupower.service --now
 cp /etc/default/cpupower $MACHINE/etc/defaults/la7-default_cpupower
 sudo sed -i 's/^#max_freq="3GHz/max_freq="2800Mhz/' /etc/default/cpupower
 systemctl status cpupower.service
+## after a random reboot while updating
+error: linux: signature from "Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>" is invalid
+:: File /var/cache/pacman/pkg/linux-5.14.11.arch1-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+fixed by rerunning  sudo pacman -Syu
+## HP ENVY 5532 IP Address changed to 250
+was 192.168.43.249, somehow became 192.168.43.250
+hp-toolbox (= HP Device Manager) > selected old HP Envy 5530 Series icon > Remove Device
+hp-setup 192.168.43.250 > Next > Add Printer
+hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control > Set as Default
+## Nomacs printing blank pages
+hp-testpage,  lp <image>,  Zathura  work
+fixed by upgrade to v1:3.17.2206-5
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
