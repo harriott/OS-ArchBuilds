@@ -364,12 +364,6 @@
       <command>urxvt</command>
     </action>
   </keybind>
-  <!-- Keybinding to get the last tmux buffer over into X11 clipboard - JH -->
-  <keybind key="W-t">
-    <action name="Execute">
-      <command>/home/jo/.config/openbox/tmuxBufferToX11clipboard.sh</command>
-    </action>
-  </keybind>
   <!-- Keybinding for PrintScreen - JH -->
   <keybind key="Print">
     <action name="Execute">

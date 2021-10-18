@@ -12,7 +12,66 @@ alias tkt='tmux kill-server > /dev/null 2>&1; tmux'
 
 export PAGER=less
 
-[ $TERM == 'screen-256color' ] || neofetch  # won't run in tmux
+[ $TERM != 'screen-256color' ] && [ $(logname) == $(whoami) ] && neofetch
+# - won't run in  tmux  or after  su
+
+#=> better file managing
+alias e='exa'
+alias l='ls --color=auto'
+alias s="stat -c '%A %a %h %U %G %s %y %n'"
+alias so="stat -c '%a %n'"  # octal rights
+alias sm="stat -c '%y %n'"  # modification time
+
+shopt -s autocd dotglob extglob globstar nullglob
+
+#==> broot
+if [ -s "/usr/bin/broot" ]; then
+    # generalised from what broot added to .bashrc:
+    source ~/.config/broot/launcher/bash/br
+fi
+
+#==> count filetypes
+cft(){
+  find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
+}
+
+#==> fzf
+if [ -s "/usr/share/fzf" ]; then
+  # alias f="fzf --preview 'bat --color=always {} | head -500'"
+  alias f="fzf --preview 'bat --color=always {}'"
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --no-ignore'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  source /usr/share/fzf/key-bindings.bash
+  source /usr/share/fzf/completion.bash
+fi
+
+#==> locate directories
+locd () {
+    locate -0 -b -A "$@" | xargs -0 -I {} bash -c '[ -d "{}" ] && echo "{}"'
+}
+
+#==> move up [n] directories
+up(){
+  local dir=""
+  limit=$1
+  for ((i=1 ; i <= limit ; i++))
+    do
+      dir=$dir/..
+    done
+  dir=$(echo $dir | sed 's/^\///')
+  if [ -z "$dir" ]; then
+    dir=..
+  fi
+  cd $dir
+}
+
+#==> system monitoring
+alias bt='bashtop'
+alias gl='glances'
+
+#==> virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs
+[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
 
 #=> colours
 source $ARCHBUILDS/Bash/xcol.sh
@@ -82,61 +141,26 @@ alias pg='ping -c 3 -n google.com'
 alias pqs='pacman -Qs'
 alias wp='curl wttr.in/Paris'  # weather
 
-#=> better file managing
-alias e='exa'
-alias l='ls --color=auto'
-alias s="stat -c '%A %a %h %U %G %s %y %n'"
-alias so="stat -c '%a %n'"  # octal rights
-alias sm="stat -c '%y %n'"  # modification time
+#=> turbostat
+alias ts1='sudo turbostat --interval 2 --quiet'
 
-shopt -s autocd dotglob extglob globstar nullglob
-
-#==> broot
-if [ -s "/usr/bin/broot" ]; then
-    # generalised from what broot added to .bashrc:
-    source ~/.config/broot/launcher/bash/br
-fi
-
-#==> count filetypes
-cft(){
-  find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
-}
-
-#==> fzf
-if [ -s "/usr/share/fzf" ]; then
-  # alias f="fzf --preview 'bat --color=always {} | head -500'"
-  alias f="fzf --preview 'bat --color=always {}'"
-  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --no-ignore'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  source /usr/share/fzf/key-bindings.bash
-  source /usr/share/fzf/completion.bash
-fi
-
-#==> locate directories
-locd () {
-    locate -0 -b -A "$@" | xargs -0 -I {} bash -c '[ -d "{}" ] && echo "{}"'
-}
-
-#==> move up [n] directories
-up(){
-  local dir=""
-  limit=$1
-  for ((i=1 ; i <= limit ; i++))
-    do
-      dir=$dir/..
-    done
-  dir=$(echo $dir | sed 's/^\///')
-  if [ -z "$dir" ]; then
-    dir=..
-  fi
-  cd $dir
-}
-
-#==> system monitoring
-alias bt='bashtop'
-alias gl='glances'
-
-#==> virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
-[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
+ts2 () {
+  if [ $TERM == 'linux' ]; then
+    echo "not in a resizable window"  # Console
+  elif [[ -n $TMUX ]]; then
+    echo "now detach tmux and run ts2 again"
+    export reattachTmux=ts2
+  else
+    export reattachTmux=
+    tc=109 # columns needed for turbostat
+    read rows cols < <( stty size )
+    if (( $cols < $tc )); then
+      resize -s $rows $tc
+    else
+      echo "columns already >= $tc"
+      sleep 1
+    fi
+    tmux a
+  fi  # tmux
+} # widen terminal for turbostat
 

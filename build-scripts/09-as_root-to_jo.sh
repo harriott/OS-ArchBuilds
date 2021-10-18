@@ -19,9 +19,6 @@ true
 #=> 0 netcat
 pacman -S openbsd-netcat
 
-#=> 0 pass
-pacman -S pass
-
 #=> 0 Rootkit Hunter
 pacman -S rkhunter
 source 00-as_root-RootkitHunt.sh
@@ -147,6 +144,13 @@ source 00-as_root-RootkitHunt.sh
 # # pkgstats
 # pacman -S pkgstats
 
+#=> 0 softwares - various
+# universal-ctags
+pacman -S ctags
+
+# pass
+pacman -S pass
+
 # #=> 0 swappiness to 10
 # # check that the default is 60
 # cat /sys/fs/cgroup/memory/memory.swappiness
@@ -167,6 +171,9 @@ source 00-as_root-RootkitHunt.sh
 # useradd -m -G wheel jo
 # until passwd jo; do echo "try again"; done
 # cat /etc/passwd
+
+#=> tmux configuration
+ln -sf $tmux/tmux.conf ~/.tmux.conf
 
 #=> 1 end
 # you're ready to reboot and login to jo

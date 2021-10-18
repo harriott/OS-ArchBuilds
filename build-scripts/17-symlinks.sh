@@ -39,5 +39,5 @@ ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 find ~ -mindepth 1 -maxdepth 3 -type l -ls
 
 #=> 2 if first build
-echo "now  reboot  (and don't allow startx!)"
+echo "now  relogin  (and don't allow startx!)"
 
