@@ -8,20 +8,20 @@ trap read debug  # puts a read request after each executable line
 # sudo sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
 # grep SystemMaxUse /etc/systemd/journald.conf
 
-#=> 0 NetworkManager 1 install
-pacman -S networkmanager
-systemctl enable NetworkManager.service --now
+# #=> 0 NetworkManager 1 install
+# pacman -S networkmanager
+# systemctl enable NetworkManager.service --now
 
-#=> 0 NetworkManager 2 status
-systemctl status NetworkManager.service | cat
-true
+# #=> 0 NetworkManager 2 status
+# systemctl status NetworkManager.service | cat
+# true
 
-#=> 0 netcat
-pacman -S openbsd-netcat
+# #=> 0 netcat
+# pacman -S openbsd-netcat
 
-#=> 0 Rootkit Hunter
-pacman -S rkhunter
-source 00-as_root-RootkitHunt.sh
+# #=> 0 Rootkit Hunter
+# pacman -S rkhunter
+# source 00-as_root-RootkitHunt.sh
 
 # #=> 0 softwares - info
 # # Bashtop
@@ -144,12 +144,12 @@ source 00-as_root-RootkitHunt.sh
 # # pkgstats
 # pacman -S pkgstats
 
-#=> 0 softwares - various
-# universal-ctags
-pacman -S ctags
+# #=> 0 softwares - various
+# # universal-ctags
+# pacman -S ctags
 
-# pass
-pacman -S pass
+# # pass
+# pacman -S pass
 
 # #=> 0 swappiness to 10
 # # check that the default is 60
