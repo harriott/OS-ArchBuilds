@@ -22,11 +22,14 @@ VISUAL= fcrontab -e  # then make your changes
 cat jo.orig
 cat systab.orig  # contains bootrun tabs to catch
 
-# file manage - broot
+# file manage
+bat <file>
+
+## broot
 bm broot
 F5 => refresh
 
-## run
+### run
 alt+enter => quit to current directory
 br
 br -c :count
@@ -37,11 +40,11 @@ br -i => br --show-gitignored
 br -p => br --permissions
 br -s => br --sizes
 
-# file manage - Ctrl+t
+## Ctrl+t
 cd ctrl+t  # then fuzzy search for a file, hit enter, backspace to the file's directory, Enter
 puts node selection onto command line
 
-## Search syntax
+### Search syntax
 Token    -  Match type                  -  Description
 sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
 'wild    -  exact-match (quoted)        -  Items that include wild
@@ -53,34 +56,34 @@ sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
 
 | OR
 
-# file manage - directory structures
+## directory structures
 <directory>  # cd <directory>  ( shopt autocd )
 
-## exa
+### exa
 bm exa
 e
 e -la  # for permissions and symlinks
 e -T   # for tree
 
-## Samokovarov's jump
+### Samokovarov's jump
 bm jump
 j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
 jump clean  # I have in fcrontab
-jump top | moar
+jump top | mo
 jump --help
 
-# file manage - file searching
+## file searching
 as root: find / -xdev -iname "*fmtutil.cnf*"
 find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
 find . -type d -name .git
 find . -type f -name .gitignore
 find . -type f -name "*.pl"
 
-## for configuration files
+### for configuration files
 fd -I -e conf
 find . -type f -name "*.conf"
 
-## fd
+### fd
 bm fd
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
@@ -90,17 +93,17 @@ fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
 sharkdp/fd
 
-## grepping
+### grepping
 grep -E '<someText>|<otherText>'
 grep -r --include "*.sh" ' -f ' .
 grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
 grep -ri --include "*.conf" '#=> ' .
 
-### manual
+#### manual
 bm grep
 man grep | grep egrep | xcol egrep fgrep
 
-### ripgrep
+#### ripgrep
 batgrep
 bm rg
 for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
@@ -115,11 +118,11 @@ rg -ttxt -l --sort modified 'ft=bbcode' > dts-bbcode_ft.txt
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 rg <someText>  # searches recursively in files
 
-#### in vimfiles
+##### in vimfiles
 rg --no-ignore '\$MSwin10'
 rg --no-ignore '\$onGH'
 
-#### TeX files
+##### TeX files
 rg -l -ttex '\\input' > rg-tex.txt
 rg -l -ttex '\\parskip' > rg-tex.txt
 rg -l -ttex verseSettings > rg-tex.txt
@@ -128,27 +131,27 @@ rg -ttex '\\parindent'
 rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
 rg -ttex ^%%
 
-## mlocate
+### mlocate
 /etc/updatedb.conf
 bm locate
 locate -c <target>  # --count
 locate -h
 locate -r '\.conf$'
-locate -r '\.json$' | moar
+locate -r '\.json$' | mo
 sudo updatedb
 systemctl status updatedb.timer
 
-## list symlinks
+### list symlinks
 find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
 
-### recursively
+#### recursively
 find . -type l -ls
 find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
-# file manage - fuzzy
+## fuzzy
 find . -type f | fzy  # selecta
 
-## file manage - fzf
+### fzf
 <someCommand> Ctrl-t - gets the selected node on the command-line
 Alt+c  # to change directory
 bm fzf
@@ -160,6 +163,16 @@ gvim -o `f`  # calling upon fzf
 kill -9 <tab>
 ls -l $(fzf -m)
 unalias **<tab>
+
+## pagers
+mo <file>  # ? lists the limited moar commands
+
+### less pager
+less <file>
+
+#### commands
+h -> help
+j,k -> down/up
 
 # fonts
 cd /usr/share/fonts; $ fd -L consolas
@@ -258,7 +271,7 @@ see $Imagey/Scan.sh
 # multimedia
 ~/.config/obs-studio/logs
 for t in *.mp3; do aet "$t" 3; done
-mediainfo -h | moar
+mediainfo -h | mo
 pkill quodlibet
 
 ## cmus
@@ -346,16 +359,6 @@ sudo pacman -Rs <packagetoremove>
 pgrep pacman  # to ensure it's not running
 sudo rm /var/lib/pacman/db.lck  # delete the stale lock
 
-# pagers
-moar <file>  # ? lists the limited commands
-
-## less pager
-less <file>
-
-### commands
-h -> help
-j,k -> down/up
-
 # pass
 pass edit gmail-neomutt
 pass cz
@@ -433,7 +436,7 @@ echo $TERM
 neofetch
 
 ## termdown
-termdown --help | moar
+termdown --help | mo
 termdown -b 10
 
 ## tmux
