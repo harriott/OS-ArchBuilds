@@ -2,7 +2,6 @@
 # vim: set et tw=0:
 
 git clone https://github.com/CrispyConductor/tmux-copy-toolkit
-sed -i 's/x S/x e/' $tmux/Plugins/tmux-copy-toolkit/copytk.tmux
 
 git clone https://github.com/tmux-plugins/tmux-resurrect
 
