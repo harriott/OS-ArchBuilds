@@ -79,14 +79,6 @@ trap read debug  # puts a read request after each executable line
 # #=> 1 sxiv
 # sudo pacman -S sxiv
 
-#=> 1 trizen
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/trizen.git
-cd trizen
-gvim -c "silent! /trizen" PKGBUILD
-makepkg -sic
-cd ~
-
 # #=> 1 urlview
 # # creates a numbered list of url's in a resource
 # cd ~/Arch/AUR

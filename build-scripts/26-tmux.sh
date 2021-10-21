@@ -4,6 +4,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+# bash 26-tmux.sh
 # gctm  &  rAUR  are defined in $Bash/bashrc-console
 
 # #=> 0 tmux configuration
@@ -22,7 +23,6 @@ trap read debug  # puts a read request after each executable line
 # depends on bash-completion, and brings in tmux
 cd ~/Arch/AURdev-clone
 rAUR tmux-bash-completion-git
-# git clone https://aur.archlinux.org/tmux-bash-completion-git.git
 trizen -G tmux-bash-completion-git
 gctm tmux-bash-completion-git
 nvim -c "silent! /imomaliev" PKGBUILD
