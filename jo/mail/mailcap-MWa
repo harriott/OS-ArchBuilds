@@ -1,8 +1,11 @@
+
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
 # copied from Luke Smith's Mutt Wizard
 #  /usr/share/mutt-wizard/mailcap
 #  https://gitlab.com/LukeSmithxyz/mutt-wizard/-/blob/master/share/mailcap
+
+# required by  $email/muttrc-MWa
 
 text/plain; $EDITOR %s ;
 text/html; openfile %s ; nametemplate=%s.html
@@ -11,3 +14,4 @@ image/*; muttimage %s ; copiousoutput
 video/*; setsid mpv --quiet %s &; copiousoutput
 application/pdf; openfile %s ;
 application/pgp-encrypted; gpg -d '%s'; copiousoutput;
+

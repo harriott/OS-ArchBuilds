@@ -1,0 +1,50 @@
+# vim: fdc=1 fdl=1 fdm=marker ft=mbsync:
+
+# -------------------------
+# template, for the curious
+# -------------------------
+
+# my working  ~/.mbsyncrc  is backed up offline at  $GNULE/mbsyncrc-backup
+
+Create Both
+Expunge Both
+SyncState *
+
+# {{{1 IMAPAccount xxx
+
+IMAPStore xxx-remote
+Host imap.gmail.com
+User xxx@gmail.com
+PassCmd "pass xxx/mbsync"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore xxx-local
+Path ~/.local/share/mail/xxx/
+Inbox ~/.local/share/mail/xxx/INBOX
+Flatten .
+
+Channel xxx
+Far :xxx-remote:
+Near :xxx-local:
+Patterns *
+
+# {{{1 IMAPAccount yyy
+
+IMAPStore yyy-remote
+Host imap.gmail.com
+User yyy@gmail.com
+PassCmd "pass yyy/mbsync"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore yyy-local
+Path ~/.local/share/mail/yyy/
+Inbox ~/.local/share/mail/yyy/INBOX
+Flatten .
+
+Channel yyy
+Far :yyy-remote:
+Near :yyy-local:
+Patterns *
+

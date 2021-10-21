@@ -1,0 +1,41 @@
+# vim: set fdc=1 fdl=1 fdm=marker ft=msmtp:
+
+# template, for the curious
+# -------------------------
+
+# my working  ~/.msmtprc  is backed up offline at  $GNULE/msmtprc-backup
+
+# see  msmtp --version
+
+# test messages have no way to include subject
+
+defaults
+tls	on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile	~/.msmtp.log
+
+# {{{1 xxx
+account xxx
+auth oauthbearer
+host smtp.gmail.com
+port 587
+from xxx@gmail.com
+user xxx@gmail.com
+# echo 0 | pass insert -e xxx/GmailAPI/token-expire  # if it gets out of sync
+passwordeval bash $email/oauth2tool.sh xxx
+# echo "test of msmtpConfig" | msmtp -a xxx <targetEmailAddress>
+
+# {{{1 yyy
+account yyy
+auth oauthbearer
+host smtp.gmail.com
+port 587
+from yyy@gmail.com
+user yyy@gmail.com
+# echo 0 | pass insert -e yyy/GmailAPI/token-expire  # if it gets out of sync
+passwordeval bash $email/oauth2tool.sh yyy
+# echo "test of msmtpConfig" | msmtp -a yyy <targetEmailAddress>
+
+# {{{1 default
+account default : xxx
+

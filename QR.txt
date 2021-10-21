@@ -455,7 +455,7 @@ termdown --help | mo
 termdown -b 10
 
 ## tmux
-$tmux/tmux.conf
+$tmx/tmux.conf
 C-a w -> choose window from a list
 C-a [ -> copy-mode
 resize -s 65 120  # good for half of ViewSonic VX2025wm

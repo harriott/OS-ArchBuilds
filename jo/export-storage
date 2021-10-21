@@ -19,7 +19,7 @@ export DROPBOX=$Storage/Dropbox   # keep this capitalised for finding it without
               export MACHINE=$ARCHBUILDS/$host
           export Openbox=$ARCHBUILDS/jo/Openbox
             export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
-            export tmux=$ARCHBUILDS/jo/tmux  # used in tmux.conf
+            export tmx=$ARCHBUILDS/jo/tmux  # used in tmux.conf
         export MD4PDF=$onGH/md4pdf
         export MSWin10=$onGH/MSWin10  # for notes
         export vimfiles=$onGH/vimfiles
@@ -29,4 +29,6 @@ export DROPBOX=$Storage/Dropbox   # keep this capitalised for finding it without
   export ITP=$DROPBOX/JH/Technos/IT0-Partitionable  # $ITP/diskUsage.txt
   export SE=$DROPBOX/JH/CforWork/Education/Science-Engineering  # used in my TextNotes
 export PAPERSIZE=A4
+
+# taking care to avoid variables that only differ by case
 

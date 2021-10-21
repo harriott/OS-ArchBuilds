@@ -14,6 +14,25 @@ I started with help from Luke Smith. [Mutt Wizard: Command Line Email at 156% Ef
 - **Sending emails** - I use `msmtp` of course, and now it supports `OAUTH2`!
 - **Searching for text** in a folder, an account, or all accounts is easy, either using `notmuch` (I've made a couple of small tools in my `bashrc-email` for pulling out the text of emails to `gVim`) or by doing something like a `ripgrep`, `~/.local/share/mail$ rg Miscov`.
 
+# configuration
+I configure access to these files in my `$Bash/bashrc-email` which defines aliases like this:
+
+- `msx` = "mail sync <xAccount>" - runs `mbsync` and then updates `notmuch` tags on a local account
+    - `~/.mbsyncrc` = `$email/mbsyncrc-template
+- `nmx` = `neomutt <xAccount>` for opening neomutt on a local account
+- `nmse` = `notmuch search ...` for searching into all of my local accounts
+    - `nmsh` = shows me the emails found by `nmse`
+    - `~/.notmuch-config` = `$email/nm-config-template`
+
+## msmtp
+`~/.config/msmtp/config` = `$email/mbsyncrc-template`
+
+Allows me to send emails, either directly from `neomutt` or like this:
+
+```bash
+echo "content" | nmx -s "subject" <recipientEmail> -a <attachment1> -a <attachment2> ...
+```
+
 # associated practices
 I turn off conversation view for all of my accounts. I get what it does, but I dislike it, and it doesn't help in my workflow.
 
@@ -38,22 +57,4 @@ because it's still an excellent open-source program that allows me to:
 - check folder settings for an account
 - get ready access to accounts that take some time to setup, such as Gmail's `OAUTH2` requirement when I've setup 2-step verification
 - remove attachments from an email while leaving the name of the attachment in the email - handy for having a more compact store of done emails while still being able to see what was sent with them (I wish `neomutt` had this ability)
-
-# configuration
-I configure access to these files in my `$Bash/bashrc-email` which defines aliases like this:
-
-- `nmx` = `neomutt <xAccount>` for opening neomutt on a local account
-- `msx` = "mail sync <xAccount>" - runs `mbsync` and then updates `notmuch` tags
-    - `~/.mbsyncrc` = `$GNULE/mbsyncrc-backup`
-- `nmse` = `notmuch search ...` for digging into all of my local accounts
-    - `nmsh` = shows me the emails found by `nmse`
-
-## msmtp
-`~/.config/msmtp/config` = `$GNULE/msmtpConfig-backup`
-
-Allows me to send emails, either directly from `neomutt` or like this:
-
-```bash
-echo "content" | nmx -s "subject" <recipientEmail> -a <attachment1> -a <attachment2> ...
-```
 

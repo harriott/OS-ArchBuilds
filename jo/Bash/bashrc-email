@@ -1,6 +1,7 @@
 # vim: ft=sh:
 
-# $GNULE/msmtpConfig-backup  has tests for sends
+# see  $email/msmtprc-template  for tests for sends
+# see  $ARCHBUILDS/build-scripts/27-mail.sh  &  $email/nm-config-template
 
 #=> backup my Mutt Wizard files
 alias mwb='bash $email/mwBackup.sh'
@@ -30,7 +31,7 @@ magl () { # failing...
   done
 }
 
-#=> neomutt - view mail
+#=> neomutt
 alias nmf='neomutt -F $email/muttrc-account_ftml'
 alias nmj='neomutt -F $email/muttrc-account_tj'
 alias nml='neomutt -F $email/muttrc-account_live'
@@ -61,9 +62,9 @@ nmsh () {
 #=> sync & tag mail
 [[ -d $GNULE ]] && source $GNULE/emailAddresses
 
-nmnew () { echo "notmuch new:"; notmuch new; }
+nmnew () { echo "notmuch new:"; notmuch new; } # see $email/nm-config-template
 
-# see $GNULE/mbsyncrc-backup
+# see $email/mbsyncrc-template
 msf () { mbsync fm   ; nmnew ; echo "nmTags-fm.sh"   ; bash $email/nmTags-fm.sh   ; }
 msj () { mbsync tj   ; nmnew ; echo "nmTags-tj.sh"   ; bash $email/nmTags-tj.sh   ; }
 msl () { mbsync live ; nmnew ; echo "nmTags-live.sh" ; bash $email/nmTags-live.sh ; }

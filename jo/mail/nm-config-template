@@ -1,0 +1,34 @@
+
+# -------------------------
+# template, for the curious
+# -------------------------
+
+# my working  ~/.notmuch-config  is backed up offline at  $GNULE/notmuch-config-backup
+
+# Database configuration
+[database]
+path=/home/jo/.local/share/mail
+
+# User configuration
+[user]
+name=Joseph Harriott
+primary_email=xxx@gmail.com
+other_email=xxx@gmx.com;xxx@ftml.net;xxx@live.co.uk
+
+# Configuration for   notmuch new
+[new]
+tags=unread;inbox;
+ignore=.mbsyncstate;.uidvalidity
+
+# Search configuration
+[search]
+# exclude_tags=deleted;spam;
+
+# Maildir compatibility configuration
+[maildir]
+synchronize_flags=true
+
+# Cryptography related configuration
+[crypto]
+gpg_path=gpg
+

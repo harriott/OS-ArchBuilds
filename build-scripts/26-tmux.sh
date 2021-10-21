@@ -6,8 +6,8 @@ trap read debug  # puts a read request after each executable line
 
 # gctm  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 
-#=> tmux configuration
-ln -sf $tmux/tmux.conf ~/.tmux.conf
+# #=> tmux configuration
+# ln -sf $tmx/tmux.conf ~/.tmux.conf
 
 #=> tmux-bash-completion-git
 # depends on bash-completion, and brings in tmux

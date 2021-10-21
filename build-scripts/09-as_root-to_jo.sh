@@ -173,7 +173,7 @@ trap read debug  # puts a read request after each executable line
 # cat /etc/passwd
 
 #=> tmux configuration
-ln -sf $tmux/tmux.conf ~/.tmux.conf
+ln -sf $tmx/tmux.conf ~/.tmux.conf
 
 #=> 1 end
 # you're ready to reboot and login to jo
