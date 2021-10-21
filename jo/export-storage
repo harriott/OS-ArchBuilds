@@ -4,13 +4,13 @@
 # ln -sf $ARCHBUILDS/jo/export-storage ~/.export-storage
 #  which is sourced by  $Bash/bash_profile
 
-export ARCHBUILDS=$HOME/ArchBuilds  # provisional
 export DROPBOX=$Storage/Dropbox   # keep this capitalised for finding it without need for $
   export core=$DROPBOX/JH/core
     export ITstack=$core/IT_stack
       export CrossPlatform=$ITstack/CrossPlatform
       export GNULE=$ITstack/unix_like-GNULinux/email
       export onGH=$ITstack/onGitHub
+        export ARCHBUILDS=$HOME/ArchBuilds  # provisional
         if [[ $myDrA ]]; then export ARCHBUILDS=$onGH/ArchBuilds; fi  # my Dropbox is active
           export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
           export Bash=$ARCHBUILDS/jo/Bash

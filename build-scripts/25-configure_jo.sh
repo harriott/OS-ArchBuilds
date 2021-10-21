@@ -16,3 +16,6 @@ cp /etc/X11/xinit/xinitrc ~/xinitrc-laa
 #=> make AUR directories
 mkdir ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make
 
+#=> base-devel group for makepkg
+sudo pacman -S --needed base-devel
+
