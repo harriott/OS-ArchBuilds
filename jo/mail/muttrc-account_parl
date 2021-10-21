@@ -8,7 +8,7 @@
 
 set from = $parl  # defined in my  $GNULE/emailAddresses
 set sendmail = "msmtp -a parl"
-set folder = "$mail/parl"
+set folder = "$maild/parl"
 set header_cache = /home/jo/.cache/mutt/parl/headers
 set message_cachedir = /home/jo/.cache/mutt/parl/bodies
 

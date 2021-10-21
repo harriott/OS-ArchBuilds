@@ -82,15 +82,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-cd ~/Arch/AUR
-rAUR dropbox
-git clone https://aur.archlinux.org/dropbox.git
-cd dropbox
-gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# # only once there's a browser, and preferably after LastPass
+# cd ~/Arch/AUR
+# rAUR dropbox
+# git clone https://aur.archlinux.org/dropbox.git
+# cd dropbox
+# gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -146,14 +146,14 @@ true
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
 
-# #=> Google Chrome
-# cd ~/Arch/AUR
-# rAUR google-chrome
-# git clone https://aur.archlinux.org/google-chrome.git
-# cd google-chrome
-# gvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+cd ~/Arch/AUR
+rAUR google-chrome
+git clone https://aur.archlinux.org/google-chrome.git
+cd google-chrome
+gvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> gnome-disk-utility
 # sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
@@ -279,14 +279,14 @@ true
 # #=> OpenShot
 # sudo pacman -S openshot
 
-#=> PDFsam
-# depends on  jdk-openjdk
-cd ~/Arch/AUR
-rAUR pdfsam
-git clone https://aur.archlinux.org/pdfsam.git
-cd pdfsam
-gvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic
+# #=> PDFsam
+# # depends on  jdk-openjdk
+# cd ~/Arch/AUR
+# rAUR pdfsam
+# git clone https://aur.archlinux.org/pdfsam.git
+# cd pdfsam
+# gvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -347,14 +347,14 @@ makepkg -sic
 # #=> Python 2
 # sudo pacman -S python2  # needed for  oauth2.py
 
-#=> python-fangfrisch 1 AUR
-cd ~/Arch/AUR
-rAUR python-fangfrisch
-git clone https://aur.archlinux.org/python-fangfrisch.git
-cd python-fangfrisch
-gvim -c "silent! /rseichter" PKGBUILD
-makepkg -sic
-true
+# #=> python-fangfrisch 1 AUR
+# cd ~/Arch/AUR
+# rAUR python-fangfrisch
+# git clone https://aur.archlinux.org/python-fangfrisch.git
+# cd python-fangfrisch
+# gvim -c "silent! /rseichter" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> python-fangfrisch 2 settings
 # # 1 create database structure

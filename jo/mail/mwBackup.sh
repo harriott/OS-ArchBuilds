@@ -15,9 +15,9 @@ if [ ! -d $muttBasckupDestination ]; then
   exit
 fi
 echo -e "\e[1m7z-ing:\e[0m"
-echo "$mail/"
-echo -e "\e[92m$mail.7z\e[0m"
-7z a -mx1 $mail.7z $mail
+echo "$maild/"
+echo -e "\e[92m$maild.7z\e[0m"
+7z a -mx1 $maild.7z $maild
 echo -e "\e[1mcp-ing:\e[0m"
 mkdir $bfolder
 nodes=(
@@ -26,7 +26,7 @@ nodes=(
   "/home/jo/.config/msmtp/config" \
   "/home/jo/.config/mutt" \
     # - created by Mutt Wizard, can eventually be deleted
-  "$mail.7z" \
+  "$maild.7z" \
   "/home/jo/.mbsyncrc" \
 )
 for node in "${nodes[@]}"; do

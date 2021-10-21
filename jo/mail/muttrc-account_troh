@@ -1,15 +1,10 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
-# my preferred configuration file for accessing  Fastmail
-# I prefer to call this through an alias in my  ~/.bashrc
-
-# this is developed to my preferences from  accounts/2-fm.muttrc  which was created by  Mutt Wizard
-#  mbsync troh   using ~/.mbsyncrc
-#  msmtp  uses settings in  ~/.config/msmtp/config
+# see  $email/README.md > configuration
 
 set from = $troh  # $GNULE/emailAddresses
 set sendmail = "msmtp -a troh"
-set folder = "$mail/troh"
+set folder = "$maild/troh"
 set header_cache = /home/jo/.cache/mutt/troh/headers
 set message_cachedir = /home/jo/.cache/mutt/troh/bodies
 

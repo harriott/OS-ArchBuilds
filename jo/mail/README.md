@@ -1,5 +1,5 @@
 
-# my neomutt setup
+# my neomutt + notmuch setup
 This folder of configuration files may well be useful to someone else.
 
 Setting up `mutt` with `notmuch` for the first time isn't easy, but it *is* worth it if you want to be able to quickly move in and out of huge lists of email, rapidly search in various clever ways, and you've already re-discovered the power of the Unix command line and life-changing text editors such as `vim`.
@@ -38,4 +38,22 @@ because it's still an excellent open-source program that allows me to:
 - check folder settings for an account
 - get ready access to accounts that take some time to setup, such as Gmail's `OAUTH2` requirement when I've setup 2-step verification
 - remove attachments from an email while leaving the name of the attachment in the email - handy for having a more compact store of done emails while still being able to see what was sent with them (I wish `neomutt` had this ability)
+
+# configuration
+I configure access to these files in my `$Bash/bashrc-email` which defines aliases like this:
+
+- `nmx` = `neomutt <xAccount>` for opening neomutt on a local account
+- `msx` = "mail sync <xAccount>" - runs `mbsync` and then updates `notmuch` tags
+    - `~/.mbsyncrc` = `$GNULE/mbsyncrc-backup`
+- `nmse` = `notmuch search ...` for digging into all of my local accounts
+    - `nmsh` = shows me the emails found by `nmse`
+
+## msmtp
+`~/.config/msmtp/config` = `$GNULE/msmtpConfig-backup`
+
+Allows me to send emails, either directly from `neomutt` or like this:
+
+```bash
+echo "content" | nmx -s "subject" <recipientEmail> -a <attachment1> -a <attachment2> ...
+```
 

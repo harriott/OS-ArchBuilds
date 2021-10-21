@@ -2,7 +2,9 @@
 # See https://gitlab.com/o9000/tint2/wikis/Configure for 
 # full documentation of the configuration options.
 #
-#  cp ~/.config/tint2/tint2rc $Openbox/tint2rc  # JH
+# my changes - JH
+#  bash $ARCHBUILDS/build-scripts/33-softwaresWhenOpenbox.sh
+#  tint2 17.0.1-1
 #
 #-------------------------------------
 # Gradients

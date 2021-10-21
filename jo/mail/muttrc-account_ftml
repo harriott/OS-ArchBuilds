@@ -9,7 +9,7 @@
 
 set from = $fm  # defined in my  $GNULE/mymuttrcAddresses
 set sendmail = "msmtp -a fm"
-set folder = "$mail/fm"
+set folder = "$maild/fm"
 set header_cache = /home/jo/.cache/mutt/fm/headers
 set message_cachedir = /home/jo/.cache/mutt/fm/bodies
 
@@ -21,7 +21,7 @@ set alias_file = "$GNULE/aliases-fm"
 source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh
-# rm -r ~/.cache/mutt/fm/* $mail/fm/*
+# rm -r ~/.cache/mutt/fm/* $maild/fm/*
 mailboxes "=Archive" "=Deauram" "=Drafts" "=Friends" "=INBOX" "=Junk\ Mail" "=Sent\ Items" "=Trash" "=Waiting" "=Work"
 virtual-mailboxes "All" "notmuch://?query=tag:fm"
 

@@ -8,7 +8,7 @@
 
 set from = $cz  # defined in my  $GNULE/emailAddresses
 set sendmail = "msmtp -a cz"
-set folder = "$mail/cz"
+set folder = "$maild/cz"
 set header_cache = /home/jo/.cache/mutt/cz/headers
 set message_cachedir = /home/jo/.cache/mutt/cz/bodies
 
@@ -22,7 +22,7 @@ source $alias_file
 # if you make changes here, you probably need to clear your folders, and start afresh
 # rm -r ~/.cache/mutt/cz/* ~/.local/share/mail/cz/*
 # and fix  ~/.mbsyncrc  to correspond
-mailboxes "=Archives" "=[Gmail].All\ mail" "=[Gmail].Bin" "=[Gmail].Drafts" "=[Gmail].Sent\ Mail" "=[Gmail].Spam" "=INBOX" "=Waiting"
+mailboxes "=Archives" "=[Gmail].All\ Mail" "=[Gmail].Bin" "=[Gmail].Drafts" "=[Gmail].Sent\ Mail" "=[Gmail].Spam" "=INBOX" "=Waiting"
 #  - any errors here will trigger others
 virtual-mailboxes "All" "notmuch://?query=tag:cz"
 

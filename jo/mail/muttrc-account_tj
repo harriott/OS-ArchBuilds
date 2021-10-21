@@ -9,7 +9,7 @@
 
 set from = $tj
 set sendmail = "msmtp -a tj"
-set folder = "$mail/tj"
+set folder = "$maild/tj"
 set header_cache = /home/jo/.cache/mutt/tj/headers
 set message_cachedir = /home/jo/.cache/mutt/tj/bodies
 

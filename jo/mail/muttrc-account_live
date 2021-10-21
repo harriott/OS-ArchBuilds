@@ -9,7 +9,7 @@
 
 set from = $live
 set sendmail = "msmtp -a live"
-set folder = "$mail/live"
+set folder = "$maild/live"
 set header_cache = /home/jo/.cache/mutt/live/headers
 set message_cachedir = /home/jo/.cache/mutt/live/bodies
 

@@ -78,6 +78,7 @@ find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
 find . -type d -name .git
 find . -type f -name .gitignore
 find . -type f -name "*.pl"
+find . -type f -name "python.vim"
 
 ### for configuration files
 fd -I -e conf
@@ -109,6 +110,7 @@ bm rg
 for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
 outer whitespaces get ignored
 rg '\$ITstack'
+rg '\$mail'
 rg '<someText>|<otherText>'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
 rg -ttex '\\subsubsection\{'
@@ -253,6 +255,10 @@ journalctl -u rsnapshot@daily -r
 journalctl -u rsnapshot@hourly -r
 systemctl status rsnapshot-hourly.timer
 
+#### find vimfiles
+find $rsnapshot/*/localhost/home/jo/.vim/ftplugin -type f -name "perl.vim"
+find $rsnapshot/*/localhost/home/jo/.vim/ftplugin -type f -name "python.vim"
+
 #### quickly lists all instances of directories
 for d in $(ls hourly.*/localhost/home/jo -dtr); do stat -c '%y %n' $d; done  # hourly instances in time order
 ls *ly.*/localhost/home/jo/.config/copyq -d  # CopyQ data directory instances
@@ -291,7 +297,12 @@ sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
 xdg-open https://archlinux.org
 
-## Dropbox conflicted copies
+## Dropbox
+dropbox &  # as in  $Openbox/openbox/autostart/autostart
+killall dropbox
+lsof -c dropbox
+
+### conflicted copies
 find -name "* conflicted copy *" -exec rm -f {} \;
 find -name "*(Copie en conflit de *"
 
@@ -354,6 +365,10 @@ checkupdates
 pacman -Qdt  # lists all orphans
 sudo pacman -Rs <packagetoremove>
 /var/cache/pacman/pkg/
+
+## groups
+pacman -Qg base-devel  # lists packages installed
+pacman -Sg base-devel  # lists all
 
 ## package database locked
 pgrep pacman  # to ensure it's not running

@@ -1,4 +1,4 @@
-# vim: fdm=expr ft=sh.shfold tw=0:
+# vim: ft=sh:
 
 # $GNULE/msmtpConfig-backup  has tests for sends
 
@@ -8,25 +8,25 @@ alias mwb='bash $email/mwBackup.sh'
 #=> mutt-aliases
 # (can be slow)
 alias mas='bash ~/mutt-alias.sh/mutt-alias.sh'
-export mail=/home/jo/.local/share/mail  # used also in  muttrc-*
+export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
 magf () {
   for folder in Archive Deauram Friends Waiting Work; do
-    mas -a $GNULE/aliases-fm-mag -p "$mail/fm/$folder/cur"
+    mas -a $GNULE/aliases-fm-mag -p "$maild/fm/$folder/cur"
   done
 }
 magt () {
   for folder in Archives Waiting; do
-    mas -a $GNULE/aliases-troh-mag -p "$mail/troh/$folder/cur"
+    mas -a $GNULE/aliases-troh-mag -p "$maild/troh/$folder/cur"
   done
 }
 magx () {
   for folder in Archives Waiting; do
-    mas -a $GNULE/aliases-gmx-mag -p "$mail/gmx/$folder/cur"
+    mas -a $GNULE/aliases-gmx-mag -p "$maild/gmx/$folder/cur"
   done
 }
 magl () { # failing...
   for folder in Archive LPD Waiting; do
-    mas -a $GNULE/aliases-live-mag -p "$mail/live/$folder/cur"
+    mas -a $GNULE/aliases-live-mag -p "$maild/live/$folder/cur"
   done
 }
 
