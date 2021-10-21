@@ -2,7 +2,7 @@
 
 # bash <thisfile>.sh
 
-# rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+# rAUR  is defined in $Bash/bashrc-console
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line

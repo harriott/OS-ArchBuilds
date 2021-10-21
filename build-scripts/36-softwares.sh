@@ -9,7 +9,7 @@ trap read debug  # puts a read request after each executable line
 #  gctm  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
 #  use  $ARCHBUILDS/build-scripts/27-remakeAURdevs.sh  to later update them
 
-# rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+# rAUR  is defined in $Bash/bashrc-console
 
 # #=> bat-extras-git
 # cd ~/Arch/AURdev-clone

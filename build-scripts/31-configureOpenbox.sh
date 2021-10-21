@@ -5,7 +5,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+# rAUR  is defined in $Bash/bashrc-console
 
 # #=> 0 ATI install
 # sudo pacman -S xf86-video-ati  # should probably reboot

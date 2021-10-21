@@ -4,7 +4,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# rAUR  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+# rAUR  is defined in $Bash/bashrc-console
 
 # #=> 0 tint2rc
 # gvim -geometry 200x55 -O /etc/xdg/tint2/tint2rc ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"
@@ -80,7 +80,6 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S sxiv
 
 #=> 1 trizen
-# creates a numbered list of url's in a resource
 cd ~/Arch/AUR
 git clone https://aur.archlinux.org/trizen.git
 cd trizen
