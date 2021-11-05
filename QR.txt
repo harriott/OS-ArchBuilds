@@ -204,6 +204,7 @@ man cmatrix
 
 # hw
 cd /sys/devices/system/cpu/cpu0/cpufreq
+HP ENVY 5532: d0:bf:9c:a2:2f:0e
 
 ## graphics card details
 glxinfo

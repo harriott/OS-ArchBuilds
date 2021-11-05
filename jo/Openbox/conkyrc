@@ -4,7 +4,7 @@
 Joseph Harriott
 configuration last updated Fri 29 Apr 2016
 adapted from output of  conky --print-config
-conky -c <thisfile>
+conky -c <thisfile>, as in  $Openbox/openbox/autostart/autostart
 ]]
 
 conky.config = {

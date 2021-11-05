@@ -129,7 +129,7 @@ PROMPT_COMMAND='history -a' # Samokovarov's  jump  later tweaks this
 shopt -s histappend
 
 #=> f1t2t3 - for sbMb
-if [ $(hostname) = 'sbMb' ]; then
+if [ $host = 'sbMb' ]; then
   alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"
 fi
 

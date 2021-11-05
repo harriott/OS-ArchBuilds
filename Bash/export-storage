@@ -1,0 +1,34 @@
+#!/bin/sh
+# vim: ft=sh sw=2:
+
+# here I export variables that could also be useful as root
+# I'm taking care to avoid variables that only differ by case
+
+# for jo:
+#  symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
+#  sourced by  $Bash/bash_profile
+# for root:
+#  symlinked in  $ARCHBUILDS/build-scripts/05-root_symlinks.sh
+#  sourced by  $ARCHBUILDS/root/bash_profile
+
+# $Storage  is pre-defined in  $MACHINE/jo/export-machine
+export DROPBOX=$Storage/Dropbox
+# - keep  DROPBOX  capitalised for finding it without need for $
+  export core=$DROPBOX/JH/core
+    export ITstack=$core/IT_stack
+      export CrossPlatform=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
+      export GNULE=$ITstack/unix_like-GNULinux/email
+      export onGH=$ITstack/onGitHub
+        export vimfiles=$onGH/vimfiles
+    export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
+
+export ARCHBUILDS=$HOME/ArchBuilds  # provisional
+if [[ $myDrA ]]; then export ARCHBUILDS=$onGH/ArchBuilds; fi  # my Dropbox is active
+  export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
+  export Bash=$ARCHBUILDS/jo/Bash
+    export host=$(uname -n)
+    # - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
+      export MACHINE=$ARCHBUILDS/$host
+  export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
+  export tmx=$ARCHBUILDS/jo/tmux  # used in tmux.conf
+

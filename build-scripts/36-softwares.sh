@@ -6,7 +6,7 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 # AUR development packages:
-#  gctm  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+#  gctm  is defined in $Bash/bashrc-console
 #  use  $ARCHBUILDS/build-scripts/27-remakeAURdevs.sh  to later update them
 
 # rAUR  is defined in $Bash/bashrc-console

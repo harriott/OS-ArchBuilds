@@ -1,7 +1,7 @@
 #!/bin/sh
 # vim: ft=sh sw=2:
 
-# sourced by  $Bash/bash_profile  &  $MACHINE/jo/bashrc
+# sourced by  $Bash/bash_profile  &  $MACHINE/jo/Bash/bashrc
 # useful also in Console as user
 
 # -----------------------------------------------------------
@@ -38,7 +38,7 @@ alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
 #==> Git
 alias ga='git add'
 alias gis='git status -u'
-export BFG=$ITstack/CrossPlatform/bfg-1.13.0.jar
+export BFG=$CrossPlatform/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
 #==> my Encrypted directories

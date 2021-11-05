@@ -2,7 +2,7 @@
 
 # bash <thisfile>.sh
 
-#  gctm  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+#  gctm  is defined in $Bash/bashrc-console
 
 PQ(){ pacman -Qs $1; }
 

@@ -144,12 +144,12 @@ trap read debug  # puts a read request after each executable line
 # # pkgstats
 # pacman -S pkgstats
 
-# #=> 0 softwares - various
-# # universal-ctags
-# pacman -S ctags
+#=> 0 softwares - various
+# universal-ctags
+pacman -S ctags
 
-# # pass
-# pacman -S pass
+# pass (bring in gnupg)
+pacman -S pass
 
 # #=> 0 swappiness to 10
 # # check that the default is 60

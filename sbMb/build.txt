@@ -692,6 +692,18 @@ hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control 
 ## Nomacs printing blank pages
 hp-testpage,  lp <image>,  Zathura  work
 fixed by upgrade to v1:3.17.2206-5
+## Updates
+:: Replace python-sgmllib with extra/python-sgmllib3k? [Y/n]
+## HP ENVY 5532 IP Address changed to 249
+was 192.168.43.250, somehow became 192.168.43.249
+## removed redundant Vim packages
+sudo pacman -Rs vim-nerdcommenter vim-supertab vim-surround vim-syntastic vim-tabular
+## HP ENVY 5532 IP Address changed to 249
+hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Removed
+hp-makeuri 192.168.43.249
+  CUPS URI: hp:/net/ENVY_5530_series?ip=192.168.43.249
+  SANE URI: hpaio:/net/ENVY_5530_series?ip=192.168.43.249
+scanimage --device 'hpaio:/net/ENVY_5530_series?ip=192.168.43.249&queue=false' --format=tiff --mode Color -p --resolution 300 > scanimage-test.tiff
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
@@ -713,6 +725,8 @@ ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 /var/cache/ 8.9GB
 /var/cache/pacman/ 8.6GB
 /var/log/journal/ 2.2 GB
+# GnuPG keys
+gpg -ao sbMbA-backup-las.asc --export-secret-keys --export-options backup jh
 # physical configuration
 D-Link DUB-H7
 TL-WN821N

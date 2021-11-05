@@ -1,0 +1,290 @@
+/usr/bin/hp-check:685: SyntaxWarning: "is not" with a literal. Did you mean "!="?
+  if 'getfacl' not in g and '' is not g and 'file' not in g:
+Saving output in log file: /mnt/SD480GSSDPlus/Dropbox/JH/core/hp-check.log
+
+HP Linux Imaging and Printing System (ver. 3.21.8)
+Dependency/Version Check Utility ver. 15.1
+
+Copyright (c) 2001-18 HP Development Company, LP
+This software comes with ABSOLUTELY NO WARRANTY.
+This is free software, and you are welcome to distribute it
+under certain conditions. See COPYING file for more details.
+
+Note: hp-check can be run in three modes:
+1. Compile-time check mode (-c or --compile): Use this mode before compiling the HPLIP supplied tarball (.tar.gz or .run) to determine if the proper dependencies are installed to successfully compile HPLIP.
+2. Run-time check mode (-r or --run): Use this mode to determine if a distro supplied package (.deb, .rpm, etc) or an already built HPLIP supplied tarball has the proper dependencies installed to successfully run.
+3. Both compile- and run-time check mode (-b or --both) (Default): This mode will check both of the above cases (both compile- and run-time dependencies).
+
+Check types:
+a. EXTERNALDEP - External Dependencies
+b. GENERALDEP - General Dependencies (required both at compile and run time)
+c. COMPILEDEP - Compile time Dependencies
+d. [All are run-time checks]
+PYEXT SCANCONF QUEUES PERMISSION
+
+Status Types:
+    OK
+    MISSING       - Missing Dependency or Permission or Plug-in
+    INCOMPAT      - Incompatible dependency-version or Plugin-version
+
+warning: 0- version is not supported. Using 0-0 versions dependencies to verify and install...
+
+---------------
+| SYSTEM INFO |
+---------------
+
+ Kernel: 5.14.14-arch1-1 #1 SMP PREEMPT Wed, 20 Oct 2021 21:35:18 +0000 GNU/Linux
+ Host: sbMb
+ Proc: 5.14.14-arch1-1 #1 SMP PREEMPT Wed, 20 Oct 2021 21:35:18 +0000 GNU/Linux
+ Distribution: 0
+ Bitness: 64 bit
+
+
+-----------------------
+| HPLIP CONFIGURATION |
+-----------------------
+
+HPLIP-Version: HPLIP 3.21.8
+HPLIP-Home: /usr/share/hplip
+warning: HPLIP-Installation: Auto installation is not supported for 0 distro   version
+
+Current contents of '/etc/hp/hplip.conf' file:
+# hplip.conf.  Generated from hplip.conf.in by configure.
+
+[hplip]
+version=3.21.8
+
+[dirs]
+home=/usr/share/hplip
+run=/var/run
+ppd=/usr/share/ppd/HP
+ppdbase=/usr/share/ppd
+doc=/usr/share/doc/hplip-3.21.8
+html=/usr/share/doc/hplip-3.21.8
+icon=/usr/share/applications
+cupsbackend=/usr/lib/cups/backend
+cupsfilter=/usr/lib/cups/filter
+drv=/usr/share/cups/drv/hp
+bin=/usr/bin
+apparmor=/etc/apparmor.d
+# Following values are determined at configure time and cannot be changed.
+[configure]
+network-build=yes
+libusb01-build=no
+pp-build=yes
+gui-build=yes
+scanner-build=yes
+fax-build=yes
+dbus-build=yes
+cups11-build=no
+doc-build=yes
+shadow-build=no
+hpijs-install=no
+foomatic-drv-install=no
+foomatic-ppd-install=no
+foomatic-rip-hplip-install=no
+hpcups-install=yes
+cups-drv-install=yes
+cups-ppd-install=no
+internal-tag=3.21.8
+restricted-build=no
+ui-toolkit=qt5
+qt3=no
+qt4=no
+qt5=yes
+policy-kit=no
+lite-build=no
+udev_sysfs_rules=no
+hpcups-only-build=no
+hpijs-only-build=no
+apparmor_build=no
+class-driver=no
+
+
+Current contents of '/var/lib/hp/hplip.state' file:
+Plugins are not installed. Could not access file: No such file or directory
+
+Current contents of '~/.hplip/hplip.conf' file:
+
+[fax]
+email_address =
+voice_phone =
+
+[installation]
+date_time = 11/05/21 10:29:59
+version = 3.21.8
+
+[last_used]
+device_uri = "hp:/net/ENVY_5530_series?ip=192.168.43.250"
+printer_name = ENVY_5530
+working_dir = .
+
+[polling]
+device_list =
+enable = false
+interval = 5
+
+[refresh]
+enable = false
+rate = 30
+type = 1
+
+[settings]
+systray_messages = 0
+systray_visible = 0
+
+[upgrade]
+last_upgraded_time = 1612893857
+notify_upgrade = false
+pending_upgrade_time = 0
+
+
+ <Package-name>        <Package-Desc>      <Required/Optional> <Min-Version> <Installed-Version> <Status>   <Comment>
+
+-------------------------
+| External Dependencies |
+-------------------------
+
+ cups                 CUPS - Common Unix Printing System                           REQUIRED        1.1             2.3.3           OK         'CUPS Scheduler is running'
+ gs                   GhostScript - PostScript and PDF language interpreter and previewer REQUIRED        7.05            9.55.0          OK         -
+ error: xsane         xsane - Graphical scanner frontend for SANE                  OPTIONAL        0.9             -               MISSING    'xsane needs to be installed'
+ scanimage            scanimage - Shell scanning program                           OPTIONAL        1.0             1.0.32          OK         -
+ dbus                 DBus - Message bus system                                    REQUIRED        -               1.12.20         OK         -
+ policykit            PolicyKit - Administrative policy framework                  OPTIONAL        -               0.120           OK         -
+ network              network -wget                                                OPTIONAL        -               1.21.2          OK         -
+ avahi-utils          avahi-utils                                                  OPTIONAL        -               0.8             OK         -
+
+------------------------
+| General Dependencies |
+------------------------
+
+ libjpeg              libjpeg - JPEG library                                       REQUIRED        -               -               OK         -
+ cups-devel           CUPS devel- Common Unix Printing System development files    REQUIRED        -               2.3.3           OK         -
+ cups-image           CUPS image - CUPS image development files                    REQUIRED        -               2.3.3           OK         -
+ libpthread           libpthread - POSIX threads library                           REQUIRED        -               b'2.33'         OK         -
+ libusb               libusb - USB library                                         REQUIRED        -               1.0             OK         -
+ sane                 SANE - Scanning library                                      REQUIRED        -               1.0.32          OK         -
+ sane-devel           SANE - Scanning library development files                    REQUIRED        -               1.0.32          OK         -
+ libavahi-dev         libavahi-dev                                                 REQUIRED        -               -               OK         -
+ libnetsnmp-devel     libnetsnmp-devel - SNMP networking library development files REQUIRED        5.0.9           5.9.1           OK         -
+ libcrypto            libcrypto - OpenSSL cryptographic library                    REQUIRED        -               1.1.1           OK         -
+ python3X             Python 2.2 or greater - Python programming language          REQUIRED        2.2             3.9.7           OK         -
+ python3-notify2      Python libnotify - Python bindings for the libnotify Desktop notifications OPTIONAL        -               -               OK         -
+ error: python3-pyqt4-dbus PyQt 4 DBus - DBus Support for PyQt4                         OPTIONAL        4.0             -               MISSING    'python3-pyqt4-dbus needs to be installed'
+ error: python3-pyqt4 PyQt 4- Qt interface for Python (for Qt version 4.x)         REQUIRED        4.0             -               MISSING    'python3-pyqt4 needs to be installed'
+
+ <Package-name>        <Package-Desc>      <Required/Optional> <Min-Version> <Installed-Version> <Status>   <Comment>
+
+-------------------------
+| External Dependencies |
+-------------------------
+
+ cups                 CUPS - Common Unix Printing System                           REQUIRED        1.1             2.3.3           OK         'CUPS Scheduler is running'
+ gs                   GhostScript - PostScript and PDF language interpreter and previewer REQUIRED        7.05            9.55.0          OK         -
+ error: xsane         xsane - Graphical scanner frontend for SANE                  OPTIONAL        0.9             -               MISSING    'xsane needs to be installed'
+ scanimage            scanimage - Shell scanning program                           OPTIONAL        1.0             1.0.32          OK         -
+ dbus                 DBus - Message bus system                                    REQUIRED        -               1.12.20         OK         -
+ policykit            PolicyKit - Administrative policy framework                  OPTIONAL        -               0.120           OK         -
+ network              network -wget                                                OPTIONAL        -               1.21.2          OK         -
+ avahi-utils          avahi-utils                                                  OPTIONAL        -               0.8             OK         -
+
+------------------------
+| General Dependencies |
+------------------------
+
+ libjpeg              libjpeg - JPEG library                                       REQUIRED        -               -               OK         -
+ cups-devel           CUPS devel- Common Unix Printing System development files    REQUIRED        -               2.3.3           OK         -
+ cups-image           CUPS image - CUPS image development files                    REQUIRED        -               2.3.3           OK         -
+ libpthread           libpthread - POSIX threads library                           REQUIRED        -               b'2.33'         OK         -
+ libusb               libusb - USB library                                         REQUIRED        -               1.0             OK         -
+ sane                 SANE - Scanning library                                      REQUIRED        -               1.0.32          OK         -
+ sane-devel           SANE - Scanning library development files                    REQUIRED        -               1.0.32          OK         -
+ libavahi-dev         libavahi-dev                                                 REQUIRED        -               -               OK         -
+ libnetsnmp-devel     libnetsnmp-devel - SNMP networking library development files REQUIRED        5.0.9           5.9.1           OK         -
+ libcrypto            libcrypto - OpenSSL cryptographic library                    REQUIRED        -               1.1.1           OK         -
+ python3X             Python 2.2 or greater - Python programming language          REQUIRED        2.2             3.9.7           OK         -
+ python3-notify2      Python libnotify - Python bindings for the libnotify Desktop notifications OPTIONAL        -               -               OK         -
+ error: python3-pyqt4-dbus PyQt 4 DBus - DBus Support for PyQt4                         OPTIONAL        4.0             -               MISSING    'python3-pyqt4-dbus needs to be installed'
+ error: python3-pyqt4 PyQt 4- Qt interface for Python (for Qt version 4.x)         REQUIRED        4.0             -               MISSING    'python3-pyqt4 needs to be installed'
+ python3-dbus         Python DBus - Python bindings for DBus                       REQUIRED        0.80.0          1.2.18          OK         -
+ python3-xml          Python XML libraries                                         REQUIRED        -               2.4.1           OK         -
+ python3-devel        Python devel - Python development files                      REQUIRED        2.2             3.9.7           OK         -
+ python3-pil          PIL - Python Imaging Library (required for commandline scanning with hp-scan) OPTIONAL        -               8.4.0           OK         -
+ error: python3-reportlab Reportlab - PDF library for Python                           OPTIONAL        2.0             -               MISSING    'python3-reportlab needs to be installed'
+
+--------------
+| COMPILEDEP |
+--------------
+
+ libtool              libtool - Library building support services                  REQUIRED        -               2.4.6           OK         -
+ gcc                  gcc - GNU Project C and C++ Compiler                         REQUIRED        -               11.1.0          OK         -
+ make                 make - GNU make utility to maintain groups of programs       REQUIRED        3.0             4.3             OK         -
+
+---------------------
+| Python Extentions |
+---------------------
+
+ cupsext              CUPS-Extension                                               REQUIRED        -               3.21.8          OK         -
+ hpmudext             IO-Extension                                                 REQUIRED        -               3.21.8          OK         -
+
+----------------------
+| Scan Configuration |
+----------------------
+
+ hpaio                HPLIP-SANE-Backend                                           REQUIRED        -               3.21.8          OK         'hpaio found in /etc/sane.d/dll.conf'
+ scanext              Scan-SANE-Extension                                          REQUIRED        -               3.21.8          OK         -
+
+------------------------------
+| DISCOVERED SCANNER DEVICES |
+------------------------------
+
+device `hpaio:/net/ENVY_5530_series?ip=192.168.43.250' is a Hewlett-Packard ENVY_5530_series all-in-one
+
+
+--------------------------
+| DISCOVERED USB DEVICES |
+--------------------------
+
+No devices found.
+
+---------------------------------
+| INSTALLED CUPS PRINTER QUEUES |
+---------------------------------
+
+
+ENVY_5530
+---------
+Type: Printer
+Device URI: hp:/net/ENVY_5530_series?ip=192.168.43.250
+PPD: /etc/cups/ppd/ENVY_5530.ppd
+warning: Failed to read /etc/cups/ppd/ENVY_5530.ppd ppd file
+PPD Description:
+Printer status: printer ENVY_5530 is idle.  enabled since Tue 19 Oct 2021 11:39:18 CEST
+error: Unable to communicate with device (code=12): hp:/net/ENVY_5530_series?ip=192.168.43.250
+error: unable to open channel
+error: Communication status: Failed
+
+
+--------------
+| PERMISSION |
+--------------
+
+
+-----------
+| SUMMARY |
+-----------
+
+Missing Required Dependencies
+-----------------------------
+None
+
+Missing Optional Dependencies
+-----------------------------
+None
+
+
+Total Errors: 5
+Total Warnings: 0
+
+
+Done.

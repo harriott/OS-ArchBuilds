@@ -2,13 +2,15 @@
 #
 # my generic  ~/.bash_profile
 # ---------------------------
+# symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
 
-# defined here so they can be accessed pre-X, by
+# exports defined here so they can be accessed pre-X, by
 #  $ARCHBUILDS/jo/Openbox/openbox/autostart, & by gvim
 # kill tmux sessions if you've made changes here
-source ~/.export-machine  # defines  $myDrA  &  $Storage
-    source ~/.export-storage
-# - carries through to X
+source ~/.export-machine
+source ~/.export-storage
+source ~/.export-storage-user
+# - carry through to X
 
 # Useful before X:
   source ~/.bashrc-generic  # useful everywhere, including root

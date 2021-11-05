@@ -20,11 +20,13 @@ if [ $1 = "248" ] ; then
   siPrefix="scanimage --format=tiff -p --resolution"
   declare -a Resns=(1 2 3 4 6 12)
 elif [ $1 = "55n" ] || [ $1 = "55u" ] ; then
+  device=$'--device \'hpaio:/net/ENVY_5530_series\?ip=192.168.43.249\''  # got from  hp-makeuri
   declare -a Resns=(1 2 3 6 12)
   if [ $1 = "55n" ] ; then
     n5log="$( dirname "${BASH_SOURCE[0]}" )/network5532.log"
     if [ $2 ] ; then
-      device="--device $(awk 'END{print $3}' $n5log)"
+      # device="--device $(awk 'END{print $3}' $n5log)"
+      true
     else
       echo 'grabbing HP ENVY 5532 network address to network5532.log ...'
       mapfile -t siL < <(scanimage -L | grep net | awk '{ print $2 }' )

@@ -101,9 +101,6 @@ mt() # do my TextNotes
     cd $DROPBOX/JH/core/TextNotes
     pwd
     m4ps0 0
-    cd ../TN-OT-V-N-E-A-B-Nephrozoa
-    pwd
-    m4ps0 0
     cd ..
 }
 

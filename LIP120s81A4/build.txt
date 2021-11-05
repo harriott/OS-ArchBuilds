@@ -187,6 +187,11 @@ bash 24-as_root-rsnapshot_automated.sh
 ## configure jo
 bash 25-configure_jo.sh
 bash 26-tmux.sh
+## GnuPG keys
+gpg --list-keys
+  gpg: directory '/home/jo/.gnupg' created
+  gpg: keybox '/home/jo/.gnupg/pubring.kbx' created
+  gpg: /home/jo/.gnupg/trustdb.gpg: trustdb created
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
 KDTG311281  for  rsnapshot

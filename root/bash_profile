@@ -1,10 +1,9 @@
 # vim: set ft=sh:
 #
 # ~/.bash_profile
-# get my  .bashrc  settings working in  Console
-#
+# get my  .bashrc  settings working in  Console  &  su
 
-# this is only here incase you  su -
+source ~/.export-machine; source ~/.export-storage
 
-[[ -f /root/.bashrc ]] && . /root/.bashrc  # desired for su
+[[ -f /root/.bashrc ]] && . /root/.bashrc
 

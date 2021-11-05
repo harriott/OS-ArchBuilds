@@ -12,15 +12,16 @@ ARCHBUILDS=$HOME/ArchBuilds
 #=> 1 Bash
 # sort this list by last use of "~":  :sort /,*\~/
 
-ln -sf $Bash/bash_profile              ~/.bash_profile
-ln -sf $MACHINE/jo/bashrc              ~/.bashrc
-ln -sf $Bash/bashrc-console            ~/.bashrc-console
-ln -sf $ARCHBUILDS/Bash/bashrc-generic ~/.bashrc-generic
-ln -sf $ARCHBUILDS/Bash/inputrc        ~/.inputrc
-ln -sf $MACHINE/jo/export-machine      ~/.export-machine
-ln -sf $ARCHBUILDS/jo/export-storage   ~/.export-storage
-ln -sf $ARCHBUILDS/jo/xinitrc          ~/.xinitrc  # which calls $MACHINE/jo/Xresources
-ln -sf $ARCHBUILDS/jo/bash_history.sh  ~/Arch/bash_history.sh
+ln -sf $Bash/bash_profile                   ~/.bash_profile
+ln -sf $MACHINE/jo/Bash/bashrc              ~/.bashrc
+ln -sf $Bash/bashrc-console                 ~/.bashrc-console
+ln -sf $ARCHBUILDS/Bash/bashrc-generic      ~/.bashrc-generic
+ln -sf $ARCHBUILDS/Bash/GNUReadline-inputrc ~/.inputrc
+ln -sf $MACHINE/export-machine              ~/.export-machine
+ln -sf $ARCHBUILDS/Bash/export-storage      ~/.export-storage
+ln -sf $Bash/export-storage                 ~/.export-storage-user
+ln -sf $ARCHBUILDS/jo/xinitrc               ~/.xinitrc # calls $MACHINE/jo/Xresources
+ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
 
 # #=> 0 Bash - mouse wheel
 # ln -sf $ARCHBUILDS/jo/xbindkeysrc ~/.xbindkeysrc

@@ -1,0 +1,21 @@
+#!/bin/sh
+# vim: ft=sh sw=2:
+
+# symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
+#  sourced by  $Bash/bash_profile
+
+# here I'm taking care to avoid variables that only differ by case
+
+export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
+export IT1=$DROPBOX/JH/Technos/IT1  # for notes
+export ITP=$DROPBOX/JH/Technos/IT0-Partitionable  # $ITP/diskUsage.txt
+export IThandy=$DROPBOX/JH/Copied/IT-handy  # for fonts
+export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
+export MD4PDF=$onGH/md4pdf
+export MSWin10=$onGH/MSWin10  # for notes
+export Openbox=$ARCHBUILDS/jo/Openbox
+export PAPERSIZE=A4
+export SE=$DROPBOX/JH/CforWork/Education/Science-Engineering  # for notes
+export vimfiles=$onGH/vimfiles
+uG=$MACHINE/jo/Bash/export-urxvtGeometry; [[ -f $uG ]] && . $uG
+

@@ -2,7 +2,7 @@
 
 # bash <thisfile>.sh
 
-#  gctm  is defined in $ARCHBUILDS/jo/Bash/bashrc-console
+#  gctm  is defined in $Bash/bashrc-console
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -25,14 +25,15 @@ sudo pacman -S rustup
 # 2 Rust Toolchain
 rustup toolchain install stable
 
-#=> 1 configure GnuPG for pinentry
-# pinentry
-export GPG_TTY=$(tty)
-
-# and will need  ~/.gnupg/gpg-agent.conf  for passphrase
+#=> 1 gpg-agent configuration
+export GPG_TTY=$(tty)  # for pinentry
+ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 
 #=> 1 Dropbox public key
 gpg --keyserver keys.gnupg.net --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
+
+#=> 1 pgpdump
+sudo pacman -S pgpdump
 
 #=> 2 auracle-git
 cd ~/Arch/AURdev-clone
