@@ -38,7 +38,7 @@ updateMaybe bat-extras-git eth-p
 #=> cht.sh-git
 PQ cht.sh-git
 xdgo https://github.com/chubin/cheat.sh/commits/master
-updateMaybe cht.sh-git
+updateMaybe cht.sh-git chubin
 
 #=> fontpreview-git
 PQ fontpreview-git
@@ -55,8 +55,8 @@ PQ pscircle-git
 xdgo https://gitlab.com/mildlyparallel/pscircle/-/commits/master/
 updateMaybe pscircle-git
 
-# #=> tmux-bash-completion-git
-# PQ tmux-bash-completion-git
-# xdgo https://github.com/imomaliev/tmux-bash-completion/commits/master
-# updateMaybe tmux-bash-completion-git
+#=> tmux-bash-completion-git
+PQ tmux-bash-completion-git
+xdgo https://github.com/imomaliev/tmux-bash-completion/commits/master
+updateMaybe tmux-bash-completion-git
 

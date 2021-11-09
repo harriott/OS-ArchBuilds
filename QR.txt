@@ -222,8 +222,6 @@ hp-levels -p ENVY_5532
 hp-setup -b net 192.168.43.249  # when online
 
 ## storage
-gio trash --empty  # empties all .Trash-1000
-gio trash --list  # lists trash by locations
 GNU Parted
 /proc/filesystems - those supported by the kernel
 
@@ -234,12 +232,13 @@ GNU Parted
 $DROPBOX/JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch > rg -ttxt ft=bbcode > forum.txt
 
 #### Trash
-trash-empty
+gio trash --empty  # empties all .Trash-1000
+gio trash --list  # lists trash by locations
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
 #### trash-cli
 $Bash/bashrc-console
-trash-empty
+trash-empty  # lists before query
 
 ### rsnapshot
 $MACHINE/etc/rsnapshot.conf

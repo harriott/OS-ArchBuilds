@@ -146,14 +146,14 @@ trap read debug  # puts a read request after each executable line
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
 
-#=> Google Chrome
-cd ~/Arch/AUR
-rAUR google-chrome
-git clone https://aur.archlinux.org/google-chrome.git
-cd google-chrome
-gvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# cd ~/Arch/AUR
+# rAUR google-chrome
+# git clone https://aur.archlinux.org/google-chrome.git
+# cd google-chrome
+# gvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> gnome-disk-utility
 # sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
@@ -259,7 +259,7 @@ true
 # rAUR nordvpn-bin
 # git clone https://aur.archlinux.org/nordvpn-bin.git
 # cd nordvpn-bin
-# gvim -c "silent! /nordvpn" PKGBUILD
+# gvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
 # makepkg -sic
 # true
 
@@ -279,14 +279,14 @@ true
 # #=> OpenShot
 # sudo pacman -S openshot
 
-# #=> PDFsam
-# # depends on  jdk-openjdk
-# cd ~/Arch/AUR
-# rAUR pdfsam
-# git clone https://aur.archlinux.org/pdfsam.git
-# cd pdfsam
-# gvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic
+#=> PDFsam
+# depends on  jdk-openjdk
+cd ~/Arch/AUR
+rAUR pdfsam
+git clone https://aur.archlinux.org/pdfsam.git
+cd pdfsam
+gvim -c "silent! /torakiki" PKGBUILD
+makepkg -sic
 
 # #=> pdftk
 # sudo pacman -S pdftk

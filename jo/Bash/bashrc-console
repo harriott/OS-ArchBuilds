@@ -152,6 +152,7 @@ fdtsKS () {
 } # $1 being the keystring
 
 #==> trash-cli
+alias gte='gio trash --empty'
 alias tl='trash-list'
 alias tre='trash-restore'
 

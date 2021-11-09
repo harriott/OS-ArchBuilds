@@ -24,7 +24,7 @@ fv () {
     # find $Vs -type f -name "*$1*"
     Vss=($(find $VsLocation -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
     for Vs in "${Vss[@]}"; do
-        find $Vs -iname "*$1*"
+        find $Vs -iname "*$1*" | xcol "$1"
     done
 } # fv 'Dog Vision'
 

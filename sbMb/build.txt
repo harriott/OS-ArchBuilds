@@ -704,6 +704,13 @@ hp-makeuri 192.168.43.249
   CUPS URI: hp:/net/ENVY_5530_series?ip=192.168.43.249
   SANE URI: hpaio:/net/ENVY_5530_series?ip=192.168.43.249
 scanimage --device 'hpaio:/net/ENVY_5530_series?ip=192.168.43.249&queue=false' --format=tiff --mode Color -p --resolution 300 > scanimage-test.tiff
+lpinfo -m | grep 5530
+  drv:///hp/hpcups.drv/hp-envy_5530_series.ppd HP Envy 5530 Series, hpcups 3.21.8
+  lsb/usr/HP/hp-envy_5530_series.ppd.gz HP Envy 5530 Series, hpcups 3.21.8
+hp-setup 192.168.43.249 > Next > Add Printer
+hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control > Set as Default
+lpr /usr/share/cups/data/testprint
+## waiting - CUPS Socket activation
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
