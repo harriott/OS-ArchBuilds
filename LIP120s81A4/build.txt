@@ -192,6 +192,12 @@ gpg --list-keys
   gpg: directory '/home/jo/.gnupg' created
   gpg: keybox '/home/jo/.gnupg/pubring.kbx' created
   gpg: /home/jo/.gnupg/trustdb.gpg: trustdb created
+lsblk -l  indicated  sudo mount /dev/sdb1 /au
+### import 842A4DEE13F327EF
+in  /au/secure/  gpg --import sprbMbArch-private.asc > passphrase
+## password-store
+lsblk -l  indicated  sudo mount /dev/sdb1 /au
+in  /au/secure/  cp password-store ~/.password-store
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
 KDTG311281  for  rsnapshot

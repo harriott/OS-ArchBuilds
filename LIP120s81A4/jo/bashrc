@@ -1,16 +1,10 @@
 # vim: fdl=1 ft=sh sw=2:
 
 # ~/.bashrc in an Arch install on my LIP120s81A4 system
-
-# Joseph Harriott
-# source ~/.bashrc if you've changed something here...
+# symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
 #=> load the rest of my bashrc
-source ~/.bashrc-generic  # useful everywhere, including root
-source ~/.bashrc-console  # useful also in Console as user
-source $Bash/bashrc-email  # can be used before WM
-source $Bash/bashrc-wm
-source $Bash/bashrc-ob  # useful in Openbox
+source $Bash/bashrc
 

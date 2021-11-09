@@ -3,11 +3,11 @@
 
 # logged in as user
 
-#=> 0 before ~/.export-storage defined
-ARCHBUILDS=$HOME/ArchBuilds
-  Bash=$ARCHBUILDS/jo/Bash
-  MACHINE=$ARCHBUILDS/$(uname -n)
-    echo '$MACHINE' "= $MACHINE"
+# #=> 0 before ~/.export-storage defined
+# ARCHBUILDS=$HOME/ArchBuilds
+#   Bash=$ARCHBUILDS/jo/Bash
+#   MACHINE=$ARCHBUILDS/$(uname -n)
+#     echo '$MACHINE' "= $MACHINE"
 
 #=> 1 Bash
 # sort this list by last use of "~":  :sort /,*\~/
@@ -26,19 +26,19 @@ ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
 # #=> 0 Bash - mouse wheel
 # ln -sf $ARCHBUILDS/jo/xbindkeysrc ~/.xbindkeysrc
 
-#=> 1 Git
-ln -sf $MACHINE/jo/gitconfig ~/.gitconfig  # points to $ITstack/gitconfig
+# #=> 1 Git
+# ln -sf $MACHINE/jo/gitconfig ~/.gitconfig  # points to $ITstack/gitconfig
 
-#=> 1 vims
-ln -sf $MACHINE/jo/gvimrc ~/.gvimrc
-ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
+# #=> 1 vims
+# ln -sf $MACHINE/jo/gvimrc ~/.gvimrc
+# ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 
-[ -d ~/.config/nvim ] || mkdir -p ~/.config/nvim
-ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
+# [ -d ~/.config/nvim ] || mkdir -p ~/.config/nvim
+# ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
-#=> 2 visual check
-find ~ -mindepth 1 -maxdepth 3 -type l -ls
+# #=> 2 visual check
+# find ~ -mindepth 1 -maxdepth 3 -type l -ls
 
-#=> 2 if first build
-echo "now  relogin  (and don't allow startx!)"
+# #=> 2 if first build
+# echo "now  relogin  (and don't allow startx!)"
 

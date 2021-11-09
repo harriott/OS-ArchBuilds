@@ -1,0 +1,11 @@
+# vim: fdl=1 ft=sh sw=2:
+
+# sourced by  $MACHINE/jo/Bash/bashrc
+
+#=> load the rest of my bashrc
+source ~/.bashrc-generic  # useful everywhere, including root
+source ~/.bashrc-console  # useful also in Console as user
+source $Bash/bashrc-email  # can be used before WM
+source $Bash/bashrc-wm
+source $Bash/bashrc-ob  # useful in Openbox
+
