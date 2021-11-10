@@ -3,7 +3,7 @@ vim: ft=build:
 Lenovo IdeaPad 120s 81A4 = LIP120S-81A4 = LIP120s81A4
 
 # before Dropbox, prepare K8GBDTIG3
-cp -f $ITstack/unix_like/LIP120s81A4-iwctl.sh /run/media/jo/K8GBDTIG3
+cp -f $ITstack/unix_like-GNULinux/iwctl-connect.sh /run/media/jo/K8GBDTIG3
 rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
 rsync -irtv --delete --modify-window=1 $core/ /run/media/jo/K8GBDTIG3/core
 # build
@@ -59,7 +59,7 @@ gdisk /dev/mmcblk0 >
   w > y
 #### K8GBDTIG3
 K8GBDTIG3 loaded with  ArchBuilds plugged into right USB socket
-mkdir /bs   mount /dev/sdb /bs   cd /bs   bash LIP120s81A4-iwctl.sh
+mkdir /bs   mount /dev/sdb /bs   cd /bs   bash iwctl-connect.sh
   ping -c 3 -n google.com
 cd /bs/ArchBuilds/build-scripts
 bash 01-as_root-efi-to_chroot.sh
@@ -122,7 +122,7 @@ sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /mnt
 ### update /ArchBuilds
 #### mount partition KDTG311282 containing  core
 blkid indicates  mount /dev/sda2 /mnt
-bash /mnt/core/IT_stack/unix_like/LIP120s81A4-iwctl.sh  got me online
+bash /mnt/core/IT_stack/unix_like-GNULinux/iwctl-connect.sh  got me online
 cd /; bash ArchBuilds/build-scripts/03-cloneArchBuilds.sh; cd ArchBuilds/build-scripts
 ### rsyncBackup.sh
 booted to  archlinux-2021.09.01-x86_64.iso  on  K8GBDT100  in left USB socket

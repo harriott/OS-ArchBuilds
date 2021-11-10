@@ -10,8 +10,8 @@ echo $ARCHBUILDS
 #=> pkgconf
 pacman -S pkgconf
 
-# #=> software - android-tools
-# pacman -S android-tools
+#=> software - android-tools
+pacman -S android-tools
 
 #=> softwares - documenting
 # Ghostscript
@@ -53,7 +53,7 @@ pacman -S iscan
 pacman -S pulsemixer
 
 # #=> softwares - networking iw
-# # iw - might be there already
+# # made redundant by  $ITstack/unix_like-GNULinux/iwctl-connect.sh
 # pacman -S iw
 
 #=> softwares - networking
@@ -72,7 +72,7 @@ pacman -S mailcap
 # Transmission
 pacman -S transmission-qt
 
-#=> softwares - Openbox environment 1
+#=> softwares - Openbox environment
 # configure Openbox
 pacman -S lxappearance-obconf obconf
 
