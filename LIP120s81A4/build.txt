@@ -187,15 +187,19 @@ bash 24-as_root-rsnapshot_automated.sh
 ## configure jo
 bash 25-configure_jo.sh
 bash 26-tmux.sh
-## GnuPG keys
+## Updates
+:: Import PGP key 1736C918F59A5673, "Alexander Epaneshnikov <alex19ep@archlinux.org>"? [Y/n]
+## prepare for Softwares
+bash 27-prepare_forSoftwares.sh
+### GnuPG keys
 gpg --list-keys
   gpg: directory '/home/jo/.gnupg' created
   gpg: keybox '/home/jo/.gnupg/pubring.kbx' created
   gpg: /home/jo/.gnupg/trustdb.gpg: trustdb created
 lsblk -l  indicated  sudo mount /dev/sdb1 /au
-### import 842A4DEE13F327EF
+#### import 842A4DEE13F327EF
 in  /au/secure/  gpg --import sprbMbArch-private.asc > passphrase
-## password-store
+### password-store
 lsblk -l  indicated  sudo mount /dev/sdb1 /au
 in  /au/secure/  cp password-store ~/.password-store
 # physical configuration

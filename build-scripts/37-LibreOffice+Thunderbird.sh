@@ -12,10 +12,10 @@ libreoffice  # first-run of LibreOffice - close it
 #=> 0 Thunderbird 0 install
 sudo pacman -S thunderbird-i18n-en-gb
 thunderbird  # generates a dummy Profile, not to be hereafter used
-sed -i '/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s/Path=.*/Path=\/mnt\/SD480GSSDPlus\/Dropbox\/JH\/T78-default-release/ }' ~/.thunderbird/profiles.ini  # requires Thunderbird not to be running
-thunderbird  # (default-release) > Start
 
-#=> 0 Thunderbird 0 remove
+#=> 0 Thunderbird 1 T91-default-release
+sed -i '/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s/Path=.*/Path=\/mnt\/SD480GSSDPlus\/Dropbox\/JH\/T91-default-release/ }' ~/.thunderbird/profiles.ini  # requires Thunderbird not to be running
+thunderbird  # (default-release) > Start
 
 # #=> 1 LibreOffice configurations
 # trap - debug  # turn off debug

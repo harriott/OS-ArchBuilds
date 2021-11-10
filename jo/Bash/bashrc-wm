@@ -2,22 +2,6 @@
 
 # stuff that's useful when a Window Manager is installed
 
-aet () {
-  export a="$1"
-  trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
-  duration=$(ffprobe -i "$a" -show_format -v quiet | sed -n 's/duration=//p')
-  trimmed=$(echo "$duration-$trim" | bc)
-  ffmpeg -i "$a" -c copy -t $trimmed -y "t$a"
-  mpv --start=-3 "t$a"
-} # aet <anAudioFileToTrimOffEnd> <trimIfGreaterThan1second>
-abt () {
-  export a="$1"
-  trim=1
-  ffmpeg -ss $trim -i "$a" -c copy -y "t$a"
-  mpv --end=3 "t$a"
-} # abt <anAudioFileToTrimOffBeginning>
-# mv "t$a" "$a"
-
 alias xc="zathura -P 38 $IThandy/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
 
 fv () {
@@ -45,6 +29,25 @@ ltx () {
   sed -i 's/\\subsubsection{/            /' $s
   sed -i 's/}//' $s
 }
+
+#=> audio trimming
+aet () {
+  export a="$1"
+  trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
+  duration=$(ffprobe -i "$a" -show_format -v quiet | sed -n 's/duration=//p')
+  trimmed=$(echo "$duration-$trim" | bc)
+  ffmpeg -i "$a" -c copy -t $trimmed -y "t$a"
+  mpv --start=-3 "t$a"
+} # aet <anAudioFileToTrimOffEnd> <trimIfGreaterThan1second>
+
+abt () {
+  export a="$1"
+  trim=1
+  ffmpeg -ss $trim -i "$a" -c copy -y "t$a"
+  mpv --end=3 "t$a"
+} # abt <anAudioFileToTrimOffBeginning>
+
+# mv "t$a" "$a"
 
 #=> CUPS
 alias lpd='lpstat -p -d'
