@@ -21,7 +21,7 @@ set +v
 if [ $host = "LIP120s81A4" ]; then
   sudo pacman -Scc  # empty completely
 else
-  sudo paccache -r  # reduce to last 3 versions
+  sudo paccache -qr  # reduce to last 3 versions
 fi
 
 #=> 4 AURs
