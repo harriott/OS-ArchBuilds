@@ -3,6 +3,8 @@
 
 #=> 0 ARCHBUILDS
 ARCHBUILDS=/ArchBuilds
+AB=/home/jo/ArchBuilds
+[[ -d $AB ]] && ARCHBUILDS=$AB
 AB=/mnt/SD480GSSDPlus/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
 [[ -d $AB ]] && ARCHBUILDS=$AB
 
