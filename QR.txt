@@ -208,6 +208,7 @@ HP ENVY 5532: d0:bf:9c:a2:2f:0e
 
 ## graphics card details
 glxinfo
+lspci -vnn | grep VGA -A 10 | xcol Intel size VGA
 lspci -vnn | grep VGA -A 12 | xcol Radeon size VGA
 sudo lshw -C display | xcol Radeon size VGA
 

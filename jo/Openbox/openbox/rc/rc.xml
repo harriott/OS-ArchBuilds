@@ -67,6 +67,7 @@
 </placement>
 
 <theme>
+  <!-- theme can also be selected from obconf - JH -->
   <name>Thebear</name>
   <titleLayout>NLIMC</titleLayout>
   <!--
