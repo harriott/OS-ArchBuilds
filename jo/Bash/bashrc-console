@@ -35,6 +35,8 @@ sp (){ PS1='\[\e[1;34m\][\W]\$\[\e[0m\] ';}
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
 
+locx () { locate $1 | xcol $1; }
+
 #==> Git
 alias ga='git add'
 alias gis='git status -u'
@@ -99,6 +101,7 @@ fdtsAll () {
 
 #==> time-sorted lists of files - by extension
 alias fx='fdtsExt'
+# fx gfm
 # fx gitignore
 
 fdtsExt () {
@@ -143,9 +146,10 @@ ctfp () {
 export printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
 
 fdtsKS () {
-  echo "vim: nowrap tw=0:" > $2
+  echo "vim: ft=ftlist nowrap tw=0:" > $2
   echo "" >> $2
   echo $PWD >> $2
+  echo "" >> $2
   eval "find -iname \"$1\" $printfDTsort >> $2"
   echo "" >> $2
   echo "results are in $2"

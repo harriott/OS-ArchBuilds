@@ -24,13 +24,13 @@ trap read debug  # puts a read request after each executable line
 # # for nnn -r
 # cd ~/Arch/AUR
 # rAUR advcp
-# git clone https://aur.archlinux.org/advcp.git
+# trizen -G advcp
 # cd advcp
-# gvim PKGBUILD
+# gvim -c "silent! /advcp" PKGBUILD
 # # requires Pádraig Brady's key
-# makepkg -sic
+# makepkg -sic  # takes a long time
 
-# #=> 1 nnn plugins
+#=> 1 nnn plugins
 [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 

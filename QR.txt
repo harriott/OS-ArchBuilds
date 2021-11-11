@@ -181,9 +181,9 @@ cd /usr/share/fonts; $ fd -L consolas
 
 ## Fontconfig
 cd /etc/fonts  # to explore the configuration files
-fc-cache -f  # regenerates the cache
 fc-list | grep Lohit
-fc-list | grep ubuntu
+fc-list -v ubuntu
+sudo fc-cache -f  # regenerates the cache
 
 ### fc-scan
 fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf
@@ -472,7 +472,15 @@ C-a } = swap-pane -D
 
 ## urxvt
 Alt+s --> urxvt-searchable-scrollback
+appres urxvt
 rxvt-unicode
+
+## test fonts
+Ctrl-Shift-leftClick
+gets weird sizes, and doesn't work in tmux
+printf '\e]710;%s\007' "xft:Hack:Bold:pixelsize=12"
+printf '\e]710;%s\007' "xft:UbuntuMono:Bold:pixelsize=12"
+printf '\e]710;%s\007' "xft:Consolas:Bold:pixelsize=12"
 
 ## virtual consoles
 $TERM is set to 'linux'

@@ -202,6 +202,7 @@ in  /au/secure/  gpg --import sprbMbArch-private.asc > passphrase
 ### password-store
 lsblk -l  indicated  sudo mount /dev/sdb1 /au
 in  /au/secure/  cp password-store ~/.password-store
+## waiting - appres
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
 KDTG311281  for  rsnapshot

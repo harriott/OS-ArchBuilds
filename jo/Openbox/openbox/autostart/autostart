@@ -20,10 +20,16 @@
 # my additions
 # ------------
 # this file is symlinked to  ~/.config/openbox/autostart
+#  in  my  $ARCHBUILDS/build-scripts/34-symlinks-Openbox.sh
 
 conky -c $ARCHBUILDS/jo/Openbox/conkyrc
 copyq & # because CopyQ's internal Autostart doesn't work
-dropbox &
+
+# dropbox
+# dropbox &
+DBSESSIONID=$(dbus-daemon --session --print-address --fork)
+DBUS_SESSION_BUS_ADDRESS=$DBSESSIONID snixembed --fork
+DBUS_SESSION_BUS_ADDRESS=$DBSESSIONID dropbox &
 
 # gvim -geometry +670+0 &  # opens right-side of a 1440x900
 gvim -geometry +760+0 &  # opens just left of Conky on 1920x1080 screen

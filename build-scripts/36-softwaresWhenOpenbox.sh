@@ -76,6 +76,16 @@ trap read debug  # puts a read request after each executable line
 # #=> 1 SANE
 # sudo pacman -S sane
 
+#=> 1 snixembed-git
+# to get Dropbox icon down into tint2
+cd ~/Arch/AURdev-clone
+rAUR snixembed-git
+trizen -G snixembed-git
+cd snixembed-git
+gvim -c "silent! /https:\/\/git.sr.ht\/~steef\/snixembed" PKGBUILD
+makepkg -sic
+cd ~
+
 # #=> 1 sxiv
 # sudo pacman -S sxiv
 

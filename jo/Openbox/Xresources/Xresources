@@ -12,7 +12,7 @@ Xft.rgba: rgb
 ! ------------
 ! ------------
 
-! After changes here, either quit & restart X or  ! xrdb $MACHINE/jo/Xresources
+! After changes here, either quit & restart X or  xrdb $MACHINE/jo/Xresources
 ! apostrophes in comments can trigger warnings, so dont use them
 
 ! ------------
@@ -45,10 +45,11 @@ URxvt.clipboard.autocopy: true
 
 ! Consolas
 ! URxvt.font: xft:consolas:size=10 ! seems to be the minimum size
+! wider than Ubuntu...
 
-! Hack - very nice, about 20% shorter than Ubuntu 10, and muted
+! Hack - very readable
 ! URxvt.letterSpace: -1
-! URxvt.font:     xft:hack:size=8
+! URxvt.font:     xft:hack:size=8  ! about same height as Ubuntu 9, but wider
 ! URxvt.boldFont: xft:hack:bold:size=10
 
 ! Liberation - a mess...
@@ -57,9 +58,8 @@ URxvt.clipboard.autocopy: true
 
 ! Ubuntu - my preferred
 URxvt.letterSpace: -1 ! preferred now
-URxvt.font:     xft:ubuntumono:size=10
-! URxvt.font:   xft:ubuntu mono:size=10  ! is a mess
-URxvt.boldFont: xft:ubuntumono:bold:size=10
+URxvt.font:     xft:ubuntumono:size=9
+URxvt.boldFont: xft:ubuntumono:bold:size=9
 
 ! Adobe
 ! URxvt.letterSpace: -1

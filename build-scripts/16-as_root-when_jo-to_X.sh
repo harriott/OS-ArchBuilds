@@ -49,6 +49,9 @@ ARCHBUILDS=/ArchBuilds
 # #==> softwares - appearance - Ubuntu font family
 # pacman -S ttf-ubuntu-font-family
 
+# #==> softwares - appres
+# pacman -S xorg-appres
+
 # #==> softwares - AV
 # # AlsaUtils
 # pacman -S alsa-utils
