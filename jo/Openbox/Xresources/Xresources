@@ -15,6 +15,13 @@ Xft.rgba: rgb
 ! After changes here, either quit & restart X or  xrdb $MACHINE/jo/Xresources
 ! apostrophes in comments can trigger warnings, so dont use them
 
+! These don't have any visible effect:
+xman*directoryFontNormal: -*-ubuntumono-*-r-*-*-*-120-*-*-*-*-*-*
+xman*manualFontNormal:    -*-ubuntumono-*-r-*-*-*-120-*-*-*-*-*-*
+! - even though:
+!  $ appres xman  shows that they are set
+!  $ xman -notopbox &  still reports conversion error
+
 ! ------------
 ! rxvt-unicode
 ! ------------

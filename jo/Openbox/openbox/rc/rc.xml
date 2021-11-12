@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vim: fdl=1 sw=2:
      my changes are commented like this - JH
-     I symlink this copy to  ~/.config/openbox/rc.xml
+     in my  31-symlinks-Openbox.sh, I symlink this copy to  ~/.config/openbox/rc.xml
      reconfigure  after making changes here -->
 
 <!-- Based on  /etc/xdg/openbox/rc.xml  from  openbox 3.6.1-8,
@@ -363,6 +363,12 @@
   <keybind key="W-u">
     <action name="Execute">
       <command>urxvt</command>
+    </action>
+  </keybind>
+  <!-- Keybinding for xman - JH -->
+  <keybind key="W-x">
+    <action name="Execute">
+      <command>xman -notopbox</command>
     </action>
   </keybind>
   <!-- Keybinding for PrintScreen - JH -->

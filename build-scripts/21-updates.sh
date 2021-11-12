@@ -19,7 +19,7 @@ set +v
 
 #=> 3 /var/cache/pacman/pkg
 if [ $host = "LIP120s81A4" ]; then
-  sudo pacman -Scc  # empty completely
+  yes | sudo pacman -Scc  # empty completely
 else
   sudo paccache -qr  # reduce to last 3 versions
 fi

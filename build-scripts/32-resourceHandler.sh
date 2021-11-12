@@ -13,14 +13,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#==> 1 remove xdg-utils
-# because in conflict with xdg-utils-handlr
-sudo pacman -Rs xdg-utils
-
-#==> 2 xdg-utils-handlr
+#==> 1 xdg-utils-handlr
+# sudo pacman -Rs xdg-utils  can't be done as needed by  chromium  &  qt5-base
 gAUR xdg-utils-handlr
 nvim -c "silent! /handlr" PKGBUILD
-makepkg -sic
+makepkg -sic  # don't forget to allow Removal of xdg-utils
 cd ~
 
 # #=> mimeo

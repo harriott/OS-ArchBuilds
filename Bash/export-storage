@@ -11,7 +11,7 @@
 #  symlinked in  $ARCHBUILDS/build-scripts/05-root_symlinks.sh
 #  sourced by  $ARCHBUILDS/root/bash_profile
 
-# $Storage  is pre-defined in  $MACHINE/jo/export-machine
+# $Storage  is pre-defined in  $MACHINE/export-machine
 export DROPBOX=$Storage/Dropbox
 # - keep  DROPBOX  capitalised for finding it without need for $
   export core=$DROPBOX/JH/core
@@ -22,7 +22,9 @@ export DROPBOX=$Storage/Dropbox
         export vimfiles=$onGH/vimfiles
     export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
 
+# $ARCHBUILDS  being set here requires that this file be accessible in  ~
 export ARCHBUILDS=$HOME/ArchBuilds  # provisional
+# $myDrA  is pre-defined in  $MACHINE/export-machine
 if [[ $myDrA ]]; then export ARCHBUILDS=$onGH/ArchBuilds; fi  # my Dropbox is active
   export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
   export Bash=$ARCHBUILDS/jo/Bash

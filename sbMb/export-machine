@@ -1,7 +1,7 @@
 #!/bin/bash
-# vim: ft=sh:
+# vim: fdl=1 ft=sh:
 
-# here I export variables that could also be useful as root
+# machine-specific exports that could also be useful as root
 
 # for jo:
 #  symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
@@ -12,7 +12,7 @@
 
 export rsnapshot=/mnt/WD1001FALS/rsnapshot
 
-# machine-specific, for  $ARCHBUILDS/jo/export-storage
+#=> for  $ARCHBUILDS/jo/export-storage
 export myDrA=1  # my Dropbox is active
 export Storage=/mnt/SD480GSSDPlus  # where I keep stuff
 

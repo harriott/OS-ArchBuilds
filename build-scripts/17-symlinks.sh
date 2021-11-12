@@ -19,7 +19,7 @@ ln -sf $ARCHBUILDS/Bash/bashrc-generic      ~/.bashrc-generic
 ln -sf $ARCHBUILDS/Bash/GNUReadline-inputrc ~/.inputrc
 ln -sf $MACHINE/export-machine              ~/.export-machine
 ln -sf $ARCHBUILDS/Bash/export-storage      ~/.export-storage
-ln -sf $Bash/export-storage                 ~/.export-storage-user
+ln -sf $Bash/export-jo                      ~/.export-jo
 ln -sf $ARCHBUILDS/jo/xinitrc               ~/.xinitrc # calls $MACHINE/jo/Xresources
 ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
 

@@ -1,0 +1,18 @@
+#!/bin/bash
+# vim: fdl=1 ft=sh:
+
+# called by  $Bash/export-jo
+# Used in  $Openbox/openbox/autostart/urxvtl.sh
+
+#=> set geometry for monitor
+# open urxvt from left of screen, allowing room for 106 column gVim
+
+# export urxvtGeometry='92x54+0+0'  # 1440x900 screen
+
+# 1920x1080 screen:
+# export urxvtGeometry='105x67+0+0'  # urxvt -geometry '105x67+0+0' &
+export urxvtGeometry='105x78+0+0'  # urxvt -geometry '105x78+0+0' &
+
+#=> start with session 1
+export tmuxStartSession='new -s 1'
+

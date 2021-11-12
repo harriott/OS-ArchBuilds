@@ -1,9 +1,15 @@
 #!/bin/sh
-# vim: ft=sh sw=2:
+# vim: fdl=1 ft=sh sw=2:
 
-# symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
+# ~/.export-jo
+#  depends on  $ARCHBUILDS/Bash/export-storage
 #  sourced by  $Bash/bash_profile
+#  symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
 
+export MANPATH=/usr/share/man/
+uG=$MACHINE/jo/Bash/export-urxvt; [[ -f $uG ]] && . $uG
+
+#=> 1 storage
 # here I'm taking care to avoid variables that only differ by case
 
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
@@ -17,5 +23,4 @@ export Openbox=$ARCHBUILDS/jo/Openbox
 export PAPERSIZE=A4
 export SE=$DROPBOX/JH/CforWork/Education/Science-Engineering  # for notes
 export vimfiles=$onGH/vimfiles
-uG=$MACHINE/jo/Bash/export-urxvtGeometry; [[ -f $uG ]] && . $uG
 

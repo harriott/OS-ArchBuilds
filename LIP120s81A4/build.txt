@@ -209,6 +209,9 @@ su > root pw for  bash 29-as_root-toOpenbox.sh
 bash 30-toOpenbox.sh
 bash 31-symlinks-Openbox.sh
 bash 32-resourceHandler.sh
+## X
+startx  reports that  /etc/X11/xinit/xserverrc  can't find  /usr/bin/X
+  sudo pacman -S xorg-server
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

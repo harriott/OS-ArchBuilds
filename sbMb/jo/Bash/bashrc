@@ -13,6 +13,7 @@ omc() # OBS mkv grabs convert
     cd $VsLocation/OBSmkvGrabs
     echo "(moved to $PWD to run OBSmkvShrink.sh)"
     bash shrink.sh
+    fin
 }
 
 #=> load the rest of my bashrc

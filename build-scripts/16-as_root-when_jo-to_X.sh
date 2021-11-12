@@ -34,25 +34,16 @@ ARCHBUILDS=/ArchBuilds
 #=> 1 when X
 # wanted
 
-# #==> monitor settings
-# # disable DPMS
-# [ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
-# cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
-
-# #==> python-pew
-# pacman -S python-pew
-# pacman -Rs python-pew
-
-# #==> softwares - appearance - hicolor-icon-theme
+# #==> appearance - hicolor-icon-theme
 # pacman -S hicolor-icon-theme
 
-# #==> softwares - appearance - Ubuntu font family
+# #==> appearance - Ubuntu font family
 # pacman -S ttf-ubuntu-font-family
 
-# #==> softwares - appres
+# #==> appres
 # pacman -S xorg-appres
 
-# #==> softwares - AV
+# #==> AV
 # # AlsaUtils
 # pacman -S alsa-utils
 
@@ -66,23 +57,28 @@ ARCHBUILDS=/ArchBuilds
 # # PulseAudio
 # pacman -S pulsemixer
 
-# #==> softwares - AV remove PulseAudio
+# #==> AV remove PulseAudio
 # # removal step 1 (also removes pulseaudio-alsa)
 # pacman -Rs zoom
 # # removal step 1 (also removes pulseaudio)
 # pacman -Rs pulsemixer
 
-# #==> softwares - file manage
+# #==> file manage
 # # fzy
 # pacman -S fzy
 
 # # shfmt (for bat-extras-git)
 # pacman -S shfmt
 
-# #==> softwares - file manage - rsnapshot install
+# #==> file manage - rsnapshot install
 # pacman -S rsnapshot
 
-# #==> softwares - networking
+# #==> monitor settings
+# # disable DPMS
+# [ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
+# cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
+
+# #==> networking
 # # DNS Lookup utility
 # pacman -S bind-tools
 
@@ -98,10 +94,14 @@ ARCHBUILDS=/ArchBuilds
 # # Secure Shell
 # pacman -S openssh
 
-# #==> softwares - networking - LastPass CLI
+# #==> networking - LastPass CLI
 # pacman -S lastpass-cli
 
-# #==> softwares - system
+# #==> python-pew
+# pacman -S python-pew
+# pacman -Rs python-pew
+
+# #==> system
 # # espeak-ng-espeak & termdown
 # pacman -S espeak-ng-espeak termdown
 
@@ -114,6 +114,9 @@ ARCHBUILDS=/ArchBuilds
 # #==> xautomation
 # # for mouse middle click
 # pacman -S xautomation
+
+#==> xman
+pacman -S xorg-xman
 
 #=> 1 when X - vimish
 # wanted
