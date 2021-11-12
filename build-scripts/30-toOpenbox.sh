@@ -7,17 +7,18 @@ trap read debug  # puts a read request after each executable line
 
 # rAUR  is defined in $Bash/bashrc-console
 
-#=> 0 ATI install
-sudo pacman -S xf86-video-ati  # should probably reboot
+# #=> 0 ATI install
+# sudo pacman -S xf86-video-ati  # should probably reboot
 
-#=> 0 for Dunst
-mkdir -p ~/.config/dunst
+# #=> 0 for Dunst
+# mkdir -p ~/.config/dunst
 
-#=> 0 generate 00-keyboard.conf
-sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
+# #=> 0 generate 00-keyboard.conf
+# sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
 
-#=> 0 Intel video driver
-sudo pacman -S mesa xf86-video-intel  # will need to reboot
+# #=> 0 Intel video driver
+# # mesa should already be there
+# sudo pacman -S xf86-video-intel  # will need to reboot
 
 # #=> 0 Nouveau install
 # # for NVIDIA (mesa might've been there already)
@@ -35,7 +36,7 @@ sudo pacman -S mesa xf86-video-intel  # will need to reboot
 # rAUR nvidia-utils-beta
 # git clone https://aur.archlinux.org/nvidia-utils-beta.git
 # cd nvidia-utils-beta
-# nvim PKGBUILD # or check it online
+# nvim PKGBUILD
 # makepkg -sic
 
 # #=> 0 NVIDIA beta install 1
@@ -43,38 +44,39 @@ sudo pacman -S mesa xf86-video-intel  # will need to reboot
 # rAUR nvidia-beta
 # git clone https://aur.archlinux.org/nvidia-beta.git
 # cd nvidia-beta
-# nvim PKGBUILD # or check it online
+# nvim PKGBUILD
 # makepkg -sic
 
-#=> 0 Openbox configuration folders
-mkdir ~/.config/openbox
-mkdir ~/.config/obmenu-generator
+# #=> 0 Openbox configuration folders
+# mkdir ~/.config/openbox
+# mkdir ~/.config/obmenu-generator
 
-#=> 0 openbox-themes
-cd ~/Arch/AUR
-rAUR openbox-themes
-trizen -G openbox-themes
-cd openbox-themes
-nvim PKGBUILD # or check it online
-makepkg -sic
+# #=> 0 openbox-themes
+# cd ~/Arch/AUR
+# rAUR openbox-themes
+# trizen -G openbox-themes
+# cd openbox-themes
+# nvim PKGBUILD
+# nvim -c "silent! /http:\/\/ftp.debian.org\/debian\/pool\/main\/o\/openbox-themes\/openbox-themes" PKGBUILD
+# makepkg -sic
 
-#=> 0 for urxvt
-mkdir -p ~/.urxvt
+# #=> 0 for urxvt
+# mkdir -p ~/.urxvt
 
-#=> 0 xorg-xkbprint
-# for keyboard maps
-cd ~/Arch/AUR
-rAUR xorg-xkbprint
-trizen -G xorg-xkbprint
-cd xorg-xkbprint
-nvim PKGBUILD # or check it online
-makepkg -sic
+# #=> 0 xorg-xkbprint
+# # for keyboard maps
+# cd ~/Arch/AUR
+# rAUR xorg-xkbprint
+# trizen -G xorg-xkbprint
+# cd xorg-xkbprint
+# nvim -c "silent! /individual" PKGBUILD
+# makepkg -sic
 
-#=> 0 xrandr
-sudo pacman -S xorg-xrandr
+# #=> 0 xrandr
+# sudo pacman -S xorg-xrandr
 
 #=> 1 importScreenshot.sh
-cp $ARCHBUILDS/jo/Openbox/openbox/importScreenshot.sh ~/.config/openbox/importScreenshot.sh
+cp $Openbox/openbox/rc/importScreenshot.sh ~/.config/openbox/importScreenshot.sh
 chmod 755 ~/.config/openbox/importScreenshot.sh
 
 #=> 1 intel-media-driver
@@ -100,7 +102,7 @@ sudo pacman -S perl-data-dump
 cd ~/Arch/AUR
 trizen -G obmenu-generator
 cd perl-linux-desktopfiles
-nvim PKGBUILD # or check it online
+nvim PKGBUILD
 makepkg -sic
 
 #=> 2 obmenu-generator
@@ -108,7 +110,7 @@ cd ~/Arch/AUR
 rAUR obmenu-generator
 trizen -G obmenu-generator
 cd obmenu-generator
-nvim -c "silent! /trizen" PKGBUILD # or check it online
+nvim -c "silent! /trizen" PKGBUILD
 makepkg -sic
 nvim -geom 200 -O /etc/xdg/obmenu-generator/schema.pl $Openbox/openbox/schema.pl
 
