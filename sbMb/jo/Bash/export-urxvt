@@ -4,7 +4,7 @@
 # called by  $Bash/export-jo
 # Used in  $Openbox/openbox/autostart/urxvtl.sh
 
-#=> set geometry for monitor
+#=> set geometry appropriate for monitor
 # open urxvt from left of screen, allowing room for 106 column gVim
 
 # export urxvtGeometry='92x54+0+0'  # 1440x900 screen
