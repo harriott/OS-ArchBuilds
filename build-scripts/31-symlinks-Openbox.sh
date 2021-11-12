@@ -6,7 +6,7 @@
 #=> symlinks for Openbox itself
 
 ln -sf $Openbox/openbox/schema.pl ~/.config/obmenu-generator/schema.pl
-e -la ~/.config/obmenu-generator/schema.pl
+exa -la ~/.config/obmenu-generator/schema.pl
 
 # sort by last use of "~":  :sort /,*\~/
 
@@ -15,5 +15,5 @@ ln -sf $Openbox/openbox/rc/importScreenshot.sh ~/.config/openbox/importScreensho
 ln -sf $Openbox/openbox/menu.xml               ~/.config/openbox/menu.xml
 ln -sf $Openbox/openbox/rc/rc.xml              ~/.config/openbox/rc.xml
 
-e -la ~/.config/openbox
+exa -la ~/.config/openbox
 
