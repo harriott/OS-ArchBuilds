@@ -12,6 +12,9 @@ trap read debug  # puts a read request after each executable line
 # rAUR  is defined in $Bash/bashrc-console
 
 # #=> bat-extras-git
+
+# rewrite gctm for trizen -G
+
 # cd ~/Arch/AURdev-clone
 # rAUR bat-extras-git
 # git clone https://aur.archlinux.org/bat-extras-git.git

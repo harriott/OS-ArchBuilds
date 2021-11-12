@@ -1,11 +1,13 @@
 #!/bin/bash
+# vim: sw=2:
 
-# bash <thisfile>.sh
+# bash 30-toOpenbox.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 # rAUR  is defined in $Bash/bashrc-console
+gAUR () { cd ~/Arch/AUR; rAUR $1; trizen -G $1; cd $1; }
 
 # #=> 0 ATI install
 # sudo pacman -S xf86-video-ati  # should probably reboot
@@ -75,12 +77,9 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 xrandr
 # sudo pacman -S xorg-xrandr
 
-#=> 1 importScreenshot.sh
-cp $Openbox/openbox/rc/importScreenshot.sh ~/.config/openbox/importScreenshot.sh
-
-#=> 1 intel-media-driver
-# for  VA-API
-sudo pacman -S intel-media-driver
+# #=> 1 intel-media-driver
+# # for  VA-API
+# sudo pacman -S intel-media-driver
 
 # #=> 1 libva-mesa-driver
 # # for  VA-API
@@ -92,24 +91,26 @@ sudo pacman -S intel-media-driver
 # sed -i '/window.active.border.color:/ s/#000000/#FF8000/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 # sed -i '/^border.width:/ s/1/2/' ~/.local/share/themes/LomaJH/openbox-3/themerc
 
-#=> 1 perl-data-dump
-# for  obmenu-generator
-sudo pacman -S perl-data-dump
+# #=> 1 perl-data-dump
+# # for  obmenu-generator
+# sudo pacman -S perl-data-dump
 
 #=> 1 perl-linux-desktopfiles
 # for  obmenu-generator
-cd ~/Arch/AUR
-trizen -G obmenu-generator
-cd perl-linux-desktopfiles
-nvim PKGBUILD
+gAUR perl-linux-desktopfiles
+# cd ~/Arch/AUR
+# rAUR perl-linux-desktopfiles
+# trizen -G perl-linux-desktopfiles
+# cd perl-linux-desktopfiles
+nvim -c "silent! /trizen" PKGBUILD
 makepkg -sic
 
 #=> 2 obmenu-generator
-cd ~/Arch/AUR
-rAUR obmenu-generator
-trizen -G obmenu-generator
-cd obmenu-generator
+gAUR obmenu-generator
+# cd ~/Arch/AUR
+# rAUR obmenu-generator
+# trizen -G obmenu-generator
+# cd obmenu-generator
 nvim -c "silent! /trizen" PKGBUILD
 makepkg -sic
-nvim -geom 200 -O /etc/xdg/obmenu-generator/schema.pl $Openbox/openbox/schema.pl
 
