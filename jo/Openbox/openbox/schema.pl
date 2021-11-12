@@ -29,6 +29,7 @@ require "$ENV{HOME}/.config/obmenu-generator/config.pl";
 
 ## Text editor
 my $editor = $CONFIG->{editor};
+$editor = 'gvim';
 
 # symlinked to  ~/.config/obmenu-generator/schema.pl
 
@@ -121,11 +122,18 @@ our $SCHEMA = [
     # {item => ['xscreensaver-command -lock', 'Lock', 'system-lock-screen']},
 
     ## This option uses the default Openbox's "Exit" action
-    {exit => ['Exit', 'application-exit']},
+    # {exit => ['Exit', 'application-exit']},
+    # - I can't find  application-exit  online...
+    # {exit => ['Exit', 'openbox --exit']},
+    # - launches the same annoying exit query, and even this does:
+    # {exit => ['Exit', 'true']},
 
     ## This uses the 'oblogout' menu
     # {item => ['oblogout', 'Exit', 'application-exit']},
 
 	# attempt to get rid of query:
 	# {raw => q(<item label="Quit X"><action name="Execute"><command>openbox --exit</action</item>)},
+
+    {item => ['openbox --exit', 'Exit', 'system-file-manager']},
+
 ]
