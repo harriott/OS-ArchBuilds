@@ -208,6 +208,7 @@ bash 28-Zen.sh
 su > root pw for  bash 29-as_root-toOpenbox.sh
 bash 30-toOpenbox.sh
 bash 31-symlinks-Openbox.sh
+bash 32-resourceHandler.sh
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

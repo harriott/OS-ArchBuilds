@@ -22,7 +22,6 @@ sudo pacman -S rustup
 rustup toolchain install stable
 
 #=> 1 gpg-agent configuration
-export GPG_TTY=$(tty)  # for pinentry
 ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 
 #=> 1 Dropbox public key

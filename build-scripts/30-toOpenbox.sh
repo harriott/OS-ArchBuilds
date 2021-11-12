@@ -6,8 +6,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# rAUR  is defined in $Bash/bashrc-console
-gAUR () { cd ~/Arch/AUR; rAUR $1; trizen -G $1; cd $1; }
+# gAUR  is defined in $Bash/bashrc-console
 
 # #=> 0 ATI install
 # sudo pacman -S xf86-video-ati  # should probably reboot
@@ -34,18 +33,12 @@ gAUR () { cd ~/Arch/AUR; rAUR $1; trizen -G $1; cd $1; }
 
 # #=> 0 NVIDIA beta install 0
 # # required by nvidia-beta
-# cd ~/Arch/AUR
-# rAUR nvidia-utils-beta
-# git clone https://aur.archlinux.org/nvidia-utils-beta.git
-# cd nvidia-utils-beta
+# gAUR nvidia-utils-beta
 # nvim PKGBUILD
 # makepkg -sic
 
 # #=> 0 NVIDIA beta install 1
-# cd ~/Arch/AUR
-# rAUR nvidia-beta
-# git clone https://aur.archlinux.org/nvidia-beta.git
-# cd nvidia-beta
+# gAUR nvidia-beta
 # nvim PKGBUILD
 # makepkg -sic
 
@@ -54,11 +47,7 @@ gAUR () { cd ~/Arch/AUR; rAUR $1; trizen -G $1; cd $1; }
 # mkdir ~/.config/obmenu-generator
 
 # #=> 0 openbox-themes
-# cd ~/Arch/AUR
-# rAUR openbox-themes
-# trizen -G openbox-themes
-# cd openbox-themes
-# nvim PKGBUILD
+# gAUR openbox-themes
 # nvim -c "silent! /http:\/\/ftp.debian.org\/debian\/pool\/main\/o\/openbox-themes\/openbox-themes" PKGBUILD
 # makepkg -sic
 
@@ -67,10 +56,7 @@ gAUR () { cd ~/Arch/AUR; rAUR $1; trizen -G $1; cd $1; }
 
 # #=> 0 xorg-xkbprint
 # # for keyboard maps
-# cd ~/Arch/AUR
-# rAUR xorg-xkbprint
-# trizen -G xorg-xkbprint
-# cd xorg-xkbprint
+# gAUR xorg-xkbprint
 # nvim -c "silent! /individual" PKGBUILD
 # makepkg -sic
 
