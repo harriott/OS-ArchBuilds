@@ -206,6 +206,8 @@ in  /au/secure/  cp password-store ~/.password-store
 bash 28-Zen.sh
 ## prepare for Openbox
 su > root pw for  bash 29-as_root-toOpenbox.sh
+bash 30-toOpenbox.sh
+bash 31-symlinks-Openbox.sh
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

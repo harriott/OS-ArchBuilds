@@ -1,10 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# bash <this_script>
-
-set -v  # prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
+# bash 34-grabKeybMaps.sh
 
 #=> grab keyboard maps
 if [ -w /mm ]; then

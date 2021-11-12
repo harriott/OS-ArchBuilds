@@ -98,19 +98,11 @@ gAUR () { cd ~/Arch/AUR; rAUR $1; trizen -G $1; cd $1; }
 #=> 1 perl-linux-desktopfiles
 # for  obmenu-generator
 gAUR perl-linux-desktopfiles
-# cd ~/Arch/AUR
-# rAUR perl-linux-desktopfiles
-# trizen -G perl-linux-desktopfiles
-# cd perl-linux-desktopfiles
 nvim -c "silent! /trizen" PKGBUILD
 makepkg -sic
 
 #=> 2 obmenu-generator
 gAUR obmenu-generator
-# cd ~/Arch/AUR
-# rAUR obmenu-generator
-# trizen -G obmenu-generator
-# cd obmenu-generator
 nvim -c "silent! /trizen" PKGBUILD
 makepkg -sic
 

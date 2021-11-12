@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# bash <thisfile>
+# bash 38-as_root-symlink_fonts.sh
 
 #=> for fonts
 cfA=/usr/share/fonts/copiedForArch

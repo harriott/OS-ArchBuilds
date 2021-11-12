@@ -10,8 +10,7 @@
 
 #=> Chromium 0 
 ln -sf $MACHINE/jo/config-chromium-flags.conf ~/.config/chromium-flags.conf
-
-find ~ -mindepth 2 -maxdepth 2 -type l -ls
+find ~/.config -type l -ls | xcol chromium
 
 #=> Chromium 1 remove chromium-flags.conf - for ATI
 rm ~/.config/chromium-flags.conf
