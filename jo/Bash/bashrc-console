@@ -172,7 +172,7 @@ gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; 
 export -f gctm
 
 # get an AUR repository
-gAUR () { cd ~/Arch/AUR; rAUR $1; trizen -G $1; cd $1; }
+gAUR () { cd ~/Arch/AUR; rAUR $1; trizen -G $1; cd $1; }; export -f gAUR
 
 # remove an AUR repository if it's there
 rAUR(){ [[ -d $1 ]] && sudo rm -r $1; }; export -f rAUR
