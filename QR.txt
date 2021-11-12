@@ -449,7 +449,9 @@ journalctl -b -g 'EFI v'  # shows EFI version
 
 # term
 echo $TERM
+figlet Joseph Harriott
 neofetch
+watch -n1 "date '+%D%n%T' | figlet -k"
 
 ## termdown
 termdown --help | mo
