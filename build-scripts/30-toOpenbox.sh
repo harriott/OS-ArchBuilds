@@ -77,7 +77,6 @@ trap read debug  # puts a read request after each executable line
 
 #=> 1 importScreenshot.sh
 cp $Openbox/openbox/rc/importScreenshot.sh ~/.config/openbox/importScreenshot.sh
-chmod 755 ~/.config/openbox/importScreenshot.sh
 
 #=> 1 intel-media-driver
 # for  VA-API
