@@ -10,6 +10,7 @@ fi
 # because my config specifies ssh
   [ -d ArchBuildsOld ] && sudo rm -r ArchBuildsOld
   [ -d ArchBuilds ] && mv ArchBuilds ArchBuildsOld
-git clone https://github.com/harriott/ArchBuilds.git
+# git clone https://github.com/harriott/ArchBuilds.git
+git clone git@github.com:harriott/ArchBuilds.git
 ls ArchBuilds
 
