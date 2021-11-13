@@ -3,58 +3,12 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 limit systemd Journal size
-# # helpful for  LIP120s81A4
-# sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
-# grep SystemMaxUse /etc/systemd/journald.conf
+#=> 0 doas
+pacman -S opendoas
+cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
+chmod -c 0400 /etc/doas.conf
 
-# #=> 0 NetworkManager 1 install
-# pacman -S networkmanager
-# systemctl enable NetworkManager.service --now
-
-# #=> 0 NetworkManager 2 status
-# systemctl status NetworkManager.service | cat
-# true
-
-# #=> 0 netcat
-# pacman -S openbsd-netcat
-
-# #=> 0 Rootkit Hunter
-# pacman -S rkhunter
-# source 00-as_root-RootkitHunt.sh
-
-# #=> 0 softwares - info
-# # Bashtop
-# pacman -S bashtop  # later superseded by AUR bpytop
-
-# # htop
-# pacman -S htop
-
-# # iotop
-# pacman -S iotop
-
-# # lshw
-# pacman -S lshw
-
-# # lsof
-# pacman -S lsof
-
-# # man-db
-# pacman -S man-db
-
-# # man-pages
-# pacman -S man-pages
-
-# # Neofetch
-# pacman -S neofetch
-
-# # progress
-# pacman -S progress
-
-# # sysstat
-# pacman -S sysstat
-
-# #=> 0 softwares - file manage
+# #=> 0 file manage
 # # bat
 # pacman -S bat
 
@@ -99,6 +53,57 @@ trap read debug  # puts a read request after each executable line
 # # tree
 # pacman -S tree
 
+# #=> 0 info
+# # Bashtop
+# pacman -S bashtop  # later superseded by AUR bpytop
+
+# # htop
+# pacman -S htop
+
+# # iotop
+# pacman -S iotop
+
+# # lshw
+# pacman -S lshw
+
+# # lsof
+# pacman -S lsof
+
+# # man-db
+# pacman -S man-db
+
+# # man-pages
+# pacman -S man-pages
+
+# # Neofetch
+# pacman -S neofetch
+
+# # progress
+# pacman -S progress
+
+# # sysstat
+# pacman -S sysstat
+
+# #=> 0 limit systemd Journal size
+# # helpful for  LIP120s81A4
+# sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
+# grep SystemMaxUse /etc/systemd/journald.conf
+
+# #=> 0 NetworkManager 1 install
+# pacman -S networkmanager
+# systemctl enable NetworkManager.service --now
+
+# #=> 0 NetworkManager 2 status
+# systemctl status NetworkManager.service | cat
+# true
+
+# #=> 0 netcat
+# pacman -S openbsd-netcat
+
+# #=> 0 Rootkit Hunter
+# pacman -S rkhunter
+# source 00-as_root-RootkitHunt.sh
+
 # #=> 0 softwares - networking
 # # isync
 # pacman -S isync  # for mbsync
@@ -109,12 +114,7 @@ trap read debug  # puts a read request after each executable line
 # # Wget
 # pacman -S wget
 
-# #=> 0 softwares - system
-# # doas
-# pacman -S opendoas
-# cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
-# chmod -c 0400 /etc/doas.conf
-
+# #=> 0 system
 # # fcron
 # pacman -S fcron
 # systemctl enable fcron.service
@@ -149,12 +149,12 @@ trap read debug  # puts a read request after each executable line
 # # pkgstats
 # pacman -S pkgstats
 
-#=> 0 softwares - various
-# universal-ctags
-pacman -S ctags
+# #=> 0 various
+# # universal-ctags
+# pacman -S ctags
 
-# pass (bring in gnupg)
-pacman -S pass
+# # pass (bring in gnupg)
+# pacman -S pass
 
 # #=> 0 swappiness to 10
 # # check that the default is 60
@@ -177,8 +177,8 @@ pacman -S pass
 # until passwd jo; do echo "try again"; done
 # cat /etc/passwd
 
-#=> tmux configuration
-ln -sf $tmx/tmux.conf ~/.tmux.conf
+# #=> tmux configuration
+# ln -sf $tmx/tmux.conf ~/.tmux.conf
 
 #=> 1 end
 # you're ready to reboot and login to jo
