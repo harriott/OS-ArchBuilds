@@ -116,7 +116,6 @@ rg --no-ignore 'sometext'  # allows searching into gitignored places
 rg -ttex '\\subsubsection\{'
 rg -tmd '\$SE'
 rg -tmd '\{TNW}'
-rg -ttxt -l --sort modified 'ft=bbcode' > dts-bbcode_ft.txt
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 rg <someText>  # searches recursively in files
 

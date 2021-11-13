@@ -115,6 +115,10 @@ ARCHBUILDS=/ArchBuilds
 # # for mouse middle click
 # pacman -S xautomation
 
+#==> xinput
+# for changing libinput (touchpad) settings at runtime
+pacman -S xorg-xinput
+
 #==> xman
 pacman -S xorg-xman
 

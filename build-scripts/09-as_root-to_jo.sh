@@ -5,7 +5,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> 0 limit systemd Journal size
 # # helpful for  LIP120s81A4
-# sudo sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
+# sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
 # grep SystemMaxUse /etc/systemd/journald.conf
 
 # #=> 0 NetworkManager 1 install
@@ -63,7 +63,7 @@ trap read debug  # puts a read request after each executable line
 # broot # to generate br command
 
 # # dvd+rw-tools
-# sudo pacman -S dvd+rw-tools
+# pacman -S dvd+rw-tools
 
 # # exa
 # pacman -S exa
@@ -110,6 +110,9 @@ trap read debug  # puts a read request after each executable line
 # pacman -S wget
 
 # #=> 0 softwares - system
+# # doas
+# pacman -S opendoas
+
 # # fcron
 # pacman -S fcron
 # systemctl enable fcron.service

@@ -16,7 +16,7 @@
 ! I havent yet found a scheme that can usefully list colourised NTFS directories
 
 ! EITHER before Dropbox is up:
-include "/home/jo/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-gruvbox"
+#include "/home/jo/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-gruvbox"
 ! OR after Dropbox is up:
 ! #include "/mnt/SD480GSSDPlus/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/jo/Openbox/Xresources/colorschemes/LukeSmith-gruvbox"
 

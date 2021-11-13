@@ -12,7 +12,7 @@ updateMaybe()
     if [ $cnfrm ] && [ $cnfrm = "y" ]; then
         gctm $1
         gvim -c "silent! /$2" PKGBUILD
-        read -p "    - is the PKGBUILD good? "
+        read -p "    <Enter> if the PKGBUILD is good "
         makepkg -sic
     fi
 }

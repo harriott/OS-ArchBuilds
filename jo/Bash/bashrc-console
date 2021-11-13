@@ -123,7 +123,8 @@ fdtsExt () {
 #==> time-sorted lists of files - bbcode
 fdtsbbcode () {
   dtsfile=dts-bbcode.txt
-  eval "fdtsKS 'ft=bbcode' $dtsfile"
+  ftListHeader $dtsfile
+  rg -ttxt -l --sort modified 'ft=bbcode' >> $dtsfile
 }
 
 #==> time-sorted lists of files - by keystring in name
@@ -145,11 +146,15 @@ ctfp () {
 
 export printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
 
+ftListHeader () {
+  echo "vim: ft=ftlist nowrap tw=0:" > $1
+  echo "" >> $1
+  echo $PWD >> $1
+  echo "" >> $1
+}
+
 fdtsKS () {
-  echo "vim: ft=ftlist nowrap tw=0:" > $2
-  echo "" >> $2
-  echo $PWD >> $2
-  echo "" >> $2
+  ftListHeader $2
   eval "find -iname \"$1\" $printfDTsort >> $2"
   echo "" >> $2
   echo "results are in $2"

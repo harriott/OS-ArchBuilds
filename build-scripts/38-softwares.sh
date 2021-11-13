@@ -10,11 +10,9 @@ trap read debug  # puts a read request after each executable line
 #  use  $ARCHBUILDS/build-scripts/27-remakeAURdevs.sh  to later update them
 
 # rAUR  is defined in $Bash/bashrc-console
+#  rewrite gctm for trizen -G
 
 # #=> bat-extras-git
-
-# rewrite gctm for trizen -G
-
 # cd ~/Arch/AURdev-clone
 # rAUR bat-extras-git
 # git clone https://aur.archlinux.org/bat-extras-git.git
@@ -24,19 +22,13 @@ trap read debug  # puts a read request after each executable line
 # true
 
 # #=> bfg
-# cd ~/Arch/AUR
-# rAUR bfg
-# git clone https://aur.archlinux.org/bfg.git
-# cd bfg
+# gAUR bfg
 # gvim PKGBUILD
 # makepkg -sic
 
 # #=> bpytop
 # # supersedes  Bashtop
-# cd ~/Arch/AUR
-# rAUR bpytop
-# git clone https://aur.archlinux.org/bpytop.git
-# cd bpytop
+# gAUR bpytop
 # gvim PKGBUILD
 # makepkg -sic
 
@@ -61,10 +53,7 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs clamav-unofficial-sigs
 
 # #=> cmus-notify
-# cd ~/Arch/AUR
-# rAUR cmus-notify
-# git clone https://aur.archlinux.org/cmus-notify.git
-# cd cmus-notify
+# gAUR cmus-notify
 # gvim -c "silent! /AntoineGagne" PKGBUILD
 # makepkg -sic
 # true
@@ -77,21 +66,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 
 # #=> diskonaut
-# cd ~/Arch/AUR
-# rAUR diskonaut
-# git clone https://aur.archlinux.org/diskonaut.git
-# cd diskonaut
+# gAUR diskonaut
 # gvim -c "silent! /imsnif" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> Dropbox 0 (re)install
 # # only once there's a browser, and preferably after LastPass
-# cd ~/Arch/AUR
-# rAUR dropbox
-# git clone https://aur.archlinux.org/dropbox.git
-# cd dropbox
-# gvim -c "silent! /https:\/\/clientupdates.dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# gAUR dropbox
+# gvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
 # makepkg -sic
 # true
 
@@ -100,10 +83,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> Dust
 # # (after Rust Toolchain)
-# cd ~/Arch/AUR
-# rAUR dust
-# git clone https://aur.archlinux.org/dust.git
-# cd dust
+# gAUR dust
 # gvim -c "silent! /https:\/\/github.com\/bootandy\/" PKGBUILD
 # makepkg -sic
 
@@ -119,10 +99,7 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 
 # #=> fonts - fontpreview-git
-# cd ~/Arch/AURdev-clone
-# rAUR fontpreview-git
-# git clone https://aur.archlinux.org/fontpreview-git.git
-# gctm fontpreview-git
+# gAUR fontpreview-git
 # gvim PKGBUILD
 # makepkg -sic
 
@@ -130,10 +107,7 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S gnu-free-fonts
 
 # #=> fonts - lohit-fonts
-# cd ~/Arch/AUR
-# rAUR lohit-fonts
-# git clone https://aur.archlinux.org/lohit-fonts.git
-# cd lohit-fonts
+# gAUR lohit-fonts
 # gvim -c "silent! /_fhosted" PKGBUILD
 # makepkg -sic
 
@@ -150,10 +124,7 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S gifski  # (for making animated GIFs)
 
 # #=> Google Chrome
-# cd ~/Arch/AUR
-# rAUR google-chrome
-# git clone https://aur.archlinux.org/google-chrome.git
-# cd google-chrome
+# gAUR google-chrome
 # gvim -c "silent! /dl.google.com" PKGBUILD
 # makepkg -sic
 # true
@@ -162,10 +133,7 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
 
 # #=> gst123
-# cd ~/Arch/AUR
-# rAUR gst123
-# git clone https://aur.archlinux.org/gst123.git
-# cd gst123
+# gAUR gst123
 # gvim PKGBUILD
 # makepkg -sic
 # true
@@ -207,10 +175,7 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S mesa-demos
 
 # #=> mimeo
-# cd ~/Arch/AUR
-# rAUR mimeo
-# git clone https://aur.archlinux.org/mimeo.git
-# cd mimeo
+# gAUR mimeo
 # gvim PKGBUILD
 # makepkg -sic
 # true
@@ -226,10 +191,7 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs moar-git
 
 # #=> moar-git 1 install
-# cd ~/Arch/AURdev-clone
-# rAUR moar-git
-# git clone https://aur.archlinux.org/moar-git.git
-# gctm moar-git
+# gAUR moar-git
 # gvim -c "silent! /walles" PKGBUILD
 # makepkg -sic
 # true
@@ -246,10 +208,7 @@ trap read debug  # puts a read request after each executable line
 # true
 
 # #=> nodejs-mapscii 0 install
-# cd ~/Arch/AUR
-# rAUR nodejs-mapscii
-# git clone https://aur.archlinux.org/nodejs-mapscii.git
-# cd nodejs-mapscii
+# gAUR nodejs-mapscii
 # gvim PKGBUILD
 # makepkg -sic
 # true
@@ -258,10 +217,7 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs nodejs-mapscii
 
 # #=> nordvpn-bin 0 install
-# cd ~/Arch/AUR
-# rAUR nordvpn-bin
-# git clone https://aur.archlinux.org/nordvpn-bin.git
-# cd nordvpn-bin
+# gAUR nordvpn-bin
 # gvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
 # makepkg -sic
 # true
@@ -282,14 +238,11 @@ trap read debug  # puts a read request after each executable line
 # #=> OpenShot
 # sudo pacman -S openshot
 
-#=> PDFsam
-# depends on  jdk-openjdk
-cd ~/Arch/AUR
-rAUR pdfsam
-git clone https://aur.archlinux.org/pdfsam.git
-cd pdfsam
-gvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic
+# #=> PDFsam
+# # depends on  jdk-openjdk
+# gAUR pdfsam
+# gvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -302,19 +255,13 @@ makepkg -sic
 
 # #=> perl-clone-pp
 #  for  perl-data-printer
-# cd ~/Arch/AUR
-# rAUR perl-clone-pp
-# git clone https://aur.archlinux.org/perl-clone-pp.git
-# cd perl-clone-pp
+# gAUR perl-clone-pp
 # gvim -c "silent! /NEILB" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> perl-data-printer
-# cd ~/Arch/AUR
-# rAUR perl-data-printer
-# git clone https://aur.archlinux.org/perl-data-printer.git
-# cd perl-data-printer
+# gAUR perl-data-printer
 # gvim -c "silent! /GARU" PKGBUILD
 # makepkg -sic
 # true
@@ -323,10 +270,7 @@ makepkg -sic
 # sudo pacman -S perl-image-exiftool
 
 # #=> PhotoCollage
-# cd ~/Arch/AUR
-# rAUR photocollage
-# git clone https://aur.archlinux.org/photocollage.git
-# cd photocollage
+# gAUR photocollage
 # gvim PKGBUILD
 # makepkg -sic
 
@@ -351,10 +295,7 @@ makepkg -sic
 # sudo pacman -S python2  # needed for  oauth2.py
 
 # #=> python-fangfrisch 1 AUR
-# cd ~/Arch/AUR
-# rAUR python-fangfrisch
-# git clone https://aur.archlinux.org/python-fangfrisch.git
-# cd python-fangfrisch
+# gAUR python-fangfrisch
 # gvim -c "silent! /rseichter" PKGBUILD
 # makepkg -sic
 # true
@@ -370,20 +311,14 @@ makepkg -sic
 # sudo pacman -S quodlibet
 
 # #=> Samokovarov's jump
-# cd ~/Arch/AUR
-# rAUR jump
-# git clone https://aur.archlinux.org/jump.git
-# cd jump
+# gAUR jump
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> Spotify
-# cd ~/Arch/AUR
-# rAUR spotify
-# git clone https://aur.archlinux.org/spotify.git
-# cd spotify
-# gvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
-# makepkg -sic
+#=> Spotify
+gAUR spotify
+gvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
+makepkg -sic
 
 # #=> sqlitebrowser
 # sudo pacman -S sqlitebrowser
@@ -399,18 +334,12 @@ makepkg -sic
 # sudo pacman -Rs tint2
 
 # #=> tint2-git
-# cd ~/Arch/AUR
-# rAUR tint2-git
-# git clone https://aur.archlinux.org/tint2-git.git
-# cd tint2-git
+# gAUR tint2-git
 # gvim -c "silent! /tint2.git" PKGBUILD
 # makepkg -sic
 
 # #=> tspreed
-# cd ~/Arch/AUR
-# rAUR tspreed
-# git clone https://aur.archlinux.org/tspreed.git
-# cd tspreed
+# gAUR tspreed
 # gvim -c "silent! /n-ivkovic" PKGBUILD
 # makepkg -sic
 # true
@@ -428,10 +357,7 @@ makepkg -sic
 # sudo pacman -S youtube-dl
 
 # #=> Zoom
-# cd ~/Arch/AUR
-# rAUR zoom
-# git clone https://aur.archlinux.org/zoom.git
-# cd zoom
+# gAUR zoom
 # gvim -c "silent! /zoom.us" PKGBUILD
 # makepkg -sic
 

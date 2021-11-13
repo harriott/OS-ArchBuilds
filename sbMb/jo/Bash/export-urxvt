@@ -7,11 +7,13 @@
 #=> set geometry appropriate for monitor
 # open urxvt from left of screen, allowing room for 106 column gVim
 
-# export urxvtGeometry='92x54+0+0'  # 1440x900 screen
+# 1440x900 screen:
+# export urxvtGeometry='92x54+0+0'
 
 # 1920x1080 screen:
 # export urxvtGeometry='105x67+0+0'  # urxvt -geometry '105x67+0+0' &
-export urxvtGeometry='105x78+0+0'  # urxvt -geometry '105x78+0+0' &
+# ubuntumono 9 in $Openbox/Xresources/Xresources:
+export urxvtGeometry='122x78+0+0'  # urxvt -geometry '122x78+0+0' &
 
 #=> start with session 1
 export tmuxStartSession='new -s 1'
