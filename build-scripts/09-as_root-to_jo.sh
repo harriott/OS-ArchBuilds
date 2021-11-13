@@ -3,7 +3,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-ARCHBUILDS=/ArchBuilds
+ARCHBUILDS=/home/jo/ArchBuilds
 
 #=> 0 doas
 pacman -S opendoas
