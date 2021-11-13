@@ -8,18 +8,19 @@ ARCHBUILDS=/ArchBuilds
 #=> 0 to X
 # really needed
 
-# #==> hard drives
-# stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
+#==> hard drives
+stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
 
-# # make writable for jo
-# # chown jo:jo /mnt/9QF57J6Q
-# # chown jo:jo /mnt/SD480GSSDPlus
-# # chown jo:jo /mnt/SDEP128G
-# # chown jo:jo /mnt/ST3320418AS
-# # chown jo:jo /mnt/WD30EZRZ
+# make writable for jo
+# chown jo:jo /mnt/9QF57J6Q
+# chown jo:jo /mnt/SD480GSSDPlus
+# chown jo:jo /mnt/SDEP128G
+# chown jo:jo /mnt/ST3320418AS
+# chown jo:jo /mnt/WD30EZRZ
 
-# cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
-# updatedb
+nvim -o $MACHINE/etc/updatedb.conf /etc/updatedb.conf
+cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
+updatedb
 
 # #==> prepare for X
 # # Xorg
@@ -118,12 +119,12 @@ ARCHBUILDS=/ArchBuilds
 # # for mouse middle click
 # pacman -S xautomation
 
-#==> xinput
-# for changing libinput (touchpad) settings at runtime
-pacman -S xorg-xinput
+# #==> xinput
+# # for changing libinput (touchpad) settings at runtime
+# pacman -S xorg-xinput
 
-#==> xman
-pacman -S xorg-xman
+# #==> xman
+# pacman -S xorg-xman
 
 #=> 1 when X - vimish
 # wanted
@@ -139,10 +140,10 @@ pacman -S xorg-xman
 # # (for bash linting in xVim)
 # pacman -S shellcheck  # brings in Haskell
 
-#=> 2 automatic login to virtual console
-[ -d /etc/systemd/system/getty@tty1.service.d ] || mkdir /etc/systemd/system/getty@tty1.service.d
-cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
+# #=> 2 automatic login to virtual console
+# [ -d /etc/systemd/system/getty@tty1.service.d ] || mkdir /etc/systemd/system/getty@tty1.service.d
+# cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
 
-#=> 3 finish
-echo "now reboot"
+# #=> 3 finish
+# echo "now reboot"
 
