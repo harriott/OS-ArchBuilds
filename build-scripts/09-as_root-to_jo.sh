@@ -112,6 +112,8 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 softwares - system
 # # doas
 # pacman -S opendoas
+# cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
+# chmod -c 0400 /etc/doas.conf
 
 # # fcron
 # pacman -S fcron

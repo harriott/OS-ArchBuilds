@@ -13,7 +13,6 @@ alias l='ls --color=auto'
 # my preferences:
 # ---------------
 set -o vi
-[[ -f /root/.bashrc-generic ]] && . /root/.bashrc-generic
 [[ -f $ARCHBUILDS/Bash/bashrc-generic ]] && . $ARCHBUILDS/Bash/bashrc-generic
 
 # a colorised (bold red) prompt:

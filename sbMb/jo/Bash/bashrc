@@ -8,14 +8,15 @@
 
 export VsLocation=/mnt/ST4000VN008  # path to my video store
 
-omc() # OBS mkv grabs convert
+#=> 0 load the rest of my bashrc
+source $Bash/bashrc
+
+#=> 1 OBS mkv grabs convert
+omc()
 {
     cd $VsLocation/OBSmkvGrabs
     echo "(moved to $PWD to run OBSmkvShrink.sh)"
     bash shrink.sh
     fin
 }
-
-#=> load the rest of my bashrc
-source $Bash/bashrc
 

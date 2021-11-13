@@ -133,13 +133,15 @@ rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
 rg -ttex ^%%
 
 ### mlocate
-/etc/updatedb.conf
 bm locate
 locate -c <target>  # --count
 locate -h
 locate -r '\.conf$'
 locate -r '\.json$' | mo
-sudo updatedb
+
+#### updatedb
+/etc/updatedb.conf
+doas updatedb
 systemctl status updatedb.timer
 
 ### list symlinks

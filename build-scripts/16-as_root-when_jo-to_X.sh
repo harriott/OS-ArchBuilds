@@ -18,6 +18,9 @@ ARCHBUILDS=/ArchBuilds
 # # chown jo:jo /mnt/ST3320418AS
 # # chown jo:jo /mnt/WD30EZRZ
 
+# cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
+# updatedb
+
 # #==> prepare for X
 # # Xorg
 # pacman -S xorg-server
