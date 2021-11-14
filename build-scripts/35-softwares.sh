@@ -11,15 +11,11 @@ trap read debug  # puts a read request after each executable line
 
 # gAUR  &  rAUR  are defined in $Bash/bashrc-console
 
-#=> bat-extras-git
-gdAUR bat-extras-git
-# gAUR bat-extras-git dev-clone
-# git clone https://aur.archlinux.org/bat-extras-git.git
-# gctm bat-extras-git
-gvim -c "silent! /eth-p" PKGBUILD
-makepkg -sic
-true
-exit 0
+# #=> bat-extras-git
+# gdAUR bat-extras-git
+# gvim -c "silent! /eth-p" PKGBUILD
+# makepkg -sic
+# true
 
 #=> bfg
 gAUR bfg
@@ -64,6 +60,10 @@ git clone https://aur.archlinux.org/colorpicker.git
 cd colorpicker
 gvim PKGBUILD
 makepkg -sic
+
+#=> devtools
+sudo pacman -S devtools
+mkdir /mnt/SD480GSSDPlus/chroot
 
 #=> diskonaut
 gAUR diskonaut

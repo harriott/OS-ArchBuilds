@@ -173,8 +173,7 @@ export GPG_TTY=$(tty)  # correct TTY for GnuPG
 
 #==> for AUR packages
 # "Get Clone To Make" - for my building of AUR development packages
-gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; }
-export -f gctm
+gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; }; export -f gctm
 
 # get into an AUR repository
 gAUR () { cd "$HOME/Arch/AUR$2"; rAUR $1; trizen -G $1; cd $1; }; export -f gAUR
