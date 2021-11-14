@@ -6,25 +6,22 @@ trap read debug  # puts a read request after each executable line
 
 # gAUR  &  rAUR  are defined in $Bash/bashrc-console
 
-#=> 0 tint2rc
-gvim -geometry 200x55 -O /etc/xdg/tint2/tint2rc ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"
-killall -SIGUSR1 tint2  # reloads tint2rc
-# - should also be done if  tint2  has been updated
+# #=> 0 tint2rc
+# gvim -geometry 200x55 -O /etc/xdg/tint2/tint2rc ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"
+# killall -SIGUSR1 tint2  # reloads tint2rc
+# # - should also be done if  tint2  has been updated
 
-#=> 1 CUPS service
-sudo pacman -S cups
-sudo systemctl enable cups.service --now
+# #=> 1 CUPS service
+# sudo pacman -S cups
+# sudo systemctl enable cups.service --now
 
-#=> 1 dragon-drag-and-drop
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/dragon-drag-and-drop.git
-cd dragon-drag-and-drop
-gvim PKGBUILD
-makepkg -sic
-cd ~
+# #=> 1 dragon-drag-and-drop
+# rAUR dragon-drag-and-drop
+# gvim -c "silent! /dragon" PKGBUILD
+# makepkg -sic
 
-#=> 1 mpv
-sudo pacman -S mpv
+# #=> 1 mpv
+# sudo pacman -S mpv
 
 #=> 1 nomacs
 sudo pacman -S nomacs
