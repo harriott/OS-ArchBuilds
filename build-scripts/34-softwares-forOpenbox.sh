@@ -67,7 +67,7 @@ trap read debug  # puts a read request after each executable line
 #=> 1 snixembed-git
 # to get Dropbox icon down into tint2
 # cd ~/Arch/AURdev-clone
-gAUR snixembed-git -clone
+gAUR snixembed-git dev-clone
 # trizen -G snixembed-git
 # cd snixembed-git
 gvim -c "silent! /https:\/\/git.sr.ht\/~steef\/snixembed" PKGBUILD
