@@ -3,8 +3,12 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-ARCHBUILDS=/ArchBuilds
-ARCHBUILDS=/home/jo/ArchBuilds
+# run from root to have  $ARCHBUILDS  $MACHINE
+true
+
+# ARCHBUILDS=/ArchBuilds
+# ARCHBUILDS=/home/jo/ArchBuilds
+  # MACHINE=$ARCHBUILDS/$(uname -n)
 
 #=> 0 to X
 # really needed
