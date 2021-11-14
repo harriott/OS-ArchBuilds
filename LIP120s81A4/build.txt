@@ -217,7 +217,16 @@ bash 32-resourceHandler.sh
 ## nnn improvements
 bash 33-softwares-for_nnn.sh
 ## NetworkManager Jo-XA2
+nmcli device  reports  wlan0 disconnected
+nmcli device wifi list | cat  shows  Jo-XA2
+### activation failed
 nmcli device wifi connect Jo-XA2 password <pw>
+  Secrets were required, but not provided.
+nmcli connection show
+nmcli connection delete Jo-XA2
+## NetworkManager Jo-X10II
+nmcli device wifi list | cat  shows  Jo-XA10II
+nmcli device wifi connect Jo-XA2 password <pw>  go me connected
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

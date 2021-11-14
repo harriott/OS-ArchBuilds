@@ -11,6 +11,7 @@ Ctrl+P (= Preferences) >
   Items > Text >
     HTML off-ticked
     Maximum number of lines > 2
+  Shortcuts > Show/hide > + > Win+P
   Appearance > Theme > Forest
 
 cp $ARCHBUILDS/jo/CopyQ/readyforPasting.ini ~/readyforPasting.ini
