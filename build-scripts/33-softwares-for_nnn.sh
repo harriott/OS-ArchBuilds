@@ -37,6 +37,7 @@ trap read debug  # puts a read request after each executable line
 #=> 1 advcpmv
 # for nnn -r
 gAUR advcpmv
+sed -i 's/b41f03d01c6e51db2ab491758bee594034cc02a815c87f4c19a4fafdfdfc9bd6/93a222e380d5f318f387e79b48b5b7647cb23658f4bee3e06c73c81120a6e223/' PKGBUILD
 gvim -c "silent! /jarun\/advcpmv" PKGBUILD
 makepkg -sic  # the checks are long...
 sudo cp /usr/bin/advcp /usr/local/bin/cpg  ## cpg --help
