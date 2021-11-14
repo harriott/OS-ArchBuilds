@@ -66,13 +66,9 @@ trap read debug  # puts a read request after each executable line
 
 #=> 1 snixembed-git
 # to get Dropbox icon down into tint2
-# cd ~/Arch/AURdev-clone
 gAUR snixembed-git dev-clone
-# trizen -G snixembed-git
-# cd snixembed-git
 gvim -c "silent! /https:\/\/git.sr.ht\/~steef\/snixembed" PKGBUILD
-makepkg -sic
-cd ~
+makepkg -sic  # takes a while
 
 #=> 1 sxiv
 sudo pacman -S sxiv
@@ -81,12 +77,12 @@ sudo pacman -S sxiv
 # creates a numbered list of url's in a resource
 cd ~/Arch/AUR
 git clone https://aur.archlinux.org/urlview.git
-cd urlview
+gAUR urlview
 gvim PKGBUILD
 makepkg -sic
-cd ~
 
 #=> 1 Zathura
 sudo pacman -S zathura-pdf-mupdf
 mkdir ~/.config/zathura
+# zathurarc  will be symlinked in  38-symlinks-softwares.sh
 

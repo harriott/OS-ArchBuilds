@@ -227,6 +227,8 @@ nmcli connection delete Jo-XA2
 ## NetworkManager Jo-X10II
 nmcli device wifi list | cat  shows  Jo-XA10II
 nmcli device wifi connect Jo-XA2 password <pw>  go me connected
+## Openbox softares
+bash 34-softwares-forOpenbox.sh
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

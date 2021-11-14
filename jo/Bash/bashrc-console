@@ -176,8 +176,11 @@ export GPG_TTY=$(tty)  # correct TTY for GnuPG
 gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; }
 export -f gctm
 
-# get an AUR repository
+# get into an AUR repository
 gAUR () { cd "$HOME/Arch/AUR$2"; rAUR $1; trizen -G $1; cd $1; }; export -f gAUR
+
+# get into an AUR development repository
+gdAUR () { gAUR $1 dev-clone; gctm $1; }; export -f gdAUR
 
 # remove an AUR repository if it's there
 rAUR(){ [[ -d $1 ]] && sudo rm -r $1; }; export -f rAUR
