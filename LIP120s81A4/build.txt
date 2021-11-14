@@ -212,6 +212,10 @@ bash 32-resourceHandler.sh
 ## X
 startx  reports that  /etc/X11/xinit/xserverrc  can't find  /usr/bin/X
   sudo pacman -S xorg-server
+## handlr
+bash 32-resourceHandler.sh
+## nnn improvements
+bash 33-softwares-for_nnn.sh
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

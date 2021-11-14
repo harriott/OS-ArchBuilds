@@ -42,7 +42,7 @@ makepkg -sic  # the checks are long...
 sudo cp /usr/bin/advcp /usr/local/bin/cpg  ## cpg --help
 sudo cp /usr/bin/advmv /usr/local/bin/mvg  ## mpg --help
 
-# #=> 2 nnn plugins
-# [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
-# curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+#=> 2 nnn plugins
+[[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
