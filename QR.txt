@@ -347,6 +347,7 @@ nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
 nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
 sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
 sudo ls /etc/NetworkManager/system-connections/
+systemctl status NetworkManager
 
 # Openbox
 $Openbox/openbox/autostart

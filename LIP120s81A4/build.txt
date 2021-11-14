@@ -216,6 +216,8 @@ startx  reports that  /etc/X11/xinit/xserverrc  can't find  /usr/bin/X
 bash 32-resourceHandler.sh
 ## nnn improvements
 bash 33-softwares-for_nnn.sh
+## NetworkManager Jo-XA2
+nmcli device wifi connect Jo-XA2 password <pw>
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
