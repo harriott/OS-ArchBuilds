@@ -132,7 +132,7 @@ ARCHBUILDS=/ArchBuilds
 # cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
 
 #==> 1 touch settings
-cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf  # will need a reboot
 
 #=> 1 when X - vimish
 # wanted
