@@ -4,6 +4,7 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 ARCHBUILDS=/ArchBuilds
+ARCHBUILDS=/home/jo/ArchBuilds
 
 #=> 0 to X
 # really needed
@@ -133,6 +134,7 @@ ARCHBUILDS=/ArchBuilds
 
 #==> 1 touch settings
 cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf  # will need a reboot
+true
 
 #=> 1 when X - vimish
 # wanted
