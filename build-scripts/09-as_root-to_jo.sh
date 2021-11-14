@@ -9,6 +9,7 @@ ARCHBUILDS=/home/jo/ArchBuilds
 pacman -S opendoas
 cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
 chmod -c 0400 /etc/doas.conf
+# test with  doas updatedb
 
 # #=> 0 file manage
 # # bat

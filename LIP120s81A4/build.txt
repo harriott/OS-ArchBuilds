@@ -212,7 +212,7 @@ bash 32-resourceHandler.sh
 ## X
 startx  reports that  /etc/X11/xinit/xserverrc  can't find  /usr/bin/X
   sudo pacman -S xorg-server
-## waiting - doas
+## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
 KDTG311281  for  rsnapshot

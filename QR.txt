@@ -25,6 +25,10 @@ cat systab.orig  # contains bootrun tabs to catch
 # file manage
 bat <file>
 
+## advcpmv
+cpg --help | mo  # man advcp
+mvg --help | mo  # man advmv
+
 ## broot
 bm broot
 F5 => refresh
@@ -318,6 +322,7 @@ grep -r "Georita" *
 #### mutt
 $email/muttrc-MWa
 $email/muttrc-account_ftml
+$email/muttrc-account_troh
 echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 F => toggle important flag (= Star in Gmail)
 

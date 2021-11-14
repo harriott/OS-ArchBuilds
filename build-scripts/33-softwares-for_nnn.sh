@@ -37,11 +37,10 @@ trap read debug  # puts a read request after each executable line
 #=> 1 advcpmv
 # for nnn -r
 gAUR advcpmv
-AURadvcpmv
 gvim -c "silent! /jarun\/advcpmv" PKGBUILD
-makepkg -sic
-sudo cp /usr/bin/advcp /usr/local/bin/cpg
-sudo cp /usr/bin/advmv /usr/local/bin/mvg
+makepkg -sic  # the checks are long...
+sudo cp /usr/bin/advcp /usr/local/bin/cpg  ## cpg --help
+sudo cp /usr/bin/advmv /usr/local/bin/mvg  ## mpg --help
 
 # #=> 2 nnn plugins
 # [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*

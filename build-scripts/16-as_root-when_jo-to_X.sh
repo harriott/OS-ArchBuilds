@@ -8,19 +8,19 @@ ARCHBUILDS=/ArchBuilds
 #=> 0 to X
 # really needed
 
-#==> hard drives
-stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
+# #==> hard drives
+# stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
 
-# make writable for jo
-# chown jo:jo /mnt/9QF57J6Q
-# chown jo:jo /mnt/SD480GSSDPlus
-# chown jo:jo /mnt/SDEP128G
-# chown jo:jo /mnt/ST3320418AS
-# chown jo:jo /mnt/WD30EZRZ
+# # make writable for jo
+# # chown jo:jo /mnt/9QF57J6Q
+# # chown jo:jo /mnt/SD480GSSDPlus
+# # chown jo:jo /mnt/SDEP128G
+# # chown jo:jo /mnt/ST3320418AS
+# # chown jo:jo /mnt/WD30EZRZ
 
-nvim -o $MACHINE/etc/updatedb.conf /etc/updatedb.conf
-cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
-updatedb
+# nvim -o $MACHINE/etc/updatedb.conf /etc/updatedb.conf
+# cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
+# updatedb
 
 # #==> prepare for X
 # # Xorg
@@ -77,11 +77,6 @@ updatedb
 # #==> file manage - rsnapshot install
 # pacman -S rsnapshot
 
-# #==> monitor settings
-# # disable DPMS
-# [ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
-# cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
-
 # #==> networking
 # # DNS Lookup utility
 # pacman -S bind-tools
@@ -125,6 +120,19 @@ updatedb
 
 # #==> xman
 # pacman -S xorg-xman
+
+#=> 1 when X - IO hw
+# wanted
+
+# #==> 0 xorg.conf.d
+# [ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
+
+# #==> 1 monitor settings
+# # disable DPMS
+# cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
+
+#==> 1 touch settings
+cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 
 #=> 1 when X - vimish
 # wanted
