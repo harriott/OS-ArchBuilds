@@ -231,6 +231,13 @@ nmcli device wifi connect Jo-XA2 password <pw>  go me connected
 bash 34-softwares-forOpenbox.sh
 ## softwares
 bash 35-softwares.sh
+## Dropbox
+Preferences > Sync > [
+  Selective > off-ticked all except  Apps COutThere JH Photos Public Screenshots
+  Move > /mnt/SDEP128G/ ]
+## NetworkManager Jo-XA2
+  Error: Connection activation failed: (53) The Wi-Fi network could not be found.
+fix:  sudo systemctl disable iwd.service
 ## waiting
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup

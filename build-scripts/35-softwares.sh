@@ -286,20 +286,20 @@ trap read debug  # puts a read request after each executable line
 # gvim -c "silent! /gsamokovarov" PKGBUILD
 # makepkg -sic
 
-#=> Spotify
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
-gpg -k 0D811D58
-gAUR spotify
-gvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
-makepkg -sic
+# #=> Spotify
+# curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
+# gpg -k 0D811D58
+# gAUR spotify
+# gvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
+# makepkg -sic
 
-#=> sqlitebrowser
-sudo pacman -S sqlitebrowser
+# #=> sqlitebrowser
+# sudo pacman -S sqlitebrowser
 
-#=> tint-tetris
-gAUR tint-tetris
-gvim -c "silent! /debian" PKGBUILD
-makepkg -sic
+# #=> tint-tetris
+# gAUR tint-tetris
+# gvim -c "silent! /debian" PKGBUILD
+# makepkg -sic
 
 # #=> tint2 0 remove
 # sudo pacman -Rs tint2
@@ -309,23 +309,23 @@ makepkg -sic
 # gvim -c "silent! /tint2.git" PKGBUILD
 # makepkg -sic
 
-#=> tspreed
-gAUR tspreed
-gvim -c "silent! /n-ivkovic" PKGBUILD
-makepkg -sic
-true
+# #=> tspreed
+# gAUR tspreed
+# gvim -c "silent! /n-ivkovic" PKGBUILD
+# makepkg -sic
+# true
 
-#=> ttf-croscore
-sudo pacman -S ttf-croscore
+# #=> ttf-croscore
+# sudo pacman -S ttf-croscore
 
-#=> Vimiv
-sudo pacman -S vimiv
+# #=> Vimiv
+# sudo pacman -S vimiv
 
-#=> xbindkeys
-sudo pacman -S xbindkeys
+# #=> xbindkeys
+# sudo pacman -S xbindkeys
 
-#=> youtube-dl
-sudo pacman -S youtube-dl
+# #=> youtube-dl
+# sudo pacman -S youtube-dl
 
 #=> Zoom
 gAUR zoom
