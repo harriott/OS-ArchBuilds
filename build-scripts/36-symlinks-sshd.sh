@@ -8,7 +8,13 @@
 
 # sort these lists by last use of "~":  :sort /,*\~/
 
+#=> Dropbox vimfiles
+rm -r ~/.vim; ln -s $vimfiles ~/.vim
+
 #=> email config
+cp -f $GNULE/mbsyncrc-backup ~/.mbsyncrc
+cp -f $GNULE/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
+cp -f $GNULE/notmuch-config-backup ~/.notmuch-config
 ln -sf $GNULE/notmuch-config ~/.notmuch-config
 
 #=> LaTeX
@@ -21,32 +27,24 @@ ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 #=> Pandoc templates
 ln -s $onGH/pandoc-templates ~/.pandoc/templates
 
-#=> sbMb dual monitors 0
-sudo cp $MACHINE/etc/20-monitor.conf /etc/X11/xorg.conf.d/20-monitor.conf
+# #=> sbMb dual monitors 0
+# sudo cp $MACHINE/etc/20-monitor.conf /etc/X11/xorg.conf.d/20-monitor.conf
 
-#=> sbMb dual monitors 1
-sudo rm /etc/X11/xorg.conf.d/20-monitor.conf
+# #=> sbMb dual monitors 1
+# sudo rm /etc/X11/xorg.conf.d/20-monitor.conf
 
-#=> SSH config
-ln -sf $CrossPlatform/SSHconfig/M587637 ~/.ssh/config
-ln -sf $CrossPlatform/SSHconfig/sbMb ~/.ssh/config
+# #=> sshd 1 sshd.service 0 test
+# sshd -t  # before restarting service
 
-#=> sshd 0 sshd_config
-sudo cp $CrossPlatform/sshd_config/M587637 /etc/ssh/sshd_config
-sudo cp $CrossPlatform/sshd_config/sbMb /etc/ssh/sshd_config
+# #=> sshd 1 sshd.service 1 enable
+# sudo systemctl enable sshd.service --now
+# sudo systemctl status sshd.service
 
-#=> sshd 1 sshd.service 0 test
-sshd -t  # before restarting service
+# #=> sshd 1 sshd.service 2 restart
+# sudo systemctl restart sshd.service
 
-#=> sshd 1 sshd.service 1 enable
-sudo systemctl enable sshd.service --now
-sudo systemctl status sshd.service
-
-#=> sshd 1 sshd.service 2 restart
-sudo systemctl restart sshd.service
-
-#=> sshd 1 sshd.service 3 disable
-sudo systemctl disable sshd.service --now
+# #=> sshd 1 sshd.service 3 disable
+# sudo systemctl disable sshd.service --now
 
 #=> softares in my Openbox build
 
@@ -58,7 +56,4 @@ ln -sf $Openbox/dunstrc   ~/.config/dunst/dunstrc # requires restarting X
 ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
 
 rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
-
-#=> Vim
-rm -r ~/.vim; ln -s $vimfiles ~/.vim
 

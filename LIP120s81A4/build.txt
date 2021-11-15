@@ -239,6 +239,8 @@ Preferences > Sync > [
   Error: Connection activation failed: (53) The Wi-Fi network could not be found.
 fix:  sudo systemctl disable iwd.service
 ## waiting
+network-manager-applet
+bash 36-symlinks-sshd.sh
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
 KDTG311281  for  rsnapshot

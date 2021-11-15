@@ -36,10 +36,13 @@ reboot
 # gvim PKGBUILD
 # makepkg -sic
 
-#=> systemd-resolved
-sudo systemctl enable systemd-resolved.service --now
-
-#=> grab default sshd_config
+#=> sshd 0 grab default sshd_config
 sudo cp /etc/ssh/sshd_config $MACHINE/etc/defaults/kc1-sshd_config
 sudo chown jo:jo $MACHINE/etc/defaults/kc1-sshd_config
+
+#=> sshd 1 sshd_config
+sudo cp $MACHINE/etc/sshd_config /etc/ssh/sshd_config
+
+#=> systemd-resolved
+sudo systemctl enable systemd-resolved.service --now
 
