@@ -25,9 +25,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> bpytop
 # supersedes  Bashtop
-gAUR bpytop
-gvim PKGBUILD
-makepkg -sic
+sudo pacman -S bpytop
 
 #=> cht.sh-git
 gdAUR cht.sh-git
