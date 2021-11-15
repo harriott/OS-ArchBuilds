@@ -13,6 +13,6 @@
 export rsnapshot=/au/rsnapshot
 
 # machine-specific, for  $ARCHBUILDS/jo/export-storage
-# export myDrA=1  # my Dropbox is active
+export myDrA=1  # my Dropbox is active
 export Storage=/mnt/SDEP128G  # where I keep stuff
 
