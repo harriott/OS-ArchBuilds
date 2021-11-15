@@ -23,14 +23,14 @@ trap read debug  # puts a read request after each executable line
 # gvim -c "silent! /madgag" PKGBUILD
 # makepkg -sic  # jre-openjdk
 
-#=> bpytop
-# supersedes  Bashtop
-sudo pacman -S bpytop
+# #=> bpytop
+# # supersedes  Bashtop
+# sudo pacman -S bpytop
 
-#=> cht.sh-git
-gdAUR cht.sh-git
-gvim -c "silent! /chubin" PKGBUILD
-makepkg -sic
+# #=> cht.sh-git
+# gdAUR cht.sh-git
+# gvim -c "silent! /chubin" PKGBUILD
+# makepkg -sic
 
 # #=> clamav-unofficial-sigs 0 install
 # gdAUR clamav-unofficial-sigs
@@ -42,42 +42,40 @@ makepkg -sic
 # sudo systemctl disable clamav-unofficial-sigs.timer
 # sudo pacman -Rs clamav-unofficial-sigs
 
-#=> cmus-notify
-gAUR cmus-notify
-gvim -c "silent! /AntoineGagne" PKGBUILD
-makepkg -sic
-true
+# #=> cmus-notify
+# gAUR cmus-notify
+# gvim -c "silent! /AntoineGagne" PKGBUILD
+# makepkg -sic
+# true
 
-#=> colorpicker
-gAUR colorpicker
-gvim -c "silent! /Jack12816" PKGBUILD
-makepkg -sic
+# #=> colorpicker
+# gAUR colorpicker
+# gvim -c "silent! /Jack12816" PKGBUILD
+# makepkg -sic
 
-#=> devtools
-sudo pacman -S devtools
-# mkdir /mnt/SD480GSSDPlus/chroot
+# #=> devtools
+# sudo pacman -S devtools
+# # mkdir /mnt/SD480GSSDPlus/chroot
 
-#=> diskonaut
-gAUR diskonaut
-gvim -c "silent! /imsnif" PKGBUILD
-makepkg -sic
-true
+# #=> diskonaut
+# gAUR diskonaut
+# gvim -c "silent! /imsnif" PKGBUILD
+# makepkg -sic  # takes a long time
+# true
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-gAUR dropbox
-gvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# # only once there's a browser, and preferably after LastPass
+# gAUR dropbox
+# gvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
-#=> Dropbox 1 dropbox-dist folder
-install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
+# #=> Dropbox 1 dropbox-dist folder
+# install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
 
 #=> Dust
 # (after Rust Toolchain)
-gAUR dust
-gvim -c "silent! /https:\/\/github.com\/bootandy\/" PKGBUILD
-makepkg -sic
+sudo pacman -S dust
 
 #=> ffmpeg
 sudo pacman -S ffmpeg
