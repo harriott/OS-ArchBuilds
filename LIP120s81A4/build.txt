@@ -229,7 +229,7 @@ nmcli device wifi list | cat  shows  Jo-XA10II
 nmcli device wifi connect Jo-XA2 password <pw>  go me connected
 ## Openbox softares
 bash 34-softwares-forOpenbox.sh
-## softares
+## softwares
 bash 35-softwares.sh
 ## waiting
 # physical configuration

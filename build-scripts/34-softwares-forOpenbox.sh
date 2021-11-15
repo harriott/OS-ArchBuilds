@@ -4,7 +4,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# gAUR  &  rAUR  are defined in $Bash/bashrc-console
+# gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
 # #=> 0 tint2rc
 # gvim -geometry 200x55 -O /etc/xdg/tint2/tint2rc ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"

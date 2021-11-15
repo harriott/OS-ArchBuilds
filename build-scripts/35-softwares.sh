@@ -9,7 +9,7 @@ trap read debug  # puts a read request after each executable line
 #  gctm  is defined in $Bash/bashrc-console
 #  use  $ARCHBUILDS/build-scripts/27-remakeAURdevs.sh  to later update them
 
-# gAUR  &  rAUR  are defined in $Bash/bashrc-console
+# gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
 # #=> bat-extras-git
 # gdAUR bat-extras-git
@@ -17,10 +17,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> bfg
-gAUR bfg
-gvim PKGBUILD
-makepkg -sic
+# #=> bfg
+# gAUR bfg
+# gvim PKGBUILD
+# gvim -c "silent! /madgag" PKGBUILD
+# makepkg -sic  # jre-openjdk
 
 #=> bpytop
 # supersedes  Bashtop
@@ -29,24 +30,19 @@ gvim PKGBUILD
 makepkg -sic
 
 #=> cht.sh-git
-cd ~/Arch/AURdev-clone
-git clone https://aur.archlinux.org/cht.sh-git.git
-gctm cht.sh-git
-gvim PKGBUILD
+gdAUR cht.sh-git
+gvim -c "silent! /chubin" PKGBUILD
 makepkg -sic
 
-#=> clamav-unofficial-sigs 0 install
-cd ~/Arch/AURdev-clone
-rAUR clamav-unofficial-sigs
-git clone https://aur.archlinux.org/clamav-unofficial-sigs.git
-cd clamav-unofficial-sigs
-gvim -c "silent! /extremeshok" PKGBUILD
-makepkg -sic
-sudo systemctl enable clamav-unofficial-sigs.timer
+# #=> clamav-unofficial-sigs 0 install
+# gdAUR clamav-unofficial-sigs
+# gvim -c "silent! /extremeshok" PKGBUILD
+# makepkg -sic
+# sudo systemctl enable clamav-unofficial-sigs.timer
 
-#=> clamav-unofficial-sigs 1 remove
-sudo systemctl disable clamav-unofficial-sigs.timer
-sudo pacman -Rs clamav-unofficial-sigs
+# #=> clamav-unofficial-sigs 1 remove
+# sudo systemctl disable clamav-unofficial-sigs.timer
+# sudo pacman -Rs clamav-unofficial-sigs
 
 #=> cmus-notify
 gAUR cmus-notify
@@ -55,15 +51,13 @@ makepkg -sic
 true
 
 #=> colorpicker
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/colorpicker.git
-cd colorpicker
-gvim PKGBUILD
+gAUR colorpicker
+gvim -c "silent! /Jack12816" PKGBUILD
 makepkg -sic
 
 #=> devtools
 sudo pacman -S devtools
-mkdir /mnt/SD480GSSDPlus/chroot
+# mkdir /mnt/SD480GSSDPlus/chroot
 
 #=> diskonaut
 gAUR diskonaut
@@ -92,15 +86,13 @@ sudo pacman -S ffmpeg
 
 #=> fonts - figlet-fonts
 # brings in figlet
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/figlet-fonts.git
-cd figlet-fonts
-gvim PKGBUILD
+gAUR figlet-fonts
+gvim -c "silent! /ftp.figlet.org" PKGBUILD
 makepkg -sic
 
 #=> fonts - fontpreview-git
 gAUR fontpreview-git
-gvim PKGBUILD
+gvim -c "silent! /sdushantha" PKGBUILD
 makepkg -sic
 
 #=> fonts - gnu-free-fonts
@@ -120,6 +112,19 @@ sudo pacman -S falkon
 #=> Firefox
 sudo pacman -S firefox
 
+#=> fangfrisch 1 AUR
+gAUR python-fangfrisch
+gvim -c "silent! /rseichter" PKGBUILD
+makepkg -sic
+true
+
+#=> fangfrisch 2 settings
+# 1 create database structure
+sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
+
+# 2 enable systemd timer
+sudo systemctl enable fangfrisch.timer --now
+
 #=> gifski
 sudo pacman -S gifski  # (for making animated GIFs)
 
@@ -134,14 +139,14 @@ sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
 
 #=> gst123
 gAUR gst123
-gvim PKGBUILD
+gvim -c "silent! /stefan" PKGBUILD
 makepkg -sic
 true
 
-#=> Google API python toolchain
-sudo pacman -S python-google-api-python-client
-sudo pacman -S python-google-auth-httplib2
-sudo pacman -S python-google-auth-oauthlib
+# #=> Google API python toolchain
+# sudo pacman -S python-google-api-python-client
+# sudo pacman -S python-google-auth-httplib2
+# sudo pacman -S python-google-auth-oauthlib
 
 #=> gucharmap
 sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode Block)
@@ -161,8 +166,8 @@ sudo pacman -S keepassxc
 #=> LanguageTool
 sudo pacman -S languagetool
 
-#=> libappindicator-gtk3
-sudo pacman -S libappindicator-gtk3  # didn't help with non-captured Dropbox tray icon...
+# #=> libappindicator-gtk3
+# sudo pacman -S libappindicator-gtk3  # didn't help with non-captured Dropbox tray icon...
 
 #=> libgphoto2
 sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
@@ -174,47 +179,37 @@ sudo pacman -S libva-utils
 #=> mesa-demos
 sudo pacman -S mesa-demos
 
-#=> mimeo
-gAUR mimeo
-gvim PKGBUILD
-makepkg -sic
-true
+# #=> moar remove
+# cd ~/Arch/AUR
+# rAUR moar
+# sudo pacman -Rs moar
 
-#=> moar remove
-cd ~/Arch/AUR
-rAUR moar
-sudo pacman -Rs moar
-
-#=> moar-git 0 remove
-cd ~/Arch/AUR
-rAUR moar-git
-sudo pacman -Rs moar-git
-
-#=> moar-git 1 install
+#=> moar-git 0 install
 gAUR moar-git
 gvim -c "silent! /walles" PKGBUILD
 makepkg -sic
 true
 
-#=> msmtprc
-cp -f $GNULE/msmtpConfig-backup ~/.msmtprc
-chmod 600 ~/.msmtprc
+# #=> moar-git 1 remove
+# cd ~/Arch/AUR
+# rAUR moar-git
+# sudo pacman -Rs moar-git
 
-#=> MusicBrainz Picard
-sudo pacman -S chromaprint picard
-# Options > Options > [ General > Check for updates  offticked
-#   Fingerprinting > Fingerprint calculator > /usr/bin/fpcalc
-#   User Interface > Show a quit confirmation  off ]
-true
+# #=> MusicBrainz Picard
+# sudo pacman -S chromaprint picard
+# # Options > Options > [ General > Check for updates  offticked
+# #   Fingerprinting > Fingerprint calculator > /usr/bin/fpcalc
+# #   User Interface > Show a quit confirmation  off ]
+# true
 
-#=> nodejs-mapscii 0 install
-gAUR nodejs-mapscii
-gvim PKGBUILD
-makepkg -sic
-true
+# #=> nodejs-mapscii 0 install
+# gAUR nodejs-mapscii
+# gvim PKGBUILD
+# makepkg -sic
+# true
 
-#=> nodejs-mapscii 1 remove
-sudo pacman -Rs nodejs-mapscii
+# #=> nodejs-mapscii 1 remove
+# sudo pacman -Rs nodejs-mapscii
 
 #=> nordvpn-bin 0 install
 gAUR nordvpn-bin
@@ -228,12 +223,12 @@ true
 sudo systemctl enable nordvpnd.service --now
 true
 
-#=> OBS Studio 0 install
-sudo pacman -S obs-studio
+# #=> OBS Studio 0 install
+# sudo pacman -S obs-studio
 
-#=> OBS Studio 0 remove
-sudo pacman -Rs obs-studio
-rm -r ~/.config/obs-studio
+# #=> OBS Studio 0 remove
+# sudo pacman -Rs obs-studio
+# rm -r ~/.config/obs-studio
 
 #=> OpenShot
 sudo pacman -S openshot
@@ -269,50 +264,31 @@ true
 #=> perl-image-exiftool
 sudo pacman -S perl-image-exiftool
 
-#=> PhotoCollage
-gAUR photocollage
-gvim PKGBUILD
-makepkg -sic
+# #=> PhotoCollage
+# gAUR photocollage
+# gvim PKGBUILD
+# makepkg -sic
 
 #=> Pinta
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/pinta.git
-cd pinta
-gvim PKGBUILD
-makepkg -sic
+sudo pacman -S pinta
 
 #=> pip
 sudo pacman -S python-pip
 
 #=> pscircle-git
-cd ~/Arch/AURdev-clone
-git clone https://aur.archlinux.org/pscircle-git.git
-gctm pscircle-git
-gvim PKGBUILD
+gAUR pscircle-git
+gvim -c "silent! /mildlyparallel" PKGBUILD
 makepkg -sic
 
 #=> Python 2
 sudo pacman -S python2  # needed for  oauth2.py
-
-#=> python-fangfrisch 1 AUR
-gAUR python-fangfrisch
-gvim -c "silent! /rseichter" PKGBUILD
-makepkg -sic
-true
-
-#=> python-fangfrisch 2 settings
-# 1 create database structure
-sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
-
-# 2 enable systemd timer
-sudo systemctl enable fangfrisch.timer --now
 
 #=> Quod Libet
 sudo pacman -S quodlibet
 
 #=> Samokovarov's jump
 gAUR jump
-gvim PKGBUILD
+gvim -c "silent! /gsamokovarov" PKGBUILD
 makepkg -sic
 
 #=> Spotify
@@ -324,19 +300,17 @@ makepkg -sic
 sudo pacman -S sqlitebrowser
 
 #=> tint-tetris
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/tint-tetris.git
-cd tint-tetris
-gvim PKGBUILD
+gAUR tint-tetris
+gvim -c "silent! /debian" PKGBUILD
 makepkg -sic
 
-#=> tint2 0 remove
-sudo pacman -Rs tint2
+# #=> tint2 0 remove
+# sudo pacman -Rs tint2
 
-#=> tint2-git
-gAUR tint2-git
-gvim -c "silent! /tint2.git" PKGBUILD
-makepkg -sic
+# #=> tint2 1 tint2-git
+# gAUR tint2-git
+# gvim -c "silent! /tint2.git" PKGBUILD
+# makepkg -sic
 
 #=> tspreed
 gAUR tspreed

@@ -28,7 +28,6 @@ cd ~
 # gAUR mimeo
 # nvim PKGBUILD
 # makepkg -sic
-# cd ~
 
 # #==> 1 xdg-utils-mimeo
 # gAUR xdg-utils-mimeo
