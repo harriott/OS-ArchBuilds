@@ -1,4 +1,5 @@
-# vim: ft=sh:
+# vim: fdl=2 ft=sh:
+
 #
 # These things are run when an Openbox X Session is started.
 # You may place a similar script in $HOME/.config/openbox/autostart
@@ -17,24 +18,20 @@
 #
 #xfce-mcs-manager &
 
-# my additions
-# ------------
+#=> my additions
 # this file is symlinked to  ~/.config/openbox/autostart
 #  in  my  $ARCHBUILDS/build-scripts/34-symlinks-Openbox.sh
+#  depends on  $ARCHBUILDS/Bash/export-storage
 
-conky -c $ARCHBUILDS/jo/Openbox/conkyrc
-copyq & # because CopyQ's internal Autostart doesn't work
-
-# dropbox
-# dropbox &
-DBSESSIONID=$(dbus-daemon --session --print-address --fork)
-DBUS_SESSION_BUS_ADDRESS=$DBSESSIONID snixembed --fork
-DBUS_SESSION_BUS_ADDRESS=$DBSESSIONID dropbox &
-
+#==> 0 gvim
 # gvim -geometry +670+0 &  # opens right-side of a 1440x900
 gvim -geometry +760+0 &  # opens just left of Conky on 1920x1080 screen
 # - set also in $Openbox/openbox/rc.xml
 
+#==> 0 openbox
+conky -c $ARCHBUILDS/jo/Openbox/conkyrc
+copyq & # because CopyQ's internal Autostart doesn't work
+dropbox &
 # hp-systray & disown   doesn't launch...
 # htop &  snags...
 nm-applet &
@@ -44,4 +41,7 @@ pnmixer &
 redshift-gtk -l 48.8646:2.3984 &
 tint2 &
 $Openbox/openbox/autostart/urxvtl.sh
+
+#==> 1 machine dependent
+[ -f $MACHINE/jo/autostart.sh ] && . $MACHINE/jo/autostart.sh
 

@@ -13,6 +13,3 @@ $us -e sh -c "tmux $tmuxStartSession; bash" &
 #=> 2 neofetch
 sleep 2; tmux send neofetch Enter
 
-#=> 3 optional tmux commands
-[ -f $MACHINE/jo/urxvtl.sh ] && . $MACHINE/jo/urxvtl.sh
-

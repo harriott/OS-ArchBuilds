@@ -742,7 +742,7 @@ ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 gpg -ao sbMbA-backup-las.asc --export-secret-keys --export-options backup jh
 # physical configuration
 D-Link DUB-H7
-TL-WN821N
+NETGEAR WG111v2
 ## cbh
 Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard

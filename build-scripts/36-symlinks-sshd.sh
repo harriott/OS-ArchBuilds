@@ -8,24 +8,23 @@
 
 # sort these lists by last use of "~":  :sort /,*\~/
 
-#=> Dropbox vimfiles
-rm -r ~/.vim; ln -s $vimfiles ~/.vim
+# #=> Dropbox vimfiles
+# sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
 
-#=> email config
-cp -f $GNULE/mbsyncrc-backup ~/.mbsyncrc
-cp -f $GNULE/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
-cp -f $GNULE/notmuch-config-backup ~/.notmuch-config
-ln -sf $GNULE/notmuch-config ~/.notmuch-config
+# #=> email config
+# cp -f $GNULE/mbsyncrc-backup ~/.mbsyncrc
+# cp -f $GNULE/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
+# cp -f $GNULE/notmuch-config-backup ~/.notmuch-config
 
-#=> LaTeX
-ln -sf $CrossPlatform/LaTeX/jo ~/texmf/tex/latex/jo
+# #=> LaTeX
+# ln -sf $CrossPlatform/LaTeX/jo ~/texmf/tex/latex/jo
 
-#=> Pandoc defaults
-ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
-ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
+# #=> Pandoc defaults
+# ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
+# ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 
-#=> Pandoc templates
-ln -s $onGH/pandoc-templates ~/.pandoc/templates
+# #=> Pandoc templates
+# ln -s $onGH/pandoc-templates ~/.pandoc/templates
 
 # #=> sbMb dual monitors 0
 # sudo cp $MACHINE/etc/20-monitor.conf /etc/X11/xorg.conf.d/20-monitor.conf
@@ -55,5 +54,9 @@ ln -sf $Openbox/cmus-rc.conf               ~/.config/cmus/rc
 ln -sf $Openbox/dunstrc   ~/.config/dunst/dunstrc # requires restarting X
 ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
 
-rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
+# #=> remove urxvt extensions
+# rm -r ~/.urxvt/ext
+
+#=> urxvt extensions
+ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
 

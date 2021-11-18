@@ -119,6 +119,9 @@ true
 # # for mouse middle click
 # pacman -S xautomation
 
+#==> xbacklight
+pacman -S xorg-xbacklight
+
 # #==> xinput
 # # for changing libinput (touchpad) settings at runtime
 # pacman -S xorg-xinput

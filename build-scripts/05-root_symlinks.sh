@@ -6,6 +6,7 @@ ARCHBUILDS=/ArchBuilds
 AB=/home/jo/ArchBuilds
 [[ -d $AB ]] && ARCHBUILDS=$AB
 AB=/mnt/SD480GSSDPlus/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
+AB=/mnt/SDEP128G/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
 [[ -d $AB ]] && ARCHBUILDS=$AB
 
 #=> 1 test

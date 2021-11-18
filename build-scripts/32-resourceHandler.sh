@@ -22,6 +22,9 @@ nvim -c "silent! /handlr" PKGBUILD
 makepkg -sic  # don't forget to allow Removal of xdg-utils
 cd ~
 
+#==> 2 set default handlers
+handlr set .md gvim.desktop
+
 # #=> mimeo
 
 # #==> 0 mimeo

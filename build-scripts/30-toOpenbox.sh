@@ -21,6 +21,11 @@ trap read debug  # puts a read request after each executable line
 # # mesa should already be there
 # sudo pacman -S xf86-video-intel  # will need to reboot
 
+#=> 0 mictray
+gAUR mictray
+nvim -c "silent! /Junker" PKGBUILD
+makepkg -sic
+
 # #=> 0 Nouveau install
 # # for NVIDIA (mesa might've been there already)
 # sudo pacman -S mesa xf86-video-nouveau  # will need to reboot
@@ -81,14 +86,14 @@ trap read debug  # puts a read request after each executable line
 # # for  obmenu-generator
 # sudo pacman -S perl-data-dump
 
-#=> 1 perl-linux-desktopfiles
-# for  obmenu-generator
-gAUR perl-linux-desktopfiles
-nvim -c "silent! /trizen" PKGBUILD
-makepkg -sic
+# #=> 1 perl-linux-desktopfiles
+# # for  obmenu-generator
+# gAUR perl-linux-desktopfiles
+# nvim -c "silent! /trizen" PKGBUILD
+# makepkg -sic
 
-#=> 2 obmenu-generator
-gAUR obmenu-generator
-nvim -c "silent! /trizen" PKGBUILD
-makepkg -sic
+# #=> 2 obmenu-generator
+# gAUR obmenu-generator
+# nvim -c "silent! /trizen" PKGBUILD
+# makepkg -sic
 

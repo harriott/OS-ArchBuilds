@@ -7,13 +7,10 @@ trap read debug  # puts a read request after each executable line
 
 echo $ARCHBUILDS
 
-#=> pkgconf
-pacman -S pkgconf
-
-#=> software - android-tools
+#=> android-tools
 pacman -S android-tools
 
-#=> softwares - documenting
+#=> documenting
 # Ghostscript
 pacman -S ghostscript
 
@@ -23,7 +20,14 @@ pacman -S pandoc
 # TeX Live
 pacman -S texlive-most texlive-langchinese  # select all
 
-#=> softwares - file manage
+#=> ebook - Calibre
+pacman -S calibre
+
+#=> ebook - Foliate
+pacman -S foliate
+# Openbox Menu > Office > Foliate > Menu > Advanced > Continuous
+
+#=> file manage
 # cdrtools
 pacman -S cdrtools
 
@@ -36,12 +40,13 @@ pacman -S gvfs-mtp
 # nnn
 pacman -S nnn
 
-#=> softwares - cmatrix
+#=> cmatrix
 pacman -S cmatrix
 
-#=> softwares - multimedia
+#=> multimedia
 # Cmus
 pacman -S cmus
+mkdir ~/.config/cmus
 
 # espeak-ng-espeak & termdown
 pacman -S espeak-ng-espeak termdown
@@ -52,11 +57,11 @@ pacman -S iscan
 # pulsemixer
 pacman -S pulsemixer
 
-# #=> softwares - networking iw
+# #=> networking iw
 # # made redundant by  $ITstack/unix_like-GNULinux/iwctl-connect.sh
 # pacman -S iw
 
-#=> softwares - networking
+#=> networking
 # bluetooth
 pacman -S bluez bluez-utils
 
@@ -72,7 +77,10 @@ pacman -S mailcap
 # Transmission
 pacman -S transmission-qt
 
-#=> softwares - Openbox environment
+#=> Openbox environment
+# cbatticon
+pacman -S cbatticon
+
 # configure Openbox
 pacman -S lxappearance-obconf obconf
 
@@ -94,7 +102,10 @@ pacman -S gsimplecal
 # Openbox & tint2
 pacman -S openbox tint2
 
-#=> softwares - system
+#=> pkgconf
+pacman -S pkgconf
+
+#=> system
 # Bluefish
 pacman -S bluefish
 

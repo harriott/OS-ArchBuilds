@@ -8,6 +8,10 @@ ARCHBUILDS=/ArchBuilds
 # #=> 0 internet check
 # ping -c 3 8.8.8.8
 
+#=> 1 ACPI
+# for laptop
+pacman -S acpi
+
 #=> 1 CPU
 # Cpupower
 pacman -S cpupower

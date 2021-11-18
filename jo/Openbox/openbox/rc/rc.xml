@@ -347,6 +347,12 @@
       <command>kfmclient openProfile filemanagement</command>
     </action>
   </keybind>
+  <!-- Keybinding for firefox - JH -->
+  <keybind key="W-f">
+    <action name="Execute">
+      <command>firefox</command>
+    </action>
+  </keybind>
   <!-- Keybinding for gVim - JH -->
   <keybind key="W-g">
     <action name="Execute">
@@ -359,6 +365,45 @@
       <menu>root-menu</menu>
     </action>
   </keybind>
+  <!-- Keybinding for microphone - JH -->
+  <keybind key="XF86AudioMicMute">
+    <action name="Execute">
+      <command>pactl set-source-mute 1 toggle</command>
+    </action>
+  </keybind>
+  <!-- Keybinding for PrintScreen - JH -->
+  <keybind key="Print">
+    <action name="Execute">
+      <command>/home/jo/.config/openbox/importScreenshot.sh</command>
+    </action>
+  </keybind>
+  <!-- Keybindings for screen brightness - JH -->
+  <keybind key="XF86MonBrightnessDown">
+    <action name="Execute">
+      <command>xbacklight -dec 10</command>
+    </action>
+  </keybind>
+  <keybind key="XF86MonBrightnessUp">
+    <action name="Execute">
+      <command>xbacklight -inc 10</command>
+    </action>
+  </keybind>
+  <!-- Keybindings for speaker - JH -->
+  <keybind key="XF86AudioMute">
+    <action name="Execute">
+      <command>pactl set-sink-mute 0 toggle</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioLowerVolume">
+    <action name="Execute">
+      <command>pactl set-sink-volume 0 -5%</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioRaiseVolume">
+    <action name="Execute">
+      <command>pactl set-sink-volume 0 +5%</command>
+    </action>
+  </keybind>
   <!-- Keybinding for urxvt - JH -->
   <keybind key="W-u">
     <action name="Execute">
@@ -369,12 +414,6 @@
   <keybind key="W-x">
     <action name="Execute">
       <command>xman -notopbox</command>
-    </action>
-  </keybind>
-  <!-- Keybinding for PrintScreen - JH -->
-  <keybind key="Print">
-    <action name="Execute">
-      <command>/home/jo/.config/openbox/importScreenshot.sh</command>
     </action>
   </keybind>
 </keyboard>

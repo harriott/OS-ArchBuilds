@@ -124,11 +124,11 @@ trap read debug  # puts a read request after each executable line
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
 
-# #=> Google Chrome
-# gAUR google-chrome
-# gvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+gvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> gnome-disk-utility
 # sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
@@ -327,8 +327,8 @@ trap read debug  # puts a read request after each executable line
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-#=> Zoom
-gAUR zoom
-gvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# gvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

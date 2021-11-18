@@ -9,6 +9,8 @@
 export MANPATH=/usr/share/man/
 uG=$MACHINE/jo/Bash/export-urxvt; [[ -f $uG ]] && . $uG
 
+export MOZ_GTK_TITLEBAR_DECORATION=client
+
 #=> 1 storage
 # here I'm taking care to avoid variables that only differ by case
 

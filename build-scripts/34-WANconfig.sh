@@ -5,6 +5,8 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+# gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
+
 # #=> 8192eu 0 blacklist rtl8xxxu
 # echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
 
@@ -18,7 +20,7 @@ sudo rm /etc/modprobe.d/rtl8xxxu.conf
 # rm -fr 8192eu-dkms # (-f is needed for some weird files therein)
 # git clone https://aur.archlinux.org/8192eu-dkms.git
 # cd 8192eu-dkms
-# gvim PKGBUILD
+# gvim -c "silent! /Mange" PKGBUILD
 # makepkg -sic
 # #  (2/2) Install DKMS modules  takes a long time
 # reboot
@@ -29,11 +31,9 @@ reboot
 
 # #=> rtl8192eu
 # # (didn't get  TL-WN821N  up)
-# cd ~/Arch/AUR
-# rAUR rtl8192eu
-# git clone https://aur.archlinux.org/rtl8192eu.git
-# cd rtl8192eu
+# gdAUR rtl8192eu
 # gvim PKGBUILD
+# gvim -c "silent! /Mange" PKGBUILD
 # makepkg -sic
 
 #=> sshd 0 grab default sshd_config

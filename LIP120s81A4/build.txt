@@ -2,6 +2,7 @@ vim: ft=build:
 
 Lenovo IdeaPad 120s 81A4 = LIP120S-81A4 = LIP120s81A4
 
+cat /sys/class/power_supply/BAT1/capacity
 # before Dropbox, prepare K8GBDTIG3
 cp -f $ITstack/unix_like-GNULinux/iwctl-connect.sh /run/media/jo/K8GBDTIG3
 rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
@@ -238,9 +239,23 @@ Preferences > Sync > [
 ## NetworkManager Jo-XA2
   Error: Connection activation failed: (53) The Wi-Fi network could not be found.
 fix:  sudo systemctl disable iwd.service
+## move to Dropbox symlinks
+find ~ -mindepth 1 -maxdepth 3 -type l -ls | xcol ArchBuilds
+## fonts
+su > root pw
+bash 05-root_symlinks.sh
+bash 37-as_root-symlink_fonts.sh
+## LibreOffice & Thunderbird
+bash 38-LibreOffice+Thunderbird.sh
 ## waiting
-network-manager-applet
-bash 36-symlinks-sshd.sh
+# fcron
+fcrontab -l
+  @ 3 bash ~/Arch/cmusqueue.sh
+  @ 10 bash ~/Arch/bash_history.sh
+  @ 20 jump clean
+## temperatures
+ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # physical configuration
 F2 at boot for Phoenix SecureCore Technology Setup
 KDTG311281  for  rsnapshot

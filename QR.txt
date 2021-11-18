@@ -12,7 +12,6 @@ xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 systemctl status fcron.service  # showing recent events
 
 ## fcrontab
-fcrontab -l
 VISUAL= fcrontab -e  # then make your changes
 
 ### spool directory
@@ -211,7 +210,10 @@ man cmatrix
 cd /sys/devices/system/cpu/cpu0/cpufreq
 HP ENVY 5532: d0:bf:9c:a2:2f:0e
 
-## graphics card details
+## avio
+/sys/class/backlight/intel_backlight/max_brightness
+
+### graphics card details
 glxinfo
 lspci -vnn | grep VGA -A 10 | xcol Intel size VGA
 lspci -vnn | grep VGA -A 12 | xcol Radeon size VGA

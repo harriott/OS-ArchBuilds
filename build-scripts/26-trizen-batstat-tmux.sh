@@ -21,14 +21,15 @@ trap read debug  # puts a read request after each executable line
 # cd trizen
 # nvim -c "silent! /trizen" PKGBUILD
 # makepkg -sic
-# cd ~
 
-#=> 1 tmux-bash-completion-git
-# depends on bash-completion, and brings in tmux
-cd ~/Arch/AURdev-clone
-rAUR tmux-bash-completion-git
-trizen -G tmux-bash-completion-git
-gctm tmux-bash-completion-git
-nvim -c "silent! /imomaliev" PKGBUILD
+#=> 1 batstat-git
+gdAUR batstat-git
+nvim -c "silent! /xeruf" PKGBUILD
 makepkg -sic
+
+# #=> 1 tmux-bash-completion-git
+# # depends on bash-completion, and brings in tmux
+# gdAUR tmux-bash-completion-git
+# nvim -c "silent! /imomaliev" PKGBUILD
+# makepkg -sic
 
