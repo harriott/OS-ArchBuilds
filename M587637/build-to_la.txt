@@ -233,9 +233,11 @@ su + root pw  for  cd /etc/ssh/
   rm sshd_config.pacnew
 ## tint2-git
 :: tint2-git and tint2 are in conflict. Remove tint2? [y/N] 
-## Updates
+## Updates - failure to start
 halt -p  got stuck on kvm
 wouldn't restart, complaining that things were Tainted
+## restarted
+reboot  got stuck on "kvm: exiting hardware virtualization"
 # physical configuration
 Fujitsu E19W5 1440x900
 SDSSDA240G  in  LogiLink 2.5" HDD Mounting Bracket

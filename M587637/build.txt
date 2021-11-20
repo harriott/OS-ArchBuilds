@@ -9,6 +9,8 @@ rsync -irtv --delete --modify-window=1 $core/ /run/media/jo/K8GBDTIG3/core
 # build
 ## Arch install - from the ISO
 ### prepare the bootable disk
+booted to  archlinux-2021.11.01-x86_64.iso  on  Kodak 16x DVD+R
+Resource conflict(s) found affecting gpio_ich
 ## waiting
 # physical configuration
 Fujitsu E19W5 1440x900

@@ -119,9 +119,6 @@ true
 # # for mouse middle click
 # pacman -S xautomation
 
-#==> xbacklight
-pacman -S xorg-xbacklight
-
 # #==> xinput
 # # for changing libinput (touchpad) settings at runtime
 # pacman -S xorg-xinput
@@ -139,9 +136,24 @@ pacman -S xorg-xbacklight
 # # disable DPMS
 # cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
 
-#==> 1 touch settings
-cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf  # will need a reboot
-true
+# #==> 1 touch settings
+# # will need a reboot
+# cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+# true
+
+#=> 1 when X - for laptop
+# wanted
+
+#==> HandleLidSwitchExternalPower
+# allows programs to continue running when lid is closed while laptop is charging
+sed -i 's/^#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ignore/' /etc/systemd/logind.conf
+
+#==> slock
+# for laptops
+pacman -S slock
+
+# #==> xbacklight
+# pacman -S xorg-xbacklight
 
 #=> 1 when X - vimish
 # wanted

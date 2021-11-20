@@ -223,15 +223,16 @@ sudo lshw -C display | xcol Radeon size VGA
 lpoptions -d ENVY_5530  # set as default
 lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 lpoptions -p Envy5532 -o PageSize=A4
-sudo cupsenable ENVY_5530  # if it's paused
+doas cupsenable ENVY_5530  # if it's paused
 
 ## printing - HPLIP - HP ENVY 5532 WiFi
 hp-levels -p ENVY_5532
 hp-setup -b net 192.168.43.249  # when online
 
 ## storage
-GNU Parted
 /proc/filesystems - those supported by the kernel
+cdrecord dev=/dev/sr0 -checkdrive  # Vendor_info etc
+GNU Parted
 
 ### mkfs.ext4
 /etc/mke2fs.conf  has bytes-per-inode ratios for usage types

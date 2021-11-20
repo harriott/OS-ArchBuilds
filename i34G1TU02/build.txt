@@ -1,0 +1,43 @@
+vim: ft=build:
+
+Packard Bell iMedia S i34G1TU02
+
+# before Dropbox, prepare K8GBDTIG3
+cp -f $ITstack/unix_like-GNULinux/iwctl-connect.sh /run/media/jo/K8GBDTIG3
+rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
+rsync -irtv --delete --modify-window=1 $core/ /run/media/jo/K8GBDTIG3/core
+# build
+## mature Arch install from M587637 on SDSSDA240G
+booted to  archlinux-2021.11.01-x86_64.iso  on  K8GBDT100
+lsblk  indicated  mount /dev/sda2 /mnt
+### fstab
+cd /mnt/etc
+  cat fstab  shows it's gpt
+  mv fstab fstab-la
+mount /dev/sda3 /mnt/home
+genfstab -U /mnt >> /mnt/etc/fstab  got the same UUIDs
+halt -p
+### won't boot
+ERROR: No boot disk has been detected or the disk has failed.
+BIOS > Boot Options > Hard Disk Drive Priority ain't showing a drive - I'm guessing because it's GPT
+## waiting
+# physical configuration
+Fujitsu E19W5 1440x900
+SDSSDA240G  in space under DVD drive
+TL-WN725N
+## BIOS Setup Utility
+Boot Options
+  1st Boot Device: Hard Disk
+  2nd Boot Device: CD&DVD HL-DT-ST DVDRAM GH70N
+  3rd Boot Device: Removable Device
+  4th Boot Device: EFI Device
+  5th Boot Device: LAN
+Boot Options
+  1st Boot Device: EFI Device
+  2nd Boot Device: Hard Disk
+  3rd Boot Device: CD&DVD HL-DT-ST DVDRAM GH70N
+  4th Boot Device: Removable Device
+  5th Boot Device: LAN
+## cbh
+MX 610 Laser
+Perixx PERIBOARD-407W keyboard

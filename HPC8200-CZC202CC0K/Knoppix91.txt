@@ -1,0 +1,15 @@
+vim: ft=build:
+
+HP Compaq 8200 XY129ET CZC202CC0K - HPC8200
+
+Knoppix91
+
+# physical configuration
+ATI Radeon HD 4870 with a DVI to VGA adapter
+ViewSonic VA1616w 1366x768
+## cbh
+Perixx PERIBOARD-407W keyboard
+## disks
+SATA0: ST380013AS in bottom  3½" slot
+SATA1: WD400 in middle 3½" slot
+SATA2: DVD drive in 2nd 5¼" bay from top

@@ -1,0 +1,18 @@
+vim: ft=build:
+
+HP Compaq 8200 XY129ET CZC202CC0K - HPC8200
+
+# build
+## mature Arch install from AVT661 on SDSSDA240G
+non present drives configured in  /etc/fstab  failed - offered maintenance mode
+  nvim /etc/fstab  and commented out my extra disks
+15-as_root-rsnapshot_automated.sh  to  disable  timers
+systemctl disable dhcpcd@enp0s25
+sudo blkid > ~/Arch/kcb-HPC8200-blkid
+# physical configuration
+Mirai DML-519W100 - wide 1440x900 = 16:10  Contrast 0
+## cbh
+Perixx PERIBOARD-407W keyboard
+## disks
+SATA0: SDSSDA240G resting in 4th 3½" bay from top
+SATA2: DVD drive in 2nd 5¼" bay from top

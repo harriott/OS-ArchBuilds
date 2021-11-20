@@ -1,0 +1,13 @@
+vim: ft=build:
+
+HP Compaq 8200 XY129ET CZC202CC0K - HPC8200
+
+# build
+# physical configuration
+Acer GF-7300SE-N-A3
+## cbh
+Perixx PERIBOARD-407W keyboard
+## disks
+SATA0: ST380013AS in bottom  3½" slot
+SATA1: WD400 in middle 3½" slot
+SATA2: DVD drive in 2nd 5¼" bay from top

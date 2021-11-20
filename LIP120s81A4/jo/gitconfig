@@ -6,8 +6,8 @@
 # Its contents are referred to as needed by Git, making changes saved here instantaneous.
 
 [include]
-	path = ~/gitconfig-user
-	# path = /mnt/SDEP128G/Dropbox/JH/core/IT_stack/CrossPlatform/git/config-user
-	path = ~/misc/CrossPlatform/gitconfig
-	# path = /mnt/SDEP128G/Dropbox/JH/core/IT_stack/onGitHub/misc/CrossPlatform/gitconfig
+	; path = /home/jo/gitconfig-user
+	path = /mnt/SDEP128G/Dropbox/JH/core/IT_stack/CrossPlatform/git/config-user
+	; path = /home/jo/misc/CrossPlatform/gitconfig
+	path = /mnt/SDEP128G/Dropbox/JH/core/IT_stack/onGitHub/misc/CrossPlatform/gitconfig
 

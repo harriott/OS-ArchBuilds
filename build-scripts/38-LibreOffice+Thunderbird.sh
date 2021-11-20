@@ -35,9 +35,9 @@ Drloc=SD480GSSDPlus
 Drloc=SDEP128G
 defrel=(
   sed -i
-  "'/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s:Path=.*:Path=/mnt/$Drloc/Dropbox/JH/T91-default-release: }'"
+  "/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s:Path=.*:Path=/mnt/$Drloc/Dropbox/JH/T91-default-release: }"
   ~/.thunderbird/profiles.ini
 )
-eval "${defrel[@]}"
+"${defrel[@]}"
 thunderbird  # (default-release) > Start
 

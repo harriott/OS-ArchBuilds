@@ -388,6 +388,12 @@
       <command>xbacklight -inc 10</command>
     </action>
   </keybind>
+  <!-- Keybinding for slock - JH -->
+  <keybind key="W-s">
+    <action name="Execute">
+      <command>slock</command>
+    </action>
+  </keybind>
   <!-- Keybindings for speaker - JH -->
   <keybind key="XF86AudioMute">
     <action name="Execute">
