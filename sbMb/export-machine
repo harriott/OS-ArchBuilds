@@ -11,6 +11,7 @@
 #  sourced by  $ARCHBUILDS/root/bash_profile
 
 export rsnapshot=/mnt/WD1001FALS/rsnapshot
+export startxDelay=8
 
 #=> for  $ARCHBUILDS/jo/export-storage
 export myDrA=1  # my Dropbox is active

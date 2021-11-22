@@ -29,7 +29,7 @@ mkfs.ext4 /dev/$root
 # swap
 mkswap /dev/$swap
 swapon /dev/$swap
-swapon -s  # should show /dev/$root has Priority -2
+swapon -s  # should show /dev/$swap has Priority -2
 
 # /home
 mkfs.ext4 /dev/$home

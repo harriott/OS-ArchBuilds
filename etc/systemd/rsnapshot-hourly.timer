@@ -1,3 +1,7 @@
+# vim: set fdl=1:
+
+# cp $ARCHBUILDS/etc/systemd/rsnapshot-hourly.timer /etc/systemd/system/rsnapshot-hourly.timer
+#  done in  $ARCHBUILDS/build-scripts/09-as_root-to_jo.sh
 
 [Unit]
 Description=rsnapshot hourly backup
@@ -10,3 +14,4 @@ Unit=rsnapshot@hourly.service
 
 [Install]
 WantedBy=timers.target
+

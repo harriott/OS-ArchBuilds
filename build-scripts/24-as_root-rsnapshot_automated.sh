@@ -1,20 +1,20 @@
 #!/bin/bash
 # vim: fdl=1:
 
-if [[ $(id -u) > 0 ]]; then
-  echo "Run this as root!"
-  exit
-fi
+if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-echo $ARCHBUILDS
+echo "ARCHBUILDS=$ARCHBUILDS"
 
-#=> 1 rsnapshot systemd files
-# rsnapshot timers - when rsnapshot conf
-for systemdUnit in $ARCHBUILDS/etc/systemd/rsnapshot*; do
-    cp $systemdUnit /etc/systemd/system/${systemdUnit##/*/}
-    # echo "$systemdUnit /etc/systemd/system/${systemdUnit##/*/}"
-done
-# eg $ARCHBUILDS/etc/systemd/rsnapshot-hourly.timer
+# # #=> 1 rsnapshot systemd files 0
+# cp $ARCHBUILDS/etc/systemd/rsnapshot-hourly.timer /etc/systemd/system/rsnapshot-hourly.timer
+# cp $ARCHBUILDS/etc/systemd/rsnapshot-daily.timer /etc/systemd/system/rsnapshot-daily.timer
+# cp $ARCHBUILDS/etc/systemd/rsnapshot-weekly.timer /etc/systemd/system/rsnapshot-weekly.timer
+# cp $ARCHBUILDS/etc/systemd/rsnapshot-monthly.timer /etc/systemd/system/rsnapshot-monthly.timer
+# cp $ARCHBUILDS/etc/systemd/rsnapshot@.service /etc/systemd/system/rsnapshot@.service
+
+#=> 1 rsnapshot systemd files 1 adjusted for laptop
+cp $ARCHBUILDS/etc/systemd/rsnapshot-sync-hourly.timer /etc/systemd/system/rsnapshot-hourly.timer
+cp $ARCHBUILDS/etc/systemd/rsnapshot-sync-hourly.service /etc/systemd/system/rsnapshot-hourly.service
 
 #=> 2 rsnapshot timers 0 enable
 systemctl enable --now rsnapshot-hourly.timer

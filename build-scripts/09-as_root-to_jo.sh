@@ -56,6 +56,19 @@ chmod -c 0400 /etc/doas.conf
 # # tree
 # pacman -S tree
 
+#=> 0 hd
+# hdparm
+pacman -S hdparm
+
+# NTFS-3G
+pacman -S ntfs-3g
+
+# udiskie
+pacman -S udiskie
+
+# weekly TRIM
+systemctl enable fstrim.timer --now
+
 # #=> 0 info
 # # Bashtop
 # pacman -S bashtop  # later superseded by AUR bpytop
@@ -103,11 +116,7 @@ chmod -c 0400 /etc/doas.conf
 # #=> 0 netcat
 # pacman -S openbsd-netcat
 
-# #=> 0 Rootkit Hunter
-# pacman -S rkhunter
-# source 00-as_root-RootkitHunt.sh
-
-# #=> 0 softwares - networking
+# #=> 0 networking
 # # isync
 # pacman -S isync  # for mbsync
 
@@ -116,6 +125,10 @@ chmod -c 0400 /etc/doas.conf
 
 # # Wget
 # pacman -S wget
+
+# #=> 0 Rootkit Hunter
+# pacman -S rkhunter
+# source 00-as_root-RootkitHunt.sh
 
 # #=> 0 system
 # # fcron
@@ -130,9 +143,6 @@ chmod -c 0400 /etc/doas.conf
 
 # # meson, for auracle later
 # pacman -S meson
-
-# # NTFS-3G
-# pacman -S ntfs-3g
 
 # # pacman-contrib, for paccache
 # pacman -S pacman-contrib

@@ -2,17 +2,9 @@
 # vim: fdl=1 sw=2:
 
 #=> 0 ARCHBUILDS
-ARCHBUILDS=/ArchBuilds
-AB=/home/jo/ArchBuilds
-[[ -d $AB ]] && ARCHBUILDS=$AB
-AB=/mnt/SD480GSSDPlus/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
-AB=/mnt/SDEP128G/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
-[[ -d $AB ]] && ARCHBUILDS=$AB
+. 05-exports.sh
 
-#=> 1 test
-echo $ARCHBUILDS
-
-#=> 2 root symlinks
+#=> 1 root symlinks
 ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
   ln -sf $ARCHBUILDS/root/bashrc /root/.bashrc  # sources bashrc-generic
 

@@ -65,6 +65,7 @@ sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
 ### exa
 bm exa
 e
+e -l -s modified  # time sorted
 e -la  # for permissions and symlinks
 e -T   # for tree
 
@@ -251,14 +252,16 @@ trash-empty  # lists before query
 
 ### rsnapshot
 $MACHINE/etc/rsnapshot.conf
-cd /mnt/WD1001FALS/rsnapshot
-sm /mnt/WD1001FALS/rsnapshot/monthly.6
+cd $rsnapshot
+sm $rsnapshot/monthly.6
 
 #### backup localhost without mnt
 lastMonthly=/mnt/WD1001FALS/rsnapshot/monthly.6/localhost/; month=$(date -r $lastMonthly +%y%m%d); echo $month
 sudo rsync -irtv --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
 
 #### checking
+/var/log/rsnapshot
+e -l -s modified $rsnapshot
 journalctl -r | grep rsnapshot | grep Consumed | xcol daily weekly | mo
 journalctl -u rsnapshot@daily -r
 journalctl -u rsnapshot@hourly -r

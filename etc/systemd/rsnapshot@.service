@@ -1,3 +1,7 @@
+# vim: set fdl=1:
+
+# cp $ARCHBUILDS/etc/systemd/rsnapshot@.service /etc/systemd/system/rsnapshot@.service
+#  done in  $ARCHBUILDS/build-scripts/09-as_root-to_jo.sh
 
 [Unit]
 Description=rsnapshot (%I) backup
@@ -7,3 +11,4 @@ Type=oneshot
 Nice=19
 IOSchedulingClass=idle
 ExecStart=/usr/bin/rsnapshot %I
+

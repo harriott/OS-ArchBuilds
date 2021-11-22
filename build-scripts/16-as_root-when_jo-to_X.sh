@@ -172,6 +172,7 @@ pacman -S slock
 # #=> 2 automatic login to virtual console
 # [ -d /etc/systemd/system/getty@tty1.service.d ] || mkdir /etc/systemd/system/getty@tty1.service.d
 # cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
+# rm /etc/systemd/system/getty@tty1.service.d/override.conf
 
 # #=> 3 finish
 # echo "now reboot"

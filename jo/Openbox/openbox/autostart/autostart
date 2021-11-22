@@ -28,7 +28,7 @@
 gvim -geometry +760+0 &  # opens just left of Conky on 1920x1080 screen
 # - set also in $Openbox/openbox/rc.xml
 
-#==> 0 openbox
+#==> 0 Openbox
 conky -c $ARCHBUILDS/jo/Openbox/conkyrc
 copyq & # because CopyQ's internal Autostart doesn't work
 dropbox &
@@ -40,6 +40,7 @@ obmenu-generator &
 pnmixer &
 redshift-gtk -l 48.8646:2.3984 &
 tint2 &
+udiskie -t &
 $Openbox/openbox/autostart/urxvtl.sh
 
 #==> 1 machine dependent

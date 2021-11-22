@@ -1,0 +1,15 @@
+# vim: fdl=1 ft=fstab:
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# /dev/sda1
+UUID=35ba3af1-a89a-417e-9937-0feccbf24996	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda2
+UUID=7a35934a-646a-4dac-a087-010026e43693	/home     	ext4      	rw,relatime	0 2
+
+# /dev/sda3
+UUID=1fcd7fbc-fca7-4329-aa5d-94555420f28c	none      	swap      	defaults  	0 0
+
+LABEL=BX200 /mnt/BX200  ext4  defaults  0  2
+

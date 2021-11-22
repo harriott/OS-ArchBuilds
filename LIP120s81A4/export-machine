@@ -10,7 +10,9 @@
 #  symlinked in  $ARCHBUILDS/build-scripts/05-root_symlinks.sh
 #  sourced by  $ARCHBUILDS/root/bash_profile
 
-export rsnapshot=/au/rsnapshot
+# export rsnapshot=/au/rsnapshot
+export rsnapshot=/run/media/jo/KDTG311281/rsnapshot/
+export startxDelay=2
 
 # machine-specific, for  $ARCHBUILDS/jo/export-storage
 export myDrA=1  # my Dropbox is active

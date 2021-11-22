@@ -20,3 +20,4 @@ LABEL=SD480GSSDPlus /mnt/SD480GSSDPlus  ext4  defaults  0  2
 LABEL=ST4000VN008 /mnt/ST4000VN008  ext4  defaults  0  2
 LABEL=WD1001FALS /mnt/WD1001FALS  ext4  defaults  0  2
 LABEL=WD30EZRZ /mnt/WD30EZRZ  ext4  defaults  0  2
+
