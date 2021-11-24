@@ -3,7 +3,10 @@
 
 # bash 31-symlinks-Openbox.sh
 
-#=> symlinks for Openbox itself
+#=> 0 ARCHBUILDS
+. 05-exports.sh
+
+#=> 1 symlinks for Openbox itself
 
 ln -sf $Openbox/openbox/schema.pl ~/.config/obmenu-generator/schema.pl
 exa -la ~/.config/obmenu-generator/schema.pl

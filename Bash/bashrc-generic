@@ -1,8 +1,15 @@
 # vim: ft=sh sw=2:
 
 # Joseph Harriott
+
 # Bash configurations that are also useful in Console and as root.
-# sourced by  $Bash/bash_profile  &  $MACHINE/jo/bashrc
+
+# for jo:
+#  symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
+#  sourced by  $Bash/bash_profile (&  $Bash/bashrc)
+# for root:
+#  symlinked in  $ARCHBUILDS/build-scripts/05-root_symlinks.sh
+#  sourced by  $ARCHBUILDS/root/bashrc
 
 alias fin='figlet -f univers finished'
 alias tkt='tmux kill-server > /dev/null 2>&1; tmux'

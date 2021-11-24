@@ -5,8 +5,7 @@ Joseph Harriott
 configuration last updated Wed 24 Nov 2021
 adapted from output of  conky --print-config
 conky -c <thisfile>, as in  $Openbox/openbox/autostart/autostart
-*** replaced now by  $MACHINE/jo/conkyrc ***
-some settings are machine specific
+some settings are machine specific (and there's no easy way to generalise this file)
 ]]
 
 conky.config = {

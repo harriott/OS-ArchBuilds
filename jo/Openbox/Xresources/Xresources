@@ -1,6 +1,6 @@
 ! https://wiki.archlinux.org/index.php/font_configuration
 Xft.autohint: 0
-Xft.lcdfilter: lcddefault
+ft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
 Xft.hinting: 1
 Xft.antialias: 1
@@ -12,10 +12,13 @@ Xft.rgba: rgb
 ! ------------
 ! ------------
 
-! After changes here, either quit & restart X or  xrdb $MACHINE/jo/Xresources
+! this is called from my  $ARCHBUILDS/jo/xinitrc
+
+! after changes here, either quit & restart X or
+!  xrdb $MACHINE/jo/Xresources  or  xrdb ~/.Xresources
 ! apostrophes in comments can trigger warnings, so dont use them
 
-! These don't have any visible effect:
+! These dont have any visible effect:
 xman*directoryFontNormal: -*-ubuntumono-*-r-*-*-*-120-*-*-*-*-*-*
 xman*manualFontNormal:    -*-ubuntumono-*-r-*-*-*-120-*-*-*-*-*-*
 ! - even though:
@@ -72,4 +75,6 @@ URxvt.boldFont: xft:ubuntumono:bold:size=9
 ! URxvt.letterSpace: -1
 ! URxvt.font: xft:sourcecodepro:size=9
 ! - a tiny bit taller than Ubuntu 10
+
+#include "/home/jo/.Xresources-LukeSmith-gruvbox"
 

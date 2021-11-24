@@ -15,7 +15,7 @@ sudo pacman -S network-manager-applet
 
 # #=> 0 SSH config
 # ln -sf $CrossPlatform/SSHconfig/LIP120s81A4 ~/.ssh/config
-# ln -sf $CrossPlatform/SSHconfig/M587637 ~/.ssh/config
+ln -sf $CrossPlatform/SSHconfig/i34G1TU02 ~/.ssh/config
 # ln -sf $CrossPlatform/SSHconfig/sbMb ~/.ssh/config
 
 # #=> 1 git 0 check configuration

@@ -6,7 +6,6 @@ commands in this QuickReference work in my Arch install
 $ITstack/gitconfig
 copyq help | mo
 gspdfpng
-xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
 # fcron
 systemctl status fcron.service  # showing recent events
@@ -187,7 +186,7 @@ cd /usr/share/fonts; $ fd -L consolas
 ## Fontconfig
 cd /etc/fonts  # to explore the configuration files
 fc-list | grep Lohit
-fc-list -v ubuntu
+fc-list -v ubuntumono
 sudo fc-cache -f  # regenerates the cache
 
 ### fc-scan
@@ -240,6 +239,7 @@ GNU Parted
 
 ### non-optical
 $DROPBOX/JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch > rg -ttxt ft=bbcode > forum.txt
+df -h | xcol mnt media
 
 #### Trash
 gio trash --empty  # empties all .Trash-1000
@@ -305,8 +305,11 @@ get the PIDs  ps ax | grep cmus  then for each  kill -9 PID
 # networking
 bm firewall-cmd
 cat /etc/hostname
+curl ifconfig.co  # IP address
+curl ifconfig.co/country
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
+wp  # weather in Paris
 xdg-open https://archlinux.org
 
 ## Dropbox
@@ -354,25 +357,6 @@ nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
 sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
 sudo ls /etc/NetworkManager/system-connections/
 systemctl status NetworkManager
-
-# Openbox
-$Openbox/openbox/autostart
-$Openbox/openbox/schema.pl
-
-## rc
-$Openbox/openbox/rc.xml
-Alt+Space => show client menu for active window
-Ctrl+Alt+arrows => move to desktop
-Shift+Alt+arrows => move to desktop, bringing current window along
-Win+1 => move the window to monitor 1
-Win+2 => move the window to monitor 2
-Win+r => Resize
-Win+t => last tmux buffer to X11 clipboard
-Win+u => urxvt
-
-## tint2
-$Openbox/tint2rc
-killall -SIGUSR1 tint2  # reloads
 
 # packages
 checkupdates
@@ -472,19 +456,26 @@ termdown -b 10
 
 ## tmux
 $tmx/tmux.conf
-C-a w -> choose window from a list
 C-a [ -> copy-mode
 resize -s 65 120  # good for half of ViewSonic VX2025wm
 tmux list-keys | mo
 
-### panes
+### session window pane
+M-PgDn/PgUp -> (= C-a (/) ) previous/next session
+
+#### panes
 C-a C-o -> Rotate through the panes
 C-a M-1 -> switch to even-horizontal layout
 C-a M-2 -> switch to even-vertical layout
 C-a M-3 -> switch to main-horizontal layout
 C-a M-4 -> switch to main-vertical layout
+C-a q -> show numbers
 C-a { = swap-pane -U
 C-a } = swap-pane -D
+
+#### windows
+C-a w -> choose window from a list
+M-n -> (= C-a n ) select window n
 
 ## urxvt
 Alt+s --> urxvt-searchable-scrollback
@@ -516,4 +507,26 @@ pkill copyq
 ## gVim
 gvim --help | mo
 gvim -geom 200  # height parameter is omitted as it's having no effect
+
+# windows
+xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
+
+## Openbox
+$Openbox/openbox/autostart
+$Openbox/openbox/schema.pl
+
+### rc
+$Openbox/openbox/rc.xml
+Alt+Space => show client menu for active window
+Ctrl+Alt+arrows => move to desktop
+Shift+Alt+arrows => move to desktop, bringing current window along
+Win+1 => move the window to monitor 1
+Win+2 => move the window to monitor 2
+Win+r => Resize
+Win+t => last tmux buffer to X11 clipboard
+Win+u => urxvt
+
+### tint2
+$Openbox/tint2rc
+killall -SIGUSR1 tint2  # reloads
 

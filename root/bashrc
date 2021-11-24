@@ -13,7 +13,7 @@ alias l='ls --color=auto'
 # my preferences:
 # ---------------
 set -o vi
-[[ -f $ARCHBUILDS/Bash/bashrc-generic ]] && . $ARCHBUILDS/Bash/bashrc-generic
+[[ -f /home/jo/.bashrc-generic ]] && . /home/jo/.bashrc-generic
 
 # a colorised (bold red) prompt:
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '

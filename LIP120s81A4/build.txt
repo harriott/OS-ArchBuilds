@@ -250,6 +250,8 @@ bash 38-LibreOffice+Thunderbird.sh
 ## waiting
 hdparm
 weekly TRIM
+~/.Xresources
+~/.Xresources-LukeSmith-gruvbox
 # fcron
 fcrontab -l
   @ 3 bash ~/Arch/cmusqueue.sh

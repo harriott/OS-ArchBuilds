@@ -1,25 +1,28 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# to be sourced by another build script
+# bash $ARCHBUILDS/build-scripts/05-exports.sh
 
 #=> 0 ARCHBUILDS
 # 1 in root
-ARCHBUILDS=/ArchBuilds
+export ARCHBUILDS=/ArchBuilds
 # 2 in jo
 AB=/home/jo/ArchBuilds
-[[ -d $AB ]] && ARCHBUILDS=$AB
+[[ -d $AB ]] && export ARCHBUILDS=$AB
 # 3 in Dropbox
-Storage=/mnt/BX200
-# Storage=/mnt/SD480GSSDPlus
+Storage=/mnt/BX200  # i34G1TU02
+# Storage=/mnt/SD480GSSDPlus  # sbMb
 # Storage=/mnt/SDEP128G
-  AB=/mnt/$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
-[[ -d $AB ]] && ARCHBUILDS=$AB
+  AB=$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
+[[ -d $AB ]] && export ARCHBUILDS=$AB
 
 #=> 1 and more
-Bash=$ARCHBUILDS/jo/Bash
-MACHINE=$ARCHBUILDS/$(uname -n)
+export Bash=$ARCHBUILDS/jo/Bash
+export host=$(uname -n)
+  export MACHINE=$ARCHBUILDS/$host
+export Openbox=$ARCHBUILDS/jo/Openbox
 
 #=> 2 test
-    echo '$MACHINE' "= $MACHINE"
+echo '$MACHINE' "= $MACHINE"
+read -p "- looks good?"
 

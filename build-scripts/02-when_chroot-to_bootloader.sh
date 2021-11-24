@@ -35,13 +35,15 @@ trap read debug  # puts a read request after each executable line
 # # echo KEYMAP=fr > /etc/vconsole.conf
 # echo KEYMAP=uk > /etc/vconsole.conf
 
-# #=> 2 host
-# cat /etc/hostname  # shows it ain't there
+#=> 2 hostname
+cat /etc/hostname  # shows it ain't there
+hostname=i34G1TU02
 # hostname=LIP120s81A4
-# hostname=LIP120s81A4
-# # hostname=ltcm58
-# # hostname=sbMb
-# echo $hostname > /etc/hostname
+# hostname=sbMb
+echo $hostname > /etc/hostname
+cat /etc/hostname
+
+# #=> 2 hosts
 # # /etc/hosts
 # echo "127.0.0.1 localhost" >> /etc/hosts
 # echo "::1       localhost" >> /etc/hosts
@@ -83,19 +85,19 @@ trap read debug  # puts a read request after each executable line
 # # root password
 # until passwd; do echo 'try again'; done
 
-#=> 6 nano
-ARCHBUILDS=/ArchBuilds
-pacman -S nano-syntax-highlighting
+# #=> 6 nano
+# ARCHBUILDS=/ArchBuilds
+# pacman -S nano-syntax-highlighting
 
-# #==> jo nanorc
-# mkdir /home/jo/.config/nano
-# ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
-# nvim -O /home/jo/.config/nano/nanorc /etc/nanorc
+# # #==> jo nanorc
+# # mkdir /home/jo/.config/nano
+# # ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
+# # nvim -O /home/jo/.config/nano/nanorc /etc/nanorc
 
-#==> root nanorc
-mkdir ~/.config/nano
-ln -sf $ARCHBUILDS/root/nanorc ~/.config/nano/nanorc
-nvim -O ~/.config/nano/nanorc /etc/nanorc
+# #==> root nanorc
+# mkdir ~/.config/nano
+# ln -sf $ARCHBUILDS/root/nanorc ~/.config/nano/nanorc
+# nvim -O ~/.config/nano/nanorc /etc/nanorc
 
 # #=> 7 finish
 # # Quit chroot now, and reboot!

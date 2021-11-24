@@ -35,7 +35,7 @@ halt -p
 "Timed out... enp0s25" so  systemctl disable dhcpcd@enp0s25
 firewall-cmd --zone=trusted --remove-interface=enp0s25 --permanent
 firewall-cmd --reload
-## waiting
+## waiting - hostname
 # physical configuration
 Fujitsu E19W5 1440x900
 BX200  in  LogiLink 2.5" HDD Mounting Bracket  in space under DVD drive
