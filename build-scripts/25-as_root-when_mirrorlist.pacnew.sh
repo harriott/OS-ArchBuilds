@@ -1,10 +1,9 @@
 #!/bin/bash
 
-set -v  # prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
+if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-# to be run as root
-true
+set -v  # prints each statement here, including comments
+
 rm /etc/pacman.d/mirrorlist.pacnew
 . 02-when_chroot-reflector.sh
 

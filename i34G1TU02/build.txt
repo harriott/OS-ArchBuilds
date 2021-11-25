@@ -35,7 +35,26 @@ halt -p
 "Timed out... enp0s25" so  systemctl disable dhcpcd@enp0s25
 firewall-cmd --zone=trusted --remove-interface=enp0s25 --permanent
 firewall-cmd --reload
-## waiting - hostname
+## Updates
+bash 36-symlinks-sshd.sh
+:: Replace python-sgmllib with extra/python-sgmllib3k? [Y/n]
+2GiB...
+## waiting
+# fcron
+fcrontab -l
+  @ 10 bash ~/Arch/bash_history.sh
+  @ 20 jump clean
+## temperatures
+ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+# pacnew - clamd.conf
+sudo nvim -o /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
+sudo rm /etc/clamav/clamd.conf.pacnew
+# pacnew - mirrorlist
+bash 25-as_root-when_mirrorlist.pacnew.sh
+# pacnew - sshd_config
+sudo nvim -O /etc/ssh/sshd_config /etc/ssh/sshd_config.pacnew -c 'windo difft'
+sudo rm /etc/ssh/sshd_config.pacnew
 # physical configuration
 Fujitsu E19W5 1440x900
 BX200  in  LogiLink 2.5" HDD Mounting Bracket  in space under DVD drive

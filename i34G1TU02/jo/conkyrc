@@ -98,5 +98,5 @@ ${color white}$hr
 
 $font${alignc}${color lightgrey}${execpi 300 curl wttr.in/Paris?T0 -s -m 3}
 
-   ${color white}sunrise${color lightgrey}${execpi 300 curl wttr.in/Paris?format="+%S" -s -m 3} ${color white}sunset${color lightgrey}${execpi 300 curl wttr.in/Paris?format="+%s" -s -m 3}
+   ${color lightgrey}${execpi 300 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
 ]]

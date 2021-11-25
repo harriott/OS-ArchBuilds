@@ -6,5 +6,6 @@
 
 #=> set geometry appropriate for 1440x900 screen
 # open urxvt from left of screen, allowing room for 106 column gVim
-export urxvtGeometry='92x54+0+0'  # urxvt -geometry '92x54+0+0' &
+export urxvtGeometry='104x64+0+0'  # urxvt -geometry '104x64+0+0' &
+# for  ubuntumono 9  in  $Openbox/Xresources/Xresources
 

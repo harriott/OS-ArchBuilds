@@ -15,22 +15,22 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd ~
 
-#==> 1 xdg-utils-handlr
-# sudo pacman -Rs xdg-utils  can't be done as needed by  chromium  &  qt5-base
-gAUR xdg-utils-handlr
-nvim -c "silent! /handlr" PKGBUILD
-makepkg -sic  # don't forget to allow Removal of xdg-utils
-cd ~
+# #==> 1 xdg-utils-handlr
+# # sudo pacman -Rs xdg-utils  can't be done as needed by  chromium  &  qt5-base
+# gAUR xdg-utils-handlr
+# nvim -c "silent! /handlr" PKGBUILD
+# makepkg -sic  # don't forget to allow Removal of xdg-utils
+# cd ~
 
-#==> 2 set default handlers
-handlr set .md gvim.desktop
+# #==> 2 set default handlers
+# handlr set .md gvim.desktop
 
 # #=> mimeo
 
-# #==> 0 mimeo
-# gAUR mimeo
-# nvim PKGBUILD
-# makepkg -sic
+#==> 0 mimeo
+gAUR mimeo
+nvim -c "silent! /mimeo" PKGBUILD
+makepkg -sic
 
 # #==> 1 xdg-utils-mimeo
 # gAUR xdg-utils-mimeo

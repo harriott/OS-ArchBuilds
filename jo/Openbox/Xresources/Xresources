@@ -12,7 +12,8 @@ Xft.rgba: rgb
 ! ------------
 ! ------------
 
-! this is called from my  $ARCHBUILDS/jo/xinitrc
+! symlinked in my  $ARCHBUILDS/build-scripts/17-symlinks.sh
+! called from my  $ARCHBUILDS/jo/xinitrc
 
 ! after changes here, either quit & restart X or
 !  xrdb $MACHINE/jo/Xresources  or  xrdb ~/.Xresources

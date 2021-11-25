@@ -1,9 +1,0 @@
-
-let g:monitorheight='1050' " for setting window height
-
-" move on to my Arch gvimrc
-let gvimrcArch = expand("$HOME/.vim/gvimrc-Arch.vim")
-if filereadable(gvimrcArch)
-  exec "source ".gvimrcArch
-endif " ignored if ~/.vim isn't yet there
-

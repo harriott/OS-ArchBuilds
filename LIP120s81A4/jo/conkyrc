@@ -23,7 +23,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'DejaVu Sans Mono:size=10',
+    font = 'ubuntumono:size=9',
     gap_x = 60,
     gap_y = 60,
     minimum_height = 5,
@@ -51,17 +51,17 @@ conky.config = {
 conky.text = [[
 #
 #-- system
-  ${color white}$nodename - $sysname $kernel
+ ${color white}$nodename - $sysname $kernel
 $hr
 #
 #-- time
-${color lightgrey}${font Arial:pixelsize=44}${time %k:%M}${font Arial:pixelsize=38}${time :%S} $font
+${color lightgrey}${font Arial:pixelsize=34}${time %k:%M}${font Arial:pixelsize=30}${time :%S} $font
 #
 #-- calendar
 ${color lightgrey}${execpi 1800 DA=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$DA"'\b'/'\1${color orange}'"$DA"'${color lightgrey}'/}
 #
 #-- system stats
-${color white}Uptime $color$uptime  ${color white}Frequency $color$freq MHz
+${font :size=8}${color white}Uptime $color$uptime  ${color white}Frequency $color$freq MHz
 ${color white}RAM $color$mem ($memmax) = $memperc% ${membar 4}
 ${color white}Swap $color$swap ($swapmax) = $swapperc% ${swapbar 4}
 ${color white}CPU $color$cpu% ${cpubar 4}
@@ -69,14 +69,13 @@ ${color white}Processes $color$processes  ${color white}Running $color$running_p
 ${color white}$hr
 #
 #-- hard drives
-${font :size=9} / $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color white}
+ / $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color white}
  /home $color${fs_used /home} (${fs_size /home}) ${fs_bar 6 /home} ${color white}
- $Storage $color${fs_used /mnt/SD480GSSDPlus} (${fs_size /mnt/SD480GSSDPlus}) ${fs_bar 6 /mnt/SD480GSSDPlus}
+ $Storage $color${fs_used /mnt/SDEP128G} (${fs_size /mnt/SDEP128G}) ${fs_bar 6 /mnt/SDEP128G}
 # can't figure how to feed  $Storage  to  fs_*  commands
 ${color white}$hr
 #
 #-- WAN
-  ${color white}enp0s25  Up $color${upspeed enp0s25} ${color white} Down $color${downspeed enp0s25}
   ${color white}wlan0  Up $color${upspeed wlan0} ${color white} Down $color${downspeed wlan0}
 ${color white}$hr
 #
@@ -98,5 +97,5 @@ ${color white}$hr
 
 $font${alignc}${color lightgrey}${execpi 300 curl wttr.in/Paris?T0 -s -m 3}
 
-   ${color white}sunrise${color lightgrey}${execpi 300 curl wttr.in/Paris?format="+%S" -s -m 3} ${color white}sunset${color lightgrey}${execpi 300 curl wttr.in/Paris?format="+%s" -s -m 3}
+   ${color lightgrey}${execpi 300 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
 ]]

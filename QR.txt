@@ -353,6 +353,7 @@ URLs (such as in an email sent from mutt) unclickable - so better to send to the
 nmcli connection delete Jo-X10II
 nmcli device wifi connect Jo-X10II password <password>
 nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
+nmcli connection up uuid 667c759d-382a-4875-9021-2258cdba8dad
 nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
 sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
 sudo ls /etc/NetworkManager/system-connections/

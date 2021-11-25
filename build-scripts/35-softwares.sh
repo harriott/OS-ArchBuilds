@@ -13,14 +13,14 @@ trap read debug  # puts a read request after each executable line
 
 # #=> bat-extras-git
 # gdAUR bat-extras-git
-# gvim -c "silent! /eth-p" PKGBUILD
+# nvim -c "silent! /eth-p" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> bfg
 # gAUR bfg
-# gvim PKGBUILD
-# gvim -c "silent! /madgag" PKGBUILD
+# nvim PKGBUILD
+# nvim -c "silent! /madgag" PKGBUILD
 # makepkg -sic  # jre-openjdk
 
 # #=> bpytop
@@ -29,12 +29,12 @@ trap read debug  # puts a read request after each executable line
 
 # #=> cht.sh-git
 # gdAUR cht.sh-git
-# gvim -c "silent! /chubin" PKGBUILD
+# nvim -c "silent! /chubin" PKGBUILD
 # makepkg -sic
 
 # #=> clamav-unofficial-sigs 0 install
 # gdAUR clamav-unofficial-sigs
-# gvim -c "silent! /extremeshok" PKGBUILD
+# nvim -c "silent! /extremeshok" PKGBUILD
 # makepkg -sic
 # sudo systemctl enable clamav-unofficial-sigs.timer
 
@@ -44,13 +44,13 @@ trap read debug  # puts a read request after each executable line
 
 # #=> cmus-notify
 # gAUR cmus-notify
-# gvim -c "silent! /AntoineGagne" PKGBUILD
+# nvim -c "silent! /AntoineGagne" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> colorpicker
 # gAUR colorpicker
-# gvim -c "silent! /Jack12816" PKGBUILD
+# nvim -c "silent! /Jack12816" PKGBUILD
 # makepkg -sic
 
 # #=> devtools
@@ -59,16 +59,16 @@ trap read debug  # puts a read request after each executable line
 
 # #=> diskonaut
 # gAUR diskonaut
-# gvim -c "silent! /imsnif" PKGBUILD
+# nvim -c "silent! /imsnif" PKGBUILD
 # makepkg -sic  # takes a long time
 # true
 
-# #=> Dropbox 0 (re)install
-# # only once there's a browser, and preferably after LastPass
-# gAUR dropbox
-# gvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+# only once there's a browser, and preferably after LastPass
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -83,12 +83,12 @@ trap read debug  # puts a read request after each executable line
 # #=> fonts - figlet-fonts
 # # brings in figlet
 # gAUR figlet-fonts
-# gvim -c "silent! /ftp.figlet.org" PKGBUILD
+# nvim -c "silent! /ftp.figlet.org" PKGBUILD
 # makepkg -sic
 
 # #=> fonts - fontpreview-git
 # gAUR fontpreview-git
-# gvim -c "silent! /sdushantha" PKGBUILD
+# nvim -c "silent! /sdushantha" PKGBUILD
 # makepkg -sic
 
 # #=> fonts - gnu-free-fonts
@@ -96,7 +96,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> fonts - lohit-fonts
 # gAUR lohit-fonts
-# gvim -c "silent! /_fhosted" PKGBUILD
+# nvim -c "silent! /_fhosted" PKGBUILD
 # makepkg -sic
 
 # #=> fonts - ttf-dejavu
@@ -108,11 +108,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Firefox
 # sudo pacman -S firefox
 
-# #=> fangfrisch 1 AUR
-# gAUR python-fangfrisch
-# gvim -c "silent! /rseichter" PKGBUILD
-# makepkg -sic
-# true
+#=> fangfrisch 1 AUR
+gAUR python-fangfrisch
+nvim -c "silent! /rseichter" PKGBUILD
+makepkg -sic
+true
 
 # #=> fangfrisch 2 settings
 # # 1 create database structure
@@ -126,7 +126,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> Google Chrome
 # gAUR google-chrome
-# gvim -c "silent! /dl.google.com" PKGBUILD
+# nvim -c "silent! /dl.google.com" PKGBUILD
 # makepkg -sic
 # true
 
@@ -135,7 +135,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> gst123
 # gAUR gst123
-# gvim -c "silent! /stefan" PKGBUILD
+# nvim -c "silent! /stefan" PKGBUILD
 # makepkg -sic  # takes a while
 # true
 
@@ -182,7 +182,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> moar-git 0 install
 # gAUR moar-git
-# gvim -c "silent! /walles" PKGBUILD
+# nvim -c "silent! /walles" PKGBUILD
 # makepkg -sic
 # true
 
@@ -200,18 +200,18 @@ trap read debug  # puts a read request after each executable line
 
 # #=> nodejs-mapscii 0 install
 # gAUR nodejs-mapscii
-# gvim PKGBUILD
+# nvim PKGBUILD
 # makepkg -sic
 # true
 
 # #=> nodejs-mapscii 1 remove
 # sudo pacman -Rs nodejs-mapscii
 
-#=> nordvpn-bin 0 install
-gAUR nordvpn-bin
-gvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
-makepkg -sic
-true
+# #=> nordvpn-bin 0 install
+# gAUR nordvpn-bin
+# nvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> nordvpn-bin 1 configure
 # sudo usermod -aG nordvpn jo  # need to re-login
@@ -229,10 +229,10 @@ true
 # #=> OpenShot
 # sudo pacman -S openshot
 
-# #=> PDFsam
-# gAUR pdfsam
-# gvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic  # choose  jdk-openjdk
+#=> PDFsam
+gAUR pdfsam
+nvim -c "silent! /torakiki" PKGBUILD
+makepkg -sic  # choose  jdk-openjdk
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -246,13 +246,13 @@ true
 # #=> perl-clone-pp
 # # for  perl-data-printer
 # gAUR perl-clone-pp
-# gvim -c "silent! /NEILB" PKGBUILD
+# nvim -c "silent! /NEILB" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> perl-data-printer
 # gAUR perl-data-printer
-# gvim -c "silent! /GARU" PKGBUILD
+# nvim -c "silent! /GARU" PKGBUILD
 # makepkg -sic
 # true
 
@@ -261,7 +261,7 @@ true
 
 # #=> PhotoCollage
 # gAUR photocollage
-# gvim PKGBUILD
+# nvim PKGBUILD
 # makepkg -sic
 
 # #=> Pinta
@@ -272,7 +272,7 @@ true
 
 # #=> pscircle-git
 # gAUR pscircle-git
-# gvim -c "silent! /mildlyparallel" PKGBUILD
+# nvim -c "silent! /mildlyparallel" PKGBUILD
 # makepkg -sic
 
 # #=> Python 2
@@ -283,14 +283,14 @@ true
 
 # #=> Samokovarov's jump
 # gAUR jump
-# gvim -c "silent! /gsamokovarov" PKGBUILD
+# nvim -c "silent! /gsamokovarov" PKGBUILD
 # makepkg -sic
 
 # #=> Spotify
 # curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
 # gpg -k 0D811D58
 # gAUR spotify
-# gvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
+# nvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
 # makepkg -sic
 
 # #=> sqlitebrowser
@@ -298,7 +298,7 @@ true
 
 # #=> tint-tetris
 # gAUR tint-tetris
-# gvim -c "silent! /debian" PKGBUILD
+# nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
 
 # #=> tint2 0 remove
@@ -306,12 +306,12 @@ true
 
 # #=> tint2 1 tint2-git
 # gAUR tint2-git
-# gvim -c "silent! /tint2.git" PKGBUILD
+# nvim -c "silent! /tint2.git" PKGBUILD
 # makepkg -sic
 
 # #=> tspreed
 # gAUR tspreed
-# gvim -c "silent! /n-ivkovic" PKGBUILD
+# nvim -c "silent! /n-ivkovic" PKGBUILD
 # makepkg -sic
 # true
 
@@ -327,8 +327,8 @@ true
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-# #=> Zoom
-# gAUR zoom
-# gvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

@@ -11,7 +11,7 @@ updateMaybe()
     read -p "    - so is an update of $1 needed? " cnfrm
     if [ $cnfrm ] && [ $cnfrm = "y" ]; then
         gctm $1
-        gvim -c "silent! /$2" PKGBUILD
+        nvim -c "silent! /$2" PKGBUILD
         read -p "    <Enter> if the PKGBUILD is good "
         makepkg -sic
     fi

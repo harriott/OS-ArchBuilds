@@ -249,6 +249,7 @@ bash 37-as_root-symlink_fonts.sh
 bash 38-LibreOffice+Thunderbird.sh
 ## waiting
 hdparm
+nnn plugins
 weekly TRIM
 ~/.Xresources
 ~/.Xresources-LukeSmith-gruvbox

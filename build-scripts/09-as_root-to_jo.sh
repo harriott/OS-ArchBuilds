@@ -67,6 +67,7 @@ pacman -S ntfs-3g
 pacman -S udiskie
 
 # weekly TRIM
+# systemctl status fstrim.timer
 systemctl enable fstrim.timer --now
 
 # #=> 0 info
