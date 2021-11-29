@@ -30,7 +30,7 @@ xman*manualFontNormal:    -*-ubuntumono-*-r-*-*-*-120-*-*-*-*-*-*
 ! rxvt-unicode
 ! ------------
 
-! default terminal wide enough for  ip l :
+! default terminal wide enough for  ip link :
 URxvt.geometry: 115x24
 
 ! A large scrollback buffer (over 8x the default):

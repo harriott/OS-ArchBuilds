@@ -3,29 +3,51 @@
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-echo "ARCHBUILDS=$ARCHBUILDS"
+#=> 0 ARCHBUILDS
+. 05-exports.sh
 
-# # #=> 1 rsnapshot systemd files 0
-# cp $ARCHBUILDS/etc/systemd/rsnapshot-hourly.timer /etc/systemd/system/rsnapshot-hourly.timer
-# cp $ARCHBUILDS/etc/systemd/rsnapshot-daily.timer /etc/systemd/system/rsnapshot-daily.timer
-# cp $ARCHBUILDS/etc/systemd/rsnapshot-weekly.timer /etc/systemd/system/rsnapshot-weekly.timer
-# cp $ARCHBUILDS/etc/systemd/rsnapshot-monthly.timer /etc/systemd/system/rsnapshot-monthly.timer
-# cp $ARCHBUILDS/etc/systemd/rsnapshot@.service /etc/systemd/system/rsnapshot@.service
+# #=> 0 rsnapshot two-minute-test 0
+# read -p "Have you switched to  rsnapshot-minuteTest.conf?"
 
-#=> 1 rsnapshot systemd files 1 adjusted for laptop
-cp $ARCHBUILDS/etc/systemd/rsnapshot-sync-hourly.timer /etc/systemd/system/rsnapshot-hourly.timer
-cp $ARCHBUILDS/etc/systemd/rsnapshot-sync-hourly.service /etc/systemd/system/rsnapshot-hourly.service
+# #=> 0 rsnapshot two-minute-test 1 systemd files
+# cp $ARCHBUILDS/etc/systemd/rsnapshot/minuteTest.timer /etc/systemd/system/rsnapshot-minuteTest.timer
 
-#=> 2 rsnapshot timers 0 enable
+# #=> 0 rsnapshot two-minute-test 3 make target folder
+# mkdir ~/rsnapshot-minuteTest/
+
+# #=> 0 rsnapshot two-minute-test 3 timer 0 enable
+# systemctl enable --now rsnapshot-minuteTest.timer
+
+# #=> 0 rsnapshot two-minute-test 4 timer 1 disable
+# systemctl disable --now rsnapshot-minuteTest.timer
+
+# #=> 0 rsnapshot two-minute-test 5 remove target folder
+# sudo rm -r ~/rsnapshot-minuteTest/
+
+#=> 1 rsnapshot working 0 systemd files 0
+cp $ARCHBUILDS/etc/systemd/rsnapshot/hourly.timer /etc/systemd/system/rsnapshot-hourly.timer
+cp $ARCHBUILDS/etc/systemd/rsnapshot/daily.timer /etc/systemd/system/rsnapshot-daily.timer
+cp $ARCHBUILDS/etc/systemd/rsnapshot/weekly.timer /etc/systemd/system/rsnapshot-weekly.timer
+cp $ARCHBUILDS/etc/systemd/rsnapshot/monthly.timer /etc/systemd/system/rsnapshot-monthly.timer
+cp $ARCHBUILDS/etc/systemd/rsnapshot/ampersand.service /etc/systemd/system/rsnapshot@.service
+
+#=> 1 rsnapshot working 0 systemd files 1 adjusted for external target
+cp $ARCHBUILDS/etc/systemd/rsnapshot/hourlySF.timer /etc/systemd/system/rsnapshot-hourly.timer
+cp $ARCHBUILDS/etc/systemd/rsnapshot/hourlySF.service /etc/systemd/system/rsnapshot-hourly.service
+
+#=> 1 rsnapshot working 1 timers 0 enable
 systemctl enable --now rsnapshot-hourly.timer
 systemctl enable --now rsnapshot-daily.timer
 systemctl enable --now rsnapshot-weekly.timer
 systemctl enable --now rsnapshot-monthly.timer
 systemctl status rsnapshot-hourly.timer
 
-# #=> 2 rsnapshot timers 1 disable
+# #=> 1 rsnapshot working 1 timers 1 disable
 # systemctl disable --now rsnapshot-hourly.timer
 # systemctl disable --now rsnapshot-daily.timer
 # systemctl disable --now rsnapshot-weekly.timer
 # systemctl disable --now rsnapshot-monthly.timer
+
+#=> 2 list all timers
+systemctl list-timers --no-pager
 

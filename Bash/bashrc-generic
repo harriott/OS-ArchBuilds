@@ -27,7 +27,7 @@ alias sm="stat -c '%y %n'"  # modification time
 export PAGER=less
 shopt -s autocd dotglob extglob globstar nullglob
 
-#==> fzf
+#==> bat
 alias bm='batman'
 export BAT_PAGER=less
 

@@ -55,7 +55,7 @@ conky.text = [[
 $hr
 #
 #-- time
-${color lightgrey}${font Arial:pixelsize=34}${time %k:%M}${font Arial:pixelsize=30}${time :%S} $font
+${color lightgrey}${font Arial:pixelsize=34}${time %k:%M}${font Arial:pixelsize=26}${time :%S} $font
 #
 #-- calendar
 ${color lightgrey}${execpi 1800 DA=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$DA"'\b'/'\1${color orange}'"$DA"'${color lightgrey}'/}

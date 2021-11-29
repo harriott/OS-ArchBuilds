@@ -163,7 +163,7 @@ Alt+c  # to change directory
 bm fzf
 cat $(fzf)
 cd [directory/][fuzzy_pattern]**<tab>
-f
+f  # defined in  $ARCHBUILDS/Bash/bashrc-generic
 FZF_DEFAULT_COMMAND
 gvim -o `f`  # calling upon fzf
 kill -9 <tab>
@@ -401,7 +401,6 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 bat -A /etc/hosts
 bm <command>  # batman
 cat /proc/cpuinfo
-dunstify -u critical "Read this now!"
 sudo !!
 sudo du -h --max-depth=1
 
@@ -419,15 +418,17 @@ n = right = next
 e toggles it
 spacebar toggles open/closed a branch
 
+## Dunst
+dunstctl close-all
+dunstify -u critical "Read this now!"
+
 ## groups
 cat /etc/group  # list all groups on the system
 id jo        # show uid, gid, and groups for jo
 
 ## mimeapps
+/home/jo/.config/mimeapps.list  # mimeo
 handlr list
-
-### mimeo
-/home/jo/.config/mimeapps.list
 
 ## sizes
 sudo du -h --max-depth=1 /usr

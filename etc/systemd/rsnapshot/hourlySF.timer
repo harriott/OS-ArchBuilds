@@ -1,0 +1,18 @@
+# vim: set fdl=1:
+
+# managed by my  $ARCHBUILDS/build-scripts/24-as_root-rsnapshot_automated.sh
+
+[Unit]
+Description=rsnapshot sync hourly backup
+
+[Timer]
+# Run hourly
+OnCalendar=*-*-* *:00:00
+Persistent=true
+Unit=rsnapshot-hourly.service
+# runs  $ARCHBUILDS/etc/systemd/rsnapshot-hourlySF.service
+#  which expects  sync_first  to be enabled in  $MACHINE/etc/rsnapshot.conf
+
+[Install]
+WantedBy=timers.target
+

@@ -10,7 +10,7 @@
 #  symlinked in  $ARCHBUILDS/build-scripts/05-root_symlinks.sh
 #  sourced by  $ARCHBUILDS/root/bash_profile
 
-export rsnapshot=/mnt/WD1001FALS/rsnapshot
+export rsnapshot=/run/media/jo/KDTG311282/rsnapshot/
 export startxDelay=5
 
 #=> for  $ARCHBUILDS/jo/export-storage

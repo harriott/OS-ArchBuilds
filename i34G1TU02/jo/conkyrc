@@ -71,12 +71,12 @@ ${color white}$hr
 #-- hard drives
 ${font :size=9} / $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color white}
  /home $color${fs_used /home} (${fs_size /home}) ${fs_bar 6 /home} ${color white}
- $Storage $color${fs_used /mnt/SD480GSSDPlus} (${fs_size /mnt/SD480GSSDPlus}) ${fs_bar 6 /mnt/SD480GSSDPlus}
+ $Storage $color${fs_used /mnt/BX200} (${fs_size /mnt/BX200}) ${fs_bar 6 /mnt/BX200}
 # can't figure how to feed  $Storage  to  fs_*  commands
 ${color white}$hr
 #
 #-- WAN
-  ${color white}enp0s25  Up $color${upspeed enp0s25} ${color white} Down $color${downspeed enp0s25}
+  ${color white}eno1  Up $color${upspeed eno1} ${color white} Down $color${downspeed eno1}
   ${color white}wlan0  Up $color${upspeed wlan0} ${color white} Down $color${downspeed wlan0}
 ${color white}$hr
 #

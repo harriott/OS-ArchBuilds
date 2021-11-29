@@ -1,0 +1,17 @@
+# vim: set fdl=1:
+
+# copied by  $ARCHBUILDS/build-scripts/24-as_root-rsnapshot_automated.sh
+#        to  /etc/systemd/system/rsnapshot@.service
+
+# called by  $ARCHBUILDS/etc/systemd/rsnapshot/*.timer
+
+[Unit]
+Description=rsnapshot (%I) backup
+
+[Service]
+Type=oneshot
+Nice=19
+IOSchedulingClass=idle
+ExecStart=/usr/bin/rsnapshot %I
+# instance value  %I  should be specified as a  retain  in  /etc/rsnapshot.conf
+

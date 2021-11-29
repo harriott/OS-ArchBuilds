@@ -6,14 +6,21 @@
 #=> 0 ARCHBUILDS
 # 1 in root
 export ARCHBUILDS=/ArchBuilds
+
 # 2 in jo
 AB=/home/jo/ArchBuilds
 [[ -d $AB ]] && export ARCHBUILDS=$AB
+
 # 3 in Dropbox
-Storage=/mnt/BX200  # i34G1TU02
-# Storage=/mnt/SD480GSSDPlus  # sbMb
-# Storage=/mnt/SDEP128G
-  AB=$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
+export host=$(uname -n)
+if [ $host = "i34G1TU02" ]; then
+  Storage=/mnt/BX200
+elif [ $host = "LIP120s81A4" ]; then
+  Storage=/mnt/SDEP128G
+elif [ $host = "sbMb" ]; then
+  Storage=/mnt/SD480GSSDPlus
+fi
+AB=$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
 [[ -d $AB ]] && export ARCHBUILDS=$AB
 
 #=> 1 and more

@@ -1,7 +1,6 @@
 # vim: set fdl=1:
 
-# cp $ARCHBUILDS/etc/systemd/rsnapshot-hourly.timer /etc/systemd/system/rsnapshot-hourly.timer
-#  done in  $ARCHBUILDS/build-scripts/09-as_root-to_jo.sh
+# managed by my  $ARCHBUILDS/build-scripts/24-as_root-rsnapshot_automated.sh
 
 [Unit]
 Description=rsnapshot hourly backup
@@ -11,6 +10,7 @@ Description=rsnapshot hourly backup
 OnCalendar=*-*-* *:00:00
 Persistent=true
 Unit=rsnapshot@hourly.service
+# runs  hourly  instance of  $ARCHBUILDS/etc/systemd/rsnapshot/ampersand.service
 
 [Install]
 WantedBy=timers.target

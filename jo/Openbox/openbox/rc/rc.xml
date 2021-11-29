@@ -332,6 +332,12 @@
       <command>keepassxc</command>
     </action>
   </keybind>
+  <!-- Keybinding to close a dunst notification - JH -->
+  <keybind key="C-space">
+    <action name="Execute">
+      <command>dunstctl close</command>
+    </action>
+  </keybind>
   <!-- Keybinding to toggle Cmus play/pause - JH -->
   <keybind key="W-c">
     <action name="Execute">

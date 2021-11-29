@@ -63,12 +63,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a long time
 # true
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# # only once there's a browser, and preferably after LastPass
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -108,11 +108,11 @@ true
 # #=> Firefox
 # sudo pacman -S firefox
 
-#=> fangfrisch 1 AUR
-gAUR python-fangfrisch
-nvim -c "silent! /rseichter" PKGBUILD
-makepkg -sic
-true
+# #=> fangfrisch 1 AUR
+# gAUR python-fangfrisch
+# nvim -c "silent! /rseichter" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> fangfrisch 2 settings
 # # 1 create database structure
@@ -172,6 +172,24 @@ true
 # #=> libva-utils
 # sudo pacman -S libva-utils
 
+# #=> Mbrola
+# gAUR mbrola
+# nvim -c "silent! /numediart" PKGBUILD
+# makepkg -sic
+# true
+
+#=> Mbrola American English female
+gAUR mbrola-voices-us1
+nvim -c "silent! /numediart" PKGBUILD
+makepkg -sic
+true
+
+# #=> Mbrola British English male
+# gAUR mbrola-voices-en1
+# nvim -c "silent! /numediart" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> mesa-demos
 # sudo pacman -S mesa-demos
 
@@ -229,10 +247,10 @@ true
 # #=> OpenShot
 # sudo pacman -S openshot
 
-#=> PDFsam
-gAUR pdfsam
-nvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic  # choose  jdk-openjdk
+# #=> PDFsam
+# gAUR pdfsam
+# nvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic  # choose  jdk-openjdk
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -327,8 +345,8 @@ makepkg -sic  # choose  jdk-openjdk
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

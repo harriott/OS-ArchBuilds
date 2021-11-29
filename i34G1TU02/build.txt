@@ -39,7 +39,18 @@ firewall-cmd --reload
 bash 36-symlinks-sshd.sh
 :: Replace python-sgmllib with extra/python-sgmllib3k? [Y/n]
 2GiB...
+## fixed updatedb.conf
+## got rsnapshot working
+## Zen kernel
+bash 28-Zen.sh
+  Warning: os-prober will not be executed to detect other bootable partitions.
+## ethernet
+somehow:
+  2: eno1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+      link/ether ec:a8:6b:8b:a4:28 brd ff:ff:ff:ff:ff:ff
+      altname enp0s25
 ## waiting
+Google Chrome
 # fcron
 fcrontab -l
   @ 10 bash ~/Arch/bash_history.sh
@@ -47,14 +58,6 @@ fcrontab -l
 ## temperatures
 ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
-# pacnew - clamd.conf
-sudo nvim -o /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
-sudo rm /etc/clamav/clamd.conf.pacnew
-# pacnew - mirrorlist
-bash 25-as_root-when_mirrorlist.pacnew.sh
-# pacnew - sshd_config
-sudo nvim -O /etc/ssh/sshd_config /etc/ssh/sshd_config.pacnew -c 'windo difft'
-sudo rm /etc/ssh/sshd_config.pacnew
 # physical configuration
 Fujitsu E19W5 1440x900
 BX200  in  LogiLink 2.5" HDD Mounting Bracket  in space under DVD drive
