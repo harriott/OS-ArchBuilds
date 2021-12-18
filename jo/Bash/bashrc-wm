@@ -42,7 +42,7 @@ aet () {
 
 abt () {
   export a="$1"
-  trim=1
+  trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
   ffmpeg -ss $trim -i "$a" -c copy -y "t$a"
   mpv --end=3 "t$a"
 } # abt <anAudioFileToTrimOffBeginning>
@@ -59,6 +59,60 @@ alias ffmhb='nice -n 19 ffmpeg -hide_banner'
 frames () {
   ffmpeg -i $1 -vcodec copy -f rawvideo -y /dev/null 2>&1
 } # $1 mustn't contain spaces...
+
+vs () {
+  if [ $1 ]; then
+    if [ $2 ]; then
+      if [[ $2 == '0' || $2 == '1' ]]; then
+        trfs=($(find . -maxdepth 1 -type f -name "*.trf"))
+        trfs=(${trfs[@]/#\.\//})  # remove leading ./
+        nt=${#trfs[@]}  # number of trf's
+        if [[ $nt == 0 ]]; then
+          echo "step 1: vs <video_to_stabilise>" # because no trf file has been made
+        else
+          if [[ $nt == 1 ]]; then
+            trf=${trfs[0]}  # only one trf file
+          else
+            echo ${trfs[@]}
+            read -p "choose an index " ti
+            if [[ $ti =~ ^[0-9]+$ ]] && [ $ti -ge 0 ] && [ $ti -le $((nt-1)) ]; then
+              # $ti is an integer, and within the range of $trfs
+              trf=${trfs[$ti]}
+            else
+              echo "bad index"
+              unset trf
+            fi
+          fi  # a trf file has been selected, or not
+          if [ $trf ]; then
+            auc='-an'
+            (( $2 )) && auc='-c:a copy'
+            shv=($(find . -maxdepth 1 -type f -name "${trf%.*}.*" ! -name $trf))  # divine the shaky video file
+            shv=(${shv[@]/#\.\//})  # remove leading ./
+            if [ $shv ] && [ -s $shv ]; then
+              echo "====== ${tpf2b}vs${tpfn} step 2 stabilising ${tpf2b}$shv${tpfn} with ${tpf2b}$trf${tpfn} to ${tpf2b}$1${tpfn} ======"
+              ffmpeg -i $shv -vf vidstabtransform=input=$trf:zoom=0:smoothing=10,unsharp=5:5:0.8:3:3:0.4 -tune film $auc $1
+            else
+              rm $trf
+              echo "removed dangling $trf"
+            fi
+          fi
+        fi
+      else
+        echo "vs 2nd argument: 0 = no audio, 1 = copy audio"  # vs la2-stabilised.mp4 0
+      fi
+    else
+      vfbn=${1%.*}
+      if [ -s $1 ]; then
+        echo "====== ${tpf2b}vs${tpfn} 1 getting transform vectors for ${tpf2b}$1${tpfn} ======"
+        ffmpeg -i $1 -vf vidstabdetect=stepsize=32:shakiness=10:accuracy=10:result=${1%.*}.trf -f null -
+      else
+        echo "vs <video_to_stabilise>"  # vs MOV_0001.mp4
+      fi
+    fi
+  else
+    echo "step 1: ${tpf2b}vs <video_to_stabilise>${tpfn}  step 2: ${tpf2b}vs <stabilised_video> <audio_choice>${tpfn}"
+  fi
+}  # stabilize a video
 
 #=> gVim cautious
 gvc () {

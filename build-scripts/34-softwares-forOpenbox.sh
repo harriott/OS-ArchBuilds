@@ -7,7 +7,7 @@ trap read debug  # puts a read request after each executable line
 # gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
 # #=> 0 tint2rc
-# gvim -geometry 200x55 -O /etc/xdg/tint2/tint2rc ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"
+# nvim -O /etc/xdg/tint2/tint2rc ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"
 # killall -SIGUSR1 tint2  # reloads tint2rc
 # # - should also be done if  tint2  has been updated
 
@@ -19,6 +19,9 @@ trap read debug  # puts a read request after each executable line
 # rAUR dragon-drag-and-drop
 # gvim -c "silent! /dragon" PKGBUILD
 # makepkg -sic
+
+#=> 1 feh
+sudo pacman -S feh
 
 # #=> 1 mpv
 # sudo pacman -S mpv

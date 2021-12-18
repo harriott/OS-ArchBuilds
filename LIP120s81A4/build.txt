@@ -248,11 +248,8 @@ bash 37-as_root-symlink_fonts.sh
 ## LibreOffice & Thunderbird
 bash 38-LibreOffice+Thunderbird.sh
 ## waiting
-hdparm
-nnn plugins
-weekly TRIM
-~/.Xresources
-~/.Xresources-LukeSmith-gruvbox
+blueman
+python-pipx
 # fcron
 fcrontab -l
   @ 3 bash ~/Arch/cmusqueue.sh

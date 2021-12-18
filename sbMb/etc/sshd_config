@@ -1,7 +1,7 @@
 
 # my changes are marked JH
 #  JH vim: ft=sshdconfig:
-#  sudo cp $CrossPlatform/sshd_config/AVT661 /etc/ssh/sshd_config  # JH
+#  sudo cp $CP/sshd_config/AVT661 /etc/ssh/sshd_config  # JH
 #  sudo systemctl restart sshd.service  # if you've made changes - JH
 #  sudo systemctl status sshd.service  # JH
 

@@ -78,7 +78,7 @@ alias gl='glances'
 
 #==> virtualenvwrapper
 export WORKON_HOME=~/.virtualenvs
-[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper.sh
+[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper_lazy.sh
 
 #=> colours
 source $ARCHBUILDS/Bash/xcol.sh

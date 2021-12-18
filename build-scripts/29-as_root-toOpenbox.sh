@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# sudo bash <thisfile>.sh
+# sudo bash 29-as_root-toOpenbox.sh
+
+if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -18,7 +20,7 @@ pacman -S ghostscript
 pacman -S pandoc
 
 # TeX Live
-pacman -S texlive-most texlive-langchinese  # select all
+pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all
 
 #=> ebook - Calibre
 pacman -S calibre
@@ -54,6 +56,11 @@ pacman -S espeak-ng-espeak termdown
 # iscan
 pacman -S iscan
 
+#=> multimedia - PulseAudio
+# pavucontrol - for pnmixer
+pacman -S pavucontrol
+sed -i '/VolumeControlCommand/ s/=.*/=pavucontrol/' /home/jo/.config/pnmixer/config
+
 # pulsemixer
 pacman -S pulsemixer
 
@@ -63,7 +70,9 @@ pacman -S pulsemixer
 
 #=> networking
 # bluetooth
-pacman -S bluez bluez-utils
+gpasswd -a jo lp
+pacman -S blueman bluez bluez-utils pulseaudio-bluetooth
+systemctl enable bluetooth.service --now
 
 # iptraf-ng
 pacman -S iptraf-ng

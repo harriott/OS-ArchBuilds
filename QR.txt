@@ -102,10 +102,11 @@ grep -E '<someText>|<otherText>'
 grep -r --include "*.sh" ' -f ' .
 grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
 grep -ri --include "*.conf" '#=> ' .
+man grep | grep egrep | xcol egrep fgrep
 
 #### manual
-bm grep
-man grep | grep egrep | xcol egrep fgrep
+GNU Grep Manual
+GREP(1)
 
 #### ripgrep
 batgrep
@@ -186,6 +187,7 @@ cd /usr/share/fonts; $ fd -L consolas
 ## Fontconfig
 cd /etc/fonts  # to explore the configuration files
 fc-list | grep Lohit
+fc-list | grep Deja
 fc-list -v ubuntumono
 sudo fc-cache -f  # regenerates the cache
 
@@ -228,6 +230,7 @@ doas cupsenable ENVY_5530  # if it's paused
 ## printing - HPLIP - HP ENVY 5532 WiFi
 hp-levels -p ENVY_5532
 hp-setup -b net 192.168.43.249  # when online
+http://192.168.43.249/
 
 ## storage
 /proc/filesystems - those supported by the kernel
@@ -303,7 +306,6 @@ kill -9 "$(pidof cmus)"
 get the PIDs  ps ax | grep cmus  then for each  kill -9 PID
 
 # networking
-bm firewall-cmd
 cat /etc/hostname
 curl ifconfig.co  # IP address
 curl ifconfig.co/country
@@ -358,6 +360,7 @@ nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
 sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
 sudo ls /etc/NetworkManager/system-connections/
 systemctl status NetworkManager
+systemctl status NetworkManager-dispatcher
 
 # packages
 checkupdates
@@ -401,8 +404,6 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 bat -A /etc/hosts
 bm <command>  # batman
 cat /proc/cpuinfo
-sudo !!
-sudo du -h --max-depth=1
 
 ## BpyTOP
 bpytop  # supersedes  bashtop
@@ -418,17 +419,17 @@ n = right = next
 e toggles it
 spacebar toggles open/closed a branch
 
-## Dunst
-dunstctl close-all
-dunstify -u critical "Read this now!"
-
 ## groups
 cat /etc/group  # list all groups on the system
 id jo        # show uid, gid, and groups for jo
 
 ## mimeapps
-/home/jo/.config/mimeapps.list  # mimeo
+handlr get .png
 handlr list
+
+### mimeo
+/home/jo/.config/mimeapps.list  # add mimetypes here
+mimeo -m <fileToOpen>  # reports mimetype
 
 ## sizes
 sudo du -h --max-depth=1 /usr

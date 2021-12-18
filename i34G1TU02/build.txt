@@ -45,12 +45,12 @@ bash 36-symlinks-sshd.sh
 bash 28-Zen.sh
   Warning: os-prober will not be executed to detect other bootable partitions.
 ## ethernet
-somehow:
+altname somehow:
   2: eno1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
       link/ether ec:a8:6b:8b:a4:28 brd ff:ff:ff:ff:ff:ff
       altname enp0s25
+## reboot is slow
 ## waiting
-Google Chrome
 # fcron
 fcrontab -l
   @ 10 bash ~/Arch/bash_history.sh

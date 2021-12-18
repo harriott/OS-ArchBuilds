@@ -1,7 +1,12 @@
 # vim: set et:
 
-# this file should be symlinked to  ~/.config/dunst/dunstrc
+# implemented by my  $ARCHBUILDS/build-scripts/36-symlinks-sshd.sh
+#   symlinked to  ~/.config/dunst/dunstrc
+
+#   see  /etc/dunst/dunstrc
+
 # $ eval $(dbus-launch)   if you make changes here
+
 # test with  dunstify "First test message."; dunstify "Second test message, which is longer."
 
 [global]
@@ -12,7 +17,7 @@
     follow = mouse
     font = Cantarell 10
     format = "%s %p\n%b"
-    geometry = "900x10-20+40"
+    height = 300
     history_length = 20
     horizontal_padding = 10
     icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
@@ -22,6 +27,8 @@
     indicate_hidden = yes
     line_height = 0
     monitor = 0
+    offset = 20x30
+    origin = top-right
     padding = 8
     separator_color = frame
     separator_height = 9
@@ -31,6 +38,7 @@
     sort = no
     startup_notification = false
     sticky_history = yes
+    width = (0, 1200)
     word_wrap = no
 
 [frame]

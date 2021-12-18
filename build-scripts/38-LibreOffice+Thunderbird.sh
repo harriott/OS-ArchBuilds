@@ -20,12 +20,12 @@ uc0=~/.config/libreoffice/4/user
 #==> bring in
 rm -r $uc0/config
 rm $uc0/registrymodifications.xcu
-uc1=$CrossPlatform/LibreOffice/l3i-sbMb-user
+uc1=$CP/LibreOffice/l3i-sbMb-user
 cp -r $uc1/config $uc0/config
 cp $uc1/registrymodifications.xcu $uc0/registrymodifications.xcu
 
 # #==> export
-# uc1=$CrossPlatform/LibreOffice/lbg-sbMb-user
+# uc1=$CP/LibreOffice/lbg-sbMb-user
 # mkdir $uc1
 # cp -r $uc0/config $uc1/config
 # cp $uc0/registrymodifications.xcu $uc1/registrymodifications.xcu

@@ -1,5 +1,6 @@
 vim: ft=build:
 
+# CopyQ
 Ctrl+P (= Preferences) >
   General >
     Wrap long text  off
@@ -17,4 +18,7 @@ Ctrl+P (= Preferences) >
 cp $ARCHBUILDS/jo/CopyQ/readyforPasting.ini ~/readyforPasting.ini
  for  CopyQ > F6 > Load > readyforPasting.ini
 rm ~/readyforPasting.ini
+
+# nomacs
+(C-S-p >) Advanced > Save Exif Orientation  off-ticked
 

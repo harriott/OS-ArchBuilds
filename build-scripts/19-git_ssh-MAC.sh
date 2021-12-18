@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-# after  $CrossPlatform/git/remote2.sh
+# after  $CP/git/remote2.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -10,13 +10,16 @@ trap read debug  # puts a read request after each executable line
 # # needed for  LIP120s81A4  to connect to  Jo-XA2
 # sudo cp $MACHINE/etc/wifi_rand_mac.conf /etc/NetworkManager/conf.d/wifi_rand_mac.conf
 
-#=> 0 NetworkManager - network-manager-applet
-sudo pacman -S network-manager-applet
+#=> 0 NetworkManager dispatcher
+sudo systemctl enable NetworkManager-dispatcher --now
+
+# #=> 0 NetworkManager - network-manager-applet
+# sudo pacman -S network-manager-applet
 
 # #=> 0 SSH config
-# ln -sf $CrossPlatform/SSHconfig/LIP120s81A4 ~/.ssh/config
-ln -sf $CrossPlatform/SSHconfig/i34G1TU02 ~/.ssh/config
-# ln -sf $CrossPlatform/SSHconfig/sbMb ~/.ssh/config
+# ln -sf $CP/SSHconfig/LIP120s81A4 ~/.ssh/config
+ln -sf $CP/SSHconfig/i34G1TU02 ~/.ssh/config
+# ln -sf $CP/SSHconfig/sbMb ~/.ssh/config
 
 # #=> 1 git 0 check configuration
 # git config -l

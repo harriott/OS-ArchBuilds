@@ -8,16 +8,25 @@
 
 # sort these lists by last use of "~":  :sort /,*\~/
 
+#=> cmus, Dunst, Zathura
+
+ln -sf $ARCHBUILDS/jo/Openbox/cmusqueue.sh ~/Arch/cmusqueue.sh
+ln -sf $Openbox/cmus_notify.sh             ~/.local/share/cmus_notify.sh
+ln -sf $Openbox/cmus-rc.conf               ~/.config/cmus/rc
+
+ln -sf $Openbox/dunstrc   ~/.config/dunst/dunstrc # requires restarting X
+ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
+
 # #=> Dropbox vimfiles
 # sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
 
-#=> email config
-cp -f $GNULE/mbsyncrc-backup ~/.mbsyncrc
-cp -f $GNULE/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
-cp -f $GNULE/notmuch-config-backup ~/.notmuch-config
+# #=> email config
+# cp -f $GNULE/mbsyncrc-backup ~/.mbsyncrc
+# cp -f $GNULE/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
+# cp -f $GNULE/notmuch-config-backup ~/.notmuch-config
 
 # #=> LaTeX
-# ln -sf $CrossPlatform/LaTeX/jo ~/texmf/tex/latex/jo
+# ln -sf $CP/LaTeX/jo ~/texmf/tex/latex/jo
 
 # #=> Pandoc defaults
 # ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
@@ -44,15 +53,6 @@ cp -f $GNULE/notmuch-config-backup ~/.notmuch-config
 
 # #=> sshd 1 sshd.service 3 disable
 # sudo systemctl disable sshd.service --now
-
-# #=> softares in my Openbox build
-
-# ln -sf $ARCHBUILDS/jo/Openbox/cmusqueue.sh ~/Arch/cmusqueue.sh
-# ln -sf $Openbox/cmus_notify.sh             ~/.local/share/cmus_notify.sh
-# ln -sf $Openbox/cmus-rc.conf               ~/.config/cmus/rc
-
-# ln -sf $Openbox/dunstrc   ~/.config/dunst/dunstrc # requires restarting X
-# ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
 
 # #=> remove urxvt extensions
 # rm -r ~/.urxvt/ext

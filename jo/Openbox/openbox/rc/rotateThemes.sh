@@ -11,7 +11,7 @@ declare -a themes=(AbsE Airborne Anchos Arctic Artwiz-boxed Ayunb BBstyle Bamboo
 declare -a themes=(Bloohax Clearlooks Clearlooks-3.4 Clearlooks-Olive Default Emacs M0nst4-sky Mavos Natura Operation Raleigh Simple-Generic Thebear) # preferred
 
 # get the current theme
-# sed -n '/^  <name>/'p $Openbox/openbox/rc.xml
+# sed -n '/^  <name>/'p $Openbox/openbox/rc/rc.xml
 tagged_ct=$(sed -n '/^  <name>/p' $Openbox/openbox/rc.xml)
 cttag=${tagged_ct#*>}
 ct=${cttag%%<*} # current theme

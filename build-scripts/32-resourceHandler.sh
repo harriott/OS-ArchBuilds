@@ -24,8 +24,10 @@ trap read debug  # puts a read request after each executable line
 
 # #==> 2 set default handlers
 # handlr set .conf gvim.desktop
+# handlr set .jpg org.nomacs.ImageLounge.desktop
 # handlr set .md gvim.desktop
 # handlr set .mp3 mpv.desktop
+# handlr set .png org.nomacs.ImageLounge.desktop
 
 # #=> mimeo
 
@@ -34,8 +36,8 @@ gAUR mimeo
 nvim -c "silent! /mimeo" PKGBUILD
 makepkg -sic
 
-#==> 0 mimeo 1 remove
-sudo pacman -Rs mimeo
+# #==> 0 mimeo 1 remove
+# sudo pacman -Rs mimeo
 
 # #==> 1 xdg-utils-mimeo
 # gAUR xdg-utils-mimeo

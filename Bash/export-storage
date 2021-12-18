@@ -19,7 +19,7 @@ export DROPBOX=$Storage/Dropbox
 # - keep  DROPBOX  capitalised for finding it without need for $
   export core=$DROPBOX/JH/core
     export ITstack=$core/IT_stack
-      export CrossPlatform=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
+      export CP=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
       export ulGL=$ITstack/unix_like-GNULinux
         export GNULE=$ulGL/email
       export onGH=$ITstack/onGitHub

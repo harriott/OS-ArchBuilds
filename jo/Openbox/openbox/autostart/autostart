@@ -29,6 +29,7 @@ gvim -geometry +760+0 &  # opens just left of Conky on 1920x1080 screen
 # - set also in $Openbox/openbox/rc.xml
 
 #==> 0 Openbox
+blueman-applet &
 conky -c $MACHINE/jo/conkyrc
 copyq & # because CopyQ's internal Autostart doesn't work
 dropbox &

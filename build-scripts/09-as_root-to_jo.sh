@@ -163,12 +163,18 @@ systemctl enable fstrim.timer --now
 # # pkgstats
 # pacman -S pkgstats
 
-# #=> 0 various
-# # universal-ctags
-# pacman -S ctags
+#=> 0 various
+# universal-ctags
+pacman -S ctags
 
-# # pass (bring in gnupg)
-# pacman -S pass
+# pass (bring in gnupg)
+pacman -S pass
+
+# python-pipx
+pacman -S python-pipx
+
+# strace - for debugging
+pacman -S strace
 
 # #=> 0 swappiness to 10
 # # check that the default is 60

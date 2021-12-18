@@ -1,11 +1,12 @@
 #!/bin/bash
 # vim: set sw=2:
 
-# Mon 27 Sep 2021
+# Tue 07 Dec 2021
 
 # Full system backup
 # ------------------
 # this is only needed until I've setup  rsnapshot
+#  symlinked in  $ARCHBUILDS/build-scripts/05-root_symlinks.sh
 
 # -----------------------------
 # run this script from Arch ISO

@@ -28,11 +28,11 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 export EDITOR=nvim
 export VISUAL=gvim
 
+# pipx shell completions
+eval "$(register-python-argcomplete pipx)"
+
 # short prompt
 sp (){ PS1='\[\e[1;34m\][\W]\$\[\e[0m\] ';}
-
-# sudo !!
-alias s!='sudo "$BASH" -c "$(history -p !!)"'
 
 #=> file manage
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
@@ -43,7 +43,7 @@ locx () { locate -i $1 | xcol $1; }
 #==> Git
 alias ga='git add'
 alias gis='git status -u'
-export BFG=$CrossPlatform/bfg-1.13.0.jar
+export BFG=$CP/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
 #==> my Encrypted directories
@@ -110,7 +110,7 @@ alias fx='fdtsExt'
 fdtsExt () {
   if [ $1 ]; then
     if [ $1 = "gitignore" ]; then
-      dtsfile=dts-$1-all
+      dtsfile=dts-$1-all.txt
       search=.$1
     else
       dtsfile=dts-$1.txt

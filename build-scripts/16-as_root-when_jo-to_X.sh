@@ -129,6 +129,9 @@ true
 #=> 1 when X - IO hw
 # wanted
 
+# Wacom Tablet
+pacman -S xf86-input-wacom
+
 # #==> 0 xorg.conf.d
 # [ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
 

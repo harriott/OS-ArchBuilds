@@ -22,7 +22,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'DejaVu Sans Mono:size=10',
+	font = 'DejaVuSansMono:size=10',
     gap_x = 60,
     gap_y = 60,
     minimum_height = 5,
@@ -68,7 +68,7 @@ ${color white}Processes $color$processes  ${color white}Running $color$running_p
 ${color white}$hr
 #
 #-- hard drives
-${font :size=9} / $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color white}
+${font DejaVuSansMono:size=9} / $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color white}
  /home $color${fs_used /home} (${fs_size /home}) ${fs_bar 6 /home} ${color white}
  $Storage $color${fs_used /mnt/SD480GSSDPlus} (${fs_size /mnt/SD480GSSDPlus}) ${fs_bar 6 /mnt/SD480GSSDPlus}
 # can't figure how to feed  $Storage  to  fs_*  commands

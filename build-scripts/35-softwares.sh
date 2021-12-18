@@ -124,14 +124,22 @@ trap read debug  # puts a read request after each executable line
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
 
+# #=> gnome-disk-utility
+# sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
+
+# #=> Google API python toolchain
+# sudo pacman -S python-google-api-python-client
+# sudo pacman -S python-google-auth-httplib2
+# sudo pacman -S python-google-auth-oauthlib
+
 # #=> Google Chrome
 # gAUR google-chrome
 # nvim -c "silent! /dl.google.com" PKGBUILD
 # makepkg -sic
 # true
 
-# #=> gnome-disk-utility
-# sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
+# #=> GraphicsMagick
+# sudo pacman -S graphicsmagick
 
 # #=> gst123
 # gAUR gst123
@@ -139,16 +147,8 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a while
 # true
 
-# #=> Google API python toolchain
-# sudo pacman -S python-google-api-python-client
-# sudo pacman -S python-google-auth-httplib2
-# sudo pacman -S python-google-auth-oauthlib
-
 # #=> gucharmap
 # sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode Block)
-
-# #=> GraphicsMagick
-# sudo pacman -S graphicsmagick
 
 # #=> HPLIP
 # sudo pacman -S hplip
@@ -178,11 +178,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Mbrola American English female
-gAUR mbrola-voices-us1
-nvim -c "silent! /numediart" PKGBUILD
-makepkg -sic
-true
+# #=> Mbrola American English female
+# gAUR mbrola-voices-us1
+# nvim -c "silent! /numediart" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Mbrola British English male
 # gAUR mbrola-voices-en1
@@ -216,6 +216,10 @@ true
 # #   User Interface > Show a quit confirmation  off ]
 # true
 
+# #=> MyPaint
+# sudo pacman -S mypaint
+# true
+
 # #=> nodejs-mapscii 0 install
 # gAUR nodejs-mapscii
 # nvim PKGBUILD
@@ -247,10 +251,10 @@ true
 # #=> OpenShot
 # sudo pacman -S openshot
 
-# #=> PDFsam
-# gAUR pdfsam
-# nvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic  # choose  jdk-openjdk
+#=> PDFsam
+gAUR pdfsam
+nvim -c "silent! /torakiki" PKGBUILD
+makepkg -sic  # choose  jdk-openjdk
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -304,9 +308,11 @@ true
 # nvim -c "silent! /gsamokovarov" PKGBUILD
 # makepkg -sic
 
-# #=> Spotify
-# curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
-# gpg -k 0D811D58
+# #=> Spotify 0 signing key
+# curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
+# gpg -k 5E3C45D7B312C643
+
+# #=> Spotify 1 (re)install
 # gAUR spotify
 # nvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
 # makepkg -sic
@@ -342,8 +348,14 @@ true
 # #=> xbindkeys
 # sudo pacman -S xbindkeys
 
+# #=> Xournal++
+# sudo pacman -S xournalpp
+
 # #=> youtube-dl
 # sudo pacman -S youtube-dl
+
+# #=> yt-dlp
+# sudo pacman -S yt-dlp
 
 # #=> Zoom
 # gAUR zoom

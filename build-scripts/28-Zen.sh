@@ -7,7 +7,7 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 0 Zen
-sudo pacman -S linux-zen
+sudo pacman -S linux-zen linux-zen-headers
 
 #=> 1 tweak GRUB
 sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' /etc/default/grub

@@ -320,8 +320,6 @@ nmcli device wifi connect Jo-X10II password <pw>
 ## jo's pw became unaccepted
 fixed by a reboot
 after hard reboot  $HOME/.cache/ctrlp/mru/cache.txt  was empty...
-## nomacs Settings
-(C-S-p >) Advanced > Save Exif Orientation  off-ticked
 ## ASUS C027PI DVI failed on reboot
 ## xdg-open .md
 handlr get .md  returns  no handlers found for text/markdown
@@ -352,7 +350,7 @@ sudo rm /etc/sane.d/canon_lide70.conf.pacnew /etc/sane.d/escl.conf.pacnew /etc/d
 sudo archlinux-java set java-11-openjdk
 sudo archlinux-java set java-15-openjdk
 ## LanguageTool
-sudo cp -R /mnt/ST3500413AS/Share/IT-Copied/CrossPlatform/LanguageTool-5.2 /usr/share/java/LanguageTool-5.2
+sudo cp -R $CP/LanguageTool-5.2 /usr/share/java/LanguageTool-5.2
 java -jar /usr/share/java/LanguageTool-5.2/languagetool-commandline.jar -h
 ## Spotify
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
@@ -489,7 +487,7 @@ sudo rm -r /mnt/WD1001FALS/rsnapshot/daily.*/localhost/mnt/ST3500413AS
 sudo rm -r /mnt/WD1001FALS/rsnapshot/hourly.*/localhost/mnt/ST3500413AS
 ## recover Thunderbird v78 profile
 cleared out contents of  ~/.thunderbird/xggwhyu0.default-release
-bash $ITstack/CrossPlatform/Thunderbird/LastVersion.sh
+bash $CP/Thunderbird/LastVersion.sh
 rsync -irtv --delete /mnt/WD1001FALS/rsnapshot/daily.3/localhost/mnt/SD480GSSDPlus/Dropbox/JH/TP.default-release/ $DROPBOX/JH/TP-default-release
 ## lm_sensors
 sudo sensors-detect
@@ -718,9 +716,15 @@ thunderbird  # (default-release) > Start
 ## clean chroot
 mkarchroot $CHROOT/root base-devel
 arch-nspawn $CHROOT/root pacman -Syu
+## HP ENVY 5532 IP Address changed to 250
+hp-setup -r > selected 249 > Remove
+lpinfo -m | grep 5530
+
+hp-makeuri 192.168.43.250
+hp-setup 192.168.43.250 > Next > Add Printer
 ## waiting
 CUPS Socket activation
-nnn plugins
+sudo gpasswd -a jo lp
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
