@@ -153,6 +153,12 @@ trap read debug  # puts a read request after each executable line
 # #=> HPLIP
 # sudo pacman -S hplip
 
+# #=> iscan
+# gAUR iscan
+# nvim -c "silent! /support.epson.net" PKGBUILD
+# makepkg -sic  # takes a long time...
+# true
+
 # #=> java-commons-lang
 # sudo pacman -S java-commons-lang  # (for pdftk's functions)
 
@@ -251,10 +257,10 @@ trap read debug  # puts a read request after each executable line
 # #=> OpenShot
 # sudo pacman -S openshot
 
-#=> PDFsam
-gAUR pdfsam
-nvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic  # choose  jdk-openjdk
+# #=> PDFsam
+# gAUR pdfsam
+# nvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic  # choose  jdk-openjdk
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -357,8 +363,8 @@ makepkg -sic  # choose  jdk-openjdk
 # #=> yt-dlp
 # sudo pacman -S yt-dlp
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

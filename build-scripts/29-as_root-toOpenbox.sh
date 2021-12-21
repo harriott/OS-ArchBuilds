@@ -53,9 +53,6 @@ mkdir ~/.config/cmus
 # espeak-ng-espeak & termdown
 pacman -S espeak-ng-espeak termdown
 
-# iscan
-pacman -S iscan
-
 #=> multimedia - PulseAudio
 # pavucontrol - for pnmixer
 pacman -S pavucontrol

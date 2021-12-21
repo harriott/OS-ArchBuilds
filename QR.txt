@@ -117,6 +117,7 @@ rg '\$ITstack'
 rg '\$mail'
 rg '<someText>|<otherText>'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
+rg -ttex '\\includepdf'
 rg -ttex '\\subsubsection\{'
 rg -tmd '\$SE'
 rg -tmd '\{TNW}'
@@ -367,6 +368,7 @@ checkupdates
 pacman -Qdt  # lists all orphans
 sudo pacman -Rs <packagetoremove>
 /var/cache/pacman/pkg/
+grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
 
 ## groups
 pacman -Qg base-devel  # lists packages installed

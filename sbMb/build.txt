@@ -719,9 +719,9 @@ arch-nspawn $CHROOT/root pacman -Syu
 ## HP ENVY 5532 IP Address changed to 250
 hp-setup -r > selected 249 > Remove
 lpinfo -m | grep 5530
-
 hp-makeuri 192.168.43.250
 hp-setup 192.168.43.250 > Next > Add Printer
+hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control > Set as Default
 ## waiting
 CUPS Socket activation
 sudo gpasswd -a jo lp
