@@ -444,7 +444,7 @@ stuck on  Loading initial ramdisk ...
 ## Pacman ParallelDownloads
 sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 16/' /etc/pacman.conf
 ## fit ST4000VN008
-sudo cp $MACHINE/etc/fstab/l8f /etc/fstab $bf
+sudo cp $MACHINE/etc/fstab/l8f /etc/fstab
 sudo rm -r /mnt/ST3500413AS
 sudo chown jo:jo /mnt/ST4000VN008
 ## Updates
@@ -725,6 +725,10 @@ hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control 
 updated $Imagey/Scan.sh
 ## advcpmv 9.0-3
 sudo rm /usr/local/bin/cpg /usr/local/bin/mvg
+## fitted Cooler Master Hyper 212 EVO V2
+sudo cp $MACHINE/etc/fstab/l8f /etc/fstab
+cleaned all round
+## fitted Cooler Master Hyper 213 EVO V2
 ## waiting
 CUPS Socket activation
 # CPU frequency
@@ -756,26 +760,27 @@ NETGEAR WG111v2
 ## cbh
 Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard
+## disks
+SATA0: SD480GSSDPlus resting at bottom of 3½" bays, under the tidied cables
+SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
+SATA2: WD30EZRZ in top 5¼" bay
+SATA3: ST4000VN008 in top 3½" bay
+SATA4: HD103SJ in 3rd 5¼" bay from top, held up by spacer pulled from Acer Veriton T661, which requires removing rhs panel
+SATA5: WD1001FALS in a plastic holder in bottom 5¼" tray
+## graphics - NVIDIA
+ASUS C027PI rev2.00 Radeon HD 5450  on  PCIEX16
 ## monitor
 DVI: Philips 221V2 - wide 1920x1080 = 16:9
 ## motherboard
 Antec Neo HE550
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
   AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
+    Cooler Master Hyper 212 EVO v2
   HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
-### disks
-SATA0: SD480GSSDPlus resting in middle of 3½" bays
-SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
-SATA2: WD30EZRZ in 1st 5¼" bay from top
-SATA3: ST4000VN008 in bottom 3½" bay
-SATA4: HD103SJ in top 3½" bay
-SATA5: WD1001FALS in a plastic holder, 4th 5¼" tray down
 ### fans
 PWR FAN: unused
 SYS FAN1: lower front pull air in
 SYS FAN2: back push air out
-### graphics - NVIDIA
-ASUS C027PI rev2.00 Radeon HD 5450  on  PCIEX16
 ### startup
 F12  gets a choice of boot media
 #### DualBIOS
