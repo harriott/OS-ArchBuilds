@@ -43,7 +43,7 @@ URxvt.cursorUnderline:    true
 URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
 URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
 URxvt.keysym.M-quotedbl:  perl:aAtt:skeleton-complete
-URxvt.url-launcher:       /usr/bin/chromium
+URxvt.url-launcher:       /usr/bin/firefox
 URxvt.underlineURLs:      True
 URxvt.keysym.M-e:         perl:keyboard-select:activate
 URxvt.keysym.M-s:         perl:keyboard-select:search

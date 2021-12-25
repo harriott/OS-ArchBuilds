@@ -722,9 +722,11 @@ lpinfo -m | grep 5530
 hp-makeuri 192.168.43.250
 hp-setup 192.168.43.250 > Next > Add Printer
 hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control > Set as Default
+updated $Imagey/Scan.sh
+## advcpmv 9.0-3
+sudo rm /usr/local/bin/cpg /usr/local/bin/mvg
 ## waiting
 CUPS Socket activation
-sudo gpasswd -a jo lp
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

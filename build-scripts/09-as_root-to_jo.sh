@@ -1,17 +1,20 @@
 #!/bin/bash
 
+#=> 0 ARCHBUILDS
+. 05-exports.sh
+
+#=> 1 go slow
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-ARCHBUILDS=/home/jo/ArchBuilds
-
-#=> 0 doas
+#=> 2 doas
 pacman -S opendoas
 cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
 chmod -c 0400 /etc/doas.conf
-# test with  doas updatedb
+gpasswd -a jo wheel
+# after a reboot, test with  doas updatedb
 
-# #=> 0 file manage
+# #=> 2 file manage
 # # bat
 # pacman -S bat
 
@@ -56,21 +59,21 @@ chmod -c 0400 /etc/doas.conf
 # # tree
 # pacman -S tree
 
-#=> 0 hd
-# hdparm
-pacman -S hdparm
+# #=> 2 hd
+# # hdparm
+# pacman -S hdparm
 
-# NTFS-3G
-pacman -S ntfs-3g
+# # NTFS-3G
+# pacman -S ntfs-3g
 
-# udiskie
-pacman -S udiskie
+# # udiskie
+# pacman -S udiskie
 
-# weekly TRIM
-# systemctl status fstrim.timer
-systemctl enable fstrim.timer --now
+# # weekly TRIM
+# # systemctl status fstrim.timer
+# systemctl enable fstrim.timer --now
 
-# #=> 0 info
+# #=> 2 info
 # # Bashtop
 # pacman -S bashtop  # later superseded by AUR bpytop
 
@@ -101,23 +104,23 @@ systemctl enable fstrim.timer --now
 # # sysstat
 # pacman -S sysstat
 
-# #=> 0 limit systemd Journal size
+# #=> 2 limit systemd Journal size
 # # helpful for  LIP120s81A4
 # sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
 # grep SystemMaxUse /etc/systemd/journald.conf
 
-# #=> 0 NetworkManager 1 install
+# #=> 2 NetworkManager 1 install
 # pacman -S networkmanager
 # systemctl enable NetworkManager.service --now
 
-# #=> 0 NetworkManager 2 status
+# #=> 2 NetworkManager 2 status
 # systemctl status NetworkManager.service | cat
 # true
 
-# #=> 0 netcat
+# #=> 2 netcat
 # pacman -S openbsd-netcat
 
-# #=> 0 networking
+# #=> 2 networking
 # # isync
 # pacman -S isync  # for mbsync
 
@@ -127,11 +130,11 @@ systemctl enable fstrim.timer --now
 # # Wget
 # pacman -S wget
 
-# #=> 0 Rootkit Hunter
+# #=> 2 Rootkit Hunter
 # pacman -S rkhunter
 # source 00-as_root-RootkitHunt.sh
 
-# #=> 0 system
+# #=> 2 system
 # # fcron
 # pacman -S fcron
 # systemctl enable fcron.service
@@ -163,20 +166,20 @@ systemctl enable fstrim.timer --now
 # # pkgstats
 # pacman -S pkgstats
 
-#=> 0 various
-# universal-ctags
-pacman -S ctags
+# #=> 2 various
+# # universal-ctags
+# pacman -S ctags
 
-# pass (bring in gnupg)
-pacman -S pass
+# # pass (bring in gnupg)
+# pacman -S pass
 
-# python-pipx
-pacman -S python-pipx
+# # python-pipx
+# pacman -S python-pipx
 
-# strace - for debugging
-pacman -S strace
+# # strace - for debugging
+# pacman -S strace
 
-# #=> 0 swappiness to 10
+# #=> 2 swappiness to 10
 # # check that the default is 60
 # cat /sys/fs/cgroup/memory/memory.swappiness
 # # show that  /etc/sysctl.d  is empty
@@ -185,7 +188,7 @@ pacman -S strace
 # echo "vm.swappiness=00" > /etc/sysctl.d/99-sysctl.conf
 # ls /etc/sysctl.d
 
-# #=> 0 Users
+# #=> 2 Users
 # # activate wheel group
 # sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
 # grep wheel /etc/sudoers
@@ -197,9 +200,9 @@ pacman -S strace
 # until passwd jo; do echo "try again"; done
 # cat /etc/passwd
 
-# #=> tmux configuration
+# #=> 2 tmux configuration
 # ln -sf $tmx/tmux.conf ~/.tmux.conf
 
-#=> 1 end
+#=> 3 end
 # you're ready to reboot and login to jo
 

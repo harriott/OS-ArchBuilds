@@ -199,6 +199,12 @@ trap read debug  # puts a read request after each executable line
 # #=> mesa-demos
 # sudo pacman -S mesa-demos
 
+#=> moar 0 install
+gAUR moar
+nvim -c "silent! /walles" PKGBUILD
+makepkg -sic
+true
+
 # #=> moar remove
 # cd ~/Arch/AUR
 # rAUR moar
@@ -211,7 +217,7 @@ trap read debug  # puts a read request after each executable line
 # true
 
 # #=> moar-git 1 remove
-# cd ~/Arch/AUR
+# cd ~/Arch/AURdev-clone
 # rAUR moar-git
 # sudo pacman -Rs moar-git
 
@@ -363,8 +369,8 @@ trap read debug  # puts a read request after each executable line
 # #=> yt-dlp
 # sudo pacman -S yt-dlp
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

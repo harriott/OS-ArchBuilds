@@ -312,6 +312,7 @@ curl ifconfig.co  # IP address
 curl ifconfig.co/country
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
+systemctl status nordvpnd.service
 wp  # weather in Paris
 xdg-open https://archlinux.org
 
