@@ -66,44 +66,6 @@ export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uid
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
 export NNN_LOCKER='saidar -c' # for 0
 
-#=> Pandoc my markdown notes
-for i in {0..1}; do  # setup alternative commands to define the header style
-    setHeadingsSty[$i]="ln -sf $MD4PDF/iih/headings$i.sty ~/texmf/tex/latex/m4p/headings.sty"
-done
-
-m4p() # a single TextNote file
-{
-    eval ${setHeadingsSty[0]}
-    export headingtoodeep=######
-    export m4pfont=0
-    bash $MD4PDF/GNULinux/m4p.sh $1 $2
-}
-
-# recursively compile from many markdowns
-m4ps0() # my TextNotes
-{
-    eval ${setHeadingsSty[0]}
-    export headingtoodeep=######
-    export m4pfont=0
-    bash $MD4PDF/GNULinux/m4ps.sh $1 $2
-} # 2nd argument turns off ToC
-
-m4ps1() # muted headings
-{
-    eval ${setHeadingsSty[1]}
-    export headingtoodeep=####
-    export m4pfont=1
-    bash $MD4PDF/GNULinux/m4ps.sh 0 1
-}
-
-mt() # do my TextNotes
-{
-    cd $DROPBOX/JH/core/TextNotes
-    pwd
-    m4ps0 0
-    cd ..
-}
-
 #=> PCManFM
 pf () {
     nohup pcmanfm &

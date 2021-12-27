@@ -129,6 +129,10 @@ true
 #=> 1 when X - IO hw
 # wanted
 
+# libva-mesa-driver
+# for  ATI Radeon HD 4870
+pacman -S libva-mesa-driver
+
 # Wacom Tablet
 pacman -S xf86-input-wacom
 

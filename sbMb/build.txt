@@ -5,6 +5,7 @@ sbMb
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 # build
 ## Arch install - from the ISO
+ASUS NVIDIA C027PI rev2.00 Radeon HD 5450  on  PCIEX16
 ### ARCH_202008 - SQUASHFS errors
 K16GB500 loaded with archlinux-2020.08.01-x86_64.iso  in lowest socket, 2nd from top of box
 Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 > UEFI: KingstonDT R500 PMAP
@@ -728,7 +729,12 @@ sudo rm /usr/local/bin/cpg /usr/local/bin/mvg
 ## fitted Cooler Master Hyper 212 EVO V2
 sudo cp $MACHINE/etc/fstab/l8f /etc/fstab
 cleaned all round
-## fitted Cooler Master Hyper 213 EVO V2
+## graphics card
+removed ASUS NVIDIA C027PI rev2.00 Radeon HD 5450
+fitted ATI Radeon HD 4870
+## OBS Studio Settings
+Alt+f (= File) > s (= Settings)
+  Output > Recording > Recording Path > /mnt/ST4000VN008
 ## waiting
 CUPS Socket activation
 # CPU frequency
@@ -755,6 +761,7 @@ ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # GnuPG keys
 gpg -ao sbMbA-backup-las.asc --export-secret-keys --export-options backup jh
 # physical configuration
+ATI Radeon HD 4870
 D-Link DUB-H7
 NETGEAR WG111v2
 ## cbh
@@ -767,8 +774,6 @@ SATA2: WD30EZRZ in top 5¼" bay
 SATA3: ST4000VN008 in top 3½" bay
 SATA4: HD103SJ in 3rd 5¼" bay from top, held up by spacer pulled from Acer Veriton T661, which requires removing rhs panel
 SATA5: WD1001FALS in a plastic holder in bottom 5¼" tray
-## graphics - NVIDIA
-ASUS C027PI rev2.00 Radeon HD 5450  on  PCIEX16
 ## monitor
 DVI: Philips 221V2 - wide 1920x1080 = 16:9
 ## motherboard

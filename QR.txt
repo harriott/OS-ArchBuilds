@@ -217,7 +217,8 @@ HP ENVY 5532: d0:bf:9c:a2:2f:0e
 /sys/class/backlight/intel_backlight/max_brightness
 
 ### graphics card details
-glxinfo
+doas cat /sys/kernel/debug/dri/0/radeon_pm_info
+glxinfo > glxinfo
 lspci -vnn | grep VGA -A 10 | xcol Intel size VGA
 lspci -vnn | grep VGA -A 12 | xcol Radeon size VGA
 sudo lshw -C display | xcol Radeon size VGA
@@ -404,6 +405,7 @@ for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # system
+$ARCHBUILDS/etc/doas.conf
 bat -A /etc/hosts
 bm <command>  # batman
 cat /proc/cpuinfo

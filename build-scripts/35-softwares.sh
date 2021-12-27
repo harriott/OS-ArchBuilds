@@ -196,8 +196,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> mesa-demos
+# #=> mesa-demos 0 install
 # sudo pacman -S mesa-demos
+
+# #=> mesa-demos 1 remove
+# sudo pacman -Rs mesa-demos
+
+# #=> mesa-utils
+# # for glxinfo
+# sudo pacman -S mesa-utils
 
 #=> moar 0 install
 gAUR moar
@@ -220,6 +227,7 @@ true
 # cd ~/Arch/AURdev-clone
 # rAUR moar-git
 # sudo pacman -Rs moar-git
+# true
 
 # #=> MusicBrainz Picard
 # sudo pacman -S chromaprint picard
