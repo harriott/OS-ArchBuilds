@@ -171,9 +171,9 @@ S () {
 }
 
 #=> Pandoc my markdown notes
-for i in {0..1}; do  # setup alternative commands to define the header style
-    setHeadingsSty[$i]="ln -sf $MD4PDF/iih/headings$i.sty ~/texmf/tex/latex/m4p/headings.sty"
-done
+for iHS in {0..1}; do  # setup alternative commands to define the header style
+    setHeadingsSty[$iHS]="ln -sf $MD4PDF/iih/headings$iHS.sty ~/texmf/tex/latex/m4p/headings.sty"
+  done  # (leaves iHS set to 1)
 
 m4p() # a single TextNote file
 {

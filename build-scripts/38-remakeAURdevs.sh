@@ -45,11 +45,6 @@ PQ fontpreview-git
 xdgo https://github.com/sdushantha/fontpreview/commits/master
 updateMaybe fontpreview-git
 
-#=> moar-git
-PQ moar-git
-xdgo https://github.com/walles/moar/commits/master
-updateMaybe moar-git walles
-
 #=> pscircle-git
 PQ pscircle-git
 xdgo https://gitlab.com/mildlyparallel/pscircle/-/commits/master/

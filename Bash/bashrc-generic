@@ -60,8 +60,8 @@ locd () {
 #==> move up [n] directories
 up(){
   local dir=""
-  limit=$1
-  for ((i=1 ; i <= limit ; i++))
+  uplimit=$1
+  for ((upshift=1 ; upshift <= uplimit ; upshift++))
     do
       dir=$dir/..
     done

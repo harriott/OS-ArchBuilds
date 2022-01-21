@@ -38,3 +38,5 @@ if [[ $myDrA ]]; then export ARCHBUILDS=$onGH/ArchBuilds; fi  # my Dropbox is ac
   export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
   export tmx=$ARCHBUILDS/jo/tmux  # used in tmux.conf
 
+export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
+

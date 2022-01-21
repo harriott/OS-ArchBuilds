@@ -10,11 +10,11 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 advcp 0 install
 # out-of-date
 
-#==> 0 Pádraig Brady's key for coreutils
-# for advcp
-gpg -k
-gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9
-true
+# #==> 0 Pádraig Brady's key for coreutils
+# # for advcp
+# gpg -k
+# gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9
+# true
 
 # #==> 1 advcp
 # # for nnn -r

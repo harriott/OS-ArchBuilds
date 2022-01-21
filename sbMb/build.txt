@@ -732,9 +732,24 @@ cleaned all round
 ## graphics card
 removed ASUS NVIDIA C027PI rev2.00 Radeon HD 5450
 fitted ATI Radeon HD 4870
+Wireless Mouse M525 is failing when I run OBS Studio
 ## OBS Studio Settings
 Alt+f (= File) > s (= Settings)
   Output > Recording > Recording Path > /mnt/ST4000VN008
+## HP ENVY 5532 IP Address changed to 249
+hp-makeuri 192.168.43.249
+updated $Imagey/Scan.sh
+hp-setup 192.168.43.249 > Next > Name tweaked to ENVY_5530_249 > Add Printer
+hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control > Set as Default
+## grub.pacnew
+sudo nvim -O /etc/default/grub /etc/default/grub.pacnew
+sudo rm /etc/default/grub.pacnew
+## OBS Studio Settings
+Alt+f (= File) > s (= Settings)
+  Output > Recording > Recording Path > /home/jo
+## Updates
+:: Replace hwids with core/hwdata? [Y/n]
+:: Import PGP key C132293954BBE4AD, "Sergej Pupykin <spupykin@archlinux.org>"? [Y/n]
 ## waiting
 CUPS Socket activation
 # CPU frequency
@@ -775,7 +790,8 @@ SATA3: ST4000VN008 in top 3½" bay
 SATA4: HD103SJ in 3rd 5¼" bay from top, held up by spacer pulled from Acer Veriton T661, which requires removing rhs panel
 SATA5: WD1001FALS in a plastic holder in bottom 5¼" tray
 ## monitor
-DVI: Philips 221V2 - wide 1920x1080 = 16:9
+lower DVI: DVI-D to DVI-D: Philips 221V2 - wide 1920x1080 = 16:9
+upper DVI: DVI-A to VGA: Packard Bell Viseo 223DX - wide 1920x1080 = 16:9
 ## motherboard
 Antec Neo HE550
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
@@ -791,7 +807,8 @@ F12  gets a choice of boot media
 #### DualBIOS
 Del  gets into BIOS
 ##### settings
-BIOS Features > Peripherals > EHCI Hand-off Disabled [ IOMMU Controller  XHCI Hand-off ] > Enabled
+BIOS Features > Peripherals >
+  [ EHCI Hand-off  IOMMU Controller ] > Disabled  XHCI Hand-off > Enabled
 M.I.T > PC Health Status >
   1st System Fan Fail Warning
   2nd System Fan Fail Warning

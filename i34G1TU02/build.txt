@@ -50,6 +50,14 @@ altname somehow:
       link/ether ec:a8:6b:8b:a4:28 brd ff:ff:ff:ff:ff:ff
       altname enp0s25
 ## reboot is slow
+## grub.pacnew
+sudo nvim -O /etc/default/grub /etc/default/grub.pacnew
+sudo rm /etc/default/grub.pacnew
+## Updates
+:: Replace hwids with core/hwdata? [Y/n]
+## trailing Firefox error
+after calling it from  xdg-open
+  !!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 ## waiting
 # fcron
 fcrontab -l
@@ -76,5 +84,5 @@ Boot Options
   4th Boot Device: Removable Device
   5th Boot Device: LAN
 ## cbh
-MX 610 Laser
+Logitech M187 Wireless Mini Mouse
 Perixx PERIBOARD-407W keyboard

@@ -249,6 +249,15 @@ bash 37-as_root-symlink_fonts.sh
 bash 38-LibreOffice+Thunderbird.sh
 ## advcpmv 9.0-3
 sudo rm /usr/local/bin/cpg /usr/local/bin/mvg
+## pacnews
+sudo nvim -O /etc/default/grub /etc/default/grub.pacnew
+sudo rm /etc/default/grub.pacnew
+sudo nvim -O /etc/systemd/logind.conf /etc/systemd/logind.conf.pacnew
+sudo rm /etc/systemd/logind.conf.pacnew
+## auracle-git
+failed to give pw, so  sudo pacman -U auracle-git-r366.8739929-3-x86_64.pkg.tar.zst
+## Updates
+:: Replace hwids with core/hwdata? [Y/n]
 ## waiting
 # fcron
 fcrontab -l

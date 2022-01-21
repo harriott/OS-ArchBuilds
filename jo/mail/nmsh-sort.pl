@@ -8,7 +8,7 @@
 
 use strict;  use warnings;
 use Tie::File;
-use Date::Parse;
+use Date::Parse;  # str2time
 use Data::Printer;
 use feature 'say';
 

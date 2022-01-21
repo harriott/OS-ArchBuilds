@@ -264,8 +264,8 @@
   <keybind key="A-space">
     <action name="ShowMenu"><menu>client-menu</menu></action>
   </keybind>
-  <!-- Keybinding for toggling Maximize - JH -->
-  <keybind key="A-m">
+  <!-- Keybinding for toggling maximize (Full screen a window) - JH -->
+  <keybind key="W-f">
     <action name="ToggleMaximize"/>
   </keybind>
   <!-- Keybinding for Resize - JH -->
@@ -353,8 +353,8 @@
       <command>kfmclient openProfile filemanagement</command>
     </action>
   </keybind>
-  <!-- Keybinding for firefox - JH -->
-  <keybind key="W-f">
+  <!-- Keybinding for Firefox - JH -->
+  <keybind key="W-i">
     <action name="Execute">
       <command>firefox</command>
     </action>

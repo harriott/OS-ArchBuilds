@@ -63,12 +63,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a long time
 # true
 
-# #=> Dropbox 0 (re)install
-# # only once there's a browser, and preferably after LastPass
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+# only once there's a browser, and preferably after LastPass
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -206,11 +206,11 @@ trap read debug  # puts a read request after each executable line
 # # for glxinfo
 # sudo pacman -S mesa-utils
 
-#=> moar 0 install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar remove
 # cd ~/Arch/AUR
@@ -275,6 +275,7 @@ true
 # gAUR pdfsam
 # nvim -c "silent! /torakiki" PKGBUILD
 # makepkg -sic  # choose  jdk-openjdk
+# true
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -304,6 +305,7 @@ true
 # #=> PhotoCollage
 # gAUR photocollage
 # nvim PKGBUILD
+# nvim -c "silent! /adrienverge" PKGBUILD
 # makepkg -sic
 
 # #=> Pinta
@@ -327,6 +329,12 @@ true
 # gAUR jump
 # nvim -c "silent! /gsamokovarov" PKGBUILD
 # makepkg -sic
+
+# #=> Solaar
+# # for  Logitech Wireless Mouse M525
+# sudo pacman -S solaar
+# sudo groupadd plugdev
+# sudo usermod -aG plugdev jo  # need to re-login
 
 # #=> Spotify 0 signing key
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -

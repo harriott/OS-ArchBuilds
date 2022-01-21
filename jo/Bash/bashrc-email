@@ -6,30 +6,29 @@
 #=> backup my Mutt Wizard files
 alias mwb='bash $email/mwBackup.sh'
 
-#=> mutt-aliases
-# (can be slow)
-alias mas='bash ~/mutt-alias.sh/mutt-alias.sh'
-export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
-magf () {
-  for folder in Archive Deauram Friends Waiting Work; do
-    mas -a $GNULE/aliases-fm-mag -p "$maild/fm/$folder/cur"
-  done
+#=> find mutt aliases
+maf () {
+    fAt=$maild/$account/foundAliasesTemp
+    # $maild  is defined in  $ARCHBUILDS/Bash/export-storage
+    notmuch show tag:$account > $fAt
+    sed -Ei '/(^Cc|^From|^To):/!d' $fAt  # clear out all but addresses
+    sed -Ei 's/(^Cc|^From|^To)://' $fAt  # remove directions
+    sed -i 's/ $//' $fAt  # remove trailing space
+    sed -Ei '/"[[:alnum:]]+,/ s/,//' $fAt  # remove comma in name
+    sed -Ei 's/, /\n/g' $fAt  # newline all emails
+    sed -i '/^[[:space:]]*$/d' $fAt  # removes empty lines
+    sed -Ei 's/^[ \t]+//' $fAt  # removes leading whitespace
+    sed -i 's/^/alias /' $fAt  # prefix, ready to sort
+    fA=$maild/$account/foundAliases
+    echo "# vim: set ft=muttaliases:" > $fA
+    echo "" >> $fA
+    sort -u $fAt >> $fA  # save as a rough collection, sorted
+    rm $fAt
 }
-magt () {
-  for folder in Archives Waiting; do
-    mas -a $GNULE/aliases-troh-mag -p "$maild/troh/$folder/cur"
-  done
-}
-magx () {
-  for folder in Archives Waiting; do
-    mas -a $GNULE/aliases-gmx-mag -p "$maild/gmx/$folder/cur"
-  done
-}
-magl () { # failing...
-  for folder in Archive LPD Waiting; do
-    mas -a $GNULE/aliases-live-mag -p "$maild/live/$folder/cur"
-  done
-}
+maff (){ account=fm;   maf; }
+mafx (){ account=gmx;  maf; }
+mafl (){ account=live; maf; }
+maft (){ account=troh; maf; }
 
 #=> neomutt
 alias nmf='neomutt -F $email/muttrc-account_ftml'
@@ -46,6 +45,7 @@ nmse () {
     echo $notmuchsearch
     notmuch search $notmuchsearch
 } # gets a quick list of the relevant emails
+# nmse bloch date:2021
 nmsh () {
     echo '# vim: set ft=mail tw=0:' > nms
     echo >> nms
@@ -77,7 +77,7 @@ alias ms='
 echo -e "${tpf2b}-- fm   --${tpfn}"; msf;
 echo -e "${tpf2b}-- tj   --${tpfn}"; msj;
 echo -e "${tpf2b}-- live --${tpfn}"; msl;
-echo -e "${tpf2b}-- parl --${tpfn}"; msl;
+echo -e "${tpf2b}-- parl --${tpfn}"; msp;
 echo -e "${tpf2b}-- troh --${tpfn}"; mst;
 echo -e "${tpf2b}-- gmx  --${tpfn}"; msx;
 echo -e "${tpf2b}-- cz   --${tpfn}"; msz;

@@ -338,6 +338,7 @@ $email/muttrc-MWa
 $email/muttrc-account_ftml
 $email/muttrc-account_troh
 echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
+f => forward
 F => toggle important flag (= Star in Gmail)
 
 #### notmuch search
@@ -367,6 +368,7 @@ systemctl status NetworkManager-dispatcher
 
 # packages
 checkupdates
+pacman -Q > $MACHINE/pacman-Q.txt
 pacman -Qdt  # lists all orphans
 sudo pacman -Rs <packagetoremove>
 /var/cache/pacman/pkg/
