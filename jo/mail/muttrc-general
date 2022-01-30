@@ -1,32 +1,38 @@
-# muttrc-*  filetypes are set in  plugin/buffers.vim
+
+# muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
 
 # based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
 # general settings for neomutt
+# sourced by  $email/muttrc-all_accounts
 
 set editor = 'nvim'
-set mailcap_path = $email/mailcap-MWa
+set mailcap_path = $email/mailcap
+source $email/muttrc-layout
 
-# the index
-set date_format="%y/%m/%d %H:%M"
-#
-set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
-# useful message status flags:
-#  D = deleted (marked for deletion)
-#  N = new
-#  r = replied
-#  ! = flagged
-#  * = tagged
-#
-# useful message recipient flags:
-#  + = to you and you only
-#  T = to you, but also to or CC'ed to others
-#  C = CC'ed to you
-#  F = from you
-#  L = sent to a subscribed mailing list
-#  R = has your address in the Reply-To field
-#
-# set sort = 'reverse-date'
+#=> general rebindings
+bind attach <return> view-mailcap
+bind attach l view-mailcap
+bind browser l select-entry
+bind editor <space> noop
+bind index D delete-message
+bind index G noop  # precautionary release from <fetch-mail>
+bind index U undelete-message
+bind index h noop
+bind index <space> tag-entry
+bind index \031 previous-undeleted # Mouse wheel
+bind index \005 next-undeleted  # Mouse wheel
+bind index \Cf noop  # disable <forget-passphrase>
+bind index,pager H view-raw-message
+bind index,pager g noop  # releasing from <group-reply> because I use g in my account muttrc's
+bind index,pager S sync-mailbox
+bind index,pager R group-reply
+bind pager = previous-line
+bind pager \031 previous-line  # Mouse wheel
+bind pager \005 next-line  # Mouse wheel
+bind pager ] half-down
+bind pager [ half-up
 
+#=> general settings
 set smtp_authenticators = 'gssapi:login'
 # set query_command = "abook --mutt-query '%s'"
 set rfc2047_parameters = yes
@@ -47,15 +53,33 @@ set tmpdir = ~/.cache/mutt/tmp  # as a precaution agains power cuts
 auto_view text/html  # automatically show html (mailcap uses w3m)
 auto_view application/pgp-encrypted
 alternative_order text/plain text/enriched text/html
-bind index,pager g noop  # releasing from <group-reply> because I use g in my account muttrc's
-bind index \Cf noop  # disable <forget-passphrase>
-bind index G noop  # precautionary release from <fetch-mail>
 
 set menu_scroll # smoother movement
 unset confirmappend # don't ask of confirmation when moving emails
 unset signature
 
-# Useful key bindings for the index
+#=> the index
+set date_format="%y/%m/%d %H:%M"
+#
+set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
+# useful message status flags:
+#  D = deleted (marked for deletion)
+#  N = new
+#  r = replied
+#  ! = flagged
+#  * = tagged
+#
+# useful message recipient flags:
+#  + = to you and you only
+#  T = to you, but also to or CC'ed to others
+#  C = CC'ed to you
+#  F = from you
+#  L = sent to a subscribed mailing list
+#  R = has your address in the Reply-To field
+#
+# set sort = 'reverse-date'
+
+#=> QR - index
 #  $ ==> sync changes
 #  * or <End> -> <last-entry> ==> jump to the last entry
 #  / ~F ==> find flagged message
@@ -65,49 +89,25 @@ unset signature
 #  J ==> next message
 #  K ==> previous message
 #  N ==> toggle New mark
-#  T -> tag-pattern ==> tag messages matching a pattern
+#  T ==> tag-pattern ==> tag messages matching a pattern
 #   T > .* ==> tags all in a folder
 #   T > ~N ==> tags all marked as new in a folder
+#  ^T ==> untag messages matching a pattern
 #  U ==> undo deletion
-#  [ -> <half-up>
-#  ] -> <half-down>
+#  [ ==> <half-up>
+#  ] ==> <half-down>
 
-# Useful key bindings for the browser
+#=> QR - browser
 #  c? ==> enter browser
 #  p ==> parent folder
 
-# Useful key bindings for the pager
-#  - -> <previous-page> ==> page up
-#  <enter> -> <next-line> ==> scroll down a line
-#  <space> -> <next-page> ==> page down
-#  = -> <previous-line> ==> scroll up a line
+#=> QR - pager
+#  - ==> <previous-page> ==> page up
+#  <enter> ==> <next-line> ==> scroll down a line
+#  <space> ==> <next-page> ==> page down
+#  = ==> <previous-line> ==> scroll up a line
 
-# General rebindings
-bind attach <return> view-mailcap
-bind attach l view-mailcap
-bind editor <space> noop
-bind index D delete-message
-bind index U undelete-message
-bind index h noop
-bind index <space> tag-entry
-bind index,pager H view-raw-message
-bind browser l select-entry
-bind index,pager S sync-mailbox
-bind index,pager R group-reply
-bind index \031 previous-undeleted # Mouse wheel
-bind index \005 next-undeleted  # Mouse wheel
-bind pager \031 previous-line  # Mouse wheel
-bind pager \005 next-line  # Mouse wheel
-bind pager ] half-down
-bind pager [ half-up
-bind pager = previous-line
-
-# Layout:
-source $email/muttrc-MWa-layout
-
-# Searching
-# ---------
-
+#=> Searching
 bind index l noop
 bind index ll limit  # ~p = to me, ~P = from me
 #  ~C <textinsendlist>

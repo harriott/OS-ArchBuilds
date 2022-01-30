@@ -1,4 +1,6 @@
-# muttrc-*  filetypes are set in  plugin/buffers.vim
+# vim: set filetype=neomuttrc:
+
+# muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
 
 # based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
 # layout settings for neomutt
@@ -65,7 +67,7 @@ color bold black default
 color underline black default
 color normal default default
 
-# Regex highlighting:
+#=> Regex highlighting
 color header blue default ".*"
 color header brightmagenta default "^(From)"
 color header brightmagenta default "^(Subject)"

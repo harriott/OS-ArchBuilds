@@ -22,6 +22,7 @@ cat systab.orig  # contains bootrun tabs to catch
 
 # file manage
 bat <file>
+pygmentize -h
 
 ## advcpmv
 cpg --help | mo  # man advcp
@@ -117,8 +118,13 @@ rg '\$ITstack'
 rg '\$mail'
 rg '<someText>|<otherText>'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
+rg -tmd '\$Sig'
+rg -ttex '\$Sig'
 rg -ttex '\\includepdf'
+rg -ttex '\\multirow\{'
 rg -ttex '\\subsubsection\{'
+rg -ttex '\\tabular\{'
+rg -ttex 'newcommand\{'
 rg -tmd '\$SE'
 rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
@@ -243,7 +249,7 @@ GNU Parted
 /etc/mke2fs.conf  has bytes-per-inode ratios for usage types
 
 ### non-optical
-$DROPBOX/JH/Now/Technos/IT/UnixLike/GNU+Linux/Arch > rg -ttxt ft=bbcode > forum.txt
+$IT1/UnixLike/GNU+Linux/Arch > rg -ttxt ft=bbcode > forum.txt
 df -h | xcol mnt media
 
 #### Trash
@@ -334,7 +340,7 @@ $Bash/bashrc-email
 grep -r "Georita" *
 
 #### mutt
-$email/muttrc-MWa
+$email/muttrc-general
 $email/muttrc-account_ftml
 $email/muttrc-account_troh
 echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...

@@ -58,7 +58,12 @@ sudo rm /etc/default/grub.pacnew
 ## trailing Firefox error
 after calling it from  xdg-open
   !!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+## Updates
+:: Import PGP key C132293954BBE4AD, "Sergej Pupykin <spupykin@archlinux.org>"? [Y/n]
+## Updates
+:: Replace quazip with extra/quazip-qt5? [Y/n]
 ## waiting
+lsd
 # fcron
 fcrontab -l
   @ 10 bash ~/Arch/bash_history.sh

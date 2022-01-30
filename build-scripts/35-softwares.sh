@@ -63,12 +63,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a long time
 # true
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# # only once there's a browser, and preferably after LastPass
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -261,6 +261,11 @@ true
 # sudo systemctl enable nordvpnd.service --now
 # true
 
+# #=> noto-fonts-cjk
+# # for  $MD4PDF/GNULinux/md4pdf.sh
+# sudo pacman -S noto-fonts-cjk
+# true
+
 # #=> OBS Studio 0 install
 # sudo pacman -S obs-studio
 
@@ -385,8 +390,8 @@ true
 # #=> yt-dlp
 # sudo pacman -S yt-dlp
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

@@ -1,0 +1,8 @@
+# vim: set filetype=neomuttrc:
+
+#=> QR - pager
+#  - ==> <previous-page> ==> page up
+#  <enter> ==> <next-line> ==> scroll down a line
+#  <space> ==> <next-page> ==> page down
+#  = ==> <previous-line> ==> scroll up a line
+

@@ -25,7 +25,7 @@ virtual-mailboxes "All" "notmuch://?query=tag:troh"
 # tweak the default status line to show  "->troh":
 set status_format=" -%r-NeoMutt->troh: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
 
-source $email/muttrc-all
+source $email/muttrc-all_accounts
 
 macro index,pager ga "<change-folder>=Archives<enter>" "go to Archives"
 macro index,pager Ga "<save-message>=Archives<enter>" "move mail to Archives"

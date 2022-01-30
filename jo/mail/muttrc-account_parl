@@ -30,7 +30,7 @@ virtual-mailboxes "Tous\ les\ messages" "notmuch://?query=tag:parl"
 set status_format=" -%r-NeoMutt->parl: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
 
 set reflow_wrap=0
-source $email/muttrc-MWa
+source $email/muttrc-general
 set realname = "Parlottes Cafézoïde"
 set mbox_type = Maildir
 

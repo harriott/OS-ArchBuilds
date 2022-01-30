@@ -7,7 +7,7 @@ set -v  # prints each statement here, including comments
 
 #=> better mirrorlist
 cd /etc/pacman.d
-reflector --country France --age 12 --protocol https --sort rate --save mirrorlist
+reflector --fastest 30 --protocol https --sort age --save mirrorlist
 cat mirrorlist
 pacman -Syyuu
 

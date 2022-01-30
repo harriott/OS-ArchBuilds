@@ -1,11 +1,9 @@
 
-# muttrc-*  filetypes are set in  plugin/buffers.vim
-
 # copied from Luke Smith's Mutt Wizard
-#  /usr/share/mutt-wizard/mailcap
 #  https://gitlab.com/LukeSmithxyz/mutt-wizard/-/blob/master/share/mailcap
+#  (/usr/share/mutt-wizard/mailcap  when installed)
 
-# required by  $email/muttrc-MWa
+# required by  $email/muttrc-general
 
 text/plain; $EDITOR %s ;
 text/html; openfile %s ; nametemplate=%s.html

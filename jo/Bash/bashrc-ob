@@ -48,7 +48,7 @@ n()
 
 # ~/.config/nnn/.selection
 
-export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/technos/IT1;j:/run/media/jo;l:$DROPBOX/JH/Work/ST/LPD/IdF;m:$DROPBOX/CAM-toSort0;r:$DROPBOX/JH/Copied/France/Places/IdF/Transport/RATP;s:$DROPBOX/JH/CforWork/Education/Science-Engineering;t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$DROPBOX/JH/Then0/Deauram/with"
+export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/technos/IT1;j:/run/media/jo;l:$DROPBOX/JH/Work/ST/LPD/IdF;m:$DROPBOX/CAM-toSort0;r:$DROPBOX/JH/copied/France/Places/IdF/Transport/RATP;s:$DROPBOX/JH/CforWork/Education/Science-Engineering;t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$DROPBOX/JH/Then0/Deauram/with"
 #  only first 10 get loaded correctly
 #
 #  a:/home/jo/.local/share/mail
@@ -56,7 +56,7 @@ export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/technos/IT1;j:/run/me
 #  j:/run/media/jo
 #  l:$DROPBOX/JH/Work/ST/LPD/IdF
 #  m:$DROPBOX/CAM-toSort0
-#  r:$DROPBOX/JH/Copied/France/Places/IdF/Transport/RATP
+#  r:$DROPBOX/JH/copied/France/Places/IdF/Transport/RATP
 #  s:$DROPBOX/JH/CforWork/Education/Science-Engineering
 #  t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed
 #  w:$DROPBOX/JH/Then0/Deauram/with

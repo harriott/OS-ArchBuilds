@@ -15,11 +15,11 @@ if pgrep cmus; then
   cd $rwd
   if [[ -f cmusqueue && -s cmusqueue ]]; then
     mv cmusqueue cmusq
+    sed -i '1i\\' $rwd/cmusq
+    sed -i '1i vim: ft=cmusq nowrap tw=0:' $rwd/cmusq
   else
     rm cmusqueue  # it's empty
   fi
-  sed -i '1i\\' $rwd/cmusq
-  sed -i '1i vim: ft=cmusq nowrap tw=0:' $rwd/cmusq
 fi
 
 

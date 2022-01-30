@@ -258,7 +258,11 @@ sudo rm /etc/systemd/logind.conf.pacnew
 failed to give pw, so  sudo pacman -U auracle-git-r366.8739929-3-x86_64.pkg.tar.zst
 ## Updates
 :: Replace hwids with core/hwdata? [Y/n]
+## Updates
+:: Replace quazip with extra/quazip-qt5? [Y/n]
 ## waiting
+lsd
+noto-fonts-cjk
 # fcron
 fcrontab -l
   @ 3 bash ~/Arch/cmusqueue.sh

@@ -750,8 +750,11 @@ Alt+f (= File) > s (= Settings)
 ## Updates
 :: Replace hwids with core/hwdata? [Y/n]
 :: Import PGP key C132293954BBE4AD, "Sergej Pupykin <spupykin@archlinux.org>"? [Y/n]
+## Updates
+:: Replace quazip with extra/quazip-qt5? [Y/n]
 ## waiting
 CUPS Socket activation
+lsd
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

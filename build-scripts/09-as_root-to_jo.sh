@@ -14,50 +14,53 @@ chmod -c 0400 /etc/doas.conf
 gpasswd -a jo wheel
 # after a reboot, test with  doas updatedb
 
-# #=> 2 file manage
-# # bat
-# pacman -S bat
+#=> 2 file manage
+# bat
+pacman -S bat
 
-# # broot
-# pacman -S broot
-# broot # to generate br command
+# broot
+pacman -S broot
+broot # to generate br command
 
-# # dvd+rw-tools
-# pacman -S dvd+rw-tools
+# dvd+rw-tools
+pacman -S dvd+rw-tools
 
-# # exa
-# pacman -S exa
+# exa
+pacman -S exa
 
-# # fd
-# pacman -S fd
+# fd
+pacman -S fd
 
-# # fzf
-# pacman -S fzf
+# fzf
+pacman -S fzf
 
-# # mlocate
-# pacman -S mlocate
-# updatedb
+# lsd
+pacman -S awesome-terminal-fonts lsd
 
-# # ncdu
-# pacman -S ncdu
+# mlocate
+pacman -S mlocate
+updatedb
 
-# # p7zip
-# pacman -S p7zip
+# ncdu
+pacman -S ncdu
 
-# # rhash
-# pacman -S rhash
+# p7zip
+pacman -S p7zip
 
-# # ripgrep
-# pacman -S ripgrep
+# rhash
+pacman -S rhash
 
-# # rsync
-# pacman -S rsync
+# ripgrep
+pacman -S ripgrep
 
-# # trash-cli
-# pacman -S trash-cli
+# rsync
+pacman -S rsync
 
-# # tree
-# pacman -S tree
+# trash-cli
+pacman -S trash-cli
+
+# tree
+pacman -S tree
 
 # #=> 2 hd
 # # hdparm

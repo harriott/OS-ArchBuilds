@@ -1,10 +1,20 @@
-# muttrc-*  filetypes are set in  plugin/buffers.vim
+
+# muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
 
 # my configuration settings that are common across my email accounts
 
+# Sourced by:
+#  $email/muttrc-account_cz
+#  $email/muttrc-account_ftml
+#  $email/muttrc-account_gmx
+#  $email/muttrc-account_live
+#  $email/muttrc-account_parl
+#  $email/muttrc-account_tj
+#  $email/muttrc-account_troh
+
 set reflow_wrap=0
 # (default is 78) doesn't dynamically adapt to terminal size changes
-source $email/muttrc-MWa
+source $email/muttrc-general
 
 set realname = "Joseph Harriott"
 set mbox_type = Maildir
