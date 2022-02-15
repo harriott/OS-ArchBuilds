@@ -79,7 +79,14 @@ set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 #
 # set sort = 'reverse-date'
 
-#=> QR - index
+#=> QR
+#  f ==> forward
+
+#==> browser
+#  c? ==> enter browser
+#  p ==> parent folder
+
+#==> index
 #  $ ==> sync changes
 #  * or <End> -> <last-entry> ==> jump to the last entry
 #  / ~F ==> find flagged message
@@ -97,17 +104,13 @@ set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 #  [ ==> <half-up>
 #  ] ==> <half-down>
 
-#=> QR - browser
-#  c? ==> enter browser
-#  p ==> parent folder
-
-#=> QR - pager
+#==> pager
 #  - ==> <previous-page> ==> page up
 #  <enter> ==> <next-line> ==> scroll down a line
 #  <space> ==> <next-page> ==> page down
 #  = ==> <previous-line> ==> scroll up a line
 
-#=> Searching
+#=> searching
 bind index l noop
 bind index ll limit  # ~p = to me, ~P = from me
 #  ~C <textinsendlist>

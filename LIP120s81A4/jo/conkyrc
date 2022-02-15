@@ -69,7 +69,7 @@ ${color white}Processes $color$processes  ${color white}Running $color$running_p
 ${color white}$hr
 #
 #-- hard drives
- / $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color white}
+${font DejaVuSansMono:size=8} / $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color white}
  /home $color${fs_used /home} (${fs_size /home}) ${fs_bar 6 /home} ${color white}
  $Storage $color${fs_used /mnt/SDEP128G} (${fs_size /mnt/SDEP128G}) ${fs_bar 6 /mnt/SDEP128G}
 # can't figure how to feed  $Storage  to  fs_*  commands

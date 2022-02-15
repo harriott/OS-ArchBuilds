@@ -19,6 +19,7 @@ ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
 
 # #=> Dropbox vimfiles
 # sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
+# sudo rm -r ~/.vim; ln -s /mnt/SD480GSSDPlus/Play0/vimfiles ~/.vim  # for testing
 
 # #=> email config
 # cp -f $GNULE/mbsyncrc-backup ~/.mbsyncrc

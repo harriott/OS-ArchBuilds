@@ -15,12 +15,6 @@
 export HISTFILESIZE=10000
 export HISTSIZE=1000
 
-# a colorised (bold blue) prompt, with git support
-source /usr/share/git/completion/git-prompt.sh
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-PS1='\[\e[1;34m\][\w$(__git_ps1 " (%s)")]\$\[\e[0m\] '
-
 # command not found hook
 source /usr/share/doc/pkgfile/command-not-found.bash
 
@@ -31,8 +25,26 @@ export VISUAL=gvim
 # pipx shell completions
 eval "$(register-python-argcomplete pipx)"
 
-# short prompt
-sp (){ PS1='\[\e[1;34m\][\W]\$\[\e[0m\] ';}
+#==> prompt
+# a colorised (bold blue) prompt, with git support
+source /usr/share/git/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1=$(__git_ps1 " (%s)")  # comment out if entering a huge repository such as  nerd-fonts
+longPrompt='\[\e[1;34m\][\w$GIT_PS1]\$\[\e[0m\] '
+shortPrompt=false
+PS1=$longPrompt
+
+# toggle short prompt
+sp (){
+  if $shortPrompt; then
+    PS1=$longPrompt
+    shortPrompt=false
+  else
+    PS1='\[\e[1;34m\][\W]\$\[\e[0m\] '
+    shortPrompt=true
+  fi
+}
 
 #=> file manage
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'

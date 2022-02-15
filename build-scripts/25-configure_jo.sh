@@ -1,21 +1,28 @@
 #!/bin/bash
 # vim: fdl=1:
 
-#=> broot br
-broot  # to load  br
+#=> 1 go slow
+set -v  # prints each statement here, including comments
+trap read debug  # puts a read request after each executable line
 
-#=> for *mutt
-mkdir ~/.local/share/mail
+# #=> 2 broot br
+# broot  # to load  br
 
-#=> for my m4p scripts
-mkdir -p ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $Bash/bashrc-ob
+# #=> 2 for *mutt
+# mkdir ~/.local/share/mail
 
-#=> grab default xinitrc
-cp /etc/X11/xinit/xinitrc ~/xinitrc-laa
+# #=> 2 for my m4p scripts
+# mkdir -p ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $Bash/bashrc-ob
 
-#=> make AUR directories
-mkdir ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make
+# #=> 2 grab default xinitrc
+# cp /etc/X11/xinit/xinitrc ~/xinitrc-laa
 
-#=> base-devel group for makepkg
-sudo pacman -S --needed base-devel
+#=> 2 LanguageTool
+sudo ln -sf $IThandy/LanguageTool-5.6 /usr/share/java/LanguageTool
+
+# #=> 2 make AUR directories
+# mkdir ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make
+
+# #=> 2 base-devel group for makepkg
+# sudo pacman -S --needed base-devel
 

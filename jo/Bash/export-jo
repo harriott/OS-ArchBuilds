@@ -11,6 +11,8 @@ uG=$MACHINE/jo/Bash/export-urxvt; [[ -f $uG ]] && . $uG
 
 export MOZ_GTK_TITLEBAR_DECORATION=client
 
+# export GIT_PS1=$(__git_ps1 " (%s)")  # excruciatingly slow on a huge repository such as  nerd-fonts
+
 #=> 1 storage
 # here I'm taking care to avoid variables that only differ by case
 
@@ -25,6 +27,6 @@ export MSWin10=$onGH/MSWin10  # for notes
 export Openbox=$ARCHBUILDS/jo/Openbox
 export PAPERSIZE=A4
 export SE=$DROPBOX/JH/CforWork/Education/Science-Engineering  # for notes
-export Sig=$DROPBOX/JH/Now/Essential/Signatures  # for use in creating documents
+export Sig=$DROPBOX/JH/now/essential/signatures  # for use in creating documents
 export vimfiles=$onGH/vimfiles
 

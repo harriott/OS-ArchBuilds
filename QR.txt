@@ -94,6 +94,7 @@ fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones dis
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
 fd -d1 -td  # depth 1 (current dir), type dir
 fd -H  # --hidden
+fd -HI --changed-within 1h
 fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
 sharkdp/fd
@@ -123,8 +124,9 @@ rg -ttex '\$Sig'
 rg -ttex '\\includepdf'
 rg -ttex '\\multirow\{'
 rg -ttex '\\subsubsection\{'
-rg -ttex '\\tabular\{'
+rg -ttex '{tabular}'
 rg -ttex 'newcommand\{'
+rg -ttex '\\setdefaultlanguage'
 rg -tmd '\$SE'
 rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
@@ -149,6 +151,7 @@ locate -c <target>  # --count
 locate -h
 locate -r '\.conf$'
 locate -r '\.json$' | mo
+locate -r 'gestion des cas'
 
 #### updatedb
 /etc/updatedb.conf
@@ -190,13 +193,17 @@ j,k -> down/up
 
 # fonts
 cd /usr/share/fonts; $ fd -L consolas
+font-manager &
 
 ## Fontconfig
 cd /etc/fonts  # to explore the configuration files
-fc-list | grep Lohit
+fc-list | grep Caskaydia
 fc-list | grep Deja
+fc-list | grep Lohit
+fc-list | grep ubuntu
 fc-list -v ubuntumono
-sudo fc-cache -f  # regenerates the cache
+fc-list > $MACHINE/fclist.txt
+doas fc-cache -f  # regenerates the cache
 
 ### fc-scan
 fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf
@@ -273,7 +280,7 @@ sudo rsync -irtv --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/A
 #### checking
 /var/log/rsnapshot
 e -l -s modified $rsnapshot
-journalctl -r | grep rsnapshot | grep Consumed | xcol daily weekly | mo
+journalctl -r | grep rsnapshot | grep Consumed | xcol weekly monthly | mo
 journalctl -u rsnapshot@daily -r
 journalctl -u rsnapshot@hourly -r
 systemctl status rsnapshot-hourly.timer
@@ -296,6 +303,18 @@ rm -r ~/.thumbnails/normal/*
 ## scanimage
 S 55n 3 <imagefilename> <scanheight>
 see $Imagey/Scan.sh
+
+# LanguageTool package
+languagetool  # GUI
+whereis languagetool
+
+# LanguageTool symlinked
+java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar -h
+java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --list  # languages
+
+## version
+/usr/share/java/LanguageTool/README.md
+java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
 
 # multimedia
 ~/.config/obs-studio/logs
@@ -348,6 +367,7 @@ f => forward
 F => toggle important flag (= Star in Gmail)
 
 #### notmuch search
+nmse '"Elswick Family Practice"'
 nmse '"Georita Harriott"' date:march..  # searches from March
 nmse parlotte date:sat
 notmuch search tag:fm | wc -l
@@ -364,6 +384,7 @@ URLs (such as in an email sent from mutt) unclickable - so better to send to the
 ## NetworkManager
 nmcli connection delete Jo-X10II
 nmcli device wifi connect Jo-X10II password <password>
+nmcli connection delete cafezoide
 nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
 nmcli connection up uuid 667c759d-382a-4875-9021-2258cdba8dad
 nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
@@ -418,20 +439,6 @@ bat -A /etc/hosts
 bm <command>  # batman
 cat /proc/cpuinfo
 
-## BpyTOP
-bpytop  # supersedes  bashtop
-
-### keybinds
-h = F1
-
-#### sorting columns
-b = left = previous
-n = right = next
-
-#### tree view
-e toggles it
-spacebar toggles open/closed a branch
-
 ## groups
 cat /etc/group  # list all groups on the system
 id jo        # show uid, gid, and groups for jo
@@ -443,6 +450,23 @@ handlr list
 ### mimeo
 /home/jo/.config/mimeapps.list  # add mimetypes here
 mimeo -m <fileToOpen>  # reports mimetype
+
+## monitoring
+btop
+
+### BpyTOP
+bpytop  # supersedes  bashtop
+
+#### keybinds
+h = F1
+
+##### sorting columns
+b = left = previous
+n = right = next
+
+##### tree view
+e toggles it
+spacebar toggles open/closed a branch
 
 ## sizes
 sudo du -h --max-depth=1 /usr

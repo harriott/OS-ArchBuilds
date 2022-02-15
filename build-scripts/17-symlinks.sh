@@ -30,7 +30,6 @@ ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
 #=> 1 X
-
 ln -sf $ARCHBUILDS/jo/xbindkeysrc ~/.xbindkeysrc  # mouse wheel
 ln -sf $ARCHBUILDS/jo/xinitrc     ~/.xinitrc  # calls $MACHINE/jo/Xresources
 ln -sf $Openbox/Xresources/Xresources ~/.Xresources

@@ -121,6 +121,9 @@ trap read debug  # puts a read request after each executable line
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer --now
 
+# #=> Font Manager
+# sudo pacman -S font-manager
+
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
 
@@ -132,11 +135,11 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -276,6 +279,15 @@ trap read debug  # puts a read request after each executable line
 # #=> OpenShot
 # sudo pacman -S openshot
 
+# #=> patched Cascadia Code font 0 install
+# gAUR nerd-fonts-cascadia-code
+# nvim -c "silent! /ryanoasis\/nerd-fonts" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> patched Cascadia Code font 0 remove
+# sudo pacman -Rs nerd-fonts-cascadia-code
+
 # #=> PDFsam
 # gAUR pdfsam
 # nvim -c "silent! /torakiki" PKGBUILD
@@ -390,8 +402,8 @@ trap read debug  # puts a read request after each executable line
 # #=> yt-dlp
 # sudo pacman -S yt-dlp
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

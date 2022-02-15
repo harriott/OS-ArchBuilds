@@ -260,9 +260,13 @@ failed to give pw, so  sudo pacman -U auracle-git-r366.8739929-3-x86_64.pkg.tar.
 :: Replace hwids with core/hwdata? [Y/n]
 ## Updates
 :: Replace quazip with extra/quazip-qt5? [Y/n]
+## sudoers.pacnew
+sudo nvim -O /etc/sudoers /etc/sudoers.pacnew
+sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers
+sudo rm /etc/sudoers.pacnew
+## LanguageTool 5.6
 ## waiting
 lsd
-noto-fonts-cjk
 # fcron
 fcrontab -l
   @ 3 bash ~/Arch/cmusqueue.sh

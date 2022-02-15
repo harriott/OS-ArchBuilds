@@ -27,9 +27,9 @@ makepkg -sic
 # nvim -c "silent! /xeruf" PKGBUILD
 # makepkg -sic
 
-#=> 1 tmux-bash-completion-git
-# depends on bash-completion, and brings in tmux
-gdAUR tmux-bash-completion-git
-nvim -c "silent! /imomaliev" PKGBUILD
-makepkg -sic
+# #=> 1 tmux-bash-completion-git
+# # depends on bash-completion, and brings in tmux
+# gdAUR tmux-bash-completion-git
+# nvim -c "silent! /imomaliev" PKGBUILD
+# makepkg -sic
 

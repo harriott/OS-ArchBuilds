@@ -62,8 +62,16 @@ after calling it from  xdg-open
 :: Import PGP key C132293954BBE4AD, "Sergej Pupykin <spupykin@archlinux.org>"? [Y/n]
 ## Updates
 :: Replace quazip with extra/quazip-qt5? [Y/n]
+## sudoers.pacnew
+sudo nvim -O /etc/sudoers /etc/sudoers.pacnew
+sudo visudo -c -f /etc/sudoers
+cp /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers
+sudo chown jo:jo $ARCHBUILDS/etc/sudoers/sudoers
+sudo rm /etc/sudoers.pacnew
+## LanguageTool 5.6
 ## waiting
 lsd
+$ARCHBUILDS/etc/doas.conf
 # fcron
 fcrontab -l
   @ 10 bash ~/Arch/bash_history.sh

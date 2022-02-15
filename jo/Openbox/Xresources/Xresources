@@ -16,7 +16,7 @@ Xft.rgba: rgb
 ! called from my  $ARCHBUILDS/jo/xinitrc
 
 ! after changes here, either quit & restart X or
-!  xrdb $MACHINE/jo/Xresources  or  xrdb ~/.Xresources
+!  xrdb $Openbox/Xresources/Xresources  or  xrdb ~/.Xresources
 ! apostrophes in comments can trigger warnings, so dont use them
 
 ! These dont have any visible effect:
@@ -32,6 +32,8 @@ xman*manualFontNormal:    -*-ubuntumono-*-r-*-*-*-120-*-*-*-*-*-*
 
 ! default terminal wide enough for  ip link :
 URxvt.geometry: 115x24
+
+#include "/home/jo/.Xresources-LukeSmith-gruvbox"
 
 ! A large scrollback buffer (over 8x the default):
 URxvt.saveLines: 8192
@@ -52,30 +54,22 @@ URxvt.clipboard.autocopy: true
 
 ! font
 ! ----
-! I dont know how to test  URxvt.boldFont
+! echo "m-0 in URxvt.font"; echo "${tpf7b}m-0 in URxvt.boldFont${tpfn}"
+! cmus  &  tmux  folders show in  URxvt.boldFont
 
-! Consolas
-! URxvt.font: xft:consolas:size=10 ! seems to be the minimum size
-! wider than Ubuntu...
+! Caskaydia Cove Nerd Font Complete Mono
+URxvt.letterSpace: -1
+URxvt.font: xft:CaskaydiaCoveNerdFontMono:size=8
+!  better than Ubuntu Mono, except the hyphen runs into adjoining letters
+! URxvt.boldFont: xft:CaskaydiaCoveNerdFontMono:bold
+!  gets too small if size of Regular is 8
 
-! Hack - very readable
-! URxvt.letterSpace: -1
-! URxvt.font:     xft:hack:size=8  ! about same height as Ubuntu 9, but wider
-! URxvt.boldFont: xft:hack:bold:size=10
+! Hack Bold Nerd Font Complete Monor
+URxvt.boldFont: xft:HackNerdFontMono:Bold
 
-! Liberation - a mess...
-! URxvt.letterSpace: -4
-! URxvt.font:     xft:liberation:size=10
-
-! Ubuntu - my preferred
-URxvt.letterSpace: -1 ! preferred now
-URxvt.font:     xft:ubuntumono:size=9
-URxvt.boldFont: xft:ubuntumono:bold:size=9
-
-! Adobe
-! URxvt.letterSpace: -1
-! URxvt.font: xft:sourcecodepro:size=9
-! - a tiny bit taller than Ubuntu 10
-
-#include "/home/jo/.Xresources-LukeSmith-gruvbox"
+! Ubuntu Mono - my long-time preferred
+! URxvt.letterSpace: -1 ! preferred now
+! URxvt.font: xft:ubuntumono:size=9
+!  cant show icons in  lsd
+! URxvt.boldFont: xft:ubuntumono:bold
 

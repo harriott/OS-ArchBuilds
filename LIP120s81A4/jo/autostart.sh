@@ -4,9 +4,13 @@
 # called by  $Openbox/openbox/autostart/urxvtl.sh
 # (chmod u+x $MACHINE/jo/urxvtl.sh)
 
+#=> cbatticon
+cbatticon &
+
 #=> MicTray
 mictray &
 
-#=> cbatticon
-cbatticon &
+#=> open a new window for btop
+tmux new-window
+tmux send btop Enter
 

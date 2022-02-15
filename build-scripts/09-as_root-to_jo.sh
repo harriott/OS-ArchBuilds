@@ -7,60 +7,60 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 2 doas
-pacman -S opendoas
-cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
-chmod -c 0400 /etc/doas.conf
-gpasswd -a jo wheel
-# after a reboot, test with  doas updatedb
+# #=> 2 doas
+# pacman -S opendoas
+# cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
+# chmod -c 0400 /etc/doas.conf
+# gpasswd -a jo wheel
+# # after a reboot, test with  doas updatedb
 
-#=> 2 file manage
-# bat
-pacman -S bat
+# #=> 2 file manage
+# # bat
+# pacman -S bat
 
-# broot
-pacman -S broot
-broot # to generate br command
+# # broot
+# pacman -S broot
+# broot # to generate br command
 
-# dvd+rw-tools
-pacman -S dvd+rw-tools
+# # dvd+rw-tools
+# pacman -S dvd+rw-tools
 
-# exa
-pacman -S exa
+# # exa
+# pacman -S exa
 
-# fd
-pacman -S fd
+# # fd
+# pacman -S fd
 
-# fzf
-pacman -S fzf
+# # fzf
+# pacman -S fzf
 
-# lsd
-pacman -S awesome-terminal-fonts lsd
+# # lsd
+# pacman -S awesome-terminal-fonts lsd
 
-# mlocate
-pacman -S mlocate
-updatedb
+# # mlocate
+# pacman -S mlocate
+# updatedb
 
-# ncdu
-pacman -S ncdu
+# # ncdu
+# pacman -S ncdu
 
-# p7zip
-pacman -S p7zip
+# # p7zip
+# pacman -S p7zip
 
-# rhash
-pacman -S rhash
+# # rhash
+# pacman -S rhash
 
-# ripgrep
-pacman -S ripgrep
+# # ripgrep
+# pacman -S ripgrep
 
-# rsync
-pacman -S rsync
+# # rsync
+# pacman -S rsync
 
-# trash-cli
-pacman -S trash-cli
+# # trash-cli
+# pacman -S trash-cli
 
-# tree
-pacman -S tree
+# # tree
+# pacman -S tree
 
 # #=> 2 hd
 # # hdparm
@@ -138,6 +138,9 @@ pacman -S tree
 # source 00-as_root-RootkitHunt.sh
 
 # #=> 2 system
+# # btop
+# pacman -S btop
+
 # # fcron
 # pacman -S fcron
 # systemctl enable fcron.service
