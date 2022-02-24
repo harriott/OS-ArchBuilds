@@ -18,6 +18,7 @@ trap read debug  # puts a read request after each executable line
 # cp /etc/X11/xinit/xinitrc ~/xinitrc-laa
 
 #=> 2 LanguageTool
+# needed for command-line usage
 sudo ln -sf $IThandy/LanguageTool-5.6 /usr/share/java/LanguageTool
 
 # #=> 2 make AUR directories

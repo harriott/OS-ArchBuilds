@@ -15,9 +15,6 @@ gvim PKGBUILD
 makepkg -sic
 
 #=> npm ffmpeg-concat
-sudo pacman -S npm
-mkdir ~/.npm-global
-npm config set prefix=$HOME/.npm-global
 npm install npm@latest -g
 which npm
 npm install -g ffmpeg-concat

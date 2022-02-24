@@ -265,6 +265,9 @@ sudo nvim -O /etc/sudoers /etc/sudoers.pacnew
 sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers
 sudo rm /etc/sudoers.pacnew
 ## LanguageTool 5.6
+## /etc/locale.gen.pacnew
+sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew   & diff'd over changes
+sudo rm /etc/locale.gen.pacnew
 ## waiting
 lsd
 # fcron

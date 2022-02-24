@@ -172,18 +172,30 @@ trap read debug  # puts a read request after each executable line
 # # pkgstats
 # pacman -S pkgstats
 
-# #=> 2 various
-# # universal-ctags
-# pacman -S ctags
+#=> 2 various
+# universal-ctags
+pacman -S ctags
 
-# # pass (bring in gnupg)
-# pacman -S pass
+# languagetool
+pacman -S languagetool  # for the GUI
 
-# # python-pipx
-# pacman -S python-pipx
+# Node Package Manager 0 npm install
+pacman -S npm
 
-# # strace - for debugging
-# pacman -S strace
+# OpenOffice English thesaurus
+pacman -S mythes-en
+
+# pass (bring in gnupg)
+pacman -S pass
+
+# python-pipx
+pacman -S python-pipx
+
+# strace - for debugging
+pacman -S strace
+
+# for thesaurus_query.vim
+pacman -S python-beautifulsoup4
 
 # #=> 2 swappiness to 10
 # # check that the default is 60

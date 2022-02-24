@@ -69,9 +69,14 @@ cp /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers
 sudo chown jo:jo $ARCHBUILDS/etc/sudoers/sudoers
 sudo rm /etc/sudoers.pacnew
 ## LanguageTool 5.6
+## update GnuPG key 13F327EF
+gpg --edit-key 13F327EF > 1 > expire > 2y > trust
+gpg -ao sprbMbArch-m2o-public.asc --export jharr
+gpg -ao sprbMbArch-m2o-private.asc --export-secret-keys jharr
+gpg --send-keys 13F327EF
+  gpg: sending key 842A4DEE13F327EF to hkps://keyserver.ubuntu.com
 ## waiting
-lsd
-$ARCHBUILDS/etc/doas.conf
+cspell
 # fcron
 fcrontab -l
   @ 10 bash ~/Arch/bash_history.sh

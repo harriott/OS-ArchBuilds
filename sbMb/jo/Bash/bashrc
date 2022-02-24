@@ -3,6 +3,7 @@
 
 # ~/.bashrc in an Arch install on my sprayed brown Multivision box system
 # symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
+#  e -la ~/.bashrc
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 

@@ -269,6 +269,13 @@ true
 # sudo pacman -S noto-fonts-cjk
 # true
 
+#=> npm 0 configure npm-global
+mkdir ~/.npm-global
+npm config set prefix=$HOME/.npm-global
+
+#=> npm 1 cspell
+npm install -g cspell
+
 # #=> OBS Studio 0 install
 # sudo pacman -S obs-studio
 
