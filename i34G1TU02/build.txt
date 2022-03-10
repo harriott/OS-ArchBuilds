@@ -75,8 +75,11 @@ gpg -ao sprbMbArch-m2o-public.asc --export jharr
 gpg -ao sprbMbArch-m2o-private.asc --export-secret-keys jharr
 gpg --send-keys 13F327EF
   gpg: sending key 842A4DEE13F327EF to hkps://keyserver.ubuntu.com
+## Updates
+:: libstdc++5-bin and libstdc++5 are in conflict. Remove libstdc++5? [y/N]
 ## waiting
 cspell
+LanguageTool
 # fcron
 fcrontab -l
   @ 10 bash ~/Arch/bash_history.sh

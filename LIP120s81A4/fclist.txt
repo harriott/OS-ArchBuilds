@@ -41,6 +41,7 @@
 /usr/share/fonts/noto-cjk/NotoSerifCJK-ExtraLight.ttc: Noto Serif CJK KR,Noto Serif CJK KR ExtraLight:style=ExtraLight,Regular
 /usr/share/fonts/TTF/Lohit-Hindi.ttf: Lohit Hindi:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/ebrimabd.ttf: Ebrima:style=Bold,Negreta,tučné,fed,Fett,Έντονα,Negrita,Lihavoitu,Gras,Félkövér,Grassetto,Vet,Halvfet,Pogrubiony,Negrito,Полужирный,Fet,Kalın,Krepko,Lodia
+/usr/share/fonts/awesome-terminal-fonts/pomicons-regular.ttf: Pomodoro:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/tahoma.ttf: Tahoma:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,thường,Arrunta
 /usr/share/fonts/adobe-source-code-pro/SourceCodePro-BlackIt.otf: Source Code Pro,Source Code Pro Black:style=Black Italic,Italic
 /usr/share/fonts/copiedForArch/Win10Pro/verdana.ttf: Verdana:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
@@ -135,6 +136,7 @@
 /usr/share/fonts/copiedForArch/FontSquirrel/hind/hind-regular.otf: Hind:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/j8514oem.fon: Terminal:style=Regular
 /usr/share/fonts/copiedForArch/FontSquirrel/Kingthings-Calligraphica/Kingthings_Calligraphica_Light.ttf: Kingthings Calligraphica Light:style=Light
+/usr/share/fonts/copiedForArch/nerd-fonts/Ubuntu Nerd Font Complete.ttf: Ubuntu Nerd Font:style=Book
 /usr/share/fonts/copiedForArch/Win10Pro/Sitka.ttc: Sitka Heading,Sitka:style=Regular,Heading
 /usr/share/fonts/copiedForArch/Win10Pro/Sitka.ttc: Sitka Display,Sitka:style=Regular,Display
 /usr/share/fonts/copiedForArch/Win10Pro/smallfr.fon: Small Fonts:style=Regular
@@ -263,6 +265,7 @@
 /usr/share/fonts/copiedForArch/Win10Pro/timesbd.ttf: Times New Roman:style=Bold,Negreta,tučné,fed,Fett,Έντονα,Negrita,Lihavoitu,Gras,Félkövér,Grassetto,Vet,Halvfet,Pogrubiona,Negrito,Полужирный,Fet,Kalın,Krepko,đậm,Lodia
 /usr/share/fonts/gsfonts/P052-Bold.otf: P052:style=Bold
 /usr/share/fonts/copiedForArch/Noto-hinted/NotoSans-SemiCondensedExtraLightItalic.ttf: Noto Sans,Noto Sans SemCond ExtLt:style=SemiCondensed ExtraLight Italic,Italic
+/usr/share/fonts/awesome-terminal-fonts/fontawesome-regular.ttf: FontAwesome:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/coue1257.fon: Courier:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/c8514oem.fon: Terminal:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/smalle.fon: Small Fonts:style=Regular
@@ -538,6 +541,7 @@
 /usr/share/fonts/copiedForArch/Win10Pro/c8514sys.fon: System:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/vga865.fon: Terminal:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/seguihis.ttf: Segoe UI Historic:style=Regular
+/usr/share/fonts/copiedForArch/nerd-fonts/Ubuntu Mono Nerd Font Complete Mono.ttf: UbuntuMono Nerd Font Mono:style=Regular
 /usr/share/fonts/copiedForArch/Noto-hinted/NotoSansCJKtc-Medium.otf: Noto Sans CJK TC,Noto Sans CJK TC Medium:style=Medium,Regular
 /usr/share/fonts/copiedForArch/Win10Pro/sseriffe.fon: MS Sans Serif:style=Regular
 /usr/share/fonts/copiedForArch/Win10Home/LinBiolinum_R_G.ttf: Linux Biolinum G:style=Regular
@@ -668,6 +672,7 @@
 /usr/share/fonts/copiedForArch/Win10Pro/symbol.ttf: Symbol:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
 /usr/share/fonts/copiedForArch/FontSquirrel/Colaborate/ColabMed.otf: Colaborate\-Medium:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/cambria.ttc: Cambria Math:style=Regular
+/usr/share/fonts/awesome-terminal-fonts/devicons-regular.ttf: icomoon:style=Regular
 /usr/share/fonts/noto-cjk/NotoSerifCJK-Black.ttc: Noto Serif CJK KR,Noto Serif CJK KR Black:style=Black,Regular
 /usr/share/fonts/copiedForArch/Win10Pro/Sitka.ttc: Sitka Subheading,Sitka:style=Regular,Subheading
 /usr/share/fonts/copiedForArch/Win10Pro/trebucit.ttf: Trebuchet MS:style=Italic,Cursiva,kurzíva,kursiv,Πλάγια,Kursivoitu,Italique,Dőlt,Corsivo,Cursief,Kursywa,Itálico,Курсив,İtalik,Poševno,Etzana
@@ -707,6 +712,7 @@
 /usr/share/fonts/copiedForArch/Win10Pro/app775.fon: Terminal:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/seguibli.ttf: Segoe UI,Segoe UI Black:style=Black Italic,Italic
 /usr/share/fonts/gsfonts/C059-BdIta.otf: C059:style=Bold Italic
+/usr/share/fonts/copiedForArch/nerd-fonts/Arimo Regular Nerd Font Complete.ttf: Arimo Nerd Font:style=Regular
 /usr/share/fonts/copiedForArch/Noto-hinted/NotoSans-ExtraCondensedLight.ttf: Noto Sans,Noto Sans ExtCond Light:style=ExtraCondensed Light,Regular
 /usr/share/fonts/copiedForArch/FontSquirrel/metropolis/Metropolis-ExtraLight.otf: Metropolis,Metropolis Extra Light:style=Extra Light,Regular
 /usr/share/fonts/copiedForArch/FontSquirrel/open-sans/OpenSans-Italic.ttf: Open Sans:style=Italic
@@ -770,6 +776,7 @@
 /usr/share/fonts/cantarell/Cantarell-VF.otf: Cantarell:style=Thin
 /usr/share/fonts/copiedForArch/Noto-hinted/NotoSansCJKkr-Bold.otf: Noto Sans CJK KR,Noto Sans CJK KR Bold:style=Bold,Regular
 /usr/share/fonts/noto-cjk/NotoSerifCJK-Regular.ttc: Noto Serif CJK JP:style=Regular
+/usr/share/fonts/awesome-terminal-fonts/octicons-regular.ttf: octicons:style=Medium
 /usr/share/fonts/copiedForArch/Win10Pro/gadugi.ttf: Gadugi:style=Regular
 /usr/share/fonts/copiedForArch/Win10Pro/85775.fon: Terminal:style=Regular
 /usr/share/fonts/copiedForArch/Win10Home/Caladea-Italic.ttf: Caladea:style=Italic

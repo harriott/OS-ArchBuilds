@@ -53,6 +53,25 @@ abt () {
 alias lpd='lpstat -p -d'
 alias sc5='sudo cupsenable ENVY_5530'
 
+#=> Dropbox conflicted copies
+# results are noted in time-stamped logs
+dcc0 () {
+  jHMS=$(date "+%j-%H%M%S")  # echo $jHM
+  export DropboxConflictedLog="conflicted-$jHMS.log"
+  find -name "* conflicted copy *" > $DropboxConflictedLog
+  gvim $DropboxConflictedLog
+}  # lists them
+dcc1 () {
+  export DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
+  mkdir $DropboxConflictedRemoved
+  while IFS= read -r file
+    do mv "$file" "$DropboxConflictedRemoved/$file"
+  done < $DropboxConflictedLog
+  removedLog=$DropboxConflictedRemoved/removed.log
+  mv $DropboxConflictedLog $removedLog
+  echo "removed files listed in $removedLog"
+}  # removes them
+
 #=> ffmpeg
 alias ffmhb='nice -n 19 ffmpeg -hide_banner'
 
@@ -181,7 +200,7 @@ m4p() # a single TextNote file
     export headingtoodeep=######
     export m4pfont=0
     bash $MD4PDF/GNULinux/m4p.sh $1 $2
-}
+} # 2nd argument turns off ToC
 
 # recursively compile from many markdowns
 m4ps0() # my TextNotes

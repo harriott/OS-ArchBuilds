@@ -63,12 +63,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a long time
 # true
 
-# #=> Dropbox 0 (re)install
-# # only once there's a browser, and preferably after LastPass
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+# only once there's a browser, and preferably after LastPass
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -135,11 +135,11 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -177,6 +177,12 @@ true
 # #=> libgphoto2
 # sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
 # sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
+
+# #=> libstdc++5-bin
+# gAUR libstdc++5-bin
+# nvim -c "silent! /ftp.de.debian.org" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> libva-utils
 # sudo pacman -S libva-utils
@@ -269,12 +275,12 @@ true
 # sudo pacman -S noto-fonts-cjk
 # true
 
-#=> npm 0 configure npm-global
-mkdir ~/.npm-global
-npm config set prefix=$HOME/.npm-global
+# #=> npm 0 configure npm-global
+# mkdir ~/.npm-global
+# npm config set prefix=$HOME/.npm-global
 
-#=> npm 1 cspell
-npm install -g cspell
+# #=> npm 1 cspell
+# npm install -g cspell
 
 # #=> OBS Studio 0 install
 # sudo pacman -S obs-studio

@@ -19,7 +19,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> 2 LanguageTool
 # needed for command-line usage
-sudo ln -sf $IThandy/LanguageTool-5.6 /usr/share/java/LanguageTool
+sudo ln -sf $IThandy/LanguageTool /usr/share/java/LanguageTool
 
 # #=> 2 make AUR directories
 # mkdir ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make

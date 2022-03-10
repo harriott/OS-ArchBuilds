@@ -31,7 +31,7 @@ cp $uc1/registrymodifications.xcu $uc0/registrymodifications.xcu
 # cp $uc0/registrymodifications.xcu $uc1/registrymodifications.xcu
 
 # #=> 1 Thunderbird - T91-default-release
-Drloc=SD480GSSDPlus
+Drloc=SD480GSSDPlus  # Path=/mnt/SD480GSSDPlus/Dropbox/JH/T91-default-release
 Drloc=SDEP128G
 defrel=(
   sed -i

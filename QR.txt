@@ -119,7 +119,9 @@ rg '\$ITstack'
 rg '\$mail'
 rg '<someText>|<otherText>'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
+rg -tmd '\$SE'
 rg -tmd '\$Sig'
+rg -tmd '\{TNW}'
 rg -ttex '\$Sig'
 rg -ttex '\\includepdf'
 rg -ttex '\\multirow\{'
@@ -128,8 +130,7 @@ rg -ttex '{tabular}'
 rg -ttex 'newcommand\{'
 rg -ttex '\\setdefaultlanguage'
 rg -ttex 'WLR'
-rg -tmd '\$SE'
-rg -tmd '\{TNW}'
+rg -tvim 'vimHints'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 rg <someText>  # searches recursively in files
 

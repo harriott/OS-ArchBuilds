@@ -268,8 +268,22 @@ sudo rm /etc/sudoers.pacnew
 ## /etc/locale.gen.pacnew
 sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew   & diff'd over changes
 sudo rm /etc/locale.gen.pacnew
+## Spotify Public Repository Signing Key
+gpg --delete-key 0D811D58
+## HP ENVY 5532 by WiFi to CUPS
+/etc/cups/ppd/  is empty
+hp-makeuri 192.168.43.249
+  CUPS URI: hp:/net/ENVY_5530_series?ip=192.168.43.249
+  SANE URI: hpaio:/net/ENVY_5530_series?ip=192.168.43.249
+hp-setup -i 192.168.43.249 > ENVY_5532
+  Found PPD file: drv:///hp/hpcups.drv/hp-envy_5530_series.ppd > y
+  ... location ... > Enter
+  ... additional ... > Enter
+  ... test page ... > y
+## Updates
+  ==> NOTE: Custom flags should be put directly in: ~/.config/chrome-flags.conf
+  ==> NOTE: The launcher is called: 'google-chrome-stable'
 ## waiting
-lsd
 # fcron
 fcrontab -l
   @ 3 bash ~/Arch/cmusqueue.sh
