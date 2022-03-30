@@ -63,12 +63,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a long time
 # true
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# # only once there's a browser, and preferably after LastPass
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -135,11 +135,11 @@ true
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -258,7 +258,7 @@ true
 # #=> nodejs-mapscii 1 remove
 # sudo pacman -Rs nodejs-mapscii
 
-# #=> nordvpn-bin 0 install
+# #=> nordvpn-bin 0 (re)install
 # gAUR nordvpn-bin
 # nvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
 # makepkg -sic

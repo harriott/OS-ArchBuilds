@@ -239,10 +239,11 @@ lspci -vnn | grep VGA -A 12 | xcol Radeon size VGA
 sudo lshw -C display | xcol Radeon size VGA
 
 ## printing - CUPS - HP ENVY 5532 WiFi
+lpoptions -d ENVY_5530  # set as default
 lpoptions -d ENVY_5530_249  # set as default
 lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 lpoptions -p Envy5532 -o PageSize=A4
-doas cupsenable ENVY_5530_249  # if it's paused
+doas cupsenable ENVY_5530  # if it's paused
 
 ## printing - HPLIP - HP ENVY 5532 WiFi
 hp-levels -p ENVY_5532

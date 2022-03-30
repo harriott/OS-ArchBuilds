@@ -76,7 +76,6 @@
 ##
 ## User privilege specification
 ##
-jo ALL=(ALL:ALL) ALL
 root ALL=(ALL:ALL) ALL
 
 ## Uncomment to allow members of group wheel to execute any command
@@ -97,6 +96,9 @@ root ALL=(ALL:ALL) ALL
 @includedir /etc/sudoers.d
 
 Defaults editor=/usr/bin/rnano
+
+## allow root access to dhcpcd (stackexchange 18830)
+jo ALL = (root) NOPASSWD: /usr/bin/dhcpcd
 
 ## allow root access to ip
 jo ALL = (root) NOPASSWD: /usr/bin/ip

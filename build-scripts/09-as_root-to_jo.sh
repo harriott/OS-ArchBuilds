@@ -8,10 +8,10 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 # #=> 2 doas
+# gpasswd -a jo wheel  # might already be done
 # pacman -S opendoas
 # cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
 # chmod -c 0400 /etc/doas.conf
-# gpasswd -a jo wheel
 # # after a reboot, test with  doas updatedb
 
 # #=> 2 file manage

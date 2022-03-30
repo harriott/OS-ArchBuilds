@@ -1,6 +1,7 @@
 # vim: ft=sh sw=2:
 
 # stuff that's useful when a Window Manager is installed
+# sourced by  $Bash/bashrc
 
 alias xc="zathura -P 38 $IThandy/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
 
@@ -166,9 +167,25 @@ clm () { # lose lighter stuff, darken, and slightly reduce filesize
   bash $Imagey/cnvt.sh $1 "-level 25%,75%,.5 -quality 50"
 }
 
+#=> imagey - convert all webp to jpg
+w2j () {
+  for w in *.webp; do convert $w ${w/.webp/_webp.jpg}; done
+}
+
 #=> imagey - copy a directory of sketches darker
 dsd () {
-  bash $Imagey/gamma03.sh $1
+  id=${1%/}
+  if [[ -d $id ]]; then
+    [[ -d $id-gamma03 ]] && rm -r $id-gamma03
+    mkdir $id-gamma03
+    echo $id-gamma03
+    cd $id
+    i=0
+    for j in *.jpg; do convert $j -level 0%,100%,0.3 ../$id-gamma03/$j; done
+    cd ..
+  else
+    echo "$id ain't there"
+  fi  # darken sketches with ImageMagick
 }
 
 #=> imagey - jpeg orientation
@@ -194,24 +211,7 @@ for iHS in {0..1}; do  # setup alternative commands to define the header style
     setHeadingsSty[$iHS]="ln -sf $MD4PDF/iih/headings$iHS.sty ~/texmf/tex/latex/m4p/headings.sty"
   done  # (leaves iHS set to 1)
 
-m4p() # a single TextNote file
-{
-    eval ${setHeadingsSty[0]}
-    export headingtoodeep=######
-    export m4pfont=0
-    bash $MD4PDF/GNULinux/m4p.sh $1 $2
-} # 2nd argument turns off ToC
-
-# recursively compile from many markdowns
-m4ps0() # my TextNotes
-{
-    eval ${setHeadingsSty[0]}
-    export headingtoodeep=######
-    export m4pfont=0
-    bash $MD4PDF/GNULinux/m4ps.sh $1 $2
-} # 2nd argument turns off ToC
-
-m4ps1() # muted headings
+m4ps1()  # muted headings
 {
     eval ${setHeadingsSty[1]}
     export headingtoodeep=####
@@ -219,11 +219,28 @@ m4ps1() # muted headings
     bash $MD4PDF/GNULinux/m4ps.sh 0 1
 }
 
-mt() # do my TextNotes
+mt()  # do my TextNotes
 {
     cd $DROPBOX/JH/core/TextNotes
     pwd
     m4ps0 0
     figlet -f univers done
+}
+
+#==> maybe redo all, maybe no ToC
+m4p()  # a single TextNote file
+{
+    eval ${setHeadingsSty[0]}
+    export headingtoodeep=######
+    export m4pfont=0
+    bash $MD4PDF/GNULinux/m4p.sh $1 $2
+}
+
+m4ps0()  # recursively compile many TextNotes
+{
+    eval ${setHeadingsSty[0]}
+    export headingtoodeep=######
+    export m4pfont=0
+    bash $MD4PDF/GNULinux/m4ps.sh $1 $2
 }
 

@@ -1,7 +1,8 @@
 #!/bin/bash
 # vim: sw=2:
 
-# Joseph Harriott, Fri 05 Nov 2021
+# Joseph Harriott, Thu 17 Mar 2022
+# S  is defined in  $Bash/bashrc-wm
 
 # $1 manually chooses the scanner because there's no other easy way
 #  only one scanning device should be plugged in
@@ -20,7 +21,7 @@ if [ $1 = "248" ] ; then
 elif [ $1 = "55n" ] || [ $1 = "55u" ] ; then
   declare -a Resns=(1 2 3 6 12)
   if [ $1 = "55n" ] ; then
-    device=$'--device \'hpaio:/net/ENVY_5530_series\?ip=192.168.43.249\''
+    device=$'--device \'hpaio:/net/ENVY_5530_series\?ip=192.168.43.250\''
   fi  # from  hp-makeuri
   siPrefix="scanimage $device -p --format=tiff --mode Color --resolution"
 else
@@ -39,3 +40,4 @@ for Resn in "${Resns[@]}"; do
     eval $goscan
   fi
 done
+

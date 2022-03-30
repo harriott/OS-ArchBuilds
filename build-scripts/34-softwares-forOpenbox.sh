@@ -20,8 +20,8 @@ trap read debug  # puts a read request after each executable line
 # gvim -c "silent! /dragon" PKGBUILD
 # makepkg -sic
 
-#=> 1 feh
-sudo pacman -S feh
+# #=> 1 feh
+# sudo pacman -S feh
 
 # #=> 1 mpv
 # sudo pacman -S mpv
@@ -50,11 +50,11 @@ sudo pacman -S feh
 # # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 # true
 
-# #=> 1 qt5-styleplugins
-# # for qt5ct - allows fix of narrow fonts in XnViewMP
-# gAUR qt5-styleplugins
-# gvim -c "silent! /qtstyleplugins" PKGBUILD
-# makepkg -sic  # takes a long time
+#=> 1 qt5-styleplugins
+# for qt5ct - allows fix of narrow fonts in XnViewMP
+gAUR qt5-styleplugins
+nvim -c "silent! /qtstyleplugins" PKGBUILD
+makepkg -sic  # takes a long time
 
 # #=> 1 qpdfview
 # sudo pacman -S qpdfview
@@ -67,25 +67,23 @@ sudo pacman -S feh
 # #=> 1 SANE
 # sudo pacman -S sane
 
-#=> 1 snixembed-git
-# to get Dropbox icon down into tint2
-gdAUR snixembed-git
-gvim -c "silent! /https:\/\/git.sr.ht\/~steef\/snixembed" PKGBUILD
-makepkg -sic  # takes a while
+# #=> 1 snixembed-git
+# # to get Dropbox icon down into tint2
+# gdAUR snixembed-git
+# gvim -c "silent! /https:\/\/git.sr.ht\/~steef\/snixembed" PKGBUILD
+# makepkg -sic  # takes a while
 
-#=> 1 sxiv
-sudo pacman -S sxiv
+# #=> 1 sxiv
+# sudo pacman -S sxiv
 
-#=> 1 urlview
-# creates a numbered list of url's in a resource
-cd ~/Arch/AUR
-git clone https://aur.archlinux.org/urlview.git
-gAUR urlview
-gvim PKGBUILD
-makepkg -sic
+# #=> 1 urlview
+# # creates a numbered list of url's in a resource
+# gAUR urlview
+# gvim PKGBUILD
+# makepkg -sic
 
-#=> 1 Zathura
-sudo pacman -S zathura-pdf-mupdf
-mkdir ~/.config/zathura
-# zathurarc  will be symlinked in  38-symlinks-softwares.sh
+# #=> 1 Zathura
+# sudo pacman -S zathura-pdf-mupdf
+# mkdir ~/.config/zathura
+# # zathurarc  will be symlinked in  38-symlinks-softwares.sh
 
