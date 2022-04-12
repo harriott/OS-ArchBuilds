@@ -80,6 +80,9 @@ gpg --send-keys 13F327EF
 ## locale.gen.pacnew
 sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew   & diff'd over changes
 sudo rm /etc/locale.gen.pacnew
+## Updates
+:: Starting full system upgrade...
+:: Replace espeak-ng-espeak with community/espeak-ng? [Y/n]
 ## waiting
 cspell
 LanguageTool

@@ -286,6 +286,9 @@ hp-setup -i 192.168.43.249 > ENVY_5532
 ## logind.conf.pacnew
 sudo nvim -O /etc/systemd/logind.conf /etc/systemd/logind.conf.pacnew
 sudo rm /etc/systemd/logind.conf.pacnew
+## Updates
+:: Starting full system upgrade...
+:: Replace espeak-ng-espeak with community/espeak-ng? [Y/n]
 ## waiting
 feh
 # fcron

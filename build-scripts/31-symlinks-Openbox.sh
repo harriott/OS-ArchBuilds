@@ -20,3 +20,7 @@ ln -sf $Openbox/openbox/rc/rc.xml              ~/.config/openbox/rc.xml
 
 exa -la ~/.config/openbox
 
+#=> 1 symlinks for Tex Live
+
+sudo ln -sf $ARCHBUILDS/jo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
+

@@ -771,6 +771,22 @@ hp-setup -r > selected 249 > Remove
 hp-setup 192.168.43.250 > Next > Add Printer
 hp-toolbox &
 changed 249 to 250 in  $Imagey/Scan.sh
+## Updates
+:: Starting full system upgrade...
+:: Replace espeak-ng-espeak with community/espeak-ng? [Y/n]
+...
+error: thunderbird: signature from "Antonio Rojas <arojas@archlinux.org>" is invalid
+:: File /var/cache/pacman/pkg/thunderbird-91.8.0-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+fix was to rerun  pacman -Syu
+## Updates
+error: chromium: signature from "Evangelos Foutras <evangelos@foutrelis.com>" is invalid
+:: File /var/cache/pacman/pkg/chromium-100.0.4896.88-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+fix was to rerun  pacman -Syu
+## HP ENVY 5532 IP Address changed to 249
+hp-setup -r > selected 250 > Remove
+hp-setup 192.168.43.249 > Next > Add Printer
+hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control > Set as Default
+changed 250 to 249 in  $Imagey/Scan.sh
 ## waiting
 annotator
 CUPS Socket activation

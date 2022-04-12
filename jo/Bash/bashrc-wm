@@ -31,6 +31,10 @@ ltx () {
   sed -i 's/}//' $s
 }
 
+x () {
+  max_print_line=4000 xelatex $1
+}
+
 #=> audio trimming
 aet () {
   export a="$1"
@@ -202,9 +206,8 @@ cl () {
 }
 
 #=> imagey - SANE's scanimage tool
-S () {
-  bash $Imagey/Scan.sh $1 $2 $3 $4
-}
+S () { bash $Imagey/Scan.sh $1 $2 $3 $4; }
+  s53 () { S 55n 3 $1 $2; }
 
 #=> Pandoc my markdown notes
 for iHS in {0..1}; do  # setup alternative commands to define the header style

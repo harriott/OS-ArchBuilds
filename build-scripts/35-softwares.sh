@@ -215,11 +215,11 @@ true
 # # for glxinfo
 # sudo pacman -S mesa-utils
 
-# #=> moar 0 install
-# gAUR moar
-# nvim -c "silent! /walles" PKGBUILD
-# makepkg -sic
-# true
+#=> moar 0 install
+gAUR moar
+nvim -c "silent! /walles" PKGBUILD
+makepkg -sic
+true
 
 # #=> moar remove
 # cd ~/Arch/AUR

@@ -137,9 +137,10 @@ fdtsExt () {
 
 #==> time-sorted lists of files - bbcode
 fdtsbbcode () {
-  dtsfile=dts-bbcode.txt
+  dtsfile=dts-ft_bbcode.txt
   ftListHeader $dtsfile
   rg -ttxt -l --sort modified 'ft=bbcode' >> $dtsfile
+  echo "results are in $dtsfile"
 }
 
 #==> time-sorted lists of files - by keystring in name
