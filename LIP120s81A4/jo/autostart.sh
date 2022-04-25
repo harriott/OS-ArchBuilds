@@ -1,8 +1,8 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# called by  $Openbox/openbox/autostart/urxvtl.sh
-# (chmod u+x $MACHINE/jo/urxvtl.sh)
+# called by  $Openbox/openbox/autostart/autostart
+# (chmod u+x $MACHINE/jo/autostart.sh)
 
 #=> cbatticon
 cbatticon &

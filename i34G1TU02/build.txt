@@ -83,6 +83,8 @@ sudo rm /etc/locale.gen.pacnew
 ## Updates
 :: Starting full system upgrade...
 :: Replace espeak-ng-espeak with community/espeak-ng? [Y/n]
+## Updates
+:: libvterm01 and libvterm are in conflict. Remove libvterm? [y/N] y
 ## waiting
 cspell
 LanguageTool

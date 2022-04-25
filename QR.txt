@@ -273,6 +273,8 @@ trash-empty  # lists before query
 ### rsnapshot
 $MACHINE/etc/rsnapshot.conf
 cd $rsnapshot
+pgrep rsnapshot
+sudo pkill rsnapshot
 sm $rsnapshot/monthly.6
 
 #### backup localhost without mnt
@@ -341,7 +343,6 @@ curl ifconfig.co/country
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
 systemctl status nordvpnd.service
-wp  # weather in Paris
 xdg-open https://archlinux.org
 
 ## Dropbox
@@ -394,9 +395,13 @@ sudo ls /etc/NetworkManager/system-connections/
 systemctl status NetworkManager
 systemctl status NetworkManager-dispatcher
 
+## weather
+ansiweather -f 7
+wp  # in Paris
+
 # packages
 checkupdates
-pacman -Q > $MACHINE/pacman-Q.txt
+pacman -Q > $MACHINE/pacman-Q/$(date '+%Y%m%d%H%M').txt
 pacman -Qdt  # lists all orphans
 sudo pacman -Rs <packagetoremove>
 /var/cache/pacman/pkg/
@@ -405,6 +410,10 @@ grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
 ## groups
 pacman -Qg base-devel  # lists packages installed
 pacman -Sg base-devel  # lists all
+
+## list local and remote packages
+pacman -Ss <keyword>
+pacsearch <keyword>  # better search
 
 ## package database locked
 pgrep pacman  # to ensure it's not running

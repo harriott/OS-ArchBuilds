@@ -19,7 +19,6 @@ cp /etc/fstab /mnt/fstab-$dt
 # grep 'd f' /etc/mkinitcpio.conf
 
 #=> reset mkinitcpio.conf
-dt=$(date "+%F-%H-%M")
 sed 's#fsck shutdown usr)#fsck)#' /etc/mkinitcpio.conf > /mnt/mkinitcpio-$dt.conf
 cp /mnt/mkinitcpio-$dt.conf /etc/mkinitcpio.conf
 grep 'd f' /etc/mkinitcpio.conf

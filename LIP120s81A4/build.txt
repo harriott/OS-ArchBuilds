@@ -289,6 +289,13 @@ sudo rm /etc/systemd/logind.conf.pacnew
 ## Updates
 :: Starting full system upgrade...
 :: Replace espeak-ng-espeak with community/espeak-ng? [Y/n]
+## Updates
+:: libvterm01 and libvterm are in conflict. Remove libvterm? [y/N] y
+## tint2 cbatticon & MicTray icons invisible
+killing & restarting them doesn't help
+## xdg-open .lua
+handlr get .lua  returns  no handlers found for text/x-lua
+  handlr set .lua gvim.desktop
 ## waiting
 feh
 # fcron

@@ -8,7 +8,9 @@
 
 # sort these lists by last use of "~":  :sort /,*\~/
 
-#=> cmus, Dunst, Zathura
+#=> ansiweather, cmus, Dunst, Zathura
+
+ln -sf $ARCHBUILDS/jo/ansiweather ~/.ansiweatherrc
 
 ln -sf $ARCHBUILDS/jo/Openbox/cmusqueue.sh ~/Arch/cmusqueue.sh
 ln -sf $Openbox/cmus_notify.sh             ~/.local/share/cmus_notify.sh

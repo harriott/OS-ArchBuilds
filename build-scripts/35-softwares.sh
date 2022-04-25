@@ -11,9 +11,21 @@ trap read debug  # puts a read request after each executable line
 
 # gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
+# #=> ansiweather
+# gAUR ansiweather
+# nvim -c "silent! /fcambus" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> bat-extras-git
 # gdAUR bat-extras-git
 # nvim -c "silent! /eth-p" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> bdf-unifont
+# gAUR bdf-unifont
+# nvim -c "silent! /unifont" PKGBUILD
 # makepkg -sic
 # true
 
@@ -135,11 +147,11 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -215,11 +227,11 @@ true
 # # for glxinfo
 # sudo pacman -S mesa-utils
 
-#=> moar 0 install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar remove
 # cd ~/Arch/AUR
@@ -360,6 +372,12 @@ true
 # nvim -c "silent! /gsamokovarov" PKGBUILD
 # makepkg -sic
 
+#=> shell-color-scripts
+gAUR shell-color-scripts
+nvim -c "silent! /dwt1" PKGBUILD
+makepkg -sic
+true
+
 # #=> Solaar
 # # for  Logitech Wireless Mouse M525
 # sudo pacman -S solaar
@@ -389,6 +407,11 @@ true
 # #=> tint2 1 tint2-git
 # gAUR tint2-git
 # nvim -c "silent! /tint2.git" PKGBUILD
+# makepkg -sic
+
+# #=> tint3-cpp-git
+# gdAUR tint3-cpp-git
+# nvim -c "silent! /jmc-88\/tint3.git" PKGBUILD
 # makepkg -sic
 
 # #=> tspreed

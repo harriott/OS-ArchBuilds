@@ -23,4 +23,6 @@ exa -la ~/.config/openbox
 #=> 1 symlinks for Tex Live
 
 sudo ln -sf $ARCHBUILDS/jo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
+sudo sed -i 's/^max_print_line = 79/max_print_line = 4000/' /etc/texmf/web2c/texmf.cnf
+# - works, but I prefer my function  x  in  $Bash/bashrc-wm
 

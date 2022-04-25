@@ -31,9 +31,7 @@ ltx () {
   sed -i 's/}//' $s
 }
 
-x () {
-  max_print_line=4000 xelatex $1
-}
+x () { max_print_line=4000 xelatex $1 | xcol Missing; }
 
 #=> audio trimming
 aet () {
