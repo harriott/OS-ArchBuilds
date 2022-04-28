@@ -55,7 +55,7 @@ fi
 xset s off
 
 # lastly, Openbox
-export QT_QPA_PLATFORMTHEME=qt5ct  # QPA set here so qt5ct works from Menu too
+export QT_QPA_PLATFORMTHEME=qt5ct  # QPA set here so qt5ct works from Openbox Menu too
 xbindkeys  # must be before launching Openbox
-exec openbox-session
+exec openbox-session  # accesses  ~/.config/openbox/autostart
 

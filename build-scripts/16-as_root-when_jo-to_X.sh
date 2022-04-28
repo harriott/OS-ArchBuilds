@@ -176,10 +176,16 @@ pacman -S slock
 # # (for bash linting in xVim)
 # pacman -S shellcheck  # brings in Haskell
 
-# #=> 2 automatic login to virtual console
+# #=> 2 automatic login tty1 0 on
 # [ -d /etc/systemd/system/getty@tty1.service.d ] || mkdir /etc/systemd/system/getty@tty1.service.d
 # cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
+
+# #=> 2 automatic login tty1 1 off
 # rm /etc/systemd/system/getty@tty1.service.d/override.conf
+
+# #=> 2 automatic login tty2 0 on
+# [ -d /etc/systemd/system/getty@tty2.service.d ] || mkdir /etc/systemd/system/getty@tty2.service.d
+# cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty2.service.d/override.conf
 
 # #=> 3 finish
 # echo "now reboot"

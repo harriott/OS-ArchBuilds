@@ -111,6 +111,9 @@ pacman -S openbox tint2
 #=> pkgconf
 pacman -S pkgconf
 
+#=> redshift
+pacman -S redshift
+
 #=> system
 # Bluefish
 pacman -S bluefish

@@ -403,6 +403,7 @@ wp  # in Paris
 checkupdates
 pacman -Q > $MACHINE/pacman-Q/$(date '+%Y%m%d%H%M').txt
 pacman -Qdt  # lists all orphans
+pactree -r <package_to_find_depencies_of>
 sudo pacman -Rs <packagetoremove>
 /var/cache/pacman/pkg/
 grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
@@ -496,6 +497,7 @@ journalctl -b -g 'EFI v'  # shows EFI version
 
 # term
 echo $TERM
+colorscript -r
 figlet Joseph Harriott
 neofetch
 watch -n1 "date '+%D%n%T' | figlet -k"

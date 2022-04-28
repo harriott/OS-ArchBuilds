@@ -206,7 +206,7 @@ pacman -S python-beautifulsoup4
 # echo "vm.swappiness=00" > /etc/sysctl.d/99-sysctl.conf
 # ls /etc/sysctl.d
 
-# #=> 2 Users
+# #=> 2 users
 # # activate wheel group
 # sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
 # grep wheel /etc/sudoers

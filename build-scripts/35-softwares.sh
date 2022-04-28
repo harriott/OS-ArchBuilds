@@ -23,11 +23,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> bdf-unifont
+# #=> bdf-unifont 0 install
 # gAUR bdf-unifont
 # nvim -c "silent! /unifont" PKGBUILD
 # makepkg -sic
+# pactree -r bdf-unifont  # shows it's maybe not needed
 # true
+
+# #=> bdf-unifont 1 remove
+# sudo pacman -Rs bdf-unifont
 
 # #=> bfg
 # gAUR bfg
@@ -147,11 +151,11 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -372,11 +376,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /gsamokovarov" PKGBUILD
 # makepkg -sic
 
-#=> shell-color-scripts
-gAUR shell-color-scripts
-nvim -c "silent! /dwt1" PKGBUILD
-makepkg -sic
-true
+# #=> shell-color-scripts
+# gAUR shell-color-scripts
+# nvim -c "silent! /dwt1" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Solaar
 # # for  Logitech Wireless Mouse M525
@@ -438,8 +442,8 @@ true
 # #=> yt-dlp
 # sudo pacman -S yt-dlp
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 
