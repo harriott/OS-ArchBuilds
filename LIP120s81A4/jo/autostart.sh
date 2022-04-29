@@ -12,5 +12,5 @@ mictray &
 
 #=> open a new window for btop
 tmux new-window
-tmux send btop Enter
+sleep 1; tmux send btop Enter
 

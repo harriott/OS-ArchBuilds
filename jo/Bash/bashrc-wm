@@ -33,25 +33,6 @@ ltx () {
 
 x () { max_print_line=4000 xelatex $1 | xcol Missing; }
 
-#=> audio trimming
-aet () {
-  export a="$1"
-  trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
-  duration=$(ffprobe -i "$a" -show_format -v quiet | sed -n 's/duration=//p')
-  trimmed=$(echo "$duration-$trim" | bc)
-  ffmpeg -i "$a" -c copy -t $trimmed -y "t$a"
-  mpv --start=-3 "t$a"
-} # aet <anAudioFileToTrimOffEnd> <trimIfGreaterThan1second>
-
-abt () {
-  export a="$1"
-  trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
-  ffmpeg -ss $trim -i "$a" -c copy -y "t$a"
-  mpv --end=3 "t$a"
-} # abt <anAudioFileToTrimOffBeginning>
-
-# mv "t$a" "$a"
-
 #=> CUPS
 alias lpd='lpstat -p -d'
 alias sc5='sudo cupsenable ENVY_5530'
@@ -75,7 +56,7 @@ dcc1 () {
   echo "removed files listed in $removedLog"
 }  # removes them
 
-#=> ffmpeg
+#=> ffmpeg 0
 alias ffmhb='nice -n 19 ffmpeg -hide_banner'
 
 frames () {
@@ -135,6 +116,25 @@ vs () {
     echo "step 1: ${tpf2b}vs <video_to_stabilise>${tpfn}  step 2: ${tpf2b}vs <stabilised_video> <audio_choice>${tpfn}"
   fi
 }  # stabilize a video
+
+#=> ffmpeg 1 audio trimming
+aet () {
+  export a="$1"
+  trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
+  duration=$(ffprobe -i "$a" -show_format -v quiet | sed -n 's/duration=//p')
+  trimmed=$(echo "$duration-$trim" | bc)
+  ffmpeg -i "$a" -c copy -t $trimmed -y "t$a"
+  mpv --start=-3 "t$a"
+} # aet <anAudioFileToTrimOffEnd> <trimIfGreaterThan1second>
+
+abt () {
+  export a="$1"
+  trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
+  ffmhb -ss $trim -i "$a" -c copy -y "t$a"
+  mpv --end=3 "t$a"
+} # abt <anAudioFileToTrimOffBeginning> <trimIfGreaterThan1second>
+
+# mv "t$a" "$a"
 
 #=> gVim cautious
 gvc () {

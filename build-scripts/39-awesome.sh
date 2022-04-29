@@ -2,5 +2,5 @@
 
 sudo pacman -S awesome
 mkdir -p ~/.config/awesome/
-cp /etc/xdg/awesome/rc.lua ~/.config/awesome/
+ln -sf $MACHINE/jo/awesomerc.lua ~/.config/awesome/rc.lua
 

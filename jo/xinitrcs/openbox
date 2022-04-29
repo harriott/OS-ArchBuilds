@@ -1,0 +1,7 @@
+#!/bin/sh
+
+source $ARCHBUILDS/jo/xinitrcs/xinitrc
+
+## Openbox
+exec openbox-session  # accesses  ~/.config/openbox/autostart
+

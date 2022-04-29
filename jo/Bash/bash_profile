@@ -31,7 +31,7 @@ if [ $EXITSTATUS -eq 1 ]; then
   if (read -rsn1 -t$startxDelay -p"Going to startx in $startxDelay seconds, press any key to abort: "); then
     echo -e "\nOkay, \e[1mstartx\e[0m yourself when ready..."
   else
-    [[ -z $DISPLAY ]] && startx
+    [[ -z $DISPLAY ]] && startx  # because running interactively
   fi
 fi  # possibly start X
 

@@ -92,7 +92,7 @@ fdtsEncryptedChanges () {
 
 if [ $host = 'sbMb' ]; then
 
-  alias rsM='bash $onGH/rsync-portabledrives/rsync-Music.sh'
+  alias rsM='bash $onGH/rsync-portabledrives/sbMb/rsync-Music.sh'
   alias rsVP='bash $onGH/rsync-portabledrives/rsync-VsPref.sh'
 
   fS () {

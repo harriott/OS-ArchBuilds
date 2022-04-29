@@ -1,0 +1,7 @@
+#!/bin/sh
+
+source $ARCHBUILDS/jo/xinitrcs/xinitrc
+
+## awesome
+exec awesome
+

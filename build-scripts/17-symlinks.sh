@@ -10,7 +10,7 @@
 # sort this list by last use of "~":  :sort /,*\~/
 
 ln -sf $Bash/bash_profile                   ~/.bash_profile
-ln -sf $Bash/bashrc                         ~/.bashrc
+ln -sf $MACHINE/jo/Bash/bashrc              ~/.bashrc
 ln -sf $Bash/bashrc-console                 ~/.bashrc-console
 ln -sf $ARCHBUILDS/Bash/bashrc-generic      ~/.bashrc-generic
 ln -sf $ARCHBUILDS/Bash/GNUReadline-inputrc ~/.inputrc
@@ -31,7 +31,8 @@ ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
 #=> 1 X
 ln -sf $ARCHBUILDS/jo/xbindkeysrc ~/.xbindkeysrc  # mouse wheel
-ln -sf $ARCHBUILDS/jo/xinitrc     ~/.xinitrc  # calls $MACHINE/jo/Xresources
+# ln -sf $ARCHBUILDS/jo/xinitrc     ~/.xinitrc  # calls $MACHINE/jo/Xresources
+ln -sf $ARCHBUILDS/jo/xinitrcs/openbox     ~/.xinitrc  # calls $MACHINE/jo/Xresources
 ln -sf $Openbox/Xresources/Xresources ~/.Xresources
 ln -sf $Openbox/Xresources/colorschemes/LukeSmith-gruvbox ~/.Xresources-LukeSmith-gruvbox
 
