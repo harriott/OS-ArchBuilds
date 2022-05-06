@@ -308,6 +308,12 @@ true
 # #=> OpenShot
 # sudo pacman -S openshot
 
+# #=> Pacfinder
+# gAUR pacfinder
+# nvim -c "silent! /stevenbenner\/pacfinder" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> patched Cascadia Code font 0 install
 # gAUR nerd-fonts-cascadia-code
 # nvim -c "silent! /ryanoasis\/nerd-fonts" PKGBUILD
@@ -442,8 +448,8 @@ true
 # #=> yt-dlp
 # sudo pacman -S yt-dlp
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

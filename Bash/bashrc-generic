@@ -17,9 +17,9 @@ alias tkt='tmux kill-server > /dev/null 2>&1; tmux'
 [ $TERM != 'screen-256color' ] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su
 
-#=> awesome
-sa0 () { ln -sf $ARCHBUILDS/jo/xinitrcs/awesome ~/.xinitrc; startx; }
-sa1 () { ln -sf $ARCHBUILDS/jo/xinitrcs/openbox ~/.xinitrc; }
+#=> awesome or Openbox on a machine
+startxa () { ln -sf $ARCHBUILDS/jo/xinitrcs/awesome ~/.xinitrc; }
+startxo () { ln -sf $ARCHBUILDS/jo/xinitrcs/openbox ~/.xinitrc; }
 
 #=> better file managing
 alias e='exa'

@@ -137,6 +137,28 @@ trap read debug  # puts a read request after each executable line
 # pacman -S rkhunter
 # source 00-as_root-RootkitHunt.sh
 
+# #=> 2 Pacman
+# # colorized Pacman
+# sudo sed -i 's/#Color/Color/' /etc/pacman.conf
+
+# # expac
+# pacman -S expac
+
+# # pacman-contrib, for paccache
+# pacman -S pacman-contrib
+
+# # pacutils
+# pacman -S pacutils
+
+# # pkgfile - for finding possible packages
+# pacman -S pkgfile
+# pkgfile -u
+# systemctl enable pkgfile-update.timer --now
+# systemctl list-timers
+
+# # pkgstats
+# pacman -S pkgstats
+
 # #=> 2 system
 # # btop
 # pacman -S btop
@@ -154,23 +176,8 @@ trap read debug  # puts a read request after each executable line
 # # meson, for auracle later
 # pacman -S meson
 
-# # pacman-contrib, for paccache
-# pacman -S pacman-contrib
-
-# # pacutils
-# pacman -S pacutils
-
 # # Pipe Viewer
 # pacman -S pv
-
-# # pkgfile - for finding possible packages
-# pacman -S pkgfile
-# pkgfile -u
-# systemctl enable pkgfile-update.timer --now
-# systemctl list-timers
-
-# # pkgstats
-# pacman -S pkgstats
 
 #=> 2 various
 # universal-ctags

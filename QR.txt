@@ -1,4 +1,4 @@
-vim: ft=build:
+vim: ft=build nospell:
 
 commands in this QuickReference work in my Arch install
  more generally, see $onGH/misc/GNULinuxQR.txt
@@ -117,6 +117,7 @@ for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > githubIssue
 outer whitespaces get ignored
 rg '\$ITstack'
 rg '\$mail'
+rg '\~/\.npm-'
 rg '<someText>|<otherText>'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
 rg -tmd '\$SE'
@@ -152,6 +153,7 @@ bm locate
 locate -c <target>  # --count
 locate -h
 locate -r '\.conf$'
+locate -r '\.desktop$' > $MACHINE/desktops.txt
 locate -r '\.json$' | mo
 locate -r 'gestion des cas'
 
@@ -370,6 +372,7 @@ f => forward
 F => toggle important flag (= Star in Gmail)
 
 #### notmuch search
+nmse najac date:2022
 nmse '"pattern with spaces"'
 notmuch search tag:fm | wc -l
 notmuch search tag:gmail | wc -l
@@ -401,12 +404,17 @@ wp  # in Paris
 
 # packages
 checkupdates
+pacfinder
 pacman -Q > $MACHINE/pacman-Q/$(date '+%Y%m%d%H%M').txt
 pacman -Qdt  # lists all orphans
 pactree -r <package_to_find_depencies_of>
 sudo pacman -Rs <packagetoremove>
 /var/cache/pacman/pkg/
 grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
+
+## most recent installs
+expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $MACHINE/expac-500-$(date '+%Y%m%d%H%M').log
+  then remove dates in vim with  :%s/\H*
 
 ## groups
 pacman -Qg base-devel  # lists packages installed

@@ -86,8 +86,7 @@ sudo rm /etc/locale.gen.pacnew
 ## Updates
 :: libvterm01 and libvterm are in conflict. Remove libvterm? [y/N] y
 ## waiting
-cspell
-LanguageTool
+expac
 # fcron
 fcrontab -l
   @ 10 bash ~/Arch/bash_history.sh

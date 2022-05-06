@@ -187,6 +187,9 @@ pacman -S slock
 # [ -d /etc/systemd/system/getty@tty2.service.d ] || mkdir /etc/systemd/system/getty@tty2.service.d
 # cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty2.service.d/override.conf
 
+# #=> 2 automatic login tty1 2 off
+# rm /etc/systemd/system/getty@tty2.service.d/override.conf
+
 # #=> 3 finish
 # echo "now reboot"
 

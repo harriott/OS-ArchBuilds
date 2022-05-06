@@ -7,7 +7,7 @@
 # (chmod u+x $MACHINE/jo/urxvtl.sh)
 
 #=> 0 safely run omc in existing tmux
-tmux send 'figlet -f univers tmux-S1' Enter
+tmux send 'figlet -f univers tmux-S0' Enter
 tmux split-window  # moves focus down, and allows  Tmux Resurrect  to  Restore  without clobbering
 tmux send-keys omc Enter  # see $ARCHBUILDS/sbMb/jo/bashrc
 

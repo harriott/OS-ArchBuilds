@@ -1,7 +1,7 @@
 vim: ft=build:
 
 # CopyQ
-Ctrl+P (= Preferences) >
+Ctrl+p (= Preferences) >
   General >
     Wrap long text  off
     Confirm application exit  off
@@ -12,7 +12,7 @@ Ctrl+P (= Preferences) >
   Items > Text >
     HTML off-ticked
     Maximum number of lines > 2
-  Shortcuts > Show/hide > + > Win+P
+  Shortcuts > Show/hide > + > Win+q
   Appearance > Theme > Forest
 
 cp $ARCHBUILDS/jo/CopyQ/readyforPasting.ini ~/readyforPasting.ini

@@ -1,4 +1,4 @@
-vim: set ft=build: sbMb
+vim: set ft=build nospell: sbMb
 
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 # build
@@ -789,10 +789,14 @@ hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control 
 changed 250 to 249 in  $Imagey/Scan.sh
 ## Updates
 :: libvterm01 and libvterm are in conflict. Remove libvterm? [y/N] y
-## colorized Pacman
-sudo sed -i 's/#Color/Color/' /etc/pacman.conf
+## Updates
+system seized during
+### retry after reboot
+:: Synchronising package databases...
+error: failed to synchronize all databases (unable to lock database)
+sudo rm /var/lib/pacman/db.lck
+found the list of packages with  expac, and reinstalled them all
 ## waiting
-annotator
 CUPS Socket activation
 disable Shift+PrtSc
 # CPU frequency
@@ -833,8 +837,8 @@ SATA3: ST4000VN008 in top 3½" bay
 SATA4: HD103SJ in 3rd 5¼" bay from top, held up by spacer pulled from Acer Veriton T661, which requires removing rhs panel
 SATA5: WD1001FALS in a plastic holder in bottom 5¼" tray
 ## monitor
-lower DVI: DVI-D to DVI-D: Philips 221V2 - wide 1920x1080 = 16:9
-upper DVI: DVI-D to DVI-D: Packard Bell Viseo 223DX - wide 1920x1080 = 16:9
+lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 1920x1080 = 16:9) Brightness 40
+upper DVI: DVI-D to DVI-D: Packard Bell Viseo 223DX (wide 1920x1080 = 16:9)
 ## motherboard
 Antec Neo HE550
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0

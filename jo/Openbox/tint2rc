@@ -4,7 +4,7 @@
 #
 # my changes - JH
 #  bash $ARCHBUILDS/build-scripts/34-softwares-forOpenbox.sh
-#  tint2-git 17.0.1.r2.ga4996c8-1
+#  tint2 17.0.1-1
 #
 #-------------------------------------
 # Gradients
@@ -14,7 +14,8 @@
 rounded = 0
 border_width = 0
 border_sides = TBLR
-background_color = #000000 60
+background_color = #444444 60
+# - less black, rending visible  cbatticon  &  MicTray  icon  - JH
 border_color = #000000 30
 background_color_hover = #000000 60
 border_color_hover = #000000 30
@@ -85,7 +86,7 @@ autohide_hide_timeout = 0.5
 autohide_height = 2
 strut_policy = follow_size
 panel_window_name = tint2
-disable_transparency = 1
+disable_transparency = 0
 mouse_effects = 1
 font_shadow = 0
 mouse_hover_icon_asb = 100 0 10

@@ -123,7 +123,7 @@ aet () {
   trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
   duration=$(ffprobe -i "$a" -show_format -v quiet | sed -n 's/duration=//p')
   trimmed=$(echo "$duration-$trim" | bc)
-  ffmpeg -i "$a" -c copy -t $trimmed -y "t$a"
+  ffmhb -i "$a" -c copy -t $trimmed -y "t$a"
   mpv --start=-3 "t$a"
 } # aet <anAudioFileToTrimOffEnd> <trimIfGreaterThan1second>
 

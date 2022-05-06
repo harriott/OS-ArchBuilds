@@ -297,6 +297,7 @@ killing & restarting them doesn't help
 handlr get .lua  returns  no handlers found for text/x-lua
   handlr set .lua gvim.desktop
 ## waiting
+expac
 feh
 # fcron
 fcrontab -l
