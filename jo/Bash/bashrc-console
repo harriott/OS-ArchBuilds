@@ -75,13 +75,16 @@ fdtsEncryptedChanges () {
   fi
   for i in ${!Encrypted[@]}; do
     if [ $i -gt 0 ]; then
-      f7z="find . -iname \"${Encrypted[$i]}*.7z\" | sort | tail -1"
+      ed=${Encrypted[$i]}
+      f7z="find . -iname \"$ed*.7z\" | sort | tail -1"
       ed7z=$(eval "$f7z")
       if [ $ed7z ]; then
         tput setaf 5
-        eval "find . -iname \"${Encrypted[$i]}*.7z\" $printfDTsort"
+        eval "find . -iname \"$ed*.7z\" $printfDTsort"
         tput setaf 7
-        eval "find -path \"./${Encrypted[$i]}*\" -newer $ed7z $printfDTsort"  # fails to detect change of year
+        eval "find -path \"./$ed*\" -newer $ed7z $printfDTsort"
+        # - fails to detect change of year
+        eval "find \"$core/encrypted\" -name \"$ed*\" -newer $ed7z"
       fi
     fi
   done
