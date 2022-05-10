@@ -41,7 +41,7 @@ alias nmz='neomutt -F $email/muttrc-account_cz'
 
 #=> notmuch search
 nmse () {
-    notmuchsearch="$1 $2 $3 $4 $5 $6 $7 $8 $9"
+    notmuchsearch="$@"
     echo $notmuchsearch
     notmuch search $notmuchsearch
 } # gets a quick list of the relevant emails

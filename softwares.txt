@@ -20,5 +20,6 @@ cp $ARCHBUILDS/jo/CopyQ/readyforPasting.ini ~/readyforPasting.ini
 rm ~/readyforPasting.ini
 
 # nomacs
-(C-S-p >) Advanced > Save Exif Orientation  off-ticked
+(C-S-p >) [ Advanced > Save Exif Orientation  off-ticked
+  Display > Slideshow > Appear ]
 

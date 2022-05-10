@@ -9,8 +9,7 @@
 -rw-r--r-- 1 jo jo 756 Apr  4 18:11 m3v-account.md
 -rw-r--r-- 1 jo jo 14667 May  5 07:08 m3v-account.pdf
 -rw-r--r-- 1 jo jo 845 May  8 22:56 m44-account.md
--rw-r--r-- 1 jo jo 14659 May  5 07:08 m44-account.pdf
-Pandoc'd m44-account.md
--rw-r--r-- 1 jo jo 1317 May  8 23:56 m4l-account.md
--rw-r--r-- 1 jo jo 19981 May  5 07:54 m4l-account.pdf
+-rw-r--r-- 1 jo jo 15208 May  8 23:58 m44-account.pdf
+-rw-r--r-- 1 jo jo 1407 May  9 09:44 m4l-account.md
+-rw-r--r-- 1 jo jo 21595 May  8 23:58 m4l-account.pdf
 Pandoc'd m4l-account.md

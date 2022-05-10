@@ -19,9 +19,6 @@ run nm-applet
 run pnmixer
 run udiskie -t
 
-run gvim  # --------------------------------------------------------------------------88
-          # prefer 99 columns - see $HOME/.vim/gvimrc.vim
-
 #=> for laptops
 run cbatticon
 run mictray

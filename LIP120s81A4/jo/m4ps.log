@@ -116,8 +116,9 @@
 -rw-r--r-- 1 jo jo 34442 Dec  7  2020 TN/JH-DailyLife/Europe/France/Places/IdF/HautsSeine/BoulogneBillancourt/CIEP-DELF-DALF.pdf
 -rw-r--r-- 1 jo jo 16717 Apr 13 16:42 TN/JH-DailyLife/Europe/France/Places/IdF/HautsSeine/HautsSeine.md
 -rw-r--r-- 1 jo jo 75268 Apr 14 11:33 TN/JH-DailyLife/Europe/France/Places/IdF/HautsSeine/HautsSeine.pdf
--rw-r--r-- 1 jo jo 135015 May  4 08:23 TN/JH-DailyLife/Europe/France/Places/IdF/IdF.md
+-rw-r--r-- 1 jo jo 135491 May  9 00:06 TN/JH-DailyLife/Europe/France/Places/IdF/IdF.md
 -rw-r--r-- 1 jo jo 276869 May  6 21:20 TN/JH-DailyLife/Europe/France/Places/IdF/IdF.pdf
+Pandoc'd TN/JH-DailyLife/Europe/France/Places/IdF/IdF.md
 -rw-r--r-- 1 jo jo 32012 Apr 22 20:37 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/10e.md
 -rw-r--r-- 1 jo jo 92722 Apr 26 19:35 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/10e.pdf
 -rw-r--r-- 1 jo jo 3525 Apr 25 19:45 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/12e-QuartierPicpus.md
@@ -130,8 +131,9 @@
 -rw-r--r-- 1 jo jo 26823 May  3 15:49 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/20e/rueErmitage.pdf
 -rw-r--r-- 1 jo jo 13672 Apr 15 14:58 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/20e/Sante.md
 -rw-r--r-- 1 jo jo 57714 Apr 18 13:25 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/20e/Sante.pdf
--rw-r--r-- 1 jo jo 293996 May  4 07:16 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/Divisions.md
+-rw-r--r-- 1 jo jo 294249 May  9 00:29 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/Divisions.md
 -rw-r--r-- 1 jo jo 554546 May  6 21:21 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/Divisions.pdf
+Pandoc'd TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/Divisions.md
 -rw-r--r-- 1 jo jo 6339 Apr  6 21:25 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/ParisCentre/2e.md
 -rw-r--r-- 1 jo jo 41089 Apr  9 11:18 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/ParisCentre/2e.pdf
 -rw-r--r-- 1 jo jo 31250 Apr 12 19:47 TN/JH-DailyLife/Europe/France/Places/IdF/Paris/Divisions/ParisCentre/ParisCentre.md
@@ -286,8 +288,9 @@
 -rw-r--r-- 1 jo jo 603018 Feb 18 10:40 TN/JH-DailyLife/Health/Ingest/Ingest0.pdf
 -rw-r--r-- 1 jo jo 184982 Dec 25 23:15 TN/JH-DailyLife/Health/Ingest/Regimes.md
 -rw-r--r-- 1 jo jo 275851 Dec 25 23:16 TN/JH-DailyLife/Health/Ingest/Regimes.pdf
--rw-r--r-- 1 jo jo 1634 Jan 11 14:40 TN/JH-DailyLife/Online/IT/HPSmartInstantInkCartridges.md
+-rw-r--r-- 1 jo jo 1671 May  8 23:41 TN/JH-DailyLife/Online/IT/HPSmartInstantInkCartridges.md
 -rw-r--r-- 1 jo jo 33047 Jan 18 09:38 TN/JH-DailyLife/Online/IT/HPSmartInstantInkCartridges.pdf
+Pandoc'd TN/JH-DailyLife/Online/IT/HPSmartInstantInkCartridges.md
 -rw-r--r-- 1 jo jo 45490 Mar 18 03:16 TN/JH-DailyLife/Online/IT/IT.md
 -rw-r--r-- 1 jo jo 115901 Mar 20 09:18 TN/JH-DailyLife/Online/IT/IT.pdf
 -rw-r--r-- 1 jo jo 27710 Apr 14 10:45 TN/JH-DailyLife/Online/IT/Websites.md
@@ -322,8 +325,9 @@
 -rw-r--r-- 1 jo jo 106619 Aug 16  2021 TN/JH-DailyLife/Roles/Cafezoide/Agenda/1509-1803.pdf
 -rw-r--r-- 1 jo jo 25687 Apr 22 21:05 TN/JH-DailyLife/Roles/Cafezoide/Agenda/1805-.md
 -rw-r--r-- 1 jo jo 94990 Apr 26 19:39 TN/JH-DailyLife/Roles/Cafezoide/Agenda/1805-.pdf
--rw-r--r-- 1 jo jo 266133 May  5 06:11 TN/JH-DailyLife/Roles/Cafezoide/Cafezoide.md
+-rw-r--r-- 1 jo jo 266480 May  9 00:50 TN/JH-DailyLife/Roles/Cafezoide/Cafezoide.md
 -rw-r--r-- 1 jo jo 486230 May  6 21:23 TN/JH-DailyLife/Roles/Cafezoide/Cafezoide.pdf
+Pandoc'd TN/JH-DailyLife/Roles/Cafezoide/Cafezoide.md
 -rw-r--r-- 1 jo jo 17004 Nov 19  2020 TN/JH-DailyLife/Roles/Cafezoide/EnglishSongs/EarlyYears.md
 -rw-r--r-- 1 jo jo 63245 Aug 16  2021 TN/JH-DailyLife/Roles/Cafezoide/EnglishSongs/EarlyYears.pdf
 -rw-r--r-- 1 jo jo 33656 May 10  2021 TN/JH-DailyLife/Roles/Cafezoide/EnglishSongs/Songs.md
@@ -358,8 +362,9 @@
 -rw-r--r-- 1 jo jo 54857 Dec  7  2020 TN/JH-DailyLife/Roles/IT/momentary/WordPress.pdf
 -rw-r--r-- 1 jo jo 24947 Jan 30 12:02 TN/JH-DailyLife/Roles/IT/Work.md
 -rw-r--r-- 1 jo jo 77309 Jan 31 09:27 TN/JH-DailyLife/Roles/IT/Work.pdf
--rw-r--r-- 1 jo jo 573829 May  5 06:10 TN/JH-DailyLife/Roles/Roles.md
+-rw-r--r-- 1 jo jo 574215 May  9 02:14 TN/JH-DailyLife/Roles/Roles.md
 -rw-r--r-- 1 jo jo 1034102 May  6 21:25 TN/JH-DailyLife/Roles/Roles.pdf
+Pandoc'd TN/JH-DailyLife/Roles/Roles.md
 -rw-r--r-- 1 jo jo 13941 Dec  3  2020 TN/JH-DailyLife/Roles/Teaching/ST/LPD-IdF/Antennes/Antennes.md
 -rw-r--r-- 1 jo jo 70600 Dec  7  2020 TN/JH-DailyLife/Roles/Teaching/ST/LPD-IdF/Antennes/Antennes.pdf
 -rw-r--r-- 1 jo jo 16027 Nov 19  2020 TN/JH-DailyLife/Roles/Teaching/ST/LPD-IdF/Antennes/GonesseTAPs.md
@@ -376,8 +381,9 @@
 -rw-r--r-- 1 jo jo 96792 Dec  7  2020 TN/JH-DailyLife/Roles/Teaching/ST/TRACES.pdf
 -rw-r--r-- 1 jo jo 13683 Nov 19  2020 TN/JH-DailyLife/Roles/Teaching/Teaching.md
 -rw-r--r-- 1 jo jo 61359 Dec  7  2020 TN/JH-DailyLife/Roles/Teaching/Teaching.pdf
--rw-r--r-- 1 jo jo 35902 Apr 30 01:24 TN/JH-DailyLife/Suppliers/DecathlonGroup.md
+-rw-r--r-- 1 jo jo 36040 May  9 01:06 TN/JH-DailyLife/Suppliers/DecathlonGroup.md
 -rw-r--r-- 1 jo jo 116239 Apr 30 16:05 TN/JH-DailyLife/Suppliers/DecathlonGroup.pdf
+Pandoc'd TN/JH-DailyLife/Suppliers/DecathlonGroup.md
 -rw-r--r-- 1 jo jo 5046 Apr 24  2021 TN/JH-DailyLife/Suppliers/LebaraMobile.md
 -rw-r--r-- 1 jo jo 40875 Apr 26  2021 TN/JH-DailyLife/Suppliers/LebaraMobile.pdf
 -rw-r--r-- 1 jo jo 27476 Apr 22 12:32 TN/JH-DailyLife/Suppliers/Suppliers.md
@@ -426,8 +432,9 @@
 -rw-r--r-- 1 jo jo 38140 Mar 31 23:17 TN/JH-DailyLife/Technos/Outdoor/heatingStuff-gasStoves.pdf
 -rw-r--r-- 1 jo jo 71729 Apr 15 08:55 TN/JH-DailyLife/Technos/Outdoor/Outdoor.md
 -rw-r--r-- 1 jo jo 158854 Apr 15 14:31 TN/JH-DailyLife/Technos/Outdoor/Outdoor.pdf
--rw-r--r-- 1 jo jo 245322 May  5 23:21 TN/JH-DailyLife/Technos/Technos.md
+-rw-r--r-- 1 jo jo 245592 May  9 01:02 TN/JH-DailyLife/Technos/Technos.md
 -rw-r--r-- 1 jo jo 430906 May  6 21:26 TN/JH-DailyLife/Technos/Technos.pdf
+Pandoc'd TN/JH-DailyLife/Technos/Technos.md
 -rw-r--r-- 1 jo jo 18356 Jan 14 11:52 TN/JH-DailyLife/UK/England/EastEngland.md
 -rw-r--r-- 1 jo jo 58404 Jan 18 09:37 TN/JH-DailyLife/UK/England/EastEngland.pdf
 -rw-r--r-- 1 jo jo 12467 Jun 15  2021 TN/JH-DailyLife/UK/England/EastMidlands.md
@@ -488,8 +495,9 @@
 -rw-r--r-- 1 jo jo 45887 Jan  5 21:20 TN/JH-Essential/Phonish/UK/UK.pdf
 -rw-r--r-- 1 jo jo 1713646 Jan  4 23:46 TN/JH-Private/Journal_9203-1410.md
 -rw-r--r-- 1 jo jo 2079126 Jan  5 21:15 TN/JH-Private/Journal_9203-1410.pdf
--rw-r--r-- 1 jo jo 975499 May  6 21:05 TN/JH-Private/Private.md
+-rw-r--r-- 1 jo jo 977245 May  9 01:06 TN/JH-Private/Private.md
 -rw-r--r-- 1 jo jo 1387965 May  6 21:28 TN/JH-Private/Private.pdf
+Pandoc'd TN/JH-Private/Private.md
 -rw-r--r-- 1 jo jo 2709 May  7  2021 TN/LTX/OT-sectionHeadings.md
 -rw-r--r-- 1 jo jo 34361 May  7  2021 TN/LTX/OT-sectionHeadings.pdf
 -rw-r--r-- 1 jo jo 3028 Sep 27  2021 TN/LTX/sectionHeadings.md
@@ -581,8 +589,7 @@
 -rw-r--r-- 1 jo jo 21263 Jan 22 07:40 TN/OutThere/Verifiable/Engineering/wasteTreatment.md
 -rw-r--r-- 1 jo jo 49419 Jan 22 21:14 TN/OutThere/Verifiable/Engineering/wasteTreatment.pdf
 -rw-r--r-- 1 jo jo 245038 May  6 21:30 TN/OutThere/Verifiable/Human/Body.md
--rw-r--r-- 1 jo jo 328941 May  6 21:28 TN/OutThere/Verifiable/Human/Body.pdf
-Pandoc'd TN/OutThere/Verifiable/Human/Body.md
+-rw-r--r-- 1 jo jo 328099 May  6 21:34 TN/OutThere/Verifiable/Human/Body.pdf
 -rw-r--r-- 1 jo jo 226176 Apr 15 09:38 TN/OutThere/Verifiable/Human/Human.md
 -rw-r--r-- 1 jo jo 318390 Apr 15 14:34 TN/OutThere/Verifiable/Human/Human.pdf
 -rw-r--r-- 1 jo jo 412674 Apr 22 10:49 TN/OutThere/Verifiable/Human/Illnesses.md
@@ -804,10 +811,9 @@ Pandoc'd TN/OutThere/Verifiable/Human/Body.md
 -rw-r--r-- 1 jo jo 20924 Apr 13 22:36 TN/OutThere/World/America-US/WesternUS-MountainStates/Colorado.md
 -rw-r--r-- 1 jo jo 73383 Apr 14 11:38 TN/OutThere/World/America-US/WesternUS-MountainStates/Colorado.pdf
 -rw-r--r-- 1 jo jo 32685 May  6 21:32 TN/OutThere/World/America-US/WesternUS-MountainStates/MountainStates.md
--rw-r--r-- 1 jo jo 94940 May  6 21:30 TN/OutThere/World/America-US/WesternUS-MountainStates/MountainStates.pdf
-Pandoc'd TN/OutThere/World/America-US/WesternUS-MountainStates/MountainStates.md
+-rw-r--r-- 1 jo jo 77483 May  6 21:34 TN/OutThere/World/America-US/WesternUS-MountainStates/MountainStates.pdf
 -rw-r--r-- 1 jo jo 10349 May  6 21:32 TN/OutThere/World/America-US/WesternUS-MountainStates/Nevada.md
-Pandoc'd TN/OutThere/World/America-US/WesternUS-MountainStates/Nevada.md
+-rw-r--r-- 1 jo jo 35884 May  6 21:35 TN/OutThere/World/America-US/WesternUS-MountainStates/Nevada.pdf
 -rw-r--r-- 1 jo jo 39244 Apr 28 20:44 TN/OutThere/World/Arts/Arts.md
 -rw-r--r-- 1 jo jo 90419 Apr 29 12:43 TN/OutThere/World/Arts/Arts.pdf
 -rw-r--r-- 1 jo jo 15027 Jan  6 20:09 TN/OutThere/World/Arts/Filmic.md
