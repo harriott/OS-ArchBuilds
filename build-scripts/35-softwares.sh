@@ -151,11 +151,11 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -398,10 +398,10 @@ true
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
 # gpg -k 5E3C45D7B312C643
 
-# #=> Spotify 1 (re)install
-# gAUR spotify
-# nvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
-# makepkg -sic
+#=> Spotify 1 (re)install
+gAUR spotify
+nvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
+makepkg -sic
 
 # #=> sqlitebrowser
 # sudo pacman -S sqlitebrowser

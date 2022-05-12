@@ -400,6 +400,11 @@ systemctl status NetworkManager-dispatcher
 
 ## weather
 ansiweather -f 7
+
+### wttr.in
+curl wttr.in/London
+curl wttr.in/Moscow
+curl wttr.in/Salt+Lake+City
 wp  # in Paris
 
 # packages

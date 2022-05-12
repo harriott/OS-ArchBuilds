@@ -1,36 +1,38 @@
 -- vim: set et:
 
--- Joseph Harriott - Fri 06 May 2022
+-- Joseph Harriott - Thu 12 May 2022
 -- adapted from  /etc/xdg/awesome/rc.lua
 -- symlinked in my  $ARCHBUILDS/build-scripts/39-awesome.sh
 --  exa -la ~/.config/awesome/rc.lua
 
 --  to do
 --  -----
---  Conky on background
---  message when a new Firefox tab is opened
---  hotkeys for Firefox, gVim, Thunderbird
 --  Rofi
+--  s = slock
+--  volume controls
 
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
 -- -> 0 initial setup
--- Standard awesome library
+-- standard awesome library
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 -- widget and layout library
-local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
 local wibox = require("wibox")
--- Theme handling library
+local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
+-- theme handling library
 local beautiful = require("beautiful")
--- Notification library
+-- notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup_jo = require("awful.hotkeys_popup");
-local hotkeys_popup_jo_sized = hotkeys_popup_jo.widget.new({ width = 820, height = 450 });
+local hotkeys_popup_jo_sized = hotkeys_popup_jo.widget.new({ width = 930, height = 450 });
   -- for my Lenovo IdeaPad 120s 81A4
 
 -- -> 1 error handling
@@ -62,9 +64,9 @@ end
 awful.layout.layouts = {
     -- awful.layout.suit.floating,  -- respects gvim's & urxvt's sizes
     awful.layout.suit.tile.left,
-    awful.layout.suit.tile,
+    -- awful.layout.suit.tile,
     awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
+    -- awful.layout.suit.tile.top,
     awful.layout.suit.max,
 }
 
@@ -103,7 +105,7 @@ clientkeys = gears.table.join(
             c.fullscreen = not c.fullscreen
             c:raise()
         end, {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
+    awful.key({ modkey, "Shift"   }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
     awful.key({ modkey, "Control" }, "m", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
@@ -116,7 +118,7 @@ clientkeys = gears.table.join(
         c.maximized = false
         c.floating = not c.floating
         -- these only apply when floating
-        c.x = 400
+        c.x = 200
         c.y = 70
         -- (can't figure how to use awful.placement.centered)
         c.width = 762  -- (matches width defined by  columns  in my  $HOME/.vim/gvimrc.vim)
@@ -160,10 +162,10 @@ globalkeys = gears.table.join(
               {description = "quit awesome", group = "awesome"}),
 
     -- --> brightness
-    awful.key({ }, "XF86MonBrightnessDown", function ()
-        awful.util.spawn("xbacklight -dec 4") end),
-    awful.key({ }, "XF86MonBrightnessUp", function ()
-        awful.util.spawn("xbacklight -inc 12") end),
+    -- awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 4") end),
+    awful.key({ }, "XF86MonBrightnessDown", function () brightness_widget:dec() end, {description = "increase brightness", group = "custom"}),
+    -- awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 12") end),
+    awful.key({ }, "XF86MonBrightnessUp",   function () brightness_widget:inc() end, {description = "decrease brightness", group = "custom"}),
 
     -- --> changing screens
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
@@ -193,29 +195,51 @@ globalkeys = gears.table.join(
             c:raise()
         end, {description = "toggle between last two clients", group = "client"}),
 
+-- --> destroy_all_notifications
+    awful.key({ modkey, "Control" }, "d",
+        function() naughty.destroy_all_notifications() end,
+            {description="destroy_all_notifications", group="awesome"}),
+
 -- --> hotkeys_popup_jo
-    awful.key({ modkey, }, "s", function() hotkeys_popup_jo_sized:show_help() end,
-              {description="show help", group="awesome"}),
+    awful.key({ modkey, }, "p", function() hotkeys_popup_jo_sized:show_help() end,
+              {description="hotkeys_popup", group="awesome"}),
 
--- --> launching
-    -- gVim floating, thus respecting it's preferred size
-    --  (as defined by  columns  &  lines  in my  $HOME/.vim/gvimrc.vim)
-    awful.key({ modkey, "Control" }, "Return", function () awful.spawn("gvim", { floating  = true, }) end,
-        -- Return  shows in  myawesomemenu  as  Enter
-        {description = "open gVim floating", group = "launcher"}),
-
+-- --> launchings
     -- menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-        {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey }, "m", function() menubar.show() end,
+        {description = "menubar", group = "launcher"}),
 
     -- run an executable
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
         {description = "run prompt", group = "launcher"}),
 
-    -- terminal
-    awful.key({ modkey, }, "Return", function () awful.spawn("urxvt -e sh -c tmux new") end,
-                -- Return  shows in  myawesomemenu  as  Enter
-              {description = "open urxvt with new tmux session", group = "launcher"}),
+    -- slock
+    awful.key({ modkey, "Shift" }, "s", function () awful.spawn("slock") end,
+        {description = "slock", group = "launcher"}),
+
+    -- Thunderbird
+    awful.key({ modkey, "Shift" }, "t", function () awful.spawn("thunderbird") end,
+        {description = "Thunderbird on tag 3", group = "launcher"}),
+
+    -- ---> using Return key
+    -- Return  shows in  myawesomemenu  as  Enter
+
+        -- ----> Firefox, gVim, terminal
+        -- Firefox
+        -- awful.key({ modkey, "Shift" }, "Return", function () awful.spawn("firefox") end,
+        awful.key({ modkey, "Shift" }, "Return",
+            function ()
+                awful.spawn.with_shell("~/.config/awesome/Firefox-notify-send.sh") end,
+            {description = "Firefox on tag 2", group = "launcher"}),
+
+        -- gVim floating, thus respecting it's preferred size
+        --  (as defined by  columns  &  lines  in my  $HOME/.vim/gvimrc.vim)
+        awful.key({ modkey, "Control" }, "Return", function () awful.spawn("gvim", { floating  = true, }) end,
+            {description = "open gVim floating", group = "launcher"}),
+
+        -- terminal
+        awful.key({ modkey, }, "Return", function () awful.spawn("urxvt -e sh -c tmux new") end,
+                  {description = "open urxvt with new tmux session", group = "launcher"}),
 
     -- --> layout - columns
     awful.key({ modkey, "Control" }, "o",     function () awful.tag.incncol(-1, nil, true)    end,
@@ -348,38 +372,34 @@ awful.rules.rules = {
       }, properties = { floating = true }},
 
     -- set browsers to always map on the tag named "2"
-    { rule_any = { instance = { "Navigator" } }, properties = { tag = "2" } },
+    { rule_any = { class = { "Falkon", "firefox", "Google-chrome" } }, properties = { tag = "2" } },
 
     -- set Thunderbird to always map on the tag named "3"
     { rule_any = { class = { "Thunderbird" } }, properties = { tag = "3" } }
 
 } -- (through the "manage" signal)
 
--- -> 4 awesome menu widget for wibar
-
--- --> 0 myawesomemenu
+-- -> 4 awesome menu widget - 0 myawesomemenu
 myawesomemenu = {
    { "hotkeys", function() hotkeys_popup_jo_sized:show_help(nil, awful.screen.focused()) end },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end },
 }
 
--- --> 1 mymainmenu
+-- -> 4 awesome menu widget - 1 mymainmenu
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "open terminal", terminal } } })
 
--- --> 2 mylauncher
+-- -> 4 awesome menu widget - 2 mylauncher
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
                                      -- don't know why this needs to be on two lines
 
--- -> 5 signals
-
--- --> client borders
+-- -> 5 signals - client borders
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
--- --> new clients
+-- -> 5 signals - new clients
 client.connect_signal("manage", function (c)
     if not awesome.startup then awful.client.setslave(c) end -- new window at end
     if awesome.startup
@@ -389,12 +409,12 @@ client.connect_signal("manage", function (c)
     end
 end)
 
--- --> sloppy focus (focus follows mouse)
+-- -> 5 signals - sloppy focus (focus follows mouse)
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
--- --> titlebar (if titlebars_enabled)
+-- -> 5 signals - titlebar (if titlebars_enabled)
 client.connect_signal("request::titlebars", function(c)
     -- buttons for the titlebar
     local buttons = gears.table.join(
@@ -434,11 +454,27 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
--- -> 5 wibar
-
--- --> 0 callback - prepare
+-- -> 5 wibar - 0 callback - prepare
 local function set_wallpaper(s) gears.wallpaper.set("#000000") end -- black...
 mytextclock = wibox.widget.textclock()
+
+-- ---> 0 calendar
+local cw = calendar_widget({ placement = 'bottom_right' })
+mytextclock:connect_signal("button::press",
+    function(_, _, _, button) if button == 1 then cw.toggle() end
+    end)
+
+local cal = wibox.widget {
+    date         = os.date('*t'),
+    font         = 'Monospace 8',
+    spacing      = 2,
+    week_numbers = false,
+    start_sunday = false,
+    widget       = wibox.widget.calendar.year
+}
+mytextclock:connect_signal("button::press",
+    function(_, _, _, button) if button == 3 then cal.toggle() end
+    end)
 
 -- ---> 0 taglist buttons
 local taglist_buttons = gears.table.join(
@@ -472,18 +508,18 @@ local tasklist_buttons = gears.table.join(
                                           end),
                      awful.button({ }, 3, function() awful.menu.client_list({ theme = { width = 250 } }) end))
 
--- --> 1 callback for all current and future screens
+-- -> 5 wibar - 1 callback for all current and future screens
 awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
-    -- 0 prepare tables for widget creation
+    -- --> 0 prepare tables for widget creation
     s.mypromptbox = awful.widget.prompt()
     s.mylayoutbox = awful.widget.layoutbox(s)
     s.mylayoutbox:buttons(gears.table.join(
-                           awful.button({ }, 1, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(-1) end)))
+        awful.button({ }, 1, function () awful.layout.inc( 1) end),
+        awful.button({ }, 3, function () awful.layout.inc(-1) end)))
     s.mytaglist = awful.widget.taglist {
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
@@ -495,22 +531,23 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = tasklist_buttons
     }
 
-    -- 1 create the wibox
+    -- --> 1 create the wibox
     s.mywibox = awful.wibar({ position = "bottom", screen = s })
 
-    -- 2 add widgets to the wibox
+    -- --> 2 add widgets to the wibox - end)
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
-        {
-            layout = wibox.layout.fixed.horizontal,
+        { layout = wibox.layout.fixed.horizontal,
             mylauncher,
             s.mypromptbox,
             s.mytaglist,
         }, -- left widgets
         s.mytasklist, -- middle widget
-        {
-            layout = wibox.layout.fixed.horizontal,
+        { layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
+            brightness_widget{ base = '50', program = 'xbacklight', timeout = '999', tooltip = 'true' },
+		    cpu_widget({ step_spacing = 0, step_width = 1, width = 20, }),
+            ram_widget(),
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
@@ -518,10 +555,10 @@ awful.screen.connect_for_each_screen(function(s)
     }
 end)
 
--- --> 1 re-set wallpaper when a screen's geometry changes (eg different resolution)
+-- -> 5 wibar - 1 re-set wallpaper when a screen's geometry changes (eg different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
 -- -> 7 autoruns
--- 0 spawn background apps
+-- spawn background apps
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 

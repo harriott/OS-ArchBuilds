@@ -13,10 +13,12 @@ run() {
     fi
 }
 run blueman-applet
+run conky -c $MACHINE/jo/conkyrc
 run copyq  # because CopyQ's internal Autostart wouldn't work in Openbox
 run dropbox
 run nm-applet
 run pnmixer
+run redshift-gtk -l 48.8646:2.3984 &
 run udiskie -t
 
 #=> for laptops
