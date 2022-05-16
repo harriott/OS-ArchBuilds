@@ -44,6 +44,9 @@ trap read debug  # puts a read request after each executable line
 # # ncdu
 # pacman -S ncdu
 
+# # perl-rename
+# pacman -S perl-rename
+
 # # p7zip
 # pacman -S p7zip
 

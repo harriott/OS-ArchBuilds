@@ -2,10 +2,10 @@
 
 # Joseph Harriott
 
-# ------------------------------
-# configurations when in Openbox
-# ------------------------------
-# source ~/.bashrc if you've changed something here...
+# -----------------------------------------------
+# configurations when in Openbox (and awesome wm)
+# -----------------------------------------------
+# source  ~/.bashrc  if you've changed something here...
 
 alias gpr='gprename &'
 alias rpd='bash $onGH/rsync-portabledrives/rsync.sh'

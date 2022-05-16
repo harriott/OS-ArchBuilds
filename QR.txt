@@ -522,7 +522,9 @@ termdown -b 10
 ## tmux
 $tmx/tmux.conf
 C-a [ -> copy-mode
+C-a ~ -> show-messages
 resize -s 65 120  # good for half of ViewSonic VX2025wm
+tmux list-keys | grep '~'
 tmux list-keys | mo
 
 ### session window pane

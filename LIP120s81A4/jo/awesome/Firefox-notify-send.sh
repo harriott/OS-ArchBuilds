@@ -7,6 +7,6 @@
 # called by  $MACHINE/jo/awesome/rc.lua
 # symlinked in my  $ARCHBUILDS/build-scripts/39-awesome.sh
 
-firefox
 notify-send -i /usr/share/icons/hicolor/16x16/apps/firefox.png "An instance of Firefox was launched."
+firefox
 

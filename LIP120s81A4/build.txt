@@ -298,9 +298,12 @@ handlr get .lua  returns  no handlers found for text/x-lua
   handlr set .lua gvim.desktop
 ## eMMC fsck
 $IT1/HW/laptops/81A4/m59-mmcblkxp3-fsError2.JPG
+## /etc/clamav/clamd.conf.pacnew
+sudo nvim -O /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew   & diff'd over changes
 ## waiting
 expac
 feh
+perl-rename
 # fcron
 fcrontab -l
   @ 3 bash ~/Arch/cmusqueue.sh

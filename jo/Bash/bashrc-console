@@ -179,6 +179,20 @@ fdtsKS () {
   echo "results are in $2"
 } # $1 being the keystring
 
+#==> time-sorted lists of files - in $rsnapshot
+fdtsRsnapshot () {
+  echo $1
+  echo $2
+  if [ $2 ]; then
+    # eval "find $rsnapshot/*/localhost/$1 -type f -name \"$2\" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\\n | sort"
+    # echo "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" -printf %T@\ %U\ %TY-%Tm-%Td\ %TH:%TM\ %p\\\n | sort"
+    eval "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" -printf %p\\\n | sort" > $rsnapshot/tds_find
+    # echo "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" -printf %T@\ %p\\\n | sort"
+  else
+    echo "fdtsRsnapshot <directoryToSearchIn> <fileToSearchFor>"
+  fi
+}
+
 #==> trash-cli
 alias gte='gio trash --empty'
 alias tl='trash-list'
