@@ -8,6 +8,10 @@
 
 # sort these lists by last use of "~":  :sort /,*\~/
 
+#=> test
+echo '$ARCHBUILDS' "= $ARCHBUILDS"
+read -p "- looks good?"
+
 #=> ansiweather, cmus, Dunst, Zathura
 
 ln -sf $ARCHBUILDS/jo/ansiweather ~/.ansiweatherrc
@@ -20,7 +24,7 @@ ln -sf $Openbox/dunstrc   ~/.config/dunst/dunstrc # requires restarting X
 ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
 
 # #=> Dropbox vimfiles
-# sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
+# sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim  # file ~/.vim
 # sudo rm -r ~/.vim; ln -s /mnt/SD480GSSDPlus/Play0/vimfiles ~/.vim  # for testing
 
 # #=> email config
@@ -28,15 +32,15 @@ ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
 # cp -f $GNULE/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
 # cp -f $GNULE/notmuch-config-backup ~/.notmuch-config
 
-# #=> LaTeX
-# ln -sf $CP/LaTeX/jo ~/texmf/tex/latex/jo
+#=> LaTeX
+rm -r ~/texmf/tex/latex/jo; ln -s $CP/LaTeX/jo ~/texmf/tex/latex/jo
 
-# #=> Pandoc defaults
-# ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
-# ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
+#=> Pandoc defaults
+ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
+ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 
-# #=> Pandoc templates
-# ln -s $onGH/pandoc-templates ~/.pandoc/templates
+#=> Pandoc templates
+rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
 
 # #=> sbMb dual monitors 0
 # sudo cp $MACHINE/etc/20-monitor.conf /etc/X11/xorg.conf.d/20-monitor.conf
@@ -60,6 +64,6 @@ ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
 # #=> remove urxvt extensions
 # rm -r ~/.urxvt/ext
 
-# #=> urxvt extensions
-# ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
+#=> urxvt extensions
+rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
 

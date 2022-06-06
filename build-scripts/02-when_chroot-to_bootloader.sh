@@ -89,10 +89,10 @@ cat /etc/hostname
 # ARCHBUILDS=/ArchBuilds
 # pacman -S nano-syntax-highlighting
 
-# # #==> jo nanorc
-# # mkdir /home/jo/.config/nano
-# # ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
-# # nvim -O /home/jo/.config/nano/nanorc /etc/nanorc
+# #==> jo nanorc
+# mkdir /home/jo/.config/nano
+# ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
+# nvim -O /home/jo/.config/nano/nanorc /etc/nanorc
 
 # #==> root nanorc
 # mkdir ~/.config/nano

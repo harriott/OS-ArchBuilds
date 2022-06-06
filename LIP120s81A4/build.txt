@@ -300,15 +300,21 @@ handlr get .lua  returns  no handlers found for text/x-lua
 $IT1/HW/laptops/81A4/m59-mmcblkxp3-fsError2.JPG
 ## /etc/clamav/clamd.conf.pacnew
 sudo nvim -O /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew   & diff'd over changes
+sudo rm /etc/clamav/clamd.conf.pacnew
+## logind.conf.pacnew
+sudo nvim -O /etc/systemd/logind.conf /etc/systemd/logind.conf.pacnew
+sudo rm /etc/systemd/logind.conf.pacnew
+## disabled rsnapshot timers
 ## waiting
+cp $MACHINE/etc/rsnapshot.conf
 expac
 feh
 perl-rename
 # fcron
 fcrontab -l
-  @ 3 bash ~/Arch/cmusqueue.sh
-  @ 10 bash ~/Arch/bash_history.sh
-  @ 20 jump clean
+  @ 1 bash ~/Arch/locks.sh
+  @ 20 bash ~/Arch/bash_history.sh
+  @ 30 jump clean
 ## temperatures
 ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
@@ -318,4 +324,4 @@ F2 at boot for Phoenix SecureCore Technology Setup
 KDTG311281  for  rsnapshot
 lspci -k | grep 3165 -A 3
 screen is 1366x768
-SDEP128G in microSD slot
+SDEP128G in microSD slot, for Dropbox

@@ -70,7 +70,7 @@ ${color white}$hr
 #-- hard drives
 ${font DejaVuSansMono:size=9} / $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color white}
  /home $color${fs_used /home} (${fs_size /home}) ${fs_bar 6 /home} ${color white}
- $Storage $color${fs_used /mnt/SD480GSSDPlus} (${fs_size /mnt/SD480GSSDPlus}) ${fs_bar 6 /mnt/SD480GSSDPlus}
+ $Storage $color${fs_used /mnt/WD30EZRZ} (${fs_size /mnt/WD30EZRZ}) ${fs_bar 6 /mnt/WD30EZRZ}
 # can't figure how to feed  $Storage  to  fs_*  commands
 ${color white}$hr
 #
@@ -94,8 +94,9 @@ ${color lightgrey} ${top name 10} ${top pid 10} ${top cpu 10} ${top mem 10}
 ${color white}$hr
 #
 #-- weather (blank if not online)
+${font DejaVuSansMono:size=8}
 
-$font${alignc}${color lightgrey}${execpi 300 curl wttr.in/Paris?T0 -s -m 3}
+${alignc}${color lightgrey}${execpi 300 curl wttr.in/Paris?T0 -s -m 3}
 
    ${color lightgrey}${execpi 300 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
 ]]

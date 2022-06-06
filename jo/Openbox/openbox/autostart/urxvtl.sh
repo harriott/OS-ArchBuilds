@@ -13,5 +13,6 @@ $us -e sh -c "tmux new; bash" &
 #  see $MACHINE/jo/Bash/export-urxvt
 
 #=> 2 neofetch
-sleep 2; tmux send neofetch Enter
+sleep 3  # for slow-starting  /mnt/WD30EZRZ/Dropbox
+tmux send neofetch Enter
 

@@ -79,15 +79,18 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a long time
 # true
 
-# #=> Dropbox 0 (re)install
-# # only once there's a browser, and preferably after LastPass
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+# only once there's a browser, and preferably after LastPass
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
+
+# #=> Dropbox 2 uninstall
+# sudo pacman -Rs dropbox
 
 # #=> Dust
 # # (after Rust Toolchain)
@@ -274,11 +277,11 @@ trap read debug  # puts a read request after each executable line
 # #=> nodejs-mapscii 1 remove
 # sudo pacman -Rs nodejs-mapscii
 
-# #=> nordvpn-bin 0 (re)install
-# gAUR nordvpn-bin
-# nvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
-# makepkg -sic
-# true
+#=> nordvpn-bin 0 (re)install
+gAUR nordvpn-bin
+nvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
+makepkg -sic
+true
 
 # #=> nordvpn-bin 1 configure
 # sudo usermod -aG nordvpn jo  # need to re-login
@@ -356,7 +359,6 @@ trap read debug  # puts a read request after each executable line
 
 # #=> PhotoCollage
 # gAUR photocollage
-# nvim PKGBUILD
 # nvim -c "silent! /adrienverge" PKGBUILD
 # makepkg -sic
 

@@ -1,6 +1,6 @@
 -- vim: set et:
 
--- Joseph Harriott - Thu 12 May 2022
+-- Joseph Harriott - Mon 06 Jun 2022
 -- adapted from  /etc/xdg/awesome/rc.lua
 -- symlinked in my  $ARCHBUILDS/build-scripts/39-awesome.sh
 --  exa -la ~/.config/awesome/rc.lua
@@ -8,7 +8,6 @@
 --  to do
 --  -----
 --  Rofi
---  s = slock
 --  volume controls
 
 -- If LuaRocks is installed, make sure that packages installed through it are
@@ -220,6 +219,10 @@ globalkeys = gears.table.join(
     -- Thunderbird
     awful.key({ modkey, "Shift" }, "t", function () awful.spawn("thunderbird") end,
         {description = "Thunderbird on tag 3", group = "launcher"}),
+
+    -- KeePassXC
+    awful.key({ modkey, "Shift" }, "p", function () awful.spawn("keepassxc") end,
+        {description = "KeePassXC", group = "launcher"}),
 
     -- ---> using Return key
     -- Return  shows in  myawesomemenu  as  Enter

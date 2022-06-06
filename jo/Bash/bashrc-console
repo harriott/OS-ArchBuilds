@@ -67,7 +67,7 @@ gic () { git commit -m "$1"; }
 #===> quick-check
 alias fe='fdtsEncryptedChanges'
 
-Encrypted=($Storage/Encrypted Digital0 Digital1 Secure0 Secure1 SHG Stack)
+Encrypted=($me Digital0 Digital1 Secure0 Secure1 SHG Stack)
 fdtsEncryptedChanges () {
   if [ "$PWD" != ${Encrypted[0]} ]; then
     cd ${Encrypted[0]}
@@ -95,8 +95,8 @@ fdtsEncryptedChanges () {
 
 if [ $host = 'sbMb' ]; then
 
-  alias rsM='bash $onGH/rsync-portabledrives/sbMb/rsync-Music.sh'
-  alias rsVP='bash $onGH/rsync-portabledrives/rsync-VsPref.sh'
+  alias rsM='bash $onGH/rsync-drives/sbMb/rsync-Music.sh'
+  alias rsV='bash $onGH/rsync-drives/sbMb/rsync-Vs.sh'
 
   fS () {
     find /mnt/WD30EZRZ/Sync2 -type f -name "*$1*"

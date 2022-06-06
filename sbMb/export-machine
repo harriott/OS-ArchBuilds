@@ -10,10 +10,11 @@
 #  symlinked in  $ARCHBUILDS/build-scripts/05-root_symlinks.sh
 #  sourced by  $ARCHBUILDS/root/bash_profile
 
-export rsnapshot=/mnt/WD1001FALS/rsnapshot
+export rsnapshot=/mnt/ST4000VN008/rsnapshot
 export startxDelay=5
 
-#=> for  $ARCHBUILDS/jo/export-storage
+#=> for  $ARCHBUILDS/Bash/export-storage
 export myDrA=1  # my Dropbox is active
-export Storage=/mnt/SD480GSSDPlus  # where I keep stuff
+export Storage=/mnt/WD30EZRZ  # where I keep stuff
+    export me=$Storage/local/Encrypted
 

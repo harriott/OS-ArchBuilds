@@ -1,6 +1,7 @@
 #!/bin/bash
 # vim: set et tw=0:
 
+echo "${tpf3b} - tweaking${tpfn}"
 # my preferred entry:
 sed -i 's/x S/x e/' $tmx/Plugins/tmux-copy-toolkit/copytk.tmux
 

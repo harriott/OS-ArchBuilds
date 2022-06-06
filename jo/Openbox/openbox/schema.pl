@@ -31,7 +31,8 @@ require "$ENV{HOME}/.config/obmenu-generator/config.pl";
 my $editor = $CONFIG->{editor};
 $editor = 'gvim';
 
-# symlinked to  ~/.config/obmenu-generator/schema.pl
+# symlinked in my  $ARCHBUILDS/build-scripts/31-symlinks-Openbox.sh
+#  to  ~/.config/obmenu-generator/schema.pl
 
 our $SCHEMA = [
 
@@ -49,7 +50,8 @@ our $SCHEMA = [
     {item => ['obs',                  'OBS Studio',         'web-browser']},
     {item => ['opera',                'opera',              'web-browser']},
   # {item => ['thunderbird',          'Mail',               'web-browser']},
-    {item => ['thunderbird',          'Thunderbird',        'web-browser']},
+  # {item => ['thunderbird',          'Thunderbird',        'web-browser']},
+    {item => ['thunderbird_safely',   'Thunderbird safely', 'web-browser']},
     # {item => ['gvim',               'gVim',               'terminal']},
     {item => ['quodlibet',            'Quod Libet',         'web-browser']},
     {item => ['picard',               'MusicBrainz Picard', 'web-browser']},

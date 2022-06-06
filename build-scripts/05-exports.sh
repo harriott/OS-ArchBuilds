@@ -18,7 +18,7 @@ if [ $host = "i34G1TU02" ]; then
 elif [ $host = "LIP120s81A4" ]; then
   Storage=/mnt/SDEP128G
 elif [ $host = "sbMb" ]; then
-  Storage=/mnt/SD480GSSDPlus
+  Storage=/mnt/WD30EZRZ
 fi
 AB=$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
 [[ -d $AB ]] && export ARCHBUILDS=$AB

@@ -22,7 +22,9 @@ cat systab.orig  # contains bootrun tabs to catch
 
 # file manage
 bat <file>
+MV(1)
 pygmentize -h
+rsync(1)
 
 ## advcpmv
 cpg --help | mo  # man advcp
@@ -61,6 +63,8 @@ sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
 
 ## directory structures
 <directory>  # cd <directory>  ( shopt autocd )
+file ~/.vim  # shows symlink source
+namei ~/.vim  # shows tree, including symlink sources
 
 ### exa
 bm exa
@@ -90,6 +94,7 @@ find . -type f -name "*.conf"
 
 ### fd
 bm fd
+fd -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
 fd -d1 -td  # depth 1 (current dir), type dir
@@ -254,8 +259,9 @@ http://192.168.43.249/
 
 ## storage
 /proc/filesystems - those supported by the kernel
-cdrecord dev=/dev/sr0 -checkdrive  # Vendor_info etc
+CP(1)
 GNU Parted
+NCDU(1)
 
 ### mkfs.ext4
 /etc/mke2fs.conf  has bytes-per-inode ratios for usage types
@@ -272,10 +278,19 @@ sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 $Bash/bashrc-console
 trash-empty  # lists before query
 
+### optical
+cdrecord dev=/dev/sr0 -checkdrive
+
+#### burning
+cdrecord -v -sao dev=/dev/sr0 isoimage.iso
+growisofs
+
 ### rsnapshot
 $MACHINE/etc/rsnapshot.conf
 cd $rsnapshot
 pgrep rsnapshot
+snapshot_root
+sudo du -sh $rsnapshot
 sudo pkill rsnapshot
 sm $rsnapshot/monthly.6
 
@@ -284,7 +299,7 @@ lastMonthly=/mnt/WD1001FALS/rsnapshot/monthly.6/localhost/; month=$(date -r $las
 sudo rsync -irtv --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
 
 #### checking
-/var/log/rsnapshot
+/var/log/rsnapshot > completed successfully
 e -l -s modified $rsnapshot
 journalctl -r | grep rsnapshot | grep Consumed | xcol weekly monthly | mo
 journalctl -u rsnapshot@daily -r
@@ -436,13 +451,19 @@ sudo rm /var/lib/pacman/db.lck  # delete the stale lock
 # pass
 pass edit gmail-neomutt
 pass cz
-pass troh/GmailAPI/token-expire
 ~/.password-store
+
+## Gmail API expiry
+date -d @$(pass cz/GmailAPI/token-expire)
+pass cz/GmailAPI/token-expire
 
 # scripting
 kill -9 "$(pidof perl)"
 
-## Bash - ANSI escape sequences
+## Bash
+[ -f $T91/parent.lock ] && echo zero file size
+
+### ANSI escape sequences
 $ARCHBUILDS/Bash/bashrc-generic
 \e[0;34m = Blue
 \e[1;34m = Bold Blue
@@ -512,6 +533,7 @@ journalctl -b -g 'EFI v'  # shows EFI version
 echo $TERM
 colorscript -r
 figlet Joseph Harriott
+figlet(6)
 neofetch
 watch -n1 "date '+%D%n%T' | figlet -k"
 
@@ -526,6 +548,8 @@ C-a ~ -> show-messages
 resize -s 65 120  # good for half of ViewSonic VX2025wm
 tmux list-keys | grep '~'
 tmux list-keys | mo
+TMUX(1)
+joinp -s 2 [-t 1 ]  -> join-pane, joining pane in window 2 [to that in window 1]
 
 ### session window pane
 M-PgDn/PgUp -> (= C-a (/) ) previous/next session

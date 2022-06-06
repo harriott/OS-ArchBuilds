@@ -1,0 +1,17 @@
+
+# for  $ARCHBUILDS/jo/ts.sh
+# symlinked in my  $ARCHBUILDS/build-scripts/38-LibreOffice+Thunderbird.sh
+#  to provide my command  thunderbird_safely, used in  $Openbox/openbox/schema.pl
+
+#  cat /usr/share/applications/ts.desktop
+#  nvim -O /usr/share/applications/thunderbird.desktop $ARCHBUILDS/jo/ts.desktop -c 'windo difft'
+
+[Desktop Entry]
+Name=Thunderbird Safely
+Comment=run Thunderbird safely from profile shared on Dropbox
+Exec=/usr/local/bin/thunderbird_safely
+Terminal=false
+Type=Application
+Icon=thunderbird
+Categories=Network;Email;
+

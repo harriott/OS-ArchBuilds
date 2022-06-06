@@ -11,9 +11,6 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 grab default rsnapshot conf
 # cp /etc/rsnapshot.conf ~/la5-rsnapshot.conf
 
-# #=> 1 set my rsnapshot conf 0 test
-# sudo cp $ARCHBUILDS/etc/systemd/rsnapshot-minuteTest.conf /etc/rsnapshot.conf
-
 #=> 1 set my rsnapshot conf 1 working
 sudo cp $MACHINE/etc/rsnapshot.conf /etc/rsnapshot.conf
 
@@ -21,7 +18,7 @@ sudo cp $MACHINE/etc/rsnapshot.conf /etc/rsnapshot.conf
 A=$ARCHBUILDS; erc=etc/rsnapshot.conf; nvim -O $A/i34G1TU02/$erc $A/LIP120s81A4/$erc $A/sbMb/$erc -c 'windo difft'
 
 #=> 2 rsnapshot needed locations
-mkdir $rsnapshot
+mkdir $rsnapshot  # see $MACHINE/export-machine
 sudo touch /var/log/rsnapshot
 
 #=> 3 test rsnapshot conf

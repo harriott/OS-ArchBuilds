@@ -31,17 +31,17 @@ trap read debug  # puts a read request after each executable line
 
 # #=> mimeo
 
-#==> 0 mimeo 0 install
-gAUR mimeo
-nvim -c "silent! /mimeo" PKGBUILD
-makepkg -sic
+# #==> 0 mimeo 0 install
+# gAUR mimeo
+# nvim -c "silent! /mimeo" PKGBUILD
+# makepkg -sic
 
 # #==> 0 mimeo 1 remove
 # sudo pacman -Rs mimeo
 
-# #==> 1 xdg-utils-mimeo
-# gAUR xdg-utils-mimeo
-# nvim PKGBUILD
-# makepkg -sic
-# cd ~
+#==> 1 xdg-utils-mimeo
+gAUR xdg-utils-mimeo
+nvim -c "silent! /freedesktop" PKGBUILD
+makepkg -sic
+cd ~
 

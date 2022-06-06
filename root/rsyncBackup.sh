@@ -42,9 +42,9 @@ read -p "about to rsync to $bd - any key to continue" null
 mkdir $bd
 for sysfolder in boot etc home root usr var; do
   mkdir $bd/$sysfolder
-  rsync -aAivX /as/$sysfolder/ $bd/$sysfolder 2>&1 | tee $bd/$sysfolder.txt
+  rsync -aiv /as/$sysfolder/ $bd/$sysfolder 2>&1 | tee $bd/$sysfolder.txt
 done
 if [ -d /ah ]; then
-  rsync -aAivX /ah/ $bd/home 2>&1 | tee $bd/home.txt
+  rsync -aiv /ah/ $bd/home 2>&1 | tee $bd/home.txt
 fi
 

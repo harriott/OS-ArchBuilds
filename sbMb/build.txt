@@ -209,6 +209,7 @@ removing  dkms  broke a few things, so I re-installed it
 ==> WARNING: Possibly missing firmware for module: xhci_pci
 ## Dropbox didn't start
 fixed by making  ~/.dropbox-dist  unwriteable
+sudo ls -a /home/jo/.dropbox-dist
 ## Thunderbird Profile
 Thunderbird > Start
 ## system seized again
@@ -796,9 +797,227 @@ system seized during
 error: failed to synchronize all databases (unable to lock database)
 sudo rm /var/lib/pacman/db.lck
 found the list of packages with  expac, and reinstalled them all
+## Updates
+error: firefox: signature from "Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>" is invalid
+:: File /var/cache/pacman/pkg/firefox-100.0.2-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+Do you want to delete it? [Y/n]
+## rsnapshot root ST4000VN008
+just made the change in  $MACHINE/etc/rsnapshot.conf
+  so had to  sudo chown -R jo:jo $rsnapshot  which took ages
+cp /var/log/rsnapshot $MACHINE/l8f-m5q-WD1001FALS-rsnapshot.log
+sudo nvim -c "silent! /2022-05-26T02:15:57" /var/log/rsnapshot  to reduce it
+## rsnapshot root WD30EZRZ
+mkdir $rsnapshot
+## / is almost full
+/dev/sda2 59G 55G 1011M 99% /
+## prepare SDSSDA240G (via UGREEN Adapter) as new bootable disk
+lsblk  shows SDSSDA240G is /dev/sdj
+### gdisk
+sudo gdisk /dev/sdj  got  Caution: Found protective or hybrid MBR and corrupt GPT.
+#### umount sdjx
+lsblk /dev/sdj  indicated
+  umount /dev/sdj5
+  umount /dev/sdj3
+  umount /dev/sdj2
+#### gdisk again
+sudo gdisk /dev/sdj  got  Caution: Found protective or hybrid MBR and corrupt GPT.
+  and somehow triggered  udiskie  to remount sdjx
+  o > This option deletes all partitions and creates a new protective MBR. Proceed? (Y/N): y
+  p > Disk /dev/sdj: 468862126 sectors, 223.6 GiB
+    Model: Storage Device
+    Sector size (logical/physical): 512/512 bytes
+    Disk identifier (GUID): 7CB29021-A571-4338-B002-05598D19D460
+    Partition table holds up to 128 entries
+    Main partition table begins at sector 2 and ends at sector 33
+    First usable sector is 34, last usable sector is 468862092
+    Partitions will be aligned on 2048-sector boundaries
+    Total free space is 468862059 sectors (223.6 GiB)
+  w > Final checks complete. About to write GPT data. THIS WILL OVERWRITE EXISTING PARTITIONS!!
+    Do you want to proceed? (Y/N): y
+      OK; writing new GUID partition table (GPT) to /dev/sdj.
+      Warning: The kernel is still using the old partition table.
+      The new table will be used at the next reboot or after you run partprobe(8) or kpartx(8)
+      The operation has completed successfully.
+reboot
+#### gdisk again
+lsblk  shows SDSSDA240G is /dev/sdj
+##### create partitions
+n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
+  ef00 (EFI system partition)
+n > Partition number (defaults to 2) > First sector (defaults to 1128448) > +90g > Hex code >
+  8304 Linux x86-64 root (/)
+n > Partition number (defaults to 3) > First sector (defaults to 189872128) > +4g > 8200 (Linux swap)
+n > Partition number (defaults to 4) > First sector (defaults to 198260736) > +40g > Hex code >
+  8302 (Linux home)
+n > Partition number (defaults to 5) > First sector (defaults to 282146816) > Enter > Enter >
+  8300 (Linux filesystem)
+w
+### format partitions
+sudo mkfs.fat -F 32 /dev/sdj1
+sudo mkfs.ext4 /dev/sdj2
+sudo mkfs.ext4 /dev/sdj4
+sudo mkswap /dev/sdj3
+sudo mkfs.ext4 -L SDSSDA240G /dev/sdj5
+### own partitions - fail
+sudo chown -R jo:jo /dev/sdj3
+sudo chown -R jo:jo /dev/sdj5
+### own SDSSDA240G
+sudo chown -R jo:jo /run/media/jo/SDSSDA240G
+### prepare root
+lsblk  &  lsblk -f  indicated
+  sudo rsync -axv --delete / /run/media/jo/2dacef35-6b13-44bb-a0e5-94909d6239b6
+## replaced HD103SJ with SDSSDA240G
+prepared $MACHINE/etc/fstab/m5r  for  sudo cp $MACHINE/etc/fstab/m5r /etc/fstab
+### prepare home
+lsblk  &  lsblk -f  indicated
+  sudo mkdir /run/media/jo/temp  # does not persist
+  sudo mount /dev/sdc4 /run/media/jo/temp
+  sudo chown -R jo:jo /run/media/jo/temp
+  rsync -av --delete /home/jo/ /run/media/jo/temp
+  sudo umount /dev/sdc4
+### prepare root
+lsblk  indicated
+  sudo mount /dev/sdc2 /mm
+  su > root pw  for  /  rm -r home  mkdir home
+  sudo rsync -axv --delete --exclude=home / /mm
+### move /home to SDSSDA240G
+logged out of jo and into root only for
+  lsblk  indicated  mount /dev/sdc4 /mm
+  rsync -av --delete /home/jo/ /mm
+  nvim /etc/fstab  to change the UUID
+  reboot, and logged into jo
+#### Dropbox
+Firefox fired up with this: "Joseph Harriott, Would you like to connect the computer sbMb to your Dropbox account (jharr@ftml.net)? If you didn’t request this, please click 'Cancel'." > Connect
+Dropbox began sync'ing 231,000 files, which took a while, but didn't change anything.
+### move swap temporarily
+sudo swapon /dev/sdc3
+sudo swapoff /dev/sda3
+### move / to SDSSDA240G - fail
+boot ARCH_202205
+  K16GBDTR500  loaded with  archlinux-2022.05.01-x86_64.iso  in D-Link DUB-H7
+  Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 > UEFI: KingstonDT R500 PMAP
+mount /dev/sda2 sa
+mount /dev/sdc2 sc
+vim sa/etc/fstab
+rsync -axv --delete --exclude=home --exclude=mnt sa/ sc
+reboot  for  Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 >
+    GRUB (PO: SanDisk SSD PLUS 480GB)
+the new  /  wasn't respected, and
+   gdisk /dev/sdc  got  Caution: Found protective or hybrid MBR and corrupt GPT.  again...
+## rsnapshot root ST4000VN008
+made the change in  $MACHINE/etc/rsnapshot.conf
+## move Dropbox to WD30EZRZ
+### syncs with Dropbox
+rsync -irtv --delete /mnt/SD480GSSDPlus/Dropbox/ /mnt/WD30EZRZ/Dropbo
+  - wasn't needed as now Dropbox copied the files over locally, until it failed
+rsync -inrtv --delete /mnt/SD480GSSDPlus/Dropbox/ /mnt/WD30EZRZ/Dropbox >
+  ~/DropboxMove.log  indicated
+    rsync -irtv --delete /mnt/SD480GSSDPlus/Dropbox/Apps/ /mnt/WD30EZRZ/Dropbox/Apps
+    rsync -irtv --delete /mnt/SD480GSSDPlus/Dropbox/CAM-best/ /mnt/WD30EZRZ/Dropbox/CAM-best
+    rsync -irtv --delete /mnt/SD480GSSDPlus/Dropbox/CAM-good/ /mnt/WD30EZRZ/Dropbox/CAM-good
+    rsync -irtv --delete /mnt/SD480GSSDPlus/Dropbox/CAM-toSort0/ /mnt/WD30EZRZ/Dropbox/CAM-toSort0
+    rsync -irtv --delete /mnt/SD480GSSDPlus/Dropbox/CAT-OutThere/ /mnt/WD30EZRZ/Dropbox/CAT-OutThere
+    rsync -irtv --delete /mnt/SD480GSSDPlus/Dropbox/COutThere/ /mnt/WD30EZRZ/Dropbox/COutThere
+### fix symlinks
+find ~/ -type l -ls | xcol SD480GSSDPlus WD30EZRZ
+sudo bash 05-root_symlinks.sh
+bash 17-symlinks.sh
+source $ARCHBUILDS/Bash/export-storage
+bash 31-symlinks-Openbox.sh
+nvim 05-exports.sh
+sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
+ln -sf $tmx/tmux.conf ~/.tmux.conf
+bash 36-symlinks-sshd.sh
+rm -r ~/texmf/tex/latex/jo; ln -s $CP/LaTeX/jo ~/texmf/tex/latex/jo
+rm ~/texmf/tex/latex/m4p/headings.sty
+rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
+ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
+ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
+ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
+ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $ARCHBUILDS/jo/TS/locks.sh ~/Arch/locks.sh
+ln -sf $CP/SSHconfig/sbMb ~/.ssh/config
+rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
+sudo bash 37-as_root-symlink_fonts.sh
+## move swap, for growing /
+sudo swapon /dev/sdc3
+sudo swapoff /dev/sda3
+changed swap UUID in  $MACHINE/etc/fstab/m5r  for  sudo cp $MACHINE/etc/fstab/m5r /etc/fstab  reboot
+## discovered Dropbox still pointing at SD480GSSDPlus
+paused sync'ing
+rsync -irtv --delete /mnt/WD30EZRZ/Dropbox/ /mnt/SD480GSSDPlus/Dropbox
+## forgotten change done to  $MACHINE/etc/rsnapshot.conf
+/mnt/WD30EZRZ/Dropbox/
+## move Dropbox to WD30EZRZ
+rsync -irtv --delete /mnt/WD30EZRZ/Dropbox/JH/core/ /mnt/SD480GSSDPlus/Dropbox/JH/core
+rsync -irtv --delete /mnt/WD30EZRZ/Dropbox/JH/core/ /mnt/WD30EZRZ/WD30EZRZ/core
+rsync -irtv --delete /mnt/WD30EZRZ/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/ /mnt/SD480GSSDPlus/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
+rsync -irtv --delete /mnt/WD30EZRZ/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/ /mnt/WD30EZRZ/WD30EZRZ/core/IT_stack/onGitHub/ArchBuilds
+### uninstall Dropbox
+### Dropbox
+installed, then  dropbox &
+  It picked up all my old settings...
+#### info.json
+quit Dropbox, changed path in  ~/.dropbox/info.json
+  dropbox &  ~/.dropbox/info.json  got reset...
+quit Dropbox, renamed  ~/.dropbox
+  dropbox &  which got me  /home/jo/Dropbox
+### move new empty Dropbox to WD30EZRZ
+paused Syncing
+renamed my  /mnt/WD30EZRZ/Dropbox
+Dropbox > Preferences > Sync > Move > /mnt/WD30EZRZ/Dropbox
+renamed away newly created /mnt/WD30EZRZ/Dropbox  to bring that back my fully populated directory
+resumed sync'ing - took ages to Index
+#### check and fix the results
+(because some files were moved by Dropbox)
+rsync -inrtv --delete /mnt/SD480GSSDPlus/Dropbox/ /mnt/WD30EZRZ/Dropbox
+fixed some snags individually
+### bring back in Dr-CAT-Buddhism
+Dropbox > Preferences > Sync > Selective > ticked on CAT-Buddhism
+quit Dropbox  for
+  rsync -irtv --delete /mnt/WD30EZRZ/Dr-CAT-Buddhism/ /mnt/WD30EZRZ/Dropbox/CAT-Buddhism
+  dropbox &
+### bring back in Dr-CAT-OutThere-UK
+Dropbox > Preferences > Sync > Selective > ticked on CAT-OutThere-UK
+quit Dropbox  for
+  rsync -irtv --delete /mnt/WD30EZRZ/Dr-CAT-OutThere-UK/ /mnt/WD30EZRZ/Dropbox/CAT-OutThere-UK
+  dropbox &
+#### check
+rsync -inrtv --delete /mnt/WD30EZRZ/Dr-CAT-OutThere-UK/ /mnt/WD30EZRZ/Dropbox/CAT-OutThere-UK
+  then cleared a conflicted copy
+### automatic login tty1 0 back on
+## ACL
+sudo tune2fs -l /dev/sda2 | xcol acl
+## fails to boot due to ST4000VN008
+can't boot from Arch 2021.11.01 CD
+disabled in /etc/fstab
+### repair attempt
+plugged in via Decrescent
+lsblk indicated  $ sudo e2fsck -p /dev/sdb1
+  ST4000VN008: recovering journal
+  ST4000VN008 contains a file system with errors, check forced.
+  ST4000VN008: Duplicate or bad block in use!
+  ST4000VN008: Multiply-claimed block(s) in inode 197558319: 930097821
+  ST4000VN008: Multiply-claimed block(s) in inode 199884980: 930097821
+  ST4000VN008: (There are 2 inodes containing multiply-claimed blocks.)
+  ST4000VN008: File /rsnapshot/hourly.13/localhost/mnt/WD30EZRZ/Dropbox/CAM-toSort1-UK/Echobelly (inode #197558319, mod time Fri Apr 30 00:27:58 2021)
+    has 1 multiply-claimed block(s), shared with 1 file(s):
+  ST4000VN008:    /rsnapshot/hourly.5/localhost/mnt/WD30EZRZ/Dropbox/CAM-toSort1-UK/David Sylvian/Words With The Shaman/03 Part Three Awakening (Sons from The Tree Tops).m4a (inode #199884980, mod time Fri Feb 16 18:09:14 2007)
+  ST4000VN008:
+  ST4000VN008: UNEXPECTED INCONSISTENCY; RUN fsck MANUALLY. (i.e., without -a or -p options)
+disabled rsnapshot timers
+## update thunderbird_safely symlinks
+sudo ln -sf $ARCHBUILDS/jo/TS/ts.sh /usr/local/bin/thunderbird_safely
+sudo ln -sf $ARCHBUILDS/jo/TS/ts.desktop /usr/share/applications/thunderbird_safely.desktop
+## repartition & reformat ST4000VN008
+sudo chown -R jo:jo $VsLocation
+mkdir $VsLocation/OBSmkvGrabs
 ## waiting
 CUPS Socket activation
 disable Shift+PrtSc
+### remake /efi/EFI/GRUB/grubx64.efi
+sudo grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
@@ -808,6 +1027,7 @@ ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh
+  @ 1 bash ~/Arch/locks.sh
   @ 3 bash ~/Arch/cmusqueue.sh
   @ 10 bash ~/Arch/bash_history.sh
   @ 20 jump clean
@@ -822,6 +1042,8 @@ ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 /var/log/journal/ 2.2 GB
 # GnuPG keys
 gpg -ao sbMbA-backup-las.asc --export-secret-keys --export-options backup jh
+## SystemRescueCd public signing key
+gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
 # physical configuration
 ATI Radeon HD 4870
 D-Link DUB-H7
@@ -833,12 +1055,13 @@ Perixx PERIBOARD-407W keyboard
 SATA0: SD480GSSDPlus resting at bottom of 3½" bays, under the tidied cables
 SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
 SATA2: WD30EZRZ in top 5¼" bay
-SATA3: ST4000VN008 in top 3½" bay
-SATA4: HD103SJ in 3rd 5¼" bay from top, held up by spacer pulled from Acer Veriton T661, which requires removing rhs panel
-SATA5: WD1001FALS in a plastic holder in bottom 5¼" tray
+SATA3: SDSSDA240G in top 3½" bay
+SATA4: ST4000VN008 in 3rd 5¼" bay from top, held up by spacer pulled from AVT661
+  (fixed to rhs)
+SATA5: WD1001FALS in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
 ## monitor
-lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 1920x1080 = 16:9) Brightness 40
-upper DVI: DVI-D to DVI-D: Packard Bell Viseo 223DX (wide 1920x1080 = 16:9)
+lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 1920x1080 = 16:9) Brightness 50
+upper DVI: DVI-D to DVI-D: Packard Bell Viseo 223DX (wide 1920x1080 = 16:9) Brightness 50
 ## motherboard
 Antec Neo HE550
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
@@ -861,9 +1084,15 @@ M.I.T > PC Health Status >
   2nd System Fan Fail Warning
   CPU Warning Temperature
 ### USB headers
+CY Double Port USB 3.0, exiting by middle slot
 Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB3
 # random reboots
 happen any time
+# recovering journal, after a hard reboot
+  Starting version 251.1-1-arch
+  /dev/sda2: recovering journal
+  /dev/sda2: clean, 874157/3932160 files, 14687050/15728640 blocks
+when finally booted,  /dev/sda2 = /
 # system seizures under load
 happens most when system is under load, but also sometimes when not heavily loaded
 journalctl -b -1 -r  shows no snags

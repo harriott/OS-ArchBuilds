@@ -85,6 +85,7 @@ sudo rm /etc/locale.gen.pacnew
 :: Replace espeak-ng-espeak with community/espeak-ng? [Y/n]
 ## Updates
 :: libvterm01 and libvterm are in conflict. Remove libvterm? [y/N] y
+## rsnapshot never seems to complete
 ## waiting
 expac
 # fcron
@@ -96,7 +97,6 @@ ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # physical configuration
 Fujitsu E19W5 1440x900
-BX200  in  LogiLink 2.5" HDD Mounting Bracket  in space under DVD drive
 TL-WN725N
 ## BIOS Setup Utility
 Boot Options
@@ -114,3 +114,6 @@ Boot Options
 ## cbh
 Logitech M187 Wireless Mini Mouse
 Perixx PERIBOARD-407W keyboard
+## disks
+BX200  in  LogiLink 2.5" HDD Mounting Bracket  in space under DVD drive
+KDTG311282  in a USB slot as  snapshot_root

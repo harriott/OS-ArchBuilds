@@ -44,6 +44,6 @@ tint2 &
 udiskie -t &
 $Openbox/openbox/autostart/urxvtl.sh
 
-#==> 1 machine dependent
+#==> 1 machine dependent tmux tweaks
 [ -f $MACHINE/jo/autostart.sh ] && . $MACHINE/jo/autostart.sh
 
