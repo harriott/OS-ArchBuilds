@@ -6,6 +6,6 @@
 # Its contents are referred to as needed by Git, making changes saved here instantaneous.
 
 [include]
-	path = /mnt/SD480GSSDPlus/Dropbox/JH/core/IT_stack/CrossPlatform/git/config-user
-	path = /mnt/SD480GSSDPlus/Dropbox/JH/core/IT_stack/onGitHub/misc/CrossPlatform/gitconfig
+	path = /mnt/WD30EZRZ/Dropbox/JH/core/IT_stack/CrossPlatform/git/config-user
+	path = /mnt/WD30EZRZ/Dropbox/JH/core/IT_stack/onGitHub/misc/CrossPlatform/gitconfig
 

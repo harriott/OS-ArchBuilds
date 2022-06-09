@@ -73,18 +73,24 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S devtools
 # # mkdir /mnt/SD480GSSDPlus/chroot
 
+#=> didyoumean
+gAUR didyoumean
+nvim -c "silent! /hisbaan\/didyoumean" PKGBUILD
+makepkg -sic
+true
+
 # #=> diskonaut
 # gAUR diskonaut
 # nvim -c "silent! /imsnif" PKGBUILD
 # makepkg -sic  # takes a long time
 # true
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# # only once there's a browser, and preferably after LastPass
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -277,11 +283,11 @@ true
 # #=> nodejs-mapscii 1 remove
 # sudo pacman -Rs nodejs-mapscii
 
-#=> nordvpn-bin 0 (re)install
-gAUR nordvpn-bin
-nvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
-makepkg -sic
-true
+# #=> nordvpn-bin 0 (re)install
+# gAUR nordvpn-bin
+# nvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> nordvpn-bin 1 configure
 # sudo usermod -aG nordvpn jo  # need to re-login
@@ -376,6 +382,11 @@ true
 # #=> Python 2
 # sudo pacman -S python2  # needed for  oauth2.py
 
+# #=> python2-wheel
+# gAUR python2-wheel
+# nvim -c "silent! /github.com\/pypa\/wheel" PKGBUILD
+# makepkg -sic
+
 # #=> Quod Libet
 # sudo pacman -S quodlibet
 
@@ -450,8 +461,8 @@ true
 # #=> yt-dlp
 # sudo pacman -S yt-dlp
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

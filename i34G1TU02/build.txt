@@ -77,15 +77,23 @@ gpg --send-keys 13F327EF
   gpg: sending key 842A4DEE13F327EF to hkps://keyserver.ubuntu.com
 ## Updates
 :: libstdc++5-bin and libstdc++5 are in conflict. Remove libstdc++5? [y/N]
-## locale.gen.pacnew
-sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew   & diff'd over changes
-sudo rm /etc/locale.gen.pacnew
 ## Updates
 :: Starting full system upgrade...
 :: Replace espeak-ng-espeak with community/espeak-ng? [Y/n]
 ## Updates
 :: libvterm01 and libvterm are in conflict. Remove libvterm? [y/N] y
 ## rsnapshot never seems to complete
+## Updates
+pactree -r python2-wheel
+  python2-wheel
+  └─python2-importlib_resources
+    └─python2-virtualenv
+### sudoers.pacnew
+sudo nvim -O /etc/sudoers /etc/sudoers.pacnew -c 'windo difft'  diff'd over changes then  :wq!
+sudo visudo -c -f /etc/sudoers
+sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers -c 'windo difft'
+sudo chown jo:jo $ARCHBUILDS/etc/sudoers/sudoers
+sudo rm /etc/sudoers.pacnew
 ## waiting
 expac
 # fcron
@@ -95,6 +103,9 @@ fcrontab -l
 ## temperatures
 ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+# locale.gen.pacnew
+sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
+sudo rm /etc/locale.gen.pacnew
 # physical configuration
 Fujitsu E19W5 1440x900
 TL-WN725N

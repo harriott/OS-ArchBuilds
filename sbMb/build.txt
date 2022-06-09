@@ -120,10 +120,6 @@ sudo mount -t vfat -o uid=1000,gid=1000 /dev/sde1 /mm  # writeable as jo
 lsblk -f  indicated  sudo mount /dev/sde1 /mm
 sudo mount -t vfat -o uid=1000,gid=1000 /dev/sde1 /mm  # writeable as jo
 ##### 17-symlinks-jo.sh
-## /etc/locale.gen.pacnew
-cd /etc/  for  su + root pw  for
-nvim -O locale.gen locale.gen.pacnew   & diff'd over changes
-rm /locale.gen.pacnew
 ## GnuPG keys
 gpg --list-keys
   gpg: directory '/home/jo/.gnupg' created
@@ -1013,6 +1009,19 @@ sudo ln -sf $ARCHBUILDS/jo/TS/ts.desktop /usr/share/applications/thunderbird_saf
 ## repartition & reformat ST4000VN008
 sudo chown -R jo:jo $VsLocation
 mkdir $VsLocation/OBSmkvGrabs
+## ST4000VN008 fail
+ceased to be accessible
+### reboot long delay
+Failed unmounting /mnt/ST4000VN008  - maybe the cause of a long slow shutdwon...
+  Remounting /mnt/ST4000VN008 read-only ... timed out
+  Failed to unmount /mnt/ST4000VN008
+  Remounting /oldroot/mnt/ST4000VN008 read-only
+## enabled rsnapshot timers
+## sudoers.pacnew
+sudo nvim -O /etc/sudoers /etc/sudoers.pacnew -c 'windo difft'  diff'd over changes then  :wq!
+sudo visudo -c -f /etc/sudoers
+sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers -c 'windo difft'
+sudo rm /etc/sudoers.pacnew
 ## waiting
 CUPS Socket activation
 disable Shift+PrtSc
@@ -1044,6 +1053,9 @@ ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 gpg -ao sbMbA-backup-las.asc --export-secret-keys --export-options backup jh
 ## SystemRescueCd public signing key
 gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
+# locale.gen.pacnew
+sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
+sudo rm /etc/locale.gen.pacnew
 # physical configuration
 ATI Radeon HD 4870
 D-Link DUB-H7

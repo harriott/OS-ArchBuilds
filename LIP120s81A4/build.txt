@@ -265,9 +265,6 @@ sudo nvim -O /etc/sudoers /etc/sudoers.pacnew
 sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers
 sudo rm /etc/sudoers.pacnew
 ## LanguageTool 5.6
-## /etc/locale.gen.pacnew
-sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew   & diff'd over changes
-sudo rm /etc/locale.gen.pacnew
 ## Spotify Public Repository Signing Key
 gpg --delete-key 0D811D58
 ## HP ENVY 5532 by WiFi to CUPS
@@ -318,6 +315,9 @@ fcrontab -l
 ## temperatures
 ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+# locale.gen.pacnew
+sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
+sudo rm /etc/locale.gen.pacnew
 # physical configuration
 32GB eMMC
 F2 at boot for Phoenix SecureCore Technology Setup
@@ -325,3 +325,8 @@ KDTG311281  for  rsnapshot
 lspci -k | grep 3165 -A 3
 screen is 1366x768
 SDEP128G in microSD slot, for Dropbox
+# sudoers.pacnew
+sudo nvim -O /etc/sudoers /etc/sudoers.pacnew -c 'windo difft'  diff'd over changes then  :wq!
+sudo visudo -c -f /etc/sudoers
+sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers -c 'windo difft'
+sudo rm /etc/sudoers.pacnew

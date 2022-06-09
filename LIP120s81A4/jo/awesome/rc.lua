@@ -374,10 +374,9 @@ awful.rules.rules = {
                }
       }, properties = { floating = true }},
 
-    -- set browsers to always map on the tag named "2"
+    -- map certain programs to certain tags
     { rule_any = { class = { "Falkon", "firefox", "Google-chrome" } }, properties = { tag = "2" } },
-
-    -- set Thunderbird to always map on the tag named "3"
+    { rule_any = { class = { "KeePassXC" } }, properties = { tag = "4" } },
     { rule_any = { class = { "Thunderbird" } }, properties = { tag = "3" } }
 
 } -- (through the "manage" signal)
