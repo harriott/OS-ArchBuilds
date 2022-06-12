@@ -95,6 +95,7 @@ sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers -c 'windo difft'
 sudo chown jo:jo $ARCHBUILDS/etc/sudoers/sudoers
 sudo rm /etc/sudoers.pacnew
 ## waiting
+dym
 expac
 # fcron
 fcrontab -l

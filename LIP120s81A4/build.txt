@@ -304,6 +304,7 @@ sudo rm /etc/systemd/logind.conf.pacnew
 ## disabled rsnapshot timers
 ## waiting
 cp $MACHINE/etc/rsnapshot.conf
+dym
 expac
 feh
 perl-rename

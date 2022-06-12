@@ -459,6 +459,7 @@ pass cz/GmailAPI/token-expire
 
 # Rust
 cargo version
+dym better
 rustup update
 
 # scripting
