@@ -17,6 +17,9 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
+# #=> asunder
+# sudo pacman -S asunder
+
 # #=> bat-extras-git
 # gdAUR bat-extras-git
 # nvim -c "silent! /eth-p" PKGBUILD
@@ -74,9 +77,11 @@ trap read debug  # puts a read request after each executable line
 # # mkdir /mnt/SD480GSSDPlus/chroot
 
 #=> didyoumean
+# provides  dym
+rustup update
 gAUR didyoumean
 nvim -c "silent! /hisbaan\/didyoumean" PKGBUILD
-makepkg -sic
+makepkg -sic  # takes ages
 true
 
 # #=> diskonaut
@@ -84,6 +89,9 @@ true
 # nvim -c "silent! /imsnif" PKGBUILD
 # makepkg -sic  # takes a long time
 # true
+
+#=> diskus
+sudo pacman -S diskus
 
 # #=> Dropbox 0 (re)install
 # # only once there's a browser, and preferably after LastPass
@@ -97,6 +105,9 @@ true
 
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
+
+#=> dua-cli
+sudo pacman -S dua-cli
 
 # #=> Dust
 # # (after Rust Toolchain)
@@ -148,6 +159,9 @@ true
 
 # #=> Font Manager
 # sudo pacman -S font-manager
+
+#=> gdu
+sudo pacman -S gdu
 
 # #=> gifski
 # sudo pacman -S gifski  # (for making animated GIFs)
@@ -382,6 +396,42 @@ true
 # #=> Python 2
 # sudo pacman -S python2  # needed for  oauth2.py
 
+# #=> python2-backports
+# # for python2-configparser
+# gAUR python2-backports
+# nvim -c "silent! /github.com\/brandon-rhodes\/backports" PKGBUILD
+# makepkg -sic
+
+# #=> python2-configparser
+# # for python2-virtualenv
+# gAUR python2-configparser
+# nvim -c "silent! /pypi.python.org" PKGBUILD
+# makepkg -sic
+
+# #=> python2-importlib-metadata
+# # for python2-virtualenv
+# gAUR python2-importlib-metadata
+# nvim -c "silent! /github.com\/python\/importlib_metadata" PKGBUILD
+# makepkg -sic
+
+# #=> python2-pathlib2
+# # for python2-virtualenv
+# gAUR python2-pathlib2
+# nvim -c "silent! /pypi.python.org" PKGBUILD
+# makepkg -sic
+
+# #=> python2-scandir
+# # for python2-virtualenv
+# gAUR python2-scandir
+# nvim -c "silent! /github.com\/benhoyt\/scandir" PKGBUILD
+# makepkg -sic
+
+# #=> python2-setuptools-scm
+# # for python2-configparser python2-importlib-metadata
+# gAUR python2-setuptools-scm
+# nvim -c "silent! /github.com\/pypa\/setuptools_scm" PKGBUILD
+# makepkg -sic
+
 # #=> python2-wheel
 # gAUR python2-wheel
 # nvim -c "silent! /github.com\/pypa\/wheel" PKGBUILD
@@ -448,6 +498,13 @@ true
 
 # #=> Vimiv
 # sudo pacman -S vimiv
+
+# #=> vorbis-tools
+# # for  oggenc
+# sudo pacman -S vorbis-tools
+
+# #=> whipper
+# sudo pacman -S whipper
 
 # #=> xbindkeys
 # sudo pacman -S xbindkeys

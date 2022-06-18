@@ -14,7 +14,7 @@ export VsLocation=/mnt/ST4000VN008  # path to my video store
 source $Bash/bashrc
 
 #=> 1 OBS mkv grabs convert
-ignore () { stat -c '%Y  %s  %n' "$1" >> $ulGL/OBSmkv/ignore; }
+ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/OBSmkv/ignore; }
 # ignore <an_mkv_to_ignore>
 # for m in *.mkv; do ignore "$m"; done
 

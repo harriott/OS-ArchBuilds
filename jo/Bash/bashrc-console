@@ -67,7 +67,7 @@ gic () { git commit -m "$1"; }
 #===> quick-check
 alias fe='fdtsEncryptedChanges'
 
-Encrypted=($me Digital0 Digital1 Secure0 Secure1 SHG Stack)
+Encrypted=($Enc Digital0 Digital1 Secure0 Secure1 SHG Stack)
 fdtsEncryptedChanges () {
   if [ "$PWD" != ${Encrypted[0]} ]; then
     cd ${Encrypted[0]}

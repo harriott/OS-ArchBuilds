@@ -65,7 +65,8 @@ bash 02-when_chroot-to_bootloader.sh
 cd /  for  umount /dev/sdg1  "target is busy"  so  umount -l /dev/sdg1
 mount /dev/sdh1 /mnt   cd /mnt/ArchBuilds/build-scripts
 ## reboot to root
-Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 > GRUB (PO: SanDisk SSD PLUS 480GB)
+Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 >
+  GRUB (PO: SanDisk SSD PLUS 480GB)
 root pw
 dmesg | grep "EFI v"  reported "EFI v2.31"
 ### K8GBDT100
@@ -355,7 +356,7 @@ curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import 
   gpg:               imported: 1
 ## can't Sign in to chromium
 chromium > History > Tabs from other devices > Sign in
-  404. That’s an error. The requested URL was not found on this server. That’s all we know.
+  404. That's an error. The requested URL was not found on this server. That's all we know.
 ## updatedb.conf.pacnew
 sudo nvim -o /etc/updatedb.conf /etc/updatedb.conf.pacnew
 sudo rm /etc/updatedb.conf.pacnew
@@ -366,7 +367,7 @@ gpg --keyserver pool.sks-keyservers.net --search-keys "Klaus Knopper" > 5
   gpg: key 3798E3D757E37087: public key "Klaus Knopper <knopper@knopper.net>" imported
 ## Updates
 reboot  got stuck on "Loading initial ramdisk ..." fixed by hard reboot
-## anticapitalista’s key
+## anticapitalista's key
 gpg --keyserver hkps://keys.gnupg.net --recv-keys 4A0C4F9C
   gpg: key A80582E000067FDD: public key "anticapitalista <antix@operamail.com>" imported
   gpg: Total number processed: 1
@@ -883,7 +884,7 @@ logged out of jo and into root only for
   nvim /etc/fstab  to change the UUID
   reboot, and logged into jo
 #### Dropbox
-Firefox fired up with this: "Joseph Harriott, Would you like to connect the computer sbMb to your Dropbox account (jharr@ftml.net)? If you didn’t request this, please click 'Cancel'." > Connect
+Firefox fired up with this: "Joseph Harriott, Would you like to connect the computer sbMb to your Dropbox account (jharr@ftml.net)? If you didn't request this, please click 'Cancel'." > Connect
 Dropbox began sync'ing 231,000 files, which took a while, but didn't change anything.
 ### move swap temporarily
 sudo swapon /dev/sdc3
@@ -897,9 +898,9 @@ mount /dev/sdc2 sc
 vim sa/etc/fstab
 rsync -axv --delete --exclude=home --exclude=mnt sa/ sc
 reboot  for  Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 >
-    GRUB (PO: SanDisk SSD PLUS 480GB)
+  GRUB (PO: SanDisk SSD PLUS 480GB)
 the new  /  wasn't respected, and
-   gdisk /dev/sdc  got  Caution: Found protective or hybrid MBR and corrupt GPT.  again...
+  gdisk /dev/sdc  got  Caution: Found protective or hybrid MBR and corrupt GPT.  again...
 ## rsnapshot root ST4000VN008
 made the change in  $MACHINE/etc/rsnapshot.conf
 ## move Dropbox to WD30EZRZ
@@ -982,7 +983,7 @@ quit Dropbox  for
 #### check
 rsync -inrtv --delete /mnt/WD30EZRZ/Dr-CAT-OutThere-UK/ /mnt/WD30EZRZ/Dropbox/CAT-OutThere-UK
   then cleared a conflicted copy
-### automatic login tty1 0 back on
+### automatic login tty1 back on
 ## ACL
 sudo tune2fs -l /dev/sda2 | xcol acl
 ## fails to boot due to ST4000VN008
@@ -1022,6 +1023,89 @@ sudo nvim -O /etc/sudoers /etc/sudoers.pacnew -c 'windo difft'  diff'd over chan
 sudo visudo -c -f /etc/sudoers
 sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers -c 'windo difft'
 sudo rm /etc/sudoers.pacnew
+## grow /
+booted with SystemRescueCd v9.03 > startx > GParted > messily
+  (including unneccessary adjustments to sda4+5) arrived at Deleting sda3-5 (SD480GSSDPlus),
+  growing sda2, and recreating swap, then two ext4's
+  "Libparted Error: The backup GPT table is corrupt,
+  but the primary apears OK so that will be used." - all changes were lost...
+  so (simpler) Deleted sda3-5 and grew sda2 again
+  "Libparted Error: The backup GPT table is corrupt,
+  but the primary apears OK so that will be used." - but my changes stuck
+  gdisk /dev/sda > p  showed all well
+forgot to remove  SD480GSSDPlus swap  from  /etc/fstab, so did that from Arch root maintenance
+### gdisk
+sudo gdisk /dev/sda
+  p >
+    1     2048  1126400   549.0 MiB  EF00  EFI system partition
+    2  1128448  186566655  88.4 GiB  8304  Linux x86-64 root (/)
+#### create partitions
+n > Partition number (defaults to 3) > First sector (defaults to 186566655) > +4g >
+  8200 (Linux swap)
+n > Partition number (defaults to 4) > First sector (defaults to 194955264) > +40g >
+  8302 (Linux home)
+n > Partition number (defaults to 5) > First sector (defaults to 278841344) >
+  Last sector (defaults to 937701375) > 8300 (Linux filesystem)
+w
+reboot  to see the partitions
+## move swap back
+sudo mkswap /dev/sda3  UUID=3c859bab-c47a-49ec-89c5-55bdae6a7fe1
+changed swap UUID in  $MACHINE/etc/fstab/m5r  for  sudo cp $MACHINE/etc/fstab/m5-6 /etc/fstab
+  reboot
+forgot to comment out  SD480GSSDPlus  from  /etc/fstab, so did that from Arch root maintenance
+## format sda4+5
+sudo mkfs.ext4 /dev/sda4
+  mke2fs 1.46.5 (30-Dec-2021)
+  Discarding device blocks: done
+  Creating filesystem with 10485760 4k blocks and 2621440 inodes
+  Filesystem UUID: 9d23d7e6-dc11-457f-8615-25bd972c194c
+  Superblock backups stored on blocks: 32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 4096000, 7962624
+  Allocating group tables: done
+  Writing inode tables: done
+  Creating journal (65536 blocks): done
+  Writing superblocks and filesystem accounting information: done
+sudo mkfs.ext4 /dev/sda5
+  mke2fs 1.46.5 (30-Dec-2021)
+  Discarding device blocks: done
+  Creating filesystem with 82357504 4k blocks and 20594688 inodes
+  Filesystem UUID: 5b7fd211-fb46-472e-beff-559f1eb2b14e
+  Superblock backups stored on blocks: 32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968
+  Allocating group tables: done
+  Writing inode tables: done
+  Creating journal (262144 blocks): done
+  Writing superblocks and filesystem accounting information: done
+sudo e2label /dev/sda5 SD480GSSDPlus
+## move /home back to SD480GSSDPlus
+prepared  $MACHINE/etc/fstab/m5-6  with new  UUID
+automatic login tty1 off for logged out of jo and into root only for
+  lsblk  indicated  mount /dev/sda4 /mm
+  rsync -av --delete /home/jo/ /mm/jo
+  nvim /etc/fstab  to change the UUID
+  reboot, and logged into jo
+### Dropbox
+Firefox fired up with this: "Joseph Harriott, Would you like to connect the computer sbMb to your Dropbox account (jharr@ftml.net)? If you didn't request this, please click 'Cancel'." > Connect
+Dropbox began sync'ing 231,000 files, which took a while, but didn't change anything.
+## GRUB loglevel=4
+sudo nvim -O /etc/default/grub $MACHINE/etc/grub -c 'windo difft'  & sync'd the changes
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+## automatic login tty1 back on
+## remove SDSSDA240G, added SD480GSSDPlus
+prepared  $MACHINE/etc/fstab/m5-6  with new  UUID
+sudo cp $MACHINE/etc/fstab/m6d /etc/fstab
+sudo chown -R jo:jo /mnt/SD480GSSDPlus
+sudo rm -r /mnt/SDSSDA240G
+## GRUB loglevel=5
+sudo nvim -O /etc/default/grub $MACHINE/etc/grub -c 'windo difft'  & sync'd the changes
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+## fsck'd WD1001FALS
+sudo mount /dev/sdd1 /mnt/WD1001FALS
+## xdg-open .tiff
+handlr get .tiff  reports  gimp.desktop  so  handlr set .tiff feh.desktop
+## xdg-open .log
+handlr get .log  reports  no handlers found for 'text/x-log'
+  handlr set .log gvim.desktop
+## xdg-open .sh
+handlr get .sh  reports  vim.desktop  so  handlr set .sh gvim.desktop
 ## waiting
 CUPS Socket activation
 disable Shift+PrtSc
@@ -1057,7 +1141,7 @@ gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
 sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 sudo rm /etc/locale.gen.pacnew
 # physical configuration
-ATI Radeon HD 4870
+ATI Radeon HD 4870 on PCIEX16
 D-Link DUB-H7
 NETGEAR WG111v2
 ## cbh
@@ -1065,12 +1149,38 @@ Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard
 ## disks
 SATA0: SD480GSSDPlus resting at bottom of 3½" bays, under the tidied cables
-SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
 SATA2: WD30EZRZ in top 5¼" bay
-SATA3: SDSSDA240G in top 3½" bay
-SATA4: ST4000VN008 in 3rd 5¼" bay from top, held up by spacer pulled from AVT661
-  (fixed to rhs)
+SATA3 cable protruding out of back of case
+SATA4: ST4000VN008 in 3rd 5¼" bay from top, held up by spacer pulled from AVT661 (fixed to rhs)
 SATA5: WD1001FALS in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
+### optical
+SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
+#### whipper
+whipper drive analyze
+  INFO:whipper.command.drive:cdparanoia can defeat the audio cache on this drive
+  INFO:whipper.command.drive:adding drive cache behaviour to configuration file
+whipper drive list
+  drive: /dev/cdrom, vendor: TSSTcorp, model: DVD+-RW TS-H653A, release: D500
+  WARNING:whipper.command.drive:no read offset found. Run 'whipper offset find'
+    Can defeat audio cache: True
+##### offset
+whipper offset find -o +6
+  INFO:whipper.command.offset:checking device /dev/sr0
+  Track 1 finished, found 10 Q sub-channels with CRC errors
+  Track 2 finished, found 9 Q sub-channels with CRC errors
+  Track 3 finished, found 10 Q sub-channels with CRC errors
+  Track 4 finished, found 7 Q sub-channels with CRC errors
+  Track 5 finished, found 9 Q sub-channels with CRC errors
+  Track 6 finished, found 9 Q sub-channels with CRC errors
+  Track 7 finished, found 12 Q sub-channels with CRC errors
+  Track 8 finished, found 22 Q sub-channels with CRC errors
+  Track 9 finished, found 17 Q sub-channels with CRC errors
+  Track 10 finished, found 20 Q sub-channels with CRC errors
+  Track 11 finished, found 26 Q sub-channels with CRC errors
+  ERROR:whipper.common.accurip:error retrieving AccurateRip entry: HTTP Error 404: Not Found
+  WARNING:whipper.common.accurip:entry not found in AccurateRip database
+  WARNING:whipper.command.offset:AccurateRip entry not found: drive offset can't be determined, try again with another disc
+so I added  read_offset = 6 ; JH  to  ~/.config/whipper/whipper.conf
 ## monitor
 lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 1920x1080 = 16:9) Brightness 50
 upper DVI: DVI-D to DVI-D: Packard Bell Viseo 223DX (wide 1920x1080 = 16:9) Brightness 50
@@ -1109,4 +1219,5 @@ when finally booted,  /dev/sda2 = /
 happens most when system is under load, but also sometimes when not heavily loaded
 journalctl -b -1 -r  shows no snags
 regularly: clock stuck, no CBH, so hard reboot
-sometimes orphaned inodes on /dev/sda2
+## orphaned inodes on /dev/sda2
+journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS

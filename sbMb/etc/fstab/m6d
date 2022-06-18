@@ -1,0 +1,25 @@
+
+# vim: et fdl=1 ft=fstab:
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# sudo nvim -O /etc/fstab $MACHINE/etc/fstab/m6d -c 'windo difft'
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda2
+UUID=19f3e2fc-36f1-4641-827e-9602c38e0ebe / ext4 rw,relatime 0 1
+
+# /dev/sda1
+UUID=0396-38EE /efi vfat rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro 0 2
+
+# /dev/sda4
+UUID=cfd516ca-061e-41a4-bea8-c2ccfaf662ae /home ext4 rw,relatime 0 2
+
+# /dev/sda3
+UUID=3c859bab-c47a-49ec-89c5-55bdae6a7fe1 none swap defaults 0 0
+
+LABEL=SD480GSSDPlus /mnt/SD480GSSDPlus ext4 defaults 0 2
+LABEL=ST4000VN008 /mnt/ST4000VN008 ext4 defaults 0 2
+LABEL=WD1001FALS /mnt/WD1001FALS ext4 defaults 0 2
+LABEL=WD30EZRZ /mnt/WD30EZRZ ext4 defaults 0 2
+

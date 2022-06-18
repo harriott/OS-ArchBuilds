@@ -7,7 +7,7 @@ cp -f $ITstack/unix_like-GNULinux/iwctl-connect.sh /run/media/jo/K8GBDTIG3
 rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
 rsync -irtv --delete --modify-window=1 $core/ /run/media/jo/K8GBDTIG3/core
 # build
-## mature Arch install from M587637 on SDSSDA240G
+## mature Arch install from M587637 on GPT SDSSDA240G
 booted to  archlinux-2021.11.01-x86_64.iso  on  K8GBDT100
 lsblk  indicated  mount /dev/sda2 /mnt
 ### fstab
@@ -20,7 +20,9 @@ halt -p
 ### won't boot SDSSDA240G
 ERROR: No boot disk has been detected or the disk has failed.
 BIOS > Boot Options > Hard Disk Drive Priority ain't showing a drive - because it's GPT
-### BX200
+### move to MBR BX200
+(in  sbMb  Arch, prep'd with  parted
+  then  sudo rsync -aAivX --delete ...  to copy over the partitions from SDSSDA240G)
 booted to  archlinux-2021.11.01-x86_64.iso  on  K8GBDT100
 lsblk  indicated  mount /dev/sda1 /mnt  mount /dev/sda2 /mnt/home
 mkswap /dev/sda3
@@ -94,8 +96,41 @@ sudo visudo -c -f /etc/sudoers
 sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers -c 'windo difft'
 sudo chown jo:jo $ARCHBUILDS/etc/sudoers/sudoers
 sudo rm /etc/sudoers.pacnew
+## moved snapshot_root to WD1600AAJS
+### temporarily disabled rsnapshot timers
+$ARCHBUILDS/build-scripts/24-as_root-rsnapshot_automated.sh
+## Updates
+error: failed retrieving file 'python-more-itertools-8.13.0-1-any.pkg.tar.zst.sig'
+  from archlinux.thaller.ws
+sudo bash 02-when_chroot-reflector.sh
+Packages (1) google-chrome-102.0.5005.115-1
+...
+==> NOTE: Custom flags should be put directly in: ~/.config/chrome-flags.conf
+==> NOTE: The launcher is called: 'google-chrome-stable'
+## prepare SDSSDA240G (via Decrescent) as new bootable disk
+prep'd partitions on sbMb, mistakenly adding an EFI boot
+### Updates
+#### sudoers.pacnew
+sudo nvim -O /etc/sudoers /etc/sudoers.pacnew -c 'windo difft'  diff'd over changes then  :wq!
+sudo visudo -c -f /etc/sudoers
+sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers -c 'windo difft'
+sudo rm /etc/sudoers.pacnew
+### prepare root
+su > root pw  for
+  rsync -aAixvX --delete --exclude=/home/* / /run/media/jo/e840a3bc-a0d8-4b56-8394-dcd1de8123fc
+### prepare home
+su > root pw  for
+  rsync -aAixvX --delete /home/ /run/media/jo/bd7a46cc-2b12-4e37-8404-f1cc8a731fa3
+### prepare SDSSDA240G
+su > root pw  for
+  rsync -aAixvX --delete /mnt/BX200/ /run/media/jo/SDSSDA240G
+## prepare to switch from BX200 to SDSSDA240G - unneeded
+temporarily removed DVD writer and switched BX200 to that SATA - booted as normal
 ## waiting
+diskus
+dua-cli
 expac
+gdu
 # fcron
 fcrontab -l
   @ 10 bash ~/Arch/bash_history.sh
@@ -125,6 +160,8 @@ Boot Options
 ## cbh
 Logitech M187 Wireless Mini Mouse
 Perixx PERIBOARD-407W keyboard
-## disks
+## drives
+HL Data Storage GH70N DVD rewriter
+### disks
 BX200  in  LogiLink 2.5" HDD Mounting Bracket  in space under DVD drive
-KDTG311282  in a USB slot as  snapshot_root
+WD1600AAJS  in a USB slot as  snapshot_root

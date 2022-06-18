@@ -302,10 +302,10 @@ sudo rm /etc/clamav/clamd.conf.pacnew
 sudo nvim -O /etc/systemd/logind.conf /etc/systemd/logind.conf.pacnew
 sudo rm /etc/systemd/logind.conf.pacnew
 ## disabled rsnapshot timers
+$ARCHBUILDS/build-scripts/24-as_root-rsnapshot_automated.sh
 ## waiting
 cp $MACHINE/etc/rsnapshot.conf
-expac
-feh
+gdu
 perl-rename
 # fcron
 fcrontab -l
