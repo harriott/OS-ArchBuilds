@@ -306,6 +306,9 @@ $ARCHBUILDS/build-scripts/24-as_root-rsnapshot_automated.sh
 ## waiting
 cp $MACHINE/etc/rsnapshot.conf
 gdu
+dym
+expac
+feh
 perl-rename
 # fcron
 fcrontab -l

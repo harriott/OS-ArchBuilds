@@ -129,6 +129,7 @@ temporarily removed DVD writer and switched BX200 to that SATA - booted as norma
 ## waiting
 diskus
 dua-cli
+dym
 expac
 gdu
 # fcron
