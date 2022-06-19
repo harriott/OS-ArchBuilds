@@ -33,6 +33,7 @@ local menubar = require("menubar")
 local hotkeys_popup_jo = require("awful.hotkeys_popup");
 local hotkeys_popup_jo_sized = hotkeys_popup_jo.widget.new({ width = 930, height = 450 });
   -- for my Lenovo IdeaPad 120s 81A4
+local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
 
 -- -> 1 error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -553,6 +554,12 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
+            weather_widget({
+                api_key='ce0b30e43e080280543289004ba40921',
+                coordinates = {48.870082, 2.391482}, -- Paris, France
+                show_hourly_forecast = true,
+                show_daily_forecast = true,
+            }),
         }, -- right widgets
     }
 end)

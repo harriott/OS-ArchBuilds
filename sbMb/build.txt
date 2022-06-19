@@ -1109,6 +1109,7 @@ handlr get .sh  reports  vim.desktop  so  handlr set .sh gvim.desktop
 ## waiting
 CUPS Socket activation
 disable Shift+PrtSc
+tk
 ### remake /efi/EFI/GRUB/grubx64.efi
 sudo grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
 # CPU frequency

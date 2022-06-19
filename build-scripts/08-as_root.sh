@@ -38,8 +38,11 @@ pacman -S turbostat
 # # - don't forget to  reboot !
 # reboot
 
-# #=> 1 Sudo & Tig
+# #=> 1 Sudo Tig
 # pacman -S sudo tig
+
+# #=> 1 tk
+# pacman -S tk  # for  gitk
 
 # #=> 1 time zone
 # # check local time correction

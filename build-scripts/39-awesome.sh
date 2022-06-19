@@ -12,4 +12,5 @@ ln -sf $MACHINE/jo/awesome/Firefox-notify-send.sh ~/.config/awesome/Firefox-noti
 ln -sf $MACHINE/jo/awesome/rc.lua ~/.config/awesome/rc.lua
 ln -sf $MACHINE/jo/awesome/themes-zenburn ~/.config/awesome/zenburn
 sudo ln -s $HOME/.vim/notify-send-Firefox_tab.sh /usr/local/bin/nsBt
+wget -P ~/.config/awesome/ https://raw.githubusercontent.com/rxi/json.lua/master/json.lua
 

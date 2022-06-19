@@ -1,6 +1,13 @@
 #!/bin/bash
 
-# Joseph Harriott - Sun 04 Oct 2020
+# Joseph Harriott - Sun 19 Jun 2022
+
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!!!!  this no longer works   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# https://superuser.com/q/1723180/242800
+#  (my $IT1/UnixLike/linux/email/oauth2tool_sh/msmtp-OAuth2-Gmail-mutt.md)
+# !!!!!  this no longer works   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 # my adaptation of  oauth2token
 # -----------------------------

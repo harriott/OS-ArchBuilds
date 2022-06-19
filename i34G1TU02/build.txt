@@ -126,12 +126,13 @@ su > root pw  for
   rsync -aAixvX --delete /mnt/BX200/ /run/media/jo/SDSSDA240G
 ## prepare to switch from BX200 to SDSSDA240G - unneeded
 temporarily removed DVD writer and switched BX200 to that SATA - booted as normal
+## Updates
+NetworkManager WiFi was stuck in a VPN mode and couldn't see any wireless networks
+  workaround was to tether Sony Xperia XA2
+### abandon Python2
+sudo pacman -Rs $(pacman -Qq | grep python2)
 ## waiting
-diskus
-dua-cli
-dym
-expac
-gdu
+tk
 # fcron
 fcrontab -l
   @ 10 bash ~/Arch/bash_history.sh

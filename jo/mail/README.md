@@ -18,7 +18,7 @@ I started with help from Luke Smith. [Mutt Wizard: Command Line Email at 156% Ef
 I configure access to these files in my `$Bash/bashrc-email` which defines aliases like this:
 
 - `msx` = "mail sync <xAccount>" - runs `mbsync` and then updates `notmuch` tags on a local account
-    - `~/.mbsyncrc` = `$email/mbsyncrc-template
+    - `~/.mbsyncrc` = `$email/mbsyncrc-template`
 - `nmx` = `neomutt <xAccount>` for opening neomutt on a local account
 - `nmse` = `notmuch search ...` for searching into all of my local accounts
     - `nmsh` = shows me the emails found by `nmse`
@@ -40,7 +40,8 @@ I turn off conversation view for all of my accounts. I get what it does, but I d
 - Archiving:
     - I create a folder named "Archives" for emails that are done but worth keeping.
     - I avoid hitting the `Archive` button on Gmail's web interface because that just strips away all labels such that the email is then lost in `All Mail`.
-- I set up 2-Step Verification in my Google Accounts such that I can enable the API, then use `msmtp` for sending Gmails (see `oauth2tool.sh`).
+- I had set up 2-Step Verification in my Google Accounts such that I can enable the API, then I used `msmtp` for sending Gmails (see `oauth2tool.sh`), but this can no longer be done - see
+my question [How to continue using msmtp OAuth 2.0 for Gmail in mutt after oob deprecation?](https://superuser.com/q/1723180/242800).
 
 ## HTML in emails
 I don't bother, as some do, trying to view HTML emails in `neovim`. So these are my workarounds:
