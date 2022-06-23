@@ -40,20 +40,29 @@ alias sc5='sudo cupsenable ENVY_5530'
 #=> Dropbox conflicted copies
 # results are noted in time-stamped logs
 dcc0 () {
+  pushd $DROPBOX
   jHMS=$(date "+%j-%H%M%S")  # echo $jHM
-  export DropboxConflictedLog="conflicted-$jHMS.log"
-  find -name "* conflicted copy *" > $DropboxConflictedLog
+  export DropboxConflictedLog="$DROPBOX/conflicted/$jHMS.log"
+  echo 'scanning for conflicted copies'
+  find $PWD -path $DROPBOX/conflicted -prune -o -name "* conflicted copy*" -print > $DropboxConflictedLog
   gvim $DropboxConflictedLog
+  popd
 }  # lists them
 dcc1 () {
-  export DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
-  mkdir $DropboxConflictedRemoved
-  while IFS= read -r file
-    do mv "$file" "$DropboxConflictedRemoved/$file"
-  done < $DropboxConflictedLog
-  removedLog=$DropboxConflictedRemoved/removed.log
-  mv $DropboxConflictedLog $removedLog
-  echo "removed files listed in $removedLog"
+  if [ -s "$DropboxConflictedLog" ]; then
+    export DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
+    mkdir $DropboxConflictedRemoved
+    while IFS= read -r file; do
+      removedRelativePath=${file/$DROPBOX\//}
+      removedFlattenedPath=${removedRelativePath//\//--}
+      mv "$file" "$DropboxConflictedRemoved/$removedFlattenedPath"
+    done < $DropboxConflictedLog
+    removedLog=$DropboxConflictedRemoved.log
+    mv $DropboxConflictedLog $removedLog
+    gvim $removedLog
+  else
+    echo "you should've ${tpf7b}dcc0${tpfn}"
+  fi
 }  # removes them
 
 #=> ffmpeg 0

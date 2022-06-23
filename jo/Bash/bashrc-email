@@ -60,7 +60,7 @@ nmsh () {
 } # shows the relevant emails
 
 #=> sync & tag mail
-[[ -d $GNULE ]] && source $GNULE/emailAddresses
+[[ -d $LE ]] && source $LE/emailAddresses
 
 nmnew () { echo "notmuch new:"; notmuch new; } # see $email/nm-config-template
 

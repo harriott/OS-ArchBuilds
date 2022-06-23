@@ -1,9 +1,9 @@
 #!/bin/bash -eu
 
 # Joseph Harriott - Thu 12 May 2022
-# launche  Firefox  with a notification
+# launch  Firefox  with a notification
 
-# (chmod 755 $vimfiles/Firefox-notify-send.sh)
+# (chmod 755 $MACHINE/jo/awesome/Firefox-notify-send.sh)
 # called by  $MACHINE/jo/awesome/rc.lua
 # symlinked in my  $ARCHBUILDS/build-scripts/39-awesome.sh
 

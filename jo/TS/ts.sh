@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Joseph Harriott - Wed 18 May 2022
+# Joseph Harriott - Thu 23 Jun 2022
 
 # run Thunderbird safely from Profile shared on Dropbox
 # -----------------------------------------------------
@@ -14,8 +14,8 @@
 #  echo lockTest > $llf
 #  touch $wlf
 
-llf=$T91/linuxlock    # my creation  -  rm $llf
-wlf=$T91/parent.lock  # auto-created by  Thunderbird  on  Win10  -  rm $wlf
+llf=$T91/linuxlock    # my creation
+wlf=$T91/parent.lock  # auto-created by  Thunderbird  on  Win10
 # l 2>/dev/null $llf $wlf
 
 if [ -s $llf ]; then
@@ -26,7 +26,12 @@ fi
 
 l="$ll $wl"
 if [ -z $l ]; then
-    echo $host > $llf; thunderbird
+    echo $host > $llf
+    if test $(find $T91 -name "* conflicted copy*" | wc -c) -eq 0; then
+        thunderbird
+    else
+        notify-send -i /usr/share/icons/hicolor/16x16/apps/thunderbird.png -u critical 'Dropbox conflicts in $T91.'
+    fi
 else
     notify-send -i /usr/share/icons/hicolor/16x16/apps/thunderbird.png -u critical "? $l > Thunderbird > T91-default-release"
 fi

@@ -18,6 +18,7 @@ T91=$Storage/Dropbox/JH/T91-default-release
 
 # remove this machine's lockfile if Thunderbird isn't running
 llf=$T91/linuxlock  # lockfile created by  $ARCHBUILDS/jo/TS/ts.sh
+    # rm $T91/linuxlock
 if ! pgrep thunderbird; then [ $(cat $llf) = $host ] && rm $llf; fi
 
 # remove linux Thunderbird's default lockfile

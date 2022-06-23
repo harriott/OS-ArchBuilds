@@ -17,4 +17,5 @@ export startxDelay=2
 # machine-specific, for  $ARCHBUILDS/jo/export-storage
 export myDrA=1  # my Dropbox is active
 export Storage=/mnt/SDEP128G  # where I keep stuff
+    export Enc=$Storage/Encrypted
 

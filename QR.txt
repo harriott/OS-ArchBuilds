@@ -134,6 +134,7 @@ rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
 rg -ttex '\$Sig'
 rg -ttex '\\includepdf'
+rg -ttex '\\includegraphics'
 rg -ttex '\\multirow\{'
 rg -ttex '\\subsubsection\{'
 rg -ttex '{tabular}'
@@ -375,9 +376,10 @@ xdg-open https://archlinux.org
 dropbox &  # as in  $Openbox/openbox/autostart/autostart
 killall dropbox
 lsof -c dropbox
+pkill dropbox; dropbox &
 
 ### conflicted copies
-find -name "* conflicted copy *" -exec rm -f {} \;
+find -name "* conflicted copy*" -exec rm -f {} \;
 find -name "*(Copie en conflit de *"
 
 ## email

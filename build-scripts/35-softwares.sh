@@ -297,11 +297,11 @@ trap read debug  # puts a read request after each executable line
 # #=> nodejs-mapscii 1 remove
 # sudo pacman -Rs nodejs-mapscii
 
-# #=> nordvpn-bin 0 (re)install
-# gAUR nordvpn-bin
-# nvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
-# makepkg -sic
-# true
+#=> nordvpn-bin 0 (re)install
+gAUR nordvpn-bin
+nvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
+makepkg -sic
+true
 
 # #=> nordvpn-bin 1 configure
 # sudo usermod -aG nordvpn jo  # need to re-login
@@ -361,18 +361,18 @@ trap read debug  # puts a read request after each executable line
 # #=> Perl modules for JSON
 # sudo pacman -S perl-json perl-json-parse perl-json-xs
 
-# #=> perl-clone-pp
-# # for  perl-data-printer
-# gAUR perl-clone-pp
-# nvim -c "silent! /NEILB" PKGBUILD
-# makepkg -sic
-# true
+#=> perl-clone-pp
+# for  perl-data-printer
+gAUR perl-clone-pp
+nvim -c "silent! /NEILB" PKGBUILD
+makepkg -sic
+true
 
-# #=> perl-data-printer
-# gAUR perl-data-printer
-# nvim -c "silent! /GARU" PKGBUILD
-# makepkg -sic
-# true
+#=> perl-data-printer
+gAUR perl-data-printer
+nvim -c "silent! /GARU" PKGBUILD
+makepkg -sic
+true
 
 # #=> perl-image-exiftool
 # sudo pacman -S perl-image-exiftool

@@ -1106,6 +1106,16 @@ handlr get .log  reports  no handlers found for 'text/x-log'
   handlr set .log gvim.desktop
 ## xdg-open .sh
 handlr get .sh  reports  vim.desktop  so  handlr set .sh gvim.desktop
+## Updates
+  (2/2) Warn about old perl modules
+  WARNING: '/usr/lib/perl5/5.34' contains data from at least 2 packages which will NOT be used by the installed perl interpreter.
+   -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.34'
+pacman -Qqo '/usr/lib/perl5/5.34'
+  perl-clone-pp
+  perl-data-printer
+so re-installed them
+## xdg-open .tex
+handlr get .tex  reports  vim.desktop  so  handlr set .tex gvim.desktop
 ## waiting
 CUPS Socket activation
 disable Shift+PrtSc

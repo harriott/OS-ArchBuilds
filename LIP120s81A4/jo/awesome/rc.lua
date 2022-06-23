@@ -217,8 +217,9 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "s", function () awful.spawn("slock") end,
         {description = "slock", group = "launcher"}),
 
-    -- Thunderbird
-    awful.key({ modkey, "Shift" }, "t", function () awful.spawn("thunderbird") end,
+    -- Thunderbird Safely
+    awful.key({ modkey, "Shift" }, "t",
+        function () awful.spawn.with_shell("~/.config/awesome/Thunderbird-notify-send.sh") end,
         {description = "Thunderbird on tag 3", group = "launcher"}),
 
     -- KeePassXC
@@ -232,8 +233,7 @@ globalkeys = gears.table.join(
         -- Firefox
         -- awful.key({ modkey, "Shift" }, "Return", function () awful.spawn("firefox") end,
         awful.key({ modkey, "Shift" }, "Return",
-            function ()
-                awful.spawn.with_shell("~/.config/awesome/Firefox-notify-send.sh") end,
+            function () awful.spawn.with_shell("~/.config/awesome/Firefox-notify-send.sh") end,
             {description = "Firefox on tag 2", group = "launcher"}),
 
         -- gVim floating, thus respecting it's preferred size
@@ -462,21 +462,13 @@ local function set_wallpaper(s) gears.wallpaper.set("#000000") end -- black...
 mytextclock = wibox.widget.textclock()
 
 -- ---> 0 calendar
-local cw = calendar_widget({ placement = 'bottom_right' })
+local cw = calendar_widget({
+    placement = 'bottom_right',
+    previous_month_button = 1,
+    next_month_button = 3,
+})
 mytextclock:connect_signal("button::press",
     function(_, _, _, button) if button == 1 then cw.toggle() end
-    end)
-
-local cal = wibox.widget {
-    date         = os.date('*t'),
-    font         = 'Monospace 8',
-    spacing      = 2,
-    week_numbers = false,
-    start_sunday = false,
-    widget       = wibox.widget.calendar.year
-}
-mytextclock:connect_signal("button::press",
-    function(_, _, _, button) if button == 3 then cal.toggle() end
     end)
 
 -- ---> 0 taglist buttons

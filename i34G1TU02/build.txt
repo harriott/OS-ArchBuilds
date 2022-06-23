@@ -129,7 +129,7 @@ temporarily removed DVD writer and switched BX200 to that SATA - booted as norma
 ## Updates
 NetworkManager WiFi was stuck in a VPN mode and couldn't see any wireless networks
   workaround was to tether Sony Xperia XA2
-### abandon Python2
+### abandon Python 2
 sudo pacman -Rs $(pacman -Qq | grep python2)
 ## waiting
 tk

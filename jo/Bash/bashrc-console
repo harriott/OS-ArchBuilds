@@ -70,8 +70,11 @@ alias fe='fdtsEncryptedChanges'
 Encrypted=($Enc Digital0 Digital1 Secure0 Secure1 SHG Stack)
 fdtsEncryptedChanges () {
   if [ "$PWD" != ${Encrypted[0]} ]; then
-    cd ${Encrypted[0]}
-    pwd
+    if [ -d "${Encrypted[0]}" ]; then
+      cd ${Encrypted[0]}; pwd
+    else
+      echo "${Encrypted[0]} ain't there"; return
+    fi
   fi
   for i in ${!Encrypted[@]}; do
     if [ $i -gt 0 ]; then
