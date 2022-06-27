@@ -5,7 +5,7 @@
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # !!!!!  this no longer works   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # https://superuser.com/q/1723180/242800
-#  (my $IT1/UnixLike/linux/email/oauth2tool_sh/msmtp-OAuth2-Gmail-mutt.md)
+#  (= my  $IT1/UnixLike/linux/email/oauth2tool_sh/msmtp-OAuth2-Gmail-mutt.md)
 # !!!!!  this no longer works   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

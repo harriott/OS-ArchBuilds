@@ -15,6 +15,6 @@ export startxDelay=5
 
 #=> for  $ARCHBUILDS/Bash/export-storage
 export myDrA=1  # my Dropbox is active
-export Storage=/mnt/WD30EZRZ  # where I keep stuff
+export Storage=/mnt/SDU3D1TB  # where I keep stuff
 export Enc=/mnt/SD480GSSDPlus/Encrypted
 

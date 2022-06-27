@@ -131,6 +131,14 @@ NetworkManager WiFi was stuck in a VPN mode and couldn't see any wireless networ
   workaround was to tether Sony Xperia XA2
 ### abandon Python 2
 sudo pacman -Rs $(pacman -Qq | grep python2)
+## Updates
+  ... Warn about old perl modules
+  WARNING: '/usr/lib/perl5/5.34' contains data from at least 2 packages which will NOT be used by the installed perl interpreter.
+   -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.34'
+pacman -Qqo '/usr/lib/perl5/5.34'
+  perl-clone-pp
+  perl-data-printer
+so re-installed them
 ## waiting
 tk
 # fcron

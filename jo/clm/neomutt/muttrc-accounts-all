@@ -1,20 +1,24 @@
 
 # muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
 
+# ------------------------------------------------------------------
 # my configuration settings that are common across my email accounts
+# ------------------------------------------------------------------
 
 # Sourced by:
-#  $email/muttrc-account_cz
-#  $email/muttrc-account_ftml
-#  $email/muttrc-account_gmx
-#  $email/muttrc-account_live
-#  $email/muttrc-account_parl
-#  $email/muttrc-account_tj
-#  $email/muttrc-account_troh
+#  $clm/neomutt/muttrc-accounts/cz
+#  $clm/neomutt/muttrc-accounts/ftml
+#  $clm/neomutt/muttrc-accounts/gmx
+#  $clm/neomutt/muttrc-accounts/live
+#  $clm/neomutt/muttrc-accounts/parl
+#  $clm/neomutt/muttrc-accounts/tj
+#  $clm/neomutt/muttrc-accounts/troh
+#  $clm/neomutt/muttrc-accounts/zou
+# - which are called through aliases in my  ~/.bashrc  (specifically  $Bash/bashrc-clm)
 
 set reflow_wrap=0
 # (default is 78) doesn't dynamically adapt to terminal size changes
-source $email/muttrc-general
+source $clm/muttrc-general
 
 set realname = "Joseph Harriott"
 set mbox_type = Maildir

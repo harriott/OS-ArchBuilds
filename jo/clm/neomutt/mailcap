@@ -3,7 +3,7 @@
 #  https://gitlab.com/LukeSmithxyz/mutt-wizard/-/blob/master/share/mailcap
 #  (/usr/share/mutt-wizard/mailcap  when installed)
 
-# required by  $email/muttrc-general
+# required by  $clm/muttrc-general
 
 text/plain; $EDITOR %s ;
 text/html; openfile %s ; nametemplate=%s.html

@@ -28,9 +28,9 @@ ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
 # sudo rm -r ~/.vim; ln -s /mnt/SD480GSSDPlus/Play0/vimfiles ~/.vim  # for testing
 
 # #=> email config
-# cp -f $GNULE/mbsyncrc-backup ~/.mbsyncrc
-# cp -f $GNULE/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
-# cp -f $GNULE/notmuch-config-backup ~/.notmuch-config
+# cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
+# cp -f $lclm/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
+# cp -f $lclm/notmuch-config-backup ~/.notmuch-config
 
 #=> LaTeX
 rm -r ~/texmf/tex/latex/jo; ln -s $CP/LaTeX/jo ~/texmf/tex/latex/jo

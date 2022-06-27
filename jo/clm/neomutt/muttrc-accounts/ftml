@@ -1,13 +1,6 @@
 # muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
 
-# my preferred configuration file for accessing  Fastmail
-# I prefer to call this through an alias in my  ~/.bashrc
-
-# this is developed to my preferences from  accounts/2-fm.muttrc  which was created by  Mutt Wizard
-#  mbsync fm   using ~/.mbsyncrc
-#  msmtp  uses settings in  ~/.config/msmtp/config
-
-set from = $fm  # defined in my  $GNULE/mymuttrcAddresses
+set from = $fm  # = my Fastmail email, defined in my  $LE/mymuttrcAddresses
 set sendmail = "msmtp -a fm"
 set folder = "$maild/fm"
 set header_cache = /home/jo/.cache/mutt/fm/headers
@@ -17,7 +10,7 @@ set spoolfile = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+Trash"
 
-set alias_file = "$GNULE/aliases-fm"
+set alias_file = "$LE/aliases-fm"
 source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh

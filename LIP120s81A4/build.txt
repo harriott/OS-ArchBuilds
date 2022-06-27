@@ -306,7 +306,7 @@ $ARCHBUILDS/build-scripts/24-as_root-rsnapshot_automated.sh
 ## abandon Python 2
 sudo pacman -Rs $(pacman -Qq | grep python2)
 ## Updates
-  (2/2) Warn about old perl modules
+  ... Warn about old perl modules
   WARNING: '/usr/lib/perl5/5.34' contains data from at least 2 packages which will NOT be used by the installed perl interpreter.
    -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.34'
 pacman -Qqo '/usr/lib/perl5/5.34'
@@ -316,6 +316,14 @@ so re-installed them
 ## xdg-open .log
 handlr get .log  reports  no handlers found for 'text/x-log'
   handlr set .log gvim.desktop
+## xdg-open .rst
+handlr get .rst  reports  no handlers found for 'text/x-rst'
+  handlr set .rst gvim.desktop
+## xdg-open .py
+handlr get .py  reports  no handlers found for 'text/x-python3'
+  handlr set .py gvim.desktop
+## xdg-open .pl
+handlr get .pl  reports  bluefish.desktop  so  handlr set .pl gvim.desktop
 ## waiting
 cp $MACHINE/etc/rsnapshot.conf
 # fcron

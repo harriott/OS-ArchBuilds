@@ -29,7 +29,7 @@ tmux new-window
 tmux select-window -t 1:0
 
 #==> 1 open two panes on my new music directory
-cdm () { tmux send-keys -t 1:$1 'cd /mnt/WD30EZRZ/Dropbox/CAM-toSort0' Enter; }
+cdm () { tmux send-keys -t 1:$1 'cd /mnt/SDU3D1TB/Dropbox/CAM-toSort0' Enter; }
 cdm 0; tmux split-window -t 1:0; cdm 0.1
 
 #==> 2 launch nnn & cmus

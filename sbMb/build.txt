@@ -1116,6 +1116,60 @@ pacman -Qqo '/usr/lib/perl5/5.34'
 so re-installed them
 ## xdg-open .tex
 handlr get .tex  reports  vim.desktop  so  handlr set .tex gvim.desktop
+## jo's pw failing
+fixed by a reboot
+## move Dropbox to SDU3D1TB
+quit Dropbox, renamed  ~/.dropbox
+  dropbox &  got me  Firefox > Joseph Harriott, Would you like to connect the computer sbMb to your Dropbox account (jharr@ftml.net)? If you didn’t request this, please click 'Cancel'. > Connect
+    which got me  /home/jo/Dropbox
+paused Syncing
+Dropbox > Preferences > Sync > Move > /mnt/SDU3D1TB/Dropbox
+  ~/.dropbox/info.json  shows  SDU3D1TB
+renamed away newly created /mnt/WD30EZRZ/Dropbox  to bring that back to my ready populated directory
+resumed sync'ing - took ages to Index
+### fix root symlinks
+[/mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/build-scripts]$ su > root pw
+find /root -type l -ls | xcol SDU3D1TB WD30EZRZ
+bash 05-root_symlinks.sh
+### fix symlinks
+find ~ -type l -ls | xcol SDU3D1TB WD30EZRZ
+bash 17-symlinks.sh
+bash 31-symlinks-Openbox.sh
+reboot to get $MACHINE  for  bash 36-symlinks-sshd.sh
+rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
+rm -r ~/texmf/tex/latex/jo; ln -s $CP/LaTeX/jo ~/texmf/tex/latex/jo
+ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
+ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
+ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
+ln -sf $ARCHBUILDS/jo/TS/locks.sh ~/Arch/locks.sh
+ln -sf $CP/SSHconfig/sbMb ~/.ssh/config
+ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $tmx/tmux.conf ~/.tmux.conf
+sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
+mt  to update  headings.sty
+### fix font symlinks
+[/mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/build-scripts]$ su > root pw
+bash 37-as_root-symlink_fonts.sh
+### fix my OBS grabs
+symlinks as in  $ITstack/unix_like-linux/OBSmkv/shrink.sh
+### fix tmux'ing into CAM-toSort0
+$MACHINE/jo/autostart.sh
+## remove WD30EZRZ from mlocate path
+sudo cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
+doas updatedb
+## fix Thunderbird for SDU3D1TB
+bash 38-LibreOffice+Thunderbird.sh
+replaced WD30EZRZ  in  ~/.thunderbird/profiles.ini
+## omc fail
+  (moved to /mnt/ST4000VN008/OBSmkvGrabs to run OBSmkvShrink.sh)
+  7420s since last run here
+  getting OBSmkvGrabs
+  ../Vs-story-US/bad guys/MT 2 Desperado (Rodriguez 1995) 1.mkv -> 1347145655
+  (index 077 done of 89 segments)
+  shrink.sh: line 109:  5707 Segmentation fault      (core dumped) FFREPORT=file=078done-mkv.log:level=24 nice -n 19 ffmpeg -hide_banner -loglevel quiet -stats -nostdin -i 078Seg.mkv -itsoffset 0.1 -i 078Seg.mkv -c:a copy -tune film -map 0:a -map 1:v -y 078done.mkv
+conversion failed
+worked again normally after a reboot
 ## waiting
 CUPS Socket activation
 disable Shift+PrtSc
@@ -1159,9 +1213,9 @@ NETGEAR WG111v2
 Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard
 ## disks
-SATA0: SD480GSSDPlus resting at bottom of 3½" bays, under the tidied cables
-SATA2: WD30EZRZ in top 5¼" bay
-SATA3 cable protruding out of back of case
+SATA0: SD480GSSDPlus resting almost at bottom of 3½" bays, under the tidied cables
+SATA2: protruding out of a back slot, with a spare power cable
+SATA3: SDU3D1TB resting at bottom of 3½" bays, under the tidied cables
 SATA4: ST4000VN008 in 3rd 5¼" bay from top, held up by spacer pulled from AVT661 (fixed to rhs)
 SATA5: WD1001FALS in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
 ### optical

@@ -21,7 +21,7 @@ echo -e "\e[92m$maild.7z\e[0m"
 echo -e "\e[1mcp-ing:\e[0m"
 mkdir $bfolder
 nodes=(
-  "/home/jo/.cache/mutt-wizard" \
+  "/home/jo/.cache/mutt" \
     # - created by Mutt Wizard, can eventually be deleted
   "/home/jo/.config/msmtp/config" \
   "/home/jo/.config/mutt" \
@@ -37,3 +37,4 @@ for node in "${nodes[@]}"; do
   echo -e "\e[92m$bfolder/$backupnode\e[0m"
   cp -r $node "$bfolder/$backupnode" # (can't stat "~/...")
 done
+

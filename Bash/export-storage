@@ -22,7 +22,7 @@ export DROPBOX=$Storage/Dropbox
     export ITstack=$core/IT_stack
       export CP=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
       export ulL=$ITstack/unix_like-linux  # was $ulGL
-        export LE=$ulL/email  # :s/GNULE/LE/g
+        export lclm=$ulL/clm  # :s/GNULE\|LE/lclm/g
       export onGH=$ITstack/onGitHub
         export vimfiles=$onGH/vimfiles
     export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
@@ -36,8 +36,8 @@ if [[ $myDrA ]]; then export ARCHBUILDS=$onGH/ArchBuilds; fi  # my Dropbox is ac
     export host=$(uname -n)
     # - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
       export MACHINE=$ARCHBUILDS/$host
-  export email=$ARCHBUILDS/jo/mail  # used in  bashrc-email  and  muttrc-*
-  export tmx=$ARCHBUILDS/jo/tmux  # used in tmux.conf
+  export clm=$ARCHBUILDS/jo/clm  # used in  bashrc-clm  and  muttrc-*  :s/email/clm/g
+  export tmx=$ARCHBUILDS/jo/tmux  # used in  tmux.conf
 
 export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
 

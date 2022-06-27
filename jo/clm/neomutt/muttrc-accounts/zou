@@ -1,12 +1,12 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
 # my preferred configuration file for accessing this Gmail account
-# I prefer to call this through an alias in my  ~/.bashrc
+# I prefer to call this through an alias in my  ~/.bashrc  ($Bash/bashrc-clm)
 
 #  mbsync cz   using ~/.mbsyncrc
 #  msmtp  uses settings in  ~/.config/msmtp/config
 
-set from = $cz  # defined in my  $GNULE/emailAddresses
+set from = $cz  # defined in my  $lclm/emailAddresses
 set sendmail = "msmtp -a cz"
 set folder = "$maild/cz"
 set header_cache = /home/jo/.cache/mutt/cz/headers
@@ -16,7 +16,7 @@ set spoolfile = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+[Gmail].Bin"
 
-set alias_file = "$GNULE/aliases-cz"
+set alias_file = "$lclm/aliases-zou"
 source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh

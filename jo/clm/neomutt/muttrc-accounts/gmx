@@ -7,7 +7,7 @@
 #  mbsync gmx   using ~/.mbsyncrc
 #  msmtp  uses settings in  ~/.config/msmtp/config
 
-set from = $gmx
+set from = $gmx  # = my GMX email, defined in my  $lclm/mymuttrcAddresses
 set sendmail = "msmtp -a gmx"
 set folder = "$maild/gmx"
 set header_cache = /home/jo/.cache/mutt/gmx/headers
@@ -17,7 +17,7 @@ set spoolfile = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+Trash"
 
-set alias_file = "$GNULE/aliases-gmx"
+set alias_file = "$lclm/aliases-gmx"
 source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh
