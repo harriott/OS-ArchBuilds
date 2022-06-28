@@ -10,7 +10,7 @@ set spoolfile = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+Trash"
 
-set alias_file = "$LE/aliases-fm"
+set alias_file = "$lclm/muttAliases/fm"
 source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh

@@ -1,12 +1,5 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
-# my preferred configuration file for accessing  Fastmail
-# I prefer to call this through an alias in my  ~/.bashrc
-
-# this is developed to my preferences from my muttrc-fm
-#  mbsync live   using ~/.mbsyncrc
-#  msmtp  uses settings in  ~/.config/msmtp/config
-
 set from = $live
 set sendmail = "msmtp -a live"
 set folder = "$maild/live"
@@ -17,7 +10,7 @@ set spoolfile = "+INBOX"
 set record = "+Sent"
 set trash = "+Deleted"
 
-set alias_file = "$GNULE/aliases-live"
+set alias_file = "$lclm/muttAliases/live"
 source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh

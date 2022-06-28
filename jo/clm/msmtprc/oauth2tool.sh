@@ -58,7 +58,7 @@
 
 handle=$1  # for use in parameter expansions
 
-#  my  bashrc  sources my bash script  $GNULE/emailAddresses  which contains lines like this
+#  my  bashrc  sources my bash script  $lclm/muttrc-emails  which contains lines like this
 #   export <handle>='<username>@gmail.com'
 #   such that  ${!1}  equates to my full Gmail address
 

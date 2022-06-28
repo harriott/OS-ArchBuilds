@@ -3,7 +3,7 @@
 # template, for the curious
 # -------------------------
 
-# my working  ~/.notmuch-config  is backed up offline at  $GNULE/notmuch-config-backup
+# my working  ~/.notmuch-config  is backed up offline at  $lclm/notmuch-config-backup
 
 # Database configuration
 [database]

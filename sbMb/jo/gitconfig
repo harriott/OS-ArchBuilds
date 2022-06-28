@@ -1,11 +1,11 @@
 # vim: ft=gitconfig
 
-# This file should be symlinked to  ~/.gitconfig
+# e -la ~/.gitconfig  ($ARCHBUILDS/build-scripts/17-symlinks.sh)
 
 # This is Git's per-user configuration file, as for Arch.
 # Its contents are referred to as needed by Git, making changes saved here instantaneous.
 
 [include]
-	path = /mnt/WD30EZRZ/Dropbox/JH/core/IT_stack/CrossPlatform/git/config-user
-	path = /mnt/WD30EZRZ/Dropbox/JH/core/IT_stack/onGitHub/misc/CrossPlatform/gitconfig
+	path = /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/CrossPlatform/git/config-user
+	path = /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/misc/CrossPlatform/gitconfig
 

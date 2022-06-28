@@ -1,6 +1,6 @@
 # vim: ft=gitconfig
 
-# symlinked in my  $ARCHBUILDS/build-scripts/17-symlinks.sh  to  ~/.gitconfig
+# e -la ~/.gitconfig  ($ARCHBUILDS/build-scripts/17-symlinks.sh)
 
 # This is Git's per-user configuration file, as for Arch.
 # Its contents are referred to as needed by Git, making changes saved here instantaneous.

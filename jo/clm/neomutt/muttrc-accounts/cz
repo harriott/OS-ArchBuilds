@@ -1,6 +1,6 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
-set from = $cz  # = one of my Gmail accounts, defined in my  $LE/emailAddresses
+set from = $cz  # = one of my Gmail accounts, defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a cz"
 set folder = "$maild/cz"
 set header_cache = /home/jo/.cache/mutt/cz/headers
@@ -10,7 +10,7 @@ set spoolfile = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+[Gmail].Bin"
 
-set alias_file = "$LE/aliases-cz"
+set alias_file = "$lclm/muttAliases/cz"
 source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh

@@ -1,8 +1,7 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
-# see  $email/README.md > configuration
-
-set from = $troh  # $LE/emailAddresses
+set from = $troh  # = one of my Gmail accounts, defined in my  $lclm/muttrc-emails
+$lclm/muttrc-emails
 set sendmail = "msmtp -a troh"
 set folder = "$maild/troh"
 set header_cache = /home/jo/.cache/mutt/troh/headers
@@ -12,7 +11,7 @@ set spoolfile = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+[Google\ Mail].Bin"
 
-set alias_file = "$LE/aliases-troh"
+set alias_file = "$lclm/muttAliases/troh"
 source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh

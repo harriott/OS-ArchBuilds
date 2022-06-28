@@ -1,33 +1,27 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
-# my preferred configuration file for accessing this Gmail account
-# I prefer to call this through an alias in my  ~/.bashrc  ($Bash/bashrc-clm)
-
-#  mbsync cz   using ~/.mbsyncrc
-#  msmtp  uses settings in  ~/.config/msmtp/config
-
-set from = $cz  # defined in my  $lclm/emailAddresses
-set sendmail = "msmtp -a cz"
-set folder = "$maild/cz"
-set header_cache = /home/jo/.cache/mutt/cz/headers
-set message_cachedir = /home/jo/.cache/mutt/cz/bodies
+set from = $zou  # = my Zourit email, defined in my  $lclm/muttrc-emails
+set sendmail = "msmtp -a zou"
+set folder = "$maild/zou"
+set header_cache = /home/jo/.cache/mutt/zou/headers
+set message_cachedir = /home/jo/.cache/mutt/zou/bodies
 
 set spoolfile = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+[Gmail].Bin"
 
-set alias_file = "$lclm/aliases-zou"
+set alias_file = "$lclm/muttAliases/zou"
 source $alias_file
 
 # if you make changes here, you probably need to clear your folders, and start afresh
-# rm -r ~/.cache/mutt/cz/* ~/.local/share/mail/cz/*
+# rm -r ~/.cache/mutt/zou/* ~/.local/share/mail/zou/*
 # and fix  ~/.mbsyncrc  to correspond
 mailboxes "=Archives" "=[Gmail].All\ Mail" "=[Gmail].Bin" "=[Gmail].Drafts" "=[Gmail].Sent\ Mail" "=[Gmail].Spam" "=INBOX" "=Waiting"
 #  - any errors here will trigger others
-virtual-mailboxes "All" "notmuch://?query=tag:cz"
+virtual-mailboxes "All" "notmuch://?query=tag:zou"
 
-# tweak the default status line to show  "->cz":
-set status_format=" -%r-NeoMutt->cz: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
+# tweak the default status line to show  "->zou":
+set status_format=" -%r-NeoMutt->zou: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
 
 source $email/muttrc-all_accounts
 set realname = "Joseph - Cafézoïde"
