@@ -31,6 +31,9 @@ trap read debug  # puts a read request after each executable line
 # # fd
 # pacman -S fd
 
+# # FuseISO
+# pacman -S fuseiso
+
 # # fzf
 # pacman -S fzf
 
@@ -206,6 +209,9 @@ pacman -S strace
 
 # for thesaurus_query.vim
 pacman -S python-beautifulsoup4
+
+# web-ish
+pacman -S arch-wiki-docs lynx w3m
 
 # #=> 2 swappiness to 10
 # # check that the default is 60

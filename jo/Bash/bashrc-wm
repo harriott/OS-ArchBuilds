@@ -50,7 +50,7 @@ dcc0 () {
 }  # lists them
 dcc1 () {
   if [ -s "$DropboxConflictedLog" ]; then
-    export DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
+    DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
     mkdir $DropboxConflictedRemoved
     while IFS= read -r file; do
       removedRelativePath=${file/$DROPBOX\//}

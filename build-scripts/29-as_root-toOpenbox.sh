@@ -74,9 +74,6 @@ systemctl enable bluetooth.service --now
 # iptraf-ng
 pacman -S iptraf-ng
 
-# lynx
-pacman -S lynx
-
 # mailcap
 pacman -S mailcap
 

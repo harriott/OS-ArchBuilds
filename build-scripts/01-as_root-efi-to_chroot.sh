@@ -16,7 +16,7 @@ loadkeys uk
 EFI=mmcblk0p1
 root=mmcblk0p3
 swap=mmcblk0p2
-home=mmcblk1p1
+# home=mmcblk1p1
 
 #=> 1 format needed partitions
 # EFI
@@ -32,7 +32,7 @@ swapon /dev/$swap
 swapon -s  # should show /dev/$swap has Priority -2
 
 # /home
-mkfs.ext4 /dev/$home
+# mkfs.ext4 /dev/$home
 
 #=> 2 mount /
 mount /dev/$root /mnt
@@ -42,14 +42,14 @@ mount /dev/$root /mnt
 [ -d /mnt/efi ] || mkdir /mnt/efi
 
 # /home
-[ -d /mnt/home ] || mkdir /mnt/home
+# [ -d /mnt/home ] || mkdir /mnt/home
 
 #=> 4 mount needed partitions
 # EFI
 mount /dev/$EFI /mnt/efi
 
 # /home
-mount /dev/$home /mnt/home
+# mount /dev/$home /mnt/home
 
 # #=> 5 format extra partition
 # mkfs.ext4 /dev/sda5

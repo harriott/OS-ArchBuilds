@@ -7,8 +7,8 @@ set header_cache = /home/jo/.cache/mutt/zou/headers
 set message_cachedir = /home/jo/.cache/mutt/zou/bodies
 
 set spoolfile = "+INBOX"
-set record = "+Sent\ Items"
-set trash = "+[Gmail].Bin"
+set record = "+Sent"
+set trash = "Trash"
 
 set alias_file = "$lclm/muttAliases/zou"
 source $alias_file
@@ -16,31 +16,31 @@ source $alias_file
 # if you make changes here, you probably need to clear your folders, and start afresh
 # rm -r ~/.cache/mutt/zou/* ~/.local/share/mail/zou/*
 # and fix  ~/.mbsyncrc  to correspond
-mailboxes "=Archives" "=[Gmail].All\ Mail" "=[Gmail].Bin" "=[Gmail].Drafts" "=[Gmail].Sent\ Mail" "=[Gmail].Spam" "=INBOX" "=Waiting"
+mailboxes "=Archives" "=Drafts" "=INBOX" "=Junk" "=Sent" "=Trash" "=Waiting"
 #  - any errors here will trigger others
 virtual-mailboxes "All" "notmuch://?query=tag:zou"
 
 # tweak the default status line to show  "->zou":
 set status_format=" -%r-NeoMutt->zou: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
 
-source $email/muttrc-all_accounts
+source $clm/neomutt/muttrc-accounts-all
 set realname = "Joseph - Cafézoïde"
 
 macro index,pager ga "<change-folder>=Archives<enter>" "go to Archives"
 macro index,pager Ga "<save-message>=Archives<enter>" "move mail to Archives"
 
-macro index,pager gb "<change-folder>=[Gmail].Bin<enter>" "go to Bin"
-macro index,pager Gb "<save-message>=[Gmail].Bin<enter>" "move mail to Bin"
-
-macro index,pager gr "<change-folder>=[Gmail].Drafts<enter>" "go to Drafts"
-macro index,pager Gr "<save-message>=[Gmail].Drafts<enter>" "move mail to Drafts"
-
-macro index,pager gs "<change-folder>=[Gmail].Sent\ Mail<enter>" "go to Sent Mail"
-macro index,pager Gs "<save-message>=[Gmail].Sent\ Mail<enter>" "move mail to Sent Mail"
-
-macro index,pager gj "<change-folder>=[Gmail].Spam<enter>" "go to Spam"
-macro index,pager Gj "<save-message>=[Gmail].Spam<enter>" "move mail to Spam"
+macro index,pager gb "<change-folder>=Trash<enter>" "go to Trash"
+macro index,pager Gb "<save-message>=Trash<enter>" "move mail to Trash"
 
 macro index,pager gi "<change-folder>=INBOX<enter>" "go to INBOX"
 macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to INBOX"
+
+macro index,pager gj "<change-folder>=Junk<enter>" "go to Junk"
+macro index,pager Gj "<save-message>=Junk<enter>" "move mail to Junk"
+
+macro index,pager gr "<change-folder>=Drafts<enter>" "go to Drafts"
+macro index,pager Gr "<save-message>=Drafts<enter>" "move mail to Drafts"
+
+macro index,pager gs "<change-folder>=Sent<enter>" "go to Sent"
+macro index,pager Gs "<save-message>=Sent<enter>" "move mail to Sent"
 

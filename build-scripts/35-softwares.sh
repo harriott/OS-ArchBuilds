@@ -346,11 +346,11 @@ trap read debug  # puts a read request after each executable line
 # #=> patched Cascadia Code font 0 remove
 # sudo pacman -Rs nerd-fonts-cascadia-code
 
-# #=> PDFsam
-# gAUR pdfsam
-# nvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic  # choose  jdk-openjdk
-# true
+#=> PDFsam
+gAUR pdfsam
+nvim -c "silent! /torakiki" PKGBUILD
+makepkg -sic  # choose  jdk-openjdk
+true
 
 # #=> pdftk
 # sudo pacman -S pdftk

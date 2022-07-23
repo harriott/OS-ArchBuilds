@@ -139,12 +139,25 @@ pacman -Qqo '/usr/lib/perl5/5.34'
   perl-clone-pp
   perl-data-printer
 so re-installed them
+## /var/log/rsnapshot gets refreshed
+thus losing old records...
+## Updates
+==> Verifying source file signatures with gpg...
+    mimeo-2022.7.tar.xz ... FAILED (unknown public key 12C6F735F7A9A519)
+==> ERROR: One or more PGP signatures could not be verified!
+gpg --delete-key 8F173680
+gpg --recv-keys 12C6F735F7A9A519
+  gpg: key 12C6F735F7A9A519: public key "Xyne. (Replaces EC3CBE7F607D11E663149E811D1F0DC78F173680.) <xyne@archlinux.org>" imported
+  gpg: Total number processed: 1
+  gpg:               imported: 1
 ## waiting
-tk
+FuseISO
 # fcron
 fcrontab -l
+  @ 1 bash ~/Arch/locks.sh
   @ 10 bash ~/Arch/bash_history.sh
   @ 20 jump clean
+  @ 1 d bash ~/Arch/log_rsnapshot.sh
 ## temperatures
 ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
@@ -172,6 +185,7 @@ Logitech M187 Wireless Mini Mouse
 Perixx PERIBOARD-407W keyboard
 ## drives
 HL Data Storage GH70N DVD rewriter
+WD1600AAJS  in USB as target for  rsnapshot
 ### disks
 BX200  in  LogiLink 2.5" HDD Mounting Bracket  in space under DVD drive
 WD1600AAJS  in a USB slot as  snapshot_root

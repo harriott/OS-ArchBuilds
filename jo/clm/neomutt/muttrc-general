@@ -3,11 +3,11 @@
 
 # based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
 # general settings for neomutt
-# sourced by  $email/muttrc-all_accounts
+# sourced by  $clm/neomutt/muttrc-accounts-all
 
 set editor = 'nvim'
-set mailcap_path = $email/mailcap
-source $email/muttrc-layout
+set mailcap_path = $clm/mailcap
+source $clm/neomutt/muttrc-layout
 
 #=> general rebindings
 bind attach <return> view-mailcap

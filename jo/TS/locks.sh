@@ -12,7 +12,7 @@ case $host in
 # case $(uname -n) in
     i34G1TU02) Storage=/mnt/BX200 ;;
     LIP120s81A4) Storage=/mnt/SDEP128G ;;
-    sbMb) Storage=/mnt/SD480GSSDPlus ;;
+    sbMb) Storage=/mnt/SDU3D1TB ;;
 esac
 T91=$Storage/Dropbox/JH/T91-default-release
 

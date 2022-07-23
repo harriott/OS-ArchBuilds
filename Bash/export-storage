@@ -1,5 +1,5 @@
 #!/bin/sh
-# vim: ft=sh sw=2:
+# vim: fdl=2 ft=sh sw=2:
 
 # here I export variables that could also be useful as root
 
@@ -7,6 +7,7 @@
 #  avoid names that only differ by case
 #  use names that grep unambiguously
 
+# for initial build of Arch:  when  $myDrA  is undefined
 # for jo:
 #  symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
 #  sourced by  $Bash/bash_profile
@@ -14,30 +15,36 @@
 #  symlinked in  $ARCHBUILDS/build-scripts/05-root_symlinks.sh
 #  sourced by  $ARCHBUILDS/root/bash_profile
 
-# $Storage  is pre-defined in  $MACHINE/export-machine
+#=> 0 core
+# $myDrA  &  $Storage  are pre-defined in  $MACHINE/export-machine
+
+#==> 0 $DROPBOX
 export DROPBOX=$Storage/Dropbox
 # - keep  DROPBOX  capitalised for finding it without need for $
-  export core=$DROPBOX/JH/core
+  export detail=$DROPBOX/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage/detail
   export T91=$DROPBOX/JH/T91-default-release
-    export ITstack=$core/IT_stack
-      export CP=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
-      export ulL=$ITstack/unix_like-linux  # was $ulGL
-        export lclm=$ulL/clm  # :s/GNULE\|LE/lclm/g
-      export onGH=$ITstack/onGitHub
-        export vimfiles=$onGH/vimfiles
-    export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
 
-# $ARCHBUILDS  being set here requires that this file be accessible in  ~
-export ARCHBUILDS=$HOME/ArchBuilds  # provisional
-# $myDrA  is pre-defined in  $MACHINE/export-machine
-if [[ $myDrA ]]; then export ARCHBUILDS=$onGH/ArchBuilds; fi  # my Dropbox is active
-  export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
-  export Bash=$ARCHBUILDS/jo/Bash
-    export host=$(uname -n)
-    # - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
-      export MACHINE=$ARCHBUILDS/$host
-  export clm=$ARCHBUILDS/jo/clm  # used in  bashrc-clm  and  muttrc-*  :s/email/clm/g
-  export tmx=$ARCHBUILDS/jo/tmux  # used in  tmux.conf
+#==> 1 $core
+export core=/bs/core  # provisional
+if [[ $myDrA ]]; then export core=$DROPBOX/JH/core; fi
+  export ITstack=$core/IT_stack
+    export CP=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
+    export ulL=$ITstack/unix_like-linux  # was $ulGL
+      export lclm=$ulL/clm  # :s/GNULE\|LE/lclm/g
+    export onGH=$ITstack/onGitHub
+      export vimfiles=$onGH/vimfiles
+  export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
 
+#==> 2 $ARCHBUILDS
+export ARCHBUILDS=$onGH/ArchBuilds
+export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
+export Bash=$ARCHBUILDS/jo/Bash
+  export host=$(uname -n)
+  # - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
+    export MACHINE=$ARCHBUILDS/$host
+export clm=$ARCHBUILDS/jo/clm  # used in  bashrc-clm  and  muttrc-*  :s/email/clm/g
+export tmx=$ARCHBUILDS/jo/tmux  # used in  tmux.conf
+
+#=> 0 mail
 export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
 

@@ -30,8 +30,8 @@ halt -p
 booted straight into Knoppix v9.1 on KDTG311281
 Menu > Accessories > Disks  showed
   SD Card DF4032 31GB /dev/mmcblk0
-  /dev/mmcblk0boot0 4.2MB Unkown
-  /dev/mmcblk0boot1 4.2MB Unkown
+  /dev/mmcblk0boot0 4.2MB Unknown
+  /dev/mmcblk0boot1 4.2MB Unknown
 PCManFM can see but not enter into the mmcblk0bootx's
 #### proposal
 / on the 32GB eMMC except /home /usr on SDEP128G
@@ -325,6 +325,8 @@ handlr get .py  reports  no handlers found for 'text/x-python3'
 ## xdg-open .pl
 handlr get .pl  reports  bluefish.desktop  so  handlr set .pl gvim.desktop
 ## waiting
+pacman -S arch-wiki-docs w3m
+pqs lynx
 cp $MACHINE/etc/rsnapshot.conf
 # fcron
 fcrontab -l
@@ -343,7 +345,7 @@ F2 at boot for Phoenix SecureCore Technology Setup
 KDTG311281  for  rsnapshot
 lspci -k | grep 3165 -A 3
 screen is 1366x768
-SDEP128G in microSD slot, for Dropbox
+SDEP128G  in  microSD  slot, for  Dropbox
 # sudoers.pacnew
 sudo nvim -O /etc/sudoers /etc/sudoers.pacnew -c 'windo difft'  diff'd over changes then  :wq!
 sudo visudo -c -f /etc/sudoers

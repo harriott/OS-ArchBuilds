@@ -31,3 +31,6 @@ rsnapshot configtest
 # #=> 4 rsyncSystemRestore
 # cp $ARCHBUILDS/build-scripts/24-rsyncSystemRestore.sh $rsnapshot/rsyncSystemRestore.sh
 
+#=> 5 backup  /var/log/rsnapshot
+ln -sf $ARCHBUILDS/jo/log_rsnapshot.sh ~/Arch/log_rsnapshot.sh
+

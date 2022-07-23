@@ -1170,6 +1170,32 @@ replaced WD30EZRZ  in  ~/.thunderbird/profiles.ini
   shrink.sh: line 109:  5707 Segmentation fault      (core dumped) FFREPORT=file=078done-mkv.log:level=24 nice -n 19 ffmpeg -hide_banner -loglevel quiet -stats -nostdin -i 078Seg.mkv -itsoffset 0.1 -i 078Seg.mkv -c:a copy -tune film -map 0:a -map 1:v -y 078done.mkv
 conversion failed
 worked again normally after a reboot
+## xdg-open .pl
+handlr get .pl  reports  bluefish.desktop  so  handlr set .pl gvim.desktop
+## HP ENVY 5532 connected to OPPO A76
+hp-makeuri 192.168.61.10
+  CUPS URI: hp:/net/ENVY_5530_series?ip=192.168.61.10
+  SANE URI: hpaio:/net/ENVY_5530_series?ip=192.168.61.10
+updated $Imagey/Scan.sh
+## HP ENVY 5532 IP Address changed to 192.10
+changed 61 to 192 in  $Imagey/Scan.sh
+## Updates
+error: languagetool: signature from "Antonio Rojas <arojas@archlinux.org>" is invalid
+:: File /var/cache/pacman/pkg/languagetool-5.8-1-any.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+Do you want to delete it? [Y/n]
+fixed by a redo
+## HP ENVY 5532 IP Address changed to 198.10
+changed 192.10 to 198.10 in  $Imagey/Scan.sh
+### for printing
+hp-setup -r > selected 43.250 > Remove
+hp-setup 192.168.198.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 22.10
+changed 198.10 to 22.10 in  $Imagey/Scan.sh
+### for printing
+hp-setup -r > selected 198.10 > Remove
+hp-setup 192.168.22.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control > Set as Default
 ## waiting
 CUPS Socket activation
 disable Shift+PrtSc
@@ -1216,8 +1242,8 @@ Perixx PERIBOARD-407W keyboard
 SATA0: SD480GSSDPlus resting almost at bottom of 3½" bays, under the tidied cables
 SATA2: protruding out of a back slot, with a spare power cable
 SATA3: SDU3D1TB resting at bottom of 3½" bays, under the tidied cables
-SATA4: ST4000VN008 in 3rd 5¼" bay from top, held up by spacer pulled from AVT661 (fixed to rhs)
-SATA5: WD1001FALS in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
+SATA4: ST4000VN008 in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
+SATA5: WD1001FALS in 3rd 5¼" tray from top, tied into a metal frame
 ### optical
 SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
 #### whipper

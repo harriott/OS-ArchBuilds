@@ -67,28 +67,26 @@ gic () { git commit -m "$1"; }
 #===> quick-check
 alias fe='fdtsEncryptedChanges'
 
-Encrypted=($Enc Digital0 Digital1 Secure0 Secure1 SHG Stack)
+Encrypted=(Digital0 Digital1 Secure0 Secure1 SHG Stack)
 fdtsEncryptedChanges () {
-  if [ "$PWD" != ${Encrypted[0]} ]; then
-    if [ -d "${Encrypted[0]}" ]; then
-      cd ${Encrypted[0]}; pwd
+  if [ "$PWD" != $Enc ]; then
+    if [ -d "$Enc" ]; then
+      cd $Enc; pwd
     else
-      echo "${Encrypted[0]} ain't there"; return
+      echo "$Enc ain't there"; return
     fi
   fi
   for i in ${!Encrypted[@]}; do
-    if [ $i -gt 0 ]; then
-      ed=${Encrypted[$i]}
-      f7z="find . -iname \"$ed*.7z\" | sort | tail -1"
-      ed7z=$(eval "$f7z")
-      if [ $ed7z ]; then
-        tput setaf 5
-        eval "find . -iname \"$ed*.7z\" $printfDTsort"
-        tput setaf 7
-        eval "find -path \"./$ed*\" -newer $ed7z $printfDTsort"
-        # - fails to detect change of year
-        eval "find \"$core/encrypted\" -name \"$ed*\" -newer $ed7z"
-      fi
+    ed=${Encrypted[$i]}
+    f7z="find . -iname \"$ed*.7z\" | sort | tail -1"
+    ed7z=$(eval "$f7z")
+    if [ $ed7z ]; then
+      tput setaf 5
+      eval "find . -iname \"$ed*.7z\" $printfDTsort"
+      tput setaf 7
+      eval "find -path \"./$ed*\" -newer $ed7z $printfDTsort"
+      # - fails to detect change of year
+      eval "find \"$core/encrypted\" -name \"$ed*\" -newer $ed7z"
     fi
   done
 }
@@ -100,6 +98,7 @@ if [ $host = 'sbMb' ]; then
 
   alias rsM='bash $onGH/rsync-drives/sbMb/rsync-Music.sh'
   alias rsV='bash $onGH/rsync-drives/sbMb/rsync-Vs.sh'
+  alias rsVe='bash $onGH/rsync-drives/sbMb/rsync-Vs-extra.sh'
 
   fS () {
     find /mnt/WD30EZRZ/Sync2 -type f -name "*$1*"

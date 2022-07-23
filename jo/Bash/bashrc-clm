@@ -56,7 +56,7 @@ nmsh () {
     tac nms | sed '/Date: /{h;d;};/message{/G' | tac > nms.mail  # moves date to start of message
     rm nms
     sed -i '//d' nms.mail  # finally remove unneeded lines
-    perl $clm/nmsh-sort.pl nms.mail
+    perl $clm/notmuch/nmsh-sort.pl nms.mail
     [[ $DISPLAY ]] && gvc nms.mail # open it in gVim only if safe to do so
 } # shows the relevant emails
 

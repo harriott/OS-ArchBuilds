@@ -17,8 +17,8 @@ VISUAL= fcrontab -e  # then make your changes
 /var/spool/fcron
 
 #### check the crontabs therein
-cat jo.orig
-cat systab.orig  # contains bootrun tabs to catch
+systab.orig  # contains bootrun tabs to catch
+sudo cat /var/spool/fcron/jo.orig
 
 # file manage
 bat <file>
@@ -230,6 +230,7 @@ fontpreview -h
 uses fzf
 
 # fun
+cat $CP/EMOJI_CHEAT_SHEET.gfm
 tint  # tetris
 
 ## CMatrix
@@ -274,6 +275,8 @@ NCDU(1)
 
 ### non-optical
 df -h | xcol mnt media
+doas blkid -o list  # shows fs_type
+doas file -s /dev/sdxn | xcol bit FAT
 
 #### fsck
 FSCK(8)
@@ -282,6 +285,9 @@ sudo umount /dev/sdxn  for  sudo fsck -MV /dev/sdxn
 #### Trash
 gio trash --empty  # empties all .Trash-1000
 gio trash --list  # lists trash by locations
+
+##### snags
+rm -r .Trash-1000/info
 sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
 #### trash-cli
@@ -318,6 +324,7 @@ systemctl status rsnapshot-hourly.timer
 
 #### find my OBS grabs
 find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
+find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "Queen*.mkv" -exec rm -f {} \;
 find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "2022-*.mkv" -exec rm -f {} \;
 
 #### quickly lists all instances of directories
@@ -496,6 +503,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # system
 $ARCHBUILDS/etc/doas.conf
+/usr/share/doc/arch-wiki/html/en
 bat -A /etc/hosts
 bm <command>  # batman
 cat /proc/cpuinfo
