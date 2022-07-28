@@ -8,6 +8,9 @@ trap read debug  # puts a read request after each executable line
 echo $ARCHBUILDS
 true
 
+#=> 1 for nano
+mkdir -p ~/.config/nano
+
 #=> 1 grab fstab
 cp /etc/fstab /bs/fstab-$(date "+%F-%H-%M")
 

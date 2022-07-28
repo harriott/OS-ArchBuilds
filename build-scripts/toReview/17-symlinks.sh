@@ -22,6 +22,9 @@ ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
 #=> 1 Git
 ln -sf $MACHINE/jo/gitconfig ~/.gitconfig  # points to $ITstack/gitconfig
 
+#=> 1 nanorc
+ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
+
 #=> 1 vims
 ln -sf $MACHINE/jo/gvimrc ~/.gvimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc

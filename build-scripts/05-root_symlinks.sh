@@ -15,5 +15,7 @@ ln -sf $ARCHBUILDS/Bash/GNUReadline-inputrc /root/.inputrc
 ln -sf $MACHINE/export-machine /root/.export-machine
   ln -sf $ARCHBUILDS/Bash/export-storage /root/.export-storage
 
+ln -sf $ARCHBUILDS/root/nanorc ~/.config/nano/nanorc
+
 ln -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh
 

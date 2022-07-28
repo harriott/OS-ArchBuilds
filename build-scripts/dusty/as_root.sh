@@ -25,3 +25,13 @@ dt=$(date "+%F-%H-%M")
 # cp /mnt/mkinitcpio-$dt.conf /etc/mkinitcpio.conf
 # grep 'd f' /etc/mkinitcpio.conf
 
+# #=> 0 Numlock on in getty
+# mkdir /etc/systemd/system/getty@.service.d
+# echo [Service] > /etc/systemd/system/getty@.service.d/activate-numlock.conf
+# echo "ExecStartPre=/bin/sh -c 'setleds +num < /dev/%I'" >> /etc/systemd/system/getty@.service.d/activate-numlock.conf
+# cat /etc/systemd/system/getty@.service.d/activate-numlock.conf
+
+# #=> 1 Numlock off in getty
+# # because it didn't work in sbMb
+# rm /etc/systemd/system/getty@.service.d/activate-numlock.conf
+

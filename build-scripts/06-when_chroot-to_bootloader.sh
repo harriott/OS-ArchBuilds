@@ -3,12 +3,10 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 test internet
-# # ping -c 3 8.8.8.8
-# ping -c 3 -n google.com  # for Jo-XA2
-
-#=> 1 updates
-. 02-as_root-updates.sh
+#=> 0 $ARCHBUILDS
+# check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
+echo "\$ARCHBUILDS is $ARCHBUILDS"
+read -p "- looks good?"
 
 #=> 2 time
 # time zone
@@ -16,8 +14,7 @@ ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime
 
 # system clock
 timedatectl set-ntp true
-timedatectl status
-# doesn't show local correction
+timedatectl status  # doesn't show local correction
 
 # hardware clock
 hwclock --systohc
@@ -30,11 +27,11 @@ sed -i 's/^#fr_FR.UTF-8/fr_FR.UTF-8/' /etc/locale.gen
 cat /etc/locale.gen | grep -v '^#'
 locale-gen
 cat /etc/locale.conf  # shows it ain't there
-# echo LANG=fr_FR.UTF-8 > /etc/locale.conf
 echo LANG=en_GB.UTF-8 > /etc/locale.conf
+# echo LANG=fr_FR.UTF-8 > /etc/locale.conf
 cat /etc/vconsole.conf  # shows it ain't there
-# echo KEYMAP=fr > /etc/vconsole.conf
 echo KEYMAP=uk > /etc/vconsole.conf
+# echo KEYMAP=fr > /etc/vconsole.conf
 
 #=> 3 hostname
 cat /etc/hostname  # shows it ain't there
@@ -48,13 +45,12 @@ cat /etc/hostname
 #=> 3 hosts
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
-# echo "127.0.1.1 avt661.localdomain avt661" >> /etc/hosts
 echo "127.0.1.1 $hostname" >> /etc/hosts
 cat /etc/hosts
 
 #=> 4 better mirrorlist
 pacman -S reflector
-. 02-when_chroot-reflector.sh
+. 02-as_root-reflector.sh
 
 #=> 5 bootloader
 # 0 GRUB, Network Time Protocol
@@ -88,18 +84,7 @@ pacman -S udisks2
 until passwd; do echo 'try again'; done
 
 #=> 7 nano
-ARCHBUILDS=/ArchBuilds
 pacman -S nano-syntax-highlighting
-
-#==> jo nanorc
-mkdir /home/jo/.config/nano
-ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
-nvim -O /home/jo/.config/nano/nanorc /etc/nanorc
-
-#==> root nanorc
-mkdir ~/.config/nano
-ln -sf $ARCHBUILDS/root/nanorc ~/.config/nano/nanorc
-nvim -O ~/.config/nano/nanorc /etc/nanorc
 
 #=> 8 finish
 # Quit chroot now, and reboot!

@@ -222,21 +222,24 @@ pacman -S arch-wiki-docs lynx w3m
 # echo "vm.swappiness=00" > /etc/sysctl.d/99-sysctl.conf
 # ls /etc/sysctl.d
 
-# #=> 2 users
-# # activate wheel group
-# sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
-# grep wheel /etc/sudoers
-# # check that  /etc/sudoers  parses OK
-# visudo -c -f /etc/sudoers
+#=> 2 users
+# activate wheel group
+sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
+grep wheel /etc/sudoers
+# check that  /etc/sudoers  parses OK
+visudo -c -f /etc/sudoers
 
-# # User jo, creating the home directory and adding to group wheel
-# useradd -m -G wheel jo
-# until passwd jo; do echo "try again"; done
-# cat /etc/passwd
+# User jo, creating the home directory and adding to group wheel
+useradd -m -G wheel jo
+until passwd jo; do echo "try again"; done
+cat /etc/passwd
 
 # #=> 2 tmux configuration
 # ln -sf $tmx/tmux.conf ~/.tmux.conf
 
-#=> 3 end
+#=> 3 prepare for nanorc
+mkdir /home/jo/.config/nano
+
+#=> 4 end
 # you're ready to reboot and login to jo
 
