@@ -85,8 +85,8 @@ bash 03-as_root.sh
 pushed harriott/ArchBuilds  for  cd /  for  . ArchBuilds/build-scripts/04-cloneArchBuilds.sh
 . ../Bash/export-storage
 for after reboot,  bash 05-root_symlinks.sh
-## to bootloader
-### K8GBDTIG3 loaded with $core
+bash 06-when_chroot-to_bootloader.sh
+ctrl-d  for  halt -p
 ## waiting
 # fcron
 # physical configuration

@@ -1,12 +1,13 @@
 #!/bin/bash
 
-set -v  # prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
-
 #=> 0 $ARCHBUILDS
 # check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
 echo "\$ARCHBUILDS is $ARCHBUILDS"
 read -p "- looks good?"
+
+#=> 1 go slow
+set -v  # prints each statement here, including comments
+trap read debug  # puts a read request after each executable line
 
 #=> 2 time
 # time zone
