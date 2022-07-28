@@ -4,13 +4,14 @@
 #=> grab latest ArchBuilds
 if [[ $(id -u) > 0 ]]; then
   cd ~  # when  jo
+  s=sudo
 else
   cd /  # as root
 fi
 # because my config specifies ssh
-  [ -d ArchBuildsOld ] && sudo rm -r ArchBuildsOld
+  [ -d ArchBuildsOld ] && $s rm -r ArchBuildsOld
   [ -d ArchBuilds ] && mv ArchBuilds ArchBuildsOld
 # git clone https://github.com/harriott/ArchBuilds.git
 git clone git@github.com:harriott/ArchBuilds.git
-ls ArchBuilds
+cd ArchBuilds/build-scripts
 

@@ -17,7 +17,7 @@ pacman -S appmenu-gtk-module
 pacman -S dkms
 reboot
 
-#=> 1 softwares - dkms 0 install
+#=> 1 softwares - dkms 0 remove
 # this caused  $userresources  not to be respected in  ~/.xinitrc  and poor fonts in  gVim
 pacman -Rs dkms
 reboot
