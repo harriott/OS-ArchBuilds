@@ -82,6 +82,7 @@ $ARCHBUILDS/build-scripts
 bash 02-when_chroot-reflector.sh
 bash 03-as_root.sh
 . 04-cloneArchBuilds.sh
+pushed harriott/ArchBuilds  for  cd /  for  . ArchBuilds/build-scripts/04-cloneArchBuilds.sh
 ## to bootloader
 ### K8GBDTIG3 loaded with $core
 ## waiting
