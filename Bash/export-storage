@@ -37,6 +37,7 @@ if [[ $myDrA ]]; then export core=$DROPBOX/JH/core; fi
 
 #==> 2 $ARCHBUILDS
 export ARCHBUILDS=$onGH/ArchBuilds
+if [[ -d /ArchBuilds ]] && export ARCHBUILDS=/ArchBuilds  # provisional
 export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
 export Bash=$ARCHBUILDS/jo/Bash
   export host=$(uname -n)

@@ -11,7 +11,7 @@ fi
 # because my config specifies ssh
   [ -d ArchBuildsOld ] && $s rm -r ArchBuildsOld
   [ -d ArchBuilds ] && mv ArchBuilds ArchBuildsOld
-# git clone https://github.com/harriott/ArchBuilds.git
-git clone git@github.com:harriott/ArchBuilds.git
+git clone https://github.com/harriott/ArchBuilds.git
+# git clone git@github.com:harriott/ArchBuilds.git  # only possible when booted from root
 cd ArchBuilds/build-scripts
 

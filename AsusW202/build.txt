@@ -76,11 +76,12 @@ $ulL  for  bash iwctl-connect.sh  got me online
 $ARCHBUILDS/build-scripts  for  bash 01-as_root-efi-to_chroot.sh
 ### as chroot
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
-(maybe not needed) cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
+(maybe not needed) cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  . export-storage
 #### build-scripts
 $ARCHBUILDS/build-scripts
 bash 02-when_chroot-reflector.sh
 bash 03-as_root.sh
+. 04-cloneArchBuilds.sh
 ## to bootloader
 ### K8GBDTIG3 loaded with $core
 ## waiting
