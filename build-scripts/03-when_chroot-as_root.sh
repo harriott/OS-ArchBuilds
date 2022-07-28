@@ -3,7 +3,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 $ARCHBUILDS
+#=> 0 $ARCHBUILDS
 # check  $ARCHBUILDS/Bash/export-storage  has leveraged  /bs
 echo $ARCHBUILDS
 true

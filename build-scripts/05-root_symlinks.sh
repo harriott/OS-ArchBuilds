@@ -1,8 +1,10 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-#=> 0 ARCHBUILDS
-. 05-exports.sh
+#=> 0 $ARCHBUILDS
+# check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
+echo "\$ARCHBUILDS is $ARCHBUILDS"
+read -p "- looks good?"
 
 #=> 1 root symlinks
 ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
