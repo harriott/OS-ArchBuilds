@@ -1196,6 +1196,12 @@ changed 198.10 to 22.10 in  $Imagey/Scan.sh
 hp-setup -r > selected 198.10 > Remove
 hp-setup 192.168.22.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control > Set as Default
+## celt
+sudo pacman -Rs celt
+## xdg-open .xml
+handlr get .xml  reports  google-chrome.desktop  so  handlr set .xml gvim.desktop
+## xdg-open .mediawiki
+handlr get .mediawiki  reports so  handlr add .mediawiki gvim.desktop
 ## waiting
 CUPS Socket activation
 disable Shift+PrtSc

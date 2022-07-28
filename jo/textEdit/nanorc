@@ -9,7 +9,7 @@
 ## double quote on the line will be seen as the closing quote.
 
 # my changes are marked JH
-# this file has been diff'd against  /etc/nanorc  from  nano 6.2-1 - JH
+# this file has been diff'd against  /etc/nanorc  from  nano 6.3-1 - JH
 
 ## Make 'nextword' (Ctrl+Right) and 'chopwordright' (Ctrl+Delete)
 ## stop at word ends instead of at beginnings.
@@ -296,6 +296,9 @@ include "/usr/share/nano-syntax-highlighting/*.nanorc"  # JH
 ## and then pipe the selected text through a sed command.)
 # bind Sh-M-U "Oc[1;6D|sed 's/.*/\U&/'" main
 # bind Sh-M-L "Oc[1;6D|sed 's/.*/\L&/'" main
+
+## For copying a marked region to the system clipboard:
+# bind Sh-M-T "|xsel -ibu" main
 
 ## If you would like nano to have keybindings that are more "usual",
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,

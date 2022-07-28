@@ -152,6 +152,7 @@ gpg --recv-keys 12C6F735F7A9A519
   gpg:               imported: 1
 ## waiting
 FuseISO
+mediawiki.xml
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

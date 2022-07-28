@@ -35,13 +35,49 @@ gdisk /dev/mmcblk0 >
     (defaults to 122140671) > 8304 Linux x86-64 root (/)
   w > y
 gdisk /dev/mmcblk0 -l
-### wireless
+### wireless check
 lspci -k  reports  Intel Corporation Dual Band Wireless-AC 8265
 iw dev wlan0 scan | grep OPP  found  Jo-OPPO-A76
+### shutdown
+halt -p
+rebooted to  ARCH_202207
+### K8GBDTIG3 loaded with $core - fail
+plugged into right USB socket
+mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
+cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
+bash $ulL/iwctl-connect.sh  got me online
+bash $ARCHBUILDS/build-scripts/01-as_root-efi-to_chroot.sh
+  chroot: failed to run command '/bin/bash': No such file or directory
+  /mnt/bin  not there...
+rm -r /mnt  (didn't remove  /mnt/efi)
+reboot
+### K8GBDTIG3 loaded with $core - fail
+plugged into right USB socket
+mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
+/bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
+$ulL  for  bash iwctl-connect.sh  got me online
+$ARCHBUILDS/build-scripts  for  bash 01-as_root-efi-to_chroot.sh
+  error: libcap: signature from "David Runge <dvzrv@archlinux.org>" is marginal trust
+  /usr  didn't get installed...
+rm -r /mnt  (didn't remove  /mnt/efi)
+### K8GBDTIG3 loaded with $core
+plugged into right USB socket
+mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
+/bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
+$ulL  for  bash iwctl-connect.sh  got me online
+$ARCHBUILDS/build-scripts  for  bash 01-as_root-efi-to_chroot.sh
+### shutdown
+ctrl-d  for  halt -p
+### K8GBDTIG3 loaded with $core
+plugged into right USB socket
+mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
+/bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
+$ulL  for  bash iwctl-connect.sh  got me online
+$ARCHBUILDS/build-scripts  for  bash 01-as_root-efi-to_chroot.sh
+mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
+## to bootloader
+### K8GBDTIG3 loaded with $core
 ## waiting
-### K8GBDTIG3
-K8GBDTIG3 loaded with  ArchBuilds plugged into right USB socket
-mkdir /bs
 # fcron
 # physical configuration
 4GB RAM

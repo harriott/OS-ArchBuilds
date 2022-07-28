@@ -44,7 +44,7 @@ alias nmz='neomutt -F $clm/neomutt/muttrc-accounts/zou'
 nmse () {
     notmuchsearch="$@"
     echo $notmuchsearch
-    notmuch search $notmuchsearch
+    notmuch search $notmuchsearch  # can't fix time of a day
 } # gets a quick list of the relevant emails
 # nmse bloch date:2021
 nmsh () {

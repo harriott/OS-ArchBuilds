@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- vim: fdl=2:
+symlinked in  $ARCHBUILDS/build-scripts/toReview/17-symlinks.sh -->
+
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+ <mime-type type="text/mediawiki">
+  <comment>MediaWiki</comment>
+  <glob pattern="*.mediawiki"/>
+ </mime-type>
+</mime-info>
+

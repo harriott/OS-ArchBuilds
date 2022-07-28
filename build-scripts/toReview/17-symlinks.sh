@@ -29,16 +29,18 @@ ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 [ -d ~/.config/nvim ] || mkdir -p ~/.config/nvim
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
-#=> 1 X
+#=> 2 X
+ln -sf $ARCHBUILDS/jo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
+  update-mime-database ~/.local/share/mime
 ln -sf $ARCHBUILDS/jo/xbindkeysrc ~/.xbindkeysrc  # mouse wheel
 # ln -sf $ARCHBUILDS/jo/xinitrc     ~/.xinitrc  # calls $MACHINE/jo/Xresources
 ln -sf $ARCHBUILDS/jo/xinitrcs/openbox     ~/.xinitrc  # calls $MACHINE/jo/Xresources
 ln -sf $Openbox/Xresources/Xresources ~/.Xresources
 ln -sf $Openbox/Xresources/colorschemes/LukeSmith-gruvbox ~/.Xresources-LukeSmith-gruvbox
 
-#=> 2 visual check
+#=> 3 visual check
 find ~ -mindepth 1 -maxdepth 3 -type l -ls
 
-# #=> 2 if first build
+# #=> 4 if first build
 # echo "now  relogin  (and don't allow startx!)"
 

@@ -174,11 +174,11 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -346,11 +346,11 @@ trap read debug  # puts a read request after each executable line
 # #=> patched Cascadia Code font 0 remove
 # sudo pacman -Rs nerd-fonts-cascadia-code
 
-#=> PDFsam
-gAUR pdfsam
-nvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic  # choose  jdk-openjdk
-true
+# #=> PDFsam
+# gAUR pdfsam
+# nvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic  # choose  jdk-openjdk
+# true
 
 # #=> pdftk
 # sudo pacman -S pdftk
@@ -443,11 +443,11 @@ true
 # nvim -c "silent! /jmc-88\/tint3.git" PKGBUILD
 # makepkg -sic
 
-#=> tspreed
-gAUR tspreed
-nvim -c "silent! /n-ivkovic" PKGBUILD
-makepkg -sic
-true
+# #=> tspreed
+# gAUR tspreed
+# nvim -c "silent! /n-ivkovic" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> ttf-croscore
 # sudo pacman -S ttf-croscore
@@ -474,8 +474,8 @@ true
 # #=> yt-dlp
 # sudo pacman -S yt-dlp
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

@@ -514,8 +514,11 @@ cat /etc/group  # list all groups on the system
 id jo        # show uid, gid, and groups for jo
 
 ## mimeapps
+gio mime
+handlr -h
 handlr get .png
 handlr list
+~/.config/mimeapps.list
 
 ### mimeo
 /home/jo/.config/mimeapps.list  # add mimetypes here
