@@ -5,9 +5,9 @@
 echo "\$ARCHBUILDS is $ARCHBUILDS"
 read -p "- looks good?"
 
-# #=> 1 go slow
-# set -v  # prints each statement here, including comments
-# trap read debug  # puts a read request after each executable line
+#=> 1 go slow
+set -v  # prints each statement here, including comments
+trap read debug  # puts a read request after each executable line
 
 # #=> 2 file manage
 # # broot
@@ -231,7 +231,7 @@ chmod -c 0400 /etc/doas.conf
 mkdir /home/jo/.config/nano
 
 #=> 3 Rootkit Hunter
-# pacman -S rkhunter
+pacman -S rkhunter
 mkdir /home/jo/Arch
 
 #=> 4 end
