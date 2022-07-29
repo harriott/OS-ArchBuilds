@@ -44,7 +44,7 @@ export Bash=$ARCHBUILDS/jo/Bash
   # - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
     export MACHINE=$ARCHBUILDS/$host
 export clm=$ARCHBUILDS/jo/clm  # used in  bashrc-clm  and  muttrc-*  :s/email/clm/g
-export tmx=$ARCHBUILDS/jo/tmux  # used in  tmux.conf
+export tmx=$ARCHBUILDS/tmux  # used in  tmux.conf
 
 #=> 0 mail
 export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
