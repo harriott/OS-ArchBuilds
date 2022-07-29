@@ -46,7 +46,7 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 bash $ulL/iwctl-connect.sh  got me online
-bash $ARCHBUILDS/build-scripts/01-as_root-efi-to_chroot.sh
+bash $ARCHBUILDS/build-scripts/01-fromISO-efi-to_chroot.sh
   chroot: failed to run command '/bin/bash': No such file or directory
   /mnt/bin  not there...
 rm -r /mnt  (didn't remove  /mnt/efi)
@@ -87,6 +87,10 @@ pushed harriott/ArchBuilds  for  cd /  for  . ArchBuilds/build-scripts/04-cloneA
 for after reboot,  bash 05-root_symlinks.sh
 bash 06-when_chroot-to_bootloader.sh
 ctrl-d  for  halt -p
+## root
+BIOS > Boot Priority > Windows Boot Manager  is still there...
+to fix /root/.export-machine symlink,  bash 05-root_symlinks.sh
+bash ~/iwctl-connect.sh  got me online
 ## waiting
 # fcron
 # physical configuration

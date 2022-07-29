@@ -1,18 +1,20 @@
 #!/bin/bash
 
-#=> 0 ARCHBUILDS
-. 05-exports.sh
+#=> 0 $ARCHBUILDS
+# check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
+echo "\$ARCHBUILDS is $ARCHBUILDS"
+read -p "- looks good?"
 
 #=> 1 go slow
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 2 doas
-# gpasswd -a jo wheel  # might already be done
-# pacman -S opendoas
-# cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
-# chmod -c 0400 /etc/doas.conf
-# # after a reboot, test with  doas updatedb
+#=> 2 doas
+gpasswd -a jo wheel  # might already be done
+pacman -S opendoas
+cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
+chmod -c 0400 /etc/doas.conf
+# after a reboot, test with  doas updatedb
 
 # #=> 2 file manage
 # # bat

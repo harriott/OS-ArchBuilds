@@ -6,7 +6,7 @@
 echo "\$ARCHBUILDS is $ARCHBUILDS"
 read -p "- looks good?"
 
-#=> 1 root symlinks
+#=> 1 make root symlinks
 ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
   ln -sf $ARCHBUILDS/root/bashrc /root/.bashrc  # sources bashrc-generic
 
@@ -19,3 +19,5 @@ ln -sf $ARCHBUILDS/root/nanorc ~/.config/nano/nanorc
 
 ln -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh
 
+#=> 2 list root symlinks
+find /root -type l -ls  # doesn't show broken
