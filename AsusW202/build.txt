@@ -95,7 +95,11 @@ bash ~/iwctl-connect.sh  got me online
 # fcron
 # physical configuration
 4GB RAM
-64GB eMMC
 F2  at  POST  for  ASUS BIOS Utility - EZ Mode
 screen is 1366x768
 SDEP128G  in  microSD  slot, for  Dropbox
+## eMMC
+64GB
+### TRIM support
+lsblk -D  reports DISC-GRAN's of 4M DISC-MAX's of 74M
+sudo hdparm -I /dev/mmcblk0  reports nothing

@@ -5,121 +5,114 @@
 echo "\$ARCHBUILDS is $ARCHBUILDS"
 read -p "- looks good?"
 
-#=> 1 go slow
-set -v  # prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
+# #=> 1 go slow
+# set -v  # prints each statement here, including comments
+# trap read debug  # puts a read request after each executable line
 
-#=> 2 file manage
-# bat
-pacman -S bat
+# #=> 2 file manage
+# # broot
+# pacman -S broot
+# broot # to generate br command
+# echo "${tpfn}"  # reset normal text
 
-# broot
-pacman -S broot
-broot # to generate br command
+# # dvd+rw-tools
+# pacman -S dvd+rw-tools
 
-# dvd+rw-tools
-pacman -S dvd+rw-tools
+# # exa
+# pacman -S exa
 
-# exa
-pacman -S exa
+# # fd
+# pacman -S fd
 
-# fd
-pacman -S fd
+# # FuseISO
+# pacman -S fuseiso
 
-# FuseISO
-pacman -S fuseiso
+# # fzf
+# pacman -S fzf
 
-# fzf
-pacman -S fzf
+# # lsd
+# pacman -S awesome-terminal-fonts lsd
 
-# lsd
-pacman -S awesome-terminal-fonts lsd
+# # mlocate
+# pacman -S mlocate
+# updatedb
 
-# mlocate
-pacman -S mlocate
-updatedb
+# # ncdu
+# pacman -S ncdu
 
-# ncdu
-pacman -S ncdu
+# # perl-rename
+# pacman -S perl-rename
 
-# perl-rename
-pacman -S perl-rename
+# # p7zip
+# pacman -S p7zip
 
-# p7zip
-pacman -S p7zip
+# # rhash
+# pacman -S rhash
 
-# rhash
-pacman -S rhash
+# # ripgrep
+# pacman -S ripgrep
 
-# ripgrep
-pacman -S ripgrep
+# # rsync
+# pacman -S rsync
 
-# rsync
-pacman -S rsync
+# # sharkdp's bat
+# pacman -S bat
 
-# trash-cli
-pacman -S trash-cli
+# # trash-cli
+# pacman -S trash-cli
 
-# tree
-pacman -S tree
+# # tree
+# pacman -S tree
 
-#=> 2 hd
-# hdparm
-pacman -S hdparm
+# #=> 2 hd
+# # hdparm
+# pacman -S hdparm
 
-# NTFS-3G
-pacman -S ntfs-3g
+# # NTFS-3G
+# pacman -S ntfs-3g
 
-# udiskie
-pacman -S udiskie
+# # udiskie
+# pacman -S udiskie
 
-# weekly TRIM
-# systemctl status fstrim.timer
-systemctl enable fstrim.timer --now
+# # weekly TRIM
+# # systemctl status fstrim.timer
+# systemctl enable fstrim.timer --now
 
-#=> 2 info
-# Bashtop
-pacman -S bashtop  # later superseded by AUR bpytop
+# #=> 2 info
+# # Bashtop
+# pacman -S bashtop  # later superseded by AUR bpytop
 
-# htop
-pacman -S htop
+# # htop
+# pacman -S htop
 
-# iotop
-pacman -S iotop
+# # iotop
+# pacman -S iotop
 
-# lshw
-pacman -S lshw
+# # lshw
+# pacman -S lshw
 
-# lsof
-pacman -S lsof
+# # lsof
+# pacman -S lsof
 
-# man-db
-pacman -S man-db
+# # man-db
+# pacman -S man-db
 
-# man-pages
-pacman -S man-pages
+# # man-pages
+# pacman -S man-pages
 
-# Neofetch
-pacman -S neofetch
+# # Neofetch
+# pacman -S neofetch
 
-# progress
-pacman -S progress
+# # progress
+# pacman -S progress
 
-# sysstat
-pacman -S sysstat
+# # sysstat
+# pacman -S sysstat
 
-#=> 2 limit systemd Journal size
-# helpful for storage-limited installations
-sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
-grep SystemMaxUse /etc/systemd/journald.conf
-
-#=> 2 NetworkManager 1 install
-pacman -S networkmanager
-systemctl enable NetworkManager.service --now
-
-#=> 2 NetworkManager 2 status
-systemctl status NetworkManager.service | cat
-true
+# #=> 2 limit systemd Journal size
+# # helpful for storage-limited installations
+# sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
+# grep SystemMaxUse /etc/systemd/journald.conf
 
 #=> 2 networking
 # isync
@@ -127,6 +120,9 @@ pacman -S isync  # for mbsync
 
 # netcat - for network connection tests
 pacman -S openbsd-netcat
+
+# NetworkManager
+pacman -S networkmanager
 
 # tcpdump
 pacman -S tcpdump  # for packet analysis
