@@ -114,48 +114,43 @@ read -p "- looks good?"
 # sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
 # grep SystemMaxUse /etc/systemd/journald.conf
 
-#=> 2 networking
-# isync
-pacman -S isync  # for mbsync
+# #=> 2 networking
+# # isync
+# pacman -S isync  # for mbsync
 
-# netcat - for network connection tests
-pacman -S openbsd-netcat
+# # netcat - for network connection tests
+# pacman -S openbsd-netcat
 
-# NetworkManager
-pacman -S networkmanager
+# # NetworkManager
+# pacman -S networkmanager
 
-# tcpdump
-pacman -S tcpdump  # for packet analysis
+# # tcpdump
+# pacman -S tcpdump  # for packet analysis
 
-# Wget
-pacman -S wget
+# # Wget
+# pacman -S wget
 
-#=> 2 Rootkit Hunter
-pacman -S rkhunter
-mkdir /home/jo/Arch
-bash 09-as_root-RootkitHunt.sh
+# #=> 2 Pacman
+# # colorized Pacman
+# sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
-#=> 2 Pacman
-# colorized Pacman
-sudo sed -i 's/#Color/Color/' /etc/pacman.conf
+# # expac
+# pacman -S expac
 
-# expac
-pacman -S expac
+# # pacman-contrib, for paccache
+# pacman -S pacman-contrib
 
-# pacman-contrib, for paccache
-pacman -S pacman-contrib
+# # pacutils
+# pacman -S pacutils
 
-# pacutils
-pacman -S pacutils
+# # pkgfile - for finding possible packages
+# pacman -S pkgfile
+# pkgfile -u
+# systemctl enable pkgfile-update.timer --now
+# systemctl list-timers
 
-# pkgfile - for finding possible packages
-pacman -S pkgfile
-pkgfile -u
-systemctl enable pkgfile-update.timer --now
-systemctl list-timers
-
-# pkgstats
-pacman -S pkgstats
+# # pkgstats
+# pacman -S pkgstats
 
 #=> 2 system
 # btop
@@ -234,6 +229,10 @@ chmod -c 0400 /etc/doas.conf
 
 #=> 3 prepare for nanorc
 mkdir /home/jo/.config/nano
+
+#=> 3 Rootkit Hunter
+# pacman -S rkhunter
+mkdir /home/jo/Arch
 
 #=> 4 end
 # you're ready to reboot and login to jo

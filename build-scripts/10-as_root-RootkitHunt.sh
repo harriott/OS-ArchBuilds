@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
+# bash 10-as_root-to_jo.sh
+
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 Rootkit Hunter
