@@ -28,7 +28,7 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 
 #=> 1 tmux-bash-completion-git
-# depends on bash-completion, and brings in tmux
+# depends on bash-completion
 gdAUR tmux-bash-completion-git
 nvim -c "silent! /imomaliev" PKGBUILD
 makepkg -sic

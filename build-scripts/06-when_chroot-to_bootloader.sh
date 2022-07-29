@@ -78,14 +78,17 @@ pacman -S iwd  # allowing an alternative to  NetworkManager + wpa_supplicant
 # lsusb
 pacman -S usbutils
 
+# nano
+pacman -S nano-syntax-highlighting
+
 # udisks
 pacman -S udisks2
 
 # root password
 until passwd; do echo 'try again'; done
 
-#=> 7 nano
-pacman -S nano-syntax-highlighting
+# tmux
+pacman -S tmux
 
 #=> 8 finish
 # Quit chroot now, and reboot!

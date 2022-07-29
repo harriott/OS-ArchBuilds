@@ -19,5 +19,8 @@ ln -sf $ARCHBUILDS/root/nanorc ~/.config/nano/nanorc
 
 ln -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh
 
+ln -sf $tmx/tmux.conf ~/.tmux.conf
+
 #=> 2 list root symlinks
 find /root -type l -ls  # doesn't show broken
+

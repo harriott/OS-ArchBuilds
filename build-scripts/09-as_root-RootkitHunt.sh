@@ -1,10 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-if [[ $(id -u) > 0 ]]; then
-  echo "Run this as root!"
-  exit
-fi
+if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 Rootkit Hunter
 rkhunter --propupd  # update the file properties database

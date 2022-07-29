@@ -9,183 +9,177 @@ read -p "- looks good?"
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 2 doas
-gpasswd -a jo wheel  # might already be done
-pacman -S opendoas
-cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
-chmod -c 0400 /etc/doas.conf
-# after a reboot, test with  doas updatedb
+#=> 2 file manage
+# bat
+pacman -S bat
 
-# #=> 2 file manage
-# # bat
-# pacman -S bat
+# broot
+pacman -S broot
+broot # to generate br command
 
-# # broot
-# pacman -S broot
-# broot # to generate br command
+# dvd+rw-tools
+pacman -S dvd+rw-tools
 
-# # dvd+rw-tools
-# pacman -S dvd+rw-tools
+# exa
+pacman -S exa
 
-# # exa
-# pacman -S exa
+# fd
+pacman -S fd
 
-# # fd
-# pacman -S fd
+# FuseISO
+pacman -S fuseiso
 
-# # FuseISO
-# pacman -S fuseiso
+# fzf
+pacman -S fzf
 
-# # fzf
-# pacman -S fzf
+# lsd
+pacman -S awesome-terminal-fonts lsd
 
-# # lsd
-# pacman -S awesome-terminal-fonts lsd
+# mlocate
+pacman -S mlocate
+updatedb
 
-# # mlocate
-# pacman -S mlocate
-# updatedb
+# ncdu
+pacman -S ncdu
 
-# # ncdu
-# pacman -S ncdu
+# perl-rename
+pacman -S perl-rename
 
-# # perl-rename
-# pacman -S perl-rename
+# p7zip
+pacman -S p7zip
 
-# # p7zip
-# pacman -S p7zip
+# rhash
+pacman -S rhash
 
-# # rhash
-# pacman -S rhash
+# ripgrep
+pacman -S ripgrep
 
-# # ripgrep
-# pacman -S ripgrep
+# rsync
+pacman -S rsync
 
-# # rsync
-# pacman -S rsync
+# trash-cli
+pacman -S trash-cli
 
-# # trash-cli
-# pacman -S trash-cli
+# tree
+pacman -S tree
 
-# # tree
-# pacman -S tree
+#=> 2 hd
+# hdparm
+pacman -S hdparm
 
-# #=> 2 hd
-# # hdparm
-# pacman -S hdparm
+# NTFS-3G
+pacman -S ntfs-3g
 
-# # NTFS-3G
-# pacman -S ntfs-3g
+# udiskie
+pacman -S udiskie
 
-# # udiskie
-# pacman -S udiskie
+# weekly TRIM
+# systemctl status fstrim.timer
+systemctl enable fstrim.timer --now
 
-# # weekly TRIM
-# # systemctl status fstrim.timer
-# systemctl enable fstrim.timer --now
+#=> 2 info
+# Bashtop
+pacman -S bashtop  # later superseded by AUR bpytop
 
-# #=> 2 info
-# # Bashtop
-# pacman -S bashtop  # later superseded by AUR bpytop
+# htop
+pacman -S htop
 
-# # htop
-# pacman -S htop
+# iotop
+pacman -S iotop
 
-# # iotop
-# pacman -S iotop
+# lshw
+pacman -S lshw
 
-# # lshw
-# pacman -S lshw
+# lsof
+pacman -S lsof
 
-# # lsof
-# pacman -S lsof
+# man-db
+pacman -S man-db
 
-# # man-db
-# pacman -S man-db
+# man-pages
+pacman -S man-pages
 
-# # man-pages
-# pacman -S man-pages
+# Neofetch
+pacman -S neofetch
 
-# # Neofetch
-# pacman -S neofetch
+# progress
+pacman -S progress
 
-# # progress
-# pacman -S progress
+# sysstat
+pacman -S sysstat
 
-# # sysstat
-# pacman -S sysstat
+#=> 2 limit systemd Journal size
+# helpful for storage-limited installations
+sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
+grep SystemMaxUse /etc/systemd/journald.conf
 
-# #=> 2 limit systemd Journal size
-# # helpful for  LIP120s81A4
-# sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
-# grep SystemMaxUse /etc/systemd/journald.conf
+#=> 2 NetworkManager 1 install
+pacman -S networkmanager
+systemctl enable NetworkManager.service --now
 
-# #=> 2 NetworkManager 1 install
-# pacman -S networkmanager
-# systemctl enable NetworkManager.service --now
+#=> 2 NetworkManager 2 status
+systemctl status NetworkManager.service | cat
+true
 
-# #=> 2 NetworkManager 2 status
-# systemctl status NetworkManager.service | cat
-# true
+#=> 2 networking
+# isync
+pacman -S isync  # for mbsync
 
-# #=> 2 netcat
-# pacman -S openbsd-netcat
+# netcat - for network connection tests
+pacman -S openbsd-netcat
 
-# #=> 2 networking
-# # isync
-# pacman -S isync  # for mbsync
+# tcpdump
+pacman -S tcpdump  # for packet analysis
 
-# # tcpdump
-# pacman -S tcpdump  # for packet analysis
+# Wget
+pacman -S wget
 
-# # Wget
-# pacman -S wget
+#=> 2 Rootkit Hunter
+pacman -S rkhunter
+mkdir /home/jo/Arch
+bash 09-as_root-RootkitHunt.sh
 
-# #=> 2 Rootkit Hunter
-# pacman -S rkhunter
-# source 00-as_root-RootkitHunt.sh
+#=> 2 Pacman
+# colorized Pacman
+sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
-# #=> 2 Pacman
-# # colorized Pacman
-# sudo sed -i 's/#Color/Color/' /etc/pacman.conf
+# expac
+pacman -S expac
 
-# # expac
-# pacman -S expac
+# pacman-contrib, for paccache
+pacman -S pacman-contrib
 
-# # pacman-contrib, for paccache
-# pacman -S pacman-contrib
+# pacutils
+pacman -S pacutils
 
-# # pacutils
-# pacman -S pacutils
+# pkgfile - for finding possible packages
+pacman -S pkgfile
+pkgfile -u
+systemctl enable pkgfile-update.timer --now
+systemctl list-timers
 
-# # pkgfile - for finding possible packages
-# pacman -S pkgfile
-# pkgfile -u
-# systemctl enable pkgfile-update.timer --now
-# systemctl list-timers
+# pkgstats
+pacman -S pkgstats
 
-# # pkgstats
-# pacman -S pkgstats
+#=> 2 system
+# btop
+pacman -S btop
 
-# #=> 2 system
-# # btop
-# pacman -S btop
+# fcron
+pacman -S fcron
+systemctl enable fcron.service
 
-# # fcron
-# pacman -S fcron
-# systemctl enable fcron.service
+# glances
+pacman -S glances
 
-# # glances
-# pacman -S glances
+# Mesa demos
+pacman -S mesa-demos
 
-# # Mesa demos
-# pacman -S mesa-demos
+# meson, for auracle later
+pacman -S meson
 
-# # meson, for auracle later
-# pacman -S meson
-
-# # Pipe Viewer
-# pacman -S pv
+# Pipe Viewer
+pacman -S pv
 
 #=> 2 various
 # universal-ctags
@@ -215,14 +209,14 @@ pacman -S python-beautifulsoup4
 # web-ish
 pacman -S arch-wiki-docs lynx w3m
 
-# #=> 2 swappiness to 10
-# # check that the default is 60
-# cat /sys/fs/cgroup/memory/memory.swappiness
-# # show that  /etc/sysctl.d  is empty
-# ls /etc/sysctl.d
-# # fix lower value, which will become effective after reboot
-# echo "vm.swappiness=00" > /etc/sysctl.d/99-sysctl.conf
-# ls /etc/sysctl.d
+#=> 2 swappiness to 10
+# check that the default is 60
+cat /sys/fs/cgroup/memory/memory.swappiness
+# show that  /etc/sysctl.d  is empty
+ls /etc/sysctl.d
+# fix lower value, which will become effective after reboot
+echo "vm.swappiness=00" > /etc/sysctl.d/99-sysctl.conf
+ls /etc/sysctl.d
 
 #=> 2 users
 # activate wheel group
@@ -236,8 +230,11 @@ useradd -m -G wheel jo
 until passwd jo; do echo "try again"; done
 cat /etc/passwd
 
-# #=> 2 tmux configuration
-# ln -sf $tmx/tmux.conf ~/.tmux.conf
+#=> 3 doas
+pacman -S opendoas
+cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
+chmod -c 0400 /etc/doas.conf
+# after a reboot, test with  doas updatedb
 
 #=> 3 prepare for nanorc
 mkdir /home/jo/.config/nano
