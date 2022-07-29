@@ -9,7 +9,6 @@ read -p "- looks good?"
 #=> 1 make root symlinks
 ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
   ln -sf $ARCHBUILDS/root/bashrc /root/.bashrc  # sources bashrc-generic
-    ln -sf $ARCHBUILDS/Bash/bashrc-generic ~/.bashrc-generic
 
 ln -sf $ARCHBUILDS/Bash/GNUReadline-inputrc /root/.inputrc
 

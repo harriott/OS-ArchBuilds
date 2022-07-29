@@ -89,8 +89,10 @@ bash 06-when_chroot-to_bootloader.sh
 ctrl-d  for  halt -p
 ## root
 BIOS > Boot Priority > Windows Boot Manager  is still there...
-to fix /root/.export-machine symlink,  bash 05-root_symlinks.sh
+to fix  /root/.export-machine  symlink,  bash 05-root_symlinks.sh
 bash ~/iwctl-connect.sh  got me online
+bash 09-as_root-to_jo.sh
+to fix  /home/jo/.bashrc-generic  symlink,  bash 05-root_symlinks.sh
 ## waiting
 # fcron
 # physical configuration
