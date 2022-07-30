@@ -152,62 +152,62 @@ trap read debug  # puts a read request after each executable line
 # # pkgstats
 # pacman -S pkgstats
 
-#=> 2 system
-# btop
-pacman -S btop
+# #=> 2 system
+# # btop
+# pacman -S btop
 
-# fcron
-pacman -S fcron
-systemctl enable fcron.service
+# # fcron
+# pacman -S fcron
+# systemctl enable fcron.service
 
-# glances
-pacman -S glances
+# # glances
+# pacman -S glances
 
-# Mesa demos
-pacman -S mesa-demos
+# # Mesa demos
+# pacman -S mesa-demos
 
-# meson, for auracle later
-pacman -S meson
+# # meson, for auracle later
+# pacman -S meson
 
-# Pipe Viewer
-pacman -S pv
+# # Pipe Viewer
+# pacman -S pv
 
-#=> 2 various
-# universal-ctags
-pacman -S ctags
+# #=> 2 various
+# # universal-ctags
+# pacman -S ctags
 
-# languagetool
-pacman -S languagetool  # for the GUI
+# # languagetool
+# pacman -S languagetool  # for the GUI
 
-# Node Package Manager 0 npm install
-pacman -S npm
+# # Node Package Manager 0 npm install
+# pacman -S npm
 
-# OpenOffice English thesaurus
-pacman -S mythes-en
+# # OpenOffice English thesaurus
+# pacman -S mythes-en
 
-# pass (bring in gnupg)
-pacman -S pass
+# # pass (bring in gnupg)
+# pacman -S pass
 
-# python-pipx
-pacman -S python-pipx
+# # python-pipx
+# pacman -S python-pipx
 
-# strace - for debugging
-pacman -S strace
+# # strace - for debugging
+# pacman -S strace
 
-# for thesaurus_query.vim
-pacman -S python-beautifulsoup4
+# # for thesaurus_query.vim
+# pacman -S python-beautifulsoup4
 
-# web-ish
-pacman -S arch-wiki-docs lynx w3m
+# # web-ish
+# pacman -S arch-wiki-docs lynx w3m
 
-#=> 2 swappiness to 10
-# check that the default is 60
-cat /sys/fs/cgroup/memory/memory.swappiness
-# show that  /etc/sysctl.d  is empty
-ls /etc/sysctl.d
-# fix lower value, which will become effective after reboot
-echo "vm.swappiness=00" > /etc/sysctl.d/99-sysctl.conf
-ls /etc/sysctl.d
+# #=> 2 swappiness to 10
+# # check the default
+# sysctl vm.swappiness
+# # show that  /etc/sysctl.d  is empty
+# ls /etc/sysctl.d
+# # fix lower value, which will become effective after reboot
+# echo "vm.swappiness=00" > /etc/sysctl.d/99-sysctl.conf
+# cat /etc/sysctl.d/99-sysctl.conf
 
 #=> 2 users
 # activate wheel group
