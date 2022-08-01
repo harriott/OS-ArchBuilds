@@ -233,6 +233,7 @@ mkdir /home/jo/.config/nano
 #=> 3 Rootkit Hunter
 pacman -S rkhunter
 mkdir /home/jo/Arch
+chown jo:jo /home/jo/Arch
 
 #=> 4 end
 # you're ready to reboot and login to jo

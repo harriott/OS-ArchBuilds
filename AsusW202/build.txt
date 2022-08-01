@@ -100,6 +100,7 @@ bash 10-as_root-RootkitHunt.sh
 su rm /root/iwctl-connect.sh
 su rm -r /Archbuilds
 bash ~/iwctl-connect.sh  got me online
+bash ~/Archbuilds/Bash/export-storage
 ## waiting
 # fcron
 # physical configuration
