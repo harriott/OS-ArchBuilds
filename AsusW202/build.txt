@@ -94,8 +94,12 @@ bash ~/iwctl-connect.sh  got me online
 bash 09-as_root-to_jo.sh
 to fix  /home/jo/.bashrc-generic  symlink,  bash 05-root_symlinks.sh
 bash 09-as_root-to_jo.sh
-
 bash 10-as_root-RootkitHunt.sh
+## jo
+### move to NetworkManager
+su rm /root/iwctl-connect.sh
+su rm -r /Archbuilds
+bash ~/iwctl-connect.sh  got me online
 ## waiting
 # fcron
 # physical configuration

@@ -4,7 +4,7 @@
 # logged in as user
 
 #=> 0 ARCHBUILDS
-. 05-exports.sh
+. ../Bash/export-storage
 
 #=> 1 Bash
 # sort this list by last use of "~":  :sort /,*\~/
@@ -33,17 +33,14 @@ ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
 #=> 2 X
-ln -sf $ARCHBUILDS/jo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
-  update-mime-database ~/.local/share/mime
-ln -sf $ARCHBUILDS/jo/xbindkeysrc ~/.xbindkeysrc  # mouse wheel
+ln -sf $ARCHBUILDS/jo/mediawiki.xml                       ~ /.local/share/mime/packages/mediawiki.xml
+  update-mime-database                                    ~ /.local/share/mime
+ln -sf $ARCHBUILDS/jo/xbindkeysrc                         ~ /.xbindkeysrc  # mouse wheel
 # ln -sf $ARCHBUILDS/jo/xinitrc     ~/.xinitrc  # calls $MACHINE/jo/Xresources
-ln -sf $ARCHBUILDS/jo/xinitrcs/openbox     ~/.xinitrc  # calls $MACHINE/jo/Xresources
-ln -sf $Openbox/Xresources/Xresources ~/.Xresources
-ln -sf $Openbox/Xresources/colorschemes/LukeSmith-gruvbox ~/.Xresources-LukeSmith-gruvbox
+ln -sf $ARCHBUILDS/jo/xinitrcs/openbox                    ~ /.xinitrc  # calls $MACHINE/jo/Xresources
+ln -sf $Openbox/Xresources/Xresources                     ~ /.Xresources
+ln -sf $Openbox/Xresources/colorschemes/LukeSmith-gruvbox ~ /.Xresources-LukeSmith-gruvbox
 
 #=> 3 visual check
 find ~ -mindepth 1 -maxdepth 3 -type l -ls
-
-# #=> 4 if first build
-# echo "now  relogin  (and don't allow startx!)"
 

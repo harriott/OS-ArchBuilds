@@ -18,26 +18,26 @@
 #=> 0 core
 # $myDrA  &  $Storage  are pre-defined in  $MACHINE/export-machine
 
-#==> 0 $DROPBOX
-export DROPBOX=$Storage/Dropbox
-# - keep  DROPBOX  capitalised for finding it without need for $
-  export detail=$DROPBOX/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage/detail
-  export T91=$DROPBOX/JH/T91-default-release
+# #==> 0 $DROPBOX
+# export DROPBOX=$Storage/Dropbox
+# # - keep  DROPBOX  capitalised for finding it without need for $
+#   export detail=$DROPBOX/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage/detail
+#   export T91=$DROPBOX/JH/T91-default-release
 
-#==> 1 $core
-export core=/bs/core  # provisional
-if [[ $myDrA ]]; then export core=$DROPBOX/JH/core; fi
-  export ITstack=$core/IT_stack
-    export CP=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
-    export ulL=$ITstack/unix_like-linux  # was $ulGL
-      export lclm=$ulL/clm  # :s/GNULE\|LE/lclm/g
-    export onGH=$ITstack/onGitHub
-      export vimfiles=$onGH/vimfiles
-  export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
+# #==> 1 $core
+# export core=/bs/core  # provisional
+# if [[ $myDrA ]]; then export core=$DROPBOX/JH/core; fi
+#   export ITstack=$core/IT_stack
+#     export CP=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
+#     export ulL=$ITstack/unix_like-linux  # was $ulGL
+#       export lclm=$ulL/clm  # :s/GNULE\|LE/lclm/g
+#     export onGH=$ITstack/onGitHub
+#       export vimfiles=$onGH/vimfiles
+#   export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
 
 #==> 2 $ARCHBUILDS
 export ARCHBUILDS=$onGH/ArchBuilds
-[[ -d /ArchBuilds ]] && export ARCHBUILDS=/ArchBuilds  # provisional
+[[ -d ~/ArchBuilds ]] && export ARCHBUILDS=/ArchBuilds  # provisional
 export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
 export Bash=$ARCHBUILDS/jo/Bash
   export host=$(uname -n)

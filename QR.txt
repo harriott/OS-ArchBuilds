@@ -505,7 +505,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 $ARCHBUILDS/etc/doas.conf
 /usr/share/doc/arch-wiki/html/en
 bat -A /etc/hosts
-bm <command>  # batman
+bm <command>  # batman - only good in full-screen
 cat /proc/cpuinfo
 GRUB (GRand Unified Bootloader)
 
