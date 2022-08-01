@@ -228,7 +228,7 @@ chmod -c 0400 /etc/doas.conf
 # after a reboot, test with  doas updatedb
 
 #=> 3 prepare for nanorc
-mkdir /home/jo/.config/nano
+mkdir -p /home/jo/.config/nano
 
 #=> 3 Rootkit Hunter
 pacman -S rkhunter
