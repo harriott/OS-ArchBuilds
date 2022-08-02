@@ -160,9 +160,9 @@ gvc () {
 
 #=> imagey - convert scanned images to jpg with ImageMagick
 # (won't work with white-spaces in file names)
-c () {
+C () {
   bash $Imagey/cnvt.sh $1 "-quality 70"
-}
+}  # leaving  c  free for  CliFM
 cg () {
   bash $Imagey/cnvt.sh $1 "-colorspace gray -quality 80"
 }

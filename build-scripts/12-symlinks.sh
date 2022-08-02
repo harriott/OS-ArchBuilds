@@ -22,6 +22,9 @@ ln -sf $MACHINE/jo/gitconfig ~/.gitconfig  # points to $ITstack/gitconfig
 #=> 0 nanorc
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
 
+#=> 0 nanorc
+ln -sf $ARCHBUILDS/jo/pinforc ~/.pinforc
+
 #=> 0 vims
 ln -sf $MACHINE/jo/gvimrc ~/.gvimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc

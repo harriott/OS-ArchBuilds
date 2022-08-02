@@ -47,6 +47,7 @@ sp (){
 }
 
 #=> file manage
+alias c=clifm
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
 
@@ -215,6 +216,7 @@ export PATH="$HOME/.npm-global/bin:$PATH"
 
 #=> system
 alias i=pinfo
+alias im='pinfo -m'
 export GPG_TTY=$(tty)  # correct TTY for GnuPG
 
 #==> for AUR packages

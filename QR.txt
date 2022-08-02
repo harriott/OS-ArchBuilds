@@ -3,7 +3,6 @@ vim: ft=build nospell:
 commands in this QuickReference work in my Arch install
  more generally, see $onGH/misc/linux/QR.txt
 
-$ITstack/gitconfig
 copyq help | mo
 gspdfpng
 
@@ -34,7 +33,7 @@ cpg --help | mo  # man advcp
 mvg --help | mo  # man advmv
 
 ## fd
-bm fd
+im fd
 fd -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
@@ -42,15 +41,17 @@ fd -d1 -td  # depth 1 (current dir), type dir
 fd -e ods  # finds OpenOffice Calc spreadsheets
 fd -H  # --hidden
 fd -HI --changed-within 1h
-fd -HI -tf ^config$ | xargs rg 'gh'  # ripgrep in git config's
-fd -HI -tf ^config$ > git_config.txt
 fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
 sharkdp/fd
 
+### git config's
+fd -HI -tf ^config$ | xargs rg -l 'remote = gh'  # ripgrep
+see  $Bash/bashrc-console
+
 ## ripgrep
 batgrep
-bm rg
+i rg
 outer whitespaces get ignored
 rg '\$ITstack'
 rg '\$mail'
@@ -250,6 +251,15 @@ cheat cheat
 /etc/pinforc
 i pinfo
 see  $Bash/bashrc-console
+
+### commands
+quite a few don't work, and some crash the terminal...
+
+#### commands that work
+/       -> search
+<space> -> PgDn
+b       -> PgUp
+f       -> next search term
 
 # hw
 cd /sys/devices/system/cpu/cpu0/cpufreq

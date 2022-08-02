@@ -1,5 +1,9 @@
 # Keybindings file for CliFM
 
+# created on first invocation of  clifm, so
+#  nvim -O /usr/share/clifm/keybindings.cfm $ARCHBUILDS/jo/clifm/keybindings.cfm -c 'windo difft'
+#  nvim -O $ARCHBUILDS/jo/clifm/keybindings.cfm ~/.config/clifm/keybindings.cfm -c 'windo difft'
+
 # Use the 'kbgen' plugin (compile it first: gcc -o kbgen kbgen.c) to find out the escape code for the key o key sequence you want. Use either octal, hexadecimal codes or symbols.
 # Ex: For Alt-/ (in rxvt terminals) 'kbgen' will print the following lines:
 # Hex  | Oct | Symbol
