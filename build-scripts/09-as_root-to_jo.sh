@@ -103,11 +103,18 @@ trap read debug  # puts a read request after each executable line
 # # Neofetch
 # pacman -S neofetch
 
+# # pinfo
+# pacman -S pinfo
+
 # # progress
 # pacman -S progress
 
 # # sysstat
 # pacman -S sysstat
+
+# # tealdeer
+# pacman -S tealdeer
+# 
 
 # #=> 2 limit systemd Journal size
 # # helpful for storage-limited installations

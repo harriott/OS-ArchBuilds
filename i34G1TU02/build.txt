@@ -150,9 +150,15 @@ gpg --recv-keys 12C6F735F7A9A519
   gpg: key 12C6F735F7A9A519: public key "Xyne. (Replaces EC3CBE7F607D11E663149E811D1F0DC78F173680.) <xyne@archlinux.org>" imported
   gpg: Total number processed: 1
   gpg:               imported: 1
+## celt
+sudo pacman -Rs celt
 ## waiting
+cheat
 FuseISO
 mediawiki.xml
+pinfo
+remove cht.sh-git
+tealdeer
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

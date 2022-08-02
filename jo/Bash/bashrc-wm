@@ -4,6 +4,7 @@
 # sourced by  $Bash/bashrc
 
 alias xc="zathura -P 38 $IThandy/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
+export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
 
 fv () {
     # find $Vs -type f -name "*$1*"

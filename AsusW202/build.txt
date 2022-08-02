@@ -103,6 +103,8 @@ bash ~/iwctl-connect.sh  got me online
 . ~/Archbuilds/Bash/export-storage
 bash ~/Archbuilds/build-scripts/11-symlinks.sh
 ## waiting
+pinfo
+tealdeer
 # fcron
 # physical configuration
 4GB RAM

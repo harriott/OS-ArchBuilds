@@ -46,10 +46,19 @@ trap read debug  # puts a read request after each executable line
 # # supersedes  Bashtop
 # sudo pacman -S bpytop
 
-# #=> cht.sh-git
+# #=> cheat
+# gdAUR cheat
+# nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
+# makepkg -sic
+# sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
+
+# #=> cht.sh-git 0 install
 # gdAUR cht.sh-git
 # nvim -c "silent! /chubin" PKGBUILD
 # makepkg -sic
+
+# #=> cht.sh-git 1 remove
+# sudo pacman -Rs cht.sh-git
 
 # #=> clamav-unofficial-sigs 0 install
 # gdAUR clamav-unofficial-sigs
@@ -60,6 +69,11 @@ trap read debug  # puts a read request after each executable line
 # #=> clamav-unofficial-sigs 1 remove
 # sudo systemctl disable clamav-unofficial-sigs.timer
 # sudo pacman -Rs clamav-unofficial-sigs
+
+#=> clifm
+gdAUR clifm
+nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
+makepkg -sic
 
 # #=> cmus-notify
 # gAUR cmus-notify
@@ -174,11 +188,11 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -474,8 +488,8 @@ true
 # #=> yt-dlp
 # sudo pacman -S yt-dlp
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

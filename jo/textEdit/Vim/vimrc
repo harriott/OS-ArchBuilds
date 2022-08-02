@@ -1,4 +1,6 @@
 
+" symlinked in  $ARCHBUILDS/build-scripts/12-symlinks.sh
+
 " move on to my Arch vimrc
 let vimrcArch = expand("$HOME/.vim/vimrc-Arch.vim")
 if filereadable(vimrcArch)

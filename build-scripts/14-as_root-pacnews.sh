@@ -10,7 +10,7 @@ set -v  # prints each statement here, including comments
 
 #=> mirrorlist
 rm /etc/pacman.d/mirrorlist.pacnew
-. 02-when_chroot-reflector.sh
+. 02-as_root-reflector.sh
 
 # #=> sshd_config
 # nvim -O /etc/ssh/sshd_config /etc/ssh/sshd_config.pacnew -c 'windo difft'

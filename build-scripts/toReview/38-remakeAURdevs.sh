@@ -35,10 +35,9 @@ PQ bat-extras-git
 xdgo https://github.com/eth-p/bat-extras/commits/master
 updateMaybe bat-extras-git eth-p
 
-#=> cht.sh-git
-PQ cht.sh-git
-xdgo https://github.com/chubin/cheat.sh/commits/master
-updateMaybe cht.sh-git chubin
+# PQ cht.sh-git
+# xdgo https://github.com/chubin/cheat.sh/commits/master
+# updateMaybe cht.sh-git chubin
 
 #=> fontpreview-git
 PQ fontpreview-git

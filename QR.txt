@@ -1,7 +1,7 @@
 vim: ft=build nospell:
 
 commands in this QuickReference work in my Arch install
- more generally, see $onGH/misc/GNULinuxQR.txt
+ more generally, see $onGH/misc/linux/QR.txt
 
 $ITstack/gitconfig
 copyq help | mo
@@ -33,8 +33,65 @@ rsync(1)
 cpg --help | mo  # man advcp
 mvg --help | mo  # man advmv
 
+## fd
+bm fd
+fd -H -t l  # finds symlinks in current directory, broken ones distinguished
+fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
+fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
+fd -d1 -td  # depth 1 (current dir), type dir
+fd -e ods  # finds OpenOffice Calc spreadsheets
+fd -H  # --hidden
+fd -HI --changed-within 1h
+fd -HI -tf ^config$ | xargs rg 'gh'  # ripgrep in git config's
+fd -HI -tf ^config$ > git_config.txt
+fd -I  # --no-ignore => do not respect .(git|fd)ignore files
+fd -I -e pdf  # finds pdf's when they're gitignored
+sharkdp/fd
+
+## ripgrep
+batgrep
+bm rg
+outer whitespaces get ignored
+rg '\$ITstack'
+rg '\$mail'
+rg '\~/\.npm-'
+rg '<someText>|<otherText>'
+rg --no-ignore 'sometext'  # allows searching into gitignored places
+rg -tmd '\$SE'
+rg -tmd '\$Sig'
+rg -tmd '\{TNW}'
+rg -ttex '\$Sig'
+rg -ttex '\\includepdf'
+rg -ttex '\\includegraphics'
+rg -ttex '\\multirow\{'
+rg -ttex '\\subsubsection\{'
+rg -ttex '{tabular}'
+rg -ttex 'newcommand\{'
+rg -ttex '\\setdefaultlanguage'
+rg -ttex 'WLR'
+rg -tvim 'vimHints'
+rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
+rg <someText>  # searches recursively in files
+
+### in vimfiles
+rg --no-ignore '\$MSwin10'
+rg --no-ignore '\$onGH'
+
+### TeX files
+rg -l -ttex '\\input' > rg-tex.txt
+rg -l -ttex '\\parskip' > rg-tex.txt
+rg -l -ttex verseSettings > rg-tex.txt
+rg -ttex '\{geometry}'
+rg -ttex '\\parindent'
+rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
+rg -ttex ^%%
+
+# Bash
+pinfo bash
+pinfo -m bash
+
 ## broot
-bm broot
+man broot
 F5 => refresh
 
 ### run
@@ -95,19 +152,6 @@ find . -type f -name "python.vim"
 fd -I -e conf
 find . -type f -name "*.conf"
 
-### fd
-bm fd
-fd -H -t l  # finds symlinks in current directory, broken ones distinguished
-fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
-fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
-fd -d1 -td  # depth 1 (current dir), type dir
-fd -e ods  # finds OpenOffice Calc spreadsheets
-fd -H  # --hidden
-fd -HI --changed-within 1h
-fd -I  # --no-ignore => do not respect .(git|fd)ignore files
-fd -I -e pdf  # finds pdf's when they're gitignored
-sharkdp/fd
-
 ### grepping
 grep -E '<someText>|<otherText>'
 grep -r --include "*.sh" ' -f ' .
@@ -118,45 +162,6 @@ man grep | grep egrep | xcol egrep fgrep
 #### manual
 GNU Grep Manual
 GREP(1)
-
-#### ripgrep
-batgrep
-bm rg
-for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > githubIssues.txt  # my GitHub issues
-outer whitespaces get ignored
-rg '\$ITstack'
-rg '\$mail'
-rg '\~/\.npm-'
-rg '<someText>|<otherText>'
-rg --no-ignore 'sometext'  # allows searching into gitignored places
-rg -tmd '\$SE'
-rg -tmd '\$Sig'
-rg -tmd '\{TNW}'
-rg -ttex '\$Sig'
-rg -ttex '\\includepdf'
-rg -ttex '\\includegraphics'
-rg -ttex '\\multirow\{'
-rg -ttex '\\subsubsection\{'
-rg -ttex '{tabular}'
-rg -ttex 'newcommand\{'
-rg -ttex '\\setdefaultlanguage'
-rg -ttex 'WLR'
-rg -tvim 'vimHints'
-rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
-rg <someText>  # searches recursively in files
-
-##### in vimfiles
-rg --no-ignore '\$MSwin10'
-rg --no-ignore '\$onGH'
-
-##### TeX files
-rg -l -ttex '\\input' > rg-tex.txt
-rg -l -ttex '\\parskip' > rg-tex.txt
-rg -l -ttex verseSettings > rg-tex.txt
-rg -ttex '\{geometry}'
-rg -ttex '\\parindent'
-rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
-rg -ttex ^%%
 
 ### mlocate
 bm locate
@@ -236,6 +241,15 @@ tint  # tetris
 ## CMatrix
 cmatrix -u 9 -C blue
 man cmatrix
+
+# help
+apropos
+cheat cheat
+
+## pinfo
+/etc/pinforc
+i pinfo
+see  $Bash/bashrc-console
 
 # hw
 cd /sys/devices/system/cpu/cpu0/cpufreq
@@ -508,6 +522,7 @@ bat -A /etc/hosts
 bm <command>  # batman - only good in full-screen
 cat /proc/cpuinfo
 GRUB (GRand Unified Bootloader)
+i hier
 
 ## groups
 cat /etc/group  # list all groups on the system
@@ -559,11 +574,25 @@ journalctl -b -g 'EFI v'  # shows EFI version
 
 # term
 echo $TERM
-colorscript -r
 figlet Joseph Harriott
 figlet(6)
 neofetch
 watch -n1 "date '+%D%n%T' | figlet -k"
+
+## colours
+bash $lB/colours/256/BR-color256.sh
+bash $lB/colours/256/SO-BrunoBronosky.sh
+bash $lB/colours/256/SE269077-numbers-ordered.sh
+bash $lB/colours/256/SE269077-FHauri.sh
+bash $lB/colours/awk-rgb-test.sh
+bash $lB/colours/ss64.sh
+bash $lB/colours/tripleee+isntn.sh
+perl $lB/colours/256/hSATAC-256color.pl
+python $lB/colours/256/WoLpH-colortest.py
+colorscript -r
+terminal-colors  # shows what the terminal can
+terminal-colors -l  # with #xxxxxx's
+terminal-colors -o  # ANSI escape codes
 
 ## termdown
 termdown --help | mo

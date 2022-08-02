@@ -111,15 +111,25 @@ if [ -s "/usr/bin/jump" ]; then
   eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
 fi
 
-#==> time-sorted lists of files - all
-alias fa='fdtsAll'
-
-fdtsAll () {
+#==> time-sorted lists of files
+fa () {
   eval "find * $printfDTsort"
-  echo "$printfDTsort"
+}  # all files
+
+ghi () {
+  for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > GitHubIssues.txt
+  sed -i '/copied\/IT-handy\//d' GitHubIssues.txt
+  echo "results are in GitHubIssues.txt"
+}  # my GitHub issues
+
+gitc () {
+  echo 'vim: nospell:' > git_config.txt
+  echo '' >> git_config.txt
+  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> git_config.txt
+  echo "results are in git_config.txt"
 }
 
-#==> time-sorted lists of files - by extension
+#===> by extension
 alias fx='fdtsExt'
 # fx gfm
 # fx gitignore
@@ -140,7 +150,7 @@ fdtsExt () {
   fi
 }
 
-#==> time-sorted lists of files - bbcode
+#===> bbcode
 fdtsbbcode () {
   dtsfile=dts-ft_bbcode.txt
   ftListHeader $dtsfile
@@ -148,7 +158,7 @@ fdtsbbcode () {
   echo "results are in $dtsfile"
 }
 
-#==> time-sorted lists of files - by keystring in name
+#===> by keystring in name
 alias fk=fdtsKeyString
 
 fdtsKeyString () {
@@ -159,7 +169,7 @@ fdtsKeyString () {
   fi
 }
 
-#==> time-sorted lists of files - common functionality
+#===> common functionality
 ctfp () {
   # corrects to full path
   sed -i "s| \.| $PWD|" $1
@@ -181,7 +191,7 @@ fdtsKS () {
   echo "results are in $2"
 } # $1 being the keystring
 
-#==> time-sorted lists of files - in $rsnapshot
+#===> in $rsnapshot
 fdtsRsnapshot () {
   echo $1
   echo $2
@@ -204,6 +214,7 @@ alias tre='trash-restore'
 export PATH="$HOME/.npm-global/bin:$PATH"
 
 #=> system
+alias i=pinfo
 export GPG_TTY=$(tty)  # correct TTY for GnuPG
 
 #==> for AUR packages

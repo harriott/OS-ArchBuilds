@@ -1,6 +1,5 @@
 #!/bin/bash
 # vim: set sw=2:
-# $ulL/Bash/Scratch.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
