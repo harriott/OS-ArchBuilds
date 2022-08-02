@@ -114,7 +114,7 @@ trap read debug  # puts a read request after each executable line
 
 # # tealdeer
 # pacman -S tealdeer
-# 
+# tldr -u
 
 # #=> 2 limit systemd Journal size
 # # helpful for storage-limited installations

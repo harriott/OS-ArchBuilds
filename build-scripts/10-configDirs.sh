@@ -4,6 +4,9 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> 1 for broot
+broot -- install  # gets  br
+
 #=> 1 for MediaWiki
 mkdir -p ~/.local/share/mime/packages
 

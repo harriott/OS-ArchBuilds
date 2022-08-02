@@ -92,7 +92,8 @@ pinfo bash
 pinfo -m bash
 
 ## broot
-man broot
+ctrl+q => quit
+i broot
 F5 => refresh
 
 ### run
@@ -260,6 +261,11 @@ quite a few don't work, and some crash the terminal...
 <space> -> PgDn
 b       -> PgUp
 f       -> next search term
+
+## tealdeer
+tldr -h
+tldr -u
+tldr tldr
 
 # hw
 cd /sys/devices/system/cpu/cpu0/cpufreq

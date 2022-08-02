@@ -46,19 +46,19 @@ trap read debug  # puts a read request after each executable line
 # # supersedes  Bashtop
 # sudo pacman -S bpytop
 
-# #=> cheat
-# gdAUR cheat
-# nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
-# makepkg -sic
-# sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
+#=> cheat
+gdAUR cheat
+nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
+makepkg -sic
+sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
 # #=> cht.sh-git 0 install
 # gdAUR cht.sh-git
 # nvim -c "silent! /chubin" PKGBUILD
 # makepkg -sic
 
-# #=> cht.sh-git 1 remove
-# sudo pacman -Rs cht.sh-git
+#=> cht.sh-git 1 remove
+sudo pacman -Rs cht.sh-git
 
 # #=> clamav-unofficial-sigs 0 install
 # gdAUR clamav-unofficial-sigs
@@ -360,11 +360,11 @@ makepkg -sic
 # #=> patched Cascadia Code font 0 remove
 # sudo pacman -Rs nerd-fonts-cascadia-code
 
-# #=> PDFsam
-# gAUR pdfsam
-# nvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic  # choose  jdk-openjdk
-# true
+#=> PDFsam
+gAUR pdfsam
+nvim -c "silent! /torakiki" PKGBUILD
+makepkg -sic  # choose  jdk-openjdk
+true
 
 # #=> pdftk
 # sudo pacman -S pdftk

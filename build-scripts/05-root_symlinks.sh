@@ -17,7 +17,7 @@ ln -sf $MACHINE/export-machine /root/.export-machine
 
 ln -sf $ARCHBUILDS/root/nanorc ~/.config/nano/nanorc
 
-ln -sf $ARCHBUILDS/root/rsyncBackup.sh /root/rsyncBackup.sh
+ln -sf $ARCHBUILDS/root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 

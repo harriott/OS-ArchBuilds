@@ -25,6 +25,9 @@ ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
 #=> 0 nanorc
 ln -sf $ARCHBUILDS/jo/pinforc ~/.pinforc
 
+#=> 0 tmux
+ln -sf $tmx/tmux.conf ~/.tmux.conf
+
 #=> 0 vims
 ln -sf $MACHINE/jo/gvimrc ~/.gvimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
