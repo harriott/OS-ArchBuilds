@@ -102,9 +102,13 @@ su rm -r /Archbuilds
 bash ~/iwctl-connect.sh  got me online
 . ~/Archbuilds/Bash/export-storage
 bash ~/Archbuilds/build-scripts/11-symlinks.sh
+#### iwd disable & stop
+sudo bash ~/Archbuilds/build-scripts/07-iwd.sh
+#### NetworkManager enable & start
+bash ~/Archbuilds/build-scripts/13-NetworkManager.sh
+reboot  for  nmcli device
+bash ~/NetworkManager.sh
 ## waiting
-pinfo
-tealdeer
 # fcron
 # physical configuration
 4GB RAM

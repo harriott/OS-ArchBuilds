@@ -7,7 +7,7 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 0 enable & start
-sudo systemctl enable NetworkManager.service --now
+sudo systemctl enable NetworkManager --now
 
 # #=> 1 disable & stop
 # systemctl disable NetworkManager.service --now

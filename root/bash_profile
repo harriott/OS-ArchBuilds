@@ -7,3 +7,5 @@ source ~/.export-machine; source ~/.export-storage
 
 [[ -f /root/.bashrc ]] && . /root/.bashrc
 
+. ~/.config/broot/launcher/bash/br  # - carries through to X
+
