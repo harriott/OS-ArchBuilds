@@ -2,12 +2,13 @@
 # vim: fdl=2 ft=sh sw=2:
 
 # here I export variables that could also be useful as root
+# . $ARCHBUILDS/Bash/export-storage
 
 # Variable naming constraints:
 #  avoid names that only differ by case
 #  use names that grep unambiguously
 
-# for initial build of Arch:  when  $myDrA  is undefined
+# for initial build of Arch:
 # for jo:
 #  symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
 #  sourced by  $Bash/bash_profile
@@ -19,7 +20,7 @@
 # $myDrA  &  $Storage  are pre-defined in  $MACHINE/export-machine
 
 #==> 0 $DROPBOX
-if [[ $myDrA ]]; then
+if [ $myDrA ]; then
   export DROPBOX=$Storage/Dropbox
   # - keep  DROPBOX  capitalised for finding it without need for $
     export detail=$DROPBOX/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage/detail
@@ -38,16 +39,24 @@ if [[ $myDrA ]]; then
 fi
 
 #==> 2 $ARCHBUILDS
-export ARCHBUILDS=$onGH/ArchBuilds
-[[ -d ~/ArchBuilds ]] && export ARCHBUILDS=~/ArchBuilds  # provisional
-echo "\$ARCHBUILDS is $ARCHBUILDS"
-export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
-export Bash=$ARCHBUILDS/jo/Bash
-  export host=$(uname -n)
-  # - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
-    export MACHINE=$ARCHBUILDS/$host
-export clm=$ARCHBUILDS/jo/clm  # used in  bashrc-clm  and  muttrc-*  :s/email/clm/g
-export tmx=$ARCHBUILDS/tmux  # used in  tmux.conf
+if [ $onGH ]; then
+  export ARCHBUILDS=$onGH/ArchBuilds
+# [[ -d ~/ArchBuilds ]] && export ARCHBUILDS=~/ArchBuilds  # provisional
+else AB=~/ArchBuilds; hjAB=/home/jo/ArchBuilds
+  if [ -d $AB ]; then export ARCHBUILDS=$rAB
+  elif [ -d $hjAB ]; then export ARCHBUILDS=$hjAB
+  fi  # provisional
+fi
+if [ $ARCHBUILDS ]; then
+  export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
+  export Bash=$ARCHBUILDS/jo/Bash
+  export bs=$ARCHBUILDS/build-scripts  # :s/ARCHBUILDS\/build-scripts/bs
+    export host=$(uname -n)
+    # - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
+      export MACHINE=$ARCHBUILDS/$host
+  export clm=$ARCHBUILDS/jo/clm  # used in  bashrc-clm  and  muttrc-*  :s/email/clm/g
+  export tmx=$ARCHBUILDS/tmux  # used in  tmux.conf
+fi
 
 #=> 0 mail
 export maild=/home/jo/.local/share/mail  # used also in  muttrc-*

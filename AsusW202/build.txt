@@ -108,6 +108,8 @@ sudo bash ~/Archbuilds/build-scripts/07-iwd.sh
 bash ~/Archbuilds/build-scripts/13-NetworkManager.sh
 reboot  for  nmcli device
 bash ~/NetworkManager.sh
+### Firewalld
+bash ~/Archbuilds/build-scripts/15-as_root-when_jo-toFirewall.sh
 ## waiting
 # fcron
 # physical configuration

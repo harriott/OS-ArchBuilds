@@ -2,17 +2,22 @@
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-set -v  # prints each statement here, including comments
+set -ev  # quit on error, prints each statement here, including comments
 
-# #=> clamd.conf
+#=> 0 $ARCHBUILDS
+# check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
+echo "\$ARCHBUILDS is $ARCHBUILDS"
+read -p "- looks good?"
+
+# #=> 1 clamd.conf
 # nvim -o /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
 # rm /etc/clamav/clamd.conf.pacnew
 
-#=> mirrorlist
+#=> 1 mirrorlist
 rm /etc/pacman.d/mirrorlist.pacnew
-. 02-as_root-reflector.sh
+. $bs/02-as_root-reflector.sh
 
-# #=> sshd_config
+# #=> 1 sshd_config
 # nvim -O /etc/ssh/sshd_config /etc/ssh/sshd_config.pacnew -c 'windo difft'
 # rm /etc/ssh/sshd_config.pacnew
 

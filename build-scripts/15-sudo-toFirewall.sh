@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# set -v  # prints each statement here, including comments
-# trap read debug  # puts a read request after each executable line
+set -ev  # quits on error, prints each statement here, including comments
+trap read debug  # puts a read request after each executable line
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 $ARCHBUILDS
-# check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
+. $ARCHBUILDS/Bash/export-storage
 echo "\$ARCHBUILDS is $ARCHBUILDS"
 read -p "- looks good?"
 
