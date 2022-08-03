@@ -47,7 +47,7 @@ sp (){
 }
 
 #=> file manage
-alias c=clifm
+alias c='clifm .'
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
 

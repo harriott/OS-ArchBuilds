@@ -32,6 +32,11 @@ rsync(1)
 cpg --help | mo  # man advcp
 mvg --help | mo  # man advmv
 
+## CliFM
+$ARCHBUILDS/jo/clifm/keybindings.cfm
+Q => quit to current directory
+shift+up => navigate up
+
 ## fd
 im fd
 fd -H -t l  # finds symlinks in current directory, broken ones distinguished
@@ -88,6 +93,7 @@ rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
 rg -ttex ^%%
 
 # Bash
+im time
 pinfo bash
 pinfo -m bash
 
@@ -352,7 +358,10 @@ journalctl -u rsnapshot@daily -r
 journalctl -u rsnapshot@hourly -r
 systemctl status rsnapshot-hourly.timer
 
-#### find my OBS grabs
+#### find
+find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/CAM-toSort0 -type f -name "01 *"
+
+##### my OBS grabs
 find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
 find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "Queen*.mkv" -exec rm -f {} \;
 find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "2022-*.mkv" -exec rm -f {} \;

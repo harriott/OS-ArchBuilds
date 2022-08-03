@@ -120,6 +120,7 @@ edit-color-scheme:\e[19~
 open-keybinds:\e[20~
 open-config:\e[21~
 open-bookmarks:\e[23~
+## F12
 quit:\e[24~
 
 # Plugins

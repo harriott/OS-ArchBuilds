@@ -170,18 +170,13 @@ sudo rm /etc/locale.gen.pacnew
 Fujitsu E19W5 1440x900
 TL-WN725N
 ## BIOS Setup Utility
-Boot Options
-  1st Boot Device: Hard Disk
-  2nd Boot Device: CD&DVD HL-DT-ST DVDRAM GH70N
-  3rd Boot Device: Removable Device
-  4th Boot Device: EFI Device
-  5th Boot Device: LAN
-Boot Options
-  1st Boot Device: EFI Device
-  2nd Boot Device: Hard Disk
-  3rd Boot Device: CD&DVD HL-DT-ST DVDRAM GH70N
-  4th Boot Device: Removable Device
-  5th Boot Device: LAN
+<delete> at start
+### Boot Options
+1st Boot Device: EFI Device
+2nd Boot Device: Hard Disk
+3rd Boot Device: CD&DVD HL-DT-ST DVDRAM GH70N
+4th Boot Device: Removable Device
+5th Boot Device: LAN
 ## cbh
 Logitech M187 Wireless Mini Mouse
 Perixx PERIBOARD-407W keyboard

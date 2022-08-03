@@ -112,6 +112,7 @@ bash ~/NetworkManager.sh
 bash ~/Archbuilds/build-scripts/02-as_root-reflector.sh
 bash ~/Archbuilds/build-scripts/15-as_root-when_jo-toFirewall.sh
 ## waiting
+clamscan /
 # fcron
 # physical configuration
 4GB RAM

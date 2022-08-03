@@ -114,9 +114,17 @@ export tpf6b="$tpfb$tpf6" # bold cyan
 export tpf7b="$tpfb$tpf7" # bold white
 # echo "${tpf0b}black ${tpf1b}red ${tpf2b}green ${tpf3b}yellow ${tpf4b}blue ${tpf5b}magenta ${tpf6b}cyan ${tpf7b}white${tpfn}"
 
-#=> clamscan results
-cslbn=~/Arch/clamscan  # log basename
+#=> clamscan 0 preferred log basename
+cslbn=~/Arch/clamscan
 
+#=> clamscan 1 scan
+scs () {
+  echo "about to clamscan /"
+  sudo clamscan -r --exclude-dir='/media|/mnt|/sys' / 2>&1 | tee $cslbn.log
+  sudo chown jo:jo $cslbn.log
+}  # end of log shows time taken
+
+#==> examine results
 csF () {
   if [ $1 ]; then
     cslF=$cslbn"FOUND-$1.log"
@@ -129,8 +137,12 @@ csF () {
 
 csFt () {
   cslF=$cslbn"FOUND-$1.log"
-  echo "Possible threats listed in $cslF:"
-  sed -n '/Heuristics.Phishing.Email.SpoofedDomain\|Sanesecurity\|Urlhaus/! p' $cslF
+  if [ -f $cslF ]; then
+    echo "Possible threats listed in $cslF:"
+    sed -n '/Heuristics.Phishing.Email.SpoofedDomain\|Sanesecurity\|Urlhaus/! p' $cslF
+  else
+    echo "$cslF  ain't there"
+  fi
 }  # show remaining threats
 
 #=> command history

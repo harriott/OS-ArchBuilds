@@ -1203,6 +1203,7 @@ handlr get .xml  reports  google-chrome.desktop  so  handlr set .xml gvim.deskto
 ## xdg-open .mediawiki
 handlr get .mediawiki  reports so  handlr add .mediawiki gvim.desktop
 ## waiting
+clifm-git
 CUPS Socket activation
 disable Shift+PrtSc
 tk
