@@ -13,7 +13,7 @@ set -ev  # quits on error, prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 2 allow dhcpcd without pw
-bash -c "cat $ARCHBUILDS/etc/sudoers-dhcpcd >> /etc/sudoers"
+bash -c "cat $ARCHBUILDS/etc/sudoers/dhcpcd >> /etc/sudoers"
 visudo -c -f /etc/sudoers
 tail -n 2 /etc/sudoers
 
