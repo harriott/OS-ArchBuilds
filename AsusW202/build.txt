@@ -116,13 +116,14 @@ scs
 unset ARCHBUILDS myDrA onGH
   . ~/Archbuilds/Bash/export-storage
 bash $bs/08-as_root-updates.sh
-
-#### locale.gen.pacnew
-$bs/anytime/as_root-pacnews.sh
+bash ArchBuilds/build-scripts/anytime/cloneArchBuilds.sh
+reboot
 #### ranger
 bash $bs/1-to_jo/2-config.sh
 bash $bs/symlinks-root.sh
 ## waiting
+### locale.gen.pacnew
+bash $bs/anytime/as_root-pacnews.sh
 # fcron
 # physical configuration
 4GB RAM

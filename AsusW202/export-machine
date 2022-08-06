@@ -14,7 +14,7 @@ export rsnapshot=/run/media/jo/KDTG311281/rsnapshot/
 export startxDelay=2
 
 # machine-specific, for  $ARCHBUILDS/Bash/export-storage
-export myDrA=true  # 1 when my Dropbox is active
+export myDrA=false  # 1 when my Dropbox is active
 export Storage=/mnt/SDEP128G  # where I keep stuff
     export Enc=$Storage/Encrypted
 
