@@ -23,7 +23,7 @@ export host=$(uname -n)
 # $myDrA  &  $Storage  are pre-defined in  $MACHINE/export-machine
 
 #==> 0 $DROPBOX
-if [ $myDrA ]; then
+if $myDrA; then
   export DROPBOX=$Storage/Dropbox
   # - keep  DROPBOX  capitalised for finding it without need for $
   core=$DROPBOX/JH/core
@@ -33,8 +33,6 @@ if [ $myDrA ]; then
         export lB=$ulL/Bash  # used in  $ARCHBUILDS/QR.txt
       export onGH=$ITstack/onGitHub
         export vimfiles=$onGH/vimfiles
-else
-  unset onGH
 fi
 
 #==> 2 $ARCHBUILDS
