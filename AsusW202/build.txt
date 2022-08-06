@@ -120,7 +120,7 @@ bash ArchBuilds/build-scripts/anytime/cloneArchBuilds.sh
 reboot
 #### ranger
 bash $bs/1-to_jo/2-config.sh
-bash $bs/symlinks-root.sh
+sudo bash $bs/anytime/symlinks-root.sh
 ## waiting
 ### locale.gen.pacnew
 bash $bs/anytime/as_root-pacnews.sh

@@ -2,7 +2,8 @@
 # vim: fdl=1 sw=2:
 
 #=> 0 $ARCHBUILDS
-# check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
+sd=$(dirname "${BASH_SOURCE[0]}")
+. ${sd%/*}/Bash/export-storage
 echo "\$ARCHBUILDS is $ARCHBUILDS"
 read -p "- looks good?"
 
