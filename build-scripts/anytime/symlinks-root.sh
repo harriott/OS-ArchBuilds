@@ -1,9 +1,11 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
+set -e
+
 #=> 0 $ARCHBUILDS
-sd=$(dirname "${BASH_SOURCE[0]}")
-. ${sd%/*}/Bash/export-storage
+cd $(dirname "${BASH_SOURCE[0]}")
+. ../../Bash/export-storage
 echo "\$ARCHBUILDS is $ARCHBUILDS"
 read -p "- looks good?"
 
