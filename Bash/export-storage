@@ -26,22 +26,19 @@ export host=$(uname -n)
 if [ $myDrA ]; then
   export DROPBOX=$Storage/Dropbox
   # - keep  DROPBOX  capitalised for finding it without need for $
-    export detail=$DROPBOX/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage/detail
-    export T91=$DROPBOX/JH/T91-default-release
-
   core=$DROPBOX/JH/core
     export ITstack=$core/IT_stack
       export CP=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
       export ulL=$ITstack/unix_like-linux  # was $ulGL
         export lB=$ulL/Bash  # used in  $ARCHBUILDS/QR.txt
-        export lclm=$ulL/clm  # linux command-line mail, was GNULE
       export onGH=$ITstack/onGitHub
         export vimfiles=$onGH/vimfiles
-    export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
-
+else
+  unset onGH
 fi
 
 #==> 2 $ARCHBUILDS
+unset ARCHBUILDS
 if [ $onGH ]; then
   export ARCHBUILDS=$onGH/ArchBuilds
 else

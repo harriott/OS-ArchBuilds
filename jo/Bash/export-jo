@@ -17,11 +17,13 @@ export MOZ_GTK_TITLEBAR_DECORATION=client
 # here I'm taking care to avoid variables that only differ by case
 
 export bilan=$DROPBOX/JH/Work/ST/LPD/IdF/AB-TAP/bilan
+export cITh=$DROPBOX/JH/copied/IT-handy
+  export cIThul=$cITh/unix-like
+export detail=$DROPBOX/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage/detail
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export IT1=$DROPBOX/JH/technos/IT1  # for notes
 export ITP=$DROPBOX/JH/technos/IT0-storage  # $ITP/diskUsage.txt
-export cITh=$DROPBOX/JH/copied/IT-handy
-  export cIThul=$cITh/unix-like
+export lclm=$ulL/clm  # linux command-line mail, was GNULE
 export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
 export MD4PDF=$onGH/md4pdf
 export MSWin10=$onGH/MSWin10  # for notes
@@ -29,5 +31,6 @@ export Openbox=$ARCHBUILDS/jo/Openbox
 export PAPERSIZE=A4
 export SE=$DROPBOX/JH/CforWork/Education/Science-Engineering  # for notes
 export Sig=$DROPBOX/JH/now/essential/signatures  # for use in creating documents
+export T91=$DROPBOX/JH/T91-default-release
 export vimfiles=$onGH/vimfiles
 

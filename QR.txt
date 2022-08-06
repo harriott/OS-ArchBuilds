@@ -130,12 +130,15 @@ pinfo bash
 pinfo -m bash
 
 ## broot
-ctrl+q [<enter>] => quit
 i broot
+
+### commands
+alt+enter => quit to current directory
+alt+h => toggle hidden
+ctrl+q [<enter>] => quit
 F5 => refresh
 
-### run
-alt+enter => quit to current directory
+### launch
 br
 br -c :count
 br -d => br --dates => the last modified date

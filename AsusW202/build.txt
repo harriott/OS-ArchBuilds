@@ -113,9 +113,16 @@ bash $bs/02-as_root-reflector.sh
 bash $bs/15-as_root-when_jo-toFirewall.sh
 scs
 ### ranger
+unset ARCHBUILDS myDrA onGH
+  . ~/Archbuilds/Bash/export-storage
 bash $bs/08-as_root-updates.sh
+
+#### locale.gen.pacnew
+$bs/anytime/as_root-pacnews.sh
+#### ranger
+bash $bs/1-to_jo/2-config.sh
+bash $bs/symlinks-root.sh
 ## waiting
-ranger
 # fcron
 # physical configuration
 4GB RAM

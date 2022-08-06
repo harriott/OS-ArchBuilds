@@ -24,3 +24,7 @@ ln -sf $tmx/tmux.conf ~/.tmux.conf
 #=> 2 list root symlinks
 find /root -type l -ls  # doesn't show broken
 
+#=> 2 ranger
+sudo ln -sf $ARCHBUILDS/jo/ranger /root/.config/ranger
+exa -la /root/.config
+

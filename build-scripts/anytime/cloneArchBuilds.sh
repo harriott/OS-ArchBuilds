@@ -2,6 +2,7 @@
 # vim: fdl=1 sw=2:
 
 #=> grab latest ArchBuilds
+# useful before Dropbox
 if [[ $(id -u) > 0 ]]; then
   cd ~  # when  jo
   s=sudo
