@@ -1,6 +1,6 @@
 # vim: set et:
 
-# implemented by my  $ARCHBUILDS/build-scripts/36-symlinks-sshd.sh
+# implemented by my  $bs/36-symlinks-sshd.sh
 #   symlinked to  ~/.config/dunst/dunstrc
 
 #   see  /etc/dunst/dunstrc

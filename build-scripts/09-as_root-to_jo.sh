@@ -46,6 +46,9 @@ trap read debug  # puts a read request after each executable line
 # # p7zip
 # pacman -S p7zip
 
+# # ranger
+# pacman -S ranger
+
 # # rhash
 # pacman -S rhash
 

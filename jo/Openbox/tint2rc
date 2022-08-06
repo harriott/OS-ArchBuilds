@@ -3,7 +3,7 @@
 # full documentation of the configuration options.
 #
 # my changes - JH
-#  bash $ARCHBUILDS/build-scripts/34-softwares-forOpenbox.sh
+#  bash $bs/34-softwares-forOpenbox.sh
 #  tint2 17.0.1-1
 #
 #-------------------------------------

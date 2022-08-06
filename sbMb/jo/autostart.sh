@@ -6,9 +6,9 @@
 # machine dependent Openbox autostart tmux tweaks
 # called from  $Openbox/openbox/autostart/autostart
 
-# test this configuration with
+# test (or reload) this configuration with
 #  tmux kill-server
-#  $Openbox/openbox/autostart/urxvtl.sh; $MACHINE/jo/autostart.sh
+#  bash $Openbox/openbox/autostart/urxvtl.sh; bash $MACHINE/jo/autostart.sh
 
 # (chmod u+x $MACHINE/jo/urxvtl.sh)
 

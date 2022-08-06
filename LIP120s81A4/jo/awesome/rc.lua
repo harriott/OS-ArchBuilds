@@ -2,7 +2,7 @@
 
 -- Joseph Harriott - Mon 06 Jun 2022
 -- adapted from  /etc/xdg/awesome/rc.lua
--- symlinked in my  $ARCHBUILDS/build-scripts/39-awesome.sh
+-- symlinked in my  $bs/39-awesome.sh
 --  exa -la ~/.config/awesome/rc.lua
 
 --  to do

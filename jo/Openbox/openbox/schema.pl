@@ -31,7 +31,7 @@ require "$ENV{HOME}/.config/obmenu-generator/config.pl";
 my $editor = $CONFIG->{editor};
 $editor = 'gvim';
 
-# symlinked in my  $ARCHBUILDS/build-scripts/31-symlinks-Openbox.sh
+# symlinked in my  $bs/31-symlinks-Openbox.sh
 #  to  ~/.config/obmenu-generator/schema.pl
 
 our $SCHEMA = [

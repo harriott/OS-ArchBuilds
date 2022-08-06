@@ -12,7 +12,7 @@ Xft.rgba: rgb
 ! ------------
 ! ------------
 
-! symlinked in my  $ARCHBUILDS/build-scripts/17-symlinks.sh
+! symlinked in my  $bs/17-symlinks.sh
 ! called from my  $ARCHBUILDS/jo/xinitrc
 
 ! after changes here, either quit & restart X or

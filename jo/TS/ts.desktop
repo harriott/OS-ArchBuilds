@@ -1,6 +1,6 @@
 
 # for  $ARCHBUILDS/jo/ts.sh
-# symlinked in my  $ARCHBUILDS/build-scripts/38-LibreOffice+Thunderbird.sh
+# symlinked in my  $bs/38-LibreOffice+Thunderbird.sh
 #  to provide my command  thunderbird_safely, used in  $Openbox/openbox/schema.pl
 
 #  cat /usr/share/applications/ts.desktop

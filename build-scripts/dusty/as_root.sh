@@ -3,53 +3,82 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> for *8192eu*
+#=> root
 
-#==> 1 softwares - appmenu-gtk-module 0 install
+#==> for *8192eu*
+
+#===> 1 softwares - appmenu-gtk-module 0 install
 pacman -S appmenu-gtk-module
 
-# #==> 1 softwares - appmenu-gtk-module 1 uninstall
+# #===> 1 softwares - appmenu-gtk-module 1 uninstall
 # pacman -Rs appmenu-gtk-module
 # true
 
-#==> 1 softwares - dkms 0 install
+#===> 1 softwares - dkms 0 install
 pacman -S dkms
 reboot
 
-#==> 1 softwares - dkms 1 remove
+#===> 1 softwares - dkms 1 remove
 # this caused  $userresources  not to be respected in  ~/.xinitrc  and poor fonts in  gVim
 pacman -Rs dkms
 reboot
 
-# #=> linux headers
+#==> hard drives mounts
+stat -c '%A %a %h %U %G %s %n' /mnt/*  # check ownerships
+
+# make writable for jo
+# chown jo:jo /mnt/9QF57J6Q
+# chown jo:jo /mnt/SD480GSSDPlus
+# chown jo:jo /mnt/SDEP128G
+# chown jo:jo /mnt/ST3320418AS
+# chown jo:jo /mnt/WD30EZRZ
+
+# #==> linux headers
 # # for *8192eu*
 # pacman -S linux-headers
 # # - don't forget to  reboot !
 # reboot
 
-# #=> move /usr
+# #==> move /usr
 dt=$(date "+%F-%H-%M")
 
-# #==> grab the UUIDs
+# #===> grab the UUIDs
 # ls -l /dev/disk/by-uuid/ > /mnt/UUIDs.txt
 
-# #==> modify mkinitcpio.conf for repositioning of /usr
+# #===> modify mkinitcpio.conf for repositioning of /usr
 # sed 's#fsck)#fsck shutdown usr)#' /etc/mkinitcpio.conf > /mnt/mkinitcpio-$dt.conf
 # cp /mnt/mkinitcpio-$dt.conf /etc/mkinitcpio.conf
 # grep 'd f' /etc/mkinitcpio.conf
 
-# #==> reset mkinitcpio.conf
+# #===> reset mkinitcpio.conf
 # sed 's#fsck shutdown usr)#fsck)#' /etc/mkinitcpio.conf > /mnt/mkinitcpio-$dt.conf
 # cp /mnt/mkinitcpio-$dt.conf /etc/mkinitcpio.conf
 # grep 'd f' /etc/mkinitcpio.conf
 
-# #=> 0 Numlock on in getty
+# #==> 0 Numlock on in getty
 # mkdir /etc/systemd/system/getty@.service.d
 # echo [Service] > /etc/systemd/system/getty@.service.d/activate-numlock.conf
 # echo "ExecStartPre=/bin/sh -c 'setleds +num < /dev/%I'" >> /etc/systemd/system/getty@.service.d/activate-numlock.conf
 # cat /etc/systemd/system/getty@.service.d/activate-numlock.conf
 
-# #=> 1 Numlock off in getty
+# #==> 1 Numlock off in getty
 # # because it didn't work in sbMb
 # rm /etc/systemd/system/getty@.service.d/activate-numlock.conf
+
+#=> as root when jo 0
+
+#==> python-pew 0 install
+pacman -S python-pew
+
+#==> python-pew 1 remove
+pacman -Rs python-pew
+
+#=> as root when jo 1 when X
+
+#==> AV remove PulseAudio
+pacman -Rs zoom  # (also removes pulseaudio-alsa)
+pacman -Rs pulsemixer  # (also removes pulseaudio)
+
+#==> networking - LastPass CLI
+pacman -S lastpass-cli
 

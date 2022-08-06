@@ -4,7 +4,7 @@
 # ----------------------------------------------------
 
 # chmod 755 $Openbox/openbox/importScreenshot.sh
-# symlinked in  $ARCHBUILDS/build-scripts/34-symlinks-Openbox.sh
+# symlinked in  $bs/34-symlinks-Openbox.sh
 
 # Called by  $Openbox/openbox/rc.xml  because:
 #  <command>importScreenshot</command>  doesn't find my Bash function

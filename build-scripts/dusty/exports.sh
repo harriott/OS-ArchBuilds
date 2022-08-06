@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $ARCHBUILDS/build-scripts/05-exports.sh
+# bash $bs/05-exports.sh
 
 #=> 0 ARCHBUILDS
 # 1 in root

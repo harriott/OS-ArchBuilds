@@ -25,6 +25,9 @@ ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
 #=> 0 nanorc
 ln -sf $ARCHBUILDS/jo/pinforc ~/.pinforc
 
+#=> 0 ranger
+ln -sf $ARCHBUILDS/jo/ranger ~/.config/ranger
+
 #=> 0 tmux
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 

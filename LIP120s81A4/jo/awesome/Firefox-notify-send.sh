@@ -5,7 +5,7 @@
 
 # (chmod 755 $MACHINE/jo/awesome/Firefox-notify-send.sh)
 # called by  $MACHINE/jo/awesome/rc.lua
-# symlinked in my  $ARCHBUILDS/build-scripts/39-awesome.sh
+# symlinked in my  $bs/39-awesome.sh
 
 notify-send -i /usr/share/icons/hicolor/16x16/apps/firefox.png "An instance of Firefox was launched."
 firefox

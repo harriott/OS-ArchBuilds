@@ -13,7 +13,7 @@ mkdir -p ~/.local/share/mime/packages
 # #=> 1 prepare for nanorc
 # mkdir -p /home/jo/.config/nano
 
-# #=> 1 Rootkit Hunter
+# #=> 1 for Rootkit Hunter
 # mkdir /home/jo/Arch
 
 #=> 1 tealdeer

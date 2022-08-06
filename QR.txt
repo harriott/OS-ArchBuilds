@@ -23,7 +23,7 @@ sudo cat /var/spool/fcron/jo.orig
 bat <file>
 diskus
 dua [i]
-gdu
+e
 MV(1)
 pygmentize -h
 rsync(1)
@@ -34,8 +34,23 @@ mvg --help | mo  # man advmv
 
 ## CliFM
 $ARCHBUILDS/jo/clifm/keybindings.cfm
-Q => quit to current directory
+clifm -v
+i clifm
+
+### commands
+Q => quit to current directory - doesn't work...
 shift+up => navigate up
+
+#### selection
+r sel => remove all
+s i j n-m
+
+## exa
+e
+e -l -s modified  # time sorted
+e -la  # for permissions and symlinks
+e -T   # for tree
+i exa
 
 ## fd
 im fd
@@ -54,10 +69,27 @@ sharkdp/fd
 fd -HI -tf ^config$ | xargs rg -l 'remote = gh'  # ripgrep
 see  $Bash/bashrc-console
 
+## ranger
+feh $cIThul/cheatsheet.png &
+r $ARCHBUILDS/jo/ranger  # my configurations
+r $DROPBOX/JH/Cafezoide
+ranger --version
+
+### commands
+? => start of help dialogue
+I => rename
+i => inspect file
+shift+s => open subshell
+c-h / zh => toggle hidden
+
 ## ripgrep
 batgrep
 i rg
 outer whitespaces get ignored
+rg --type-list
+
+### searches
+rg '\$cITh' -l
 rg '\$ITstack'
 rg '\$mail'
 rg '\~/\.npm-'
@@ -66,28 +98,28 @@ rg --no-ignore 'sometext'  # allows searching into gitignored places
 rg -tmd '\$SE'
 rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
+rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
+rg <someText>  # searches recursively in files
+
+#### in vimfiles
+rg --no-ignore '\$MSwin10'
+rg --no-ignore '\$onGH'
+rg -tvim 'vimHints'
+
+#### TeX files
+rg -l -ttex '\\input' > rg-tex.txt
+rg -l -ttex '\\parskip' > rg-tex.txt
+rg -l -ttex verseSettings > rg-tex.txt
 rg -ttex '\$Sig'
 rg -ttex '\\includepdf'
 rg -ttex '\\includegraphics'
 rg -ttex '\\multirow\{'
+rg -ttex '\\setdefaultlanguage'
 rg -ttex '\\subsubsection\{'
+rg -ttex '\{geometry}'
 rg -ttex '{tabular}'
 rg -ttex 'newcommand\{'
-rg -ttex '\\setdefaultlanguage'
 rg -ttex 'WLR'
-rg -tvim 'vimHints'
-rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
-rg <someText>  # searches recursively in files
-
-### in vimfiles
-rg --no-ignore '\$MSwin10'
-rg --no-ignore '\$onGH'
-
-### TeX files
-rg -l -ttex '\\input' > rg-tex.txt
-rg -l -ttex '\\parskip' > rg-tex.txt
-rg -l -ttex verseSettings > rg-tex.txt
-rg -ttex '\{geometry}'
 rg -ttex '\\parindent'
 rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
 rg -ttex ^%%
@@ -133,13 +165,6 @@ sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
 <directory>  # cd <directory>  ( shopt autocd )
 file ~/.vim  # shows symlink source
 namei ~/.vim  # shows tree, including symlink sources
-
-### exa
-bm exa
-e
-e -l -s modified  # time sorted
-e -la  # for permissions and symlinks
-e -T   # for tree
 
 ### Samokovarov's jump
 bm jump
@@ -303,6 +328,7 @@ http://192.168.43.249/
 ## storage
 /proc/filesystems - those supported by the kernel
 CP(1)
+gdu
 GNU Parted
 NCDU(1)
 
@@ -359,6 +385,7 @@ journalctl -u rsnapshot@hourly -r
 systemctl status rsnapshot-hourly.timer
 
 #### find
+eval "find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/syntax -type f -name 'cmusq.vim' $printfDTsort"
 find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/CAM-toSort0 -type f -name "01 *"
 
 ##### my OBS grabs
@@ -542,6 +569,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # system
 $ARCHBUILDS/etc/doas.conf
+$Openbox/openbox/rc/rc.xml
 /usr/share/doc/arch-wiki/html/en
 bat -A /etc/hosts
 bm <command>  # batman - only good in full-screen
@@ -599,8 +627,6 @@ journalctl -b -g 'EFI v'  # shows EFI version
 
 # term
 echo $TERM
-figlet Joseph Harriott
-figlet(6)
 neofetch
 watch -n1 "date '+%D%n%T' | figlet -k"
 
@@ -618,6 +644,14 @@ colorscript -r
 terminal-colors  # shows what the terminal can
 terminal-colors -l  # with #xxxxxx's
 terminal-colors -o  # ANSI escape codes
+
+## FIGlet
+figlet Joseph Harriott
+figlet(6)
+
+### fonts
+ft  # $ARCHBUILDS/Bash/bashrc-generic
+showfigfonts > $lB/FIGletFonts.txt; sed -i 's/ \+$//' $lB/FIGletFonts.txt
 
 ## termdown
 termdown --help | mo

@@ -98,7 +98,7 @@ sudo chown jo:jo $ARCHBUILDS/etc/sudoers/sudoers
 sudo rm /etc/sudoers.pacnew
 ## moved snapshot_root to WD1600AAJS
 ### temporarily disabled rsnapshot timers
-$ARCHBUILDS/build-scripts/24-as_root-rsnapshot_automated.sh
+$bs/24-as_root-rsnapshot_automated.sh
 ## Updates
 error: failed retrieving file 'python-more-itertools-8.13.0-1-any.pkg.tar.zst.sig'
   from archlinux.thaller.ws
@@ -154,6 +154,7 @@ gpg --recv-keys 12C6F735F7A9A519
 sudo pacman -Rs celt
 ## waiting
 FuseISO
+ranger
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

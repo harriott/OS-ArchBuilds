@@ -1,7 +1,7 @@
 # vim: fdl=1 ft=sh sw=2:
 
 # ~/.bashrc in an Arch install on my  LIP120s81A4  system
-# symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
+# symlinked in  $bs/17-symlinks.sh
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 

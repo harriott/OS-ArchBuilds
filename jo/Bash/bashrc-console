@@ -47,7 +47,7 @@ sp (){
 }
 
 #=> file manage
-alias c='clifm .'
+alias C='clifm .'  # CliFM
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
 
@@ -118,16 +118,16 @@ fa () {
 }  # all files
 
 ghi () {
-  for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > GitHubIssues.txt
-  sed -i '/copied\/IT-handy\//d' GitHubIssues.txt
-  echo "results are in GitHubIssues.txt"
+  for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > GitHubIssues.lst
+  sed -i '/copied\/IT-handy\//d' GitHubIssues.lst
+  echo "results are in GitHubIssues.lst"
 }  # my GitHub issues
 
 gitc () {
-  echo 'vim: nospell:' > git_config.txt
-  echo '' >> git_config.txt
-  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> git_config.txt
-  echo "results are in git_config.txt"
+  echo 'vim: nospell:' > git_config.lst
+  echo '' >> git_config.lst
+  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> git_config.lst
+  echo "results are in git_config.lst"
 }
 
 #===> by extension

@@ -52,18 +52,6 @@
        from 1, specifying a particular monitor.  Or it can be one of the
        following: 'Mouse' - where the mouse is, or
                   'Active' - where the active window is -->
-  <!-- move the window to monitor 1 - JH -->
-  <keybind key="W-1">
-    <action name="MoveResizeTo">
-      <monitor>1</monitor>
-    </action>
-  </keybind>
-  <!-- move the window to monitor 2 - JH -->
-  <keybind key="W-2">
-    <action name="MoveResizeTo">
-      <monitor>2</monitor>
-    </action>
-  </keybind>
 </placement>
 
 <theme>
@@ -327,7 +315,7 @@
 
   <!-- Keybindings for running applications -->
   <!-- KeePassXC - JH -->
-  <keybind key="W-3">
+  <keybind key="W-k">
     <action name="Execute">
       <command>keepassxc</command>
     </action>

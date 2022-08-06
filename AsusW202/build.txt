@@ -46,7 +46,7 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 bash $ulL/iwctl-connect.sh  got me online
-bash $ARCHBUILDS/build-scripts/01-fromISO-efi-to_chroot.sh
+bash $bs/01-fromISO-efi-to_chroot.sh
   chroot: failed to run command '/bin/bash': No such file or directory
   /mnt/bin  not there...
 rm -r /mnt  (didn't remove  /mnt/efi)
@@ -56,7 +56,7 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 $ulL  for  bash iwctl-connect.sh  got me online
-$ARCHBUILDS/build-scripts  for  bash 01-as_root-efi-to_chroot.sh
+$bs  for  bash 01-as_root-efi-to_chroot.sh
   error: libcap: signature from "David Runge <dvzrv@archlinux.org>" is marginal trust
   /usr  didn't get installed...
 rm -r /mnt  (didn't remove  /mnt/efi)
@@ -65,7 +65,7 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 $ulL  for  bash iwctl-connect.sh  got me online
-$ARCHBUILDS/build-scripts  for  bash 01-as_root-efi-to_chroot.sh
+$bs  for  bash 01-as_root-efi-to_chroot.sh
 ### shutdown
 ctrl-d  for  halt -p
 ### K8GBDTIG3 loaded with $core
@@ -73,12 +73,12 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 $ulL  for  bash iwctl-connect.sh  got me online
-$ARCHBUILDS/build-scripts  for  bash 01-as_root-efi-to_chroot.sh
+$bs  for  bash 01-as_root-efi-to_chroot.sh
 ### as chroot
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 (maybe not needed) cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  . export-storage
 #### build-scripts
-$ARCHBUILDS/build-scripts
+$bs
 bash 02-when_chroot-reflector.sh
 bash 03-as_root.sh
 . 04-cloneArchBuilds.sh
@@ -101,18 +101,21 @@ su rm /root/iwctl-connect.sh
 su rm -r /Archbuilds
 bash ~/iwctl-connect.sh  got me online
 . ~/Archbuilds/Bash/export-storage
-bash ~/Archbuilds/build-scripts/11-symlinks.sh
+bash $bs/11-symlinks.sh
 #### iwd disable & stop
-sudo bash ~/Archbuilds/build-scripts/07-iwd.sh
+sudo bash $bs/07-iwd.sh
 #### NetworkManager enable & start
-bash ~/Archbuilds/build-scripts/13-NetworkManager.sh
+bash $bs/13-NetworkManager.sh
 reboot  for  nmcli device
 bash ~/NetworkManager.sh
 ### Firewalld
-bash ~/Archbuilds/build-scripts/02-as_root-reflector.sh
-bash ~/Archbuilds/build-scripts/15-as_root-when_jo-toFirewall.sh
+bash $bs/02-as_root-reflector.sh
+bash $bs/15-as_root-when_jo-toFirewall.sh
+scs
+### ranger
+bash $bs/08-as_root-updates.sh
 ## waiting
-clamscan /
+ranger
 # fcron
 # physical configuration
 4GB RAM

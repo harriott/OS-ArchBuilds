@@ -2,7 +2,7 @@
 #
 # my generic  ~/.bash_profile
 # ---------------------------
-# symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
+# symlinked in  $bs/17-symlinks.sh
 
 # exports defined here so they can be accessed pre-X, by
 #  $ARCHBUILDS/jo/Openbox/openbox/autostart, & by gvim

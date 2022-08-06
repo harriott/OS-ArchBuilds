@@ -3,7 +3,7 @@
 # stuff that's useful when a Window Manager is installed
 # sourced by  $Bash/bashrc
 
-alias xc="zathura -P 38 $IThandy/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
+alias xc="zathura -P 38 $cITh/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
 export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
 
 fv () {
@@ -158,33 +158,17 @@ gvc () {
     fi
 } # opens the file in gVim only if there's no swap file present for it
 
-#=> imagey - convert scanned images to jpg with ImageMagick
-# (won't work with white-spaces in file names)
-C () {
-  bash $Imagey/cnvt.sh $1 "-quality 70"
-}  # leaving  c  free for  CliFM
-cg () {
-  bash $Imagey/cnvt.sh $1 "-colorspace gray -quality 80"
-}
-cr () {
-  bash $Imagey/cnvt.sh $1 -resize $2
-}
-crg () {
-  bash $Imagey/cnvt.sh $1 "-colorspace gray -resize" $2
-}
-cld () { # darken, and slightly reduce filesize
-  bash $Imagey/cnvt.sh $1 "-level 25%,100%,.5 -quality 50"
-}
-clm () { # lose lighter stuff, darken, and slightly reduce filesize
-  bash $Imagey/cnvt.sh $1 "-level 25%,75%,.5 -quality 50"
-}
+#=> imagey
+# call SANE's scanimage tool
+S () { bash $Imagey/Scan.sh $1 $2 $3 $4; }
+  s53 () { S 55n 3 $1 $2; }
 
-#=> imagey - convert all webp to jpg
+#==> convert all webp to jpg
 w2j () {
   for w in *.webp; do convert $w ${w/.webp/_webp.jpg}; done
 }
 
-#=> imagey - copy a directory of sketches darker
+#==> copy a directory of sketches darker
 dsd () {
   id=${1%/}
   if [[ -d $id ]]; then
@@ -200,22 +184,42 @@ dsd () {
   fi  # darken sketches with ImageMagick
 }
 
-#=> imagey - jpeg orientation
+#==> itj
+t () {
+  bash $Imagey/itj.sh $1 "-quality 70"
+}  # most useful for scanned tiff's
+
+# won't work with white-spaces in file names
+
+#===> adjust
+cg () {
+  bash $Imagey/itj.sh $1 "-colorspace gray -quality 80"
+}
+cr () {
+  bash $Imagey/itj.sh $1 -resize $2
+}
+crg () {
+  bash $Imagey/itj.sh $1 "-colorspace gray -resize" $2
+}
+csd () { # darken, and slightly reduce filesize
+  bash $Imagey/itj.sh $1 "-level 25%,100%,.5 -quality 50"
+}
+cssd () { # lose lighter stuff, darken, and slightly reduce filesize
+  bash $Imagey/itj.sh $1 "-level 25%,75%,.5 -quality 50"
+}
+
+#==> jpeg orientation
 # Recursively find all *.jpg (- that's case insensitive) files in the current directory
 # and set  -orientation=Horizontal   if necessary.
 jpo () {
   exiftool -r -ext jpg -overwrite_original -orientation=Horizontal -progress -if '$orientation =~ /Rotate/' .
 }
 
-#=> imagey - lighten an image
+#==> lighten an image
 cl () {
   inimag=${1%.*}
   convert $1 -level 0,75% -quality 80 $inimag-l.jpg
 }
-
-#=> imagey - SANE's scanimage tool
-S () { bash $Imagey/Scan.sh $1 $2 $3 $4; }
-  s53 () { S 55n 3 $1 $2; }
 
 #=> Pandoc my markdown notes
 for iHS in {0..1}; do  # setup alternative commands to define the header style

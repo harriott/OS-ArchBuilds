@@ -3,7 +3,7 @@
 
 # Joseph Harriott - Mon 02 May 2022
 # called by  $MACHINE/jo/awesome/rc.lua
-# symlinked in my  $ARCHBUILDS/build-scripts/39-awesome.sh
+# symlinked in my  $bs/39-awesome.sh
 # (chmod u+x $MACHINE/jo/awesome/autorun.sh)
 
 # run() { if ! pgrep -f "$1"; then "$@" & ; fi; }

@@ -10,6 +10,6 @@ cfA=/usr/share/fonts/copiedForArch
 . /home/jo/.export-machine
 . /home/jo/.export-storage
 . /home/jo/.export-jo
-[[ $cfA ]] && rm -r $cfA; ln -s $IThandy/fonts-forArch $cfA
+[[ $cfA ]] && rm -r $cfA; ln -s $cITh/fonts-forArch $cfA
 exa -la /usr/share/fonts
 

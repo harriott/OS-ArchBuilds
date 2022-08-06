@@ -1,7 +1,7 @@
 # vim: ft=sh:
 
 # see  $clm/msmtprc-template  for tests for sends
-# see  $ARCHBUILDS/build-scripts/27-mail.sh  &  $clm/nm-config-template
+# see  $bs/27-mail.sh  &  $clm/nm-config-template
 
 #=> backup my Mutt Wizard files
 alias mwb='bash $clm/mwBackup.sh'

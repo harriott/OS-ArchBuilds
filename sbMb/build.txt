@@ -1201,7 +1201,12 @@ sudo pacman -Rs celt
 ## xdg-open .xml
 handlr get .xml  reports  google-chrome.desktop  so  handlr set .xml gvim.desktop
 ## xdg-open .mediawiki
-handlr get .mediawiki  reports so  handlr add .mediawiki gvim.desktop
+handlr get .mediawiki  handlr add .mediawiki gvim.desktop
+## xdg-open .ppm
+handlr get .ppm  reports  org.nomacs.ImageLounge.desktop
+## xdg-open .lua
+handlr get .lua  reports  no handlers found for 'text/x-lua'
+  handlr set .lua gvim.desktop
 ## waiting
 clifm-git
 CUPS Socket activation

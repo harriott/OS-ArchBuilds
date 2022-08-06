@@ -111,6 +111,9 @@ pacman -S pkgconf
 #=> redshift
 pacman -S redshift
 
+#=> wmctrl
+pacman -S wmctrl
+
 #=> system
 # Bluefish
 pacman -S bluefish

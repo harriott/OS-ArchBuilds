@@ -5,10 +5,9 @@
 # Bash configurations that are also useful in Console and as root.
 
 # for jo:
-#  symlinked in  $ARCHBUILDS/build-scripts/toReview/17-symlinks.sh
-#  sourced by  $Bash/bash_profile (&  $Bash/bashrc)
+#  symlinked in  $bs/12-symlinks.sh
+#  sourced by  $Bash/bash_profile  &  $Bash/bashrc
 # for root:
-#  symlinked in  $ARCHBUILDS/build-scripts/05-root_symlinks.sh
 #  sourced by  $ARCHBUILDS/root/bashrc
 
 alias fin='figlet -f univers finished'
@@ -16,6 +15,20 @@ alias tkt='tmux kill-server > /dev/null 2>&1; tmux'
 
 [ $TERM != 'screen-256color' ] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su
+
+ft () {
+  if [ "$1" ]; then
+    of=$lB/FIGletFontsTest.txt
+    echo "$1" > $of; echo '' >> $of
+    for font in big doh doom isometric1 isometric2 larry3d nancyj-fancy nancyj nancyj-underlined ogre poison puffy radical_ rowancap shadow standard starwars stellar stop straight tombstone trashman ttyb tty univers usaflag utopia xbriteb xttyb; do
+      figlet -t -f $font -w 250 "$1" >> $of
+      echo "- $font" >> $of
+    done
+    sed -i 's/ \+$//' $of
+  else
+    echo "ft 'some text'"
+  fi
+}
 
 #=> awesome or Openbox on a machine
 startxa () { ln -sf $ARCHBUILDS/jo/xinitrcs/awesome ~/.xinitrc; }
@@ -30,6 +43,15 @@ alias so="stat -c '%a %n'"  # octal rights
 alias sm="stat -c '%y %n'"  # modification time
 export PAGER=less
 shopt -s autocd dotglob extglob globstar nullglob
+
+c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l; }
+# - https://superuser.com/a/1244522/242800
+
+r () {
+  [ $TERM != 'screen-256color' ] && pi="--cmd='set preview_images true'"
+  eval "ranger --choosedir=$HOME/Arch/ranger_last_visited $pi $1"
+  cd "$(cat /home/jo/Arch/ranger_last_visited)"
+}  # r "$DROPBOX/CAM-best/Classic Yo-Yo"
 
 #==> bat
 alias bm='batman'
@@ -84,6 +106,53 @@ alias gl='glances'
 export WORKON_HOME=~/.virtualenvs
 [[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper_lazy.sh
 
+#=> clamscan 0 preferred log basename
+# cslbn=$clamscan/clamscan
+if [ $myDrA ]; then
+  cslLocation=$ulL/Arch/$host
+else
+  cslLocation=/home/jo/Arch
+fi
+cslbn=$cslLocation/clamscan
+
+#=> clamscan 1 scan
+scs () {
+  echo "about to clamscan /"
+  sudo clamscan -r --exclude-dir='/media|/mnt|/sys' / 2>&1 | tee $cslbn.log
+  sudo chown jo:jo $cslbn.log
+}  # end of log shows time taken
+
+#=> clamscan 2 filter the results
+# $vimfiles/syntax/cslF.vim
+
+csF () {
+  if [ $1 ]; then
+    cslFbn=$cslbn"-$1-FOUND"
+      cslF="$cslFbn.log"
+    if [ $2 ]; then
+      # filter down to some remaining threats - might not catch all
+      cslFt="$cslFbn-threats.log"
+      if [ -f $cslF ]; then
+        cp $cslF $cslFt
+        sed -i '/Heuristics.Phishing.Email.SpoofedDomain\|Sanesecurity\|Urlhaus/!d' $cslFt
+        sed -i '1s/^/vim: ft=cslF:\n\n/' $cslFt
+        echo "- possible threats are now listed in ${tpf7}$cslFt${tpfn}"
+      else
+        echo "$cslF  ain't there"
+      fi
+    else
+      # make clamscanFOUND log file - should be enough
+      cp $cslbn.log $cslF
+      sed -i '/ FOUND$/!d' $cslF
+      sed -i 's/ FOUND$//' $cslF
+      sed -i '1s/^/vim: ft=cslF:\n\n/' $cslF
+      echo "- now look in ${tpf7}$cslF${tpfn}"
+    fi
+  else
+    echo "- need a datecode"
+  fi
+}  # make clamscanFOUND log file - should be enough
+
 #=> colours
 source $ARCHBUILDS/Bash/xcol.sh
 
@@ -113,37 +182,6 @@ export tpf5b="$tpfb$tpf5" # bold magenta
 export tpf6b="$tpfb$tpf6" # bold cyan
 export tpf7b="$tpfb$tpf7" # bold white
 # echo "${tpf0b}black ${tpf1b}red ${tpf2b}green ${tpf3b}yellow ${tpf4b}blue ${tpf5b}magenta ${tpf6b}cyan ${tpf7b}white${tpfn}"
-
-#=> clamscan 0 preferred log basename
-cslbn=~/Arch/clamscan
-
-#=> clamscan 1 scan
-scs () {
-  echo "about to clamscan /"
-  sudo clamscan -r --exclude-dir='/media|/mnt|/sys' / 2>&1 | tee $cslbn.log
-  sudo chown jo:jo $cslbn.log
-}  # end of log shows time taken
-
-#==> examine results
-csF () {
-  if [ $1 ]; then
-    cslF=$cslbn"FOUND-$1.log"
-    cp $cslbn.log $cslF
-    sed -i '/ FOUND$/!d' $cslF
-  else
-    echo "- need a datecode"
-  fi
-}  # make clamscanFOUND log file
-
-csFt () {
-  cslF=$cslbn"FOUND-$1.log"
-  if [ -f $cslF ]; then
-    echo "Possible threats listed in $cslF:"
-    sed -n '/Heuristics.Phishing.Email.SpoofedDomain\|Sanesecurity\|Urlhaus/! p' $cslF
-  else
-    echo "$cslF  ain't there"
-  fi
-}  # show remaining threats
 
 #=> command history
 alias h='history'

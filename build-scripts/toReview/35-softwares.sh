@@ -7,7 +7,7 @@ trap read debug  # puts a read request after each executable line
 
 # AUR development packages:
 #  gctm  is defined in $Bash/bashrc-console
-#  use  $ARCHBUILDS/build-scripts/27-remakeAURdevs.sh  to later update them
+#  use  $bs/toReview/38-remakeAURdevs.sh  to later update them
 
 # gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
@@ -46,19 +46,19 @@ trap read debug  # puts a read request after each executable line
 # # supersedes  Bashtop
 # sudo pacman -S bpytop
 
-#=> cheat
-gdAUR cheat
-nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
-makepkg -sic
-sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
+# #=> cheat
+# gdAUR cheat
+# nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
+# makepkg -sic
+# sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
 # #=> cht.sh-git 0 install
 # gdAUR cht.sh-git
 # nvim -c "silent! /chubin" PKGBUILD
 # makepkg -sic
 
-#=> cht.sh-git 1 remove
-sudo pacman -Rs cht.sh-git
+# #=> cht.sh-git 1 remove
+# sudo pacman -Rs cht.sh-git
 
 # #=> clamav-unofficial-sigs 0 install
 # gdAUR clamav-unofficial-sigs
@@ -70,16 +70,28 @@ sudo pacman -Rs cht.sh-git
 # sudo systemctl disable clamav-unofficial-sigs.timer
 # sudo pacman -Rs clamav-unofficial-sigs
 
-#=> clifm
-gdAUR clifm
+# #=> clifm 0 install
+# gdAUR clifm
+# nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
+# makepkg -sic
+
+#=> clifm 1 remove
+sudo pacman -Rs clifm
+rm -r ~/.config/clifm
+
+#=> clifm-git
+gdAUR clifm-git
 nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
 makepkg -sic
 
-# #=> cmus-notify
+# #=> cmus-notify 0 install
 # gAUR cmus-notify
 # nvim -c "silent! /AntoineGagne" PKGBUILD
 # makepkg -sic
 # true
+
+# #=> cmus-notify 1 remove
+# sudo pacman -Rs cmus-notify
 
 # #=> colorpicker
 # gAUR colorpicker
@@ -313,7 +325,7 @@ makepkg -sic
 
 # #=> nordvpn-bin 0 (re)install
 # gAUR nordvpn-bin
-# nvim -c "silent! /https:\/\/repo.nordvpn.com\/deb\/nordvpn\/debian\/pool\/main\/nordvpn_" PKGBUILD
+# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
 # makepkg -sic
 # true
 
@@ -360,11 +372,11 @@ makepkg -sic
 # #=> patched Cascadia Code font 0 remove
 # sudo pacman -Rs nerd-fonts-cascadia-code
 
-#=> PDFsam
-gAUR pdfsam
-nvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic  # choose  jdk-openjdk
-true
+# #=> PDFsam
+# gAUR pdfsam
+# nvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic  # choose  jdk-openjdk
+# true
 
 # #=> pdftk
 # sudo pacman -S pdftk

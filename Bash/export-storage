@@ -10,11 +10,14 @@
 
 # for initial build of Arch:
 # for jo:
-#  symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
+#  symlinked in  $bs/17-symlinks.sh
 #  sourced by  $Bash/bash_profile
 # for root:
-#  symlinked in  $ARCHBUILDS/build-scripts/05-root_symlinks.sh
+#  symlinked in  $bs/05-root_symlinks.sh
 #  sourced by  $ARCHBUILDS/root/bash_profile
+
+export host=$(uname -n)
+# - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
 
 #=> 0 core
 # $myDrA  &  $Storage  are pre-defined in  $MACHINE/export-machine
@@ -26,33 +29,30 @@ if [ $myDrA ]; then
     export detail=$DROPBOX/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage/detail
     export T91=$DROPBOX/JH/T91-default-release
 
-  #==> $core
   core=$DROPBOX/JH/core
     export ITstack=$core/IT_stack
       export CP=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
       export ulL=$ITstack/unix_like-linux  # was $ulGL
         export lB=$ulL/Bash  # used in  $ARCHBUILDS/QR.txt
-        export lclm=$ulL/clm  # :s/GNULE\|LE/lclm/g
+        export lclm=$ulL/clm  # linux command-line mail, was GNULE
       export onGH=$ITstack/onGitHub
         export vimfiles=$onGH/vimfiles
     export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
+
 fi
 
 #==> 2 $ARCHBUILDS
 if [ $onGH ]; then
   export ARCHBUILDS=$onGH/ArchBuilds
-# [[ -d ~/ArchBuilds ]] && export ARCHBUILDS=~/ArchBuilds  # provisional
-else AB=~/ArchBuilds; hjAB=/home/jo/ArchBuilds
-  if [ -d $AB ]; then export ARCHBUILDS=$rAB
-  elif [ -d $hjAB ]; then export ARCHBUILDS=$hjAB
+else
+  AB=~/ArchBuilds; if [ -d $AB ]; then export ARCHBUILDS=$AB
+  hjAB=/home/jo/ArchBuilds; elif [ -d $hjAB ]; then export ARCHBUILDS=$hjAB
   fi  # provisional
 fi
 if [ $ARCHBUILDS ]; then
   export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
   export Bash=$ARCHBUILDS/jo/Bash
-  export bs=$ARCHBUILDS/build-scripts  # :s/ARCHBUILDS\/build-scripts/bs
-    export host=$(uname -n)
-    # - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
+  export bs=$ARCHBUILDS/build-scripts
       export MACHINE=$ARCHBUILDS/$host
   export clm=$ARCHBUILDS/jo/clm  # used in  bashrc-clm  and  muttrc-*  :s/email/clm/g
   export tmx=$ARCHBUILDS/tmux  # used in  tmux.conf

@@ -4,7 +4,7 @@
 # ~/.export-jo
 #  depends on  $ARCHBUILDS/Bash/export-storage
 #  sourced by  $Bash/bash_profile
-#  symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
+#  symlinked in  $bs/17-symlinks.sh
 
 export MANPATH=/usr/share/man/
 uG=$MACHINE/jo/Bash/export-urxvt; [[ -f $uG ]] && . $uG
@@ -20,8 +20,8 @@ export bilan=$DROPBOX/JH/Work/ST/LPD/IdF/AB-TAP/bilan
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export IT1=$DROPBOX/JH/technos/IT1  # for notes
 export ITP=$DROPBOX/JH/technos/IT0-storage  # $ITP/diskUsage.txt
-export IThandy=$DROPBOX/JH/copied/IT-handy
-  export ul=$IThandy/unix-like
+export cITh=$DROPBOX/JH/copied/IT-handy
+  export cIThul=$cITh/unix-like
 export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
 export MD4PDF=$onGH/md4pdf
 export MSWin10=$onGH/MSWin10  # for notes

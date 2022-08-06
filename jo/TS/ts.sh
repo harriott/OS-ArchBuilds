@@ -6,7 +6,7 @@
 # -----------------------------------------------------
 
 # (chmod 755 $ARCHBUILDS/jo/ts.sh)
-# symlinked in my  $ARCHBUILDS/build-scripts/38-LibreOffice+Thunderbird.sh
+# symlinked in my  $bs/38-LibreOffice+Thunderbird.sh
 #  cat /usr/local/bin/thunderbird_safely
 
 # Tests:

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # JH note:
-#  symlinked in  $ARCHBUILDS/build-scripts/17-symlinks.sh
+#  symlinked in  $bs/17-symlinks.sh
 #   so that it is used instead of the default
 #  I built this from default, with my additions marked JH.
 #  replaced now by  $ARCHBUILDS/jo/xinitrcs/openbox

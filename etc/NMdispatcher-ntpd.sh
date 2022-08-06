@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# implemented by my  $ARCHBUILDS/build-scripts/37-as_root-NMdispatcher.sh
+# implemented by my  $bs/37-as_root-NMdispatcher.sh
 
 if [ "$2" = "up" ]; then
     # su jo -c 'DISPLAY=:0 dunstify "checking time with NTP daemon"'

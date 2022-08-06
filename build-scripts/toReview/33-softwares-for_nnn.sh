@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# bash $ARCHBUILDS/build-scripts/33-softwares-for_nnn.sh
+# bash $bs/33-softwares-for_nnn.sh
 
 # gAUR  &  rAUR  are defined in $Bash/bashrc-console
 
