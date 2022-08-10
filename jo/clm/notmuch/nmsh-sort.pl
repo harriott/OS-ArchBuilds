@@ -3,7 +3,7 @@
 # ----------------------------------------------------
 # sorts nmsh output by date - incredibly useful
 #
-# I call this from my $Bash/bashrc-email
+# I call this from my $Bash/bashrc-clm
 # ----------------------------------------------------
 
 use strict;  use warnings;
@@ -16,7 +16,7 @@ use feature 'say';
 tie my @nmsh, 'Tie::File', "$ARGV[0]" or die "Can't read file: $!\n";
 # exit;
 
-my @emailsSorted = splice(@nmsh,0,2); # save vim modeline
+my @emailsSorted = splice(@nmsh,0,1); # save first line
 
 # mark and join up each email into one single line
 # ------------------------------------------------
@@ -43,7 +43,6 @@ my $EALUTS;
 my @emailAsLines;
 foreach $EALUTS (@EALUTSorted) {
   $EAL = substr($EALUTS,10);
-  # push(@emailsSorted, $EAL);
   @emailAsLines = split /◙/, $EAL;
   push(@emailsSorted, @emailAsLines);
 }

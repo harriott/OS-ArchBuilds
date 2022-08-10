@@ -33,7 +33,7 @@ cpg --help | mo  # man advcp
 mvg --help | mo  # man advmv
 
 ## CliFM
-$ARCHBUILDS/jo/clifm/keybindings.cfm
+$ARCHBUILDS/jo/CliFM/keybindings.clifm
 clifm -v
 i clifm
 
@@ -318,9 +318,12 @@ sudo lshw -C display | xcol Radeon size VGA
 ## printing - CUPS - HP ENVY 5532 WiFi
 lpoptions -d ENVY_5530  # set as default
 lpoptions -d ENVY_5530_249  # set as default
-lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 lpoptions -p Envy5532 -o PageSize=A4
 doas cupsenable ENVY_5530  # if it's paused
+
+### see selected options
+lpoptions -p ENVY_5530 -l | xcol '\*'
+lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 
 ## printing - HPLIP - HP ENVY 5532 WiFi
 hp-levels -p ENVY_5530
@@ -389,6 +392,7 @@ systemctl status rsnapshot-hourly.timer
 
 #### find
 eval "find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/syntax -type f -name 'cmusq.vim' $printfDTsort"
+eval "find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/CAM-toSort0 -type f -name '*Apache*' $printfDTsort"
 find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/CAM-toSort0 -type f -name "01 *"
 
 ##### my OBS grabs
@@ -401,6 +405,9 @@ for d in $(ls hourly.*/localhost/home/jo -dtr); do stat -c '%y %n' $d; done  # h
 ls *ly.*/localhost/home/jo/.config/copyq -d  # CopyQ data directory instances
 ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
 ls *ly.*/localhost/mnt/SD480GSSDPlus/Dropbox/CAM* -d
+
+#### recover folder
+rsync -irtv --delete $rsnapshot/daily.0/localhost/home/jo/.local/share/mail/ $maild
 
 # imagey
 jpo  # defined in my $Bash/bashrc-wm
@@ -462,8 +469,9 @@ find -name "*(Copie en conflit de *"
 default-release:  find -name "* conflicted copy*" -exec rm -f {} \;
 
 ### CLI tools
-$Bash/bashrc-email
+$Bash/bashrc-clm
 grep -r "Georita" *
+rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
 
 #### mutt
 $email/muttrc-general
@@ -476,6 +484,7 @@ F => toggle important flag (= Star in Gmail)
 #### notmuch search
 nmse najac date:2022
 nmse '"pattern with spaces"'
+notmuch search tag:attachment | wc -l
 notmuch search tag:fm | wc -l
 notmuch search tag:gmail | wc -l
 notmuch search tag:trohib | wc -l
@@ -512,7 +521,6 @@ wp  # in Paris
 # packages
 checkupdates
 pacfinder
-pacman -Q > $MACHINE/pacman-Q/$(date '+%Y%m%d%H%M').txt
 pacman -Qdt  # lists all orphans
 pactree -r <package_to_find_depencies_of>
 sudo pacman -Rs <packagetoremove>

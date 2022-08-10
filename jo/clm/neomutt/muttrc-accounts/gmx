@@ -7,7 +7,7 @@ set header_cache = /home/jo/.cache/mutt/gmx/headers
 set message_cachedir = /home/jo/.cache/mutt/gmx/bodies
 
 set spoolfile = "+INBOX"
-set record = "+Sent\ Items"
+set record = "+Sent"
 set trash = "+Trash"
 
 set alias_file = "$lclm/muttAliases/gmx"
@@ -39,6 +39,6 @@ macro index,pager Gr "<save-message>=Drafts<enter>" "move mail to dRafts"
 macro index,pager gs "<change-folder>=Sent<enter>" "go to Sent"
 macro index,pager Gs "<save-message>=Sent<enter>" "move mail to Sent"
 
-macro index,pager gt "<change-folder>=Trash<enter>" "go to Trash"
-macro index,pager Gt "<save-message>=Trash<enter>" "move mail to Trash"
+macro index,pager gd "<change-folder>=Trash<enter>" "go to Trash"
+macro index,pager Gd "<save-message>=Trash<enter>" "move mail to Trash"
 

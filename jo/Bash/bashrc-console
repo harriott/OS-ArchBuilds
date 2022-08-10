@@ -11,6 +11,8 @@
 # Joseph Harriott
 
 #=> Bash interface
+alias o=echo
+
 # bigger command history
 export HISTFILESIZE=10000
 export HISTSIZE=1000
@@ -53,82 +55,10 @@ alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
 
 locx () { locate -i $1 | xcol $1; }
 
-#==> Git
-alias ga='git add'
-alias gis='git status -u'
-export BFG=$CP/bfg-1.13.0.jar
-gic () { git commit -m "$1"; }
-
-#==> my Encrypted directories
-#  fa | grep Digital0
-#  fa | grep Secure0
-#  fa | grep Secure1
-#  fa | grep Stack
-
-#===> quick-check
-alias fe='fdtsEncryptedChanges'
-
-Encrypted=(Digital0 Digital1 Secure0 Secure1 SHG Stack)
-fdtsEncryptedChanges () {
-  if [ "$PWD" != $Enc ]; then
-    if [ -d "$Enc" ]; then
-      cd $Enc; pwd
-    else
-      echo "$Enc ain't there"; return
-    fi
-  fi
-  for i in ${!Encrypted[@]}; do
-    ed=${Encrypted[$i]}
-    f7z="find . -iname \"$ed*.7z\" | sort | tail -1"
-    ed7z=$(eval "$f7z")
-    if [ $ed7z ]; then
-      tput setaf 5
-      eval "find . -iname \"$ed*.7z\" $printfDTsort"
-      tput setaf 7
-      eval "find -path \"./$ed*\" -newer $ed7z $printfDTsort"
-      # - fails to detect change of year
-      eval "find \"$core/encrypted\" -name \"$ed*\" -newer $ed7z"
-    fi
-  done
-}
-
-#==> only useful in sbMb
-# and not needed as root
-
-if [ $host = 'sbMb' ]; then
-
-  alias rsM='bash $onGH/rsync-drives/sbMb/rsync-Music.sh'
-  alias rsV='bash $onGH/rsync-drives/sbMb/rsync-Vs.sh'
-  alias rsVe='bash $onGH/rsync-drives/sbMb/rsync-Vs-extra.sh'
-
-  fS () {
-    find /mnt/WD30EZRZ/Sync2 -type f -name "*$1*"
-  }
-
-fi
-
-#==> Samokovarov's  jump
-if [ -s "/usr/bin/jump" ]; then
-  eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
-fi
-
-#==> time-sorted lists of files
+#==> date time-sorted lists of files
 fa () {
   eval "find * $printfDTsort"
 }  # all files
-
-ghi () {
-  for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > GitHubIssues.lst
-  sed -i '/copied\/IT-handy\//d' GitHubIssues.lst
-  echo "results are in GitHubIssues.lst"
-}  # my GitHub issues
-
-gitc () {
-  echo 'vim: nospell:' > git_config.lst
-  echo '' >> git_config.lst
-  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> git_config.lst
-  echo "results are in git_config.lst"
-}
 
 #===> by extension
 alias fx='fdtsExt'
@@ -138,10 +68,10 @@ alias fx='fdtsExt'
 fdtsExt () {
   if [ $1 ]; then
     if [ $1 = "gitignore" ]; then
-      dtsfile=dts-$1-all.txt
+      dtsfile=dts-$1-all.list
       search=.$1
     else
-      dtsfile=dts-$1.txt
+      dtsfile=dts-$1.list
       search='\*.$1'
     fi
     eval "fdtsKS $search $dtsfile"
@@ -153,8 +83,8 @@ fdtsExt () {
 
 #===> bbcode
 fdtsbbcode () {
-  dtsfile=dts-ft_bbcode.txt
-  ftListHeader $dtsfile
+  dtsfile=dts-ft_bbcode.list
+  fdtsListHeader $dtsfile
   rg -ttxt -l --sort modified 'ft=bbcode' >> $dtsfile
   echo "results are in $dtsfile"
 }
@@ -178,15 +108,16 @@ ctfp () {
 
 export printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
 
-ftListHeader () {
-  echo "vim: ft=ftlist nowrap tw=0:" > $1
+fdtsListHeader () {
+  # echo "vim: ft=ftlist:" > $1
+  echo "vim: ft=fdtslist:" > $1
   echo "" >> $1
   echo $PWD >> $1
   echo "" >> $1
 }
 
 fdtsKS () {
-  ftListHeader $2
+  fdtsListHeader $2
   eval "find -iname \"$1\" $printfDTsort >> $2"
   echo "" >> $2
   echo "results are in $2"
@@ -205,6 +136,81 @@ fdtsRsnapshot () {
     echo "fdtsRsnapshot <directoryToSearchIn> <fileToSearchFor>"
   fi
 }
+
+#==> Git
+alias ga='git add'
+alias gis='git status -u'
+export BFG=$CP/bfg-1.13.0.jar
+gic () { git commit -m "$1"; }
+
+#===> time-sorted lists of files
+ghi () {
+  ghil=GitHubIssues.list
+  for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
+  sed -i '/copied\/IT-handy\//d' $ghil
+  sed -i '1s/^/\n/' $ghil; echo '' $ghil
+  echo "results are in $ghil"
+}  # my GitHub issues
+
+gitc () {
+  gitcl=git_config.list
+  echo 'vim: nospell:' > $gitcl
+  echo '' >> $gitcl
+  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gitcl
+  echo "results are in $gitcl"
+}
+
+#==> my Encrypted directories
+#  fa | grep Digital0
+#  fa | grep Secure0
+#  fa | grep Secure1
+#  fa | grep Stack
+
+#===> quick-check
+alias fe='fdtsEncryptedChanges'
+
+Encrypted=(Digital0 Digital1 Secure0 Secure1 SHG Stack)
+fdtsEncryptedChanges () {
+  if [ "$PWD" != $Enc ]; then
+    if [ -d "$Enc" ]; then
+      cd $Enc; pwd
+    else
+      echo "$Enc ain't there"; return
+    fi
+  fi
+  for E in ${Encrypted[@]}; do
+    f7z="find . -iname \"$E*.7z\" | sort | tail -1"
+    ed7z=$(eval "$f7z")
+    if [ $ed7z ]; then
+      tput setaf 5
+      eval "find . -iname \"$E*.7z\" $printfDTsort"
+      tput setaf 7
+      eval "find -path \"./$E*\" -newer $ed7z $printfDTsort"
+      # - fails to detect change of year
+      eval "find \"$core/encrypted\" -name \"$E*\" -newer $ed7z"
+    fi
+  done
+}
+
+#==> only useful in sbMb
+# and not needed as root
+
+if [ $host = 'sbMb' ]; then
+
+  alias rsM='bash $onGH/rsync-drives/sbMb/rsync-Music.sh'
+  alias rsV='bash $onGH/rsync-drives/sbMb/rsync-Vs.sh'
+  alias rsVe='bash $onGH/rsync-drives/sbMb/rsync-Vs-extra.sh'
+
+  fS () {
+    find /mnt/WD30EZRZ/Sync2 -type f -name "*$1*"
+  }
+
+fi
+
+#==> Samokovarov's  jump
+if [ -s "/usr/bin/jump" ]; then
+  eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
+fi
 
 #==> trash-cli
 alias gte='gio trash --empty'

@@ -17,14 +17,18 @@ true
 trap - debug  # turn off debug
 set +v
 
-#=> 3 /var/cache/pacman/pkg
+#=> 3 save full query
+# pacman -Q > $MACHINE/pacman-Q/$(date '+%Y%m%d%H%M').txt
+# also  checkupdates
+
+#=> 4 /var/cache/pacman/pkg
 if [ $host = "LIP120s81A4" ]; then
   yes | sudo pacman -Scc  # empty completely
 else
   sudo paccache -qr  # reduce to last 3 versions
 fi
 
-#=> 4 AURs
+#=> 5 AURs
 if ( pacman -Qs auracle > /dev/null 2>&1) ; then
   auracle sync
 fi

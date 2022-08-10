@@ -1207,6 +1207,11 @@ handlr get .ppm  reports  org.nomacs.ImageLounge.desktop
 ## xdg-open .lua
 handlr get .lua  reports  no handlers found for 'text/x-lua'
   handlr set .lua gvim.desktop
+## HP ENVY 5532 IP Address changed to 96.10
+hp-setup -r > Selecte > Remove
+hp-setup 192.168.96.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+changed 250 to 249 in  $Imagey/Scan.sh
 ## waiting
 clifm-git
 CUPS Socket activation

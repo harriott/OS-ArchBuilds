@@ -4,17 +4,21 @@
 # reset my notmuch tags
 # ---------------------
 
-# check the effects with  notmuch dump
-
+# check:
+# notmuch dump
 # notmuch search tag:cz | wc -l
+
+# clear tags:
 # notmuch tag -cz -- "*"
 
-notmuch tag -inbox -- 'folder:/cz\/[^I]/ and tag:inbox' # remove unneeded inbox tags
 notmuch tag +cz -- 'folder:/cz\/.*/ and not tag:cz' # add cz tags to all
+notmuch tag -inbox -- 'folder:/cz\/[^I]/ and tag:inbox' # remove unneeded inbox tags
 
-# cz/Archive:
-notmuch tag +archive -- folder:cz/Archive and not tag:archive
-
-# cz/Waiting:
+# individual folder tags:
+notmuch tag +archive -- folder:cz/Archives and not tag:archive
+notmuch tag +bin -- 'folder:"cz/[Gmail].Bin" and not tag:bin'
+notmuch tag +draft -- 'folder:"cz/[Gmail].Drafts" and not tag:draft'
+notmuch tag +sent -- 'folder:"cz/[Gmail].Sent Mail" and not tag:sent'
+notmuch tag +spam -- 'folder:"cz/[Gmail].Spam" and not tag:spam'
 notmuch tag +waiting -- folder:cz/Waiting and not tag:waiting
 

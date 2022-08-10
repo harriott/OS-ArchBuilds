@@ -4,21 +4,18 @@
 # reset my notmuch tags
 # ---------------------
 
-# check the effects with  notmuch dump
+# check:
+# notmuch dump
+# notmuch search tag:gmx | wc -l
 
 notmuch tag +gmx -- 'folder:/gmx\/.*/ and not tag:gmx' # add gmx tags to all
 notmuch tag -inbox -- 'folder:/gmx\/[^I]/ and tag:inbox' # remove unneeded inbox tags
 
-# gmx/Archives:
+# individual folder tags:
 notmuch tag +archive -- folder:gmx/Archives and not tag:archive
-
-# gmx/Drafts:
 notmuch tag +draft -- folder:gmx/Drafts and not tag:draft
-
-# gmx/Sent:
-notmuch tag -fm -- folder:gmx/Sent and tag:fm
 notmuch tag +sent -- folder:gmx/Sent and not tag:sent
-
-# gmx/Waiting:
+notmuch tag +spam -- folder:gmx/Spam and not tag:spam
+notmuch tag +trash -- folder:gmx/Trash and not tag:trash
 notmuch tag +waiting -- folder:gmx/Waiting and not tag:waiting
 

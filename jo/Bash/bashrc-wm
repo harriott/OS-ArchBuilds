@@ -35,8 +35,8 @@ ltx () {
 x () { max_print_line=4000 xelatex $1 | xcol Missing; }
 
 #=> CUPS
-alias lpd='lpstat -p -d'
-alias sc5='sudo cupsenable ENVY_5530'
+alias lpspd='lpstat -p -d'
+alias sc5='doas cupsenable ENVY_5530'
 
 #=> Dropbox conflicted copies
 # results are noted in time-stamped logs

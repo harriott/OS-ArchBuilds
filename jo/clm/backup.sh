@@ -1,8 +1,8 @@
 # !/bin/bash
 # vim: set et tw=0:
 
-# Mutt Wizard files backup
-# ------------------------
+# Mutt files backup
+# -----------------
 # this isn't needed once  rsnapshot  is running
 
 # Labels for backup name
