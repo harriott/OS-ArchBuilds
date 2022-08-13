@@ -12,103 +12,102 @@ read -p "- looks good?"
 set -ev  # quits on error, prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 to X
-# really needed
+# #=> 0 to X
+# # really needed
 
-#==> prepare for X
-# Xorg
-pacman -S xorg-server
+# #==> prepare for X
+# # Xorg
+# pacman -S xorg-server
 
-# xinit
-pacman -S xorg-xinit
+# # xinit
+# pacman -S xorg-xinit
 
-# X settings
-pacman -S xorg-xset
+# # X settings
+# pacman -S xorg-xset
 
-# xsel
-pacman -S xsel
+# # xsel
+# pacman -S xsel
 
-#==> updatedb.conf
-cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
-updatedb
+# #==> updatedb.conf
+# cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
+# updatedb
 
-#=> 1 when X 0
+# #=> 1 when X 0
 
-#==> appearance - hicolor-icon-theme
-pacman -S hicolor-icon-theme
+# #==> appearance - hicolor-icon-theme
+# pacman -S hicolor-icon-theme
 
-#==> appearance - Ubuntu font family
-pacman -S ttf-ubuntu-font-family
+# #==> appearance - Ubuntu font family
+# pacman -S ttf-ubuntu-font-family
 
-#==> appres
-pacman -S xorg-appres
+# #==> appres
+# pacman -S xorg-appres
 
-#==> AV
-# AlsaUtils
-pacman -S alsa-utils
+# #==> AV
+# # AlsaUtils
+# pacman -S alsa-utils
 
-# GStreamer Plug-ins
-pacman -S gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly
+# # GStreamer Plug-ins
+# pacman -S gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly
 
-# mediainfo
-pacman -S mediainfo
+# # mediainfo
+# pacman -S mediainfo
 
-# PulseAudio
-pacman -S pulsemixer
+# # PulseAudio
+# pacman -S pulsemixer
 
-#==> file manage
-# fzy
-pacman -S fzy
+# #==> file manage
+# # fzy
+# pacman -S fzy
 
-# shfmt (for bat-extras-git)
-pacman -S shfmt
+# # shfmt (for bat-extras-git)
+# pacman -S shfmt
 
-#==> file manage - rsnapshot install
-pacman -S rsnapshot
+# #==> file manage - rsnapshot install
+# pacman -S rsnapshot
 
-#==> networking
-# DNS Lookup utility
-pacman -S bind-tools
+# #==> networking
+# # DNS Lookup utility
+# pacman -S bind-tools
 
-# Chromium
-pacman -S chromium
+# # Chromium
+# pacman -S chromium
 
-# msmtp-mta
-pacman -S msmtp-mta  # brings in  msmtp
+# # msmtp-mta
+# pacman -S msmtp-mta  # brings in  msmtp
 
-# NeoMutt
-pacman -S neomutt
+# # NeoMutt
+# pacman -S neomutt
 
-# Secure Shell
-pacman -S openssh
+# # Secure Shell
+# pacman -S openssh
 
-#==> system
-# espeak-ng-espeak & termdown
-pacman -S espeak-ng-espeak termdown
+# #==> system
+# # espeak-ng-espeak & termdown
+# pacman -S espeak-ng-espeak termdown
 
-# moreutils
-pacman -S moreutils
+# # moreutils
+# pacman -S moreutils
 
-# xterm
-pacman -S xterm
+# # xterm
+# pacman -S xterm
 
-#==> xautomation
-# for mouse middle click
-pacman -S xautomation
+# #==> xautomation
+# # for mouse middle click
+# pacman -S xautomation
 
-#==> xinput
-# for changing libinput (touchpad) settings at runtime
-pacman -S xorg-xinput
+# #==> xinput
+# # for changing libinput (touchpad) settings at runtime
+# pacman -S xorg-xinput
 
-#==> xman
-pacman -S xorg-xman
+# #==> xman
+# pacman -S xorg-xman
 
-#=> 1 when X 1 IO hw
-# libva-mesa-driver
-# - for  ATI Radeon HD 4870
-pacman -S libva-mesa-driver
+# #=> 1 when X 1 IO hw - libva-mesa-driver
+# # - for  ATI Radeon HD 4870
+# pacman -S libva-mesa-driver
 
-# Wacom Tablet
+#=> 1 when X 1 IO hw - Wacom Tablet
 pacman -S xf86-input-wacom
 
 #==> 0 xorg.conf.d 0
@@ -123,7 +122,7 @@ cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
 cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 true
 
-#=> 1 when X - for laptop
+#=> 1 when X 1 for laptop
 # wanted
 
 #==> HandleLidSwitchExternalPower
@@ -137,7 +136,7 @@ pacman -S slock
 #==> xbacklight
 pacman -S xorg-xbacklight
 
-#=> 1 when X - vimish
+#=> 1 when X 1 vimish
 # wanted
 
 #==> flake8 & Vim
