@@ -42,7 +42,6 @@ if [ $onGH ]; then
 else
   AB=~/ArchBuilds; [ -d $AB ] && export ARCHBUILDS=$AB
   hjAB=/home/jo/ArchBuilds; [ -d $hjAB ] && export ARCHBUILDS=$hjAB
-  fi  # provisional
 fi
 if [ $ARCHBUILDS ]; then
   export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
