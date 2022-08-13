@@ -23,7 +23,7 @@ omc()
     cd $VsLocation/OBSmkvGrabs
     echo "(moved to $PWD to run OBSmkvShrink.sh)"
     bash shrink.sh  # populates  $VsLocation/OBSmkvGrabs/OBSmkvGrabs
-    # (- see  $ITstack/unix_like-GNULinux/OBSmkv/shrink.sh)
+    # (- see  $ulL/OBSmkv/shrink.sh)
     fin
 }
 

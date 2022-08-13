@@ -121,6 +121,9 @@ reboot
 #### ranger
 bash $bs/1-to_jo/2-config.sh
 sudo bash $bs/anytime/symlinks-root.sh
+## X
+
+sudo bash $bs/3-sudo-toX.sh
 ## waiting
 ### locale.gen.pacnew
 bash $bs/anytime/as_root-pacnews.sh
