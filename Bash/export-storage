@@ -36,13 +36,12 @@ if [[ $Storage ]]; then
 fi
 
 #==> 2 $ARCHBUILDS
-ARCHBUILDS=/home/jo/ArchBuilds; [ -d $ARCHBUILDS ] || unset ARCHBUILDS
-ARCH=~/Arch; [ -d $ARCH ] || unset ARCH
+unset ARCHBUILDS
 if [ $onGH ]; then
   export ARCHBUILDS=$onGH/ArchBuilds
 else
-  AB=~/ArchBuilds; if [ -d $AB ]; then export ARCHBUILDS=$AB
-  hjAB=/home/jo/ArchBuilds; elif [ -d $hjAB ]; then export ARCHBUILDS=$hjAB
+  AB=~/ArchBuilds; [ -d $AB ] && export ARCHBUILDS=$AB
+  hjAB=/home/jo/ArchBuilds; [ -d $hjAB ] && export ARCHBUILDS=$hjAB
   fi  # provisional
 fi
 if [ $ARCHBUILDS ]; then
