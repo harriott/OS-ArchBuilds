@@ -36,7 +36,7 @@ if [[ $Storage ]]; then
 fi
 
 #==> 2 $ARCHBUILDS
-$ARCHBUILDS=~/ArchBuilds; [ -d $ARCHBUILDS ] || unset ARCHBUILDS
+ARCHBUILDS=~/ArchBuilds; [ -d $ARCHBUILDS ] || unset ARCHBUILDS
 if [ $onGH ]; then
   export ARCHBUILDS=$onGH/ArchBuilds
 else
