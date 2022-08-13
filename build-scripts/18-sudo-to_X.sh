@@ -3,8 +3,9 @@
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 $ARCHBUILDS
-sd=$(dirname "${BASH_SOURCE[0]}")
-. ${sd%/*}/Bash/export-storage
+cd $(dirname "${BASH_SOURCE[0]}")
+. ../../$(uname -n)/export-machine
+. ../../Bash/export-storage
 echo "\$ARCHBUILDS is $ARCHBUILDS"
 read -p "- looks good?"
 
