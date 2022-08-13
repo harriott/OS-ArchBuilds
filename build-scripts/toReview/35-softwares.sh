@@ -11,11 +11,11 @@ trap read debug  # puts a read request after each executable line
 
 # gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
-# #=> ansiweather
-# gAUR ansiweather
-# nvim -c "silent! /fcambus" PKGBUILD
-# makepkg -sic
-# true
+#=> ansiweather
+gAUR ansiweather
+nvim -c "silent! /fcambus" PKGBUILD
+makepkg -sic
+true
 
 # #=> asunder
 # sudo pacman -S asunder
@@ -46,11 +46,11 @@ trap read debug  # puts a read request after each executable line
 # # supersedes  Bashtop
 # sudo pacman -S bpytop
 
-# #=> cheat
-# gdAUR cheat
-# nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
-# makepkg -sic
-# sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
+#=> cheat
+gdAUR cheat
+nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
+makepkg -sic
+sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
 # #=> cht.sh-git 0 install
 # gdAUR cht.sh-git
@@ -75,14 +75,14 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
 # makepkg -sic
 
-#=> clifm 1 remove
-sudo pacman -Rs clifm
-rm -r ~/.config/clifm
+# #=> clifm 1 remove
+# sudo pacman -Rs clifm
+# rm -r ~/.config/clifm
 
-#=> clifm-git
-gdAUR clifm-git
-nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
-makepkg -sic
+# #=> clifm-git
+# gdAUR clifm-git
+# nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
+# makepkg -sic
 
 # #=> cmus-notify 0 install
 # gAUR cmus-notify
@@ -200,11 +200,11 @@ makepkg -sic
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick

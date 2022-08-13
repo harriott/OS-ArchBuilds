@@ -76,11 +76,14 @@ r $DROPBOX/JH/Cafezoide
 ranger --version
 
 ### commands
+:delete => current file or selection in directory
 ? => start of help dialogue
 I => rename
 i => inspect file
 shift+s => open subshell
+space => mark
 c-h / zh => toggle hidden
+v => mark all
 
 ## ripgrep
 batgrep
@@ -424,6 +427,7 @@ whereis languagetool
 
 # LanguageTool symlinked
 java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar -h
+java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
 java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --list  # languages
 
 ## version
@@ -510,7 +514,7 @@ systemctl status NetworkManager
 systemctl status NetworkManager-dispatcher
 
 ## weather
-ansiweather -f 7
+aw
 
 ### wttr.in
 curl wttr.in/London
@@ -520,16 +524,13 @@ wp  # in Paris
 
 # packages
 checkupdates
+expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $ulL/Arch/$host/pacman/expac-499-$(date '+%Y%m%d%H%M').log  # most recent installs
 pacfinder
 pacman -Qdt  # lists all orphans
 pactree -r <package_to_find_depencies_of>
 sudo pacman -Rs <packagetoremove>
 /var/cache/pacman/pkg/
 grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
-
-## most recent installs
-expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $MACHINE/expac-500-$(date '+%Y%m%d%H%M').log
-  then remove dates in vim with  :%s/\H*
 
 ## groups
 pacman -Qg base-devel  # lists packages installed

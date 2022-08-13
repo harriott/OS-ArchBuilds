@@ -1211,7 +1211,7 @@ handlr get .lua  reports  no handlers found for 'text/x-lua'
 hp-setup -r > Selecte > Remove
 hp-setup 192.168.96.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
-changed 250 to 249 in  $Imagey/Scan.sh
+changed 22 to 96 in  $Imagey/Scan.sh
 ## waiting
 clifm-git
 CUPS Socket activation

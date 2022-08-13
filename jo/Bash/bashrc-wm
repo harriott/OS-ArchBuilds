@@ -3,7 +3,8 @@
 # stuff that's useful when a Window Manager is installed
 # sourced by  $Bash/bashrc
 
-alias xc="zathura -P 38 $cITh/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
+alias aw='ansiweather -f 7'
+alias xc="zathura -P 38 $cITh/CP/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
 export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
 
 fv () {

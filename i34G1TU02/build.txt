@@ -154,7 +154,6 @@ gpg --recv-keys 12C6F735F7A9A519
 sudo pacman -Rs celt
 ## waiting
 FuseISO
-ranger
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

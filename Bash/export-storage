@@ -23,7 +23,7 @@ export host=$(uname -n)
 # $myDrA  &  $Storage  are pre-defined in  $MACHINE/export-machine
 
 #==> 0 $DROPBOX
-if $myDrA; then
+if [[ $Storage ]]; then
   export DROPBOX=$Storage/Dropbox
   # - keep  DROPBOX  capitalised for finding it without need for $
   export core=$DROPBOX/JH/core
