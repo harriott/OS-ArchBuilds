@@ -1,7 +1,9 @@
 #!/bin/sh
 
 # JH note:
-#  symlinked in  $bs/17-symlinks.sh
+#  called by
+#   $ARCHBUILDS/jo/xinitrcs/awesome
+#   $ARCHBUILDS/jo/xinitrcs/openbox
 #   so that it is used instead of the default
 #  I built this from default, with my additions marked JH.
 
@@ -56,5 +58,5 @@ xset s off
 
 # lastly, window manager
 export QT_QPA_PLATFORMTHEME=qt5ct  # QPA set here so qt5ct works from Openbox Menu too
-xbindkeys  # must be before launching Openbox
+[ -f usr/bin/xbindkeys ] && xbindkeys  # must be before launching Openbox
 

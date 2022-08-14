@@ -39,13 +39,15 @@ ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
 #=> 1 X
-ln -sf $ARCHBUILDS/jo/mediawiki.xml                       ~/.local/share/mime/packages/mediawiki.xml
-  update-mime-database                                    ~/.local/share/mime
 ln -sf $ARCHBUILDS/jo/xbindkeysrc                         ~/.xbindkeysrc  # mouse wheel
 ln -sf $ARCHBUILDS/jo/xinitrcs/openbox                    ~/.xinitrc  # calls $MACHINE/jo/Xresources
 ln -sf $Openbox/Xresources/Xresources                     ~/.Xresources
 ln -sf $Openbox/Xresources/colorschemes/LukeSmith-gruvbox ~/.Xresources-LukeSmith-gruvbox
 
-#=> 2 visual check
+#=> 2 MIME database
+ln -sf $ARCHBUILDS/jo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
+  update-mime-database ~/.local/share/mime
+
+#=> 3 visual check
 find ~ -mindepth 1 -maxdepth 3 -type l -ls
 
