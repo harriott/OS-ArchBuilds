@@ -3,8 +3,9 @@
 
 # here I export variables that could also be useful as root
 
+# ~/.export-machine
 # for jo:
-#  symlinked in  $bs/17-symlinks.sh
+#  symlinked in  $bs/anytime/symlinks-jo.sh
 #  sourced by  $Bash/bash_profile
 # for root:
 #  symlinked in  $bs/05-root_symlinks.sh

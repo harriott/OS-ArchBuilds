@@ -78,12 +78,15 @@ ranger --version
 ### commands
 :delete => current file or selection in directory
 ? => start of help dialogue
+c-h / zh => toggle hidden
+dd => cut
 I => rename
 i => inspect file
+pp => paste
 shift+s => open subshell
 space => mark
-c-h / zh => toggle hidden
 v => mark all
+yy => copy
 
 ## ripgrep
 batgrep

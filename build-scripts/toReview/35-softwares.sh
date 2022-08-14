@@ -488,9 +488,6 @@ true
 # #=> whipper
 # sudo pacman -S whipper
 
-# #=> xbindkeys
-# sudo pacman -S xbindkeys
-
 # #=> Xournal++
 # sudo pacman -S xournalpp
 

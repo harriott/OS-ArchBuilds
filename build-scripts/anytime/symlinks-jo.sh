@@ -17,12 +17,17 @@ ln -sf $Bash/export-jo                      ~/.export-jo
 ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
 
 #=> 0 Git
-ln -sf $MACHINE/jo/gitconfig ~/.gitconfig  # points to $ITstack/gitconfig
+if [[ $myDrA == 1 ]]; then
+  ln -sf $MACHINE/jo/gitconfig ~/.gitconfig
+else
+  ln -sf $bs/2-to_X/1-gitconfig ~/.gitconfig
+fi
+# points to $ITstack/gitconfig
 
 #=> 0 nanorc
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
 
-#=> 0 nanorc
+#=> 0 pinfo
 ln -sf $ARCHBUILDS/jo/pinforc ~/.pinforc
 
 #=> 0 ranger

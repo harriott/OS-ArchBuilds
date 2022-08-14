@@ -5,8 +5,7 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 #=> 0 set $ARCHBUILDS & $MACHINE
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../Bash/export-storage
-echo "\$ARCHBUILDS is $ARCHBUILDS"
-read -p "- looks good?"
+read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
 #=> 1 go slow
 set -ev  # quits on error, prints each statement here, including comments
@@ -111,6 +110,9 @@ trap read debug  # puts a read request after each executable line
 
 # #==> Wacom Tablet
 # pacman -S xf86-input-wacom
+
+# #==> Xbindkeys
+# sudo pacman -S xbindkeys
 
 # #==> xorg.conf.d 0
 # [ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
