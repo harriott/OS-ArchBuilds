@@ -107,7 +107,7 @@ trap read debug  # puts a read request after each executable line
 # # - for  ATI Radeon HD 4870
 # pacman -S libva-mesa-driver
 
-#=> 1 when X 1 IO hw
+# #=> 1 when X 1 IO hw
 
 # #==> Wacom Tablet
 # pacman -S xf86-input-wacom
@@ -119,34 +119,34 @@ trap read debug  # puts a read request after each executable line
 # # disable DPMS
 # cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
 
-#==> xorg.conf.d 1 touch settings
-# will need a reboot
-cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
-true
+# #==> xorg.conf.d 1 touch settings
+# # will need a reboot
+# cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+# true
 
-#=> 1 when X 1 for laptop
-# wanted
+# #=> 1 when X 1 for laptop
+# # wanted
 
-#==> HandleLidSwitchExternalPower
-# allows programs to continue running when lid is closed while laptop is charging
-sed -i 's/^#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ignore/' /etc/systemd/logind.conf
+# #==> HandleLidSwitchExternalPower
+# # allows programs to continue running when lid is closed while laptop is charging
+# sed -i 's/^#HandleLidSwitchExternalPower=suspend/HandleLidSwitchExternalPower=ignore/' /etc/systemd/logind.conf
 
-#==> slock
-# for laptops
-pacman -S slock
+# #==> slock
+# # for laptops
+# pacman -S slock
 
-#==> xbacklight
-pacman -S xorg-xbacklight
+# #==> xbacklight
+# pacman -S xorg-xbacklight
 
 #=> 1 when X 1 vimish
 # wanted
 
-#==> flake8 & Vim
-# 0 gVim
-pacman -S flake8 gvim
+# #==> flake8 & Vim
+# # 0 gVim
+# pacman -S flake8 gvim
 
-#==> Vim - Neovim
-pacman -S neovim python-pynvim
+# #==> Vim - Neovim
+# pacman -S neovim python-pynvim
 
 #==> Vim - ShellCheck
 # (for bash linting in xVim)

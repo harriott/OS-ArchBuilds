@@ -124,6 +124,8 @@ sudo bash $bs/anytime/symlinks-root.sh
 ## X
 sudo bash $bs/anytime/as_root-reflector.sh
 sudo bash $bs/3-sudo-to_X.sh
+
+bash $bs/anytime/timeCorrection.sh
 ## waiting
 ### locale.gen.pacnew
 bash $bs/anytime/as_root-pacnews.sh
