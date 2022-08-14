@@ -128,6 +128,10 @@ sudo bash $bs/3-sudo-to_X.sh
 ### locale.gen.pacnew
 bash $bs/anytime/as_root-pacnews.sh
 # fcron
+# MCEs at start
+[Hardware Error]: CPU 0: Machine Check: 0 Bank 4: a600000000020408
+[Hardware Error]: TSC 0 ADDR fef622c0
+[Hardware Error]: PROCESSOR 0:506c9 TIME 1660462321 SOCKET 0
 # physical configuration
 4GB RAM
 F2  at  POST  for  ASUS BIOS Utility - EZ Mode

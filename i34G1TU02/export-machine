@@ -15,6 +15,6 @@ export rsnapshot=/run/media/jo/KDTG311282/rsnapshot/
 export startxDelay=5
 
 #=> for  $ARCHBUILDS/jo/export-storage
-export myDrA=true  # 1 when my Dropbox is active
+export myDrA=1  # only when my Dropbox is active
 export Storage=/mnt/BX200  # where I keep stuff
 
