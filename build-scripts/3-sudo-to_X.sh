@@ -107,17 +107,19 @@ trap read debug  # puts a read request after each executable line
 # # - for  ATI Radeon HD 4870
 # pacman -S libva-mesa-driver
 
-#=> 1 when X 1 IO hw - Wacom Tablet
-pacman -S xf86-input-wacom
+#=> 1 when X 1 IO hw
 
-#==> 0 xorg.conf.d 0
-[ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
+# #==> Wacom Tablet
+# pacman -S xf86-input-wacom
 
-#==> 0 xorg.conf.d 1 monitor settings
-# disable DPMS
-cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
+# #==> xorg.conf.d 0
+# [ -d /etc/X11/xorg.conf.d ] || mkdir /etc/X11/xorg.conf.d
 
-#==> 0 xorg.conf.d 1 touch settings
+# #==> xorg.conf.d 1 monitor settings
+# # disable DPMS
+# cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
+
+#==> xorg.conf.d 1 touch settings
 # will need a reboot
 cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 true
