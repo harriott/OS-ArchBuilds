@@ -80,6 +80,7 @@ ranger --version
 ? => start of help dialogue
 c-h / zh => toggle hidden
 dd => cut
+F9 => open outside of tmux, for r (allowing images)
 I => rename
 i => inspect file
 pp => paste

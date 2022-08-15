@@ -1,8 +1,6 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-# after  $CP/git/remote2.sh
-
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
@@ -12,21 +10,8 @@ trap read debug  # puts a read request after each executable line
 
 #=> 0 NetworkManager dispatcher
 sudo systemctl enable NetworkManager-dispatcher --now
+# r /etc/NetworkManager/dispatcher.d /usr/lib/NetworkManager/dispatcher.d
 
 # #=> 0 NetworkManager - network-manager-applet
 # sudo pacman -S network-manager-applet
-
-# #=> 0 SSH config
-# ln -sf $CP/SSHconfig/LIP120s81A4 ~/.ssh/config
-ln -sf $CP/SSHconfig/i34G1TU02 ~/.ssh/config
-# ln -sf $CP/SSHconfig/sbMb ~/.ssh/config
-
-# #=> 1 git 0 check configuration
-# git config -l
-
-# #=> 1 git 1 first SSH to GitHub
-# # should see:  RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
-# ssh -T git@github.com  # "yes"
-# cat ~/.ssh/known_hosts
-# cp ~/.ssh/known_hosts ~/known_hosts-la5
 

@@ -7,10 +7,6 @@ trap read debug  # puts a read request after each executable line
 # bash 26-tmux.sh
 # gctm  &  rAUR  are defined in $Bash/bashrc-console
 
-# #=> 0 AURdev
-# mkdir ~/Arch/AURdev-clone
-# mkdir ~/Arch/AURdev-make
-
 # #=> 0 tmux configuration
 # ln -sf $tmx/tmux.conf ~/.tmux.conf
 

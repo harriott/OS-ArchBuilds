@@ -8,6 +8,9 @@ read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 set -ev
 trap read debug  # puts a read request after each executable line
 
+#=> 2 base-devel group for makepkg
+sudo pacman -S --needed base-devel
+
 # #=> 2 for *mutt
 # m=~/.local/share/mail
 # mkdir $m $m/cz $m/fm $m/tj $m/live $m/parl $m/troh $m/gmx $m/zou
@@ -26,6 +29,6 @@ trap read debug  # puts a read request after each executable line
 #=> 2 make AUR directories
 mkdir ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make
 
-#=> 2 base-devel group for makepkg
-sudo pacman -S --needed base-devel
+#=> 2 terminal-colors
+pipx install terminal-colors
 

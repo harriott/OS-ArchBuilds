@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdl=1 sw=2:
+# vim: sw=2:
 
 # logged in as user
 
@@ -22,7 +22,8 @@ if [[ $myDrA == 1 ]]; then
 else
   ln -sf $bs/2-to_X/1-gitconfig ~/.gitconfig
 fi
-# points to $ITstack/gitconfig
+# points to further convigurations on  $ITstack
+# e -la ~/.gitconfig
 
 #=> 0 nanorc
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
@@ -32,6 +33,11 @@ ln -sf $ARCHBUILDS/jo/pinforc ~/.pinforc
 
 #=> 0 ranger
 ln -sf $ARCHBUILDS/jo/ranger ~/.config/ranger
+
+#=> 0 SSH config
+if [[ $myDrA == 1 ]]; then
+  ln -sf $CP/SSHconfig/$host ~/.ssh/config
+fi
 
 #=> 0 tmux
 ln -sf $tmx/tmux.conf ~/.tmux.conf

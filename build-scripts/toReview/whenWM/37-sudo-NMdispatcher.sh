@@ -1,4 +1,5 @@
 #!/bin/bash
+# vim: set fdl=1 sw=2:
 
 # bash 37-NMdispatcher.sh
 

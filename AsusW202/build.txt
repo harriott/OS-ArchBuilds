@@ -126,11 +126,12 @@ sudo bash $bs/anytime/as_root-reflector.sh
 sudo bash $bs/2-to_X/1-sudo-to_X.sh
 bash $bs/anytime/timeCorrection.sh
 sudo bash $bs/2-to_X/1-sudo-autoLoginTTY.sh
-## waiting
 bash $bs/2-to_X/1-configure_jo.sh
 bash $bs/2-to_X/1-misc_for_gitconfig.sh
 sudo bash $bs/anytime/sudo-extra_drives_into_fstab.sh
-Xbindkeys
+on sbMb,  bash $bs/2-to_X/2-git-remote1.sh
+## waiting
+terminal-colors
 ### locale.gen.pacnew
 bash $bs/anytime/as_root-pacnews.sh
 # fcron

@@ -49,7 +49,7 @@ c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l; }
 
 r () {
   [ $TERM != 'screen-256color' ] && pi="--cmd='set preview_images true'"
-  eval "ranger --choosedir=$HOME/Arch/ranger_last_visited $pi $1"
+  eval "ranger --choosedir=$HOME/Arch/ranger_last_visited $pi $@"
   cd "$(cat /home/jo/Arch/ranger_last_visited)"
 }  # r "$DROPBOX/CAM-best/Classic Yo-Yo"
 
