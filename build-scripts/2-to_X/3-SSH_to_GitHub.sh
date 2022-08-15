@@ -3,15 +3,15 @@
 
 # after  $CP/encoding/git/remote2.sh
 
-set -v  # prints each statement here, including comments
+set -ev
 trap read debug  # puts a read request after each executable line
 
-#=> 1 git 0 check configuration
+#=> 0 check configuration
 git config -l
 
-#=> 1 git 1 first SSH to GitHub
+#=> 1 first SSH to GitHub
 # should see:  RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 ssh -T git@github.com  # "yes"
 cat ~/.ssh/known_hosts
-cp ~/.ssh/known_hosts ~/known_hosts-la5
+cp ~/.ssh/known_hosts ~/known_hosts-m8f
 

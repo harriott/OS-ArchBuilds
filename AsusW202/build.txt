@@ -130,6 +130,9 @@ bash $bs/2-to_X/1-configure_jo.sh
 bash $bs/2-to_X/1-misc_for_gitconfig.sh
 sudo bash $bs/anytime/sudo-extra_drives_into_fstab.sh
 on sbMb,  bash $bs/2-to_X/2-git-remote1.sh
+lsblk  indicated  sudo mount /dev/sdb1 /bs
+from  /bs/GHssh/  . 2-git-remote2.sh
+on sbMb,  bash $bs/2-to_X/3-SSH_to_GitHub.sh
 ## waiting
 terminal-colors
 ### locale.gen.pacnew

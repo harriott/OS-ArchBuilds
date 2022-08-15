@@ -19,5 +19,5 @@ cp $S1/id_ed25519-forGitHub $s/id_ed25519-forGitHub
 cp $S1/id_ed25519-forGitHub.pub $s/id_ed25519-forGitHub.pub
 
 #=> 2 grab next part
-cp $CP/encoding/git/remote2.sh $s/
+cp $bs/2-to_X/2-git-remote2.sh $s/
 
