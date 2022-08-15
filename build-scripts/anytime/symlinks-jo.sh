@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# logged in as user
+# logged in as jo
 
 #=> 0 Bash
 # sort this list by last use of "~":  :sort /,*\~/

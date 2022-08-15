@@ -7,7 +7,7 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 0 go & make
-sudo pacman -S go make  # needed for  hexokinase
+sudo pacman -S --needed go make  # needed for  hexokinase
 
 #=> 1 configure gVim
 cd ~
