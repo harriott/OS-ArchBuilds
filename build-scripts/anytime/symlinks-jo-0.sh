@@ -59,7 +59,7 @@ ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
 ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 
 #=> Pandoc templates
-pt=~/.pandoc/templates; [ -d $pt ] && rm -r $pt; ln -s $onGH/pandoc-templates $pt
+pt=~/.pandoc/templates; [ -d $pt ] && rm -r $pt; ln -sf $onGH/pandoc-templates $pt
 
 #=> pinfo
 ln -sf $ARCHBUILDS/jo/pinforc ~/.pinforc

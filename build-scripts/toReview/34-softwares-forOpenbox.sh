@@ -11,6 +11,17 @@ trap read debug  # puts a read request after each executable line
 # killall -SIGUSR1 tint2  # reloads tint2rc
 # # - should also be done if  tint2  has been updated
 
+# #=> 1 audio 0 ALSA - PNMixer
+# gAUR pnmixer
+# gvim -c "silent! /pnmixer-v" PKGBUILD
+# makepkg -sic
+# # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
+# true
+
+#=> 1 audio 1 PulseAudio - pavucontrol
+pacman -S pavucontrol  # for pnmixer
+sed -i '/VolumeControlCommand/ s/=.*/=pavucontrol/' /home/jo/.config/pnmixer/config
+
 # #=> 1 CUPS service
 # sudo pacman -S cups
 # sudo systemctl enable cups.service --now
@@ -42,13 +53,6 @@ trap read debug  # puts a read request after each executable line
 
 # #=> 1 Pinta
 # sudo pacman -S pinta
-
-# #=> 1 PNMixer
-# gAUR pnmixer
-# gvim -c "silent! /pnmixer-v" PKGBUILD
-# makepkg -sic
-# # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
-# true
 
 #=> 1 qt5-styleplugins
 # for qt5ct - allows fix of narrow fonts in XnViewMP

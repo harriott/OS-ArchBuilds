@@ -48,12 +48,7 @@ sudo sed -i 's/^max_print_line = 79/max_print_line = 4000/' /etc/texmf/web2c/tex
 # #=> Cmus
 # pacman -S cmus
 
-#=> multimedia - PulseAudio
-# pavucontrol - for pnmixer
-pacman -S pavucontrol
-sed -i '/VolumeControlCommand/ s/=.*/=pavucontrol/' /home/jo/.config/pnmixer/config
-
-# pulsemixer
+#=> PulseAudio - pulsemixer
 pacman -S pulsemixer
 
 #=> networking
