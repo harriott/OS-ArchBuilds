@@ -195,11 +195,12 @@ trap read debug  # puts a read request after each executable line
 # # OpenOffice English thesaurus
 # pacman -S mythes-en
 
-# # pass (bring in gnupg)
+# # pass (brings in gnupg)
 # pacman -S pass
 
 # # python-pipx
 # pacman -S python-pipx
+#  pipx ensurepath
 
 # # strace - for debugging
 # pacman -S strace

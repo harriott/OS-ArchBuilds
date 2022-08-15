@@ -1,8 +1,7 @@
 #!/bin/bash
+# vim: fdl=1:
 
-# bash <thisfile>.sh
-
-# gctm  &  rAUR  are defined in $Bash/bashrc-console
+# gdAUR  is defined in $Bash/bashrc-console
 
 set -ev
 trap read debug  # puts a read request after each executable line
@@ -15,9 +14,6 @@ true
 
 #=> Dropbox public key
 gpg --keyserver keyserver.ubuntu.com --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
-
-#=> GnuPG directory
-gpg -k  # creates & populates  ~/.gnupg
 
 #=> pgpdump
 sudo pacman -S pgpdump

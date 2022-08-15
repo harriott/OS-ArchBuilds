@@ -11,9 +11,6 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 ATI install
 # sudo pacman -S xf86-video-ati  # should probably reboot
 
-# #=> 0 for Dunst
-# mkdir -p ~/.config/dunst
-
 # #=> 0 generate 00-keyboard.conf
 # sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
 
