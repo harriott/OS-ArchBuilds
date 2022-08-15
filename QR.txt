@@ -398,9 +398,10 @@ journalctl -u rsnapshot@hourly -r
 systemctl status rsnapshot-hourly.timer
 
 #### find
-eval "find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/syntax -type f -name 'cmusq.vim' $printfDTsort"
-eval "find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/CAM-toSort0 -type f -name '*Apache*' $printfDTsort"
-find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/CAM-toSort0 -type f -name "01 *"
+fdtsRsnapshot $Bash bashrc-console
+fdtsRsnapshot $DROPBOX/CAM-toSort0 '01 '
+fdtsRsnapshot $DROPBOX/CAM-toSort0 Apache
+fdtsRsnapshot $vimfiles/syntax cmusq.vim
 
 ##### my OBS grabs
 find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"

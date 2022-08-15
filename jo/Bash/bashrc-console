@@ -1,6 +1,7 @@
 #!/bin/sh
 # vim: ft=sh sw=2:
 
+# symlinked in  $bs/anytime/symlinks-jo.sh  to  /home/jo/.bashrc-console
 # sourced by  $Bash/bash_profile  &  $MACHINE/jo/Bash/bashrc
 # useful also in Console as user
 
@@ -128,14 +129,15 @@ fdtsRsnapshot () {
   echo $1
   echo $2
   if [ $2 ]; then
-    # eval "find $rsnapshot/*/localhost/$1 -type f -name \"$2\" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\\n | sort"
-    # echo "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" -printf %T@\ %U\ %TY-%Tm-%Td\ %TH:%TM\ %p\\\n | sort"
-    eval "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" -printf %p\\\n | sort" > $rsnapshot/tds_find
-    # echo "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" -printf %T@\ %p\\\n | sort"
+    tf=$rsnapshot/tds_find
+    echo "$1 $2" > $tf
+    echo '' >> $tf
+    eval "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" $printfDTsort" >> $tf
+    echo '- now look in  $rsnapshot/tds_find'
   else
     echo "fdtsRsnapshot <directoryToSearchIn> <fileToSearchFor>"
   fi
-}
+} # no spaces in arguments
 
 #==> Git
 alias ga='git add'
@@ -230,7 +232,7 @@ export GPG_TTY=$(tty)  # correct TTY for GnuPG
 gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; }; export -f gctm
 
 # get into an AUR repository
-gAUR () { cd "$HOME/Arch/AUR"; rAUR $1; trizen -G $1; cd $1; }; export -f gAUR
+gAUR () { cd "$HOME/Arch/AUR$2"; rAUR $1; trizen -G $1; cd $1; }; export -f gAUR
 
 # get into an AUR development repository
 gdAUR () { gAUR $1 dev-clone; gctm $1; }; export -f gdAUR
