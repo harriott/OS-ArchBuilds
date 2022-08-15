@@ -5,48 +5,48 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 set -ev
 trap read debug  # puts a read request after each executable line
 
-#=> android-tools
-pacman -S android-tools
+# #=> android-tools
+# pacman -S android-tools
 
-#=> documenting
-# Ghostscript
-pacman -S ghostscript
+# #=> documenting
+# # Ghostscript
+# pacman -S ghostscript
 
-# Pandoc
-pacman -S pandoc
+# # Pandoc
+# pacman -S pandoc
 
-# TeX Live
-pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all
+# # TeX Live
+# pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all
 
-#=> ebook - Calibre
-pacman -S calibre
+#=> documenting - TeX Live - max_print_line
+sudo sed -i 's/^max_print_line = 79/max_print_line = 4000/' /etc/texmf/web2c/texmf.cnf
+# - works, but I prefer my function  x  in  $Bash/bashrc-wm
 
-#=> ebook - Foliate
-pacman -S foliate
-# Openbox Menu > Office > Foliate > Menu > Advanced > Continuous
+# #=> ebook - Calibre
+# pacman -S calibre
 
-#=> file manage
-# cdrtools
-pacman -S cdrtools
+# #=> ebook - Foliate
+# pacman -S foliate
+# # Openbox Menu > Office > Foliate > Menu > Advanced > Continuous
 
-# GVFS
-pacman -S gvfs
+# #=> file manage
+# # cdrtools
+# pacman -S cdrtools
 
-# gvfs-mtp - for accessing phone memory
-pacman -S gvfs-mtp
+# # GVFS
+# pacman -S gvfs
 
-# nnn
-pacman -S nnn
+# # gvfs-mtp - for accessing phone memory
+# pacman -S gvfs-mtp
 
-#=> cmatrix
-pacman -S cmatrix
+# # nnn
+# pacman -S nnn
 
-#=> multimedia
-# Cmus
-pacman -S cmus
+# #=> cmatrix
+# pacman -S cmatrix
 
-# espeak-ng-espeak & termdown
-pacman -S espeak-ng-espeak termdown
+# #=> Cmus
+# pacman -S cmus
 
 #=> multimedia - PulseAudio
 # pavucontrol - for pnmixer
@@ -71,12 +71,9 @@ pacman -S mailcap
 # Transmission
 pacman -S transmission-qt
 
-#=> Openbox environment
+#=> WM environment
 # cbatticon
 pacman -S cbatticon
-
-# configure Openbox
-pacman -S lxappearance-obconf obconf
 
 # CopyQ
 pacman -S copyq
@@ -87,11 +84,15 @@ pacman -S dunst
 # galculator
 pacman -S galculator
 
-# Gmrun
-pacman -S gmrun
-
 # gsimplecal
 pacman -S gsimplecal
+
+#=> Openbox environment
+# configure Openbox
+pacman -S lxappearance-obconf obconf
+
+# Gmrun
+pacman -S gmrun
 
 # Openbox & tint2
 pacman -S openbox tint2
@@ -101,9 +102,6 @@ pacman -S pkgconf
 
 #=> redshift
 pacman -S redshift
-
-#=> wmctrl
-pacman -S wmctrl
 
 #=> system
 # Bluefish

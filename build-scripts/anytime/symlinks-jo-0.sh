@@ -25,7 +25,7 @@ ln -sf $Openbox/cmus_notify.sh             ~/.local/share/cmus_notify.sh
 ln -sf $Openbox/cmus-rc.conf               ~/.config/cmus/rc
 
 #=> Dunst
-ln -sf $Openbox/dunstrc   ~/.config/dunst/dunstrc # requires restarting X
+ln -sf $Openbox/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
 
 #=> Git
 if [[ $myDrA == 1 ]]; then
@@ -38,6 +38,9 @@ fi
 
 #=> gpg-agent configuration
 ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
+
+#=> for Tex Live
+sudo ln -sf $ARCHBUILDS/jo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 
 #=> LanguageTool
 # needed for command-line usage

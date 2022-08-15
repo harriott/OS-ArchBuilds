@@ -144,6 +144,7 @@ bash $bs/anytime/as_root-updates.sh
 bash $bs/anytime/Zen.sh
 bash $bs/2-to_X/7-as_root-toWM.sh
 ## waiting
+bash $bs/anytime/symlinks-jo.sh
 terminal-colors
 ### locale.gen.pacnew
 bash $bs/anytime/as_root-pacnews.sh

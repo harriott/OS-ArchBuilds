@@ -100,3 +100,6 @@ pacman -S partitionmanager
 #=> 2 KDE 2 check iwd.service (for Kdenetwork)
 systemctl status iwd.service
 
+#=> 2 wmctrl
+pacman -S wmctrl
+
