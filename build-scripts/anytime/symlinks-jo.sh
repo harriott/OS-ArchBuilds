@@ -1,9 +1,12 @@
 #!/bin/bash
 # vim: sw=2:
 
-# logged in as jo
+set -e
 
-#=> 0 Bash
+#=> ansiweather
+ln -sf $ARCHBUILDS/jo/ansiweather ~/.ansiweatherrc
+
+#=> Bash
 # sort this list by last use of "~":  :sort /,*\~/
 
 ln -sf $Bash/bash_profile                   ~/.bash_profile
@@ -16,7 +19,15 @@ ln -sf $ARCHBUILDS/Bash/export-storage      ~/.export-storage
 ln -sf $Bash/export-jo                      ~/.export-jo
 ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
 
-#=> 0 Git
+#=> cmus
+ln -sf $ARCHBUILDS/jo/Openbox/cmusqueue.sh ~/Arch/cmusqueue.sh
+ln -sf $Openbox/cmus_notify.sh             ~/.local/share/cmus_notify.sh
+ln -sf $Openbox/cmus-rc.conf               ~/.config/cmus/rc
+
+#=> Dunst
+ln -sf $Openbox/dunstrc   ~/.config/dunst/dunstrc # requires restarting X
+
+#=> Git
 if [[ $myDrA == 1 ]]; then
   ln -sf $MACHINE/jo/gitconfig ~/.gitconfig
 else
@@ -25,40 +36,55 @@ fi
 # points to further convigurations on  $ITstack
 # e -la ~/.gitconfig
 
-#=> 0 nanorc
+#=> gpg-agent configuration
+ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
+
+#=> LanguageTool
+# needed for command-line usage
+sudo ln -sf $cITh/CP/LanguageTool /usr/share/java/LanguageTool
+# exa -la /usr/share/java
+
+#=> MIME database
+ln -sf $ARCHBUILDS/jo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
+  update-mime-database ~/.local/share/mime
+
+#=> nanorc
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
 
-#=> 0 pinfo
+#=> Pandoc defaults
+ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
+ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
+
+#=> Pandoc templates
+pt=~/.pandoc/templates; [ -d $pt ] && rm -r $pt; ln -s $onGH/pandoc-templates $pt
+
+#=> pinfo
 ln -sf $ARCHBUILDS/jo/pinforc ~/.pinforc
 
-#=> 0 ranger
+#=> ranger
 ln -sf $ARCHBUILDS/jo/ranger ~/.config/ranger
 
-#=> 0 SSH config
+#=> SSH config
 if [[ $myDrA == 1 ]]; then
   ln -sf $CP/SSHconfig/$host ~/.ssh/config
 fi
 
-#=> 0 tmux
+#=> tmux
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 
-#=> 0 vims
+#=> vims
 ln -sf $MACHINE/jo/gvimrc ~/.gvimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 
 [ -d ~/.config/nvim ] || mkdir -p ~/.config/nvim
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
-#=> 1 X
+#=> X
 ln -sf $ARCHBUILDS/jo/xbindkeysrc                         ~/.xbindkeysrc  # mouse wheel
 ln -sf $ARCHBUILDS/jo/xinitrcs/openbox                    ~/.xinitrc  # calls $MACHINE/jo/Xresources
 ln -sf $Openbox/Xresources/Xresources                     ~/.Xresources
 ln -sf $Openbox/Xresources/colorschemes/LukeSmith-gruvbox ~/.Xresources-LukeSmith-gruvbox
 
-#=> 2 MIME database
-ln -sf $ARCHBUILDS/jo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
-  update-mime-database ~/.local/share/mime
-
-#=> 3 visual check
-find ~ -mindepth 1 -maxdepth 3 -type l -ls
+#=> Zathura
+ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
 

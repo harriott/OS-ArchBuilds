@@ -11,9 +11,10 @@ uG=$MACHINE/jo/Bash/export-urxvt; [[ -f $uG ]] && . $uG
 
 export MOZ_GTK_TITLEBAR_DECORATION=client
 
-# export GIT_PS1=$(__git_ps1 " (%s)")  # excruciatingly slow on a huge repository such as  nerd-fonts
+# export GIT_PS1=$(__git_ps1 " (%s)")
+# - excruciatingly slow on a huge repository such as  nerd-fonts
 
-#=> 1 storage
+#=> storage
 # here I'm taking care to avoid variables that only differ by case
 
 export bilan=$DROPBOX/JH/Work/ST/LPD/IdF/AB-TAP/bilan

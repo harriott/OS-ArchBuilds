@@ -137,6 +137,7 @@ bash $bs/2-to_X/3-SSH_to_GitHub.sh
 bash $bs/anytime/as_root-updates.sh
 bash $bs/2-to_X/4-vimfiles.sh
 bash $bs/2-to_X/5-trizen-batstat-tmux.sh
+bash $bs/2-to_X/1-configure_jo.sh
 ## waiting
 terminal-colors
 ### locale.gen.pacnew

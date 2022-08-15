@@ -44,7 +44,7 @@ alias sm="stat -c '%y %n'"  # modification time
 export PAGER=less
 shopt -s autocd dotglob extglob globstar nullglob
 
-c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l; }
+c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
 # - https://superuser.com/a/1244522/242800
 
 r () {

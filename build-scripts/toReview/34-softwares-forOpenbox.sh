@@ -82,8 +82,7 @@ makepkg -sic  # takes a long time
 # gvim PKGBUILD
 # makepkg -sic
 
-# #=> 1 Zathura
-# sudo pacman -S zathura-pdf-mupdf
-# mkdir ~/.config/zathura
-# # zathurarc  will be symlinked in  38-symlinks-softwares.sh
+#=> 1 Zathura
+sudo pacman -S zathura-pdf-mupdf
+# zathurarc  will be symlinked in  38-symlinks-softwares.sh
 

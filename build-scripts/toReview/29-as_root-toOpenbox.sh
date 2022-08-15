@@ -48,7 +48,6 @@ pacman -S cmatrix
 #=> multimedia
 # Cmus
 pacman -S cmus
-mkdir ~/.config/cmus
 
 # espeak-ng-espeak & termdown
 pacman -S espeak-ng-espeak termdown
