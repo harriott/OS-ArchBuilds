@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
+set -e
+
 #=> 0 save update log
 echo 'checkupdates'
 checkupdates > $ulL/Arch/$host/pacman/checkupdates-$(date '+%y%m%d-%H%M').log

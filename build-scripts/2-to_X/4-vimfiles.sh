@@ -3,7 +3,7 @@
 
 # bash <this_script>
 
-set -v  # prints each statement here, including comments
+set -ev  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 0 go & make

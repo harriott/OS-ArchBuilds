@@ -134,6 +134,8 @@ lsblk  indicated  sudo mount /dev/sdb1 /bs
 from  /bs/GHssh/  . 2-git-remote2.sh
 bash $bs/anytime/symlinks-jo.sh
 bash $bs/2-to_X/3-SSH_to_GitHub.sh
+bash $bs/anytime/as_root-updates.sh
+bash $bs/2-to_X/4-vimfiles.sh
 ## waiting
 terminal-colors
 ### locale.gen.pacnew
