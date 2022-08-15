@@ -19,5 +19,5 @@ rg GRUB_DISABLE_SUBMENU /etc/default/grub
 
 #=> 1 update GRUB
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-# now  reboot  for  GNU GRUB > Advanced options for Arch Linux > Arch Linux, with Linux linux-zen
+# now  reboot
 

@@ -3,7 +3,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> root
+#=> 0 root
 
 #==> for *8192eu*
 
@@ -55,6 +55,10 @@ dt=$(date "+%F-%H-%M")
 # cp /mnt/mkinitcpio-$dt.conf /etc/mkinitcpio.conf
 # grep 'd f' /etc/mkinitcpio.conf
 
+#==> networking iw
+# made redundant by  $ulL/connectSSID/iwctl.sh
+pacman -S iw
+
 # #==> 0 Numlock on in getty
 # mkdir /etc/systemd/system/getty@.service.d
 # echo [Service] > /etc/systemd/system/getty@.service.d/activate-numlock.conf
@@ -65,7 +69,7 @@ dt=$(date "+%F-%H-%M")
 # # because it didn't work in sbMb
 # rm /etc/systemd/system/getty@.service.d/activate-numlock.conf
 
-#=> as root when jo 0
+#=> 1 as root when jo 0
 
 #==> python-pew 0 install
 pacman -S python-pew
@@ -73,7 +77,7 @@ pacman -S python-pew
 #==> python-pew 1 remove
 pacman -Rs python-pew
 
-#=> as root when jo 1 when X
+#=> 1 as root when jo 1 when X
 
 #==> AV remove PulseAudio
 pacman -Rs zoom  # (also removes pulseaudio-alsa)
@@ -81,4 +85,18 @@ pacman -Rs pulsemixer  # (also removes pulseaudio)
 
 #==> networking - LastPass CLI
 pacman -S lastpass-cli
+
+#=> 2 KDE 0
+pacman -S kde-applications plasma
+# phonon-qt5
+
+# sshfs (for KDE Connect)
+pacman -S sshfs
+
+#=> 2 KDE 1 Partition Manager
+# (it's not in Discover...)
+pacman -S partitionmanager
+
+#=> 2 KDE 2 check iwd.service (for Kdenetwork)
+systemctl status iwd.service
 

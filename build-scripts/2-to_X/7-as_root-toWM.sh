@@ -1,13 +1,9 @@
 #!/bin/bash
 
-# sudo bash 29-as_root-toOpenbox.sh
-
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-set -v  # prints each statement here, including comments
+set -ev
 trap read debug  # puts a read request after each executable line
-
-echo $ARCHBUILDS
 
 #=> android-tools
 pacman -S android-tools
@@ -59,10 +55,6 @@ sed -i '/VolumeControlCommand/ s/=.*/=pavucontrol/' /home/jo/.config/pnmixer/con
 
 # pulsemixer
 pacman -S pulsemixer
-
-# #=> networking iw
-# # made redundant by  $ITstack/unix_like-GNULinux/iwctl-connect.sh
-# pacman -S iw
 
 #=> networking
 # bluetooth

@@ -45,7 +45,7 @@ rebooted to  ARCH_202207
 plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
-bash $ulL/iwctl-connect.sh  got me online
+bash $ulL/connectSSID/iwctl.sh  got me online
 bash $bs/01-fromISO-efi-to_chroot.sh
   chroot: failed to run command '/bin/bash': No such file or directory
   /mnt/bin  not there...
@@ -55,7 +55,7 @@ reboot
 plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
-$ulL  for  bash iwctl-connect.sh  got me online
+$ulL  for  bash connectSSID/iwctl.sh  got me online
 $bs  for  bash 01-as_root-efi-to_chroot.sh
   error: libcap: signature from "David Runge <dvzrv@archlinux.org>" is marginal trust
   /usr  didn't get installed...
@@ -64,7 +64,7 @@ rm -r /mnt  (didn't remove  /mnt/efi)
 plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
-$ulL  for  bash iwctl-connect.sh  got me online
+$ulL  for  bash connectSSID/iwctl.sh  got me online
 $bs  for  bash 01-as_root-efi-to_chroot.sh
 ### shutdown
 ctrl-d  for  halt -p
@@ -72,7 +72,7 @@ ctrl-d  for  halt -p
 plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
-$ulL  for  bash iwctl-connect.sh  got me online
+$ulL  for  bash connectSSID/iwctl.sh  got me online
 $bs  for  bash 01-as_root-efi-to_chroot.sh
 ### as chroot
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
@@ -90,16 +90,16 @@ ctrl-d  for  halt -p
 ## root
 BIOS > Boot Priority > Windows Boot Manager  is still there...
 to fix  /root/.export-machine  symlink,  bash 05-root_symlinks.sh
-bash ~/iwctl-connect.sh  got me online
+bash ~/iwctl.sh  got me online
 bash 09-as_root-to_jo.sh
 to fix  /home/jo/.bashrc-generic  symlink,  bash 05-root_symlinks.sh
 bash 09-as_root-to_jo.sh
 bash 10-as_root-RootkitHunt.sh
 ## jo
 ### move to NetworkManager
-su rm /root/iwctl-connect.sh
+su rm /root/iwctl.sh
 su rm -r /Archbuilds
-bash ~/iwctl-connect.sh  got me online
+bash ~/iwctl.sh  got me online
 . ~/Archbuilds/Bash/export-storage
 bash $bs/anytime/symlinks-jo.sh
 #### iwd disable & stop
@@ -140,6 +140,9 @@ bash $bs/2-to_X/5-trizen-batstat-tmux.sh
 bash $bs/2-to_X/1-configure_jo.sh
 bash $bs/anytime/symlinks-jo.sh
 bash $bs/2-to_X/6-prepare_forSoftwares.sh
+bash $bs/anytime/as_root-updates.sh
+bash $bs/anytime/Zen.sh
+bash $bs/2-to_X/7-as_root-toWM.sh
 ## waiting
 terminal-colors
 ### locale.gen.pacnew
