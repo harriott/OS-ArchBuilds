@@ -18,9 +18,9 @@ trap read debug  # puts a read request after each executable line
 # # TeX Live
 # pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all
 
-#=> documenting - TeX Live - max_print_line
-sudo sed -i 's/^max_print_line = 79/max_print_line = 4000/' /etc/texmf/web2c/texmf.cnf
-# - works, but I prefer my function  x  in  $Bash/bashrc-wm
+# #=> documenting - TeX Live - max_print_line
+# sudo sed -i 's/^max_print_line = 79/max_print_line = 4000/' /etc/texmf/web2c/texmf.cnf
+# # - works, but I prefer my function  x  in  $Bash/bashrc-wm
 
 # #=> ebook - Calibre
 # pacman -S calibre
@@ -48,49 +48,39 @@ sudo sed -i 's/^max_print_line = 79/max_print_line = 4000/' /etc/texmf/web2c/tex
 # #=> Cmus
 # pacman -S cmus
 
-#=> PulseAudio - pulsemixer
-pacman -S pulsemixer
+# #=> PulseAudio - pulsemixer
+# pacman -S pulsemixer
 
-#=> networking
-# bluetooth
-gpasswd -a jo lp
-pacman -S blueman bluez bluez-utils pulseaudio-bluetooth
-systemctl enable bluetooth.service --now
+# #=> networking
+# # bluetooth
+# gpasswd -a jo lp
+# pacman -S blueman bluez bluez-utils pulseaudio-bluetooth
+# systemctl enable bluetooth.service --now
 
-# iptraf-ng
-pacman -S iptraf-ng
+# # iptraf-ng
+# pacman -S iptraf-ng
 
-# mailcap
-pacman -S mailcap
+# # mailcap
+# pacman -S mailcap
 
-# Transmission
-pacman -S transmission-qt
+# # Transmission
+# pacman -S transmission-qt
 
-#=> WM environment
-# cbatticon
-pacman -S cbatticon
+# #=> WM environment
+# # cbatticon
+# pacman -S cbatticon
 
-# CopyQ
-pacman -S copyq
+# # CopyQ
+# pacman -S copyq
 
-# Dunst
-pacman -S dunst
+# # Dunst
+# pacman -S dunst
 
-# galculator
-pacman -S galculator
+# # galculator
+# pacman -S galculator
 
-# gsimplecal
-pacman -S gsimplecal
-
-#=> Openbox environment
-# configure Openbox
-pacman -S lxappearance-obconf obconf
-
-# Gmrun
-pacman -S gmrun
-
-# Openbox & tint2
-pacman -S openbox tint2
+# # gsimplecal
+# pacman -S gsimplecal
 
 #=> pkgconf
 pacman -S pkgconf
