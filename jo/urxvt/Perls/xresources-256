@@ -22,4 +22,6 @@ sub on_start {
    ()
 }
 
-# https://github.com/Roliga/urxvt-xresources-256
+# 16/08/22 JH checked against
+#  https://github.com/Roliga/urxvt-xresources-256/blob/master/xresources-256
+

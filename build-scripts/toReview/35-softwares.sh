@@ -17,8 +17,8 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> asunder
-sudo pacman -S asunder
+# #=> asunder
+# sudo pacman -S asunder
 
 # #=> bat-extras-git
 # gdAUR bat-extras-git
@@ -46,11 +46,11 @@ sudo pacman -S asunder
 # # supersedes  Bashtop
 # sudo pacman -S bpytop
 
-#=> cheat
-gdAUR cheat
-nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
-makepkg -sic
-sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
+# #=> cheat
+# gdAUR cheat
+# nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
+# makepkg -sic
+# sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
 # #=> cht.sh-git 0 install
 # gdAUR cht.sh-git
@@ -200,11 +200,11 @@ sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -422,10 +422,10 @@ true
 # #=> Quod Libet
 # sudo pacman -S quodlibet
 
-# #=> Samokovarov's jump
-# gAUR jump
-# nvim -c "silent! /gsamokovarov" PKGBUILD
-# makepkg -sic
+#=> Samokovarov's jump
+gAUR jump
+nvim -c "silent! /gsamokovarov" PKGBUILD
+makepkg -sic
 
 # #=> shell-color-scripts
 # gAUR shell-color-scripts

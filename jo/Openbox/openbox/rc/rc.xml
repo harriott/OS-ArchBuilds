@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vim: fdl=1 sw=2:
      my changes are commented like this - JH
+     nvim -O /etc/xdg/openbox/rc.xml $Openbox/openbox/rc/rc.xml
      in my  31-symlinks-Openbox.sh, I symlink this copy to  ~/.config/openbox/rc.xml
      reconfigure  after making changes here -->
 

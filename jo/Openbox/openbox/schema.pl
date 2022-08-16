@@ -1,9 +1,7 @@
 #!/usr/bin/perl
 
 # obmenu-generator - schema file
-
-# AUR package reports:
-# "The schema file has been installed as: /etc/xdg/obmenu-generator/schema.pl"
+# nvim -O /etc/xdg/obmenu-generator/schema.pl $Openbox/openbox/schema.pl
 
 =for comment
 
