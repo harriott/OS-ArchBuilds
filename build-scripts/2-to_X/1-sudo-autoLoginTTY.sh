@@ -14,25 +14,28 @@ read -p "- looks good?"
 set -ev  # quits on error, prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 2 tty1 0
+#=> 2 ttyx
+# r /etc/systemd/system
+
+#==> tty1 0
 [ -d /etc/systemd/system/getty@tty1.service.d ] || mkdir /etc/systemd/system/getty@tty1.service.d
 
-#=> 2 tty1 1 on
+#==> tty1 1 on
 cp $ARCHBUILDS/etc/systemd/autologin.conf /etc/systemd/system/getty@tty1.service.d/autologin.conf
 # cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty1.service.d/override.conf
 
-# #=> 2 tty1 1 off
+# #==> tty1 1 off
 # rm /etc/systemd/system/getty@tty1.service.d/autologin.conf
 # # rm /etc/systemd/system/getty@tty1.service.d/override.conf
 
-# #=> 2 tty2 0
+# #==> tty2 0
 # [ -d /etc/systemd/system/getty@tty2.service.d ] || mkdir /etc/systemd/system/getty@tty2.service.d
 
-# #=> 2 tty1 2 on
+# #==> tty1 2 on
 # cp $ARCHBUILDS/etc/systemd/autologin.conf /etc/systemd/system/getty@tty2.service.d/autologin.conf
 # # cp $ARCHBUILDS/etc/systemd/override.conf /etc/systemd/system/getty@tty2.service.d/override.conf
 
-# #=> 2 tty1 2 off
+# #==> tty1 2 off
 # rm /etc/systemd/system/getty@tty2.service.d/autologin.conf
 # # rm /etc/systemd/system/getty@tty2.service.d/override.conf
 

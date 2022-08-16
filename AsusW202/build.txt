@@ -142,10 +142,11 @@ bash $bs/anytime/symlinks-jo-0.sh
 bash $bs/2-to_X/6-prepare_forSoftwares.sh
 bash $bs/anytime/as_root-updates.sh
 bash $bs/anytime/Zen.sh
-sudo bash $bs/2-to_X/7-as_root-toWM.sh
+sudo bash $bs/3-toWM/1-sudo-prep_forWM.sh
 bash $bs/anytime/symlinks-jo-0.sh
-sudo bash $bs/2-to_X/7-as_root-toWM.sh
+sudo bash $bs/3-toWM/1-sudo-prep_forWM.sh
 ## waiting
+sudo bash $bs/2-to_X/1-sudo-to_X.sh
 terminal-colors
 ### locale.gen.pacnew
 bash $bs/anytime/as_root-pacnews.sh

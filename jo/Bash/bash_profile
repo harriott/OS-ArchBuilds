@@ -37,3 +37,6 @@ fi  # possibly start X
 
 . ~/.config/broot/launcher/bash/br  # - carries through to X
 
+
+# Created by `pipx` on 2022-08-15 19:39:50
+export PATH="$PATH:/home/jo/.local/bin"

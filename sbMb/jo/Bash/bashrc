@@ -27,3 +27,6 @@ omc()
     fin
 }
 
+
+# Created by `pipx` on 2022-08-15 19:39:50
+export PATH="$PATH:/home/jo/.local/bin"

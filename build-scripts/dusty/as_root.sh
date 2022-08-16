@@ -69,7 +69,39 @@ pacman -S iw
 # # because it didn't work in sbMb
 # rm /etc/systemd/system/getty@.service.d/activate-numlock.conf
 
-#=> 1 as root when jo 0
+#=> 1 as root - sshd_config
+sudo cp $MACHINE/etc/sshd_config /etc/ssh/sshd_config
+
+#=> 1 as root - wifi - 8192eu 0 blacklist rtl8xxxu
+echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf
+
+#=> 1 as root - wifi - 8192eu 1 remove blacklist
+sudo rm /etc/modprobe.d/rtl8xxxu.conf
+
+#=> 1 as root - wifi - 8192eu-dkms 0 install
+# for  TP-Link TL-WN821N
+# needs  appmenu-gtk-module dkms linux-headers
+cd ~/Arch/AUR
+rm -fr 8192eu-dkms # (-f is needed for some weird files therein)
+git clone https://aur.archlinux.org/8192eu-dkms.git
+cd 8192eu-dkms
+gvim -c "silent! /Mange" PKGBUILD
+makepkg -sic
+#  (2/2) Install DKMS modules  takes a long time
+reboot
+
+#=> 1 as root - wifi - 8192eu-dkms 1 remove
+sudo pacman -Rs 8192eu-dkms
+reboot
+
+#=> 1 as root - wifi - rtl8192eu
+# (didn't get  TL-WN821N  up)
+gdAUR rtl8192eu
+gvim PKGBUILD
+gvim -c "silent! /Mange" PKGBUILD
+makepkg -sic
+
+#=> 2 as root when jo 0
 
 #==> python-pew 0 install
 pacman -S python-pew
@@ -77,7 +109,7 @@ pacman -S python-pew
 #==> python-pew 1 remove
 pacman -Rs python-pew
 
-#=> 1 as root when jo 1 when X
+#=> 2 as root when jo 1 when X
 
 #==> AV remove PulseAudio
 pacman -Rs zoom  # (also removes pulseaudio-alsa)
@@ -86,20 +118,25 @@ pacman -Rs pulsemixer  # (also removes pulseaudio)
 #==> networking - LastPass CLI
 pacman -S lastpass-cli
 
-#=> 2 KDE 0
+#=> 3 KDE 0
 pacman -S kde-applications plasma
 # phonon-qt5
 
 # sshfs (for KDE Connect)
 pacman -S sshfs
 
-#=> 2 KDE 1 Partition Manager
+#=> 3 KDE 1 Partition Manager
 # (it's not in Discover...)
 pacman -S partitionmanager
 
-#=> 2 KDE 2 check iwd.service (for Kdenetwork)
+#=> 3 KDE 1 check iwd.service (for Kdenetwork)
 systemctl status iwd.service
 
-#=> 2 wmctrl
+#=> 3 KDE 1 Event Calendar
+gAUR plasma5-applets-eventcalendar
+nvim PKGBUILD
+makepkg -sic
+
+#=> 3 wmctrl
 pacman -S wmctrl
 

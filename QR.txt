@@ -459,6 +459,7 @@ get the PIDs  ps ax | grep cmus  then for each  kill -9 PID
 cat /etc/hostname
 curl ifconfig.co  # IP address
 curl ifconfig.co/country
+i sshd_config
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
 systemctl status nordvpnd.service
@@ -658,7 +659,7 @@ bash $lB/colours/tripleee+isntn.sh
 perl $lB/colours/256/hSATAC-256color.pl
 python $lB/colours/256/WoLpH-colortest.py
 colorscript -r
-terminal-colors  # shows what the terminal can
+terminal-colors  # shows what the terminal can do (console only 8 colours)
 terminal-colors -l  # with #xxxxxx's
 terminal-colors -o  # ANSI escape codes
 

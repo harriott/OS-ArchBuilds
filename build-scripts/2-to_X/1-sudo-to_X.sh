@@ -31,7 +31,7 @@ trap read debug  # puts a read request after each executable line
 # cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
 # updatedb
 
-# #=> 1 when X 0
+#=> 1 when X 0
 
 # #==> appearance - hicolor-icon-theme
 # pacman -S hicolor-icon-theme
@@ -78,8 +78,11 @@ trap read debug  # puts a read request after each executable line
 # # NeoMutt
 # pacman -S neomutt
 
-# # Secure Shell
+# # OpenSSH
 # pacman -S openssh
+
+#==> networking - OpenSSH - grab default sshd_config
+g=~/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; sudo chown jo:jo $g
 
 # #==> system
 # # espeak-ng-espeak & termdown
@@ -140,8 +143,8 @@ trap read debug  # puts a read request after each executable line
 # #==> xbacklight
 # pacman -S xorg-xbacklight
 
-#=> 1 when X 1 vimish
-# wanted
+# #=> 1 when X 1 vimish
+# # wanted
 
 # #==> flake8 & Vim
 # # 0 gVim
@@ -150,10 +153,10 @@ trap read debug  # puts a read request after each executable line
 # #==> Vim - Neovim
 # pacman -S neovim python-pynvim
 
-#==> Vim - ShellCheck
-# (for bash linting in xVim)
-pacman -S shellcheck  # brings in Haskell
+# #==> Vim - ShellCheck
+# # (for bash linting in xVim)
+# pacman -S shellcheck  # brings in Haskell
 
-#=> 3 finish
-echo "now reboot"
+# #=> 3 finish
+# echo "now reboot"
 

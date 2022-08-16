@@ -11,14 +11,14 @@ trap read debug  # puts a read request after each executable line
 
 # gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
-#=> ansiweather
-gAUR ansiweather
-nvim -c "silent! /fcambus" PKGBUILD
-makepkg -sic
-true
+# #=> ansiweather
+# gAUR ansiweather
+# nvim -c "silent! /fcambus" PKGBUILD
+# makepkg -sic
+# true
 
-# #=> asunder
-# sudo pacman -S asunder
+#=> asunder
+sudo pacman -S asunder
 
 # #=> bat-extras-git
 # gdAUR bat-extras-git

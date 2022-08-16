@@ -83,7 +83,7 @@ trap read debug  # puts a read request after each executable line
 # pacman -S gsimplecal
 
 #=> pkgconf
-pacman -S pkgconf
+pacman -S --needed pkgconf
 
 #=> redshift
 pacman -S redshift
