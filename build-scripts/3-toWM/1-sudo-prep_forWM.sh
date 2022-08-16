@@ -82,37 +82,37 @@ trap read debug  # puts a read request after each executable line
 # # gsimplecal
 # pacman -S gsimplecal
 
-#=> pkgconf
-pacman -S --needed pkgconf
+# #=> pkgconf
+# pacman -S --needed pkgconf
 
-#=> redshift
-pacman -S redshift
+# #=> redshift
+# pacman -S redshift
 
-#=> system
-# Bluefish
-pacman -S bluefish
+# #=> system
+# # Bluefish
+# pacman -S bluefish
 
-# Conky
-pacman -S conky
+# # Conky
+# pacman -S conky
 
-# exFAT utilities
-pacman -S exfatprogs
+# # exFAT utilities
+# pacman -S exfatprogs
 
-# gtop
-pacman -S gtop
+# # gtop
+# pacman -S gtop
 
-# lm_sensors
-pacman -S lm_sensors
+# # lm_sensors
+# pacman -S lm_sensors
 
-# python-virtualenvwrapper
-pacman -S python-virtualenvwrapper
+# # python-virtualenvwrapper
+# pacman -S python-virtualenvwrapper
 
-# sysstat
-pacman -S sysstat
+# # sysstat
+# pacman -S sysstat
 
-# xvt-perls
-pacman -S urxvt-perls
+# # xvt-perls
+# pacman -S urxvt-perls
 
-# xdotool
-pacman -S xdotool
+# # xdotool
+# pacman -S xdotool
 

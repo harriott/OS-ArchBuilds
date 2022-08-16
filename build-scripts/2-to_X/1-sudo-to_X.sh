@@ -4,7 +4,7 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 set $ARCHBUILDS & $MACHINE
 cd $(dirname "${BASH_SOURCE[0]}")
-. ../Bash/export-storage
+. ../../Bash/export-storage
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
 #=> 1 go slow
@@ -82,7 +82,7 @@ trap read debug  # puts a read request after each executable line
 # pacman -S openssh
 
 #==> networking - OpenSSH - grab default sshd_config
-g=~/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; sudo chown jo:jo $g
+g=/home/jo/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; sudo chown jo:jo $g
 
 # #==> system
 # # espeak-ng-espeak & termdown
