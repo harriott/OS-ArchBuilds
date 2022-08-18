@@ -9,5 +9,5 @@ cd ~
 git clone git@github.com:harriott/misc.git
 
 #==> 1 origin -> sh
-sed -i 's/origin/gh/g' misc/.git/config
+# sed -i 's/origin/gh/g' misc/.git/config
 

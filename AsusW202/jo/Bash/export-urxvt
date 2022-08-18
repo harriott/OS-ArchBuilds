@@ -1,0 +1,10 @@
+#!/bin/bash
+# vim: fdl=1 ft=sh:
+
+# called by  $Bash/export-jo
+# Used in  $Openbox/openbox/autostart/urxvtl.sh
+
+#=> set geometry appropriate for 1366x768 screen
+# open urxvt from left of screen, allowing room for 106 column gVim
+export urxvtGeometry='97x54+0+0'  # urxvt -geometry '97x54+0+0' &
+

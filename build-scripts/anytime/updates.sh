@@ -29,7 +29,7 @@ pacman -Q > $pm/pacman-Q-$(date '+%y%m%d-%H%M').log
 
 #=> 5 /var/cache/pacman/pkg
 echo 'minimising /var/cache/pacman/pkg'
-if [ $host = "LIP120s81A4" ]; then
+if [ $host = "AsusW202" ]; then
   yes | sudo pacman -Scc  # empty completely
 else
   sudo paccache -qr  # reduce to last 3 versions
