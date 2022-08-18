@@ -6,8 +6,8 @@
 cd ~
 
 #==> 0 HTTPS
-git clone https://github.com/harriott/misc.git
+git clone git@github.com:harriott/misc.git
 
-#==> 1 convert to SSH
-sed -i 's/origin/gh/g; s#https://github.com/#git@github.com:#g' misc/.git/config
+#==> 1 origin -> sh
+sed -i 's/origin/gh/g' misc/.git/config
 
