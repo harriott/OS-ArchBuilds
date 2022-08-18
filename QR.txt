@@ -87,6 +87,7 @@ pp => paste
 shift+s => open subshell
 space => mark
 v => mark all
+W => view log
 yy => copy
 
 ## ripgrep
