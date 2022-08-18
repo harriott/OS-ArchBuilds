@@ -61,6 +61,20 @@ fa () {
   eval "find * $printfDTsort"
 }  # all files
 
+fRs () {
+  echo $1
+  echo $2
+  if [ $2 ]; then
+    tf=$rsnapshot/tds_find
+    echo "$1 $2" > $tf
+    echo '' >> $tf
+    eval "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" $printfDTsort" >> $tf
+    echo '- now look in  $rsnapshot/tds_find'
+  else
+    echo "fdtsRsnapshot <directoryToSearchIn> <fileToSearchFor>"
+  fi
+} # no spaces in arguments
+
 #===> by extension
 alias fx='fdtsExt'
 # fx gfm
@@ -123,21 +137,6 @@ fdtsKS () {
   echo "" >> $2
   echo "results are in $2"
 } # $1 being the keystring
-
-#===> in $rsnapshot
-fdtsRsnapshot () {
-  echo $1
-  echo $2
-  if [ $2 ]; then
-    tf=$rsnapshot/tds_find
-    echo "$1 $2" > $tf
-    echo '' >> $tf
-    eval "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" $printfDTsort" >> $tf
-    echo '- now look in  $rsnapshot/tds_find'
-  else
-    echo "fdtsRsnapshot <directoryToSearchIn> <fileToSearchFor>"
-  fi
-} # no spaces in arguments
 
 #==> Git
 alias ga='git add'

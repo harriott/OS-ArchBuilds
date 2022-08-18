@@ -1,13 +1,15 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# bash <thisfile>.sh
-set -v  # prints each statement here, including comments
+set -ev
 trap read debug  # puts a read request after each executable line
 
 # #=> 0 LibreOffice Fresh install
 # sudo pacman -S libreoffice-fresh-en-gb
 # libreoffice  # first-run of LibreOffice - close it
+
+#=> 0 Pandoc reference.odt
+pandoc -o ~/.pandoc/custom-reference.odt --print-default-data-file reference.odt
 
 # #=> 0 Thunderbird - install
 # sudo pacman -S thunderbird-i18n-en-gb

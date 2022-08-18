@@ -10,6 +10,14 @@ ln -sf $MACHINE/jo/config/chromium-flags.conf ~/.config/chromium-flags.conf
 #=> 1 Chromium 1 remove chromium-flags.conf - for ATI
 rm ~/.config/chromium-flags.conf
 
+#=> 1 nodejs-ffmpeg-concat
+gAUR nodejs-ffmpeg-concat
+nvim PKGBUILD
+makepkg -sic
+
+#=> 1 npm ffmpeg-concat
+npm install -g ffmpeg-concat
+
 #=> 1 sbMb dual monitors 0
 r /etc/X11/xorg.conf.d
 

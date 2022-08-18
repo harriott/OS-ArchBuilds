@@ -89,9 +89,6 @@ trap read debug  # puts a read request after each executable line
 # pacman -S redshift
 
 # #=> system
-# # Bluefish
-# pacman -S bluefish
-
 # # Conky
 # pacman -S conky
 
@@ -110,9 +107,13 @@ trap read debug  # puts a read request after each executable line
 # # sysstat
 # pacman -S sysstat
 
-# # xvt-perls
-# pacman -S urxvt-perls
-
 # # xdotool
 # pacman -S xdotool
+
+# #=> various
+# # Bluefish
+# pacman -S bluefish
+
+# # xvt-perls
+# pacman -S urxvt-perls
 

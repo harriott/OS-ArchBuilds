@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# bash $bs/33-softwares-for_nnn.sh
-
-# gAUR  &  rAUR  are defined in $Bash/bashrc-console
+# gAUR  rAUR  are defined in $Bash/bashrc-console
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line

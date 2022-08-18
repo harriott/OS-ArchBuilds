@@ -1208,10 +1208,15 @@ handlr get .ppm  reports  org.nomacs.ImageLounge.desktop
 handlr get .lua  reports  no handlers found for 'text/x-lua'
   handlr set .lua gvim.desktop
 ## HP ENVY 5532 IP Address changed to 96.10
-hp-setup -r > Selecte > Remove
+hp-setup -r > Select > Remove
 hp-setup 192.168.96.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 changed 22 to 96 in  $Imagey/Scan.sh
+## HP ENVY 5532 IP Address changed to 131.10
+changed 96 to 131 in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.131.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 clifm-git
 CUPS Socket activation
@@ -1252,6 +1257,7 @@ sudo rm /etc/locale.gen.pacnew
 ATI Radeon HD 4870 on PCIEX16
 D-Link DUB-H7
 NETGEAR WG111v2
+TP-Link UB400
 ## cbh
 Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard

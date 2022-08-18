@@ -200,11 +200,11 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -354,6 +354,9 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs obs-studio
 # rm -r ~/.config/obs-studio
 
+# #=> odt2txt
+# sudo pacman -S odt2txt
+
 # #=> OpenShot
 # sudo pacman -S openshot
 
@@ -422,10 +425,10 @@ trap read debug  # puts a read request after each executable line
 # #=> Quod Libet
 # sudo pacman -S quodlibet
 
-#=> Samokovarov's jump
-gAUR jump
-nvim -c "silent! /gsamokovarov" PKGBUILD
-makepkg -sic
+# #=> Samokovarov's jump
+# gAUR jump
+# nvim -c "silent! /gsamokovarov" PKGBUILD
+# makepkg -sic
 
 # #=> shell-color-scripts
 # gAUR shell-color-scripts

@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# JH note
-# ---------------------------
-# ~/.config/ranger/scope.sh
-# ---------------------------
-# -  ranger --copy-config=all  copies from
-#  /usr/lib/python3.10/site-packages/ranger/data/scope.sh  and makes it executable
+## JH notes
+## ---------------------------
+## ~/.config/ranger/scope.sh
+## ---------------------------
+## -  ranger --copy-config=all  copies from
+##  /usr/lib/python3.10/site-packages/ranger/data/scope.sh  and makes it executable
 
-# these  ranger  configurations are symlinked in  $bs/12-symlinks.sh
+## these  ranger  configurations are symlinked in  $bs/anytime/symlinks-jo-0.sh
 
 set -o noclobber -o noglob -o nounset -o pipefail
 IFS=$'\n'
@@ -20,9 +20,8 @@ IFS=$'\n'
 ## This script is considered a configuration file and must be updated manually.
 ## It will be left untouched if you upgrade ranger.
 
-## Because of some automated testing we do on the script #'s for comments need
-## to be doubled up. Code that is commented out, because it's an alternative for
-## example, gets only one #.
+## Because of some automated testing we do on the script #'s for comments need to be doubled up.
+## Code that is commented out, because it's an alternative for example, gets only one #.
 
 ## Meanings of exit codes:
 ## code | meaning    | action of ranger
@@ -89,7 +88,8 @@ handle_extension() {
             exit 1;;
 
         ## OpenDocument
-        odt|ods|odp|sxw)
+        ## odt|ods|odp|sxw)
+        odt|odp|sxw) ## JH
             ## Preview as text conversion
             odt2txt "${FILE_PATH}" && exit 5
             ## Preview as markdown conversion

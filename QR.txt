@@ -118,6 +118,7 @@ rg -l -ttex '\\input' > rg-tex.txt
 rg -l -ttex '\\parskip' > rg-tex.txt
 rg -l -ttex verseSettings > rg-tex.txt
 rg -ttex '\$Sig'
+rg -ttex '\\bel'
 rg -ttex '\\includepdf'
 rg -ttex '\\includegraphics'
 rg -ttex '\\multirow\{'
@@ -398,10 +399,11 @@ journalctl -u rsnapshot@hourly -r
 systemctl status rsnapshot-hourly.timer
 
 #### find
-fdtsRsnapshot $Bash bashrc-console
-fdtsRsnapshot $DROPBOX/CAM-toSort0 '01 '
-fdtsRsnapshot $DROPBOX/CAM-toSort0 Apache
-fdtsRsnapshot $vimfiles/syntax cmusq.vim
+fRs $Bash bashrc-console
+fRs $DROPBOX/CAM-toSort0 '01 '
+fRs $DROPBOX/CAM-toSort0 Apache
+fRs $vimfiles/syntax cmusq.vim
+fRs $CP/LaTeX/jo/CzPlanning planning.cls
 
 ##### my OBS grabs
 find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
@@ -438,6 +440,12 @@ java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --list  # la
 ## version
 /usr/share/java/LanguageTool/README.md
 java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
+
+# LaTeX
+r $cITh/CP/TeX/LaTeX
+r $CP/LaTeX/jo
+x <LaTeX_file_basename>
+xc
 
 # multimedia
 ~/.config/obs-studio/logs

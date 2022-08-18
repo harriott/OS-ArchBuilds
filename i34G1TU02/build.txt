@@ -156,6 +156,7 @@ sudo pacman -Rs celt
 normal with Jo-OPPO-A76
 ## waiting
 FuseISO
+odt2txt
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh
@@ -170,6 +171,7 @@ sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 sudo rm /etc/locale.gen.pacnew
 # physical configuration
 Fujitsu E19W5 1440x900
+LUPO Nano EDR
 TL-WN725N
 ## BIOS Setup Utility
 <delete> at start
