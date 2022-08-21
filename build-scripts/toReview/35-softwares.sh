@@ -276,10 +276,6 @@ true
 # #=> mesa-demos 1 remove
 # sudo pacman -Rs mesa-demos
 
-# #=> mesa-utils
-# # for glxinfo
-# sudo pacman -S mesa-utils
-
 # #=> moar 0 install
 # gAUR moar
 # nvim -c "silent! /walles" PKGBUILD

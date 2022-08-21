@@ -6,15 +6,14 @@ trap read debug  # puts a read request after each executable line
 
 # gAUR  is defined in $Bash/bashrc-console
 
-# #=> 0 ATI install
+# #=> 0 ATI DDX driver
 # sudo pacman -S xf86-video-ati  # should probably reboot
+
+#=> 0 Intel DDX driver
+sudo pacman -S xf86-video-intel  # will need to reboot
 
 # #=> 0 generate 00-keyboard.conf
 # sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
-
-# #=> 0 Intel video driver
-# # mesa should already be there
-# sudo pacman -S xf86-video-intel  # will need to reboot
 
 # #=> 0 mictray
 # gAUR mictray
@@ -55,7 +54,16 @@ trap read debug  # puts a read request after each executable line
 # # for  VA-API
 # sudo pacman -S intel-media-driver
 
-# #=> 1 libva-mesa-driver
-# # for  VA-API
-# sudo pacman -S libva-mesa-driver
+#=> 1 libva-mesa-driver
+# for  VA-API
+sudo pacman -S libva-mesa-driver
+
+# #=> 1 mesa-utils 0 install
+# # for glxinfo, which may not work...
+# sudo pacman -S mesa-utils
+
+#=> 1 mesa-utils 0 install
+sudo pacman -Rs mesa-utils
+
+#=> 2 now reboot
 

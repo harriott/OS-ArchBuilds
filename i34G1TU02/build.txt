@@ -156,6 +156,7 @@ sudo pacman -Rs celt
 normal with Jo-OPPO-A76
 ## waiting
 FuseISO
+remove mesa-utils
 odt2txt
 # fcron
 fcrontab -l

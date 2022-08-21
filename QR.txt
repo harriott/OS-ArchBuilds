@@ -319,9 +319,7 @@ HP ENVY 5532: d0:bf:9c:a2:2f:0e
 
 ### graphics card details
 doas cat /sys/kernel/debug/dri/0/radeon_pm_info
-glxinfo > glxinfo
-lspci -vnn | grep VGA -A 10 | xcol Intel size VGA
-lspci -vnn | grep VGA -A 12 | xcol Radeon size VGA
+lspci -vnn | grep VGA -A 12 | xcol Intel Radeon size VGA
 sudo lshw -C display | xcol Radeon size VGA
 
 ## printing - CUPS - HP ENVY 5532 WiFi

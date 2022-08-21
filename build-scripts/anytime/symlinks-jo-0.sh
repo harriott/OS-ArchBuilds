@@ -83,10 +83,11 @@ ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
 #=> X
-ln -sf $ARCHBUILDS/jo/xbindkeysrc                         ~/.xbindkeysrc  # mouse wheel
-ln -sf $ARCHBUILDS/jo/xinitrcs/openbox                    ~/.xinitrc  # calls $MACHINE/jo/Xresources
-ln -sf $Openbox/Xresources/Xresources                     ~/.Xresources
-ln -sf $Openbox/Xresources/colorschemes/LukeSmith-gruvbox ~/.Xresources-LukeSmith-gruvbox
+ln -sf $ARCHBUILDS/jo/xbindkeysrc                                ~/.xbindkeysrc  # mouse wheel
+ln -sf $ARCHBUILDS/jo/xinitrcs/openbox                           ~/.xinitrc
+[ $host = 'AsusW202' ] && ln -sf $ARCHBUILDS/jo/xinitrcs/awesome ~/.xinitrc
+ln -sf $Openbox/Xresources/Xresources                            ~/.Xresources
+ln -sf $Openbox/Xresources/colorschemes/LukeSmith-gruvbox        ~/.Xresources-LukeSmith-gruvbox
 
 #=> Zathura
 ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc

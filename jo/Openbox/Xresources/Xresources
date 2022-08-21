@@ -12,7 +12,7 @@ Xft.rgba: rgb
 ! ------------
 ! ------------
 
-! symlinked in my  $bs/17-symlinks.sh
+# symlinked in  $bs/anytime/symlinks-jo-0.sh  to  ~/.Xresources
 ! called from my  $ARCHBUILDS/jo/xinitrc
 
 ! after changes here, either quit & restart X or

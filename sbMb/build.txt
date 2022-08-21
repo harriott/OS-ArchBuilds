@@ -1217,6 +1217,8 @@ changed 96 to 131 in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.131.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## glxinfo
+Segmentation fault (core dumped)
 ## waiting
 clifm-git
 CUPS Socket activation
