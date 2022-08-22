@@ -145,6 +145,11 @@ bash $bs/anytime/Zen.sh
 sudo bash $bs/3-toWM/1-sudo-prep_forWM.sh
 bash $bs/anytime/symlinks-jo-0.sh
 sudo bash $bs/3-toWM/1-sudo-prep_forWM.sh
+## lshw
+sudo lshw
+  terminate called after throwing an instance of 'std::length_error'
+    what():  basic_string::_M_create
+sudo pacman -Rs lshw
 ## waiting
 sudo bash $bs/2-to_X/1-sudo-to_X.sh
 terminal-colors
