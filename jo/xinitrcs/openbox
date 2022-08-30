@@ -2,7 +2,7 @@
 
 # symlinked in  $bs/anytime/symlinks-jo.sh  to  ~/.xinitrc
 
-source $ARCHBUILDS/jo/xinitrcs/xinitrc  # calls $MACHINE/jo/Xresources
+source $ARCHBUILDS/jo/xinitrcs/xinitrc  # calls $machBld/jo/Xresources
 
 ## Openbox
 exec openbox-session  # accesses  ~/.config/openbox/autostart

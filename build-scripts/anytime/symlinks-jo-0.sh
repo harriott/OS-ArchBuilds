@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim: sw=2:
 
+# bash $bs/anytime/symlinks-jo-0.sh
+
 set -e
 
 #=> ansiweather
@@ -10,14 +12,22 @@ ln -sf $ARCHBUILDS/jo/ansiweather ~/.ansiweatherrc
 # sort this list by last use of "~":  :sort /,*\~/
 
 ln -sf $Bash/bash_profile                   ~/.bash_profile
-ln -sf $MACHINE/jo/Bash/bashrc              ~/.bashrc
+ln -sf $machBld/jo/Bash/bashrc              ~/.bashrc
 ln -sf $Bash/bashrc-console                 ~/.bashrc-console
 ln -sf $ARCHBUILDS/Bash/bashrc-generic      ~/.bashrc-generic
 ln -sf $ARCHBUILDS/Bash/GNUReadline-inputrc ~/.inputrc
-ln -sf $MACHINE/export-machine              ~/.export-machine
+ln -sf $machBld/export-machine              ~/.export-machine
 ln -sf $ARCHBUILDS/Bash/export-storage      ~/.export-storage
 ln -sf $Bash/export-jo                      ~/.export-jo
 ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
+
+#=> CliFM
+ln -sf $ARCHBUILDS/jo/CliFM/clifmrc ~/.config/clifm/profiles/default/clifmrc
+for p in BFG colors img_viewer; do
+  c=$ARCHBUILDS/jo/CliFM/$p.sh
+  chmod +x $c
+  ln -sf $c ~/.config/clifm/plugins/$p.sh
+done
 
 #=> cmus
 ln -sf $ARCHBUILDS/jo/Openbox/cmusqueue.sh ~/Arch/cmusqueue.sh
@@ -29,7 +39,7 @@ ln -sf $Openbox/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
 
 #=> Git
 if [[ $myDrA == 1 ]]; then
-  ln -sf $MACHINE/jo/gitconfig ~/.gitconfig
+  ln -sf $machBld/jo/gitconfig ~/.gitconfig
 else
   ln -sf $bs/2-to_X/1-gitconfig ~/.gitconfig
 fi
@@ -76,7 +86,7 @@ fi
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 
 #=> vims
-ln -sf $MACHINE/jo/gvimrc ~/.gvimrc
+ln -sf $machBld/jo/gvimrc ~/.gvimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 
 [ -d ~/.config/nvim ] || mkdir -p ~/.config/nvim

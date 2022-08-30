@@ -155,9 +155,6 @@ sudo pacman -Rs celt
 ## TL-WN725N to Jo-X10II extremely slow
 normal with Jo-OPPO-A76
 ## waiting
-FuseISO
-remove mesa-utils
-odt2txt
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh
@@ -165,8 +162,8 @@ fcrontab -l
   @ 20 jump clean
   @ 1 d bash ~/Arch/log_rsnapshot.sh
 ## temperatures
-ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
-ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # locale.gen.pacnew
 sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 sudo rm /etc/locale.gen.pacnew

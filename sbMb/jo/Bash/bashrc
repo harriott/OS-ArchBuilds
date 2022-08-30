@@ -2,7 +2,7 @@
 # vim: fdl=1 ft=sh sw=2:
 
 # ~/.bashrc in an Arch install on my sprayed brown Multivision box system
-# symlinked in  $bs/17-symlinks.sh
+# symlinked in  $bs/anytime/symlinks-jo-0.sh
 #  e -la ~/.bashrc
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
@@ -14,7 +14,7 @@ export VsLocation=/mnt/ST4000VN008  # path to my video store
 source $Bash/bashrc
 
 #=> 1 OBS mkv grabs convert
-ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/OBSmkv/ignore; }
+ignore () { stat -c '%Y  %s  %n' "$1" >> $ulLinux/OBSmkv/ignore; }
 # ignore <an_mkv_to_ignore>
 # for m in *.mkv; do ignore "$m"; done
 
@@ -23,7 +23,7 @@ omc()
     cd $VsLocation/OBSmkvGrabs
     echo "(moved to $PWD to run OBSmkvShrink.sh)"
     bash shrink.sh  # populates  $VsLocation/OBSmkvGrabs/OBSmkvGrabs
-    # (- see  $ulL/OBSmkv/shrink.sh)
+    # (- see  $ulLinux/OBSmkv/shrink.sh)
     fin
 }
 

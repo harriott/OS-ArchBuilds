@@ -8,14 +8,14 @@
 
 # test (or reload) this configuration with
 #  tmux kill-server
-#  bash $Openbox/openbox/autostart/urxvtl.sh; bash $MACHINE/jo/autostart.sh
+#  bash $Openbox/openbox/autostart/urxvtl.sh; bash $machBld/jo/autostart.sh
 
-# (chmod u+x $MACHINE/jo/urxvtl.sh)
+# (chmod u+x $machBld/jo/urxvtl.sh)
 
 #=> 0 safely run omc in existing tmux
 tmux send 'figlet -f univers tmux-S0 -t' Enter
 tmux split-window  # moves focus down, and allows  Tmux Resurrect  to  Restore  without clobbering
-tmux send-keys omc Enter  # see $MACHINE/jo/Bash/bashrc
+tmux send-keys omc Enter  # see $machBld/jo/Bash/bashrc
 
 #=> 1 open a new tmux window for btop
 tmux new-window

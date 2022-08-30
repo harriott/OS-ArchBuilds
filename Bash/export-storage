@@ -6,7 +6,7 @@
 
 # Variable naming constraints:
 #  avoid names that only differ by case
-#  use names that grep unambiguously
+#  use names that grep unambiguously throughout all of my notes directories
 
 # for initial build of Arch:
 # for jo:
@@ -20,7 +20,7 @@ export host=$(uname -n)
 # - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
 
 #=> 0 core
-# $myDrA  &  $Storage  are pre-defined in  $MACHINE/export-machine
+# $myDrA  &  $Storage  are pre-defined in  $machBld/export-machine
 
 #==> 0 $DROPBOX
 export vimfiles=~/.vim
@@ -30,8 +30,9 @@ if [[ $myDrA == 1 ]]; then
   export core=$DROPBOX/JH/core
     export ITstack=$core/IT_stack
       export CP=$ITstack/CrossPlatform  # used in  $Bash/bashrc-console  & build scripts
-      export ulL=$ITstack/unix_like-linux  # was $ulGL
-        export lB=$ulL/Bash  # used in  $ARCHBUILDS/QR.txt
+      export ulLinux=$ITstack/unix_like-linux  # was $ulGL, then ulL
+        export lB=$ulLinux/Bash  # used in  $ARCHBUILDS/QR.txt
+        export machLg=$ulLinux/Arch/$host  # as opposed to  $machBld
       export onGH=$ITstack/onGitHub
         export vimfiles=$onGH/vimfiles
 fi
@@ -48,7 +49,7 @@ if [ $ARCHBUILDS ]; then
   export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
   export Bash=$ARCHBUILDS/jo/Bash
   export bs=$ARCHBUILDS/build-scripts
-      export MACHINE=$ARCHBUILDS/$host
+      export machBld=$ARCHBUILDS/$host  # as opposed to  $machLg
   export clm=$ARCHBUILDS/jo/clm  # used in  bashrc-clm  and  muttrc-*  :s/email/clm/g
   export tmx=$ARCHBUILDS/tmux  # used in  tmux.conf
 fi

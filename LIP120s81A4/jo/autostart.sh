@@ -2,7 +2,7 @@
 # vim: fdl=1:
 
 # called by  $Openbox/openbox/autostart/autostart
-# (chmod u+x $MACHINE/jo/autostart.sh)
+# (chmod u+x $machBld/jo/autostart.sh)
 
 #=> cbatticon
 cbatticon &

@@ -176,7 +176,7 @@ as root  bash 15-as_root-when_jo-configure_freshclam.sh
 ## to X
 as root  bash 02-when_chroot-reflector.sh
 as root  bash 16-as_root-when_jo-to_X.sh
-bash 17-symlinks.sh
+bash anytime/symlinks-jo-0.sh
 bash 18-misc.sh
 bash remote2.sh
 bash 19-git_ssh.sh
@@ -327,15 +327,15 @@ handlr get .pl  reports  bluefish.desktop  so  handlr set .pl gvim.desktop
 ## waiting
 pacman -S arch-wiki-docs w3m
 pqs lynx
-cp $MACHINE/etc/rsnapshot.conf
+cp $machBld/etc/rsnapshot.conf
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh
   @ 20 bash ~/Arch/bash_history.sh
   @ 30 jump clean
 ## temperatures
-ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
-ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # locale.gen.pacnew
 sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 sudo rm /etc/locale.gen.pacnew

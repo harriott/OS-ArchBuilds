@@ -15,7 +15,7 @@ ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
 
 ln -sf $ARCHBUILDS/Bash/GNUReadline-inputrc /root/.inputrc
 
-ln -sf $MACHINE/export-machine /root/.export-machine
+ln -sf $machBld/export-machine /root/.export-machine
   ln -sf $ARCHBUILDS/Bash/export-storage /root/.export-storage
 
 ln -sf $ARCHBUILDS/root/nanorc ~/.config/nano/nanorc

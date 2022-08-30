@@ -1,4 +1,5 @@
 
+# JH
 # created on first invocation of  clifm, so
 #  nvim -O /usr/share/clifm/mimelist.clifm $ARCHBUILDS/jo/clifm/keybindings.clifm -c 'windo difft'
 #  nvim -O $ARCHBUILDS/jo/clifm/mimelist.clifm ~/.config/clifm/profiles/default/mimelist.clifm -c 'windo difft'
@@ -92,8 +93,11 @@ X:^application/(zip|gzip|zstd|x-7z-compressed|x-xz|x-bzip*|x-tar|x-iso9660-image
 X:.*/pdf$=mupdf;sioyek;llpp;lpdf;zathura;mupdf-x11;apvlv;xpdf;evince;atril;okular;epdfview;qpdfview
 
 # Images
-X:^image/gif$=animate;pqiv;sxiv -a;nsxiv -a
-X:^image/.*=fim;display;sxiv;nsxiv;pqiv;gpicview;qview;qimgv;inkscape;mirage;ristretto;eog;eom;xviewer;viewnior;nomacs;geeqie;gwenview;gthumb;gimp
+X:^image/gif$=animate;pqiv;nsxiv -a
+X:^image/.*=fim;display;nsxiv;pqiv;gpicview;qview;qimgv;inkscape;mirage;ristretto;eog;eom;xviewer;viewnior;nomacs;geeqie;gwenview;gthumb;gimp
+# - eog  Eye of GNOME
+# - fim  seems buggy
+# - nomacs  works, but generates a load of messages
 !X:^image/*=fim;img2txt;cacaview;fbi;fbv
 
 # Video and audio

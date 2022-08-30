@@ -6,7 +6,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> 0 NetworkManager - disable MAC address randomization
 # # needed for  LIP120s81A4  to connect to  Jo-XA2
-# sudo cp $MACHINE/etc/wifi_rand_mac.conf /etc/NetworkManager/conf.d/wifi_rand_mac.conf
+# sudo cp $machBld/etc/wifi_rand_mac.conf /etc/NetworkManager/conf.d/wifi_rand_mac.conf
 
 #=> 0 NetworkManager dispatcher
 sudo systemctl enable NetworkManager-dispatcher --now

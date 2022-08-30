@@ -12,13 +12,13 @@ trap read debug  # puts a read request after each executable line
 # cp /etc/rsnapshot.conf ~/la5-rsnapshot.conf
 
 #=> 1 set my rsnapshot conf 1 working
-sudo cp $MACHINE/etc/rsnapshot.conf /etc/rsnapshot.conf
+sudo cp $machBld/etc/rsnapshot.conf /etc/rsnapshot.conf
 
 #=> 1 sync my rsnapshot configurations
 A=$ARCHBUILDS; erc=etc/rsnapshot.conf; nvim -O $A/i34G1TU02/$erc $A/LIP120s81A4/$erc $A/sbMb/$erc -c 'windo difft'
 
 #=> 2 rsnapshot needed locations
-mkdir $rsnapshot  # see $MACHINE/export-machine
+mkdir $rsnapshot  # see $machBld/export-machine
 sudo touch /var/log/rsnapshot
 
 #=> 3 test rsnapshot conf

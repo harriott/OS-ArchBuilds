@@ -21,11 +21,14 @@ sudo cat /var/spool/fcron/jo.orig
 
 # file manage
 bat <file>
+C $onGH/misc
 diskus
 dua [i]
 e
 MV(1)
 pygmentize -h
+rm -r /mnt/SDU3D1TB/.Trash-1000
+rm -r /mnt/ST4000VN008/.Trash-1000
 rsync(1)
 
 ## advcpmv
@@ -33,17 +36,82 @@ cpg --help | mo  # man advcp
 mvg --help | mo  # man advmv
 
 ## CliFM
-$ARCHBUILDS/jo/CliFM/keybindings.clifm
+C
+clifm -h
 clifm -v
 i clifm
 
+### configurations
+$ARCHBUILDS/jo/CliFM/keybindings.clifm
+kbgen
+r ~/.config/clifm
+~/.config/clifm/profiles/default/history.clifm
+~/.config/clifm/.last => workspaces
+
 ### commands
-Q => quit to current directory - doesn't work...
+/<glob> -x => recursive search
+? => basic usage examples
+actions
+alt-. => toggle hidden
+alt-e => $HOME
+alt-h => directory history
+alt-m => mount points
+alt-r => /
+alt-u => up
+bm [a/d] => bookmark [add/delete]
+da => disk_analyzer.sh
+dr => dragondrop.sh
+i => image thumbnails
+ptot <pdf.pdf> => pdftotext
 shift+up => navigate up
+stats
+ws[2] => workspaces
+
+#### configure
+edit / F10 => ~/.config/clifm/profiles/default/clifmrc
+MaxFilenameLen
+
+#### directory/file operations
+- => fuzzy preview files
+// <regex> => fzf rg
+d3 => duplicate ELN 3
+m 5 3 => move ELN 5 into ELN 3
+md <newDirectory>
+n <newFile>/<newDirectory/>
+t => list trash
+u => fails to undelete trash, quit and  tre
+vid => ffmpegthumbnailer
+
+#### directory navigation
+++ => fuzzy directory jumper
+b/f => back/forward in directories
+j [fuzzyPath] => jump [to fuzzyPath]
+
+#### help
+F1 => manpage
+F2 => manpage > COMMANDS
+F3 => manpage > KEYBOARD SHORTCUTS
+ih => fzf help (esc to quit)
+
+#### ELN's properties
+alt-l => toggles detail view
+p 1 3 => properties of those ELNs
+
+#### quit
+F12
+Q => to current directory
+
+#### refresh screen
+ctrl-r
+rf
 
 #### selection
+c sel => copy selection
+ds 2 4 => deselect those ELNs
 r sel => remove all
-s i j n-m
+s 2 4 6-9 => select those ELNs
+sb => selection box
+t sel => trash selection
 
 ## exa
 e
@@ -84,6 +152,7 @@ F9 => open outside of tmux, for r (allowing images)
 I => rename
 i => inspect file
 pp => paste
+R => reload
 shift+s => open subshell
 space => mark
 v => mark all
@@ -95,6 +164,7 @@ batgrep
 i rg
 outer whitespaces get ignored
 rg --type-list
+rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
 
 ### searches
 rg '\$cITh' -l
@@ -213,7 +283,7 @@ bm locate
 locate -c <target>  # --count
 locate -h
 locate -r '\.conf$'
-locate -r '\.desktop$' > $MACHINE/desktops.txt
+locate -r '\.desktop$' > $machBld/desktops.txt
 locate -r '\.json$' | mo
 locate -r 'gestion des cas'
 
@@ -266,7 +336,7 @@ fc-list | grep Deja
 fc-list | grep Lohit
 fc-list | grep ubuntu
 fc-list -v ubuntumono
-fc-list > $MACHINE/fclist.txt
+fc-list > $machBld/fclist.txt
 doas fc-cache -f  # regenerates the cache
 
 ### fc-scan
@@ -377,7 +447,7 @@ cdrecord -v -sao dev=/dev/sr0 isoimage.iso
 growisofs
 
 ### rsnapshot
-$MACHINE/etc/rsnapshot.conf
+$machBld/etc/rsnapshot.conf
 cd $rsnapshot
 pgrep rsnapshot
 snapshot_root
@@ -420,8 +490,12 @@ rsync -irtv --delete $rsnapshot/daily.0/localhost/home/jo/.local/share/mail/ $ma
 
 # imagey
 jpo  # defined in my $Bash/bashrc-wm
-rm -r ~/.cache/sxiv/*
 rm -r ~/.thumbnails/normal/*
+xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
+
+## [n]sxiv
+ns  # see $Bash/bashrc-wm
+rm -r ~/.cache/sxiv/*
 
 ## scanimage
 S 55n 3 <imagefilename> <scanheight>
@@ -537,7 +611,7 @@ wp  # in Paris
 
 # packages
 checkupdates
-expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $ulL/Arch/$host/pacman/expac-499-$(date '+%Y%m%d%H%M').log  # most recent installs
+expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-499-$(date '+%Y%m%d%H%M').log  # most recent installs
 pacfinder
 pacman -Qdt  # lists all orphans
 pactree -r <package_to_find_depencies_of>
@@ -594,7 +668,6 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # system
 $ARCHBUILDS/etc/doas.conf
-$Openbox/openbox/rc/rc.xml
 /usr/share/doc/arch-wiki/html/en
 bat -A /etc/hosts
 bm <command>  # batman - only good in full-screen
@@ -633,6 +706,10 @@ n = right = next
 ##### tree view
 e toggles it
 spacebar toggles open/closed a branch
+
+## Openbox
+$Openbox/openbox/rc/rc.xml
+$Openbox/openbox/schema.pl
 
 ## sizes
 sudo du -h --max-depth=1 /usr
@@ -731,12 +808,17 @@ tput works
 echo $EDITOR
 echo $VISUAL
 
+## Emacs
+r $GHrUse/syl20bnr-spacemacs-develop  # $bs/2-to_X/1-configure_jo.sh
+r $cITh/CP/encoding/textWrangling/Emacs
+
 ## CopyQ
 bm copyq
 pkill copyq
 ~/.local/share/copyq/copyq/copyq.log
 
 ## gVim
+C /usr/share/vim/vim90
 gvim --help | mo
 gvim -geom 200  # height parameter is omitted as it's having no effect
 

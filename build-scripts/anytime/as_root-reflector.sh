@@ -1,7 +1,10 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# more often called from  $bs/14-as_root-pacnews.sh
+# more often called from
+#  $bs/3-when_chroot-to_bootloader.sh
+#  $bs/anytime/as_root-mirrorlist_pacnew.sh
+
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 set -v  # prints each statement here, including comments

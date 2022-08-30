@@ -38,6 +38,7 @@ our $SCHEMA = [
     {item => ['xdg-open .',           'File Manager',       'system-file-manager']},
     {item => ['xterm',                'xterm',              'utilities-terminal']},
     {item => ['urxvt',                'rxvt-unicode',       'utilities-terminal']},
+    {item => ['emacs',                'Emacs',              'system-run']},
     {item => ['gmrun',                'Run command',        'system-run']},
   # {item => ['xdg-open http://',     'Web Browser',        'web-browser']},
   # {item => ['xdg-open http://',     'chromium',           'web-browser']},

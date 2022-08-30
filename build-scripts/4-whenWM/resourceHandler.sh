@@ -25,9 +25,19 @@ trap read debug  # puts a read request after each executable line
 # #==> 2 set default handlers
 # handlr set .conf gvim.desktop
 # handlr set .jpg org.nomacs.ImageLounge.desktop
+# handlr set .kdbx org.keepassxc.KeePassXC.desktop
+# handlr set .log gvim.desktop
+# handlr set .lua gvim.desktop
 # handlr set .md gvim.desktop
 # handlr set .mp3 mpv.desktop
 # handlr set .png org.nomacs.ImageLounge.desktop
+# handlr set .pl gvim.desktop
+# handlr set .py gvim.desktop
+# handlr set .sh gvim.desktop
+# handlr set .tex gvim.desktop
+# handlr set .tiff feh.desktop
+# handlr set .txt gvim.desktop
+# handlr set .xml gvim.desktop
 
 # #=> mimeo
 

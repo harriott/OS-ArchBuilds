@@ -5,7 +5,7 @@
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
 #=> 1 Chromium 0 --disable-gpu - for nouveau
-ln -sf $MACHINE/jo/config/chromium-flags.conf ~/.config/chromium-flags.conf
+ln -sf $machBld/jo/config/chromium-flags.conf ~/.config/chromium-flags.conf
 
 #=> 1 Chromium 1 remove chromium-flags.conf - for ATI
 rm ~/.config/chromium-flags.conf
@@ -22,7 +22,7 @@ npm install -g ffmpeg-concat
 r /etc/X11/xorg.conf.d
 
 #=> 1 sbMb dual monitors 0
-sudo cp $MACHINE/etc/20-monitor.conf /etc/X11/xorg.conf.d/20-monitor.conf
+sudo cp $machBld/etc/20-monitor.conf /etc/X11/xorg.conf.d/20-monitor.conf
 
 #=> 1 sbMb dual monitors 1
 sudo rm /etc/X11/xorg.conf.d/20-monitor.conf

@@ -44,7 +44,7 @@ pandoc -o ~/.pandoc/custom-reference.odt --print-default-data-file reference.odt
 # thunderbird  # (default-release) > Start
 
 #=> 1 Thunderbird 2 backup profile
-rsync -irtv --delete ~/.thunderbird/ $MACHINE/jo/thunderbird
+rsync -irtv --delete ~/.thunderbird/ $machBld/jo/thunderbird
 
 #=> 1 Thunderbird 2 thunderbird_safely
 ln -sf $ARCHBUILDS/jo/TS/locks.sh ~/Arch/locks.sh

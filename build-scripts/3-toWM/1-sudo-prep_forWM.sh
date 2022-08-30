@@ -42,11 +42,24 @@ trap read debug  # puts a read request after each executable line
 # # nnn
 # pacman -S nnn
 
+# #=> for CliFM
+pacman -S noto-fonts-emoji  # don't work in  urxvt  or  xterm...
+
 # #=> cmatrix
 # pacman -S cmatrix
 
 # #=> Cmus
 # pacman -S cmus
+
+# #=> hw
+# # exFAT utilities
+# pacman -S exfatprogs
+
+# # lm_sensors
+# pacman -S lm_sensors
+
+#=> hw - xorg-xev
+pacman -S xorg-xev
 
 # #=> PulseAudio - pulsemixer
 # pacman -S pulsemixer
@@ -92,14 +105,8 @@ trap read debug  # puts a read request after each executable line
 # # Conky
 # pacman -S conky
 
-# # exFAT utilities
-# pacman -S exfatprogs
-
 # # gtop
 # pacman -S gtop
-
-# # lm_sensors
-# pacman -S lm_sensors
 
 # # python-virtualenvwrapper
 # pacman -S python-virtualenvwrapper

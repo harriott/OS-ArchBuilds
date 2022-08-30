@@ -26,10 +26,10 @@ AB=$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
 #=> 1 and more
 export Bash=$ARCHBUILDS/jo/Bash
 export host=$(uname -n)
-  export MACHINE=$ARCHBUILDS/$host
+  export machBld=$ARCHBUILDS/$host
 export Openbox=$ARCHBUILDS/jo/Openbox
 
 #=> 2 test
-echo '$MACHINE' "= $MACHINE"
+echo '$machBld' "= $machBld"
 read -p "- looks good?"
 

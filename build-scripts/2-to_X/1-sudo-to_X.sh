@@ -2,7 +2,7 @@
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-#=> 0 set $ARCHBUILDS & $MACHINE
+#=> 0 set $ARCHBUILDS & $machBld
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../../Bash/export-storage
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
@@ -28,7 +28,7 @@ trap read debug  # puts a read request after each executable line
 # pacman -S xsel
 
 # #==> updatedb.conf
-# cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
+# cp $machBld/etc/updatedb.conf /etc/updatedb.conf
 # updatedb
 
 #=> 1 when X 0
@@ -126,7 +126,7 @@ g=/home/jo/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; sudo chown jo:jo $g
 
 # #==> xorg.conf.d 1 touch settings
 # # will need a reboot
-# cp $MACHINE/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+# cp $machBld/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 # true
 
 # #=> 1 when X 1 for laptop

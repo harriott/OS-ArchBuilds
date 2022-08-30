@@ -56,7 +56,7 @@ dt=$(date "+%F-%H-%M")
 # grep 'd f' /etc/mkinitcpio.conf
 
 #==> networking iw
-# made redundant by  $ulL/connectSSID/iwctl.sh
+# made redundant by  $ulLinux/connectSSID/iwctl.sh
 pacman -S iw
 
 # #==> 0 Numlock on in getty
@@ -70,7 +70,7 @@ pacman -S iw
 # rm /etc/systemd/system/getty@.service.d/activate-numlock.conf
 
 #=> 1 as root - sshd_config
-sudo cp $MACHINE/etc/sshd_config /etc/ssh/sshd_config
+sudo cp $machBld/etc/sshd_config /etc/ssh/sshd_config
 
 #=> 1 as root - wifi - 8192eu 0 blacklist rtl8xxxu
 echo "blacklist rtl8xxxu" | sudo tee /etc/modprobe.d/rtl8xxxu.conf

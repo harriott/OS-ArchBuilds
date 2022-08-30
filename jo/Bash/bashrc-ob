@@ -16,7 +16,7 @@ alias m='cmus'
 k() { kill -9 "$(pidof cmus)"; }
 
 # update library
-alias uc='bash $MACHINE/jo/cmusUpdateLibrary.sh'
+alias uc='bash $machBld/jo/cmusUpdateLibrary.sh'
 
 #=> convert a FM json
 cfmj() {

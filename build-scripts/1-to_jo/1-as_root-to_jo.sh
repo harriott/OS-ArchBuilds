@@ -183,8 +183,7 @@ trap read debug  # puts a read request after each executable line
 # pacman -S pv
 
 # #=> 2 various
-# # universal-ctags
-# pacman -S ctags
+# # GNOME Terminal
 
 # # languagetool
 # pacman -S languagetool  # for the GUI
@@ -208,8 +207,14 @@ trap read debug  # puts a read request after each executable line
 # # for thesaurus_query.vim
 # pacman -S python-beautifulsoup4
 
+# # universal-ctags
+# pacman -S ctags
+
 # # web-ish
 # pacman -S arch-wiki-docs lynx w3m
+
+#=> 2 various - GNOME Terminal
+pacman -S gnome-terminal
 
 # #=> 2 swappiness to 10
 # # check the default

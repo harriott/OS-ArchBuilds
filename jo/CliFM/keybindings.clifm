@@ -3,7 +3,7 @@
 # created on first invocation of  clifm, so
 #  nvim -O /usr/share/clifm/keybindings.clifm $ARCHBUILDS/jo/clifm/keybindings.clifm -c 'windo difft'
 #  nvim -O $ARCHBUILDS/jo/clifm/keybindings.clifm ~/.config/clifm/keybindings.clifm -c 'windo difft'
-#  cp $ARCHBUILDS/jo/clifm/keybindings.clifm ~/.config/clifm/keybindings.clifm
+#  cp $ARCHBUILDS/jo/CliFM/keybindings.clifm ~/.config/clifm/keybindings.clifm
 
 # Emacs style key escapes are the simplest way of setting your # keybindings. For example, use "action:\C-t" to bind the action name 'action' to Ctrl-t
 # Note: available action names are defined below
@@ -68,10 +68,19 @@ root-dir2:\e/
 #root-dir3:
 
 pinned-dir:\M-p
-workspace1:\M-1
-workspace2:\M-2
-workspace3:\M-3
-workspace4:\M-4
+# alt shift 1-8 for workspaces - JH
+# workspace1:\M-1
+workspace1:\M-!
+# workspace2:\M-2
+workspace2:\M-"
+# workspace3:\M-3
+workspace3:\M-£
+# workspace4:\M-4
+workspace4:\M-$
+workspace5:\M-%
+workspace6:\M-^
+workspace7:\M-&
+workspace8:\M-*
 
 # Help
 # F1-3

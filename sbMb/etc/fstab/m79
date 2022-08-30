@@ -3,7 +3,7 @@
 # Static information about the filesystems.
 # See fstab(5) for details.
 
-# sudo nvim -O /etc/fstab $MACHINE/etc/fstab/m79 -c 'windo difft'
+# sudo nvim -O /etc/fstab $machBld/etc/fstab/m79 -c 'windo difft'
 
 # <file system> <dir> <type> <options> <dump> <pass>
 # /dev/sda2

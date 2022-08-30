@@ -11,7 +11,7 @@ OnCalendar=*:0/1
 Persistent=true
 Unit=rsnapshot@minuteTest.service
 # runs  minuteTest  instance of  $ARCHBUILDS/etc/systemd/rsnapshot/@.service
-# requires  $MACHINE/etc/rsnapshot-minuteTest.conf  to be in place
+# requires  $machBld/etc/rsnapshot-minuteTest.conf  to be in place
 
 [Install]
 WantedBy=timers.target

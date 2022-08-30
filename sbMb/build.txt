@@ -235,9 +235,9 @@ as revealed by   http://time.is/
 sudo ntpd -qg
 sudo hwclock --systohc
 ## mlocate path allowing /mnt/SD480GSSDPlus/
-cp /etc/updatedb.conf $MACHINE/etc/defaults/kca-updatedb.conf
-sed 's#/mnt#/mnt/9QF57J6Q /mnt/ST3320418AS /mnt/WD30EZRZ#' /etc/updatedb.conf > $MACHINE/etc/kca-updatedb.conf
-sudo cp $MACHINE/etc/kca-updatedb.conf /etc/updatedb.conf
+cp /etc/updatedb.conf $machBld/etc/defaults/kca-updatedb.conf
+sed 's#/mnt#/mnt/9QF57J6Q /mnt/ST3320418AS /mnt/WD30EZRZ#' /etc/updatedb.conf > $machBld/etc/kca-updatedb.conf
+sudo cp $machBld/etc/kca-updatedb.conf /etc/updatedb.conf
 sudo updatedb
 ## HP ENVY 5532 by WiFi
 hp-setup -i 192.168.43.249 > ENVY_5532
@@ -249,16 +249,16 @@ scanimage -L
 causing the system to seize
   I got into maintenance mode with my root pw and commented them out in /etc/fstab
 ## fix USB lags
-cp /etc/default/grub $MACHINE/etc/defaults/kca-default_grub
-sudo cp $MACHINE/etc/kca-default_grub /etc/default/grub
+cp /etc/default/grub $machBld/etc/defaults/kca-default_grub
+sudo cp $machBld/etc/kca-default_grub /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ## swapped 9QF57J6Q for WD1001FALS
-sudo cp $MACHINE/etc/fstab/kca /etc/fstab
+sudo cp $machBld/etc/fstab/kca /etc/fstab
 sudo rm -r /mnt/9QF57J6Q
 ### remove WD1001FALS from mlocate path
-cp /etc/updatedb.conf $MACHINE/etc/defaults/kcb-updatedb.conf
+cp /etc/updatedb.conf $machBld/etc/defaults/kcb-updatedb.conf
   added in  /mnt/WD1001FALS
-sudo cp $MACHINE/etc/kcb-updatedb.conf /etc/updatedb.conf
+sudo cp $machBld/etc/kcb-updatedb.conf /etc/updatedb.conf
 sudo updatedb
 ## Logitech cordless mice
 MX 610 Laser glitchy
@@ -282,18 +282,18 @@ sudo rm -r /mnt/ST3320418AS
 ## rsnapshot.conf points to WD1001FALS
 ## restore ST3500413AS
 sudo mkdir /mnt/ST3500413AS
-sudo cp $MACHINE/etc/fstab/kca /etc/fstab
+sudo cp $machBld/etc/fstab/kca /etc/fstab
 sudo chown jo:jo /mnt/ST3500413AS
 ## HD103SJ installed
 sudo mkdir /mnt/HD103SJ
-sudo cp $MACHINE/etc/fstab/kca /etc/fstab
+sudo cp $machBld/etc/fstab/kca /etc/fstab
 reboot
 sudo chown jo:jo /mnt/HD103SJ
 ## xdg-open .txt
 handlr get .txt  returns  vim.desktop  - which was why nnn was freezing, so
   handlr set .txt gvim.desktop
 ## remove WD1001FALS from mlocate path
-sudo cp $MACHINE/etc/kcm-updatedb.conf /etc/updatedb.conf
+sudo cp $machBld/etc/kcm-updatedb.conf /etc/updatedb.conf
 sudo updatedb
 ## Zathura not opening pdf's
 zathura-pdf-mupdf 0.3.6-3  fixed by  zathura-pdf-mupdf 0.3.6-4
@@ -441,7 +441,7 @@ stuck on  Loading initial ramdisk ...
 ## Pacman ParallelDownloads
 sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 16/' /etc/pacman.conf
 ## fit ST4000VN008
-sudo cp $MACHINE/etc/fstab/l8f /etc/fstab
+sudo cp $machBld/etc/fstab/l8f /etc/fstab
 sudo rm -r /mnt/ST3500413AS
 sudo chown jo:jo /mnt/ST4000VN008
 ## Updates
@@ -665,7 +665,7 @@ df -h /  shows it's using  19G
 ###
 journalctl --disk-usage  reports "Archived and active journals take up 2.2G in the file system."
 ## symlinks in /usr
-sudo find /usr -type l -ls > $MACHINE/usr-symlinks.txt
+sudo find /usr -type l -ls > $machBld/usr-symlinks.txt
 ## DualBIOS
 1st System Fan Fail Warning (was  Disabled) Enabled
 2nd System Fan Fail Warning (was  Disabled) Enabled
@@ -674,7 +674,7 @@ CPU Warning Temperature (was  Disabled) 60°C/140°F
 ffmpeg soon got the buzzer sounding off
 ## cpupower
 sudo systemctl enable cpupower.service --now
-cp /etc/default/cpupower $MACHINE/etc/defaults/la7-default_cpupower
+cp /etc/default/cpupower $machBld/etc/defaults/la7-default_cpupower
 sudo sed -i 's/^#max_freq="3GHz/max_freq="2800Mhz/' /etc/default/cpupower
 systemctl status cpupower.service
 ## after a random reboot while updating
@@ -723,7 +723,7 @@ updated $Imagey/Scan.sh
 ## advcpmv 9.0-3
 sudo rm /usr/local/bin/cpg /usr/local/bin/mvg
 ## fitted Cooler Master Hyper 212 EVO V2
-sudo cp $MACHINE/etc/fstab/l8f /etc/fstab
+sudo cp $machBld/etc/fstab/l8f /etc/fstab
 cleaned all round
 ## graphics card
 removed ASUS NVIDIA C027PI rev2.00 Radeon HD 5450
@@ -799,9 +799,9 @@ error: firefox: signature from "Jan Alexander Steffens (heftig) <jan.steffens@gm
 :: File /var/cache/pacman/pkg/firefox-100.0.2-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
 Do you want to delete it? [Y/n]
 ## rsnapshot root ST4000VN008
-just made the change in  $MACHINE/etc/rsnapshot.conf
+just made the change in  $machBld/etc/rsnapshot.conf
   so had to  sudo chown -R jo:jo $rsnapshot  which took ages
-cp /var/log/rsnapshot $MACHINE/l8f-m5q-WD1001FALS-rsnapshot.log
+cp /var/log/rsnapshot $machBld/l8f-m5q-WD1001FALS-rsnapshot.log
 sudo nvim -c "silent! /2022-05-26T02:15:57" /var/log/rsnapshot  to reduce it
 ## rsnapshot root WD30EZRZ
 mkdir $rsnapshot
@@ -864,7 +864,7 @@ sudo chown -R jo:jo /run/media/jo/SDSSDA240G
 lsblk  &  lsblk -f  indicated
   sudo rsync -axv --delete / /run/media/jo/2dacef35-6b13-44bb-a0e5-94909d6239b6
 ## replaced HD103SJ with SDSSDA240G
-prepared $MACHINE/etc/fstab/m5r  for  sudo cp $MACHINE/etc/fstab/m5r /etc/fstab
+prepared $machBld/etc/fstab/m5r  for  sudo cp $machBld/etc/fstab/m5r /etc/fstab
 ### prepare home
 lsblk  &  lsblk -f  indicated
   sudo mkdir /run/media/jo/temp  # does not persist
@@ -902,7 +902,7 @@ reboot  for  Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 >
 the new  /  wasn't respected, and
   gdisk /dev/sdc  got  Caution: Found protective or hybrid MBR and corrupt GPT.  again...
 ## rsnapshot root ST4000VN008
-made the change in  $MACHINE/etc/rsnapshot.conf
+made the change in  $machBld/etc/rsnapshot.conf
 ## move Dropbox to WD30EZRZ
 ### syncs with Dropbox
 rsync -irtv --delete /mnt/SD480GSSDPlus/Dropbox/ /mnt/WD30EZRZ/Dropbo
@@ -918,7 +918,7 @@ rsync -inrtv --delete /mnt/SD480GSSDPlus/Dropbox/ /mnt/WD30EZRZ/Dropbox >
 ### fix symlinks
 find ~/ -type l -ls | xcol SD480GSSDPlus WD30EZRZ
 sudo bash 05-root_symlinks.sh
-bash 17-symlinks.sh
+bash anytime/symlinks-jo-0.sh
 source $ARCHBUILDS/Bash/export-storage
 bash 31-symlinks-Openbox.sh
 nvim 05-exports.sh
@@ -931,8 +931,8 @@ rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
 ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
 ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
-ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
-ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $ARCHBUILDS/jo/TS/locks.sh ~/Arch/locks.sh
 ln -sf $CP/SSHconfig/sbMb ~/.ssh/config
 rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
@@ -940,11 +940,11 @@ sudo bash 37-as_root-symlink_fonts.sh
 ## move swap, for growing /
 sudo swapon /dev/sdc3
 sudo swapoff /dev/sda3
-changed swap UUID in  $MACHINE/etc/fstab/m5r  for  sudo cp $MACHINE/etc/fstab/m5r /etc/fstab  reboot
+changed swap UUID in  $machBld/etc/fstab/m5r  for  sudo cp $machBld/etc/fstab/m5r /etc/fstab  reboot
 ## discovered Dropbox still pointing at SD480GSSDPlus
 paused sync'ing
 rsync -irtv --delete /mnt/WD30EZRZ/Dropbox/ /mnt/SD480GSSDPlus/Dropbox
-## forgotten change done to  $MACHINE/etc/rsnapshot.conf
+## forgotten change done to  $machBld/etc/rsnapshot.conf
 /mnt/WD30EZRZ/Dropbox/
 ## move Dropbox to WD30EZRZ
 rsync -irtv --delete /mnt/WD30EZRZ/Dropbox/JH/core/ /mnt/SD480GSSDPlus/Dropbox/JH/core
@@ -1050,7 +1050,7 @@ w
 reboot  to see the partitions
 ## move swap back
 sudo mkswap /dev/sda3  UUID=3c859bab-c47a-49ec-89c5-55bdae6a7fe1
-changed swap UUID in  $MACHINE/etc/fstab/m5r  for  sudo cp $MACHINE/etc/fstab/m5-6 /etc/fstab
+changed swap UUID in  $machBld/etc/fstab/m5r  for  sudo cp $machBld/etc/fstab/m5-6 /etc/fstab
   reboot
 forgot to comment out  SD480GSSDPlus  from  /etc/fstab, so did that from Arch root maintenance
 ## format sda4+5
@@ -1076,7 +1076,7 @@ sudo mkfs.ext4 /dev/sda5
   Writing superblocks and filesystem accounting information: done
 sudo e2label /dev/sda5 SD480GSSDPlus
 ## move /home back to SD480GSSDPlus
-prepared  $MACHINE/etc/fstab/m5-6  with new  UUID
+prepared  $machBld/etc/fstab/m5-6  with new  UUID
 automatic login tty1 off for logged out of jo and into root only for
   lsblk  indicated  mount /dev/sda4 /mm
   rsync -av --delete /home/jo/ /mm/jo
@@ -1086,16 +1086,16 @@ automatic login tty1 off for logged out of jo and into root only for
 Firefox fired up with this: "Joseph Harriott, Would you like to connect the computer sbMb to your Dropbox account (jharr@ftml.net)? If you didn't request this, please click 'Cancel'." > Connect
 Dropbox began sync'ing 231,000 files, which took a while, but didn't change anything.
 ## GRUB loglevel=4
-sudo nvim -O /etc/default/grub $MACHINE/etc/grub -c 'windo difft'  & sync'd the changes
+sudo nvim -O /etc/default/grub $machBld/etc/grub -c 'windo difft'  & sync'd the changes
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ## automatic login tty1 back on
 ## remove SDSSDA240G, added SD480GSSDPlus
-prepared  $MACHINE/etc/fstab/m5-6  with new  UUID
-sudo cp $MACHINE/etc/fstab/m6d /etc/fstab
+prepared  $machBld/etc/fstab/m5-6  with new  UUID
+sudo cp $machBld/etc/fstab/m6d /etc/fstab
 sudo chown -R jo:jo /mnt/SD480GSSDPlus
 sudo rm -r /mnt/SDSSDA240G
 ## GRUB loglevel=5
-sudo nvim -O /etc/default/grub $MACHINE/etc/grub -c 'windo difft'  & sync'd the changes
+sudo nvim -O /etc/default/grub $machBld/etc/grub -c 'windo difft'  & sync'd the changes
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ## fsck'd WD1001FALS
 sudo mount /dev/sdd1 /mnt/WD1001FALS
@@ -1133,9 +1133,9 @@ find /root -type l -ls | xcol SDU3D1TB WD30EZRZ
 bash 05-root_symlinks.sh
 ### fix symlinks
 find ~ -type l -ls | xcol SDU3D1TB WD30EZRZ
-bash 17-symlinks.sh
+bash anytime/symlinks-jo-0.sh
 bash 31-symlinks-Openbox.sh
-reboot to get $MACHINE  for  bash 36-symlinks-sshd.sh
+reboot to get $machBld  for  bash 36-symlinks-sshd.sh
 rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
 rm -r ~/texmf/tex/latex/jo; ln -s $CP/LaTeX/jo ~/texmf/tex/latex/jo
 ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
@@ -1143,8 +1143,8 @@ ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
 ln -sf $ARCHBUILDS/jo/TS/locks.sh ~/Arch/locks.sh
 ln -sf $CP/SSHconfig/sbMb ~/.ssh/config
-ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
-ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
 mt  to update  headings.sty
@@ -1154,9 +1154,9 @@ bash 37-as_root-symlink_fonts.sh
 ### fix my OBS grabs
 symlinks as in  $ITstack/unix_like-linux/OBSmkv/shrink.sh
 ### fix tmux'ing into CAM-toSort0
-$MACHINE/jo/autostart.sh
+$machBld/jo/autostart.sh
 ## remove WD30EZRZ from mlocate path
-sudo cp $MACHINE/etc/updatedb.conf /etc/updatedb.conf
+sudo cp $machBld/etc/updatedb.conf /etc/updatedb.conf
 doas updatedb
 ## fix Thunderbird for SDU3D1TB
 bash 38-LibreOffice+Thunderbird.sh
@@ -1220,12 +1220,23 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 ## glxinfo
 Segmentation fault (core dumped)
 ## waiting
+bluefish errors
 clifm-git
 CUPS Socket activation
 disable Shift+PrtSc
 tk
 ### remake /efi/EFI/GRUB/grubx64.efi
 sudo grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
+## Bluefish - clear rcfile error
+bluefish > alt+e > s > change something, close Bluefish for  bluefish > ... reset that change
+## xdg-open .py
+handlr get .py  reports  no handlers found for 'text/x-python3'
+  handlr set .py gvim.desktop
+## Updates
+  error: linux: signature from "Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>" is invalid
+  :: File /var/cache/pacman/pkg/linux-5.19.4.arch1-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]
+fixed on next run of  $bs/anytime/updates.sh
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
@@ -1240,8 +1251,8 @@ fcrontab -l
   @ 10 bash ~/Arch/bash_history.sh
   @ 20 jump clean
 ## temperatures
-ln -sf $MACHINE/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
-ln -sf $MACHINE/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # file-hierarchy - diskusage
 /usr/lib 5.4GB
 /usr/share 4.7GB

@@ -65,7 +65,7 @@ dcc1 () {
   else
     echo "you should've ${tpf7b}dcc0${tpfn}"
   fi
-}  # removes them
+}  # moves them to  $DROPBOX/conflicted
 
 #=> ffmpeg 0
 alias ffmhb='nice -n 19 ffmpeg -hide_banner'
@@ -160,9 +160,10 @@ gvc () {
 } # opens the file in gVim only if there's no swap file present for it
 
 #=> imagey
-# call SANE's scanimage tool
+alias ns='nsxiv -frt * &'  # using fullscreen, recursively open all flat
+
 S () { bash $Imagey/Scan.sh $1 $2 $3 $4; }
-  s53 () { S 55n 3 $1 $2; }
+  s53 () { S 55n 3 $1 $2; }  # call SANE's scanimage tool
 
 #==> convert all webp to jpg
 w2j () {

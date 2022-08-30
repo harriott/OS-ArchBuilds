@@ -2,9 +2,9 @@
 # vim: fdl=1:
 
 # Joseph Harriott - Mon 02 May 2022
-# called by  $MACHINE/jo/awesome/rc.lua
+# called by  $machBld/jo/awesome/rc.lua
 # symlinked in my  $bs/39-awesome.sh
-# (chmod u+x $MACHINE/jo/awesome/autorun.sh)
+# (chmod u+x $machBld/jo/awesome/autorun.sh)
 
 # run() { if ! pgrep -f "$1"; then "$@" & ; fi; }
 run() {
@@ -13,7 +13,7 @@ run() {
     fi
 }
 run blueman-applet
-run conky -c $MACHINE/jo/conkyrc
+run conky -c $machBld/jo/conkyrc
 run copyq  # because CopyQ's internal Autostart wouldn't work in Openbox
 run dropbox
 run nm-applet

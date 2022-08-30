@@ -4,10 +4,10 @@
 # ~/.export-jo
 #  depends on  $ARCHBUILDS/Bash/export-storage
 #  sourced by  $Bash/bash_profile
-#  symlinked in  $bs/17-symlinks.sh
+#  symlinked in  $bs/anytime/symlinks-jo-0.sh
 
 export MANPATH=/usr/share/man/
-uG=$MACHINE/jo/Bash/export-urxvt; [[ -f $uG ]] && . $uG
+uG=$machBld/jo/Bash/export-urxvt; [[ -f $uG ]] && . $uG
 
 export MOZ_GTK_TITLEBAR_DECORATION=client
 
@@ -20,11 +20,12 @@ export MOZ_GTK_TITLEBAR_DECORATION=client
 export bilan=$DROPBOX/JH/Work/ST/LPD/IdF/AB-TAP/bilan
 export cITh=$DROPBOX/JH/copied/IT-handy
   export cIThul=$cITh/unix-like
+  export GHrUse=$cITh/GHrepos  # GitHub Repositories Use - vs $GHrCl
 export detail=$DROPBOX/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage/detail
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export IT1=$DROPBOX/JH/technos/IT1  # for notes
 export ITP=$DROPBOX/JH/technos/IT0-storage  # $ITP/diskUsage.txt
-export lclm=$ulL/clm  # linux command-line mail, was GNULE
+export lclm=$ulLinux/clm  # linux command-line mail, was GNULE
 export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
 export MD4PDF=$onGH/md4pdf
 export MSWin10=$onGH/MSWin10  # for notes

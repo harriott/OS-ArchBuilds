@@ -2,7 +2,7 @@
 # vim: ft=sh sw=2:
 
 # symlinked in  $bs/anytime/symlinks-jo.sh  to  /home/jo/.bashrc-console
-# sourced by  $Bash/bash_profile  &  $MACHINE/jo/Bash/bashrc
+# sourced by  $Bash/bash_profile  &  $machBld/jo/Bash/bashrc
 # useful also in Console as user
 
 # -----------------------------------------------------------
@@ -10,6 +10,10 @@
 # -----------------------------------------------------------
 
 # Joseph Harriott
+
+# Spacemacs
+a (){ emacs $1; }  # GUI
+et (){ emacs -nw $1; }  # in terminal
 
 #=> Bash interface
 alias o=echo
@@ -50,9 +54,21 @@ sp (){
 }
 
 #=> file manage
-alias C='clifm .'  # CliFM
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
+
+C (){
+  if [ $1 ]; then
+    CliFM -A $1
+  else
+    CliFM -A .
+  fi
+}  # CliFM (show hidden)
+CliFM (){
+  clifm --cd-on-quit --disk-usage --rl-vi-mode --trash-as-rm "$@"
+  dir="$(grep "^\*" "/home/jo/.config/clifm/.last" 2>/dev/null | cut -d':' -f2)";
+  [ -d "$dir" ] && cd -- "$dir"
+}
 
 locx () { locate -i $1 | xcol $1; }
 
@@ -60,6 +76,13 @@ locx () { locate -i $1 | xcol $1; }
 fa () {
   eval "find * $printfDTsort"
 }  # all files
+
+fdtsbbcode () {
+  dtsfile=dts-ft_bbcode.list
+  fdtsListHeader $dtsfile
+  rg -ttxt -l --sort modified 'ft=bbcode' >> $dtsfile
+  echo "results are in $dtsfile"
+}
 
 fRs () {
   echo $1
@@ -94,14 +117,6 @@ fdtsExt () {
   else
     echo "^ need a file type (= filename extension)"
   fi
-}
-
-#===> bbcode
-fdtsbbcode () {
-  dtsfile=dts-ft_bbcode.list
-  fdtsListHeader $dtsfile
-  rg -ttxt -l --sort modified 'ft=bbcode' >> $dtsfile
-  echo "results are in $dtsfile"
 }
 
 #===> by keystring in name
