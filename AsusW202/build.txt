@@ -154,10 +154,14 @@ bash 2-grabGraphicsCardDetails.sh
 lsblk  reveals  K8GBDTIG3  to be  /dev/sdb1, so  sudo mount /dev/sdb1 /bs
   sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /bs
 ## locale.gen.pacnew
+bash $bSc/anytime/cloneArchBuilds.sh
 bash $bSc/anytime/as_root-pacnews.sh
 ## xrandr
-bash $bSc/anytime/as_root-pacnews.sh
+bash $bSc/anytime/cloneArchBuilds.sh
 bash $bSc/3-toWM/3-IO_HW.sh
+## nnn plugins
+bash $bSc/anytime/cloneArchBuilds.sh
+bash $bSc/3-toWM/4-softwares-for_nnn.sh
 ## waiting
 # fcron
 # MCEs at start
