@@ -1,10 +1,11 @@
 # vim: ft=sh:
 
-# see  $clm/msmtprc-template  for tests for sends
-# see  $bs/27-mail.sh  &  $clm/nm-config-template
+# see  $clMail/msmtprc/msmtprc-template  for tests for sends
+# see  $bSc/4-whenWM/whenDropbox.sh  &  $clMail/notmuch/config-template
+# sourced by  $Bash/bashrc
 
 #=> backup my Mutt Wizard files
-alias mwb='bash $clm/backup.sh'
+alias mwb='bash $clMail/backup.sh'
 
 #=> find mutt aliases
 maf () {
@@ -31,14 +32,14 @@ mafl (){ account=live; maf; }
 maft (){ account=troh; maf; }
 
 #=> neomutt
-alias nmc='neomutt -F $clm/neomutt/muttrc-accounts/cz'
-alias nmf='neomutt -F $clm/neomutt/muttrc-accounts/ftml'
-alias nmj='neomutt -F $clm/neomutt/muttrc-accounts/tj'
-alias nml='neomutt -F $clm/neomutt/muttrc-accounts/live'
-alias nmp='neomutt -F $clm/neomutt/muttrc-accounts/parl'
-alias nmt='neomutt -F $clm/neomutt/muttrc-accounts/troh'
-alias nmx='neomutt -F $clm/neomutt/muttrc-accounts/gmx'
-alias nmz='neomutt -F $clm/neomutt/muttrc-accounts/zou'
+alias nmc='neomutt -F $clMail/neomutt/muttrc-accounts/cz'
+alias nmf='neomutt -F $clMail/neomutt/muttrc-accounts/ftml'
+alias nmj='neomutt -F $clMail/neomutt/muttrc-accounts/tj'
+alias nml='neomutt -F $clMail/neomutt/muttrc-accounts/live'
+alias nmp='neomutt -F $clMail/neomutt/muttrc-accounts/parl'
+alias nmt='neomutt -F $clMail/neomutt/muttrc-accounts/troh'
+alias nmx='neomutt -F $clMail/neomutt/muttrc-accounts/gmx'
+alias nmz='neomutt -F $clMail/neomutt/muttrc-accounts/zou'
 
 #=> notmuch search
 nmse () {
@@ -76,24 +77,24 @@ nmsh () {
     tac nms | sed '/Date: /{h;d;};/message{/G' | tac > nms.mail  # moves date to start of message
     rm nms
     sed -i '//d' nms.mail  # finally remove unneeded lines
-    perl $clm/notmuch/nmsh-sort.pl nms.mail
+    perl $clMail/notmuch/nmsh-sort.pl nms.mail
     [[ $DISPLAY ]] && gvc nms.mail # open it in gVim only if safe to do so
 } # shows the relevant emails
 
 #=> sync & tag mail
 [[ -d $lclm ]] && source $lclm/muttrc-emails
 
-nmnew () { echo "notmuch new:"; notmuch new; } # see $clm/nm-config-template
+nmnew () { echo "notmuch new:"; notmuch new; } # see $clMail/nm-config-template
 
-# see  $clm/mbsyncrc-template  (~/.mbsyncrc)
-msc () { mbsync cz   ; nmnew ; echo '$clm/notmuch/tags/cz.sh'   ; bash $clm/notmuch/tags/cz.sh   ; }
-msf () { mbsync fm   ; nmnew ; echo '$clm/notmuch/tags/fm.sh'   ; bash $clm/notmuch/tags/fm.sh   ; }
-msj () { mbsync tj   ; nmnew ; echo '$clm/notmuch/tags/tj.sh'   ; bash $clm/notmuch/tags/tj.sh   ; }
-msl () { mbsync live ; nmnew ; echo '$clm/notmuch/tags/live.sh' ; bash $clm/notmuch/tags/live.sh ; }
-msp () { mbsync parl ; nmnew ; echo '$clm/notmuch/tags/parl.sh' ; bash $clm/notmuch/tags/parl.sh ; }
-mst () { mbsync troh ; nmnew ; echo '$clm/notmuch/tags/troh.sh' ; bash $clm/notmuch/tags/troh.sh ; }
-msx () { mbsync gmx  ; nmnew ; echo '$clm/notmuch/tags/gmx.sh'  ; bash $clm/notmuch/tags/gmx.sh  ; }
-msz () { mbsync zou  ; nmnew ; echo '$clm/notmuch/tags/zou.sh'  ; bash $clm/notmuch/tags/zou.sh  ; }
+# see  $clMail/mbsyncrc-template  (~/.mbsyncrc)
+msc () { mbsync cz   ; nmnew ; echo '$clMail/notmuch/tags/cz.sh'   ; bash $clMail/notmuch/tags/cz.sh   ; }
+msf () { mbsync fm   ; nmnew ; echo '$clMail/notmuch/tags/fm.sh'   ; bash $clMail/notmuch/tags/fm.sh   ; }
+msj () { mbsync tj   ; nmnew ; echo '$clMail/notmuch/tags/tj.sh'   ; bash $clMail/notmuch/tags/tj.sh   ; }
+msl () { mbsync live ; nmnew ; echo '$clMail/notmuch/tags/live.sh' ; bash $clMail/notmuch/tags/live.sh ; }
+msp () { mbsync parl ; nmnew ; echo '$clMail/notmuch/tags/parl.sh' ; bash $clMail/notmuch/tags/parl.sh ; }
+mst () { mbsync troh ; nmnew ; echo '$clMail/notmuch/tags/troh.sh' ; bash $clMail/notmuch/tags/troh.sh ; }
+msx () { mbsync gmx  ; nmnew ; echo '$clMail/notmuch/tags/gmx.sh'  ; bash $clMail/notmuch/tags/gmx.sh  ; }
+msz () { mbsync zou  ; nmnew ; echo '$clMail/notmuch/tags/zou.sh'  ; bash $clMail/notmuch/tags/zou.sh  ; }
 
 alias ms='
 echo -e "${tpf2b}-- cz   --${tpfn}"; msc;

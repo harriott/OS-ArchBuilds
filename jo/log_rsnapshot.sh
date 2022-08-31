@@ -7,7 +7,7 @@
 # because on  i34G1TU02  it gets refreshed sometimes, losing old records
 
 # fcrontab:  @ 1 d bash ~/Arch/log_rsnapshot.sh
-# symlinked in my  $bs/23-rsnapshot.sh
+# symlinked in my  $bSc/23-rsnapshot.sh
 
 d=$(date +%Y%m%d)
 l=~/Arch/log_rsnapshot-$d

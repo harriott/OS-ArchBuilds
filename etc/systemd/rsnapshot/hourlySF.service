@@ -1,6 +1,6 @@
 # vim: set fdl=1:
 
-# copied by  $bs/24-as_root-rsnapshot_automated.sh
+# copied by  $bSc/24-as_root-rsnapshot_automated.sh
 #        to  /etc/systemd/system/rsnapshot-hourly.service
 
 # managed by  $ARCHBUILDS/etc/systemd/rsnapshot-hourlySF.timer

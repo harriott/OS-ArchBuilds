@@ -1,6 +1,6 @@
 # vim: fdl=1 ft=sh sw=2:
 
-# sourced by  $machBld/jo/Bash/bashrc
+# $Bash/bashrc, sourced by  $machBld/jo/Bash/bashrc
 
 #=> load the rest of my bashrc
 source ~/.bashrc-generic  # useful everywhere, including root

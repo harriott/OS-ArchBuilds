@@ -6,7 +6,7 @@
 # Full system backup
 # ------------------
 # this is only needed until I've setup  rsnapshot
-#  symlinked in  $bs/05-root_symlinks.sh
+#  symlinked in  $bSc/05-root_symlinks.sh
 
 # -----------------------------
 # run this script from Arch ISO

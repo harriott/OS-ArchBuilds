@@ -5,10 +5,10 @@
 
 # ~/.export-machine
 # for jo:
-#  symlinked in  $bs/anytime/symlinks-jo.sh
+#  symlinked in  $bSc/anytime/symlinks-jo.sh
 #  sourced by  $Bash/bash_profile
 # for root:
-#  symlinked in  $bs/05-root_symlinks.sh
+#  symlinked in  $bSc/05-root_symlinks.sh
 #  sourced by  $ARCHBUILDS/root/bash_profile
 
 export startxDelay=2

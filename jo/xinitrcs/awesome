@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# symlinked in  $bs/anytime/symlinks-jo-0.sh  to  ~/.xinitrc
+# symlinked in  $bSc/anytime/symlinks-jo-0.sh  to  ~/.xinitrc
 
 source $ARCHBUILDS/jo/xinitrcs/xinitrc  # calls  $Openbox/Xresources/Xresources (~/.Xresources)
 

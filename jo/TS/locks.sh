@@ -5,7 +5,7 @@
 # tidy up  Thunderbird  lockfiles
 # -------------------------------
 # fcrontab:  @ 1 bash ~/Arch/locks.sh
-# symlinked in my  $bs/toReview/38-LibreOffice+Thunderbird.sh
+# symlinked in my  $bSc/toReview/38-LibreOffice+Thunderbird.sh
 
 host=$(uname -n)
 case $host in

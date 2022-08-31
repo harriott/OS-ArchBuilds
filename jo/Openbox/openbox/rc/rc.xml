@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vim: fdl=1 sw=2:
      my changes are commented like this - JH
-     ~/.config/openbox/rc.xml ($bs/anytime/symlinks-jo-1-Openbox.sh)
+     ~/.config/openbox/rc.xml ($bSc/anytime/symlinks-jo-1-Openbox.sh)
      nvim -O /etc/xdg/openbox/rc.xml $Openbox/openbox/rc/rc.xml
      reconfigure  after making changes here -->
 

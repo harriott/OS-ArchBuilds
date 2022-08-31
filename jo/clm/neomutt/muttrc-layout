@@ -3,7 +3,7 @@
 
 # layout settings for neomutt
 # based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
-# sourced by  $clm/neomutt/muttrc-general
+# sourced by  $clMail/neomutt/muttrc-general
 
 # paging down leaves lines of overlap
 set pager_context=2

@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim: fdl=1:
 
+# bash $bSc/dusty/whenWM.sh
+
 #=> 0 check $ARCHBUILDS
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 

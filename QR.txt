@@ -4,6 +4,7 @@ commands in this QuickReference work in my Arch install
  more generally, see $onGH/misc/linux/QR.txt
 
 copyq help | mo
+i datediff
 gspdfpng
 
 # fcron
@@ -167,10 +168,6 @@ rg --type-list
 rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
 
 ### searches
-rg '\$cITh' -l
-rg '\$ITstack'
-rg '\$mail'
-rg '\~/\.npm-'
 rg '<someText>|<otherText>'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
 rg -tmd '\$SE'
@@ -178,6 +175,22 @@ rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 rg <someText>  # searches recursively in files
+
+#### builds
+rg '\$ArchBuilds'
+rg '\$Bash'
+rg '\$bs'
+rg '\$cITh' -l
+rg '\$clMail'
+rg '\$CrPl'
+rg '\$CrPl'
+rg '\$lclm'
+rg '\$ITstack'
+rg '\$machBld'
+rg '\$mail'
+rg '\~/\.npm-'
+rg 'passwordeval bash oauth2tool'
+rg 'passwordeval bash'
 
 #### in vimfiles
 rg --no-ignore '\$MSwin10'
@@ -283,7 +296,7 @@ bm locate
 locate -c <target>  # --count
 locate -h
 locate -r '\.conf$'
-locate -r '\.desktop$' > $machBld/desktops.txt
+locate -r '\.desktop$' > $machLg/desktops.txt
 locate -r '\.json$' | mo
 locate -r 'gestion des cas'
 
@@ -336,7 +349,7 @@ fc-list | grep Deja
 fc-list | grep Lohit
 fc-list | grep ubuntu
 fc-list -v ubuntumono
-fc-list > $machBld/fclist.txt
+fc-list > $machLg/fclist.txt
 doas fc-cache -f  # regenerates the cache
 
 ### fc-scan
@@ -350,7 +363,7 @@ fontpreview -h
 uses fzf
 
 # fun
-cat $CP/EMOJI_CHEAT_SHEET.gfm
+cat $CrPl/EMOJI_CHEAT_SHEET.gfm
 tint  # tetris
 
 ## CMatrix
@@ -472,7 +485,7 @@ fRs $Bash bashrc-console
 fRs $DROPBOX/CAM-toSort0 '01 '
 fRs $DROPBOX/CAM-toSort0 Apache
 fRs $vimfiles/syntax cmusq.vim
-fRs $CP/LaTeX/jo/CzPlanning planning.cls
+fRs $CrPl/LaTeX/jo/CzPlanning planning.cls
 
 ##### my OBS grabs
 find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
@@ -490,6 +503,7 @@ rsync -irtv --delete $rsnapshot/daily.0/localhost/home/jo/.local/share/mail/ $ma
 
 # imagey
 jpo  # defined in my $Bash/bashrc-wm
+pq  # pqiv (recursive, no info, sorted, 2s fade - see $Bash/bashrc-wm)
 rm -r ~/.thumbnails/normal/*
 xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 
@@ -516,7 +530,7 @@ java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
 
 # LaTeX
 r $cITh/CP/TeX/LaTeX
-r $CP/LaTeX/jo
+r $CrPl/LaTeX/jo
 x <LaTeX_file_basename>
 xc
 
@@ -565,9 +579,9 @@ grep -r "Georita" *
 rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
 
 #### mutt
-$email/muttrc-general
-$email/muttrc-account_ftml
-$email/muttrc-account_troh
+$clMail/muttrc-general
+$clMail/muttrc-account_ftml
+$clMail/muttrc-account_troh
 echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 f => forward
 F => toggle important flag (= Star in Gmail)

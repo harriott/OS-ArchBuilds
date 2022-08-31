@@ -1,5 +1,11 @@
 # GRUB boot loader configuration
 
+# JH
+# sudo nvim -O /etc/default/grub $machBld/etc/grub -c 'windo difft'
+#  sudo grub-mkconfig -o /boot/grub/grub.cfg
+#   su > root_pw  for  nvim /boot/grub/grub.cfg  to check
+# JH
+
 GRUB_DEFAULT=0
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="Arch"
@@ -61,3 +67,4 @@ GRUB_DISABLE_RECOVERY=true
 # functionality install os-prober and uncomment to detect and include other
 # operating systems.
 #GRUB_DISABLE_OS_PROBER=false
+

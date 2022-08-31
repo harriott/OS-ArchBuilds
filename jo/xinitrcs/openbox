@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# symlinked in  $bs/anytime/symlinks-jo.sh  to  ~/.xinitrc
+# symlinked in  $bSc/anytime/symlinks-jo.sh  to  ~/.xinitrc
 
 source $ARCHBUILDS/jo/xinitrcs/xinitrc  # calls $machBld/jo/Xresources
 

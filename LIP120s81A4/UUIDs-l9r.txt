@@ -1,7 +1,0 @@
-total 0
-lrwxrwxrwx 1 root root 10 Sep 27 21:45 142013bf-0caf-4362-9186-f346c2124bec -> ../../sda1
-lrwxrwxrwx 1 root root 15 Sep 27 21:33 3387-CF50 -> ../../mmcblk1p1
-lrwxrwxrwx 1 root root 15 Sep 27 21:33 521c9151-9668-49b1-8788-7c35f4a0c36d -> ../../mmcblk0p1
-lrwxrwxrwx 1 root root 15 Sep 27 21:33 647c4623-446b-4c77-bacd-9fb471d19b2d -> ../../mmcblk1p2
-lrwxrwxrwx 1 root root 15 Sep 27 21:33 a05177cf-98b1-4045-8ecc-1f6d20cdcf2e -> ../../mmcblk1p3
-lrwxrwxrwx 1 root root 15 Sep 27 21:33 f6c6fcc3-2829-4de5-a91a-b9ffa1bdea01 -> ../../mmcblk0p2

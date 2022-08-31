@@ -161,6 +161,7 @@ gvc () {
 
 #=> imagey
 alias ns='nsxiv -frt * &'  # using fullscreen, recursively open all flat
+alias pq='pqiv -d 2 -inF * &'  # (recursive) no info, sorted, 2s fade
 
 S () { bash $Imagey/Scan.sh $1 $2 $3 $4; }
   s53 () { S 55n 3 $1 $2; }  # call SANE's scanimage tool

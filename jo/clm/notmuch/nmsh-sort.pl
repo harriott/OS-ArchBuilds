@@ -28,10 +28,10 @@ my @emailsAsLines = split /▶/, $allAsLine;  # separate into array
 # --------------------------------
 my @EALunixtime;
 my $date;
-my $emailAsLine;
-foreach $emailAsLine (@emailsAsLines) {
-  $date = substr($emailAsLine,6,31);  # get the RFC-822 date provided by notmuch
-  push @EALunixtime, str2time($date).$emailAsLine;
+my $clMailAsLine;
+foreach $clMailAsLine (@emailsAsLines) {
+  $date = substr($clMailAsLine,6,31);  # get the RFC-822 date provided by notmuch
+  push @EALunixtime, str2time($date).$clMailAsLine;
 }
 # p @EALunixtime; # Data::Printer - for debugging
 my @EALUTSorted = sort @EALunixtime;

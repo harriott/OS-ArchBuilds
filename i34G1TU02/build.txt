@@ -98,7 +98,7 @@ sudo chown jo:jo $ARCHBUILDS/etc/sudoers/sudoers
 sudo rm /etc/sudoers.pacnew
 ## moved snapshot_root to WD1600AAJS
 ### temporarily disabled rsnapshot timers
-$bs/24-as_root-rsnapshot_automated.sh
+$bSc/24-as_root-rsnapshot_automated.sh
 ## Updates
 error: failed retrieving file 'python-more-itertools-8.13.0-1-any.pkg.tar.zst.sig'
   from archlinux.thaller.ws

@@ -19,5 +19,5 @@ read -p "- looks good?"
 
 #=> 2 mirrorlist
 rm /etc/pacman.d/mirrorlist.pacnew
-. $bs/anytime/as_root-reflector.sh
+. $bSc/anytime/as_root-reflector.sh
 

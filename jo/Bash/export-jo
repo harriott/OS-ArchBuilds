@@ -1,10 +1,10 @@
 #!/bin/sh
 # vim: fdl=1 ft=sh sw=2:
 
-# ~/.export-jo
+# ~/.export-jo  ($Bash/export-jo)
 #  depends on  $ARCHBUILDS/Bash/export-storage
 #  sourced by  $Bash/bash_profile
-#  symlinked in  $bs/anytime/symlinks-jo-0.sh
+#  symlinked in  $bSc/anytime/symlinks-jo-0.sh
 
 export MANPATH=/usr/share/man/
 uG=$machBld/jo/Bash/export-urxvt; [[ -f $uG ]] && . $uG

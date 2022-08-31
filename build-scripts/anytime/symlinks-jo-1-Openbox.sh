@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim: fdl=1:
 
+# bash $bSc/anytime/symlinks-jo-1-Openbox.sh
+
 #=> symlinks for Openbox
 
 ln -sf $Openbox/openbox/schema.pl ~/.config/obmenu-generator/schema.pl

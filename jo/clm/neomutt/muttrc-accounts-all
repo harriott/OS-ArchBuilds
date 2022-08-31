@@ -6,19 +6,19 @@
 # ------------------------------------------------------------------
 
 # Sourced by:
-#  $clm/neomutt/muttrc-accounts/cz
-#  $clm/neomutt/muttrc-accounts/ftml
-#  $clm/neomutt/muttrc-accounts/gmx
-#  $clm/neomutt/muttrc-accounts/live
-#  $clm/neomutt/muttrc-accounts/parl
-#  $clm/neomutt/muttrc-accounts/tj
-#  $clm/neomutt/muttrc-accounts/troh
-#  $clm/neomutt/muttrc-accounts/zou
+#  $clMail/neomutt/muttrc-accounts/cz
+#  $clMail/neomutt/muttrc-accounts/ftml
+#  $clMail/neomutt/muttrc-accounts/gmx
+#  $clMail/neomutt/muttrc-accounts/live
+#  $clMail/neomutt/muttrc-accounts/parl
+#  $clMail/neomutt/muttrc-accounts/tj
+#  $clMail/neomutt/muttrc-accounts/troh
+#  $clMail/neomutt/muttrc-accounts/zou
 # - which are called through aliases in my  ~/.bashrc  (specifically  $Bash/bashrc-clm)
 
 set reflow_wrap=0
 # (default is 78) doesn't dynamically adapt to terminal size changes
-source $clm/neomutt/muttrc-general
+source $clMail/neomutt/muttrc-general
 
 set realname = "Joseph Harriott"
 set mbox_type = Maildir

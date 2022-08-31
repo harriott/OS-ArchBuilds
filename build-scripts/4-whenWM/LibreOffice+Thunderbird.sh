@@ -22,12 +22,12 @@ pandoc -o ~/.pandoc/custom-reference.odt --print-default-data-file reference.odt
 # #==> import
 # rm -r $uc0/config
 # rm $uc0/registrymodifications.xcu
-# uc1=$CP/LibreOffice/l3i-sbMb-user
+# uc1=$CrPl/LibreOffice/l3i-sbMb-user
 # cp -r $uc1/config $uc0/config
 # cp $uc1/registrymodifications.xcu $uc0/registrymodifications.xcu
 
 # #==> export
-# uc1=$CP/LibreOffice/lbg-sbMb-user
+# uc1=$CrPl/LibreOffice/lbg-sbMb-user
 # mkdir $uc1
 # cp -r $uc0/config $uc1/config
 # cp $uc0/registrymodifications.xcu $uc1/registrymodifications.xcu

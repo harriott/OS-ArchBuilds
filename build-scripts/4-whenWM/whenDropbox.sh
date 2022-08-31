@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim: fdl=1:
 
+# $ bash $bSc/4-whenWM/whenDropbox.sh
+
 #=> 0 check $ARCHBUILDS
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
@@ -13,7 +15,7 @@ cp -f $lclm/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
 cp -f $lclm/notmuch-config-backup ~/.notmuch-config
 
 #=> 1 LaTeX
-rm -r ~/texmf/tex/latex/jo; ln -s $CP/LaTeX/jo ~/texmf/tex/latex/jo
+rm -r ~/texmf/tex/latex/jo; ln -s $CrPl/LaTeX/jo ~/texmf/tex/latex/jo
 
 #=> 1 urxvt 0
 mkdir -p ~/.urxvt

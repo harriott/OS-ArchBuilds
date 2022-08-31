@@ -21,7 +21,7 @@ port 587
 from xxx@gmail.com
 user xxx@gmail.com
 # echo 0 | pass insert -e xxx/GmailAPI/token-expire  # if it gets out of sync
-passwordeval bash $clm/msmtprc/oauth2tool.sh xxx
+passwordeval bash $clMail/msmtprc/oauth2tool.sh xxx
 # echo "test of msmtpConfig" | msmtp -a xxx <targetEmailAddress>
 
 # {{{1 yyy
@@ -32,7 +32,7 @@ port 587
 from yyy@gmail.com
 user yyy@gmail.com
 # echo 0 | pass insert -e yyy/GmailAPI/token-expire  # if it gets out of sync
-passwordeval bash $clm/msmtprc/oauth2tool.sh yyy
+passwordeval bash $clMail/msmtprc/oauth2tool.sh yyy
 # echo "test of msmtpConfig" | msmtp -a yyy <targetEmailAddress>
 
 # {{{1 default

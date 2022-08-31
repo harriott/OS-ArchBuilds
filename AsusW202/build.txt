@@ -46,7 +46,7 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 bash $ulLinux/connectSSID/iwctl.sh  got me online
-bash $bs/01-fromISO-efi-to_chroot.sh
+bash $bSc/01-fromISO-efi-to_chroot.sh
   chroot: failed to run command '/bin/bash': No such file or directory
   /mnt/bin  not there...
 rm -r /mnt  (didn't remove  /mnt/efi)
@@ -56,7 +56,7 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 $ulLinux  for  bash connectSSID/iwctl.sh  got me online
-$bs  for  bash 01-as_root-efi-to_chroot.sh
+$bSc  for  bash 01-as_root-efi-to_chroot.sh
   error: libcap: signature from "David Runge <dvzrv@archlinux.org>" is marginal trust
   /usr  didn't get installed...
 rm -r /mnt  (didn't remove  /mnt/efi)
@@ -65,7 +65,7 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 $ulLinux  for  bash connectSSID/iwctl.sh  got me online
-$bs  for  bash 01-as_root-efi-to_chroot.sh
+$bSc  for  bash 01-as_root-efi-to_chroot.sh
 ### shutdown
 ctrl-d  for  halt -p
 ### K8GBDTIG3 loaded with $core
@@ -73,12 +73,12 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 $ulLinux  for  bash connectSSID/iwctl.sh  got me online
-$bs  for  bash 01-as_root-efi-to_chroot.sh
+$bSc  for  bash 01-as_root-efi-to_chroot.sh
 ### as chroot
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 (maybe not needed) cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  . export-storage
 #### build-scripts
-$bs
+$bSc
 bash 02-when_chroot-reflector.sh
 bash 03-as_root.sh
 . 04-cloneArchBuilds.sh
@@ -101,50 +101,50 @@ su rm /root/iwctl.sh
 su rm -r /Archbuilds
 bash ~/iwctl.sh  got me online
 . ~/Archbuilds/Bash/export-storage
-bash $bs/anytime/symlinks-jo-0.sh
+bash $bSc/anytime/symlinks-jo-0.sh
 #### iwd disable & stop
-sudo bash $bs/07-iwd.sh
+sudo bash $bSc/07-iwd.sh
 #### NetworkManager enable & start
-bash $bs/13-NetworkManager.sh
+bash $bSc/13-NetworkManager.sh
 reboot  for  nmcli device
 bash ~/NetworkManager.sh
 ### Firewalld
-bash $bs/02-as_root-reflector.sh
-bash $bs/15-as_root-when_jo-toFirewall.sh
+bash $bSc/02-as_root-reflector.sh
+bash $bSc/15-as_root-when_jo-toFirewall.sh
 scs
 ### ranger
 unset ARCHBUILDS myDrA onGH
   . ~/Archbuilds/Bash/export-storage
-bash $bs/08-as_root-updates.sh
+bash $bSc/08-as_root-updates.sh
 bash ArchBuilds/build-scripts/anytime/cloneArchBuilds.sh
 reboot
 #### ranger
-bash $bs/1-to_jo/2-config.sh
-sudo bash $bs/anytime/symlinks-root.sh
+bash $bSc/1-to_jo/2-config.sh
+sudo bash $bSc/anytime/symlinks-root.sh
 ## X
-sudo bash $bs/anytime/as_root-reflector.sh
-sudo bash $bs/2-to_X/1-sudo-to_X.sh
-bash $bs/anytime/timeCorrection.sh
-sudo bash $bs/2-to_X/1-sudo-autoLoginTTY.sh
-bash $bs/2-to_X/1-configure_jo.sh
-bash $bs/2-to_X/1-misc_for_gitconfig.sh
-sudo bash $bs/anytime/sudo-extra_drives_into_fstab.sh
-on sbMb,  bash $bs/2-to_X/2-git-remote1.sh
+sudo bash $bSc/anytime/as_root-reflector.sh
+sudo bash $bSc/2-to_X/1-sudo-to_X.sh
+bash $bSc/anytime/timeCorrection.sh
+sudo bash $bSc/2-to_X/1-sudo-autoLoginTTY.sh
+bash $bSc/2-to_X/1-configure_jo.sh
+bash $bSc/2-to_X/1-misc_for_gitconfig.sh
+sudo bash $bSc/anytime/sudo-extra_drives_into_fstab.sh
+on sbMb,  bash $bSc/2-to_X/2-git-remote1.sh
 lsblk  indicated  sudo mount /dev/sdb1 /bs
 from  /bs/GHssh/  . 2-git-remote2.sh
-bash $bs/anytime/symlinks-jo-0.sh
-bash $bs/2-to_X/3-SSH_to_GitHub.sh
-bash $bs/anytime/as_root-updates.sh
-bash $bs/2-to_X/4-vimfiles.sh
-bash $bs/2-to_X/5-trizen-batstat-tmux.sh
-bash $bs/2-to_X/1-configure_jo.sh
-bash $bs/anytime/symlinks-jo-0.sh
-bash $bs/2-to_X/6-prepare_forSoftwares.sh
-bash $bs/anytime/as_root-updates.sh
-bash $bs/anytime/Zen.sh
-sudo bash $bs/3-toWM/1-sudo-prep_forWM.sh
-bash $bs/anytime/symlinks-jo-0.sh
-sudo bash $bs/3-toWM/1-sudo-prep_forWM.sh
+bash $bSc/anytime/symlinks-jo-0.sh
+bash $bSc/2-to_X/3-SSH_to_GitHub.sh
+bash $bSc/anytime/as_root-updates.sh
+bash $bSc/2-to_X/4-vimfiles.sh
+bash $bSc/2-to_X/5-trizen-batstat-tmux.sh
+bash $bSc/2-to_X/1-configure_jo.sh
+bash $bSc/anytime/symlinks-jo-0.sh
+bash $bSc/2-to_X/6-prepare_forSoftwares.sh
+bash $bSc/anytime/as_root-updates.sh
+bash $bSc/anytime/Zen.sh
+sudo bash $bSc/3-toWM/1-sudo-prep_forWM.sh
+bash $bSc/anytime/symlinks-jo-0.sh
+sudo bash $bSc/3-toWM/1-sudo-prep_forWM.sh
 ## lshw
 sudo lshw
   terminate called after throwing an instance of 'std::length_error'
@@ -153,13 +153,14 @@ sudo pacman -Rs lshw
 bash 2-grabGraphicsCardDetails.sh
 lsblk  reveals  K8GBDTIG3  to be  /dev/sdb1, so  sudo mount /dev/sdb1 /bs
   sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /bs
+## more
 ## waiting
+Dateutils
 emacs
-sudo bash $bs/2-to_X/1-sudo-to_X.sh
 terminal-colors
 xorg-xev
 ### locale.gen.pacnew
-bash $bs/anytime/as_root-pacnews.sh
+bash $bSc/anytime/as_root-pacnews.sh
 # fcron
 # MCEs at start
 [Hardware Error]: CPU 0: Machine Check: 0 Bank 4: a600000000020408

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-# after  $bs/2-to_X/2-git-remote1.sh
+# after  $bSc/2-to_X/2-git-remote1.sh
 # to be run from  GHssh/
 
 set -v  # prints each statement here, including comments

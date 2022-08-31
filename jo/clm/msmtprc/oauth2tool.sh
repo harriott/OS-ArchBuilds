@@ -1,13 +1,17 @@
 #!/bin/bash
 
-# Joseph Harriott - Sun 19 Jun 2022
+# Joseph Harriott - Tue 30 Aug 2022
+
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # !!!!!  this no longer works   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# https://superuser.com/q/1723180/242800
+
+# see  https://superuser.com/q/1723180/242800
 #  (= my  $IT1/UnixLike/linux/email/oauth2tool_sh/msmtp-OAuth2-Gmail-mutt.md)
+
 # !!!!!  this no longer works   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 # my adaptation of  oauth2token
 # -----------------------------
@@ -53,7 +57,7 @@
 #        port 587
 #        from username@gmail.com
 #        user username@gmail.com
-#        passwordeval bash oauth2tool.sh handle
+#        passwordeval bash oauth2tool.sh <handle>
 #        # echo "test of msmtpConfig" | msmtp -a <handle> <destination_email_address>
 
 handle=$1  # for use in parameter expansions
@@ -63,10 +67,10 @@ handle=$1  # for use in parameter expansions
 #   such that  ${!1}  equates to my full Gmail address
 
 get_access_token() {
-    # $GNULE  should point to the directory that contains your local copy of  oauth2.py
+    # $lclm  should point to the directory that contains your local copy of  oauth2.py
 
     { IFS= read -r tokenline && IFS= read -r expireline; } < \
-    <(python2 $GNULE/oauth2.py --user=${!1} \
+    <(python2 $lclm/oauth2.py --user=${!1} \
     --client_id=$(pass $handle/GmailAPI/CID) \
     --client_secret=$(pass $handle/GmailAPI/CS) \
     --refresh_token=$(pass $handle/GmailAPI/refresh))

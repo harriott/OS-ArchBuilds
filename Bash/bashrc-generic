@@ -4,7 +4,7 @@
 
 # Bash configurations that are also useful in Console and as root.
 
-# symlinked in  $bs/anytime/symlinks-jo.sh  to  /home/jo/.bashrc-generic
+# symlinked in  $bSc/anytime/symlinks-jo.sh  to  /home/jo/.bashrc-generic
 # for jo:
 #  sourced by  $Bash/bash_profile  &  $Bash/bashrc
 # for root:
@@ -204,7 +204,7 @@ export HISTCONTROL=ignoreboth:erasedups
 PROMPT_COMMAND='history -a' # Samokovarov's  jump  later tweaks this
 shopt -s histappend
 
-#=> f1t2t3 - for sbMb
+#=> f1t2t3
 if [ $host = 'sbMb' ]; then
   alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"
 fi

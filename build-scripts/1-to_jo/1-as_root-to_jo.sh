@@ -85,6 +85,9 @@ trap read debug  # puts a read request after each executable line
 # # Bashtop
 # pacman -S bashtop  # later superseded by AUR bpytop
 
+# # Dateutils
+# pacman -S dateutils
+
 # # htop
 # pacman -S htop
 

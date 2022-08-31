@@ -7,7 +7,7 @@ trap read debug  # puts a read request after each executable line
 
 # AUR development packages:
 #  gctm  is defined in $Bash/bashrc-console
-#  use  $bs/toReview/38-remakeAURdevs.sh  to later update them
+#  use  $bSc/toReview/38-remakeAURdevs.sh  to later update them
 
 # gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
@@ -46,11 +46,11 @@ trap read debug  # puts a read request after each executable line
 # # supersedes  Bashtop
 # sudo pacman -S bpytop
 
-#=> cheat
-gdAUR cheat
-nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
-makepkg -sic
-sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
+# #=> cheat
+# gdAUR cheat
+# nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
+# makepkg -sic
+# sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
 # #=> cht.sh-git 0 install
 # gdAUR cht.sh-git
@@ -147,8 +147,8 @@ sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 # #=> ffmpeg
 # sudo pacman -S ffmpeg
 
-#=> ffmpegthumbnailer
-sudo pacman -S ffmpegthumbnailer  # for  /usr/share/clifm/plugins/vid_viewer.sh
+# #=> ffmpegthumbnailer
+# sudo pacman -S ffmpegthumbnailer  # for  /usr/share/clifm/plugins/vid_viewer.sh
 
 # #=> fim 0 bison, flex
 # sudo pacman -S bison flex
@@ -221,16 +221,16 @@ sudo pacman -S ffmpegthumbnailer  # for  /usr/share/clifm/plugins/vid_viewer.sh
 # sudo pacman -S python-google-auth-httplib2
 # sudo pacman -S python-google-auth-oauthlib
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
-
-#=> GPicView
-sudo pacman -S gpicview
-gpicview  # Preferences > Automatically save
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
 true
+
+# #=> GPicView
+# sudo pacman -S gpicview
+# gpicview  # Preferences > Automatically save
+# true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -275,18 +275,18 @@ true
 # makepkg -sic
 # true
 
-#=> libsixel
-sudo pacman -S libsixel
+# #=> libsixel
+# sudo pacman -S libsixel
 
 # #=> libva-utils
 # sudo pacman -S libva-utils
 
-#=> lsix-git
-# for sixels
-gAUR lsix-git
-nvim -c "silent! /https:\/\/github.com\/hackerb9\/lsix" PKGBUILD
-makepkg -sic
-true
+# #=> lsix-git
+# # for sixels
+# gAUR lsix-git
+# nvim -c "silent! /https:\/\/github.com\/hackerb9\/lsix" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Mbrola
 # gAUR mbrola
@@ -379,11 +379,11 @@ true
 # #=> npm 1 cspell
 # npm install -g cspell
 
-#=> nsxiv
-gAUR nsxiv
-nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
-makepkg -sic
-true
+# #=> nsxiv
+# gAUR nsxiv
+# nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> OBS Studio 0 install
 # sudo pacman -S obs-studio
@@ -455,6 +455,9 @@ true
 # #=> pip
 # sudo pacman -S python-pip
 
+# #=> pqiv
+# sudo pacman -S pqiv
+
 # #=> pscircle-git
 # gAUR pscircle-git
 # nvim -c "silent! /mildlyparallel" PKGBUILD
@@ -510,11 +513,11 @@ true
 # nvim -c "silent! /jmc-88\/tint3.git" PKGBUILD
 # makepkg -sic
 
-#=> tspreed
-gAUR tspreed
-nvim -c "silent! /n-ivkovic" PKGBUILD
-makepkg -sic
-true
+# #=> tspreed
+# gAUR tspreed
+# nvim -c "silent! /n-ivkovic" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> ttf-croscore
 # sudo pacman -S ttf-croscore
@@ -538,8 +541,8 @@ true
 # #=> yt-dlp
 # sudo pacman -S yt-dlp
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

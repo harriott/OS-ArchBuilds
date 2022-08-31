@@ -81,8 +81,8 @@ trap read debug  # puts a read request after each executable line
 # # OpenSSH
 # pacman -S openssh
 
-#==> networking - OpenSSH - grab default sshd_config
-g=/home/jo/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; sudo chown jo:jo $g
+# #==> networking - OpenSSH - grab default sshd_config
+# g=/home/jo/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; sudo chown jo:jo $g
 
 # #==> system
 # # espeak-ng-espeak & termdown

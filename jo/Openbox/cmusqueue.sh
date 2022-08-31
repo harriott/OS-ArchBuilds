@@ -5,7 +5,7 @@
 
 # robustly save my last cmus queue
 # fcrontab:  @ 2 bash ~/Arch/cmusqueue.sh
-# symlinked in my  $bs/36-symlinks-sshd.sh
+# symlinked in my  $bSc/36-symlinks-sshd.sh
 
 source ~/.export-machine; source ~/.export-storage  # get $DROPBOX into cron shell
 rwd=$DROPBOX/CAM-toSort0  # root working directory

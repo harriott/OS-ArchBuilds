@@ -1,5 +1,5 @@
 
-" symlinked in  $bs/12-symlinks.sh
+" symlinked in  $bSc/12-symlinks.sh
 
 " move on to my Arch vimrc
 let vimrcArch = expand("$HOME/.vim/vimrc-Arch.vim")

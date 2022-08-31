@@ -1,7 +1,8 @@
 #!/usr/bin/perl
 
 # obmenu-generator - schema file
-# nvim -O /etc/xdg/obmenu-generator/schema.pl $Openbox/openbox/schema.pl
+# nvim -O /etc/xdg/obmenu-generator/schema.pl $Openbox/openbox/schema.pl -c 'windo difft'
+# symlink to  ~/.config/obmenu-generator/schema.pl ($bSc/anytime/symlinks-jo-1-Openbox.sh)
 
 =for comment
 
@@ -28,9 +29,6 @@ require "$ENV{HOME}/.config/obmenu-generator/config.pl";
 ## Text editor
 my $editor = $CONFIG->{editor};
 $editor = 'gvim';
-
-# symlinked in my  $bs/31-symlinks-Openbox.sh
-#  to  ~/.config/obmenu-generator/schema.pl
 
 our $SCHEMA = [
 

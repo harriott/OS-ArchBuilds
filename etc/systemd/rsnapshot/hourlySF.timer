@@ -1,6 +1,6 @@
 # vim: set fdl=1:
 
-# managed by my  $bs/24-as_root-rsnapshot_automated.sh
+# managed by my  $bSc/24-as_root-rsnapshot_automated.sh
 
 [Unit]
 Description=rsnapshot sync hourly backup

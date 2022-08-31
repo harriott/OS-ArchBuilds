@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $bs/anytime/updates.sh
+# bash $bSc/anytime/updates.sh
 # r $machLg/pacman
 
 #=> 0 pacman directory

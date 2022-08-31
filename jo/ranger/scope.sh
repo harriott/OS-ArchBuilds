@@ -7,7 +7,7 @@
 ## -  ranger --copy-config=all  copies from
 ##  /usr/lib/python3.10/site-packages/ranger/data/scope.sh  and makes it executable
 
-## these  ranger  configurations are symlinked in  $bs/anytime/symlinks-jo-0.sh
+## these  ranger  configurations are symlinked in  $bSc/anytime/symlinks-jo-0.sh
 
 set -o noclobber -o noglob -o nounset -o pipefail
 IFS=$'\n'
@@ -232,14 +232,14 @@ handle_image() {
         #               (m.guess_type(l[:-1])[0] or '').startswith('image/') ]" |\
         #         sort -V | head -n 1)
         #     [ "$fn" = "" ] && return
-        #     [ "$bsd" ] && fn=$(printf '%b' "$fn")
+        #     [ "$bScd" ] && fn=$(printf '%b' "$fn")
         #
         #     [ "$tar" ] && tar --extract --to-stdout \
         #         --file "${FILE_PATH}" -- "$fn" > "${IMAGE_CACHE_PATH}" && exit 6
         #     fe=$(echo -n "$fn" | sed 's/[][*?\]/\\\0/g')
-        #     [ "$bsd" ] && bsdtar --extract --to-stdout \
+        #     [ "$bScd" ] && bsdtar --extract --to-stdout \
         #         --file "${FILE_PATH}" -- "$fe" > "${IMAGE_CACHE_PATH}" && exit 6
-        #     [ "$bsd" ] || [ "$tar" ] && rm -- "${IMAGE_CACHE_PATH}"
+        #     [ "$bScd" ] || [ "$tar" ] && rm -- "${IMAGE_CACHE_PATH}"
         #     [ "$rar" ] && unrar p -p- -inul -- "${FILE_PATH}" "$fn" > \
         #         "${IMAGE_CACHE_PATH}" && exit 6
         #     [ "$zip" ] && unzip -pP "" -- "${FILE_PATH}" "$fe" > \

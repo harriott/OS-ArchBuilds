@@ -291,7 +291,7 @@ reboot
 sudo chown jo:jo /mnt/HD103SJ
 ## xdg-open .txt
 handlr get .txt  returns  vim.desktop  - which was why nnn was freezing, so
-  handlr set .txt gvim.desktop
+  bash $bSc/4-whenWM/resourceHandler.sh
 ## remove WD1001FALS from mlocate path
 sudo cp $machBld/etc/kcm-updatedb.conf /etc/updatedb.conf
 sudo updatedb
@@ -320,7 +320,7 @@ after hard reboot  $HOME/.cache/ctrlp/mru/cache.txt  was empty...
 ## ASUS C027PI DVI failed on reboot
 ## xdg-open .md
 handlr get .md  returns  no handlers found for text/markdown
-  handlr set .md gvim.desktop
+  bash $bSc/4-whenWM/resourceHandler.sh
 ## system slowed down to a crawl
 ## HP Device Settings
 Print Settings > General > Media Size > A4 210x297mm
@@ -335,9 +335,8 @@ hp-toolbox > Printer Control > Default Printer
 sudo nvim -o /etc/sane.d/canon_lide70.conf /etc/sane.d/canon_lide70.conf.pacnew
 sudo nvim -o /etc/sane.d/escl.conf /etc/sane.d/escl.conf.pacnew
 ## xdg-open .kdbx
-handlr get .kdbx
-  no handlers found for 'application/x-keepass2'
-  handlr set .kdbx org.keepassxc.KeePassXC.desktop
+handlr get .kdbx  returns  no handlers found for 'application/x-keepass2'
+  bash $bSc/4-whenWM/resourceHandler.sh
 ## Enchant
 unclear how it got installed...
 ## pacnews
@@ -347,7 +346,7 @@ sudo rm /etc/sane.d/canon_lide70.conf.pacnew /etc/sane.d/escl.conf.pacnew /etc/d
 sudo archlinux-java set java-11-openjdk
 sudo archlinux-java set java-15-openjdk
 ## LanguageTool
-sudo cp -R $CP/LanguageTool-5.2 /usr/share/java/LanguageTool-5.2
+sudo cp -R $CrPl/LanguageTool-5.2 /usr/share/java/LanguageTool-5.2
 java -jar /usr/share/java/LanguageTool-5.2/languagetool-commandline.jar -h
 ## Spotify
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
@@ -484,7 +483,7 @@ sudo rm -r /mnt/WD1001FALS/rsnapshot/daily.*/localhost/mnt/ST3500413AS
 sudo rm -r /mnt/WD1001FALS/rsnapshot/hourly.*/localhost/mnt/ST3500413AS
 ## recover Thunderbird v78 profile
 cleared out contents of  ~/.thunderbird/xggwhyu0.default-release
-bash $CP/Thunderbird/LastVersion.sh
+bash $CrPl/Thunderbird/LastVersion.sh
 rsync -irtv --delete /mnt/WD1001FALS/rsnapshot/daily.3/localhost/mnt/SD480GSSDPlus/Dropbox/JH/TP.default-release/ $DROPBOX/JH/TP-default-release
 ## lm_sensors
 sudo sensors-detect
@@ -665,7 +664,7 @@ df -h /  shows it's using  19G
 ###
 journalctl --disk-usage  reports "Archived and active journals take up 2.2G in the file system."
 ## symlinks in /usr
-sudo find /usr -type l -ls > $machBld/usr-symlinks.txt
+sudo find /usr -type l -ls > $machLg/usr-symlinks.txt
 ## DualBIOS
 1st System Fan Fail Warning (was  Disabled) Enabled
 2nd System Fan Fail Warning (was  Disabled) Enabled
@@ -925,7 +924,7 @@ nvim 05-exports.sh
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 bash 36-symlinks-sshd.sh
-rm -r ~/texmf/tex/latex/jo; ln -s $CP/LaTeX/jo ~/texmf/tex/latex/jo
+rm -r ~/texmf/tex/latex/jo; ln -s $CrPl/LaTeX/jo ~/texmf/tex/latex/jo
 rm ~/texmf/tex/latex/m4p/headings.sty
 rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
@@ -934,7 +933,7 @@ ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $ARCHBUILDS/jo/TS/locks.sh ~/Arch/locks.sh
-ln -sf $CP/SSHconfig/sbMb ~/.ssh/config
+ln -sf $CrPl/SSHconfig/sbMb ~/.ssh/config
 rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
 sudo bash 37-as_root-symlink_fonts.sh
 ## move swap, for growing /
@@ -1100,12 +1099,12 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ## fsck'd WD1001FALS
 sudo mount /dev/sdd1 /mnt/WD1001FALS
 ## xdg-open .tiff
-handlr get .tiff  reports  gimp.desktop  so  handlr set .tiff feh.desktop
+handlr get .tiff  reports  gimp.desktop  so  bash $bSc/4-whenWM/resourceHandler.sh
 ## xdg-open .log
 handlr get .log  reports  no handlers found for 'text/x-log'
-  handlr set .log gvim.desktop
+  bash $bSc/4-whenWM/resourceHandler.sh
 ## xdg-open .sh
-handlr get .sh  reports  vim.desktop  so  handlr set .sh gvim.desktop
+handlr get .sh  reports  vim.desktop  so  bash $bSc/4-whenWM/resourceHandler.sh
 ## Updates
   (2/2) Warn about old perl modules
   WARNING: '/usr/lib/perl5/5.34' contains data from at least 2 packages which will NOT be used by the installed perl interpreter.
@@ -1115,7 +1114,7 @@ pacman -Qqo '/usr/lib/perl5/5.34'
   perl-data-printer
 so re-installed them
 ## xdg-open .tex
-handlr get .tex  reports  vim.desktop  so  handlr set .tex gvim.desktop
+handlr get .tex  reports  vim.desktop  so  bash $bSc/4-whenWM/resourceHandler.sh
 ## jo's pw failing
 fixed by a reboot
 ## move Dropbox to SDU3D1TB
@@ -1137,12 +1136,12 @@ bash anytime/symlinks-jo-0.sh
 bash 31-symlinks-Openbox.sh
 reboot to get $machBld  for  bash 36-symlinks-sshd.sh
 rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
-rm -r ~/texmf/tex/latex/jo; ln -s $CP/LaTeX/jo ~/texmf/tex/latex/jo
+rm -r ~/texmf/tex/latex/jo; ln -s $CrPl/LaTeX/jo ~/texmf/tex/latex/jo
 ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
 ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
 ln -sf $ARCHBUILDS/jo/TS/locks.sh ~/Arch/locks.sh
-ln -sf $CP/SSHconfig/sbMb ~/.ssh/config
+ln -sf $CrPl/SSHconfig/sbMb ~/.ssh/config
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $tmx/tmux.conf ~/.tmux.conf
@@ -1171,7 +1170,7 @@ replaced WD30EZRZ  in  ~/.thunderbird/profiles.ini
 conversion failed
 worked again normally after a reboot
 ## xdg-open .pl
-handlr get .pl  reports  bluefish.desktop  so  handlr set .pl gvim.desktop
+handlr get .pl  reports  bluefish.desktop  so  bash $bSc/4-whenWM/resourceHandler.sh
 ## HP ENVY 5532 connected to OPPO A76
 hp-makeuri 192.168.61.10
   CUPS URI: hp:/net/ENVY_5530_series?ip=192.168.61.10
@@ -1199,14 +1198,13 @@ hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control 
 ## celt
 sudo pacman -Rs celt
 ## xdg-open .xml
-handlr get .xml  reports  google-chrome.desktop  so  handlr set .xml gvim.desktop
+handlr get .xml  reports  google-chrome.desktop  so  bash $bSc/4-whenWM/resourceHandler.sh
 ## xdg-open .mediawiki
 handlr get .mediawiki  handlr add .mediawiki gvim.desktop
 ## xdg-open .ppm
 handlr get .ppm  reports  org.nomacs.ImageLounge.desktop
 ## xdg-open .lua
-handlr get .lua  reports  no handlers found for 'text/x-lua'
-  handlr set .lua gvim.desktop
+handlr get .lua  reports  no handlers found for 'text/x-lua'  bash $bSc/4-whenWM/resourceHandler.sh
 ## HP ENVY 5532 IP Address changed to 96.10
 hp-setup -r > Select > Remove
 hp-setup 192.168.96.10 > Next > Add Printer
@@ -1231,12 +1229,16 @@ sudo grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
 bluefish > alt+e > s > change something, close Bluefish for  bluefish > ... reset that change
 ## xdg-open .py
 handlr get .py  reports  no handlers found for 'text/x-python3'
-  handlr set .py gvim.desktop
+  bash $bSc/4-whenWM/resourceHandler.sh
 ## Updates
   error: linux: signature from "Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>" is invalid
   :: File /var/cache/pacman/pkg/linux-5.19.4.arch1-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
   Do you want to delete it? [Y/n]
-fixed on next run of  $bs/anytime/updates.sh
+fixed on next run of  $bSc/anytime/updates.sh
+## xdg-open .mkv
+handlr get .mkv  reports  pqiv.desktop  so  bash $bSc/4-whenWM/resourceHandler.sh
+## xdg-open .mp4
+handlr get .mp4  reports  pqiv.desktop  so  bash $bSc/4-whenWM/resourceHandler.sh
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

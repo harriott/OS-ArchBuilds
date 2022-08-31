@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# bash $bs/anytime/symlinks-jo-0.sh
+# bash $bSc/anytime/symlinks-jo-0.sh
 
 set -e
 
@@ -41,7 +41,7 @@ ln -sf $Openbox/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
 if [[ $myDrA == 1 ]]; then
   ln -sf $machBld/jo/gitconfig ~/.gitconfig
 else
-  ln -sf $bs/2-to_X/1-gitconfig ~/.gitconfig
+  ln -sf $bSc/2-to_X/1-gitconfig ~/.gitconfig
 fi
 # points to further convigurations on  $ITstack
 # e -la ~/.gitconfig
@@ -79,7 +79,7 @@ ln -sf $ARCHBUILDS/jo/ranger ~/.config/ranger
 
 #=> SSH config
 if [[ $myDrA == 1 ]]; then
-  ln -sf $CP/SSHconfig/$host ~/.ssh/config
+  ln -sf $CrPl/SSHconfig/$host ~/.ssh/config
 fi
 
 #=> tmux

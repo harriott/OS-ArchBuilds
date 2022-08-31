@@ -1,7 +1,7 @@
 #!/bin/sh
 # vim: ft=sh sw=2:
 
-# symlinked in  $bs/anytime/symlinks-jo.sh  to  /home/jo/.bashrc-console
+# symlinked in  $bSc/anytime/symlinks-jo.sh  to  /home/jo/.bashrc-console
 # sourced by  $Bash/bash_profile  &  $machBld/jo/Bash/bashrc
 # useful also in Console as user
 
@@ -156,7 +156,7 @@ fdtsKS () {
 #==> Git
 alias ga='git add'
 alias gis='git status -u'
-export BFG=$CP/bfg-1.13.0.jar
+export BFG=$CrPl/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
 #===> time-sorted lists of files

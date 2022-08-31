@@ -1,5 +1,5 @@
 
-# symlinked in  $bs/anytime/symlinks-jo.sh  to  ~/.xbindkeysrc
+# symlinked in  $bSc/anytime/symlinks-jo.sh  to  ~/.xbindkeysrc
 
 # mouse wheel click acts as double left click
 "/usr/bin/xte 'usleep 10000' 'mouseclick 1' 'mouseclick 1'"
