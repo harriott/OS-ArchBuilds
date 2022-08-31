@@ -12,8 +12,8 @@ trap read debug  # puts a read request after each executable line
 # #=> 0 Intel DDX driver
 # sudo pacman -S xf86-video-intel  # will need to reboot
 
-#=> 0 generate 00-keyboard.conf
-sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
+# #=> 0 generate 00-keyboard.conf
+# sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
 
 #=> 0 mictray
 gAUR mictray
