@@ -155,10 +155,6 @@ lsblk  reveals  K8GBDTIG3  to be  /dev/sdb1, so  sudo mount /dev/sdb1 /bs
   sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /bs
 ## more
 ## waiting
-Dateutils
-emacs
-terminal-colors
-xorg-xev
 ### locale.gen.pacnew
 bash $bSc/anytime/as_root-pacnews.sh
 # fcron
