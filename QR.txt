@@ -328,15 +328,16 @@ kill -9 <tab>
 ls -l $(fzf -m)
 unalias **<tab>
 
-## pagers
-mo <file>  # ? lists the limited moar commands
-
-### less pager
+## pager - less
 less <file>
 
-#### commands
+### commands
 h -> help
 j,k -> down/up
+
+## pager - moar
+mo <file>  # ? lists the limited moar commands
+moar -h
 
 # fonts
 cd /usr/share/fonts; $ fd -L consolas
@@ -656,8 +657,11 @@ pass cz/GmailAPI/token-expire
 
 # Rust
 cargo version
-dym better
 rustup update
+
+## didyoumean
+dym better
+i dym
 
 # scripting
 kill -9 "$(pidof perl)"
