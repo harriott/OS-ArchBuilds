@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-set -ev
+set -v
 trap read debug  # puts a read request after each executable line
 
 # gAUR  is defined in $Bash/bashrc-console
