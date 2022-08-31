@@ -153,10 +153,9 @@ sudo pacman -Rs lshw
 bash 2-grabGraphicsCardDetails.sh
 lsblk  reveals  K8GBDTIG3  to be  /dev/sdb1, so  sudo mount /dev/sdb1 /bs
   sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /bs
-## more
-## waiting
-### locale.gen.pacnew
+## locale.gen.pacnew
 bash $bSc/anytime/as_root-pacnews.sh
+## waiting
 # fcron
 # MCEs at start
 [Hardware Error]: CPU 0: Machine Check: 0 Bank 4: a600000000020408

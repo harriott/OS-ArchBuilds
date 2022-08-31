@@ -105,10 +105,6 @@ trap read debug  # puts a read request after each executable line
 # #==> xman
 # pacman -S xorg-xman
 
-# #=> 1 when X 1 IO hw - libva-mesa-driver
-# # - for  ATI Radeon HD 4870
-# pacman -S libva-mesa-driver
-
 # #=> 1 when X 1 IO hw
 
 # #==> Wacom Tablet

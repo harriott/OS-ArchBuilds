@@ -688,6 +688,7 @@ bm <command>  # batman - only good in full-screen
 cat /proc/cpuinfo
 GRUB (GRand Unified Bootloader)
 i hier
+i localectl
 
 ## groups
 cat /etc/group  # list all groups on the system

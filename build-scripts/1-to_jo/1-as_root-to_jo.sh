@@ -177,7 +177,7 @@ trap read debug  # puts a read request after each executable line
 # pacman -S glances
 
 # # Mesa demos
-# pacman -S mesa-demos
+# pacman -S mesa-demos  # probably brings in  mesa
 
 # # meson, for auracle later
 # pacman -S meson
