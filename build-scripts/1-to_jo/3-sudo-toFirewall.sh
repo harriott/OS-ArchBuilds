@@ -5,8 +5,7 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 #=> 0 $ARCHBUILDS
 sd=$(dirname "${BASH_SOURCE[0]}")
 . ${sd%/*}/Bash/export-storage
-echo "\$ARCHBUILDS is $ARCHBUILDS"
-read -p "- looks good?"
+read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
 #=> 1 go slow
 set -ev  # quits on error, prints each statement here, including comments

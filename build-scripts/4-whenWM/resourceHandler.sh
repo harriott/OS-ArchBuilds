@@ -34,6 +34,7 @@ handlr set .mkv mpv.desktop
 handlr set .mp4 mpv.desktop
 handlr set .py gvim.desktop
 handlr set .sh gvim.desktop
+handlr set .svg gpicview.desktop
 handlr set .tex gvim.desktop
 handlr set .tiff feh.desktop
 handlr set .txt gvim.desktop

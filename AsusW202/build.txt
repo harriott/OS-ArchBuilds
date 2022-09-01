@@ -163,6 +163,7 @@ bash $bSc/3-toWM/3-IO_HW.sh
 bash $bSc/anytime/cloneArchBuilds.sh
 bash $bSc/3-toWM/4-softwares-for_nnn.sh
 ## waiting
+Vifm
 # fcron
 # MCEs at start
 [Hardware Error]: CPU 0: Machine Check: 0 Bank 4: a600000000020408

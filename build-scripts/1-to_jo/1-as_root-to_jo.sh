@@ -2,8 +2,7 @@
 
 #=> 0 $ARCHBUILDS
 # check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
-echo "\$ARCHBUILDS is $ARCHBUILDS"
-read -p "- looks good?"
+read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
 #=> 1 go slow
 set -v  # prints each statement here, including comments
@@ -66,6 +65,9 @@ trap read debug  # puts a read request after each executable line
 
 # # tree
 # pacman -S tree
+
+# # Vifm
+# pacman -S vifm
 
 # #=> 2 hd
 # # hdparm

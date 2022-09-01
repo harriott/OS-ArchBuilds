@@ -14,8 +14,7 @@ if [ ! -f /etc/pacman.d/mirrorlist.pacnew ]; then echo "no mirrorlist.pacnew"; e
 #=> 1 check $ARCHBUILDS
 set -v  # prints each statement here, including comments
 # check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
-echo "\$ARCHBUILDS is $ARCHBUILDS"
-read -p "- looks good?"
+read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
 #=> 2 mirrorlist
 rm /etc/pacman.d/mirrorlist.pacnew

@@ -27,6 +27,7 @@ diskus
 dua [i]
 e
 MV(1)
+n [directory]
 pygmentize -h
 rm -r /mnt/SDU3D1TB/.Trash-1000
 rm -r /mnt/ST4000VN008/.Trash-1000
@@ -215,6 +216,13 @@ rg -ttex 'WLR'
 rg -ttex '\\parindent'
 rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
 rg -ttex ^%%
+
+## Vifm
+/usr/share/vifm/vifm-help.txt
+/usr/share/vifm/vim-doc/doc/vifm-app.txt
+/usr/share/vifm/vim-doc/doc/vifm-lua.txt
+feh -F $cITh/CP/vifm-v0.12-builtin-normal.png &
+~/.config/vifm/vifmrc
 
 # Bash
 im time
@@ -694,6 +702,8 @@ cat /proc/cpuinfo
 GRUB (GRand Unified Bootloader)
 i hier
 i localectl
+r $ARCHBUILDS $ulLinux/Arch
+vifm $ARCHBUILDS $ulLinux/Arch
 
 ## groups
 cat /etc/group  # list all groups on the system
@@ -704,11 +714,8 @@ gio mime
 handlr -h
 handlr get .png
 handlr list
-~/.config/mimeapps.list
-
-### mimeo
-/home/jo/.config/mimeapps.list  # add mimetypes here
 mimeo -m <fileToOpen>  # reports mimetype
+~/.config/mimeapps.list  # add mimetypes here
 
 ## monitoring
 btop

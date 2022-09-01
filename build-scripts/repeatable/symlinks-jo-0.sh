@@ -61,6 +61,10 @@ sudo ln -sf $cITh/CP/LanguageTool /usr/share/java/LanguageTool
 ln -sf $ARCHBUILDS/jo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
   update-mime-database ~/.local/share/mime
 
+#=> mimeapps.list
+[ $host = 'i34G1TU02' ] && ln -sf $machBld/jo/mimeappsList ~/.config/mimeapps.list
+# e -la ~/.config/mimeapps.list
+
 #=> nanorc
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
 

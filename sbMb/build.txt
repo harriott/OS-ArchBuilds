@@ -1239,6 +1239,8 @@ fixed on next run of  $bSc/anytime/updates.sh
 handlr get .mkv  reports  pqiv.desktop  so  bash $bSc/4-whenWM/resourceHandler.sh
 ## xdg-open .mp4
 handlr get .mp4  reports  pqiv.desktop  so  bash $bSc/4-whenWM/resourceHandler.sh
+## waiting
+Vifm
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

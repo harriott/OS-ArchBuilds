@@ -154,6 +154,8 @@ gpg --recv-keys 12C6F735F7A9A519
 sudo pacman -Rs celt
 ## TL-WN725N to Jo-X10II extremely slow
 normal with Jo-OPPO-A76
+## xdg-open .svg
+mimeo -m .svg  reports  image/svg+xml
 ## waiting
 # fcron
 fcrontab -l

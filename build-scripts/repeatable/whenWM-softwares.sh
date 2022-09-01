@@ -78,10 +78,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> GPicView
-# sudo pacman -S gpicview
-# gpicview  # Preferences > Automatically save
-# true
+#=> GPicView
+# Menu > Graphics > Image Viewer
+sudo pacman -S gpicview
+gpicview  # Preferences > Automatically save
+true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick

@@ -4,7 +4,7 @@
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 ARCHBUILDS
-. 05-exports.sh
+. ../dusty/exports.sh
 
 # #=> 0 rsnapshot two-minute-test 0
 # read -p "Have you switched to  rsnapshot-minuteTest.conf?"

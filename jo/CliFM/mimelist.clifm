@@ -1,8 +1,8 @@
 
 # JH
-# created on first invocation of  clifm, so
-#  nvim -O /usr/share/clifm/mimelist.clifm $ARCHBUILDS/jo/clifm/keybindings.clifm -c 'windo difft'
-#  nvim -O $ARCHBUILDS/jo/clifm/mimelist.clifm ~/.config/clifm/profiles/default/mimelist.clifm -c 'windo difft'
+# (re)created by  clifm, so
+#  nvim -O /usr/share/clifm/mimelist.clifm $ARCHBUILDS/jo/CliFM/mimelist.clifm -c 'windo difft'
+#  nvim -O $ARCHBUILDS/jo/CliFM/mimelist.clifm ~/.config/clifm/profiles/default/mimelist.clifm -c 'windo difft'
 #  cp $ARCHBUILDS/jo/CliFM/mimelist.clifm ~/.config/clifm/profiles/default/mimelist.clifm
 
 # :%s/\$EDITOR;\$VISUAL/\$VISUAL;\$EDITOR
@@ -30,16 +30,30 @@
 # If %f is not specified, the file name will be added to the end of the command. Ex: 'mpv --terminal=no' -> 'mpv --terminal=no FILE'.
 
 # Running the opening application in the background:
-# For GUI applications: APP %f &
-# For terminal applications: TERM -e APP %f &
-# Replace 'TERM' and 'APP' by the corresponding values. The -e option might vary depending on the terminal emulator used (TERM).
+# For GUI applications:
+#    APP %f &
+# For terminal applications:
+#    TERM -e APP %f &
+# Replace 'TERM' and 'APP' by the corresponding values. The -e option
+# might vary depending on the terminal emulator used (TERM)
 
-# To silence STDERR and/or STDOUT use !E and !O respectively (they could be used together). Examples:
-# Silence STDERR only and run in the foreground: mpv %f !E
-# Silence both (STDERR and STDOUT) and run in the background: mpv %f !EO &
-# or mpv %f !E !O &
+# Note on graphical applications: If the opening application is already
+# running, the file will be opened, usually in a new tab, and CliFM won't
+# wait for the file to be closed (because the procecss already returned).
+# To avoid this, instruct the application to run a new instance. For example:
+# geany -i, gedit -s, kate -n, pluma --new-window, and so on.
 
-# Environment variables could be used as well. Example: X:text/plain=$TERM -e $EDITOR %f &;$VISUAL;nano;vi.
+# To silence STDERR and/or STDOUT use !E and !O respectivelly (they could
+# be used together). Examples:
+# Silence STDERR only and run in the foreground:
+#    mpv %f !E
+# Silence both (STDERR and STDOUT) and run in the background:
+#    mpv %f !EO &
+# or
+#    mpv %f !E !O &
+
+# Environment variables could be used as well. Example:
+# X:text/plain=$EDITOR %f &;$VISUAL;nano;vi
 
 ###########################
 #  File names/extensions  #
@@ -112,4 +126,3 @@ X:application/x-bittorrent=rtorrent;transimission-gtk;transmission-qt;deluge-gtk
 
 # Fallback to another resource opener as last resource
 .*=xdg-open;mimeo;mimeopen -n;whippet -m;open;linopen;
-

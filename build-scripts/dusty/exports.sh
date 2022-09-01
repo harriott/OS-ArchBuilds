@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $bSc/05-exports.sh
+# only now used by  $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
 
 #=> 0 ARCHBUILDS
 # 1 in root

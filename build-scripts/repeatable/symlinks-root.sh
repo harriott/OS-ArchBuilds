@@ -6,8 +6,7 @@ set -e
 #=> 0 $ARCHBUILDS
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../../Bash/export-storage
-echo "\$ARCHBUILDS is $ARCHBUILDS"
-read -p "- looks good?"
+read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
 #=> 1 make root symlinks
 ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
