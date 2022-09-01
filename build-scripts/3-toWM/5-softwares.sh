@@ -10,15 +10,15 @@ trap read debug  # puts a read request after each executable line
 
 # gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
-#=> ansiweather
-gAUR ansiweather
-nvim -c "silent! /fcambus" PKGBUILD
-makepkg -sic
-true
+# #=> ansiweather
+# gAUR ansiweather
+# nvim -c "silent! /fcambus" PKGBUILD
+# makepkg -sic
+# true
 
 #=> audio 0 ALSA - PNMixer
 gAUR pnmixer
-gvim -c "silent! /pnmixer-v" PKGBUILD
+nvim -c "silent! /pnmixer-v" PKGBUILD
 makepkg -sic
 # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 true
