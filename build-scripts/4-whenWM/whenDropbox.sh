@@ -6,6 +6,13 @@
 #=> 0 check $ARCHBUILDS
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
+#=> 1 ALSA - PNMixer
+gAUR pnmixer
+nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
+makepkg -sic
+# now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
+true
+
 #=> 1 Dropbox vimfiles
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim  # file ~/.vim
 

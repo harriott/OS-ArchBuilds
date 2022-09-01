@@ -16,13 +16,6 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> audio 0 ALSA - PNMixer
-gAUR pnmixer
-nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
-makepkg -sic
-# now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
-true
-
 #=> audio 1 PulseAudio - pavucontrol
 pacman -S pavucontrol  # for pnmixer
 sed -i '/VolumeControlCommand/ s/=.*/=pavucontrol/' /home/jo/.config/pnmixer/config

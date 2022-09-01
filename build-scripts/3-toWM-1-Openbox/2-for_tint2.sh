@@ -1,4 +1,5 @@
 #!/bin/bash
+# vim: fdl=1:
 
 # bash <thisfile>.sh
 set -v  # prints each statement here, including comments
@@ -13,7 +14,8 @@ gvim -c "silent! /https:\/\/git.sr.ht\/~steef\/snixembed" PKGBUILD
 makepkg -sic  # takes a while
 
 #=> tint2rc
-nvim -O /etc/xdg/tint2/tint2rc ~/.config/tint2/tint2rc $Openbox/tint2rc -c "windo difft"
+nvim -O /etc/xdg/tint2/tint2rc $Openbox/tint2rc -c "windo difft"
+nvim -O $Openbox/tint2rc ~/.config/tint2/tint2rc -c "windo difft"
 killall -SIGUSR1 tint2  # reloads tint2rc
 # - should also be done if  tint2  has been updated
 

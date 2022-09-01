@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# bash 37-as_root-symlink_fonts.sh
+# bash $bSc/anytime/as_root-symlink_fonts.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 

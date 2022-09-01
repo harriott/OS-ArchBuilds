@@ -509,6 +509,7 @@ rm -r ~/.thumbnails/normal/*
 xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 
 ## [n]sxiv
+i nsxiv
 ns  # see $Bash/bashrc-wm
 rm -r ~/.cache/sxiv/*
 

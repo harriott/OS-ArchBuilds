@@ -3,7 +3,7 @@
 # full documentation of the configuration options.
 #
 # my changes - JH
-#  bash $bSc/34-softwares-forOpenbox.sh
+#  $bSc/3-toWM-1-Openbox/2-for_tint2.sh
 #  tint2 17.0.1-1
 #
 #-------------------------------------
@@ -16,6 +16,8 @@ border_width = 0
 border_sides = TBLR
 background_color = #444444 60
 # - less black, rending visible  cbatticon  &  MicTray  icon  - JH
+background_color = #483C32 60
+# - Taupe - JH
 border_color = #000000 30
 background_color_hover = #000000 60
 border_color_hover = #000000 30
