@@ -18,7 +18,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> audio 0 ALSA - PNMixer
 gAUR pnmixer
-nvim -c "silent! /pnmixer-v" PKGBUILD
+nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
 makepkg -sic
 # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 true
