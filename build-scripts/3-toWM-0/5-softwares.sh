@@ -16,38 +16,35 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> bfg
-gAUR bfg
-nvim -c "silent! /madgag" PKGBUILD
-makepkg -sic  # jre-openjdk
+# #=> bfg
+# gAUR bfg
+# nvim -c "silent! /madgag" PKGBUILD
+# makepkg -sic  # jre-openjdk
 
-#=> cheat
-gdAUR cheat
-nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
-makepkg -sic
-sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
+# #=> cheat
+# gdAUR cheat
+# nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
+# makepkg -sic
+# sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
-#=> CUPS service
-sudo pacman -S cups
-sudo systemctl enable cups.service --now
+# #=> CUPS service
+# sudo pacman -S cups
+# sudo systemctl enable cups.service --now
 
-#=> devtools
-# mkdir /mnt/SD480GSSDPlus/chroot
-sudo pacman -S devtools  # for package managers
+# #=> devtools
+# # mkdir /mnt/SD480GSSDPlus/chroot
+# sudo pacman -S devtools  # for package managers
 
-#=> didyoumean
-# provides  dym
-rustup update
-gAUR didyoumean
-nvim -c "silent! /hisbaan\/didyoumean" PKGBUILD
-makepkg -sic  # takes ages
-true
+# #=> didyoumean
+# # provides  dym
+# rustup update
+# gAUR didyoumean
+# nvim -c "silent! /hisbaan\/didyoumean" PKGBUILD
+# makepkg -sic  # takes ages
+# true
 
 #=> diskonaut
-gAUR diskonaut
-nvim -c "silent! /imsnif" PKGBUILD
-makepkg -sic  # takes a long time
-true
+sudo pacman -S diskonaut  # takes a long time
 
 #=> Dust
 # (after Rust Toolchain)
