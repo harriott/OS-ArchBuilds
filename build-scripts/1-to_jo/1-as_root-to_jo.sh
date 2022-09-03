@@ -1,8 +1,11 @@
 #!/bin/bash
 
+# sudo bash $bSc/1-to_jo/1-as_root-to_jo.sh
+
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 $ARCHBUILDS
+sd=$(dirname "${BASH_SOURCE[0]}"); gp=${sd%/*}; . ${gp%/*}/Bash/export-storage
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
 #=> 1 go slow
