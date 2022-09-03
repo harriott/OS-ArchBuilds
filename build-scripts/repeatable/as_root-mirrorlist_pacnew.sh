@@ -12,11 +12,13 @@ if [ ! -f /etc/pacman.d/mirrorlist.pacnew ]; then echo "no mirrorlist.pacnew"; e
 . /home/jo/.export-storage
 
 #=> 1 check $ARCHBUILDS
-set -v  # prints each statement here, including comments
 # check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
-#=> 2 mirrorlist
+#=> 2 verbose
+set -v  # prints each statement here, including comments
+
+#=> 3 mirrorlist
 rm /etc/pacman.d/mirrorlist.pacnew
-. $bSc/anytime/as_root-reflector.sh
+. $bSc/repeatable/as_root-reflector.sh
 
