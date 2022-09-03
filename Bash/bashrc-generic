@@ -49,7 +49,6 @@ startxa () { ln -sf $ARCHBUILDS/jo/xinitrcs/awesome ~/.xinitrc; }
 startxo () { ln -sf $ARCHBUILDS/jo/xinitrcs/openbox ~/.xinitrc; }
 
 #=> better file managing
-alias bd='bat -d'  # showing changes from git index
 alias e='exa'
 alias l='ls --color=auto'
 alias mo='moar'
@@ -69,7 +68,10 @@ r () {
 }  # r "$DROPBOX/CAM-best/Classic Yo-Yo"
 
 #==> bat
-alias bm='batman'
+alias b='bat'  # syntax highlit cat
+alias bd='bat -d'  # showing changes from git index
+alias bm='batman'  # better manual (in wide enough terminal)
+alias pb='prettybat'  # tidied code
 export BAT_PAGER=less
 
 #==> broot

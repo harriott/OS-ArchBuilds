@@ -3,6 +3,7 @@ vim: ft=build nospell:
 commands in this QuickReference work in my Arch install
  more generally, see $onGH/misc/linux/QR.txt
 
+bm  # (in a wide enough terminal) fuzzy search for manuals
 copyq help | mo
 i datediff
 gspdfpng
@@ -21,11 +22,11 @@ systab.orig  # contains bootrun tabs to catch
 sudo cat /var/spool/fcron/jo.orig
 
 # file manage
-bat <file>
 C $onGH/misc
 diskus
 dua [i]
 e
+fd . $ARCHBUILDS | entr notify-send 'a file in $ARCHBUILDS was modified'
 MV(1)
 n [directory]
 pygmentize -h
@@ -134,6 +135,7 @@ fd -H  # --hidden
 fd -HI --changed-within 1h
 fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
+fd . $bSc
 sharkdp/fd
 
 ### git config's
@@ -321,10 +323,7 @@ find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
 find . -type l -ls
 find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
-## fuzzy
-find . -type f | fzy  # selecta
-
-### fzf
+## fzf
 <someCommand> Ctrl-t - gets the selected node on the command-line
 Alt+c  # to change directory
 bm fzf
@@ -337,6 +336,10 @@ kill -9 <tab>
 ls -l $(fzf -m)
 unalias **<tab>
 
+## fzy
+find . -type f | fzy  # selecta
+i fzy
+
 ## pager - less
 less <file>
 
@@ -347,6 +350,10 @@ j,k -> down/up
 ## pager - moar
 mo <file>  # ? lists the limited moar commands
 moar -h
+
+# encoding
+b <codeFile>  # syntax'd cat
+pb <codeFile>  # also reformatted
 
 # fonts
 cd /usr/share/fonts; $ fd -L consolas

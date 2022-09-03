@@ -157,6 +157,9 @@ normal with Jo-OPPO-A76
 ## xdg-open .svg
 mimeo -m .svg  reports  image/svg+xml
 ## waiting
+bat-extras
+entr
+prettier
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

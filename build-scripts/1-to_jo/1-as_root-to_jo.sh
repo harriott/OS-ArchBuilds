@@ -1,7 +1,6 @@
 #!/bin/bash
 
 #=> 0 $ARCHBUILDS
-# check  $ARCHBUILDS/Bash/export-storage  has leveraged  /ArchBuilds
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
 #=> 1 go slow
@@ -69,7 +68,7 @@ trap read debug  # puts a read request after each executable line
 # # Vifm
 # pacman -S vifm
 
-# #=> 2 hd
+# #=> 2 hd 0
 # # hdparm
 # pacman -S hdparm
 
@@ -82,6 +81,16 @@ trap read debug  # puts a read request after each executable line
 # # weekly TRIM
 # # systemctl status fstrim.timer
 # systemctl enable fstrim.timer --now
+
+#=> 2 hd 1
+# diskus
+pacman -S diskus
+
+# dua-cli
+pacman -S dua-cli  # dua  for SSDs
+
+# gdu
+pacman -S gdu
 
 # #=> 2 info
 # # Bashtop
@@ -187,9 +196,11 @@ trap read debug  # puts a read request after each executable line
 # # Pipe Viewer
 # pacman -S pv
 
-# #=> 2 various
-# # GNOME Terminal
+#=> 2 system - bpytop
+# supersedes  Bashtop
+pacman -S bpytop
 
+# #=> 2 various
 # # languagetool
 # pacman -S languagetool  # for the GUI
 
@@ -218,8 +229,11 @@ trap read debug  # puts a read request after each executable line
 # # web-ish
 # pacman -S arch-wiki-docs lynx w3m
 
-#=> 2 various - GNOME Terminal
-pacman -S gnome-terminal
+#=> 2 various - Emacs
+pacman -S emacs
+
+# #=> 2 various - GNOME Terminal
+# pacman -S gnome-terminal
 
 # #=> 2 swappiness to 10
 # # check the default
@@ -230,26 +244,26 @@ pacman -S gnome-terminal
 # echo "vm.swappiness=00" > /etc/sysctl.d/99-sysctl.conf
 # cat /etc/sysctl.d/99-sysctl.conf
 
-#=> 2 users
-# activate wheel group
-sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
-grep wheel /etc/sudoers
-# check that  /etc/sudoers  parses OK
-visudo -c -f /etc/sudoers
+# #=> 2 users
+# # activate wheel group
+# sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
+# grep wheel /etc/sudoers
+# # check that  /etc/sudoers  parses OK
+# visudo -c -f /etc/sudoers
 
-# User jo, creating the home directory and adding to group wheel
-useradd -m -G wheel jo
-until passwd jo; do echo "try again"; done
-cat /etc/passwd
+# # User jo, creating the home directory and adding to group wheel
+# useradd -m -G wheel jo
+# until passwd jo; do echo "try again"; done
+# cat /etc/passwd
 
-#=> 3 doas
-pacman -S opendoas
-cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
-chmod -c 0400 /etc/doas.conf
-# after a reboot, test with  doas updatedb
+# #=> 3 doas
+# pacman -S opendoas
+# cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
+# chmod -c 0400 /etc/doas.conf
+# # after a reboot, test with  doas updatedb
 
-#=> 3 Rootkit Hunter
-pacman -S rkhunter
+# #=> 3 Rootkit Hunter
+# pacman -S rkhunter
 
 #=> 4 end
 # you're ready to reboot and login to jo

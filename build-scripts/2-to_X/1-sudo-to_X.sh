@@ -11,10 +11,7 @@ read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 set -ev  # quits on error, prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 to X
-# # really needed
-
-# #==> prepare for X
+# #=> 0 prepare for X
 # # Xorg
 # pacman -S xorg-server
 
@@ -27,9 +24,44 @@ trap read debug  # puts a read request after each executable line
 # # xsel
 # pacman -S xsel
 
-# #==> updatedb.conf
+# #=> 0 prepare for X - updatedb.conf
 # cp $machBld/etc/updatedb.conf /etc/updatedb.conf
 # updatedb
+
+#=> 0 softwares
+
+#==> encoding
+# entr (also used by batwatch)
+pacman -S entr
+
+# # NeoMutt
+# pacman -S neomutt
+
+#==> encoding - for bat-extras
+# prettier
+pacman -S prettier
+
+# python-black
+pacman -S python-black
+
+# shfmt
+pacman -S shfmt
+
+# #==> file manage - bat-extras
+# sudo pacman -S bat-extras  # brings in bat (used in  fzf --preview)
+
+# #==> file manage - fzy
+# pacman -S fzy
+
+# #==> file manage - rsnapshot install
+# pacman -S rsnapshot
+
+# #==> networking
+# # msmtp-mta
+# pacman -S msmtp-mta  # brings in  msmtp
+
+# # OpenSSH
+# pacman -S openssh
 
 #=> 1 when X 0
 
@@ -55,31 +87,12 @@ trap read debug  # puts a read request after each executable line
 # # PulseAudio
 # pacman -S pulsemixer
 
-# #==> file manage
-# # fzy
-# pacman -S fzy
-
-# # shfmt (for bat-extras-git)
-# pacman -S shfmt
-
-# #==> file manage - rsnapshot install
-# pacman -S rsnapshot
-
 # #==> networking
 # # DNS Lookup utility
 # pacman -S bind-tools
 
 # # Chromium
 # pacman -S chromium
-
-# # msmtp-mta
-# pacman -S msmtp-mta  # brings in  msmtp
-
-# # NeoMutt
-# pacman -S neomutt
-
-# # OpenSSH
-# pacman -S openssh
 
 # #==> networking - OpenSSH - grab default sshd_config
 # g=/home/jo/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; sudo chown jo:jo $g

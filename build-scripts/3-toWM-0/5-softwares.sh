@@ -16,17 +16,10 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> bat
-sudo pacman -S bat  # for  fzf --preview
-
 #=> bfg
 gAUR bfg
 nvim -c "silent! /madgag" PKGBUILD
 makepkg -sic  # jre-openjdk
-
-#=> bpytop
-# supersedes  Bashtop
-sudo pacman -S bpytop
 
 #=> cheat
 gdAUR cheat
@@ -40,7 +33,7 @@ sudo systemctl enable cups.service --now
 
 #=> devtools
 # mkdir /mnt/SD480GSSDPlus/chroot
-sudo pacman -S devtools
+sudo pacman -S devtools  # for package managers
 
 #=> didyoumean
 # provides  dym
@@ -56,18 +49,9 @@ nvim -c "silent! /imsnif" PKGBUILD
 makepkg -sic  # takes a long time
 true
 
-#=> diskus
-sudo pacman -S diskus
-
-#=> dua-cli
-sudo pacman -S dua-cli
-
 #=> Dust
 # (after Rust Toolchain)
 sudo pacman -S dust
-
-#=> Emacs
-sudo pacman -S emacs
 
 #=> fonts - figlet-fonts
 # brings in figlet
@@ -104,9 +88,6 @@ sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
 # 2 enable systemd timer
 sudo systemctl enable fangfrisch.timer --now
 
-#=> gdu
-sudo pacman -S gdu
-
 #=> libstdc++5-bin
 # GNU Standard C++ Library v3
 # Can't recall what I need it for...
@@ -116,7 +97,7 @@ makepkg -sic
 true
 
 #=> libsixel
-sudo pacman -S libsixel  # for  sixel  graphicsr
+sudo pacman -S libsixel  # for  sixel  graphics
 
 # #=> libva-utils - for sbMb
 # sudo pacman -S libva-utils  # provides  vainfo, for  VA-API checking
@@ -182,7 +163,7 @@ npm config set prefix=$HOME/.npm-global
 npm install -g cspell
 
 #=> Perl modules for JSON
-sudo pacman -S perl-json perl-json-parse perl-json-xs
+sudo pacman -S perl-json perl-json-parse perl-json-xs  # can't recall why...
 
 #=> perl-clone-pp
 # for  perl-data-printer
@@ -236,7 +217,7 @@ sudo pacman -S ttf-croscore
 sudo pacman -S vorbis-tools
 
 #=> whipper
-sudo pacman -S whipper
+sudo pacman -S whipper  # CD ripper
 
 #=> yt-dlp
 sudo pacman -S yt-dlp

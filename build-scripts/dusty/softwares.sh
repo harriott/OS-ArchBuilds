@@ -6,11 +6,8 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> bat-extras 0 install
-sudo pacman -S bat-extras  # brings in bat
-
-#=> bat-extras 1 remove
-sudo pacman -Rs bat-extras
+#=> bat-extras-git remove
+sudo pacman -Rs bat-extras-git
 
 # #=> bdf-unifont 0 install
 # gAUR bdf-unifont
