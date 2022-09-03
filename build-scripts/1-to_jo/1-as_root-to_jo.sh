@@ -1,5 +1,7 @@
 #!/bin/bash
 
+if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
+
 #=> 0 $ARCHBUILDS
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
