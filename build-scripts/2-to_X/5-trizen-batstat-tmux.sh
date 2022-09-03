@@ -17,6 +17,7 @@ nvim -c "silent! /trizen" PKGBUILD
 makepkg -sic
 
 #=> 1 batstat-git
+# battery status
 gdAUR batstat-git
 nvim -c "silent! /xeruf" PKGBUILD
 makepkg -sic

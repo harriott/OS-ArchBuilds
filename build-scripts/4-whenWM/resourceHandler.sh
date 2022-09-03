@@ -21,7 +21,9 @@ trap read debug  # puts a read request after each executable line
 # cd ~
 
 #=> handlr 2 set default handlers
+handlr set .3gp mpv.desktop
 handlr set .conf gvim.desktop
+handlr set .flv mpv.desktop
 handlr set .jpg org.nomacs.ImageLounge.desktop
 handlr set .kdbx org.keepassxc.KeePassXC.desktop
 handlr set .log gvim.desktop
@@ -33,6 +35,7 @@ handlr set .pl gvim.desktop
 handlr set .mkv mpv.desktop
 handlr set .mp4 mpv.desktop
 handlr set .py gvim.desktop
+handlr set .org gvim.desktop
 handlr set .sh gvim.desktop
 handlr set .svg gpicview.desktop
 handlr set .tex gvim.desktop

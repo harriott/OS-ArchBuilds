@@ -125,6 +125,7 @@ i exa
 ## fd
 im fd
 fd -H -t l  # finds symlinks in current directory, broken ones distinguished
+fd --changed-within 3h
 fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
 fd -d1 -td  # depth 1 (current dir), type dir

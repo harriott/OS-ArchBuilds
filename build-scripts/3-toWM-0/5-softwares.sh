@@ -16,12 +16,8 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> audio 1 PulseAudio - pavucontrol
-pacman -S pavucontrol  # for pnmixer
-sed -i '/VolumeControlCommand/ s/=.*/=pavucontrol/' /home/jo/.config/pnmixer/config
-
-#=> bat-extras
-sudo pacman -S bat-extras  # brings in bat
+#=> bat
+sudo pacman -S bat  # for  fzf --preview
 
 #=> bfg
 gAUR bfg

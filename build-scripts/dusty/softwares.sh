@@ -6,6 +6,12 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> bat-extras 0 install
+sudo pacman -S bat-extras  # brings in bat
+
+#=> bat-extras 1 remove
+sudo pacman -Rs bat-extras
+
 # #=> bdf-unifont 0 install
 # gAUR bdf-unifont
 # nvim -c "silent! /unifont" PKGBUILD
