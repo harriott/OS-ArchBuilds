@@ -44,108 +44,108 @@ trap read debug  # puts a read request after each executable line
 # true
 
 #=> diskonaut
-sudo pacman -S diskonaut  # takes a long time
+sudo pacman -S diskonaut
 
-#=> Dust
-# (after Rust Toolchain)
-sudo pacman -S dust
+# #=> Dust
+# # (after Rust Toolchain)
+# sudo pacman -S dust
 
-#=> fonts - figlet-fonts
-# brings in figlet
-gAUR figlet-fonts
-nvim -c "silent! /ftp.figlet.org" PKGBUILD
-makepkg -sic
+# #=> fonts - figlet-fonts
+# # brings in figlet
+# gAUR figlet-fonts
+# nvim -c "silent! /ftp.figlet.org" PKGBUILD
+# makepkg -sic
 
-#=> fonts - fontpreview-git
-gAUR fontpreview-git
-nvim -c "silent! /sdushantha" PKGBUILD
-makepkg -sic
+# #=> fonts - fontpreview-git
+# gAUR fontpreview-git
+# nvim -c "silent! /sdushantha" PKGBUILD
+# makepkg -sic
 
-#=> fonts - gnu-free-fonts
-sudo pacman -S gnu-free-fonts
+# #=> fonts - gnu-free-fonts
+# sudo pacman -S gnu-free-fonts
 
-#=> fonts - lohit-fonts
-gAUR lohit-fonts
-nvim -c "silent! /_fhosted" PKGBUILD
-makepkg -sic
+# #=> fonts - lohit-fonts
+# gAUR lohit-fonts
+# nvim -c "silent! /_fhosted" PKGBUILD
+# makepkg -sic
 
-#=> fonts - ttf-dejavu
-sudo pacman -S ttf-dejavu
+# #=> fonts - ttf-dejavu
+# sudo pacman -S ttf-dejavu
 
-#=> fangfrisch 1 AUR
-gAUR python-fangfrisch
-nvim -c "silent! /rseichter" PKGBUILD
-makepkg -sic
-true
+# #=> fangfrisch 1 AUR
+# gAUR python-fangfrisch
+# nvim -c "silent! /rseichter" PKGBUILD
+# makepkg -sic
+# true
 
-#=> fangfrisch 2 settings
-# 1 create database structure
-sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
+# #=> fangfrisch 2 settings
+# # 1 create database structure
+# sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
 
-# 2 enable systemd timer
-sudo systemctl enable fangfrisch.timer --now
+# # 2 enable systemd timer
+# sudo systemctl enable fangfrisch.timer --now
 
-#=> libstdc++5-bin
-# GNU Standard C++ Library v3
-# Can't recall what I need it for...
-gAUR libstdc++5-bin
-nvim -c "silent! /ftp.de.debian.org" PKGBUILD
-makepkg -sic
-true
+# #=> libstdc++5-bin
+# # GNU Standard C++ Library v3
+# # Can't recall what I need it for...
+# gAUR libstdc++5-bin
+# nvim -c "silent! /ftp.de.debian.org" PKGBUILD
+# makepkg -sic
+# true
 
-#=> libsixel
-sudo pacman -S libsixel  # for  sixel  graphics
+# #=> libsixel
+# sudo pacman -S libsixel  # for  sixel  graphics
 
 # #=> libva-utils - for sbMb
 # sudo pacman -S libva-utils  # provides  vainfo, for  VA-API checking
 
-#=> lsix-git
-# for sixels
-gAUR lsix-git
-nvim -c "silent! /https:\/\/github.com\/hackerb9\/lsix" PKGBUILD
-makepkg -sic
-true
+# #=> lsix-git
+# # for sixels
+# gAUR lsix-git
+# nvim -c "silent! /https:\/\/github.com\/hackerb9\/lsix" PKGBUILD
+# makepkg -sic
+# true
 
-#=> Mbrola
-gAUR mbrola
-nvim -c "silent! /numediart" PKGBUILD
-makepkg -sic
-true
+# #=> Mbrola
+# gAUR mbrola
+# nvim -c "silent! /numediart" PKGBUILD
+# makepkg -sic
+# true
 
-#=> Mbrola American English female
-gAUR mbrola-voices-us1
-nvim -c "silent! /numediart" PKGBUILD
-makepkg -sic
-true
+# #=> Mbrola American English female
+# gAUR mbrola-voices-us1
+# nvim -c "silent! /numediart" PKGBUILD
+# makepkg -sic
+# true
 
-#=> Mbrola British English male
-gAUR mbrola-voices-en1
-nvim -c "silent! /numediart" PKGBUILD
-makepkg -sic
-true
+# #=> Mbrola British English male
+# gAUR mbrola-voices-en1
+# nvim -c "silent! /numediart" PKGBUILD
+# makepkg -sic
+# true
 
-#=> moar 0 install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
 # rAUR moar
 # sudo pacman -Rs moar
 
-#=> nordvpn-bin 0 (re)install
-gAUR nordvpn-bin
-nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-makepkg -sic
-true
+# #=> nordvpn-bin 0 (re)install
+# gAUR nordvpn-bin
+# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+# makepkg -sic
+# true
 
-#=> nordvpn-bin 1 configure
-sudo usermod -aG nordvpn jo  # need to re-login
-true
-sudo systemctl enable nordvpnd.service --now
-true
+# #=> nordvpn-bin 1 configure
+# sudo usermod -aG nordvpn jo  # need to re-login
+# true
+# sudo systemctl enable nordvpnd.service --now
+# true
 
 #=> noto-fonts-cjk
 # for  $MD4PDF/GNULinux/md4pdf.sh

@@ -162,6 +162,11 @@ bash $bSc/3-toWM/3-IO_HW.sh
 ## nnn plugins
 bash $bSc/anytime/cloneArchBuilds.sh
 bash $bSc/3-toWM/4-softwares-for_nnn.sh
+## 5-softwares.sh
+Installing package nordvpn-bin...
+...
+chattr: No such file or directory while trying to stat /var/lib/nordvpn/data/*
+error: command failed to execute correctly
 ## waiting
 # fcron
 # MCEs at start
