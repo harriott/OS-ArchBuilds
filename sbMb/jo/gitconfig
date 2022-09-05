@@ -1,9 +1,9 @@
 # vim: ft=gitconfig
 
-# e -la ~/.gitconfig  ($bSc/12-symlinks.sh)
+# e -la ~/.gitconfig  ($bSc/repeatable/symlinks-jo-0.sh)
 
-# This is Git's per-user configuration file, as for Arch.
-# Its contents are referred to as needed by Git, making changes saved here instantaneous.
+# my machine-specific Git configuration file
+# changes saved here instantaneous
 
 [include]
 	path = /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/CP/encoding/gitconfig-JH

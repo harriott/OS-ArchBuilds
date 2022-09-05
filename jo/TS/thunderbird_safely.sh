@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# Joseph Harriott - Thu 23 Jun 2022
+# Joseph Harriott - Sun 04 Sep 2022
 
 # run Thunderbird safely from Profile shared on Dropbox
 # -----------------------------------------------------
 
-# (chmod 755 $ARCHBUILDS/jo/ts.sh)
-# symlinked in my  $bSc/38-LibreOffice+Thunderbird.sh
-#  cat /usr/local/bin/thunderbird_safely
+# (chmod 755 $ARCHBUILDS/jo/TS/thunderbird_safely.sh)
+# symlinked in my  $bSc/4-whenWM/symlinks.sh
+#  pb /usr/local/bin/thunderbird_safely
 
 # Tests:
-#  bash $ARCHBUILDS/jo/TS/ts.sh
+#  bash $ARCHBUILDS/jo/TS/thunderbird_safely.sh
 #  echo lockTest > $llf
 #  touch $wlf
 

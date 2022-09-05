@@ -28,22 +28,22 @@ trap read debug  # puts a read request after each executable line
 # cp $machBld/etc/updatedb.conf /etc/updatedb.conf
 # updatedb
 
-# #=> 3 softwares - encoding
-# # entr (also used by batwatch)
-# pacman -S entr
+#=> 3 softwares - encoding - entr
+# entr (also used by batwatch)
+pacman -S entr
 
-# # NeoMutt
+#=> 3 softwares - encoding - for bat-extras
+# prettier
+pacman -S prettier
+
+# python-black
+pacman -S python-black
+
+# shfmt
+pacman -S shfmt
+
+# #=> 3 softwares - encoding - NeoMutt
 # pacman -S neomutt
-
-# #=> 3 softwares - encoding - for bat-extras
-# # prettier
-# pacman -S prettier
-
-# # python-black
-# pacman -S python-black
-
-# # shfmt
-# pacman -S shfmt
 
 # #=> 3 softwares - file manage - bat-extras
 # sudo pacman -S bat-extras  # brings in bat (used in  fzf --preview)

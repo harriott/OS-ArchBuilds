@@ -3,10 +3,20 @@
 
 set -e
 
+if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
+
 #=> 0 $ARCHBUILDS
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../../Bash/export-storage
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
+
+#=> 1 for fonts
+cfA=/usr/share/fonts/copiedForArch
+. /home/jo/.export-machine
+. /home/jo/.export-storage
+. /home/jo/.export-jo
+[[ $cfA ]] && rm -r $cfA; ln -s $cITh/unix-like/linux/fonts-forArch $cfA
+exa -la /usr/share/fonts
 
 #=> 1 make root symlinks
 ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc

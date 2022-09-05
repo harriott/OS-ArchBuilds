@@ -157,12 +157,11 @@ normal with Jo-OPPO-A76
 ## xdg-open .svg
 mimeo -m .svg  reports  image/svg+xml
 ## waiting
-bat-extras
-entr
-prettier
+thunderbird_safely
 # fcron
 fcrontab -l
-  @ 1 bash ~/Arch/locks.sh
+  @ 1 bash ~/Arch/Elocks.sh
+  @ 1 bash ~/Arch/Tlocks.sh
   @ 10 bash ~/Arch/bash_history.sh
   @ 20 jump clean
   @ 1 d bash ~/Arch/log_rsnapshot.sh

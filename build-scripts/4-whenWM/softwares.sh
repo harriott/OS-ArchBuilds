@@ -11,43 +11,6 @@ trap read debug  # puts a read request after each executable line
 # #=> asunder
 # sudo pacman -S asunder  # graphical Audio CD ripper
 
-# #=> clifm-git
-# gdAUR clifm-git
-# nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
-# makepkg -sic
-
-# #=> cmus-notify 0 install
-# gAUR cmus-notify
-# nvim -c "silent! /AntoineGagne" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> cmus-notify 1 remove
-# sudo pacman -Rs cmus-notify
-
-# #=> colorpicker
-# gAUR colorpicker
-# nvim -c "silent! /Jack12816" PKGBUILD
-# makepkg -sic
-
-# #=> dragon-drag-and-drop
-# rAUR dragon-drag-and-drop
-# gvim -c "silent! /dragon" PKGBUILD
-# makepkg -sic
-
-# #=> Dropbox 0 (re)install
-# # only once there's a browser, and preferably after LastPass
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> Dropbox 1 dropbox-dist folder
-# install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
-
-# #=> Dropbox 2 uninstall
-# sudo pacman -Rs dropbox
-
 # #=> feh
 # sudo pacman -S feh
 
@@ -72,17 +35,11 @@ trap read debug  # puts a read request after each executable line
 # #=> gnome-disk-utility
 # sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
+# #=> GPicView
+# # Menu > Graphics > Image Viewer
+# sudo pacman -S gpicview
+# gpicview  # Preferences > Automatically save
 # true
-
-#=> GPicView
-# Menu > Graphics > Image Viewer
-sudo pacman -S gpicview
-gpicview  # Preferences > Automatically save
-true
 
 # #=> GraphicsMagick
 # sudo pacman -S graphicsmagick
@@ -92,12 +49,6 @@ true
 
 # #=> HPLIP
 # sudo pacman -S hplip
-
-# #=> iscan
-# gAUR iscan
-# nvim -c "silent! /support.epson.net" PKGBUILD
-# makepkg -sic  # takes a long time...
-# true
 
 # #=> java-commons-lang
 # sudo pacman -S java-commons-lang  # (for pdftk's functions)
@@ -128,12 +79,6 @@ true
 # # now run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
 # true
 
-# #=> nsxiv
-# gAUR nsxiv
-# nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
-# makepkg -sic
-# true
-
 # #=> OBS Studio 0 install
 # sudo pacman -S obs-studio
 
@@ -147,12 +92,6 @@ true
 # #=> OpenShot
 # sudo pacman -S openshot
 
-# #=> Pacfinder
-# gAUR pacfinder
-# nvim -c "silent! /stevenbenner\/pacfinder" PKGBUILD
-# makepkg -sic
-# true
-
 # #=> PCManFM
 # sudo pacman -S pcmanfm
 # handlr set inode/directory pcmanfm.desktop
@@ -160,12 +99,6 @@ true
 # #  General > Confirm before moving files into "trash can"   off-ticked
 # #  Volume Management > Show available options  off-ticked
 # #  Advanced > Terminal > urxvt
-# true
-
-# #=> PDFsam
-# gAUR pdfsam
-# nvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic  # choose  jdk-openjdk
 # true
 
 # #=> pdftk
@@ -177,21 +110,11 @@ true
 # #=> perl-image-exiftool
 # sudo pacman -S perl-image-exiftool
 
-# #=> PhotoCollage
-# gAUR photocollage
-# nvim -c "silent! /adrienverge" PKGBUILD
-# makepkg -sic
-
 # #=> Pinta
 # sudo pacman -S pinta
 
 # #=> pqiv
 # sudo pacman -S pqiv
-
-# #=> pscircle-git
-# gAUR pscircle-git
-# nvim -c "silent! /mildlyparallel" PKGBUILD
-# makepkg -sic
 
 # #=> qpdfview
 # sudo pacman -S qpdfview
@@ -207,26 +130,11 @@ true
 # #=> SANE
 # sudo pacman -S sane
 
-# #=> Spotify 0 signing key
-# curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
-# gpg -k 5E3C45D7B312C643
-
-# #=> Spotify 1 (re)install
-# gAUR spotify
-# nvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
-# makepkg -sic
-
 # #=> sqlitebrowser
 # sudo pacman -S sqlitebrowser
 
 # #=> sxiv
 # sudo pacman -S sxiv
-
-# #=> urlview
-# # creates a numbered list of url's in a resource
-# gAUR urlview
-# gvim PKGBUILD
-# makepkg -sic
 
 # #=> Vimiv
 # sudo pacman -S vimiv
@@ -237,9 +145,4 @@ true
 # #=> Zathura
 # sudo pacman -S zathura-pdf-mupdf
 # # zathurarc  symlinked in  $bSc/anytime/symlinks-jo-0.sh
-
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
 

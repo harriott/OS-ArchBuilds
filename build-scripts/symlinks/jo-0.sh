@@ -52,11 +52,6 @@ ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 #=> for Tex Live
 sudo ln -sf $ARCHBUILDS/jo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 
-#=> LanguageTool
-# needed for command-line usage
-sudo ln -sf $cITh/CP/LanguageTool /usr/share/java/LanguageTool
-# exa -la /usr/share/java
-
 #=> MIME database
 ln -sf $ARCHBUILDS/jo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
   update-mime-database ~/.local/share/mime
@@ -68,28 +63,16 @@ ln -sf $ARCHBUILDS/jo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
 #=> nanorc
 ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
 
-#=> Pandoc defaults
-ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
-ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
-
-#=> Pandoc templates
-pt=~/.pandoc/templates; [ -d $pt ] && rm -r $pt; ln -sf $onGH/pandoc-templates $pt
-
 #=> pinfo
 ln -sf $ARCHBUILDS/jo/pinforc ~/.pinforc
 
 #=> ranger
 ln -sf $ARCHBUILDS/jo/ranger ~/.config/ranger
 
-#=> SSH config
-if [[ $myDrA == 1 ]]; then
-  ln -sf $CrPl/SSHconfig/$host ~/.ssh/config
-fi
-
 #=> tmux
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 
-#=> vims
+#=> vim variants entry points
 ln -sf $machBld/jo/gvimrc ~/.gvimrc
 ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
 

@@ -1,17 +1,17 @@
 #!/bin/bash
 
-# Joseph Harriott - Wed 18 May 2022
+# Joseph Harriott - Sun 04 Sep 2022
 
 # tidy up  Thunderbird  lockfiles
 # -------------------------------
 # fcrontab:  @ 1 bash ~/Arch/locks.sh
-# symlinked in my  $bSc/toReview/38-LibreOffice+Thunderbird.sh
+# pb ~/Arch/Elocks.sh  - see $bSc/4-whenWM/symlinks.sh
 
 host=$(uname -n)
 case $host in
 # case $(uname -n) in
+    AsusW202) Storage=/mnt/SDEP128G ;;
     i34G1TU02) Storage=/mnt/BX200 ;;
-    LIP120s81A4) Storage=/mnt/SDEP128G ;;
     sbMb) Storage=/mnt/SDU3D1TB ;;
 esac
 T91=$Storage/Dropbox/JH/T91-default-release

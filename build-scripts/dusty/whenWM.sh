@@ -15,11 +15,14 @@ makepkg -sic
 #=> 0 npm ffmpeg-concat
 npm install -g ffmpeg-concat
 
-#=> 0 qt5-styleplugins
+#=> 0 qt5-styleplugins 0 install
 # for qt5ct - allows fix of narrow fonts in XnViewMP
 gAUR qt5-styleplugins
 nvim -c "silent! /qtstyleplugins" PKGBUILD
 makepkg -sic  # takes a long time
+
+#=> 0 qt5-styleplugins 1 remove
+sudo pacman -Rs qt5-styleplugins
 
 #=> 0 sbMb dual monitors 0
 r /etc/X11/xorg.conf.d

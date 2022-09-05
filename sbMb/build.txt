@@ -1255,7 +1255,8 @@ ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh
-  @ 1 bash ~/Arch/locks.sh
+  @ 1 bash ~/Arch/Elocks.sh
+  @ 1 bash ~/Arch/Tlocks.sh
   @ 3 bash ~/Arch/cmusqueue.sh
   @ 10 bash ~/Arch/bash_history.sh
   @ 20 jump clean

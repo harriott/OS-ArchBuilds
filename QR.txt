@@ -8,6 +8,140 @@ copyq help | mo
 i datediff
 gspdfpng
 
+# Bash
+im time
+pinfo bash
+pinfo -m bash
+
+## broot
+i broot
+
+### commands
+alt+enter => quit to current directory
+alt+h => toggle hidden
+ctrl+q [<enter>] => quit
+F5 => refresh
+
+### launch
+br
+br -c :count
+br -d => br --dates => the last modified date
+br -g => br --show-git-info
+br -h => br --hidden
+br -i => br --show-gitignored
+br -p => br --permissions
+br -s => br --sizes
+
+## Ctrl+t
+cd ctrl+t  # then fuzzy search for a file, hit enter, backspace to the file's directory, Enter
+puts node selection onto command line
+
+### Search syntax
+Token    -  Match type                  -  Description
+sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
+'wild    -  exact-match (quoted)        -  Items that include wild
+^music   -  prefix-exact-match          -  Items that start with music
+.mp3$    -  suffix-exact-match          -  Items that end with .mp3
+!fire    -  inverse-exact-match         -  Items that do not include fire
+!^music  -  inverse-prefix-exact-match  -  Items that do not start with music
+!.mp3$   -  inverse-suffix-exact-match  -  Items that do not end with .mp3
+
+| OR
+
+## directory structures
+<directory>  # cd <directory>  ( shopt autocd )
+file ~/.vim  # shows symlink source
+namei ~/.vim  # shows tree, including symlink sources
+
+### Samokovarov's jump
+bm jump
+j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
+jump clean  # I have in fcrontab
+jump top | mo
+jump --help
+
+## file searching
+as root: find / -xdev -iname "*fmtutil.cnf*"
+find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
+find . -type d -name .git
+find . -type f -name .gitignore
+find . -type f -name "*.pl"
+find . -type f -name "python.vim"
+
+### for configuration files
+fd -I -e conf
+find . -type f -name "*.conf"
+
+### grepping
+grep -E '<someText>|<otherText>'
+grep -r --include "*.sh" ' -f ' .
+grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
+grep -ri --include "*.conf" '#=> ' .
+man grep | grep egrep | xcol egrep fgrep
+
+#### manual
+GNU Grep Manual
+GREP(1)
+
+### mlocate
+bm locate
+locate -c <target>  # --count
+locate -h
+locate -r '\.conf$'
+locate -r '\.desktop$' > $machLg/desktops.txt
+locate -r '\.json$' | mo
+locate -r 'gestion des cas'
+
+#### updatedb
+/etc/updatedb.conf
+doas updatedb
+systemctl status updatedb.timer
+
+### list symlinks
+find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
+
+#### recursively
+find . -type l -ls
+find ~ -path '*/.virtualenvs' -prune -o -type l -ls
+
+## fzf
+<someCommand> Ctrl-t - gets the selected node on the command-line
+Alt+c  # to change directory
+bm fzf
+cat $(fzf)
+cd [directory/][fuzzy_pattern]**<tab>
+f  # defined in  $ARCHBUILDS/Bash/bashrc-generic
+FZF_DEFAULT_COMMAND
+gvim -o `f`  # calling upon fzf
+kill -9 <tab>
+ls -l $(fzf -m)
+unalias **<tab>
+
+## fzy
+find . -type f | fzy  # selecta
+i fzy
+
+## pager - less
+less <file>
+
+### commands
+h -> help
+j,k -> down/up
+
+## pager - moar
+mo <file>  # ? lists the limited moar commands
+moar -h
+
+# Emacs
+r $cITh/CP/encoding/textWrangling/Emacs  # PDF guides
+r $GHrUse/emacs/syl20bnr-spacemacs-develop  # local fresh clone
+r ~/.emacs.d
+r $emacs
+
+# encoding
+b <codeFile>  # syntax'd cat
+pb <codeFile>  # also reformatted
+
 # fcron
 systemctl status fcron.service  # showing recent events
 
@@ -180,7 +314,7 @@ rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 rg <someText>  # searches recursively in files
 
-#### builds
+#### for builds
 rg '\$ArchBuilds'
 rg '\$Bash'
 rg '\$bs'
@@ -192,6 +326,7 @@ rg '\$lclm'
 rg '\$ITstack'
 rg '\$machBld'
 rg '\$mail'
+rg '\$sm'
 rg '\~/\.npm-'
 rg 'passwordeval bash oauth2tool'
 rg 'passwordeval bash'
@@ -226,134 +361,6 @@ rg -ttex ^%%
 /usr/share/vifm/vim-doc/doc/vifm-lua.txt
 feh -F $cITh/CP/vifm-v0.12-builtin-normal.png &
 ~/.config/vifm/vifmrc
-
-# Bash
-im time
-pinfo bash
-pinfo -m bash
-
-## broot
-i broot
-
-### commands
-alt+enter => quit to current directory
-alt+h => toggle hidden
-ctrl+q [<enter>] => quit
-F5 => refresh
-
-### launch
-br
-br -c :count
-br -d => br --dates => the last modified date
-br -g => br --show-git-info
-br -h => br --hidden
-br -i => br --show-gitignored
-br -p => br --permissions
-br -s => br --sizes
-
-## Ctrl+t
-cd ctrl+t  # then fuzzy search for a file, hit enter, backspace to the file's directory, Enter
-puts node selection onto command line
-
-### Search syntax
-Token    -  Match type                  -  Description
-sbtrkt   -  fuzzy-match                 -  Items that match sbtrkt
-'wild    -  exact-match (quoted)        -  Items that include wild
-^music   -  prefix-exact-match          -  Items that start with music
-.mp3$    -  suffix-exact-match          -  Items that end with .mp3
-!fire    -  inverse-exact-match         -  Items that do not include fire
-!^music  -  inverse-prefix-exact-match  -  Items that do not start with music
-!.mp3$   -  inverse-suffix-exact-match  -  Items that do not end with .mp3
-
-| OR
-
-## directory structures
-<directory>  # cd <directory>  ( shopt autocd )
-file ~/.vim  # shows symlink source
-namei ~/.vim  # shows tree, including symlink sources
-
-### Samokovarov's jump
-bm jump
-j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
-jump clean  # I have in fcrontab
-jump top | mo
-jump --help
-
-## file searching
-as root: find / -xdev -iname "*fmtutil.cnf*"
-find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
-find . -type d -name .git
-find . -type f -name .gitignore
-find . -type f -name "*.pl"
-find . -type f -name "python.vim"
-
-### for configuration files
-fd -I -e conf
-find . -type f -name "*.conf"
-
-### grepping
-grep -E '<someText>|<otherText>'
-grep -r --include "*.sh" ' -f ' .
-grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
-grep -ri --include "*.conf" '#=> ' .
-man grep | grep egrep | xcol egrep fgrep
-
-#### manual
-GNU Grep Manual
-GREP(1)
-
-### mlocate
-bm locate
-locate -c <target>  # --count
-locate -h
-locate -r '\.conf$'
-locate -r '\.desktop$' > $machLg/desktops.txt
-locate -r '\.json$' | mo
-locate -r 'gestion des cas'
-
-#### updatedb
-/etc/updatedb.conf
-doas updatedb
-systemctl status updatedb.timer
-
-### list symlinks
-find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
-
-#### recursively
-find . -type l -ls
-find ~ -path '*/.virtualenvs' -prune -o -type l -ls
-
-## fzf
-<someCommand> Ctrl-t - gets the selected node on the command-line
-Alt+c  # to change directory
-bm fzf
-cat $(fzf)
-cd [directory/][fuzzy_pattern]**<tab>
-f  # defined in  $ARCHBUILDS/Bash/bashrc-generic
-FZF_DEFAULT_COMMAND
-gvim -o `f`  # calling upon fzf
-kill -9 <tab>
-ls -l $(fzf -m)
-unalias **<tab>
-
-## fzy
-find . -type f | fzy  # selecta
-i fzy
-
-## pager - less
-less <file>
-
-### commands
-h -> help
-j,k -> down/up
-
-## pager - moar
-mo <file>  # ? lists the limited moar commands
-moar -h
-
-# encoding
-b <codeFile>  # syntax'd cat
-pb <codeFile>  # also reformatted
 
 # fonts
 cd /usr/share/fonts; $ fd -L consolas
@@ -702,7 +709,6 @@ for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # system
-$ARCHBUILDS/etc/doas.conf
 /usr/share/doc/arch-wiki/html/en
 bat -A /etc/hosts
 bm <command>  # batman - only good in full-screen
@@ -710,8 +716,16 @@ cat /proc/cpuinfo
 GRUB (GRand Unified Bootloader)
 i hier
 i localectl
+
+## build
+$ARCHBUILDS/etc/doas.conf
 r $ARCHBUILDS $ulLinux/Arch
+r $ulLinux/Arch
 vifm $ARCHBUILDS $ulLinux/Arch
+
+### Openbox
+$Openbox/openbox/rc/rc.xml
+$Openbox/openbox/schema.pl
 
 ## groups
 cat /etc/group  # list all groups on the system
@@ -741,10 +755,6 @@ n = right = next
 ##### tree view
 e toggles it
 spacebar toggles open/closed a branch
-
-## Openbox
-$Openbox/openbox/rc/rc.xml
-$Openbox/openbox/schema.pl
 
 ## sizes
 sudo du -h --max-depth=1 /usr
@@ -842,10 +852,6 @@ tput works
 # text-wrangling
 echo $EDITOR
 echo $VISUAL
-
-## Emacs
-r $GHrUse/syl20bnr-spacemacs-develop  # $bs/2-to_X/1-configure_jo.sh
-r $cITh/CP/encoding/textWrangling/Emacs
 
 ## CopyQ
 bm copyq
