@@ -5,7 +5,6 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 # softwares that require a WM
 
 # #=> asunder

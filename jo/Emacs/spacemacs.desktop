@@ -1,19 +1,18 @@
 
-# for  $ARCHBUILDS/jo/Emacs/ss.sh
-# symlinked in my  $bSc/4-whenWM/symlinks.sh
-#  to provide my command  emacs_safely
-#   used in  $Openbox/openbox/schema.pl
+# symlinked in my  $bSc/symlinks/jo-2-whenDropbox.sh
+#  to reveal my command  spacemacs  to Desktop
 
 #  pb /usr/share/applications/emacs.desktop
-#  pb /usr/share/applications/emacs_safely.desktop
+#  pb /usr/share/applications/spacemacs.desktop
+#  desktop-file-validate /usr/share/applications/spacemacs.desktop
+#  r /usr/share/applications
 
 [Desktop Entry]
-Name=Emacs Safely
+Name=Spacemacs
 GenericName=Text Editor
-Comment=run Emacs safely from profile shared on Dropbox
+Comment=run Spacemacs from its separate configuration
 MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
-Exec=emacs %F
-Exec=/usr/local/bin/emacs_safely
+Exec=/usr/local/bin/spacemacs
 Icon=emacs
 Type=Application
 Terminal=false

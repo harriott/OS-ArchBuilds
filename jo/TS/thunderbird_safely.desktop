@@ -1,10 +1,7 @@
 
 # for  $ARCHBUILDS/jo/ts.sh
 # symlinked in my  $bSc/4-whenWM/symlinks.sh
-#  to provide my command  thunderbird_safely
-#   used in  $Openbox/openbox/schema.pl
-
-#  pb /usr/share/applications/thunderbird_safely.desktop
+#  to reveal my command  thunderbird_safely  to Desktop
 
 [Desktop Entry]
 Name=Thunderbird Safely

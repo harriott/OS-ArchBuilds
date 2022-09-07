@@ -5,7 +5,7 @@
 # tidy up my  Emacs  lockfiles
 # ----------------------------
 # fcrontab:  @ 1 bash ~/Arch/Elocks.sh
-# pb ~/Arch/Elocks.sh  - see $bSc/4-whenWM/symlinks.sh
+# pb ~/Arch/Elocks.sh  - see  $bSc/symlinks/jo-2-whenDropbox.sh
 
 host=$(uname -n)
 case $host in

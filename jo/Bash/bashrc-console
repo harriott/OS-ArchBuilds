@@ -68,7 +68,7 @@ CliFM (){
   clifm --cd-on-quit --disk-usage --rl-vi-mode --trash-as-rm "$@"
   dir="$(grep "^\*" "/home/jo/.config/clifm/.last" 2>/dev/null | cut -d':' -f2)";
   [ -d "$dir" ] && cd -- "$dir"
-}
+} # C <dir1> [<dir2> ...]
 
 locx () { locate -i $1 | xcol $1; }
 

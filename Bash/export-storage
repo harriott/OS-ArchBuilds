@@ -33,7 +33,6 @@ if [[ $myDrA == 1 ]]; then
       export ulLinux=$ITstack/unix_like-linux  # was $ulGL, then ulL
         export lB=$ulLinux/Bash  # used in  $ARCHBUILDS/QR.txt
         export machLg=$ulLinux/Arch/$host  # as opposed to  $machBld
-        export emacs=$ulLinux/Arch/emacs
       export onGH=$ITstack/onGitHub
         export vimfiles=$onGH/vimfiles
 fi

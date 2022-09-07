@@ -1,0 +1,20 @@
+
+# for  $ARCHBUILDS/jo/Emacs/ES/emacs_safely.sh
+# symlinked in my  $bSc/symlinks/jo-2-whenDropbox.sh
+#  to reveal my command  emacs_safely  to Desktop
+
+#  pb /usr/share/applications/emacs.desktop
+
+[Desktop Entry]
+Name=Emacs Safely
+GenericName=Text Editor
+Comment=run Emacs safely from profile shared on Dropbox
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+Exec=/usr/local/bin/emacs_safely
+Icon=emacs
+Type=Application
+Terminal=false
+Categories=Development;TextEditor;
+StartupNotify=true
+StartupWMClass=Emacs
+

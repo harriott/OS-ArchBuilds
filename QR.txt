@@ -7,6 +7,7 @@ bm  # (in a wide enough terminal) fuzzy search for manuals
 copyq help | mo
 i datediff
 gspdfpng
+r $core/TextNotes/TN
 
 # Bash
 im time
@@ -133,10 +134,20 @@ mo <file>  # ? lists the limited moar commands
 moar -h
 
 # Emacs
+im emacs
+n ~/.sm/.emacs.d
+nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
+n ~/.emacs.d
+r ~/.emacs.d
+
+## resources
+fd -e org -p $GHrUse/emacs
 r $cITh/CP/encoding/textWrangling/Emacs  # PDF guides
 r $GHrUse/emacs/syl20bnr-spacemacs-develop  # local fresh clone
-r ~/.emacs.d
-r $emacs
+
+### Worg
+$GHrUse/emacs/_bzg-worg/orgcard.org
+r $GHrUse/emacs/_bzg-worg
 
 # encoding
 b <codeFile>  # syntax'd cat
@@ -173,7 +184,7 @@ cpg --help | mo  # man advcp
 mvg --help | mo  # man advmv
 
 ## CliFM
-C
+C [dir1 [dir2 ...]]
 clifm -h
 clifm -v
 i clifm
@@ -307,6 +318,7 @@ rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
 
 ### searches
 rg '<someText>|<otherText>'
+rg '\.emacs\.d'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
 rg -tmd '\$SE'
 rg -tmd '\$Sig'
@@ -716,6 +728,11 @@ cat /proc/cpuinfo
 GRUB (GRand Unified Bootloader)
 i hier
 i localectl
+
+## .desktop
+fd -tf .desktop $ARCHBUILDS
+r /usr/share/applications
+rg Exec= /usr/share/applications  # check others
 
 ## build
 $ARCHBUILDS/etc/doas.conf

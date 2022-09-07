@@ -1,18 +1,19 @@
 #!/bin/bash
 
-# Joseph Harriott - Sun 04 Sep 2022
+# Joseph Harriott - Tue 06 Sep 2022
 
 # run Emacs safely from .emacs.d shared on Dropbox
 # ------------------------------------------------
+# $emacs  should define a shared  .emacs.d  that needs protection
 
-# (chmod 755 $ARCHBUILDS/jo/Emacs/emacs_safely.sh)
-# symlinked in my  $bSc/4-whenWM/symlinks.sh
-#  pb /usr/local/bin/emacs_safely
+# (chmod 755 $ARCHBUILDS/jo/Emacs/ES/emacs_safely.sh)
+# symlinked in my  $bSc/symlinks/jo-2-whenDropbox.sh
+#  to provide my command  emacs_safely
+#   used in  $Openbox/openbox/schema.pl
 
 # Tests:
-#  . $ARCHBUILDS/jo/ES/emacs_safely.sh
+#  . $ARCHBUILDS/jo/Emacs/ES/emacs_safely.sh
 #  echo lockTest > $llf
-#  r $emacs
 
 llf=$emacs/lock  # my creation
 # l 2>/dev/null $llf
