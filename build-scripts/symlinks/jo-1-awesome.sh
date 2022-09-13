@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1:
 
-bash $bSc/symlinks/jo-1-awesome.sh
+# bash $bSc/symlinks/jo-1-awesome.sh
 
 #=> awesome
 ln -sf $machBld/jo/awesome/autorun.sh     ~/.config/awesome/autorun.sh
