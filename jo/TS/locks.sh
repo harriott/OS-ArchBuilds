@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Joseph Harriott - Sun 04 Sep 2022
+# Joseph Harriott - Wed 07 Sep 2022
 
 # tidy up  Thunderbird  lockfiles
 # -------------------------------
-# fcrontab:  @ 1 bash ~/Arch/locks.sh
+# fcrontab:  @ 1 bash ~/Arch/Tlocks.sh
 # pb ~/Arch/Elocks.sh  - see $bSc/4-whenWM/symlinks.sh
 
 host=$(uname -n)

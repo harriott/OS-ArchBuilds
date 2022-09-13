@@ -270,9 +270,7 @@ i exa
 
 ## fd
 im fd
-fd -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --changed-within 3h
-fd --max-depth 1 -H -t l  # finds symlinks in current directory, broken ones distinguished
 fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
 fd -d1 -td  # depth 1 (current dir), type dir
 fd -e ods  # finds OpenOffice Calc spreadsheets
@@ -281,7 +279,13 @@ fd -HI --changed-within 1h
 fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
 fd . $bSc
+recursive by default
 sharkdp/fd
+
+### symlinks
+fd --max-depth 1 -Hl -tl
+fd -H -tl  # only found targets, broken ones with red background
+fd -Hl -tl  # show supposed link source
 
 ### git config's
 fd -HI -tf ^config$ | xargs rg -l 'remote = gh'  # ripgrep
@@ -317,14 +321,13 @@ rg --type-list
 rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
 
 ### searches
-rg '<someText>|<otherText>'
+rg '<someText>|<otherText>'  # searches recursively in files
 rg '\.emacs\.d'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
 rg -tmd '\$SE'
 rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
-rg <someText>  # searches recursively in files
 
 #### for builds
 rg '\$ArchBuilds'

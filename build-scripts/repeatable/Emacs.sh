@@ -9,10 +9,12 @@ mkdir ~/.emacs.d
 # e -la ~/.emacs.d
 
 #=> Emacs 0 configure
+ln -sf $onGH/misc/Emacs/custom.el ~/.emacs.d/custom.el
 ln -sf $onGH/misc/Emacs/early-init.el ~/.emacs.d/early-init.el
 ln -sf $onGH/misc/Emacs/init.el ~/.emacs.d/init.el
 ln -sf $onGH/misc/Emacs/lisp ~/.emacs.d/lisp
 ln -sf $core/TextNotes/TN/Emacs/diary ~/.emacs.d/diary
+ln -sf $GHrUse/emacs/TobiasZawada-md-outline-list ~/.emacs.d/TobiasZawada-md-outline-list
 # e -la ~/.emacs.d/
 
 #=> Emacs 1 backup

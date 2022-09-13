@@ -164,7 +164,9 @@ ghi () {
   ghil=GitHubIssues.list
   for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
   sed -i '/copied\/IT-handy\//d' $ghil
-  sed -i '1s/^/\n/' $ghil; echo '' $ghil
+  sed -i '1s/^/\n/' $ghil
+  sed -i '1ivim: ft=fdtslist' $ghil
+  echo '' >> $ghil
   echo "results are in $ghil"
 }  # my GitHub issues
 

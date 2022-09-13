@@ -1249,6 +1249,9 @@ handlr get .flv  reports  pqiv.desktop  so  bash $bSc/4-whenWM/resourceHandler.s
 handlr get .el  reports  no handlers found for 'text/x-emacs-lisp'
 ## HP ENVY 5532 IP Address changed to 182.10
 changed 131 to 182 in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.182.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
