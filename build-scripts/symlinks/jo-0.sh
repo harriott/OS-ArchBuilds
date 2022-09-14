@@ -22,12 +22,14 @@ ln -sf $Bash/export-jo                      ~/.export-jo
 ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
 
 #=> CliFM
-ln -sf $ARCHBUILDS/jo/CliFM/clifmrc ~/.config/clifm/profiles/default/clifmrc
-for p in BFG colors img_viewer; do
-  c=$ARCHBUILDS/jo/CliFM/$p.sh
-  chmod +x $c
-  ln -sf $c ~/.config/clifm/plugins/$p.sh
-done
+if [ -s "/usr/bin/clifm" ]; then
+  ln -sf $ARCHBUILDS/jo/CliFM/clifmrc ~/.config/clifm/profiles/default/clifmrc
+  for p in BFG colors img_viewer; do
+    c=$ARCHBUILDS/jo/CliFM/$p.sh
+    chmod +x $c
+    ln -sf $c ~/.config/clifm/plugins/$p.sh
+  done
+fi
 
 #=> cmus
 ln -sf $ARCHBUILDS/jo/Openbox/cmusqueue.sh ~/Arch/cmusqueue.sh
