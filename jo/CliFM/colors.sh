@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # JH
-# nvim -O /usr/share/clifm/plugins/colors.sh $ARCHBUILDS/jo/CliFM/colors.sh -c 'windo difft'
+# nvim -O /usr/share/clifm/plugins/colors.sh $ABjo/CliFM/colors.sh -c 'windo difft'
 # see  colors  in  $bSc/anytime/symlinks-jo-0.sh
 
 # Terminal colors test script for CliFM

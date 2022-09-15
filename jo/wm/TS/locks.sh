@@ -17,7 +17,7 @@ esac
 T91=$Storage/Dropbox/JH/T91-default-release
 
 # remove this machine's lockfile if Thunderbird isn't running
-llf=$T91/linuxlock  # lockfile created by  $ARCHBUILDS/jo/TS/ts.sh
+llf=$T91/linuxlock  # lockfile created by  $ABjo/TS/ts.sh
     # rm $T91/linuxlock
 if ! pgrep thunderbird; then [ $(cat $llf) = $host ] && rm $llf; fi
 

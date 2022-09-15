@@ -6,10 +6,10 @@
 set -e
 
 # #=> Emacs safely 1 install
-# ln -sf $ARCHBUILDS/jo/Emacs/ES/locks.sh ~/Arch/Elocks.sh
-# sudo ln -sf $ARCHBUILDS/jo/Emacs/ES/emacs_safely.sh /usr/local/bin/emacs_safely
+# ln -sf $ABjo/Emacs/ES/locks.sh ~/Arch/Elocks.sh
+# sudo ln -sf $ABjo/Emacs/ES/emacs_safely.sh /usr/local/bin/emacs_safely
 # # pb /usr/local/bin/emacs_safely
-# sudo ln -sf $ARCHBUILDS/jo/Emacs/ES/emacs_safely.desktop /usr/share/applications/emacs_safely.desktop
+# sudo ln -sf $ABjo/Emacs/ES/emacs_safely.desktop /usr/share/applications/emacs_safely.desktop
 # # pb /usr/share/applications/emacs_safely.desktop
 
 # #=> Emacs safely 2 remove
@@ -33,8 +33,8 @@ set -e
 # ln -sf $CrPl/SSHconfig/$host ~/.ssh/config
 
 #=> Spacemacs
-sudo ln -sf $ARCHBUILDS/jo/Emacs/spacemacs.desktop /usr/share/applications/spacemacs.desktop
+sudo ln -sf $ABjo/Emacs/spacemacs.desktop /usr/share/applications/spacemacs.desktop
 # e -la /usr/share/applications/spacemacs.desktop
-sudo ln -sf $ARCHBUILDS/jo/Emacs/spacemacs.sh /usr/local/bin/spacemacs
+sudo ln -sf $ABjo/Emacs/spacemacs.sh /usr/local/bin/spacemacs
 # pb /usr/local/bin/spacemacs
 

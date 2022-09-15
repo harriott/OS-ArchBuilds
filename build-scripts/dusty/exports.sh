@@ -24,10 +24,10 @@ AB=$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
 [[ -d $AB ]] && export ARCHBUILDS=$AB
 
 #=> 1 and more
-export Bash=$ARCHBUILDS/jo/Bash
+export Bash=$ABjo/Bash
 export host=$(uname -n)
   export machBld=$ARCHBUILDS/$host
-export Openbox=$ARCHBUILDS/jo/Openbox
+export Openbox=$ABjo/Openbox
 
 #=> 2 test
 echo '$machBld' "= $machBld"

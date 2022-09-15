@@ -12,8 +12,8 @@ Xft.rgba: rgb
 ! ------------
 ! ------------
 
-# symlinked in  $bSc/anytime/symlinks-jo-0.sh  to  ~/.Xresources
-! called from my  $ARCHBUILDS/jo/xinitrc
+! symlinked in  $bSc/symlinks/jo-0.sh  to  ~/.Xresources
+! called from my  $ABjo/xinitrc
 
 ! after changes here, either quit & restart X or
 !  xrdb $Openbox/Xresources/Xresources  or  xrdb ~/.Xresources

@@ -2,7 +2,7 @@
 # vim: fdl=1:
 
 #=> 2 Firewalld - firewall-applet
-ln -sf $ARCHBUILDS/jo/firewalldApplet.conf ~/.config/firewall/applet.conf
+ln -sf $ABjo/firewalldApplet.conf ~/.config/firewall/applet.conf
 
 # #=> 2 Firewalld - firewall-applet icons - fixed size
 # hc=/usr/share/icons/hicolor

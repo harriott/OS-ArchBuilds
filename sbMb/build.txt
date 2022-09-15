@@ -328,7 +328,7 @@ sudo /etc/papersize
 echo "a4" | sudo tee -a /etc/papersize
 ## chromium print to A4
 Ctrl+P > More settings > A4 210x297mm
-ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
+ln -sf $ABjo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
 ## HP Device Manager Default Printer
 hp-toolbox > Printer Control > Default Printer
 ## SANE pacnews
@@ -652,8 +652,8 @@ su + root pw  for  cd /etc/ssh/
 sudo pacman -S nano-syntax-highlighting
 mkdir ~/.config/nano
 cp /etc/nanorc ~/.config/nano/nanorc
-cp ~/.config/nano/nanorc $ARCHBUILDS/jo/textEdit/nanorc
-ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
+cp ~/.config/nano/nanorc $ABjo/textEdit/nanorc
+ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 ## system size
 df -h /  shows it's using  25G
 ### reduce pacman cache
@@ -927,12 +927,12 @@ bash 36-symlinks-sshd.sh
 rm -r ~/texmf/tex/latex/jo; ln -s $CrPl/LaTeX/jo ~/texmf/tex/latex/jo
 rm ~/texmf/tex/latex/m4p/headings.sty
 rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
-ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
-ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
-ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
+ln -sf $ABjo/textEdit/nanorc /home/jo/.config/nano/nanorc
+ln -sf $ABjo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
+ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
-ln -sf $ARCHBUILDS/jo/TS/locks.sh ~/Arch/locks.sh
+ln -sf $ABjo/TS/locks.sh ~/Arch/locks.sh
 ln -sf $CrPl/SSHconfig/sbMb ~/.ssh/config
 rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
 sudo bash 37-as_root-symlink_fonts.sh
@@ -1004,8 +1004,8 @@ lsblk indicated  $ sudo e2fsck -p /dev/sdb1
   ST4000VN008: UNEXPECTED INCONSISTENCY; RUN fsck MANUALLY. (i.e., without -a or -p options)
 disabled rsnapshot timers
 ## update thunderbird_safely symlinks
-sudo ln -sf $ARCHBUILDS/jo/TS/ts.sh /usr/local/bin/thunderbird_safely
-sudo ln -sf $ARCHBUILDS/jo/TS/ts.desktop /usr/share/applications/thunderbird_safely.desktop
+sudo ln -sf $ABjo/TS/ts.sh /usr/local/bin/thunderbird_safely
+sudo ln -sf $ABjo/TS/ts.desktop /usr/share/applications/thunderbird_safely.desktop
 ## repartition & reformat ST4000VN008
 sudo chown -R jo:jo $VsLocation
 mkdir $VsLocation/OBSmkvGrabs
@@ -1137,10 +1137,10 @@ bash 31-symlinks-Openbox.sh
 reboot to get $machBld  for  bash 36-symlinks-sshd.sh
 rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
 rm -r ~/texmf/tex/latex/jo; ln -s $CrPl/LaTeX/jo ~/texmf/tex/latex/jo
-ln -sf $ARCHBUILDS/jo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
-ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
-ln -sf $ARCHBUILDS/jo/textEdit/nanorc /home/jo/.config/nano/nanorc
-ln -sf $ARCHBUILDS/jo/TS/locks.sh ~/Arch/locks.sh
+ln -sf $ABjo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
+ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
+ln -sf $ABjo/textEdit/nanorc /home/jo/.config/nano/nanorc
+ln -sf $ABjo/TS/locks.sh ~/Arch/locks.sh
 ln -sf $CrPl/SSHconfig/sbMb ~/.ssh/config
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh

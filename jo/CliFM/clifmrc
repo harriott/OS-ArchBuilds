@@ -1,6 +1,6 @@
 # vim: ft=clifm:
 # JH
-# nvim -O /usr/share/clifm/clifmrc $ARCHBUILDS/jo/CliFM/clifmrc -c 'windo difft'
+# nvim -O /usr/share/clifm/clifmrc $ABjo/CliFM/clifmrc -c 'windo difft'
 # symlinked to  ~/.config/clifm/profiles/default/clifmrc  in  $bSc/anytime/symlinks-jo-0.sh
 
 		###########################################

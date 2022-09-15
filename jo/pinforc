@@ -1,6 +1,6 @@
 # # vim: set ft=pinfo:
 #
-# nvim -O /etc/pinforc $ARCHBUILDS/jo/pinforc -c 'windo difft'  # done for v0.6.13
+# nvim -O /etc/pinforc $ABjo/pinforc -c 'windo difft'  # done for v0.6.13
 #
 # Here are some colour setting.
 # Whitespace between the entries is optional.

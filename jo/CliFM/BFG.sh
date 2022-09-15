@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # JH
-# nvim -O /usr/share/clifm/plugins/BFG.sh $ARCHBUILDS/jo/CliFM/BFG.sh -c 'windo difft'
+# nvim -O /usr/share/clifm/plugins/BFG.sh $ABjo/CliFM/BFG.sh -c 'windo difft'
 # see  BFG  in  $bSc/anytime/symlinks-jo-0.sh
 
 # BFG: This is CliFM's file previewer script. It is called by the fzfnav.sh

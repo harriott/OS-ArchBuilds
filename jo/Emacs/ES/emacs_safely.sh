@@ -6,13 +6,13 @@
 # ------------------------------------------------
 # $emacs  should define a shared  .emacs.d  that needs protection
 
-# (chmod 755 $ARCHBUILDS/jo/Emacs/ES/emacs_safely.sh)
+# (chmod 755 $ABjo/Emacs/ES/emacs_safely.sh)
 # symlinked in my  $bSc/symlinks/jo-2-whenDropbox.sh
 #  to provide my command  emacs_safely
 #   used in  $Openbox/openbox/schema.pl
 
 # Tests:
-#  . $ARCHBUILDS/jo/Emacs/ES/emacs_safely.sh
+#  . $ABjo/Emacs/ES/emacs_safely.sh
 #  echo lockTest > $llf
 
 llf=$emacs/lock  # my creation

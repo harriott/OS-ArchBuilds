@@ -6,7 +6,7 @@
 set -e
 
 #=> ansiweather
-ln -sf $ARCHBUILDS/jo/ansiweather ~/.ansiweatherrc
+ln -sf $ABjo/ansiweather ~/.ansiweatherrc
 
 #=> Bash
 # sort this list by last use of "~":  :sort /,*\~/
@@ -23,16 +23,16 @@ ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
 
 #=> CliFM
 if [ -s "/usr/bin/clifm" ]; then
-  ln -sf $ARCHBUILDS/jo/CliFM/clifmrc ~/.config/clifm/profiles/default/clifmrc
+  ln -sf $ABjo/CliFM/clifmrc ~/.config/clifm/profiles/default/clifmrc
   for p in BFG colors img_viewer; do
-    c=$ARCHBUILDS/jo/CliFM/$p.sh
+    c=$ABjo/CliFM/$p.sh
     chmod +x $c
     ln -sf $c ~/.config/clifm/plugins/$p.sh
   done
 fi
 
 #=> cmus
-ln -sf $ARCHBUILDS/jo/Openbox/cmusqueue.sh ~/Arch/cmusqueue.sh
+ln -sf $ABjo/Openbox/cmusqueue.sh ~/Arch/cmusqueue.sh
 ln -sf $Openbox/cmus_notify.sh             ~/.local/share/cmus_notify.sh
 ln -sf $Openbox/cmus-rc.conf               ~/.config/cmus/rc
 
@@ -49,13 +49,13 @@ fi
 # e -la ~/.gitconfig
 
 #=> gpg-agent configuration
-ln -sf $ARCHBUILDS/jo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
+ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 
 #=> for Tex Live
-sudo ln -sf $ARCHBUILDS/jo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
+sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 
 #=> MIME database
-ln -sf $ARCHBUILDS/jo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
+ln -sf $ABjo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
   update-mime-database ~/.local/share/mime
 
 #=> mimeapps.list
@@ -63,31 +63,31 @@ ln -sf $ARCHBUILDS/jo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
 # e -la ~/.config/mimeapps.list
 
 #=> nanorc
-ln -sf $ARCHBUILDS/jo/textEdit/nanorc ~/.config/nano/nanorc
+ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 
 #=> pinfo
-ln -sf $ARCHBUILDS/jo/pinforc ~/.pinforc
+ln -sf $ABjo/pinforc ~/.pinforc
 
 #=> ranger
-ln -sf $ARCHBUILDS/jo/ranger ~/.config/ranger
+ln -sf $ABjo/ranger ~/.config/ranger
 
 #=> tmux
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 
 #=> vim variants entry points
 ln -sf $machBld/jo/gvimrc ~/.gvimrc
-ln -sf $ARCHBUILDS/jo/textEdit/Vim/vimrc ~/.vimrc
+ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
 
 [ -d ~/.config/nvim ] || mkdir -p ~/.config/nvim
-ln -sf $ARCHBUILDS/jo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
+ln -sf $ABjo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 
 #=> X
-ln -sf $ARCHBUILDS/jo/xbindkeysrc                                ~/.xbindkeysrc  # mouse wheel
-ln -sf $ARCHBUILDS/jo/xinitrcs/openbox                           ~/.xinitrc
-[ $host = 'AsusW202' ] && ln -sf $ARCHBUILDS/jo/xinitrcs/awesome ~/.xinitrc
-ln -sf $Openbox/Xresources/Xresources                            ~/.Xresources
-ln -sf $Openbox/Xresources/colorschemes/LukeSmith-gruvbox        ~/.Xresources-LukeSmith-gruvbox
+ln -sf $ABjo/xbindkeysrc                                ~/.xbindkeysrc  # mouse wheel
+ln -sf $ABjo/xinitrcs/openbox                           ~/.xinitrc
+[ $host = 'AsusW202' ] && ln -sf $ABjo/xinitrcs/awesome ~/.xinitrc
+ln -sf $ABjo/wm/Xresources/Xresources                            ~/.Xresources
+ln -sf $ABjo/wm/Xresources/colorschemes/LukeSmith-gruvbox        ~/.Xresources-LukeSmith-gruvbox
 
 #=> Zathura
-ln -sf $Openbox/zathurarc ~/.config/zathura/zathurarc
+ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
 

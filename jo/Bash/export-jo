@@ -17,6 +17,8 @@ export MOZ_GTK_TITLEBAR_DECORATION=client
 #=> storage
 # here I'm taking care to avoid variables that only differ by case
 
+export ABjo=$ARCHBUILDS/jo
+  export Openbox=$ABjo/wm/Openbox
 export bilan=$DROPBOX/JH/Work/ST/LPD/IdF/AB-TAP/bilan
 export cITh=$DROPBOX/JH/copied/IT-handy
   export cIThul=$cITh/unix-like
@@ -29,7 +31,6 @@ export lclm=$ulLinux/clm  # linux command-line mail, was GNULE
 export LTX=$core/TextNotes/LTX  # used in  $Bash/bashrc-wm
 export MD4PDF=$onGH/md4pdf
 export MSWin10=$onGH/MSWin10  # for notes
-export Openbox=$ARCHBUILDS/jo/Openbox
 export PAPERSIZE=A4
 export SE=$DROPBOX/JH/CforWork/Education/Science-Engineering  # for notes
 export Sig=$DROPBOX/JH/now/essential/signatures  # for use in creating documents

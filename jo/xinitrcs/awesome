@@ -2,7 +2,7 @@
 
 # symlinked in  $bSc/anytime/symlinks-jo-0.sh  to  ~/.xinitrc
 
-source $ARCHBUILDS/jo/xinitrcs/xinitrc  # calls  $Openbox/Xresources/Xresources (~/.Xresources)
+source $ABjo/xinitrcs/xinitrc  # calls  $Openbox/Xresources/Xresources (~/.Xresources)
 
 ## awesome
 exec /usr/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr

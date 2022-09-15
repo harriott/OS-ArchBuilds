@@ -5,7 +5,7 @@
 # symlinked in  $bSc/anytime/symlinks-jo-0.sh
 
 # exports defined here so they can be accessed pre-X, by
-#  $ARCHBUILDS/jo/Openbox/openbox/autostart, & by gvim
+#  $ABjo/Openbox/openbox/autostart, & by gvim
 # kill tmux sessions if you've made changes here
 source ~/.export-machine; source ~/.export-storage  # also in  $ARCHBUILDS/root/bash_profile
   source ~/.export-jo

@@ -20,6 +20,6 @@ if 1
 else
 
   " Or explore how function keys are working
-  source $DROPBOX/$ARCHBUILDS/jo/Vim/fnKeyTest.vim
+  source $DROPBOX/$ABjo/Vim/fnKeyTest.vim
 
 endif

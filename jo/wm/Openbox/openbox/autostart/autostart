@@ -23,7 +23,10 @@
 #  in  my  $bSc/31-symlinks-Openbox.sh
 #  depends on  $ARCHBUILDS/Bash/export-storage
 
-#==> 0 gvim
+#==> 0 gVim layout
+# gVim's  columns  lines  are set in  $vimfiles/gvimrc.vim
+
+#===> 0 position
 # gvim -geometry +670+0 &  # opens right-side of a 1440x900
 gvim -geometry +760+0 &  # opens just left of Conky on 1920x1080 screen
 # - set also in $Openbox/openbox/rc.xml

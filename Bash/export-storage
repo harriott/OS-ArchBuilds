@@ -17,7 +17,7 @@
 #  sourced by  $ARCHBUILDS/root/bash_profile
 
 export host=$(uname -n)
-# - for  $ARCHBUILDS/jo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
+# - for  $ABjo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
 
 #=> 0 core
 # $myDrA  &  $Storage  are pre-defined in  $machBld/export-machine
@@ -46,11 +46,11 @@ else
   hjAB=/home/jo/ArchBuilds; [ -d $hjAB ] && export ARCHBUILDS=$hjAB
 fi
 if [ $ARCHBUILDS ]; then
-  export BAT_CONFIG_PATH=$ARCHBUILDS/jo/bat.conf  # for the bat pager
-  export Bash=$ARCHBUILDS/jo/Bash
+  export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
+  export Bash=$ABjo/Bash
   export bSc=$ARCHBUILDS/build-scripts
       export machBld=$ARCHBUILDS/$host  # as opposed to  $machLg
-  export clMail=$ARCHBUILDS/jo/clm  # used in  bashrc-clm  and  muttrc-*
+  export clMail=$ABjo/clm  # used in  bashrc-clm  and  muttrc-*
   export tmx=$ARCHBUILDS/tmux  # used in  tmux.conf
 fi
 

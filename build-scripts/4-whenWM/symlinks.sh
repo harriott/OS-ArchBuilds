@@ -18,14 +18,14 @@ read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 # rm -r ~/texmf/tex/latex/jo; ln -s $CrPl/LaTeX/jo ~/texmf/tex/latex/jo
 
 #=> 1 Thunderbird safely
-ln -sf $ARCHBUILDS/jo/TS/locks.sh ~/Arch/Tlocks.sh
-sudo ln -sf $ARCHBUILDS/jo/TS/thunderbird_safely.sh /usr/local/bin/thunderbird_safely
+ln -sf $ABjo/wm/TS/locks.sh ~/Arch/Tlocks.sh
+sudo ln -sf $ABjo/wm/TS/thunderbird_safely.sh /usr/local/bin/thunderbird_safely
 # pb /usr/local/bin/thunderbird_safely
-sudo ln -sf $ARCHBUILDS/jo/TS/thunderbird_safely.desktop /usr/share/applications/thunderbird_safely.desktop
+sudo ln -sf $ABjo/wm/TS/thunderbird_safely.desktop /usr/share/applications/thunderbird_safely.desktop
 # pb /usr/share/applications/thunderbird_safely.desktop
 
 # #=> 1 urxvt 1 extensions
-# rm -r ~/.urxvt/ext; ln -s $ARCHBUILDS/jo/urxvt/Perls ~/.urxvt/ext
+# rm -r ~/.urxvt/ext; ln -s $ABjo/urxvt/Perls ~/.urxvt/ext
 # # e -la ~/.urxvt
 # # r ~/.urxvt
 

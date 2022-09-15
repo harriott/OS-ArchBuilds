@@ -37,7 +37,7 @@ trap read debug  # puts a read request after each executable line
 # mkdir -p ~/.pandoc/defaults
 
 #=> 2 ranger scope.sh executable
-chmod +x $ARCHBUILDS/jo/ranger/scope.sh
+chmod +x $ABjo/ranger/scope.sh
 
 # #=> 2 terminal-colors
 # pipx install terminal-colors

@@ -17,7 +17,7 @@ esac
 emacs=$Storage/Dropbox/JH/core/IT_stack/unix_like-linux/Arch/emacs
 
 # remove this machine's lockfile if  Emacs  isn't running
-llf=$emacs/lock  # lockfile created by  $ARCHBUILDS/jo/ES/emacs_safely.sh
+llf=$emacs/lock  # lockfile created by  $ABjo/ES/emacs_safely.sh
     # rm $emacs/lock
 if ! pgrep emacs; then [ $(cat $llf) = $host ] && rm $llf; fi
 

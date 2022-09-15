@@ -1,9 +1,9 @@
 # Keybindings file for CliFM
 
 # created on first invocation of  clifm, so
-#  nvim -O /usr/share/clifm/keybindings.clifm $ARCHBUILDS/jo/clifm/keybindings.clifm -c 'windo difft'
-#  nvim -O $ARCHBUILDS/jo/clifm/keybindings.clifm ~/.config/clifm/keybindings.clifm -c 'windo difft'
-#  cp $ARCHBUILDS/jo/CliFM/keybindings.clifm ~/.config/clifm/keybindings.clifm
+#  nvim -O /usr/share/clifm/keybindings.clifm $ABjo/clifm/keybindings.clifm -c 'windo difft'
+#  nvim -O $ABjo/clifm/keybindings.clifm ~/.config/clifm/keybindings.clifm -c 'windo difft'
+#  cp $ABjo/CliFM/keybindings.clifm ~/.config/clifm/keybindings.clifm
 
 # Emacs style key escapes are the simplest way of setting your # keybindings. For example, use "action:\C-t" to bind the action name 'action' to Ctrl-t
 # Note: available action names are defined below

@@ -37,6 +37,6 @@ ln -sf $tmx/tmux.conf ~/.tmux.conf
 find /root -type l -ls  # doesn't show broken
 
 #=> 2 ranger
-sudo ln -sf $ARCHBUILDS/jo/ranger /root/.config/ranger
+sudo ln -sf $ABjo/ranger /root/.config/ranger
 exa -la /root/.config
 

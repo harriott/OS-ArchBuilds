@@ -11,8 +11,8 @@
 
 # Joseph Harriott
 
-# Spacemacs
-a (){ emacs $1; }  # GUI
+# Emacs
+a (){ emacs --no-splash -fh $1 & }  # GUI
 et (){ emacs -nw $1; }  # in terminal
 
 #=> Bash interface

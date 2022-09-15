@@ -134,6 +134,9 @@ mo <file>  # ? lists the limited moar commands
 moar -h
 
 # Emacs
+$ulLinux/Emacs/sm/.spacemacs
+a <fileToOpenGUI>
+et <fileToOpenTerminal>
 im emacs
 n ~/.sm/.emacs.d
 nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
@@ -190,7 +193,7 @@ clifm -v
 i clifm
 
 ### configurations
-$ARCHBUILDS/jo/CliFM/keybindings.clifm
+$ABjo/CliFM/keybindings.clifm
 kbgen
 r ~/.config/clifm
 ~/.config/clifm/profiles/default/history.clifm
@@ -293,7 +296,7 @@ see  $Bash/bashrc-console
 
 ## ranger
 feh $cIThul/cheatsheet.png &
-r $ARCHBUILDS/jo/ranger  # my configurations
+r $ABjo/ranger  # my configurations
 r $DROPBOX/JH/Cafezoide
 ranger --version
 
@@ -329,7 +332,8 @@ rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 
-#### for builds
+#### for builds, in $ITstack
+rg 'ARCHBUILDS/jo'
 rg '\$ArchBuilds'
 rg '\$Bash'
 rg '\$bs'
@@ -337,6 +341,7 @@ rg '\$cITh' -l
 rg '\$clMail'
 rg '\$CrPl'
 rg '\$CrPl'
+rg '\$ABjo'
 rg '\$lclm'
 rg '\$ITstack'
 rg '\$machBld'

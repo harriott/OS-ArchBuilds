@@ -52,7 +52,7 @@ sudo systemctl enable clamav-unofficial-sigs.timer
 # sudo pacman -S bison flex
 
 # #=> fim 1 fim
-# # for  $ARCHBUILDS/jo/clifm/mimelist.clifm
+# # for  $ABjo/clifm/mimelist.clifm
 # gAUR fim
 # nvim -c "silent! /https:\/\/download.savannah.gnu.org\/releases\/fbi-improved" PKGBUILD
 # makepkg -sic  # loads of warnings...
