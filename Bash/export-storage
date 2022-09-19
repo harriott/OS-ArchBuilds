@@ -10,10 +10,10 @@
 
 # for initial build of Arch:
 # for jo:
-#  symlinked in  $bSc/anytime/symlinks-jo.sh
+#  symlinked in  $bSc/symlinks/jo-0.sh
 #  sourced by  $Bash/bash_profile
 # for root:
-#  symlinked in  $bSc/anytime/symlinks-root.sh
+#  symlinked in  $bSc/symlinks/root.sh
 #  sourced by  $ARCHBUILDS/root/bash_profile
 
 export host=$(uname -n)
@@ -46,8 +46,9 @@ else
   hjAB=/home/jo/ArchBuilds; [ -d $hjAB ] && export ARCHBUILDS=$hjAB
 fi
 if [ $ARCHBUILDS ]; then
+  export ABjo=$ARCHBUILDS/jo
+    export Bash=$ABjo/Bash
   export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
-  export Bash=$ABjo/Bash
   export bSc=$ARCHBUILDS/build-scripts
       export machBld=$ARCHBUILDS/$host  # as opposed to  $machLg
   export clMail=$ABjo/clm  # used in  bashrc-clm  and  muttrc-*

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# bash $bSc/anytime/symlinks-jo-0.sh
+# bash $bSc/symlinks/jo-0.sh
 
 set -e
 
@@ -32,9 +32,9 @@ if [ -s "/usr/bin/clifm" ]; then
 fi
 
 #=> cmus
-ln -sf $ABjo/Openbox/cmusqueue.sh ~/Arch/cmusqueue.sh
-ln -sf $Openbox/cmus_notify.sh             ~/.local/share/cmus_notify.sh
-ln -sf $Openbox/cmus-rc.conf               ~/.config/cmus/rc
+ln -sf $ABjo/wm/cmusqueue.sh   ~/Arch/cmusqueue.sh
+ln -sf $ABjo/wm/cmus_notify.sh ~/.local/share/cmus_notify.sh
+ln -sf $ABjo/wm/cmus-rc.conf   ~/.config/cmus/rc
 
 #=> Dunst
 ln -sf $Openbox/dunstrc ~/.config/dunst/dunstrc  # requires restarting X

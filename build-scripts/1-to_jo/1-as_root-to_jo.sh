@@ -21,6 +21,9 @@ trap read debug  # puts a read request after each executable line
 # # dvd+rw-tools
 # pacman -S dvd+rw-tools
 
+# # enca
+# pacman -S enca
+
 # # exa
 # pacman -S exa
 

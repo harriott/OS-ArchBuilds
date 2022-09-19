@@ -14,7 +14,7 @@ export csm=i34G1TU02-clamscan
 export rsnapshot=/run/media/jo/KDTG311282/rsnapshot/
 export startxDelay=5
 
-#=> for  $ABjo/export-storage
+#=> for  $ARCHBUILDS/Bash/export-storage
 export myDrA=1  # only when my Dropbox is active
 export Storage=/mnt/BX200  # where I keep stuff
 

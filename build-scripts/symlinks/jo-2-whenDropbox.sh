@@ -5,14 +5,25 @@
 
 set -e
 
-# #=> Emacs safely 1 install
+#=> Emacs configure 0
+ln -sf $onGH/misc/Emacs/custom.el ~/.emacs.d/custom.el
+ln -sf $onGH/misc/Emacs/early-init.el ~/.emacs.d/early-init.el
+ln -sf $onGH/misc/Emacs/init.el ~/.emacs.d/init.el
+ln -sf $onGH/misc/Emacs/lisp ~/.emacs.d/lisp
+ln -sf $core/TextNotes/TN/Emacs/diary ~/.emacs.d/diary
+ln -sf $GHrUse/emacs/TobiasZawada-md-outline-list ~/.emacs.d/TobiasZawada-md-outline-list
+# e -la ~/.emacs.d/
+
+#=> Emacs configure 1 all-the-icons.el fonts
+
+# #=> Emacs safely 0 install
 # ln -sf $ABjo/Emacs/ES/locks.sh ~/Arch/Elocks.sh
 # sudo ln -sf $ABjo/Emacs/ES/emacs_safely.sh /usr/local/bin/emacs_safely
 # # pb /usr/local/bin/emacs_safely
 # sudo ln -sf $ABjo/Emacs/ES/emacs_safely.desktop /usr/share/applications/emacs_safely.desktop
 # # pb /usr/share/applications/emacs_safely.desktop
 
-# #=> Emacs safely 2 remove
+# #=> Emacs safely 1 remove
 # rm ~/Arch/Elocks.sh
 # sudo rm /usr/local/bin/emacs_safely
 # sudo rm /usr/share/applications/emacs_safely.desktop

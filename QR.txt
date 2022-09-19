@@ -281,6 +281,7 @@ fd -H  # --hidden
 fd -HI --changed-within 1h
 fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
+fd -tf
 fd . $bSc
 recursive by default
 sharkdp/fd
@@ -352,18 +353,21 @@ rg 'passwordeval bash oauth2tool'
 rg 'passwordeval bash'
 
 #### in vimfiles
+rg --no-ignore '<leader><leader>r'
+rg --no-ignore '<leader><leader>x'
 rg --no-ignore '\$MSwin10'
 rg --no-ignore '\$onGH'
 rg -tvim 'vimHints'
 
 #### TeX files
+rg -l -ttex '\\bel' > rg-tex.txt
+rg -l -ttex '\\includegraphics' > rg-tex.txt
 rg -l -ttex '\\input' > rg-tex.txt
 rg -l -ttex '\\parskip' > rg-tex.txt
 rg -l -ttex verseSettings > rg-tex.txt
 rg -ttex '\$Sig'
 rg -ttex '\\bel'
 rg -ttex '\\includepdf'
-rg -ttex '\\includegraphics'
 rg -ttex '\\multirow\{'
 rg -ttex '\\setdefaultlanguage'
 rg -ttex '\\subsubsection\{'
@@ -892,11 +896,11 @@ gvim -geom 200  # height parameter is omitted as it's having no effect
 xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
 ## Openbox
-$Openbox/openbox/autostart
+$Openbox/openbox/autostart/autostart
 $Openbox/openbox/schema.pl
 
 ### rc
-$Openbox/openbox/rc.xml
+$Openbox/openbox/rc/rc.xml
 Alt+Space => show client menu for active window
 Ctrl+Alt+arrows => move to desktop
 Shift+Alt+arrows => move to desktop, bringing current window along
