@@ -1,5 +1,5 @@
 #!/bin/sh
-# vim: fdl=2 ft=sh sw=2:
+# vim: ft=sh sw=2:
 
 # here I export variables that could also be useful as root
 # . $ARCHBUILDS/Bash/export-storage
@@ -16,13 +16,17 @@
 #  symlinked in  $bSc/symlinks/root.sh
 #  sourced by  $ARCHBUILDS/root/bash_profile
 
-export host=$(uname -n)
-# - for  $ABjo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
-
 #=> 0 core
 # $myDrA  &  $Storage  are pre-defined in  $machBld/export-machine
 
-#==> 0 $DROPBOX
+#=> 0 mail
+export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
+
+#=> 1 host
+export host=$(uname -n)
+# - for  $ABjo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
+
+#=> 2 $DROPBOX, or not
 export vimfiles=~/.vim
 if [[ $myDrA == 1 ]]; then
   export DROPBOX=$Storage/Dropbox
@@ -37,7 +41,7 @@ if [[ $myDrA == 1 ]]; then
         export vimfiles=$onGH/vimfiles
 fi
 
-#==> 2 $ARCHBUILDS
+#=> 3 $ARCHBUILDS, or not
 unset ARCHBUILDS
 if [ $onGH ]; then
   export ARCHBUILDS=$onGH/ArchBuilds
@@ -54,7 +58,4 @@ if [ $ARCHBUILDS ]; then
   export clMail=$ABjo/clm  # used in  bashrc-clm  and  muttrc-*
   export tmx=$ARCHBUILDS/tmux  # used in  tmux.conf
 fi
-
-#=> 0 mail
-export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
 

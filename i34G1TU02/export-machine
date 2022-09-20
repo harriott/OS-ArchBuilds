@@ -4,7 +4,7 @@
 # machine-specific exports that could also be useful as root
 
 # for jo:
-#  symlinked in  $bSc/anytime/symlinks-jo-0.sh
+#  symlinked in  $bSc/symlinks/jo-0.sh
 #  sourced by  $Bash/bash_profile
 # for root:
 #  symlinked in  $bSc/05-root_symlinks.sh

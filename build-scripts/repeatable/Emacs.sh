@@ -5,10 +5,13 @@
 
 set -e
 
+#=> Emacs 0 directories
 mkdir ~/.emacs.d
 # e -la ~/.emacs.d
 
-#=> Emacs backup
+sudo mkdir /usr/share/fonts/EmacsAllTheIcons
+
+#=> Emacs 1 backup
 # find ~/.emacs.d -type l -ls  # shows tons from  straight, so not much point backing up to Dropbox
 
 #=> Spacemacs 0 load

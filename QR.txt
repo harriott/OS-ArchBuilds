@@ -327,8 +327,8 @@ rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
 ### searches
 rg '<someText>|<otherText>'  # searches recursively in files
 rg '\.emacs\.d'
+rg '\$ScEn'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
-rg -tmd '\$SE'
 rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff

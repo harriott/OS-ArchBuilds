@@ -5,16 +5,14 @@
 
 set -e
 
-#=> Emacs configure 0
+#=> Emacs configure
 ln -sf $onGH/misc/Emacs/custom.el ~/.emacs.d/custom.el
 ln -sf $onGH/misc/Emacs/early-init.el ~/.emacs.d/early-init.el
 ln -sf $onGH/misc/Emacs/init.el ~/.emacs.d/init.el
 ln -sf $onGH/misc/Emacs/lisp ~/.emacs.d/lisp
 ln -sf $core/TextNotes/TN/Emacs/diary ~/.emacs.d/diary
-ln -sf $GHrUse/emacs/TobiasZawada-md-outline-list ~/.emacs.d/TobiasZawada-md-outline-list
+ln -sf $GHrUse/emacs/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # e -la ~/.emacs.d/
-
-#=> Emacs configure 1 all-the-icons.el fonts
 
 # #=> Emacs safely 0 install
 # ln -sf $ABjo/Emacs/ES/locks.sh ~/Arch/Elocks.sh

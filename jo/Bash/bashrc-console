@@ -186,6 +186,27 @@ gitc () {
   echo "results are in $gitcl"
 }
 
+#==> lists of files by content
+rgl () {
+  cd $DROPBOX/JH
+  echo 'vim: ft=fdtslist:' > rgl.list; echo '' >> rgl.list
+  for ITd in $IT1 $ITstack; do
+    rgc="rg -l $1 $ITd"
+    echo '' >> rgl.list; echo $rgc >> rgl.list
+    echo '' >> rgl.list; $rgc >> rgl.list; echo '' >> rgl.list
+  done
+}
+
+SE () {
+  cd $DROPBOX/JH
+  echo 'vim: ft=fdtslist:' > SE.list
+  echo '' >> SE.list
+  rg -l -tmd 'stackexchange' $ITstack | sort >> SE.list
+  rg -l -tmd 'stackexchange' $IT1 | sort >> SE.list
+  echo '' >> SE.list
+  echo 'now open SE.list'
+}
+
 #==> my Encrypted directories
 #  fa | grep Digital0
 #  fa | grep Secure0

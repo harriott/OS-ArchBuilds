@@ -1,6 +1,6 @@
 # vim: ft=gitconfig
 
-# e -la ~/.gitconfig  ($bSc/repeatable/symlinks-jo-0.sh)
+# e -la ~/.gitconfig  ($bSc/symlinks/jo-0.sh)
 
 # my machine-specific Git configuration file
 # changes saved here instantaneous
