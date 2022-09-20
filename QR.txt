@@ -145,8 +145,9 @@ r ~/.emacs.d
 
 ## resources
 fd -e org -p $GHrUse/emacs
-r $cITh/CP/encoding/textWrangling/Emacs  # PDF guides
+r $GHrUse/emacs
 r $GHrUse/emacs/syl20bnr-spacemacs-develop  # local fresh clone
+r $cITh/CP/encoding/textWrangling/Emacs  # PDF guides
 
 ### Worg
 $GHrUse/emacs/_bzg-worg/orgcard.org
