@@ -170,16 +170,17 @@ Installing package nordvpn-bin...
 chattr: No such file or directory while trying to stat /var/lib/nordvpn/data/*
 error: command failed to execute correctly
 ## awesome
-6-awesome.sh
-jo-1-awesome.sh
 ### K8GBDTIG3 load with $GHrUse
 mkdir -p /run/media/jo/K8GBDTIG3/GHrUse/linux/wm-awesome
   rsync -iLrtv --delete --modify-window=1 $GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets/ /run/media/jo/K8GBDTIG3/GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets
 mkdir -p /run/media/jo/K8GBDTIG3/GHrUse/CP/rxi-json.lua
   rsync -iLrtv --delete --modify-window=1 $GHrUse/CP/rxi-json.lua/ /run/media/jo/K8GBDTIG3/GHrUse/CP/rxi-json.lua
 ### K8GBDTIG3 loaded with $GHrUse
-lsblk  reveals  K8GBDTIG3  to be  /dev/sdb1, so
-  sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /bs
+lsblk  reveals  K8GBDTIG3  to be  /dev/sda1, so
+  sudo mount -t exfat -o uid=1000,gid=1000 /dev/sda1 /bs
+6-awesome.sh
+jo-1-awesome.sh
+startx
 ## waiting
 # fcron
 # MCEs at start

@@ -9,6 +9,9 @@ i datediff
 gspdfpng
 r $core/TextNotes/TN
 
+# awesome wm
+modkey+p = hotkeys_popup
+
 # Bash
 im time
 pinfo bash

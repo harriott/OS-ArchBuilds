@@ -30,11 +30,6 @@ PQ auracle-git
 xdgo https://github.com/falconindy/auracle/commits/master
 updateMaybe auracle-git falconindy
 
-#=> cht.sh-git
-# PQ cht.sh-git
-# xdgo https://github.com/chubin/cheat.sh/commits/master
-# updateMaybe cht.sh-git chubin
-
 #=> fontpreview-git
 PQ fontpreview-git
 xdgo https://github.com/sdushantha/fontpreview/commits/master

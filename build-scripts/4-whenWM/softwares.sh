@@ -2,88 +2,90 @@
 
 # bash <this_script>
 
+if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
+
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 # softwares that require a WM
 
-# #=> asunder
-# sudo pacman -S asunder  # graphical Audio CD ripper
+#=> asunder
+sudo pacman -S asunder  # graphical Audio CD ripper
 
-# #=> feh
-# sudo pacman -S feh
+#=> feh
+sudo pacman -S feh
 
-# #=> ffmpeg
-# sudo pacman -S ffmpeg
+#=> ffmpeg
+sudo pacman -S ffmpeg
 
-# #=> ffmpegthumbnailer
-# sudo pacman -S ffmpegthumbnailer  # for  /usr/share/clifm/plugins/vid_viewer.sh
+#=> ffmpegthumbnailer
+sudo pacman -S ffmpegthumbnailer  # for  /usr/share/clifm/plugins/vid_viewer.sh
 
-# #=> Falkon
-# sudo pacman -S falkon
+#=> Falkon
+sudo pacman -S falkon
 
-# #=> Firefox
-# sudo pacman -S firefox
+#=> Firefox
+sudo pacman -S firefox
 
-# #=> Font Manager
-# sudo pacman -S font-manager
+#=> Font Manager
+sudo pacman -S font-manager
 
-# #=> gifski
-# sudo pacman -S gifski  # (for making animated GIFs)
+#=> gifski
+sudo pacman -S gifski  # (for making animated GIFs)
 
-# #=> gnome-disk-utility
-# sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
+#=> gnome-disk-utility
+sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
 
-# #=> GPicView
-# # Menu > Graphics > Image Viewer
-# sudo pacman -S gpicview
-# gpicview  # Preferences > Automatically save
-# true
+#=> GPicView
+# Menu > Graphics > Image Viewer
+sudo pacman -S gpicview
+gpicview  # Preferences > Automatically save
+true
 
-# #=> GraphicsMagick
-# sudo pacman -S graphicsmagick
+#=> GraphicsMagick
+sudo pacman -S graphicsmagick
 
-# #=> gucharmap
-# sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode Block)
+#=> gucharmap
+sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode Block)
 
-# #=> HPLIP
-# sudo pacman -S hplip
+#=> HPLIP
+sudo pacman -S hplip
 
-# #=> java-commons-lang
-# sudo pacman -S java-commons-lang  # (for pdftk's functions)
+#=> java-commons-lang
+sudo pacman -S java-commons-lang  # (for pdftk's functions)
 
-# #=> keepassxc
-# sudo pacman -S keepassxc
+#=> keepassxc
+sudo pacman -S keepassxc
 
-# #=> libgphoto2
-# sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
-# sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
+#=> libgphoto2
+sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
+sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
 
-# #=> mpv
-# sudo pacman -S mpv
+#=> mpv
+sudo pacman -S mpv
 
-# #=> MusicBrainz Picard
-# sudo pacman -S chromaprint picard
-# # Options > Options > [ General > Check for updates  offticked
-# #   Fingerprinting > Fingerprint calculator > /usr/bin/fpcalc
-# #   User Interface > Show a quit confirmation  off ]
-# true
+#=> MusicBrainz Picard
+sudo pacman -S chromaprint picard
+# Options > Options > [ General > Check for updates  offticked
+#   Fingerprinting > Fingerprint calculator > /usr/bin/fpcalc
+#   User Interface > Show a quit confirmation  off ]
+true
 
-# #=> MyPaint
-# sudo pacman -S mypaint
-# true
+#=> MyPaint
+sudo pacman -S mypaint
+true
 
-# #=> nomacs
-# sudo pacman -S nomacs
-# # now run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-# true
+#=> nomacs
+sudo pacman -S nomacs
+# now run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+true
 
-# #=> OBS Studio 0 install
-# sudo pacman -S obs-studio
+#=> OBS Studio 0 install
+sudo pacman -S obs-studio
 
-# #=> OBS Studio 0 remove
-# sudo pacman -Rs obs-studio
-# rm -r ~/.config/obs-studio
+#=> OBS Studio 0 remove
+sudo pacman -Rs obs-studio
+rm -r ~/.config/obs-studio
 
 # #=> odt2txt
 # sudo pacman -S odt2txt
