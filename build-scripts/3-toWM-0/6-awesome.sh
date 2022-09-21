@@ -12,5 +12,5 @@ trap read debug  # puts a read request after each executable line
 
 #=> 1 $GHrUse - needed until Dropbox
 # see  $Bash/export-jo
-rsync -iLrtv --delete --modify-window=1 /run/media/jo/K8GBDTIG3/GHrUse/ $GHrUse
+rsync -iLrtv --delete --modify-window=1 /bs/GHrUse/ $GHrUse
 

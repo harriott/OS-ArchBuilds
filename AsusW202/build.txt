@@ -153,7 +153,7 @@ sudo lshw
     what():  basic_string::_M_create
 sudo pacman -Rs lshw
 bash 2-grabGraphicsCardDetails.sh
-lsblk  reveals  K8GBDTIG3  to be  /dev/sdb1, so  sudo mount /dev/sdb1 /bs
+lsblk  reveals  K8GBDTIG3  to be  /dev/sdb1, so
   sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /bs
 ## locale.gen.pacnew
 bash $bSc/anytime/cloneArchBuilds.sh
@@ -177,6 +177,9 @@ mkdir -p /run/media/jo/K8GBDTIG3/GHrUse/linux/wm-awesome
   rsync -iLrtv --delete --modify-window=1 $GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets/ /run/media/jo/K8GBDTIG3/GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets
 mkdir -p /run/media/jo/K8GBDTIG3/GHrUse/CP/rxi-json.lua
   rsync -iLrtv --delete --modify-window=1 $GHrUse/CP/rxi-json.lua/ /run/media/jo/K8GBDTIG3/GHrUse/CP/rxi-json.lua
+### K8GBDTIG3 loaded with $GHrUse
+lsblk  reveals  K8GBDTIG3  to be  /dev/sdb1, so
+  sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /bs
 ## waiting
 # fcron
 # MCEs at start
