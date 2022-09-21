@@ -1,0 +1,10 @@
+
+! symlinked in  $bSc/symlinks/jo-0.sh  to  ~/.Xresources-font
+!  called from my  $ABjo/wm/Xresources/Xresources
+
+! Ubuntu Mono - my long-time preferred
+URxvt.letterSpace: -1 ! preferred now
+URxvt.font: xft:ubuntumono:size=9
+!  cant show icons in  lsd
+URxvt.boldFont: xft:ubuntumono:bold
+

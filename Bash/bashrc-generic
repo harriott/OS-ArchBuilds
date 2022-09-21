@@ -18,13 +18,14 @@ alias tkt='tmux kill-server > /dev/null 2>&1; tmux'
 
 ft () {
   if [ "$1" ]; then
-    of=$lB/FIGletFontsTest.txt
+    of=$ulLB/FIGletFontsTest.txt
     echo "$1" > $of; echo '' >> $of
     for font in big doh doom isometric1 isometric2 larry3d nancyj-fancy nancyj nancyj-underlined ogre poison puffy radical_ rowancap shadow standard starwars stellar stop straight tombstone trashman ttyb tty univers usaflag utopia xbriteb xttyb; do
       figlet -t -f $font -w 250 "$1" >> $of
       echo "- $font" >> $of
     done
     sed -i 's/ \+$//' $of
+    echo "results are in $of"
   else
     echo "ft 'some text'"
   fi

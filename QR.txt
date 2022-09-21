@@ -347,6 +347,7 @@ rg '\$clMail'
 rg '\$CrPl'
 rg '\$CrPl'
 rg '\$ABjo'
+rg '\$ulLB'
 rg '\$lclm'
 rg '\$ITstack'
 rg '\$machBld'
@@ -393,6 +394,7 @@ feh -F $cITh/CP/vifm-v0.12-builtin-normal.png &
 # fonts
 cd /usr/share/fonts; $ fd -L consolas
 font-manager &
+r /usr/share/fonts
 
 ## Fontconfig
 cd /etc/fonts  # to explore the configuration files
@@ -585,7 +587,6 @@ java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
 r $cITh/CP/TeX/LaTeX
 r $CrPl/LaTeX/jo
 x <LaTeX_file_basename>
-xc
 
 # multimedia
 ~/.config/obs-studio/logs
@@ -811,15 +812,15 @@ neofetch
 watch -n1 "date '+%D%n%T' | figlet -k"
 
 ## colours
-bash $lB/colours/256/BR-color256.sh
-bash $lB/colours/256/SO-BrunoBronosky.sh
-bash $lB/colours/256/SE269077-numbers-ordered.sh
-bash $lB/colours/256/SE269077-FHauri.sh
-bash $lB/colours/awk-rgb-test.sh
-bash $lB/colours/ss64.sh
-bash $lB/colours/tripleee+isntn.sh
-perl $lB/colours/256/hSATAC-256color.pl
-python $lB/colours/256/WoLpH-colortest.py
+bash $ulLB/colours/256/BR-color256.sh
+bash $ulLB/colours/256/SO-BrunoBronosky.sh
+bash $ulLB/colours/256/SE269077-numbers-ordered.sh
+bash $ulLB/colours/256/SE269077-FHauri.sh
+bash $ulLB/colours/awk-rgb-test.sh
+bash $ulLB/colours/ss64.sh
+bash $ulLB/colours/tripleee+isntn.sh
+perl $ulLB/colours/256/hSATAC-256color.pl
+python $ulLB/colours/256/WoLpH-colortest.py
 colorscript -r
 terminal-colors  # shows what the terminal can do (console only 8 colours)
 terminal-colors -l  # with #xxxxxx's
@@ -831,7 +832,7 @@ figlet(6)
 
 ### fonts
 ft  # $ARCHBUILDS/Bash/bashrc-generic
-showfigfonts > $lB/FIGletFonts.txt; sed -i 's/ \+$//' $lB/FIGletFonts.txt
+showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFonts.txt
 
 ## termdown
 termdown --help | mo

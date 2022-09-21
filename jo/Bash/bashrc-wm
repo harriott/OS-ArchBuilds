@@ -5,6 +5,7 @@
 
 alias aw='ansiweather -f 7'
 alias xc="zathura -P 38 $cITh/CP/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
+alias pif="zathura -P 9 $cITh/CP/TeX/LaTeX/Appearance/font/psnfss2e.pdf &"
 export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
 
 fv () {

@@ -1,0 +1,14 @@
+
+! symlinked in  $bSc/symlinks/jo-0.sh  to  ~/.Xresources-font
+!  called from my  $ABjo/wm/Xresources/Xresources
+
+! Caskaydia Cove Nerd Font Complete Mono
+URxvt.letterSpace: -1
+URxvt.font: xft:CaskaydiaCoveNerdFontMono:size=8
+!  better than Ubuntu Mono, except the hyphen runs into adjoining letters
+! URxvt.boldFont: xft:CaskaydiaCoveNerdFontMono:bold
+!  gets too small if size of Regular is 8
+
+! Hack Bold Nerd Font Complete Monor
+URxvt.boldFont: xft:HackNerdFontMono:Bold
+
