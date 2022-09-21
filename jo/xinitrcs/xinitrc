@@ -57,7 +57,3 @@ fi
 # stop the 600s screensaver
 xset s off
 
-# lastly, window manager
-export QT_QPA_PLATFORMTHEME=qt5ct  # QPA set here so qt5ct works from Openbox Menu too
-[ -f usr/bin/xbindkeys ] && xbindkeys  # must be before launching Openbox
-

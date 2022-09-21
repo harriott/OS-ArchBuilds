@@ -8,10 +8,6 @@ if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> awesome - for AsusW202
-mkdir -p ~/.config/awesome/
-sudo pacman -S awesome
-
 # #=> CUPS service
 # sudo pacman -S cups
 # sudo systemctl enable cups.service --now

@@ -22,6 +22,7 @@ export cITh=$DROPBOX/JH/copied/IT-handy
   export cIThul=$cITh/unix-like
   export GHrCl=$Storage/IT-Copied/GHrepos  # GitHub Repositories Clone
   export GHrUse=$cITh/GHrepos  # GitHub Repositories Use
+  [ -d "$GHrUse" ] || export GHrUse=~/GHrUse
 export detail=$DROPBOX/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage/detail
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export IT1=$DROPBOX/JH/technos/IT1  # for notes
