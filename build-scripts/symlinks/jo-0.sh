@@ -85,8 +85,8 @@ ln -sf $ABjo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
 ln -sf $ABjo/xbindkeysrc                                ~/.xbindkeysrc  # mouse wheel
 ln -sf $ABjo/xinitrcs/openbox                           ~/.xinitrc
 [ $host = 'AsusW202' ] && ln -sf $ABjo/xinitrcs/awesome ~/.xinitrc
-ln -sf $ABjo/wm/Xresources/Xresources                            ~/.Xresources
-ln -sf $ABjo/wm/Xresources/colorschemes/LukeSmith-gruvbox        ~/.Xresources-LukeSmith-gruvbox
+ln -sf $ABjo/wm/Xresources/Xresources                     ~/.Xresources
+ln -sf $ABjo/wm/Xresources/colorschemes/LukeSmith-gruvbox ~/.Xresources-LukeSmith-gruvbox
 
 #=> Zathura
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc

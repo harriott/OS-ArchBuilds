@@ -83,67 +83,67 @@ true
 #=> OBS Studio 0 install
 sudo pacman -S obs-studio
 
-#=> OBS Studio 0 remove
-sudo pacman -Rs obs-studio
-rm -r ~/.config/obs-studio
+# #=> OBS Studio 0 remove
+# sudo pacman -Rs obs-studio
+# rm -r ~/.config/obs-studio
 
-# #=> odt2txt
-# sudo pacman -S odt2txt
+#=> odt2txt
+sudo pacman -S odt2txt
 
-# #=> OpenShot
-# sudo pacman -S openshot
+#=> OpenShot
+sudo pacman -S openshot
 
-# #=> PCManFM
-# sudo pacman -S pcmanfm
-# handlr set inode/directory pcmanfm.desktop
-# # now run it to set some of my preferences:  Edit > Preferences >
-# #  General > Confirm before moving files into "trash can"   off-ticked
-# #  Volume Management > Show available options  off-ticked
-# #  Advanced > Terminal > urxvt
-# true
+#=> PCManFM
+sudo pacman -S pcmanfm
+handlr set inode/directory pcmanfm.desktop
+# now run it to set some of my preferences:  Edit > Preferences >
+#  General > Confirm before moving files into "trash can"   off-ticked
+#  Volume Management > Show available options  off-ticked
+#  Advanced > Terminal > urxvt
+true
 
-# #=> pdftk
-# sudo pacman -S pdftk
+#=> pdftk
+sudo pacman -S pdftk
 
-# #=> peek
-# sudo pacman -S peek  # (GIF Screen Recorder)
+#=> peek
+sudo pacman -S peek  # (GIF Screen Recorder)
 
-# #=> perl-image-exiftool
-# sudo pacman -S perl-image-exiftool
+#=> perl-image-exiftool
+sudo pacman -S perl-image-exiftool
 
-# #=> Pinta
-# sudo pacman -S pinta
+#=> Pinta
+sudo pacman -S pinta
 
-# #=> pqiv
-# sudo pacman -S pqiv
+#=> pqiv
+sudo pacman -S pqiv
 
-# #=> qpdfview
-# sudo pacman -S qpdfview
+#=> qpdfview
+sudo pacman -S qpdfview
 
-# #=> qt5ct
-# # - Qt5 theme - allows better tab differentiation in CopyQ
-# sudo pacman -S qt5ct
-# #  QT_QPA_PLATFORMTHEME=qt5ct  is set in  ~/.xinitrc
+#=> qt5ct
+# - Qt5 theme - allows better tab differentiation in CopyQ
+sudo pacman -S qt5ct
+#  QT_QPA_PLATFORMTHEME=qt5ct  is set in  ~/.xinitrc
 
-# #=> Quod Libet
-# sudo pacman -S quodlibet
+#=> Quod Libet
+sudo pacman -S quodlibet
 
-# #=> SANE
-# sudo pacman -S sane
+#=> SANE
+sudo pacman -S sane
 
-# #=> sqlitebrowser
-# sudo pacman -S sqlitebrowser
+#=> sqlitebrowser
+sudo pacman -S sqlitebrowser
 
-# #=> sxiv
-# sudo pacman -S sxiv
+#=> sxiv
+sudo pacman -S sxiv
 
-# #=> Vimiv
-# sudo pacman -S vimiv
+#=> Vimiv
+sudo pacman -S vimiv
 
-# #=> Xournal++
-# sudo pacman -S xournalpp  # for hand-writing pad
+#=> Xournal++
+sudo pacman -S xournalpp  # for hand-writing pad
 
-# #=> Zathura
-# sudo pacman -S zathura-pdf-mupdf
-# # zathurarc  symlinked in  $bSc/anytime/symlinks-jo-0.sh
+#=> Zathura
+sudo pacman -S zathura-pdf-mupdf
+# zathurarc  symlinked in  $bSc/symlinks/jo-0.sh
 

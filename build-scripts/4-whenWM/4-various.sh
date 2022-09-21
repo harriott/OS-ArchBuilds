@@ -6,17 +6,6 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 audio PNMixer 0
-gAUR pnmixer
-nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
-makepkg -sic
-# now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
-true
-
-#=> 0 audio PNMixer 1 pavucontrol
-pacman -S pavucontrol  # for pnmixer
-sed -i '/VolumeControlCommand/ s/=.*/=pavucontrol/' ~/.config/pnmixer/config
-
 #=> 0 LibreOffice Fresh install
 sudo pacman -S libreoffice-fresh-en-gb
 libreoffice  # first-run of LibreOffice - close it
@@ -27,12 +16,16 @@ sudo pacman -S network-manager-applet
 #=> 0 Pandoc reference.odt
 pandoc -o ~/.pandoc/custom-reference.odt --print-default-data-file reference.odt
 
+#=> 0 pavucontrol
+pacman -S pavucontrol  # for pnmixer
+sed -i '/VolumeControlCommand/ s/=.*/=pavucontrol/' ~/.config/pnmixer/config
+
 #=> 0 Thunderbird - install
 sudo pacman -S thunderbird-i18n-en-gb
 thunderbird  # generates a dummy Profile, not to be hereafter used
 
-#=> 0 urxvt 0
-mkdir -p ~/.urxvt
+#=> 0 urxvt
+mkdir -p ~/.urxvt  # for  $ABjo/wm/urxvt/Perls
 
 #=> 1 check $ARCHBUILDS
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"

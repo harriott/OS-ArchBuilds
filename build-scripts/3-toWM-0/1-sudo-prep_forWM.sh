@@ -121,6 +121,6 @@ pacman -S xorg-xev
 # # Bluefish
 # pacman -S bluefish
 
-# # xvt-perls
-# pacman -S urxvt-perls
+# # urxvt-perls
+# pacman -S urxvt-perls  # brings in  rxvt-unicode
 

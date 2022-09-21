@@ -75,10 +75,17 @@ true
 # makepkg -sic  # choose  jdk-openjdk
 # true
 
-# #=> PhotoCollage
-# gAUR photocollage
-# nvim -c "silent! /adrienverge" PKGBUILD
-# makepkg -sic
+#=> PhotoCollage
+gAUR photocollage
+nvim -c "silent! /adrienverge" PKGBUILD
+makepkg -sic
+
+#=> audio PNMixer
+gAUR pnmixer
+nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
+makepkg -sic
+# now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
+true
 
 # #=> pscircle-git
 # gAUR pscircle-git
