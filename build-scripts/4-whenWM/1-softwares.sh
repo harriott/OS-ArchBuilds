@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# bash <this_script>
+# softwares that require a WM
+
+# bash $bSc/4-whenWM/1-softwares.sh
 
 if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 
-set -v  # prints each statement here, including comments
+set -ev  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
-
-# softwares that require a WM
 
 #=> asunder
 sudo pacman -S asunder  # graphical Audio CD ripper
@@ -67,7 +67,7 @@ sudo pacman -S mpv
 #=> MusicBrainz Picard
 sudo pacman -S chromaprint picard
 # Options > Options > [ General > Check for updates  offticked
-#   Fingerprinting > Fingerprint calculator > /usr/bin/fpcalc
+#   (Fingerprinting > Fingerprint calculator > /usr/bin/fpcalc)
 #   User Interface > Show a quit confirmation  off ]
 true
 
@@ -95,7 +95,6 @@ sudo pacman -S openshot
 
 #=> PCManFM
 sudo pacman -S pcmanfm
-handlr set inode/directory pcmanfm.desktop
 # now run it to set some of my preferences:  Edit > Preferences >
 #  General > Confirm before moving files into "trash can"   off-ticked
 #  Volume Management > Show available options  off-ticked
@@ -116,9 +115,6 @@ sudo pacman -S pinta
 
 #=> pqiv
 sudo pacman -S pqiv
-
-#=> qpdfview
-sudo pacman -S qpdfview
 
 #=> qt5ct
 # - Qt5 theme - allows better tab differentiation in CopyQ

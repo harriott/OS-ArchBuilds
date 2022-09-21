@@ -10,6 +10,7 @@ gspdfpng
 r $core/TextNotes/TN
 
 # awesome wm
+modkey+c = c:kill()
 modkey+p = hotkeys_popup
 
 # Bash

@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# bash <this_script>
+# AURs that require a WM
+
+# bash $bSc/4-whenWM/3-moreAURs-repeatable.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -87,10 +89,15 @@ makepkg -sic
 # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 true
 
-# #=> pscircle-git
-# gAUR pscircle-git
-# nvim -c "silent! /mildlyparallel" PKGBUILD
-# makepkg -sic
+#=> pscircle-git
+gAUR pscircle-git
+nvim -c "silent! /mildlyparallel" PKGBUILD
+makepkg -sic
+
+#=> qpdfview
+gAUR qpdfview
+nvim -c "silent! /launchpad" PKGBUILD
+makepkg -sic
 
 # #=> Spotify 0 signing key
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -

@@ -181,6 +181,7 @@ lsblk  reveals  K8GBDTIG3  to be  /dev/sda1, so
 6-awesome.sh
 jo-1-awesome.sh
 startx
+### bash $bSc/4-whenWM/1-softwares.sh
 ## waiting
 # fcron
 # MCEs at start
