@@ -1,17 +1,14 @@
 #!/bin/bash
 
-# bash $bSc/4-whenWM/resourceHandler.sh
+# bash $bSc/4-whenWM/2-resourceHandler.sh
 
 # gAUR  is defined in $Bash/bashrc-console
 
-set -ev
+set -v
 trap read debug  # puts a read request after each executable line
 
-#=> handlr 0 handlr-bin
-gAUR handlr-bin
-nvim -c "silent! /handlr" PKGBUILD
-makepkg -sic
-cd ~
+#=> handlr 0 handlr
+sudo pacman -S handlr
 
 #=> handlr 1 xdg-utils-handlr
 # sudo pacman -Rs xdg-utils  can't be done as needed by  chromium  &  qt5-base
