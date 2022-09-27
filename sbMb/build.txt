@@ -1260,6 +1260,9 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 error: go: signature from "Morten Linderud <morten@linderud.pw>" is invalid
 :: File /var/cache/pacman/pkg/go-2:1.19.1-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
 Do you want to delete it? [Y/n] - I allowed, and it got re-downloaded
+## Updates
+:: Replace at-spi2-atk with extra/at-spi2-core? [Y/n]
+:: Replace atk with extra/at-spi2-core? [Y/n]
 ## waiting
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies

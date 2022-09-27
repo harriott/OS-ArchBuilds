@@ -49,6 +49,9 @@ trap read debug  # puts a read request after each executable line
 # # perl-rename
 # pacman -S perl-rename
 
+# # perl-test-fatal
+# pacman -S perl-test-fatal  # needed for  perl-unicode-utf8
+
 # # p7zip
 # pacman -S p7zip
 

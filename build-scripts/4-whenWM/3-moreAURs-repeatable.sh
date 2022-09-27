@@ -47,11 +47,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> iscan
 # gAUR iscan
@@ -77,27 +77,33 @@ true
 # makepkg -sic  # choose  jdk-openjdk
 # true
 
-#=> PhotoCollage
-gAUR photocollage
-nvim -c "silent! /adrienverge" PKGBUILD
-makepkg -sic
-
-#=> audio PNMixer
-gAUR pnmixer
-nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
-makepkg -sic
-# now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
+#=> perl-unicode-utf8
+gAUR perl-unicode-utf8
+nvim -c "silent! /metacpan.org" PKGBUILD
+makepkg -sic  # requires  perl-test-fatal
 true
 
-#=> pscircle-git
-gAUR pscircle-git
-nvim -c "silent! /mildlyparallel" PKGBUILD
-makepkg -sic
+# #=> PhotoCollage
+# gAUR photocollage
+# nvim -c "silent! /adrienverge" PKGBUILD
+# makepkg -sic
 
-#=> qpdfview
-gAUR qpdfview
-nvim -c "silent! /launchpad" PKGBUILD
-makepkg -sic
+# #=> audio PNMixer
+# gAUR pnmixer
+# nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
+# makepkg -sic
+# # now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
+# true
+
+# #=> pscircle-git
+# gAUR pscircle-git
+# nvim -c "silent! /mildlyparallel" PKGBUILD
+# makepkg -sic
+
+# #=> qpdfview
+# gAUR qpdfview
+# nvim -c "silent! /launchpad" PKGBUILD
+# makepkg -sic
 
 # #=> Spotify 0 signing key
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -

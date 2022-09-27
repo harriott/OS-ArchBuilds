@@ -182,7 +182,10 @@ lsblk  reveals  K8GBDTIG3  to be  /dev/sda1, so
 jo-1-awesome.sh
 startx
 ### bash $bSc/4-whenWM/1-softwares.sh
+### bash $bSc/4-whenWM/2-resourceHandler.sh
 ## waiting
+Gpick
+perl-test-fatal
 # fcron
 # MCEs at start
 [Hardware Error]: CPU 0: Machine Check: 0 Bank 4: a600000000020408

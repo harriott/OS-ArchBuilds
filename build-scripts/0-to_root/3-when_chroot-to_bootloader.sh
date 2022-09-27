@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# bash $bSc/0-to_root/3-when_chroot-to_bootloader.sh
+
 #=> 1 go slow
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line

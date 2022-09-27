@@ -101,17 +101,15 @@ fRs () {
 #===> by extension
 alias fx='fdtsExt'
 # fx gfm
-# fx gitignore
 
 fdtsExt () {
   if [ $1 ]; then
     if [ $1 = "gitignore" ]; then
-      dtsfile=dts-$1-all.list
-      search=.$1
+      search='\.$1'
     else
-      dtsfile=dts-$1.list
       search='\*.$1'
     fi
+    dtsfile=dts-$1.list
     eval "fdtsKS $search $dtsfile"
     [[ $1 = @(gitignore|pl|tex|txt) ]] && ctfp $dtsfile
   else
@@ -162,12 +160,26 @@ fmtypes () {
 }
 
 #==> Git
+# fx gitignore
+
 alias ga='git add'
 alias gis='git status -u'
 export BFG=$CrPl/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
 #===> time-sorted lists of files
+gitc () {
+  gitcl=git_config.list
+  echo 'vim: nospell:' > $gitcl
+  echo '' >> $gitcl
+  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gitcl
+  echo "results are in $gitcl"
+}
+
+#====> my GitHub issues
+# $IT1/GitHubIssues.list
+# $ITstack/GitHubIssues.list
+
 ghi () {
   ghil=GitHubIssues.list
   for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
@@ -176,14 +188,6 @@ ghi () {
   sed -i '1ivim: ft=fdtslist' $ghil
   echo '' >> $ghil
   echo "results are in $ghil"
-}  # my GitHub issues
-
-gitc () {
-  gitcl=git_config.list
-  echo 'vim: nospell:' > $gitcl
-  echo '' >> $gitcl
-  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gitcl
-  echo "results are in $gitcl"
 }
 
 #==> lists of files by content

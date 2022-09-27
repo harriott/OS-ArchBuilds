@@ -13,13 +13,13 @@ sudo pacman -S handlr
 #=> handlr 1 xdg-utils-handlr
 # sudo pacman -Rs xdg-utils  can't be done as needed by  chromium  &  qt5-base
 gAUR xdg-utils-handlr
-nvim -c "silent! /handlr" PKGBUILD
+nvim -c "silent! /chmln\/\/\/handlr" PKGBUILD
 makepkg -sic  # don't forget to allow Removal of xdg-utils
 cd ~
 
 #=> handlr 2 set default handlers
 handlr set .3gp mpv.desktop
-handlr set .conf gvim.desktop
+# handlr set .conf gvim.desktop  # not sure this does anything
 handlr set .el gvim.desktop
 handlr set .flv mpv.desktop
 handlr set .jpg org.nomacs.ImageLounge.desktop

@@ -157,7 +157,7 @@ normal with Jo-OPPO-A76
 ## xdg-open .svg
 mimeo -m .svg  reports  image/svg+xml
 ## waiting
-thunderbird_safely
+perl-test-fatal
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

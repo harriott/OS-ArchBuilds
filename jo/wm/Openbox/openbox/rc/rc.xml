@@ -378,6 +378,12 @@
       <command>/home/jo/.config/openbox/importScreenshot.sh</command>
     </action>
   </keybind>
+  <!-- Keybindings for repairing CopyQ - JH -->
+  <keybind key="W-o">
+    <action name="Execute">
+      <command>/home/jo/.config/openbox/fixCopyQ.sh</command>
+    </action>
+  </keybind>
   <!-- Keybindings for screen brightness - JH -->
   <keybind key="XF86MonBrightnessDown">
     <action name="Execute">

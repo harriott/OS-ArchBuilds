@@ -34,6 +34,8 @@ pf () {
 }
 
 #=> pdf
+alias tt='rm *.aux *.log'  # tidy tex = clear away TeX ancillary files
+
 gspdfpng() {
     if [ -z "$1" ] ; then
         echo "${tpf5}gspdfpng <pdf> [<pagelist>] [<png_basename>]${tpfn}"

@@ -29,6 +29,9 @@ trap read debug  # puts a read request after each executable line
 # #=> fonts - ttf-dejavu
 # sudo pacman -S ttf-dejavu
 
+#=> Gpick
+sudo pacman -S gpick
+
 # #=> libsixel
 # sudo pacman -S libsixel  # for  sixel  graphics
 

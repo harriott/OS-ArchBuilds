@@ -2,8 +2,8 @@
 # vim: fdl=1:
 
 # more often called from
-#  $bSc/3-when_chroot-to_bootloader.sh
-#  $bSc/anytime/as_root-mirrorlist_pacnew.sh
+#  $bSc/0-to_root/3-when_chroot-to_bootloader.sh
+#  $bSc/repeatable/as_root-mirrorlist_pacnew.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 

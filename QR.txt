@@ -89,7 +89,8 @@ GNU Grep Manual
 GREP(1)
 
 ### mlocate
-bm locate
+i locate
+im locate
 locate -c <target>  # --count
 locate -h
 locate -r '\.conf$'
