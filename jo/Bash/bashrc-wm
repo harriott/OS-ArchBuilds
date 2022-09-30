@@ -4,8 +4,6 @@
 # sourced by  $Bash/bashrc
 
 alias aw='ansiweather -f 7'
-alias xc="zathura -P 38 $cITh/CP/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
-alias pif="zathura -P 9 $cITh/CP/TeX/LaTeX/Appearance/font/psnfss2e.pdf &"
 export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
 
 fv () {
@@ -34,6 +32,7 @@ ltx () {
   sed -i 's/}//' $s
 }
 
+alias tt='rm *.aux *.log *.out'  # tidy tex = clear away TeX ancillary files
 x () { max_print_line=4000 xelatex $1 | xcol Missing; }
 
 #=> CUPS

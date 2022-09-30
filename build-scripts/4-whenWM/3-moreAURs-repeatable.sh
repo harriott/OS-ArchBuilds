@@ -47,11 +47,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> iscan
 # gAUR iscan
@@ -77,11 +77,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # choose  jdk-openjdk
 # true
 
-#=> perl-unicode-utf8
-gAUR perl-unicode-utf8
-nvim -c "silent! /metacpan.org" PKGBUILD
-makepkg -sic  # requires  perl-test-fatal
-true
+# #=> perl-unicode-utf8
+# gAUR perl-unicode-utf8
+# nvim -c "silent! /metacpan.org" PKGBUILD
+# makepkg -sic  # requires  perl-test-fatal
+# true
 
 # #=> PhotoCollage
 # gAUR photocollage

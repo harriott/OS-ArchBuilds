@@ -18,6 +18,9 @@ trap read debug  # puts a read request after each executable line
 # #=> pgpdump
 # sudo pacman -S pgpdump
 
+#=> Python 2.7 remove
+sudo pacman -Rs python2
+
 # #=> Rust Toolchain - for Dust
 # # 1 rustup
 # sudo pacman -S rustup
@@ -25,8 +28,8 @@ trap read debug  # puts a read request after each executable line
 # # 2 Rust Toolchain
 # rustup toolchain install stable
 
-#=> systemd-resolved
-# Can't recall the advantage of this...
-sudo systemctl enable systemd-resolved.service --now
-systemctl status systemd-resolved.service
+# #=> systemd-resolved
+# # Can't recall the advantage of this...
+# sudo systemctl enable systemd-resolved.service --now
+# systemctl status systemd-resolved.service
 

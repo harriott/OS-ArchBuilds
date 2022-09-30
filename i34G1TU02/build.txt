@@ -158,6 +158,7 @@ normal with Jo-OPPO-A76
 mimeo -m .svg  reports  image/svg+xml
 ## waiting
 perl-test-fatal
+Python 2.7 remove
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

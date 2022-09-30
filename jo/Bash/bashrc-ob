@@ -34,7 +34,8 @@ pf () {
 }
 
 #=> pdf
-alias tt='rm *.aux *.log'  # tidy tex = clear away TeX ancillary files
+alias pif="zathura -P 9 $cITh/CP/TeX/LaTeX/Appearance/font/psnfss2e.pdf &"
+alias xc="zathura -P 38 $cITh/CP/TeX/LaTeX/Appearance/colour/xcolor.pdf &"
 
 gspdfpng() {
     if [ -z "$1" ] ; then

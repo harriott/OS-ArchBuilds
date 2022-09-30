@@ -186,6 +186,7 @@ startx
 ## waiting
 Gpick
 perl-test-fatal
+Python 2.7 remove
 # fcron
 # MCEs at start
 [Hardware Error]: CPU 0: Machine Check: 0 Bank 4: a600000000020408
