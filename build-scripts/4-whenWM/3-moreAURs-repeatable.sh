@@ -29,8 +29,8 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /Jack12816" PKGBUILD
 # makepkg -sic
 
-#=> dragon-drag-and-drop
-gAUR dragon-drag-and-drop
+#=> dragon-drop
+gAUR dragon-drop
 nvim -c "silent! /dragon" PKGBUILD
 makepkg -sic
 
