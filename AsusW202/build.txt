@@ -183,10 +183,10 @@ jo-1-awesome.sh
 startx
 ### bash $bSc/4-whenWM/1-softwares.sh
 ### bash $bSc/4-whenWM/2-resourceHandler.sh
+### Updates
+:: Replace at-spi2-atk with extra/at-spi2-core? [Y/n]
+:: Replace atk with extra/at-spi2-core? [Y/n]
 ## waiting
-Gpick
-perl-test-fatal
-Python 2.7 remove
 # fcron
 # MCEs at start
 [Hardware Error]: CPU 0: Machine Check: 0 Bank 4: a600000000020408
