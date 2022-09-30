@@ -7,31 +7,31 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
+# gAUR  gdAUR  are defined in $Bash/bashrc-console
 # softwares that require a WM
 
-#=> clifm-git
-gdAUR clifm-git
-nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
-makepkg -sic
+# #=> clifm-git
+# gdAUR clifm-git
+# nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
+# makepkg -sic
 
-#=> cmus-notify 0 install
-gAUR cmus-notify
-nvim -c "silent! /AntoineGagne" PKGBUILD
-makepkg -sic
-true
+# #=> cmus-notify 0 install
+# gAUR cmus-notify
+# nvim -c "silent! /AntoineGagne" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> cmus-notify 1 remove
 # sudo pacman -Rs cmus-notify
 
-#=> colorpicker
-gAUR colorpicker
-nvim -c "silent! /Jack12816" PKGBUILD
-makepkg -sic
+# #=> colorpicker
+# gAUR colorpicker
+# nvim -c "silent! /Jack12816" PKGBUILD
+# makepkg -sic
 
 #=> dragon-drag-and-drop
-rAUR dragon-drag-and-drop
-gvim -c "silent! /dragon" PKGBUILD
+gAUR dragon-drag-and-drop
+nvim -c "silent! /dragon" PKGBUILD
 makepkg -sic
 
 #=> Dropbox 0 (re)install
