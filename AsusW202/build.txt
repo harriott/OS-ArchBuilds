@@ -186,6 +186,7 @@ startx
 ### Updates
 :: Replace at-spi2-atk with extra/at-spi2-core? [Y/n]
 :: Replace atk with extra/at-spi2-core? [Y/n]
+### bash $bSc/4-whenWM/3-moreAURs-repeatable.sh
 ## waiting
 # fcron
 # MCEs at start

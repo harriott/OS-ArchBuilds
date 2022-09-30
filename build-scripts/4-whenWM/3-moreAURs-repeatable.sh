@@ -29,78 +29,80 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /Jack12816" PKGBUILD
 # makepkg -sic
 
-#=> dragon-drop
-gAUR dragon-drop
-nvim -c "silent! /dragon" PKGBUILD
-makepkg -sic
+# #=> dragon-drop
+# gAUR dragon-drop
+# nvim -c "silent! /mwh\/dragon" PKGBUILD
+# makepkg -sic
 
-#=> Dropbox 0 (re)install
-# only once there's a browser, and preferably after LastPass
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
-#=> Dropbox 1 dropbox-dist folder
-install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
+# #=> Dropbox 1 dropbox-dist folder
+# install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
 
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
-#=> iscan
-gAUR iscan
-nvim -c "silent! /support.epson.net" PKGBUILD
-makepkg -sic  # takes a long time...
-true
+# #=> iscan
+# gAUR iscan
+# nvim -c "silent! /support.epson.net" PKGBUILD
+# makepkg -sic  # takes a long time...
+# true
 
-#=> nsxiv
-gAUR nsxiv
-nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
-makepkg -sic
-true
+# #=> nsxiv
+# gAUR nsxiv
+# nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
+# makepkg -sic
+# true
 
-#=> Pacfinder
-gAUR pacfinder
-nvim -c "silent! /stevenbenner\/pacfinder" PKGBUILD
-makepkg -sic
-true
+# #=> Pacfinder
+# gAUR pacfinder
+# nvim -c "silent! /stevenbenner\/pacfinder" PKGBUILD
+# makepkg -sic
+# true
 
-#=> PDFsam
-gAUR pdfsam
-nvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic  # choose  jdk-openjdk
-true
+# #=> PDFsam
+# gAUR pdfsam
+# nvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic  # choose  jdk-openjdk
+# true
 
-#=> perl-unicode-utf8
-gAUR perl-unicode-utf8
-nvim -c "silent! /metacpan.org" PKGBUILD
-makepkg -sic  # requires  perl-test-fatal
-true
+# #=> perl-unicode-utf8
+# gAUR perl-unicode-utf8
+# nvim -c "silent! /metacpan.org" PKGBUILD
+# makepkg -sic  # requires  perl-test-fatal
+# true
 
-#=> PhotoCollage
-gAUR photocollage
-nvim -c "silent! /adrienverge" PKGBUILD
-makepkg -sic
+# #=> PhotoCollage
+# gAUR photocollage
+# nvim -c "silent! /adrienverge" PKGBUILD
+# makepkg -sic
 
-#=> audio PNMixer
-gAUR pnmixer
-nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
-makepkg -sic
-# now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
-true
+# #=> audio PNMixer
+# gAUR pnmixer
+# nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
+# makepkg -sic
+# # (in Openbox)  now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
+# true
 
-#=> pscircle-git
-gAUR pscircle-git
-nvim -c "silent! /mildlyparallel" PKGBUILD
-makepkg -sic
+# #=> pscircle-git
+# gAUR pscircle-git
+# nvim -c "silent! /mildlyparallel" PKGBUILD
+# makepkg -sic
 
-#=> qpdfview
+#=> qpdfview 0 Adam Reichold's public key
+gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8
+
+#=> qpdfview 1 (re)install
 gAUR qpdfview
 nvim -c "silent! /launchpad" PKGBUILD
 makepkg -sic
