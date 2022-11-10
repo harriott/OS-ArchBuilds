@@ -37,17 +37,6 @@ sudo systemctl enable clamav-unofficial-sigs.timer
 # sudo systemctl disable clamav-unofficial-sigs.timer
 # sudo pacman -Rs clamav-unofficial-sigs
 
-# #=> clifm 0 install
-# gdAUR clifm
-# nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
-# makepkg -sic
-# cd /usr/share/clifm/plugins
-# gcc -o kbgen kbgen.c -lcurses
-
-# #=> clifm 1 remove
-# sudo pacman -Rs clifm
-# rm -r ~/.config/clifm
-
 # #=> fim 0 bison, flex
 # sudo pacman -S bison flex
 

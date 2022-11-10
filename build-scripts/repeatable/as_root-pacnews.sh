@@ -17,6 +17,10 @@ sudo find /etc -type f -name "*pacnew"
 # nvim -o /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
 # rm /etc/clamav/clamd.conf.pacnew
 
+#=> 1 firewalld.conf
+nvim -o /etc/firewalld/firewalld.conf /etc/firewalld/firewalld.conf.pacnew -c 'windo difft'
+rm /etc/firewalld/firewalld.conf.pacnew
+
 #=> 1 locale.gen
 nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 rm /etc/locale.gen.pacnew

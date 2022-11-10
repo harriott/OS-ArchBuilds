@@ -5,8 +5,6 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 set -e  # quit on error
 
-if [ ! -f /etc/pacman.d/mirrorlist.pacnew ]; then echo "no mirrorlist.pacnew"; exit; fi
-
 #=> 0 get $ARCHBUILDS
 . /home/jo/.export-machine  # if you've got Dropbox
 . /home/jo/.export-storage
@@ -19,6 +17,6 @@ read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 set -v  # prints each statement here, including comments
 
 #=> 3 mirrorlist
-rm /etc/pacman.d/mirrorlist.pacnew
+[ -f /etc/pacman.d/mirrorlist.pacnew ] && rm /etc/pacman.d/mirrorlist.pacnew
 . $bSc/repeatable/as_root-reflector.sh
 

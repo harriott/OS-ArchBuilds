@@ -26,12 +26,12 @@ export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
 export host=$(uname -n)
 # - for  $ABjo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
 
-#=> 2 $DROPBOX, or not
+#=> 2 $Drpbx, or not
 export vimfiles=~/.vim
 if [[ $myDrA == 1 ]]; then
-  export DROPBOX=$Storage/Dropbox
+  export Drpbx=$Storage/Dropbox
   # - keep  DROPBOX  capitalised for finding it without need for $
-  export core=$DROPBOX/JH/core
+  export core=$Drpbx/JH/core
     export ITstack=$core/IT_stack
       export CrPl=$ITstack/CP  # used in  $Bash/bashrc-console  & build scripts
       export ulLinux=$ITstack/unix_like-linux  # was $ulGL, then ulL

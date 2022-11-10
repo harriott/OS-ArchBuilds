@@ -7,7 +7,7 @@ set header_cache = /home/jo/.cache/mutt/troh/headers
 set message_cachedir = /home/jo/.cache/mutt/troh/bodies
 
 set spoolfile = "+INBOX"
-set record = "+Sent\ Items"
+set record = "+[Google\ Mail].Sent\ Mail"
 set trash = "+[Google\ Mail].Bin"
 
 set alias_file = "$lclm/muttAliases/troh"

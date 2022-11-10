@@ -7,11 +7,14 @@ alias aw='ansiweather -f 7'
 export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
 
 fv () {
-    # find $Vs -type f -name "*$1*"
-    Vss=($(find $VsLocation -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
+  # find $Vs -type f -name "*$1*"
+  # Vss=($(find ${VsLocations[0]} -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
+  for VsL in "${VsLocations[@]}"; do
+    Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
     for Vs in "${Vss[@]}"; do
-        find $Vs -iname "*$1*" | xcol "$1"
+      find $Vs -iname "*$1*" | xcol "$1"
     done
+  done
 } # fv 'Dog Vision'
 
 ltx () {
@@ -33,7 +36,7 @@ ltx () {
 }
 
 alias tt='rm *.aux *.log *.out'  # tidy tex = clear away TeX ancillary files
-x () { max_print_line=4000 xelatex $1 | xcol Missing; }
+x () { max_print_line=4000 xelatex -halt-on-error $1 | xcol Missing; }
 
 #=> CUPS
 alias lpspd='lpstat -p -d'
@@ -42,11 +45,11 @@ alias sc5='doas cupsenable ENVY_5530'
 #=> Dropbox conflicted copies
 # results are noted in time-stamped logs
 dcc0 () {
-  pushd $DROPBOX
+  pushd $Drpbx
   jHMS=$(date "+%j-%H%M%S")  # echo $jHM
-  export DropboxConflictedLog="$DROPBOX/conflicted/$jHMS.log"
+  export DropboxConflictedLog="$Drpbx/conflicted/$jHMS.log"
   echo 'scanning for conflicted copies'
-  find $PWD -path $DROPBOX/conflicted -prune -o -name "* conflicted copy*" -print > $DropboxConflictedLog
+  find $PWD -path $Drpbx/conflicted -prune -o -name "* conflicted copy*" -print > $DropboxConflictedLog
   gvim $DropboxConflictedLog
   popd
 }  # lists them
@@ -55,7 +58,7 @@ dcc1 () {
     DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
     mkdir $DropboxConflictedRemoved
     while IFS= read -r file; do
-      removedRelativePath=${file/$DROPBOX\//}
+      removedRelativePath=${file/$Drpbx\//}
       removedFlattenedPath=${removedRelativePath//\//--}
       mv "$file" "$DropboxConflictedRemoved/$removedFlattenedPath"
     done < $DropboxConflictedLog
@@ -65,7 +68,7 @@ dcc1 () {
   else
     echo "you should've ${tpf7b}dcc0${tpfn}"
   fi
-}  # moves them to  $DROPBOX/conflicted
+}  # moves them to  $Drpbx/conflicted
 
 #=> ffmpeg 0
 alias ffmhb='nice -n 19 ffmpeg -hide_banner'
@@ -239,7 +242,7 @@ m4ps1()  # muted headings
 
 mt()  # do my TextNotes
 {
-    cd $DROPBOX/JH/core/TextNotes
+    cd $TeNo
     pwd
     m4ps0 0
     figlet -f univers done

@@ -156,9 +156,14 @@ sudo pacman -Rs celt
 normal with Jo-OPPO-A76
 ## xdg-open .svg
 mimeo -m .svg  reports  image/svg+xml
+## Updates
+gAUR ...
+  Environment contains multiple differing definitions for 'cz'. Using value from 'Cz' (/mnt/BX200/Dropbox/JH/Cafezoide) and ignoring 'cz' (joseph.cafezoide@gmail.com) at /usr/share/perl5/vendor_perl/LWP/UserAgent.pm line 1134.
+## PNMixer Error
+  Warning: connection to sound system failed.
+  Do you want to re-initialize the connection to alsa?
+fixed by a reboot
 ## waiting
-perl-test-fatal
-Python 2.7 remove
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

@@ -52,6 +52,10 @@ makepkg -sic  # takes a long time
 # #=> 1 Chromium 1 remove chromium-flags.conf - for ATI
 # rm ~/.config/chromium-flags.conf
 
+#=> handlr-bin 0 remove
+sudo pacman -Rs xdg-utils-handlr
+sudo pacman -Rs handlr-bin
+
 # #=> tint2 0 remove
 # sudo pacman -Rs tint2
 

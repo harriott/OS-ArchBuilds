@@ -10,6 +10,17 @@ trap read debug  # puts a read request after each executable line
 # gAUR  gdAUR  are defined in $Bash/bashrc-console
 # softwares that require a WM
 
+# #=> clifm 0 (re)install
+# gAUR clifm
+# nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
+# makepkg -sic
+# cd /usr/share/clifm/plugins
+# sudo gcc -o kbgen kbgen.c -lcurses
+
+# #=> clifm 1 remove
+# sudo pacman -Rs clifm
+# rm -r ~/.config/clifm
+
 # #=> clifm-git
 # gdAUR clifm-git
 # nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
@@ -34,11 +45,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox 0 (re)install
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -46,11 +57,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> iscan
 # gAUR iscan
@@ -99,28 +110,28 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mildlyparallel" PKGBUILD
 # makepkg -sic
 
-#=> qpdfview 0 Adam Reichold's public key
-gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8
+# #=> qpdfview 0 Adam Reichold's public key
+# gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8
 
-#=> qpdfview 1 (re)install
-gAUR qpdfview
-nvim -c "silent! /launchpad" PKGBUILD
-makepkg -sic
+# #=> qpdfview 1 (re)install
+# gAUR qpdfview
+# nvim -c "silent! /launchpad" PKGBUILD
+# makepkg -sic  # takes a long time...
 
-#=> Spotify 0 signing key
-curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
-gpg -k 5E3C45D7B312C643
+# #=> Spotify 0 signing key
+# curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
+# gpg -k 5E3C45D7B312C643
 
-#=> Spotify 1 (re)install
-gAUR spotify
-nvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
-makepkg -sic
+# #=> Spotify 1 (re)install
+# gAUR spotify
+# nvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
+# makepkg -sic
 
-#=> urlview
-# creates a numbered list of url's in a resource
-gAUR urlview
-gvim PKGBUILD
-makepkg -sic
+# #=> urlview
+# # creates a numbered list of url's in a resource
+# gAUR urlview
+# nvim -c "silent! /debian" PKGBUILD
+# makepkg -sic
 
 #=> Zoom
 gAUR zoom

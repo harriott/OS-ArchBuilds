@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdl=1 sw=2:
+# vim: sw=2:
 
 # bash $bSc/symlinks/jo-2-whenDropbox.sh
 
@@ -10,7 +10,7 @@ set -e
 # ln -sf $onGH/misc/Emacs/early-init.el ~/.emacs.d/early-init.el
 # ln -sf $onGH/misc/Emacs/init.el ~/.emacs.d/init.el
 # ln -sf $onGH/misc/Emacs/lisp ~/.emacs.d/lisp
-# ln -sf $core/TextNotes/TN/Emacs/diary ~/.emacs.d/diary
+# ln -sf $TeNo/TN/Emacs/diary ~/.emacs.d/diary
 # ln -sf $GHrUse/emacs/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # # e -la ~/.emacs.d/
 

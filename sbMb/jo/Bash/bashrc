@@ -9,6 +9,8 @@
 
 export CHROOT=/mnt/SD480GSSDPlus/chroot
 export VsLocation=/mnt/ST4000VN008  # path to my video store
+export VsLocations=(/mnt/ST4000VN008 /mnt/SDU3D1TB /mnt/WD1001FALS)
+#  o ${VsLocations[@]}  # path to my video stores
 
 #=> 0 load the rest of my bashrc
 source $Bash/bashrc
@@ -20,10 +22,9 @@ ignore () { stat -c '%Y  %s  %n' "$1" >> $ulLinux/OBSmkv/ignore; }
 
 omc()
 {
-    cd $VsLocation/OBSmkvGrabs
+    cd ${VsLocations[0]}/OBSmkvGrabs
     echo "(moved to $PWD to run OBSmkvShrink.sh)"
-    bash shrink.sh  # populates  $VsLocation/OBSmkvGrabs/OBSmkvGrabs
-    # (- see  $ulLinux/OBSmkv/shrink.sh)
+    bash shrink.sh  # $ulLinux/OBSmkv/shrink.sh  populates  $VsLocation/OBSmkvGrabs/OBSmkvGrabs
     fin
 }
 

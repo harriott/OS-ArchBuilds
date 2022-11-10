@@ -66,7 +66,7 @@ r () {
   [ $TERM != 'screen-256color' ] && pi="--cmd='set preview_images true'"
   eval "ranger --choosedir=$HOME/Arch/ranger_last_visited $pi $@"
   cd "$(cat /home/jo/Arch/ranger_last_visited)"
-}  # r "$DROPBOX/CAM-best/Classic Yo-Yo"
+}  # r "$Drpbx/CAM-best/Classic Yo-Yo"
 
 #==> bat
 alias b='bat'  # syntax highlit cat

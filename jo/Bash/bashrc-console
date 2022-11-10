@@ -192,7 +192,7 @@ ghi () {
 
 #==> lists of files by content
 rgl () {
-  cd $DROPBOX/JH
+  cd $Drpbx/JH
   echo 'vim: ft=fdtslist:' > rgl.list; echo '' >> rgl.list
   for ITd in $IT1 $ITstack; do
     rgc="rg -l $1 $ITd"
@@ -202,7 +202,7 @@ rgl () {
 }
 
 SE () {
-  cd $DROPBOX/JH
+  cd $Drpbx/JH
   echo 'vim: ft=fdtslist:' > SE.list
   echo '' >> SE.list
   rg -l -tmd 'stackexchange' $ITstack | sort >> SE.list
@@ -292,18 +292,18 @@ n()
 
 # ~/.config/nnn/.selection
 
-export NNN_BMS="a:/home/jo/.local/share/mail;i:$DROPBOX/JH/technos/IT1;j:/run/media/jo;l:$DROPBOX/JH/work/ST/LPD/IdF;m:$DROPBOX/CAM-toSort0;r:$DROPBOX/JH/copied/France/places/IdF/transport/RATP;s:$DROPBOX/JH/CforWork/Education/Science-Engineering;t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$DROPBOX/JH/Then0/Deauram/with"
+export NNN_BMS="a:/home/jo/.local/share/mail;i:$Drpbx/JH/technos/IT1;j:/run/media/jo;l:$Drpbx/JH/work/ST/LPD/IdF;m:$Drpbx/CAM-toSort0;r:$Drpbx/JH/copied/France/places/IdF/transport/RATP;s:$Drpbx/JH/CforWork/Education/Science-Engineering;t:$Drpbx/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$Drpbx/JH/Then0/Deauram/with"
 #  only first 10 get loaded correctly
 #
 #  a:/home/jo/.local/share/mail
-#  i:$DROPBOX/JH/technos/IT1
+#  i:$Drpbx/JH/technos/IT1
 #  j:/run/media/jo
-#  l:$DROPBOX/JH/Work/ST/LPD/IdF
-#  m:$DROPBOX/CAM-toSort0
-#  r:$DROPBOX/JH/copied/France/Places/IdF/Transport/RATP
-#  s:$DROPBOX/JH/CforWork/Education/Science-Engineering
-#  t:$DROPBOX/JH/F+F/fromDiptonAvenue/ThaverMohammed
-#  w:$DROPBOX/JH/Then0/Deauram/with
+#  l:$Drpbx/JH/Work/ST/LPD/IdF
+#  m:$Drpbx/CAM-toSort0
+#  r:$Drpbx/JH/copied/France/Places/IdF/Transport/RATP
+#  s:$Drpbx/JH/CforWork/Education/Science-Engineering
+#  t:$Drpbx/JH/F+F/fromDiptonAvenue/ThaverMohammed
+#  w:$Drpbx/JH/Then0/Deauram/with
 #
 export NNN_COLORS='5723' # good for my tmux in urxvt
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context

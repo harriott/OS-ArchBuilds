@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# $bSc/2-to_X/1-sudo-to_X.sh
+
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 set $ARCHBUILDS & $machBld

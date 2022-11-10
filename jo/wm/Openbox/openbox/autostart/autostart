@@ -1,4 +1,4 @@
-# vim: fdl=2 ft=sh:
+# vim: fdl=3 ft=sh:
 
 #
 # These things are run when an Openbox X Session is started.

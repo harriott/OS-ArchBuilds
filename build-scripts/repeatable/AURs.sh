@@ -21,11 +21,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /madgag" PKGBUILD
 # makepkg -sic  # jre-openjdk
 
-# #=> cheat
-# gdAUR cheat
-# nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
-# makepkg -sic
-# sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
+#=> cheat
+gdAUR cheat
+nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
+makepkg -sic
+sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
 # #=> didyoumean
 # # provides  dym
@@ -120,32 +120,32 @@ trap read debug  # puts a read request after each executable line
 # sudo systemctl enable nordvpnd.service --now
 # true
 
-#=> perl-clone-pp
-# for  perl-data-printer
-gAUR perl-clone-pp
-nvim -c "silent! /NEILB" PKGBUILD
-makepkg -sic
-true
+# #=> perl-clone-pp
+# # for  perl-data-printer
+# gAUR perl-clone-pp
+# nvim -c "silent! /NEILB" PKGBUILD
+# makepkg -sic
+# true
 
-#=> perl-data-printer
-gAUR perl-data-printer
-nvim -c "silent! /GARU" PKGBUILD
-makepkg -sic
-true
+# #=> perl-data-printer
+# gAUR perl-data-printer
+# nvim -c "silent! /GARU" PKGBUILD
+# makepkg -sic
+# true
 
-#=> Samokovarov's jump
-gAUR jump
-nvim -c "silent! /gsamokovarov" PKGBUILD
-makepkg -sic
+# #=> Samokovarov's jump
+# gAUR jump
+# nvim -c "silent! /gsamokovarov" PKGBUILD
+# makepkg -sic
 
-#=> shell-color-scripts
-gAUR shell-color-scripts
-nvim -c "silent! /dwt1" PKGBUILD
-makepkg -sic
-true
+# #=> shell-color-scripts
+# gAUR shell-color-scripts
+# nvim -c "silent! /dwt1" PKGBUILD
+# makepkg -sic
+# true
 
-#=> tint-tetris
-gAUR tint-tetris
-nvim -c "silent! /debian" PKGBUILD
-makepkg -sic
+# #=> tint-tetris
+# gAUR tint-tetris
+# nvim -c "silent! /debian" PKGBUILD
+# makepkg -sic
 

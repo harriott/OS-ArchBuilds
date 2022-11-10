@@ -5,8 +5,9 @@ commands in this QuickReference work in my Arch install
 
 bm  # (in a wide enough terminal) fuzzy search for manuals
 copyq help | mo
+i bc
 i datediff
-r $core/TextNotes/TN
+r $TeNo/TN
 
 # awesome wm
 modkey+c = c:kill()
@@ -45,7 +46,7 @@ file ~/.vim  # shows symlink source
 namei ~/.vim  # shows tree, including symlink sources
 
 #### Samokovarov's jump
-bm jump
+i jump
 j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
 jump clean  # I have in fcrontab
 jump top | mo
@@ -259,7 +260,7 @@ t sel => trash selection
 ## exa
 e
 e -l -s modified  # time sorted
-e -la  # for permissions and symlinks
+e -alR  # show permissions and symlinks recursively
 e -T   # for tree
 i exa
 
@@ -274,6 +275,7 @@ fd -HI --changed-within 1h
 fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
 fd -tf
+fd -tl -HL -X rm  # removes dead links
 fd . $bSc
 recursive by default
 sharkdp/fd
@@ -290,7 +292,7 @@ see  $Bash/bashrc-console
 ## ranger
 feh $cIThul/cheatsheet.png &
 r $ABjo/ranger  # my configurations
-r $Cz
+r $Cfzd
 ranger --version
 
 ### commands
@@ -319,13 +321,13 @@ rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
 ### searches
 rg '<someText>|<otherText>'  # searches recursively in files
 rg '\.emacs\.d'
-rg '\$ScEn'
+rg '\$Drpbx'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
 rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 
-#### for builds, in $ITstack
+#### for builds, in $core
 rg 'ARCHBUILDS/jo'
 rg '\$ABjo'
 rg '\$ArchBuilds'
@@ -334,13 +336,16 @@ rg '\$bs'
 rg '\$cITh' -l
 rg '\$clMail'
 rg '\$CrPl'
-rg '\$Cz'
+rg '\$Cfzd'
 rg '\$ulLB'
 rg '\$lclm'
 rg '\$ITstack'
 rg '\$machBld'
 rg '\$mail'
+rg '\$ScEn'
 rg '\$sm'
+rg '\$StEr'
+rg '\$TeNo'
 rg '\~/\.npm-'
 rg 'passwordeval bash oauth2tool'
 rg 'passwordeval bash'
@@ -527,8 +532,8 @@ systemctl status rsnapshot-hourly.timer
 
 #### find
 fRs $Bash bashrc-console
-fRs $DROPBOX/CAM-toSort0 '01 '
-fRs $DROPBOX/CAM-toSort0 Apache
+fRs $Drpbx/CAM-toSort0 '01 '
+fRs $Drpbx/CAM-toSort0 Apache
 fRs $vimfiles/syntax cmusq.vim
 fRs $CrPl/LaTeX/jo/CzPlanning planning.cls
 
@@ -577,13 +582,15 @@ java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
 
 # LaTeX
 r $CrPl/LaTeX/jo  # my packages
-r $Cz/manage/planning/m1-/m88-_Joseph $CrPl/LaTeX/jo/CzPlanning
+r $Cfzd/manage/planning/m1-/m88-_Joseph $CrPl/LaTeX/jo/CzPlanning
 x <LaTeX_file_basename>
 
 ## copied resources
 r $cITh/CP/TeX/LaTeX
 zathura $cITh/CP/TeX/LaTeX/Appearance/font/psnfss2e.pdf &
 zathura $cITh/CP/TeX/LaTeX/Structure/Parts/hyperref-doc.pdf &
+zathura $cITh/CP/TeX/LaTeX/Structure/Parts/Lists/easylist-doc.pdf &
+zathura $cITh/CP/TeX/LaTeX/Structure/Classes/Memoir/memman.pdf &
 
 # multimedia
 ~/.config/obs-studio/logs
@@ -618,6 +625,7 @@ lsof -c dropbox
 pkill dropbox; dropbox &
 
 ### conflicted copies
+find $Drpbx -path $Drpbx/conflicted -prune -o -name "* conflicted copy*"
 find -name "* conflicted copy*" -exec rm -f {} \;
 find -name "*(Copie en conflit de *"
 
@@ -630,8 +638,9 @@ grep -r "Georita" *
 rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
 
 #### mutt
-$clMail/muttrc-general
+$clMail/neomutt/muttrc-general
 $clMail/neomutt/muttrc-accounts/ftml
+$clMail/neomutt/muttrc-accounts/troh
 $clMail/neomutt/muttrc-accounts/zou
 echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 f => forward
@@ -753,10 +762,6 @@ $ARCHBUILDS/etc/doas.conf
 r $ARCHBUILDS $ulLinux/Arch
 r $ulLinux/Arch
 vifm $ARCHBUILDS $ulLinux/Arch
-
-### Openbox
-$Openbox/openbox/rc/rc.xml
-$Openbox/openbox/schema.pl
 
 ## groups
 cat /etc/group  # list all groups on the system
@@ -906,13 +911,24 @@ $Openbox/openbox/rc/rc.xml
 Alt+Space => show client menu for active window
 Ctrl+Alt+arrows => move to desktop
 Shift+Alt+arrows => move to desktop, bringing current window along
+W-a => galculator
+W-d => ToggleShowDesktop
+W-f => ToggleMaximize
+W-F1-4 => GoToDesktop 1-4
+W-k => keepassxc
+W-r => Resize
+W-u => urxvt
+W-S-Left/Right/Up/Down => DirectionalCycleWindows <direction>
 Win+1 => move the window to monitor 1
 Win+2 => move the window to monitor 2
-Win+r => Resize
 Win+t => last tmux buffer to X11 clipboard
 Win+u => urxvt
 
 ### tint2
 $Openbox/tint2rc
 killall -SIGUSR1 tint2  # reloads
+
+# Zathura
+$ABjo/wm/zathurarc
+i zathurarc
 

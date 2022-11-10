@@ -1,4 +1,7 @@
 
+# $ABjo/wm/zathurarc  symlinked in  $bSc/symlinks/jo-0.sh
+
+
 # Adding reverse search between gvim and zathura
 set synctex true
 set synctex-editor-command "gvim --remote-silent +%{line} %{input}"
@@ -11,4 +14,8 @@ set first-page-column 1:1
 
 # for  xdg-open http://...
 set sandbox none
+
+# use full height
+set window-height 1100
+# - taller than a 1080 screen
 

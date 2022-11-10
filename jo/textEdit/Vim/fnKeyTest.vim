@@ -2,7 +2,7 @@
 " this is an alternative vimrc, just for discovering which function keys work in neovim
 
 " In  ~/.config/nvim/init.vim  or  .vimrc
-"  source $DROPBOX/$ABjo/Vim/nvim/fnKeyTest.vim
+"  source $Drpbx/$ABjo/Vim/nvim/fnKeyTest.vim
 
 nmap <f1>  :echo "detected  f1"<cr>
 nmap <f2>  :echo "detected  f2"<cr>
