@@ -121,7 +121,7 @@ alias bt='bashtop'
 alias gl='glances'
 
 #==> virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs
+export WORKON_HOME=~/.virtualenvs  # $WORKON_HOME
 [[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper_lazy.sh
 
 #=> clamscan 0 preferred log basename

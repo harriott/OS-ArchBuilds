@@ -45,11 +45,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-#=> Dropbox 0 (re)install
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -81,6 +81,26 @@ true
 # makepkg -sic
 # true
 
+# #=> briss
+# gAUR briss
+# nvim -c "silent! /sourceforge.net\/projects\/briss" PKGBUILD
+# makepkg -sic
+
+#=> pdfCropMargins 0 python-pypdf2
+gAUR python-pypdf2
+nvim -c "silent! /github.com\/py-pdf" PKGBUILD
+makepkg -sic
+
+# #=> pdfCropMargins 1 python-pysimplegui
+# gAUR python-pysimplegui
+# nvim -c "silent! /github.com\/MikeTheWatchGuy\/PySimpleGUI" PKGBUILD
+# makepkg -sic
+
+# #=> pdfCropMargins 2 pdfcropmargins
+# gAUR pdfcropmargins
+# nvim -c "silent! /pypi.org\/project\/pdfCropMargins" PKGBUILD
+# makepkg -sic
+
 # #=> PDFsam
 # gAUR pdfsam
 # nvim -c "silent! /torakiki" PKGBUILD
@@ -97,6 +117,15 @@ true
 # gAUR photocollage
 # nvim -c "silent! /adrienverge" PKGBUILD
 # makepkg -sic
+
+# #=> pinta-git 0 install
+# gAUR pinta-git
+# nvim -c "silent! /github.com\/PintaProject\/Pinta.git" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> pinta-git 0 remove
+# sudo pacman -Rs pinta-git
 
 # #=> audio PNMixer
 # gAUR pnmixer
@@ -133,8 +162,8 @@ true
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

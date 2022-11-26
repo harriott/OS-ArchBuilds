@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Joseph Harriott - Sun 04 Sep 2022
+# Joseph Harriott - Sat 12 Nov 2022
 
 # run Thunderbird safely from Profile shared on Dropbox
 # -----------------------------------------------------
 
 # (chmod 755 $ABjo/TS/thunderbird_safely.sh)
-# symlinked in my  $bSc/4-whenWM/symlinks.sh
+# symlinked in my  $bSc/symlinks/jo-2-whenDropbox.sh
 #  to provide my command  thunderbird_safely
 #   used in  $Openbox/openbox/schema.pl
 
@@ -15,8 +15,8 @@
 #  echo lockTest > $llf
 #  touch $wlf
 
-llf=$T91/linuxlock    # my creation
-wlf=$T91/parent.lock  # auto-created by  Thunderbird  on  Win10
+llf=$T91/linuxlock     # my creation
+wlf=$T91/Win10ProLock  # auto-created by  Thunderbird  on  Win10Pro
 # l 2>/dev/null $llf $wlf
 
 if [ -s $llf ]; then

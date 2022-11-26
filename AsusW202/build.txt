@@ -188,6 +188,12 @@ startx
 :: Replace atk with extra/at-spi2-core? [Y/n]
 ### bash $bSc/4-whenWM/3-moreAURs-repeatable.sh
 ## waiting
+calibre
+cpu-x
+dotnet-runtime-6.0
+nasm
+nawk
+opencl-headers
 # fcron
 # MCEs at start
 [Hardware Error]: CPU 0: Machine Check: 0 Bank 4: a600000000020408

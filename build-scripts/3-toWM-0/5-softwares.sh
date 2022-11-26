@@ -56,6 +56,9 @@ sudo pacman -S gpick
 # #=> pip
 # sudo pacman -S python-pip
 
+#=> python-pymupdf
+sudo pacman -S python-pymupdf  # for  pdfCropMargins
+
 # #=> Solaar
 # # for  Logitech Wireless Mouse M525
 # sudo pacman -S solaar

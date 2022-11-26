@@ -165,7 +165,10 @@ pacman -S gdu
 # # Wget
 # pacman -S wget
 
-# #=> 2 Pacman
+# #=> 2 packages - automake
+# pacman -S automake
+
+# #=> 2 packages - Pacman
 # # colorized Pacman
 # sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
@@ -212,6 +215,9 @@ pacman -S gdu
 pacman -S bpytop
 
 # #=> 2 various
+# # dotnet-runtime-6.0
+# pacman -S dotnet-runtime-6.0  # for Pinta
+
 # # languagetool
 # pacman -S languagetool  # for the GUI
 

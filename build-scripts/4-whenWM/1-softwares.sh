@@ -75,6 +75,12 @@ true
 sudo pacman -S mypaint
 true
 
+#=> nasm
+sudo pacman -S nasm  # for  cpu-x
+
+#=> nawk
+sudo pacman -S nawk  # for  cpu-x
+
 #=> nomacs
 sudo pacman -S nomacs
 # now run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
@@ -89,6 +95,9 @@ sudo pacman -S obs-studio
 
 #=> odt2txt
 sudo pacman -S odt2txt
+
+#=> opencl-headers
+sudo pacman -S opencl-headers  # for  cpu-x
 
 #=> OpenShot
 sudo pacman -S openshot
@@ -110,8 +119,11 @@ sudo pacman -S peek  # (GIF Screen Recorder)
 #=> perl-image-exiftool
 sudo pacman -S perl-image-exiftool
 
-#=> Pinta
+#=> Pinta 0 install
 sudo pacman -S pinta
+
+#=> Pinta 0 remove
+sudo pacman -Rs pinta
 
 #=> pqiv
 sudo pacman -S pqiv

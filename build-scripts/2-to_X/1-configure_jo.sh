@@ -39,8 +39,8 @@ trap read debug  # puts a read request after each executable line
 #=> 2 ranger scope.sh executable
 chmod +x $ABjo/ranger/scope.sh
 
-# #=> 2 terminal-colors
-# pipx install terminal-colors
+#=> 2 terminal-colors
+pipx install terminal-colors
 
 # #=> 2 Zathura
 # mkdir ~/.config/zathura

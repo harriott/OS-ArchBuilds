@@ -27,6 +27,18 @@ nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
 makepkg -sic
 sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
+# #=> cpu-x 0 mawk
+# gdAUR mawk
+# nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> cpu-x 1 cpu-x
+# gdAUR cpu-x
+# nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> didyoumean
 # # provides  dym
 # rustup update

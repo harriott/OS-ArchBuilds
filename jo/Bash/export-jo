@@ -18,12 +18,13 @@ export MOZ_GTK_TITLEBAR_DECORATION=client
 # here I'm taking care to avoid variables that only differ by case
 
 export bilan=$Drpbx/JH/Work/ST/LPD/IdF/AB-TAP/bilan
-export cITh=$Drpbx/JH/copied/IT-handy
-  export cIThul=$cITh/unix-like
-  export GHrCl=$Storage/IT-Copied/GHrepos  # GitHub Repositories Clone
-  export GHrUse=$cITh/GHrepos  # GitHub Repositories Use
-  [ -d "$GHrUse" ] || export GHrUse=~/GHrUse
 export Cfzd=$Drpbx/JH/Cafezoide
+export copied=$Drpbx/JH/copied  # used often in  $TeNo
+  export cITh=$copied/IT-handy
+    export cIThul=$cITh/unix-like
+    export GHrCl=$Storage/IT-Copied/GHrepos  # GitHub Repositories Clone
+    export GHrUse=$cITh/GHrepos  # GitHub Repositories Use
+    [ -d "$GHrUse" ] || export GHrUse=~/GHrUse
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export IT1=$Drpbx/JH/technos/IT1  # for notes
 export ITP=$Drpbx/JH/technos/IT0-storage  # $ITP/diskUsage.txt

@@ -77,13 +77,6 @@ fa () {
   eval "find * $printfDTsort"
 }  # all files
 
-fdtsbbcode () {
-  dtsfile=dts-ft_bbcode.list
-  fdtsListHeader $dtsfile
-  rg -ttxt -l --sort modified 'ft=bbcode' >> $dtsfile
-  echo "results are in $dtsfile"
-}
-
 fRs () {
   echo $1
   echo $2
@@ -149,6 +142,17 @@ fdtsKS () {
   echo "" >> $2
   echo "results are in $2"
 } # $1 being the keystring
+
+#===> my Arch Forum issues
+# $IT1/dts-ft_bbcode.list
+# $ITstack/dts-ft_bbcode.list
+
+fdtsbbcode () {
+  dtsfile=dts-ft_bbcode.list
+  fdtsListHeader $dtsfile
+  rg -ttxt -l --sort modified 'ft=bbcode' >> $dtsfile
+  echo "results are in $dtsfile"
+}
 
 #==> file mime types
 fmtypes () {

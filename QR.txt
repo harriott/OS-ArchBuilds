@@ -126,12 +126,9 @@ mo <file>  # ? lists the limited moar commands
 moar -h
 
 # Emacs
-$ulLinux/Emacs/sm/.spacemacs
 a <fileToOpenGUI>
 et <fileToOpenTerminal>
 im emacs
-n ~/.sm/.emacs.d
-nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 n ~/.emacs.d
 r ~/.emacs.d
 
@@ -145,7 +142,13 @@ r $cITh/CP/encoding/textWrangling/Emacs  # PDF guides
 $GHrUse/emacs/_bzg-worg/orgcard.org
 r $GHrUse/emacs/_bzg-worg
 
+## Spacemacs
+$ulLinux/Emacs/sm/.spacemacs
+n ~/.sm/.emacs.d
+nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
+
 # encoding
+/home/jo/.local/pipx/venvs
 b <codeFile>  # syntax'd cat
 pb <codeFile>  # also reformatted
 
@@ -311,6 +314,13 @@ v => mark all
 W => view log
 yy => copy
 
+## rename
+im rename
+
+### perl-rename
+i perl-rename
+perl-rename 's/^\.\\//' *  # removes leading  .\
+
 ## ripgrep
 batgrep
 i rg
@@ -335,6 +345,7 @@ rg '\$Bash'
 rg '\$bs'
 rg '\$cITh' -l
 rg '\$clMail'
+rg '\$copied'
 rg '\$CrPl'
 rg '\$Cfzd'
 rg '\$ulLB'

@@ -51,7 +51,8 @@ our $SCHEMA = [
   # {item => ['thunderbird',          'Thunderbird',        'web-browser']},
     {item => ['thunderbird_safely',   'Thunderbird safely', 'web-browser']},
     # {item => ['gvim',               'gVim',               'terminal']},
-    {item => ['quodlibet',            'Quod Libet',         'web-browser']},
+    {item => ['exfalso',              'QL - Ex Falso',      'web-browser']},
+    {item => ['quodlibet',            'QL - Quod Libet',    'web-browser']},
     {item => ['picard',               'MusicBrainz Picard', 'web-browser']},
     {item => ['zoom',                 'Zoom',               'web-browser']},
 

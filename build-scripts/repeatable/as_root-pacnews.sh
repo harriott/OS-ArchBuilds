@@ -21,6 +21,10 @@ sudo find /etc -type f -name "*pacnew"
 nvim -o /etc/firewalld/firewalld.conf /etc/firewalld/firewalld.conf.pacnew -c 'windo difft'
 rm /etc/firewalld/firewalld.conf.pacnew
 
+#=> grub
+nvim -O /etc/default/grub /etc/default/grub.pacnew -c 'windo difft'
+rm /etc/default/grub.pacnew
+
 #=> 1 locale.gen
 nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 rm /etc/locale.gen.pacnew
