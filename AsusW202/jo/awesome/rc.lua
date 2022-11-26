@@ -224,7 +224,7 @@ globalkeys = gears.table.join(
 
     -- KeePassXC
     awful.key({ modkey, "Shift" }, "p", function () awful.spawn("keepassxc") end,
-        {description = "KeePassXC", group = "launcher"}),
+        {description = "KeePassXC on tag 4", group = "launcher"}),
 
     -- ---> using Return key
     -- Return  shows in  myawesomemenu  as  Enter

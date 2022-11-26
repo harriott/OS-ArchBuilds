@@ -187,6 +187,12 @@ startx
 :: Replace at-spi2-atk with extra/at-spi2-core? [Y/n]
 :: Replace atk with extra/at-spi2-core? [Y/n]
 ### bash $bSc/4-whenWM/3-moreAURs-repeatable.sh
+### autorun.sh
+chmod u+x $machBld/jo/awesome/autorun.sh
+## Dropbox on SDEP128G
+renamed my /mnt/SDEP128G/Dropbox to Dropbo
+Signed in > email for security code > Pause Syncing > Preferences > Sync > Move > /mnt/SDEP128G >
+  Choose > OK > renamed my Dropbo to Dropbox > Resume Syncing
 ## waiting
 calibre
 cpu-x
