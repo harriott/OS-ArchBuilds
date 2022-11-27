@@ -456,6 +456,7 @@ tldr tldr
 
 # hw
 cd /sys/devices/system/cpu/cpu0/cpufreq
+doas showkey  # keycodes
 HP ENVY 5532: d0:bf:9c:a2:2f:0e
 
 ## avio

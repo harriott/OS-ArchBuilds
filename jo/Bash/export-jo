@@ -24,7 +24,7 @@ export copied=$Drpbx/JH/copied  # used often in  $TeNo
     export cIThul=$cITh/unix-like
     export GHrCl=$Storage/IT-Copied/GHrepos  # GitHub Repositories Clone
     export GHrUse=$cITh/GHrepos  # GitHub Repositories Use
-    [ -d "$GHrUse" ] || export GHrUse=~/GHrUse
+    [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export IT1=$Drpbx/JH/technos/IT1  # for notes
 export ITP=$Drpbx/JH/technos/IT0-storage  # $ITP/diskUsage.txt
@@ -40,4 +40,5 @@ export T91=$Drpbx/JH/T91-default-release
 export TeNo=$core/TextNotes  # used in my personal notes
   export LTX=$TeNo/TN/LTX  # Landscape TeXs - used in  $Bash/bashrc-wm
 export vimfiles=$onGH/vimfiles
+  [ -d "$onGH" ] || export vimfiles=~/.vim  # when building Arch
 
