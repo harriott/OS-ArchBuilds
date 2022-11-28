@@ -293,6 +293,7 @@ fd -HI -tf ^config$ | xargs rg -l 'remote = gh'  # ripgrep
 see  $Bash/bashrc-console
 
 ## ranger
+can't cope with  utf-16le
 feh $cIThul/cheatsheet.png &
 r $ABjo/ranger  # my configurations
 r $Cfzd

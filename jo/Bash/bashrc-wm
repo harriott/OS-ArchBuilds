@@ -46,10 +46,12 @@ alias sc5='doas cupsenable ENVY_5530'
 # results are noted in time-stamped logs
 dcc0 () {
   pushd $Drpbx
-  jHMS=$(date "+%j-%H%M%S")  # echo $jHM
+  jHMS=$(date "+%y%m%d-%H%M%S")  # o $jHMS
   export DropboxConflictedLog="$Drpbx/conflicted/$jHMS.log"
   echo 'scanning for conflicted copies'
-  find $PWD -path $Drpbx/conflicted -prune -o -name "* conflicted copy*" -print > $DropboxConflictedLog
+  echo 'vim: nowrap:' > $DropboxConflictedLog
+  echo '' >> $DropboxConflictedLog
+  find $PWD -path $Drpbx/conflicted -prune -o -name "* conflicted copy*" -print >> $DropboxConflictedLog
   gvim $DropboxConflictedLog
   popd
 }  # lists them
@@ -57,14 +59,21 @@ dcc1 () {
   if [ -s "$DropboxConflictedLog" ]; then
     DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
     mkdir $DropboxConflictedRemoved
-    while IFS= read -r file; do
-      removedRelativePath=${file/$Drpbx\//}
+    removedRestore="$DropboxConflictedRemoved-restore.sh"
+    echo '# vim: nowrap:' > $removedRestore
+    echo '' >> $removedRestore
+    sed -i '1,2d' $DropboxConflictedLog  # remove the vim modeline
+    while IFS= read -r dcc; do
+      removedRelativePath=${dcc/$Drpbx\//}
       removedFlattenedPath=${removedRelativePath//\//--}
-      mv "$file" "$DropboxConflictedRemoved/$removedFlattenedPath"
+      removedFPNS=${removedFlattenedPath// /_}
+      removed="$DropboxConflictedRemoved/$removedFPNS"
+      mv "$dcc" "$removed"
+      echo $"mv $'${removed//\'/\\\'}' $'${dcc//\'/\\\'}'" >> $removedRestore
     done < $DropboxConflictedLog
-    removedLog=$DropboxConflictedRemoved.log
-    mv $DropboxConflictedLog $removedLog
-    gvim $removedLog
+    rm $DropboxConflictedLog
+    gvim $removedRestore
+    cd $Drpbx/conflicted
   else
     echo "you should've ${tpf7b}dcc0${tpfn}"
   fi

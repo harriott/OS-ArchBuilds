@@ -276,7 +276,7 @@ pacman -S emacs
 # #=> 3 doas
 # pacman -S opendoas
 # cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
-# chmod -c 0400 /etc/doas.conf
+# chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
 # # after a reboot, test with  doas updatedb
 
 # #=> 3 Rootkit Hunter
