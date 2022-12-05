@@ -47,8 +47,8 @@ pacman -S shfmt
 # #=> 3 softwares - encoding - NeoMutt
 # pacman -S neomutt
 
-# #=> 3 softwares - file manage - bat-extras
-# sudo pacman -S bat-extras  # brings in bat (used in  fzf --preview)
+#=> 3 softwares - file manage - bat-extras
+sudo pacman -S bat-extras  # brings in bat (used in  fzf --preview)
 
 # #=> 3 softwares - file manage - fzy
 # pacman -S fzy
@@ -142,8 +142,14 @@ pacman -S shfmt
 # # for laptops
 # pacman -S slock
 
-# #=> 4 when X for laptop - xbacklight
+# #=> 4 when X for laptop - xbacklight - acpilight
+# pacman -S acpilight
+
+# #=> 4 when X for laptop - xbacklight - xorg-xbacklight 0 install
 # pacman -S xorg-xbacklight
+
+#=> 4 when X for laptop - xbacklight - xorg-xbacklight 1 remove
+pacman -Rs xorg-xbacklight
 
 # #=> 5 Vim - flake8 & Vim
 # pacman -S flake8 gvim

@@ -9,6 +9,12 @@ if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 set -ev  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> acpilight - configure
+gpasswd -a jo video  # groups jo
+sudo cp $machBld/etc/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
+#  pb /etc/udev/rules.d/90-backlight.rules
+# after a reboot can  xbacklight -inc 12
+
 #=> asunder
 sudo pacman -S asunder  # graphical Audio CD ripper
 

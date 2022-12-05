@@ -1,10 +1,15 @@
 #!/bin/bash
 # vim: fdl=1:
 
+# sudo bash $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
+
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-#=> 0 ARCHBUILDS
-. ../dusty/exports.sh
+#=> 0 $ARCHBUILDS
+cd $(dirname "${BASH_SOURCE[0]}")
+. ../../$(uname -n)/export-machine
+. ../../Bash/export-storage
+read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
 # #=> 0 rsnapshot two-minute-test 0
 # read -p "Have you switched to  rsnapshot-minuteTest.conf?"
@@ -35,18 +40,18 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 # cp $ARCHBUILDS/etc/systemd/rsnapshot/hourlySF.timer /etc/systemd/system/rsnapshot-hourly.timer
 # cp $ARCHBUILDS/etc/systemd/rsnapshot/hourlySF.service /etc/systemd/system/rsnapshot-hourly.service
 
-#=> 1 rsnapshot working 1 timers 0 enable
-systemctl enable --now rsnapshot-hourly.timer
-systemctl enable --now rsnapshot-daily.timer
-systemctl enable --now rsnapshot-weekly.timer
-systemctl enable --now rsnapshot-monthly.timer
-systemctl status rsnapshot-hourly.timer
+# #=> 1 rsnapshot working 1 timers 0 enable
+# systemctl enable --now rsnapshot-hourly.timer
+# systemctl enable --now rsnapshot-daily.timer
+# systemctl enable --now rsnapshot-weekly.timer
+# systemctl enable --now rsnapshot-monthly.timer
+# systemctl status rsnapshot-hourly.timer
 
-# #=> 1 rsnapshot working 1 timers 1 disable
-# systemctl disable --now rsnapshot-hourly.timer
-# systemctl disable --now rsnapshot-daily.timer
-# systemctl disable --now rsnapshot-weekly.timer
-# systemctl disable --now rsnapshot-monthly.timer
+#=> 1 rsnapshot working 1 timers 1 disable
+systemctl disable --now rsnapshot-hourly.timer
+systemctl disable --now rsnapshot-daily.timer
+systemctl disable --now rsnapshot-weekly.timer
+systemctl disable --now rsnapshot-monthly.timer
 
 #=> 2 list all timers
 systemctl list-timers --no-pager

@@ -21,11 +21,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /madgag" PKGBUILD
 # makepkg -sic  # jre-openjdk
 
-#=> cheat
-gdAUR cheat
-nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
-makepkg -sic
-sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
+# #=> cheat
+# gdAUR cheat
+# nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
+# makepkg -sic
+# sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
 # #=> cpu-x 0 mawk
 # gdAUR mawk
@@ -120,11 +120,11 @@ sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 # rAUR moar
 # sudo pacman -Rs moar
 
-# #=> nordvpn-bin 0 (re)install
-# gAUR nordvpn-bin
-# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-# makepkg -sic
-# true
+#=> nordvpn-bin 0 (re)install
+gAUR nordvpn-bin
+nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+makepkg -sic
+true
 
 # #=> nordvpn-bin 1 configure
 # sudo usermod -aG nordvpn jo  # need to re-login

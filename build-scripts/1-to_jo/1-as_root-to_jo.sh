@@ -79,29 +79,32 @@ trap read debug  # puts a read request after each executable line
 # # Vifm
 # pacman -S vifm
 
-# #=> 2 hd 0
-# # hdparm
-# pacman -S hdparm
-
-# # NTFS-3G
-# pacman -S ntfs-3g
-
-# # udiskie
-# pacman -S udiskie
-
-# # weekly TRIM
-# # systemctl status fstrim.timer
-# systemctl enable fstrim.timer --now
-
-#=> 2 hd 1
+#=> 2 hd 0
 # diskus
 pacman -S diskus
 
+# hdparm
+pacman -S hdparm
+
+# NTFS-3G
+pacman -S ntfs-3g
+
+# smartmontools
+pacman -S smartmontools
+
+# udiskie
+pacman -S udiskie
+
+#=> 2 hd 1 SSDs
 # dua-cli
 pacman -S dua-cli  # dua  for SSDs
 
 # gdu
 pacman -S gdu
+
+# weekly TRIM
+# systemctl status fstrim.timer
+systemctl enable fstrim.timer --now
 
 # #=> 2 info
 # # Bashtop
@@ -275,7 +278,7 @@ pacman -S emacs
 
 # #=> 3 doas
 # pacman -S opendoas
-# cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf
+# cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
 # chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
 # # after a reboot, test with  doas updatedb
 

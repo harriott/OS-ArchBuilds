@@ -39,7 +39,7 @@ if [[ $myDrA == 1 ]]; then
         export ulLB=$ulLinux/Bash  # used in  $ARCHBUILDS/QR.txt
       export onGH=$ITstack/onGitHub
         export vimfiles=$onGH/vimfiles
-fi
+fi  # depends on  myDrA=
 
 #=> 3 $ARCHBUILDS, or not
 unset ARCHBUILDS
@@ -48,7 +48,7 @@ if [ $onGH ]; then
 else
   AB=~/ArchBuilds; [ -d $AB ] && export ARCHBUILDS=$AB
   hjAB=/home/jo/ArchBuilds; [ -d $hjAB ] && export ARCHBUILDS=$hjAB
-fi
+fi  # depends on  onGH=
 if [ $ARCHBUILDS ]; then
   export ABjo=$ARCHBUILDS/jo
     export Bash=$ABjo/Bash

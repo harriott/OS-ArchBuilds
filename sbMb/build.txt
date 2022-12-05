@@ -1287,7 +1287,7 @@ handlr get .BMP  reports  gimp.desktop  so  bash $bSc/4-whenWM/2-resourceHandler
 sudo pacman -Rdd handlr-bin
 sudo pacman -S handlr
 ## HP ENVY 5532 IP Address changed to 163.10
-changed 32 t0 163 in  $Imagey/Scan.sh
+changed 32 to 163 in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.167.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
@@ -1298,7 +1298,7 @@ handlr get .webp  reports  gimp.desktop  so  bash $bSc/4-whenWM/2-resourceHandle
 ## xdg-open .mpg
 handlr get .mpg  reports  pqiv.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
 ## HP ENVY 5532 IP Address changed to 167.10
-changed 163 t0 167 in  $Imagey/Scan.sh
+changed 163 to 167 in  $Imagey/Scan.sh
 ## HP ENVY 5532 IP Address changed to 143.10
 hp-setup -r > Select > Remove
 hp-setup 192.168.143.10 > Next > Add Printer
@@ -1310,9 +1310,23 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.215.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## HP ENVY 5532 IP Address changed to 30.10
+fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.30.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 27.10
+fixed in  $Imagey/Scan.sh
+## fails to boot due to ST4000VN008
+  Failed to start File System Check on /dev/disk/by-label/ST4000VN008.
+  Dependency failed for /mnt/ST4000VN008.
+root pw > nvim /etc/fstab > commented out ST4000VN008 > reboot  for
+  rsnapshot timers disabled  &  e2fsck -v /dev/sdc1
+  then reinstated it in  /etc/fstab  rsnapshot timers enabled
+## WD1001FALS/lost+found
+sudo chown -R jo:jo /mnt/WD1001FALS/lost+found
+## xdg-open .toml
+handlr get .toml  reports  no handlers found for 'application/toml'
+  bash $bSc/4-whenWM/2-resourceHandler.sh
 ## waiting
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
@@ -1323,8 +1337,7 @@ ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh
-  @ 1 bash ~/Arch/Elocks.sh
-  @ 1 bash ~/Arch/Tlocks.sh
+  @ 1 bash ~/Arch/locks.sh
   @ 3 bash ~/Arch/cmusqueue.sh
   @ 10 bash ~/Arch/bash_history.sh
   @ 20 jump clean

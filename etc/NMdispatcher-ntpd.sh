@@ -1,7 +1,7 @@
 #! /bin/sh
 
-# to be placed in  /etc/NetworkManager/dispatcher.d
-# implemented by my  $bSc/37-as_root-NMdispatcher.sh
+# implemented by my  $bSc/4-whenWM/4-various.sh
+#  r /etc/NetworkManager/dispatcher.d
 
 if [ "$2" = "up" ]; then
     sudo -u jo DISPLAY=:0 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus dunstify "checking time with NTP daemon"

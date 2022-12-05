@@ -4,7 +4,7 @@
 
 # Bash configurations that are also useful in Console and as root.
 
-# symlinked in  $bSc/anytime/symlinks-jo.sh  to  /home/jo/.bashrc-generic
+# $ARCHBUILDS/Bash/bashrc-generic  symlinked in  $bSc/symlinks/jo-0.sh
 # for jo:
 #  sourced by  $Bash/bash_profile  &  $Bash/bashrc
 # for root:
@@ -50,7 +50,10 @@ startxa () { ln -sf $ABjo/xinitrcs/awesome ~/.xinitrc; }
 startxo () { ln -sf $ABjo/xinitrcs/openbox ~/.xinitrc; }
 
 #=> better file managing
-alias e='exa'
+alias e='exa --icons'
+  alias a='e -aF'  # grid, handily showing up symlinks
+  alias er='e -alR'  # show permissions and symlinks recursively
+  alias et='e -T'  # for tree
 alias l='ls --color=auto'
 alias mo='moar'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"

@@ -1,11 +1,13 @@
 # vim: ft=gitconfig
 
-# e -la ~/.gitconfig  ($bSc/repeatable/symlinks-jo-0.sh)
+# symlinked in  $bSc/symlinks/jo-0.sh
+#  e -la ~/.gitconfig
+#  pb ~/.gitconfig
 
 # my machine-specific Git configuration file
 # changes saved here instantaneous
 
 [include]
-	path = /mnt/SDEP128G/Dropbox/JH/core/IT_stack/CrossPlatform/git/config-JH
+	path = /mnt/SDEP128G/Dropbox/JH/core/IT_stack/CP/encoding/gitconfig-JH
 	path = /mnt/SDEP128G/Dropbox/JH/core/IT_stack/onGitHub/misc/CrossPlatform/gitconfig
 

@@ -22,6 +22,10 @@ ln -sf $Bash/export-jo                      ~/.export-jo
 ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
 
 #=> CliFM
+[ -d ~/.config/clifm ] || mkdir -p ~/.config/clifm
+[ -d ~/.config/clifm/plugins ] || mkdir -p ~/.config/clifm/plugins
+[ -d ~/.config/clifm/profiles ] || mkdir -p ~/.config/clifm/profiles
+[ -d ~/.config/clifm/profiles/default ] || mkdir -p ~/.config/clifm/profiles/default
 if [ -s "/usr/bin/clifm" ]; then
   ln -sf $ABjo/CliFM/clifmrc ~/.config/clifm/profiles/default/clifmrc
   for p in BFG colors img_viewer; do
@@ -69,13 +73,16 @@ ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 ln -sf $ABjo/pinforc ~/.pinforc
 
 #=> ranger
-ln -sf $ABjo/ranger ~/.config/ranger
+cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -s $ABjo/ranger $cr  # e -adl ~/.config/ranger
 
 #=> tmux
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 
-#=> vim variants entry points
-ln -sf $machBld/jo/gvimrc ~/.gvimrc
+#=> vim variants 0 $vimfiles
+# symlinked in  $bSc/symlinks/jo-2-whenDropbox.sh
+
+#=> vim variants 1 entry points
+ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
 ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
 
 [ -d ~/.config/nvim ] || mkdir -p ~/.config/nvim

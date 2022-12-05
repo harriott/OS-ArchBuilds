@@ -2,7 +2,7 @@
 
 # e -la ~/.gitconfig  ($bSc/symlinks/jo-0.sh)
 
-# provisional Git configuration file
+# provisional Git configuration file, for use before Dropbox
 # changes saved here are instantaneous
 
 [include]

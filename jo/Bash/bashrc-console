@@ -12,8 +12,8 @@
 # Joseph Harriott
 
 # Emacs
-a (){ emacs --no-splash -fh $1 & }  # GUI
-et (){ emacs -nw $1; }  # in terminal
+G (){ emacs --no-splash -fh $1 & }  # GUI
+T (){ emacs -nw $1; }  # in terminal
 
 #=> Bash interface
 alias o=echo
@@ -72,7 +72,9 @@ CliFM (){
 
 locx () { locate -i $1 | xcol $1; }
 
-#==> date time-sorted lists of files
+#==> dts
+# date time-sorted lists of files
+
 fa () {
   eval "find * $printfDTsort"
 }  # all files
@@ -97,14 +99,11 @@ alias fx='fdtsExt'
 
 fdtsExt () {
   if [ $1 ]; then
-    if [ $1 = "gitignore" ]; then
-      search='\.$1'
-    else
-      search='\*.$1'
-    fi
-    dtsfile=dts-$1.list
-    eval "fdtsKS $search $dtsfile"
-    [[ $1 = @(gitignore|pl|tex|txt) ]] && ctfp $dtsfile
+    fdtsKSsearch="*.$1"; [[ $1 = 'gitignore' ]] && fdtsKSsearch=".$1"
+    [[ $1 = "tex" ]] && fdtsKSprune=$'-path \'*/copied/*\' -prune -o -path \'*/vimfiles/*\' -prune -o'
+    fdtsKSlist=dts-$1.list
+    fdtsKS
+    # [[ $1 = @(gitignore|pl|tex|txt) ]] && sed -i "s| \.| $PWD|" $fdtsKSlist
   else
     echo "^ need a file type (= filename extension)"
   fi
@@ -115,18 +114,13 @@ alias fk=fdtsKeyString
 
 fdtsKeyString () {
   if [ $1 ]; then
-    dtsfile=dts-$1_in_name.txt
+    fdtsKSlist=dts-$1_in_name.txt
     search='\*$1\*'
     eval "fdtsKS $search $dtsfile"
   fi
 }
 
 #===> common functionality
-ctfp () {
-  # corrects to full path
-  sed -i "s| \.| $PWD|" $1
-}
-
 export printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
 
 fdtsListHeader () {
@@ -137,11 +131,11 @@ fdtsListHeader () {
 }
 
 fdtsKS () {
-  fdtsListHeader $2
-  eval "find -iname \"$1\" $printfDTsort >> $2"
-  echo "" >> $2
-  echo "results are in $2"
-} # $1 being the keystring
+  fdtsListHeader $fdtsKSlist
+  eval "find . $fdtsKSprune -iname \"$fdtsKSsearch\" $printfDTsort >> $fdtsKSlist"
+  echo "" >> $fdtsKSlist
+  echo "results are in $fdtsKSlist"
+} # internal use only
 
 #===> my Arch Forum issues
 # $IT1/dts-ft_bbcode.list

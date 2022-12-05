@@ -7,7 +7,7 @@
 set -v  # prints each statement here, including comments
 
 #=> private gitconfig
-cp gitconfig-JH ~/gitconfig-JH
+cp gitconfig-JH ~/gitconfig-JH  # pb ~/gitconfig-JH
 
 #=> SSH keys
 skd=~/.ssh

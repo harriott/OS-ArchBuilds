@@ -1,14 +1,13 @@
 # vim: ft=sh sw=2:
 
+# $Bash/bashrc-wm   sourced by  $Bash/bashrc
+
 # stuff that's useful when a Window Manager is installed
-# sourced by  $Bash/bashrc
 
 alias aw='ansiweather -f 7'
 export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
 
 fv () {
-  # find $Vs -type f -name "*$1*"
-  # Vss=($(find ${VsLocations[0]} -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
   for VsL in "${VsLocations[@]}"; do
     Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
     for Vs in "${Vss[@]}"; do
@@ -173,7 +172,7 @@ gvc () {
 
 #=> imagey
 alias ns='nsxiv -frt * &'  # using fullscreen, recursively open all flat
-alias pq='pqiv -d 2 -inF * &'  # (recursive) no info, sorted, 2s fade
+alias pq='pqiv -d 2 -inF * &'  # (recursive) no info, sorted, 2s fade when changed
 
 S () { bash $Imagey/Scan.sh $1 $2 $3 $4; }
   s53 () { S 55n 3 $1 $2; }  # call SANE's scanimage tool

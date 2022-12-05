@@ -7,6 +7,10 @@ if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 #=> 0 check $ARCHBUILDS
 read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
 
+#=> 0 handlr-bin 0 remove
+sudo pacman -Rs xdg-utils-handlr
+sudo pacman -Rs handlr-bin
+
 # #=> 0 nodejs-ffmpeg-concat
 # gAUR nodejs-ffmpeg-concat
 # nvim PKGBUILD
@@ -46,26 +50,34 @@ makepkg -sic  # takes a long time
 # #=> 0 sshd 1 sshd.service 3 disable
 # sudo systemctl disable sshd.service --now
 
+# #=> 0 tint2 0 remove
+# sudo pacman -Rs tint2
+
+# #=> 0 tint2 1 tint2-git
+# gAUR tint2-git
+# nvim -c "silent! /tint2.git" PKGBUILD
+# makepkg -sic
+
+# #=> 0 tint3-cpp-git
+# gdAUR tint3-cpp-git
+# nvim -c "silent! /jmc-88\/tint3.git" PKGBUILD
+# makepkg -sic
+
 # #=> 1 Chromium 0 --disable-gpu - for nouveau
 # ln -sf $machBld/jo/config/chromium-flags.conf ~/.config/chromium-flags.conf
 
 # #=> 1 Chromium 1 remove chromium-flags.conf - for ATI
 # rm ~/.config/chromium-flags.conf
 
-#=> handlr-bin 0 remove
-sudo pacman -Rs xdg-utils-handlr
-sudo pacman -Rs handlr-bin
+#=> 1 Emacs safely 0 install
+ln -sf $ABjo/Emacs/ES/locks.sh ~/Arch/Elocks.sh
+sudo ln -sf $ABjo/Emacs/ES/emacs_safely.sh /usr/local/bin/emacs_safely
+# pb /usr/local/bin/emacs_safely
+sudo ln -sf $ABjo/Emacs/ES/emacs_safely.desktop /usr/share/applications/emacs_safely.desktop
+# pb /usr/share/applications/emacs_safely.desktop
 
-# #=> tint2 0 remove
-# sudo pacman -Rs tint2
-
-# #=> tint2 1 tint2-git
-# gAUR tint2-git
-# nvim -c "silent! /tint2.git" PKGBUILD
-# makepkg -sic
-
-# #=> tint3-cpp-git
-# gdAUR tint3-cpp-git
-# nvim -c "silent! /jmc-88\/tint3.git" PKGBUILD
-# makepkg -sic
+#=> 1 Emacs safely 1 remove
+rm ~/Arch/Elocks.sh
+sudo rm /usr/local/bin/emacs_safely
+sudo rm /usr/share/applications/emacs_safely.desktop
 

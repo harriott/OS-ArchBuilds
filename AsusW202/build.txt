@@ -103,7 +103,7 @@ su rm /root/iwctl.sh
 su rm -r /Archbuilds
 bash ~/iwctl.sh  got me online
 . ~/Archbuilds/Bash/export-storage
-bash $bSc/anytime/symlinks-jo-0.sh
+bash $bSc/symlinks/jo-0.sh
 #### iwd disable & stop
 sudo bash $bSc/07-iwd.sh
 #### NetworkManager enable & start
@@ -195,15 +195,21 @@ Signed in > email for security code > Pause Syncing > Preferences > Sync > Move 
   Choose > OK > renamed my Dropbo to Dropbox > Resume Syncing
 ## logind.conf
 HandleLidSwitchExternalPower=ignore
-### Updates
+## Updates
+## symlinks to Dropbox
+bash $bSc/symlinks/jo-0.sh
+bash $bSc/symlinks/jo-2-whenDropbox.sh
+## symlinks for root
+bash $bSc/symlinks/root.sh
+## various
+hugo
 ## waiting
-calibre
-cpu-x
-dotnet-runtime-6.0
-nasm
-nawk
-opencl-headers
+yaml2toml
 # fcron
+fcrontab -l
+  @ 1 bash ~/Arch/locks.sh
+  @ 20 bash ~/Arch/bash_history.sh
+  @ 30 jump clean
 # MCEs at start
 [Hardware Error]: CPU 0: Machine Check: 0 Bank 4: a600000000020408
 [Hardware Error]: TSC 0 ADDR fef622c0

@@ -1,4 +1,5 @@
 #!/bin/bash
+# vim: set fdl=1:
 
 # manage clips
 

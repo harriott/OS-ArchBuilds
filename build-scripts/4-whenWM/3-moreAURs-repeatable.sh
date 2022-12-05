@@ -45,11 +45,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-#=> Dropbox 0 (re)install
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -96,10 +96,13 @@ true
 # nvim -c "silent! /github.com\/MikeTheWatchGuy\/PySimpleGUI" PKGBUILD
 # makepkg -sic
 
-# #=> pdfCropMargins 2 pdfcropmargins
+# #=> pdfCropMargins 2 pdfcropmargins 0 install
 # gAUR pdfcropmargins
 # nvim -c "silent! /pypi.org\/project\/pdfCropMargins" PKGBUILD
 # makepkg -sic
+
+# #=> pdfCropMargins 2 pdfcropmargins 0 remove
+# sudo pacman -Rs pdfcropmargins
 
 # #=> PDFsam
 # gAUR pdfsam

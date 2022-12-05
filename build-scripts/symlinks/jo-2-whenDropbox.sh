@@ -14,18 +14,6 @@ set -e
 # ln -sf $GHrUse/emacs/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # # e -la ~/.emacs.d/
 
-# #=> Emacs safely 0 install
-# ln -sf $ABjo/Emacs/ES/locks.sh ~/Arch/Elocks.sh
-# sudo ln -sf $ABjo/Emacs/ES/emacs_safely.sh /usr/local/bin/emacs_safely
-# # pb /usr/local/bin/emacs_safely
-# sudo ln -sf $ABjo/Emacs/ES/emacs_safely.desktop /usr/share/applications/emacs_safely.desktop
-# # pb /usr/share/applications/emacs_safely.desktop
-
-# #=> Emacs safely 1 remove
-# rm ~/Arch/Elocks.sh
-# sudo rm /usr/local/bin/emacs_safely
-# sudo rm /usr/share/applications/emacs_safely.desktop
-
 # #=> email config
 # cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
 # cp -f $lclm/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
@@ -34,10 +22,11 @@ set -e
 # #=> LanguageTool
 # # needed for command-line usage
 # sudo ln -sf $cITh/CP/LanguageTool /usr/share/java/LanguageTool
-# # e -la /usr/share/java
+# # e -adl /usr/share/java/LanguageTool
 
-# #=> LaTeX
-# rm -r ~/texmf/tex/latex/jo; ln -s $CrPl/LaTeX/jo ~/texmf/tex/latex/jo
+#=> LaTeX
+lj=~/texmf/tex/latex/jo; [ -d $lj ] && rm -r $lj; ln -s $CrPl/LaTeX/jo $lj
+# e -adl ~/texmf/tex/latex/jo
 
 # #=> mdfpdf Pandoc defaults
 # ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
@@ -45,6 +34,7 @@ set -e
 
 # #=> Pandoc templates
 # pt=~/.pandoc/templates; [ -d $pt ] && rm -r $pt; ln -sf $onGH/pandoc-templates $pt
+# # e -adl ~/.pandoc/templates
 
 # #=> SSH config
 # ln -sf $CrPl/SSHconfig/$host ~/.ssh/config
@@ -55,20 +45,22 @@ set -e
 # sudo ln -sf $ABjo/Emacs/spacemacs.sh /usr/local/bin/spacemacs
 # # pb /usr/local/bin/spacemacs
 
-#=> Thunderbird safely
-ln -sf $ABjo/wm/TS/locks.sh ~/Arch/Tlocks.sh
-sudo ln -sf $ABjo/wm/TS/thunderbird_safely.sh /usr/local/bin/thunderbird_safely
-# pb /usr/local/bin/thunderbird_safely
-sudo ln -sf $ABjo/wm/TS/thunderbird_safely.desktop /usr/share/applications/thunderbird_safely.desktop
-# pb /usr/share/applications/thunderbird_safely.desktop
+# #=> Thunderbird safely
+# ln -sf $ABjo/wm/TS/locks.sh ~/Arch/locks.sh
+# sudo ln -sf $ABjo/wm/TS/thunderbird_safely.sh /usr/local/bin/thunderbird_safely
+# # pb /usr/local/bin/thunderbird_safely
+# sudo ln -sf $ABjo/wm/TS/thunderbird_safely.desktop /usr/share/applications/thunderbird_safely.desktop
+# # pb /usr/share/applications/thunderbird_safely.desktop
 
 #=> urxvt extensions
+[ -d ~/.urxvt ] || mkdir ~/.urxvt
 # r $ABjo/wm/urxvt/Perls
-rm -r ~/.urxvt/ext; ln -s $ABjo/wm/urxvt/Perls ~/.urxvt/ext
+ue=~/.urxvt/ext; [ -d $ue ] && rm -r $ue; ln -s $ABjo/wm/urxvt/Perls $ue
+# rm -r ~/.urxvt/ext; ln -s $ABjo/wm/urxvt/Perls ~/.urxvt/ext
 # e -la ~/.urxvt
 # r ~/.urxvt
 
-# #=> vimfiles
-# sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim  # file ~/.vim
-# # e -la ~/.vim
+#=> vimfiles
+sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim  # file ~/.vim
+# e -adl ~/.vim
 

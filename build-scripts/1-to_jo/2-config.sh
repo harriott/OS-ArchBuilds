@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim: se fdl=2:
 
+# bash $bSc/1-to_jo/2-config.sh
+
 set -e
 
 #=> 0 $ARCHBUILDS
@@ -24,10 +26,6 @@ cp ~/.config/mimeapps.list $machLg/jo/mimeappsList-m91
 
 # #=> 2 prepare for nanorc
 # mkdir -p /home/jo/.config/nano
-
-#=> 2 ranger - fix :trash
-sudo rg '.path for f in files' /usr/lib/python3.10/site-packages/ranger/core/actions.py
-sudo sed -i 's/.path for f in files]/ if isinstance(f, str) else f.path for f in files]/' /usr/lib/python3.10/site-packages/ranger/core/actions.py
 
 # #=> 1 for Rootkit Hunter
 # mkdir /home/jo/Arch

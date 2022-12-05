@@ -6,10 +6,13 @@
 #=> awesome
 ln -sf $machBld/jo/awesome/autorun.sh     ~/.config/awesome/autorun.sh
 ln -sf $machBld/jo/awesome/rc.lua         ~/.config/awesome/rc.lua
+
+t=~/.config/awesome/zenburn; rm -r $t
 ln -sf $machBld/jo/awesome/themes-zenburn ~/.config/awesome/zenburn
 
 #=> Awesome WM Widgets 0
-ln -sf $GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets ~/.config/awesome/awesome-wm-widgets
+t=~/.config/awesome/awesome-wm-widgets; rm -r $t
+ln -sf $GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets $t
 # r $GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets
 
 #=> Awesome WM Widgets 1 for Weather widget

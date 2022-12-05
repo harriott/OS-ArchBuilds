@@ -164,6 +164,7 @@ gAUR ...
   Do you want to re-initialize the connection to alsa?
 fixed by a reboot
 ## waiting
+yaml2toml
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

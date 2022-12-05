@@ -1,7 +1,9 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $bSc/repeatable/Emacs.sh
+# bash $bSc/4-whenWM/5-EmacsDirectories.sh
+
+# these directories will be populated in  $bSc/symlinks/jo-2-whenDropbox.sh
 
 set -e
 

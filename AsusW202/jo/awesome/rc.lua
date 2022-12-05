@@ -378,7 +378,7 @@ awful.rules.rules = {
     -- map certain programs to certain tags
     { rule_any = { class = { "Falkon", "firefox", "Google-chrome" } }, properties = { tag = "2" } },
     { rule_any = { class = { "KeePassXC" } }, properties = { tag = "4" } },
-    { rule_any = { class = { "Thunderbird" } }, properties = { tag = "3" } }
+    { rule_any = { class = { "thunderbird" } }, properties = { tag = "3" } }
 
 } -- (through the "manage" signal)
 

@@ -16,7 +16,7 @@ Xft.rgba: rgb
 ! called from my  $ABjo/xinitrc
 
 ! after changes here, either quit & restart X or
-!  xrdb $Openbox/Xresources/Xresources  or  xrdb ~/.Xresources
+!  xrdb $ABjo/wm/Xresources/Xresources  or  xrdb ~/.Xresources
 ! apostrophes in comments can trigger warnings, so dont use them
 
 ! These dont have any visible effect:

@@ -125,8 +125,23 @@ j,k -> down/up
 mo <file>  # ? lists the limited moar commands
 moar -h
 
+# documenting
+pq $Sig
+
+## LaTeX
+r $CrPl/LaTeX/jo  # my packages
+r $Cfzd/manage/planning/m1-/m88-_Joseph $CrPl/LaTeX/jo/CzPlanning
+x <LaTeX_file_basename>
+
+### copied resources
+r $cITh/CP/TeX/LaTeX
+zathura $cITh/CP/TeX/LaTeX/Appearance/font/psnfss2e.pdf &
+zathura $cITh/CP/TeX/LaTeX/Structure/Parts/hyperref-doc.pdf &
+zathura $cITh/CP/TeX/LaTeX/Structure/Parts/Lists/easylist-doc.pdf &
+zathura $cITh/CP/TeX/LaTeX/Structure/Classes/Memoir/memman.pdf &
+
 # Emacs
-a <fileToOpenGUI>
+E <fileToOpenGUI>
 et <fileToOpenTerminal>
 im emacs
 n ~/.emacs.d
@@ -167,8 +182,7 @@ sudo cat /var/spool/fcron/jo.orig
 
 # file manage
 C $onGH/misc
-diskus
-dua [i]
+diskus  # size of current directory
 e
 fd . $ARCHBUILDS | entr notify-send 'a file in $ARCHBUILDS was modified'
 MV(1)
@@ -263,9 +277,9 @@ t sel => trash selection
 ## exa
 e
 e -l -s modified  # time sorted
-e -alR  # show permissions and symlinks recursively
-e -T   # for tree
+e -adl <directory_to_check>  # reports for the directory (not its contents)
 i exa
+more in  $ARCHBUILDS/Bash/bashrc-generic
 
 ## fd
 im fd
@@ -300,7 +314,8 @@ r $Cfzd
 ranger --version
 
 ### commands
-:delete => current file or selection in directory
+:delete => (permanently) current file or selection in directory
+:trash => current file or selection in directory
 ? => start of help dialogue
 c-h / zh => toggle hidden
 dd => cut
@@ -332,13 +347,27 @@ rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
 ### searches
 rg '<someText>|<otherText>'  # searches recursively in files
 rg '\.emacs\.d'
-rg '\$Drpbx'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
 rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 
-#### for builds, in $core
+#### in JH
+rg '\$cFr'
+rg '\$CfWk'
+rg '\$copied'
+rg '\$DaLi'
+rg '\$Dropbox'
+rg '\$Drpbx'
+rg '\$ess'
+rg '\$France'
+rg '\$ScEn'
+rg '\$T0Fr'
+rg '\$Sig'
+rg -uu '\$IT0s'
+rg -uu '\$IT0w'
+
+##### for builds, in $core
 rg 'ARCHBUILDS/jo'
 rg '\$ABjo'
 rg '\$ArchBuilds'
@@ -362,14 +391,14 @@ rg '\~/\.npm-'
 rg 'passwordeval bash oauth2tool'
 rg 'passwordeval bash'
 
-#### in vimfiles
+##### in vimfiles
 rg --no-ignore '<leader><leader>r'
 rg --no-ignore '<leader><leader>x'
 rg --no-ignore '\$MSwin10'
 rg --no-ignore '\$onGH'
 rg -tvim 'vimHints'
 
-#### TeX files
+#### in TeX files
 rg -l -ttex '\\bel' > rg-tex.txt
 rg -l -ttex '\\iftoggle' > rg-tex.txt
 rg -l -ttex '\\includegraphics' > rg-tex.txt
@@ -397,7 +426,7 @@ rg -ttex ^%%
 /usr/share/vifm/vim-doc/doc/vifm-app.txt
 /usr/share/vifm/vim-doc/doc/vifm-lua.txt
 feh -F $cITh/CP/vifm-v0.12-builtin-normal.png &
-~/.config/vifm/vifmrc
+r ~/.config/vifm
 
 # fonts
 cd /usr/share/fonts; $ fd -L consolas
@@ -487,9 +516,12 @@ http://192.168.43.249/
 ## storage
 /proc/filesystems - those supported by the kernel
 CP(1)
-gdu
 GNU Parted
 NCDU(1)
+
+### directories on SSDs
+dua [i]
+gdu
 
 ### mkfs.ext4
 /etc/mke2fs.conf  has bytes-per-inode ratios for usage types
@@ -523,8 +555,8 @@ cdrecord -v -sao dev=/dev/sr0 isoimage.iso
 growisofs
 
 ### rsnapshot
+$bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
 $machBld/etc/rsnapshot.conf
-cd $rsnapshot
 pgrep rsnapshot
 snapshot_root
 sudo du -sh $rsnapshot
@@ -593,18 +625,6 @@ java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --list  # la
 /usr/share/java/LanguageTool/README.md
 java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
 
-# LaTeX
-r $CrPl/LaTeX/jo  # my packages
-r $Cfzd/manage/planning/m1-/m88-_Joseph $CrPl/LaTeX/jo/CzPlanning
-x <LaTeX_file_basename>
-
-## copied resources
-r $cITh/CP/TeX/LaTeX
-zathura $cITh/CP/TeX/LaTeX/Appearance/font/psnfss2e.pdf &
-zathura $cITh/CP/TeX/LaTeX/Structure/Parts/hyperref-doc.pdf &
-zathura $cITh/CP/TeX/LaTeX/Structure/Parts/Lists/easylist-doc.pdf &
-zathura $cITh/CP/TeX/LaTeX/Structure/Classes/Memoir/memman.pdf &
-
 # multimedia
 ~/.config/obs-studio/logs
 for t in *.mp3; do aet "$t" 3; done
@@ -626,6 +646,7 @@ cat /etc/hostname
 curl ifconfig.co  # IP address
 curl ifconfig.co/country
 i sshd_config
+my Thunderbird locks: pb $T91/linuxlock; pb $T91/Win10ProLock
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
 systemctl status nordvpnd.service
@@ -764,6 +785,7 @@ cat /proc/cpuinfo
 GRUB (GRand Unified Bootloader)
 i hier
 i localectl
+slock  # unlocks when correct user pw is entered
 
 ## .desktop
 fd -tf .desktop $ARCHBUILDS
@@ -881,6 +903,7 @@ C-a w -> choose window from a list
 M-n -> (= C-a n ) select window n
 
 ## urxvt
+$ABjo/wm/urxvt/keystrokes.md
 Alt+s --> urxvt-searchable-scrollback
 appres urxvt
 rxvt-unicode
