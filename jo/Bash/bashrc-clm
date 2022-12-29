@@ -10,7 +10,7 @@ alias mwb='bash $clMail/backup.sh'
 #=> find mutt aliases
 maf () {
     fAt=$maild/$account/foundAliasesTemp
-    # $maild  is defined in  $ARCHBUILDS/Bash/export-storage
+    # $maild  is defined in  $OSAB/Bash/export-storage
     notmuch show tag:$account > $fAt
     sed -Ei '/(^Cc|^From|^To):/!d' $fAt  # clear out all but addresses
     sed -Ei 's/(^Cc|^From|^To)://' $fAt  # remove directions
@@ -46,7 +46,7 @@ nmse () {
     notmuchsearch="$@"
     echo $notmuchsearch
     mapfile -t nms < <( notmuch search $notmuchsearch )
-    source $ARCHBUILDS/Bash/xcol.sh
+    source $OSAB/Bash/xcol.sh
     for si in "${nms[@]}"; do
       spaceFromSubjectTags="${si#*]}"
       spaceFrom="${spaceFromSubjectTags%;*}"

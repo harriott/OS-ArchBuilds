@@ -96,6 +96,7 @@ fRs () {
 #===> by extension
 alias fx='fdtsExt'
 # fx gfm
+# fx gitignore  # $Drpbx/JH/dts-gitignore.list
 
 fdtsExt () {
   if [ $1 ]; then
@@ -166,18 +167,8 @@ export BFG=$CrPl/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
 #===> time-sorted lists of files
-gitc () {
-  gitcl=git_config.list
-  echo 'vim: nospell:' > $gitcl
-  echo '' >> $gitcl
-  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gitcl
-  echo "results are in $gitcl"
-}
-
-#====> my GitHub issues
 # $IT1/GitHubIssues.list
 # $ITstack/GitHubIssues.list
-
 ghi () {
   ghil=GitHubIssues.list
   for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
@@ -186,6 +177,15 @@ ghi () {
   sed -i '1ivim: ft=fdtslist' $ghil
   echo '' >> $ghil
   echo "results are in $ghil"
+}
+
+# $ITstack/git_config.list
+gitc () {
+  gitcl=git_config.list
+  echo 'vim: nospell:' > $gitcl
+  echo '' >> $gitcl
+  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gitcl
+  echo "results are in $gitcl"
 }
 
 #==> lists of files by content
@@ -201,12 +201,14 @@ rgl () {
 
 SE () {
   cd $Drpbx/JH
-  echo 'vim: ft=fdtslist:' > SE.list
-  echo '' >> SE.list
-  rg -l -tmd 'stackexchange' $ITstack | sort >> SE.list
-  rg -l -tmd 'stackexchange' $IT1 | sort >> SE.list
-  echo '' >> SE.list
-  echo 'now open SE.list'
+  echo 'vim: ft=fdtslist:' > SEN.list
+  for ITd in $IT1 $ITstack; do
+    echo '' >> SEN.list
+    rg -l -tmd 'stackexchange|stackoverflow' $ITd | sort >> SEN.list
+  done
+  # rg -l -tmd 'stackexchange' $IT1 | sort >> SEN.list
+  echo '' >> SEN.list
+  echo 'now open SEN.list'  # $Drpbx/JH/SEN.list
 }
 
 #==> my Encrypted directories
@@ -246,9 +248,9 @@ fdtsEncryptedChanges () {
 
 if [ $host = 'sbMb' ]; then
 
-  alias rsM='bash $onGH/rsync-drives/sbMb/rsync-Music.sh'
-  alias rsV='bash $onGH/rsync-drives/sbMb/rsync-Vs.sh'
-  alias rsVe='bash $onGH/rsync-drives/sbMb/rsync-Vs-extra.sh'
+  alias rsM='bash $onGH/FM-rsync-drives/sbMb/rsync-Music.sh'
+  alias rsV='bash $onGH/FM-rsync-drives/sbMb/rsync-Vs.sh'
+  alias rsVe='bash $onGH/FM-rsync-drives/sbMb/rsync-Vs-extra.sh'
 
   fS () {
     find /mnt/WD30EZRZ/Sync2 -type f -name "*$1*"
@@ -265,9 +267,6 @@ fi
 alias gte='gio trash --empty'
 alias tl='trash-list'
 alias tre='trash-restore'
-
-#=> my preferred npm global directory
-export PATH="$HOME/.npm-global/bin:$PATH"
 
 #=> nnn
 [ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
@@ -308,6 +307,18 @@ export NNN_CONTEXT_COLORS="2136" # use a different color for each context
 export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'  # quit treeview's nvim with ZQ
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
 export NNN_LOCKER='saidar -c' # for 0
+
+#=> npm global directory
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+#=> pipx exposed binaries
+export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
+
+#=> Ruby gems
+if [ -s "/usr/bin/ruby" ]; then
+  export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+  export PATH="$PATH:$GEM_HOME/bin"
+fi
 
 #=> system
 alias i=pinfo

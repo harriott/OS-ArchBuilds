@@ -5,11 +5,11 @@
 
 set -e
 
-#=> 0 $ARCHBUILDS
+#=> 0 $OSAB
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../../$(uname -n)/export-machine
 . ../../Bash/export-storage
-read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
+read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 1 go slow
 set -v  # prints each statement here, including comments

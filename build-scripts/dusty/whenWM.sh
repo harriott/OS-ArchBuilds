@@ -4,8 +4,8 @@
 
 if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 
-#=> 0 check $ARCHBUILDS
-read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
+#=> 0 check $OSAB
+read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 0 handlr-bin 0 remove
 sudo pacman -Rs xdg-utils-handlr

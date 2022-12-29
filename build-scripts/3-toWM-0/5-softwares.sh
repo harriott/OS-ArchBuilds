@@ -29,8 +29,8 @@ trap read debug  # puts a read request after each executable line
 # #=> fonts - ttf-dejavu
 # sudo pacman -S ttf-dejavu
 
-#=> Gpick
-sudo pacman -S gpick
+# #=> Gpick
+# sudo pacman -S gpick
 
 # #=> libsixel
 # sudo pacman -S libsixel  # for  sixel  graphics
@@ -50,14 +50,16 @@ sudo pacman -S gpick
 # #=> npm 1 cspell
 # npm install -g cspell
 
+#=> pdfCropMargins
+
 # #=> Perl modules for JSON
 # sudo pacman -S perl-json perl-json-parse perl-json-xs  # can't recall why...
 
 # #=> pip
 # sudo pacman -S python-pip
 
-#=> python-pymupdf
-sudo pacman -S python-pymupdf  # for  pdfCropMargins
+# #=> python-pymupdf
+# sudo pacman -S python-pymupdf  # for  pdfCropMargins
 
 # #=> Solaar
 # # for  Logitech Wireless Mouse M525

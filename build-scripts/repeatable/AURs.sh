@@ -39,13 +39,13 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> didyoumean
-# # provides  dym
-# rustup update
-# gAUR didyoumean
-# nvim -c "silent! /hisbaan\/didyoumean" PKGBUILD
-# makepkg -sic  # takes ages
-# true
+#=> didyoumean
+# provides  dym
+rustup update
+gAUR didyoumean
+nvim -c "silent! /hisbaan\/didyoumean" PKGBUILD
+makepkg -sic  # takes ages
+true
 
 # #=> fonts - figlet-fonts
 # # brings in figlet
@@ -120,11 +120,11 @@ trap read debug  # puts a read request after each executable line
 # rAUR moar
 # sudo pacman -Rs moar
 
-#=> nordvpn-bin 0 (re)install
-gAUR nordvpn-bin
-nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-makepkg -sic
-true
+# #=> nordvpn-bin 0 (re)install
+# gAUR nordvpn-bin
+# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> nordvpn-bin 1 configure
 # sudo usermod -aG nordvpn jo  # need to re-login

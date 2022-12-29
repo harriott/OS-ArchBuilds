@@ -1,9 +1,10 @@
 -- vim: set et:
 
 -- Joseph Harriott - Mon 06 Jun 2022
--- adapted from  /etc/xdg/awesome/rc.lua
--- symlinked in my  $bSc/symlinks/jo-1-awesome.sh
---  exa -la ~/.config/awesome/rc.lua
+-- $machBld/jo/awesome/rc.lua
+--  adapted from  /etc/xdg/awesome/rc.lua
+--  symlinked in my  $bSc/symlinks/jo-1-awesome.sh
+--   exa -la ~/.config/awesome/rc.lua
 
 --  to do
 --  -----
@@ -205,6 +206,11 @@ globalkeys = gears.table.join(
               {description="hotkeys_popup", group="awesome"}),
 
 -- --> launchings
+    -- Google Chrome
+    awful.key({ modkey, "Shift" }, "g",
+        function () awful.spawn("google-chrome-stable") end,
+        {description = "Google Chrome on tag 2", group = "launcher"}),
+
     -- menubar
     awful.key({ modkey }, "m", function() menubar.show() end,
         {description = "menubar", group = "launcher"}),

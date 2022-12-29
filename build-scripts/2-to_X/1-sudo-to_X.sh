@@ -4,10 +4,10 @@
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-#=> 0 set $ARCHBUILDS & $machBld
+#=> 0 set $OSAB & $machBld
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../../Bash/export-storage
-read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
+read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 1 go slow
 set -ev  # quits on error, prints each statement here, including comments
@@ -127,7 +127,7 @@ sudo pacman -S bat-extras  # brings in bat (used in  fzf --preview)
 
 # #=> 4 when X 1 IO hw - xorg.conf.d 1 monitor settings
 # # disable DPMS
-# cp $ARCHBUILDS/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
+# cp $OSAB/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
 
 # #=> 4 when X 1 IO hw - xorg.conf.d 1 touch settings
 # # will need a reboot

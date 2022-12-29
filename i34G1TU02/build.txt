@@ -67,8 +67,8 @@ after calling it from  xdg-open
 ## sudoers.pacnew
 sudo nvim -O /etc/sudoers /etc/sudoers.pacnew
 sudo visudo -c -f /etc/sudoers
-cp /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers
-sudo chown jo:jo $ARCHBUILDS/etc/sudoers/sudoers
+cp /etc/sudoers $OSAB/etc/sudoers/sudoers
+sudo chown jo:jo $OSAB/etc/sudoers/sudoers
 sudo rm /etc/sudoers.pacnew
 ## LanguageTool 5.6
 ## update GnuPG key 13F327EF
@@ -93,8 +93,8 @@ pactree -r python2-wheel
 ### sudoers.pacnew
 sudo nvim -O /etc/sudoers /etc/sudoers.pacnew -c 'windo difft'  diff'd over changes then  :wq!
 sudo visudo -c -f /etc/sudoers
-sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers -c 'windo difft'
-sudo chown jo:jo $ARCHBUILDS/etc/sudoers/sudoers
+sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
+sudo chown jo:jo $OSAB/etc/sudoers/sudoers
 sudo rm /etc/sudoers.pacnew
 ## moved snapshot_root to WD1600AAJS
 ### temporarily disabled rsnapshot timers
@@ -113,7 +113,7 @@ prep'd partitions on sbMb, mistakenly adding an EFI boot
 #### sudoers.pacnew
 sudo nvim -O /etc/sudoers /etc/sudoers.pacnew -c 'windo difft'  diff'd over changes then  :wq!
 sudo visudo -c -f /etc/sudoers
-sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers -c 'windo difft'
+sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
 sudo rm /etc/sudoers.pacnew
 ### prepare root
 su > root pw  for
@@ -163,8 +163,17 @@ gAUR ...
   Warning: connection to sound system failed.
   Do you want to re-initialize the connection to alsa?
 fixed by a reboot
+## Updates
+  error: failed to commit transaction (conflicting files) python-cairo: /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc exists in filesystem
+pacman -Qo /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc
+  error: No package owns /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc
+sudo mv /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc.bak
+### Updates
+sudo rm /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc.bak
+## xdg-open .md
+mimeo -m .md  reports  text/markdown  so  mimeo --add text/markdown gvim.desktop
 ## waiting
-yaml2toml
+Ruby
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

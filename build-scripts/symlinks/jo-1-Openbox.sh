@@ -3,6 +3,8 @@
 
 # bash $bSc/symlinks/jo-1-Openbox.sh
 
+set -e
+
 #=> symlinks for Openbox
 
 ln -sf $Openbox/openbox/schema.pl ~/.config/obmenu-generator/schema.pl

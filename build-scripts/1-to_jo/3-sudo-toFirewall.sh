@@ -2,17 +2,17 @@
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-#=> 0 $ARCHBUILDS
+#=> 0 $OSAB
 sd=$(dirname "${BASH_SOURCE[0]}")
 . ${sd%/*}/Bash/export-storage
-read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
+read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 1 go slow
 set -ev  # quits on error, prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 2 allow dhcpcd without pw
-bash -c "cat $ARCHBUILDS/etc/sudoers/dhcpcd >> /etc/sudoers"
+bash -c "cat $OSAB/etc/sudoers/dhcpcd >> /etc/sudoers"
 visudo -c -f /etc/sudoers
 tail -n 2 /etc/sudoers
 

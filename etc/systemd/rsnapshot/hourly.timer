@@ -10,7 +10,7 @@ Description=rsnapshot hourly backup
 OnCalendar=*-*-* *:00:00
 Persistent=true
 Unit=rsnapshot@hourly.service
-# runs  hourly  instance of  $ARCHBUILDS/etc/systemd/rsnapshot/ampersand.service
+# runs  hourly  instance of  $OSAB/etc/systemd/rsnapshot/ampersand.service
 
 [Install]
 WantedBy=timers.target

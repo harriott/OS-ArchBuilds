@@ -1,8 +1,8 @@
 #!/bin/bash
 # vim: fdl=1:
 
-#=> 0 set $ARCHBUILDS
-read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
+#=> 0 set $OSAB
+read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 1 go slow
 set -ev

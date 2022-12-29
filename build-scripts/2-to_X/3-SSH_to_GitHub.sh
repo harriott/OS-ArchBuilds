@@ -14,6 +14,6 @@ git config -l
 #  RSA key fingerprint SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 #  Ed25519 key fingerprint SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU
 ssh -T git@github.com  # "yes"
-cat ~/.ssh/known_hosts
+cat ~/.ssh/known_hosts  # pb ~/.ssh/known_hosts
 cp ~/.ssh/known_hosts ~/known_hosts-m8f
 

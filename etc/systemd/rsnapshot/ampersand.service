@@ -3,7 +3,7 @@
 # copied by  $bSc/24-as_root-rsnapshot_automated.sh
 #        to  /etc/systemd/system/rsnapshot@.service
 
-# called by  $ARCHBUILDS/etc/systemd/rsnapshot/*.timer
+# called by  $OSAB/etc/systemd/rsnapshot/*.timer
 
 [Unit]
 Description=rsnapshot (%I) backup

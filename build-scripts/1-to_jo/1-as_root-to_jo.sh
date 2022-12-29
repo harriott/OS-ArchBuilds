@@ -4,13 +4,16 @@
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-#=> 0 $ARCHBUILDS
-sd=$(dirname "${BASH_SOURCE[0]}"); gp=${sd%/*}; . ${gp%/*}/Bash/export-storage
-read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
-
-#=> 1 go slow
 set -v  # prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
+
+# #=> 0 set $OSAB & $machBld
+# cd $(dirname "${BASH_SOURCE[0]}")
+# . ../../Bash/export-storage
+# read -p "\$OSAB is $OSAB - looks good?"
+
+# #=> 1 go slow
+# set -v  # prints each statement here, including comments
+# trap read debug  # puts a read request after each executable line
 
 # #=> 2 file manage
 # # broot
@@ -79,32 +82,32 @@ trap read debug  # puts a read request after each executable line
 # # Vifm
 # pacman -S vifm
 
-#=> 2 hd 0
-# diskus
-pacman -S diskus
+# #=> 2 hd 0
+# # diskus
+# pacman -S diskus
 
-# hdparm
-pacman -S hdparm
+# # hdparm
+# pacman -S hdparm
 
-# NTFS-3G
-pacman -S ntfs-3g
+# # NTFS-3G
+# pacman -S ntfs-3g
 
-# smartmontools
-pacman -S smartmontools
+# # smartmontools
+# pacman -S smartmontools
 
-# udiskie
-pacman -S udiskie
+# # udiskie
+# pacman -S udiskie
 
-#=> 2 hd 1 SSDs
-# dua-cli
-pacman -S dua-cli  # dua  for SSDs
+# #=> 2 hd 1 SSDs
+# # dua-cli
+# pacman -S dua-cli  # dua  for SSDs
 
-# gdu
-pacman -S gdu
+# # gdu
+# pacman -S gdu
 
-# weekly TRIM
-# systemctl status fstrim.timer
-systemctl enable fstrim.timer --now
+# # weekly TRIM
+# # systemctl status fstrim.timer
+# systemctl enable fstrim.timer --now
 
 # #=> 2 info
 # # Bashtop
@@ -193,6 +196,22 @@ systemctl enable fstrim.timer --now
 # # pkgstats
 # pacman -S pkgstats
 
+#=> Ruby 0 IRB
+pacman -S ruby
+
+#=> Ruby 0 IRB
+pacman -S ruby-irb
+
+#=> Ruby 1 documentation
+pacman -S ruby-docs ruby-rdoc
+
+#=> Ruby 2 gems
+gem update
+
+#=> Ruby 3 Jekyll & bundler
+gem install bundler jekyll  # takes ages...
+true
+
 # #=> 2 system
 # # btop
 # pacman -S btop
@@ -213,9 +232,9 @@ systemctl enable fstrim.timer --now
 # # Pipe Viewer
 # pacman -S pv
 
-#=> 2 system - bpytop
-# supersedes  Bashtop
-pacman -S bpytop
+# #=> 2 system - bpytop
+# # supersedes  Bashtop
+# pacman -S bpytop
 
 # #=> 2 various
 # # dotnet-runtime-6.0
@@ -249,8 +268,8 @@ pacman -S bpytop
 # # web-ish
 # pacman -S arch-wiki-docs lynx w3m
 
-#=> 2 various - Emacs
-pacman -S emacs
+# #=> 2 various - Emacs
+# pacman -S emacs
 
 # #=> 2 various - GNOME Terminal
 # pacman -S gnome-terminal
@@ -278,13 +297,13 @@ pacman -S emacs
 
 # #=> 3 doas
 # pacman -S opendoas
-# cp $ARCHBUILDS/etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
+# cp $OSAB/etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
 # chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
 # # after a reboot, test with  doas updatedb
 
 # #=> 3 Rootkit Hunter
 # pacman -S rkhunter
 
-#=> 4 end
-# you're ready to reboot and login to jo
+# #=> 4 end
+# # you're ready to reboot and login to jo
 

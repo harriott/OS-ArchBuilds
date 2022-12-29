@@ -21,7 +21,7 @@
 #=> JH additions
 # this file is symlinked to  ~/.config/openbox/autostart
 #  in  my  $bSc/31-symlinks-Openbox.sh
-#  depends on  $ARCHBUILDS/Bash/export-storage
+#  depends on  $OSAB/Bash/export-storage
 
 #==> 0 gVim layout
 # gVim's  columns  lines  are set in  $vimfiles/gvimrc.vim

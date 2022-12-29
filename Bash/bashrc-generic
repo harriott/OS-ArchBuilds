@@ -4,11 +4,11 @@
 
 # Bash configurations that are also useful in Console and as root.
 
-# $ARCHBUILDS/Bash/bashrc-generic  symlinked in  $bSc/symlinks/jo-0.sh
+# $OSAB/Bash/bashrc-generic  symlinked in  $bSc/symlinks/jo-0.sh
 # for jo:
 #  sourced by  $Bash/bash_profile  &  $Bash/bashrc
 # for root:
-#  sourced by  $ARCHBUILDS/root/bashrc
+#  sourced by  $OSAB/root/bashrc
 
 alias fin='figlet -f univers finished'
 alias tkt='tmux kill-server > /dev/null 2>&1; tmux'
@@ -175,7 +175,7 @@ csF () {
 }  # make clamscanFOUND log file - should be enough
 
 #=> colours
-source $ARCHBUILDS/Bash/xcol.sh
+source $OSAB/Bash/xcol.sh
 
 #==> tput foreground
 # inspired by nachoparker

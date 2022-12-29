@@ -6,7 +6,7 @@
 # -----------------------------------------------------
 
 # (chmod 755 $ABjo/TS/thunderbird_safely.sh)
-# symlinked in my  $bSc/symlinks/jo-2-whenDropbox.sh
+# symlinked in my  $bSc/symlinks/jo-2-whenWM-1.sh
 #  to provide my command  thunderbird_safely
 #   used in  $Openbox/openbox/schema.pl
 

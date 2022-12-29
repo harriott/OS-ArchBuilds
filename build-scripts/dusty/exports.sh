@@ -3,13 +3,13 @@
 
 # only now used by  $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
 
-#=> 0 ARCHBUILDS
+#=> 0 OSAB
 # 1 in root
-export ARCHBUILDS=/ArchBuilds
+export OSAB=/ArchBuilds
 
 # 2 in jo
 AB=/home/jo/ArchBuilds
-[[ -d $AB ]] && export ARCHBUILDS=$AB
+[[ -d $AB ]] && export OSAB=$AB
 
 # 3 in Dropbox
 export host=$(uname -n)
@@ -21,12 +21,12 @@ elif [ $host = "sbMb" ]; then
   Storage=/mnt/SDU3D1TB
 fi
 AB=$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds
-[[ -d $AB ]] && export ARCHBUILDS=$AB
+[[ -d $AB ]] && export OSAB=$AB
 
 #=> 1 and more
 export Bash=$ABjo/Bash
 export host=$(uname -n)
-  export machBld=$ARCHBUILDS/$host
+  export machBld=$OSAB/$host
 export Openbox=$ABjo/Openbox
 
 #=> 2 test

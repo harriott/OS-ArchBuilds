@@ -7,12 +7,12 @@ set -e
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-#=> 0 $ARCHBUILDS
+#=> 0 $OSAB
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../../$(uname -n)/export-machine
 . ../../Bash/export-storage
 . ../../jo/Bash/export-jo
-read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
+read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 1 fonts - all-the-icons.el
 [ -d /usr/share/fonts/EmacsAllTheIcons ] || mkdir /usr/share/fonts/EmacsAllTheIcons
@@ -27,17 +27,17 @@ cfA=/usr/share/fonts/copiedForArch
 exa -la /usr/share/fonts
 
 #=> 1 make root symlinks
-ln -sf $ARCHBUILDS/root/bash_profile /root/.bash_profile  # sources root bashrc
-  ln -sf $ARCHBUILDS/root/bashrc /root/.bashrc  # sources bashrc-generic
+ln -sf $OSAB/root/bash_profile /root/.bash_profile  # sources root bashrc
+  ln -sf $OSAB/root/bashrc /root/.bashrc  # sources bashrc-generic
 
-ln -sf $ARCHBUILDS/Bash/GNUReadline-inputrc /root/.inputrc
+ln -sf $OSAB/Bash/GNUReadline-inputrc /root/.inputrc
 
 ln -sf $machBld/export-machine /root/.export-machine
-  ln -sf $ARCHBUILDS/Bash/export-storage /root/.export-storage
+  ln -sf $OSAB/Bash/export-storage /root/.export-storage
 
-ln -sf $ARCHBUILDS/root/nanorc ~/.config/nano/nanorc
+ln -sf $OSAB/root/nanorc ~/.config/nano/nanorc
 
-ln -sf $ARCHBUILDS/root/backup/rsyncBackup.sh /root/rsyncBackup.sh
+ln -sf $OSAB/root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 

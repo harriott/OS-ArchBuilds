@@ -1,6 +1,3 @@
-# r /usr/share/applications
-# reboot if changed
-
 [Default Applications]
 application/json=gvim.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;
@@ -30,7 +27,6 @@ video/ogg=mpv.desktop;
 x-scheme-handler/chrome=firefox.desktop;
 x-scheme-handler/http=firefox.desktop;
 x-scheme-handler/https=firefox.desktop;
-
 [Added Associations]
 application/json=gvim.desktop;
 application/octet-stream=vlc.desktop;bluefish.desktop;
@@ -59,8 +55,9 @@ image/webp=org.nomacs.ImageLounge.desktop;nomacs.desktop;
 inode/directory=pcmanfm.desktop;
 message/rfc822=bluefish.desktop;
 text/html=gvim.desktop;chromium.desktop;firefox.desktop;
-text/x-log=gvim.desktop;
+text/markdown=gvim.desktop;
 text/plain=bluefish.desktop;gvim.desktop;
+text/x-log=gvim.desktop;
 video/mpeg=vlc.desktop;
 video/ogg=mpv.desktop;
 x-scheme-handler/chrome=firefox.desktop;

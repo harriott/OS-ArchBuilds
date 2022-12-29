@@ -3,7 +3,7 @@
 # copied by  $bSc/24-as_root-rsnapshot_automated.sh
 #        to  /etc/systemd/system/rsnapshot-hourly.service
 
-# managed by  $ARCHBUILDS/etc/systemd/rsnapshot-hourlySF.timer
+# managed by  $OSAB/etc/systemd/rsnapshot-hourlySF.timer
 
 [Unit]
 Description=rsnapshot sync_first hourly backup

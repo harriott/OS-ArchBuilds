@@ -9,12 +9,12 @@
 #  sourced by  $Bash/bash_profile
 # for root:
 #  symlinked in  $bSc/05-root_symlinks.sh
-#  sourced by  $ARCHBUILDS/root/bash_profile
+#  sourced by  $OSAB/root/bash_profile
 
 export startxDelay=2
 
-# machine-specific, for  $ARCHBUILDS/Bash/export-storage
+# machine-specific, for  $OSAB/Bash/export-storage
 export myDrA=1  # only when my Dropbox is active
 export Storage=/mnt/SDEP128G  # where I keep stuff
-    export Enc=$Storage/Encrypted
+    export Enc=~/encrypted
 

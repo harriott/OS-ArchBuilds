@@ -21,9 +21,13 @@ trap read debug  # puts a read request after each executable line
 # handlr set .3gp mpv.desktop
 # handlr set .BMP org.nomacs.ImageLounge.desktop
 # # handlr set .conf gvim.desktop  # not sure this does anything
+# handlr set .css gvim.desktop
+# handlr set .csv gvim.desktop
 # handlr set .divx mpv.desktop
+# handlr set .docx libreoffice-writer.desktop
 # handlr set .el gvim.desktop
 # handlr set .flv mpv.desktop
+# handlr set .html gvim.desktop
 # handlr set .jpg org.nomacs.ImageLounge.desktop
 # handlr set .kdbx org.keepassxc.KeePassXC.desktop
 # handlr set .log gvim.desktop
@@ -31,11 +35,13 @@ trap read debug  # puts a read request after each executable line
 # handlr set .md gvim.desktop
 # handlr set .MOV mpv.desktop
 # handlr set .mp3 mpv.desktop
+# handlr set .pdf org.pwmt.zathura.desktop
 # handlr set .png org.nomacs.ImageLounge.desktop
 # handlr set .pl gvim.desktop
 # handlr set .mkv mpv.desktop
 # handlr set .mp4 mpv.desktop
 # handlr set .mpg mpv.desktop
+# handlr set .oma mpv.desktop
 # handlr set .py gvim.desktop
 # handlr set .org gvim.desktop
 # handlr set .sh gvim.desktop
@@ -63,4 +69,8 @@ gAUR xdg-utils-mimeo
 nvim -c "silent! /freedesktop" PKGBUILD
 makepkg -sic
 cd ~
+
+#=> Sony OpenMG audio
+cp $OSAB/local-share-mime-packages-audio-oma.xml ~/.local/share/mime/packages/audio-oma.xml
+update-mime-database ~/.local/share/mime
 

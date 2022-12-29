@@ -10,7 +10,7 @@ Description=rsnapshot every minute backup test
 OnCalendar=*:0/1
 Persistent=true
 Unit=rsnapshot@minuteTest.service
-# runs  minuteTest  instance of  $ARCHBUILDS/etc/systemd/rsnapshot/@.service
+# runs  minuteTest  instance of  $OSAB/etc/systemd/rsnapshot/@.service
 # requires  $machBld/etc/rsnapshot-minuteTest.conf  to be in place
 
 [Install]

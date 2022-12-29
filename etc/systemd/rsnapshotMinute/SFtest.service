@@ -3,7 +3,7 @@
 # copied by  $bSc/24-as_root-rsnapshot_automated.sh
 #        to  /etc/systemd/system/rsnapshot-minuteTest.service
 
-# managed by  $ARCHBUILDS/etc/systemd/rsnapshot/minuteSFTest.timer
+# managed by  $OSAB/etc/systemd/rsnapshot/minuteSFTest.timer
 
 [Unit]
 Description=rsnapshot sync_first minute backup

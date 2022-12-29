@@ -2,7 +2,7 @@
 # vim: fdl=1 ft=sh sw=2:
 
 # ~/.export-jo  ($Bash/export-jo)
-#  depends on  $ARCHBUILDS/Bash/export-storage
+#  depends on  $OSAB/Bash/export-storage
 #  sourced by  $Bash/bash_profile
 #  symlinked in  $bSc/anytime/symlinks-jo-0.sh
 
@@ -23,22 +23,25 @@ export copied=$Drpbx/JH/copied  # used in  $TeNo
   export cFr=$copied/France  # used in  $TeNo
   export cITh=$copied/IT-handy
     export cIThul=$cITh/unix-like
-    export GHrCl=$Storage/IT-Copied/GHrepos  # GitHub Repositories Clone
     export GHrUse=$cITh/GHrepos  # GitHub Repositories Use
-    [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
+      [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
+    export Pr0=$copied/Practical0
+      export Pr0t=$copied/Practical0/technos
 export DaLi=$Drpbx/JH/now/DailyLife  # used in $TeNo
+export GHrCl=$Storage/IT-Copied/GHrepos  # $GHrCl  GitHub Repositories Clone
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
-export IT0s=$Drpbx/JH/technos/IT0-storage  # $IT0s/diskUsage.txt
-export IT0w=$Drpbx/JH/technos/IT0-websites  # $IT0w
-export IT1=$Drpbx/JH/technos/IT1  # used in $TeNo
-export lclm=$ulLinux/clm  # linux command-line mail, was  GNULE
+export JHt=$Drpbx/JH/technos
+  export IT0s=$JHt/IT0-storage  # $IT0s/diskUsage.txt
+  export IT0w=$JHt/IT0-websites  # $IT0w
+  export IT1=$JHt/IT1  # $IT1  used in $TeNo
+export lclm=$ulL/clm  # linux command-line mail, was  GNULE
 export MD4PDF=$onGH/md4pdf
-export MSWin10=$onGH/MSWin10  # used in  $TeNo
+export MSWin10=$onGH/OS-MSWin10  # used in  $TeNo
 export Openbox=$ABjo/wm/Openbox
 export PAPERSIZE=A4
 export CfWk=$Drpbx/JH/CforWork
   export ScEn=$CfWk/education/Science-Engineering
-export ess=$Drpbx/JH/essential
+export ess=$Drpbx/JH/now/essential
   export Sig=$Drpbx/JH/now/essential/signatures  # for use in creating documents
 export StEr=$Drpbx/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage  # previously used  $detail
 export T91=$Drpbx/JH/T91-default-release
@@ -46,6 +49,6 @@ export TeNo=$core/TextNotes  # used in  $TeNo
   export LTX=$TeNo/TN/LTX  # Landscape TeXs - used in  $Bash/bashrc-wm
 export Then0=$Drpbx/JH/Then0  # used in  $TeNo
   export T0Fr=$Then0/Europe/France  # used in  $TeNo
-export vimfiles=$onGH/vimfiles
+export vimfiles=$onGH/vimfiles  # $vimfiles
   [ -d "$onGH" ] || export vimfiles=~/.vim  # when building Arch
 

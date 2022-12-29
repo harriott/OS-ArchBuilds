@@ -56,7 +56,7 @@ dt=$(date "+%F-%H-%M")
 # grep 'd f' /etc/mkinitcpio.conf
 
 #==> networking iw
-# made redundant by  $ulLinux/connectSSID/iwctl.sh
+# made redundant by  $ulL/connectSSID/iwctl.sh
 pacman -S iw
 
 # #==> 0 Numlock on in getty

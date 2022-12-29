@@ -2,7 +2,7 @@
 # vim: ft=sh sw=2:
 
 # here I export variables that could also be useful as root
-# . $ARCHBUILDS/Bash/export-storage
+# . $OSAB/Bash/export-storage
 
 # Variable naming constraints:
 #  avoid names that only differ by case
@@ -14,7 +14,7 @@
 #  sourced by  $Bash/bash_profile
 # for root:
 #  symlinked in  $bSc/symlinks/root.sh
-#  sourced by  $ARCHBUILDS/root/bash_profile
+#  sourced by  $OSAB/root/bash_profile
 
 #=> 0 core
 # $myDrA  &  $Storage  are pre-defined in  $machBld/export-machine
@@ -24,7 +24,7 @@ export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
 
 #=> 1 host
 export host=$(uname -n)
-# - for  $ABjo/Openbox/conkyrc  &  $ARCHBUILDS/Bash/bashrc-generic
+# - for  $ABjo/Openbox/conkyrc  &  $OSAB/Bash/bashrc-generic
 
 #=> 2 $Drpbx, or not
 export vimfiles=~/.vim
@@ -32,30 +32,30 @@ if [[ $myDrA == 1 ]]; then
   export Drpbx=$Storage/Dropbox
   # - keep  DROPBOX  capitalised for finding it without need for $
   export core=$Drpbx/JH/core
-    export ITstack=$core/IT_stack
-      export CrPl=$ITstack/CP  # used in  $Bash/bashrc-console  & build scripts
-      export ulLinux=$ITstack/unix_like-linux  # was $ulGL, then ulL
-        export machLg=$ulLinux/Arch/$host  # as opposed to  $machBld
-        export ulLB=$ulLinux/Bash  # used in  $ARCHBUILDS/QR.txt
-      export onGH=$ITstack/onGitHub
+  export ITstack=$core/IT_stack
+  export CrPl=$ITstack/CP  # used in  $Bash/bashrc-console  & build scripts
+  export ulL=$ITstack/unix_like-linux
+  export machLg=$ulL/Arch/$host  # as opposed to  $machBld
+  export ulLB=$ulL/Bash  # used in  $OSAB/QR.txt
+  export onGH=$ITstack/onGitHub
         export vimfiles=$onGH/vimfiles
 fi  # depends on  myDrA=
 
-#=> 3 $ARCHBUILDS, or not
-unset ARCHBUILDS
+#=> 3 $OSAB, or not
+unset OSAB
 if [ $onGH ]; then
-  export ARCHBUILDS=$onGH/ArchBuilds
+  export OSAB=$onGH/OS-ArchBuilds
 else
-  AB=~/ArchBuilds; [ -d $AB ] && export ARCHBUILDS=$AB
-  hjAB=/home/jo/ArchBuilds; [ -d $hjAB ] && export ARCHBUILDS=$hjAB
+  AB=~/OS-ArchBuilds; [ -d $AB ] && export OSAB=$AB
+  hjAB=/home/jo/OS-ArchBuilds; [ -d $hjAB ] && export OSAB=$hjAB
 fi  # depends on  onGH=
-if [ $ARCHBUILDS ]; then
-  export ABjo=$ARCHBUILDS/jo
+if [ $OSAB ]; then
+  export ABjo=$OSAB/jo
     export Bash=$ABjo/Bash
   export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
-  export bSc=$ARCHBUILDS/build-scripts
-      export machBld=$ARCHBUILDS/$host  # as opposed to  $machLg
+  export bSc=$OSAB/build-scripts
+      export machBld=$OSAB/$host  # as opposed to  $machLg
   export clMail=$ABjo/clm  # used in  bashrc-clm  and  muttrc-*
-  export tmx=$ARCHBUILDS/tmux  # used in  tmux.conf
+  export tmx=$OSAB/tmux  # used in  tmux.conf
 fi
 

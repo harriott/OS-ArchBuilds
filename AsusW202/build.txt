@@ -47,7 +47,7 @@ rsync -irtv --exclude="*tmux/plugins/tmux-*" --delete --modify-window=1 $core/ /
 plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
-bash $ulLinux/connectSSID/iwctl.sh  got me online
+bash $ulL/connectSSID/iwctl.sh  got me online
 bash $bSc/01-fromISO-efi-to_chroot.sh
   chroot: failed to run command '/bin/bash': No such file or directory
   /mnt/bin  not there...
@@ -57,7 +57,7 @@ reboot
 plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
-$ulLinux  for  bash connectSSID/iwctl.sh  got me online
+$ulL  for  bash connectSSID/iwctl.sh  got me online
 $bSc  for  bash 01-as_root-efi-to_chroot.sh
   error: libcap: signature from "David Runge <dvzrv@archlinux.org>" is marginal trust
   /usr  didn't get installed...
@@ -66,7 +66,7 @@ rm -r /mnt  (didn't remove  /mnt/efi)
 plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
-$ulLinux  for  bash connectSSID/iwctl.sh  got me online
+$ulL  for  bash connectSSID/iwctl.sh  got me online
 $bSc  for  bash 01-as_root-efi-to_chroot.sh
 ### shutdown
 ctrl-d  for  halt -p
@@ -74,7 +74,7 @@ ctrl-d  for  halt -p
 plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
-$ulLinux  for  bash connectSSID/iwctl.sh  got me online
+$ulL  for  bash connectSSID/iwctl.sh  got me online
 $bSc  for  bash 01-as_root-efi-to_chroot.sh
 ### as chroot
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
@@ -115,7 +115,7 @@ bash $bSc/02-as_root-reflector.sh
 bash $bSc/15-as_root-when_jo-toFirewall.sh
 scs
 ### ranger
-unset ARCHBUILDS myDrA onGH
+unset OSAB myDrA onGH
   . ~/Archbuilds/Bash/export-storage
 bash $bSc/08-as_root-updates.sh
 bash ArchBuilds/build-scripts/anytime/cloneArchBuilds.sh
@@ -159,8 +159,7 @@ lsblk  reveals  K8GBDTIG3  to be  /dev/sdb1, so
 bash $bSc/anytime/cloneArchBuilds.sh
 bash $bSc/anytime/as_root-pacnews.sh
 ## xrandr
-bash $bSc/anytime/cloneArchBuilds.sh
-bash $bSc/3-toWM/3-IO_HW.sh
+bash $bSc/3-toWM-0/3-IO_HW.sh
 ## nnn plugins
 bash $bSc/anytime/cloneArchBuilds.sh
 bash $bSc/3-toWM/4-softwares-for_nnn.sh
@@ -203,8 +202,29 @@ bash $bSc/symlinks/jo-2-whenDropbox.sh
 bash $bSc/symlinks/root.sh
 ## various
 hugo
+## Updates
+  error: failed to commit transaction (conflicting files) python-cairo: /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc exists in filesystem
+pacman -Qo /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc
+  error: No package owns /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc
+sudo mv /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc.bak
+finished Updates for
+  sudo rm /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc.bak
+### Updates
+sudo rm /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc.bak
+## Updates
+  error: openssl: signature from "Pierre Schmitz <pierre@archlinux.org>" is marginal trust
+  :: File /var/cache/pacman/pkg/openssl-3.0.7-4-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]
+  error: failed to commit transaction (invalid or corrupted package)
+  Errors occurred, no packages were upgraded.
+sudo pacman -Sy archlinux-keyring
+## xdg-open .pdf
+handlr get .pdf  reports  firefox.desktop
+  bash $bSc/4-whenWM/2-resourceHandler.sh
+## xdg-open .docx
+handlr get .docx  reports  calibre-ebook-viewer.desktop
+  bash $bSc/4-whenWM/2-resourceHandler.sh
 ## waiting
-yaml2toml
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

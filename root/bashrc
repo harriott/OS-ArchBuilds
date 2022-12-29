@@ -15,8 +15,8 @@ alias l='ls --color=auto'
 set -o vi
 if [ -f /home/jo/.bashrc-generic ]; then
     . /home/jo/.bashrc-generic
-elif [ -f $ARCHBUILDS/Bash/bashrc-generic ]; then
-    . $ARCHBUILDS/Bash/bashrc-generic
+elif [ -f $OSAB/Bash/bashrc-generic ]; then
+    . $OSAB/Bash/bashrc-generic
 fi
 
 # a colorised (bold red) prompt:

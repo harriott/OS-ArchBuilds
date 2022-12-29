@@ -9,7 +9,7 @@
 
 alias gpr='gprename &'
 alias psci='pscShots=/home/jo/Arch/AUR/pscircle-git-shots;pscLatest="$pscShots/$(date +%Y%m%d%H%M%S).png";pscircle --output=$pscLatest;sxiv -fn $(ls $pscShots | wc -l) $pscShots &'
-rpd () { bash $onGH/rsync-drives/rsync.sh $1; }
+rpd () { bash $onGH/FM-rsync-drives/rsync.sh $1; }
 
 #=> cmus
 alias m='cmus'

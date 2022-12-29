@@ -57,11 +57,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> iscan
 # gAUR iscan
@@ -86,10 +86,10 @@ true
 # nvim -c "silent! /sourceforge.net\/projects\/briss" PKGBUILD
 # makepkg -sic
 
-# #=> pdfCropMargins 0 python-pypdf2
-# gAUR python-pypdf2
-# nvim -c "silent! /github.com\/py-pdf" PKGBUILD
-# makepkg -sic
+#=> pdfCropMargins 0 python-pypdf2
+gAUR python-pypdf2
+nvim -c "silent! /github.com\/py-pdf" PKGBUILD
+makepkg -sic
 
 # #=> pdfCropMargins 1 python-pysimplegui
 # gAUR python-pysimplegui
@@ -163,6 +163,11 @@ true
 # # creates a numbered list of url's in a resource
 # gAUR urlview
 # nvim -c "silent! /debian" PKGBUILD
+# makepkg -sic
+
+# #=> yj-git
+# gAUR yj-git
+# nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
 # #=> Zoom

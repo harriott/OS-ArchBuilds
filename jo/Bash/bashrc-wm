@@ -5,7 +5,6 @@
 # stuff that's useful when a Window Manager is installed
 
 alias aw='ansiweather -f 7'
-export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
 
 fv () {
   for VsL in "${VsLocations[@]}"; do

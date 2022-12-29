@@ -3,9 +3,9 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 $ARCHBUILDS
-# check  $ARCHBUILDS/Bash/export-storage  has leveraged  /bs
-echo $ARCHBUILDS
+#=> 0 $OSAB
+# check  $OSAB/Bash/export-storage  has leveraged  /bs
+echo $OSAB
 true
 
 #=> 1 for nano
@@ -29,7 +29,7 @@ pacman -S turbostat
 
 #=> 2 disable dhcpcd wait at start
 mkdir /etc/systemd/system/dhcpcd@.service.d
-cp $ARCHBUILDS/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
+cp $OSAB/etc/systemd/no-wait.conf /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
 
 #=> 2 frame buffer
 pacman -S fbset
@@ -38,7 +38,7 @@ fbset -i
 
 #=> 2 have boot messages stay on tty1
 mkdir /etc/systemd/system/getty@tty1.service.d
-cp $ARCHBUILDS/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
+cp $OSAB/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/noclear.conf
 
 #=> 2 Sudo Tig
 pacman -S sudo tig

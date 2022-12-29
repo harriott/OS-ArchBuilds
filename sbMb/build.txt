@@ -757,7 +757,7 @@ gpg --delete-key 0D811D58
 ## system partially stuck on hard-drives
 ## sudoers.pacnew
 sudo nvim -O /etc/sudoers /etc/sudoers.pacnew
-sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers
+sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers
 sudo visudo -c -f /etc/sudoers
 sudo rm /etc/sudoers.pacnew
 ## locale.gen.pacnew
@@ -918,7 +918,7 @@ rsync -inrtv --delete /mnt/SD480GSSDPlus/Dropbox/ /mnt/WD30EZRZ/Dropbox >
 find ~/ -type l -ls | xcol SD480GSSDPlus WD30EZRZ
 sudo bash 05-root_symlinks.sh
 bash anytime/symlinks-jo-0.sh
-source $ARCHBUILDS/Bash/export-storage
+source $OSAB/Bash/export-storage
 bash 31-symlinks-Openbox.sh
 nvim 05-exports.sh
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
@@ -1020,7 +1020,7 @@ Failed unmounting /mnt/ST4000VN008  - maybe the cause of a long slow shutdwon...
 ## sudoers.pacnew
 sudo nvim -O /etc/sudoers /etc/sudoers.pacnew -c 'windo difft'  diff'd over changes then  :wq!
 sudo visudo -c -f /etc/sudoers
-sudo nvim -O /etc/sudoers $ARCHBUILDS/etc/sudoers/sudoers -c 'windo difft'
+sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
 sudo rm /etc/sudoers.pacnew
 ## grow /
 booted with SystemRescueCd v9.03 > startx > GParted > messily
@@ -1316,17 +1316,45 @@ hp-setup 192.168.30.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## HP ENVY 5532 IP Address changed to 27.10
 fixed in  $Imagey/Scan.sh
-## fails to boot due to ST4000VN008
-  Failed to start File System Check on /dev/disk/by-label/ST4000VN008.
-  Dependency failed for /mnt/ST4000VN008.
-root pw > nvim /etc/fstab > commented out ST4000VN008 > reboot  for
-  rsnapshot timers disabled  &  e2fsck -v /dev/sdc1
-  then reinstated it in  /etc/fstab  rsnapshot timers enabled
+hp-setup -r > Select > Remove
+hp-setup 192.168.27.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## WD1001FALS/lost+found
 sudo chown -R jo:jo /mnt/WD1001FALS/lost+found
 ## xdg-open .toml
 handlr get .toml  reports  no handlers found for 'application/toml'
   bash $bSc/4-whenWM/2-resourceHandler.sh
+## xdg-open .css
+handlr get .css  reports  bluefish.desktop
+  bash $bSc/4-whenWM/2-resourceHandler.sh
+## xdg-open .html
+handlr get .html  reports  firefox.desktop
+  bash $bSc/4-whenWM/2-resourceHandler.sh
+## xdg-open .oma
+handlr get .oma  reports
+  error: Invalid value for '<mime>': could not figure out the mime type of '.oma'
+mime type for Sony OpenMG audio
+handlr get .toml  reports  no handlers found for 'audio/oma'
+  bash $bSc/4-whenWM/2-resourceHandler.sh
+## xdg-open .csv
+handlr get .csv  reports  libreoffice-calc.desktop
+  bash $bSc/4-whenWM/2-resourceHandler.sh
+## HP ENVY 5532 IP Address changed to 199.10
+hp-setup -r > Select > Remove
+hp-setup 192.168.199.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Firefox wouldn't appear after update to v108
+pkill firefox
+firefox -safe-mode & > Refresh  lost my OneTabs
+### recover OneTabs
+~/.mozilla/firefox/6qq4cnaa.default-release is empty, so filled it from slightly dated $rsnapshot (so lost some recent OneTabs) - 690MiB!
+sed -i 's/kpd3wz3a.default-release-1671258409942/6qq4cnaa.default-release/' ~/.mozilla/firefox/profiles.ini
+enabled rsnapshot timers (that'd been left disabled)
+rm -r ~/.mozilla/firefox/u9krhoe0.default & deleted [Profile1]
+## Updates
+  (16/16) Updating the desktop file MIME type cache...
+  free(): invalid pointer
+reboot & continued
 ## waiting
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
@@ -1334,6 +1362,12 @@ handlr get .toml  reports  no handlers found for 'application/toml'
 ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
   acpi-cpufreq.ko.zst          p4-clockmod.ko.zst  powernow-k8.ko.zst
   amd_freq_sensitivity.ko.zst  pcc-cpufreq.ko.zst  speedstep-lib.ko.zst
+# snag - fails to boot due to ST4000VN008
+  Failed to start File System Check on /dev/disk/by-label/ST4000VN008.
+  Dependency failed for /mnt/ST4000VN008.
+root pw > nvim /etc/fstab > commented out ST4000VN008 > reboot  for
+  rsnapshot timers disabled  &  sudo e2fsck -v /dev/sdc1
+  then reinstated it in  /etc/fstab  rsnapshot timers enabled
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh

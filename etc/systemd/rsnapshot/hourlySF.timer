@@ -10,7 +10,7 @@ Description=rsnapshot sync hourly backup
 OnCalendar=*-*-* *:00:00
 Persistent=true
 Unit=rsnapshot-hourly.service
-# runs  $ARCHBUILDS/etc/systemd/rsnapshot-hourlySF.service
+# runs  $OSAB/etc/systemd/rsnapshot-hourlySF.service
 #  which expects  sync_first  to be enabled in  $machBld/etc/rsnapshot.conf
 
 [Install]

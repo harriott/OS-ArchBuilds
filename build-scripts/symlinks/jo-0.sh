@@ -14,10 +14,10 @@ ln -sf $ABjo/ansiweather ~/.ansiweatherrc
 ln -sf $Bash/bash_profile                   ~/.bash_profile
 ln -sf $machBld/jo/Bash/bashrc              ~/.bashrc
 ln -sf $Bash/bashrc-console                 ~/.bashrc-console
-ln -sf $ARCHBUILDS/Bash/bashrc-generic      ~/.bashrc-generic
-ln -sf $ARCHBUILDS/Bash/GNUReadline-inputrc ~/.inputrc
+ln -sf $OSAB/Bash/bashrc-generic      ~/.bashrc-generic
+ln -sf $OSAB/Bash/GNUReadline-inputrc ~/.inputrc
 ln -sf $machBld/export-machine              ~/.export-machine
-ln -sf $ARCHBUILDS/Bash/export-storage      ~/.export-storage
+ln -sf $OSAB/Bash/export-storage      ~/.export-storage
 ln -sf $Bash/export-jo                      ~/.export-jo
 ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
 
@@ -73,7 +73,7 @@ ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 ln -sf $ABjo/pinforc ~/.pinforc
 
 #=> ranger
-cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -s $ABjo/ranger $cr  # e -adl ~/.config/ranger
+cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -sf $ABjo/ranger $cr  # e -adl ~/.config/ranger
 
 #=> tmux
 ln -sf $tmx/tmux.conf ~/.tmux.conf

@@ -7,6 +7,7 @@ bm  # (in a wide enough terminal) fuzzy search for manuals
 copyq help | mo
 i bc
 i datediff
+Topics by ttoirrah https://bbs.archlinux.org/search.php?action=show_user_topics&user_id=88384
 r $TeNo/TN
 
 # awesome wm
@@ -103,7 +104,7 @@ Alt+c  # to change directory
 bm fzf
 cat $(fzf)
 cd [directory/][fuzzy_pattern]**<tab>
-f  # defined in  $ARCHBUILDS/Bash/bashrc-generic
+f  # defined in  $OSAB/Bash/bashrc-generic
 FZF_DEFAULT_COMMAND
 gvim -o `f`  # calling upon fzf
 kill -9 <tab>
@@ -158,7 +159,7 @@ $GHrUse/emacs/_bzg-worg/orgcard.org
 r $GHrUse/emacs/_bzg-worg
 
 ## Spacemacs
-$ulLinux/Emacs/sm/.spacemacs
+$ulL/Emacs/sm/.spacemacs
 n ~/.sm/.emacs.d
 nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
@@ -166,6 +167,7 @@ nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'w
 /home/jo/.local/pipx/venvs
 b <codeFile>  # syntax'd cat
 pb <codeFile>  # also reformatted
+r $GEM_HOME
 
 # fcron
 systemctl status fcron.service  # showing recent events
@@ -184,7 +186,7 @@ sudo cat /var/spool/fcron/jo.orig
 C $onGH/misc
 diskus  # size of current directory
 e
-fd . $ARCHBUILDS | entr notify-send 'a file in $ARCHBUILDS was modified'
+fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
 MV(1)
 n [directory]
 pygmentize -h
@@ -279,7 +281,7 @@ e
 e -l -s modified  # time sorted
 e -adl <directory_to_check>  # reports for the directory (not its contents)
 i exa
-more in  $ARCHBUILDS/Bash/bashrc-generic
+more in  $OSAB/Bash/bashrc-generic
 
 ## fd
 im fd
@@ -288,11 +290,11 @@ fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
 fd -d1 -td  # depth 1 (current dir), type dir
 fd -e ods  # finds OpenOffice Calc spreadsheets
 fd -H  # --hidden
-fd -HI --changed-within 1h
 fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
 fd -tf
 fd -tl -HL -X rm  # removes dead links
+fd -u --changed-within 1h
 fd . $bSc
 recursive by default
 sharkdp/fd
@@ -361,14 +363,18 @@ rg '\$Dropbox'
 rg '\$Drpbx'
 rg '\$ess'
 rg '\$France'
+rg '\$JHt'
+rg '\$OSAB'
+rg '\$Pr0'
+rg '\$Pr0t'
 rg '\$ScEn'
-rg '\$T0Fr'
 rg '\$Sig'
+rg '\$T0Fr'
+rg -uu '\$ulL'
 rg -uu '\$IT0s'
 rg -uu '\$IT0w'
 
 ##### for builds, in $core
-rg 'ARCHBUILDS/jo'
 rg '\$ABjo'
 rg '\$ArchBuilds'
 rg '\$Bash'
@@ -396,9 +402,11 @@ rg --no-ignore '<leader><leader>r'
 rg --no-ignore '<leader><leader>x'
 rg --no-ignore '\$MSwin10'
 rg --no-ignore '\$onGH'
+rg -iuu '<f4>'
+rg -iuu '<f11>'
 rg -tvim 'vimHints'
 
-#### in TeX files
+##### in TeX files
 rg -l -ttex '\\bel' > rg-tex.txt
 rg -l -ttex '\\iftoggle' > rg-tex.txt
 rg -l -ttex '\\includegraphics' > rg-tex.txt
@@ -420,6 +428,11 @@ rg -ttex 'WLR'
 rg -ttex '\\parindent'
 rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
 rg -ttex ^%%
+
+#### vim
+in /usr/share/vim/vim90
+rg 'let b:undo_ftplugin'
+rg main_syntax
 
 ## Vifm
 /usr/share/vifm/vifm-help.txt
@@ -454,7 +467,7 @@ fontpreview -h
 uses fzf
 
 # fun
-cat $CrPl/EMOJI_CHEAT_SHEET.gfm
+cat $CrPl/encoding/EMOJI_CHEAT_SHEET.gfm
 tint  # tetris
 
 ## CMatrix
@@ -763,7 +776,7 @@ kill -9 "$(pidof perl)"
 [ -f $T91/parent.lock ] && echo zero file size
 
 ### ANSI escape sequences
-$ARCHBUILDS/Bash/bashrc-generic
+$OSAB/Bash/bashrc-generic
 \e[0;34m = Blue
 \e[1;34m = Bold Blue
 echo ${my_array[@]}
@@ -788,15 +801,15 @@ i localectl
 slock  # unlocks when correct user pw is entered
 
 ## .desktop
-fd -tf .desktop $ARCHBUILDS
+fd -tf .desktop $OSAB
 r /usr/share/applications
 rg Exec= /usr/share/applications  # check others
 
 ## build
-$ARCHBUILDS/etc/doas.conf
-r $ARCHBUILDS $ulLinux/Arch
-r $ulLinux/Arch
-vifm $ARCHBUILDS $ulLinux/Arch
+$OSAB/etc/doas.conf
+r $OSAB $ulL/Arch
+r $ulL/Arch
+vifm $OSAB $ulL/Arch
 
 ## groups
 cat /etc/group  # list all groups on the system
@@ -843,6 +856,36 @@ journalctl -b -1 -e  # shows end of  -n1000
 journalctl -b -1 -r  # newest first
 journalctl -b -g 'EFI v'  # shows EFI version
 
+## windows
+$machBld/jo/awesome/rc.lua
+xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
+
+### Openbox
+$Openbox/openbox/autostart/autostart
+$Openbox/openbox/schema.pl
+
+#### rc
+$Openbox/openbox/rc/rc.xml
+Alt+Space => show client menu for active window
+Ctrl+Alt+arrows => move to desktop
+Shift+Alt+arrows => move to desktop, bringing current window along
+W-a => galculator
+W-d => ToggleShowDesktop
+W-f => ToggleMaximize
+W-F1-4 => GoToDesktop 1-4
+W-k => keepassxc
+W-r => Resize
+W-u => urxvt
+W-S-Left/Right/Up/Down => DirectionalCycleWindows <direction>
+Win+1 => move the window to monitor 1
+Win+2 => move the window to monitor 2
+Win+t => last tmux buffer to X11 clipboard
+Win+u => urxvt
+
+#### tint2
+$Openbox/tint2rc
+killall -SIGUSR1 tint2  # reloads
+
 # term
 echo $TERM
 neofetch
@@ -868,7 +911,7 @@ figlet Joseph Harriott
 figlet(6)
 
 ### fonts
-ft  # $ARCHBUILDS/Bash/bashrc-generic
+ft  # $OSAB/Bash/bashrc-generic
 showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFonts.txt
 
 ## termdown
@@ -922,6 +965,7 @@ Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2
 tput works
 
 # text-wrangling
+$GHrUse/CP/vim/vim/README.md
 echo $EDITOR
 echo $VISUAL
 
@@ -930,39 +974,12 @@ bm copyq
 pkill copyq
 ~/.local/share/copyq/copyq/copyq.log
 
-## gVim
+## vim
 C /usr/share/vim/vim90
+
+### gVim
 gvim --help | mo
 gvim -geom 200  # height parameter is omitted as it's having no effect
-
-# windows
-xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
-
-## Openbox
-$Openbox/openbox/autostart/autostart
-$Openbox/openbox/schema.pl
-
-### rc
-$Openbox/openbox/rc/rc.xml
-Alt+Space => show client menu for active window
-Ctrl+Alt+arrows => move to desktop
-Shift+Alt+arrows => move to desktop, bringing current window along
-W-a => galculator
-W-d => ToggleShowDesktop
-W-f => ToggleMaximize
-W-F1-4 => GoToDesktop 1-4
-W-k => keepassxc
-W-r => Resize
-W-u => urxvt
-W-S-Left/Right/Up/Down => DirectionalCycleWindows <direction>
-Win+1 => move the window to monitor 1
-Win+2 => move the window to monitor 2
-Win+t => last tmux buffer to X11 clipboard
-Win+u => urxvt
-
-### tint2
-$Openbox/tint2rc
-killall -SIGUSR1 tint2  # reloads
 
 # Zathura
 $ABjo/wm/zathurarc

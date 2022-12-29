@@ -16,7 +16,7 @@ export VsLocations=(/mnt/ST4000VN008 /mnt/SDU3D1TB /mnt/WD1001FALS)
 source $Bash/bashrc
 
 #=> 1 OBS mkv grabs convert
-ignore () { stat -c '%Y  %s  %n' "$1" >> $ulLinux/OBSmkv/ignore; }
+ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/OBSmkv/ignore; }
 # ignore <an_mkv_to_ignore>
 # for m in *.mkv; do ignore "$m"; done
 
@@ -24,7 +24,7 @@ omc()
 {
     cd ${VsLocations[0]}/OBSmkvGrabs
     echo "(moved to $PWD to run OBSmkvShrink.sh)"
-    . shrink.sh  # $ulLinux/OBSmkv/shrink.sh  populates  $VsLocation/OBSmkvGrabs/OBSmkvGrabs
+    . shrink.sh  # $ulL/OBSmkv/shrink.sh  populates  $VsLocation/OBSmkvGrabs/OBSmkvGrabs
     fin
 }
 

@@ -32,12 +32,12 @@ sudo pacman -S hugo
 #=> 0 yaml2toml
 pipx install yaml2toml
 
-#=> 1 check $ARCHBUILDS
-read -p "\$ARCHBUILDS is $ARCHBUILDS - looks good?"
+#=> 1 check $OSAB
+read -p "\$OSAB is $OSAB - looks good?"
 
 # #=> 2 NetworkManager dispatcher
 # sudo systemctl enable NetworkManager-dispatcher --now
-# sudo cp $ARCHBUILDS/etc/NMdispatcher-ntpd.sh /etc/NetworkManager/dispatcher.d/ntpd.sh
+# sudo cp $OSAB/etc/NMdispatcher-ntpd.sh /etc/NetworkManager/dispatcher.d/ntpd.sh
 # sudo chmod 755 /etc/NetworkManager/dispatcher.d/ntpd.sh
 # # vifm /etc/NetworkManager/dispatcher.d /usr/lib/NetworkManager/dispatcher.d
 
