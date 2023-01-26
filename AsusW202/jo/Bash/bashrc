@@ -1,7 +1,6 @@
 # vim: fdl=1 ft=sh sw=2:
 
-# ~/.bashrc in an Arch install on my  AsusW202  system
-# symlinked in  $bSc/anytime/symlinks-jo-0.sh
+# $machBld/jo/Bash/bashrc  symlinked in  $bSc/symlinks/jo-0.sh  e -la ~/.bashrc
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 

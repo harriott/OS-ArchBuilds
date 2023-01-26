@@ -1,14 +1,13 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh sw=2:
 
-# ~/.bashrc in an Arch install on my sprayed brown Multivision box system
-# symlinked in  $bSc/anytime/symlinks-jo-0.sh
-#  e -la ~/.bashrc
+# $machBld/jo/Bash/bashrc  symlinked in  $bSc/symlinks/jo-0.sh  e -la ~/.bashrc
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
 export CHROOT=/mnt/SD480GSSDPlus/chroot
-export VsLocation=/mnt/ST4000VN008  # path to my video store
+export VsLocation=/mnt/ST4000VN008  # principal location
+  export VsLmore=(/mnt/SDU3D1TB /mnt/WD1001FALS)
 export VsLocations=(/mnt/ST4000VN008 /mnt/SDU3D1TB /mnt/WD1001FALS)
 #  o ${VsLocations[@]}  # path to my video stores
 
@@ -20,14 +19,8 @@ ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/OBSmkv/ignore; }
 # ignore <an_mkv_to_ignore>
 # for m in *.mkv; do ignore "$m"; done
 
-omc()
-{
-    cd ${VsLocations[0]}/OBSmkvGrabs
-    echo "(moved to $PWD to run OBSmkvShrink.sh)"
-    . shrink.sh  # $ulL/OBSmkv/shrink.sh  populates  $VsLocation/OBSmkvGrabs/OBSmkvGrabs
-    fin
-}
+omc() { bash $ulL/OBSmkv/shrink.sh; fin; } # used in  $OSAB/sbMb/jo/autostart.sh
 
-
-# Created by `pipx` on 2022-08-15 19:39:50
+#=> 2 Created by `pipx` on 2022-08-15 19:39:50
 export PATH="$PATH:/home/jo/.local/bin"
+

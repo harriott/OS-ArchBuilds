@@ -168,6 +168,7 @@ nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'w
 b <codeFile>  # syntax'd cat
 pb <codeFile>  # also reformatted
 r $GEM_HOME
+r ~/.npm-global
 
 # fcron
 systemctl status fcron.service  # showing recent events
@@ -293,6 +294,7 @@ fd -H  # --hidden
 fd -I  # --no-ignore => do not respect .(git|fd)ignore files
 fd -I -e pdf  # finds pdf's when they're gitignored
 fd -tf
+fd -tf -e md | wc -l
 fd -tl -HL -X rm  # removes dead links
 fd -u --changed-within 1h
 fd . $bSc
@@ -350,6 +352,7 @@ rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
 rg '<someText>|<otherText>'  # searches recursively in files
 rg '\.emacs\.d'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
+rg -tmd '[\p{Devanagari}]'  # finds Devanagari characters
 rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
@@ -370,9 +373,21 @@ rg '\$Pr0t'
 rg '\$ScEn'
 rg '\$Sig'
 rg '\$T0Fr'
+rg -uu '\$DWp'
+rg -uu '\$InTe'
+rg -uu '\$digitized'
+rg -uu '\$dgtzd'
+rg -uu '\$tIs'
+rg -uu '\$tInf'
+rg -uu '\$IT'
+rg -uu '\$tIs'
+rg -uu '\$JHw'
+rg -uu '\$IT1ul'
+rg -uu '\$ITw'
 rg -uu '\$ulL'
-rg -uu '\$IT0s'
-rg -uu '\$IT0w'
+rg -uu '\$m4p'
+rg -uu '\$JHw'
+rg -uu '\$JHw'
 
 ##### for builds, in $core
 rg '\$ABjo'
@@ -592,6 +607,7 @@ systemctl status rsnapshot-hourly.timer
 fRs $Bash bashrc-console
 fRs $Drpbx/CAM-toSort0 '01 '
 fRs $Drpbx/CAM-toSort0 Apache
+fRs $Drpbx/CAM-good US
 fRs $vimfiles/syntax cmusq.vim
 fRs $CrPl/LaTeX/jo/CzPlanning planning.cls
 
@@ -732,7 +748,7 @@ wp  # in Paris
 
 # packages
 checkupdates
-expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-499-$(date '+%Y%m%d%H%M').log  # most recent installs
+expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500-$(date '+%Y%m%d%H%M').log  # 500 most recent installs
 pacfinder
 pacman -Qdt  # lists all orphans
 pactree -r <package_to_find_depencies_of>
@@ -962,6 +978,7 @@ printf '\e]710;%s\007' "xft:Consolas:Bold:pixelsize=12"
 $TERM is set to 'linux'
 can login concurrently to jo
 Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2
+stty -a
 tput works
 
 # text-wrangling

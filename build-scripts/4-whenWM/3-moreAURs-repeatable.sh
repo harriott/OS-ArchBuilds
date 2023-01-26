@@ -86,10 +86,10 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /sourceforge.net\/projects\/briss" PKGBUILD
 # makepkg -sic
 
-#=> pdfCropMargins 0 python-pypdf2
-gAUR python-pypdf2
-nvim -c "silent! /github.com\/py-pdf" PKGBUILD
-makepkg -sic
+# #=> pdfCropMargins 0 python-pypdf2
+# gAUR python-pypdf2
+# nvim -c "silent! /github.com\/py-pdf" PKGBUILD
+# makepkg -sic
 
 # #=> pdfCropMargins 1 python-pysimplegui
 # gAUR python-pysimplegui
@@ -170,8 +170,8 @@ makepkg -sic
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

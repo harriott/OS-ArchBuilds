@@ -1,6 +1,7 @@
 vim: ft=build:
 
 Asus VivoBook W202 = AsusW202
+X randomly restarting
 
 # build
 ## ARCH_202207 to chroot
@@ -224,7 +225,22 @@ handlr get .pdf  reports  firefox.desktop
 ## xdg-open .docx
 handlr get .docx  reports  calibre-ebook-viewer.desktop
   bash $bSc/4-whenWM/2-resourceHandler.sh
+## HP ENVY 5532 IP Address 83.10
+hp-setup 192.168.83.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## print to A4 - HP Device Manager
+hp-toolbox & > Print Settings > General > Media Size > A4 210x297mm
+- didn't get transferred to Zathura's Page Setup > Paper size
+## Updates
+X randomly restarted
+:: Synchronising package databases...
+error: failed to synchronize all databases (unable to lock database)
+sudo rm /var/lib/pacman/db.lck
+## print to A4 - /etc/papersize
+echo "a4" | sudo tee -a /etc/papersize
+- didn't get transferred to Zathura's Page Setup > Paper size
 ## waiting
+wikit
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

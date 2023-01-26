@@ -2,10 +2,9 @@
 
 --[[
 Joseph Harriott
-configuration last updated Wed 24 Nov 2021
+configuration last updated Sun 15 Jan 2023
 adapted from output of  conky --print-config
-conky -c <thisfile>, as in  $Openbox/openbox/autostart/autostart
-*** replaced now by  $machBld/jo/conkyrc ***
+conky -c $machBld/jo/conkyrc  as in  $machBld/jo/awesome/autorun.sh
 some settings are machine specific (and there's no easy way to generalise this file)
 ]]
 

@@ -11,15 +11,15 @@ ln -sf $ABjo/ansiweather ~/.ansiweatherrc
 #=> Bash
 # sort this list by last use of "~":  :sort /,*\~/
 
-ln -sf $Bash/bash_profile                   ~/.bash_profile
-ln -sf $machBld/jo/Bash/bashrc              ~/.bashrc
-ln -sf $Bash/bashrc-console                 ~/.bashrc-console
+ln -sf $Bash/bash_profile             ~/.bash_profile
+ln -sf $machBld/jo/Bash/bashrc        ~/.bashrc
+ln -sf $Bash/bashrc-console           ~/.bashrc-console
 ln -sf $OSAB/Bash/bashrc-generic      ~/.bashrc-generic
 ln -sf $OSAB/Bash/GNUReadline-inputrc ~/.inputrc
-ln -sf $machBld/export-machine              ~/.export-machine
+ln -sf $machBld/export-machine        ~/.export-machine
 ln -sf $OSAB/Bash/export-storage      ~/.export-storage
-ln -sf $Bash/export-jo                      ~/.export-jo
-ln -sf $Bash/bash_history.sh                ~/Arch/bash_history.sh
+ln -sf $Bash/export-jo                ~/.export-jo
+ln -sf $Bash/bash_history.sh          ~/Arch/bash_history.sh
 
 #=> CliFM
 [ -d ~/.config/clifm ] || mkdir -p ~/.config/clifm

@@ -322,9 +322,8 @@ after hard reboot  $HOME/.cache/ctrlp/mru/cache.txt  was empty...
 handlr get .md  returns  no handlers found for text/markdown
   bash $bSc/4-whenWM/2-resourceHandler.sh
 ## system slowed down to a crawl
-## HP Device Settings
-Print Settings > General > Media Size > A4 210x297mm
-sudo /etc/papersize
+## print to A4
+hp-toolbox & > Print Settings > General > Media Size > A4 210x297mm
 echo "a4" | sudo tee -a /etc/papersize
 ## chromium print to A4
 Ctrl+P > More settings > A4 210x297mm
@@ -1355,6 +1354,23 @@ rm -r ~/.mozilla/firefox/u9krhoe0.default & deleted [Profile1]
   (16/16) Updating the desktop file MIME type cache...
   free(): invalid pointer
 reboot & continued
+## HP ENVY 5532 IP Address changed to 83.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.83.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## xdg-open .docx
+handlr get .docx  reports  calibre-ebook-viewer.desktop
+  bash $bSc/4-whenWM/2-resourceHandler.sh
+## Firefox won't appear
+fixed by re-installing
+## Google Chrome won't search Google
+fixed by re-installing
+## HP ENVY 5532 IP Address changed to 254.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.254.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies

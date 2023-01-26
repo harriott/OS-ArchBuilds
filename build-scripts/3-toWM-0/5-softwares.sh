@@ -50,6 +50,9 @@ trap read debug  # puts a read request after each executable line
 # #=> npm 1 cspell
 # npm install -g cspell
 
+# #=> npm 1 wikit
+# npm i -g wikit
+
 #=> pdfCropMargins
 
 # #=> Perl modules for JSON

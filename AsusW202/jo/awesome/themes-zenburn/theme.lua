@@ -2,7 +2,7 @@
 --  "Zenburn" awesome theme  --
 --    By Adrian C. (anrxc)   --
 -------------------------------
--- adapted by JH from  https://github.com/awesomeWM/awesome
+-- adapted by JH from  https://github.com/awesomeWM/awesome/blob/master/themes/zenburn/theme.lua
 -- thus  GNU General Public License v2 or later
 
 local themes_path = require("gears.filesystem").get_themes_dir()

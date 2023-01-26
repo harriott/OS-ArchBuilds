@@ -1,5 +1,5 @@
 
-" symlinked in  $bSc/symlinks/jo-0.sh
+" $ABjo/textEdit/Vim/vimrc  symlinked in  $bSc/symlinks/jo-0.sh
 
 " move on to my Arch vimrc
 let vimrcArch = expand("$HOME/.vim/vimrc-Arch.vim")

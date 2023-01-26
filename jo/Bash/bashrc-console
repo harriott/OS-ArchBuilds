@@ -80,8 +80,8 @@ fa () {
 }  # all files
 
 fRs () {
-  echo $1
-  echo $2
+  echo "directory: $1"
+  echo "file glob to find: $2"
   if [ $2 ]; then
     tf=$rsnapshot/tds_find
     echo "$1 $2" > $tf
@@ -289,7 +289,7 @@ n()
 
 # ~/.config/nnn/.selection
 
-export NNN_BMS="a:/home/jo/.local/share/mail;i:$Drpbx/JH/technos/IT1;j:/run/media/jo;l:$Drpbx/JH/work/ST/LPD/IdF;m:$Drpbx/CAM-toSort0;r:$Drpbx/JH/copied/France/places/IdF/transport/RATP;s:$Drpbx/JH/CforWork/Education/Science-Engineering;t:$Drpbx/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$Drpbx/JH/Then0/Deauram/with"
+export NNN_BMS="a:/home/jo/.local/share/mail;i:$Drpbx/JH/technos/IT;j:/run/media/jo;l:$JHw/ST/LPD/IdF;m:$Drpbx/CAM-toSort0;r:$Drpbx/JH/copied/France/places/IdF/transport/RATP;s:$Drpbx/JH/CforWork/Education/Science-Engineering;t:$Drpbx/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$Drpbx/JH/Then0/Deauram/with"
 #  only first 10 get loaded correctly
 #
 #  a:/home/jo/.local/share/mail

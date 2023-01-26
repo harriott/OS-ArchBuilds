@@ -7,13 +7,13 @@
 alias aw='ansiweather -f 7'
 
 fv () {
-  for VsL in "${VsLocations[@]}"; do
+  for VsL in $VsLocation $(cat $machBld/jo/Bash/VsLmore); do
     Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
     for Vs in "${Vss[@]}"; do
       find $Vs -iname "*$1*" | xcol "$1"
     done
   done
-} # fv 'Dog Vision'
+} # fv cat  fv 'Dog Vision'
 
 ltx () {
   cd $LTX
@@ -237,38 +237,32 @@ cl () {
 #=> Pandoc my markdown notes
 for iHS in {0..1}; do  # setup alternative commands to define the header style
     setHeadingsSty[$iHS]="ln -sf $MD4PDF/iih/headings$iHS.sty ~/texmf/tex/latex/m4p/headings.sty"
-  done  # (leaves iHS set to 1)
+  done  # (leaves iHS set to 1) pb ~/texmf/tex/latex/m4p/headings.sty
 
-m4ps1()  # muted headings
-{
+m4psm() {
     eval ${setHeadingsSty[1]}
     export headingtoodeep=####
-    export m4pfont=1
-    bash $MD4PDF/GNULinux/m4ps.sh 0 1
-}
+    redo=0; [ $1 ] && redo=1
+    bash $MD4PDF/GNULinux/m4ps.sh $redo 1
+  } # m4psm [1 (= redo)]  for muted headings
 
-mt()  # do my TextNotes
-{
+mt() {
     cd $TeNo
     pwd
-    m4ps0 0
+    m4ps 0
     figlet -f univers done
-}
+} # do my TextNotes
 
-#==> maybe redo all, maybe no ToC
-m4p()  # a single TextNote file
-{
+#==> maybe redo, maybe no ToC
+m4p() {
     eval ${setHeadingsSty[0]}
     export headingtoodeep=######
-    export m4pfont=0
     bash $MD4PDF/GNULinux/m4p.sh $1 $2
-}
+} # m4p <md_file> [1 (= no ToC)]
 
-m4ps0()  # recursively compile many TextNotes
-{
+m4ps() {
     eval ${setHeadingsSty[0]}
     export headingtoodeep=######
-    export m4pfont=0
     bash $MD4PDF/GNULinux/m4ps.sh $1 $2
-}
+} # m4ps 0 (= don't redo) [1 (= no ToC)]
 

@@ -46,6 +46,7 @@ nmse () {
     notmuchsearch="$@"
     echo $notmuchsearch
     mapfile -t nms < <( notmuch search $notmuchsearch )
+    # - try  notmuch search bloch  to understand the following tweaks
     source $OSAB/Bash/xcol.sh
     for si in "${nms[@]}"; do
       spaceFromSubjectTags="${si#*]}"
