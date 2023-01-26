@@ -24,6 +24,7 @@ require("awful.autofocus")
 local wibox = require("wibox")
 local brightness_widget = require("awesome-wm-widgets.brightness-widget.brightness")
 local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local capslock = require("capslock")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 -- theme handling library
@@ -312,7 +313,10 @@ for i = 1, 9 do
     )
 end
 
--- -> 3 key bindings - globalkeys - 2 set keys
+-- -> 3 key bindings - globalkeys - 2 awesome-capslock_widget
+globalkeys = awful.util.table.join(globalkeys, capslock.key)
+
+-- -> 3 key bindings - globalkeys - 3 set keys
 root.keys(globalkeys)
 
 -- -> 3 keyboard map indicator and switcher
@@ -547,6 +551,7 @@ awful.screen.connect_for_each_screen(function(s)
         { layout = wibox.layout.fixed.horizontal,
             mykeyboardlayout,
             brightness_widget{ base = '50', program = 'xbacklight', timeout = '999', tooltip = 'true' },
+            capslock,
 		    cpu_widget({ step_spacing = 0, step_width = 1, width = 20, }),
             ram_widget(),
             wibox.widget.systray(),

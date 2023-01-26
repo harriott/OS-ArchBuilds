@@ -239,6 +239,10 @@ sudo rm /var/lib/pacman/db.lck
 ## print to A4 - /etc/papersize
 echo "a4" | sudo tee -a /etc/papersize
 - didn't get transferred to Zathura's Page Setup > Paper size
+## Update AUR spotify
+  ==> Verifying source file signatures with gpg...
+      spotify-1.1.84.716-6-Release ... FAILED (unknown public key 7A3A762FAFD4A51F)
+  ==> ERROR: One or more PGP signatures could not be verified!
 ## waiting
 wikit
 # fcron

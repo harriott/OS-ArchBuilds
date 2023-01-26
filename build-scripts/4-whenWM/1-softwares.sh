@@ -30,8 +30,11 @@ sudo pacman -S ffmpegthumbnailer  # for  /usr/share/clifm/plugins/vid_viewer.sh
 #=> Falkon
 sudo pacman -S falkon
 
-#=> Firefox
+#=> Firefox 0 install
 sudo pacman -S firefox
+
+#=> Firefox 1 remove
+sudo pacman -Rs firefox
 
 #=> Font Manager
 sudo pacman -S font-manager
