@@ -9,3 +9,5 @@ export QT_QPA_PLATFORMTHEME=qt5ct  # QPA set here so qt5ct works from Openbox Me
 [ -f usr/bin/xbindkeys ] && xbindkeys  # must be before launching Openbox
 exec openbox-session  # accesses  ~/.config/openbox/autostart
 
+# journalctl -b -1 > $ulL/Arch/$host/journalctl-$(date '+%y%m%d-%H%M').log
+

@@ -164,6 +164,7 @@ n ~/.sm/.emacs.d
 nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
 # encoding
+$onGH/pandoc-templates
 /home/jo/.local/pipx/venvs
 b <codeFile>  # syntax'd cat
 pb <codeFile>  # also reformatted
@@ -380,6 +381,7 @@ rg -uu '\$dgtzd'
 rg -uu '\$tIs'
 rg -uu '\$tInf'
 rg -uu '\$IT'
+rg -uu '\$ITstack/onGitHub'
 rg -uu '\$tIs'
 rg -uu '\$JHw'
 rg -uu '\$IT1ul'
@@ -422,14 +424,14 @@ rg -iuu '<f11>'
 rg -tvim 'vimHints'
 
 ##### in TeX files
-rg -l -ttex '\\bel' > rg-tex.txt
-rg -l -ttex '\\iftoggle' > rg-tex.txt
-rg -l -ttex '\\includegraphics' > rg-tex.txt
-rg -l -ttex '\\input' > rg-tex.txt
-rg -l -ttex '\\parskip' > rg-tex.txt
-rg -l -ttex '\\url' > rg-tex.txt
-rg -l -ttex memoirArticle > rg-tex.txt
-rg -l -ttex verseSettings > rg-tex.txt
+rg -l -ttex '\\bel' > rg-tex.fetl
+rg -l -ttex '\\iftoggle' > rg-tex.fetl
+rg -l -ttex '\\includegraphics' > rg-tex.fetl
+rg -l -ttex '\\input' > rg-tex.fetl
+rg -l -ttex '\\parskip' > rg-tex.fetl
+rg -l -ttex '\\url' > rg-tex.fetl
+rg -l -ttex memoirArticle > rg-tex.fetl
+rg -l -ttex verseSettings > rg-tex.fetl
 rg -ttex '\$Sig'
 rg -ttex '\\bel'
 rg -ttex '\\includepdf'
@@ -674,7 +676,6 @@ get the PIDs  ps ax | grep cmus  then for each  kill -9 PID
 cat /etc/hostname
 curl ifconfig.co  # IP address
 curl ifconfig.co/country
-i sshd_config
 my Thunderbird locks: pb $T91/linuxlock; pb $T91/Win10ProLock
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
@@ -736,6 +737,10 @@ sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
 sudo ls /etc/NetworkManager/system-connections/
 systemctl status NetworkManager
 systemctl status NetworkManager-dispatcher
+
+## SSH
+$CrPl/networking/SSHconfig/$host
+i sshd_config
 
 ## weather
 aw
@@ -863,7 +868,9 @@ sudo du -sh /boot /etc /home /root /usr
 
 ## systemd
 journalctl --list-boots
+journalctl --verify
 journalctl | grep Consumed
+journalctl -b -1 > $ulL/Arch/$host/journalctl.txt
 
 ### messages, paged
 journalctl -b  # for this boot

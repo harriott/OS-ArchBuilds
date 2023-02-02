@@ -243,7 +243,20 @@ echo "a4" | sudo tee -a /etc/papersize
   ==> Verifying source file signatures with gpg...
       spotify-1.1.84.716-6-Release ... FAILED (unknown public key 7A3A762FAFD4A51F)
   ==> ERROR: One or more PGP signatures could not be verified!
+## random reboot
+journalctl -b  has loads of these:
+  sd 1:0:0:0: [sda] tag#0 device offline or changed
+  AsusW202 kernel: I/O error, dev sda, sector 228263632 op 0x0:(READ) flags 0x3000 phys_seg 1 prio class 2
+  AsusW202 kernel: EXT4-fs warning (device sda1): htree_dirblock_to_tree:1072: inode #1089759: lblock 0: comm Linux FS WORKER: error -5 reading directory block
+  AsusW202 kernel: sd 1:0:0:0: [sda] tag#0 device offline or changed
+journalctl -b -1
+  Data from the specified boot (-1) is not available: No such boot ID in journal
+## xdg-open .sifw
+handlr get .sifw  reports  no mime type
+  bash $bSc/4-whenWM/2-resourceHandler.sh
 ## waiting
+GitHub CLI
+remove Spotify AUR
 wikit
 # fcron
 fcrontab -l

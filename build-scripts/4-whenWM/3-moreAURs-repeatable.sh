@@ -57,11 +57,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> iscan
 # gAUR iscan
@@ -150,14 +150,21 @@ true
 # nvim -c "silent! /launchpad" PKGBUILD
 # makepkg -sic  # takes a long time...
 
-# #=> Spotify 0 signing key
+# #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
 # gpg -k 5E3C45D7B312C643
 
-#=> Spotify 1 (re)install
+#=> Spotify 0 signing key 1 delete
+gpg -k | xcol 5E3C45D7B312C643 spotify
+  gpg --delete-key 5E3C45D7B312C643
+
+#=> Spotify AUR 1 (re)install
 gAUR spotify
 nvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
 makepkg -sic
+
+#=> Spotify AUR 2 remove
+sudo pacman -Rs spotify
 
 # #=> urlview
 # # creates a numbered list of url's in a resource
@@ -170,8 +177,8 @@ makepkg -sic
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

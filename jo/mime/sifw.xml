@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+vim: fdl=2:
+$ABjo/sifw.xml
+symlinked in  $bSc/symlinks/jo-0.sh  to  ~/.local/share/mime/packages/sifw.xml
+-->
+
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+ <mime-type type="text/sifw">
+  <comment>sifw</comment>
+  <glob pattern="*.sifw"/>
+ </mime-type>
+</mime-info>
+

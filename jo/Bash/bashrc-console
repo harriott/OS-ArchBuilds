@@ -102,7 +102,7 @@ fdtsExt () {
   if [ $1 ]; then
     fdtsKSsearch="*.$1"; [[ $1 = 'gitignore' ]] && fdtsKSsearch=".$1"
     [[ $1 = "tex" ]] && fdtsKSprune=$'-path \'*/copied/*\' -prune -o -path \'*/vimfiles/*\' -prune -o'
-    fdtsKSlist=dts-$1.list
+    fdtsKSlist=dts-$1.fetl
     fdtsKS
     # [[ $1 = @(gitignore|pl|tex|txt) ]] && sed -i "s| \.| $PWD|" $fdtsKSlist
   else
@@ -115,7 +115,7 @@ alias fk=fdtsKeyString
 
 fdtsKeyString () {
   if [ $1 ]; then
-    fdtsKSlist=dts-$1_in_name.txt
+    fdtsKSlist=dts-$1_in_name.fetl
     search='\*$1\*'
     eval "fdtsKS $search $dtsfile"
   fi
@@ -123,13 +123,7 @@ fdtsKeyString () {
 
 #===> common functionality
 export printfDTsort='-printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort'
-
-fdtsListHeader () {
-  echo "vim: ft=fdtslist:" > $1
-  echo "" >> $1
-  echo $PWD >> $1
-  echo "" >> $1
-}
+fdtsListHeader () { echo "" > $1; echo $PWD >> $1; echo "" >> $1; }
 
 fdtsKS () {
   fdtsListHeader $fdtsKSlist
@@ -139,11 +133,11 @@ fdtsKS () {
 } # internal use only
 
 #===> my Arch Forum issues
-# $IT1/dts-ft_bbcode.list
-# $ITstack/dts-ft_bbcode.list
+# $IT1/dts-ft_bbcode.fetl
+# $ITstack/dts-ft_bbcode.fetl
 
 fdtsbbcode () {
-  dtsfile=dts-ft_bbcode.list
+  dtsfile=dts-ft_bbcode.fetl
   fdtsListHeader $dtsfile
   rg -ttxt -l --sort modified 'ft=bbcode' >> $dtsfile
   echo "results are in $dtsfile"
@@ -166,49 +160,50 @@ alias gis='git status -u'
 export BFG=$CrPl/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
-#===> time-sorted lists of files
-# $IT1/GitHubIssues.list
-# $ITstack/GitHubIssues.list
+#===> time-sorted - .git/config
+# $ITstack/git_config.fetl
+
+gitc () {
+  gitcl=git_config.fetl
+  echo '' > $gitcl
+  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gitcl
+  echo "results are in $gitcl"
+}
+
+#===> time-sorted - my GitHub issues
+# $tInf/GitHubIssues.fetl
+# $ITstack/GitHubIssues.fetl
+
 ghi () {
-  ghil=GitHubIssues.list
+  ghil=GitHubIssues.fetl
   for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
   sed -i '/copied\/IT-handy\//d' $ghil
   sed -i '1s/^/\n/' $ghil
-  sed -i '1ivim: ft=fdtslist' $ghil
   echo '' >> $ghil
   echo "results are in $ghil"
-}
-
-# $ITstack/git_config.list
-gitc () {
-  gitcl=git_config.list
-  echo 'vim: nospell:' > $gitcl
-  echo '' >> $gitcl
-  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gitcl
-  echo "results are in $gitcl"
 }
 
 #==> lists of files by content
 rgl () {
   cd $Drpbx/JH
-  echo 'vim: ft=fdtslist:' > rgl.list; echo '' >> rgl.list
+  echo '' > rgl.fetl
   for ITd in $IT1 $ITstack; do
     rgc="rg -l $1 $ITd"
-    echo '' >> rgl.list; echo $rgc >> rgl.list
-    echo '' >> rgl.list; $rgc >> rgl.list; echo '' >> rgl.list
+    echo '' >> rgl.fetl; echo $rgc >> rgl.fetl
+    echo '' >> rgl.fetl; $rgc >> rgl.fetl; echo '' >> rgl.fetl
   done
 }
 
 SE () {
   cd $Drpbx/JH
-  echo 'vim: ft=fdtslist:' > SEN.list
+  [ -s SEN.fetl ] && rm SEN.fetl
   for ITd in $IT1 $ITstack; do
-    echo '' >> SEN.list
-    rg -l -tmd 'stackexchange|stackoverflow' $ITd | sort >> SEN.list
+    echo '' >> SEN.fetl
+    rg -l -tmd 'stackexchange|stackoverflow' $ITd | sort >> SEN.fetl
   done
-  # rg -l -tmd 'stackexchange' $IT1 | sort >> SEN.list
-  echo '' >> SEN.list
-  echo 'now open SEN.list'  # $Drpbx/JH/SEN.list
+  # rg -l -tmd 'stackexchange' $IT1 | sort >> SEN.fetl
+  echo '' >> SEN.fetl
+  echo 'now open SEN.fetl'  # $Drpbx/JH/SEN.fetl
 }
 
 #==> my Encrypted directories

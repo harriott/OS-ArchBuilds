@@ -59,7 +59,8 @@ ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 
 #=> MIME database
-ln -sf $ABjo/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
+ln -sf $ABjo/mime/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
+ln -sf $ABjo/mime/sifw.xml ~/.local/share/mime/packages/sifw.xml
   update-mime-database ~/.local/share/mime
 
 #=> mimeapps.list

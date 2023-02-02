@@ -38,8 +38,9 @@ lj=~/texmf/tex/latex/jo; [ -d $lj ] && rm -r $lj; ln -s $CrPl/LaTeX/jo $lj
 # # e -adl ~/.pandoc/templates
 
 #=> SSH config
-ln -sf $machBld/jo/gitconfig ~/.ssh/config
+ln -sf $CrPl/networking/SSHconfig/$host ~/.ssh/config
 # e -la ~/.ssh/config
+# pb ~/.ssh/config
 
 #=> vimfiles
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim  # file ~/.vim

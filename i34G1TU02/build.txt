@@ -173,6 +173,8 @@ sudo rm /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310
 ## xdg-open .md
 mimeo -m .md  reports  text/markdown  so  mimeo --add text/markdown gvim.desktop
 ## waiting
+GitHub CLI
+remove Spotify AUR
 Ruby
 wikit
 # fcron

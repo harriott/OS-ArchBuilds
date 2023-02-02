@@ -2,7 +2,8 @@
 
 <!--
 vim: fdl=2:
-symlinked in  $bSc/anytime/symlinks-jo.sh  to  ~/.local/share/mime/packages/mediawiki.xml
+$ABjo/mediawiki.xml
+symlinked in  $bSc/symlinks/jo-0.sh  to  ~/.local/share/mime/packages/mediawiki.xml
 -->
 
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">

@@ -155,21 +155,25 @@ set -v  # prints each statement here, including comments
 # sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
 # grep SystemMaxUse /etc/systemd/journald.conf
 
-# #=> 2 networking
-# # isync
-# pacman -S isync  # for mbsync
+#=> 2 networking
+# GitHub CLI
+pacman -S github-cli
+gh config set -h github.com git_protocol ssh
 
-# # netcat - for network connection tests
-# pacman -S openbsd-netcat
+# isync
+pacman -S isync  # for mbsync
 
-# # NetworkManager
-# pacman -S networkmanager
+# netcat - for network connection tests
+pacman -S openbsd-netcat
 
-# # tcpdump
-# pacman -S tcpdump  # for packet analysis
+# NetworkManager
+pacman -S networkmanager
 
-# # Wget
-# pacman -S wget
+# tcpdump
+pacman -S tcpdump  # for packet analysis
+
+# Wget
+pacman -S wget
 
 # #=> 2 packages - automake
 # pacman -S automake

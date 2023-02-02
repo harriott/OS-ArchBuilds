@@ -38,6 +38,7 @@ trap read debug  # puts a read request after each executable line
 # handlr set .pdf org.pwmt.zathura.desktop
 # handlr set .png org.nomacs.ImageLounge.desktop
 # handlr set .pl gvim.desktop
+# handlr set .mediawiki gvim.desktop  # $ABjo/mediawiki.xml
 # handlr set .mkv mpv.desktop
 # handlr set .mp4 mpv.desktop
 # handlr set .mpg mpv.desktop
@@ -45,6 +46,7 @@ trap read debug  # puts a read request after each executable line
 # handlr set .py gvim.desktop
 # handlr set .org gvim.desktop
 # handlr set .sh gvim.desktop
+# handlr set .sifw gvim.desktop
 # handlr set .svg gpicview.desktop
 # handlr set .tex gvim.desktop
 # handlr set .tiff feh.desktop

@@ -16,7 +16,6 @@ export MOZ_GTK_TITLEBAR_DECORATION=client
 #=> storage
 # here I'm taking care to avoid variables that only differ by case
 
-export bilan=$Drpbx/JH/Work/ST/LPD/IdF/AB-TAP/bilan
 export Cfzd=$Drpbx/JH/Cafezoide
 export copied=$Drpbx/JH/copied  # used in  $TeNo
   export cFr=$copied/France  # used in  $TeNo
@@ -34,6 +33,8 @@ export JHt=$Drpbx/JH/technos
   export tInf=$JHt/IT  # used in $DWp & $TeNo
   export tIs=$JHt/IT-storage  # $tIs/diskUsage.txt
 export JHw=$Drpbx/JH/work  # $JHw - for IT websites and more
+  export bilan=$JHw/ST/LPD/IdF/AB-TAP/bilan
+  export StEr=$JHw/France/IdF/Paris/rueErmitage/StudioErmitage  # previously used  $detail
 export lclm=$ulL/clm  # linux command-line mail, was  GNULE
 export MD4PDF=$onGH/md4pdf  # $MD4PDF  is unambiguous
 export MSWin10=$onGH/OS-MSWin10  # $MSWin10  used in  $DWp & $TeNo
@@ -43,7 +44,6 @@ export CfWk=$Drpbx/JH/CforWork
   export ScEn=$CfWk/education/Science-Engineering
 export ess=$Drpbx/JH/now/essential
   export Sig=$Drpbx/JH/now/essential/signatures  # $Sig  for use in creating documents
-export StEr=$Drpbx/JH/work/France/IdF/Paris/rueErmitage/StudioErmitage  # previously used  $detail
 export T91=$Drpbx/JH/T91-default-release
 export TeNo=$core/TextNotes  # used in  $TeNo
   export LTX=$TeNo/TN/LTX  # Landscape TeXs - used in  $Bash/bashrc-wm
