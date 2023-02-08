@@ -20,7 +20,7 @@
 
 #=> JH additions
 # this file is symlinked to  ~/.config/openbox/autostart
-#  in  my  $bSc/31-symlinks-Openbox.sh
+#  in  my  $bSc/symlinks/jo-1-Openbox.sh
 #  depends on  $OSAB/Bash/export-storage
 
 #==> 0 gVim layout

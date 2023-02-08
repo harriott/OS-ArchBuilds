@@ -17,7 +17,7 @@ run conky -c $machBld/jo/conkyrc
 run copyq  # because CopyQ's internal Autostart wouldn't work in Openbox
 run dropbox
 run nm-applet
-run pnmixer
+run pnmixer  # puts volume icon in rhs wibox
 run redshift-gtk -l 48.8646:2.3984 &
 run udiskie -t
 

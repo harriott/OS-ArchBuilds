@@ -9,6 +9,7 @@ i bc
 i datediff
 Topics by ttoirrah https://bbs.archlinux.org/search.php?action=show_user_topics&user_id=88384
 r $TeNo/TN
+~/.config/pnmixer/config
 
 # awesome wm
 modkey+c = c:kill()
@@ -164,12 +165,17 @@ n ~/.sm/.emacs.d
 nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
 # encoding
-$onGH/pandoc-templates
+$onGH/pandoc-templates/README.markdown
 /home/jo/.local/pipx/venvs
 b <codeFile>  # syntax'd cat
 pb <codeFile>  # also reformatted
-r $GEM_HOME
 r ~/.npm-global
+
+## Ruby
+gem list --no-versions | tr '\n' ' ' | xcol bundler github-pages jekyll liquid
+gem list > $ulL/Arch/$host/gems.gems
+r $GEM_HOME
+see $vimfiles/syntax/gems.vim
 
 # fcron
 systemctl status fcron.service  # showing recent events
@@ -189,6 +195,7 @@ C $onGH/misc
 diskus  # size of current directory
 e
 fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
+i tree
 MV(1)
 n [directory]
 pygmentize -h
@@ -358,7 +365,12 @@ rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
 rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 
+#### in /usr/share/vim/vim90
+rg 'let b:undo_ftplugin'
+rg main_syntax
+
 #### in JH
+in $GHrUse/CP/Jekyll: rg -tyaml -l -uu exclude: > rg.fetl
 rg '\$cFr'
 rg '\$CfWk'
 rg '\$copied'
@@ -445,11 +457,6 @@ rg -ttex 'WLR'
 rg -ttex '\\parindent'
 rg -ttex -l --sort modified '\\includegraphics' > dts-tex-includegraphics.txt
 rg -ttex ^%%
-
-#### vim
-in /usr/share/vim/vim90
-rg 'let b:undo_ftplugin'
-rg main_syntax
 
 ## Vifm
 /usr/share/vifm/vifm-help.txt
@@ -829,7 +836,7 @@ rg Exec= /usr/share/applications  # check others
 ## build
 $OSAB/etc/doas.conf
 r $OSAB $ulL/Arch
-r $ulL/Arch
+r $ulL/Arch/$host
 vifm $OSAB $ulL/Arch
 
 ## groups
@@ -870,7 +877,7 @@ sudo du -sh /boot /etc /home /root /usr
 journalctl --list-boots
 journalctl --verify
 journalctl | grep Consumed
-journalctl -b -1 > $ulL/Arch/$host/journalctl.txt
+see  $Bash/bash_profile
 
 ### messages, paged
 journalctl -b  # for this boot
@@ -935,7 +942,7 @@ figlet(6)
 
 ### fonts
 ft  # $OSAB/Bash/bashrc-generic
-showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFonts.txt
+showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.txt
 
 ## termdown
 termdown --help | mo

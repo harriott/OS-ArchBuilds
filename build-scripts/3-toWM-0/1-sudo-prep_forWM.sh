@@ -13,7 +13,7 @@ trap read debug  # puts a read request after each executable line
 # pacman -S ghostscript
 
 # # Pandoc
-# pacman -S pandoc
+# pacman -S pandoc-cli
 
 # # TeX Live
 # pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all

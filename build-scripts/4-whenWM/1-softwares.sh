@@ -70,6 +70,9 @@ sudo pacman -S keepassxc
 sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
 sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
 
+#=> metis 1 remove
+sudo pacman -Rs metis
+
 #=> mpv
 sudo pacman -S mpv
 
@@ -159,6 +162,9 @@ sudo pacman -S vimiv
 
 #=> Xournal++
 sudo pacman -S xournalpp  # for hand-writing pad
+
+#=> yamllint
+sudo pacman -S yamllint
 
 #=> Zathura
 sudo pacman -S zathura-pdf-mupdf

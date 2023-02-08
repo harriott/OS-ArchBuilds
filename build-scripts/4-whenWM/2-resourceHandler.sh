@@ -28,6 +28,7 @@ trap read debug  # puts a read request after each executable line
 # handlr set .el gvim.desktop
 # handlr set .flv mpv.desktop
 # handlr set .html gvim.desktop  # still feeds to  Firefox...
+# handlr set .ico org.nomacs.ImageLounge.desktop
 # handlr set .jpg org.nomacs.ImageLounge.desktop
 # handlr set .kdbx org.keepassxc.KeePassXC.desktop
 # handlr set .log gvim.desktop

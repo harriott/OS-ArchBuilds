@@ -14,7 +14,7 @@ nvim -O /etc/cheat/conf.yml /etc/cheat/conf.yml.pacnew -c 'windo difft'
 rm /etc/cheat/conf.yml.pacnew
 
 #=> 1 clamd.conf
-nvim -o /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
+nvim -O /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
 rm /etc/clamav/clamd.conf.pacnew
 
 #=> 1 firewalld.conf
@@ -32,6 +32,10 @@ rm /etc/locale.gen.pacnew
 #=> 1 logind.conf
 nvim -O /etc/systemd/logind.conf /etc/systemd/logind.conf.pacnew -c 'windo difft'
 rm /etc/systemd/logind.conf.pacnew
+
+#=> 1 shells
+nvim -O /etc/shells /etc/shells.pacnew -c 'windo difft'
+rm /etc/shells.pacnew
 
 #=> 1 sshd_config
 nvim -O /etc/ssh/sshd_config /etc/ssh/sshd_config.pacnew -c 'windo difft'

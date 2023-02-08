@@ -6,11 +6,6 @@
 --  symlinked in my  $bSc/symlinks/jo-1-awesome.sh
 --   exa -la ~/.config/awesome/rc.lua
 
---  to do
---  -----
---  Rofi
---  volume controls
-
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
@@ -33,7 +28,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup_jo = require("awful.hotkeys_popup");
-local hotkeys_popup_jo_sized = hotkeys_popup_jo.widget.new({ width = 930, height = 450 });
+local hotkeys_popup_jo_sized = hotkeys_popup_jo.widget.new({ width = 930, height = 425 });
   -- for my Lenovo IdeaPad 120s 81A4
 local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
 
@@ -165,9 +160,9 @@ globalkeys = gears.table.join(
 
     -- --> brightness
     -- awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 4") end),
-    awful.key({ }, "XF86MonBrightnessDown", function () brightness_widget:dec() end, {description = "increase brightness", group = "custom"}),
+    awful.key({ }, "XF86MonBrightnessDown", function () brightness_widget:dec() end, {description = "increase brightness", group = "AV"}),
     -- awful.key({ }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 12") end),
-    awful.key({ }, "XF86MonBrightnessUp",   function () brightness_widget:inc() end, {description = "decrease brightness", group = "custom"}),
+    awful.key({ }, "XF86MonBrightnessUp",   function () brightness_widget:inc() end, {description = "decrease brightness", group = "AV"}),
 
     -- --> changing screens
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
@@ -276,6 +271,21 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
 
+    -- --> pactl mute toggle
+    awful.key({ }, "XF86AudioMute",
+        function () awful.spawn.with_shell("~/.config/awesome/audio/pactlMuteUnmute.sh") end,
+        {description = "mute toggle", group = "AV"}),
+
+    -- --> pactl volume down
+    awful.key({ }, "XF86AudioLowerVolume",
+        function () awful.spawn.with_shell("~/.config/awesome/audio/pactlDown5.sh") end,
+        {description = "volume down 5%", group = "AV"}),
+
+    -- --> pactl volume up
+    awful.key({ }, "XF86AudioRaiseVolume",
+        function () awful.spawn.with_shell("~/.config/awesome/audio/pactlUp5.sh") end,
+        {description = "volume up 5%", group = "AV"}),
+
 -- --> run some Lua
     awful.key({ modkey }, "x", function () awful.prompt.run {
         prompt       = "Run Lua code: ",
@@ -283,6 +293,11 @@ globalkeys = gears.table.join(
         exe_callback = awful.util.eval,
         history_path = awful.util.get_cache_dir() .. "/history_eval"
         } end, {description = "lua execute prompt", group = "awesome"}),
+
+    -- --> screenshot
+    awful.key({ }, "Print",
+        function () awful.spawn.with_shell("~/.config/awesome/importScreenshot.sh") end,
+        {description = "screenshot", group = "screen"}),
 
 -- --> tags next/previous )
     awful.key({ modkey, }, "Left",   awful.tag.viewprev, {description = "view previous", group = "tag"}),
@@ -341,7 +356,8 @@ awful.rules.rules = {
 
     -- all clients
     { rule = { },
-      properties = { border_width = beautiful.border_width,
+      properties = {
+                     border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,

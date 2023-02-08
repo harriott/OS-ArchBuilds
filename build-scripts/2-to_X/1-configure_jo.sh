@@ -1,5 +1,8 @@
 #!/bin/bash
-# vim: fdl=1:
+
+#=> 0 GitHub CLI
+sudo pacman -S github-cli
+gh config set -h github.com git_protocol ssh
 
 #=> 0 set $OSAB
 read -p "\$OSAB is $OSAB - looks good?"

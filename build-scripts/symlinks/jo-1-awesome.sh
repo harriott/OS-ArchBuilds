@@ -23,7 +23,13 @@ ln -sf $GHrUse/CP/rxi-json.lua/json.lua ~/.config/awesome/json.lua
 #=> awesome-capslock_widget
 ln -sf $GHrUse/linux/wm-awesome/stefano-m-awesome-capslock_widget/capslock.lua ~/.config/awesome/capslock.lua
 
+#=> mute toggle
+a=/home/jo/.config/awesome/audio; [ -d $a ] && rm $a; ln -sf $machBld/jo/awesome/audio $a
+
 #=> notifies
 ln -sf $machBld/jo/awesome/Firefox-notify-send.sh     ~/.config/awesome/Firefox-notify-send.sh
 ln -sf $machBld/jo/awesome/Thunderbird-notify-send.sh ~/.config/awesome/Thunderbird-notify-send.sh
+
+#=> screenshot
+ln -sf $ABjo/wm/importScreenshot.sh ~/.config/awesome/importScreenshot.sh
 

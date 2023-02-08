@@ -172,11 +172,19 @@ sudo mv /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310
 sudo rm /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310.pyc.bak
 ## xdg-open .md
 mimeo -m .md  reports  text/markdown  so  mimeo --add text/markdown gvim.desktop
+## Updates
+:: Replace pandoc with community/pandoc-cli? [Y/n]
+## Updates
+==> Verifying source file signatures with gpg...
+    qpdfview-0.5.tar.gz ... FAILED (unknown public key F4928C4DD24D4DF8)
+==> ERROR: One or more PGP signatures could not be verified!
+## remove old npm
+npm --version  reports  6.14.5
+sudo npm uninstall npm -g
+rm -r ~/.npm-global
+sudo pacman -S npm
+npm config set prefix=$HOME/.npm-global
 ## waiting
-GitHub CLI
-remove Spotify AUR
-Ruby
-wikit
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

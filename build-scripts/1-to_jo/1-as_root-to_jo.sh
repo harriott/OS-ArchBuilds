@@ -156,10 +156,6 @@ set -v  # prints each statement here, including comments
 # grep SystemMaxUse /etc/systemd/journald.conf
 
 #=> 2 networking
-# GitHub CLI
-pacman -S github-cli
-gh config set -h github.com git_protocol ssh
-
 # isync
 pacman -S isync  # for mbsync
 

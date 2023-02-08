@@ -254,10 +254,14 @@ journalctl -b -1
 ## xdg-open .sifw
 handlr get .sifw  reports  no mime type
   bash $bSc/4-whenWM/2-resourceHandler.sh
+## xdg-open .ico
+handlr get .ico  reports  no handlers found for 'image/vnd.microsoft.icon'
+  bash $bSc/4-whenWM/2-resourceHandler.sh
+## Updates
+:: Replace pandoc with community/pandoc-cli? [Y/n]
+## PNMixer won't unmute
+sed -i '/VolMuteKey/ s/=.*/=/' ~/.config/pnmixer/config
 ## waiting
-GitHub CLI
-remove Spotify AUR
-wikit
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

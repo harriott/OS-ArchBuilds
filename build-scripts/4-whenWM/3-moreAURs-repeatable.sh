@@ -104,11 +104,11 @@ trap read debug  # puts a read request after each executable line
 # #=> pdfCropMargins 2 pdfcropmargins 0 remove
 # sudo pacman -Rs pdfcropmargins
 
-# #=> PDFsam
-# gAUR pdfsam
-# nvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic  # choose  jdk-openjdk
-# true
+#=> PDFsam
+gAUR pdfsam
+nvim -c "silent! /torakiki" PKGBUILD
+makepkg -sic  # choose  jdk-openjdk
+true
 
 # #=> perl-unicode-utf8
 # gAUR perl-unicode-utf8
@@ -145,26 +145,26 @@ trap read debug  # puts a read request after each executable line
 # #=> qpdfview 0 Adam Reichold's public key
 # gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8
 
-# #=> qpdfview 1 (re)install
-# gAUR qpdfview
-# nvim -c "silent! /launchpad" PKGBUILD
-# makepkg -sic  # takes a long time...
+#=> qpdfview 1 (re)install
+gAUR qpdfview
+nvim -c "silent! /launchpad" PKGBUILD
+makepkg -sic  # takes a long time...
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
 # gpg -k 5E3C45D7B312C643
 
-#=> Spotify 0 signing key 1 delete
-gpg -k | xcol 5E3C45D7B312C643 spotify
-  gpg --delete-key 5E3C45D7B312C643
+# #=> Spotify 0 signing key 1 delete
+# # gpg -k | xcol 5E3C45D7B312C643 spotify
+# gpg --delete-key 5E3C45D7B312C643
 
-#=> Spotify AUR 1 (re)install
-gAUR spotify
-nvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
-makepkg -sic
+# #=> Spotify AUR 1 (re)install
+# gAUR spotify
+# nvim -c "silent! /http:\/\/repository.spotify.com\/dists\/testing\/non-free\/binary-amd64\/Packages" PKGBUILD
+# makepkg -sic
 
-#=> Spotify AUR 2 remove
-sudo pacman -Rs spotify
+# #=> Spotify AUR 2 remove
+# sudo pacman -Rs spotify
 
 # #=> urlview
 # # creates a numbered list of url's in a resource
@@ -177,8 +177,8 @@ sudo pacman -Rs spotify
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 
