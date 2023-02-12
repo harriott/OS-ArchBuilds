@@ -69,6 +69,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a long time...
 # true
 
+#=> js-beautify
+gAUR js-beautify
+nvim -c "silent! /registry.npmjs.org\/js-beautify" PKGBUILD
+makepkg -sic
+true
+
 # #=> nsxiv
 # gAUR nsxiv
 # nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
@@ -104,11 +110,11 @@ trap read debug  # puts a read request after each executable line
 # #=> pdfCropMargins 2 pdfcropmargins 0 remove
 # sudo pacman -Rs pdfcropmargins
 
-#=> PDFsam
-gAUR pdfsam
-nvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic  # choose  jdk-openjdk
-true
+# #=> PDFsam
+# gAUR pdfsam
+# nvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic  # choose  jdk-openjdk
+# true
 
 # #=> perl-unicode-utf8
 # gAUR perl-unicode-utf8
@@ -124,7 +130,7 @@ true
 # #=> pinta-git 0 install
 # gAUR pinta-git
 # nvim -c "silent! /github.com\/PintaProject\/Pinta.git" PKGBUILD
-# makepkg -sic
+# makepkg -sic  # takes a while, using .NET
 # true
 
 # #=> pinta-git 0 remove
@@ -145,10 +151,10 @@ true
 # #=> qpdfview 0 Adam Reichold's public key
 # gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8
 
-#=> qpdfview 1 (re)install
-gAUR qpdfview
-nvim -c "silent! /launchpad" PKGBUILD
-makepkg -sic  # takes a long time...
+# #=> qpdfview 1 (re)install
+# gAUR qpdfview
+# nvim -c "silent! /launchpad" PKGBUILD
+# makepkg -sic  # takes a long time...
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -

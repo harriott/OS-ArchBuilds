@@ -360,6 +360,7 @@ rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
 rg '<someText>|<otherText>'  # searches recursively in files
 rg '\.emacs\.d'
 rg --no-ignore 'sometext'  # allows searching into gitignored places
+rg -i <case-insensitive>
 rg -tmd '[\p{Devanagari}]'  # finds Devanagari characters
 rg -tmd '\$Sig'
 rg -tmd '\{TNW}'
@@ -368,6 +369,7 @@ rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
 #### in /usr/share/vim/vim90
 rg 'let b:undo_ftplugin'
 rg main_syntax
+rg -tvim 'b:match_words'
 
 #### in JH
 in $GHrUse/CP/Jekyll: rg -tyaml -l -uu exclude: > rg.fetl
@@ -434,6 +436,7 @@ rg --no-ignore '\$onGH'
 rg -iuu '<f4>'
 rg -iuu '<f11>'
 rg -tvim 'vimHints'
+rg -uu "'include'"
 
 ##### in TeX files
 rg -l -ttex '\\bel' > rg-tex.fetl
@@ -617,6 +620,7 @@ fRs $Bash bashrc-console
 fRs $Drpbx/CAM-toSort0 '01 '
 fRs $Drpbx/CAM-toSort0 Apache
 fRs $Drpbx/CAM-good US
+fRs $JHw _config.yml
 fRs $vimfiles/syntax cmusq.vim
 fRs $CrPl/LaTeX/jo/CzPlanning planning.cls
 

@@ -36,6 +36,7 @@ trap read debug  # puts a read request after each executable line
 # handlr set .md gvim.desktop
 # handlr set .MOV mpv.desktop
 # handlr set .mp3 mpv.desktop
+# handlr set .ogv mpv.desktop
 # handlr set .pdf org.pwmt.zathura.desktop
 # handlr set .png org.nomacs.ImageLounge.desktop
 # handlr set .pl gvim.desktop

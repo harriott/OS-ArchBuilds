@@ -185,6 +185,8 @@ rm -r ~/.npm-global
 sudo pacman -S npm
 npm config set prefix=$HOME/.npm-global
 ## waiting
+HTMLHint
+js-beautify
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

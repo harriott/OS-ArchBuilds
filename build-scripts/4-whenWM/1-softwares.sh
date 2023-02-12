@@ -60,6 +60,9 @@ sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode
 #=> HPLIP
 sudo pacman -S hplip
 
+#=> HTMLHint
+sudo pacman -S htmlhint
+
 #=> java-commons-lang
 sudo pacman -S java-commons-lang  # (for pdftk's functions)
 
