@@ -174,7 +174,7 @@ alias ns='nsxiv -frt * &'  # using fullscreen, recursively open all flat
 alias pq='pqiv -d 2 -inF * &'  # (recursive) no info, sorted, 2s fade when changed
 
 S () { bash $Imagey/Scan.sh $1 $2 $3 $4; }
-  s53 () { S 55n 3 $1 $2; }  # call SANE's scanimage tool
+  s53 () { S 55n 3 $1 $2; t $1.tiff; }  # call SANE's scanimage tool, and convert to jpg
 
 #==> convert all webp to jpg
 w2j () {
@@ -265,4 +265,8 @@ m4ps() {
     export headingtoodeep=######
     bash $MD4PDF/GNULinux/m4ps.sh $1 $2
 } # m4ps 0 (= don't redo) [1 (= no ToC)]
+
+#=> yt-dlp
+yf () { yt-dlp -F $1; }
+y7 () { yt-dlp -f "[height<=?720]" $1; }
 

@@ -184,9 +184,9 @@ sudo npm uninstall npm -g
 rm -r ~/.npm-global
 sudo pacman -S npm
 npm config set prefix=$HOME/.npm-global
+## switch to the base-devel meta package
+sudo pacman -Syu base-devel
 ## waiting
-HTMLHint
-js-beautify
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

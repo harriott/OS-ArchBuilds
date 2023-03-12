@@ -25,13 +25,14 @@ set -e
 # sudo ln -sf $cITh/CP/LanguageTool /usr/share/java/LanguageTool
 # # e -adl /usr/share/java/LanguageTool
 
-#=> LaTeX
-lj=~/texmf/tex/latex/jo; [ -d $lj ] && rm -r $lj; ln -s $CrPl/LaTeX/jo $lj
-# e -adl ~/texmf/tex/latex/jo
+# #=> LaTeX
+# lj=~/texmf/tex/latex/jo; [ -d $lj ] && rm -r $lj; ln -s $CrPl/LaTeX/jo $lj
+# # e -adl ~/texmf/tex/latex/jo
 
-# #=> mdfpdf Pandoc defaults
-# ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
-# ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
+#=> mdfpdf Pandoc defaults
+ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
+ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
+# er ~/.pandoc/defaults/*
 
 # #=> Pandoc templates
 # pt=~/.pandoc/templates; [ -d $pt ] && rm -r $pt; ln -sf $onGH/pandoc-templates $pt

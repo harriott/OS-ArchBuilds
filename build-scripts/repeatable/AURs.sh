@@ -10,11 +10,11 @@ trap read debug  # puts a read request after each executable line
 
 # gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
-# #=> ansiweather
-# gAUR ansiweather
-# nvim -c "silent! /fcambus" PKGBUILD
-# makepkg -sic
-# true
+#=> ansiweather
+gAUR ansiweather
+nvim -c "silent! /fcambus" PKGBUILD
+makepkg -sic
+true
 
 # #=> bfg
 # gAUR bfg
@@ -63,11 +63,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /_fhosted" PKGBUILD
 # makepkg -sic
 
-# #=> fangfrisch 1 AUR
-# gAUR python-fangfrisch
-# nvim -c "silent! /rseichter" PKGBUILD
-# makepkg -sic
-# true
+#=> fangfrisch 1 AUR
+gAUR python-fangfrisch
+nvim -c "silent! /rseichter" PKGBUILD
+makepkg -sic
+true
 
 # #=> fangfrisch 2 settings
 # # 1 create database structure
@@ -120,11 +120,11 @@ trap read debug  # puts a read request after each executable line
 # rAUR moar
 # sudo pacman -Rs moar
 
-#=> nordvpn-bin 0 (re)install
-gAUR nordvpn-bin
-nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-makepkg -sic
-true
+# #=> nordvpn-bin 0 (re)install
+# gAUR nordvpn-bin
+# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> nordvpn-bin 1 configure
 # sudo usermod -aG nordvpn jo  # need to re-login

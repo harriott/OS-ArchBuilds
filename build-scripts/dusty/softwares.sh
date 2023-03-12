@@ -119,6 +119,19 @@ makepkg -sic
 # #=> patched Cascadia Code font 0 remove
 # sudo pacman -Rs nerd-fonts-cascadia-code
 
+# #=> pistol-git 0 install
+# gAUR pistol-git
+# nvim -c "silent! /github.com\/doronbehar\/pistol" PKGBUILD
+# makepkg -sic
+# sudo rm -r ~/Arch/AUR/pistol-git/src
+# true
+
+#=> pistol-git 1 remove
+cd ~/Arch/AUR
+rAUR pistol-git
+sudo pacman -Rs pistol-git
+rm ~/go/bin/pistol
+
 #=> youtube-dl
 sudo pacman -S youtube-dl
 

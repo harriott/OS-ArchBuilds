@@ -261,6 +261,10 @@ handlr get .ico  reports  no handlers found for 'image/vnd.microsoft.icon'
 :: Replace pandoc with community/pandoc-cli? [Y/n]
 ## PNMixer won't unmute
 sed -i '/VolMuteKey/ s/=.*/=/' ~/.config/pnmixer/config
+## Updates
+warning: freetype2 will be installed before its harfbuzz dependency
+## switch to the base-devel meta package
+sudo pacman -Syu base-devel
 ## waiting
 # fcron
 fcrontab -l

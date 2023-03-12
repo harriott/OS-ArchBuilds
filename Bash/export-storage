@@ -33,7 +33,7 @@ if [[ $myDrA == 1 ]]; then
   # - keep  DROPBOX  capitalised for finding it without need for $
   export core=$Drpbx/JH/core
   export ITstack=$core/IT_stack
-  export CrPl=$ITstack/CP  # used in  $Bash/bashrc-console  & build scripts
+  export CrPl=$ITstack/CP  # $CrPl  used in  $Bash/bashrc-console  & build scripts
   export ulL=$ITstack/unix_like-linux
   export machLg=$ulL/Arch/$host  # as opposed to  $machBld
   export ulLB=$ulL/Bash  # used in  $OSAB/QR.txt

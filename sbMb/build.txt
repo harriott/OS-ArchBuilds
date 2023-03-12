@@ -1398,9 +1398,14 @@ not cured by re-installing, fix was pinta-git
 ## xdg-open .ogv
 handlr get .ogv  reports  pqiv.desktop
   bash $bSc/4-whenWM/2-resourceHandler.sh
+## switch to the base-devel meta package
+pacman -Syu base-devel
+## HP ENVY 5532 IP Address changed to 71.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.71.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
-HTMLHint
-js-beautify
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

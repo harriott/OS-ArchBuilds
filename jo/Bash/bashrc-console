@@ -1,7 +1,7 @@
 #!/bin/sh
 # vim: ft=sh sw=2:
 
-# symlinked in  $bSc/symlinks/jo-0.sh  to  /home/jo/.bashrc-console
+# $Bash/bashrc-console  symlinked in  $bSc/symlinks/jo-0.sh  to  /home/jo/.bashrc-console
 # sourced by  $Bash/bash_profile  &  $machBld/jo/Bash/bashrc
 # useful also in Console as user
 
@@ -101,7 +101,7 @@ alias fx='fdtsExt'
 fdtsExt () {
   if [ $1 ]; then
     fdtsKSsearch="*.$1"; [[ $1 = 'gitignore' ]] && fdtsKSsearch=".$1"
-    [[ $1 = "tex" ]] && fdtsKSprune=$'-path \'*/copied/*\' -prune -o -path \'*/vimfiles/*\' -prune -o'
+    [[ $1 = "tex" ]] && fdtsKSprune=$'-path \'*/copied/*\' -prune -o -path \'*/CGHrepos/*\' -prune -o -path \'*/vimfiles/*\' -prune -o'
     fdtsKSlist=dts-$1.fetl
     fdtsKS
     # [[ $1 = @(gitignore|pl|tex|txt) ]] && sed -i "s| \.| $PWD|" $fdtsKSlist
@@ -133,7 +133,7 @@ fdtsKS () {
 } # internal use only
 
 #===> my Arch Forum issues
-# $IT1/dts-ft_bbcode.fetl
+# $tInf/dts-ft_bbcode.fetl
 # $ITstack/dts-ft_bbcode.fetl
 
 fdtsbbcode () {
@@ -184,26 +184,28 @@ ghi () {
 }
 
 #==> lists of files by content
-rgl () {
-  cd $Drpbx/JH
-  echo '' > rgl.fetl
-  for ITd in $IT1 $ITstack; do
+rgIT () {
+  cd $Drpbx/JH/searches
+  f=IT-rg.fetl
+  echo '' > $f; echo 'rgIT  -see  $Bash/bashrc-console'; echo '' > $f
+  for ITd in $tInf $ITstack; do
     rgc="rg -l $1 $ITd"
-    echo '' >> rgl.fetl; echo $rgc >> rgl.fetl
-    echo '' >> rgl.fetl; $rgc >> rgl.fetl; echo '' >> rgl.fetl
+    echo '' >> $f; echo $rgc >> $f
+    echo '' >> $f; $rgc >> $f; echo '' >> $f
   done
 }
 
 SE () {
-  cd $Drpbx/JH
-  [ -s SEN.fetl ] && rm SEN.fetl
-  for ITd in $IT1 $ITstack; do
-    echo '' >> SEN.fetl
-    rg -l -tmd 'stackexchange|stackoverflow' $ITd | sort >> SEN.fetl
+  cd $Drpbx/JH/search
+  f=SEN.fetl
+  [ -s $f ] && rm $f
+  echo '' > $f; echo 'SE  -see  $Bash/bashrc-console'
+  for ITd in $tInf $ITstack $JHw/France; do
+    echo '' >> $f
+    rg -l -tmd 'stackexchange|stackoverflow' $ITd | sort >> $f
   done
-  # rg -l -tmd 'stackexchange' $IT1 | sort >> SEN.fetl
-  echo '' >> SEN.fetl
-  echo 'now open SEN.fetl'  # $Drpbx/JH/SEN.fetl
+  echo '' >> $f
+  echo "now open $f"  # $Drpbx/JH/$f
 }
 
 #==> my Encrypted directories
@@ -284,18 +286,18 @@ n()
 
 # ~/.config/nnn/.selection
 
-export NNN_BMS="a:/home/jo/.local/share/mail;i:$Drpbx/JH/technos/IT;j:/run/media/jo;l:$JHw/ST/LPD/IdF;m:$Drpbx/CAM-toSort0;r:$Drpbx/JH/copied/France/places/IdF/transport/RATP;s:$Drpbx/JH/CforWork/Education/Science-Engineering;t:$Drpbx/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$Drpbx/JH/Then0/Deauram/with"
+export NNN_BMS="a:/home/jo/.local/share/mail;i:$tInf;j:/run/media/jo;l:$JHw/ST/LPD/IdF;m:$Drpbx/CAM-toSort0;r:$cFr/places/IdF/transport/RATP;s:$CfWk/Education/Science-Engineering;t:$Drpbx/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$Then0/Deauram/with"
 #  only first 10 get loaded correctly
 #
 #  a:/home/jo/.local/share/mail
-#  i:$Drpbx/JH/technos/IT1
+#  i:$tInf
 #  j:/run/media/jo
 #  l:$Drpbx/JH/Work/ST/LPD/IdF
 #  m:$Drpbx/CAM-toSort0
-#  r:$Drpbx/JH/copied/France/Places/IdF/Transport/RATP
-#  s:$Drpbx/JH/CforWork/Education/Science-Engineering
+#  r:$cFr/Places/IdF/Transport/RATP
+#  s:$CfWk/Education/Science-Engineering
 #  t:$Drpbx/JH/F+F/fromDiptonAvenue/ThaverMohammed
-#  w:$Drpbx/JH/Then0/Deauram/with
+#  w:$Then0/Deauram/with
 #
 export NNN_COLORS='5723' # good for my tmux in urxvt
 export NNN_CONTEXT_COLORS="2136" # use a different color for each context

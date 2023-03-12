@@ -1,11 +1,11 @@
 # vim: ft=sh:
 
-# Joseph Harriott
+# Joseph Harriott, Wed 01 Mar 2023
 
+# $Bash/bashrc-ob  sourced by  $Bash/bashrc
 # -----------------------------------------------
 # configurations when in Openbox (and awesome wm)
 # -----------------------------------------------
-# source  ~/.bashrc  if you've changed something here...
 
 alias gpr='gprename &'
 alias psci='pscShots=/home/jo/Arch/AUR/pscircle-git-shots;pscLatest="$pscShots/$(date +%Y%m%d%H%M%S).png";pscircle --output=$pscLatest;sxiv -fn $(ls $pscShots | wc -l) $pscShots &'
@@ -34,6 +34,8 @@ pf () {
 }
 
 #=> pdf
+alias mmsc="zathura -P 427 $cITh/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf &"
+# - p.389 Appendix B Showcase B1 Chapter styles
 alias pif="zathura -P 9 $cITh/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf &"
 alias xc="zathura -P 38 $cITh/CP/TeX/LaTeX/appearance/colour/xcolor.pdf &"
 
