@@ -10,11 +10,11 @@ trap read debug  # puts a read request after each executable line
 
 # gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
-#=> ansiweather
-gAUR ansiweather
-nvim -c "silent! /fcambus" PKGBUILD
-makepkg -sic
-true
+# #=> ansiweather
+# gAUR ansiweather
+# nvim -c "silent! /fcambus" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> bfg
 # gAUR bfg
@@ -63,11 +63,11 @@ true
 # nvim -c "silent! /_fhosted" PKGBUILD
 # makepkg -sic
 
-#=> fangfrisch 1 AUR
-gAUR python-fangfrisch
-nvim -c "silent! /rseichter" PKGBUILD
-makepkg -sic
-true
+# #=> fangfrisch 1 AUR
+# gAUR python-fangfrisch
+# nvim -c "silent! /rseichter" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> fangfrisch 2 settings
 # # 1 create database structure
@@ -160,4 +160,9 @@ true
 # gAUR tint-tetris
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
+
+#=> tspreed
+gAUR tspreed
+nvim -c "silent! /github.com\/n-ivkovic\/tspreed" PKGBUILD
+makepkg -sic
 

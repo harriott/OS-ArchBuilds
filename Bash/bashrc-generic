@@ -65,31 +65,15 @@ shopt -s autocd dotglob extglob globstar nullglob
 c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
 # - https://superuser.com/a/1244522/242800
 
-r () {
-  [ $TERM != 'screen-256color' ] && pi="--cmd='set preview_images true'"
-  eval "ranger --choosedir=$HOME/Arch/ranger_last_visited $pi $@"
-  cd "$(cat /home/jo/Arch/ranger_last_visited)"
-}  # r "$Drpbx/CAM-best/Classic Yo-Yo"
+cft(){
+  find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
+} # count filetypes
 
-#==> bat
-alias b='bat'  # syntax highlit cat
-alias bd='bat -d'  # showing changes from git index
-alias bm='batman'  # better manual (in wide enough terminal)
-alias pb='prettybat'  # tidied code
-export BAT_PAGER=less
-
-#==> broot
 if [ -s "/usr/bin/broot" ]; then
     # generalised from what broot added to .bashrc:
     source ~/.config/broot/launcher/bash/br
-fi
+fi # configures broot
 
-#==> count filetypes
-cft(){
-  find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
-}
-
-#==> fzf
 if [ -s "/usr/share/fzf" ]; then
   # alias f="fzf --preview 'bat --color=always {} | head -500'"
   alias f="fzf --preview 'bat --color=always {}'"
@@ -99,25 +83,31 @@ if [ -s "/usr/share/fzf" ]; then
   source /usr/share/fzf/completion.bash
 fi
 
-#==> locate directories
 locd () {
     locate -0 -b -A "$@" | xargs -0 -I {} bash -c '[ -d "{}" ] && echo "{}"'
-}
+} # directories
 
-#==> move up [n] directories
+r () {
+  [ $TERM != 'screen-256color' ] && pi="--cmd='set preview_images true'"
+  eval "ranger --choosedir=$HOME/Arch/ranger_last_visited $pi $@"
+  cd "$(cat /home/jo/Arch/ranger_last_visited)"
+}  # r "$Drpbx/CAM-best/Classic Yo-Yo"
+
 up(){
   local dir=""
   uplimit=$1
-  for ((upshift=1 ; upshift <= uplimit ; upshift++))
-    do
-      dir=$dir/..
-    done
+  for ((upshift=1 ; upshift <= uplimit ; upshift++)); do dir=$dir/..; done
   dir=$(echo $dir | sed 's/^\///')
-  if [ -z "$dir" ]; then
-    dir=..
-  fi
+  if [ -z "$dir" ]; then dir=..; fi
   cd $dir
-}
+} # move up [n] directories
+
+#==> bat
+alias b='bat'  # syntax highlit cat
+alias bd='bat -d'  # showing changes from git index
+alias bm='batman'  # better manual (in wide enough terminal)
+alias pb='prettybat'  # tidied code
+export BAT_PAGER=less
 
 #==> system monitoring
 alias bt='bashtop'
@@ -182,17 +172,6 @@ source $OSAB/Bash/xcol.sh
 export tpfn=$'\e[0m' # normal
 export tpfb=$(tput bold)
 
-#===> normal colours
-export tpf0=$(tput setaf 0) # black
-export tpf1=$(tput setaf 1) # red
-export tpf2=$(tput setaf 2) # green, slightly duller than  echo -e '\e[92m  green'
-export tpf3=$(tput setaf 3) # yellow
-export tpf4=$(tput setaf 4) # blue
-export tpf5=$(tput setaf 5) # magenta
-export tpf6=$(tput setaf 6) # cyan
-export tpf7=$(tput setaf 7) # white
-# echo "${tpf0}black ${tpf1}red ${tpf2}green ${tpf3}yellow ${tpf4}blue ${tpf5}magenta ${tpf6}cyan ${tpf7}white${tpfn}"
-
 #===> bold colours
 export tpf0b="$tpfb$tpf0" # bold black
 export tpf1b="$tpfb$tpf1" # bold red
@@ -204,11 +183,22 @@ export tpf6b="$tpfb$tpf6" # bold cyan
 export tpf7b="$tpfb$tpf7" # bold white
 # echo "${tpf0b}black ${tpf1b}red ${tpf2b}green ${tpf3b}yellow ${tpf4b}blue ${tpf5b}magenta ${tpf6b}cyan ${tpf7b}white${tpfn}"
 
+#===> normal colours
+export tpf0=$(tput setaf 0) # black
+export tpf1=$(tput setaf 1) # red
+export tpf2=$(tput setaf 2) # green, slightly duller than  echo -e '\e[92m  green'
+export tpf3=$(tput setaf 3) # yellow
+export tpf4=$(tput setaf 4) # blue
+export tpf5=$(tput setaf 5) # magenta
+export tpf6=$(tput setaf 6) # cyan
+export tpf7=$(tput setaf 7) # white
+# echo "${tpf0}black ${tpf1}red ${tpf2}green ${tpf3}yellow ${tpf4}blue ${tpf5}magenta ${tpf6}cyan ${tpf7}white${tpfn}"
+
 #=> command history
 alias h='history'
 export HISTCONTROL=ignoreboth:erasedups
 # export HISTIGNORE='?:??'  # one or two character commands
-PROMPT_COMMAND='history -a' # Samokovarov's  jump  later tweaks this
+PROMPT_COMMAND='history -a' # store immediately (Samokovarov's  jump  later tweaks this)
 shopt -s histappend
 
 #=> f1t2t3
@@ -217,7 +207,6 @@ if [ $host = 'sbMb' ]; then
 fi
 
 #=> internetish
-alias css='cht.sh --shell'
 alias p='ping -c 3 8.8.8.8'
 alias pg='ping -c 3 -n google.com'
 alias wp='curl wttr.in/Paris'  # weather

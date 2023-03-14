@@ -820,10 +820,13 @@ pass cz/GmailAPI/token-expire
 
 ### ANSI escape sequences
     $OSAB/Bash/bashrc-generic
-    \e[0;34m = Blue
-    \e[1;34m = Bold Blue
     echo ${my_array[@]}
+
+#### colours
     echo -e "\e[1m\e[95m[1m[95m\e[0m"
+    echo -e "=\e[0;31m=Red=\e[0m="
+    echo -e "=\e[0;32m=Green=\e[0m="
+    echo -e "=\e[0;34m=Blue=\e[0m=\e[1;34m=BoldBlue=\e[0m"
 
 ### tput
     tput bold; echo hello
@@ -930,7 +933,6 @@ GRUB (GRand Unified Bootloader)
     Win+1 => move the window to monitor 1
     Win+2 => move the window to monitor 2
     Win+t => last tmux buffer to X11 clipboard
-    Win+u => urxvt
 
 #### tint2
     $Openbox/tint2rc

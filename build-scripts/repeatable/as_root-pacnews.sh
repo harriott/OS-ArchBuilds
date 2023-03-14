@@ -1,5 +1,4 @@
 #!/bin/bash
-# vim: se fdl=2:
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
@@ -16,6 +15,10 @@ rm /etc/cheat/conf.yml.pacnew
 #=> 1 clamd.conf
 nvim -O /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
 rm /etc/clamav/clamd.conf.pacnew
+
+#=> 1 etc/papersize
+nvim -O /etc/papersize /etc/papersize.pacnew -c 'windo difft'
+rm /etc/papersize.pacnew
 
 #=> 1 firewalld.conf
 nvim -o /etc/firewalld/firewalld.conf /etc/firewalld/firewalld.conf.pacnew -c 'windo difft'
