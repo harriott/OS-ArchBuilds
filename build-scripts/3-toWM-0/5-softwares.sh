@@ -16,6 +16,9 @@ trap read debug  # puts a read request after each executable line
 # # mkdir /mnt/SD480GSSDPlus/chroot
 # sudo pacman -S devtools  # for package managers
 
+#=> dictd
+sudo pacman -S dictd
+
 # #=> diskonaut
 # sudo pacman -S diskonaut
 

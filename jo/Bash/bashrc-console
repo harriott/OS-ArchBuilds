@@ -54,6 +54,17 @@ sp (){
   fi
 }
 
+#=> dict
+alias del='dict -d elements'  # del iron
+
+# English:
+alias dmt='dict -d moby-thesaurus'  # dmt fuck
+alias dwn='dict -d wn'  # dwn fuck
+
+# French translate
+alias def='dict -d fd-eng-fra'  # def fuck
+alias dfe='dict -d fd-fra-eng'  # dfe facture
+
 #=> file manage
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'

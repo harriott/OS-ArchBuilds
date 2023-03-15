@@ -142,6 +142,11 @@ moar -h
 # documenting
     r $Sig
 
+## dict
+    $Bash/bashrc-console
+    dict -D
+    i dict
+
 ## LaTeX
     r $CrPl/LaTeX/jo  # my packages
     r $Cfzd/manage/planning/m1-/m88-_Joseph $CrPl/LaTeX/jo/CzPlanning

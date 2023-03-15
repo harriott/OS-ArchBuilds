@@ -187,7 +187,7 @@ npm config set prefix=$HOME/.npm-global
 ## switch to the base-devel meta package
 sudo pacman -Syu base-devel
 ## waiting
-harriott-zenburn-emacs
+dictd
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

@@ -110,6 +110,9 @@ makepkg -sic
 # #=> nodejs-mapscii 1 remove
 # sudo pacman -Rs nodejs-mapscii
 
+#=> pacmatic - remove
+sudo pacman -Rs pacmatic
+
 # #=> patched Cascadia Code font 0 install
 # gAUR nerd-fonts-cascadia-code
 # nvim -c "silent! /ryanoasis\/nerd-fonts" PKGBUILD

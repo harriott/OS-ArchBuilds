@@ -39,6 +39,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
+#=> dict-moby-thesaurus
+gAUR dict-moby-thesaurus
+nvim -c "silent! /www.gutenberg.org\/ebooks\/3202" PKGBUILD
+makepkg -sic
+true
+
 # #=> didyoumean
 # # provides  dym
 # rustup update
@@ -161,8 +167,8 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
 
-#=> tspreed
-gAUR tspreed
-nvim -c "silent! /github.com\/n-ivkovic\/tspreed" PKGBUILD
-makepkg -sic
+# #=> tspreed
+# gAUR tspreed
+# nvim -c "silent! /github.com\/n-ivkovic\/tspreed" PKGBUILD
+# makepkg -sic
 
