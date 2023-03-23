@@ -340,6 +340,7 @@ see `$Bash/bashrc-console`
     im fd
 
 - `-d1` = depth 1 (current dir)
+- `-E` (= `--exclude`) `<glob>`
 - `-I` = `--no-ignore` = don't respect `.(fd|git)ignore`
 - `-td` type dir
 - `-tf` type file

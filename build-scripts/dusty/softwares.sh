@@ -37,6 +37,12 @@ sudo systemctl enable clamav-unofficial-sigs.timer
 # sudo systemctl disable clamav-unofficial-sigs.timer
 # sudo pacman -Rs clamav-unofficial-sigs
 
+#=> ecasound 0 install
+sudo pacman -S ecasound
+
+#=> ecasound 1 remove
+sudo pacman -Rs ecasound
+
 # #=> fim 0 bison, flex
 # sudo pacman -S bison flex
 

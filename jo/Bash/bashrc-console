@@ -11,6 +11,12 @@
 
 # Joseph Harriott
 
+ra () {
+  pactl set-sink-volume 0 60%  # master volume to non-distorting level
+  if [ $1 ]; then o=$1; else o=a; fi
+  rec -c 2 $o.flac  # SoX
+} # ra <stereoAudioRecording>
+
 # Emacs
 G (){ emacs --no-splash -fh $1 & }  # GUI
 T (){ emacs -nw $1; }  # in terminal
