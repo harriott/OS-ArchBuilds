@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vim: fdl=1 sw=2:
      my changes are commented like this - JH
-     ~/.config/openbox/rc.xml ($bSc/anytime/symlinks-jo-1-Openbox.sh)
+     ~/.config/openbox/rc.xml ($bSc/symlinks/jo-1-Openbox.sh)
      nvim -O /etc/xdg/openbox/rc.xml $Openbox/openbox/rc/rc.xml
      reconfigure  after making changes here -->
 
@@ -53,18 +53,6 @@
        from 1, specifying a particular monitor.  Or it can be one of the
        following: 'Mouse' - where the mouse is, or
                   'Active' - where the active window is -->
-  <!-- move the window to monitor 1 - JH -->
-  <keybind key="W-1">
-    <action name="MoveResizeTo">
-      <monitor>1</monitor>
-    </action>
-  </keybind>
-  <!-- move the window to monitor 2 - JH -->
-  <keybind key="W-2">
-    <action name="MoveResizeTo">
-      <monitor>2</monitor>
-    </action>
-  </keybind>
 </placement>
 
 <theme>
@@ -264,6 +252,12 @@
   </keybind>
   <keybind key="A-space">
     <action name="ShowMenu"><menu>client-menu</menu></action>
+  </keybind>
+  <!-- toggle the window from/to monitor 2 - JH (mystery why this don't work in <placement>) -->
+  <keybind key="W-2">
+    <action name="MoveResizeTo">
+      <monitor>2</monitor>
+    </action>
   </keybind>
   <!-- Keybinding for toggling maximize (Full screen a window) - JH -->
   <keybind key="W-f">

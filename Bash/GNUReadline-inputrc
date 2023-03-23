@@ -33,8 +33,9 @@ set keymap vi-insert
 set editing-mode vi
 
 # Mode indicator in prompt
+# (ANSI escape sequences break the first 8 characters of next/previous commands)
+# (cursor shapes aren't correctly passed to tmux)
 set show-mode-in-prompt on
-set vi-cmd-mode-string "\e[0;31mc"  # Red for command mode
-set vi-ins-mode-string "\e[0;32mi"  # Green for insert mode
-# (I'm not using cursor shapes as they aren't correctly passed to tmux.)
+set vi-cmd-mode-string "c"  # command mode
+set vi-ins-mode-string "i"  # insert mode
 

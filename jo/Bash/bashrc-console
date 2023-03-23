@@ -82,6 +82,16 @@ CliFM (){
   [ -d "$dir" ] && cd -- "$dir"
 } # C <dir1> [<dir2> ...]
 
+exts () { fd -tf -u '\..+' | sed -n 's/..*\.//p' | sort | uniq -c; }
+ve () {
+  exts > exts.exts
+  sed -i 's/^ \+//' exts.exts
+  sed -i 's/ /`/' exts.exts
+  sed -i 's/\r/ /' exts.exts
+  sed -i '0,/^1`/ s/^1`/\n1`/' exts.exts
+  gvim exts.exts -c 'sort!'
+}
+
 locx () { locate -i $1 | xcol $1; }
 
 #==> dts

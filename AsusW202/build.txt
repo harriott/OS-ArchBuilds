@@ -266,7 +266,6 @@ warning: freetype2 will be installed before its harfbuzz dependency
 ## switch to the base-devel meta package
 sudo pacman -Syu base-devel
 ## waiting
-dictd
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

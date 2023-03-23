@@ -15,10 +15,6 @@ r $TeNo/TN
 ~/.config/pnmixer/config
 ```
 
-# awesome wm
-    modkey+c = c:kill()
-    modkey+p = hotkeys_popup
-
 # Bash
 ```bash
 im time
@@ -322,31 +318,37 @@ vid => ffmpegthumbnailer
 ## fd
     fd --changed-within 3h
     fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
-    fd -d1 -td  # depth 1 (current dir), type dir
-    fd -e ods  # finds OpenOffice Calc spreadsheets
     fd -H  # --hidden
-    fd -I  # --no-ignore => do not respect .(git|fd)ignore files
-    fd -I -e pdf  # finds pdf's when they're gitignored
-    fd -tf
     fd -tf -e md | wc -l
     fd -tf -e md -e tex
     fd -tl -HL -X rm  # removes dead links
-    fd -u --changed-within 1h
-    fd . $bSc
-    im fd
+    fd -u '\..+'
 
 - recursive by default
 - sharkdp/fd
 
-### symlinks
-    fd --max-depth 1 -Hl -tl
-    fd -H -tl  # only found targets, broken ones with red background
-    fd -Hl -tl  # show supposed link source
+### extensions
+    fd -e ods  # finds OpenOffice Calc spreadsheets
+    fd . $bSc
 
 ### git config's
     fd -HI -tf ^config$ | xargs rg -l 'remote = gh'  # ripgrep
 
 see `$Bash/bashrc-console`
+
+### man
+    im fd
+
+- `-d1` = depth 1 (current dir)
+- `-I` = `--no-ignore` = don't respect `.(fd|git)ignore`
+- `-td` type dir
+- `-tf` type file
+- `-u` = `--unrestricted` = `--hidden --no-ignore`
+
+### symlinks
+    fd --max-depth 1 -Hl -tl
+    fd -H -tl  # only found targets, broken ones with red background
+    fd -Hl -tl  # show supposed link source
 
 ## ranger
     feh $cIThul/cheatsheet.png &
@@ -917,6 +919,10 @@ GRUB (GRand Unified Bootloader)
 ## windows
     $machBld/jo/awesome/rc.lua
     xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
+
+### awesome wm
+    modkey+c = c:kill()
+    modkey+p = hotkeys_popup
 
 ### Openbox
     $Openbox/openbox/autostart/autostart
