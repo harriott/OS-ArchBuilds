@@ -767,6 +767,7 @@ URLs (such as in an email sent from `mutt`) unclickable - so better to send to t
 ## SSH
     $CrPl/networking/SSHconfig/$host
     i sshd_config
+    ~/.ssh/config
 
 ## weather
     aw
