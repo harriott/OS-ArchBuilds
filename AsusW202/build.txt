@@ -265,8 +265,16 @@ sed -i '/VolMuteKey/ s/=.*/=/' ~/.config/pnmixer/config
 warning: freetype2 will be installed before its harfbuzz dependency
 ## switch to the base-devel meta package
 sudo pacman -Syu base-devel
+## Updates
+:: Replace tbb with extra/onetbb? [Y/n]
+
+error: target not found: java-runtime=20
+==> ERROR: 'pacman' failed to install missing dependencies.
+==> Missing dependencies:
+  -> java-runtime=20
+==> Checking buildtime dependencies...
+==> ERROR: Could not resolve all dependencies.
 ## waiting
-ecasound
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

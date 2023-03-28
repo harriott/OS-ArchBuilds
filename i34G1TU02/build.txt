@@ -189,7 +189,6 @@ sudo pacman -Syu base-devel
 ## Updates
 :: Replace tbb with extra/onetbb? [Y/n]
 ## waiting
-ecasound
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

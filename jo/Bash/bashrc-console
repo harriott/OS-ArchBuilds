@@ -88,16 +88,6 @@ CliFM (){
   [ -d "$dir" ] && cd -- "$dir"
 } # C <dir1> [<dir2> ...]
 
-exts () { fd -tf -u '\..+' | sed -n 's/..*\.//p' | sort | uniq -c; }
-ve () {
-  exts > exts.exts
-  sed -i 's/^ \+//' exts.exts
-  sed -i 's/ /`/' exts.exts
-  sed -i 's/\r/ /' exts.exts
-  sed -i '0,/^1`/ s/^1`/\n1`/' exts.exts
-  gvim exts.exts -c 'sort!'
-}
-
 locx () { locate -i $1 | xcol $1; }
 
 #==> dts
@@ -179,6 +169,23 @@ fmtypes () {
   fd -tf -x file -i {} | sort >> $fml
   echo "" >> $fml
 }
+
+#==> filetype frequencies
+exts () { fd -tf -u '\..+' | sed -n 's/..*\.//p' | sort | uniq -c; } # sorted by extensions
+
+ve () {
+  exts > exts0
+  sed -i 's/^ \+//' exts0
+  sed -i 's/ /`/' exts0
+  sed -i 's/\r/ /' exts0
+  sort -nr exts0 > exts1; rm exts0
+  sed -i '0,/^1`/ s/^1`/\n1`/' exts1  # add line before counts of 1, which could be many
+  paste -sd ' ' exts1 > exts.exts; rm exts1  # concatenate all lines
+  sed -i '1i\\' exts.exts  # prepend a blank line
+  sed -i 's/  /\n\n/' exts.exts  # separate out those counts of 1
+  echo '' >> exts.exts
+  echo "- now look in exts.exts"
+} # sorted by frequency, making use of  $vimfiles/syntax/exts.vim
 
 #==> Git
 # fx gitignore

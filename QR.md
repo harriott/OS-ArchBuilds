@@ -15,12 +15,16 @@ r $TeNo/TN
 ~/.config/pnmixer/config
 ```
 
+sort(1)
+
 # Bash
 ```bash
 im time
 pinfo bash
 pinfo -m bash
 ```
+
+uniq(1)
 
 ## file manage
     im ls
@@ -543,7 +547,6 @@ Quite a few don't work, and some crash the terminal...
 
 - CP(1)
 - GNU Parted
-- NCDU(1)
 
 ### directories on SSDs
     dua [i]
@@ -551,6 +554,11 @@ Quite a few don't work, and some crash the terminal...
 
 ### mkfs.ext4
 `/etc/mke2fs.conf` has bytes-per-inode ratios for usage types
+
+### ncdu
+    ncdu --exclude rsnapshot
+
+NCDU(1)
 
 ### non-optical
     df -h | xcol mnt media
