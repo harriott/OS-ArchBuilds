@@ -70,41 +70,41 @@ jump --help
 as root: `find / -xdev -iname "*fmtutil.cnf*"`
 
 #### for configuration files
-fd -I -e conf
-find . -type f -name "*.conf"
+    fd -I -e conf
+    find . -type f -name "*.conf"
 
 #### grepping
-grep -E '<someText>|<otherText>'
-grep -r --include "*.sh" ' -f ' .
-grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
-grep -ri --include "*.conf" '#=> ' .
-man grep | grep egrep | xcol egrep fgrep
+    grep -E '<someText>|<otherText>'
+    grep -r --include "*.sh" ' -f ' .
+    grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
+    grep -ri --include "*.conf" '#=> ' .
+    man grep | grep egrep | xcol egrep fgrep
 
 ##### manual
-GNU Grep Manual
-GREP(1)
+- GNU Grep Manual
+- GREP(1)
 
 #### mlocate
-i locate
-im locate
-locate -c <target>  # --count
-locate -h
-locate -r '\.conf$'
-locate -r '\.desktop$' > $machLg/desktops.txt
-locate -r '\.json$' | mo
-locate -r 'gestion des cas'
+    i locate
+    im locate
+    locate -c <target>  # --count
+    locate -h
+    locate -r '\.conf$'
+    locate -r '\.desktop$' > $machLg/desktops.txt
+    locate -r '\.json$' | mo
+    locate -r 'gestion des cas'
 
 ##### updatedb
-/etc/updatedb.conf
-doas updatedb
-systemctl status updatedb.timer
+    /etc/updatedb.conf
+    doas updatedb
+    systemctl status updatedb.timer
 
 #### list symlinks
-find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
+    find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
 
 ##### recursively
-find . -type l -ls
-find ~ -path '*/.virtualenvs' -prune -o -type l -ls
+    find . -type l -ls
+    find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
 ### fzf
     <someCommand> Ctrl-t - gets the selected node on the command-line
@@ -148,8 +148,7 @@ moar -h
     i dict
 
 ## LaTeX
-    r $CrPl/LaTeX/jo  # my packages
-    r $Cfzd/manage/planning/m1-/m88-_Joseph $CrPl/LaTeX/jo/CzPlanning
+    r $CrPl/documenting/LaTeX/jo  # my packages
     r $JHt/IT/CP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
@@ -191,6 +190,10 @@ moar -h
     pb <codeFile>  # also reformatted
     r ~/.npm-global
     zathura $cITh/CP/encoding/cheatsheet-a5.pdf &  # emmet
+
+## ffprobe
+    ffprobe -h | mo
+    i ffprobe
 
 ## Ruby
 ```bash
@@ -322,18 +325,16 @@ vid => ffmpegthumbnailer
 ## fd
     fd --changed-within 3h
     fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
+    fd -e ods  # finds OpenOffice Calc spreadsheets
     fd -H  # --hidden
     fd -tf -e md | wc -l
     fd -tf -e md -e tex
     fd -tl -HL -X rm  # removes dead links
     fd -u '\..+'
+    fd . $bSc
 
 - recursive by default
 - sharkdp/fd
-
-### extensions
-    fd -e ods  # finds OpenOffice Calc spreadsheets
-    fd . $bSc
 
 ### git config's
     fd -HI -tf ^config$ | xargs rg -l 'remote = gh'  # ripgrep
@@ -448,6 +449,7 @@ in `$GHrUse/CP/Jekyll`: `rg -tyaml -l -uu exclude: > rg.fetl`
     rg -iuu '<f11>'
     rg -tvim 'vimHints'
     rg -uu "'include'"
+    rg -uu synmaxcol
 
 ## Vifm
     /usr/share/vifm/vifm-help.txt
@@ -508,9 +510,13 @@ Quite a few don't work, and some crash the terminal...
     b       -> PgUp
     f       -> next search term
 
+# sed
+    i sed
+    tldr sed
+
 ## tealdeer
     tldr -h
-    tldr -u
+    tldr -u  # --update
     tldr tldr
 
 # hw
@@ -680,7 +686,6 @@ java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
 ```bash
 for t in *.mp3; do aet "$t" 3; done
 mediainfo -h | mo
-pkill quodlibet
 ```
 
 ## cmus
@@ -692,6 +697,22 @@ pkill quodlibet
 
 #### manually
 get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
+
+## OpenShot
+    r ~/.openshot_qt
+    ~/.openshot_qt/openshot.settings
+
+won't open if `cmus` is playing a track
+
+### less interesting
+    r ~/.cache/openshot
+    r ~/.local/share/openshot
+
+### projects
+
+## Quod Libet
+    pkill exfalso
+    pkill quodlibet
 
 # networking
 ```bash
@@ -837,9 +858,9 @@ pass cz/GmailAPI/token-expire
 
 ### ANSI escape sequences
     $OSAB/Bash/bashrc-generic
-    echo ${my_array[@]}
 
 #### colours
+    bash $ulL/Bash/colours/color-bash.sh
     echo -e "\e[1m\e[95m[1m[95m\e[0m"
     echo -e "=\e[0;31m=Red=\e[0m="
     echo -e "=\e[0;32m=Green=\e[0m="
@@ -1057,6 +1078,7 @@ TMUX(1)
     $ABjo/textEdit/Vim/vimrc
     C /usr/share/vim/vim90
     i vim
+    r $vimfiles
 
 ### gVim
     gvim --help | mo

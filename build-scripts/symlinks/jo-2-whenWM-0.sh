@@ -25,9 +25,9 @@ set -e
 # sudo ln -sf $cITh/CP/LanguageTool /usr/share/java/LanguageTool
 # # e -adl /usr/share/java/LanguageTool
 
-# #=> LaTeX
-# lj=~/texmf/tex/latex/jo; [ -d $lj ] && rm -r $lj; ln -s $CrPl/LaTeX/jo $lj
-# # e -adl ~/texmf/tex/latex/jo
+#=> LaTeX
+lj=~/texmf/tex/latex/jo; [ -L $lj ] && rm -r $lj; ln -s $CrPl/documenting/LaTeX/jo $lj
+# e -adl ~/texmf/tex/latex/jo
 
 #=> mdfpdf Pandoc defaults
 ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml

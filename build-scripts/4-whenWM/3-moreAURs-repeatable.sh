@@ -45,11 +45,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox 0 (re)install
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -75,11 +75,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> nsxiv
-gAUR nsxiv
-nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
-makepkg -sic
-true
+# #=> nsxiv
+# gAUR nsxiv
+# nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Pacfinder
 # gAUR pacfinder
@@ -110,11 +110,11 @@ true
 # #=> pdfCropMargins 2 pdfcropmargins 0 remove
 # sudo pacman -Rs pdfcropmargins
 
-#=> PDFsam
-gAUR pdfsam
-nvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic  # choose  jdk-openjdk
-true
+# #=> PDFsam
+# gAUR pdfsam
+# nvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic  # choose  jdk-openjdk
+# true
 
 # #=> perl-unicode-utf8
 # gAUR perl-unicode-utf8
@@ -177,6 +177,11 @@ true
 # gAUR urlview
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
+
+#=> verbiste
+gAUR verbiste
+nvim -c "silent! /perso.b2b2c.ca\/\~sarrazip\/dev" PKGBUILD
+makepkg -sic
 
 # #=> yj-git
 # gAUR yj-git

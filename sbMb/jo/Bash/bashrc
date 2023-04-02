@@ -15,11 +15,11 @@ export VsLocations=(/mnt/ST4000VN008 /mnt/SDU3D1TB /mnt/WD1001FALS)
 source $Bash/bashrc
 
 #=> 1 OBS mkv grabs convert
-ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/OBSmkv/ignore; }
+ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/video/OBSmkv/ignore; }
 # ignore <an_mkv_to_ignore>
 # for m in *.mkv; do ignore "$m"; done
 
-omc() { bash $ulL/OBSmkv/shrink.sh; fin; } # used in  $OSAB/sbMb/jo/autostart.sh
+omc() { bash $ulL/video/OBSmkv/shrink.sh; fin; } # used in  $OSAB/sbMb/jo/autostart.sh
 
 #=> 2 Created by `pipx` on 2022-08-15 19:39:50
 export PATH="$PATH:/home/jo/.local/bin"

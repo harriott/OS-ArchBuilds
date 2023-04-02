@@ -180,13 +180,13 @@ export tpf3b="$tpfb$tpf3" # bold yellow
 export tpf4b="$tpfb$tpf4" # bold blue
 export tpf5b="$tpfb$tpf5" # bold magenta
 export tpf6b="$tpfb$tpf6" # bold cyan
-export tpf7b="$tpfb$tpf7" # bold white
+export tpf7b="$tpfb$tpf7" # bold white =  echo -e '\033[1;37m bold white \e[0m'
 # echo "${tpf0b}black ${tpf1b}red ${tpf2b}green ${tpf3b}yellow ${tpf4b}blue ${tpf5b}magenta ${tpf6b}cyan ${tpf7b}white${tpfn}"
 
 #===> normal colours
 export tpf0=$(tput setaf 0) # black
 export tpf1=$(tput setaf 1) # red
-export tpf2=$(tput setaf 2) # green, slightly duller than  echo -e '\e[92m  green'
+export tpf2=$(tput setaf 2) # green, slightly duller than  echo -e '\e[92m  green \e[0m'
 export tpf3=$(tput setaf 3) # yellow
 export tpf4=$(tput setaf 4) # blue
 export tpf5=$(tput setaf 5) # magenta

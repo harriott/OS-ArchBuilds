@@ -6,6 +6,9 @@
 
 set -e
 
+ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
+ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
+
 #=> Spacemacs
 sudo ln -sf $ABjo/Emacs/spacemacs.desktop /usr/share/applications/spacemacs.desktop
 # e -la /usr/share/applications/spacemacs.desktop

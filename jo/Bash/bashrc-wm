@@ -6,15 +6,6 @@
 
 alias aw='ansiweather -f 7'
 
-fv () {
-  for VsL in $VsLocation $(cat $machBld/jo/Bash/VsLmore); do
-    Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
-    for Vs in "${Vss[@]}"; do
-      find $Vs -iname "*$1*" | xcol "$1"
-    done
-  done
-} # fv cat  fv 'Dog Vision'
-
 ltx () {
   cd $LTX
   s="sectionHeadings.md"
@@ -77,8 +68,21 @@ dcc1 () {
   fi
 }  # moves them to  $Drpbx/conflicted
 
-#=> ffmpeg 0
+#=> AV
+fv () {
+  for VsL in $VsLocation $(cat $machBld/jo/Bash/VsLmore); do
+    Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
+    for Vs in "${Vss[@]}"; do
+      find $Vs -iname "*$1*" | xcol "$1"
+    done
+  done
+} # fv cat  fv 'Dog Vision'
+
+mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")   $(mediainfo --Output='Audio;%Format%' "$v")   $(mediainfo --Output='Audio;%BitRate%' "$v") b/s   $(mediainfo --Output='Audio;%SamplingRate%' "$v") Hz   "$v""; done; }  # mi *
+
+#==> ffmpeg 0
 alias ffmhb='nice -n 19 ffmpeg -hide_banner'
+  alias ffi='ffmhb -i'
 
 frames () {
   ffmpeg -i $1 -vcodec copy -f rawvideo -y /dev/null 2>&1
@@ -138,7 +142,7 @@ vs () {
   fi
 }  # stabilize a video
 
-#=> ffmpeg 1 audio trimming
+#==> ffmpeg 1 audio trimming
 aet () {
   export a="$1"
   trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
@@ -156,6 +160,30 @@ abt () {
 } # abt <anAudioFileToTrimOffBeginning> <trimIfGreaterThan1second>
 
 # mv "t$a" "$a"
+
+#==> ffprobe
+  alias fpasr='ffprobe -v error -select_streams a:0 -show_entries stream=sample_rate -of default=nw=1:nk=1'
+  # fpd <video_file_you_want_audio_sample_rate_of>
+
+  alias fpabr='ffprobe -v error -select_streams a:0 -show_entries stream=bit_rate -of default=nw=1:nk=1'
+  # fpd <video_file_you_want_audio_bit_rate_of>
+
+  alias fpct='ffprobe -v error -select_streams v:0 -show_entries stream_tags=creation_time -of default=nw=1:nk=1'
+  # fpct <video_file_you_want_creation_time_of>
+
+  alias fpd='ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1'
+  # fpd <video_file_you_want_duration_of>
+
+  alias fpwh='ffprobe -v error -select_streams v:0 -show_entries stream=height,width -of csv=s=x:p=0'
+  # fpd <video_file_you_want_WxH_of>
+
+  alias fpfr='ffprobe -v error -select_streams v:0 -show_entries stream=avg_frame_rate -of default=nw=1:nk=1'
+  # fpd <video_file_you_want_frame_rate_of>
+
+fpcn () { ffprobe -v error -select_streams $1:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $2; }
+# fpcn <a/v> <video_file_you_want_codec_of>
+
+fps () { for v in "$@"; do echo $(fpwh $v) $(fpcn v $v) $(fpfr $v) $(fpcn a $v) $(fpasr $v) $(fpabr $v) $v; done; } # fps <files_you_want_statisitics_of>
 
 #=> gVim cautious
 gvc () {

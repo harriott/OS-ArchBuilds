@@ -274,6 +274,13 @@ error: target not found: java-runtime=20
   -> java-runtime=20
 ==> Checking buildtime dependencies...
 ==> ERROR: Could not resolve all dependencies.
+## HP ENVY 5532 IP Address 151.10
+hp-setup 192.168.151.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 151.10
+hp-setup -r > Select > Remove
+hp-setup 192.168.151.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 # fcron
 fcrontab -l

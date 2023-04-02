@@ -1,7 +1,7 @@
 # vim: set ft=sh tw=0:
 
 # Joseph Harriott
-# symlink this to  /root/.bashrc  it will be sourced directly by  su
+# $OSAB/root/bashrc  symlinked in  $bSc/symlinks/root.sh
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
@@ -24,7 +24,6 @@ PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 
 # find system stuff:
 # ------------------
-fs () {
-	find / -path /home/jo -prune -o -path /mnt -prune -o -path /run/media -prune -o -path /run/user/1000/gvfs -prune -o -iname "*$1*" -print
-}
+fs () { find / -path /home/jo -prune -o -path /mnt -prune -o -path /run/media -prune -o -path /run/user/1000/gvfs -prune -o -iname "*$1*" -print; }
+fss () { fs "$1" > /home/jo/fs.lst; chown jo:jo /home/jo/fs.lst; }
 

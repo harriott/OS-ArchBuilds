@@ -213,6 +213,9 @@ gem install bundler jekyll  # takes ages...
 true
 
 # #=> 2 system
+# # supersedes  Bashtop
+# pacman -S bpytop
+
 # # btop
 # pacman -S btop
 
@@ -223,6 +226,9 @@ true
 # # glances
 # pacman -S glances
 
+# # GNU time
+# pacman -S time
+
 # # Mesa demos
 # pacman -S mesa-demos  # probably brings in  mesa
 
@@ -231,10 +237,6 @@ true
 
 # # Pipe Viewer
 # pacman -S pv
-
-# #=> 2 system - bpytop
-# # supersedes  Bashtop
-# pacman -S bpytop
 
 # #=> 2 various
 # # dotnet-runtime-6.0

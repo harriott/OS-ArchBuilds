@@ -1420,7 +1420,7 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.151.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
-## $OSAB
+## GitHub RSA SSH host key changed
 $ git push
   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
@@ -1437,7 +1437,69 @@ $ git push
   fatal: Could not read from remote repository.
   Please make sure you have the correct access rights and the repository exists.
 fixed, then  cp ~/.ssh/known_hosts $machLg/jo/known_hosts-n3s
+$ git push
+  The authenticity of host 'github.com (140.82.121.3)' can't be established.
+  ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+  This key is not known by any other names.
+  Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+  Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+cp ~/.ssh/known_hosts $machLg/jo/known_hosts-n3si
+## Updates
+  ( 6/17) Updating linux initcpios...
+  ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'default'
+    -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux.img --microcode /boot/amd-ucode.img
+  ==> Starting build: '6.2.8-arch1-1'
+    -> Running build hook: [base]
+    -> Running build hook: [udev]
+    -> Running build hook: [autodetect]
+    -> Running build hook: [modconf]
+    -> Running build hook: [kms]
+    -> Running build hook: [keyboard]
+  ==> WARNING: Possibly missing firmware for module: 'xhci_pci'
+    -> Running build hook: [keymap]
+    -> Running build hook: [consolefont]
+  ==> WARNING: consolefont: no font found in configuration
+    -> Running build hook: [block]
+    -> Running build hook: [filesystems]
+    -> Running build hook: [fsck]
+  ==> Generating module dependencies
+  ==> Creating zstd-compressed initcpio image: '/boot/initramfs-linux.img'
+  ==> Image generation successful
+  ==> Building image from preset: /etc/mkinitcpio.d/linux.preset: 'fallback'
+    -> -k /boot/vmlinuz-linux -c /etc/mkinitcpio.conf -g /boot/initramfs-linux-fallback.img -S autodetect --microcode /boot/amd-ucode.img
+  ==> Starting build: '6.2.8-arch1-1'
+    -> Running build hook: [base]
+    -> Running build hook: [udev]
+    -> Running build hook: [modconf]
+    -> Running build hook: [kms]
+  ==> WARNING: Possibly missing firmware for module: 'ast'
+    -> Running build hook: [keyboard]
+  ==> WARNING: Possibly missing firmware for module: 'xhci_pci'
+    -> Running build hook: [keymap]
+    -> Running build hook: [consolefont]
+  ==> WARNING: consolefont: no font found in configuration
+    -> Running build hook: [block]
+  ==> WARNING: Possibly missing firmware for module: 'bfa'
+  ==> WARNING: Possibly missing firmware for module: 'qed'
+  ==> WARNING: Possibly missing firmware for module: 'qla2xxx'
+  ==> WARNING: Possibly missing firmware for module: 'wd719x'
+  ==> WARNING: Possibly missing firmware for module: 'aic94xx'
+  ==> WARNING: Possibly missing firmware for module: 'qla1280'
+    -> Running build hook: [filesystems]
+    -> Running build hook: [fsck]
+  el/fs/nfs/nfs.ko.zst : Decoding error (36) : Restored data doesn't match checksum
+  ==> Generating module dependencies
+  depmod: ERROR: failed to load symbols from /tmp/mkinitcpio.Nm0Ydf/root/lib/modules/6.2.8-arch1-1/kernel/fs/nfs/nfs.ko.zst: Invalid argument
+  ==> Creating zstd-compressed initcpio image: '/boot/initramfs-linux-fallback.img'
+  ==> WARNING: errors were encountered during the build. The image may not be complete.
+  error: command failed to execute correctly
+## HP ENVY 5532 IP Address changed to 95.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.95.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
+$CrPl/documenting/LaTeX/jo
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

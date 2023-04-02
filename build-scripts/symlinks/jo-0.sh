@@ -98,6 +98,3 @@ ln -sf $ABjo/xbindkeysrc                                    ~/.xbindkeysrc  # mo
 ln -sf $ABjo/xinitrcs/openbox                               ~/.xinitrc
   [ $host = 'AsusW202' ] && ln -sf $ABjo/xinitrcs/awesome   ~/.xinitrc
 
-#=> Zathura
-ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
-

@@ -21,10 +21,10 @@ for aif in all-the-icons file-icons fontawesome material-design-icons octicons w
 done
 exa -la /usr/share/fonts/EmacsAllTheIcons
 
-#=> 1 fonts-forArch
-cfA=/usr/share/fonts/copiedForArch
-[ -d $cfA ] && rm -r $cfA; ln -s $cITh/unix-like/linux/fonts-forArch $cfA
-exa -la /usr/share/fonts
+# #=> 1 fonts-forArch
+# cfA=/usr/share/fonts/copiedForArch
+# [ -d $cfA ] && rm -r $cfA; ln -s $cITh/unix-like/linux/fonts-forArch $cfA
+# exa -la /usr/share/fonts
 
 #=> 1 make root symlinks
 ln -sf $OSAB/root/bash_profile /root/.bash_profile  # sources root bashrc

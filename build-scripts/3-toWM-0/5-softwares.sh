@@ -35,6 +35,9 @@ sudo pacman -S dictd
 # #=> Gpick
 # sudo pacman -S gpick
 
+#=> grammalecte
+sudo pacman -S grammalecte
+
 # #=> libsixel
 # sudo pacman -S libsixel  # for  sixel  graphics
 
@@ -51,9 +54,12 @@ sudo pacman -S dictd
 # npm config set prefix=$HOME/.npm-global
 
 # #=> npm 1 cspell
-# npm install -g cspell
+# npm i -g cspell
 
-# #=> npm 1 wikit
+#=> npm 1 ffmpeg-concat
+npm i -g ffmpeg-concat  # takes time to complete
+
+# #=> npm 2 wikit
 # npm i -g wikit
 
 #=> pdfCropMargins

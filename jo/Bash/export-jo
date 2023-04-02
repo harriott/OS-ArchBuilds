@@ -19,6 +19,7 @@ export MOZ_GTK_TITLEBAR_DECORATION=client
 export Cfzd=$Drpbx/JH/Cafezoide
 export copied=$Drpbx/JH/copied  # used in  $TeNo
   export cFr=$copied/France  # used in  $TeNo
+  export chum=$copied/human  # used in  $TeNo
   export cITh=$copied/IT-handy
     export cIThul=$cITh/unix-like
     export GHrUse=$Drpbx/JH/CGHrepos  # GitHub Repositories Use

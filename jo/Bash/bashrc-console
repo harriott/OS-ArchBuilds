@@ -60,17 +60,6 @@ sp (){
   fi
 }
 
-#=> dict
-alias del='dict -d elements'  # del iron
-
-# English:
-alias dmt='dict -d moby-thesaurus'  # dmt fuck
-alias dwn='dict -d wn'  # dwn fuck
-
-# French translate
-alias def='dict -d fd-eng-fra'  # def fuck
-alias dfe='dict -d fd-fra-eng'  # dfe facture
-
 #=> file manage
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
@@ -299,6 +288,34 @@ fi
 alias gte='gio trash --empty'
 alias tl='trash-list'
 alias tre='trash-restore'
+
+#=> human language - dict
+alias del='dict -d elements'  # del iron
+
+# English:
+alias dmt='dict -d moby-thesaurus'  # dmt fuck
+alias dwn='dict -d wn'  # dwn fuck
+
+# French translate
+alias def='dict -d fd-eng-fra'  # def fuck
+alias dfe='dict -d fd-fra-eng'  # dfe facture
+
+#=> human language - Verbiste
+alias decon='french-deconjugator'  # decon aimâmes
+
+con () {
+  fco=$(french-conjugator "$1")
+  oneline="${fco//$'\n'/ }"
+  trimmed="$(echo "$oneline" | cut -c 3- | rev | cut -c 3- | rev)"
+  flagged="${trimmed//$' - '/≡}"
+  IFS='≡' read -r -a array <<< "$flagged"
+  for conjugation in "${array[@]}"; do
+    tense=$(echo "$conjugation" | sed 's/:.\+//')
+    conjugations=$(echo "$conjugation" | sed 's/.\+: //')
+    spaced=$(echo "$conjugations" | sed 's/ /  /g')
+    echo -e "\e[32m $tense \e[1;33m $spaced \e[0m"
+  done
+} # con <a_French_infinitive>
 
 #=> nnn
 [ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
