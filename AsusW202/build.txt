@@ -282,6 +282,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.151.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
+$LTXj
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

@@ -148,7 +148,7 @@ moar -h
     i dict
 
 ## LaTeX
-    r $CrPl/documenting/LaTeX/jo  # my packages
+    r $LTXj  # my packages
     r $JHt/IT/CP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
@@ -189,6 +189,7 @@ moar -h
     b <codeFile>  # syntax'd cat
     pb <codeFile>  # also reformatted
     r ~/.npm-global
+    yj -ty <file.toml >file.yml
     zathura $cITh/CP/encoding/cheatsheet-a5.pdf &  # emmet
 
 ## ffprobe
@@ -425,7 +426,6 @@ in `$GHrUse/CP/Jekyll`: `rg -tyaml -l -uu exclude: > rg.fetl`
     rg '\$cITh' -l
     rg '\$clMail'
     rg '\$copied'
-    rg '\$CrPl'
     rg '\$Cfzd'
     rg '\$ulLB'
     rg '\$lclm'
@@ -622,7 +622,7 @@ NCDU(1)
     fRs $Drpbx/CAM-good US
     fRs $JHw _config.yml
     fRs $vimfiles/syntax cmusq.vim
-    fRs $CrPl/LaTeX/jo/CzPlanning planning.cls
+    fRs $LTXj/CzPlanning planning.cls
 
 ##### my OBS grabs
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
@@ -720,6 +720,7 @@ cat /etc/hostname
 curl ifconfig.co  # IP address
 curl ifconfig.co/country
 my Thunderbird locks: pb $T91/linuxlock; pb $T91/Win10ProLock
+r $JHw/IT-Jekyll-harriott-minima
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
 systemctl status nordvpnd.service

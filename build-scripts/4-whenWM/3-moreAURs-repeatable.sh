@@ -10,12 +10,12 @@ trap read debug  # puts a read request after each executable line
 # gAUR  gdAUR  are defined in $Bash/bashrc-console
 # softwares that require a WM
 
-# #=> clifm 0 (re)install
-# gAUR clifm
-# nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
-# makepkg -sic
-# cd /usr/share/clifm/plugins
-# sudo gcc -o kbgen kbgen.c -lcurses
+#=> clifm 0 (re)install
+gAUR clifm
+nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
+makepkg -sic
+cd /usr/share/clifm/plugins
+sudo gcc -o kbgen kbgen.c -lcurses
 
 # #=> clifm 1 remove
 # sudo pacman -Rs clifm
@@ -57,11 +57,11 @@ true
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> iscan
 # gAUR iscan
@@ -75,11 +75,11 @@ true
 # makepkg -sic
 # true
 
-# #=> nsxiv
-# gAUR nsxiv
-# nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
-# makepkg -sic
-# true
+#=> nsxiv
+gAUR nsxiv
+nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
+makepkg -sic
+true
 
 # #=> Pacfinder
 # gAUR pacfinder
@@ -178,18 +178,18 @@ true
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
 
-#=> verbiste
-gAUR verbiste
-nvim -c "silent! /perso.b2b2c.ca\/\~sarrazip\/dev" PKGBUILD
-makepkg -sic
+# #=> verbiste
+# gAUR verbiste
+# nvim -c "silent! /perso.b2b2c.ca\/\~sarrazip\/dev" PKGBUILD
+# makepkg -sic
 
 # #=> yj-git
 # gAUR yj-git
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

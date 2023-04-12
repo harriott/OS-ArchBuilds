@@ -60,21 +60,21 @@ trap read debug  # puts a read request after each executable line
 # handlr set inode/directory pcmanfm.desktop
 # # r /usr/share/applications
 
-# #=> mimeo 0 mimeo 0 install
-# gAUR mimeo
-# nvim -c "silent! /https:\/\/xyne.dev\/projects\/mimeo" PKGBUILD
-# makepkg -sic
+#=> mimeo 0 mimeo 0 install
+gAUR mimeo
+nvim -c "silent! /https:\/\/xyne.dev\/projects\/mimeo" PKGBUILD
+makepkg -sic
 
 # #=> mimeo 0 mimeo 1 remove
 # sudo pacman -Rs mimeo
 
-#=> mimeo 1 xdg-utils-mimeo
-gAUR xdg-utils-mimeo
-nvim -c "silent! /freedesktop" PKGBUILD
-makepkg -sic
-cd ~
+# #=> mimeo 1 xdg-utils-mimeo
+# gAUR xdg-utils-mimeo
+# nvim -c "silent! /freedesktop" PKGBUILD
+# makepkg -sic
+# cd ~
 
-#=> Sony OpenMG audio
-cp $OSAB/local-share-mime-packages-audio-oma.xml ~/.local/share/mime/packages/audio-oma.xml
-update-mime-database ~/.local/share/mime
+# #=> Sony OpenMG audio
+# cp $OSAB/local-share-mime-packages-audio-oma.xml ~/.local/share/mime/packages/audio-oma.xml
+# update-mime-database ~/.local/share/mime
 

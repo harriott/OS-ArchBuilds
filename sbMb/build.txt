@@ -923,7 +923,7 @@ nvim 05-exports.sh
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 bash 36-symlinks-sshd.sh
-rm -r ~/texmf/tex/latex/jo; ln -s $CrPl/LaTeX/jo ~/texmf/tex/latex/jo
+rm -r ~/texmf/tex/latex/jo; ln -s $LTXj ~/texmf/tex/latex/jo
 rm ~/texmf/tex/latex/m4p/headings.sty
 rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
 ln -sf $ABjo/textEdit/nanorc /home/jo/.config/nano/nanorc
@@ -1135,7 +1135,7 @@ bash anytime/symlinks-jo-0.sh
 bash 31-symlinks-Openbox.sh
 reboot to get $machBld  for  bash 36-symlinks-sshd.sh
 rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
-rm -r ~/texmf/tex/latex/jo; ln -s $CrPl/LaTeX/jo ~/texmf/tex/latex/jo
+rm -r ~/texmf/tex/latex/jo; ln -s $LTXj ~/texmf/tex/latex/jo
 ln -sf $ABjo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
 ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 ln -sf $ABjo/textEdit/nanorc /home/jo/.config/nano/nanorc
@@ -1216,14 +1216,6 @@ hp-setup 192.168.131.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## glxinfo
 Segmentation fault (core dumped)
-## waiting
-bluefish errors
-clifm-git
-CUPS Socket activation
-disable Shift+PrtSc
-tk
-### remake /efi/EFI/GRUB/grubx64.efi
-sudo grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
 ## Bluefish - clear rcfile error
 bluefish > alt+e > s > change something, close Bluefish for  bluefish > ... reset that change
 ## xdg-open .py
@@ -1498,8 +1490,30 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.95.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+system seized during
+### retry after reboot
+:: Synchronising package databases...
+error: failed to synchronize all databases (unable to lock database)
+sudo rm /var/lib/pacman/db.lck
+  error: chromium: signature from "Evangelos Foutras <evangelos@foutrelis.com>" is invalid
+  :: File /var/cache/pacman/pkg/chromium-112.0.5615.49-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]
+
+found the list of packages with  expac, and reinstalled them all
+## HP ENVY 5532 IP Address changed to 235.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.235.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
-$CrPl/documenting/LaTeX/jo
+bluefish errors
+clifm-git
+CUPS Socket activation
+disable Shift+PrtSc
+tk
+### remake /efi/EFI/GRUB/grubx64.efi
+sudo grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

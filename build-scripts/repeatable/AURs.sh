@@ -27,17 +27,17 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
-# #=> cpu-x 0 mawk
-# gdAUR mawk
-# nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
-# makepkg -sic
-# true
+#=> cpu-x 0 mawk
+gdAUR mawk
+nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
+makepkg -sic
+true
 
-# #=> cpu-x 1 cpu-x
-# gdAUR cpu-x
-# nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
-# makepkg -sic
-# true
+#=> cpu-x 1 cpu-x
+gdAUR cpu-x
+nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
+makepkg -sic
+true
 
 # #=> dict-moby-thesaurus
 # gAUR dict-moby-thesaurus
@@ -129,11 +129,11 @@ trap read debug  # puts a read request after each executable line
 # #=> nordvpn-bin 0 remove countries.dat
 # sudo rm /var/lib/nordvpn/data/countries.dat
 
-#=> nordvpn-bin 1 (re)install
-gAUR nordvpn-bin
-nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-makepkg -sic
-true
+# #=> nordvpn-bin 1 (re)install
+# gAUR nordvpn-bin
+# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> nordvpn-bin 2 configure
 # sudo usermod -aG nordvpn jo  # need to re-login
@@ -159,11 +159,11 @@ true
 # nvim -c "silent! /gsamokovarov" PKGBUILD
 # makepkg -sic
 
-# #=> shell-color-scripts
-# gAUR shell-color-scripts
-# nvim -c "silent! /dwt1" PKGBUILD
-# makepkg -sic
-# true
+#=> shell-color-scripts
+gAUR shell-color-scripts
+nvim -c "silent! /dwt1" PKGBUILD
+makepkg -sic
+true
 
 # #=> tint-tetris
 # gAUR tint-tetris

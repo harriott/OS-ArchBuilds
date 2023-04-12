@@ -26,7 +26,7 @@ set -e
 # # e -adl /usr/share/java/LanguageTool
 
 #=> LaTeX
-lj=~/texmf/tex/latex/jo; [ -L $lj ] && rm -r $lj; ln -s $CrPl/documenting/LaTeX/jo $lj
+lj=~/texmf/tex/latex/jo; [ -L $lj ] && rm -r $lj; ln -s $LTXj $lj
 # e -adl ~/texmf/tex/latex/jo
 
 #=> mdfpdf Pandoc defaults
