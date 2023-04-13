@@ -44,7 +44,7 @@ cp $OSAB/etc/systemd/noclear.conf /etc/systemd/system/getty@tty1.service.d/nocle
 pacman -S sudo tig
 
 #=> 2 tk
-pacman -S tk  # for  gitk
+pacman -S tk  # provides  wish  for  gitk
 
 #=> 2 time zone
 # check local time correction

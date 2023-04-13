@@ -1507,9 +1507,6 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.235.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
-bluefish errors
-clifm-git
-CUPS Socket activation
 disable Shift+PrtSc
 tk
 ### remake /efi/EFI/GRUB/grubx64.efi

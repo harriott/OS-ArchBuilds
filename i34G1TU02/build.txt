@@ -189,9 +189,6 @@ sudo pacman -Syu base-devel
 ## Updates
 :: Replace tbb with extra/onetbb? [Y/n]
 ## waiting
-$LTXj
-GNU time
-verbiste
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh
