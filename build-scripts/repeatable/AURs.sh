@@ -33,11 +33,11 @@ nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
 makepkg -sic
 true
 
-#=> cpu-x 1 cpu-x
-gdAUR cpu-x
-nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
-makepkg -sic
-true
+# #=> cpu-x 1 cpu-x
+# gdAUR cpu-x
+# nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> dict-moby-thesaurus
 # gAUR dict-moby-thesaurus
@@ -159,11 +159,11 @@ true
 # nvim -c "silent! /gsamokovarov" PKGBUILD
 # makepkg -sic
 
-#=> shell-color-scripts
-gAUR shell-color-scripts
-nvim -c "silent! /dwt1" PKGBUILD
-makepkg -sic
-true
+# #=> shell-color-scripts
+# gAUR shell-color-scripts
+# nvim -c "silent! /dwt1" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> tint-tetris
 # gAUR tint-tetris

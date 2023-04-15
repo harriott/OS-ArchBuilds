@@ -1,15 +1,15 @@
 # vim: ft=sh:
 
-# see  $clMail/msmtprc/msmtprc-template  for tests for sends
-# see  $bSc/4-whenWM/whenDropbox.sh  &  $clMail/notmuch/config-template
-# sourced by  $Bash/bashrc
+# $Bash/bashrc-clm  sourced by  $Bash/bashrc
+
+# $clMail/msmtprc/msmtprc-template  includes tests for sends
 
 #=> backup my Mutt Wizard files
 alias mwb='bash $clMail/backup.sh'
 
 #=> find mutt aliases
 maf () {
-    fAt=$maild/$account/foundAliasesTemp
+    fAt=$maild/foundAliasesTemp-$account
     # $maild  is defined in  $OSAB/Bash/export-storage
     notmuch show tag:$account > $fAt
     sed -Ei '/(^Cc|^From|^To):/!d' $fAt  # clear out all but addresses
@@ -20,16 +20,19 @@ maf () {
     sed -i '/^[[:space:]]*$/d' $fAt  # removes empty lines
     sed -Ei 's/^[ \t]+//' $fAt  # removes leading whitespace
     sed -i 's/^/alias /' $fAt  # prefix, ready to sort
-    fA=$maild/$account/foundAliases
-    echo "# vim: set ft=muttaliases:" > $fA
+    fA=$lclm/muttAliases/$account  # vim: set ft=muttaliases
     echo "" >> $fA
     sort -u $fAt >> $fA  # save as a rough collection, sorted
     rm $fAt
-}
+} # adds found aliases to existing collections
+mafc (){ account=cz;   maf; }
 maff (){ account=fm;   maf; }
 mafx (){ account=gmx;  maf; }
 mafl (){ account=live; maf; }
 maft (){ account=troh; maf; }
+mafz (){ account=zou;  maf; }
+
+# r $lclm/muttAliases/$account
 
 #=> neomutt
 alias nmc='neomutt -F $clMail/neomutt/muttrc-accounts/cz'
@@ -41,7 +44,10 @@ alias nmt='neomutt -F $clMail/neomutt/muttrc-accounts/troh'
 alias nmx='neomutt -F $clMail/neomutt/muttrc-accounts/gmx'
 alias nmz='neomutt -F $clMail/neomutt/muttrc-accounts/zou'
 
-#=> notmuch search
+#=> notmuch
+# $clMail/notmuch/config-template
+
+#==> search
 nmse () {
     notmuchsearch="$@"
     echo $notmuchsearch
@@ -85,7 +91,7 @@ nmsh () {
 #=> sync & tag mail
 [[ -d $lclm ]] && source $lclm/muttrc-emails
 
-nmnew () { echo "notmuch new:"; notmuch new; } # see $clMail/nm-config-template
+nmnew () { echo "notmuch new:"; notmuch new; } # see $clMail/notmuch/config-template
 
 # see  $clMail/mbsyncrc-template  (~/.mbsyncrc)
 msc () { mbsync cz   ; nmnew ; echo '$clMail/notmuch/tags/cz.sh'   ; bash $clMail/notmuch/tags/cz.sh   ; }

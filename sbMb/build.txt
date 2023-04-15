@@ -1,5 +1,6 @@
-vim: set ft=build nospell: sbMb
+vim: set ft=build nospell:
 
+$OSAB/sbMb/build.txt
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 # build
 ## Arch install - from the ISO
@@ -224,7 +225,7 @@ temorarily allowed password login in  /etc/ssh/sshd_config  for
 ### id_ed25519-forAVT661
 temporarily added the keys to  ~/.ssh  for
   ssh-copy-id -f -i ~/.ssh/id_ed25519-forAVT661 localhost
-## import 13F327EF
+## import GnuPG key 13F327EF
 in  /mnt/SD480GSSDPlus/Encrypted/Secure1/GnuPG/13F327EF
   gpg --import sprbMb-Arch-private.asc
 ## NETGEAR WG111v2 in highest 2nd from top back USB port
@@ -297,6 +298,8 @@ sudo cp $machBld/etc/kcm-updatedb.conf /etc/updatedb.conf
 sudo updatedb
 ## Zathura not opening pdf's
 zathura-pdf-mupdf 0.3.6-3  fixed by  zathura-pdf-mupdf 0.3.6-4
+## GnuPG - my key 13F327EF backup
+gpg -ao sbMbA-backup-las.asc --export-secret-keys --export-options backup jh
 ## update GnuPG key 13F327EF
 gpg --edit-key 13F327EF > 1 > 2 > expire > 2y > trust
 gpg --with-keygrip -K  shows keygrips didn't change
@@ -1506,9 +1509,16 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.235.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## gnupg trustdb backup
+gpg --export-ownertrust > $ulL/Arch/$host/jo/gnupg-trustdb-n4e.txt
+## GnuPG my key 13F327EF backup
+gpg -ao sbMb-backup-n4e.asc --export-secret-keys --export-options backup jh
+## SystemRescueCd public signing key
+gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
+## python-progress
+sudo pacman -Rs python-progress
 ## waiting
 disable Shift+PrtSc
-tk
 ### remake /efi/EFI/GRUB/grubx64.efi
 sudo grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
 # CPU frequency
@@ -1539,13 +1549,14 @@ ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 /var/cache/ 8.9GB
 /var/cache/pacman/ 8.6GB
 /var/log/journal/ 2.2 GB
-# GnuPG keys
-gpg -ao sbMbA-backup-las.asc --export-secret-keys --export-options backup jh
-## SystemRescueCd public signing key
+# GnuPG - SystemRescueCd public signing key
 gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
 # locale.gen.pacnew
 sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 sudo rm /etc/locale.gen.pacnew
+# pass
+pass init jharr@ftml.net
+rsync -irtv --delete ~/.password-store/ $Enc/Secure1/password-store-sbMb
 # physical configuration
 ATI Radeon HD 4870 on PCIEX16
 D-Link DUB-H7

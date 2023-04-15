@@ -20,7 +20,7 @@
 # $myDrA  &  $Storage  are pre-defined in  $machBld/export-machine
 
 #=> 0 mail
-export maild=/home/jo/.local/share/mail  # used also in  muttrc-*
+export maild=/home/jo/.local/share/mail  # $maild  used also in  muttrc-*
 
 #=> 1 host
 export host=$(uname -n)

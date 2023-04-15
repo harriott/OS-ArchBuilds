@@ -491,6 +491,15 @@ uses `fzf`
     cmatrix -u 9 -C blue
     man cmatrix
 
+# GNU Privacy Guard
+    gpg --export-ownertrust > $ulL/Arch/$host/jo/gnupg-trustdb.txt
+    gpg -k | xcol 049956B6 13F327EF Asus expired expires jharr sprbMb trohib
+    gpg -K | xcol 049956B6 13F327EF Asus expired expires jharr sprbMb trohib
+    im gpg
+    r ~/.gnupg
+
+gpg(1)
+
 # help
     apropos
     cheat cheat
@@ -833,9 +842,11 @@ sudo rm /var/lib/pacman/db.lck  # delete the stale lock
 ```bash
 pass edit gmail-neomutt
 pass cz
+pass zou
 ```
 
-    ~/.password-store
+    pb ~/.password-store/.gpg-id
+    r ~/.password-store
 
 ## Gmail API expiry
 ```bash

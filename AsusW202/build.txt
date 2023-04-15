@@ -1,8 +1,7 @@
 vim: ft=build:
 
-Asus VivoBook W202 = AsusW202
+Asus VivoBook W202  $OSAB/AsusW202/build.txt
 X randomly restarting
-
 # build
 ## ARCH_202207 to chroot
 K16GBDTG2  plugged in for reboot > F2 at POST > Boot Priority >
@@ -281,8 +280,15 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 hp-setup -r > Select > Remove
 hp-setup 192.168.151.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## import GnuPG key 049956B6
+in  Encrypted/Secure1/GnuPG/N130-openSUSE/Private
+  gpg --import gpg.asc > passphrase
+## edit GnuPG key 049956B6
+gpg --edit-key 049956B6 > adduid > Joseph Harriott > trohib@gmail.com > Asus VivoBook W202 > trust > 5 > q
+## backup GnuPG key 049956B6
+gpg -ao AsusW202-backup-n4e.asc --export-secret-keys --export-options backup trohib
 ## waiting
-$LTXj
+irbrc
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh
@@ -293,6 +299,9 @@ fcrontab -l
 [Hardware Error]: TSC 0 ADDR fef622c0
 [Hardware Error]: PROCESSOR 0:506c9 TIME 1660462321 SOCKET 0
 only the unix timestamp changes
+# pass
+pass init trohib@gmail.com
+rsync -irtv --delete ~/.password-store/ $Enc/Secure1/password-store-AsusW202
 # physical configuration
 4GB RAM
 F2  at  POST  for  ASUS BIOS Utility - EZ Mode

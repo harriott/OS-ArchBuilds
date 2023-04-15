@@ -16,5 +16,5 @@ export startxDelay=2
 # machine-specific, for  $OSAB/Bash/export-storage
 export myDrA=1  # only when my Dropbox is active
 export Storage=/mnt/SDEP128G  # where I keep stuff
-    export Enc=~/encrypted
+    export Enc=~/encrypted  # $Enc
 
