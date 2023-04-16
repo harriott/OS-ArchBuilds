@@ -1,5 +1,7 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
+# $clMail/neomutt/muttrc-accounts/parl  sourced from  $Bash/bashrc-clm
+
 set from = $parl  # defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a parl"
 set folder = "$maild/parl"

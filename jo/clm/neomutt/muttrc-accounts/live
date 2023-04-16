@@ -1,5 +1,7 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
+# $clMail/neomutt/muttrc-accounts/live  sourced from  $Bash/bashrc-clm
+
 set from = $live
 set sendmail = "msmtp -a live"
 set folder = "$maild/live"

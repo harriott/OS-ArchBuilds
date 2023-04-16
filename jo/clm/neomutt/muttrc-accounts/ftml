@@ -1,5 +1,7 @@
 # muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
 
+# $clMail/neomutt/muttrc-accounts/ftml  sourced from  $Bash/bashrc-clm
+
 set from = $fm  # = my Fastmail email, defined in my  $LE/mymuttrcAddresses
 set sendmail = "msmtp -a fm"
 set folder = "$maild/fm"

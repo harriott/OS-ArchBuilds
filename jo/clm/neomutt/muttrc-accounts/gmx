@@ -1,5 +1,7 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
+# $clMail/neomutt/muttrc-accounts/gmx  sourced from  $Bash/bashrc-clm
+
 set from = $gmx  # = my GMX email, defined in my  $lclm/mymuttrcAddresses
 set sendmail = "msmtp -a gmx"
 set folder = "$maild/gmx"

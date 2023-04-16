@@ -20,7 +20,10 @@ maf () {
     sed -i '/^[[:space:]]*$/d' $fAt  # removes empty lines
     sed -Ei 's/^[ \t]+//' $fAt  # removes leading whitespace
     sed -i 's/^/alias /' $fAt  # prefix, ready to sort
-    fA=$lclm/muttAliases/$account  # vim: set ft=muttaliases
+    fA=$maild/$account/muttAliases
+    echo 'vim: set ft=muttaliases:' > $fA
+    echo "" >> $fA
+    echo '$maild/'$account'/muttAliases  gathered by my function  maf ($Bash/bashrc-clm)' >> $fA
     echo "" >> $fA
     sort -u $fAt >> $fA  # save as a rough collection, sorted
     rm $fAt

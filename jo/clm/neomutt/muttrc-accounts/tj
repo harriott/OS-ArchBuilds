@@ -1,5 +1,7 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
+# $clMail/neomutt/muttrc-accounts/tj  sourced from  $Bash/bashrc-clm
+
 set from = $tj
 set sendmail = "msmtp -a tj"
 set folder = "$maild/tj"

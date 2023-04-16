@@ -1,5 +1,7 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
+# $clMail/neomutt/muttrc-accounts/zou  sourced from  $Bash/bashrc-clm
+
 set from = $zou  # = my Zourit email, defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a zou"
 set folder = "$maild/zou"

@@ -1,5 +1,7 @@
 # muttrc-*  filetypes are set in  plugin/buffers.vim
 
+# $clMail/neomutt/muttrc-accounts/troh  sourced from  $Bash/bashrc-clm
+
 set from = $troh  # = one of my Gmail accounts, defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a troh"
 set folder = "$maild/troh"
