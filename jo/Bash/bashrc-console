@@ -229,7 +229,7 @@ SE () {
     rg -l -tmd 'stackexchange|stackoverflow' $ITd | sort >> $f
   done
   echo '' >> $f
-  echo "now open $f"  # $Drpbx/JH/$f
+  echo 'now open $Drpbx/JH/search/'$f
 }
 
 #==> my Encrypted directories

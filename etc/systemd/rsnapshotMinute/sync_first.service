@@ -1,0 +1,21 @@
+# vim: set fdl=1:
+
+# $OSAB/etc/systemd/rsnapshotMinute/sync_first.service
+#  copied by  $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
+#         to  /etc/systemd/system/rsnapshot-minuteTest.service
+
+# called by my  $OSAB/etc/systemd/rsnapshotMinute/test.timer
+# requires  $OSAB/etc/systemd/rsnapshotMinute/test.conf
+
+[Unit]
+Description=rsnapshot sync_first minute backup
+
+[Service]
+Type=oneshot
+Nice=19
+IOSchedulingClass=idle
+# sync_first
+ExecStart=/usr/bin/rsnapshot sync
+# then rotate the backups and feed in the sync
+ExecStart=/usr/bin/rsnapshot minuteTest
+

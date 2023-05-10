@@ -27,11 +27,16 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
-#=> cpu-x 0 mawk
-gdAUR mawk
-nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
-makepkg -sic
-true
+# #=> code-minimap
+# gdAUR code-minimap
+# nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
+# makepkg -sic
+
+# #=> cpu-x 0 mawk
+# gdAUR mawk
+# nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> cpu-x 1 cpu-x
 # gdAUR cpu-x
@@ -115,11 +120,11 @@ true
 # makepkg -sic
 # true
 
-# #=> moar 0 (re)install
-# gAUR moar
-# nvim -c "silent! /walles" PKGBUILD
-# makepkg -sic
-# true
+#=> moar 0 (re)install
+gAUR moar
+nvim -c "silent! /walles" PKGBUILD
+makepkg -sic
+true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR

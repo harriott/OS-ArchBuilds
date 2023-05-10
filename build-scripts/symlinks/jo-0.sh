@@ -76,6 +76,10 @@ ln -sf $ABjo/pinforc ~/.pinforc
 #=> ranger
 cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -sf $ABjo/ranger $cr  # e -adl ~/.config/ranger
 
+#=> Ruby IRB
+ln -sf $onGH/misc/irbrc ~/.irbrc
+# e -la ~/.irbrc
+
 #=> tmux
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 

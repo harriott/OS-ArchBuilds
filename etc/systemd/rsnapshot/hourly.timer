@@ -1,6 +1,7 @@
 # vim: set fdl=1:
 
-# managed by my  $bSc/24-as_root-rsnapshot_automated.sh
+# copied by  $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
+#  to  /etc/systemd/system/rsnapshot-hourly.timer
 
 [Unit]
 Description=rsnapshot hourly backup

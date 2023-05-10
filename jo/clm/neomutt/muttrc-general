@@ -1,9 +1,9 @@
 
 # muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
 
-# based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
-# general settings for neomutt
-# sourced by  $clMail/neomutt/muttrc-accounts-all
+# $clMail/neomutt/muttrc-general - general settings for  neomutt
+#  based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
+#  sourced by  $clMail/neomutt/muttrc-accounts-all
 
 set editor = 'nvim'
 set mailcap_path = $clMail/mailcap

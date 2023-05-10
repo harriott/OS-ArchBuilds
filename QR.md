@@ -221,7 +221,6 @@ see $vimfiles/syntax/gems.vim
 # file manage
     C $onGH/misc
     diskus  # size of current directory
-    e
     fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
     i tree
     n [directory]
@@ -328,6 +327,8 @@ vid => ffmpegthumbnailer
     fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
     fd -e ods  # finds OpenOffice Calc spreadsheets
     fd -H  # --hidden
+    fd -tf -e css
+    fd -tf -e ogg ' webm'
     fd -tf -e md | wc -l
     fd -tf -e md -e tex
     fd -tl -HL -X rm  # removes dead links
@@ -407,6 +408,7 @@ outer whitespaces get ignored
     rg -tmd '\$Sig'
     rg -tmd '\{TNW}'
     rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
+    rg <someText> **/*.ext
 
 #### in /usr/share/vim/vim90
     rg 'let b:undo_ftplugin'
@@ -519,15 +521,6 @@ Quite a few don't work, and some crash the terminal...
     b       -> PgUp
     f       -> next search term
 
-# sed
-    i sed
-    tldr sed
-
-## tealdeer
-    tldr -h
-    tldr -u  # --update
-    tldr tldr
-
 # hw
     cd /sys/devices/system/cpu/cpu0/cpufreq
     doas showkey  # keycodes
@@ -614,7 +607,7 @@ NCDU(1)
 
 #### backup localhost without mnt
     lastMonthly=/mnt/WD1001FALS/rsnapshot/monthly.6/localhost/; month=$(date -r $lastMonthly +%y%m%d); echo $month
-    sudo rsync -irtv --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
+    sudo rsync -aAivX --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
 
 #### checking
     /var/log/rsnapshot > completed successfully
@@ -648,6 +641,11 @@ ls *ly.*/localhost/mnt/SD480GSSDPlus/Dropbox/CAM* -d
 
 #### recover folder
     rsync -irtv --delete $rsnapshot/daily.0/localhost/home/jo/.local/share/mail/ $maild
+
+### udiskie
+    pkill udiskie
+
+UDISKIE(8)
 
 # imagey
 ```bash
@@ -888,6 +886,15 @@ nachoparker
 for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
 ```
+
+# sed
+    i sed
+    tldr sed
+
+## tealdeer
+    tldr -h
+    tldr -u  # --update
+    tldr tldr
 
 # system
     bat -A /etc/hosts

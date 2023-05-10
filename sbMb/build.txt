@@ -1502,7 +1502,6 @@ sudo rm /var/lib/pacman/db.lck
   error: chromium: signature from "Evangelos Foutras <evangelos@foutrelis.com>" is invalid
   :: File /var/cache/pacman/pkg/chromium-112.0.5615.49-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
   Do you want to delete it? [Y/n]
-
 found the list of packages with  expac, and reinstalled them all
 ## HP ENVY 5532 IP Address changed to 235.10
 fixed in  $Imagey/Scan.sh
@@ -1517,6 +1516,37 @@ gpg -ao sbMb-backup-n4e.asc --export-secret-keys --export-options backup jh
 gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
 ## python-progress
 sudo pacman -Rs python-progress
+## HP ENVY 5532 IP Address changed to 184.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.184.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing jre-openjdk (20.0.1.u9-1) breaks dependency 'java-runtime=19' required by pdfsam
+sudo pacman -Rs pdfsam  - just for the updates
+## HP ENVY 5532 IP Address changed to 176.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.176.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## TOSHIBA unwriteable
+sudo chmod 777 /run/media/jo/TOSHIBA
+## Updates
+  error: firefox: signature from "Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>" is invalid
+  :: File /var/cache/pacman/pkg/firefox-112.0.2-2-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]
+  error: thunderbird: signature from "Antonio Rojas <arojas@archlinux.org>" is invalid
+  :: File /var/cache/pacman/pkg/thunderbird-102.10.1-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]
+  error: failed to commit transaction (invalid or corrupted package)
+  Errors occurred, no packages were upgraded.
+eventually worked
+## HP ENVY 5532 IP Address changed to 37.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.37.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 disable Shift+PrtSc
 ### remake /efi/EFI/GRUB/grubx64.efi
@@ -1555,6 +1585,38 @@ gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
 sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 sudo rm /etc/locale.gen.pacnew
 # pass
+$ pass ls
+  Password Store
+  ├── cz
+  │   ├── GmailAPI
+  │   │   ├── CID
+  │   │   ├── CS
+  │   │   ├── refresh
+  │   │   ├── token-expire
+  │   │   └── token
+  │   └── mbsync
+  ├── jnbh
+  ├── mutt-wizard-fm
+  ├── mutt-wizard-gmx
+  ├── parl
+  │   ├── GmailAPI
+  │   │   ├── CID
+  │   │   ├── CS
+  │   │   ├── refresh
+  │   │   ├── token-expire
+  │   │   └── token
+  │   └── mbsync
+  ├── tj
+  │   └── mbsync
+  ├── troh
+  │   ├── GmailAPI
+  │   │   ├── CID
+  │   │   ├── CS
+  │   │   ├── refresh
+  │   │   ├── token-expire
+  │   │   └── token
+  │   └── neomutt
+  └── zou
 pass init jharr@ftml.net
 rsync -irtv --delete ~/.password-store/ $Enc/Secure1/password-store-sbMb
 # physical configuration

@@ -1,6 +1,7 @@
 # vim: set fdl=1:
 
-# managed by my  $bSc/24-as_root-rsnapshot_automated.sh
+# $OSAB/etc/systemd/rsnapshotMinute/test.timer
+#  managed by my  $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
 
 [Unit]
 Description=rsnapshot every minute backup test
@@ -9,13 +10,18 @@ Description=rsnapshot every minute backup test
 # Run hourly
 OnCalendar=*:0/1
 Persistent=true
+
+# 0 default service
 Unit=rsnapshot@minuteTest.service
 # runs  minuteTest  instance of  $OSAB/etc/systemd/rsnapshot/@.service
 # requires  $machBld/etc/rsnapshot-minuteTest.conf  to be in place
 
+# 1  sync_first  enabled
+# Unit=rsnapshot-minuteTest.service
+
 [Install]
 WantedBy=timers.target
 
-# systemctl status rsnapshot-minuteTest.timer
-# journalctl -u rsnapshot@minuteTest -r
+# systemctl status rsnapshot-test.timer
+# journalctl -u rsnapshot@test -r
 

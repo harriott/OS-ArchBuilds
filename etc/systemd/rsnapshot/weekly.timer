@@ -1,3 +1,7 @@
+# vim: set fdl=1:
+
+# copied by  $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
+#  to  /etc/systemd/system/rsnapshot-weekly.timer
 
 [Unit]
 Description=rsnapshot weekly backup
@@ -7,6 +11,8 @@ Description=rsnapshot weekly backup
 OnCalendar=Monday  *-*-* 04:30:00
 Persistent=true
 Unit=rsnapshot@weekly.service
+# runs  weekly  instance of  $OSAB/etc/systemd/rsnapshot/ampersand.service
 
 [Install]
 WantedBy=timers.target
+

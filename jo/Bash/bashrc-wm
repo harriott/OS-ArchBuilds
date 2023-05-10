@@ -83,6 +83,7 @@ mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")  
 #==> ffmpeg 0
 alias ffmhb='nice -n 19 ffmpeg -hide_banner'
   alias ffi='ffmhb -i'
+  cw () { for f in **/*.webm; do echo ''; echo ''; ffi "$f" -c:a libvorbis -aq 4 "${f/%.webm/ webm}.ogg"; rm "$f"; done; fin; } # for Poweramp.  fd -tf -e webm
 
 frames () {
   ffmpeg -i $1 -vcodec copy -f rawvideo -y /dev/null 2>&1

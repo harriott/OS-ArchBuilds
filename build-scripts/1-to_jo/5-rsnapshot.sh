@@ -1,5 +1,7 @@
 #!/bin/bash
-# vim: fdl=1 sw=2:
+# vim: sw=2:
+
+# sudo bash $bSc/1-to_jo/5-rsnapshot.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -15,7 +17,7 @@ trap read debug  # puts a read request after each executable line
 sudo cp $machBld/etc/rsnapshot.conf /etc/rsnapshot.conf
 
 #=> 1 sync my rsnapshot configurations
-A=$OSAB; erc=etc/rsnapshot.conf; nvim -O $A/i34G1TU02/$erc $A/LIP120s81A4/$erc $A/sbMb/$erc -c 'windo difft'
+A=$OSAB; erc=etc/rsnapshot.conf; nvim -O $A/AsusW202/$erc $A/i34G1TU02/$erc $A/sbMb/$erc -c 'windo difft'
 
 #=> 2 rsnapshot needed locations
 mkdir $rsnapshot  # see $machBld/export-machine

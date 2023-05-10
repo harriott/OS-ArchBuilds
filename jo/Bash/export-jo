@@ -9,6 +9,7 @@ export MANPATH=/usr/share/man/
 uG=$machBld/jo/Bash/export-urxvt; [[ -f $uG ]] && . $uG
 
 export MOZ_GTK_TITLEBAR_DECORATION=client
+export PAPERSIZE=A4  # libpaper
 
 # export GIT_PS1=$(__git_ps1 " (%s)")
 # - excruciatingly slow on a huge repository such as  nerd-fonts
@@ -24,6 +25,8 @@ export copied=$Drpbx/JH/copied  # used in  $TeNo
     export cIThul=$cITh/unix-like
     export GHrUse=$Drpbx/JH/CGHrepos  # GitHub Repositories Use
       [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
+      export jkll=$GHrUse/CP/Ruby/Jekyll
+        export mnm=$jkll/Jekyll-jekyll-minima
     export Pr0=$copied/Practical0
       export Pr0t=$copied/Practical0/technos
 export CPdoc=$CrPl/documenting
@@ -34,16 +37,17 @@ export FFIdF=$Drpbx/JH//F+F/France/IdF  # $FFIdF  used in  $TeNo
 export GHrCl=$Storage/IT-Copied/GHrepos  # $GHrCl  GitHub Repositories Clone
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export JHt=$Drpbx/JH/technos
-  export tInf=$JHt/IT  # used in $DWp & $TeNo
+  export tInf=$JHt/IT  # used in  $DWp  &  $TeNo
+    export tITUL=$JHt/IT/UnixLike  # $tITUL  used in  $core  &  $tInf
   export tIs=$JHt/IT-storage  # $tIs/diskUsage.txt
 export JHw=$Drpbx/JH/work  # $JHw - for IT websites and more
   export bilan=$JHw/ST/LPD/IdF/AB-TAP/bilan
+  export Jhm=$JHw/IT-Jekyll-harriott-minima
   export StEr=$JHw/France/IdF/Paris/rueErmitage/StudioErmitage  # previously used  $detail
 export lclm=$ulL/clm  # $lclm  linux command-line mail, was  GNULE
 export MD4PDF=$onGH/pandoc-md4pdf  # $MD4PDF  is unambiguous
-export MSWin10=$onGH/OS-MSWin10  # $MSWin10  used in  $DWp & $TeNo
+export MSWin10=$onGH/OS-MSWin10  # $MSWin10  used in  $DWp  &  $TeNo
 export Openbox=$ABjo/wm/Openbox
-export PAPERSIZE=A4  # libpaper
 export CfWk=$Drpbx/JH/CforWork
   export ScEn=$CfWk/education/Science-Engineering
 export ess=$Drpbx/JH/now/essential

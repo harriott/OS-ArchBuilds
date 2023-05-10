@@ -287,8 +287,11 @@ in  Encrypted/Secure1/GnuPG/N130-openSUSE/Private
 gpg --edit-key 049956B6 > adduid > Joseph Harriott > trohib@gmail.com > Asus VivoBook W202 > trust > 5 > q
 ## backup GnuPG key 049956B6
 gpg -ao AsusW202-backup-n4e.asc --export-secret-keys --export-options backup trohib
+## Updates
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing jre-openjdk (20.0.1.u9-1) breaks dependency 'java-runtime=19' required by pdfsam
+sudo pacman -Rs pdfsam  - just for the updates
 ## waiting
-irbrc
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

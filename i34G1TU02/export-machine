@@ -11,7 +11,8 @@
 #  sourced by  $OSAB/root/bash_profile
 
 export csm=i34G1TU02-clamscan
-export rsnapshot=/run/media/jo/KDTG311282/rsnapshot/
+export rsnapshot=/run/media/jo/9QG2FFEE/rsnapshot/
+# export rsnapshot=/run/media/jo/KDTG311282/rsnapshot/
 export startxDelay=5
 
 #=> for  $OSAB/Bash/export-storage

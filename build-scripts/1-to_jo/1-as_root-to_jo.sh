@@ -200,7 +200,6 @@ pacman -S wget
 pacman -S ruby
 
 #=> Ruby 0 IRB
-cp $onGH/misc/irbrc ~/.irbrc
 pacman -S ruby-irb
 
 #=> Ruby 1 documentation

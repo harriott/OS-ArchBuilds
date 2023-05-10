@@ -57,11 +57,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> iscan
 # gAUR iscan
@@ -110,11 +110,14 @@ trap read debug  # puts a read request after each executable line
 # #=> pdfCropMargins 2 pdfcropmargins 0 remove
 # sudo pacman -Rs pdfcropmargins
 
-# #=> PDFsam
+# #=> PDFsam 0 (re)install
 # gAUR pdfsam
 # nvim -c "silent! /torakiki" PKGBUILD
 # makepkg -sic  # choose  jdk-openjdk
 # true
+
+# #=> PDFsam 1 remove
+# sudo pacman -Rs pdfsam
 
 # #=> perl-unicode-utf8
 # gAUR perl-unicode-utf8
@@ -178,18 +181,18 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
 
-#=> verbiste
-gAUR verbiste
-nvim -c "silent! /perso.b2b2c.ca\/\~sarrazip\/dev" PKGBUILD
-makepkg -sic
+# #=> verbiste
+# gAUR verbiste
+# nvim -c "silent! /perso.b2b2c.ca\/\~sarrazip\/dev" PKGBUILD
+# makepkg -sic
 
 # #=> yj-git
 # gAUR yj-git
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

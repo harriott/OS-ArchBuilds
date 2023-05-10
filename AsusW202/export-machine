@@ -11,6 +11,7 @@
 #  symlinked in  $bSc/05-root_symlinks.sh
 #  sourced by  $OSAB/root/bash_profile
 
+export rsnapshot=/mnt/S14JJ9CP956373/rsnapshot
 export startxDelay=2
 
 # machine-specific, for  $OSAB/Bash/export-storage

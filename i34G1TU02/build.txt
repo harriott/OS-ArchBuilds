@@ -188,9 +188,11 @@ npm config set prefix=$HOME/.npm-global
 sudo pacman -Syu base-devel
 ## Updates
 :: Replace tbb with extra/onetbb? [Y/n]
+## Updates
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing jre-openjdk (20.0.1.u9-1) breaks dependency 'java-runtime=19' required by pdfsam
+sudo pacman -Rs pdfsam  - just for the updates
 ## waiting
-don't use \ in pw as it'll dissappear
-irbrc
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh
