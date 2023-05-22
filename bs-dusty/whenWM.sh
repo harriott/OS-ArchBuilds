@@ -19,6 +19,14 @@ sudo pacman -Rs handlr-bin
 # #=> 0 npm ffmpeg-concat
 # npm install -g ffmpeg-concat
 
+# #=> 0 pscircle-git 0 install
+# gAUR pscircle-git
+# nvim -c "silent! /mildlyparallel" PKGBUILD
+# makepkg -sic
+
+#=> 0 pscircle-git 1 remove
+sudo pacman -Rs pscircle-git
+
 #=> 0 qt5-styleplugins 0 install
 # for qt5ct - allows fix of narrow fonts in XnViewMP
 gAUR qt5-styleplugins

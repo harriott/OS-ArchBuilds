@@ -16,6 +16,10 @@ rm /etc/cheat/conf.yml.pacnew
 nvim -O /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
 rm /etc/clamav/clamd.conf.pacnew
 
+#=> 1 dhcpcd.conf
+nvim -O /etc/dhcpcd.conf /etc/dhcpcd.conf.pacnew -c 'windo difft'
+rm /etc/dhcpcd.conf.pacnew
+
 #=> 1 etc/papersize
 nvim -O /etc/papersize /etc/papersize.pacnew -c 'windo difft'
 rm /etc/papersize.pacnew
@@ -35,6 +39,14 @@ rm /etc/locale.gen.pacnew
 #=> 1 logind.conf
 nvim -O /etc/systemd/logind.conf /etc/systemd/logind.conf.pacnew -c 'windo difft'
 rm /etc/systemd/logind.conf.pacnew
+
+#=> 1 pacman.conf
+nvim -O /etc/pacman.conf /etc/pacman.conf.pacnew -c 'windo difft'
+rm /etc/pacman.conf.pacnew
+
+#=> 1 rsnapshot.conf
+nvim -O /etc/rsnapshot.conf /etc/rsnapshot.conf.pacnew -c 'windo difft'
+rm /etc/rsnapshot.conf.pacnew
 
 #=> 1 shells
 nvim -O /etc/shells /etc/shells.pacnew -c 'windo difft'

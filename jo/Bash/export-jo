@@ -18,6 +18,7 @@ export PAPERSIZE=A4  # libpaper
 # here I'm taking care to avoid variables that only differ by case
 
 export Cfzd=$Drpbx/JH/Cafezoide
+  export PhPr=$Cfzd/PhysicalProperty
 export copied=$Drpbx/JH/copied  # used in  $TeNo
   export cFr=$copied/France  # used in  $TeNo
   export chum=$copied/human  # used in  $TeNo

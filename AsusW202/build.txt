@@ -287,11 +287,24 @@ in  Encrypted/Secure1/GnuPG/N130-openSUSE/Private
 gpg --edit-key 049956B6 > adduid > Joseph Harriott > trohib@gmail.com > Asus VivoBook W202 > trust > 5 > q
 ## backup GnuPG key 049956B6
 gpg -ao AsusW202-backup-n4e.asc --export-secret-keys --export-options backup trohib
+## HP ENVY 5532 IP Address changed to 37.10
+hp-setup -r > Select > Remove
+hp-setup 192.168.37.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Updates
   error: failed to prepare transaction (could not satisfy dependencies)
   :: installing jre-openjdk (20.0.1.u9-1) breaks dependency 'java-runtime=19' required by pdfsam
 sudo pacman -Rs pdfsam  - just for the updates
+## auracle
+error: UNKNOWN: Failed sending HTTP request
 ## waiting
+pscircle
+### qt5-webkit
+lost track of why it was installed
+### AUR package
+sudo pacman -Rs qt5-webkit
+  :: python-pyqt5 optionally requires qt5-sensors: QtSensors
+  Packages (2) qt5-sensors-5.15.9-1  qt5-webkit-5.212.0alpha4-18
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

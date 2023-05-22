@@ -1547,6 +1547,26 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.37.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 99.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.99.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## auracle
+error: UNKNOWN: Failed sending HTTP request
+Re-installing  auracle-git  didn't help...
+## HP ENVY 5532 IP Address changed to 230.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.230.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## qt5-webkit
+lost track of why it was installed
+### AUR package
+aura >>= Building failed.
+sudo pacman -Rs qt5-webkit
+  :: python-pyqt5 optionally requires qt5-sensors: QtSensors
+  Packages (2) qt5-sensors-5.15.9-1  qt5-webkit-5.212.0alpha4-18
 ## waiting
 disable Shift+PrtSc
 ### remake /efi/EFI/GRUB/grubx64.efi

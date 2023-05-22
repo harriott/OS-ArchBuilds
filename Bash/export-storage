@@ -10,10 +10,10 @@
 
 # for initial build of Arch:
 # for jo:
-#  symlinked in  $bSc/symlinks/jo-0.sh
+#  symlinked in  $bs-symlinks/jo-0.sh
 #  sourced by  $Bash/bash_profile
 # for root:
-#  symlinked in  $bSc/symlinks/root.sh
+#  symlinked in  $bs-symlinks/root.sh
 #  sourced by  $OSAB/root/bash_profile
 
 #=> 0 core
@@ -53,9 +53,9 @@ if [ $OSAB ]; then
   export ABjo=$OSAB/jo
     export Bash=$ABjo/Bash
   export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
-  export bSc=$OSAB/build-scripts
-      export machBld=$OSAB/$host  # as opposed to  $machLg
+  # export bSc=$OSAB/build-scripts
   export clMail=$ABjo/clm  # used in  bashrc-clm  and  muttrc-*
+  export machBld=$OSAB/$host  # as opposed to  $machLg
   export tmx=$OSAB/tmux  # used in  tmux.conf
 fi
 

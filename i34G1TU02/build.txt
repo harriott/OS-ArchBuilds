@@ -192,7 +192,10 @@ sudo pacman -Syu base-devel
   error: failed to prepare transaction (could not satisfy dependencies)
   :: installing jre-openjdk (20.0.1.u9-1) breaks dependency 'java-runtime=19' required by pdfsam
 sudo pacman -Rs pdfsam  - just for the updates
+## auracle
+error: UNKNOWN: Failed sending HTTP request
 ## waiting
+pscircle
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

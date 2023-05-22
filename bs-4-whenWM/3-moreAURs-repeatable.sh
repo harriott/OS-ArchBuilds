@@ -57,11 +57,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> iscan
 # gAUR iscan
@@ -146,10 +146,10 @@ true
 # # (in Openbox)  now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 # true
 
-# #=> pscircle-git
-# gAUR pscircle-git
-# nvim -c "silent! /mildlyparallel" PKGBUILD
-# makepkg -sic
+#=> pscircle
+gAUR pscircle
+nvim -c "silent! /https:\/\/gitlab.com\/mildlyparallel\/pscircle" PKGBUILD
+makepkg -sic
 
 # #=> qpdfview 0 Adam Reichold's public key
 # gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8
@@ -191,8 +191,8 @@ true
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

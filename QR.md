@@ -149,7 +149,7 @@ moar -h
 
 ## LaTeX
     r $LTXj  # my packages
-    r $JHt/IT/CP/TeX/LaTeX  # my MWEs
+    r $tInf/CP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
 `mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
@@ -331,6 +331,7 @@ vid => ffmpegthumbnailer
     fd -tf -e ogg ' webm'
     fd -tf -e md | wc -l
     fd -tf -e md -e tex
+    fd -tf -e tex
     fd -tl -HL -X rm  # removes dead links
     fd -u '\..+'
     fd . $bSc
@@ -425,6 +426,7 @@ in `$GHrUse/CP/Jekyll`: `rg -tyaml -l -uu exclude: > rg.fetl`
     rg '\$ArchBuilds'
     rg '\$Bash'
     rg '\$bs'
+    rg '\$bSc'
     rg '\$cITh' -l
     rg '\$clMail'
     rg '\$copied'
@@ -460,31 +462,6 @@ in `$GHrUse/CP/Jekyll`: `rg -tyaml -l -uu exclude: > rg.fetl`
     feh -F $cITh/CP/vifm-v0.12-builtin-normal.png &
     r ~/.config/vifm
 
-# fonts
-    cd /usr/share/fonts; $ fd -L consolas
-    font-manager &
-    r /usr/share/fonts
-
-## Fontconfig
-    cd /etc/fonts  # to explore the configuration files
-    doas fc-cache -f  # regenerates the cache
-    fc-list | grep Caskaydia
-    fc-list | grep Deja
-    fc-list | grep Lohit
-    fc-list | grep ubuntu
-    fc-list -v ubuntumono
-    fc-list > $machLg/fclist.txt
-
-### fc-scan
-    fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf
-
-In a folder of possible fonts, to check if any are already installed: `for font in $(ls); do fc-list $font; done`
-
-## fontpreview
-    fontpreview -h
-
-uses `fzf`
-
 # fun
     cat $CrPl/encoding/EMOJI_CHEAT_SHEET.gfm
     tint  # tetris
@@ -510,7 +487,8 @@ gpg(1)
     /etc/pinforc
     i pinfo
 
-see `$Bash/bashrc-console`
+- lynx-style, but n/N don't work...
+- see `$Bash/bashrc-console`
 
 ### commands
 Quite a few don't work, and some crash the terminal...
@@ -815,12 +793,16 @@ checkupdates
 expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500-$(date '+%Y%m%d%H%M').log  # 500 most recent installs
 pacfinder
 pacman -Qdt  # lists all orphans
-pactree -r <package_to_find_depencies_of>
 sudo pacman -Rs <packagetoremove>
 grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
 ```
 
     /var/cache/pacman/pkg/
+
+## Aura
+    aura -Pa  # security analysis of all installed AUR packages
+    i aura
+    sudo aura -Aakux --devel
 
 ## groups
 ```bash
@@ -835,6 +817,10 @@ pacsearch <keyword>  # better search
 ## package database locked
 pgrep pacman  # to ensure it's not running
 sudo rm /var/lib/pacman/db.lck  # delete the stale lock
+
+## pactree
+    i pactree
+    pactree -r <package>  # shows other packages that require it
 
 # pass
 ```bash
@@ -918,6 +904,30 @@ GRUB (GRand Unified Bootloader)
     r $OSAB $ulL/Arch
     r $ulL/Arch/$host
     vifm $OSAB $ulL/Arch
+
+## fonts
+    font-manager &
+    /usr/share/fonts> fd -L consolas
+
+### Fontconfig
+    cd /etc/fonts  # to explore the configuration files
+    doas fc-cache -f  # regenerates the cache
+    fc-list | grep Caskaydia
+    fc-list | grep Deja
+    fc-list | grep Lohit
+    fc-list | grep ubuntu
+    fc-list -v ubuntumono
+    fc-list > $machLg/fclist.txt
+
+#### fc-scan
+    fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf
+
+In a folder of possible fonts, to check if any are already installed: `for font in $(ls); do fc-list $font; done`
+
+### fontpreview
+    fontpreview -h
+
+uses `fzf`
 
 ## groups
     cat /etc/group  # list all groups on the system

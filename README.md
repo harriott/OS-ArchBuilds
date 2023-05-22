@@ -12,9 +12,8 @@ git clone https://github.com/harriott/ArchBuilds.git
 ## Why Arch?
 [Arch Linux](https://harriott.github.io/2023/02/11/Arch_Linux.html)
 
-## some platforms I've used
+## some platforms I use
 - a self-build around a `Gigabyte GA-970A-DS3P` motherboard
 - an `Asus VivoBook W202`
-- an old Acer Veriton T661
 - an old Lenovo ThinkCentre M58 (Type 7637)
 

@@ -6,6 +6,12 @@
 set -ev
 trap read debug  # puts a read request after each executable line
 
+#=> Aura
+gAUR aura
+nvim -c "silent! /https:\/\/github.com\/fosskers\/aura" PKGBUILD
+makepkg -sic  # takes ages
+true
+
 # #=> auracle-git
 # gdAUR auracle-git
 # nvim -c "silent! /falconindy" PKGBUILD
@@ -18,8 +24,8 @@ trap read debug  # puts a read request after each executable line
 # #=> pgpdump
 # sudo pacman -S pgpdump
 
-#=> Python 2.7 remove
-sudo pacman -Rs python2
+# #=> Python 2.7 remove
+# sudo pacman -Rs python2
 
 # #=> Rust Toolchain - for Dust
 # # 1 rustup
