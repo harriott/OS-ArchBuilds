@@ -2,18 +2,18 @@
 # vim: ft=sh sw=2:
 
 # here I export variables that could also be useful as root
-# . $OSAB/Bash/export-storage
+# source $OSAB/Bash/export-storage
 
 # Variable naming constraints:
 #  avoid names that only differ by case
 #  use names that grep unambiguously throughout all of my notes directories
 
-# for initial build of Arch:
+# for initial build of Arch (after $machBld/export-machine):
 # for jo:
-#  symlinked in  $bs-symlinks/jo-0.sh
+#  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 #  sourced by  $Bash/bash_profile
 # for root:
-#  symlinked in  $bs-symlinks/root.sh
+#  symlinked in  $OSAB/bs-symlinks/root.sh
 #  sourced by  $OSAB/root/bash_profile
 
 #=> 0 core
@@ -31,15 +31,15 @@ export vimfiles=~/.vim
 if [[ $myDrA == 1 ]]; then
   export Drpbx=$Storage/Dropbox
   # - keep  DROPBOX  capitalised for finding it without need for $
-  export core=$Drpbx/JH/core
-  export ITstack=$core/IT_stack
-  export CrPl=$ITstack/CP  # $CrPl  used in  $Bash/bashrc-console  & build scripts
-  export ulL=$ITstack/unix_like-linux
-  export machLg=$ulL/Arch/$host  # as opposed to  $machBld
-  export ulLB=$ulL/Bash  # used in  $OSAB/QR.txt
-  export onGH=$ITstack/onGitHub
-        export vimfiles=$onGH/vimfiles
-fi  # depends on  myDrA=
+    export core=$Drpbx/JH/core
+      export ITstack=$core/IT_stack
+        export CrPl=$ITstack/CP  # $CrPl  used in  $Bash/bashrc-console  & build scripts
+        export onGH=$ITstack/onGitHub
+          export vimfiles=$onGH/vimfiles
+        export ulL=$ITstack/unix_like-linux
+          export machLg=$ulL/Arch/ml-$host  # as opposed to  $machBld
+          export ulLB=$ulL/Bash  # used in  $OSAB/QR.txt
+fi  # depends on  myDrA=  defined in  $machBld/export-machine
 
 #=> 3 $OSAB, or not
 unset OSAB
@@ -52,10 +52,9 @@ fi  # depends on  onGH=
 if [ $OSAB ]; then
   export ABjo=$OSAB/jo
     export Bash=$ABjo/Bash
-  export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
-  # export bSc=$OSAB/build-scripts
-  export clMail=$ABjo/clm  # used in  bashrc-clm  and  muttrc-*
-  export machBld=$OSAB/$host  # as opposed to  $machLg
+    export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
+    export clMail=$ABjo/clm  # used in  bashrc-clm  and  muttrc-*
+  export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg
   export tmx=$OSAB/tmux  # used in  tmux.conf
 fi
 

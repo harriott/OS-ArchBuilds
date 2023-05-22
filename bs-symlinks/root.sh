@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# bash $bSc/symlinks/root.sh
+# bash $OSAB/bs-symlinks/root.sh
 
 set -e
 
@@ -9,10 +9,10 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 $OSAB
 cd $(dirname "${BASH_SOURCE[0]}")
-. ../../$(uname -n)/export-machine
-. ../../Bash/export-storage
-. ../../jo/Bash/export-jo
-read -p "\$OSAB is $OSAB - looks good?"
+. ../mb-$(uname -n)/export-machine
+. ../Bash/export-storage
+. ../jo/Bash/export-jo
+read -p "\$OSAB  is  $OSAB - looks good?"
 
 # #=> 1 fonts - all-the-icons.el
 # [ -d /usr/share/fonts/EmacsAllTheIcons ] || mkdir /usr/share/fonts/EmacsAllTheIcons
@@ -32,8 +32,8 @@ read -p "\$OSAB is $OSAB - looks good?"
 
 # ln -sf $OSAB/Bash/GNUReadline-inputrc /root/.inputrc
 
-# ln -sf $machBld/export-machine /root/.export-machine
-#   ln -sf $OSAB/Bash/export-storage /root/.export-storage
+ln -sf $machBld/export-machine /root/.export-machine
+  ln -sf $OSAB/Bash/export-storage /root/.export-storage
 
 # ln -sf $OSAB/root/nanorc ~/.config/nano/nanorc
 

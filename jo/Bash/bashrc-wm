@@ -7,21 +7,29 @@
 alias aw='ansiweather -f 7'
 
 ltx () {
-  cd $LTX
-  s="sectionHeadings.md"
-  > $s
-  for f in **/*.tex; do
-    echo '' >> $s
-    echo "# ${f%.tex}" >> $s
-    echo "\$LTX/$f" >> $s
-    echo '' >> $s
-    sed -e '/section{/!d' $f >> $s
-  done
-  echo '' >> $s
-  sed -i 's/\\section{/    /' $s
-  sed -i 's/\\subsection{/        /' $s
-  sed -i 's/\\subsubsection{/            /' $s
-  sed -i 's/}//' $s
+  if [[ ! -z $TNt ]]; then
+    if [ -d $TNt ]; then
+      cd $TNt
+      s="sectionHeadings.md"
+      > $s
+      for f in **/*.tex; do
+        echo '' >> $s
+        echo "# ${f%.tex}" >> $s
+        echo "\$TNt/$f" >> $s
+        echo '' >> $s
+        sed -e '/section{/!d' $f >> $s
+      done
+      echo '' >> $s
+      sed -i 's/\\section{/    /' $s
+      sed -i 's/\\subsection{/        /' $s
+      sed -i 's/\\subsubsection{/            /' $s
+      sed -i 's/}//' $s
+    else
+      echo "$TNt  ain't there"
+    fi
+  else
+    echo '$TNt  is undefined'
+  fi
 }
 
 alias tt='rm *.aux *.log *.out'  # tidy tex = clear away TeX ancillary files

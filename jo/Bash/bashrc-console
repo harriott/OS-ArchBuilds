@@ -11,6 +11,8 @@
 
 # Joseph Harriott
 
+export loaded_bc=1  # used in  $OSAB/bs-symlinks/repair.sh
+
 ra () {
   pactl set-sink-volume 0 60%  # master volume to non-distorting level
   if [ $1 ]; then o=$1; else o=a; fi

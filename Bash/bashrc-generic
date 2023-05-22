@@ -16,6 +16,8 @@ alias tkt='tmux kill-server > /dev/null 2>&1; tmux'
 [ $TERM != 'screen-256color' ] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su
 
+export loaded_bg=1  # used in  $OSAB/bs-symlinks/repair.sh
+
 ft () {
   if [ "$1" ]; then
     of=$ulLB/FIGletFontsTest.txt

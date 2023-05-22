@@ -6,7 +6,7 @@
 #  symlinked in  $bSc/anytime/symlinks-jo-0.sh
 
 export MANPATH=/usr/share/man/
-uG=$machBld/jo/Bash/export-urxvt; [[ -f $uG ]] && . $uG
+uG=$machBld/jo/Bash/export-urxvt; [[ -f $uG ]] && source $uG
 
 export MOZ_GTK_TITLEBAR_DECORATION=client
 export PAPERSIZE=A4  # libpaper
@@ -55,7 +55,7 @@ export ess=$Drpbx/JH/now/essential
   export Sig=$Drpbx/JH/now/essential/signatures  # $Sig  for use in creating documents
 export T91=$Drpbx/JH/T91-default-release
 export TeNo=$core/TextNotes  # used in  $TeNo
-  export LTX=$TeNo/TN/LTX  # Landscape TeXs - used in  $Bash/bashrc-wm
+  export TNt=$TeNo/tex  # *.tex's - used in  $Bash/bashrc-wm
 export Then0=$Drpbx/JH/Then0  # used in  $TeNo
   export T0Fr=$Then0/Europe/France  # used in  $TeNo
 export vimfiles=$onGH/vimfiles  # $vimfiles

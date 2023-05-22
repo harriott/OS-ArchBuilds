@@ -22,24 +22,24 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # jre-openjdk
 
 # #=> cheat
-# gdAUR cheat
+# gAUR cheat
 # nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
 # makepkg -sic
 # sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
 # #=> code-minimap
-# gdAUR code-minimap
+# gAUR code-minimap
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
 
 # #=> cpu-x 0 mawk
-# gdAUR mawk
+# gAUR mawk
 # nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> cpu-x 1 cpu-x
-# gdAUR cpu-x
+# gAUR cpu-x
 # nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
 # makepkg -sic
 # true
@@ -97,7 +97,7 @@ true
 
 # #=> lsix-git
 # # for sixels
-# gAUR lsix-git
+# gdAUR lsix-git
 # nvim -c "silent! /https:\/\/github.com\/hackerb9\/lsix" PKGBUILD
 # makepkg -sic
 # true

@@ -219,7 +219,6 @@ see $vimfiles/syntax/gems.vim
     sudo cat /var/spool/fcron/jo.orig
 
 # file manage
-    C $onGH/misc
     diskus  # size of current directory
     fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
     i tree
@@ -237,6 +236,7 @@ see $vimfiles/syntax/gems.vim
 
 ## CliFM
     C [dir1 [dir2 ...]]
+    C $onGH/misc
     clifm -h
     clifm -v
     i clifm
@@ -411,49 +411,7 @@ outer whitespaces get ignored
     rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
     rg <someText> **/*.ext
 
-#### in /usr/share/vim/vim90
-    rg 'let b:undo_ftplugin'
-    rg main_syntax
-    rg -tvim 'b:match_words'
-
-#### in JH
-    $Drpbx/JH/search/searches.md
-
-in `$GHrUse/CP/Jekyll`: `rg -tyaml -l -uu exclude: > rg.fetl`
-
-##### for builds, in $core
-    rg '\$ABjo'
-    rg '\$ArchBuilds'
-    rg '\$Bash'
-    rg '\$bs'
-    rg '\$bSc'
-    rg '\$cITh' -l
-    rg '\$clMail'
-    rg '\$copied'
-    rg '\$Cfzd'
-    rg '\$ulLB'
-    rg '\$lclm'
-    rg '\$ITstack'
-    rg '\$machBld'
-    rg '\$mail'
-    rg '\$ScEn'
-    rg '\$sm'
-    rg '\$StEr'
-    rg '\$TeNo'
-    rg '\~/\.npm-'
-    rg 'passwordeval bash oauth2tool'
-    rg 'passwordeval bash'
-
-##### in vimfiles
-    rg --no-ignore '<leader><leader>r'
-    rg --no-ignore '<leader><leader>x'
-    rg --no-ignore '\$MSwin10'
-    rg --no-ignore '\$onGH'
-    rg -iuu '<f4>'
-    rg -iuu '<f11>'
-    rg -tvim 'vimHints'
-    rg -uu "'include'"
-    rg -uu synmaxcol
+in JH, `$Drpbx/JH/search/searches.md`
 
 ## Vifm
     /usr/share/vifm/vifm-help.txt
@@ -802,7 +760,7 @@ grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
 ## Aura
     aura -Pa  # security analysis of all installed AUR packages
     i aura
-    sudo aura -Aakux --devel
+    sudo aura -Aakux --devel > n  # just for info
 
 ## groups
 ```bash

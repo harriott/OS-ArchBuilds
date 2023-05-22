@@ -1,7 +1,8 @@
 #!/bin/bash
 # vim: sw=2:
 
-# bash $bSc/symlinks/jo-0.sh
+# build script
+# bash $OSAB/bs-symlinks/jo-0.sh
 
 set -e
 
@@ -20,6 +21,8 @@ ln -sf $machBld/export-machine        ~/.export-machine
 ln -sf $OSAB/Bash/export-storage      ~/.export-storage
 ln -sf $Bash/export-jo                ~/.export-jo
 ln -sf $Bash/bash_history.sh          ~/Arch/bash_history.sh
+
+# e -la ~
 
 #=> CliFM
 [ -d ~/.config/clifm ] || mkdir -p ~/.config/clifm

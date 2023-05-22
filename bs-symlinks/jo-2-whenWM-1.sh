@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $bSc/symlinks/jo-2-whenWM-1.sh
+# bash $OSAB/bs-symlinks/jo-2-whenWM-1.sh
 # dependent on  $OSAB
 
 set -e

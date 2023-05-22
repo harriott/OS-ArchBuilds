@@ -1,25 +1,35 @@
 #!/bin/bash
-# vim: fdl=1 sw=2:
+# vim: sw=2:
 
-# . symlinksRepair.sh
+# $OSAB/bs-symlinks/repair.sh
 # for occasions when I've renamed directories, breaking symlinks
+
+# bash repair.sh
 
 set -e
 
-#=> 0 machine
-# . AsusW202/export-machine
-# . i34G1TU02/export-machine
-# . sbMb/export-machine
+#=> 0 machine specific environment
+source "../mb-$host/export-machine"
 
-#=> 1 functional console
-# . Bash/export-storage
-# . jo/Bash/export-jo
-# . build-scripts/symlinks/jo-0.sh
+#=> 1 $OSAB (& $Bash), $machBld
+source ../Bash/export-storage  # essential
 
-#=> 2 window manager
-. build-scripts/symlinks/jo-1-awesome.sh
-# . build-scripts/symlinks/jo-1-Openbox.sh
+#=> 1 functioning root
+[[ -z $loaded_bg ]] && source $OSAB/Bash/bashrc-generic
+sudo bash $OSAB/bs-symlinks/root.sh
 
-#=> 3 when window manager up
-. build-scripts/symlinks/jo-2-whenWM-1.sh
+#=> 2 functioning console
+[[ -z $loaded_bc ]] && source $Bash/bashrc-console
+
+#=> 2 helpful environment
+source $Bash/export-jo
+
+#=> 2 reset symlinks
+source $OSAB/bs-symlinks/jo-0.sh
+
+#=> 3 awesome
+[[ -z $(pstree | grep awesome-) ]] || source $OSAB/bs-symlinks/jo-1-awesome.sh
+
+#=> 3 Openbox
+[[ -z $(pstree | grep openbox-) ]] || source $OSAB/bs-symlinks/jo-1-Openbox.sh
 

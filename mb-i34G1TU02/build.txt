@@ -194,8 +194,20 @@ sudo pacman -Syu base-devel
 sudo pacman -Rs pdfsam  - just for the updates
 ## auracle
 error: UNKNOWN: Failed sending HTTP request
+## mimeo
+xdg-open https://github.com/harriott/tagbar
+  Traceback (most recent call last):
+    File "/usr/bin/mimeo", line 5, in <module>
+      from Mimeo import run_main
+  ModuleNotFoundError: No module named 'Mimeo'
+fixed by removing & re-installing  mimeo
+## qt5-webkit
+lost track of why it was installed
+### AUR package
+sudo pacman -Rs qt5-webkit
+  :: python-pyqt5 optionally requires qt5-sensors: QtSensors
+  Packages (2) qt5-sensors-5.15.9-1  qt5-webkit-5.212.0alpha4-18
 ## waiting
-pscircle
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

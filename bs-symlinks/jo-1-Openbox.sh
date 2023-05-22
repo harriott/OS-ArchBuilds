@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# bash $bSc/symlinks/jo-1-Openbox.sh
+# bash $OSAB/bs-symlinks/jo-1-Openbox.sh
 
 set -e
 
