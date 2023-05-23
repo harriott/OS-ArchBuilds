@@ -5,7 +5,7 @@
 #  gctm  is defined in  $Bash/bashrc-console
 #  sudo aura -Aakux --devel  is good for identifying locally installed developer repositories
 
-PQ(){ pacman -Qs $1; }
+PQ(){ echo; echo $1; pacman -Qs $1; }
 
 updateMaybe()
 {
@@ -19,8 +19,8 @@ updateMaybe()
 }
 xdgo()
 {
-    if [ $host = "M587637" ]; then
-        xdg-open $1 >/dev/null 2>&1  # because chromium error reports
+    if [ $host = "AsusW202" ]; then
+        MESA_DEBUG=silent xdg-open $1
     else
         xdg-open $1
     fi
@@ -46,10 +46,10 @@ xdgo()
 # xdgo https://github.com/hackerb9/lsix/commits/master
 # updateMaybe lsix-git 'https:\/\/github.com\/hackerb9\/lsix'
 
-#=> snixembed-git
-PQ snixembed-git
-xdgo https://git.sr.ht/~steef/snixembed
-updateMaybe snixembed-git 'https:\/\/git.sr.ht\/\~steef\/snixembed'
+# #=> snixembed-git
+# PQ snixembed-git
+# xdgo https://git.sr.ht/~steef/snixembed
+# updateMaybe snixembed-git 'https:\/\/git.sr.ht\/\~steef\/snixembed'
 
 #=> tmux-bash-completion-git
 PQ tmux-bash-completion-git

@@ -58,7 +58,6 @@ trap read debug  # puts a read request after each executable line
 # handlr set .webp feh.desktop
 # handlr set .xml gvim.desktop
 # handlr set inode/directory pcmanfm.desktop
-# # r /usr/share/applications
 
 #=> mimeo 0 mimeo 0 install
 gAUR mimeo

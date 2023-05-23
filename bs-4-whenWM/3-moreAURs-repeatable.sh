@@ -10,12 +10,12 @@ trap read debug  # puts a read request after each executable line
 # gAUR  gdAUR  are defined in $Bash/bashrc-console
 # softwares that require a WM
 
-#=> clifm 0 (re)install
-gAUR clifm
-nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
-makepkg -sic
-cd /usr/share/clifm/plugins
-sudo gcc -o kbgen kbgen.c -lcurses
+# #=> clifm 0 (re)install
+# gAUR clifm
+# nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
+# makepkg -sic
+# cd /usr/share/clifm/plugins
+# sudo gcc -o kbgen kbgen.c -lcurses
 
 # #=> clifm 1 remove
 # sudo pacman -Rs clifm
@@ -45,11 +45,11 @@ sudo gcc -o kbgen kbgen.c -lcurses
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-#=> Dropbox 0 (re)install
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -146,10 +146,10 @@ true
 # # (in Openbox)  now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 # true
 
-#=> pscircle
-gAUR pscircle
-nvim -c "silent! /https:\/\/gitlab.com\/mildlyparallel\/pscircle" PKGBUILD
-makepkg -sic
+# #=> pscircle
+# gAUR pscircle
+# nvim -c "silent! /https:\/\/gitlab.com\/mildlyparallel\/pscircle" PKGBUILD
+# makepkg -sic
 
 # #=> qpdfview 0 Adam Reichold's public key
 # gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8

@@ -298,13 +298,6 @@ sudo pacman -Rs pdfsam  - just for the updates
 ## auracle
 error: UNKNOWN: Failed sending HTTP request
 ## waiting
-pscircle
-### qt5-webkit
-lost track of why it was installed
-### AUR package
-sudo pacman -Rs qt5-webkit
-  :: python-pyqt5 optionally requires qt5-sensors: QtSensors
-  Packages (2) qt5-sensors-5.15.9-1  qt5-webkit-5.212.0alpha4-18
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

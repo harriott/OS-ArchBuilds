@@ -27,23 +27,24 @@ read -p "\$OSAB  is  $OSAB - looks good?"
 # exa -la /usr/share/fonts
 
 # #=> 1 make root symlinks
-# ln -sf $OSAB/root/bash_profile /root/.bash_profile  # sources root bashrc
-#   ln -sf $OSAB/root/bashrc /root/.bashrc  # sources bashrc-generic
+ln -sf $OSAB/root/bash_profile /root/.bash_profile  # sources root bashrc
+  ln -sf $OSAB/root/bashrc /root/.bashrc  # sources bashrc-generic
 
-# ln -sf $OSAB/Bash/GNUReadline-inputrc /root/.inputrc
+ln -sf $OSAB/Bash/GNUReadline-inputrc /root/.inputrc
 
 ln -sf $machBld/export-machine /root/.export-machine
   ln -sf $OSAB/Bash/export-storage /root/.export-storage
 
-# ln -sf $OSAB/root/nanorc ~/.config/nano/nanorc
+ln -sf $OSAB/root/nanorc ~/.config/nano/nanorc
 
-# ln -sf $OSAB/root/backup/rsyncBackup.sh /root/rsyncBackup.sh
+ln -sf $OSAB/root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 
-# ln -sf $tmx/tmux.conf ~/.tmux.conf
+ln -sf $tmx/tmux.conf ~/.tmux.conf
 
 #=> 2 list root symlinks
 exa -la /root
 # find /root -type l -ls  # doesn't show broken
+exa -la /root/.config/nano
 
 #=> 2 ranger
 sudo ln -sf $ABjo/ranger /root/.config/ranger

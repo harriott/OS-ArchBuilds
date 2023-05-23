@@ -318,6 +318,7 @@ vid => ffmpegthumbnailer
 ## exa
     e
     e -l -s modified  # time sorted
+    e -RL 2  # depth of 2
     e -adl <directory_to_check>  # reports for the directory (not its contents)
     i exa
     more in  $OSAB/Bash/bashrc-generic
@@ -895,9 +896,10 @@ uses `fzf`
     gio mime
     handlr -h
     handlr get .png
-    handlr list
+    handlr list  # neatly presented [Default Applications]
     mimeo -m <fileToOpen>  # reports mimetype
-    ~/.config/mimeapps.list  # add mimetypes here
+    r /usr/share/applications  # the  *.desktop  files
+    ~/.config/mimeapps.list  # the default applications
 
 ## monitoring
     btop
