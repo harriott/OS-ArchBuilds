@@ -237,6 +237,7 @@ see $vimfiles/syntax/gems.vim
 ## CliFM
     C [dir1 [dir2 ...]]
     C $onGH/misc
+    clifm --open www.archlinux.org  # alternative to  xdg-open
     clifm -h
     clifm -v
     i clifm
@@ -599,6 +600,49 @@ i nsxiv
 ns  # see $Bash/bashrc-wm
 rm -r ~/.cache/sxiv/*
 ```
+
+### commands
+thumbnail mode: `R` reload all
+
+#### image mode
+- `n` `p` next previous
+- `[` `]` 10x backwards forwards
+- `|` `_` flip horizontal vertical
+- changes aren't saved
+
+##### pan
+- `h` `left`
+- `j` `down`
+- `k` `up`
+- `l` `right`
+
+##### rotate
+- `<` 90° ccw
+- `>` 90° cw
+- `?` 180°
+
+##### scroll
+- `H` to left
+- `J` to down
+- `K` to up
+- `L` to right
+- `z` to center
+
+##### zoom
+- `=` by 100%
+- `e` `E` fit width height
+- `F` fill (often getting only part of the image)
+- `w` fit or 100%
+- `W` fit (the default)
+
+#### general
+- `q` quit
+- `return` toggle image/thumbnail
+- `f` toggle fullscreen
+- `b` toggle statusbar
+- `g` `G` first last
+- `r` reload
+- `+` `-` zoom in out
 
 ## scanimage
     S 55n 3 <imagefilename> <scanheight>

@@ -12,6 +12,7 @@
 
 alias fin='figlet -f univers finished'
 alias tkt='tmux kill-server > /dev/null 2>&1; tmux'
+source $GHrUse/CP/wfxr-code-minimap/completions/bash/code-minimap.bash
 
 [ $TERM != 'screen-256color' ] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su

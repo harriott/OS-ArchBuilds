@@ -65,7 +65,7 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 
 # #=> fonts - fontpreview-git
-# gAUR fontpreview-git
+# gdAUR fontpreview-git
 # nvim -c "silent! /sdushantha" PKGBUILD
 # makepkg -sic
 

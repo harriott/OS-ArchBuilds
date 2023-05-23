@@ -187,7 +187,7 @@ true
 # makepkg -sic
 
 # #=> yj-git
-# gAUR yj-git
+# gdAUR yj-git
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 

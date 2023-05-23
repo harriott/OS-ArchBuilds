@@ -207,11 +207,21 @@ lost track of why it was installed
 sudo pacman -Rs qt5-webkit
   :: python-pyqt5 optionally requires qt5-sensors: QtSensors
   Packages (2) qt5-sensors-5.15.9-1  qt5-webkit-5.212.0alpha4-18
-## mimeo
+## xdg-utils-mimeo  snag
 xdg-open https://github.com/harriott/tagbar
   ATTENTION: default value of option mesa_glthread overridden by environment.
   [ERROR glean_core] Error setting metrics feature config: Json(Error("EOF while parsing a value", line: 1, column: 0))
+the error is Mozilla's, but my fix was to move over to  handlr
+## attempt to remove  xdg-utils-mimeo
+sudo pacman -Rs xdg-utils-mimeo
+  :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by chromium
+  :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by google-chrome
+  :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by libreoffice-fresh
+  :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by qt5-base
+  :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by qt6-base
+  :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by sxiv
 ## waiting
+handlr
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh
