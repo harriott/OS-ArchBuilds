@@ -1567,6 +1567,15 @@ aura >>= Building failed.
 sudo pacman -Rs qt5-webkit
   :: python-pyqt5 optionally requires qt5-sensors: QtSensors
   Packages (2) qt5-sensors-5.15.9-1  qt5-webkit-5.212.0alpha4-18
+## HP ENVY 5532 IP Address changed to 197.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.197.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## stuck after halt -p
+[...] wlan0: deauthenticating from 8e:a5:dc:81:ac:e0 by local choice (Reason: 3=DEAUTH_LEAVING)
+[...] usb 4-3.3: USB disconnect, device number 3
+took too long, I hard shutdown
 ## waiting
 disable Shift+PrtSc
 ### remake /efi/EFI/GRUB/grubx64.efi

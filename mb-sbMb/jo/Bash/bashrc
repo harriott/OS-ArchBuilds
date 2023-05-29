@@ -6,8 +6,6 @@
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
 export CHROOT=/mnt/SD480GSSDPlus/chroot
-export VsLocation=/mnt/ST4000VN008  # principal location
-  export VsLmore=(/mnt/SDU3D1TB /mnt/WD1001FALS)
 export VsLocations=(/mnt/ST4000VN008 /mnt/SDU3D1TB /mnt/WD1001FALS)
 #  o ${VsLocations[@]}  # path to my video stores
 

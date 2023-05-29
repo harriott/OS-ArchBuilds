@@ -484,7 +484,6 @@ Quite a few don't work, and some crash the terminal...
 
 ## printing - HPLIP - HP ENVY 5532 WiFi
     hp-levels -p ENVY_5530
-    hp-levels -p ENVY_5532
     hp-setup -b net 192.168.43.249  # when online
     http://192.168.43.249/
 
