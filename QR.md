@@ -12,6 +12,7 @@ copyq help | mo
 i bc
 i datediff
 r $TeNo/TN
+tty-clock -bcs
 ~/.config/pnmixer/config
 ```
 
@@ -150,6 +151,7 @@ moar -h
 ## LaTeX
     r $LTXj  # my packages
     r $tInf/CP/TeX/LaTeX  # my MWEs
+    C /usr/share/texmf-dist/tex/latex/
     x <LaTeX_file_basename>
 
 `mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
@@ -203,7 +205,15 @@ gem list > $ulL/Arch/$host/gems.gems
 r $GEM_HOME
 ```
 
-see $vimfiles/syntax/gems.vim
+see `$vimfiles/syntax/gems.vim`
+
+## Rust
+    cargo version
+    rustup update
+
+### didyoumean
+    dym better
+    i dym
 
 # fcron
     systemctl status fcron.service  # showing recent events
@@ -707,7 +717,6 @@ cat /etc/hostname
 curl ifconfig.co  # IP address
 curl ifconfig.co/country
 my Thunderbird locks: pb $T91/linuxlock; pb $T91/Win10ProLock
-r $JHw/IT-Jekyll-harriott-minima
 sudo dhcpcd wlwg111v2
 sudo ls /var/lib/dhcpcd/
 systemctl status nordvpnd.service
@@ -759,6 +768,12 @@ rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
 
 #### URLs unclickable by receiver
 URLs (such as in an email sent from `mutt`) unclickable - so better to send to them with `Thunderbird`
+
+## Jekyll
+```bash
+js
+r $Jhm
+```
 
 ## NetworkManager
     nmcli connection delete Jo-X10II
@@ -840,14 +855,6 @@ date -d @$(pass cz/GmailAPI/token-expire)
 pass cz/GmailAPI/token-expire
 ```
 
-# Rust
-    cargo version
-    rustup update
-
-## didyoumean
-    dym better
-    i dym
-
 # scripting
     kill -9 "$(pidof perl)"
 
@@ -904,7 +911,7 @@ GRUB (GRand Unified Bootloader)
 ## build
     $OSAB/etc/doas.conf
     r $OSAB $ulL/Arch
-    r $ulL/Arch/$host
+    r $ulL/Arch/ml-$host
     vifm $OSAB $ulL/Arch
 
 ## fonts

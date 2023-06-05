@@ -1576,6 +1576,11 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 [...] wlan0: deauthenticating from 8e:a5:dc:81:ac:e0 by local choice (Reason: 3=DEAUTH_LEAVING)
 [...] usb 4-3.3: USB disconnect, device number 3
 took too long, I hard shutdown
+## HP ENVY 5532 IP Address changed to 127.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.127.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 disable Shift+PrtSc
 ### remake /efi/EFI/GRUB/grubx64.efi

@@ -60,6 +60,7 @@ ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 
 #=> for Tex Live
 sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
+# e -la /usr/share/texmf.cnf
 
 #=> MIME database
 ln -sf $ABjo/mime/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml

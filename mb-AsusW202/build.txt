@@ -297,7 +297,25 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 sudo pacman -Rs pdfsam  - just for the updates
 ## auracle
 error: UNKNOWN: Failed sending HTTP request
+## tmux
+tmux: /usr/lib/libncursesw.so.6: version `NCURSES6_TINFO_6.4.current' not found (required by tmux)
+### not helped
+sudo pacman -Rs ncurses
+sudo pacman -S ncurses
+sudo pacman -Rs tmux-bash-completion-git
+sudo pacman -Rs tmux
+sudo pacman -S tmux
+### try ncurses-git
+sudo pacman -S bash-completion
+#### ncurses-git
+:: ncurses-git and ncurses are in conflict. Remove ncurses? [y/N] y
+Packages (2) ncurses-6.4-1 [removal]  ncurses-git-6.4.20230527.r0.g1cb99cd1-1
+#### reinstall tmux-bash-completion-git
+reinstalled  tmux-bash-completion-git
+## texmf.cnf
+texlive-core 2023.66587-2 -> 2023.66594-3: /usr/share/texmf-dist/web2c/texmf.cnf  corresponds to  /etc/texmf/web2c/texmf.cnf.pacnew, but no longer a symlink...
 ## waiting
+tty-clock
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

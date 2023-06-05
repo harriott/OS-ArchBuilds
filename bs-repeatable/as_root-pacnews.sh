@@ -56,3 +56,7 @@ rm /etc/shells.pacnew
 nvim -O /etc/ssh/sshd_config /etc/ssh/sshd_config.pacnew -c 'windo difft'
 rm /etc/ssh/sshd_config.pacnew
 
+#=> 1 texmf.cnf
+nvim -O /etc/texmf/web2c/texmf.cnf /etc/texmf/web2c/texmf.cnf.pacnew -c 'windo difft'
+rm /etc/texmf/web2c/texmf.cnf.pacnew
+

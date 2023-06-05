@@ -35,47 +35,6 @@ ltx () {
 alias tt='rm *.aux *.log *.out'  # tidy tex = clear away TeX ancillary files
 x () { max_print_line=4000 xelatex -halt-on-error $1 | xcol Missing; }
 
-#=> CUPS
-alias lpspd='lpstat -p -d'
-alias sc5='doas cupsenable ENVY_5530'
-
-#=> Dropbox conflicted copies
-# results are noted in time-stamped logs
-dcc0 () {
-  pushd $Drpbx
-  jHMS=$(date "+%y%m%d-%H%M%S")  # o $jHMS
-  export DropboxConflictedLog="$Drpbx/conflicted/$jHMS.log"
-  echo 'scanning for conflicted copies'
-  echo 'vim: nowrap:' > $DropboxConflictedLog
-  echo '' >> $DropboxConflictedLog
-  find $PWD -path $Drpbx/conflicted -prune -o -name "* conflicted copy*" -print >> $DropboxConflictedLog
-  gvim $DropboxConflictedLog
-  popd
-}  # lists them
-dcc1 () {
-  if [ -s "$DropboxConflictedLog" ]; then
-    DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
-    mkdir $DropboxConflictedRemoved
-    removedRestore="$DropboxConflictedRemoved-restore.sh"
-    echo '# vim: nowrap:' > $removedRestore
-    echo '' >> $removedRestore
-    sed -i '1,2d' $DropboxConflictedLog  # remove the vim modeline
-    while IFS= read -r dcc; do
-      removedRelativePath=${dcc/$Drpbx\//}
-      removedFlattenedPath=${removedRelativePath//\//--}
-      removedFPNS=${removedFlattenedPath// /_}
-      removed="$DropboxConflictedRemoved/$removedFPNS"
-      mv "$dcc" "$removed"
-      echo $"mv $'${removed//\'/\\\'}' $'${dcc//\'/\\\'}'" >> $removedRestore
-    done < $DropboxConflictedLog
-    rm $DropboxConflictedLog
-    gvim $removedRestore
-    cd $Drpbx/conflicted
-  else
-    echo "you should've ${tpf7b}dcc0${tpfn}"
-  fi
-}  # moves them to  $Drpbx/conflicted
-
 #=> AV
 fv () {
   for VsL in ${VsLocations[@]}; do
@@ -194,6 +153,47 @@ fpcn () { ffprobe -v error -select_streams $1:0 -show_entries stream=codec_name 
 
 fps () { for v in "$@"; do echo $(fpwh $v) $(fpcn v $v) $(fpfr $v) $(fpcn a $v) $(fpasr $v) $(fpabr $v) $v; done; } # fps <files_you_want_statisitics_of>
 
+#=> CUPS
+alias lpspd='lpstat -p -d'
+alias sc5='doas cupsenable ENVY_5530'
+
+#=> Dropbox conflicted copies
+# results are noted in time-stamped logs
+dcc0 () {
+  pushd $Drpbx
+  jHMS=$(date "+%y%m%d-%H%M%S")  # o $jHMS
+  export DropboxConflictedLog="$Drpbx/conflicted/$jHMS.log"
+  echo 'scanning for conflicted copies'
+  echo 'vim: nowrap:' > $DropboxConflictedLog
+  echo '' >> $DropboxConflictedLog
+  find $PWD -path $Drpbx/conflicted -prune -o -name "* conflicted copy*" -print >> $DropboxConflictedLog
+  gvim $DropboxConflictedLog
+  popd
+}  # lists them
+dcc1 () {
+  if [ -s "$DropboxConflictedLog" ]; then
+    DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
+    mkdir $DropboxConflictedRemoved
+    removedRestore="$DropboxConflictedRemoved-restore.sh"
+    echo '# vim: nowrap:' > $removedRestore
+    echo '' >> $removedRestore
+    sed -i '1,2d' $DropboxConflictedLog  # remove the vim modeline
+    while IFS= read -r dcc; do
+      removedRelativePath=${dcc/$Drpbx\//}
+      removedFlattenedPath=${removedRelativePath//\//--}
+      removedFPNS=${removedFlattenedPath// /_}
+      removed="$DropboxConflictedRemoved/$removedFPNS"
+      mv "$dcc" "$removed"
+      echo $"mv $'${removed//\'/\\\'}' $'${dcc//\'/\\\'}'" >> $removedRestore
+    done < $DropboxConflictedLog
+    rm $DropboxConflictedLog
+    gvim $removedRestore
+    cd $Drpbx/conflicted
+  else
+    echo "you should've ${tpf7b}dcc0${tpfn}"
+  fi
+}  # moves them to  $Drpbx/conflicted
+
 #=> gVim cautious
 gvc () {
     textfilefullpath=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
@@ -270,6 +270,10 @@ cl () {
   inimag=${1%.*}
   convert $1 -level 0,75% -quality 80 $inimag-l.jpg
 }
+
+#=> Jekyll
+js () { cd $Jhm; echo $Jhm; bundle exec jekyll serve; }
+jt () { cd $Jhm; rm tag/*; python $Jhm/_plugins/compile_tags.py; cd tag; }
 
 #=> Pandoc my markdown notes
 for iHS in {0..1}; do  # setup alternative commands to define the header style

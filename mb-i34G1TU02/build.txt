@@ -222,6 +222,7 @@ sudo pacman -Rs xdg-utils-mimeo
   :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by sxiv
 ## waiting
 handlr
+tty-clock
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

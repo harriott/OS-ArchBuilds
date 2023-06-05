@@ -38,7 +38,7 @@ if [[ $myDrA == 1 ]]; then
           export vimfiles=$onGH/vimfiles
         export ulL=$ITstack/unix_like-linux
           export machLg=$ulL/Arch/ml-$host  # as opposed to  $machBld
-          export ulLB=$ulL/Bash  # used in  $OSAB/QR.txt
+          export ulLB=$ulL/Bash  # used in  $OSAB/QR.md
 fi  # depends on  myDrA=  defined in  $machBld/export-machine
 
 #=> 3 $OSAB, or not

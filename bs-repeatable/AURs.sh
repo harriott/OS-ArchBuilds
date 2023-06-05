@@ -120,11 +120,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> moar 0 (re)install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 (re)install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
@@ -174,6 +174,18 @@ true
 # gAUR tint-tetris
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
+
+#=> tty-clock
+gAUR tty-clock
+nvim -c "silent! /github.com\/xorg62" PKGBUILD
+makepkg -sic
+
+# #=> ncurses-git
+# # - temporary - try moving back to  ncurses
+# gdAUR ncurses-git
+# nvim -c "silent! /https:\/\/github.com\/ThomasDickey\/ncurses-snapshots" PKGBUILD
+# makepkg -sic  # takes a long time...
+# true
 
 # #=> tspreed
 # gAUR tspreed
