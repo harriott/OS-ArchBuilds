@@ -1581,6 +1581,20 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.127.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## xdg-open .ogg
+handlr get .ogg  reports  pqiv.desktop
+  bash $bSc/4-whenWM/2-resourceHandler.sh
+## Updates
+error: failed retrieving file 'core.db' from mirror.ubrco.de : SSL certificate problem: certificate has expired
+error: failed retrieving file 'extra.db' from mirror.ubrco.de : SSL certificate problem: certificate has expired
+fixed by  sudo bash as_root-mirrorlist_pacnew.sh
+:: python-faust-cchardet and python-cchardet are in conflict. Remove python-cchardet? [y/N] y
+### texlive-fontsextra conflict
+error: failed to commit transaction (conflicting files)
+texlive-fontsextra: /usr/share/texmf-dist/fonts/tfm/google/roboto/Roboto-Light-tosf-sc-ot1--base.tfm exists in filesystem
+Errors occurred, no packages were upgraded.
+sudo pacman -Rs texlive-fontsextra  then reran Updates  then  sudo pacman -S texlive-fontsextra
+Still same conflict...
 ## waiting
 disable Shift+PrtSc
 ### remake /efi/EFI/GRUB/grubx64.efi

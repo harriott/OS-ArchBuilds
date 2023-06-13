@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# bash $bSc/0-to_root/3-when_chroot-to_bootloader.sh
+# bash $OSAB/bs-0-to_root/3-when_chroot-to_bootloader.sh
 
 #=> 1 go slow
 set -v  # prints each statement here, including comments
@@ -48,7 +48,7 @@ cat /etc/hosts
 
 #=> 4 better mirrorlist
 pacman -S reflector
-. 02-as_root-reflector.sh
+. $OSAB/bs-repeatable/as_root-reflector.sh
 
 #=> 5 bootloader
 # 0 GRUB, Network Time Protocol

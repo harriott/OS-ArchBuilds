@@ -33,7 +33,7 @@ maff (){ account=fm;   maf; }
 mafx (){ account=gmx;  maf; }
 mafl (){ account=live; maf; }
 maft (){ account=troh; maf; }
-mafz (){ account=zou;  maf; }
+mafz (){ account=zou;  maf; }  # $maild/zou/muttAliases
 
 # r $lclm/muttAliases/$account
 
@@ -42,7 +42,6 @@ alias nmc='neomutt -F $clMail/neomutt/muttrc-accounts/cz'
 alias nmf='neomutt -F $clMail/neomutt/muttrc-accounts/ftml'
 alias nmj='neomutt -F $clMail/neomutt/muttrc-accounts/tj'
 alias nml='neomutt -F $clMail/neomutt/muttrc-accounts/live'
-alias nmp='neomutt -F $clMail/neomutt/muttrc-accounts/parl'
 alias nmt='neomutt -F $clMail/neomutt/muttrc-accounts/troh'
 alias nmx='neomutt -F $clMail/neomutt/muttrc-accounts/gmx'
 alias nmz='neomutt -F $clMail/neomutt/muttrc-accounts/zou'
@@ -53,9 +52,10 @@ alias nmz='neomutt -F $clMail/neomutt/muttrc-accounts/zou'
 #==> search
 nmse () {
     notmuchsearch="$@"
-    echo $notmuchsearch
-    mapfile -t nms < <( notmuch search $notmuchsearch )
+    echo $notmuchsearch  # won't print if  nmse 'search*'
+    mapfile -t nms < <( notmuch search "$notmuchsearch" )
     # - try  notmuch search bloch  to understand the following tweaks
+    # echo ${nms[@]}  # for debugging
     source $OSAB/Bash/xcol.sh
     for si in "${nms[@]}"; do
       spaceFromSubjectTags="${si#*]}"
@@ -101,7 +101,6 @@ msc () { mbsync cz   ; nmnew ; echo '$clMail/notmuch/tags/cz.sh'   ; bash $clMai
 msf () { mbsync fm   ; nmnew ; echo '$clMail/notmuch/tags/fm.sh'   ; bash $clMail/notmuch/tags/fm.sh   ; }
 msj () { mbsync tj   ; nmnew ; echo '$clMail/notmuch/tags/tj.sh'   ; bash $clMail/notmuch/tags/tj.sh   ; }
 msl () { mbsync live ; nmnew ; echo '$clMail/notmuch/tags/live.sh' ; bash $clMail/notmuch/tags/live.sh ; }
-msp () { mbsync parl ; nmnew ; echo '$clMail/notmuch/tags/parl.sh' ; bash $clMail/notmuch/tags/parl.sh ; }
 mst () { mbsync troh ; nmnew ; echo '$clMail/notmuch/tags/troh.sh' ; bash $clMail/notmuch/tags/troh.sh ; }
 msx () { mbsync gmx  ; nmnew ; echo '$clMail/notmuch/tags/gmx.sh'  ; bash $clMail/notmuch/tags/gmx.sh  ; }
 msz () { mbsync zou  ; nmnew ; echo '$clMail/notmuch/tags/zou.sh'  ; bash $clMail/notmuch/tags/zou.sh  ; }
@@ -111,7 +110,6 @@ echo -e "${tpf2b}-- cz   --${tpfn}"; msc;
 echo -e "${tpf2b}-- fm   --${tpfn}"; msf;
 echo -e "${tpf2b}-- tj   --${tpfn}"; msj;
 echo -e "${tpf2b}-- live --${tpfn}"; msl;
-echo -e "${tpf2b}-- parl --${tpfn}"; msp;
 echo -e "${tpf2b}-- troh --${tpfn}"; mst;
 echo -e "${tpf2b}-- gmx  --${tpfn}"; msx;
 echo -e "${tpf2b}-- zou  --${tpfn}"; msz;

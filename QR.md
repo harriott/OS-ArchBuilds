@@ -16,7 +16,7 @@ tty-clock -bcs
 ~/.config/pnmixer/config
 ```
 
-sort(1)
+- sort(1)
 
 # Bash
 ```bash
@@ -88,12 +88,13 @@ as root: `find / -xdev -iname "*fmtutil.cnf*"`
 #### mlocate
     i locate
     im locate
-    locate -c <target>  # --count
-    locate -h
+
+##### regex searches
     locate -r '\.conf$'
     locate -r '\.desktop$' > $machLg/desktops.txt
     locate -r '\.json$' | mo
     locate -r 'gestion des cas'
+    locate -r 'how ya doing'
 
 ##### updatedb
     /etc/updatedb.conf
@@ -140,6 +141,10 @@ mo <file>  # ? lists the limited moar commands
 moar -h
 ```
 
+# BBCode
+    $vimfiles/ftplugin/bbcode.vim
+    [quote]quote[/quote]
+
 # documenting
     r $Sig
 
@@ -151,7 +156,6 @@ moar -h
 ## LaTeX
     r $LTXj  # my packages
     r $tInf/CP/TeX/LaTeX  # my MWEs
-    C /usr/share/texmf-dist/tex/latex/
     x <LaTeX_file_basename>
 
 `mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
@@ -162,6 +166,13 @@ moar -h
     zathura $cITh/CP/TeX/LaTeX/structure/Parts/hyperref-doc.pdf &
     zathura $cITh/CP/TeX/LaTeX/structure/Parts/Lists/easylist-doc.pdf &
     zathura $cITh/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf &
+
+### package files
+    C /usr/share/texmf-dist/tex/latex/
+
+#### Memoir
+    /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
+    \newcommand{\maketitle}
 
 # Emacs
     E <fileToOpenGUI>
@@ -402,7 +413,7 @@ can't cope with `utf-16le`
 
 ### perl-rename
     i perl-rename
-    perl-rename 's/^\.\\//' *  # removes leading  .\
+    perl-rename 's/^\.//' *  # removes leading  .\
 
 ## ripgrep
     batgrep
@@ -568,6 +579,7 @@ NCDU(1)
     fRs $Bash bashrc-console
     fRs $Drpbx/CAM-toSort0 '01 '
     fRs $Drpbx/CAM-toSort0 Apache
+    fRs $Drpbx/CAM-toSort0 Costello
     fRs $Drpbx/CAM-good US
     fRs $JHw _config.yml
     fRs $vimfiles/syntax cmusq.vim
@@ -760,7 +772,14 @@ rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
 #### notmuch search
     nmse najac date:2022
     nmse from:/gough/ date:2023
+    nmse tag: cz tag:zou '*lait*'
+    nmse tag:cz tag:zou | wc -l
     nmse '"pattern with spaces"'
+
+##### wildcard
+    nmse 'orf*'  # finds ORFILA
+
+Only possible at end of string...
 
 #### providors
 - orange.fr
@@ -1113,13 +1132,16 @@ TMUX(1)
     pkill copyq
     ~/.local/share/copyq/copyq/copyq.log
 
-## vim
+## vi
+    n $cITh/CP/encoding/textWrangling-vi
+
+### Vim
     $ABjo/textEdit/Vim/vimrc
     C /usr/share/vim/vim90
     i vim
     r $vimfiles
 
-### gVim
+#### gVim
     gvim --help | mo
     gvim -geom 200  # height parameter is omitted as it's having no effect
 

@@ -35,7 +35,10 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .md gvim.desktop
 # handlr set .MOV mpv.desktop
 # handlr set .mp3 mpv.desktop
+# handlr set .ogg mpv.desktop
 # handlr set .ogv mpv.desktop
+# handlr set .oma mpv.desktop
+# handlr set .org gvim.desktop
 # handlr set .pdf org.pwmt.zathura.desktop
 # handlr set .png org.nomacs.ImageLounge.desktop
 # handlr set .pl gvim.desktop
@@ -43,9 +46,7 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .mkv mpv.desktop
 # handlr set .mp4 mpv.desktop
 # handlr set .mpg mpv.desktop
-# handlr set .oma mpv.desktop
 # handlr set .py gvim.desktop
-# handlr set .org gvim.desktop
 # handlr set .sh gvim.desktop
 # handlr set .sifw gvim.desktop
 # handlr set .svg gpicview.desktop

@@ -381,6 +381,7 @@ gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; 
 
 # get into an AUR repository
 gAUR () { cd "$HOME/Arch/AUR$2"; rAUR $1; trizen -G $1; cd $1; }; export -f gAUR
+# if fail to enter pw in time for trizen, pacman -U package_name-version.pkg.tar.xz
 
 # get into an AUR development repository
 gdAUR () { gAUR $1 dev-clone; gctm $1; }; export -f gdAUR

@@ -57,11 +57,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> iscan
 # gAUR iscan
@@ -74,6 +74,12 @@ true
 # nvim -c "silent! /registry.npmjs.org\/js-beautify" PKGBUILD
 # makepkg -sic
 # true
+
+#=> nomacs
+gAUR nomacs
+nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs\/archive" PKGBUILD
+makepkg -sic  # takes ages...
+true
 
 # #=> nsxiv
 # gAUR nsxiv

@@ -31,33 +31,34 @@ PQ auracle-git
 xdgo https://github.com/falconindy/auracle/commits/master
 updateMaybe auracle-git falconindy
 
-# #=> clifm-git
-# PQ clifm-git
-# xdgo https://github.com/leo-arch/clifm/commits/master
-# updateMaybe clifm-git 'https:\/\/github.com\/leo-arch\/clifm'
+#=> clifm-git
+PQ clifm-git
+xdgo https://github.com/leo-arch/clifm/commits/master
+updateMaybe clifm-git 'https:\/\/github.com\/leo-arch\/clifm'
 
-# #=> fontpreview-git
-# PQ fontpreview-git
-# xdgo https://github.com/sdushantha/fontpreview/commits/master
-# updateMaybe fontpreview-git
+#=> fontpreview-git
+PQ fontpreview-git
+xdgo https://github.com/sdushantha/fontpreview/commits/master
+updateMaybe fontpreview-git
 
-# #=> lsix-git
-# PQ lsix-git
-# xdgo https://github.com/hackerb9/lsix/commits/master
-# updateMaybe lsix-git 'https:\/\/github.com\/hackerb9\/lsix'
+#=> lsix-git
+PQ lsix-git
+xdgo https://github.com/hackerb9/lsix/commits/master
+updateMaybe lsix-git 'https:\/\/github.com\/hackerb9\/lsix'
 
 # #=> snixembed-git
+# # not installed on  AsusW202  i34G1TU02
 # PQ snixembed-git
 # xdgo https://git.sr.ht/~steef/snixembed
 # updateMaybe snixembed-git 'https:\/\/git.sr.ht\/\~steef\/snixembed'
 
-# #=> tmux-bash-completion-git
-# PQ tmux-bash-completion-git
-# xdgo https://github.com/imomaliev/tmux-bash-completion/commits/master
-# updateMaybe tmux-bash-completion-git
+#=> tmux-bash-completion-git
+PQ tmux-bash-completion-git
+xdgo https://github.com/imomaliev/tmux-bash-completion/commits/master
+updateMaybe tmux-bash-completion-git
 
-# #=> yj-git
-# PQ yj-git
-# xdgo https://github.com/sclevine/yj/commits/main
-# updateMaybe yj-git 'https:\/\/github.com\/sclevine\/yj.git'
+#=> yj-git
+PQ yj-git
+xdgo https://github.com/sclevine/yj/commits/main
+updateMaybe yj-git 'https:\/\/github.com\/sclevine\/yj.git'
 

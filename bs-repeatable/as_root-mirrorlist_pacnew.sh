@@ -18,5 +18,5 @@ set -v  # prints each statement here, including comments
 
 #=> 3 mirrorlist
 [ -f /etc/pacman.d/mirrorlist.pacnew ] && rm /etc/pacman.d/mirrorlist.pacnew
-. $bSc/repeatable/as_root-reflector.sh
+. $OSAB/bs-repeatable/as_root-reflector.sh
 

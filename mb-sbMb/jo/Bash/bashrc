@@ -8,6 +8,7 @@
 export CHROOT=/mnt/SD480GSSDPlus/chroot
 export VsLocations=(/mnt/ST4000VN008 /mnt/SDU3D1TB /mnt/WD1001FALS)
 #  o ${VsLocations[@]}  # path to my video stores
+export vlogs=/mnt/SDU3D1TB/Sync2/AV-Stack/vlogs
 
 #=> 0 load the rest of my bashrc
 source $Bash/bashrc

@@ -314,8 +314,12 @@ Packages (2) ncurses-6.4-1 [removal]  ncurses-git-6.4.20230527.r0.g1cb99cd1-1
 reinstalled  tmux-bash-completion-git
 ## texmf.cnf
 texlive-core 2023.66587-2 -> 2023.66594-3: /usr/share/texmf-dist/web2c/texmf.cnf  corresponds to  /etc/texmf/web2c/texmf.cnf.pacnew, but no longer a symlink...
+## Updates
+:: python-faust-cchardet and python-cchardet are in conflict. Remove python-cchardet? [y/N] y
+system seized during subsequent updates, hard reset
+error: failed to synchronize all databases (unable to lock database)
+sudo rm /var/lib/pacman/db.lck
 ## waiting
-tty-clock
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh
@@ -327,8 +331,38 @@ fcrontab -l
 [Hardware Error]: PROCESSOR 0:506c9 TIME 1660462321 SOCKET 0
 only the unix timestamp changes
 # pass
+$ pass ls
+  Password Store
+  ├── mbsync-cz
+  ├── mbsync+msmtp-fm
+  ├── mbsync+msmtp-gmx
+  ├── mbsync+msmtp-live
+  ├── mbsync+msmtp-zou
+  ├── mbsync-tj
+  └── mbsync-troh
 pass init trohib@gmail.com
 rsync -irtv --delete ~/.password-store/ $Enc/Secure1/password-store-AsusW202
+## mbsync/cz
+pass insert mbsync-cz > <app_pw_for_mbsync>
+pass ls mbsync-cz
+## mbsync/fm
+pass insert mbsync+msmtp-fm > <app_pw_for>
+pass ls mbsync+msmtp-fm
+## mbsync/gmx
+pass insert mbsync+msmtp-gmx > <app_pw_for>
+pass ls mbsync+msmtp-gmx
+## mbsync/live
+pass insert mbsync+msmtp-live > <jnbh_pw>
+pass ls mbsync+msmtp-live
+## mbsync/tj
+pass insert mbsync-tj > <app_pw_for_mbsync>
+pass ls mbsync-tj
+## mbsync/troh
+pass insert mbsync-troh > <app_pw_for_mbsync>
+pass ls mbsync-troh
+## mbsync/zou
+pass insert mbsync+msmtp-zou > <pw>
+pass ls mbsync+msmtp-zou
 # physical configuration
 4GB RAM
 F2  at  POST  for  ASUS BIOS Utility - EZ Mode

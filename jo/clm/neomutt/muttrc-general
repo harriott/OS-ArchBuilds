@@ -2,7 +2,8 @@
 # muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
 
 # $clMail/neomutt/muttrc-general - general settings for  neomutt
-#  based on  /usr/share/mutt-wizard/mutt-wizard.muttrc
+#  based on  $GHrUse/linux/mail/LukeSmithxyz-mutt-wizard/share/mutt-wizard.muttrc
+#
 #  sourced by  $clMail/neomutt/muttrc-accounts-all
 
 set editor = 'nvim'

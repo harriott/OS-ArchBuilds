@@ -220,9 +220,9 @@ sudo pacman -Rs xdg-utils-mimeo
   :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by qt5-base
   :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by qt6-base
   :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by sxiv
+## Updates
+:: python-faust-cchardet and python-cchardet are in conflict. Remove python-cchardet? [y/N] y
 ## waiting
-handlr
-tty-clock
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh
