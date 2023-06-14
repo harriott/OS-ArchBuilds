@@ -16,16 +16,19 @@ tty-clock -bcs
 ~/.config/pnmixer/config
 ```
 
-- sort(1)
+sort(1)
 
 # Bash
+    $Bash/bash_profile
+
 ```bash
 im time
 pinfo bash
 pinfo -m bash
 ```
 
-uniq(1)
+- BASH(1)
+- uniq(1)
 
 ## file manage
     im ls
@@ -91,7 +94,6 @@ as root: `find / -xdev -iname "*fmtutil.cnf*"`
 
 ##### regex searches
     locate -r '\.conf$'
-    locate -r '\.desktop$' > $machLg/desktops.txt
     locate -r '\.json$' | mo
     locate -r 'gestion des cas'
     locate -r 'how ya doing'
@@ -174,6 +176,10 @@ moar -h
     /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
     \newcommand{\maketitle}
 
+## TeX Live
+    pacman -Qs texlive > $machLg/TeXLive-Arch_packages-$(date '+%Y%m%d%H%M').txt
+    tlmgr list --only-installed > $machLg/TeXLive-tlmgr_list-$(date '+%Y%m%d%H%M').txt
+
 # Emacs
     E <fileToOpenGUI>
     et <fileToOpenTerminal>
@@ -212,7 +218,7 @@ moar -h
 ## Ruby
 ```bash
 gem list --no-versions | tr '\n' ' ' | xcol bundler github-pages jekyll liquid
-gem list > $ulL/Arch/$host/gems.gems
+gem list > $ulLA/$host/gems.gems
 r $GEM_HOME
 ```
 
@@ -452,7 +458,7 @@ in JH, `$Drpbx/JH/search/searches.md`
     man cmatrix
 
 # GNU Privacy Guard
-    gpg --export-ownertrust > $ulL/Arch/$host/jo/gnupg-trustdb.txt
+    gpg --export-ownertrust > $ulLA/$host/jo/gnupg-trustdb.txt
     gpg -k | xcol 049956B6 13F327EF Asus expired expires jharr sprbMb trohib
     gpg -K | xcol 049956B6 13F327EF Asus expired expires jharr sprbMb trohib
     im gpg
@@ -514,9 +520,16 @@ Quite a few don't work, and some crash the terminal...
 - CP(1)
 - GNU Parted
 
-### directories on SSDs
+### directories
+    i gdu
+    gdu -d
+    gdu -nps <directory>
+
+#### dua-cli
     dua [i]
-    gdu
+    dua -h
+
+optimised for SSDs
 
 ### mkfs.ext4
 `/etc/mke2fs.conf` has bytes-per-inode ratios for usage types
@@ -920,18 +933,20 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
     /usr/share/doc/arch-wiki/html/en
 
-GRUB (GRand Unified Bootloader)
+- FILE-HIERARCHY(7)
+- GRUB (GRand Unified Bootloader)
 
 ## .desktop
     fd -tf .desktop $OSAB
+    locate -r '\.desktop$' > $machLg/desktops.txt
     r /usr/share/applications
     rg Exec= /usr/share/applications  # check others
 
 ## build
     $OSAB/etc/doas.conf
-    r $OSAB $ulL/Arch
-    r $ulL/Arch/ml-$host
-    vifm $OSAB $ulL/Arch
+    r $OSAB $ulLA
+    r $ulLA/ml-$host
+    vifm $OSAB $ulLA
 
 ## fonts
     font-manager &
@@ -992,11 +1007,12 @@ uses `fzf`
     sudo du -h --max-depth=1 /usr/share
     sudo du -sh /boot /etc /home /root /usr
 
-## systemd
+## systemd - journalctl
     journalctl --list-boots
     journalctl --verify
     journalctl | grep Consumed
-    see  $Bash/bash_profile
+
+backed up in `$Bash/bash_profile`
 
 ### messages, paged
     journalctl -b  # for this boot

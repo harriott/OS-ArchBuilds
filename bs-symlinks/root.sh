@@ -47,6 +47,6 @@ exa -la /root
 exa -la /root/.config/nano
 
 #=> 2 ranger
-sudo ln -sf $ABjo/ranger /root/.config/ranger
+sudo ln -sf $OSAB/ranger /root/.config/ranger
 exa -la /root/.config
 

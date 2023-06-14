@@ -134,11 +134,11 @@ true
 # #=> nordvpn-bin 0 remove countries.dat
 # sudo rm /var/lib/nordvpn/data/countries.dat
 
-# #=> nordvpn-bin 1 (re)install
-# gAUR nordvpn-bin
-# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-# makepkg -sic
-# true
+#=> nordvpn-bin 1 (re)install
+gAUR nordvpn-bin
+nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+makepkg -sic
+true
 
 # #=> nordvpn-bin 2 configure
 # sudo usermod -aG nordvpn jo  # need to re-login

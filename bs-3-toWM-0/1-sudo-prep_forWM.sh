@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# $OSAB/bs-3-toWM-0/1-sudo-prep_forWM.sh
+
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 set -ev
@@ -8,19 +10,31 @@ trap read debug  # puts a read request after each executable line
 # #=> android-tools
 # pacman -S android-tools
 
-# #=> documenting
-# # Ghostscript
-# pacman -S ghostscript
+#=> documenting
+# Ghostscript
+pacman -S ghostscript
 
-# # Pandoc
-# pacman -S pandoc-cli
+# Pandoc
+pacman -S pandoc-cli
 
-# # TeX Live
-# pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all
+#=> documenting - TeX Live 0 native
+perl $JHt/IT/CP/TeX/install-tl-20230613/install-tl --no-interaction
 
-# #=> documenting - TeX Live - max_print_line
-# sudo sed -i 's/^max_print_line = 79/max_print_line = 4000/' /etc/texmf/web2c/texmf.cnf
-# # - works, but I prefer my function  x  in  $Bash/bashrc-wm
+#=> documenting - TeX Live 0 Arch packaged 0 install
+pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all
+
+#=> documenting - TeX Live 0 Arch packaged 1 remove 0 packages
+# sudo pacman -Rs  as per  $machLg/TeXLive-Arch_packages-<date>.txt
+
+#=> documenting - TeX Live 0 Arch packaged 1 remove 1 trailing nodes
+for td in texinfo texmf texmf-dist; do sudo rm -r /usr/share/$td; done
+sudo rm /usr/share/texmf.cnf
+sudo rm -r /etc/texmf
+sudo rm -r /var/lib/texmf
+
+#=> documenting - TeX Live 1 max_print_line
+sudo sed -i 's/^max_print_line = 79/max_print_line = 4000/' /etc/texmf/web2c/texmf.cnf
+# - works, but I prefer my function  x  in  $Bash/bashrc-wm
 
 # #=> ebook - Calibre
 # pacman -S calibre

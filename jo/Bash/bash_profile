@@ -3,6 +3,7 @@
 # my generic  ~/.bash_profile
 # ---------------------------
 # $Bash/bash_profile  symlinked in  $bSc/symlinks/jo-0.sh
+#  supplements and overrides  /etc/profile
 
 # exports defined here so they can be accessed pre-X, by
 #  $ABjo/Openbox/openbox/autostart, & by gvim
@@ -18,7 +19,7 @@ source ~/.export-machine; source ~/.export-storage  # also in  $OSAB/root/bash_p
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # backup the previous boot's systemd journal
-journalctl -b -1 > $ulL/Arch/$host/journalctl/$(date '+%y%m%d-%H%M').jctl &
+journalctl -b -1 > $ulLA/$host/journalctl/$(date '+%y%m%d-%H%M').jctl &
 
 # first, test that X hasn't launched for this user
 ps aux | grep $USER | grep -v grep | grep "/usr/lib/Xorg" >& /dev/null

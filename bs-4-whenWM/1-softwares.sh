@@ -96,11 +96,6 @@ sudo pacman -S nasm  # for  cpu-x
 #=> nawk
 sudo pacman -S nawk  # for  cpu-x
 
-#=> nomacs
-sudo pacman -S nomacs
-# now run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-true
-
 #=> OBS Studio 0 install
 sudo pacman -S obs-studio
 

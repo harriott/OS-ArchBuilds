@@ -57,11 +57,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> iscan
 # gAUR iscan
@@ -75,11 +75,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> nomacs
-gAUR nomacs
-nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs\/archive" PKGBUILD
-makepkg -sic  # takes ages...
-true
+# #=> nomacs
+# gAUR nomacs
+# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs\/archive" PKGBUILD
+# makepkg -sic  # takes ages...
+# # now run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+# true
 
 # #=> nsxiv
 # gAUR nsxiv
@@ -197,8 +198,8 @@ true
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

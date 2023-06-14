@@ -58,7 +58,7 @@ fi
 #=> gpg-agent configuration
 ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 
-#=> for Tex Live
+#=> for Tex Live Arch packaged install
 sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 # e -la /usr/share/texmf.cnf
 
@@ -78,7 +78,7 @@ ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 ln -sf $ABjo/pinforc ~/.pinforc
 
 #=> ranger
-cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -sf $ABjo/ranger $cr  # e -adl ~/.config/ranger
+cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -sf $OSAB/ranger $cr  # e -adl ~/.config/ranger
 
 #=> Ruby IRB
 ln -sf $onGH/misc/irbrc ~/.irbrc

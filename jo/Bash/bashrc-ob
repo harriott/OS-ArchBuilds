@@ -11,6 +11,11 @@ alias gpr='gprename &'
 alias psci='pscShots=/home/jo/Arch/AUR/pscircle-git-shots;pscLatest="$pscShots/$(date +%Y%m%d%H%M%S).png";pscircle --output=$pscLatest;sxiv -fn $(ls $pscShots | wc -l) $pscShots &'
 rpd () { bash $onGH/FM-rsync-drives/rsync.sh $1; }
 
+pf () {
+    nohup pcmanfm &
+    sleep 2; rm nohup.out
+}  # launch  PCManFM  on current directory
+
 #=> cmus
 alias m='cmus'
 k() { kill -9 "$(pidof cmus)"; }
@@ -25,12 +30,6 @@ cfmj() {
         cp $1 $bn.md
         perl $onGH/misc/tools/FM-json-md.pl $bn.md
     fi
-}
-
-#=> PCManFM
-pf () {
-    nohup pcmanfm &
-    sleep 2; rm nohup.out
 }
 
 #=> pdf

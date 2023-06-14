@@ -340,19 +340,7 @@ n()
 
 # ~/.config/nnn/.selection
 
-export NNN_BMS="a:/home/jo/.local/share/mail;i:$tInf;j:/run/media/jo;l:$JHw/ST/LPD/IdF;m:$Drpbx/CAM-toSort0;r:$cFr/places/IdF/transport/RATP;s:$CfWk/Education/Science-Engineering;t:$Drpbx/JH/F+F/fromDiptonAvenue/ThaverMohammed;w:$Then0/Deauram/with"
-#  only first 10 get loaded correctly
-#
-#  a:/home/jo/.local/share/mail
-#  i:$tInf
-#  j:/run/media/jo
-#  l:$Drpbx/JH/Work/ST/LPD/IdF
-#  m:$Drpbx/CAM-toSort0
-#  r:$cFr/Places/IdF/Transport/RATP
-#  s:$CfWk/Education/Science-Engineering
-#  t:$Drpbx/JH/F+F/fromDiptonAvenue/ThaverMohammed
-#  w:$Then0/Deauram/with
-#
+source $ulLA/jo/bashrc-console-NNN_BMS  # my bookmarks
 export NNN_COLORS='5723' # good for my tmux in urxvt
 export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'  # quit treeview's nvim with ZQ
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
