@@ -19,35 +19,41 @@
 #xfce-mcs-manager &
 
 #=> JH additions
-# this file is symlinked to  ~/.config/openbox/autostart
-#  in  my  $bSc/symlinks/jo-1-Openbox.sh
+# $Openbox/openbox/autostart/autostart
+#  symlinked to  ~/.config/openbox/autostart  in my  $OSAB/bs-symlinks/jo-1-Openbox.sh
 #  depends on  $OSAB/Bash/export-storage
 
-#==> 0 gVim layout
+#==> 0 gVim
 # gVim's  columns  lines  are set in  $vimfiles/gvimrc.vim
 
-#===> 0 position
+# launch it
 # gvim -geometry +670+0 &  # opens right-side of a 1440x900
 gvim -geometry +760+0 &  # opens just left of Conky on 1920x1080 screen
 # - set also in $Openbox/openbox/rc.xml
 
 #==> 0 Openbox
-blueman-applet &
+obmenu-generator &
+pnmixer &
+redshift-gtk -l 48.8646:2.3984 &
+tint2 &
+udiskie -t &
+
+#==> 0 tmux - begin
+$Openbox/openbox/autostart/urxvtl.sh
+
+#==> 0 utilities
+blueman-applet &  # Blueman (Bluetooth manager)
 conky -c $machBld/jo/conkyrc
 copyq &  # because CopyQ's internal Autostart doesn't work
 dropbox &
 # hp-systray & disown   doesn't launch...
 # htop &  snags...
-mpd &
-nm-applet &
-obmenu-generator &
-# pcmanfm &
-pnmixer &
-redshift-gtk -l 48.8646:2.3984 &
-tint2 &
-udiskie -t &
-$Openbox/openbox/autostart/urxvtl.sh
+nm-applet &  # NetworkManager
 
-#==> 1 machine dependent tmux tweaks
+#==> 0 utilities - Music Player Daemon
+mpd &
+mpDris2 &  # for notifications and link to  playerctl
+
+#==> 1 tmux - machine dependent tweaks
 [ -f $machBld/jo/autostart.sh ] && . $machBld/jo/autostart.sh
 

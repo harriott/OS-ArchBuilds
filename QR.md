@@ -723,7 +723,8 @@ mediainfo -h | mo
     v  # alias'd to  vimpc  in  $Bash/bashrc-wm
 
 ### cmus
-    $Openbox/cmus-rc.conf
+    $ABjo/wm/cmus-rc.conf
+    cmus_notify -h
     pgrep cmus
 
 #### kill
@@ -731,6 +732,10 @@ mediainfo -h | mo
 
 ##### manually
 get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
+
+### playerctl
+    playerctl  # quick guide
+    playerctl -l  # (--list-all) available players
 
 ### Quod Libet
     pkill exfalso

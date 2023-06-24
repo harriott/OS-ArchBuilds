@@ -144,6 +144,9 @@ sudo pacman -S pinta
 #=> Pinta 0 remove
 sudo pacman -Rs pinta
 
+#=> playerctl
+sudo pacman -S playerctl  # for MPD
+
 #=> pqiv
 sudo pacman -S pqiv
 

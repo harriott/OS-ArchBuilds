@@ -378,6 +378,30 @@
       <command>pactl set-source-mute 1 toggle</command>
     </action>
   </keybind>
+  <!-- Keybinding for MPD previous - JH -->
+  <keybind key="XF86AudioPrev">
+    <action name="Execute">
+      <command>playerctl -p mpd previous</command>
+    </action>
+  </keybind>
+  <!-- Keybinding for MPD stop - JH -->
+  <keybind key="XF86AudioStop">
+    <action name="Execute">
+      <command>playerctl -a stop</command>
+    </action>
+  </keybind>
+  <!-- Keybinding for MPD play - JH -->
+  <keybind key="XF86AudioPlay">
+    <action name="Execute">
+      <command>playerctl -p mpd play-pause</command>
+    </action>
+  </keybind>
+  <!-- Keybinding for MPD next - JH -->
+  <keybind key="XF86AudioNext">
+    <action name="Execute">
+      <command>playerctl -p mpd next</command>
+    </action>
+  </keybind>
   <!-- Keybinding for PrintScreen - JH -->
   <keybind key="Print">
     <action name="Execute">
@@ -394,6 +418,12 @@
   <keybind key="W-o">
     <action name="Execute">
       <command>/home/jo/.config/openbox/fixCopyQ.sh</command>
+    </action>
+  </keybind>
+  <!-- Keybinding for Thunderbird safely - JH -->
+  <keybind key="XF86Mail">
+    <action name="Execute">
+      <command>thunderbird_safely</command>
     </action>
   </keybind>
   <!-- Keybindings for screen brightness - JH -->

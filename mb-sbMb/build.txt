@@ -1634,6 +1634,8 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 ## ymuse
 I failed to respond in time for pw, so  sudo pacman -U ymuse-0.21-1-x86_64.pkg.tar.zst
   (but could maybe just  makepkg --install)
+## cmus-notify
+cmus_notify -h  reporting tracebacks, fixed by uninstalling and re-installing
 ## waiting
 disable Shift+PrtSc
 TeX Live 0 native

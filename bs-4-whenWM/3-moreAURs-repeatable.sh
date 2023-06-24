@@ -26,11 +26,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
 # makepkg -sic
 
-# #=> cmus-notify 0 install
-# gAUR cmus-notify
-# nvim -c "silent! /AntoineGagne" PKGBUILD
-# makepkg -sic
-# true
+#=> cmus-notify 0 install
+gAUR cmus-notify
+nvim -c "silent! /AntoineGagne" PKGBUILD
+makepkg -sic
+true
 
 # #=> cmus-notify 1 remove
 # sudo pacman -Rs cmus-notify
@@ -99,6 +99,12 @@ trap read debug  # puts a read request after each executable line
 # #=> briss
 # gAUR briss
 # nvim -c "silent! /sourceforge.net\/projects\/briss" PKGBUILD
+# makepkg -sic
+
+# #=> mpdris2
+# # for MPD
+# gAUR mpdris2
+# nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
@@ -207,12 +213,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-#=> ymuse
-# for MPD
-gdAUR ymuse
-nvim -c "silent! /github.com\/yktoo" PKGBUILD
-makepkg -sic  # takes ages
-sudo pacman -U ymuse-0.21-1-x86_64.pkg.tar.zst 
+# #=> ymuse
+# # for MPD
+# gdAUR ymuse
+# nvim -c "silent! /github.com\/yktoo" PKGBUILD
+# makepkg -sic  # takes ages
 
 # #=> Zoom
 # gAUR zoom
