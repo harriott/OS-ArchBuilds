@@ -223,6 +223,13 @@ sudo pacman -Rs xdg-utils-mimeo
 ## Updates
 :: python-faust-cchardet and python-cchardet are in conflict. Remove python-cchardet? [y/N] y
 ## waiting
+.oma
+cameractrls
+guvcview
+MIME database
+mimeapps.list
+perl-tk
+R
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

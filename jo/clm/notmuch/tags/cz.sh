@@ -5,11 +5,10 @@
 # ---------------------
 
 # check:
-# notmuch dump
-# notmuch search tag:cz | wc -l
+#  notmuch dump
+#  notmuch search tag:cz | wc -l
 
-# clear tags:
-# notmuch tag -cz -- "*"
+# clear tags:  notmuch tag -cz -- "*"
 
 notmuch tag +cz -- 'folder:/cz\/.*/ and not tag:cz' # add cz tags to all
 notmuch tag -inbox -- 'folder:/cz\/[^I]/ and tag:inbox' # remove unneeded inbox tags

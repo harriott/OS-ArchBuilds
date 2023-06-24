@@ -5,35 +5,7 @@
 # stuff that's useful when a Window Manager is installed
 
 alias aw='ansiweather -f 7'
-
-ltx () {
-  if [[ ! -z $TNt ]]; then
-    if [ -d $TNt ]; then
-      cd $TNt
-      s="sectionHeadings.md"
-      > $s
-      for f in **/*.tex; do
-        echo '' >> $s
-        echo "# ${f%.tex}" >> $s
-        echo "\$TNt/$f" >> $s
-        echo '' >> $s
-        sed -e '/section{/!d' $f >> $s
-      done
-      echo '' >> $s
-      sed -i 's/\\section{/    /' $s
-      sed -i 's/\\subsection{/        /' $s
-      sed -i 's/\\subsubsection{/            /' $s
-      sed -i 's/}//' $s
-    else
-      echo "$TNt  ain't there"
-    fi
-  else
-    echo '$TNt  is undefined'
-  fi
-}
-
-alias tt='rm *.aux *.log *.out'  # tidy tex = clear away TeX ancillary files
-x () { max_print_line=4000 xelatex -halt-on-error $1 | xcol Missing; }
+alias R='R --quiet'
 
 #=> AV
 fv () {
@@ -46,6 +18,8 @@ fv () {
   done
 } # fv cat  fv 'Dog Vision'
 
+# Audio:
+alias v='vimpc'
 mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")   $(mediainfo --Output='Audio;%Format%' "$v")   $(mediainfo --Output='Audio;%BitRate%' "$v") b/s   $(mediainfo --Output='Audio;%SamplingRate%' "$v") Hz   "$v""; done; }  # mi *
 
 #==> ffmpeg 0
@@ -210,6 +184,11 @@ gvc () {
 alias ns='nsxiv -frt * &'  # using fullscreen, recursively open all flat
 alias pq='pqiv -d 2 -inF * &'  # (recursive) no info, sorted, 2s fade when changed
 
+ir () { mapfile -t images < <(fd -e jpg)
+  for image in "${images[@]}"; do identify -format '%w %h %f \n' "$image"; done
+  } # image resolutions
+# while :; do ir; sleep 9; tput reset; done
+
 S () { bash $Imagey/Scan.sh $1 $2 $3 $4; }
   s53 () { S 55n 3 $1 $2; t $1.tiff; }  # call SANE's scanimage tool, and convert to jpg
 
@@ -274,6 +253,38 @@ cl () {
 #=> Jekyll
 js () { cd $Jhm; echo $Jhm; bundle exec jekyll serve; }
 jt () { cd $Jhm; rm tag/*; python $Jhm/_plugins/compile_tags.py; cd tag; }
+
+#=> LaTeX
+export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
+
+ltx () {
+  if [[ ! -z $TNt ]]; then
+    if [ -d $TNt ]; then
+      cd $TNt
+      s="sectionHeadings.md"
+      > $s
+      for f in **/*.tex; do
+        echo '' >> $s
+        echo "# ${f%.tex}" >> $s
+        echo "\$TNt/$f" >> $s
+        echo '' >> $s
+        sed -e '/section{/!d' $f >> $s
+      done
+      echo '' >> $s
+      sed -i 's/\\section{/    /' $s
+      sed -i 's/\\subsection{/        /' $s
+      sed -i 's/\\subsubsection{/            /' $s
+      sed -i 's/}//' $s
+    else
+      echo "$TNt  ain't there"
+    fi
+  else
+    echo '$TNt  is undefined'
+  fi
+}
+
+alias tt='rm *.aux *.log *.out'  # tidy tex = clear away TeX ancillary files
+x () { max_print_line=4000 xelatex -halt-on-error $1 | xcol Missing; }
 
 #=> Pandoc my markdown notes
 for iHS in {0..1}; do  # setup alternative commands to define the header style

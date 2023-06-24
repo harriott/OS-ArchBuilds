@@ -63,13 +63,16 @@ sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 # e -la /usr/share/texmf.cnf
 
 #=> MIME database
-ln -sf $ABjo/mime/mediawiki.xml ~/.local/share/mime/packages/mediawiki.xml
-ln -sf $ABjo/mime/sifw.xml ~/.local/share/mime/packages/sifw.xml
-  update-mime-database ~/.local/share/mime
+cd $ABjo/mime
+for x in *; do ln -sf $ABjo/mime/$x ~/.local/share/mime/packages/$x; done
+cd $OSAB/bs-symlinks
+e -al ~/.local/share/mime/packages
+update-mime-database ~/.local/share/mime
 
 #=> mimeapps.list
 [ $host = 'i34G1TU02' ] && ln -sf $machBld/jo/mimeappsList ~/.config/mimeapps.list
 # e -la ~/.config/mimeapps.list
+# move to  $machLg/jo/mimeapps-n6g.list
 
 #=> nanorc
 ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc

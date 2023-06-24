@@ -48,7 +48,7 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 bash $ulL/connectSSID/iwctl.sh  got me online
-bash $bSc/01-fromISO-efi-to_chroot.sh
+bash $OSAB/bs-01-fromISO-efi-to_chroot.sh
   chroot: failed to run command '/bin/bash': No such file or directory
   /mnt/bin  not there...
 rm -r /mnt  (didn't remove  /mnt/efi)
@@ -103,50 +103,50 @@ su rm /root/iwctl.sh
 su rm -r /Archbuilds
 bash ~/iwctl.sh  got me online
 . ~/Archbuilds/Bash/export-storage
-bash $bSc/symlinks/jo-0.sh
+bash $OSAB/bs-symlinks/jo-0.sh
 #### iwd disable & stop
-sudo bash $bSc/07-iwd.sh
+sudo bash $OSAB/bs-07-iwd.sh
 #### NetworkManager enable & start
-bash $bSc/13-NetworkManager.sh
+bash $OSAB/bs-13-NetworkManager.sh
 reboot  for  nmcli device
 bash ~/NetworkManager.sh
 ### Firewalld
-bash $bSc/02-as_root-reflector.sh
-bash $bSc/15-as_root-when_jo-toFirewall.sh
+bash $OSAB/bs-02-as_root-reflector.sh
+bash $OSAB/bs-15-as_root-when_jo-toFirewall.sh
 scs
 ### ranger
 unset OSAB myDrA onGH
   . ~/Archbuilds/Bash/export-storage
-bash $bSc/08-as_root-updates.sh
+bash $OSAB/bs-08-as_root-updates.sh
 bash ArchBuilds/build-scripts/anytime/cloneArchBuilds.sh
 reboot
 #### ranger
-bash $bSc/1-to_jo/2-config.sh
-sudo bash $bSc/anytime/symlinks-root.sh
+bash $OSAB/bs-1-to_jo/2-config.sh
+sudo bash $OSAB/bs-anytime/symlinks-root.sh
 ## X
-sudo bash $bSc/anytime/as_root-reflector.sh
-sudo bash $bSc/2-to_X/1-sudo-to_X.sh
-bash $bSc/anytime/timeCorrection.sh
-sudo bash $bSc/2-to_X/1-sudo-autoLoginTTY.sh
-bash $bSc/2-to_X/1-configure_jo.sh
-bash $bSc/2-to_X/1-misc_for_gitconfig.sh
-sudo bash $bSc/anytime/sudo-extra_drives_into_fstab.sh
-on sbMb,  bash $bSc/2-to_X/2-git-remote1.sh
+sudo bash $OSAB/bs-anytime/as_root-reflector.sh
+sudo bash $OSAB/bs-2-to_X/1-sudo-to_X.sh
+bash $OSAB/bs-anytime/timeCorrection.sh
+sudo bash $OSAB/bs-2-to_X/1-sudo-autoLoginTTY.sh
+bash $OSAB/bs-2-to_X/1-configure_jo.sh
+bash $OSAB/bs-2-to_X/1-misc_for_gitconfig.sh
+sudo bash $OSAB/bs-anytime/sudo-extra_drives_into_fstab.sh
+on sbMb,  bash $OSAB/bs-2-to_X/2-git-remote1.sh
 lsblk  indicated  sudo mount /dev/sdb1 /bs
 from  /bs/GHssh/  . 2-git-remote2.sh
-bash $bSc/anytime/symlinks-jo-0.sh
-bash $bSc/2-to_X/3-SSH_to_GitHub.sh
-bash $bSc/anytime/as_root-updates.sh
-bash $bSc/2-to_X/4-vimfiles.sh
-bash $bSc/2-to_X/5-trizen-batstat-tmux.sh
-bash $bSc/2-to_X/1-configure_jo.sh
-bash $bSc/anytime/symlinks-jo-0.sh
-bash $bSc/2-to_X/6-prepare_forSoftwares.sh
-bash $bSc/anytime/as_root-updates.sh
-bash $bSc/anytime/Zen.sh
-sudo bash $bSc/3-toWM/1-sudo-prep_forWM.sh
-bash $bSc/anytime/symlinks-jo-0.sh
-sudo bash $bSc/3-toWM/1-sudo-prep_forWM.sh
+bash $OSAB/bs-anytime/symlinks-jo-0.sh
+bash $OSAB/bs-2-to_X/3-SSH_to_GitHub.sh
+bash $OSAB/bs-anytime/as_root-updates.sh
+bash $OSAB/bs-2-to_X/4-vimfiles.sh
+bash $OSAB/bs-2-to_X/5-trizen-batstat-tmux.sh
+bash $OSAB/bs-2-to_X/1-configure_jo.sh
+bash $OSAB/bs-anytime/symlinks-jo-0.sh
+bash $OSAB/bs-2-to_X/6-prepare_forSoftwares.sh
+bash $OSAB/bs-anytime/as_root-updates.sh
+bash $OSAB/bs-anytime/Zen.sh
+sudo bash $OSAB/bs-3-toWM/1-sudo-prep_forWM.sh
+bash $OSAB/bs-anytime/symlinks-jo-0.sh
+sudo bash $OSAB/bs-3-toWM/1-sudo-prep_forWM.sh
 ## lshw
 sudo lshw
   terminate called after throwing an instance of 'std::length_error'
@@ -156,13 +156,13 @@ bash 2-grabGraphicsCardDetails.sh
 lsblk  reveals  K8GBDTIG3  to be  /dev/sdb1, so
   sudo mount -t exfat -o uid=1000,gid=1000 /dev/sdb1 /bs
 ## locale.gen.pacnew
-bash $bSc/anytime/cloneArchBuilds.sh
-bash $bSc/anytime/as_root-pacnews.sh
+bash $OSAB/bs-anytime/cloneArchBuilds.sh
+bash $OSAB/bs-anytime/as_root-pacnews.sh
 ## xrandr
-bash $bSc/3-toWM-0/3-IO_HW.sh
+bash $OSAB/bs-3-toWM-0/3-IO_HW.sh
 ## nnn plugins
-bash $bSc/anytime/cloneArchBuilds.sh
-bash $bSc/3-toWM/4-softwares-for_nnn.sh
+bash $OSAB/bs-anytime/cloneArchBuilds.sh
+bash $OSAB/bs-3-toWM/4-softwares-for_nnn.sh
 ## 5-softwares.sh
 Installing package nordvpn-bin...
 ...
@@ -180,12 +180,12 @@ lsblk  reveals  K8GBDTIG3  to be  /dev/sda1, so
 6-awesome.sh
 jo-1-awesome.sh
 startx
-### bash $bSc/4-whenWM/1-softwares.sh
-### bash $bSc/4-whenWM/2-resourceHandler.sh
+### bash $OSAB/bs-4-whenWM/1-softwares.sh
+### bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ### Updates
 :: Replace at-spi2-atk with extra/at-spi2-core? [Y/n]
 :: Replace atk with extra/at-spi2-core? [Y/n]
-### bash $bSc/4-whenWM/3-moreAURs-repeatable.sh
+### bash $OSAB/bs-4-whenWM/3-moreAURs-repeatable.sh
 ### autorun.sh
 chmod u+x $machBld/jo/awesome/autorun.sh  reboot
 ## Dropbox on SDEP128G
@@ -196,10 +196,10 @@ Signed in > email for security code > Pause Syncing > Preferences > Sync > Move 
 HandleLidSwitchExternalPower=ignore
 ## Updates
 ## symlinks to Dropbox
-bash $bSc/symlinks/jo-0.sh
-bash $bSc/symlinks/jo-2-whenDropbox.sh
+bash $OSAB/bs-symlinks/jo-0.sh
+bash $OSAB/bs-symlinks/jo-2-whenDropbox.sh
 ## symlinks for root
-bash $bSc/symlinks/root.sh
+bash $OSAB/bs-symlinks/root.sh
 ## various
 hugo
 ## Updates
@@ -220,10 +220,10 @@ sudo rm /usr/lib/python3.10/site-packages/cairo/__pycache__/__init__.cpython-310
 sudo pacman -Sy archlinux-keyring
 ## xdg-open .pdf
 handlr get .pdf  reports  firefox.desktop
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .docx
 handlr get .docx  reports  calibre-ebook-viewer.desktop
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## HP ENVY 5532 IP Address 83.10
 hp-setup 192.168.83.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
@@ -252,10 +252,10 @@ journalctl -b -1
   Data from the specified boot (-1) is not available: No such boot ID in journal
 ## xdg-open .sifw
 handlr get .sifw  reports  no mime type
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .ico
 handlr get .ico  reports  no handlers found for 'image/vnd.microsoft.icon'
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## Updates
 :: Replace pandoc with community/pandoc-cli? [Y/n]
 ## PNMixer won't unmute
@@ -319,7 +319,18 @@ texlive-core 2023.66587-2 -> 2023.66594-3: /usr/share/texmf-dist/web2c/texmf.cnf
 system seized during subsequent updates, hard reset
 error: failed to synchronize all databases (unable to lock database)
 sudo rm /var/lib/pacman/db.lck
+## Updates
+:: Replace texlive-core with extra/texlive-basic? [Y/n]
+:: Replace texlive-science with extra/texlive-mathscience? [Y/n]
+## xdg-open .url
+handlr get .url  reports  no handlers found for 'application/x-mswinurl'
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## waiting
+.oma
+cameractrls
+guvcview
+MIME database
+perl-tk
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

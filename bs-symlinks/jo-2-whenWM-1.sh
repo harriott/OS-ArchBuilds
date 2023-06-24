@@ -7,6 +7,8 @@
 set -e
 
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
+ln -sf $ABjo/wm/MPD/mpd.conf ~/.mpd/mpd.conf
+ln -sf $ABjo/wm/MPD/vimpcrc ~/.config/vimpc/vimpcrc
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
 
 #=> Spacemacs

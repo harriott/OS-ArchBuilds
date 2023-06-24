@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+vim: fdl=2:
+$ABjo/mime/audio-oma.xml
+symlinked in  $OSAB/bs-symlinks/jo-0.sh  to  ~/.local/share/mime/packages/audio-oma.xml
+-->
+
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
  <mime-type type="audio/oma">
   <comment>Sony OpenMG audio</comment>

@@ -38,6 +38,7 @@ copyq &  # because CopyQ's internal Autostart doesn't work
 dropbox &
 # hp-systray & disown   doesn't launch...
 # htop &  snags...
+mpd &
 nm-applet &
 obmenu-generator &
 # pcmanfm &

@@ -77,10 +77,12 @@ set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 #  F = from you
 #  L = sent to a subscribed mailing list
 #  R = has your address in the Reply-To field
+#  O = old (= seen but not read)
 #
 # set sort = 'reverse-date'
 
 #=> QR
+#  ? ==> help
 #  f ==> forward
 
 #==> browser

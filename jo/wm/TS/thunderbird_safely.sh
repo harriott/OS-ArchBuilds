@@ -5,13 +5,13 @@
 # run Thunderbird safely from Profile shared on Dropbox
 # -----------------------------------------------------
 
-# (chmod 755 $ABjo/TS/thunderbird_safely.sh)
+# (chmod 755 $OSAB/jo/wm/TS/thunderbird_safely.sh)
 # symlinked in my  $bSc/symlinks/jo-2-whenWM-1.sh
 #  to provide my command  thunderbird_safely
 #   used in  $Openbox/openbox/schema.pl
 
 # Tests:
-#  bash $ABjo/TS/thunderbird_safely.sh
+#  bash $OSAB/jo/wm/TS/thunderbird_safely.sh
 #  echo lockTest > $llf
 #  touch $wlf
 

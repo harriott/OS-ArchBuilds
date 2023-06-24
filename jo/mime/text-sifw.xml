@@ -2,8 +2,8 @@
 
 <!--
 vim: fdl=2:
-$ABjo/sifw.xml
-symlinked in  $bSc/symlinks/jo-0.sh  to  ~/.local/share/mime/packages/sifw.xml
+$ABjo/mime/sifw.xml
+symlinked in  $OSAB/bs-symlinks/jo-0.sh  to  ~/.local/share/mime/packages/sifw.xml
 -->
 
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">

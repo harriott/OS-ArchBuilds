@@ -10,6 +10,13 @@ trap read debug  # puts a read request after each executable line
 # #=> android-tools
 # pacman -S android-tools
 
+# #=> audio - Cmus
+# pacman -S cmus
+
+# #=> audio - MPD
+# pacman -S mpd
+# mkdir -p ~/.mpd/playlists ~/music
+
 #=> documenting
 # Ghostscript
 pacman -S ghostscript
@@ -17,14 +24,35 @@ pacman -S ghostscript
 # Pandoc
 pacman -S pandoc-cli
 
-#=> documenting - TeX Live 0 native
-perl $JHt/IT/CP/TeX/install-tl-20230613/install-tl --no-interaction
+#=> documenting - TeX Live 0 native 0 cd
+cd $JHt/IT/CP/TeX/install-tl-20230613/
+
+#=> documenting - TeX Live 0 native 1 basic 0 basic
+sudo perl install-tl --scheme=basic --no-interaction
+
+#=> documenting - TeX Live 0 native 1 full
+sudo perl install-tl --no-interaction
+
+#=> documenting - TeX Live 0 native 2 tidy up
+mv texlive.profile $machLg/TeXLive/install-tl-example.profile-$(date '+%Y%m%d%H%M')
+cd $OSAB/bs-3-toWM-0
+
+# #=> documenting - TeX Live 0 native 3 basic - more
+# sudo tlmgr install currfile
+# sudo tlmgr install easylist
+# sudo tlmgr install etoolbox
+# sudo tlmgr install filehook
+# sudo tlmgr install memoir
+# sudo tlmgr install polyglossia
+# sudo tlmgr install wrapfig
+# sudo tlmgr install xetex
+# sudo tlmgr install xcolor
 
 #=> documenting - TeX Live 0 Arch packaged 0 install
 pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all
 
 #=> documenting - TeX Live 0 Arch packaged 1 remove 0 packages
-# sudo pacman -Rs  as per  $machLg/TeXLive-Arch_packages-<date>.txt
+# sudo pacman -Rs  as per  $machLg/TeXLive/Arch_packages-<date>.txt
 
 #=> documenting - TeX Live 0 Arch packaged 1 remove 1 trailing nodes
 for td in texinfo texmf texmf-dist; do sudo rm -r /usr/share/$td; done
@@ -61,9 +89,6 @@ pacman -S noto-fonts-emoji  # don't work in  urxvt  or  xterm...
 
 # #=> cmatrix
 # pacman -S cmatrix
-
-# #=> Cmus
-# pacman -S cmus
 
 # #=> hw
 # # exFAT utilities

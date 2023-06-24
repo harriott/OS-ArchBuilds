@@ -1325,11 +1325,8 @@ handlr get .css  reports  bluefish.desktop
 handlr get .html  reports  firefox.desktop
   bash $bSc/4-whenWM/2-resourceHandler.sh
 ## xdg-open .oma
-handlr get .oma  reports
-  error: Invalid value for '<mime>': could not figure out the mime type of '.oma'
-mime type for Sony OpenMG audio
-handlr get .toml  reports  no handlers found for 'audio/oma'
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .oma
+bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .csv
 handlr get .csv  reports  libreoffice-calc.desktop
   bash $bSc/4-whenWM/2-resourceHandler.sh
@@ -1604,7 +1601,7 @@ sudo pacman -Rs texlive-bibtexextra texlive-bin texlive-core texlive-formatsextr
 sudo pacman -Rs texlive-bibtexextra texlive-bin texlive-core texlive-formatsextra texlive-games texlive-humanities texlive-langchinese texlive-langgreek texlive-latexextra texlive-music texlive-pictures texlive-pstricks texlive-publishers texlive-science xournalpp
   Packages (21) dvisvgm-3.0.4-1  ffcall-2.4-2  libsigsegv-2.14-2  potrace-1.16-2  t1lib-5.1.2-8  zziplib-0.13.72-2  texlive-bibtexextra-2023.66594-7  texlive-bin-2023.66984-6  texlive-core-2023.66594-7  texlive-formatsextra-2023.66594-7  texlive-games-2023.66594-7  texlive-humanities-2023.66594-7 texlive-langchinese-2023.66594-7  texlive-langgreek-2023.66594-7  texlive-latexextra-2023.66594-7  texlive-music-2023.66594-7  texlive-pictures-2023.66594-7  texlive-pstricks-2023.66594-7  texlive-publishers-2023.66594-7  texlive-science-2023.66594-7  xournalpp-1.1.3-1
   warning: /etc/texmf/web2c/fmtutil.cnf saved as /etc/texmf/web2c/fmtutil.cnf.pacsave
-cp /etc/texmf/web2c/fmtutil.cnf.pacsave $machLg/TeXLive-etc-texmf-web2c-fmtutil_pacsave-$(date '+%Y%m%d%H%M').cnf
+cp /etc/texmf/web2c/fmtutil.cnf.pacsave $machLg/TeXLive/etc-texmf-web2c-fmtutil_pacsave-$(date '+%Y%m%d%H%M').cnf
 sudo rm /etc/texmf/web2c/fmtutil.cnf.pacsave
 ## remove all TeX Live Arch packaged trailing nodes
 as in  $OSAB/bs-3-toWM-0/1-sudo-prep_forWM.sh
@@ -1613,6 +1610,30 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.32.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## xdg-open .fetl
+bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## default applications
+cp ~/.config/mimeapps.list $machLg/jo/mimeapps-n6g.list
+## TeX Live native install
+rg -uu xpglanginauxtrue  returned nothing...
+## HP ENVY 5532 IP Address changed to 20.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.20.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 118.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.118.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 97.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.97.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## ymuse
+I failed to respond in time for pw, so  sudo pacman -U ymuse-0.21-1-x86_64.pkg.tar.zst
+  (but could maybe just  makepkg --install)
 ## waiting
 disable Shift+PrtSc
 TeX Live 0 native

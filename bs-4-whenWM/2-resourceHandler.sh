@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# bash $bSc/4-whenWM/2-resourceHandler.sh
+# bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 
 # gAUR  is defined in $Bash/bashrc-console
 
@@ -25,6 +25,7 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .divx mpv.desktop
 # handlr set .docx libreoffice-writer.desktop
 # handlr set .el gvim.desktop
+# handlr set .fetl gvim.desktop
 # handlr set .flv mpv.desktop
 # handlr set .html gvim.desktop  # still feeds to  Firefox...
 # handlr set .ico org.nomacs.ImageLounge.desktop
@@ -54,6 +55,7 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .tiff feh.desktop
 # handlr set .toml gvim.desktop
 # handlr set .txt gvim.desktop
+# handlr set .url gvim.desktop
 # handlr set .webm mpv.desktop
 # handlr set .webp feh.desktop
 # handlr set .xml gvim.desktop
@@ -72,8 +74,4 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # nvim -c "silent! /freedesktop" PKGBUILD
 # makepkg -sic
 # cd ~
-
-# #=> Sony OpenMG audio
-# cp $OSAB/local-share-mime-packages-audio-oma.xml ~/.local/share/mime/packages/audio-oma.xml
-# update-mime-database ~/.local/share/mime
 

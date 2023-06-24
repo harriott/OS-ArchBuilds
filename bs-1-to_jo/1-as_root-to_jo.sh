@@ -196,6 +196,9 @@ pacman -S wget
 # # pkgstats
 # pacman -S pkgstats
 
+#=> R
+pacman -S r
+
 #=> Ruby 0
 pacman -S ruby
 

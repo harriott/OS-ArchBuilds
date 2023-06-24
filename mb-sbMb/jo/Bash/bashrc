@@ -6,20 +6,22 @@
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
 export CHROOT=/mnt/SD480GSSDPlus/chroot
-export VsLocations=(/mnt/ST4000VN008 /mnt/SDU3D1TB /mnt/WD1001FALS)
-#  o ${VsLocations[@]}  # path to my video stores
-export vlogs=/mnt/SDU3D1TB/Sync2/AV-Stack/vlogs
-
+#
 #=> 0 load the rest of my bashrc
 source $Bash/bashrc
 
+#=> 0 various video directories
+# echo -e "/mnt/ST4000VN008\n/mnt/SDU3D1TB\n/mnt/WD1001FALS" > $machBld/jo/Bash/VsLmore
+export vlogs=/mnt/SDU3D1TB/Sync2/AV-Stack/vlogs
+
 #=> 1 OBS mkv grabs convert
+# for  $ulL/video/OBSmkv/shrink.sh
+export OBSmkvGrabs=/mnt/ST4000VN008/OBSmkvGrabs
+export OBSmkvGrabsConverted=/mnt/SDU3D1TB/Sync2/AV-Stack/OBSmkvGrabsConverted
+
 ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/video/OBSmkv/ignore; }
 # ignore <an_mkv_to_ignore>
 # for m in *.mkv; do ignore "$m"; done
 
 omc() { bash $ulL/video/OBSmkv/shrink.sh; fin; } # used in  $OSAB/sbMb/jo/autostart.sh
-
-#=> 2 Created by `pipx` on 2022-08-15 19:39:50
-export PATH="$PATH:/home/jo/.local/bin"
 

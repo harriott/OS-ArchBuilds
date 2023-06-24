@@ -1,0 +1,30 @@
+
+" vimpc  configuration file
+
+" $ABjo/wm/MPD/vimpcrc
+
+" based on  /usr/share/doc/vimpc/vimpcrc.example
+" symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-1.sh  to  ~/.config/vimpc/vimpcrc
+
+" help
+" /usr/share/doc/vimpc/help.txt
+" > < ==> next previous
+" + - ==> volume up down
+" space ==> toggle play
+
+map q :stop playback <C-M>q
+echo Parsing config file
+hi status default bold_white
+update
+set stoponquit
+set window playlist
+set windows playlist
+
+" automatic shuffle
+deleteall
+addall
+shuffle
+play 1
+
+echo Config File Complete
+

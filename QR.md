@@ -20,11 +20,13 @@ sort(1)
 
 # Bash
     $Bash/bash_profile
+    /etc/profile
 
 ```bash
 im time
 pinfo bash
 pinfo -m bash
+tput bel  # bell
 ```
 
 - BASH(1)
@@ -95,8 +97,7 @@ as root: `find / -xdev -iname "*fmtutil.cnf*"`
 ##### regex searches
     locate -r '\.conf$'
     locate -r '\.json$' | mo
-    locate -r 'gestion des cas'
-    locate -r 'how ya doing'
+    locate -i 'nick cave'
 
 ##### updatedb
     /etc/updatedb.conf
@@ -155,30 +156,36 @@ moar -h
     dict -D
     i dict
 
-## LaTeX
-    r $LTXj  # my packages
+## TeX
+    r $GHrUse/CP/MartinThoma-LaTeX-examples
     r $tInf/CP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
 `mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
 
+### Arch package files
+    C /usr/share/texmf-dist/tex/latex/
+    /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
+
 ### copied resources
-    r $cITh/CP/TeX/LaTeX
-    zathura $cITh/CP/TeX/LaTeX/Appearance/font/psnfss2e.pdf &
+    r $cITh/CP/TeX
+    zathura $cITh/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf &
+    zathura $cITh/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf &  # includes package pifont
     zathura $cITh/CP/TeX/LaTeX/structure/Parts/hyperref-doc.pdf &
     zathura $cITh/CP/TeX/LaTeX/structure/Parts/Lists/easylist-doc.pdf &
     zathura $cITh/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf &
 
-### package files
-    C /usr/share/texmf-dist/tex/latex/
-
-#### Memoir
-    /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
-    \newcommand{\maketitle}
+### my packages
+    r $LTXj
+    r ~/texmf
 
 ## TeX Live
-    pacman -Qs texlive > $machLg/TeXLive-Arch_packages-$(date '+%Y%m%d%H%M').txt
-    tlmgr list --only-installed > $machLg/TeXLive-tlmgr_list-$(date '+%Y%m%d%H%M').txt
+    pacman -Qs texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
+    tlmgr list --only-installed > $machLg/TeXLive/tlmgr_list-$(date '+%Y%m%d%H%M').txt
+
+### native install
+    /usr/local/texlive/2023/texmf-dist/doc/
+    gdu -nps /usr/local/texlive
 
 # Emacs
     E <fileToOpenGUI>
@@ -364,6 +371,7 @@ vid => ffmpegthumbnailer
     fd -tl -HL -X rm  # removes dead links
     fd -u '\..+'
     fd . $bSc
+    im fd
 
 - recursive by default
 - sharkdp/fd
@@ -401,13 +409,13 @@ can't cope with `utf-16le`
     :flat 1/0 => 1/0-level directory flattening
     :trash => current file or selection in directory
     ? => start of help dialogue
+    ^r => reload
     c-h / zh => toggle hidden
     dd => cut
     F9 => open outside of tmux, for r (allowing images)
     I => rename
     i => inspect file
     pp => paste
-    R => reload
     shift+s => open subshell
     space => mark
     v => mark all
@@ -430,6 +438,7 @@ can't cope with `utf-16le`
 outer whitespaces get ignored
 
 ### searches
+    i rg
     rg '<someText>|<otherText>'  # searches recursively in files
     rg '\.emacs\.d'
     rg --no-ignore 'sometext'  # allows searching into gitignored places
@@ -710,15 +719,22 @@ for t in *.mp3; do aet "$t" 3; done
 mediainfo -h | mo
 ```
 
-## cmus
+## audio
+    v  # alias'd to  vimpc  in  $Bash/bashrc-wm
+
+### cmus
     $Openbox/cmus-rc.conf
     pgrep cmus
 
-### kill
+#### kill
     kill -9 "$(pidof cmus)"
 
-#### manually
+##### manually
 get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
+
+### Quod Libet
+    pkill exfalso
+    pkill quodlibet
 
 ## OpenShot
     r ~/.openshot_qt
@@ -731,10 +747,6 @@ won't open if `cmus` is playing a track
     r ~/.local/share/openshot
 
 ### projects
-
-## Quod Libet
-    pkill exfalso
-    pkill quodlibet
 
 # networking
 ```bash
@@ -766,37 +778,49 @@ find -name "*(Copie en conflit de *"
 ## email
     default-release:  find -name "* conflicted copy*" -exec rm -f {} \;
 
-### CLI tools
+### mutt notmuch
 ```bash
 $Bash/bashrc-clm
 grep -r "Georita" *
 rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
 ```
 
+#### $maild
+    fd . */*/cur |wc -l  # all of my seen emails
+    fd . */*/new  # as yet unseen, a few
+    fd . */*/tmp  # usually nothing here, can be ignored
+    ~/.local/share/mail/.notmuch
+
 #### mutt
     $clMail/neomutt/muttrc-general
-    $clMail/neomutt/muttrc-accounts/ftml
-    $clMail/neomutt/muttrc-accounts/troh
-    $clMail/neomutt/muttrc-accounts/zou
-    echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
     f => forward
     F => toggle important flag (= Star in Gmail)
+
+##### accounts
+    $clMail/neomutt/muttrc-accounts/ftml
+    $clMail/neomutt/muttrc-accounts/troh
+
+###### zou
+    $clMail/neomutt/muttrc-accounts/zou
+    echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 
 #### notmuch search
     nmse najac date:2022
     nmse from:/gough/ date:2023
-    nmse tag: cz tag:zou '*lait*'
+    nmse tag:cz tag:zou '*lait*'
     nmse tag:cz tag:zou | wc -l
+    nmse tag:zou date:2023
+    nmse tag:zou date:june2023
     nmse '"pattern with spaces"'
+
+##### providors
+- orange.fr
+- yahoo!mail
 
 ##### wildcard
     nmse 'orf*'  # finds ORFILA
 
 Only possible at end of string...
-
-#### providors
-- orange.fr
-- yahoo!mail
 
 #### URLs unclickable by receiver
 URLs (such as in an email sent from `mutt`) unclickable - so better to send to them with `Thunderbird`
@@ -1021,11 +1045,11 @@ backed up in `$Bash/bash_profile`
     journalctl -b -1 -r  # newest first
     journalctl -b -g 'EFI v'  # shows EFI version
 
-## windows
+## windows managers
     $machBld/jo/awesome/rc.lua
     xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
-### awesome wm
+### awesome
     modkey+c = c:kill()
     modkey+p = hotkeys_popup
 

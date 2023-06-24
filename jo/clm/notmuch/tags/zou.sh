@@ -11,8 +11,8 @@
 # clear tags:
 # notmuch tag -zou -- "*"
 
-notmuch tag -inbox -- 'folder:/zou\/[^I]/ and tag:inbox' # remove unneeded inbox tags
 notmuch tag +zou -- 'folder:/zou\/.*/ and not tag:zou' # add zou tags to all
+notmuch tag -inbox -- 'folder:/zou\/[^I]/ and tag:inbox' # remove unneeded inbox tags
 
 # individual folder tags:
 notmuch tag +archive -- folder:zou/Archives and not tag:archive

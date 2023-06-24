@@ -54,6 +54,7 @@ our $SCHEMA = [
     {item => ['exfalso',              'QL - Ex Falso',      'web-browser']},
     {item => ['quodlibet',            'QL - Quod Libet',    'web-browser']},
     {item => ['picard',               'MusicBrainz Picard', 'web-browser']},
+    {item => ['ymuse',                'Ymuse',              'web-browser']},
     {item => ['zoom',                 'Zoom',               'web-browser']},
 
     {sep => 'Categories'},

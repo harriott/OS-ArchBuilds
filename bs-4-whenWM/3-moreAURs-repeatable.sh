@@ -57,11 +57,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> iscan
 # gAUR iscan
@@ -77,9 +77,11 @@ true
 
 # #=> nomacs
 # gAUR nomacs
-# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs\/archive" PKGBUILD
+# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
 # makepkg -sic  # takes ages...
-# # now run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+# notify-send -i /usr/share/icons/hicolor/scalable/apps/org.nomacs.ImageLounge.svg -u critical 'nomacs has been made'
+# # after first install
+# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
 # true
 
 # #=> nsxiv
@@ -193,13 +195,27 @@ true
 # nvim -c "silent! /perso.b2b2c.ca\/\~sarrazip\/dev" PKGBUILD
 # makepkg -sic
 
+# #=> vimpc-git
+# # for MPD
+# gdAUR vimpc-git
+# nvim -c "silent! /github.com\/boysetsfrog\/vimpc" PKGBUILD
+# makepkg -sic
+# mkdir ~/vimpc
+
 # #=> yj-git
 # gdAUR yj-git
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+#=> ymuse
+# for MPD
+gdAUR ymuse
+nvim -c "silent! /github.com\/yktoo" PKGBUILD
+makepkg -sic  # takes ages
+sudo pacman -U ymuse-0.21-1-x86_64.pkg.tar.zst 
+
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

@@ -32,5 +32,5 @@ set delete = yes  # default was ask-yes
 macro index,pager gw "<change-folder>=Waiting<enter>" "go to Waiting"
 macro index,pager Gw "<save-message>=Waiting<enter>" "move mail to Waiting"
 
-macro index,pager gl "<change-vfolder>All<enter>" "go to All"
+macro index,pager gn "<change-vfolder>notmuch<enter>" "go to notmuch"
 

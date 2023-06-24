@@ -34,6 +34,11 @@ ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
 ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 # er ~/.pandoc/defaults/*
 
+#=> MPD - music directories gathered
+if [ $host = 'sbMb' ]; then
+  ln -sf /mnt/SDU3D1TB/Dropbox/CAM-best ~/music/CAM-best
+fi
+
 # #=> Pandoc templates
 # pt=~/.pandoc/templates; [ -d $pt ] && rm -r $pt; ln -sf $onGH/pandoc-templates $pt
 # # e -adl ~/.pandoc/templates

@@ -18,6 +18,9 @@ sudo cp $machBld/etc/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
 #=> asunder
 sudo pacman -S asunder  # graphical Audio CD ripper
 
+#=> cameractrls
+sudo pacman -S cameractrls
+
 #=> feh
 sudo pacman -S feh
 
@@ -56,6 +59,9 @@ sudo pacman -S graphicsmagick
 
 #=> gucharmap
 sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode Block)
+
+#=> guvcview
+sudo pacman -S guvcview
 
 #=> HPLIP
 sudo pacman -S hplip
@@ -128,6 +134,9 @@ sudo pacman -S peek  # (GIF Screen Recorder)
 
 #=> perl-image-exiftool
 sudo pacman -S perl-image-exiftool
+
+#=> perl-tk
+sudo pacman -S perl-tk  # needed for  tlmgr -gui
 
 #=> Pinta 0 install
 sudo pacman -S pinta

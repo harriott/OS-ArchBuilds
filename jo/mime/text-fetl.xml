@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+vim: fdl=2:
+$ABjo/mime/text-fetl.xml
+symlinked in  $OSAB/bs-symlinks/jo-0.sh  to  ~/.local/share/mime/packages/text-fetl.xml
+-->
+
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+ <mime-type type="text/fetl">
+     <comment> $vimfiles/ftplugin/fetl.vim </comment>
+  <glob pattern="*.fetl"/>
+ </mime-type>
+</mime-info>
