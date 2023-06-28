@@ -105,12 +105,13 @@ fRs () {
 #===> by extension
 alias fx='fdtsExt'
 # fx gfm
-# fx gitignore  # $Drpbx/JH/dts-gitignore.list
+# fx gitignore  # $DJH/dts-gitignore.list
 
 fdtsExt () {
   if [ $1 ]; then
     fdtsKSsearch="*.$1"; [[ $1 = 'gitignore' ]] && fdtsKSsearch=".$1"
-    [[ $1 = "tex" ]] && fdtsKSprune=$'-path \'*/copied/*\' -prune -o -path \'*/CGHrepos/*\' -prune -o -path \'*/vimfiles/*\' -prune -o'
+    [[ $1 = "py" || $1 = "tex" ]] && fdtsKSprune=$'-path \'*/copied/*\' -prune -o -path \'*/CGHrepos/*\' -prune -o -path \'*/vimfiles/*\' -prune -o'
+    # still allows  fx tex  in  $copied, $CGHrepos, &  $vimfiles
     fdtsKSlist=dts-$1.fetl
     fdtsKS
     # [[ $1 = @(gitignore|pl|tex|txt) ]] && sed -i "s| \.| $PWD|" $fdtsKSlist
@@ -211,7 +212,7 @@ ghi () {
 
 #==> lists of files by content
 rgIT () {
-  cd $Drpbx/JH/searches
+  cd $DJH/searches
   f=IT-rg.fetl
   echo '' > $f; echo 'rgIT  -see  $Bash/bashrc-console'; echo '' > $f
   for ITd in $tInf $ITstack; do
@@ -222,7 +223,7 @@ rgIT () {
 }
 
 SE () {
-  cd $Drpbx/JH/search
+  cd $DJH/search
   f=SEN.fetl
   [ -s $f ] && rm $f
   echo '' > $f; echo 'SE  -see  $Bash/bashrc-console'
@@ -231,7 +232,7 @@ SE () {
     rg -l -tmd 'stackexchange|stackoverflow' $ITd | sort >> $f
   done
   echo '' >> $f
-  echo 'now open $Drpbx/JH/search/'$f
+  echo 'now open $DJH/search/'$f
 }
 
 #==> my Encrypted directories

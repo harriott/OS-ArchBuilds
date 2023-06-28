@@ -3,7 +3,8 @@
 <!--
 vim: fdl=2:
 $ABjo/mime/audio-oma.xml
-symlinked in  $OSAB/bs-symlinks/jo-0.sh  to  ~/.local/share/mime/packages/audio-oma.xml
+    symlinked in  $OSAB/bs-symlinks/jo-0.sh (MIME database)
+        to  ~/.local/share/mime/packages/audio-oma.xml
 -->
 
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">

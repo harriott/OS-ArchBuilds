@@ -38,7 +38,7 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .mp3 mpv.desktop
 # handlr set .ogg mpv.desktop
 # handlr set .ogv mpv.desktop
-# handlr set .oma mpv.desktop
+# handlr set .oma mpv.desktop  # $ABjo/mime/audio-oma.xml
 # handlr set .org gvim.desktop
 # handlr set .pdf org.pwmt.zathura.desktop
 # handlr set .png org.nomacs.ImageLounge.desktop

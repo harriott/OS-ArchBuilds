@@ -30,16 +30,17 @@ export host=$(uname -n)
 export vimfiles=~/.vim
 if [[ $myDrA == 1 ]]; then
   export Drpbx=$Storage/Dropbox
-  # - keep  DROPBOX  capitalised for finding it without need for $
-    export core=$Drpbx/JH/core
-      export ITstack=$core/IT_stack
-        export CrPl=$ITstack/CP  # $CrPl  used in  $Bash/bashrc-console  & build scripts
-        export onGH=$ITstack/onGitHub
-          export vimfiles=$onGH/vimfiles
-        export ulL=$ITstack/unix_like-linux
-          export ulLA=$ulL/Arch
-            export machLg=$ulLA/ml-$host  # as opposed to  $machBld
-          export ulLB=$ulL/Bash  # used in  $OSAB/QR.md
+    export DJH=$Drpbx/JH
+    # - keep  DROPBOX  capitalised for finding it without need for $
+      export core=$DJH/core
+        export ITstack=$core/IT_stack
+          export CrPl=$ITstack/CP  # $CrPl  used in  $Bash/bashrc-console  & build scripts
+          export onGH=$ITstack/onGitHub
+            export vimfiles=$onGH/vimfiles
+          export ulL=$ITstack/unix_like-linux
+            export ulLA=$ulL/Arch
+              export machLg=$ulLA/ml-$host  # as opposed to  $machBld
+            export ulLB=$ulL/Bash  # used in  $OSAB/QR.md
 fi  # depends on  myDrA=  defined in  $machBld/export-machine
 
 #=> 3 $OSAB, or not

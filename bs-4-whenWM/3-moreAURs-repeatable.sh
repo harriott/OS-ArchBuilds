@@ -26,11 +26,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
 # makepkg -sic
 
-#=> cmus-notify 0 install
-gAUR cmus-notify
-nvim -c "silent! /AntoineGagne" PKGBUILD
-makepkg -sic
-true
+# #=> cmus-notify 0 install
+# gAUR cmus-notify
+# nvim -c "silent! /AntoineGagne" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> cmus-notify 1 remove
 # sudo pacman -Rs cmus-notify
@@ -201,23 +201,24 @@ true
 # nvim -c "silent! /perso.b2b2c.ca\/\~sarrazip\/dev" PKGBUILD
 # makepkg -sic
 
-# #=> vimpc-git
-# # for MPD
-# gdAUR vimpc-git
-# nvim -c "silent! /github.com\/boysetsfrog\/vimpc" PKGBUILD
-# makepkg -sic
-# mkdir ~/vimpc
+#=> vimpc-git
+# for MPD
+gdAUR vimpc-git
+nvim -c "silent! /github.com\/boysetsfrog\/vimpc" PKGBUILD
+makepkg -sic
+mkdir ~/.config/vimpc
 
 # #=> yj-git
 # gdAUR yj-git
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-# #=> ymuse
-# # for MPD
-# gdAUR ymuse
-# nvim -c "silent! /github.com\/yktoo" PKGBUILD
-# makepkg -sic  # takes ages
+#=> ymuse
+# for MPD
+gAUR ymuse
+nvim -c "silent! /github.com\/yktoo" PKGBUILD
+makepkg -sic  # takes ages
+true
 
 # #=> Zoom
 # gAUR zoom

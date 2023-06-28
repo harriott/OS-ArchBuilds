@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# bash $bSc/symlinks/jo-2-whenWM-0.sh
+# bash $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 # not dependent on  $OSAB
 
 set -e
@@ -35,13 +35,21 @@ ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 # er ~/.pandoc/defaults/*
 
 #=> MPD - music directories gathered
-if [ $host = 'sbMb' ]; then
-  ln -sf /mnt/SDU3D1TB/Dropbox/CAM-best ~/music/CAM-best
+if [ $host = 'i34G1TU02' ]; then
+  ln -sf $Openbox/toggleMusicGood.sh ~/.config/openbox/toggleMusicGood.sh
+  ln -sf $Openbox/toggleMusicJoy.sh ~/.config/openbox/toggleMusicJoy.sh
+elif [ $host = 'sbMb' ]; then
+  ln -sf $Openbox/toggleMusicGood.sh ~/.config/openbox/toggleMusicGood.sh
+  ln -sf $machBld/jo/toggleMusicJoy.sh ~/.config/openbox/toggleMusicJoy.sh
 fi
 
 # #=> Pandoc templates
 # pt=~/.pandoc/templates; [ -d $pt ] && rm -r $pt; ln -sf $onGH/pandoc-templates $pt
 # # e -adl ~/.pandoc/templates
+
+#=> shift+PrtSc disabled - notification
+# for  i34G1TU02  &  sbMb
+ln -sf $Openbox/shiftPrtSc.sh ~/.config/openbox/shiftPrtSc.sh
 
 #=> SSH config
 ln -sf $CrPl/networking/SSHconfig/$host ~/.ssh/config

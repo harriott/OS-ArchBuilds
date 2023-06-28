@@ -219,6 +219,9 @@ true
 # # supersedes  Bashtop
 # pacman -S bpytop
 
+# # beep
+# pacman -S beep
+
 # # btop
 # pacman -S btop
 

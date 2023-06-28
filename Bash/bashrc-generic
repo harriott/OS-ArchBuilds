@@ -216,6 +216,12 @@ alias wp='curl wttr.in/Paris'  # weather
 
 pqs () { pacman -Qs $1 | xcol $1; }  # or use  pacsearch
 
+#=> pactree
+alias ptc='pactree -c '  # coloured
+alias ptr='pactree -cr '  # reversed
+
+pts () { pactree -u $1 | sort | tr '\n' '~' | sed 's/~/  /g'; echo; }  # scrunched
+
 #=> turbostat
 alias ts1='sudo turbostat --interval 2 --quiet'
 

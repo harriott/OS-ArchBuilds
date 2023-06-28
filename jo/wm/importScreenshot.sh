@@ -3,10 +3,13 @@
 # Take a time-stamped fullscreenshot using ImageMagick
 # ----------------------------------------------------
 
-# chmod 755 $Openbox/openbox/rc/importScreenshot.sh
-# symlinked in  $bSc/symlinks/jo-1-Openbox.sh
+# chmod 755 $ABjo/wm/importScreenshot.sh
+# symlinked in
+#   $OSAB/bs-symlinks/jo-1-awesome.sh
+#   $OSAB/bs-symlinks/jo-1-Openbox.sh
+# to  ~/.config/openbox/importScreenshot.sh
 
-# Called by  $Openbox/openbox/rc.xml  because:
+# Called by  $Obc/rc.xml  because:
 #  <command>importScreenshot</command>  doesn't find my Bash function
 #  and the following line doesn't get correctly parsed either.
 

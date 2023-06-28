@@ -8,7 +8,7 @@
 # (chmod 755 $OSAB/jo/wm/TS/thunderbird_safely.sh)
 # symlinked in my  $bSc/symlinks/jo-2-whenWM-1.sh
 #  to provide my command  thunderbird_safely
-#   used in  $Openbox/openbox/schema.pl
+#   used in  $Obc/schema.pl
 
 # Tests:
 #  bash $OSAB/jo/wm/TS/thunderbird_safely.sh

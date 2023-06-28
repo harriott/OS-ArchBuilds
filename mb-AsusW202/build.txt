@@ -189,7 +189,7 @@ startx
 ### autorun.sh
 chmod u+x $machBld/jo/awesome/autorun.sh  reboot
 ## Dropbox on SDEP128G
-renamed my /mnt/SDEP128G/Dropbox to Dropbo
+renamed my $Drpbx to Dropbo
 Signed in > email for security code > Pause Syncing > Preferences > Sync > Move > /mnt/SDEP128G >
   Choose > OK > renamed my Dropbo to Dropbox > Resume Syncing
 ## logind.conf
@@ -266,13 +266,12 @@ warning: freetype2 will be installed before its harfbuzz dependency
 sudo pacman -Syu base-devel
 ## Updates
 :: Replace tbb with extra/onetbb? [Y/n]
-
-error: target not found: java-runtime=20
-==> ERROR: 'pacman' failed to install missing dependencies.
-==> Missing dependencies:
-  -> java-runtime=20
-==> Checking buildtime dependencies...
-==> ERROR: Could not resolve all dependencies.
+  error: target not found: java-runtime=20
+  ==> ERROR: 'pacman' failed to install missing dependencies.
+  ==> Missing dependencies:
+    -> java-runtime=20
+  ==> Checking buildtime dependencies...
+  ==> ERROR: Could not resolve all dependencies.
 ## HP ENVY 5532 IP Address 151.10
 hp-setup 192.168.151.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
@@ -325,12 +324,28 @@ sudo rm /var/lib/pacman/db.lck
 ## xdg-open .url
 handlr get .url  reports  no handlers found for 'application/x-mswinurl'
   bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## Updates
+error: failed to synchronize all databases (unable to lock database)
+sudo rm /var/lib/pacman/db.lck
+## HP ENVY 5532 IP Address changed to 97.10
+hp-setup -r > Select > Remove
+hp-setup 192.168.97.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## xdg-open .fetl
+handlr get .fetl  reports  no handlers found for 'text/fetl'
+bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## gem update
+Updating sass-embedded
+Fetching sass-embedded-1.63.6-x86_64-linux-gnu.gem
+sass-embedded's executable "sass" conflicts with sass
+Overwrite the executable? [yN] y
+## HP ENVY 5532 IP Address changed to 208.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.208.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
-.oma
-cameractrls
-guvcview
-MIME database
-perl-tk
+qalculate-gtk
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

@@ -3,10 +3,10 @@
 # get the last tmux buffer over into X11 clipboard (= usable by CopyQ)
 # --------------------------------------------------------------------
 
-# chmod 755 $Openbox/openbox/rc/tmuxBufferToX11clipboard.sh
-# ln -sf $Openbox/openbox/rc/tmuxBufferToX11clipboard.sh ~/.config/openbox/tmuxBufferToX11clipboard.sh
+# chmod 755 $Obc/rc/tmuxBufferToX11clipboard.sh
+# ln -sf $Obc/rc/tmuxBufferToX11clipboard.sh ~/.config/openbox/tmuxBufferToX11clipboard.sh
 
-# Called by  $Openbox/openbox/rc.xml  because:
+# Called by  $Obc/rc.xml  because:
 #  <command>command | command</command>  doesn't get parsed
 
 # <!-- Keybinding to get the last tmux buffer over into X11 clipboard - JH -->

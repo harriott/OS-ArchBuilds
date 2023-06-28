@@ -222,14 +222,14 @@ sudo pacman -Rs xdg-utils-mimeo
   :: removing xdg-utils-mimeo breaks dependency 'xdg-utils' required by sxiv
 ## Updates
 :: python-faust-cchardet and python-cchardet are in conflict. Remove python-cchardet? [y/N] y
+## Updates
+:: Replace texlive-core with extra/texlive-basic? [Y/n]
+:: Replace texlive-langextra with extra/texlive-langother? [Y/n]
+:: Replace texlive-science with extra/texlive-mathscience? [Y/n]
+## ymuse
+I failed to respond in time for pw, so, in  ~/Arch/AUR/ymuse, makepkg --install
 ## waiting
-.oma
-cameractrls
-guvcview
-MIME database
-mimeapps.list
-perl-tk
-R
+$Openbox/toggleBestJoy.sh
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

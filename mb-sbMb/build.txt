@@ -486,7 +486,7 @@ sudo rm -r /mnt/WD1001FALS/rsnapshot/hourly.*/localhost/mnt/ST3500413AS
 ## recover Thunderbird v78 profile
 cleared out contents of  ~/.thunderbird/xggwhyu0.default-release
 bash $CrPl/Thunderbird/LastVersion.sh
-rsync -irtv --delete /mnt/WD1001FALS/rsnapshot/daily.3/localhost/mnt/SD480GSSDPlus/Dropbox/JH/TP.default-release/ $Drpbx/JH/TP-default-release
+rsync -irtv --delete /mnt/WD1001FALS/rsnapshot/daily.3/localhost/mnt/SD480GSSDPlus/Dropbox/JH/TP.default-release/ $DJH/TP-default-release
 ## lm_sensors
 sudo sensors-detect
   # sensors-detect version 3.6.0+git
@@ -1124,12 +1124,12 @@ quit Dropbox, renamed  ~/.dropbox
   dropbox &  got me  Firefox > Joseph Harriott, Would you like to connect the computer sbMb to your Dropbox account (jharr@ftml.net)? If you didn’t request this, please click 'Cancel'. > Connect
     which got me  /home/jo/Dropbox
 paused Syncing
-Dropbox > Preferences > Sync > Move > /mnt/SDU3D1TB/Dropbox
+Dropbox > Preferences > Sync > Move > $Storage/Dropbox
   ~/.dropbox/info.json  shows  SDU3D1TB
 renamed away newly created /mnt/WD30EZRZ/Dropbox  to bring that back to my ready populated directory
 resumed sync'ing - took ages to Index
 ### fix root symlinks
-[/mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/build-scripts]$ su > root pw
+[$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/build-scripts]$ su > root pw
 find /root -type l -ls | xcol SDU3D1TB WD30EZRZ
 bash 05-root_symlinks.sh
 ### fix symlinks
@@ -1150,7 +1150,7 @@ ln -sf $tmx/tmux.conf ~/.tmux.conf
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
 mt  to update  headings.sty
 ### fix font symlinks
-[/mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/build-scripts]$ su > root pw
+[$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/build-scripts]$ su > root pw
 bash 37-as_root-symlink_fonts.sh
 ### fix my OBS grabs
 symlinks as in  $ITstack/unix_like-linux/OBSmkv/shrink.sh
@@ -1632,15 +1632,18 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.97.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## ymuse
-I failed to respond in time for pw, so  sudo pacman -U ymuse-0.21-1-x86_64.pkg.tar.zst
+I failed to respond in time for pw, so, in  ~/Arch/AUR/ymuse,
+  sudo pacman -U ymuse-0.21-1-x86_64.pkg.tar.zst
   (but could maybe just  makepkg --install)
 ## cmus-notify
 cmus_notify -h  reporting tracebacks, fixed by uninstalling and re-installing
+## HP ENVY 5532 IP Address changed to 208.10
+hp-setup -r > Select > Remove
+hp-setup 192.168.208.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
-disable Shift+PrtSc
-TeX Live 0 native
 ### remake /efi/EFI/GRUB/grubx64.efi
-sudo grub-install --target=x86_64-efi --efi-directory=esp --bootloader-id=GRUB
+sudo grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
@@ -1650,9 +1653,12 @@ ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
 # snag - fails to boot due to ST4000VN008
   Failed to start File System Check on /dev/disk/by-label/ST4000VN008.
   Dependency failed for /mnt/ST4000VN008.
-root pw > nvim /etc/fstab > commented out ST4000VN008 > reboot  for
-  rsnapshot timers disabled  &  sudo e2fsck -v /dev/sdc1
-  then reinstated it in  /etc/fstab  rsnapshot timers enabled
+## fix with e2fsck
+root pw > nvim /etc/fstab > commented out ST4000VN008, reboot  for
+  sudo bash $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh > disable
+  sudo e2fsck -v /dev/sdc1
+  sudo nvim /etc/fstab  to reinstate  ST4000VN008, reboot
+  sudo bash $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh > enable
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh

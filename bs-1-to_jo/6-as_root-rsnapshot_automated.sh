@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# sudo bash $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
+# sudo bash $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 $OSAB
 cd $(dirname "${BASH_SOURCE[0]}")
-. ../../$(uname -n)/export-machine
-. ../../Bash/export-storage
+. ../mb-$(uname -n)/export-machine
+. ../Bash/export-storage
 read -p "\$OSAB is $OSAB - looks good?"
 
 # #=> 1 rsnapshot systemd files

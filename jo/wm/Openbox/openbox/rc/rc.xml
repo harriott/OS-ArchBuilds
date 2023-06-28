@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vim: fdl=1 sw=2:
      my changes are commented like this - JH
-     ~/.config/openbox/rc.xml ($bSc/symlinks/jo-1-Openbox.sh)
-     nvim -O /etc/xdg/openbox/rc.xml $Openbox/openbox/rc/rc.xml
+     ~/.config/openbox/rc.xml ($OSAB/bs-symlinks/jo-1-Openbox.sh)
+     nvim -O /etc/xdg/openbox/rc.xml $Obc/rc/rc.xml
      reconfigure  after making changes here -->
 
 <!-- Based on  /etc/xdg/openbox/rc.xml  from  openbox 3.6.1-8,
@@ -334,6 +334,12 @@
     </action>
   </keybind>
   <!-- Keybinding for Galculator - JH -->
+  <keybind key="W-1">
+    <action name="Execute">
+      <command>qalculate-gtk</command>
+    </action>
+  </keybind>
+  <!-- Keybinding to toggle Cmus play/pause - JH -->
   <keybind key="W-a">
     <action name="Execute">
       <command>galculator</command>
@@ -378,7 +384,19 @@
       <command>pactl set-source-mute 1 toggle</command>
     </action>
   </keybind>
-  <!-- Keybinding for MPD previous - JH -->
+  <!-- Keybinding to toggle music good symlink - JH -->
+  <keybind key="XF86Search">
+    <action name="Execute">
+      <command>/home/jo/.config/openbox/toggleMusicGood.sh</command>
+    </action>
+  </keybind>
+  <!-- Keybinding to toggle music joy only symlink - JH -->
+  <keybind key="XF86HomePage">
+    <action name="Execute">
+      <command>/home/jo/.config/openbox/toggleMusicJoy.sh</command>
+    </action>
+  </keybind>
+  <!-- Keybinding for MPD stop - JH -->
   <keybind key="XF86AudioPrev">
     <action name="Execute">
       <command>playerctl -p mpd previous</command>
@@ -411,7 +429,7 @@
   <!-- Keybinding to disable shift PrtSc - JH -->
   <keybind key="S-Print">
     <action name="Execute">
-      <command></command>
+      <command>/home/jo/.config/openbox/shiftPrtSc.sh</command>
     </action>
   </keybind>
   <!-- Keybindings for repairing CopyQ - JH -->

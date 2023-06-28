@@ -8,7 +8,7 @@
 # (chmod 755 $ABjo/Emacs/spacemacs.sh)
 # symlinked in my  $bSc/symlinks/jo-2-whenDropbox.sh
 #  to provide command  spacemacs
-#   used in  $Openbox/openbox/schema.pl
+#   used in  $Obc/schema.pl
 
 # Tests:
 #  bash $ABjo/Emacs/spacemacs.sh &

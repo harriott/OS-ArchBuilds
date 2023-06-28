@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 # obmenu-generator - schema file
-# nvim -O /etc/xdg/obmenu-generator/schema.pl $Openbox/openbox/schema.pl -c 'windo difft'
+# nvim -O /etc/xdg/obmenu-generator/schema.pl $Obc/schema.pl -c 'windo difft'
 # symlink to  ~/.config/obmenu-generator/schema.pl ($bSc/anytime/symlinks-jo-1-Openbox.sh)
 
 =for comment

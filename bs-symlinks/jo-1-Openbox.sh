@@ -7,16 +7,16 @@ set -e
 
 #=> symlinks for Openbox
 
-ln -sf $Openbox/openbox/schema.pl ~/.config/obmenu-generator/schema.pl
+ln -sf $Obc/schema.pl ~/.config/obmenu-generator/schema.pl
 exa -la ~/.config/obmenu-generator/schema.pl
 
 # sort by last use of "~":  :sort /,*\~/
 
-ln -sf $Openbox/openbox/autostart/autostart ~/.config/openbox/autostart
-ln -sf $Openbox/openbox/rc/fixCopyQ.sh      ~/.config/openbox/fixCopyQ.sh
+ln -sf $Obc/autostart/autostart ~/.config/openbox/autostart
+ln -sf $Obc/rc/fixCopyQ.sh      ~/.config/openbox/fixCopyQ.sh
 ln -sf $ABjo/wm/importScreenshot.sh         ~/.config/openbox/importScreenshot.sh
-ln -sf $Openbox/openbox/menu.xml            ~/.config/openbox/menu.xml
-ln -sf $Openbox/openbox/rc/rc.xml           ~/.config/openbox/rc.xml
+ln -sf $Obc/menu.xml            ~/.config/openbox/menu.xml
+ln -sf $Obc/rc/rc.xml           ~/.config/openbox/rc.xml
 
 exa -la ~/.config/openbox
 

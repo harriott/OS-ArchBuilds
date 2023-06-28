@@ -4,11 +4,11 @@
 # Joseph Harriott, Mon 16 May 2022
 
 # machine dependent Openbox autostart tmux tweaks
-# called from  $Openbox/openbox/autostart/autostart
+# called from  $Obc/autostart/autostart
 
 # test (or reload) this configuration with
 #  tmux kill-server
-#  bash $Openbox/openbox/autostart/urxvtl.sh; bash $machBld/jo/autostart.sh
+#  bash $Obc/autostart/urxvtl.sh; bash $machBld/jo/autostart.sh
 
 # (chmod u+x $machBld/jo/urxvtl.sh)
 
@@ -29,7 +29,7 @@ tmux new-window
 tmux select-window -t 1:0
 
 #==> 1 open two panes on my new music directory
-cdm () { tmux send-keys -t 1:$1 'cd /mnt/SDU3D1TB/Dropbox/CAM-toSort0' Enter; }
+cdm () { tmux send-keys -t 1:0 'cd /mnt/SDU3D1TB/Dropbox/CAM-toSort0' Enter; }
 cdm 0; tmux split-window -t 1:0; cdm 0.1
 
 #==> 2 launch nnn & cmus

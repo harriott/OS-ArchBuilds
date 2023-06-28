@@ -211,7 +211,6 @@ moar -h
 
 # encoding
     $onGH/pandoc-templates/README.markdown
-    /home/jo/.local/pipx/venvs
     b <codeFile>  # syntax'd cat
     pb <codeFile>  # also reformatted
     r ~/.npm-global
@@ -221,6 +220,10 @@ moar -h
 ## ffprobe
     ffprobe -h | mo
     i ffprobe
+
+## Python
+    /home/jo/.local/pipx/venvs
+    i python
 
 ## Ruby
 ```bash
@@ -258,7 +261,7 @@ see `$vimfiles/syntax/gems.vim`
     i tree
     n [directory]
     pygmentize -h
-    rm -r /mnt/SDU3D1TB/.Trash-1000
+    rm -r $Storage/.Trash-1000
     rm -r /mnt/ST4000VN008/.Trash-1000
 
 - MV(1)
@@ -449,7 +452,7 @@ outer whitespaces get ignored
     rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
     rg <someText> **/*.ext
 
-in JH, `$Drpbx/JH/search/searches.md`
+in JH, `$DJH/search/searches.md`
 
 ## Vifm
     /usr/share/vifm/vifm-help.txt
@@ -577,7 +580,7 @@ NCDU(1)
     growisofs
 
 ### rsnapshot
-    $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
+    $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
     $machBld/etc/rsnapshot.conf
     pgrep rsnapshot
     snapshot_root
@@ -767,7 +770,7 @@ xdg-open https://archlinux.org
 
 ## Dropbox
 ```bash
-dropbox &  # as in  $Openbox/openbox/autostart/autostart
+dropbox &  # as in  $Obc/autostart/autostart
 killall dropbox
 lsof -c dropbox
 pkill dropbox; dropbox &
@@ -869,6 +872,7 @@ wp  # in Paris
 ```bash
 checkupdates
 expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500-$(date '+%Y%m%d%H%M').log  # 500 most recent installs
+makepkg --install
 pacfinder
 pacman -Qdt  # lists all orphans
 sudo pacman -Rs <packagetoremove>
@@ -898,6 +902,11 @@ sudo rm /var/lib/pacman/db.lck  # delete the stale lock
 
 ## pactree
     i pactree
+
+PACTREE(8)
+
+### detailed tree
+    pactree -c <package>  # coloured
     pactree -r <package>  # shows other packages that require it
 
 # pass
@@ -959,7 +968,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     i hier
     i localectl
     slock  # unlocks when correct user pw is entered
-
+    XF86Sleep
     /usr/share/doc/arch-wiki/html/en
 
 - FILE-HIERARCHY(7)
@@ -1059,25 +1068,26 @@ backed up in `$Bash/bash_profile`
     modkey+p = hotkeys_popup
 
 ### Openbox
-    $Openbox/openbox/autostart/autostart
-    $Openbox/openbox/schema.pl
+    $Obc/autostart/autostart
+    $Obc/schema.pl
 
 #### rc
-    $Openbox/openbox/rc/rc.xml
+    $Obc/rc/rc.xml
     Alt+Space => show client menu for active window
     Ctrl+Alt+arrows => move to desktop
     Shift+Alt+arrows => move to desktop, bringing current window along
-    W-a => galculator
-    W-d => ToggleShowDesktop
-    W-f => ToggleMaximize
-    W-F1-4 => GoToDesktop 1-4
-    W-k => keepassxc
-    W-r => Resize
-    W-u => urxvt
-    W-S-Left/Right/Up/Down => DirectionalCycleWindows <direction>
-    Win+1 => move the window to monitor 1
-    Win+2 => move the window to monitor 2
-    Win+t => last tmux buffer to X11 clipboard
+    win+1 => move the window to monitor 1
+    win+2 => move the window to monitor 2
+    win+a => Galculator
+    win-d => ToggleShowDesktop
+    win-f => ToggleMaximize
+    win-F1-4 => GoToDesktop 1-4
+    win-k => keepassxc
+    win-o => $Obc/rc/fixCopyQ.sh
+    win-r => Resize
+    win-u => urxvt
+    win-S-Left/Right/Up/Down => DirectionalCycleWindows <direction>
+    win+t => last tmux buffer to X11 clipboard
 
 #### tint2
     $Openbox/tint2rc
@@ -1127,7 +1137,8 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
     tmux list-keys | mo
     joinp -s 2 [-t 1 ]  -> join-pane, joining pane in window 2 [to that in window 1]
 
-TMUX(1)
+- `send-keys` can't decode a Bash environment variable
+- TMUX(1)
 
 ### session window pane
     M-PgDn/PgUp -> (= C-a (/) ) previous/next session

@@ -150,6 +150,9 @@ sudo pacman -S playerctl  # for MPD
 #=> pqiv
 sudo pacman -S pqiv
 
+#=> qalculate-gtk
+sudo pacman -S qalculate-gtk
+
 #=> qt5ct
 # - Qt5 theme - allows better tab differentiation in CopyQ
 sudo pacman -S qt5ct
