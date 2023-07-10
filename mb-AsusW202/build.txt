@@ -344,7 +344,38 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.208.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  :: Starting full system upgrade...
+  resolving dependencies...
+  warning: cannot resolve "libicuuc.so=73-64", a dependency of "harfbuzz-icu"
+  warning: cannot resolve "libicuuc.so=73-64", a dependency of "harfbuzz-icu"
+  warning: cannot resolve "libicuuc.so=73-64", a dependency of "raptor"
+  warning: cannot resolve "libicuuc.so=73-64", a dependency of "raptor"
+  warning: cannot resolve "libicuuc.so=73-64", a dependency of "harfbuzz-icu"
+  warning: cannot resolve "libicui18n.so=73-64", a dependency of "thunderbird"
+  warning: cannot resolve "libicuuc.so=73-64", a dependency of "thunderbird"
+  warning: cannot resolve "libicui18n.so=73-64", a dependency of "thunderbird"
+  warning: cannot resolve "libicuuc.so=73-64", a dependency of "thunderbird"
+  warning: cannot resolve "libicuuc.so=73-64", a dependency of "harfbuzz-icu"
+  :: The following packages cannot be upgraded due to unresolvable dependencies:
+        harfbuzz-icu  raptor  thunderbird
+  :: Do you want to skip the above packages for this upgrade? [y/N] y
+copyq &  gets me "copyq: error while loading shared libraries: libicui18n.so.73: cannot open shared object file: No such file or directory"
+### attempted fixes
+pactree copyq > copyq-dependencies.txt
+pactree -r icu > icu-required_by.txt
+sudo pacman -U icu-73.2-1-x86_64.pkg.tar.zst
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing icu (73.2-1) breaks dependency 'libicuuc.so=72-64' required by harfbuzz-icu
+  :: installing icu (73.2-1) breaks dependency 'libicuuc.so=72-64' required by raptor
+  :: installing icu (73.2-1) breaks dependency 'libicui18n.so=72-64' required by thunderbird
+  :: installing icu (73.2-1) breaks dependency 'libicuuc.so=72-64' required by thunderbird
 ## waiting
+$OSAB/root/bash_profile
+$OSAB/root/bashrc
+apache
+MariaDB
+php
 qalculate-gtk
 # fcron
 fcrontab -l

@@ -1,0 +1,15 @@
+
+# $ABjo/wm/pqivrc  symlinked to  ~/.config/pqivrc  (by $OSAB/bs-symlinks/jo-2-whenWM-1.sh)
+
+# pqiv configuration
+
+[options]
+#
+# pqiv -i  would invoke
+hide-info-box=1
+# - but now  pqiv -i  unhides it
+#
+# pqiv -n  would invoke
+sort=1
+# - but now  pqiv -n  turns it off
+

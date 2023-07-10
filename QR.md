@@ -20,6 +20,7 @@ sort(1)
 
 # Bash
     $Bash/bash_profile
+    $core/IT_stack/unix_like-linux/Bash/colours
     /etc/profile
 
 ```bash
@@ -149,6 +150,7 @@ moar -h
     [quote]quote[/quote]
 
 # documenting
+    i pdfinfo
     r $Sig
 
 ## dict
@@ -178,6 +180,10 @@ moar -h
 ### my packages
     r $LTXj
     r ~/texmf
+
+### native install
+    /usr/local/texlive/2023/texmf-dist/tex/latex/base/nfssfont.tex
+    zathura /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf &
 
 ## TeX Live
     pacman -Qs texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
@@ -401,7 +407,7 @@ see `$Bash/bashrc-console`
 
 ## ranger
     feh $cIThul/cheatsheet.png &
-    r $ABjo/ranger  # my configurations
+    r $OSAB/ranger  # my configurations
     r $Cfzd
     ranger --version
 
@@ -490,7 +496,8 @@ gpg(1)
 - see `$Bash/bashrc-console`
 
 ### commands
-Quite a few don't work, and some crash the terminal...
+- no backwards search
+- Quite a few don't work, and some crash the terminal...
 
 #### commands that work
     /       -> search
@@ -635,15 +642,12 @@ UDISKIE(8)
 ```bash
 im gs
 jpo  # defined in my $Bash/bashrc-wm
-pq  # pqiv (recursive, no info, sorted, 2s fade - see $Bash/bashrc-wm)
 rm -r ~/.thumbnails/normal/*
 xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 ```
 
 ## [n]sxiv
 ```bash
-i nsxiv
-ns  # see $Bash/bashrc-wm
 rm -r ~/.cache/sxiv/*
 ```
 
@@ -689,6 +693,18 @@ thumbnail mode: `R` reload all
 - `g` `G` first last
 - `r` reload
 - `+` `-` zoom in out
+
+### nsxiv
+```bash
+i nsxiv
+ns  # see $Bash/bashrc-wm
+tree ~/.cache/nsxiv
+```
+
+## pqiv
+    pq  # pqiv (recursive, no info, sorted, 2s fade - $Bash/bashrc-wm)
+
+pqiv(1)
 
 ## scanimage
     S 55n 3 <imagefilename> <scanheight>
@@ -744,6 +760,11 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
     pkill exfalso
     pkill quodlibet
 
+## OBS Studio Settings
+    Hotkeys > [ Start Recording  Stop Recording ] > Win+Space (= Super + Space)
+
+sbMb: `Video > [ Output (Scaled) Resolution > 1280x720  Common FPS Values > 30 ]`
+
 ## OpenShot
     r ~/.openshot_qt
     ~/.openshot_qt/openshot.settings
@@ -767,6 +788,19 @@ sudo ls /var/lib/dhcpcd/
 systemctl status nordvpnd.service
 xdg-open https://archlinux.org
 ```
+
+## Apache
+    r /etc/httpd/conf
+    sudo rm -r /srv/http/*
+
+HTTP Server
+
+### httpd.service
+    sudo systemctl enable httpd.service --now
+    sudo systemctl restart httpd.service
+    sudo systemctl start httpd.service
+    sudo systemctl stop httpd.service
+    systemctl status httpd.service
 
 ## Dropbox
 ```bash
@@ -971,8 +1005,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     XF86Sleep
     /usr/share/doc/arch-wiki/html/en
 
-- FILE-HIERARCHY(7)
-- GRUB (GRand Unified Bootloader)
+FILE-HIERARCHY(7)
 
 ## .desktop
     fd -tf .desktop $OSAB
@@ -1060,10 +1093,10 @@ backed up in `$Bash/bash_profile`
     journalctl -b -g 'EFI v'  # shows EFI version
 
 ## windows managers
-    $machBld/jo/awesome/rc.lua
     xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
 ### awesome
+    $machBld/jo/awesome/rc.lua
     modkey+c = c:kill()
     modkey+p = hotkeys_popup
 
@@ -1103,11 +1136,9 @@ backed up in `$Bash/bash_profile`
     bash $ulLB/colours/256/SO-BrunoBronosky.sh
     bash $ulLB/colours/256/SE269077-numbers-ordered.sh
     bash $ulLB/colours/256/SE269077-FHauri.sh
-    bash $ulLB/colours/awk-rgb-test.sh
+    bash $ulLB/colours/awk-rgb-test.sh  # nice one-line gradient
     bash $ulLB/colours/ss64.sh
     bash $ulLB/colours/tripleee+isntn.sh
-    perl $ulLB/colours/256/hSATAC-256color.pl
-    python $ulLB/colours/256/WoLpH-colortest.py
     colorscript -r
     terminal-colors  # shows what the terminal can do (console only 8 colours)
     terminal-colors -l  # with #xxxxxx's

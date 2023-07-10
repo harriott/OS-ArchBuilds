@@ -272,9 +272,9 @@ fdtsEncryptedChanges () {
 
 if [ $host = 'sbMb' ]; then
 
-  alias rsM='bash $onGH/FM-rsync-drives/sbMb/rsync-Music.sh'
-  alias rsV='bash $onGH/FM-rsync-drives/sbMb/rsync-Vs.sh'
-  alias rsVe='bash $onGH/FM-rsync-drives/sbMb/rsync-Vs-extra.sh'
+  alias rsM='bash $onGH/FM-rsync-drives/sbMb/Music.sh'
+  alias rsV='bash $onGH/FM-rsync-drives/sbMb/Vs.sh'
+  alias rsVe='bash $onGH/FM-rsync-drives/sbMb/Vs-extra.sh'
 
   fS () {
     find /mnt/WD30EZRZ/Sync2 -type f -name "*$1*"

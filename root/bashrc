@@ -1,7 +1,7 @@
 # vim: set ft=sh tw=0:
 
 # Joseph Harriott
-# $OSAB/root/bashrc  symlinked in  $bSc/symlinks/root.sh
+cp $OSAB/root/bashrc /root/.bashrc
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 

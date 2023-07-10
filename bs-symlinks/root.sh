@@ -27,9 +27,6 @@ read -p "\$OSAB  is  $OSAB - looks good?"
 # exa -la /usr/share/fonts
 
 # #=> 1 make root symlinks
-ln -sf $OSAB/root/bash_profile /root/.bash_profile  # sources root bashrc
-  ln -sf $OSAB/root/bashrc /root/.bashrc  # sources bashrc-generic
-
 ln -sf $OSAB/Bash/GNUReadline-inputrc /root/.inputrc
 
 ln -sf $machBld/export-machine /root/.export-machine
@@ -47,6 +44,5 @@ exa -la /root
 exa -la /root/.config/nano
 
 #=> 2 ranger
-sudo ln -sf $OSAB/ranger /root/.config/ranger
-exa -la /root/.config
+cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -sf $OSAB/ranger $cr  # e -adl ~/.config/ranger
 

@@ -75,14 +75,13 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> nomacs
-# gAUR nomacs
-# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
-# makepkg -sic  # takes ages...
-# notify-send -i /usr/share/icons/hicolor/scalable/apps/org.nomacs.ImageLounge.svg -u critical 'nomacs has been made'
-# # after first install
-# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-# true
+#=> nomacs
+gAUR nomacs
+nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+makepkg -sic  # takes ages...
+# after first install
+#  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+true
 
 # #=> nsxiv
 # gAUR nsxiv
@@ -196,29 +195,34 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
 
+# #=> usbimager
+# gAUR usbimager
+# nvim -c "silent! /usbimager" PKGBUILD
+# makepkg -sic
+
 # #=> verbiste
 # gAUR verbiste
 # nvim -c "silent! /perso.b2b2c.ca\/\~sarrazip\/dev" PKGBUILD
 # makepkg -sic
 
-#=> vimpc-git
-# for MPD
-gdAUR vimpc-git
-nvim -c "silent! /github.com\/boysetsfrog\/vimpc" PKGBUILD
-makepkg -sic
-mkdir ~/.config/vimpc
+# #=> vimpc-git
+# # for MPD
+# gdAUR vimpc-git
+# nvim -c "silent! /github.com\/boysetsfrog\/vimpc" PKGBUILD
+# makepkg -sic
+# mkdir ~/.config/vimpc
 
 # #=> yj-git
 # gdAUR yj-git
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-#=> ymuse
-# for MPD
-gAUR ymuse
-nvim -c "silent! /github.com\/yktoo" PKGBUILD
-makepkg -sic  # takes ages
-true
+# #=> ymuse
+# # for MPD
+# gAUR ymuse
+# nvim -c "silent! /github.com\/yktoo" PKGBUILD
+# makepkg -sic  # takes ages
+# true
 
 # #=> Zoom
 # gAUR zoom

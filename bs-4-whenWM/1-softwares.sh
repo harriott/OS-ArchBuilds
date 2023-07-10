@@ -9,6 +9,16 @@ if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 set -ev  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> Apache HTTP Server 0 install
+sudo pacman -S apache
+sudo sed -i 's/^Listen 80/Listen 127.0.0.1:80/' /etc/httpd/conf/httpd.conf  # local development only
+sudo systemctl enable httpd.service --now
+
+#=> Apache HTTP Server 1 virtual hosts
+sudo sed -i 's;^#Include conf/extra/httpd-vhosts.conf;Include conf/extra/httpd-vhosts.conf;' /etc/httpd/conf/httpd.conf
+cp /etc/hosts $OSAB/etc/hosts/backup
+cp /etc/httpd/conf/extra/httpd-vhosts.conf $OSAB/etc/httpd-vhosts/backup.conf  # backup for reference
+
 #=> acpilight - configure
 gpasswd -a jo video  # groups jo
 sudo cp $machBld/etc/90-backlight.rules /etc/udev/rules.d/90-backlight.rules

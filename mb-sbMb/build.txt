@@ -1641,24 +1641,35 @@ cmus_notify -h  reporting tracebacks, fixed by uninstalling and re-installing
 hp-setup -r > Select > Remove
 hp-setup 192.168.208.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## grow /
+KDTG311282  with  systemrescue-10.01-amd64.iso > UEFI: KingstonDataTraveler 3.0MAP > Default >
+  startx > GParted > [ /dev/sda5 > Delete > /dev/sda4 > Resize > New size (MiB) 60068 > Apply
+  unallocated > New > Label > SD480GSSDPlus ] Logout > Reboot
+sudo chown jo:jo /mnt/SD480GSSDPlus  & rebuilt directories
+## sxiv remove
+sudo pacman -Rs sxiv
+  checking dependencies...
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: removing sxiv breaks dependency 'sxiv' required by fontpreview-git
+## Apache - atiavda
+sudo mkdir -p /srv/http/atiavda
+sudo chown jo:jo /srv/http/atiavda
+rsync -irtv --delete $JHw/WB-Hugo-atiavda_one/public/ /srv/http/atiavda
+rm -r /srv/http/atiavda/*
+## Apache - GHP
+sudo mkdir -p /srv/http/GHP
+sudo chown jo:jo /srv/http/GHP
+rsync -irtv --delete $Jhm/_site/ /srv/http/GHP
+rm -r /srv/http/GHP/*
 ## waiting
-### remake /efi/EFI/GRUB/grubx64.efi
-sudo grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+MariaDB
+php
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
 ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
   acpi-cpufreq.ko.zst          p4-clockmod.ko.zst  powernow-k8.ko.zst
   amd_freq_sensitivity.ko.zst  pcc-cpufreq.ko.zst  speedstep-lib.ko.zst
-# snag - fails to boot due to ST4000VN008
-  Failed to start File System Check on /dev/disk/by-label/ST4000VN008.
-  Dependency failed for /mnt/ST4000VN008.
-## fix with e2fsck
-root pw > nvim /etc/fstab > commented out ST4000VN008, reboot  for
-  sudo bash $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh > disable
-  sudo e2fsck -v /dev/sdc1
-  sudo nvim /etc/fstab  to reinstate  ST4000VN008, reboot
-  sudo bash $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh > enable
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/f1t2t3/log.sh
@@ -1784,16 +1795,25 @@ M.I.T > PC Health Status >
 ### USB headers
 CY Double Port USB 3.0, exiting by middle slot
 Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB3
-# random reboots
-happen any time
 # recovering journal, after a hard reboot
   Starting version 251.1-1-arch
   /dev/sda2: recovering journal
   /dev/sda2: clean, 874157/3932160 files, 14687050/15728640 blocks
 when finally booted,  /dev/sda2 = /
-# system seizures under load
+# snags
+random reboots happen any time
+## fails to boot due to ST4000VN008
+  Failed to start File System Check on /dev/disk/by-label/ST4000VN008.
+  Dependency failed for /mnt/ST4000VN008.
+### fix with e2fsck
+root pw > nvim /etc/fstab > commented out ST4000VN008, reboot  for
+  sudo bash $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh > disable
+  sudo e2fsck -v /dev/sdc1
+  sudo nvim /etc/fstab  to reinstate  ST4000VN008, reboot
+  sudo bash $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh > enable
+## system seizures under load
 happens most when system is under load, but also sometimes when not heavily loaded
 journalctl -b -1 -r  shows no snags
 regularly: clock stuck, no CBH, so hard reboot
-## orphaned inodes on /dev/sda2
+### orphaned inodes on /dev/sda2
 journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS

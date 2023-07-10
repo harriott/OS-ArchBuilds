@@ -1,8 +1,8 @@
 #!/bin/sh
 # vim: ft=sh sw=2:
 
+# $OSAB/Bash/export-storage  (for  ~/.export-storage)
 # here I export variables that could also be useful as root
-# source $OSAB/Bash/export-storage
 
 # Variable naming constraints:
 #  avoid names that only differ by case

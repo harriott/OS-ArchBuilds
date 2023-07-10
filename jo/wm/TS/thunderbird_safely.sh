@@ -15,7 +15,7 @@
 #  echo lockTest > $llf
 #  touch $wlf
 
-llf=$T91/linuxlock     # my creation
+llf=$T91/linuxlock     # $T91/linuxlock - my creation
 wlf=$T91/Win10ProLock  # auto-created by  Thunderbird  on  Win10Pro
 # l 2>/dev/null $llf $wlf
 

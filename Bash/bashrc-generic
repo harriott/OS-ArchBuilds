@@ -214,7 +214,7 @@ alias p='ping -c 3 8.8.8.8'
 alias pg='ping -c 3 -n google.com'
 alias wp='curl wttr.in/Paris'  # weather
 
-pqs () { pacman -Qs $1 | xcol $1; }  # or use  pacsearch
+Q () { pacman -Qs $1 | xcol $1; }  # or use  pacsearch
 
 #=> pactree
 alias ptc='pactree -c '  # coloured

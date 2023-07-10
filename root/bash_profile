@@ -1,7 +1,7 @@
 # vim: set ft=sh:
-#
-# ~/.bash_profile
+
 # get my  .bashrc  settings working in  Console  &  su
+# cp $OSAB/root/bash_profile /root/.bash_profile
 
 source ~/.export-machine; source ~/.export-storage
 
