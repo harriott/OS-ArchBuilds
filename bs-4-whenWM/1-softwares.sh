@@ -11,13 +11,60 @@ trap read debug  # puts a read request after each executable line
 
 #=> Apache HTTP Server 0 install
 sudo pacman -S apache
-sudo sed -i 's/^Listen 80/Listen 127.0.0.1:80/' /etc/httpd/conf/httpd.conf  # local development only
-sudo systemctl enable httpd.service --now
+cp /etc/httpd/conf/httpd.conf $OSAB/etc/Apache/httpd/pristine.conf
+cp /etc/httpd/conf/extra/httpd-vhosts.conf $OSAB/etc/Apache/httpd-vhosts/pristine.conf
 
-#=> Apache HTTP Server 1 virtual hosts
+#=> Apache HTTP Server 1 enable
+sudo sed -i 's/^Listen 80/Listen 127.0.0.1:80/' /etc/httpd/conf/httpd.conf
+sudo sed -i 's/1:/2:/' /etc/httpd/conf/httpd.conf
+# - local development only
+sudo systemctl enable httpd.service --now  # check  http://localhost/
+
+#=> Apache HTTP Server 1 remove
+sudo pacman -Rs apache
+
+#=> Apache HTTP Server 2 tweaks for PHP
+sudo cp $OSAB/etc/Apache/php-fcgid.conf /etc/httpd/conf/extra/php-fcgid.conf
+# sudo prettybat /etc/httpd/conf/extra/php-fcgid.conf
+sudo sed -i 's/^#LoadModule actions_module modules/LoadModule actions_module modules/' /etc/httpd/conf/httpd.conf
+sudo sed -i '/Group http/a LoadModule fcgid_module modules\/mod_fcgid.so' /etc/httpd/conf/httpd.conf
+echo '# FCGID' | sudo tee -a /etc/httpd/conf/httpd.conf
+echo 'Include conf/extra/php-fcgid.conf' | sudo tee -a /etc/httpd/conf/httpd.conf
+echo '' | sudo tee -a /etc/httpd/conf/httpd.conf
+
+#=> Apache HTTP Server 2 virtual hosts 1 configuration
+sudo cp $OSAB/etc/Apache/httpd-vhosts/jo.conf /etc/httpd/conf/extra/httpd-vhosts.conf
 sudo sed -i 's;^#Include conf/extra/httpd-vhosts.conf;Include conf/extra/httpd-vhosts.conf;' /etc/httpd/conf/httpd.conf
-cp /etc/hosts $OSAB/etc/hosts/backup
-cp /etc/httpd/conf/extra/httpd-vhosts.conf $OSAB/etc/httpd-vhosts/backup.conf  # backup for reference
+
+#=> Apache HTTP Server 2 virtual hosts 2 DocumentRoot's 0 set
+# http://atiavda
+sudo mkdir /srv/http/atiavda
+sudo chown jo:jo /srv/http/atiavda
+
+# http://GHP
+sudo mkdir /srv/http/GHP
+sudo chown jo:jo /srv/http/GHP
+
+# http://test
+sudo mkdir /srv/http/test
+sudo chown jo:jo /srv/http/test
+
+# if seeing "Access forbidden!" try redoing these
+
+#=> Apache HTTP Server 2 virtual hosts 2 DocumentRoot's 1 remove
+sudo rm -r /srv/http/atiavda/*
+sudo rm -r /srv/http/GHP/*
+sudo rm -r /srv/http/test/*
+
+#=> Apache HTTP Server 3 backup httpd.conf
+cp /etc/httpd/conf/httpd.conf $OSAB/etc/Apache/httpd/backup.conf
+
+#=> Apache HTTP Server 4 tests of PHP
+echo '<?php phpinfo(); ?>' | sudo tee -a /srv/http/phpinfo.php  # sudo rm /srv/http/phpinfo.php
+sudo chown jo:jo /srv/http/phpinfo.php
+# http://localhost/phpinfo.php
+echo '<?php phpinfo(); ?>' > /srv/http/test/phpinfo.php  # sudo rm /srv/http/test/phpinfo.php
+# http://test/phpinfo.php
 
 #=> acpilight - configure
 gpasswd -a jo video  # groups jo
@@ -73,6 +120,9 @@ sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode
 #=> guvcview
 sudo pacman -S guvcview
 
+#=> hosts
+sudo cp $OSAB/etc/hosts/more /etc/hosts
+
 #=> HPLIP
 sudo pacman -S hplip
 
@@ -88,6 +138,9 @@ sudo pacman -S keepassxc
 #=> libgphoto2
 sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
 sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
+
+#=> LibreCAD
+sudo pacman -S librecad
 
 #=> metis 1 remove
 sudo pacman -Rs metis
@@ -111,6 +164,12 @@ sudo pacman -S nasm  # for  cpu-x
 
 #=> nawk
 sudo pacman -S nawk  # for  cpu-x
+
+#=> nginx-mainline
+sudo pacman -S nginx-mainline
+cp /etc/nginx/nginx.conf $OSAB/etc/Nginx/pristine.conf
+sudo cp $OSAB/etc/Nginx/jo.conf /etc/nginx/nginx.conf
+sudo mkdir /usr/share/nginx/test
 
 #=> OBS Studio 0 install
 sudo pacman -S obs-studio
@@ -138,6 +197,15 @@ true
 
 #=> pdftk
 sudo pacman -S pdftk
+
+#=> php
+sudo pacman -S php
+sudo sed -i 's#^;date.timezone =#date.timezone = Europe/Paris#' /etc/php/php.ini
+
+#=> php-cgi
+sudo pacman -S php-cgi
+sudo mkdir /srv/http/fcgid-bin
+sudo ln -s /usr/bin/php-cgi /srv/http/fcgid-bin/php-fcgid-wrapper
 
 #=> peek
 sudo pacman -S peek  # (GIF Screen Recorder)

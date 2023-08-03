@@ -1,14 +1,12 @@
 vim: nospell:
 
-    $OSAB; m4p QR 1
+    $OSAB; m4ps 0 1
 
 - commands in this QuickReference work in my Arch install
    - more generally, see `$onGH/misc/linux/QR.md`
-- Topics by ttoirrah https://bbs.archlinux.org/search.php?action=show_user_topics&user_id=88384
 
 ```bash
 bm  # (in a wide enough terminal) fuzzy search for manuals
-copyq help | mo
 i bc
 i datediff
 r $TeNo/TN
@@ -160,7 +158,7 @@ moar -h
 
 ## TeX
     r $GHrUse/CP/MartinThoma-LaTeX-examples
-    r $tInf/CP/TeX/LaTeX  # my MWEs
+    r $jtIT/CP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
 `mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
@@ -179,6 +177,7 @@ moar -h
 
 ### my packages
     r $LTXj
+    r $JHt/IT/CP/TeX/LaTeX
     r ~/texmf
 
 ### native install
@@ -193,12 +192,19 @@ moar -h
     /usr/local/texlive/2023/texmf-dist/doc/
     gdu -nps /usr/local/texlive
 
+#### tcolorbox
+    $/usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/README.md
+    /usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/tcolorbox-example-poster.tex
+
 # Emacs
-    E <fileToOpenGUI>
+    $TeNo/Emacs/org/org.org
     et <fileToOpenTerminal>
     im emacs
     n ~/.emacs.d
+    r $onGH/misc/Emacs
     r ~/.emacs.d
+
+`G` & `T` defined in `$Bash/bashrc-console`
 
 ## resources
     fd -e org -p $GHrUse/emacs
@@ -219,13 +225,25 @@ moar -h
     $onGH/pandoc-templates/README.markdown
     b <codeFile>  # syntax'd cat
     pb <codeFile>  # also reformatted
-    r ~/.npm-global
     yj -ty <file.toml >file.yml
     zathura $cITh/CP/encoding/cheatsheet-a5.pdf &  # emmet
 
 ## ffprobe
     ffprobe -h | mo
     i ffprobe
+
+## npm
+    $HOME/.npmrc
+    r ~/.npm-global
+    wikit mooji -b
+
+### mapscii
+    mapscii
+
+#### control
+- `a`/`z` = zoom in/out
+- arrows scroll around
+- mouse
 
 ## Python
     /home/jo/.local/pipx/venvs
@@ -466,6 +484,10 @@ in JH, `$DJH/search/searches.md`
     /usr/share/vifm/vim-doc/doc/vifm-lua.txt
     feh -F $cITh/CP/vifm-v0.12-builtin-normal.png &
     r ~/.config/vifm
+
+# forum
+- Forum Rules
+- Topics by ttoirrah https://bbs.archlinux.org/search.php?action=show_user_topics&user_id=88384
 
 # fun
     cat $CrPl/encoding/EMOJI_CHEAT_SHEET.gfm
@@ -777,131 +799,6 @@ won't open if `cmus` is playing a track
 
 ### projects
 
-# networking
-```bash
-cat /etc/hostname
-curl ifconfig.co  # IP address
-curl ifconfig.co/country
-my Thunderbird locks: pb $T91/linuxlock; pb $T91/Win10ProLock
-sudo dhcpcd wlwg111v2
-sudo ls /var/lib/dhcpcd/
-systemctl status nordvpnd.service
-xdg-open https://archlinux.org
-```
-
-## Apache
-    r /etc/httpd/conf
-    sudo rm -r /srv/http/*
-
-HTTP Server
-
-### httpd.service
-    sudo systemctl enable httpd.service --now
-    sudo systemctl restart httpd.service
-    sudo systemctl start httpd.service
-    sudo systemctl stop httpd.service
-    systemctl status httpd.service
-
-## Dropbox
-```bash
-dropbox &  # as in  $Obc/autostart/autostart
-killall dropbox
-lsof -c dropbox
-pkill dropbox; dropbox &
-```
-
-### conflicted copies
-```bash
-find $Drpbx -path $Drpbx/conflicted -prune -o -name "* conflicted copy*"
-find -name "* conflicted copy*" -exec rm -f {} \;
-find -name "*(Copie en conflit de *"
-```
-
-## email
-    default-release:  find -name "* conflicted copy*" -exec rm -f {} \;
-
-### mutt notmuch
-```bash
-$Bash/bashrc-clm
-grep -r "Georita" *
-rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
-```
-
-#### $maild
-    fd . */*/cur |wc -l  # all of my seen emails
-    fd . */*/new  # as yet unseen, a few
-    fd . */*/tmp  # usually nothing here, can be ignored
-    ~/.local/share/mail/.notmuch
-
-#### mutt
-    $clMail/neomutt/muttrc-general
-    f => forward
-    F => toggle important flag (= Star in Gmail)
-
-##### accounts
-    $clMail/neomutt/muttrc-accounts/ftml
-    $clMail/neomutt/muttrc-accounts/troh
-
-###### zou
-    $clMail/neomutt/muttrc-accounts/zou
-    echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
-
-#### notmuch search
-    nmse najac date:2022
-    nmse from:/gough/ date:2023
-    nmse tag:cz tag:zou '*lait*'
-    nmse tag:cz tag:zou | wc -l
-    nmse tag:zou date:2023
-    nmse tag:zou date:june2023
-    nmse '"pattern with spaces"'
-
-##### providors
-- orange.fr
-- yahoo!mail
-
-##### wildcard
-    nmse 'orf*'  # finds ORFILA
-
-Only possible at end of string...
-
-#### URLs unclickable by receiver
-URLs (such as in an email sent from `mutt`) unclickable - so better to send to them with `Thunderbird`
-
-## Jekyll
-```bash
-js
-r $Jhm
-```
-
-## NetworkManager
-    nmcli connection delete Jo-X10II
-    nmcli connection delete cafezoide
-    nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
-    nmcli connection up uuid 667c759d-382a-4875-9021-2258cdba8dad
-    nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
-    nmcli device wifi connect cafezoide password <password>
-    nmcli device wifi connect Jo-X10II password <password>
-    sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
-    sudo ls /etc/NetworkManager/system-connections/
-    systemctl status NetworkManager
-    systemctl status NetworkManager-dispatcher
-
-## SSH
-    $CrPl/networking/SSHconfig/$host
-    i sshd_config
-    ~/.ssh/config
-
-## weather
-    aw
-
-### wttr.in
-```bash
-curl wttr.in/London
-curl wttr.in/Moscow
-curl wttr.in/Salt+Lake+City
-wp  # in Paris
-```
-
 # packages
 ```bash
 checkupdates
@@ -909,10 +806,12 @@ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/exp
 makepkg --install
 pacfinder
 pacman -Qdt  # lists all orphans
+sudo pacman -U package.pkg.tar.xz
 sudo pacman -Rs <packagetoremove>
 grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
 ```
 
+    /etc/pacman.conf
     /var/cache/pacman/pkg/
 
 ## Aura
@@ -963,7 +862,7 @@ pass cz/GmailAPI/token-expire
     kill -9 "$(pidof perl)"
 
 ## Bash
-    [ -f $T91/parent.lock ] && echo zero file size
+    [ -f $Thb/parent.lock ] && echo zero file size
 
 ### ANSI escape sequences
     $OSAB/Bash/bashrc-generic
@@ -1005,7 +904,8 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     XF86Sleep
     /usr/share/doc/arch-wiki/html/en
 
-FILE-HIERARCHY(7)
+- FILE-HIERARCHY(7)
+- Trusted Users
 
 ## .desktop
     fd -tf .desktop $OSAB
@@ -1016,7 +916,7 @@ FILE-HIERARCHY(7)
 ## build
     $OSAB/etc/doas.conf
     r $OSAB $ulLA
-    r $ulLA/ml-$host
+    r $ulLA/ml-$host/etc-fstab
     vifm $OSAB $ulLA
 
 ## fonts
@@ -1216,6 +1116,7 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
 
 ## CopyQ
     bm copyq
+    copyq help | mo
     pkill copyq
     ~/.local/share/copyq/copyq/copyq.log
 

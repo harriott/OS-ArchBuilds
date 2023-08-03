@@ -1,4 +1,4 @@
-# vim: ft=sh sw=2:
+# vim: ft=bash sw=2:
 
 # $Bash/bashrc-wm   sourced by  $Bash/bashrc
 
@@ -133,6 +133,10 @@ fpcn () { ffprobe -v error -select_streams $1:0 -show_entries stream=codec_name 
 
 fps () { for v in "$@"; do echo $(fpwh $v) $(fpcn v $v) $(fpfr $v) $(fpcn a $v) $(fpasr $v) $(fpabr $v) $v; done; } # fps <files_you_want_statisitics_of>
 
+#==> yt-dlp
+yf () { yt-dlp -F $1; }
+y7 () { yt-dlp -f "[height<=?720]" $1; }
+
 #=> CUPS
 alias lpspd='lpstat -p -d'
 alias sc5='doas cupsenable ENVY_5530'
@@ -261,8 +265,8 @@ alias pq='pqiv * &'
 alias pqs='pqiv -d 2 -F -s * &'  # 2s fade slideshow
 
 #=> Jekyll
-js () { cd $Jhm; echo $Jhm; bundle exec jekyll serve; }
-jt () { cd $Jhm; rm tag/*; python $Jhm/_plugins/compile_tags.py; cd tag; }
+js () { cd $JHm; echo $JHm; bundle exec jekyll serve --drafts; }
+jt () { cd $JHm; rm tag/*; python $JHm/_plugins/compile_tags.py; cd tag; }
 
 #=> LaTeX
 export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
@@ -293,7 +297,7 @@ ltx () {
   fi
 }
 
-alias tit='rm *.aux *.log *.out'  # tidy tex = clear away TeX ancillary files
+alias tit='rm *.aux *.listing *.log *.out *.tcbtemp'  # tidy tex = clear away TeX ancillary files
 x () { max_print_line=4000 xelatex -halt-on-error $1 | xcol Missing; }
 
 #=> Pandoc my markdown notes
@@ -327,8 +331,4 @@ m4ps() {
     export headingtoodeep=######
     bash $MD4PDF/GNULinux/m4ps.sh $1 $2
 } # m4ps 0 (= don't redo) [1 (= no ToC)]
-
-#=> yt-dlp
-yf () { yt-dlp -F $1; }
-y7 () { yt-dlp -f "[height<=?720]" $1; }
 

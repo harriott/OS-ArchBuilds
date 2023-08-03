@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# $ bash $bSc/4-whenWM/4-various.sh
+# $ bash $OSAB/bs-4-whenWM/4-various.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -41,11 +41,11 @@ read -p "\$OSAB is $OSAB - looks good?"
 # sudo chmod 755 /etc/NetworkManager/dispatcher.d/ntpd.sh
 # # vifm /etc/NetworkManager/dispatcher.d /usr/lib/NetworkManager/dispatcher.d
 
-#=> 2 Thunderbird 1 T91-default-release
-p=~/.thunderbird/profiles.ini
+#=> 2 Thunderbird 1 $Thb
+p="~/.thunderbird/profiles.ini"
 sed -i '2i\\;vim: fdl=1:' $p
 sed -i '1i\\' $p
-sed -i "/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s:Path=.*:Path=$T91: }" $p
+sed -i "/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s:Path=.*:Path=$Thb: }" $p
 
 #=> 2 Thunderbird 2 backup profile
 rsync -irtv --delete ~/.thunderbird/ $machLg/jo/thunderbird

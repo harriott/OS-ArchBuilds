@@ -143,7 +143,7 @@ fdtsKS () {
 } # internal use only
 
 #===> my Arch Forum issues
-# $tInf/dts-ft_bbcode.fetl
+# $jtIT/dts-ft_bbcode.fetl
 # $ITstack/dts-ft_bbcode.fetl
 
 fdtsbbcode () {
@@ -198,7 +198,7 @@ gitc () {
 }
 
 #===> time-sorted - my GitHub issues
-# $tInf/GitHubIssues.fetl
+# $jtIT/GitHubIssues.fetl
 # $ITstack/GitHubIssues.fetl
 
 ghi () {
@@ -215,7 +215,7 @@ rgIT () {
   cd $DJH/searches
   f=IT-rg.fetl
   echo '' > $f; echo 'rgIT  -see  $Bash/bashrc-console'; echo '' > $f
-  for ITd in $tInf $ITstack; do
+  for ITd in $jtIT $ITstack; do
     rgc="rg -l $1 $ITd"
     echo '' >> $f; echo $rgc >> $f
     echo '' >> $f; $rgc >> $f; echo '' >> $f
@@ -227,7 +227,7 @@ SE () {
   f=SEN.fetl
   [ -s $f ] && rm $f
   echo '' > $f; echo 'SE  -see  $Bash/bashrc-console'
-  for ITd in $tInf $ITstack $JHw/France; do
+  for ITd in $jtIT $ITstack $JHw/France; do
     echo '' >> $f
     rg -l -tmd 'stackexchange|stackoverflow' $ITd | sort >> $f
   done

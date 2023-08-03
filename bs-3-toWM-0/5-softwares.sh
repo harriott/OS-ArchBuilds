@@ -56,10 +56,16 @@ sudo pacman -S grammalecte
 # #=> npm 1 cspell
 # npm i -g cspell
 
-#=> npm 1 ffmpeg-concat
+#=> npm 1 ffmpeg-concat 0 install
 npm i -g ffmpeg-concat  # takes time to complete
 
-# #=> npm 2 wikit
+#=> npm 1 ffmpeg-concat 1 uninstall
+npm un -g ffmpeg-concat
+
+#=> npm 1 mapscii
+npm i -g mapscii
+
+# #=> npm 1 wikit
 # npm i -g wikit
 
 #=> pdfCropMargins

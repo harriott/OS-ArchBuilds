@@ -1,7 +1,10 @@
+" vim: fdl=1:
 
-" $ABjo/textEdit/Vim/vimrc  symlinked in  $bSc/symlinks/jo-0.sh
+" $ABjo/textEdit/Vim/vimrc
+"  symlinked in my $OSAB/bs-symlinks/jo-0.sh
+"   pb ~/.vimrc
 
-" move on to my Arch vimrc
+""> 1 move on to  $vimfiles/vimrc-Arch.vim
 let vimrcArch = expand("$HOME/.vim/vimrc-Arch.vim")
 if filereadable(vimrcArch)
   exec "source ".vimrcArch

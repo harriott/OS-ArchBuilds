@@ -12,8 +12,9 @@ Xft.rgba: rgb
 ! ------------
 ! ------------
 
-! symlinked in  $bSc/symlinks/jo-0.sh  to  ~/.Xresources
-! called from my  $ABjo/xinitrc
+! symlinked in  $OSAB/bs-symlinks/jo-0.sh  to  ~/.Xresources
+
+! called from my  $ABjo/xinitrcs/xinitrc
 
 ! after changes here, either quit & restart X or
 !  xrdb $ABjo/wm/Xresources/Xresources  or  xrdb ~/.Xresources
@@ -25,6 +26,14 @@ xman*manualFontNormal:    -*-ubuntumono-*-r-*-*-*-120-*-*-*-*-*-*
 ! - even though:
 !  $ appres xman  shows that they are set
 !  $ xman -notopbox &  still reports conversion error
+
+XTerm.termName: xterm-256color
+XTerm.vt100.locale: true
+XTerm.vt100.reverseVideo: true
+! white on black, so I can see text in tmux
+XTerm.vt100.saveLines: 4096
+XTerm*VT100*translations: #override \n\
+  Ctrl <KeyPress> Insert: copy-selection(CLIPBOARD)
 
 ! ------------
 ! rxvt-unicode
@@ -58,4 +67,5 @@ URxvt.clipboard.autocopy: true
 ! cmus  &  tmux  folders show in  URxvt.boldFont
 
 #include "/home/jo/.Xresources-font"
+! $ABjo/wm/Xresources/fontUM
 

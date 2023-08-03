@@ -1,0 +1,46 @@
+<!-- vim: set fdl=3: -->
+<!DOCTYPE html>
+
+<!--
+	for   http://test
+
+	from  https://gist.github.com/cfjedimaster/2385587  with thanks
+
+    sudo cp $OSAB/Apache-test/Moo-index.html /srv/http/test/index.html
+		chmod 644 index.html (600 will get  "Access forbidden!")
+-->
+
+<html>
+
+<head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Single page template</title>
+     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+     <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" id="page1">
+
+     <div data-role="header">
+          <h1>single test page</h1>
+     </div>
+
+     <div data-role="content">
+          <h1>test</h1>
+          <p> /srv/http/test/index.html </p>
+          <p> <?php include ('phpinfo.php'); ?> </p>
+     </div>
+
+     <div data-role="footer">
+          <h4>no footer content</h4>
+     </div>
+
+</div>
+
+</body>
+</html>
+

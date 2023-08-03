@@ -32,24 +32,29 @@ export CPdoc=$CrPl/documenting
   export LTXj=$CPdoc/LaTeX/jo  # $LTXj
 export DaLi=$DJH/now/DailyLife  #  $DaLi  used in  $TeNo
 export ess=$DJH/now/essential
-  export Sig=$DJH/now/essential/signatures  # $Sig  for use in creating documents
+  export eFr=$ess/France  # $eFr
+  export Sig=$ess/signatures  # $Sig  for use in creating documents
 export FFIdF=$DJH//F+F/France/IdF  # $FFIdF  used in  $TeNo
   export GHrUse=$DJH/CGHrepos  # GitHub Repositories Use
     [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
     export jkll=$GHrUse/CP/Ruby/Jekyll
       export mnm=$jkll/Jekyll-jekyll-minima
 export JHt=$DJH/technos
-  export tInf=$JHt/IT  # used in  $DWp  &  $TeNo
-    export tITUL=$JHt/IT/UnixLike  # $tITUL  used in  $core  &  $tInf
+  export jtIT=$JHt/IT  # used in  $core  &  $jtIT
+    export jtUL=$JHt/IT/UnixLike  # $jtUL  used in  $core  &  $jtIT
   export tIs=$JHt/IT-storage  # $tIs/diskUsage.txt
 export JHw=$DJH/work  # $JHw - for IT websites and more
   export bilan=$JHw/ST/LPD/IdF/AB-TAP/bilan
-  export Jhm=$JHw/IT-Jekyll-harriott-minima  # $Jhm
+  export JHm=$JHw/IT-Jekyll-harriott-minima  # $JHm
   export StEr=$JHw/France/IdF/Paris/rueErmitage/StudioErmitage  # previously used  $detail
-export T91=$DJH/T91-default-release  # $T91
+export Thb=$DJH/Thb-dr  # $Thb, used in
+                        #  $ABjo/wm/TS/locks.sh
+                        #  $OSAB/bs-4-whenWM/4-various.sh
+                        #  $OSAB/jo/wm/TS/thunderbird_safely.sh
+                        #  ~/.thunderbird/profiles.ini
 export Then0=$DJH/Then0  # used in  $TeNo
   export T0Fr=$Then0/Europe/France  # used in  $TeNo
-export DWp=$ITstack/DokuWiki/pages
+export DWp=$ITstack/DokuWiki/pages  # $DWp
 export GHrCl=$Storage/IT-Copied/GHrepos  # $GHrCl  GitHub Repositories Clone
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export lclm=$ulL/clm  # $lclm  linux command-line mail, was  GNULE

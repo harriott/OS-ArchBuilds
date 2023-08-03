@@ -1651,19 +1651,18 @@ sudo pacman -Rs sxiv
   checking dependencies...
   error: failed to prepare transaction (could not satisfy dependencies)
   :: removing sxiv breaks dependency 'sxiv' required by fontpreview-git
-## Apache - atiavda
-sudo mkdir -p /srv/http/atiavda
-sudo chown jo:jo /srv/http/atiavda
-rsync -irtv --delete $JHw/WB-Hugo-atiavda_one/public/ /srv/http/atiavda
-rm -r /srv/http/atiavda/*
-## Apache - GHP
-sudo mkdir -p /srv/http/GHP
-sudo chown jo:jo /srv/http/GHP
-rsync -irtv --delete $Jhm/_site/ /srv/http/GHP
-rm -r /srv/http/GHP/*
+## Apache - http://GHP
+rsync -irtv --delete $JHm/_site/ /srv/http/GHP
+## HP ENVY 5532 IP Address changed to 129.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.129.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## move to Thunderbird v115 profile
+(Thunderbird not running)  sed -i 's/91-default-release/hbdr/ ' ~/.thunderbird/profiles.ini
 ## waiting
 MariaDB
-php
+nginx-mainline
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

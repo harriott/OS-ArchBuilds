@@ -1,5 +1,7 @@
 vim: ft=build:
 
+$OSAB/softwares.txt
+
 # CopyQ
 Ctrl+p (= Preferences) >
   General >

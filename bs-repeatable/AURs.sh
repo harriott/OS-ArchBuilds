@@ -21,28 +21,28 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /madgag" PKGBUILD
 # makepkg -sic  # jre-openjdk
 
-# #=> cheat
-# gAUR cheat
-# nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
-# makepkg -sic
-# sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
+#=> cheat
+gAUR cheat
+nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
+makepkg -sic
+sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
 
 # #=> code-minimap
 # gAUR code-minimap
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
 
-# #=> cpu-x 0 mawk
-# gAUR mawk
-# nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
-# makepkg -sic
-# true
+#=> cpu-x 0 mawk
+gAUR mawk
+nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
+makepkg -sic
+true
 
-# #=> cpu-x 1 cpu-x
-# gAUR cpu-x
-# nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
-# makepkg -sic
-# true
+#=> cpu-x 1 cpu-x
+gAUR cpu-x
+nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
+makepkg -sic
+true
 
 # #=> dict-moby-thesaurus
 # gAUR dict-moby-thesaurus
@@ -126,11 +126,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> moar 0 (re)install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 (re)install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR

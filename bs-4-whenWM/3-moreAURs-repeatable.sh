@@ -16,6 +16,7 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # cd /usr/share/clifm/plugins
 # sudo gcc -o kbgen kbgen.c -lcurses
+# true
 
 # #=> clifm 1 remove
 # sudo pacman -Rs clifm
@@ -45,11 +46,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox 0 (re)install
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -57,11 +58,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> iscan
 # gAUR iscan
@@ -75,13 +76,14 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> nomacs
-gAUR nomacs
-nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
-makepkg -sic  # takes ages...
-# after first install
-#  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-true
+# #=> nomacs
+# gAUR nomacs
+# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+# makepkg -sic  # takes ages...
+# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2282-3-x86_64.pkg.tar.zst
+# # after first install
+# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+# true
 
 # #=> nsxiv
 # gAUR nsxiv
@@ -99,6 +101,16 @@ true
 # gAUR briss
 # nvim -c "silent! /sourceforge.net\/projects\/briss" PKGBUILD
 # makepkg -sic
+
+# #=> mod_fcgid 0 install
+# # for Apache
+# gAUR mod_fcgid
+# nvim -c "silent! /www.apache.org\/dist\/httpd\/mod_fcgid\/mod_fcgid" PKGBUILD
+# makepkg -sic
+# sudo cp $OSAB/etc/Apache/php-fcgid.conf /etc/httpd/conf/extra/php-fcgid.conf
+
+# #=> mod_fcgid 1 remove
+# sudo pacman -Rs mod_fcgid
 
 # #=> mpdris2
 # # for MPD

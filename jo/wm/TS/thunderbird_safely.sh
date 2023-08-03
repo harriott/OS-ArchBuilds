@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Joseph Harriott - Sat 12 Nov 2022
+# Joseph Harriott - Sun 23 Jul 2023
 
 # run Thunderbird safely from Profile shared on Dropbox
 # -----------------------------------------------------
 
 # (chmod 755 $OSAB/jo/wm/TS/thunderbird_safely.sh)
-# symlinked in my  $bSc/symlinks/jo-2-whenWM-1.sh
+# symlinked in my  $OSAB/bs-symlinks/jo-2-whenWM-1.sh
 #  to provide my command  thunderbird_safely
 #   used in  $Obc/schema.pl
 
@@ -15,8 +15,8 @@
 #  echo lockTest > $llf
 #  touch $wlf
 
-llf=$T91/linuxlock     # $T91/linuxlock - my creation
-wlf=$T91/Win10ProLock  # auto-created by  Thunderbird  on  Win10Pro
+llf=$Thb/linuxlock     # $Thb/linuxlock - my creation
+wlf=$Thb/Win10ProLock  # auto-created by  Thunderbird  on  Win10Pro
 # l 2>/dev/null $llf $wlf
 
 if [ -s $llf ]; then
@@ -26,14 +26,15 @@ fi
 [ -f "$wlf" ] && wl=Win10
 
 l="$ll $wl"
+echo $l
 if [ -z $l ]; then
     echo $host > $llf
-    if test $(find $T91 -name "* conflicted copy*" | wc -c) -eq 0; then
+    if test $(find $Thb -name "* conflicted copy*" | wc -c) -eq 0; then
         thunderbird
     else
-        notify-send -i /usr/share/icons/hicolor/16x16/apps/thunderbird.png -u critical 'Dropbox conflicts in $T91.'
+        notify-send -i /usr/share/icons/hicolor/16x16/apps/thunderbird.png -u critical 'Dropbox conflicts in $Thb.'
     fi
 else
-    notify-send -i /usr/share/icons/hicolor/16x16/apps/thunderbird.png -u critical "? $l > Thunderbird > T91-default-release"
+    notify-send -i /usr/share/icons/hicolor/16x16/apps/thunderbird.png -u critical "? $l > Thunderbird > Thb"
 fi
 

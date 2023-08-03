@@ -1,7 +1,8 @@
 # vim: set ft=sh tw=0:
 
 # Joseph Harriott
-cp $OSAB/root/bashrc /root/.bashrc
+# cp $OSAB/root/bashrc /root/.bashrc
+# nvim -O $OSAB/root/bashrc /root/.bashrc -c 'windo difft'
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 

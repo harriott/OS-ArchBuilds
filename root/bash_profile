@@ -2,6 +2,7 @@
 
 # get my  .bashrc  settings working in  Console  &  su
 # cp $OSAB/root/bash_profile /root/.bash_profile
+# nvim -O $OSAB/root/bash_profile /root/.bash_profile -c 'windo difft'
 
 source ~/.export-machine; source ~/.export-storage
 

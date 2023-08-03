@@ -1,8 +1,6 @@
 
-" this is an alternative vimrc, just for discovering which function keys work in neovim
-
-" In  ~/.config/nvim/init.vim  or  .vimrc
-"  source $Drpbx/$ABjo/Vim/nvim/fnKeyTest.vim
+" $ABjo/textEdit/Vim/fnKeyTest.vim  optionally sourced by  $ABjo/textEdit/Vim/init.vim
+" this is an alternative  vimrc, just for discovering which function keys work in  neovim
 
 nmap <f1>  :echo "detected  f1"<cr>
 nmap <f2>  :echo "detected  f2"<cr>

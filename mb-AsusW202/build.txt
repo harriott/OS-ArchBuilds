@@ -370,13 +370,48 @@ sudo pacman -U icu-73.2-1-x86_64.pkg.tar.zst
   :: installing icu (73.2-1) breaks dependency 'libicuuc.so=72-64' required by raptor
   :: installing icu (73.2-1) breaks dependency 'libicui18n.so=72-64' required by thunderbird
   :: installing icu (73.2-1) breaks dependency 'libicuuc.so=72-64' required by thunderbird
+## extra-testing errors
+  urxvt: error while loading shared libraries: libperl.so: cannot open shared object file: No such file or directory
+$jtUL/Linux/Arch/encoding/Perl/perl_5_36_1_2_breaks_various_other_packages.txt
+### not helped
+sudo pacman -S rxvt-unicode
+sudo pacman -S urxvt-perls
+sudo pacman -S rxvt-unicode-terminfo
+sudo pacman -S perl
+  pacman -Qqo '/usr/lib/perl5/5.38'
+### trizen
+reinstalled
+trizen -G perl-unicode-utf8
+  Can't locate Clone.pm in @INC (you may need to install the Clone module)
+### reinstall perl-unicode-utf8
+in  $HOME/Arch/AUR  git clone https://aur.archlinux.org/perl-unicode-utf8.git
+in  $HOME/Arch/AUR/perl-unicode-utf8  nvim -c "silent! /metacpan.org" PKGBUILD  then  makepkg -sic
+### defunct Perl packages
+  WARNING: '/usr/lib/perl5/5.38' contains data from at least 64 packages which will NOT be used by the installed perl interpreter.
+   -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.38'
+pacman -Qqo '/usr/lib/perl5/5.38' > $machLg/pacman/pacman-Qqo-perl5_5_38-$(date '+%y%m%d-%H%M').log
+sudo pacman -S graphicsmagick graphviz imagemagick net-snmp perl-alien-build perl-alien-libxml2 perl-capture-tiny perl-clone perl-common-sense perl-data-dump perl-dbi perl-dist-checkconflicts perl-encode-locale perl-error perl-exporter-tiny perl-ffi-checklib perl-file-homedir perl-file-listing perl-file-which perl-html-parser perl-html-tagset perl-http-cookies perl-http-daemon perl-http-date perl-http-message perl-http-negotiate perl-image-exiftool perl-inc-latest perl-io-html perl-io-socket-ssl perl-io-tty perl-json-parse perl-json-xs perl-lchown perl-libwww perl-list-moreutils perl-list-moreutils-xs perl-log-message perl-log-message-simple perl-lwp-mediatypes perl-lwp-protocol-https perl-mailtools perl-module-build perl-module-implementation perl-mozilla-ca perl-net-http perl-net-ssleay perl-package-stash perl-package-stash-xs perl-path-tiny perl-rename perl-sgmls perl-sort-naturally perl-term-readline-gnu perl-term-ui perl-test-fatal perl-timedate perl-try-tiny perl-types-serialiser perl-uri perl-www-robotrules perl-xml-libxml perl-xml-parser subversion
+- didn't help
+### extra-testing
+was enabled, so  sudo nvim /etc/pacman.conf  to comment it out
+sudo pacman -S perl
+sudo pacman -S graphicsmagick graphviz imagemagick net-snmp perl-alien-build perl-alien-libxml2 perl-capture-tiny perl-clone perl-common-sense perl-data-dump perl-dbi perl-dist-checkconflicts perl-encode-locale perl-error perl-exporter-tiny perl-ffi-checklib perl-file-homedir perl-file-listing perl-file-which perl-html-parser perl-html-tagset perl-http-cookies perl-http-daemon perl-http-date perl-http-message perl-http-negotiate perl-image-exiftool perl-inc-latest perl-io-html perl-io-socket-ssl perl-io-tty perl-json-parse perl-json-xs perl-lchown perl-libwww perl-list-moreutils perl-list-moreutils-xs perl-log-message perl-log-message-simple perl-lwp-mediatypes perl-lwp-protocol-https perl-mailtools perl-module-build perl-module-implementation perl-mozilla-ca perl-net-http perl-net-ssleay perl-package-stash perl-package-stash-xs perl-path-tiny perl-rename perl-sgmls perl-sort-naturally perl-term-readline-gnu perl-term-ui perl-test-fatal perl-timedate perl-try-tiny perl-types-serialiser perl-uri perl-www-robotrules perl-xml-libxml perl-xml-parser subversion
+### downgrade urxvt
+still failing, so
+sudo pacman -S rxvt-unicode rxvt-unicode-terminfo urxvt-perls
+  warning: downgrading package rxvt-unicode (9.31-4 => 9.31-3)
+  warning: downgrading package rxvt-unicode-terminfo (9.31-4 => 9.31-3)
+  warning: urxvt-perls-2.3-2 is up to date -- reinstalling
+urxvt  worked
+### downgrade gvim
+gvim &  still failing, so
+sudo pacman -S gvim
+  warning: downgrading package gvim (9.0.1676-2 => 9.0.1676-1)
 ## waiting
-$OSAB/root/bash_profile
-$OSAB/root/bashrc
 apache
+mapscii
 MariaDB
 php
-qalculate-gtk
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh
