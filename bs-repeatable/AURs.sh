@@ -21,28 +21,22 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /madgag" PKGBUILD
 # makepkg -sic  # jre-openjdk
 
-#=> cheat
-gAUR cheat
-nvim -c "silent! /https:\/\/github.com\/cheat\/cheat" PKGBUILD
-makepkg -sic
-sudo sed -i 's/# st/st/' /etc/cheat/conf.yml  # better colouring
-
 # #=> code-minimap
 # gAUR code-minimap
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
 
-#=> cpu-x 0 mawk
-gAUR mawk
-nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
-makepkg -sic
-true
+# #=> cpu-x 0 mawk
+# gAUR mawk
+# nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
+# makepkg -sic
+# true
 
-#=> cpu-x 1 cpu-x
-gAUR cpu-x
-nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
-makepkg -sic
-true
+# #=> cpu-x 1 cpu-x
+# gAUR cpu-x
+# nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> dict-moby-thesaurus
 # gAUR dict-moby-thesaurus
@@ -126,11 +120,11 @@ true
 # makepkg -sic
 # true
 
-# #=> moar 0 (re)install
-# gAUR moar
-# nvim -c "silent! /walles" PKGBUILD
-# makepkg -sic
-# true
+#=> moar 0 (re)install
+gAUR moar
+nvim -c "silent! /walles" PKGBUILD
+makepkg -sic
+true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
@@ -140,11 +134,11 @@ true
 # #=> nordvpn-bin 0 remove countries.dat
 # sudo rm /var/lib/nordvpn/data/countries.dat
 
-# #=> nordvpn-bin 1 (re)install
-# gAUR nordvpn-bin
-# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-# makepkg -sic
-# true
+#=> nordvpn-bin 1 (re)install
+gAUR nordvpn-bin
+nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+makepkg -sic
+true
 
 # #=> nordvpn-bin 2 configure
 # sudo usermod -aG nordvpn jo  # need to re-login
@@ -193,8 +187,8 @@ true
 # makepkg -sic  # takes a long time...
 # true
 
-# #=> tspreed
-# gAUR tspreed
-# nvim -c "silent! /github.com\/n-ivkovic\/tspreed" PKGBUILD
-# makepkg -sic
+#=> tspreed
+gAUR tspreed
+nvim -c "silent! /github.com\/n-ivkovic\/tspreed" PKGBUILD
+makepkg -sic
 

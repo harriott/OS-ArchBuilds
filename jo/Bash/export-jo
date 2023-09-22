@@ -18,35 +18,42 @@ export PAPERSIZE=A4  # libpaper
 # here I'm taking care to avoid variables that only differ by case
 
 export Cfzd=$DJH/Cafezoide
-  export PhPr=$Cfzd/PhysicalProperty
+  export CzPeo=$Cfzd/people  # $CzPeo
+  export CzPhy=$Cfzd/PhysicalProperty  # $PzPhy
 export CfWk=$DJH/CforWork
   export ScEn=$CfWk/education/Science-Engineering
 export copied=$DJH/copied  # used in  $TeNo
   export cFr=$copied/France  # used in  $TeNo
   export chum=$copied/human  # used in  $TeNo
   export cITh=$copied/IT-handy
+  export copOT=$copied/OutThere  # $copOT  used in  $TeNo
     export cIThul=$cITh/unix-like
   export Pr0=$copied/Practical0
     export Pr0t=$copied/Practical0/technos
+export COT=$Drpbx/COutThere  # $COT  used in  $TeNo
 export CPdoc=$CrPl/documenting
   export LTXj=$CPdoc/LaTeX/jo  # $LTXj
 export DaLi=$DJH/now/DailyLife  #  $DaLi  used in  $TeNo
 export ess=$DJH/now/essential
   export eFr=$ess/France  # $eFr
   export Sig=$ess/signatures  # $Sig  for use in creating documents
-export FFIdF=$DJH//F+F/France/IdF  # $FFIdF  used in  $TeNo
-  export GHrUse=$DJH/CGHrepos  # GitHub Repositories Use
-    [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
-    export jkll=$GHrUse/CP/Ruby/Jekyll
-      export mnm=$jkll/Jekyll-jekyll-minima
+export FFIdF=$DJH/F+F/France/IdF  # $FFIdF  used in  $TeNo
+export GHrUse=$Drpbx/CGHrepos
+  # - GitHub Repositories Use, used in  $OSAB/bs-symlinks/jo-1-awesome.sh
+  [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
+  export jkll=$GHrUse/CP/Ruby/Jekyll
+    export mnm=$jkll/Jekyll-jekyll-minima
 export JHt=$DJH/technos
   export jtIT=$JHt/IT  # used in  $core  &  $jtIT
-    export jtUL=$JHt/IT/UnixLike  # $jtUL  used in  $core  &  $jtIT
+    export jtCP=$jtIT/CP  # $jtCP
+    export jtUL=$jtIT/UnixLike  # $jtUL  used in  $core  &  $jtIT
   export tIs=$JHt/IT-storage  # $tIs/diskUsage.txt
 export JHw=$DJH/work  # $JHw - for IT websites and more
   export bilan=$JHw/ST/LPD/IdF/AB-TAP/bilan
   export JHm=$JHw/IT-Jekyll-harriott-minima  # $JHm
-  export StEr=$JHw/France/IdF/Paris/rueErmitage/StudioErmitage  # previously used  $detail
+  export rEr=$JHw/France/IdF/Paris/rueErmitage
+    export StEr=$rEr/StudioErmitage
+export OSAT=$onGH/OS-Android-Termux
 export Thb=$DJH/Thb-dr  # $Thb, used in
                         #  $ABjo/wm/TS/locks.sh
                         #  $OSAB/bs-4-whenWM/4-various.sh

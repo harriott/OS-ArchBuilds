@@ -82,30 +82,31 @@ set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 # set sort = 'reverse-date'
 
 #=> QR
-#  ? ==> help
-#  f ==> forward
+# ? ==> help
+# B ==> toggle sidebar
+# f ==> forward
+# v ==> view-attachments, select  text/plain > s (= save-entry) > messageContents.txt
 
 #==> browser
 #  c? ==> enter browser
 #  p ==> parent folder
 
 #==> index
-#  $ ==> sync changes
-#  * or <End> -> <last-entry> ==> jump to the last entry
-#  / ~F ==> find flagged message
-#  ; (= tag-prefix) ==> apply next function to tagged messages
-#  = or <Home> -> <first-entry> ==> jump to the first entry
-#  B ==> toggle sidebar
-#  J ==> next message
-#  K ==> previous message
-#  N ==> toggle New mark
-#  T ==> tag-pattern ==> tag messages matching a pattern
-#   T > .* ==> tags all in a folder
-#   T > ~N ==> tags all marked as new in a folder
-#  ^T ==> untag messages matching a pattern
-#  U ==> undo deletion
-#  [ ==> <half-up>
-#  ] ==> <half-down>
+# $ ==> sync changes
+# * or <End> -> <last-entry> ==> jump to the last entry
+# / ~F ==> find flagged message
+# ; (= tag-prefix) ==> apply next function to tagged messages
+# = or <Home> -> <first-entry> ==> jump to the first entry
+# J ==> next message
+# K ==> previous message
+# N ==> toggle New mark
+# T ==> tag-pattern ==> tag messages matching a pattern
+#  T > .* ==> tags all in a folder
+#  T > ~N ==> tags all marked as new in a folder
+# ^T ==> untag messages matching a pattern
+# U ==> undo deletion
+# [ ==> <half-up>
+# ] ==> <half-down>
 
 #==> pager
 #  - ==> <previous-page> ==> page up

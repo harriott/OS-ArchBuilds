@@ -2,7 +2,7 @@
 
 # AURs that require a WM
 
-# bash $bSc/4-whenWM/3-moreAURs-repeatable.sh
+# bash $OSAB/bs-4-whenWM/3-moreAURs-repeatable.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -41,16 +41,36 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /Jack12816" PKGBUILD
 # makepkg -sic
 
+#=> davfs2 0 Ali Abdallah's key
+gpg --recv-keys B94556F81C85D0D5
+
+#=> davfs2 1 (re)install
+gAUR davfs2
+nvim -c "silent! /savannah.nongnu.org\/projects" PKGBUILD
+makepkg -sic
+true
+
+#=> davfs2 2 dav_group
+sudo sed -i 's/^# dav_group/dav_group/' /etc/davfs2/davfs2.conf
+sudo groupadd davfs2
+sudo gpasswd -a jo davfs2
+
+#=> davfs2 3 secrets
+mkdir ~/.davfs2
+cp $Enc/Digital1/davfs2Secrets ~/.davfs2/secrets
+chmod -c 0600 ~/.davfs2/secrets
+s ~/.davfs2/secrets
+
 # #=> dragon-drop
 # gAUR dragon-drop
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-#=> Dropbox 0 (re)install
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -58,11 +78,23 @@ true
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> epson-inkjet-printer-escpr
+# gAUR epson-inkjet-printer-escpr
+# nvim -c "silent! /download3.ebz.epson.net" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> epson-printer-utility
+# gAUR epson-printer-utility
+# nvim -c "silent! /download3.ebz.epson.net" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> iscan
 # gAUR iscan
@@ -83,12 +115,6 @@ true
 # # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2282-3-x86_64.pkg.tar.zst
 # # after first install
 # #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-# true
-
-# #=> nsxiv
-# gAUR nsxiv
-# nvim -c "silent! /https:\/\/codeberg.org\/nsxiv\/nsxiv" PKGBUILD
-# makepkg -sic
 # true
 
 # #=> Pacfinder

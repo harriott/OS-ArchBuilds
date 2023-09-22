@@ -12,6 +12,6 @@ hds=(
     )
 for hd in "${hds[@]}"; do
     echo $hd
-    exa -aF $hd/lost+found
+    eza -aF $hd/lost+found
 done
 

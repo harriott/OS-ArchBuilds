@@ -110,7 +110,7 @@ alias fx='fdtsExt'
 fdtsExt () {
   if [ $1 ]; then
     fdtsKSsearch="*.$1"; [[ $1 = 'gitignore' ]] && fdtsKSsearch=".$1"
-    [[ $1 = "py" || $1 = "tex" ]] && fdtsKSprune=$'-path \'*/copied/*\' -prune -o -path \'*/CGHrepos/*\' -prune -o -path \'*/vimfiles/*\' -prune -o'
+    [[ $1 = "py" || $1 = "tex" ]] && fdtsKSprune=$'-path \'*/JH/copied/*\' -prune -o -path \'*/CGHrepos/*\' -prune -o -path \'*/vimfiles/*\' -prune -o'
     # still allows  fx tex  in  $copied, $CGHrepos, &  $vimfiles
     fdtsKSlist=dts-$1.fetl
     fdtsKS
@@ -212,14 +212,14 @@ ghi () {
 
 #==> lists of files by content
 rgIT () {
-  cd $DJH/searches
-  f=IT-rg.fetl
-  echo '' > $f; echo 'rgIT  -see  $Bash/bashrc-console'; echo '' > $f
+  cd $DJH/search
+  f=IT-rg.fetl  # $DJH/search/IT-rg.fetl
   for ITd in $jtIT $ITstack; do
     rgc="rg -l $1 $ITd"
     echo '' >> $f; echo $rgc >> $f
     echo '' >> $f; $rgc >> $f; echo '' >> $f
   done
+  echo "- now open  $DJH/search/IT-rg.fetl"
 }
 
 SE () {
@@ -323,23 +323,20 @@ con () {
 #=> nnn
 [ -n "$NNNLVL" ] && PS1="N$NNNLVL $PS1"
 
-# cd on quit
-n()
-{
-    # The default behaviour is to cd on quit (nnn checks if NNN_TMPFILE is set)
-    # To cd on quit only on ^G, export NNN_TMPFILE after the call to nnn
-
-    [ -s "/usr/bin/cpg" ] && progress=-r  # advcpmv is installed
-    nnn $progress -Q -U "$@"
-    export NNN_TMPFILE=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd
-
-    if [ -f $NNN_TMPFILE ]; then
-            . $NNN_TMPFILE
-            rm -f $NNN_TMPFILE > /dev/null
-    fi
+n() {
+  # no nesting of nnn in subshells
+    [ "${NNNLVL:-0}" -eq 0 ] || { echo "nnn is already running"; return; }
+  NNN_TMPFILE=${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd  # cd on quit only on ^G
+  [ -s "/usr/bin/cpg" ] && progress=-r  # advcpmv is installed
+  command nnn $progress -Q -U "$@"
+  if [ -f $NNN_TMPFILE ]; then
+    # ~/.config/nnn/.lastd  was created when quitting  nnn, so
+    . $NNN_TMPFILE
+    rm -f $NNN_TMPFILE > /dev/null
+  fi
 }
 
-# ~/.config/nnn/.selection
+# ~/.config/nnn/.selection - only when I've selected some files
 
 source $ulLA/jo/bashrc-console-NNN_BMS  # my bookmarks
 export NNN_COLORS='5723' # good for my tmux in urxvt

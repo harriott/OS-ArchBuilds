@@ -253,10 +253,51 @@ $ git push
   Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
   Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 cp ~/.ssh/known_hosts $machLg/jo/known_hosts-n6si
+## python-anytree
+somehow got installed,  sudo pacman -Rs python-anytree
+## grow /
+### backup files
+mkdir home K
+mount /dev/sda2 home
+mount /dev/sdb1 K
+rsync -ailrtv --delete K/i34G1TU02-home/ home
+### boot to Systemrescue
+booted to  KDTG311282  with  systemrescue-10.01-amd64.iso
+  startx >
+GParted > [ /dev/sda4 > resize smaller to right
+            /dev/sda3 linux-swap  move right
+            /dev/sda2 Delete
+            /dev/sda1 resize bigger right
+            unallocated space created  ext4
+            apply ]
+#### damaged GPT
+gdisk /dev/sda
+  Caution: invalid main GPT header, but valid backup; regenerating main header from backup!
+  Warning! Main and backup partition tables differ! Use the 'c' and 'e' options on the recovery & transformation menu to examine the two tables.
+  Warning! One or more CRCs don't match. You should repair the disk!
+  Main header: ERROR
+  Backup header: OK
+  Main partition table: ERROR
+  Backup partition table: OK
+  Partition table scan:
+    MBR: MBR only
+    BSD: not present
+    APM: not present
+    GPT: damaged
+  Found valid MBR and corrupt GPT... > 2 GPT then ctrl+c
+#### remove GPT
+gdisk /dev/sda
+  Found valid MBR and corrupt GPT... > 1 MBR  for  x > wipe out GPT > y > Blank out MBR? > n
+#### restore files
+rsync -ailrtv --delete ~/ /run/media/jo/KDT100G3B/i34G1TU02-home
 ## waiting
 apache
+FeatherPad
 MariaDB
 php
+Speech Dispatcher
+### enable the SysRq keys
+su  for  echo kernel.sysrq=1 >> /etc/sysctl.d/99-sysctl.conf
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

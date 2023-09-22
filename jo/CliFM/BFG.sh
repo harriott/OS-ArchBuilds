@@ -60,7 +60,9 @@ EOF
 }
 
 uz_image() {
+	# shellcheck disable=SC2317
 	calculate_position
+	# shellcheck disable=SC2317
 	printf '{"action": "add", "identifier": "clifm-preview", "x": "%s", "y": "%s", "width": "%s", "height": "%s", "path": "%s"}\n' "$X" "$Y" "$COLUMNS" "$LINES" "$1" > "$FIFO_UEBERZUG"
 }
 
@@ -558,10 +560,10 @@ main() {
 				lsd -A --group-dirs=first --color=always "$path" && exit 0
 			elif [ "$DIR_CMD" = "lsd-tree" ]; then
 				lsd -A --group-dirs=first --depth=1 --tree --color=always "$path" && exit 0
-			elif [ "$DIR_CMD" = "exa" ]; then
-				exa -G --group-directories-first --color=always "$path" && exit 0
-			elif [ "$DIR_CMD" = "exa-tree" ]; then
-				exa -G --group-directories-first --color=always --tree --level=1 "$path" && exit 0
+			elif [ "$DIR_CMD" = "eza" ]; then
+				eza -G --group-directories-first --color=always "$path" && exit 0
+			elif [ "$DIR_CMD" = "eza-tree" ]; then
+				eza -G --group-directories-first --color=always --tree --level=1 "$path" && exit 0
 			else
 				if [ "$POSIX_LS" = 0 ]; then
 					ls -Ap --color=always --indicator-style=none "$path" && exit 0

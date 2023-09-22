@@ -2,14 +2,17 @@ vim: nospell:
 
     $OSAB; m4ps 0 1
 
-- commands in this QuickReference work in my Arch install
-   - more generally, see `$onGH/misc/linux/QR.md`
+    m4p $OSAB/QR.md 1
+    r $onGH/misc/linux/QR  # for my more general linux QuickReference
+
+my Arch QuickReference
 
 ```bash
 bm  # (in a wide enough terminal) fuzzy search for manuals
 i bc
 i datediff
 r $TeNo/TN
+spd-say hi
 tty-clock -bcs
 ~/.config/pnmixer/config
 ```
@@ -54,16 +57,16 @@ tput bel  # bell
     br -s => br --sizes
 
 ### directory structures
-<directory>  # cd <directory>  ( shopt autocd )
-file ~/.vim  # shows symlink source
-namei ~/.vim  # shows tree, including symlink sources
+    <directory>  # cd <directory>  ( shopt autocd )
+    file ~/.vim  # shows symlink source
+    namei ~/.vim  # shows tree, including symlink sources
 
 #### Samokovarov's jump
-i jump
-j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
-jump clean  # I have in fcrontab
-jump top | mo
-jump --help
+    i jump
+    j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
+    jump clean  # I have in fcrontab
+    jump top | mo
+    jump --help
 
 ### file searching
     find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
@@ -158,7 +161,7 @@ moar -h
 
 ## TeX
     r $GHrUse/CP/MartinThoma-LaTeX-examples
-    r $jtIT/CP/TeX/LaTeX  # my MWEs
+    r $jtCP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
 `mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
@@ -169,11 +172,14 @@ moar -h
 
 ### copied resources
     r $cITh/CP/TeX
-    zathura $cITh/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf &
-    zathura $cITh/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf &  # includes package pifont
-    zathura $cITh/CP/TeX/LaTeX/structure/Parts/hyperref-doc.pdf &
-    zathura $cITh/CP/TeX/LaTeX/structure/Parts/Lists/easylist-doc.pdf &
-    zathura $cITh/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf &
+    z $cITh/CP/TeX/LaTeX/appearance/datetime2.pdf
+    z $cITh/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
+    z $cITh/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
+    z $cITh/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
+    z $cITh/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
+    z $cITh/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
+    z $cITh/CP/TeX/LaTeX/structure/parts/Lists/easylist-doc.pdf
+    z $cITh/CP/TeX/LaTeX/structure/parts/titling/titlesec.pdf
 
 ### my packages
     r $LTXj
@@ -182,11 +188,10 @@ moar -h
 
 ### native install
     /usr/local/texlive/2023/texmf-dist/tex/latex/base/nfssfont.tex
-    zathura /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf &
+    z /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf
 
 ## TeX Live
     pacman -Qs texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
-    tlmgr list --only-installed > $machLg/TeXLive/tlmgr_list-$(date '+%Y%m%d%H%M').txt
 
 ### native install
     /usr/local/texlive/2023/texmf-dist/doc/
@@ -196,20 +201,24 @@ moar -h
     $/usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/README.md
     /usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/tcolorbox-example-poster.tex
 
+### TeX Live package manager
+    /usr/local/texlive/2023/texmf-var/web2c/tlmgr.log
+    /usr/local/texlive/2023/texmf-var/web2c/tlmgr-commands.log
+    tlmgr list --only-installed > $machLg/TeXLive/tlmgr_list-$(date '+%Y%m%d%H%M').txt
+    sudo tlmgr update --all
+
 # Emacs
+    $onGH/misc/Emacs/init.el
     $TeNo/Emacs/org/org.org
     et <fileToOpenTerminal>
     im emacs
-    n ~/.emacs.d
-    r $onGH/misc/Emacs
-    r ~/.emacs.d
+    ~/.emacs.d/.cache
 
 `G` & `T` defined in `$Bash/bashrc-console`
 
 ## resources
-    fd -e org -p $GHrUse/emacs
-    r $GHrUse/emacs
-    r $GHrUse/emacs/syl20bnr-spacemacs-develop  # local fresh clone
+    fd -e org -p $GHrUse
+    r $GHrUse/CP/emacs/syl20bnr-spacemacs-develop  # local fresh clone
     r $cITh/CP/encoding/textWrangling/Emacs  # PDF guides
 
 ### Worg
@@ -226,7 +235,7 @@ moar -h
     b <codeFile>  # syntax'd cat
     pb <codeFile>  # also reformatted
     yj -ty <file.toml >file.yml
-    zathura $cITh/CP/encoding/cheatsheet-a5.pdf &  # emmet
+    z $cITh/CP/encoding/cheatsheet-a5.pdf &  # emmet
 
 ## ffprobe
     ffprobe -h | mo
@@ -377,12 +386,12 @@ vid => ffmpegthumbnailer
     sb => selection box
     t sel => trash selection
 
-## exa
+## eza
     e
     e -l -s modified  # time sorted
     e -RL 2  # depth of 2
     e -adl <directory_to_check>  # reports for the directory (not its contents)
-    i exa
+    i eza
     more in  $OSAB/Bash/bashrc-generic
 
 ## fd
@@ -422,6 +431,11 @@ see `$Bash/bashrc-console`
     fd --max-depth 1 -Hl -tl
     fd -H -tl  # only found targets, broken ones with red background
     fd -Hl -tl  # show supposed link source
+
+## ncdu
+    ncdu --exclude rsnapshot
+
+NCDU(1)
 
 ## ranger
     feh $cIThul/cheatsheet.png &
@@ -558,8 +572,7 @@ gpg(1)
 ## storage
     /proc/filesystems - those supported by the kernel
 
-- CP(1)
-- GNU Parted
+CP(1)
 
 ### directories
     i gdu
@@ -574,11 +587,6 @@ optimised for SSDs
 
 ### mkfs.ext4
 `/etc/mke2fs.conf` has bytes-per-inode ratios for usage types
-
-### ncdu
-    ncdu --exclude rsnapshot
-
-NCDU(1)
 
 ### non-optical
     df -h | xcol mnt media
@@ -646,10 +654,10 @@ NCDU(1)
 
 #### quickly lists all instances of directories
 ```bash
-for d in $(ls hourly.*/localhost/home/jo -dtr); do stat -c '%y %n' $d; done  # hourly instances in time order
+find $rsnapshot/*ly.*/localhost/mnt/SDU3D1TB/Dropbox/JH/Cafezoide/manage/online/* -type d
+for d in $(ls $rsnapshot/hourly.*/localhost/home/jo -dtr); do stat -c '%y %n' $d; done  # hourly instances in time order, but not much use as the dates are original creation
 ls *ly.*/localhost/home/jo/.config/copyq -d  # CopyQ data directory instances
 ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
-ls *ly.*/localhost/mnt/SD480GSSDPlus/Dropbox/CAM* -d
 ```
 
 #### recover folder
@@ -797,7 +805,28 @@ won't open if `cmus` is playing a track
     r ~/.cache/openshot
     r ~/.local/share/openshot
 
-### projects
+# network
+```bash
+cat /etc/hostname
+curl ifconfig.co  # IP address
+curl ifconfig.co/country
+sudo dhcpcd wlwg111v2
+sudo ls /var/lib/dhcpcd/
+systemctl status nordvpnd.service
+```
+
+## NetworkManager
+    nmcli connection delete Jo-X10II
+    nmcli connection delete cafezoide
+    nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
+    nmcli connection up uuid 667c759d-382a-4875-9021-2258cdba8dad
+    nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
+    nmcli device wifi connect cafezoide password <password>
+    nmcli device wifi connect Jo-X10II password <password>
+    sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
+    sudo ls /etc/NetworkManager/system-connections/
+    systemctl status NetworkManager
+    systemctl status NetworkManager-dispatcher
 
 # packages
 ```bash
@@ -889,6 +918,8 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     i sed
     tldr sed
 
+SED(1)
+
 ## tealdeer
     tldr -h
     tldr -u  # --update
@@ -912,6 +943,14 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     locate -r '\.desktop$' > $machLg/desktops.txt
     r /usr/share/applications
     rg Exec= /usr/share/applications  # check others
+
+## alt-sysrq REISUB
+1. r unRaw the keyboard
+1. e tErminate all processes
+1. i kIll all processes
+1. s Sync (flush data)
+1. u Unmount all
+1. b reBoot
 
 ## build
     $OSAB/etc/doas.conf
@@ -1132,6 +1171,134 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
 #### gVim
     gvim --help | mo
     gvim -geom 200  # height parameter is omitted as it's having no effect
+
+# WAN
+```bash
+xdg-open https://archlinux.org
+```
+
+## Apache HTTP Server
+    /var/log/httpd/access_log
+    /var/log/httpd/error_log
+    r /etc/httpd/conf
+    sudo rm -r /srv/http/*
+
+HTTP Server
+
+### /etc/httpd/conf/httpd.conf
+configured in `$bSc/4-whenWM/1-softwares.sh`
+
+### httpd.service
+    sudo systemctl disable httpd.service --now
+    sudo systemctl enable httpd.service --now
+    sudo systemctl restart httpd.service; systemctl status httpd.service
+    sudo systemctl start httpd.service
+    sudo systemctl stop httpd.service
+
+## cloud storage
+    s ~/.config/rclone/rclone.conf
+
+### Dropbox
+```bash
+dropbox &  # as in  $Obc/autostart/autostart
+killall dropbox
+lsof -c dropbox
+pkill dropbox; dropbox &
+```
+
+#### conflicted copies
+```bash
+find $Drpbx -path $Drpbx/conflicted -prune -o -name "* conflicted copy*"
+find -name "* conflicted copy*" -exec rm -f {} \;
+find -name "*(Copie en conflit de *"
+```
+
+## email - mutt notmuch
+```bash
+$Bash/bashrc-clm
+grep -r "Georita" *
+rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
+```
+
+### $maild
+    fd . */*/cur |wc -l  # all of my seen emails
+    fd . */*/new  # as yet unseen, a few
+    fd . */*/tmp  # usually nothing here, can be ignored
+    ~/.local/share/mail/.notmuch
+
+### mutt
+    $clMail/neomutt/muttrc-general
+    f => forward
+    F => toggle important flag (= Star in Gmail)
+
+#### accounts
+    $clMail/neomutt/muttrc-accounts/ftml
+    $clMail/neomutt/muttrc-accounts/troh
+
+##### zou
+    $clMail/neomutt/muttrc-accounts/zou
+    echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
+
+### notmuch search
+    nmse najac date:2022
+    nmse from:/gough/ date:2023
+    nmse from:/j.harriott/ date:2023
+    nmse tag:cz tag:zou '*lait*'
+    nmse tag:cz tag:zou | wc -l
+    nmse tag:zou date:2023
+    nmse tag:zou date:june2023
+    nmse '"pattern with spaces"'
+
+#### providors
+- orange.fr
+- yahoo!mail
+
+#### wildcard
+    nmse 'orf*'  # finds ORFILA
+
+Only possible at end of string...
+
+### URLs unclickable by receiver
+URLs (such as in an email sent from `mutt`) unclickable - so better to send to them with `Thunderbird`
+
+## email - Thunderbird
+    default-release:  find -name "* conflicted copy*" -exec rm -f {} \;
+
+locks: `pb $Thb/linuxlock; pb $Thb/Win10ProLock`
+
+## Jekyll
+```bash
+js
+r $JHm
+```
+
+## Nginx
+    /etc/nginx/nginx.conf
+    /etc/nginx/mime.types
+    /usr/share/nginx/html/index.html
+    r /usr/share/nginx/html
+
+### nginx.service
+    sudo systemctl disable nginx.service --now
+    sudo systemctl enable nginx.service --now
+    sudo systemctl restart nginx.service
+    systemctl status nginx.service
+
+## SSH
+    $CrPl/networking/SSHconfig/$host
+    i sshd_config
+    ~/.ssh/config
+
+## weather
+    aw
+
+### wttr.in
+```bash
+curl wttr.in/London
+curl wttr.in/Moscow
+curl wttr.in/Salt+Lake+City
+wp  # in Paris
+```
 
 # Zathura
     $ABjo/wm/zathurarc

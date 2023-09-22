@@ -7,7 +7,7 @@
 set -e
 
 #=> ansiweather
-ln -sf $ABjo/ansiweather ~/.ansiweatherrc
+ln -sf $ABjo/WAN/ansiweather ~/.ansiweatherrc
 
 #=> Bash
 # sort this list by last use of "~":  :sort /,*\~/
@@ -42,6 +42,12 @@ fi
 ln -sf $ABjo/wm/cmusqueue.sh   ~/Arch/cmusqueue.sh
 ln -sf $ABjo/wm/cmus_notify.sh ~/.local/share/cmus_notify.sh
 ln -sf $ABjo/wm/cmus-rc.conf   ~/.config/cmus/rc
+
+#=> davfs2.conf
+ln -sf $ABjo/WAN/davfs2.conf ~/.davfs2/davfs2.conf
+
+#=> dictrc
+ln -sf $ABjo/WAN/dictrc ~/.dictrc
 
 #=> Dunst
 ln -sf $Openbox/dunstrc ~/.config/dunst/dunstrc  # requires restarting X

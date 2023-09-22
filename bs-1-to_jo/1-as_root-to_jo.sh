@@ -15,6 +15,23 @@ set -v  # prints each statement here, including comments
 # set -v  # prints each statement here, including comments
 # trap read debug  # puts a read request after each executable line
 
+#=> 2 99-sysctl.conf
+# show that  /etc/sysctl.d  is empty
+ls /etc/sysctl.d
+true
+
+#==> 0 enable the SysRq keys
+echo kernel.sysrq=1 > /etc/sysctl.d/99-sysctl.conf
+
+#==> 0 swappiness to 10
+# check the default
+sysctl vm.swappiness
+# fix lower value, which will become effective after reboot
+echo "vm.swappiness=00" >> /etc/sysctl.d/99-sysctl.conf
+
+#==> 3 check settings
+cat /etc/sysctl.d/99-sysctl.conf
+
 # #=> 2 file manage
 # # broot
 # pacman -S broot
@@ -27,8 +44,8 @@ set -v  # prints each statement here, including comments
 # # enca
 # pacman -S enca
 
-# # exa
-# pacman -S exa
+# # eza
+# pacman -S eza
 
 # # fd
 # pacman -S fd
@@ -196,22 +213,22 @@ pacman -S wget
 # # pkgstats
 # pacman -S pkgstats
 
-#=> R
+#=> 2 R
 pacman -S r
 
-#=> Ruby 0
+#=> 2 Ruby 0
 pacman -S ruby
 
-#=> Ruby 0 IRB
+#=> 2 Ruby 0 IRB
 pacman -S ruby-irb
 
-#=> Ruby 1 documentation
+#=> 2 Ruby 1 documentation
 pacman -S ruby-docs ruby-rdoc
 
-#=> Ruby 2 gems
+#=> 2 Ruby 2 gems
 gem update
 
-#=> Ruby 3 Jekyll & bundler
+#=> 2 Ruby 3 Jekyll & bundler
 gem install bundler jekyll  # takes ages...
 true
 
@@ -264,6 +281,9 @@ true
 # pacman -S python-pipx
 #  pipx ensurepath
 
+# # Speech Dispatcher
+# pacman -S speech-dispatcher
+
 # # strace - for debugging
 # pacman -S strace
 
@@ -281,15 +301,6 @@ true
 
 # #=> 2 various - GNOME Terminal
 # pacman -S gnome-terminal
-
-# #=> 2 swappiness to 10
-# # check the default
-# sysctl vm.swappiness
-# # show that  /etc/sysctl.d  is empty
-# ls /etc/sysctl.d
-# # fix lower value, which will become effective after reboot
-# echo "vm.swappiness=00" > /etc/sysctl.d/99-sysctl.conf
-# cat /etc/sysctl.d/99-sysctl.conf
 
 # #=> 2 users
 # # activate wheel group

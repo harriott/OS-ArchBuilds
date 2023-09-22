@@ -58,5 +58,6 @@ ln -sf $CrPl/networking/SSHconfig/$host ~/.ssh/config
 
 #=> vimfiles
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim  # file ~/.vim
-# e -adl ~/.vim
+[ -d "~/.vimtest" ] && sudo rm -r ~/.vimtest; ln -s $onGH/misc/CrossPlatform/vimtest ~/.vimtest
+# e -adl ~/.vim*
 

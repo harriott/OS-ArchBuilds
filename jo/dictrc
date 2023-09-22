@@ -1,6 +1,0 @@
-
-# nvim -o /etc/dict/dict.conf $OSAB/jo/dictrc -c "windo difft"
-# ln -sf $OSAB/jo/dictrc ~/.dictrc  # pb ~/.dictrc
-
-server localhost
-server dict.org

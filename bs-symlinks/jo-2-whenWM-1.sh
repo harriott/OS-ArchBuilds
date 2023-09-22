@@ -20,6 +20,7 @@ sudo ln -sf $ABjo/Emacs/spacemacs.sh /usr/local/bin/spacemacs
 
 #=> Thunderbird safely
 ln -sf $ABjo/wm/TS/locks.sh ~/Arch/locks.sh
+# pb ~/Arch/locks.sh
 sudo ln -sf $ABjo/wm/TS/thunderbird_safely.sh /usr/local/bin/thunderbird_safely
 # pb /usr/local/bin/thunderbird_safely
 sudo ln -sf $ABjo/wm/TS/thunderbird_safely.desktop /usr/share/applications/thunderbird_safely.desktop

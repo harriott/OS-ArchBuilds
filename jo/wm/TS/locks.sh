@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Joseph Harriott - Sun 23 Jul 2023
+# Joseph Harriott - Wed 16 Aug 2023
 
 # tidy up  Thunderbird  lockfiles
 # -------------------------------

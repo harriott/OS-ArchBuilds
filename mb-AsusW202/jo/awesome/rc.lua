@@ -4,7 +4,7 @@
 -- $machBld/jo/awesome/rc.lua
 --  adapted from  /etc/xdg/awesome/rc.lua
 --  symlinked in my  $bSc/symlinks/jo-1-awesome.sh
---   exa -la ~/.config/awesome/rc.lua
+--   eza -la ~/.config/awesome/rc.lua
 
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.

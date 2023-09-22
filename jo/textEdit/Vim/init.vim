@@ -1,5 +1,8 @@
+" vim: set fdl=1:
 
+" -------------------------
 " configurations for neovim
+" -------------------------
 
 " $ABjo/textEdit/Vim/init.vim
 "  symlinked in my  $OSAB/bs-symlinks/jo-0.sh
@@ -10,7 +13,7 @@
 set runtimepath^=~/.vim        " at start
 set runtimepath+=~/.vim/after  " at end
 let &packpath = &runtimepath
-source ~/.vimrc
+source ~/.vimrc  " $ABjo/textEdit/Vim/vimrc
 
 " for accurate colour codes
 set termguicolors

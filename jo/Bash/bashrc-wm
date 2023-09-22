@@ -7,12 +7,6 @@
 alias aw='ansiweather -f 7'
 alias R='R --quiet'
 
-pdfmm () {
-  PSpoints=($(pdfinfo $1 | grep ' x ' | sed 's/Page size: //;s/x //;s/ pts//'))
-  echo "$1: $(PSpmm ${PSpoints[0]}) wide, $(PSpmm ${PSpoints[1]}) high"
-} # pdfmm <pdf>
-PSpmm () { echo $(bc <<< "scale=0; $1 * 0.3528 / 1")mm; } # PostScript points to millimetres
-
 #=> AV
 fv () {
   for VsL in $(cat $machBld/jo/Bash/VsLmore); do
@@ -141,6 +135,78 @@ y7 () { yt-dlp -f "[height<=?720]" $1; }
 alias lpspd='lpstat -p -d'
 alias sc5='doas cupsenable ENVY_5530'
 
+#=> documenting - LaTeX
+export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
+
+ltx () {
+  if [[ ! -z $TNt ]]; then
+    if [ -d $TNt ]; then
+      cd $TNt
+      s="sectionHeadings.md"
+      > $s
+      for f in **/*.tex; do
+        echo '' >> $s
+        echo "# ${f%.tex}" >> $s
+        echo "\$TNt/$f" >> $s
+        echo '' >> $s
+        sed -e '/section{/!d' $f >> $s
+      done
+      echo '' >> $s
+      sed -i 's/\\section{/    /' $s
+      sed -i 's/\\subsection{/        /' $s
+      sed -i 's/\\subsubsection{/            /' $s
+      sed -i 's/}//' $s
+    else
+      echo "$TNt  ain't there"
+    fi
+  else
+    echo '$TNt  is undefined'
+  fi
+}
+
+alias tit='rm *.aux *.listing *.log *.out *.tcbtemp'  # tidy tex = clear away TeX ancillary files
+x () { max_print_line=4000 xelatex -halt-on-error $1 | xcol Missing; }
+
+#=> documenting - Pandoc my markdown notes
+for iHS in {0..1}; do  # setup alternative commands to define the header style
+    setHeadingsSty[$iHS]="ln -sf $MD4PDF/iih/headings$iHS.sty ~/texmf/tex/latex/m4p/headings.sty"
+  done  # (leaves iHS set to 1) pb ~/texmf/tex/latex/m4p/headings.sty
+
+m4psm() {
+    eval ${setHeadingsSty[1]}
+    export headingtoodeep=####
+    redo=0; [ $1 ] && redo=1
+    bash $MD4PDF/GNULinux/m4ps.sh $redo 1
+  } # m4psm [1 (= redo)]  for muted headings
+
+mt() {
+    cd $TeNo
+    pwd
+    m4ps 0
+    figlet -f univers done
+} # do my TextNotes
+
+#==> maybe redo, maybe no ToC
+m4p() {
+    eval ${setHeadingsSty[0]}
+    export headingtoodeep=######
+    bash $MD4PDF/GNULinux/m4p.sh $1 $2
+} # m4p <md_file> [1 (= no ToC)]
+
+m4ps() {
+    eval ${setHeadingsSty[0]}
+    export headingtoodeep=######
+    bash $MD4PDF/GNULinux/m4ps.sh $1 $2
+} # m4ps 0 (= don't redo) [1 (= no ToC)]
+
+#=> documenting - PDF
+pdfmm () {
+  PSpoints=($(pdfinfo $1 | grep ' x ' | sed 's/Page size: //;s/x //;s/ pts//'))
+  echo "$1: $(PSpmm ${PSpoints[0]}) wide, $(PSpmm ${PSpoints[1]}) high"
+} # pdfmm <pdf>
+
+z () { zathura "$1" & }
+
 #=> Dropbox conflicted copies
 # results are noted in time-stamped logs
 dcc0 () {
@@ -192,6 +258,8 @@ gvc () {
 
 #=> imagey
 alias ns='nsxiv -frt * &'  # using fullscreen, recursively open all flat
+F () { feh -F "$1" & }
+PSpmm () { echo $(bc <<< "scale=0; $1 * 0.3528 / 1")mm; } # PostScript points to millimetres
 
 ir () { mapfile -t images < <(fd -e jpg)
   for image in "${images[@]}"; do identify -format '%w %h %f \n' "$image"; done
@@ -267,68 +335,4 @@ alias pqs='pqiv -d 2 -F -s * &'  # 2s fade slideshow
 #=> Jekyll
 js () { cd $JHm; echo $JHm; bundle exec jekyll serve --drafts; }
 jt () { cd $JHm; rm tag/*; python $JHm/_plugins/compile_tags.py; cd tag; }
-
-#=> LaTeX
-export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
-
-ltx () {
-  if [[ ! -z $TNt ]]; then
-    if [ -d $TNt ]; then
-      cd $TNt
-      s="sectionHeadings.md"
-      > $s
-      for f in **/*.tex; do
-        echo '' >> $s
-        echo "# ${f%.tex}" >> $s
-        echo "\$TNt/$f" >> $s
-        echo '' >> $s
-        sed -e '/section{/!d' $f >> $s
-      done
-      echo '' >> $s
-      sed -i 's/\\section{/    /' $s
-      sed -i 's/\\subsection{/        /' $s
-      sed -i 's/\\subsubsection{/            /' $s
-      sed -i 's/}//' $s
-    else
-      echo "$TNt  ain't there"
-    fi
-  else
-    echo '$TNt  is undefined'
-  fi
-}
-
-alias tit='rm *.aux *.listing *.log *.out *.tcbtemp'  # tidy tex = clear away TeX ancillary files
-x () { max_print_line=4000 xelatex -halt-on-error $1 | xcol Missing; }
-
-#=> Pandoc my markdown notes
-for iHS in {0..1}; do  # setup alternative commands to define the header style
-    setHeadingsSty[$iHS]="ln -sf $MD4PDF/iih/headings$iHS.sty ~/texmf/tex/latex/m4p/headings.sty"
-  done  # (leaves iHS set to 1) pb ~/texmf/tex/latex/m4p/headings.sty
-
-m4psm() {
-    eval ${setHeadingsSty[1]}
-    export headingtoodeep=####
-    redo=0; [ $1 ] && redo=1
-    bash $MD4PDF/GNULinux/m4ps.sh $redo 1
-  } # m4psm [1 (= redo)]  for muted headings
-
-mt() {
-    cd $TeNo
-    pwd
-    m4ps 0
-    figlet -f univers done
-} # do my TextNotes
-
-#==> maybe redo, maybe no ToC
-m4p() {
-    eval ${setHeadingsSty[0]}
-    export headingtoodeep=######
-    bash $MD4PDF/GNULinux/m4p.sh $1 $2
-} # m4p <md_file> [1 (= no ToC)]
-
-m4ps() {
-    eval ${setHeadingsSty[0]}
-    export headingtoodeep=######
-    bash $MD4PDF/GNULinux/m4ps.sh $1 $2
-} # m4ps 0 (= don't redo) [1 (= no ToC)]
 

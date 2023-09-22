@@ -78,6 +78,9 @@ sudo pacman -S asunder  # graphical Audio CD ripper
 #=> cameractrls
 sudo pacman -S cameractrls
 
+#=> FeatherPad
+sudo pacman -S featherpad
+
 #=> feh
 sudo pacman -S feh
 
@@ -171,6 +174,9 @@ cp /etc/nginx/nginx.conf $OSAB/etc/Nginx/pristine.conf
 sudo cp $OSAB/etc/Nginx/jo.conf /etc/nginx/nginx.conf
 sudo mkdir /usr/share/nginx/test
 
+#=> nsxiv
+sudo pacman -S nsxiv
+
 #=> OBS Studio 0 install
 sudo pacman -S obs-studio
 
@@ -238,6 +244,9 @@ sudo pacman -S qt5ct
 
 #=> Quod Libet
 sudo pacman -S quodlibet
+
+#=> Rclone
+sudo pacman -S rclone
 
 #=> SANE
 sudo pacman -S sane

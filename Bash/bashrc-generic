@@ -53,7 +53,7 @@ startxa () { ln -sf $ABjo/xinitrcs/awesome ~/.xinitrc; }
 startxo () { ln -sf $ABjo/xinitrcs/openbox ~/.xinitrc; }
 
 #=> better file managing
-alias e='exa --icons'
+alias e='eza --icons'
   alias a='e -aF'  # grid, handily showing up symlinks
   alias er='e -alR'  # show permissions and symlinks recursively
   alias et='e -T'  # for tree

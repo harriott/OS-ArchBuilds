@@ -19,12 +19,12 @@ read -p "\$OSAB  is  $OSAB - looks good?"
 # for aif in all-the-icons file-icons fontawesome material-design-icons octicons weathericons; do
 #   sudo ln -sf $GHrUse/emacs/domtronn-all-the-icons.el/fonts/$aif.ttf /usr/share/fonts/EmacsAllTheIcons/$aif.ttf
 # done
-# exa -la /usr/share/fonts/EmacsAllTheIcons
+# eza -la /usr/share/fonts/EmacsAllTheIcons
 
 # #=> 1 fonts-forArch
 # cfA=/usr/share/fonts/copiedForArch
 # [ -d $cfA ] && rm -r $cfA; ln -s $cITh/unix-like/linux/fonts-forArch $cfA
-# exa -la /usr/share/fonts
+# eza -la /usr/share/fonts
 
 # #=> 1 make root symlinks
 ln -sf $OSAB/Bash/GNUReadline-inputrc /root/.inputrc
@@ -39,9 +39,9 @@ ln -sf $OSAB/root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 
 #=> 2 list root symlinks
-exa -la /root
+eza -la /root
 # find /root -type l -ls  # doesn't show broken
-exa -la /root/.config/nano
+eza -la /root/.config/nano
 
 #=> 2 ranger
 cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -sf $OSAB/ranger $cr  # e -adl ~/.config/ranger

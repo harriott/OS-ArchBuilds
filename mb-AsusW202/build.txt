@@ -407,11 +407,43 @@ urxvt  worked
 gvim &  still failing, so
 sudo pacman -S gvim
   warning: downgrading package gvim (9.0.1676-2 => 9.0.1676-1)
+## NordVPN snag
+nordvpn connect UK  got me
+  -Whoops! Permission denied accessing /run/nordvpn/nordvpnd.sock.
+  Run 'usermod -aG nordvpn $USER' to fix this issue and log out of OS afterwards for this to take an effect.
+sudo usermod -aG nordvpn $USER  then  rebooted
+nordvpn connect UK  got me "Whoops! /run/nordvpn/nordvpnd.sock not found."  then
+  sudo systemctl enable nordvpnd.service --now
+## Updates
+  :: Starting full system upgrade...
+  warning: cpupower: local (6.3-3) is newer than extra (6.3-2)
+  warning: fakechroot: local (2.20.1-3) is newer than extra (2.20.1-2)
+  warning: libjpeg-turbo: local (3.0.0-1) is newer than extra (2.1.5.1-1)
+  warning: libnm: local (1.42.8-1) is newer than extra (1.42.6-1)
+  warning: networkmanager: local (1.42.8-1) is newer than extra (1.42.6-1)
+  warning: nftables: local (1:1.0.8-2) is newer than extra (1:1.0.7-2)
+  warning: turbostat: local (6.3-3) is newer than extra (6.3-2)
+sudo pacman -S cpupower fakechroot libjpeg-turbo libnm networkmanager nftables turbostat
+## HP ENVY 5532 IP Address changed to 230.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.230.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## python-anytree
+somehow got installed,  sudo pacman -Rs python-anytree
+## Updates
+:: Import PGP key 9B7A287D9A2EC608, "David Runge <dvzrv@archlinux.org>"? [Y/n]
+## Update
+:: Starting full system upgrade...
+:: Replace exa with extra/eza? [Y/n]
+## enable the SysRq keys
+su  for  echo kernel.sysrq=1 >> /etc/sysctl.d/99-sysctl.conf
 ## waiting
 apache
 mapscii
 MariaDB
 php
+systeroid
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

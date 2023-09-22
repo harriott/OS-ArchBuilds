@@ -1,6 +1,6 @@
 vim: set ft=build nospell:
 
-$OSAB/sbMb/build.txt
+$OSAB/mb-sbMb/build.txt
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 # build
 ## Arch install - from the ISO
@@ -1641,7 +1641,7 @@ cmus_notify -h  reporting tracebacks, fixed by uninstalling and re-installing
 hp-setup -r > Select > Remove
 hp-setup 192.168.208.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
-## grow /
+## grow /home
 KDTG311282  with  systemrescue-10.01-amd64.iso > UEFI: KingstonDataTraveler 3.0MAP > Default >
   startx > GParted > [ /dev/sda5 > Delete > /dev/sda4 > Resize > New size (MiB) 60068 > Apply
   unallocated > New > Label > SD480GSSDPlus ] Logout > Reboot
@@ -1660,6 +1660,372 @@ hp-setup 192.168.129.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## move to Thunderbird v115 profile
 (Thunderbird not running)  sed -i 's/91-default-release/hbdr/ ' ~/.thunderbird/profiles.ini
+## python-anytree
+somehow got installed,  sudo pacman -Rs python-anytree
+## HP ENVY 5532 IP Address changed to 53.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.53.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 1.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.1.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 129.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.129.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 14.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.14.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 245.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.245.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 220.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.220.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Update
+warning: could not get file information for opt/zoom/cef/libffmpeg.so
+warning: could not get file information for opt/zoom/cef/libsqlite3.so.0
+warning: could not get file information for opt/zoom/cef/libvk_swiftshader.so
+warning: could not get file information for opt/zoom/cef/libvulkan.so.1
+warning: could not get file information for opt/zoom/cef/locales/af.pak
+warning: could not get file information for opt/zoom/cef/locales/am.pak
+warning: could not get file information for opt/zoom/cef/locales/ar.pak
+warning: could not get file information for opt/zoom/cef/locales/bg.pak
+warning: could not get file information for opt/zoom/cef/locales/bn.pak
+warning: could not get file information for opt/zoom/cef/locales/ca.pak
+warning: could not get file information for opt/zoom/cef/locales/cs.pak
+warning: could not get file information for opt/zoom/cef/locales/da.pak
+warning: could not get file information for opt/zoom/cef/locales/de.pak
+warning: could not get file information for opt/zoom/cef/locales/el.pak
+warning: could not get file information for opt/zoom/cef/locales/en-GB.pak
+warning: could not get file information for opt/zoom/cef/locales/en-US.pak
+warning: could not get file information for opt/zoom/cef/locales/es-419.pak
+warning: could not get file information for opt/zoom/cef/locales/es.pak
+warning: could not get file information for opt/zoom/cef/locales/et.pak
+warning: could not get file information for opt/zoom/cef/locales/fa.pak
+warning: could not get file information for opt/zoom/cef/locales/fi.pak
+warning: could not get file information for opt/zoom/cef/locales/fil.pak
+warning: could not get file information for opt/zoom/cef/locales/fr.pak
+warning: could not get file information for opt/zoom/cef/locales/gu.pak
+warning: could not get file information for opt/zoom/cef/locales/he.pak
+warning: could not get file information for opt/zoom/cef/locales/hi.pak
+warning: could not get file information for opt/zoom/cef/locales/hr.pak
+warning: could not get file information for opt/zoom/cef/locales/hu.pak
+warning: could not get file information for opt/zoom/cef/locales/id.pak
+warning: could not get file information for opt/zoom/cef/locales/it.pak
+warning: could not get file information for opt/zoom/cef/locales/ja.pak
+warning: could not get file information for opt/zoom/cef/locales/kn.pak
+warning: could not get file information for opt/zoom/cef/locales/ko.pak
+warning: could not get file information for opt/zoom/cef/locales/lt.pak
+warning: could not get file information for opt/zoom/cef/locales/lv.pak
+warning: could not get file information for opt/zoom/cef/locales/ml.pak
+warning: could not get file information for opt/zoom/cef/locales/mr.pak
+warning: could not get file information for opt/zoom/cef/locales/ms.pak
+warning: could not get file information for opt/zoom/cef/locales/nb.pak
+warning: could not get file information for opt/zoom/cef/locales/nl.pak
+warning: could not get file information for opt/zoom/cef/locales/pl.pak
+warning: could not get file information for opt/zoom/cef/locales/pt-BR.pak
+warning: could not get file information for opt/zoom/cef/locales/pt-PT.pak
+warning: could not get file information for opt/zoom/cef/locales/ro.pak
+warning: could not get file information for opt/zoom/cef/locales/ru.pak
+warning: could not get file information for opt/zoom/cef/locales/sk.pak
+warning: could not get file information for opt/zoom/cef/locales/sl.pak
+warning: could not get file information for opt/zoom/cef/locales/sr.pak
+warning: could not get file information for opt/zoom/cef/locales/sv.pak
+warning: could not get file information for opt/zoom/cef/locales/sw.pak
+warning: could not get file information for opt/zoom/cef/locales/ta.pak
+warning: could not get file information for opt/zoom/cef/locales/te.pak
+warning: could not get file information for opt/zoom/cef/locales/th.pak
+warning: could not get file information for opt/zoom/cef/locales/tr.pak
+warning: could not get file information for opt/zoom/cef/locales/uk.pak
+warning: could not get file information for opt/zoom/cef/locales/ur.pak
+warning: could not get file information for opt/zoom/cef/locales/vi.pak
+warning: could not get file information for opt/zoom/cef/locales/zh-CN.pak
+warning: could not get file information for opt/zoom/cef/locales/zh-TW.pak
+warning: could not get file information for opt/zoom/cef/resources.pak
+warning: could not get file information for opt/zoom/cef/snapshot_blob.bin
+warning: could not get file information for opt/zoom/cef/v8_context_snapshot.bin
+warning: could not get file information for opt/zoom/cef/vk_swiftshader_icd.json
+warning: could not get file information for opt/zoom/clap-high.pcm
+warning: could not get file information for opt/zoom/clap-medium.pcm
+warning: could not get file information for opt/zoom/dingdong.pcm
+warning: could not get file information for opt/zoom/dingdong1.pcm
+warning: could not get file information for opt/zoom/double_beep.pcm
+warning: could not get file information for opt/zoom/email/assets/png/jpg.png
+warning: could not get file information for opt/zoom/email/assets/png/pdf.png
+warning: could not get file information for opt/zoom/email/favicon.ico
+warning: could not get file information for opt/zoom/email/index.html
+warning: could not get file information for opt/zoom/email/static/css/168.dbac76c0.css
+warning: could not get file information for opt/zoom/email/static/css/280.d7e67a24.css
+warning: could not get file information for opt/zoom/email/static/css/362.58c53c95.css
+warning: could not get file information for opt/zoom/email/static/css/368.511b2ae1.css
+warning: could not get file information for opt/zoom/email/static/css/383.1f4bbeef.css
+warning: could not get file information for opt/zoom/email/static/css/430.4d709a79.css
+warning: could not get file information for opt/zoom/email/static/css/580.3b35a8b5.css
+warning: could not get file information for opt/zoom/email/static/css/640.6b75982d.css
+warning: could not get file information for opt/zoom/email/static/css/679.4135cd13.css
+warning: could not get file information for opt/zoom/email/static/css/725.a096bb27.css
+warning: could not get file information for opt/zoom/email/static/css/801.07eba453.css
+warning: could not get file information for opt/zoom/email/static/css/915.2a4bf0d1.css
+warning: could not get file information for opt/zoom/email/static/css/961.740d4724.css
+warning: could not get file information for opt/zoom/email/static/css/app.c4441a31.css
+warning: could not get file information for opt/zoom/email/static/css/chunk-vendors.bad461f1.css
+warning: could not get file information for opt/zoom/email/static/css/package_mail_content_template.1de01374.css
+warning: could not get file information for opt/zoom/email/static/fonts/icozoom.45258ff3.woff
+warning: could not get file information for opt/zoom/email/static/fonts/icozoom.e6a1f19a.ttf
+warning: could not get file information for opt/zoom/email/static/img/alert.163627de.svg
+warning: could not get file information for opt/zoom/email/static/img/blocked_img.1f533250.svg
+warning: could not get file information for opt/zoom/email/static/img/broken_img.8754a186.svg
+warning: could not get file information for opt/zoom/email/static/img/chevron-more-info-down.95288da4.svg
+warning: could not get file information for opt/zoom/email/static/img/chevron-more-info-down_dark-mode.e2eb3b0e.svg
+warning: could not get file information for opt/zoom/email/static/img/chevron-more-info-right.e5191152.svg
+warning: could not get file information for opt/zoom/email/static/img/chevron-more-info-right_dark-mode.28cfa86b.svg
+warning: could not get file information for opt/zoom/email/static/img/close-filled.ba60adf6.svg
+warning: could not get file information for opt/zoom/email/static/img/close.1cf10d59.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_archive.3cac3093.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_archive.450f750f.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_audio.7b88d642.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_audio.bafc1a58.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_dat.6da4c976.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_dat.81ae4052.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_document.46129cbf.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_document.f18ad6e6.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_eml.73744649.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_eml.e4c88271.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_gz.495b3918.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_gz.5ef6d4cd.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_image.01da4cef.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_image.a6504139.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_mail_ellipsis.5cbc6abd.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_ms_excel.ba0a62df.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_ms_onenote.149bc03b.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_ms_powerpoint.63309dc0.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_ms_word.584e83c1.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_p7s.3c2e2417.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_p7s.e0f5d9a8.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_patch.0cd1378e.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_patch.6a396a28.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_pdf.4d34bf8f.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_pdf.91bc698c.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_pgp.bc19844d.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_pgp.e65b2475.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_rb.a3e6716c.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_rb.acb90b78.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_vector.06205cee.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_vector.f76eb3f1.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_video.312daa9e.svg
+warning: could not get file information for opt/zoom/email/static/img/icon_video.e36fddbe.svg
+warning: could not get file information for opt/zoom/email/static/img/key-filled.f9e7e9e7.svg
+warning: could not get file information for opt/zoom/email/static/img/key.7a4c058c.svg
+warning: could not get file information for opt/zoom/email/static/img/laptop-filled.555c7756.svg
+warning: could not get file information for opt/zoom/email/static/img/laptop.4e4527be.svg
+warning: could not get file information for opt/zoom/email/static/img/mail-splash.f3f892f9.svg
+warning: could not get file information for opt/zoom/email/static/img/megaphone-darkmode.1ca0e1cd.svg
+warning: could not get file information for opt/zoom/email/static/img/megaphone.eb263bf5.svg
+warning: could not get file information for opt/zoom/email/static/img/placeholder_img.52bc56dc.svg
+warning: could not get file information for opt/zoom/email/static/img/profile-filled.ebb8b46b.svg
+warning: could not get file information for opt/zoom/email/static/img/profile.407b4dc4.svg
+warning: could not get file information for opt/zoom/email/static/img/search-files.4487810a.svg
+warning: could not get file information for opt/zoom/email/static/img/splash.77bac1b7.svg
+warning: could not get file information for opt/zoom/email/static/img/tree_node_expand_arrow.a267e60e.svg
+warning: could not get file information for opt/zoom/email/static/img/tree_node_expand_arrow_active.e529b84e.svg
+warning: could not get file information for opt/zoom/email/static/js/168.fec08009.js
+warning: could not get file information for opt/zoom/email/static/js/170.ecffa8e5.js
+warning: could not get file information for opt/zoom/email/static/js/280.cea1c2ea.js
+warning: could not get file information for opt/zoom/email/static/js/362.6bfe3e41.js
+warning: could not get file information for opt/zoom/email/static/js/368.286ee13c.js
+warning: could not get file information for opt/zoom/email/static/js/374.03a12648.js
+warning: could not get file information for opt/zoom/email/static/js/580.9a34c2a2.js
+warning: could not get file information for opt/zoom/email/static/js/640.08779db7.js
+warning: could not get file information for opt/zoom/email/static/js/679.efa22e6f.js
+warning: could not get file information for opt/zoom/email/static/js/725.307e770c.js
+warning: could not get file information for opt/zoom/email/static/js/801.0188a828.js
+warning: could not get file information for opt/zoom/email/static/js/879.0779bb14.js
+warning: could not get file information for opt/zoom/email/static/js/915.a41d74ce.js
+warning: could not get file information for opt/zoom/email/static/js/961.b1a81441.js
+warning: could not get file information for opt/zoom/email/static/js/app.591d118f.js
+warning: could not get file information for opt/zoom/email/static/js/chunk-vendors.7ba69853.js
+warning: could not get file information for opt/zoom/email/static/js/package_mail_content_template.6a2605fb.js
+warning: could not get file information for opt/zoom/email/upgrade.html
+warning: could not get file information for opt/zoom/getbssid.sh
+warning: could not get file information for opt/zoom/json/countries.json
+warning: could not get file information for opt/zoom/json/countries_chs.json
+warning: could not get file information for opt/zoom/json/countries_cht.json
+warning: could not get file information for opt/zoom/json/countries_fr.json
+warning: could not get file information for opt/zoom/json/countries_ge.json
+warning: could not get file information for opt/zoom/json/countries_it.json
+warning: could not get file information for opt/zoom/json/countries_jp.json
+warning: could not get file information for opt/zoom/json/countries_ko.json
+warning: could not get file information for opt/zoom/json/countries_pt.json
+warning: could not get file information for opt/zoom/json/countries_ru.json
+warning: could not get file information for opt/zoom/json/countries_sp.json
+warning: could not get file information for opt/zoom/json/countries_vi.json
+warning: could not get file information for opt/zoom/json/emoji.json
+warning: could not get file information for opt/zoom/leave.pcm
+warning: could not get file information for opt/zoom/libOpenCL.so.1
+warning: could not get file information for opt/zoom/libaomagent.so
+warning: could not get file information for opt/zoom/libavcodec.so.58
+warning: could not get file information for opt/zoom/libavformat.so.58
+warning: could not get file information for opt/zoom/libavutil.so.56
+warning: could not get file information for opt/zoom/libclDNN64.so
+warning: could not get file information for opt/zoom/libdvf.so
+warning: could not get file information for opt/zoom/libfdkaac2.so
+warning: could not get file information for opt/zoom/libmkldnn.so
+warning: could not get file information for opt/zoom/libmpg123.so
+warning: could not get file information for opt/zoom/libquazip.so
+warning: could not get file information for opt/zoom/libswresample.so.3
+warning: could not get file information for opt/zoom/libturbojpeg.so
+warning: could not get file information for opt/zoom/meeting_chat_chime.pcm
+warning: could not get file information for opt/zoom/meeting_raisehand_chime.pcm
+warning: could not get file information for opt/zoom/qt.conf
+warning: could not get file information for opt/zoom/record_start.pcm
+warning: could not get file information for opt/zoom/record_stop.pcm
+warning: could not get file information for opt/zoom/ring.pcm
+warning: could not get file information for opt/zoom/ringtone/G Arpeggio.pcm
+warning: could not get file information for opt/zoom/ringtone/G Step.pcm
+warning: could not get file information for opt/zoom/ringtone/Gamelan.pcm
+warning: could not get file information for opt/zoom/ringtone/Pizzicato Strings.pcm
+warning: could not get file information for opt/zoom/ringtone/Reed Organ.pcm
+warning: could not get file information for opt/zoom/ringtone/Silent.pcm
+warning: could not get file information for opt/zoom/ringtone/Ukulele G.pcm
+warning: could not get file information for opt/zoom/ringtone/Ukulele.pcm
+warning: could not get file information for opt/zoom/ringtone/Vibraphone.pcm
+warning: could not get file information for opt/zoom/ringtone/double_beep.pcm
+warning: could not get file information for opt/zoom/ringtone/localization.xml
+warning: could not get file information for opt/zoom/ringtone/ring.pcm
+warning: could not get file information for opt/zoom/ringtone/ringtone.xml
+warning: could not get file information for opt/zoom/scheduler/favicon.ico
+warning: could not get file information for opt/zoom/scheduler/index.html
+warning: could not get file information for opt/zoom/scheduler/map.js
+warning: could not get file information for opt/zoom/scheduler/map.json
+warning: could not get file information for opt/zoom/scheduler/static/css/chunk-17171c46.3a3317d9.css
+warning: could not get file information for opt/zoom/scheduler/static/css/chunk-88c270ac.51f67b30.css
+warning: could not get file information for opt/zoom/scheduler/static/css/chunk-vendors.af34567c.css
+warning: could not get file information for opt/zoom/scheduler/static/css/index.f31cf0bd.css
+warning: could not get file information for opt/zoom/scheduler/static/css/zm-tree.bba01dde.css
+warning: could not get file information for opt/zoom/scheduler/static/fonts/icozoom.0c8360ba.ttf
+warning: could not get file information for opt/zoom/scheduler/static/fonts/icozoom.1d8f0bd8.ttf
+warning: could not get file information for opt/zoom/scheduler/static/img/jpg.f78f809e.png
+warning: could not get file information for opt/zoom/scheduler/static/img/pdf.ca86e40a.png
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-17171c46.5e37076f.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d0aaf55.96d358f2.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d0b327b.a42b110e.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d0c226a.65f0dc44.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d0d9fc4.649d3daa.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d0de1f1.689e86be.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d0de375.bbb398f0.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d0e17df.c1a96f4d.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d0ea113.f11e5edd.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d20e7e6.a811de71.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d20f516.e6c358e8.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d2167c6.ca7fe5cf.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d21b4fa.ca0ae1be.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d21d6ce.d81b6dea.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d22258b.f604ce40.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-2d230459.bfe0ea4b.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-88c270ac.d246175f.js
+warning: could not get file information for opt/zoom/scheduler/static/js/chunk-vendors.c685a8ed.js
+warning: could not get file information for opt/zoom/scheduler/static/js/index.8493d8c4.js
+warning: could not get file information for opt/zoom/scheduler/static/js/zm-tree.6ebdf6ea.js
+warning: could not get file information for opt/zoom/sip/Hangup.WAV
+warning: could not get file information for opt/zoom/sip/dtmf_#.wav
+warning: could not get file information for opt/zoom/sip/dtmf_0.wav
+warning: could not get file information for opt/zoom/sip/dtmf_1.wav
+warning: could not get file information for opt/zoom/sip/dtmf_2.wav
+warning: could not get file information for opt/zoom/sip/dtmf_3.wav
+warning: could not get file information for opt/zoom/sip/dtmf_4.wav
+warning: could not get file information for opt/zoom/sip/dtmf_5.wav
+warning: could not get file information for opt/zoom/sip/dtmf_6.wav
+warning: could not get file information for opt/zoom/sip/dtmf_7.wav
+warning: could not get file information for opt/zoom/sip/dtmf_8.wav
+warning: could not get file information for opt/zoom/sip/dtmf_9.wav
+warning: could not get file information for opt/zoom/sip/dtmf_a.wav
+warning: could not get file information for opt/zoom/sip/dtmf_dial.wav
+warning: could not get file information for opt/zoom/sip/dtmf_star.wav
+warning: could not get file information for opt/zoom/sip/ring_pstn.wav
+warning: could not get file information for opt/zoom/timezones/de/timezones.txt
+warning: could not get file information for opt/zoom/timezones/en/timezones.txt
+warning: could not get file information for opt/zoom/timezones/es/timezones.txt
+warning: could not get file information for opt/zoom/timezones/fr/timezones.txt
+warning: could not get file information for opt/zoom/timezones/id/timezones.text
+warning: could not get file information for opt/zoom/timezones/it/timezones.txt
+warning: could not get file information for opt/zoom/timezones/jp/timezones.txt
+warning: could not get file information for opt/zoom/timezones/ko/timezones.txt
+warning: could not get file information for opt/zoom/timezones/ptg/timezones.txt
+warning: could not get file information for opt/zoom/timezones/ru/timezones.txt
+warning: could not get file information for opt/zoom/timezones/vi/timezones.txt
+warning: could not get file information for opt/zoom/timezones/zh_CN/timezones.txt
+warning: could not get file information for opt/zoom/timezones/zh_TW/timezones.txt
+warning: could not get file information for opt/zoom/translations/de.qm
+warning: could not get file information for opt/zoom/translations/es.qm
+warning: could not get file information for opt/zoom/translations/fr.qm
+warning: could not get file information for opt/zoom/translations/id.qm
+warning: could not get file information for opt/zoom/translations/it.qm
+warning: could not get file information for opt/zoom/translations/jp.qm
+warning: could not get file information for opt/zoom/translations/ko.qm
+warning: could not get file information for opt/zoom/translations/nl.qm
+warning: could not get file information for opt/zoom/translations/po.qm
+warning: could not get file information for opt/zoom/translations/ptg.qm
+warning: could not get file information for opt/zoom/translations/ru.qm
+warning: could not get file information for opt/zoom/translations/tk.qm
+warning: could not get file information for opt/zoom/translations/vi.qm
+warning: could not get file information for opt/zoom/translations/zh_CN.qm
+warning: could not get file information for opt/zoom/translations/zh_TW.qm
+warning: could not get file information for opt/zoom/version.txt
+warning: could not get file information for opt/zoom/wr_ding.pcm
+warning: could not get file information for opt/zoom/zoom
+warning: could not get file information for opt/zoom/zopen
+warning: could not get file information for usr/bin/zoom
+warning: could not get file information for usr/share/applications/Zoom.desktop
+warning: could not get file information for usr/share/mime/packages/zoom.xml
+warning: could not get file information for usr/share/pixmaps/Zoom.png
+warning: could not get file information for usr/share/pixmaps/application-x-zoom.png
+## /dev/sda
+sudo gdisk -l /dev/sda
+  ...
+  Number  Start (sector)    End (sector)  Size       Code  Name
+     1            2048         1126400   549.0 MiB   EF00  EFI system partition
+     2         1128448       186566655   88.4 GiB    8304  Linux x86-64 root (/)
+     3       186566656       194955263   4.0 GiB     8200  Linux swap
+     4       194955264       317974527   58.7 GiB    8302  Linux /home
+     5       317974528       937701375   295.5 GiB   8300
+## HP ENVY 5532 IP Address changed to 253.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.253.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Update
+:: Starting full system upgrade...
+:: Replace exa with extra/eza? [Y/n]
+## TeX Live update
+sudo tlmgr update --all  updated 292 packages
+## HP ENVY 5532 IP Address changed to 229.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.229.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 61.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.61.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Update
+system seized while unregestering Haskell modules, forced a reboot
+:: Synchronising package databases...
+error: failed to synchronize all databases (unable to lock database)
+sudo rm /var/lib/pacman/db.lck
+## enable the SysRq keys
+su  for  echo kernel.sysrq=1 >> /etc/sysctl.d/99-sysctl.conf
 ## waiting
 MariaDB
 nginx-mainline
@@ -1768,7 +2134,9 @@ whipper offset find -o +6
   WARNING:whipper.command.offset:AccurateRip entry not found: drive offset can't be determined, try again with another disc
 so I added  read_offset = 6 ; JH  to  ~/.config/whipper/whipper.conf
 ## monitor
-lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 1920x1080 = 16:9) Brightness & Contrast 50
+lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 1920x1080 = 16:9)
+  Brightness 40 Contrast 20
+  SmartContrast overrides, until turned off
 upper DVI: DVI-D to DVI-D: Packard Bell Viseo 223DX (wide 1920x1080 = 16:9) Brightness 50
 ## motherboard
 Antec Neo HE550
