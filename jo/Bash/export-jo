@@ -25,6 +25,7 @@ export CfWk=$DJH/CforWork
 export copied=$DJH/copied  # used in  $TeNo
   export cFr=$copied/France  # used in  $TeNo
   export chum=$copied/human  # used in  $TeNo
+    export chin=$chum/ingest  # used in  $TeNo
   export cITh=$copied/IT-handy
   export copOT=$copied/OutThere  # $copOT  used in  $TeNo
     export cIThul=$cITh/unix-like

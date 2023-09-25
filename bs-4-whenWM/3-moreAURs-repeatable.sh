@@ -41,25 +41,25 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /Jack12816" PKGBUILD
 # makepkg -sic
 
-#=> davfs2 0 Ali Abdallah's key
-gpg --recv-keys B94556F81C85D0D5
+# #=> davfs2 0 Ali Abdallah's key
+# gpg --recv-keys B94556F81C85D0D5
 
-#=> davfs2 1 (re)install
-gAUR davfs2
-nvim -c "silent! /savannah.nongnu.org\/projects" PKGBUILD
-makepkg -sic
-true
+# #=> davfs2 1 (re)install
+# gAUR davfs2
+# nvim -c "silent! /savannah.nongnu.org\/projects" PKGBUILD
+# makepkg -sic
+# true
 
-#=> davfs2 2 dav_group
-sudo sed -i 's/^# dav_group/dav_group/' /etc/davfs2/davfs2.conf
-sudo groupadd davfs2
-sudo gpasswd -a jo davfs2
+# #=> davfs2 2 dav_group
+# sudo sed -i 's/^# dav_group/dav_group/' /etc/davfs2/davfs2.conf
+# sudo groupadd davfs2
+# sudo gpasswd -a jo davfs2
 
-#=> davfs2 3 secrets
-mkdir ~/.davfs2
-cp $Enc/Digital1/davfs2Secrets ~/.davfs2/secrets
-chmod -c 0600 ~/.davfs2/secrets
-s ~/.davfs2/secrets
+# #=> davfs2 3 secrets
+# mkdir ~/.davfs2
+# cp $Enc/Digital1/davfs2Secrets ~/.davfs2/secrets
+# chmod -c 0600 ~/.davfs2/secrets
+# s ~/.davfs2/secrets
 
 # #=> dragon-drop
 # gAUR dragon-drop
@@ -108,14 +108,14 @@ s ~/.davfs2/secrets
 # makepkg -sic
 # true
 
-# #=> nomacs
-# gAUR nomacs
-# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
-# makepkg -sic  # takes ages...
-# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2282-3-x86_64.pkg.tar.zst
-# # after first install
-# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-# true
+#=> nomacs
+gAUR nomacs
+nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+makepkg -sic  # takes ages...
+# - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2282-3-x86_64.pkg.tar.zst
+# after first install
+#  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+true
 
 # #=> Pacfinder
 # gAUR pacfinder

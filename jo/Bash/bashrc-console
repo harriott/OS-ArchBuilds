@@ -143,8 +143,8 @@ fdtsKS () {
 } # internal use only
 
 #===> my Arch Forum issues
-# $jtIT/dts-ft_bbcode.fetl
-# $ITstack/dts-ft_bbcode.fetl
+# $jtUL/Linux/Arch/dts-ft_bbcode.fetl
+# $ITstack/unix_like-linux/Arch/dts-ft_bbcode.fetl
 
 fdtsbbcode () {
   dtsfile=dts-ft_bbcode.fetl
@@ -214,13 +214,14 @@ ghi () {
 rgIT () {
   cd $DJH/search
   f=IT-rg.fetl  # $DJH/search/IT-rg.fetl
+  echo '' > $f
   for ITd in $jtIT $ITstack; do
     rgc="rg -l $1 $ITd"
     echo '' >> $f; echo $rgc >> $f
     echo '' >> $f; $rgc >> $f; echo '' >> $f
   done
   echo "- now open  $DJH/search/IT-rg.fetl"
-}
+} # rgIT <text_to_find_in_many_filetypes>
 
 SE () {
   cd $DJH/search

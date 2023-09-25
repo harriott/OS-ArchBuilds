@@ -296,6 +296,7 @@ FeatherPad
 MariaDB
 php
 Speech Dispatcher
+~/.vimtest
 ### enable the SysRq keys
 su  for  echo kernel.sysrq=1 >> /etc/sysctl.d/99-sysctl.conf
 # fcron

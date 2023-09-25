@@ -255,7 +255,8 @@ moar -h
 - mouse
 
 ## Python
-    /home/jo/.local/pipx/venvs
+    ~/.local/bin/
+    ~/.local/pipx/venvs/
     i python
 
 ## Ruby
@@ -404,6 +405,7 @@ vid => ffmpegthumbnailer
     fd -tf -e md | wc -l
     fd -tf -e md -e tex
     fd -tf -e tex
+    fd -tf -e vim
     fd -tl -HL -X rm  # removes dead links
     fd -u '\..+'
     fd . $bSc
@@ -831,7 +833,7 @@ systemctl status nordvpnd.service
 # packages
 ```bash
 checkupdates
-expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500-$(date '+%Y%m%d%H%M').log  # 500 most recent installs
+expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500.log  # 500 most recent installs
 makepkg --install
 pacfinder
 pacman -Qdt  # lists all orphans

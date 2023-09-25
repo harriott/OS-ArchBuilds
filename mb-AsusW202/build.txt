@@ -438,10 +438,15 @@ somehow got installed,  sudo pacman -Rs python-anytree
 :: Replace exa with extra/eza? [Y/n]
 ## enable the SysRq keys
 su  for  echo kernel.sysrq=1 >> /etc/sysctl.d/99-sysctl.conf
+## Updates
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing jre-openjdk (21.u35-3) breaks dependency 'java-runtime=20' required by pdfsam
+sudo pacman -Rs pdfsam  - just for the updates
 ## waiting
 apache
 mapscii
 MariaDB
+pdfsam
 php
 systeroid
 # fcron

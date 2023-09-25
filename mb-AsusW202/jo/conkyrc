@@ -94,7 +94,7 @@ ${color white}$hr
 #
 #-- weather (blank if not online)
 
-$font${alignc}${color lightgrey}${execpi 300 curl wttr.in/Paris?T0 -s -m 3}
+$font${alignc}${color lightgrey}${execpi 100 curl wttr.in/Paris?T0 -s -m 3}
 
-   ${color lightgrey}${execpi 300 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
+   ${color lightgrey}${execpi 100 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
 ]]

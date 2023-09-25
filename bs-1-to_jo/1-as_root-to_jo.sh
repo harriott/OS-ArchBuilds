@@ -213,6 +213,19 @@ pacman -S wget
 # # pkgstats
 # pacman -S pkgstats
 
+# #=> python-pip 0 (re)install
+# pacman -S python-pip
+
+# #=> 2 python-pip 1 remove
+# pacman -Rs python-pip
+
+# #=> 2 python-pipx 0 (re)install
+# pacman -S python-pipx
+#  pipx ensurepath  # maybe not needed
+
+# #=> 2 python-pipx 1 remove
+# pacman -Rs python-pipx
+
 #=> 2 R
 pacman -S r
 
@@ -276,10 +289,6 @@ true
 
 # # pass (brings in gnupg)
 # pacman -S pass
-
-# # python-pipx
-# pacman -S python-pipx
-#  pipx ensurepath
 
 # # Speech Dispatcher
 # pacman -S speech-dispatcher

@@ -4,9 +4,13 @@
 # bash $bSc/anytime/updates.sh
 # r $machLg/pacman
 
-#=> 0 pacman directory
-pm=$machLg/pacman
-[ -d $pm ] || pm=~/pacman
+#=> 0 pacman log directories 0
+pc=$machLg/pacman/checkupdates
+pQ=$machLg/pacman/Q
+
+#=> 0 pacman log directories 1 fallback
+[ -d $pc ] || pm=~/pacman/checkupdates
+[ -d $pQ ] || pm=~/pacman/Q
 
 #=> 1 get into sudo
 echo 'Get into sudo:'
@@ -14,7 +18,7 @@ sudo true
 
 #=> 2 save update log
 echo 'checkupdates'
-checkupdates > $pm/checkupdates-$(date '+%y%m%d-%H%M').log
+checkupdates > $pc/$(date '+%y%m%d-%H%M').log
 
 #=> 3 now catch errors
 set -e
@@ -33,7 +37,7 @@ read -p "${tpf5b}- were there?${tpfn}"
 
 #=> 6 save full query
 echo 'saving full package log'
-pacman -Q > $pm/pacman-Q-$(date '+%y%m%d-%H%M').log
+pacman -Q > $pQ/$(date '+%y%m%d-%H%M').log
 
 #=> 7 /var/cache/pacman/pkg
 echo 'minimising /var/cache/pacman/pkg'

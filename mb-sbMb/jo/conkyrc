@@ -1,4 +1,4 @@
--- vim: tabstop=4 shiftwidth=3 noexpandtab autoindent cindent syntax=lua tw=0
+-- vim: ts=4 sw=3 noet ai cindent syntax=lua tw=0
 
 --[[
 Joseph Harriott
@@ -68,11 +68,15 @@ ${color white}Processes $color$processes  ${color white}Running $color$running_p
 ${color white}$hr
 #
 #-- hard drives
-${font DejaVuSansMono:size=9} / $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color white}
- /home $color${fs_used /home} (${fs_size /home}) ${fs_bar 6 /home} ${color white}
- $Storage $color${fs_used /mnt/WD30EZRZ} (${fs_size /mnt/WD30EZRZ}) ${fs_bar 6 /mnt/WD30EZRZ}
-# can't figure how to feed  $Storage  to  fs_*  commands
-${color white}$hr
+# (can't figure how to feed  $Storage  to  fs_*  commands)
+${font DejaVuSansMono:size=9}
+ ${color orange}/ $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color white}
+ ${color orange}/home $color${fs_used /home} (${fs_size /home}) ${fs_bar 6 /home} ${color white}
+ /mnt/SD480GSSDPlus $color${fs_used /mnt/SD480GSSDPlus} (${fs_size /mnt/SD480GSSDPlus}) ${fs_bar 6 /mnt/SD480GSSDPlus} ${color white}
+ ${color orange}$Storage $color${fs_used /mnt/SDU3D1TB} (${fs_size /mnt/SDU3D1TB}) ${fs_bar 6 /mnt/SDU3D1TB} ${color white}
+ /mnt/ST4000VN008 $color${fs_used /mnt/ST4000VN008} (${fs_size /mnt/ST4000VN008}) ${fs_bar 6 /mnt/ST4000VN008} ${color white}
+ /mnt/WD1001FALS $color${fs_used /mnt/WD1001FALS} (${fs_size /mnt/WD1001FALS}) ${fs_bar 6 /mnt/WD1001FALS} ${color white}
+$hr
 #
 #-- WAN
   ${color white}enp0s25  Up $color${upspeed enp0s25} ${color white} Down $color${downspeed enp0s25}
@@ -94,9 +98,9 @@ ${color lightgrey} ${top name 10} ${top pid 10} ${top cpu 10} ${top mem 10}
 ${color white}$hr
 #
 #-- weather (blank if not online)
-${font DejaVuSansMono:size=8}
+# ${font DejaVuSansMono:size=8}
 
-${alignc}${color lightgrey}${execpi 300 curl wttr.in/Paris?T0 -s -m 3}
+${alignc}${color lightgrey}${execpi 100 curl wttr.in/Paris?T0 -s -m 3}
 
-   ${color lightgrey}${execpi 300 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
+   ${color lightgrey}${execpi 100 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
 ]]

@@ -1692,7 +1692,7 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.220.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
-## Update
+## Updates
 warning: could not get file information for opt/zoom/cef/libffmpeg.so
 warning: could not get file information for opt/zoom/cef/libsqlite3.so.0
 warning: could not get file information for opt/zoom/cef/libvk_swiftshader.so
@@ -2004,7 +2004,7 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.253.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
-## Update
+## Updates
 :: Starting full system upgrade...
 :: Replace exa with extra/eza? [Y/n]
 ## TeX Live update
@@ -2019,16 +2019,31 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.61.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
-## Update
+## Updates
 system seized while unregestering Haskell modules, forced a reboot
 :: Synchronising package databases...
 error: failed to synchronize all databases (unable to lock database)
 sudo rm /var/lib/pacman/db.lck
 ## enable the SysRq keys
 su  for  echo kernel.sysrq=1 >> /etc/sysctl.d/99-sysctl.conf
+## pipx broken
+after upgrading to Python v3.11.3-2 "No module named pip"
+## Updates
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing jre-openjdk (21.u35-3) breaks dependency 'java-runtime=20' required by pdfsam
+sudo pacman -Rs pdfsam  - just for the updates
+## pipx broken - failed fix attempts
+sudo pacman -S python-pipx
+sudo pacman -Rs python-pipx
+sudo pacman -S python-pipx
+sudo pacman -Rs cmus-notify
+sudo pacman -Rs python-pip
+sudo pacman -S python-pip
+reinstalled  cmus-notify
 ## waiting
 MariaDB
 nginx-mainline
+pdfsam
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

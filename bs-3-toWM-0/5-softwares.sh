@@ -73,9 +73,6 @@ npm i -g mapscii
 # #=> Perl modules for JSON
 # sudo pacman -S perl-json perl-json-parse perl-json-xs  # can't recall why...
 
-# #=> pip
-# sudo pacman -S python-pip
-
 # #=> python-pymupdf
 # sudo pacman -S python-pymupdf  # for  pdfCropMargins
 
