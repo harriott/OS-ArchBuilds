@@ -10,7 +10,7 @@ set message_cachedir = /home/jo/.cache/mutt/zou/bodies
 
 set spoolfile = "+INBOX"
 set record = "+Sent"
-set trash = "Trash"
+set trash = "+Trash"
 
 set alias_file = "$lclm/muttAliases/zou"
 source $alias_file
@@ -31,8 +31,8 @@ set realname = "Joseph - Cafézoïde"
 macro index,pager ga "<change-folder>=Archives<enter>" "go to Archives"
 macro index,pager Ga "<save-message>=Archives<enter>" "move mail to Archives"
 
-macro index,pager gb "<change-folder>=Trash<enter>" "go to Trash"
-macro index,pager Gb "<save-message>=Trash<enter>" "move mail to Trash"
+macro index,pager gt "<change-folder>=Trash<enter>" "go to Trash"
+macro index,pager Gt "<save-message>=Trash<enter>" "move mail to Trash"
 
 macro index,pager gi "<change-folder>=INBOX<enter>" "go to INBOX"
 macro index,pager Gi "<save-message>=INBOX<enter>" "move mail to INBOX"

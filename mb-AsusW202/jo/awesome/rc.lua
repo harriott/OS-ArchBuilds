@@ -243,9 +243,8 @@ globalkeys = gears.table.join(
         awful.key({ modkey, "Control" }, "Return", function () awful.spawn("gvim", { floating  = true, }) end,
             {description = "open gVim floating", group = "launcher"}),
 
-        -- terminal
-        awful.key({ modkey, }, "Return", function () awful.spawn("urxvt -e sh -c tmux new") end,
-                  {description = "open urxvt with new tmux session", group = "launcher"}),
+        -- urxvt floating on the 1366x768 screen, not covering Conky
+        awful.key({ modkey, }, "Return", function () awful.spawn("urxvt -geometry 165x55+0+0 -e sh -c tmux new", { floating  = true, }) end, {description = "open urxvt with new tmux session", group = "launcher"}),
 
     -- --> layout - columns
     awful.key({ modkey, "Control" }, "o",     function () awful.tag.incncol(-1, nil, true)    end,

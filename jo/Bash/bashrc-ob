@@ -58,7 +58,7 @@ gspdfpng() {
         pl="$2"
         [ $3 ] && png=$3
     fi # PageList
-    gs --sDEVICE=png16m -r400 -sPageList=$pl -o $png-%02d.png $1
+    gs -sDEVICE=png16m -r400 -sPageList=$pl -o $png-%02d.png $1
 } # for f in `find . -maxdepth 1 -type f -iname "*.pdf"`; do gspdfpng "$f"; done
 
 zr0() {

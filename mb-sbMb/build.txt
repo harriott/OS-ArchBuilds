@@ -2040,6 +2040,11 @@ sudo pacman -Rs cmus-notify
 sudo pacman -Rs python-pip
 sudo pacman -S python-pip
 reinstalled  cmus-notify
+## HP ENVY 5532 IP Address changed to 225.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.225.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 MariaDB
 nginx-mainline

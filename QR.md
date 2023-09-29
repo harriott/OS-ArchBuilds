@@ -434,6 +434,8 @@ see `$Bash/bashrc-console`
     fd -H -tl  # only found targets, broken ones with red background
     fd -Hl -tl  # show supposed link source
 
+`-L` follow links into symlinked directories
+
 ## ncdu
     ncdu --exclude rsnapshot
 
@@ -962,7 +964,10 @@ SED(1)
 
 ## fonts
     font-manager &
-    /usr/share/fonts> fd -L consolas
+
+### /usr/share/fonts/
+    fd -L architects
+    fd -L consolas
 
 ### Fontconfig
     cd /etc/fonts  # to explore the configuration files

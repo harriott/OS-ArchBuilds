@@ -1,8 +1,8 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh:
 
-# called by  $Bash/export-jo
-# Used in  $Obc/autostart/urxvtl.sh
+# $machBld/jo/Bash/export-urxvt  sourced by  $Bash/export-jo
+# $urxvtGeometry  used in  $Obc/autostart/urxvtl.sh
 
 #=> set geometry appropriate for 1366x768 screen
 # open urxvt from left of screen, allowing room for 106 column gVim

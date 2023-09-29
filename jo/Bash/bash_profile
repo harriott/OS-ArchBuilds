@@ -19,7 +19,7 @@ source ~/.export-machine; source ~/.export-storage  # also in  $OSAB/root/bash_p
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # backup the previous boot's systemd journal
-journalctl -b -1 > $ulLA/$host/journalctl/$(date '+%y%m%d-%H%M').jctl &
+journalctl -b -1 > $ulLA/ml-$host/journalctl/$(date '+%y%m%d-%H%M').jctl &
 
 # first, test that X hasn't launched for this user
 ps aux | grep $USER | grep -v grep | grep "/usr/lib/Xorg" >& /dev/null
