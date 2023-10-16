@@ -7,10 +7,10 @@
 set -e
 
 # #=> Emacs configure
-# ln -sf $onGH/misc/Emacs/custom.el ~/.emacs.d/custom.el
-# ln -sf $onGH/misc/Emacs/early-init.el ~/.emacs.d/early-init.el
-# ln -sf $onGH/misc/Emacs/init.el ~/.emacs.d/init.el
-# ln -sf $onGH/misc/Emacs/lisp ~/.emacs.d/lisp
+# ln -sf $misc/Emacs/custom.el ~/.emacs.d/custom.el
+# ln -sf $misc/Emacs/early-init.el ~/.emacs.d/early-init.el
+# ln -sf $misc/Emacs/init.el ~/.emacs.d/init.el
+# ln -sf $misc/Emacs/lisp ~/.emacs.d/lisp
 # ln -sf $TeNo/TN/Emacs/diary ~/.emacs.d/diary
 # ln -sf $GHrUse/emacs/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # # e -la ~/.emacs.d/
@@ -58,6 +58,6 @@ ln -sf $CrPl/networking/SSHconfig/$host ~/.ssh/config
 
 #=> vimfiles
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim  # file ~/.vim
-[ -d "~/.vimtest" ] && sudo rm -r ~/.vimtest; ln -s $onGH/misc/CrossPlatform/vimtest ~/.vimtest
+[ -d "~/.vimtest" ] && sudo rm -r ~/.vimtest; ln -s $misc/CrossPlatform/vimtest ~/.vimtest
 # e -adl ~/.vim*
 

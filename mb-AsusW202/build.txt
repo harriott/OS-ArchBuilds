@@ -442,6 +442,13 @@ su  for  echo kernel.sysrq=1 >> /etc/sysctl.d/99-sysctl.conf
   error: failed to prepare transaction (could not satisfy dependencies)
   :: installing jre-openjdk (21.u35-3) breaks dependency 'java-runtime=20' required by pdfsam
 sudo pacman -Rs pdfsam  - just for the updates
+## Updates
+:: Starting full system upgrade...
+:: Replace karchive with extra/karchive5? [Y/n]
+:: Replace kconfig with extra/kconfig5? [Y/n]
+:: Replace kcoreaddons with extra/kcoreaddons5? [Y/n]
+:: Replace knotifications with extra/knotifications5? [Y/n]
+:: Replace kwindowsystem with extra/kwindowsystem5? [Y/n]
 ## waiting
 apache
 mapscii

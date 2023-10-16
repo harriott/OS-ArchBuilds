@@ -28,7 +28,7 @@ cfmj() {
     if [ -s $1 ]; then
         bn=${1%.json}
         cp $1 $bn.md
-        perl $onGH/misc/tools/FM-json-md.pl $bn.md
+        perl $misc/tools/FM-json-md.pl $bn.md
     fi
 }
 

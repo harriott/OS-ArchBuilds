@@ -7,6 +7,6 @@
 # called by  $machBld/jo/awesome/rc.lua
 # symlinked in my  $bSc/39-awesome.sh
 
-notify-send -i /usr/share/icons/hicolor/16x16/apps/thunderbird.png "Thunderbird on tab 3."
+notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png "Thunderbird on tab 3."
 thunderbird_safely
 

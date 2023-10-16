@@ -23,7 +23,7 @@ read -p "\$OSAB  is  $OSAB - looks good?"
 
 # #=> 1 fonts-forArch
 # cfA=/usr/share/fonts/copiedForArch
-# [ -d $cfA ] && rm -r $cfA; ln -s $cITh/unix-like/linux/fonts-forArch $cfA
+# [ -d $cfA ] && rm -r $cfA; ln -s $cIThul/linux/fonts-forArch $cfA
 # eza -la /usr/share/fonts
 
 # #=> 1 make root symlinks

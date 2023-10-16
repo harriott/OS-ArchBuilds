@@ -74,11 +74,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /_fhosted" PKGBUILD
 # makepkg -sic
 
-#=> fangfrisch 1 AUR
-gAUR python-fangfrisch
-nvim -c "silent! /rseichter" PKGBUILD
-makepkg -sic
-true
+# #=> fangfrisch 1 AUR
+# gAUR python-fangfrisch
+# nvim -c "silent! /rseichter" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> fangfrisch 2 settings
 # # 1 create database structure
@@ -120,11 +120,11 @@ true
 # makepkg -sic
 # true
 
-#=> moar 0 (re)install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 (re)install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
@@ -134,11 +134,11 @@ true
 # #=> nordvpn-bin 0 remove countries.dat
 # sudo rm /var/lib/nordvpn/data/countries.dat
 
-#=> nordvpn-bin 1 (re)install
-gAUR nordvpn-bin
-nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-makepkg -sic
-true
+# #=> nordvpn-bin 1 (re)install
+# gAUR nordvpn-bin
+# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> nordvpn-bin 2 configure
 # sudo usermod -aG nordvpn jo  # need to re-login
@@ -146,12 +146,12 @@ true
 # sudo systemctl enable nordvpnd.service --now
 # true
 
-# #=> perl-clone-pp
-# # for  perl-data-printer
-# gAUR perl-clone-pp
-# nvim -c "silent! /NEILB" PKGBUILD
-# makepkg -sic
-# true
+#=> perl-clone-pp
+# for  perl-data-printer
+gAUR perl-clone-pp
+nvim -c "silent! /NEILB" PKGBUILD
+makepkg -sic
+true
 
 # #=> perl-data-printer
 # gAUR perl-data-printer
@@ -180,15 +180,15 @@ true
 # nvim -c "silent! /github.com\/xorg62" PKGBUILD
 # makepkg -sic
 
-#=> ncurses-git
-# - temporary - try moving back to  ncurses
-gdAUR ncurses-git
-nvim -c "silent! /https:\/\/github.com\/ThomasDickey\/ncurses-snapshots" PKGBUILD
-makepkg -sic  # takes a long time...
-true
+# #=> ncurses-git
+# # - temporary - try moving back to  ncurses
+# gdAUR ncurses-git
+# nvim -c "silent! /https:\/\/github.com\/ThomasDickey\/ncurses-snapshots" PKGBUILD
+# makepkg -sic  # takes a long time...
+# true
 
-#=> tspreed
-gAUR tspreed
-nvim -c "silent! /github.com\/n-ivkovic\/tspreed" PKGBUILD
-makepkg -sic
+# #=> tspreed
+# gAUR tspreed
+# nvim -c "silent! /github.com\/n-ivkovic\/tspreed" PKGBUILD
+# makepkg -sic
 

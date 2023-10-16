@@ -2,7 +2,7 @@
 # vim: set fdl=2 sw=2:
 
 #=> get misc
-# for  $machBld/jo/gitconfig  to include  $onGH/misc/CrossPlatform/gitconfig
+# for  $machBld/jo/gitconfig  to include  $misc/CrossPlatform/gitconfig
 cd ~
 
 #==> 0 HTTPS

@@ -149,6 +149,8 @@ fdtsKS () {
 fdtsbbcode () {
   dtsfile=dts-ft_bbcode.fetl
   fdtsListHeader $dtsfile
+  fd -tf -e bbcode >> $dtsfile
+  echo >> $dtsfile
   rg -ttxt -l --sort modified 'ft=bbcode' >> $dtsfile
   echo "results are in $dtsfile"
 }

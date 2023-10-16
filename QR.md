@@ -3,7 +3,7 @@ vim: nospell:
     $OSAB; m4ps 0 1
 
     m4p $OSAB/QR.md 1
-    r $onGH/misc/linux/QR  # for my more general linux QuickReference
+    r $misc/linux/QR  # for my more general linux QuickReference
 
 my Arch QuickReference
 
@@ -17,7 +17,7 @@ tty-clock -bcs
 ~/.config/pnmixer/config
 ```
 
-sort(1)
+SORT(1)
 
 # Bash
     $Bash/bash_profile
@@ -32,7 +32,7 @@ tput bel  # bell
 ```
 
 - BASH(1)
-- uniq(1)
+- UNIQ(1)
 
 ## file manage
     im ls
@@ -166,6 +166,10 @@ moar -h
 
 `mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
 
+### fontspec
+    \setmonofont{Caskaydia Cove Regular Nerd Font Complete Mono}
+    \setmonofont{Ubuntu Mono}
+
 ### Arch package files
     C /usr/share/texmf-dist/tex/latex/
     /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
@@ -175,11 +179,13 @@ moar -h
     z $cITh/CP/TeX/LaTeX/appearance/datetime2.pdf
     z $cITh/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
     z $cITh/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
+    z $cITh/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
+    z $cITh/CP/TeX/LaTeX/appearance/ragged2e.pdf
     z $cITh/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
     z $cITh/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
     z $cITh/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
     z $cITh/CP/TeX/LaTeX/structure/parts/Lists/easylist-doc.pdf
-    z $cITh/CP/TeX/LaTeX/structure/parts/titling/titlesec.pdf
+    z $cITh/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
 
 ### my packages
     r $LTXj
@@ -208,7 +214,7 @@ moar -h
     sudo tlmgr update --all
 
 # Emacs
-    $onGH/misc/Emacs/init.el
+    $misc/Emacs/init.el
     $TeNo/Emacs/org/org.org
     et <fileToOpenTerminal>
     im emacs
@@ -289,12 +295,54 @@ see `$vimfiles/syntax/gems.vim`
     systab.orig  # contains bootrun tabs to catch
     sudo cat /var/spool/fcron/jo.orig
 
+# file contents
+    pygmentize -h
+
+## awk
+    $cIThul/awk
+
+- `-F fs`, (`--field-separator fs`) redefines `FS`
+- GAWK(1)
+
+## ripgrep
+    batgrep
+    i rg
+    rg --type-list
+    rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
+
+outer whitespaces get ignored
+
+### searches
+    i rg
+    rg '<someText>|<otherText>'  # searches recursively in files
+    rg '\.emacs\.d'
+    rg --no-ignore 'sometext'  # allows searching into gitignored places
+    rg -i <case-insensitive>
+    rg -tmd '[\p{Devanagari}]'  # finds Devanagari characters
+    rg -tmd '\$Sig'
+    rg -tmd '\{TNW}'
+    rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
+    rg <someText> **/*.ext
+
+in JH, `$DJH/search/searches.md`
+
+## sed
+    $cIThul/sed
+    i sed
+    tldr sed
+
+SED(1)
+
+### tealdeer
+    tldr -h
+    tldr -u  # --update
+    tldr tldr
+
 # file manage
     diskus  # size of current directory
     fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
     i tree
     n [directory]
-    pygmentize -h
     rm -r $Storage/.Trash-1000
     rm -r /mnt/ST4000VN008/.Trash-1000
 
@@ -307,7 +355,7 @@ see `$vimfiles/syntax/gems.vim`
 
 ## CliFM
     C [dir1 [dir2 ...]]
-    C $onGH/misc
+    C $misc
     clifm --open www.archlinux.org  # alternative to  xdg-open
     clifm -h
     clifm -v
@@ -396,21 +444,21 @@ vid => ffmpegthumbnailer
     more in  $OSAB/Bash/bashrc-generic
 
 ## fd
-    fd --changed-within 3h
     fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
     fd -e ods  # finds OpenOffice Calc spreadsheets
     fd -H  # --hidden
     fd -tf -e css
+    fd -tf -e fetl
     fd -tf -e ogg ' webm'
     fd -tf -e md | wc -l
     fd -tf -e md -e tex
     fd -tf -e tex
     fd -tf -e vim
-    fd -tl -HL -X rm  # removes dead links
     fd -u '\..+'
     fd . $bSc
     im fd
 
+- `-I` = `--no-ignore` do not respect .(git|fd)ignore files
 - recursive by default
 - sharkdp/fd
 
@@ -429,10 +477,15 @@ see `$Bash/bashrc-console`
 - `-tf` type file
 - `-u` = `--unrestricted` = `--hidden --no-ignore`
 
+### recents
+    fd --changed-within 3h
+    fd -tf --changed-within 2d
+
 ### symlinks
     fd --max-depth 1 -Hl -tl
     fd -H -tl  # only found targets, broken ones with red background
     fd -Hl -tl  # show supposed link source
+    fd -tl -HL -X rm  # removes dead links
 
 `-L` follow links into symlinked directories
 
@@ -472,29 +525,7 @@ can't cope with `utf-16le`
 
 ### perl-rename
     i perl-rename
-    perl-rename 's/^\.//' *  # removes leading  .\
-
-## ripgrep
-    batgrep
-    i rg
-    rg --type-list
-    rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
-
-outer whitespaces get ignored
-
-### searches
-    i rg
-    rg '<someText>|<otherText>'  # searches recursively in files
-    rg '\.emacs\.d'
-    rg --no-ignore 'sometext'  # allows searching into gitignored places
-    rg -i <case-insensitive>
-    rg -tmd '[\p{Devanagari}]'  # finds Devanagari characters
-    rg -tmd '\$Sig'
-    rg -tmd '\{TNW}'
-    rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
-    rg <someText> **/*.ext
-
-in JH, `$DJH/search/searches.md`
+    perl-rename 's/^\.//' *  # removes leading  .
 
 ## Vifm
     /usr/share/vifm/vifm-help.txt
@@ -578,16 +609,16 @@ gpg(1)
 
 CP(1)
 
-### directories
-    i gdu
-    gdu -d
-    gdu -nps <directory>
-
-#### dua-cli
+### directories - dua-cli
     dua [i]
     dua -h
 
 optimised for SSDs
+
+### directories - gdu
+    i gdu
+    gdu -d
+    gdu -nps <directory>
 
 ### mkfs.ext4
 `/etc/mke2fs.conf` has bytes-per-inode ratios for usage types
@@ -674,6 +705,7 @@ UDISKIE(8)
 
 # imagey
 ```bash
+convert -list color > $ulLA/IM-convert-list_color.txt
 im gs
 jpo  # defined in my $Bash/bashrc-wm
 rm -r ~/.thumbnails/normal/*
@@ -918,17 +950,6 @@ for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
 ```
 
-# sed
-    i sed
-    tldr sed
-
-SED(1)
-
-## tealdeer
-    tldr -h
-    tldr -u  # --update
-    tldr tldr
-
 # system
     bat -A /etc/hosts
     bm <command>  # batman - only good in full-screen
@@ -988,6 +1009,12 @@ In a folder of possible fonts, to check if any are already installed: `for font 
     fontpreview -h
 
 uses `fzf`
+
+### fun
+- Headhunter
+- Henny Penny
+- HVD Steinzeit
+- icomoon
 
 ## groups
     cat /etc/group  # list all groups on the system
@@ -1171,6 +1198,7 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
 
 ### Vim
     $ABjo/textEdit/Vim/vimrc
+    /usr/share/vim/vim90/pack/dist/opt/
     C /usr/share/vim/vim90
     i vim
     r $vimfiles
@@ -1203,7 +1231,7 @@ configured in `$bSc/4-whenWM/1-softwares.sh`
     sudo systemctl stop httpd.service
 
 ## cloud storage
-    s ~/.config/rclone/rclone.conf
+    s ~/.config/rclone/rclone.conf  # pw is disguised
 
 ### Dropbox
 ```bash

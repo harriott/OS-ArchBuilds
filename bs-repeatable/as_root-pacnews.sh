@@ -24,6 +24,10 @@ rm /etc/dhcpcd.conf.pacnew
 nvim -O /etc/papersize /etc/papersize.pacnew -c 'windo difft'
 rm /etc/papersize.pacnew
 
+#=> 1 etc/php/php.ini
+nvim -O /etc/php/php.ini /etc/php/php.ini.pacnew -c 'windo difft'
+rm /etc/php/php.ini.pacnew
+
 #=> 1 firewalld.conf
 nvim -O /etc/firewalld/firewalld.conf /etc/firewalld/firewalld.conf.pacnew -c 'windo difft'
 rm /etc/firewalld/firewalld.conf.pacnew

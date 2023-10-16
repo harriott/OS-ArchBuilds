@@ -10,6 +10,8 @@
 #   e -la ~/Arch/locks.sh
 #   pb ~/Arch/locks.sh
 
+notify-send -u critical "ooooooooooooooooooooooo"
+
 host=$(uname -n)
 case $host in
 # case $(uname -n) in
@@ -20,10 +22,18 @@ esac
 Thb=$Storage/Dropbox/JH/Thb-dr
 
 # remove this machine's lockfile if Thunderbird isn't running
-llf=$Thb/linuxlock  # lockfile created by  $ABjo/TS/thunderbird_safely.sh
+llf=$Thb/linuxlock  # lockfile created by  $ABjo/wm/TS/thunderbird_safely.sh
     # pb $Thb/linuxlock
     # rm $Thb/linuxlock
-if ! pgrep thunderbird; then [ $(cat $llf) = $host ] && rm $llf; fi
+# if ! pgrep thunderbird; then [ $(cat $llf) = $host ] && rm $llf; fi
+# pgrep thunderbird || [ $(cat $llf) = $host ] && rm $llf; fi
+if ! pgrep thunderbird; then
+    if [ $(cat $llf) = $host ]; then
+        if (rm $llf); then
+            notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png "removed $Thb/linuxlock"
+        fi
+    fi
+fi
 
 # remove linux Thunderbird's default lockfile
 rm $Thb/lock  # file $Thb/lock

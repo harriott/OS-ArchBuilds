@@ -1,4 +1,4 @@
-#!/bin/sh # vim: fdl=1 ft=sh sw=2:
+#!/bin/sh # vim: fdl=1 ft=sh:
 
 # ~/.export-jo  ($Bash/export-jo)
 #  depends on  $OSAB/Bash/export-storage
@@ -17,61 +17,70 @@ export PAPERSIZE=A4  # libpaper
 #=> storage
 # here I'm taking care to avoid variables that only differ by case
 
-export Cfzd=$DJH/Cafezoide
-  export CzPeo=$Cfzd/people  # $CzPeo
-  export CzPhy=$Cfzd/PhysicalProperty  # $PzPhy
-export CfWk=$DJH/CforWork
-  export ScEn=$CfWk/education/Science-Engineering
-export copied=$DJH/copied  # used in  $TeNo
-  export cFr=$copied/France  # used in  $TeNo
-  export chum=$copied/human  # used in  $TeNo
-    export chin=$chum/ingest  # used in  $TeNo
-  export cITh=$copied/IT-handy
-  export copOT=$copied/OutThere  # $copOT  used in  $TeNo
-    export cIThul=$cITh/unix-like
-  export Pr0=$copied/Practical0
-    export Pr0t=$copied/Practical0/technos
-export COT=$Drpbx/COutThere  # $COT  used in  $TeNo
 export CPdoc=$CrPl/documenting
-  export LTXj=$CPdoc/LaTeX/jo  # $LTXj
+    export LTXj=$CPdoc/LaTeX/jo  # $LTXj
+export DWp=$ITstack/DokuWiki/pages  # $DWp
+export GHrCl=$Storage/IT-Copied/GHrepos  # $GHrCl  GitHub Repositories Clone
+export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
+export lclm=$ulL/clm  # $lclm  linux command-line mail, was  GNULE
+export Openbox=$ABjo/wm/Openbox
+    export Obc=$Openbox/openbox  # $Obc - configurations
+export TeNo=$core/TextNotes  # used in  $TeNo
+    export TNt=$TeNo/tex  # *.tex's - used in  $Bash/bashrc-wm
+
+#==> $DJH
+export Cfzd=$DJH/Cafezoide
+    export CzMa=$Cfzd/manage  # $CzMa
+    export CzPeo=$Cfzd/people  # $CzPeo
+    export CzPhy=$Cfzd/PhysicalProperty  # $PzPhy
+export CfWk=$DJH/CforWork
+    export ScEn=$CfWk/education/Science-Engineering
+export copied=$DJH/copied  # used in  $TeNo
+    export cFr=$copied/France  # used in  $TeNo
+    export chum=$copied/human  # used in  $TeNo
+        export chin=$chum/ingest  # used in  $TeNo
+    export cITh=$copied/IT-handy
+        export cIThul=$cITh/unix-like  # $cIThul
+    export copOT=$copied/OutThere  # $copOT  used in  $TeNo
+    export Pr0=$copied/Practical0
+        export Pr0t=$copied/Practical0/technos
 export DaLi=$DJH/now/DailyLife  #  $DaLi  used in  $TeNo
 export ess=$DJH/now/essential
-  export eFr=$ess/France  # $eFr
-  export Sig=$ess/signatures  # $Sig  for use in creating documents
+    export eFr=$ess/France  # $eFr
+    export Sig=$ess/signatures  # $Sig  for use in creating documents
 export FFIdF=$DJH/F+F/France/IdF  # $FFIdF  used in  $TeNo
-export GHrUse=$Drpbx/CGHrepos
-  # - GitHub Repositories Use, used in  $OSAB/bs-symlinks/jo-1-awesome.sh
-  [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
-  export jkll=$GHrUse/CP/Ruby/Jekyll
-    export mnm=$jkll/Jekyll-jekyll-minima
 export JHt=$DJH/technos
-  export jtIT=$JHt/IT  # used in  $core  &  $jtIT
-    export jtCP=$jtIT/CP  # $jtCP
-    export jtUL=$jtIT/UnixLike  # $jtUL  used in  $core  &  $jtIT
-  export tIs=$JHt/IT-storage  # $tIs/diskUsage.txt
+    export jtIT=$JHt/IT  # used in  $core  &  $jtIT
+        export jtCP=$jtIT/CP  # $jtCP
+        export jtUL=$jtIT/UnixLike  # $jtUL  used in  $core  &  $jtIT
+    export tIs=$JHt/IT-storage  # $tIs/diskUsage.txt
 export JHw=$DJH/work  # $JHw - for IT websites and more
-  export bilan=$JHw/ST/LPD/IdF/AB-TAP/bilan
-  export JHm=$JHw/IT-Jekyll-harriott-minima  # $JHm
-  export rEr=$JHw/France/IdF/Paris/rueErmitage
-    export StEr=$rEr/StudioErmitage
-export OSAT=$onGH/OS-Android-Termux
+    export bilan=$JHw/ST/LPD/IdF/AB-TAP/bilan
+    export JHm=$JHw/IT-Jekyll-harriott-minima  # $JHm
+    export rEr=$JHw/France/IdF/Paris/rueErmitage
+          export StEr=$rEr/StudioErmitage
 export Thb=$DJH/Thb-dr  # $Thb, used in
                         #  $ABjo/wm/TS/locks.sh
                         #  $OSAB/bs-4-whenWM/4-various.sh
                         #  $OSAB/jo/wm/TS/thunderbird_safely.sh
                         #  ~/.thunderbird/profiles.ini
 export Then0=$DJH/Then0  # used in  $TeNo
-  export T0Fr=$Then0/Europe/France  # used in  $TeNo
-export DWp=$ITstack/DokuWiki/pages  # $DWp
-export GHrCl=$Storage/IT-Copied/GHrepos  # $GHrCl  GitHub Repositories Clone
-export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
-export lclm=$ulL/clm  # $lclm  linux command-line mail, was  GNULE
+    export T0Fr=$Then0/Europe/France  # used in  $TeNo
+
+#==> $Drpbx
+export COT=$Drpbx/COutThere  # $COT  used in  $TeNo
+export GHrUse=$Drpbx/CGHrepos
+    # - GitHub Repositories Use, used in  $OSAB/bs-symlinks/jo-1-awesome.sh
+    [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
+    export jkll=$GHrUse/CP/Ruby/Jekyll
+        export mnm=$jkll/Jekyll-jekyll-minima
+
+#==> $onGH
+export OSAT=$onGH/OS-Android-Termux
 export MD4PDF=$onGH/pandoc-md4pdf  # $MD4PDF  is unambiguous
+export misc=$onGH/misc  # $misc
 export MSWin10=$onGH/OS-MSWin10  # $MSWin10  used in  $DWp  &  $TeNo
-export Openbox=$ABjo/wm/Openbox
-  export Obc=$Openbox/openbox  # $Obc - configurations
-export TeNo=$core/TextNotes  # used in  $TeNo
-  export TNt=$TeNo/tex  # *.tex's - used in  $Bash/bashrc-wm
 export vimfiles=$onGH/vimfiles  # $vimfiles
-  [ -d "$onGH" ] || export vimfiles=~/.vim  # when building Arch
+    [ -d "$onGH" ] || export vimfiles=~/.vim  # when building Arch
+    export vfp=$vimfiles/pack  # $vfp
 

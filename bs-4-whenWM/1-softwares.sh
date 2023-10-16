@@ -260,6 +260,9 @@ sudo pacman -S sxiv
 #=> Vimiv
 sudo pacman -S vimiv
 
+#=> xfd
+sudo pacman -S xorg-xfd  # for checking fonts
+
 #=> Xournal++
 sudo pacman -S xournalpp  # for hand-writing pad
 

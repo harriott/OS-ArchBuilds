@@ -2045,6 +2045,37 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.225.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+:: Starting full system upgrade...
+:: Replace karchive with extra/karchive5? [Y/n]
+:: Replace kconfig with extra/kconfig5? [Y/n]
+:: Replace kcoreaddons with extra/kcoreaddons5? [Y/n]
+:: Replace knotifications with extra/knotifications5? [Y/n]
+:: Replace kwindowsystem with extra/kwindowsystem5? [Y/n]
+### python-pep517
+somehow got installed, no apparent need so  sudo pacman -Rs python-pep517
+## HP ENVY 5532 IP Address changed to 229.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.229.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## nomacs print landscape image
+$CfWk/activities/Songs-English/partitionsdechansons-ThisLittleBird-music.jpg
+$CfWk/activities/l7c-PLAN-VILLETTE-WEB.jpg
+## HP ENVY 5532 IP Address changed to 36.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.36.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Google Chrome
+pacman -Qs google  reports  local/google-chrome
+  but no  /usr/share/applications/google-chrome.desktop
+sudo pacman -Syu
+  :: Synchronising package databases...
+  error: failed to synchronize all databases (unable to lock database)
+  sudo rm /var/lib/pacman/db.lck
+## TeX Live update
+sudo tlmgr update --all  updated 292 packages
 ## waiting
 MariaDB
 nginx-mainline

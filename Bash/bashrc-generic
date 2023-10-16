@@ -11,7 +11,6 @@
 #  sourced by  $OSAB/root/bashrc
 
 alias fin='figlet -f univers finished'
-alias tkt='tmux kill-server > /dev/null 2>&1; tmux'
 source $GHrUse/CP/wfxr-code-minimap/completions/bash/code-minimap.bash
 
 [ $TERM != 'screen-256color' ] && [ $(logname) == $(whoami) ] && neofetch
@@ -47,6 +46,10 @@ seg () {
   compgen -c | awk '{print}' ORS=' : ' >> $e
   echo '' >> $e
 }
+
+# tmux
+alias u=tmux
+  alias tkt='u kill-server > /dev/null 2>&1; tmux'  # rarely used
 
 #=> awesome or Openbox on a machine
 startxa () { ln -sf $ABjo/xinitrcs/awesome ~/.xinitrc; }

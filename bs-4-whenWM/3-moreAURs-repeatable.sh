@@ -90,11 +90,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> iscan
 # gAUR iscan
@@ -108,14 +108,14 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> nomacs
-gAUR nomacs
-nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
-makepkg -sic  # takes ages...
-# - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2282-3-x86_64.pkg.tar.zst
-# after first install
-#  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-true
+# #=> nomacs
+# gAUR nomacs
+# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+# makepkg -sic  # takes ages...
+# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2282-3-x86_64.pkg.tar.zst
+# # after first install
+# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+# true
 
 # #=> Pacfinder
 # gAUR pacfinder
@@ -233,10 +233,10 @@ true
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
 
-# #=> usbimager
-# gAUR usbimager
-# nvim -c "silent! /usbimager" PKGBUILD
-# makepkg -sic
+#=> usbimager
+gAUR usbimager
+nvim -c "silent! /usbimager" PKGBUILD
+makepkg -sic
 
 # #=> verbiste
 # gAUR verbiste
@@ -255,12 +255,12 @@ true
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-# #=> ymuse
-# # for MPD
-# gAUR ymuse
-# nvim -c "silent! /github.com\/yktoo" PKGBUILD
-# makepkg -sic  # takes ages
-# true
+#=> ymuse
+# for MPD
+gAUR ymuse
+nvim -c "silent! /github.com\/yktoo" PKGBUILD
+makepkg -sic  # takes ages
+true
 
 # #=> Zoom
 # gAUR zoom

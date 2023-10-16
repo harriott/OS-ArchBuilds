@@ -90,7 +90,7 @@ ln -sf $ABjo/pinforc ~/.pinforc
 cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -sf $OSAB/ranger $cr  # e -adl ~/.config/ranger
 
 #=> Ruby IRB
-ln -sf $onGH/misc/irbrc ~/.irbrc
+ln -sf $misc/irbrc ~/.irbrc
 # e -la ~/.irbrc
 
 #=> tmux

@@ -32,9 +32,9 @@ if [ -z $l ]; then
     if test $(find $Thb -name "* conflicted copy*" | wc -c) -eq 0; then
         thunderbird
     else
-        notify-send -i /usr/share/icons/hicolor/16x16/apps/thunderbird.png -u critical 'Dropbox conflicts in $Thb.'
+        notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png -u critical 'Dropbox conflicts in $Thb.'
     fi
 else
-    notify-send -i /usr/share/icons/hicolor/16x16/apps/thunderbird.png -u critical "? $l > Thunderbird > Thb"
+    notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png -u critical "? $l > Thunderbird > Thb"
 fi
 
