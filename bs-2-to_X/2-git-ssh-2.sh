@@ -1,8 +1,8 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-# after  $bSc/2-to_X/2-git-ssh-1.sh,
-# from the directory  $s  defined therein, bash $bSc/2-to_X/2-git-ssh-2.sh
+# after  $OSAB/bs-2-to_X/2-git-ssh-1.sh,
+# from the directory  $s  defined therein, bash $OSAB/bs-2-to_X/2-git-ssh-2.sh
 
 set -v  # prints each statement here, including comments
 

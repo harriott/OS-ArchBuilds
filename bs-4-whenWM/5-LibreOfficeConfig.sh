@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# $ bash $bSc/4-whenWM/5-LibreOfficeConfig.sh
+# $ bash $OSAB/bs-4-whenWM/5-LibreOfficeConfig.sh
 
 set -ev
 

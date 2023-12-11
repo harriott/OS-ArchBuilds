@@ -26,6 +26,7 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .docx libreoffice-writer.desktop
 # handlr set .el gvim.desktop
 # handlr set .fetl gvim.desktop
+# handlr set .flac mpv.desktop
 # handlr set .flv mpv.desktop
 # handlr set .html gvim.desktop  # still feeds to  Firefox...
 # handlr set .ico org.nomacs.ImageLounge.desktop
@@ -33,6 +34,7 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .kdbx org.keepassxc.KeePassXC.desktop
 # handlr set .log gvim.desktop
 # handlr set .lua gvim.desktop
+# handlr set .m4a mpv.desktop
 # handlr set .md gvim.desktop
 # handlr set .MOV mpv.desktop
 # handlr set .mp3 mpv.desktop

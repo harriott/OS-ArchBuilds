@@ -151,7 +151,6 @@ moar -h
     [quote]quote[/quote]
 
 # documenting
-    i pdfinfo
     r $Sig
 
 ## dict
@@ -159,22 +158,31 @@ moar -h
     dict -D
     i dict
 
-## TeX
+## LaTeX Polyglossia
+    \setmainfont{ArchitectsDaughter}
+    \setmainfont{Arimo}
+    \setmainfont{FingerPaint-Regular}
+
+## PDF
+    gspdfpng  # Ghostscript convert pdf to png
+    i pdfinfo
+
+### TeX
     r $GHrUse/CP/MartinThoma-LaTeX-examples
     r $jtCP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
 `mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
 
-### fontspec
+#### fontspec
     \setmonofont{Caskaydia Cove Regular Nerd Font Complete Mono}
     \setmonofont{Ubuntu Mono}
 
-### Arch package files
+#### Arch package files
     C /usr/share/texmf-dist/tex/latex/
     /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
 
-### copied resources
+#### copied resources
     r $cITh/CP/TeX
     z $cITh/CP/TeX/LaTeX/appearance/datetime2.pdf
     z $cITh/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
@@ -184,34 +192,39 @@ moar -h
     z $cITh/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
     z $cITh/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
     z $cITh/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
-    z $cITh/CP/TeX/LaTeX/structure/parts/Lists/easylist-doc.pdf
+    z $cITh/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
     z $cITh/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
 
-### my packages
+#### my packages
     r $LTXj
     r $JHt/IT/CP/TeX/LaTeX
     r ~/texmf
 
-### native install
+#### native install
     /usr/local/texlive/2023/texmf-dist/tex/latex/base/nfssfont.tex
     z /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf
 
-## TeX Live
+### TeX Live
     pacman -Qs texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
 
-### native install
+#### native install
     /usr/local/texlive/2023/texmf-dist/doc/
     gdu -nps /usr/local/texlive
 
-#### tcolorbox
+##### tcolorbox
     $/usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/README.md
     /usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/tcolorbox-example-poster.tex
 
-### TeX Live package manager
+#### TeX Live package manager
     /usr/local/texlive/2023/texmf-var/web2c/tlmgr.log
     /usr/local/texlive/2023/texmf-var/web2c/tlmgr-commands.log
+    tlmgr info pgfplots
     tlmgr list --only-installed > $machLg/TeXLive/tlmgr_list-$(date '+%Y%m%d%H%M').txt
     sudo tlmgr update --all
+
+### Zathura
+    $ABjo/wm/zathurarc  # set window-height <pixels>
+    i zathurarc
 
 # Emacs
     $misc/Emacs/init.el
@@ -237,9 +250,11 @@ moar -h
     nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
 # encoding
+    $machBld/jo/gitconfig
     $onGH/pandoc-templates/README.markdown
     b <codeFile>  # syntax'd cat
     pb <codeFile>  # also reformatted
+    r ~/.cache/hugo_cache
     yj -ty <file.toml >file.yml
     z $cITh/CP/encoding/cheatsheet-a5.pdf &  # emmet
 
@@ -259,6 +274,7 @@ moar -h
 - `a`/`z` = zoom in/out
 - arrows scroll around
 - mouse
+- `q` = quit
 
 ## Python
     ~/.local/bin/
@@ -318,6 +334,7 @@ outer whitespaces get ignored
     rg '\.emacs\.d'
     rg --no-ignore 'sometext'  # allows searching into gitignored places
     rg -i <case-insensitive>
+    rg -thtml -tcss <webish>
     rg -tmd '[\p{Devanagari}]'  # finds Devanagari characters
     rg -tmd '\$Sig'
     rg -tmd '\{TNW}'
@@ -440,6 +457,7 @@ vid => ffmpegthumbnailer
     e -l -s modified  # time sorted
     e -RL 2  # depth of 2
     e -adl <directory_to_check>  # reports for the directory (not its contents)
+    e <symlink>  # red if no reference
     i eza
     more in  $OSAB/Bash/bashrc-generic
 
@@ -447,15 +465,21 @@ vid => ffmpegthumbnailer
     fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
     fd -e ods  # finds OpenOffice Calc spreadsheets
     fd -H  # --hidden
+    fd -td font
     fd -tf -e css
     fd -tf -e fetl
+    fd -tf -e html
     fd -tf -e ogg ' webm'
     fd -tf -e md | wc -l
     fd -tf -e md -e tex
+    fd -tf -e mp4 -e mkv -e ogv -e MOV > films.fetl
+    fd -tf -e svg
     fd -tf -e tex
     fd -tf -e vim
+    fd -tf -e wiki
+    fd -u -tf -e odt
     fd -u '\..+'
-    fd . $bSc
+    fd . $OSAB
     im fd
 
 - `-I` = `--no-ignore` do not respect .(git|fd)ignore files
@@ -589,6 +613,17 @@ gpg(1)
     lspci -vnn | grep VGA -A 12 | xcol Intel Radeon size VGA
     sudo lshw -C display | xcol Radeon size VGA
 
+## cbh - Logitech K280e
+      alt+3 --> €
+      alt+5 --> ½
+       rh | --> ~
+       rh \ --> #
+    shift+2 --> "
+    shift+3 --> £
+          " --> @
+
+    :Tabularize /-->/r1c1l0
+
 ## printing - CUPS - HP ENVY 5532 WiFi
     doas cupsenable ENVY_5530  # if it's paused
     lpoptions -d ENVY_5530  # set as default
@@ -673,6 +708,7 @@ optimised for SSDs
     systemctl status rsnapshot-hourly.timer
 
 #### find
+    fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $Bash bashrc-console
     fRs $Drpbx/CAM-toSort0 '01 '
     fRs $Drpbx/CAM-toSort0 Apache
@@ -686,6 +722,10 @@ optimised for SSDs
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "Queen*.mkv" -exec rm -f {} \;
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "2022-*.mkv" -exec rm -f {} \;
+
+##### versions of a particular file
+    find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes/md-JH-DailyLife/roles/ -maxdepth 1 -type f -name "roles.md" -ls  # not easy to sort
+    fd roles.md $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes/md-JH-DailyLife/roles --max-depth 1 -l | sort > rsnapshots.fetl
 
 #### quickly lists all instances of directories
 ```bash
@@ -804,27 +844,28 @@ for t in *.mp3; do aet "$t" 3; done
 mediainfo -h | mo
 ```
 
-## audio
-    v  # alias'd to  vimpc  in  $Bash/bashrc-wm
-
-### cmus
+## audio - cmus
     $ABjo/wm/cmus-rc.conf
     cmus_notify -h
     pgrep cmus
 
-#### kill
+### kill
     kill -9 "$(pidof cmus)"
 
-##### manually
+#### manually
 get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 
-### playerctl
+## audio - playerctl
     playerctl  # quick guide
     playerctl -l  # (--list-all) available players
 
-### Quod Libet
+## audio - Quod Libet
     pkill exfalso
     pkill quodlibet
+
+## audio - vimpc
+    $ABjo/wm/MPD/vimpcrc
+    v  # alias'd to  vimpc  in  $Bash/bashrc-wm
 
 ## OBS Studio Settings
     Hotkeys > [ Start Recording  Stop Recording ] > Win+Space (= Super + Space)
@@ -866,18 +907,11 @@ systemctl status nordvpnd.service
 
 # packages
 ```bash
-checkupdates
 expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500.log  # 500 most recent installs
 makepkg --install
 pacfinder
-pacman -Qdt  # lists all orphans
-sudo pacman -U package.pkg.tar.xz
-sudo pacman -Rs <packagetoremove>
 grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
 ```
-
-    /etc/pacman.conf
-    /var/cache/pacman/pkg/
 
 ## Aura
     aura -Pa  # security analysis of all installed AUR packages
@@ -890,13 +924,32 @@ pacman -Qg base-devel  # lists packages installed
 pacman -Sg base-devel  # lists all
 ```
 
-## list local and remote packages
-pacman -Ss <keyword>
-pacsearch <keyword>  # better search
-
 ## package database locked
 pgrep pacman  # to ensure it's not running
 sudo rm /var/lib/pacman/db.lck  # delete the stale lock
+
+## pacman
+    /etc/pacman.conf
+    sudo du -sh /var/cache/pacman/pkg
+
+```bash
+checkupdates
+pacman -Qdt  # lists all orphans
+sudo pacman -U package.pkg.tar.xz
+sudo pacman -Rs <packagetoremove>
+```
+
+- `-i` (`--info`) on a package
+- `-ii` shows packages depend on this package
+- `-S` (`--sync`) synchronize packages from servers
+- `-y` (`--refresh`) refresh copy of the master package list (use with `-u`)
+- `-yy` (`--refresh`) force refresh
+
+### list local and remote packages
+```bash
+pacman -Ss <keyword>
+pacsearch <keyword>  # better search
+```
 
 ## pactree
     i pactree
@@ -989,6 +1042,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 ### /usr/share/fonts/
     fd -L architects
     fd -L consolas
+    fd -L symbola
 
 ### Fontconfig
     cd /etc/fonts  # to explore the configuration files
@@ -1221,7 +1275,7 @@ xdg-open https://archlinux.org
 HTTP Server
 
 ### /etc/httpd/conf/httpd.conf
-configured in `$bSc/4-whenWM/1-softwares.sh`
+configured in `$OSAB/bs-4-whenWM/1-softwares.sh`
 
 ### httpd.service
     sudo systemctl disable httpd.service --now
@@ -1229,6 +1283,7 @@ configured in `$bSc/4-whenWM/1-softwares.sh`
     sudo systemctl restart httpd.service; systemctl status httpd.service
     sudo systemctl start httpd.service
     sudo systemctl stop httpd.service
+    systemctl status httpd.service
 
 ## cloud storage
     s ~/.config/rclone/rclone.conf  # pw is disguised
@@ -1308,10 +1363,12 @@ r $JHm
 ```
 
 ## Nginx
-    /etc/nginx/nginx.conf
+    /etc/nginx/nginx.conf  # http://127.0.0.3
     /etc/nginx/mime.types
     /usr/share/nginx/html/index.html
     r /usr/share/nginx/html
+
+    rsync -irtv --delete /usr/share/nginx/test/ $JHw/usr-share-nginx-test
 
 ### nginx.service
     sudo systemctl disable nginx.service --now
@@ -1324,6 +1381,13 @@ r $JHm
     i sshd_config
     ~/.ssh/config
 
+## w3m
+    /usr/share/doc/w3m/keymap.default
+    i w3m
+    ws 'https://lite.duckduckgo.com/lite?q=non+duality'
+    ws http://en.wikipedia.org/wiki/W3m
+    ~/.w3m/config
+
 ## weather
     aw
 
@@ -1334,8 +1398,4 @@ curl wttr.in/Moscow
 curl wttr.in/Salt+Lake+City
 wp  # in Paris
 ```
-
-# Zathura
-    $ABjo/wm/zathurarc
-    i zathurarc
 

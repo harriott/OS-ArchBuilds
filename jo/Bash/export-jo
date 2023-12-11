@@ -3,7 +3,7 @@
 # ~/.export-jo  ($Bash/export-jo)
 #  depends on  $OSAB/Bash/export-storage
 #  sourced by  $Bash/bash_profile
-#  symlinked in  $bSc/anytime/symlinks-jo-0.sh
+#  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 
 export MANPATH=/usr/share/man/
 uG=$machBld/jo/Bash/export-urxvt; [[ -f $uG ]] && source $uG
@@ -32,18 +32,18 @@ export TeNo=$core/TextNotes  # used in  $TeNo
 export Cfzd=$DJH/Cafezoide
     export CzMa=$Cfzd/manage  # $CzMa
     export CzPeo=$Cfzd/people  # $CzPeo
-    export CzPhy=$Cfzd/PhysicalProperty  # $PzPhy
+    export CzPhy=$Cfzd/PhysicalProperty  # $CzPhy
 export CfWk=$DJH/CforWork
     export ScEn=$CfWk/education/Science-Engineering
 export copied=$DJH/copied  # used in  $TeNo
-    export cFr=$copied/France  # used in  $TeNo
+    export cFr=$copied/France  # $cFr  used in  $TeNo
     export chum=$copied/human  # used in  $TeNo
         export chin=$chum/ingest  # used in  $TeNo
     export cITh=$copied/IT-handy
         export cIThul=$cITh/unix-like  # $cIThul
     export copOT=$copied/OutThere  # $copOT  used in  $TeNo
     export Pr0=$copied/Practical0
-        export Pr0t=$copied/Practical0/technos
+        export Pr0t=$Pr0/technos
 export DaLi=$DJH/now/DailyLife  #  $DaLi  used in  $TeNo
 export ess=$DJH/now/essential
     export eFr=$ess/France  # $eFr
@@ -55,6 +55,7 @@ export JHt=$DJH/technos
         export jtUL=$jtIT/UnixLike  # $jtUL  used in  $core  &  $jtIT
     export tIs=$JHt/IT-storage  # $tIs/diskUsage.txt
 export JHw=$DJH/work  # $JHw - for IT websites and more
+    export atone=$JHw/WB-Hugo-atiavda_one  # $atone
     export bilan=$JHw/ST/LPD/IdF/AB-TAP/bilan
     export JHm=$JHw/IT-Jekyll-harriott-minima  # $JHm
     export rEr=$JHw/France/IdF/Paris/rueErmitage
@@ -65,7 +66,7 @@ export Thb=$DJH/Thb-dr  # $Thb, used in
                         #  $OSAB/jo/wm/TS/thunderbird_safely.sh
                         #  ~/.thunderbird/profiles.ini
 export Then0=$DJH/Then0  # used in  $TeNo
-    export T0Fr=$Then0/Europe/France  # used in  $TeNo
+    export T0Fr=$Then0/Europe/France  # $T0Fr  used in  $TeNo
 
 #==> $Drpbx
 export COT=$Drpbx/COutThere  # $COT  used in  $TeNo

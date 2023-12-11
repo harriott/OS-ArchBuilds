@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# $bSc/2-to_X/1-sudo-to_X.sh
+# $OSAB/bs-2-to_X/1-sudo-to_X.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
@@ -62,6 +62,9 @@ sudo pacman -S bat-extras  # brings in bat (used in  fzf --preview)
 
 # # OpenSSH
 # pacman -S openssh
+
+# #=> 3 softwares - systeroid
+# pacman -S systeroid
 
 # #=> 4 when X 0 - appearance - hicolor-icon-theme
 # pacman -S hicolor-icon-theme

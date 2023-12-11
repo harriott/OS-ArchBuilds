@@ -7,7 +7,7 @@
 
 # (chmod 755 $machBld/jo/awesome/audio/pactlMuteUnmute.sh)
 # called by  $machBld/jo/awesome/rc.lua  with  XF86AudioMute
-# symlinked in my  $bSc/symlinks/jo-1-awesome.sh
+# symlinked in my  $OSAB/bs-symlinks/jo-1-awesome.sh
 
 pactl set-sink-mute 0 toggle
 if [[ $(pacmd list-sinks | awk '/muted/ { print $2 }') == 'yes' ]]; then

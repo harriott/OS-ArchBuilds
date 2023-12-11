@@ -56,7 +56,7 @@ ln -sf $Openbox/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
 if [[ $myDrA == 1 ]]; then
   ln -sf $machBld/jo/gitconfig ~/.gitconfig
 else
-  ln -sf $bSc/2-to_X/1-gitconfig ~/.gitconfig
+  ln -sf $OSAB/bs-2-to_X/1-gitconfig ~/.gitconfig
 fi
 # points to further convigurations on  $ITstack
 # e -la ~/.gitconfig
@@ -93,11 +93,14 @@ cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -sf $OSAB/ranger $cr  # e -adl 
 ln -sf $misc/irbrc ~/.irbrc
 # e -la ~/.irbrc
 
+#=> Surfraw
+ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
+
 #=> tmux
 ln -sf $tmx/tmux.conf ~/.tmux.conf
 
 #=> vim variants 0 $vimfiles
-# symlinked in  $bSc/symlinks/jo-2-whenDropbox.sh
+# symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 
 #=> vim variants 1 entry points
 ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
@@ -105,6 +108,11 @@ ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
 
 [ -d ~/.config/nvim ] || mkdir -p ~/.config/nvim
 ln -sf $ABjo/textEdit/Vim/init.vim ~/.config/nvim/init.vim
+
+#=> w3m
+ln -sf $ABjo/WAN/w3m/config ~/.w3m/config
+ln -sf $ABjo/WAN/w3m/keymap ~/.w3m/keymap
+ln -sf $ABjo/WAN/w3m/omnibar_duckduckgo.cgi ~/.w3m/cgi-bin/omnibar_duckduckgo.cgi
 
 #=> X
 ln -sf $ABjo/wm/Xresources/Xresources                       ~/.Xresources

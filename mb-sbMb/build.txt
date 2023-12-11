@@ -292,7 +292,7 @@ reboot
 sudo chown jo:jo /mnt/HD103SJ
 ## xdg-open .txt
 handlr get .txt  returns  vim.desktop  - which was why nnn was freezing, so
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## remove WD1001FALS from mlocate path
 sudo cp $machBld/etc/kcm-updatedb.conf /etc/updatedb.conf
 sudo updatedb
@@ -323,7 +323,7 @@ after hard reboot  $HOME/.cache/ctrlp/mru/cache.txt  was empty...
 ## ASUS C027PI DVI failed on reboot
 ## xdg-open .md
 handlr get .md  returns  no handlers found for text/markdown
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## system slowed down to a crawl
 ## print to A4
 hp-toolbox & > Print Settings > General > Media Size > A4 210x297mm
@@ -338,7 +338,7 @@ sudo nvim -o /etc/sane.d/canon_lide70.conf /etc/sane.d/canon_lide70.conf.pacnew
 sudo nvim -o /etc/sane.d/escl.conf /etc/sane.d/escl.conf.pacnew
 ## xdg-open .kdbx
 handlr get .kdbx  returns  no handlers found for 'application/x-keepass2'
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## Enchant
 unclear how it got installed...
 ## pacnews
@@ -1101,12 +1101,12 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ## fsck'd WD1001FALS
 sudo mount /dev/sdd1 /mnt/WD1001FALS
 ## xdg-open .tiff
-handlr get .tiff  reports  gimp.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .tiff  reports  gimp.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .log
 handlr get .log  reports  no handlers found for 'text/x-log'
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .sh
-handlr get .sh  reports  vim.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .sh  reports  vim.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## Updates
   (2/2) Warn about old perl modules
   WARNING: '/usr/lib/perl5/5.34' contains data from at least 2 packages which will NOT be used by the installed perl interpreter.
@@ -1116,7 +1116,7 @@ pacman -Qqo '/usr/lib/perl5/5.34'
   perl-data-printer
 so re-installed them
 ## xdg-open .tex
-handlr get .tex  reports  vim.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .tex  reports  vim.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## jo's pw failing
 fixed by a reboot
 ## move Dropbox to SDU3D1TB
@@ -1172,7 +1172,7 @@ replaced WD30EZRZ  in  ~/.thunderbird/profiles.ini
 conversion failed
 worked again normally after a reboot
 ## xdg-open .pl
-handlr get .pl  reports  bluefish.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .pl  reports  bluefish.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## HP ENVY 5532 connected to OPPO A76
 hp-makeuri 192.168.61.10
   CUPS URI: hp:/net/ENVY_5530_series?ip=192.168.61.10
@@ -1200,13 +1200,13 @@ hp-toolbox & (= HP Device Manager) > HP Envy 5530 Series icon > Printer Control 
 ## celt
 sudo pacman -Rs celt
 ## xdg-open .xml
-handlr get .xml  reports  google-chrome.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .xml  reports  google-chrome.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .mediawiki
 handlr get .mediawiki  handlr add .mediawiki gvim.desktop
 ## xdg-open .ppm
 handlr get .ppm  reports  org.nomacs.ImageLounge.desktop
 ## xdg-open .lua
-handlr get .lua  reports  no handlers found for 'text/x-lua'  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .lua  reports  no handlers found for 'text/x-lua'  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## HP ENVY 5532 IP Address changed to 96.10
 hp-setup -r > Select > Remove
 hp-setup 192.168.96.10 > Next > Add Printer
@@ -1223,22 +1223,22 @@ Segmentation fault (core dumped)
 bluefish > alt+e > s > change something, close Bluefish for  bluefish > ... reset that change
 ## xdg-open .py
 handlr get .py  reports  no handlers found for 'text/x-python3'
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## Updates
   error: linux: signature from "Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>" is invalid
   :: File /var/cache/pacman/pkg/linux-5.19.4.arch1-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
   Do you want to delete it? [Y/n]
-fixed on next run of  $bSc/anytime/updates.sh
+fixed on next run of  $OSAB/bs-anytime/updates.sh
 ## xdg-open .mkv
-handlr get .mkv  reports  pqiv.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .mkv  reports  pqiv.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .mp4
-handlr get .mp4  reports  pqiv.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .mp4  reports  pqiv.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .org
 handlr get .org  reports  no handlers found for 'text/org'
 ## xdg-open .3gp
-handlr get .3gp  reports  pqiv.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .3gp  reports  pqiv.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .flv
-handlr get .flv  reports  pqiv.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .flv  reports  pqiv.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .el
 handlr get .el  reports  no handlers found for 'text/x-emacs-lisp'
 ## HP ENVY 5532 IP Address changed to 182.10
@@ -1259,7 +1259,7 @@ Do you want to delete it? [Y/n] - I allowed, and it got re-downloaded
 :: Replace atk with extra/at-spi2-core? [Y/n]
 :: Import PGP key F296BDE50368C6CE, "T.J. Townsend <blakkheim@archlinux.org>"? [Y/n]
 ## xdg-open .webm
-handlr get .webm  reports  pqiv.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .webm  reports  pqiv.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## SD480GSSDPlus error?
 lost  s45-1107-1113.tex  then failed to reboot  then inode messages
 ## HP ENVY 5532 IP Address changed to 32.10
@@ -1276,7 +1276,7 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
   ==> WARNING: Possibly missing firmware for module: qla1280
   ==> WARNING: Possibly missing firmware for module: xhci_pci
 ## xdg-open .BMP
-handlr get .BMP  reports  gimp.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .BMP  reports  gimp.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## switch to handlr
 sudo pacman -Rdd handlr-bin
 sudo pacman -S handlr
@@ -1286,11 +1286,11 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.167.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## xdg-open .divx
-handlr get .divx  reports  pqiv.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .divx  reports  pqiv.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .webp
-handlr get .webp  reports  gimp.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .webp  reports  gimp.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .mpg
-handlr get .mpg  reports  pqiv.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .mpg  reports  pqiv.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## HP ENVY 5532 IP Address changed to 167.10
 changed 163 to 167 in  $Imagey/Scan.sh
 ## HP ENVY 5532 IP Address changed to 143.10
@@ -1298,7 +1298,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.143.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## xdg-open .MOV
-handlr get .MOV  reports  pqiv.desktop  so  bash $bSc/4-whenWM/2-resourceHandler.sh
+handlr get .MOV  reports  pqiv.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## HP ENVY 5532 IP Address changed to 215.10
 hp-setup -r > Select > Remove
 hp-setup 192.168.215.10 > Next > Add Printer
@@ -1317,19 +1317,19 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 sudo chown -R jo:jo /mnt/WD1001FALS/lost+found
 ## xdg-open .toml
 handlr get .toml  reports  no handlers found for 'application/toml'
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .css
 handlr get .css  reports  bluefish.desktop
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .html
 handlr get .html  reports  firefox.desktop
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .oma
 handlr get .oma
 bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## xdg-open .csv
 handlr get .csv  reports  libreoffice-calc.desktop
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## HP ENVY 5532 IP Address changed to 199.10
 hp-setup -r > Select > Remove
 hp-setup 192.168.199.10 > Next > Add Printer
@@ -1353,7 +1353,7 @@ hp-setup 192.168.83.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## xdg-open .docx
 handlr get .docx  reports  calibre-ebook-viewer.desktop
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## Firefox won't appear
 fixed by re-installing
 ## Google Chrome won't search Google
@@ -1389,7 +1389,7 @@ pgrep firefox  shows 3 processes
 not cured by re-installing, fix was pinta-git
 ## xdg-open .ogv
 handlr get .ogv  reports  pqiv.desktop
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## switch to the base-devel meta package
 pacman -Syu base-devel
 ## HP ENVY 5532 IP Address changed to 71.10
@@ -1580,7 +1580,7 @@ hp-setup 192.168.127.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## xdg-open .ogg
 handlr get .ogg  reports  pqiv.desktop
-  bash $bSc/4-whenWM/2-resourceHandler.sh
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## Updates
 error: failed retrieving file 'core.db' from mirror.ubrco.de : SSL certificate problem: certificate has expired
 error: failed retrieving file 'extra.db' from mirror.ubrco.de : SSL certificate problem: certificate has expired
@@ -2076,10 +2076,145 @@ sudo pacman -Syu
   sudo rm /var/lib/pacman/db.lck
 ## TeX Live update
 sudo tlmgr update --all  updated 292 packages
+## HP ENVY 5532 IP Address changed to 50.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.50.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 76.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.76.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## WiFi Networks not showing in NetworkManager
+replugged  NETGEAR WG111v2
+## HP ENVY 5532 IP Address changed to 235.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.235.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## drive snags
+after a hard reset following a seizure - ST4000VN008 see snags, below
+then same for  WD1001FALS  so removed them from  /etc/fstab
+### fix WD1001FALS
+sudo e2fsck -v /dev/sdd1 > fixed a load of errors
+#### / full
+due to  rsnapshot  being briefly active
+paccache -k 2 -r  to free disk space on  /
+in  /mnt/ST4000VN008/rsnapshot/  su > root pw  for  diskus  which reported 19G
+rm -r /mnt/ST4000VN008/rsnapshot/
+#### reactivate WD1001FALS
+sudo nvim /etc/fstab > reactivated  WD1001FALS  for  reboot
+## Updates snags
+  :: There are 128 providers available for tessdata:
+  :: Repository extra
+    1) tesseract-data-afr  2) tesseract-data-amh  3) tesseract-data-ara  4) tesseract-data-asm  5) tesseract-data-aze  6) tesseract-data-aze_cyrl  7) tesseract-data-bel  8) tesseract-data-ben  9) tesseract-data-bod  10) tesseract-data-bos  11) tesseract-data-bre  12) tesseract-data-bul  13) tesseract-data-cat  14) tesseract-data-ceb  15) tesseract-data-ces  16) tesseract-data-chi_sim  17) tesseract-data-chi_sim_vert  18) tesseract-data-chi_tra  19) tesseract-data-chi_tra_vert  20) tesseract-data-chr  21) tesseract-data-cos  22) tesseract-data-cym  23) tesseract-data-dan  24) tesseract-data-dan_frak  25) tesseract-data-deu  26) tesseract-data-deu_frak  27) tesseract-data-div  28) tesseract-data-dzo  29) tesseract-data-ell  30) tesseract-data-eng  31) tesseract-data-enm  32) tesseract-data-epo  33) tesseract-data-equ  34) tesseract-data-est  35) tesseract-data-eus  36) tesseract-data-fao  37) tesseract-data-fas  38) tesseract-data-fil  39) tesseract-data-fin  40) tesseract-data-fra  41) tesseract-data-frk  42) tesseract-data-frm  43) tesseract-data-fry  44) tesseract-data-gla  45) tesseract-data-gle  46) tesseract-data-glg  47) tesseract-data-grc  48) tesseract-data-guj  49) tesseract-data-hat  50) tesseract-data-heb  51) tesseract-data-hin  52) tesseract-data-hrv  53) tesseract-data-hun  54) tesseract-data-hye  55) tesseract-data-iku  56) tesseract-data-ind  57) tesseract-data-isl  58) tesseract-data-ita  59) tesseract-data-ita_old  60) tesseract-data-jav  61) tesseract-data-jpn  62) tesseract-data-jpn_vert  63) tesseract-data-kan  64) tesseract-data-kat  65) tesseract-data-kat_old  66) tesseract-data-kaz  67) tesseract-data-khm  68) tesseract-data-kir  69) tesseract-data-kmr  70) tesseract-data-kor  71) tesseract-data-kor_vert  72) tesseract-data-lao  73) tesseract-data-lat  74) tesseract-data-lav  75) tesseract-data-lit  76) tesseract-data-ltz  77) tesseract-data-mal  78) tesseract-data-mar  79) tesseract-data-mkd  80) tesseract-data-mlt  81) tesseract-data-mon  82) tesseract-data-mri  83) tesseract-data-msa  84) tesseract-data-mya  85) tesseract-data-nep  86) tesseract-data-nld  87) tesseract-data-nor  88) tesseract-data-oci  89) tesseract-data-ori  90) tesseract-data-pan  91) tesseract-data-pol  92) tesseract-data-por  93) tesseract-data-pus  94) tesseract-data-que  95) tesseract-data-ron  96) tesseract-data-rus  97) tesseract-data-san  98) tesseract-data-sin  99) tesseract-data-slk  100) tesseract-data-slk_frak  101) tesseract-data-slv  102) tesseract-data-snd  103) tesseract-data-spa  104) tesseract-data-spa_old  105) tesseract-data-sqi  106) tesseract-data-srp  107) tesseract-data-srp_latn  108) tesseract-data-sun  109) tesseract-data-swa  110) tesseract-data-swe  111) tesseract-data-syr  112) tesseract-data-tam  113) tesseract-data-tat  114) tesseract-data-tel  115) tesseract-data-tgk  116) tesseract-data-tgl  117) tesseract-data-tha  118) tesseract-data-tir  119) tesseract-data-ton  120) tesseract-data-tur  121) tesseract-data-uig  122) tesseract-data-ukr  123) tesseract-data-urd  124) tesseract-data-uzb  125) tesseract-data-uzb_cyrl  126) tesseract-data-vie  127) tesseract-data-yid  128) tesseract-data-yor
+  Enter a number (default=1): 30
+### openjdk
+Q jdk
+  local/jdk-openjdk 21.u35-3
+  local/jre-openjdk 21.u35-3
+  local/jre-openjdk-headless 21.u35-3
+  local/jre11-openjdk 11.0.21.u9-2
+  local/jre11-openjdk-headless 11.0.21.u9-2
+sudo pacman -Rs jdk-openjdk
+  :: libreoffice-fresh optionally requires java-environment: required by extension-wiki-publisher and extension-nlpsolver
+  :: subversion optionally requires java-environment: for Java support
+  Packages (2) java-environment-common-3-5  jdk-openjdk-21.u35-3
+$ sudo pacman -Rs jre-openjdk
+  checking dependencies...
+  :: languagetool optionally requires java-runtime: needed for the GUI version
+  :: libbluray optionally requires java-runtime: BD-J library
+  :: libjpeg-turbo optionally requires java-runtime>11: for TurboJPEG Java wrapper
+  :: libjxl optionally requires java-runtime: for JNI bindings
+  :: libreoffice-fresh optionally requires java-runtime: adds java support
+  :: opencv optionally requires java-runtime: Java interface
+  Packages (1) jre-openjdk-21.u35-3
+  :: Do you want to remove these packages? [Y/n]
+sudo pacman -Rs jre-openjdk-headless
+sudo pacman -Syu jdk-openjdk  359 packages
+reboot
+sudo pacman -Rs jre11-openjdk
+sudo pacman -Rs jre11-openjdk-headless
+## fix ST4000VN008
+sudo e2fsck -v /dev/sdc1 > fixed a load of errors
+## HP ENVY 5532 IP Address changed to 41.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.41.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 98.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.98.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## pipx fix
+Q python-pipx
+sudo pacman -Rs python-pipx
+rm -r ~/.local/pipx
+sudo pacman -S python-pipx
+pipx list
+## HP ENVY 5532 IP Address changed to 164.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.164.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Thunderbird email links not opening
+Settings > General > Files & Attachments >
+  http > Use firefox  left as is
+  https > Use Firefox Web Browser (default) > Delete Action  got the  https  links opening again
+## PDFtk
+pdftk D231122065.pdf input_pw D190118002 output nbm-B12.pdf
+  /usr/bin/pdftk: line 3: /usr/bin/java: No such file or directory
+fixed with  sudo pacman -S jre-openjdk
+## HP ENVY 5532 IP Address changed to 222.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.222.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## xdg-open .m4a
+handlr get .m4a  reports  vlc.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## cache.sqlite  randomly appearing
+## xdg-open .flac
+handlr get .flac  reports  vlc.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## xdg-open .ogg
+handlr get .ogg  reports  vlc.desktop  so  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## xdg-open .divx
+handlr get .divx  reports  no handlers found for 'video/vnd.avi'
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## Updates
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing dotnet-runtime (8.0.0.sdk100-3) breaks dependency 'dotnet-runtime-7.0' required by pinta
+removed Pinta
+## .NET
+dotnet --list-sdks  reports  "8.0.100 [/usr/share/dotnet/sdk]"
+dotnet --list-runtimes
+  Microsoft.NETCore.App 6.0.25 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+  Microsoft.NETCore.App 8.0.0 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
+Q dotnet
+  local/dotnet-host 8.0.0.sdk100-3
+    A generic driver for the .NET Core Command Line Interface
+  local/dotnet-runtime 8.0.0.sdk100-3
+    The .NET Core runtime
+  local/dotnet-runtime-6.0 6.0.25.sdk125-1
+    The .NET Core runtime
+  local/dotnet-sdk 8.0.0.sdk100-3
+    The .NET Core SDK
+  local/dotnet-targeting-pack 8.0.0.sdk100-3
+    The .NET Core targeting pack
+sudo pacman -Rs dotnet-runtime-6.0
+## TeX Live update
+sudo tlmgr update --all
+  tlmgr  itself needs to be updated. Please do this via either  tlmgr update --self
+sudo tlmgr update --all  updated 282 packages
+## SM3 unwriteable
+sudo chmod 777 /run/media/jo/SM3
 ## waiting
 MariaDB
 nginx-mainline
 pdfsam
+surfraw
+systeroid
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

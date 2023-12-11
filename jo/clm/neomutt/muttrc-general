@@ -105,6 +105,7 @@ set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 #  T > ~N ==> tags all marked as new in a folder
 # ^T ==> untag messages matching a pattern
 # U ==> undo deletion
+# W ==> <clear-flag>
 # [ ==> <half-up>
 # ] ==> <half-down>
 
@@ -119,6 +120,7 @@ bind index l noop
 bind index ll limit  # ~p = to me, ~P = from me
 #  ~C <textinsendlist>
 #  ~f <textinfrom>
+#  ~U unread messages
 macro index lb "<limit> ~b " "limit by term in message body"
 macro index lB "<limit> ~B " "limit by term in whole message"
 # Esc l -> <show-limit> ==> show currently active limit pattern

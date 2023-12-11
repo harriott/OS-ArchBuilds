@@ -30,7 +30,7 @@ llf=$Thb/linuxlock  # lockfile created by  $ABjo/wm/TS/thunderbird_safely.sh
 if ! pgrep thunderbird; then
     if [ $(cat $llf) = $host ]; then
         if (rm $llf); then
-            notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png "removed $Thb/linuxlock"
+            XDG_RUNTIME_DIR=/run/user/$(id -u) notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png 'removed $Thb/linuxlock'
         fi
     fi
 fi

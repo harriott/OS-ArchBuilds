@@ -32,11 +32,17 @@ sudo pacman -S dictd
 # #=> fonts - ttf-dejavu
 # sudo pacman -S ttf-dejavu
 
+#=> gdown
+pipx install gdown
+
 # #=> Gpick
 # sudo pacman -S gpick
 
 #=> grammalecte
 sudo pacman -S grammalecte
+
+#=> jre-openjdk
+sudo pacman -S jre-openjdk  # required for  PDFtk
 
 # #=> libsixel
 # sudo pacman -S libsixel  # for  sixel  graphics
@@ -52,6 +58,9 @@ sudo pacman -S grammalecte
 # #=> npm 0 configure npm-global
 # mkdir ~/.npm-global
 # npm config set prefix=$HOME/.npm-global
+
+#=> npm 1 carbonyl
+npm i -g carbonyl
 
 # #=> npm 1 cspell
 # npm i -g cspell

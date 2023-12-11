@@ -2,7 +2,7 @@
 
 # obmenu-generator - schema file
 # nvim -O /etc/xdg/obmenu-generator/schema.pl $Obc/schema.pl -c 'windo difft'
-# symlink to  ~/.config/obmenu-generator/schema.pl ($bSc/anytime/symlinks-jo-1-Openbox.sh)
+# symlink to  ~/.config/obmenu-generator/schema.pl ($OSAB/bs-symlinks/jo-1-Openbox.sh)
 
 =for comment
 

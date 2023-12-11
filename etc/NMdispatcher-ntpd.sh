@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# implemented by my  $bSc/4-whenWM/4-various.sh
+# implemented by my  $OSAB/bs-4-whenWM/4-various.sh
 #  r /etc/NetworkManager/dispatcher.d
 
 if [ "$2" = "up" ]; then

@@ -1,5 +1,5 @@
 
-# $ABjo/wm/zathurarc  symlinked in  $bSc/symlinks/jo-0.sh
+# $ABjo/wm/zathurarc  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 
 
 # Adding reverse search between gvim and zathura
@@ -16,6 +16,7 @@ set first-page-column 1:1
 set sandbox none
 
 # use full height
+# set window-height 500
 set window-height 1100
 # - taller than a 1080 screen
 

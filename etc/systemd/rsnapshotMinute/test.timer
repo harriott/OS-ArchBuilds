@@ -1,7 +1,7 @@
 # vim: set fdl=1:
 
 # $OSAB/etc/systemd/rsnapshotMinute/test.timer
-#  managed by my  $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
+#  managed by my  $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
 
 [Unit]
 Description=rsnapshot every minute backup test

@@ -58,7 +58,7 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 $ulL  for  bash connectSSID/iwctl.sh  got me online
-$bSc  for  bash 01-as_root-efi-to_chroot.sh
+$OSAB  for  bash 01-as_root-efi-to_chroot.sh
   error: libcap: signature from "David Runge <dvzrv@archlinux.org>" is marginal trust
   /usr  didn't get installed...
 rm -r /mnt  (didn't remove  /mnt/efi)
@@ -67,7 +67,7 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 $ulL  for  bash connectSSID/iwctl.sh  got me online
-$bSc  for  bash 01-as_root-efi-to_chroot.sh
+$OSAB  for  bash 01-as_root-efi-to_chroot.sh
 ### shutdown
 ctrl-d  for  halt -p
 ### K8GBDTIG3 loaded with $core
@@ -75,12 +75,12 @@ plugged into right USB socket
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  source export-storage
 $ulL  for  bash connectSSID/iwctl.sh  got me online
-$bSc  for  bash 01-as_root-efi-to_chroot.sh
+$OSAB  for  bash 01-as_root-efi-to_chroot.sh
 ### as chroot
 mkdir /bs  then  blkid  indicated  mount /dev/sdc1 /bs
 (maybe not needed) cd /bs/core/IT_stack/onGitHub/ArchBuilds/Bash  for  . export-storage
 #### build-scripts
-$bSc
+$OSAB
 bash 02-when_chroot-reflector.sh
 bash 03-as_root.sh
 . 04-cloneArchBuilds.sh
@@ -449,11 +449,107 @@ sudo pacman -Rs pdfsam  - just for the updates
 :: Replace kcoreaddons with extra/kcoreaddons5? [Y/n]
 :: Replace knotifications with extra/knotifications5? [Y/n]
 :: Replace kwindowsystem with extra/kwindowsystem5? [Y/n]
+## HP ENVY 5532 IP Address changed to 36.10
+hp-setup -r > Select > Remove
+hp-setup 192.168.36.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 50.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.50.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates snags
+With  Q tess  showing nothing,
+  :: Starting full system upgrade...
+  resolving dependencies...
+  :: There are 128 providers available for tessdata:
+  :: Repository extra
+    1) tesseract-data-afr  2) tesseract-data-amh  3) tesseract-data-ara  4) tesseract-data-asm  5) tesseract-data-aze  6) tesseract-data-aze_cyrl  7) tesseract-data-bel  8) tesseract-data-ben  9) tesseract-data-bod  10) tesseract-data-bos  11) tesseract-data-bre  12) tesseract-data-bul  13) tesseract-data-cat  14) tesseract-data-ceb  15) tesseract-data-ces  16) tesseract-data-chi_sim  17) tesseract-data-chi_sim_vert  18) tesseract-data-chi_tra  19) tesseract-data-chi_tra_vert  20) tesseract-data-chr  21) tesseract-data-cos  22) tesseract-data-cym  23) tesseract-data-dan  24) tesseract-data-dan_frak  25) tesseract-data-deu  26) tesseract-data-deu_frak  27) tesseract-data-div  28) tesseract-data-dzo  29) tesseract-data-ell  30) tesseract-data-eng  31) tesseract-data-enm  32) tesseract-data-epo  33) tesseract-data-equ  34) tesseract-data-est  35) tesseract-data-eus  36) tesseract-data-fao  37) tesseract-data-fas  38) tesseract-data-fil  39) tesseract-data-fin  40) tesseract-data-fra  41) tesseract-data-frk  42) tesseract-data-frm  43) tesseract-data-fry  44) tesseract-data-gla  45) tesseract-data-gle  46) tesseract-data-glg  47) tesseract-data-grc  48) tesseract-data-guj  49) tesseract-data-hat  50) tesseract-data-heb  51) tesseract-data-hin  52) tesseract-data-hrv  53) tesseract-data-hun  54) tesseract-data-hye  55) tesseract-data-iku  56) tesseract-data-ind  57) tesseract-data-isl  58) tesseract-data-ita  59) tesseract-data-ita_old  60) tesseract-data-jav  61) tesseract-data-jpn  62) tesseract-data-jpn_vert  63) tesseract-data-kan  64) tesseract-data-kat  65) tesseract-data-kat_old  66) tesseract-data-kaz  67) tesseract-data-khm  68) tesseract-data-kir  69) tesseract-data-kmr  70) tesseract-data-kor  71) tesseract-data-kor_vert  72) tesseract-data-lao  73) tesseract-data-lat  74) tesseract-data-lav  75) tesseract-data-lit  76) tesseract-data-ltz  77) tesseract-data-mal  78) tesseract-data-mar  79) tesseract-data-mkd  80) tesseract-data-mlt  81) tesseract-data-mon  82) tesseract-data-mri  83) tesseract-data-msa  84) tesseract-data-mya  85) tesseract-data-nep  86) tesseract-data-nld  87) tesseract-data-nor  88) tesseract-data-oci  89) tesseract-data-ori  90) tesseract-data-pan  91) tesseract-data-pol  92) tesseract-data-por  93) tesseract-data-pus  94) tesseract-data-que  95) tesseract-data-ron  96) tesseract-data-rus  97) tesseract-data-san  98) tesseract-data-sin  99) tesseract-data-slk  100) tesseract-data-slk_frak  101) tesseract-data-slv  102) tesseract-data-snd  103) tesseract-data-spa  104) tesseract-data-spa_old  105) tesseract-data-sqi  106) tesseract-data-srp  107) tesseract-data-srp_latn  108) tesseract-data-sun  109) tesseract-data-swa  110) tesseract-data-swe  111) tesseract-data-syr  112) tesseract-data-tam  113) tesseract-data-tat  114) tesseract-data-tel  115) tesseract-data-tgk  116) tesseract-data-tgl  117) tesseract-data-tha  118) tesseract-data-tir  119) tesseract-data-ton  120) tesseract-data-tur  121) tesseract-data-uig  122) tesseract-data-ukr  123) tesseract-data-urd  124) tesseract-data-uzb  125) tesseract-data-uzb_cyrl  126) tesseract-data-vie  127) tesseract-data-yid  128) tesseract-data-yor
+  Enter a number (default=1): 30
+  looking for conflicting packages...
+  error: unresolvable package conflicts detected
+  error: failed to prepare transaction (conflicting dependencies)
+  :: jdk-openjdk and jre-openjdk are in conflict
+there is  /usr/bin/tessdemo
+### tesseract
+Q libmupdf  - it's the culprit
+### openjdk
+Q jdk
+  local/jdk-openjdk 21.u35-3
+  local/jre-openjdk 21.u35-3
+  local/jre-openjdk-headless 21.u35-3
+  local/jre11-openjdk 11.0.21.u9-2
+  local/jre11-openjdk-headless 11.0.21.u9-2
+pactree -r jdk-openjdk  reports nothing
+pactree -r jre-openjdk  reports  bfg  jdk-openjdk
+#### remove j??-openjdk*
+sudo pacman -Syu jdk-openjdk  got the same conflict
+sudo pacman -S jdk-openjdk
+  :: jdk-openjdk and jre-openjdk are in conflict. Remove jre-openjdk? [y/N]
+sudo pacman -Rs jre-openjdk
+  :: removing jre-openjdk breaks dependency 'jre21-openjdk=21.u35-3' required by jdk-openjdk
+sudo pacman -Rs jre-openjdk-headless
+  :: removing jre-openjdk-headless breaks dependency 'jre21-openjdk-headless=21.u35-3' required by jre-openjdk
+sudo pacman -Rs jdk-openjdk
+  :: libreoffice-fresh optionally requires java-environment: required by extension-wiki-publisher and extension-nlpsolver
+  :: subversion optionally requires java-environment: for Java support
+  Packages (2) java-environment-common-3-5  jdk-openjdk-21.u35-3
+sudo pacman -Rs jre-openjdk
+  checking dependencies...
+  :: languagetool optionally requires java-runtime: needed for the GUI version
+  :: libbluray optionally requires java-runtime: BD-J library
+  :: libjpeg-turbo optionally requires java-runtime>11: for TurboJPEG Java wrapper
+  :: libjxl optionally requires java-runtime: for JNI bindings
+  :: libreoffice-fresh optionally requires java-runtime: adds java support
+  :: opencv optionally requires java-runtime: Java interface
+  :: texlive-latexextra optionally requires java-runtime: for pdfannotextractor
+  Packages (1) jre-openjdk-21.u35-3
+  :: Do you want to remove these packages? [Y/n]
+sudo pacman -Rs jre-openjdk-headless
+#### remove jre11-openjdk*
+sudo pacman -Rs jre11-openjdk
+  :: removing jre11-openjdk breaks dependency 'java-runtime>8' required by bfg
+##### remove bfg
+(accidentally) rAUR ~/Arch/AUR/moar
+rAUR ~/Arch/AUR/bfg
+sudo pacman -Rs bfg
+  checking dependencies...
+  :: languagetool optionally requires java-runtime: needed for the GUI version
+  :: libbluray optionally requires java-runtime: BD-J library
+  :: libjxl optionally requires java-runtime: for JNI bindings
+  :: libreoffice-fresh optionally requires java-runtime: adds java support
+  :: opencv optionally requires java-runtime: Java interface
+  :: texlive-latexextra optionally requires java-runtime: for pdfannotextractor
+  Packages (2) jre11-openjdk-11.0.21.u9-2  bfg-1.14.0-1
+  :: Do you want to remove these packages? [Y/n]
+#### attempt to remove jre11-openjdk-headless
+sudo pacman -Rs jre11-openjdk-headless
+  checking dependencies...
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: removing jre11-openjdk-headless breaks dependency 'java-runtime-headless' required by bcprov
+  :: removing jre11-openjdk-headless breaks dependency 'java-runtime-headless' required by java-commons-lang
+  :: removing jre11-openjdk-headless breaks dependency 'java-runtime-headless' required by languagetool
+  :: removing jre11-openjdk-headless breaks dependency 'java-runtime-headless>=8' required by pdftk
+### reinstall jdk-openjdk
+sudo pacman -Syu jdk-openjdk  346 packages
+sudo pacman -Rs jre11-openjdk-headless
+## pipx fix
+Q python-pipx
+sudo pacman -Rs python-pipx
+rm -r ~/.local/pipx
+sudo pacman -S python-pipx
+pipx list
+## Updates
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing dotnet-runtime (8.0.0.sdk100-3) breaks dependency 'dotnet-runtime-7.0' required by pinta
+removed Pinta
+## Updates
+  warning: directory permissions differ on /etc/bluetooth/
+  filesystem: 755  package: 555
 ## waiting
 apache
-mapscii
+gdown
 MariaDB
-pdfsam
 php
 systeroid
 # fcron
@@ -501,7 +597,7 @@ pass insert mbsync+msmtp-zou > <pw>
 pass ls mbsync+msmtp-zou
 # physical configuration
 4GB RAM
-F2  at  POST  for  ASUS BIOS Utility - EZ Mode
+WiFi MAC address: ac:82:47:7c:ee:b2
 screen is 1366x768
 SDEP128G  in  microSD  slot, for  Dropbox
 ## eMMC
@@ -509,3 +605,6 @@ SDEP128G  in  microSD  slot, for  Dropbox
 ### TRIM support
 lsblk -D  reports DISC-GRAN's of 4M DISC-MAX's of 74M
 sudo hdparm -I /dev/mmcblk0  reports nothing
+## POST
+Esc  for  Please select boot device:
+F2  for  ASUS BIOS Utility - EZ Mode

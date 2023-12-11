@@ -6,6 +6,7 @@
 
 alias aw='ansiweather -f 7'
 alias R='R --quiet'
+alias ws='w3m -s'  # squeezing blank lines
 
 #=> AV
 fv () {
@@ -132,6 +133,7 @@ yf () { yt-dlp -F $1; }
 y7 () { yt-dlp -f "[height<=?720]" $1; }
 
 #=> CUPS
+alias lpf='lp -o fit-to-page'
 alias lpspd='lpstat -p -d'
 alias sc5='doas cupsenable ENVY_5530'
 
@@ -258,7 +260,8 @@ gvc () {
 
 #=> imagey
 alias ns='nsxiv -frt * &'  # using fullscreen, recursively open all flat
-F () { feh -F "$1" & }
+ff () { feh "$1" & }
+FF () { feh -F "$1" & }
 PSpmm () { echo $(bc <<< "scale=0; $1 * 0.3528 / 1")mm; } # PostScript points to millimetres
 
 ir () { mapfile -t images < <(fd -e jpg)

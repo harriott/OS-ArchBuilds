@@ -1,6 +1,6 @@
 " vim: fdl=1:
 
-" $machBld/jo/gvimrc  symlinked in  $bSc/symlinks/jo-0.sh
+" $machBld/jo/gvimrc  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 
 ""> 0 monitor height
 let g:monitorheight='768' " used in  $vimfiles/gvimrc.vim

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-# on sbMb:  bash $bSc/2-to_X/2-git-ssh-1.sh
+# on sbMb:  bash $OSAB/bs-2-to_X/2-git-ssh-1.sh
 
 #=> 0 make directory on safe USB drive
 u=K8GBDTIG3
@@ -21,5 +21,5 @@ cp $S1/id_ed25519-forGitHub $s/id_ed25519-forGitHub
 cp $S1/id_ed25519-forGitHub.pub $s/id_ed25519-forGitHub.pub
 
 #=> 2 grab next part
-cp $bSc/2-to_X/2-git-remote2.sh $s/
+cp $OSAB/bs-2-to_X/2-git-ssh-2.sh $s/
 

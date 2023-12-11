@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# sudo bash $bSc/1-to_jo/5-rsnapshot.sh
+# sudo bash $OSAB/bs-1-to_jo/5-rsnapshot.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -31,7 +31,7 @@ rsnapshot configtest
 # # could  sudo rsnapshot hourly  and monitor progress with  du -sh rsnapshot
 
 # #=> 4 rsyncSystemRestore
-# cp $bSc/24-rsyncSystemRestore.sh $rsnapshot/rsyncSystemRestore.sh
+# cp $OSAB/bs-repeatable/from_rescue_boot-rsyncSystemRestore.sh $rsnapshot/from_rescue_boot-rsyncSystemRestore.sh
 
 #=> 5 backup  /var/log/rsnapshot
 ln -sf $ABjo/log_rsnapshot.sh ~/Arch/log_rsnapshot.sh

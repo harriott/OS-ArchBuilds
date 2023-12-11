@@ -10,6 +10,13 @@ trap read debug  # puts a read request after each executable line
 # gAUR  gdAUR  are defined in $Bash/bashrc-console
 # softwares that require a WM
 
+# #=> archlinux-java-run
+# # for PDFsam
+# gAUR archlinux-java-run
+# nvim -c "silent! /michaellass\/archlinux-java-run" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> clifm 0 (re)install
 # gAUR clifm
 # nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
@@ -70,6 +77,7 @@ trap read debug  # puts a read request after each executable line
 # gAUR dropbox
 # nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
 # makepkg -sic
+# # - if missed, in  ~/Arch/AUR/dropbox/,  sudo pacman -U  dropbox-185.4.6054-1-x86_64.pkg.tar.zst
 # true
 
 # #=> Dropbox 1 dropbox-dist folder
@@ -112,7 +120,7 @@ true
 # gAUR nomacs
 # nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
 # makepkg -sic  # takes ages...
-# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2282-3-x86_64.pkg.tar.zst
+# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
 # # after first install
 # #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
 # true
@@ -233,10 +241,10 @@ true
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
 
-#=> usbimager
-gAUR usbimager
-nvim -c "silent! /usbimager" PKGBUILD
-makepkg -sic
+# #=> usbimager
+# gAUR usbimager
+# nvim -c "silent! /usbimager" PKGBUILD
+# makepkg -sic
 
 # #=> verbiste
 # gAUR verbiste
@@ -255,12 +263,12 @@ makepkg -sic
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
 # makepkg -sic
 
-#=> ymuse
-# for MPD
-gAUR ymuse
-nvim -c "silent! /github.com\/yktoo" PKGBUILD
-makepkg -sic  # takes ages
-true
+# #=> ymuse
+# # for MPD
+# gAUR ymuse
+# nvim -c "silent! /github.com\/yktoo" PKGBUILD
+# makepkg -sic  # takes ages
+# true
 
 # #=> Zoom
 # gAUR zoom

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# sudo bash $bSc/1-to_jo/1-as_root-to_jo.sh
+# sudo bash $OSAB/bs-1-to_jo/1-as_root-to_jo.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
@@ -99,21 +99,24 @@ cat /etc/sysctl.d/99-sysctl.conf
 # # Vifm
 # pacman -S vifm
 
-# #=> 2 hd 0
-# # diskus
-# pacman -S diskus
+#=> 2 hd 0
+# diskus
+pacman -S diskus
 
-# # hdparm
-# pacman -S hdparm
+# duf
+pacman -S duf
 
-# # NTFS-3G
-# pacman -S ntfs-3g
+# hdparm
+pacman -S hdparm
 
-# # smartmontools
-# pacman -S smartmontools
+# NTFS-3G
+pacman -S ntfs-3g
 
-# # udiskie
-# pacman -S udiskie
+# smartmontools
+pacman -S smartmontools
+
+# udiskie
+pacman -S udiskie
 
 # #=> 2 hd 1 SSDs
 # # dua-cli
@@ -173,6 +176,9 @@ cat /etc/sysctl.d/99-sysctl.conf
 # grep SystemMaxUse /etc/systemd/journald.conf
 
 #=> 2 networking
+# arp-scan
+pacman -S arp-scan
+
 # isync
 pacman -S isync  # for mbsync
 

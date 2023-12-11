@@ -3,7 +3,7 @@
 
 # Joseph Harriott - Mon 02 May 2022
 # called by  $machBld/jo/awesome/rc.lua  as  ~/.config/awesome/autorun.sh
-#  (symlinked in my  $bSc/symlinks/jo-1-awesome.sh)
+#  (symlinked in my  $OSAB/bs-symlinks/jo-1-awesome.sh)
 # (chmod u+x $machBld/jo/awesome/autorun.sh)
 
 # run() { if ! pgrep -f "$1"; then "$@" & ; fi; }

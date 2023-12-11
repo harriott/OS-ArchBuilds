@@ -4,7 +4,7 @@
 
 # Bash configurations that are also useful in Console and as root.
 
-# $OSAB/Bash/bashrc-generic  symlinked in  $bSc/symlinks/jo-0.sh
+# $OSAB/Bash/bashrc-generic  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 # for jo:
 #  sourced by  $Bash/bash_profile  &  $Bash/bashrc
 # for root:

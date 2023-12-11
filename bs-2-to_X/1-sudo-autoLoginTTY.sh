@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# $bSc/2-to_X/1-sudo-autoLoginTTY.sh - automatic login ttyx
+# $OSAB/bs-2-to_X/1-sudo-autoLoginTTY.sh - automatic login ttyx
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 

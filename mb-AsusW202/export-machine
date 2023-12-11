@@ -5,10 +5,10 @@
 
 # ~/.export-machine
 # for jo:
-#  symlinked in  $bSc/anytime/symlinks-jo.sh
+#  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 #  sourced by  $Bash/bash_profile
 # for root:
-#  symlinked in  $bSc/05-root_symlinks.sh
+#  symlinked in  $OSAB/bs-symlinks/root.sh
 #  sourced by  $OSAB/root/bash_profile
 
 export rsnapshot=/mnt/S14JJ9CP956373/rsnapshot

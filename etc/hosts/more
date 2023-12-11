@@ -6,7 +6,7 @@
 ::1       localhost
 127.0.1.1 sbMb.localdomain sbMb
 
-# $OSAB/etc/hosts/more  copied to  /etc/hosts  (in  $bSc/4-whenWM/1-softwares.sh)
+# $OSAB/etc/hosts/more  copied to  /etc/hosts  (in  $OSAB/bs-4-whenWM/1-softwares.sh)
 
 # http://127.0.0.2
 # ----------------

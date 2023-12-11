@@ -2,7 +2,7 @@
 # vim: set ft=udevrules:
 
 # pb $machBld/etc/90-backlight.rules
-# $bSc/4-whenWM/1-softwares.sh
+# $OSAB/bs-4-whenWM/1-softwares.sh
 # udevadm test /etc/udev/rules.d/90-backlight.rules
 
 SUBSYSTEM=="backlight", ACTION=="add", \

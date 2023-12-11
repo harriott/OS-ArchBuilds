@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Joseph Harriott, Wed 18 May 2022
+# Joseph Harriott, Thu 23 Nov 2023
 
-# bash pulls.sh  update remote tmux plugins
+# bash $tmx/plugins/pulls.sh  update remote tmux plugins
 
 find . -maxdepth 1 -mindepth 1 -type d | while read pluginName; do
     echo ${tpf3b}$pluginName${tpfn}

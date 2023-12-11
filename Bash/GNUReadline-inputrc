@@ -2,8 +2,8 @@
 
 # $OSAB/Bash/GNUReadline-inputrc - configure GNU Readline
 # symlinked by
-#  bash $bSc/symlinks/jo-0.sh
-#  bash $bSc/symlinks/root.sh
+#  bash $OSAB/bs-symlinks/jo-0.sh
+#  bash $OSAB/bs-symlinks/root.sh
 
 #=> colorized completion
 # (these settings are masked by fzf)

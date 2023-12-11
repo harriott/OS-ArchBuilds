@@ -5,8 +5,9 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 Hugo
-sudo pacman -S hugo
+#=> 0 enable multilib
+sudo sed -i 's/#\[multilib]/[multilib]/' /etc/pacman.conf
+sudo sed -i '/^\[m/{n;s/#I/I/}' /etc/pacman.conf
 
 # #=> 0 LibreOffice Fresh install
 # sudo pacman -S libreoffice-fresh-en-gb
@@ -24,6 +25,13 @@ sudo pacman -S hugo
 # #  1. right-click on PNMixer > Preferences > Behaviour > Volume Control Command > pavucontrol
 # #  2. tweak  ~/.config/pnmixer/config
 # true
+
+#=> 0 radio-active
+pipx install radio-active
+
+#=> 0 surfraw
+mkdir ~/.config/surfraw
+sudo pacman -S surfraw
 
 # #=> 0 Thunderbird - install
 # sudo pacman -S thunderbird-i18n-en-gb

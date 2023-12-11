@@ -1,13 +1,13 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $bSc/4-whenWM/5-EmacsDirectories.sh
-
-# these directories will be populated in  $bSc/symlinks/jo-2-whenDropbox.sh
+# bash $OSAB/bs-4-whenWM/5-EmacsDirectories.sh
 
 set -e
 
 #=> Emacs 0 directories
+# these directories will be populated in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
+
 mkdir ~/.emacs.d
 # e -la ~/.emacs.d
 

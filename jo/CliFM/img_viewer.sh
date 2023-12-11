@@ -2,7 +2,7 @@
 
 # JH
 # nvim -O /usr/share/clifm/plugins/img_viewer.sh $ABjo/CliFM/img_viewer.sh -c 'windo difft'
-# see  img_viewer  in  $bSc/anytime/symlinks-jo-0.sh
+# see  img_viewer  in  $OSAB/bs-symlinks/jo-0.sh
 
 # Image thumbnails plugin for CliFM
 # Written by L. Abramovich

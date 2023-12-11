@@ -1,7 +1,7 @@
 # vim: set fdl=1:
 
 # $OSAB/etc/systemd/rsnapshotMinute/sync_first.service
-#  copied by  $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
+#  copied by  $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
 #         to  /etc/systemd/system/rsnapshot-minuteTest.service
 
 # called by my  $OSAB/etc/systemd/rsnapshotMinute/test.timer

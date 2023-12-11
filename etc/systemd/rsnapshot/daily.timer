@@ -1,6 +1,6 @@
 # vim: set fdl=1:
 
-# copied by  $bSc/1-to_jo/6-as_root-rsnapshot_automated.sh
+# copied by  $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
 #  to  /etc/systemd/system/rsnapshot-daily.timer
 
 [Unit]

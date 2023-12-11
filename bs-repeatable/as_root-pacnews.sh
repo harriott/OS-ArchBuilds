@@ -36,6 +36,10 @@ rm /etc/firewalld/firewalld.conf.pacnew
 nvim -O /etc/default/grub /etc/default/grub.pacnew -c 'windo difft'
 rm /etc/default/grub.pacnew
 
+#=> 1 journald.conf
+nvim -O /etc/systemd/journald.conf /etc/systemd/journald.conf.pacnew -c 'windo difft'
+rm /etc/systemd/journald.conf.pacnew
+
 #=> 1 locale.gen
 nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 rm /etc/locale.gen.pacnew

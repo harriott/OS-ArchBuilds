@@ -2,7 +2,7 @@
 
 # softwares that require a WM
 
-# bash $bSc/4-whenWM/1-softwares.sh
+# bash $OSAB/bs-4-whenWM/1-softwares.sh
 
 if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 
@@ -108,6 +108,9 @@ sudo pacman -S gifski  # (for making animated GIFs)
 #=> gnome-disk-utility
 sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
 
+#=> gnuplot
+sudo pacman -S gnuplot
+
 #=> GPicView
 # Menu > Graphics > Image Viewer
 sudo pacman -S gpicview
@@ -131,6 +134,12 @@ sudo pacman -S hplip
 
 #=> HTMLHint
 sudo pacman -S htmlhint
+
+#=> Go - Hugo
+sudo pacman -S hugo
+
+#=> Go - gopls
+sudo pacman -S gopls
 
 #=> java-commons-lang
 sudo pacman -S java-commons-lang  # (for pdftk's functions)
@@ -260,6 +269,9 @@ sudo pacman -S sxiv
 #=> Vimiv
 sudo pacman -S vimiv
 
+#=> vlc
+sudo pacman -S vlc
+
 #=> xfd
 sudo pacman -S xorg-xfd  # for checking fonts
 
@@ -271,5 +283,5 @@ sudo pacman -S yamllint
 
 #=> Zathura
 sudo pacman -S zathura-pdf-mupdf
-# zathurarc  symlinked in  $bSc/symlinks/jo-0.sh
+# zathurarc  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 

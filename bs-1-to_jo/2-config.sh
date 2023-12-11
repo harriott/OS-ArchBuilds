@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: se fdl=2:
 
-# bash $bSc/1-to_jo/2-config.sh
+# bash $OSAB/bs-1-to_jo/2-config.sh
 
 set -e
 
@@ -32,4 +32,7 @@ cp ~/.config/mimeapps.list $machLg/jo/mimeappsList-m91
 
 # #=> 1 tealdeer
 # tldr --update
+
+# #=> 1 w3m
+# mkdir ~/.w3m/cgi-bin
 

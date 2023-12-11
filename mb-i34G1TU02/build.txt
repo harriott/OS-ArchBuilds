@@ -98,7 +98,7 @@ sudo chown jo:jo $OSAB/etc/sudoers/sudoers
 sudo rm /etc/sudoers.pacnew
 ## moved snapshot_root to WD1600AAJS
 ### temporarily disabled rsnapshot timers
-$bSc/24-as_root-rsnapshot_automated.sh
+$OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
 ## Updates
 error: failed retrieving file 'python-more-itertools-8.13.0-1-any.pkg.tar.zst.sig'
   from archlinux.thaller.ws
@@ -292,12 +292,19 @@ gdisk /dev/sda
 rsync -ailrtv --delete ~/ /run/media/jo/KDT100G3B/i34G1TU02-home
 ## waiting
 apache
+duf
 FeatherPad
+gdown
+gopls
 MariaDB
 php
+radio-active
 Rclone
+rdview
 Speech Dispatcher
+systeroid
 xfd
+w3m
 ~/.vimtest
 ### enable the SysRq keys
 su  for  echo kernel.sysrq=1 >> /etc/sysctl.d/99-sysctl.conf

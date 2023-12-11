@@ -16,10 +16,14 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> bfg
+# #=> bfg 0 (re)install
 # gAUR bfg
 # nvim -c "silent! /madgag" PKGBUILD
 # makepkg -sic  # jre-openjdk
+
+# #=> bfg 1 remove
+# rAUR ~/Arch/AUR/bfg
+# sudo pacman -Rs bfg
 
 # #=> code-minimap
 # gAUR code-minimap
@@ -120,11 +124,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> moar 0 (re)install
-# gAUR moar
-# nvim -c "silent! /walles" PKGBUILD
-# makepkg -sic
-# true
+#=> moar 0 (re)install
+gAUR moar
+nvim -c "silent! /walles" PKGBUILD
+makepkg -sic
+true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
@@ -134,11 +138,11 @@ trap read debug  # puts a read request after each executable line
 # #=> nordvpn-bin 0 remove countries.dat
 # sudo rm /var/lib/nordvpn/data/countries.dat
 
-# #=> nordvpn-bin 1 (re)install
-# gAUR nordvpn-bin
-# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-# makepkg -sic
-# true
+#=> nordvpn-bin 1 (re)install
+gAUR nordvpn-bin
+nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+makepkg -sic
+true
 
 # #=> nordvpn-bin 2 configure
 # sudo usermod -aG nordvpn jo  # need to re-login
@@ -146,16 +150,22 @@ trap read debug  # puts a read request after each executable line
 # sudo systemctl enable nordvpnd.service --now
 # true
 
-#=> perl-clone-pp
-# for  perl-data-printer
-gAUR perl-clone-pp
-nvim -c "silent! /NEILB" PKGBUILD
-makepkg -sic
-true
+# #=> perl-clone-pp
+# # for  perl-data-printer
+# gAUR perl-clone-pp
+# nvim -c "silent! /NEILB" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> perl-data-printer
 # gAUR perl-data-printer
 # nvim -c "silent! /GARU" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> rdrview
+# gAUR rdrview-git
+# nvim -c "silent! /https:\/\/github.com\/eafer\/rdrview" PKGBUILD
 # makepkg -sic
 # true
 

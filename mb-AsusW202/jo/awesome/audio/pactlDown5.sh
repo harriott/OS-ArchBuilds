@@ -7,7 +7,7 @@
 
 # (chmod 755 $machBld/jo/awesome/audio/pactlUp5.sh)
 # called by  $machBld/jo/awesome/rc.lua  through  XF86AudioLowerVolume
-# symlinked in my  $bSc/symlinks/jo-1-awesome.sh
+# symlinked in my  $OSAB/bs-symlinks/jo-1-awesome.sh
 
 pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%
 

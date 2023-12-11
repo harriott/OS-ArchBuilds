@@ -3,7 +3,7 @@
 -- Joseph Harriott - Mon 06 Jun 2022
 -- $machBld/jo/awesome/rc.lua
 --  adapted from  /etc/xdg/awesome/rc.lua
---  symlinked in my  $bSc/symlinks/jo-1-awesome.sh
+--  symlinked in my  $OSAB/bs-symlinks/jo-1-awesome.sh
 --   eza -la ~/.config/awesome/rc.lua
 
 -- If LuaRocks is installed, make sure that packages installed through it are
