@@ -102,7 +102,7 @@ as root: `find / -xdev -iname "*fmtutil.cnf*"`
     locate -i 'nick cave'
 
 ##### updatedb
-    /etc/updatedb.conf
+    $machBld/etc/updatedb.conf
     doas updatedb
     systemctl status updatedb.timer
 
@@ -186,6 +186,7 @@ moar -h
     r $cITh/CP/TeX
     z $cITh/CP/TeX/LaTeX/appearance/datetime2.pdf
     z $cITh/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
+    z $cITh/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
     z $cITh/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
     z $cITh/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
     z $cITh/CP/TeX/LaTeX/appearance/ragged2e.pdf
@@ -250,6 +251,7 @@ moar -h
     nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
 # encoding
+    $CrPl/encoding/dpl/Perl/scratch.pl
     $machBld/jo/gitconfig
     $onGH/pandoc-templates/README.markdown
     b <codeFile>  # syntax'd cat
@@ -261,6 +263,13 @@ moar -h
 ## ffprobe
     ffprobe -h | mo
     i ffprobe
+
+## gnuplot
+    ff $cITh/CP/gnuplot/gnuplot_info-colornames.jpg
+    gnuplot -e 'show linetypes' 2> $ulLA/gnuplot-linetypes.txt
+    gnuplot -e 'show palette colornames' 2> $ulLA/gnuplot-colornames.txt
+    z $cITh/CP/gnuplot/Gnuplot_5_4.pdf
+    z $cITh/CP/gnuplot/gpcard.pdf
 
 ## npm
     $HOME/.npmrc
@@ -360,8 +369,6 @@ SED(1)
     fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
     i tree
     n [directory]
-    rm -r $Storage/.Trash-1000
-    rm -r /mnt/ST4000VN008/.Trash-1000
 
 - MV(1)
 - rsync(1)
@@ -468,14 +475,17 @@ vid => ffmpegthumbnailer
     fd -td font
     fd -tf -e css
     fd -tf -e fetl
+    fd -tf -e gpi
     fd -tf -e html
     fd -tf -e ogg ' webm'
+    fd -tf -e ogg | wc -l
     fd -tf -e md | wc -l
     fd -tf -e md -e tex
     fd -tf -e mp4 -e mkv -e ogv -e MOV > films.fetl
     fd -tf -e svg
     fd -tf -e tex
     fd -tf -e vim
+    fd -tf -e webm | wc -l
     fd -tf -e wiki
     fd -u -tf -e odt
     fd -u '\..+'
@@ -512,6 +522,10 @@ see `$Bash/bashrc-console`
     fd -tl -HL -X rm  # removes dead links
 
 `-L` follow links into symlinked directories
+
+## if  trash-restore  reports  "Non parsable trashinfo file..."
+    rm -r $Storage/.Trash-1000
+    rm -r /mnt/ST4000VN008/.Trash-1000
 
 ## ncdu
     ncdu --exclude rsnapshot
@@ -837,6 +851,7 @@ java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
 ```
 
 # multimedia
+    i sox
     ~/.config/obs-studio/logs
 
 ```bash
@@ -866,6 +881,11 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 ## audio - vimpc
     $ABjo/wm/MPD/vimpcrc
     v  # alias'd to  vimpc  in  $Bash/bashrc-wm
+
+## mpv
+    r /usr/share/doc/mpv
+
+MPV(1)
 
 ## OBS Studio Settings
     Hotkeys > [ Start Recording  Stop Recording ] > Win+Space (= Super + Space)

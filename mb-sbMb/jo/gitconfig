@@ -9,5 +9,5 @@
 
 [include]
 	path = /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/CP/encoding/gitconfig-JH
-	path = /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/misc/CrossPlatform/gitconfig
+	path = /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/misc/CP/gitconfig
 

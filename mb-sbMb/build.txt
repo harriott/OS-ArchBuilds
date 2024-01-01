@@ -2209,6 +2209,15 @@ sudo tlmgr update --all
 sudo tlmgr update --all  updated 282 packages
 ## SM3 unwriteable
 sudo chmod 777 /run/media/jo/SM3
+## HP ENVY 5532 IP Address changed to 229.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.229.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Pinta
+sudo pacman -Rs dotnet-sdk
+sudo pacman -S pinta
+  Packages (4) dotnet-host-8.0.0.sdk100-3  dotnet-runtime-7.0-7.0.14.sdk114-3  webp-pixbuf-loader-0.2.5-1  pinta-2.1.1-1
 ## waiting
 MariaDB
 nginx-mainline

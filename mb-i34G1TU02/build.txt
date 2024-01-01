@@ -256,6 +256,7 @@ cp ~/.ssh/known_hosts $machLg/jo/known_hosts-n6si
 ## python-anytree
 somehow got installed,  sudo pacman -Rs python-anytree
 ## grow /
+want  /=60GB  /home=40GB  swap=5GB  /mnt/BX200=120GB
 ### backup files
 mkdir home K
 mount /dev/sda2 home
@@ -289,14 +290,36 @@ gdisk /dev/sda
 gdisk /dev/sda
   Found valid MBR and corrupt GPT... > 1 MBR  for  x > wipe out GPT > y > Blank out MBR? > n
 #### restore files
-rsync -ailrtv --delete ~/ /run/media/jo/KDT100G3B/i34G1TU02-home
+rsync -ailrtv --delete /run/media/jo/KDT100G3B/i34G1TU02-home/ ...
+### can't boot from anything
+  Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(0,0)
+### almost scrapped, root not booting
+I'd removed the  CR2032  so needed to set date & time, then successfully booted to  SystemRescue 10.02  on  KDT100G3C  and connected via  Jo-X10II, able to browse with  Firefox.  WD1600AAJS  not detected as a bootable drive, but seen by  GParted.
+## reformat entire BX200
+SystemRescue 10.02 > GParted > Deleted all four  sdax's
+KDTG311282  with  ARCH_202312  got "Initramfs unpacking failed: invalid magic at start of compressed archive"
+### SystemRescue 10.02
+gdisk /dev/sda  "Found invalid GPT and valid MBR; converting MBR to GPT format in memory. THIS OPERATION IS POTENTIALLY DESTRUCTIVE! Exit by typing 'q' if you don't want to convert your MBR partitions to GPT format!"
+sgdisk -g /dev/sda
+gdisk /dev/sda  "Found valid GPT with protective MBR; using GPT."
+## ARCH_202312 failing to use syslinux
+GNU GRUB version 2:2.12rc1-5  first default selection "Arch Linux install medium (x86_64, x64 UEFI)" gets "Initramfs unpacking failed: invalid magic at start of compressed archive"
+## SystemRescue 10.02
+sgdisk -m /dev/sda  but still
+  gdisk /dev/sda  "Found valid GPT with protective MBR; using GPT."
+  so  r > g (= convert GPT into MBR and exit) > w > w  but no change...
+gdisk /dev/sda > x (= extra functionality (experts only) > z (= zap (destroy) GPT data structure and exit) > y > y
+## ARCH_202312 failing to use syslinux
+GNU GRUB version 2:2.12rc1-5  first default selection "Arch Linux install medium (x86_64, x64 UEFI)" gets "[    0.265386] Initramfs unpacking failed: invalid magic at start of compressed archive"
 ## waiting
 apache
 duf
+Emacs configure
 FeatherPad
 gdown
 gopls
 MariaDB
+mpv configs
 php
 radio-active
 Rclone

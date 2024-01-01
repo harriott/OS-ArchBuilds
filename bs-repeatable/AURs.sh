@@ -25,6 +25,11 @@ trap read debug  # puts a read request after each executable line
 # rAUR ~/Arch/AUR/bfg
 # sudo pacman -Rs bfg
 
+#=> cheat
+gAUR cheat
+nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
+makepkg -sic
+
 # #=> code-minimap
 # gAUR code-minimap
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
@@ -138,11 +143,11 @@ true
 # #=> nordvpn-bin 0 remove countries.dat
 # sudo rm /var/lib/nordvpn/data/countries.dat
 
-#=> nordvpn-bin 1 (re)install
-gAUR nordvpn-bin
-nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-makepkg -sic
-true
+# #=> nordvpn-bin 1 (re)install
+# gAUR nordvpn-bin
+# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> nordvpn-bin 2 configure
 # sudo usermod -aG nordvpn jo  # need to re-login

@@ -7,6 +7,6 @@
 # called by  $machBld/jo/awesome/rc.lua
 # symlinked in my  $OSAB/bs-symlinks/jo-1-awesome.sh
 
-notify-send -i /usr/share/icons/hicolor/16x16/apps/firefox.png "An instance of Firefox was launched."
+notify-send -i /usr/share/icons/hicolor/16x16/apps/firefox.png "An instance of Firefox was launched on tag 2."
 firefox
 

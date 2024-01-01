@@ -546,12 +546,14 @@ removed Pinta
 ## Updates
   warning: directory permissions differ on /etc/bluetooth/
   filesystem: 755  package: 555
+## Pinta
+sudo pacman -Rs dotnet-runtime-6.0
+sudo pacman -S pinta
+  Packages (4) dotnet-host-8.0.0.sdk100-3  dotnet-runtime-7.0-7.0.14.sdk114-3  webp-pixbuf-loader-0.2.5-1  pinta-2.1.1-1
 ## waiting
 apache
-gdown
 MariaDB
 php
-systeroid
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

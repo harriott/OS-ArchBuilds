@@ -281,9 +281,6 @@ true
 # pacman -S pv
 
 # #=> 2 various
-# # dotnet-runtime-6.0
-# pacman -S dotnet-runtime-6.0  # for Pinta
-
 # # languagetool
 # pacman -S languagetool  # for the GUI
 

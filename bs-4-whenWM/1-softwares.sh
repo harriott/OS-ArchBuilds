@@ -159,6 +159,9 @@ sudo pacman -Rs metis
 
 #=> mpv
 sudo pacman -S mpv
+mkdir ~/.config/mpv/scripts
+cp $GHrUse/CP/mpv/MikelSotomonte-mpv-waveform/waveform.lua ~/.config/mpv/scripts/waveform.lua
+cp $GHrUse/CP/mpv/mfcc64-mpv-scripts/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
 
 #=> MusicBrainz Picard
 sudo pacman -S chromaprint picard
@@ -233,7 +236,6 @@ sudo pacman -S perl-tk  # needed for  tlmgr -gui
 
 #=> Pinta 0 install
 sudo pacman -S pinta
-
 #=> Pinta 0 remove
 sudo pacman -Rs pinta
 

@@ -86,11 +86,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-# #=> epson-inkjet-printer-escpr
-# gAUR epson-inkjet-printer-escpr
-# nvim -c "silent! /download3.ebz.epson.net" PKGBUILD
-# makepkg -sic
-# true
+#=> epson-inkjet-printer-escpr
+gAUR epson-inkjet-printer-escpr
+nvim -c "silent! /download3.ebz.epson.net" PKGBUILD
+makepkg -sic
+true
 
 # #=> epson-printer-utility
 # gAUR epson-printer-utility

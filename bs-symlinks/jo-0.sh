@@ -80,6 +80,9 @@ update-mime-database ~/.local/share/mime
 # e -la ~/.config/mimeapps.list
 # move to  $machLg/jo/mimeapps-n6g.list
 
+#=> mpv
+ln -sf $ABjo/mpv.conf ~/.config/mpv/mpv.conf
+
 #=> nanorc
 ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 
