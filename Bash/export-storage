@@ -57,6 +57,5 @@ if [ $OSAB ]; then
     export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
     export clMail=$ABjo/clm  # used in  bashrc-clm  and  muttrc-*
   export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg
-  export tmx=$OSAB/tmux  # used in  tmux.conf
 fi
 

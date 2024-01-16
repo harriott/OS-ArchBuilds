@@ -57,7 +57,8 @@ nmse () {
     # - try  notmuch search bloch  to understand the following tweaks
     # echo ${nms[@]}  # for debugging
     source $OSAB/Bash/xcol.sh
-    for si in "${nms[@]}"; do
+    for (( i=${#nms[@]}-1; i>=0; i-- ));do
+      si="${nms[i]}"
       spaceFromSubjectTags="${si#*]}"
       spaceFrom="${spaceFromSubjectTags%;*}"
       spaceSubjectTags="${si#*;}"
@@ -74,7 +75,7 @@ nmse () {
       tags="${tags/unread/${tpf7}unread}"
       tags="${tags/waiting/${tpf7}waiting}"
       tags="${tags/zou/${tpf1}zou}"
-      echo "${tpf2}${si:26:10}${tpfn} ${tpf7}${spaceFrom:1}${tpfn} ${subjectSpace% *} ${tpf7}($tags${tpf7})$tpfn"
+      echo "${tpf2}${si:25:11}${tpfn} ${tpf7}${spaceFrom:1}${tpfn} ${subjectSpace% *} ${tpf7}($tags${tpf7})$tpfn"
     done
 } # gets a quick list of the relevant emails
 # can't fix time of a day

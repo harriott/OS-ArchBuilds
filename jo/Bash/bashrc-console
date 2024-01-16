@@ -212,6 +212,11 @@ ghi () {
   echo "results are in $ghil"
 }
 
+#==> gsamokovarov jump
+if [ -s "/usr/bin/jump" ]; then
+  eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
+fi
+
 #==> lists of files by content
 rgIT () {
   cd $DJH/search
@@ -283,11 +288,6 @@ if [ $host = 'sbMb' ]; then
     find /mnt/WD30EZRZ/Sync2 -type f -name "*$1*"
   }
 
-fi
-
-#==> Samokovarov's  jump
-if [ -s "/usr/bin/jump" ]; then
-  eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
 fi
 
 #==> trash-cli

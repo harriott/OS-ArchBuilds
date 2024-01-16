@@ -12,7 +12,7 @@ ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el
 ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
 ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp
 ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
-ln -sf $GHrUse/CP/emacs/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
+ln -sf $onGH/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # e -la ~/.emacs.d/
 
 # #=> email config
@@ -26,7 +26,7 @@ ln -sf $GHrUse/CP/emacs/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # # e -adl /usr/share/java/LanguageTool
 
 # #=> LaTeX
-# lj=~/texmf/tex/latex/jo; [ -L $lj ] && rm -r $lj; ln -s $LTXj $lj
+# lnd $LTXj ~/texmf/tex/latex/jo
 # # e -adl ~/texmf/tex/latex/jo
 
 # #=> mdfpdf Pandoc defaults
@@ -44,7 +44,7 @@ ln -sf $GHrUse/CP/emacs/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # fi
 
 # #=> Pandoc templates
-# pt=~/.pandoc/templates; [ -d $pt ] && rm -r $pt; ln -sf $onGH/pandoc-templates $pt
+# lnd $onGH/pandoc-templates ~/.pandoc/templates
 # # e -adl ~/.pandoc/templates
 
 # #=> shift+PrtSc disabled - notification

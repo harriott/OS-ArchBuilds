@@ -18,18 +18,18 @@ read -p "\$OSAB is $OSAB - looks good?"
 # cp $OSAB/etc/systemd/rsnapshot/ampersand.service /etc/systemd/system/rsnapshot@.service
 # cp $OSAB/etc/systemd/rsnapshotMinute/test.timer /etc/systemd/system/rsnapshot-test.timer
 
-# #=> 2 rsnapshot working 1 timers 0 enable
-# systemctl enable --now rsnapshot-hourly.timer
-# systemctl enable --now rsnapshot-daily.timer
-# systemctl enable --now rsnapshot-weekly.timer
-# systemctl enable --now rsnapshot-monthly.timer
-# systemctl status rsnapshot-hourly.timer
+#=> 2 rsnapshot working 1 timers 0 enable
+systemctl enable --now rsnapshot-hourly.timer
+systemctl enable --now rsnapshot-daily.timer
+systemctl enable --now rsnapshot-weekly.timer
+systemctl enable --now rsnapshot-monthly.timer
+systemctl status rsnapshot-hourly.timer
 
-#=> 2 rsnapshot working 1 timers 1 disable
-systemctl disable --now rsnapshot-hourly.timer
-systemctl disable --now rsnapshot-daily.timer
-systemctl disable --now rsnapshot-weekly.timer
-systemctl disable --now rsnapshot-monthly.timer
+# #=> 2 rsnapshot working 1 timers 1 disable
+# systemctl disable --now rsnapshot-hourly.timer
+# systemctl disable --now rsnapshot-daily.timer
+# systemctl disable --now rsnapshot-weekly.timer
+# systemctl disable --now rsnapshot-monthly.timer
 
 #=> 3 list all timers
 systemctl list-timers --no-pager

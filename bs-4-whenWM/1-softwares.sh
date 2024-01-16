@@ -160,8 +160,6 @@ sudo pacman -Rs metis
 #=> mpv
 sudo pacman -S mpv
 mkdir ~/.config/mpv/scripts
-cp $GHrUse/CP/mpv/MikelSotomonte-mpv-waveform/waveform.lua ~/.config/mpv/scripts/waveform.lua
-cp $GHrUse/CP/mpv/mfcc64-mpv-scripts/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
 
 #=> MusicBrainz Picard
 sudo pacman -S chromaprint picard

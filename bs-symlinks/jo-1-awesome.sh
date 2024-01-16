@@ -14,14 +14,13 @@
 
 #=> Awesome WM Widgets 0
 t=~/.config/awesome/awesome-wm-widgets; rm -r $t
-ln -sf $GHrUse/unix/linux/wm-awesome/streetturtle-awesome-wm-widgets $t
-# r $GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets
+ln -sf $ITsc/awesome/streetturtle-awesome-wm-widgets $t
 
 #=> Awesome WM Widgets 1 for Weather widget
-ln -sf $GHrUse/CP/rxi-json.lua/json.lua ~/.config/awesome/json.lua
+ln -sf $ITsc/awesome/rxi-json.lua/json.lua ~/.config/awesome/json.lua
 
 #=> awesome-capslock_widget
-ln -sf $GHrUse/unix/linux/wm-awesome/stefano-m-awesome-capslock_widget/capslock.lua ~/.config/awesome/capslock.lua
+ln -sf $ITsc/awesome/stefano-m-awesome-capslock_widget/capslock.lua ~/.config/awesome/capslock.lua
 
 # #=> mute toggle
 # a=/home/jo/.config/awesome/audio; [ -d $a ] && rm $a; ln -sf $machBld/jo/awesome/audio $a
@@ -32,4 +31,7 @@ ln -sf $GHrUse/unix/linux/wm-awesome/stefano-m-awesome-capslock_widget/capslock.
 
 # #=> screenshot
 # ln -sf $ABjo/wm/importScreenshot.sh ~/.config/awesome/importScreenshot.sh
+
+#=> check
+e -la ~/.config/awesome
 

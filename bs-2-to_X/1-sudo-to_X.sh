@@ -30,6 +30,10 @@ trap read debug  # puts a read request after each executable line
 # cp $machBld/etc/updatedb.conf /etc/updatedb.conf
 # updatedb
 
+#=> 2 save grub.cfg
+gcs=$ulLA/ml-$host/boot-grub-grub.cfg; cp /boot/grub/grub.cfg $gcs; chown jo:jo $gcs
+# pb $ulLA/ml-$host/boot-grub-grub.cfg
+
 #=> 3 softwares - encoding - entr
 # entr (also used by batwatch)
 pacman -S entr
@@ -96,7 +100,7 @@ sudo pacman -S bat-extras  # brings in bat (used in  fzf --preview)
 # pacman -S chromium
 
 # #=> 4 when X 0 - networking - OpenSSH - grab default sshd_config
-# g=/home/jo/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; sudo chown jo:jo $g
+# g=/home/jo/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; chown jo:jo $g
 
 # #=> 4 when X 0 - system
 # # espeak-ng-espeak & termdown

@@ -924,7 +924,7 @@ source $OSAB/Bash/export-storage
 bash 31-symlinks-Openbox.sh
 nvim 05-exports.sh
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
-ln -sf $tmx/tmux.conf ~/.tmux.conf
+ln -sf $OSAB/tmux/tmux.conf ~/.tmux.conf
 bash 36-symlinks-sshd.sh
 rm -r ~/texmf/tex/latex/jo; ln -s $LTXj ~/texmf/tex/latex/jo
 rm ~/texmf/tex/latex/m4p/headings.sty
@@ -1146,7 +1146,7 @@ ln -sf $ABjo/TS/locks.sh ~/Arch/locks.sh
 ln -sf $CrPl/SSHconfig/sbMb ~/.ssh/config
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
-ln -sf $tmx/tmux.conf ~/.tmux.conf
+ln -sf $OSAB/tmux/tmux.conf ~/.tmux.conf
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim
 mt  to update  headings.sty
 ### fix font symlinks
@@ -2103,8 +2103,6 @@ due to  rsnapshot  being briefly active
 paccache -k 2 -r  to free disk space on  /
 in  /mnt/ST4000VN008/rsnapshot/  su > root pw  for  diskus  which reported 19G
 rm -r /mnt/ST4000VN008/rsnapshot/
-#### reactivate WD1001FALS
-sudo nvim /etc/fstab > reactivated  WD1001FALS  for  reboot
 ## Updates snags
   :: There are 128 providers available for tessdata:
   :: Repository extra
@@ -2202,7 +2200,6 @@ Q dotnet
     The .NET Core SDK
   local/dotnet-targeting-pack 8.0.0.sdk100-3
     The .NET Core targeting pack
-sudo pacman -Rs dotnet-runtime-6.0
 ## TeX Live update
 sudo tlmgr update --all
   tlmgr  itself needs to be updated. Please do this via either  tlmgr update --self
@@ -2218,12 +2215,75 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 sudo pacman -Rs dotnet-sdk
 sudo pacman -S pinta
   Packages (4) dotnet-host-8.0.0.sdk100-3  dotnet-runtime-7.0-7.0.14.sdk114-3  webp-pixbuf-loader-0.2.5-1  pinta-2.1.1-1
+## HP ENVY 5532 IP Address changed to 165.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.165.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 22.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.22.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 28.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.28.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 47.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.47.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## ST4000VN008 not mounting
+got pushed into maintenance mode
+  e2fsck -v /dev/sdd1 > fixed a load of errors
+    Pass 1: Checking inodes, blocks, and sizes
+    ...
+    File /rsnapshot/hourly.13/localhost/mnt/...
+      has 1 multiply-claimed block(s), shared with 1 file(s):
+    Clone multiply-claimed blocks<y>?
+    ...
+    Pass 5: Checking group summary information
+    ...
+    Fix<y>?
+    Free blocks count wrong for group #...
+    Fix<y>?
+    ...
+    Fix<y>?
+    ...
+    Fix<y>?
+    Padding at end of inode bitmap is not set. Fix<y>?
+## HP ENVY 5532 IP Address changed to 218.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.218.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## nomacs not opening
+fixed by re-installing
+## gsamokovarov jump
+  err: invalid character '\f' after object key:value pair
+not fixed by removing & re-installing...
+rm ~/.jump/*  fixed it
+## HP ENVY 5532 IP Address changed to 128.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.128.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 69.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.69.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
+all-the-icons.el
+harriott-zenburn-emacs
 MariaDB
 nginx-mainline
 pdfsam
 surfraw
 systeroid
+~/.config/mpv/scripts
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

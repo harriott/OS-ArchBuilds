@@ -55,5 +55,5 @@ mpd &
 mpDris2 &  # for notifications and link to  playerctl
 
 #==> 1 tmux - machine dependent tweaks
-[ -f $machBld/jo/autostart.sh ] && source $machBld/jo/autostart.sh
+[ -f $machBld/jo/tmux_begin.sh ] && source $machBld/jo/tmux_begin.sh
 

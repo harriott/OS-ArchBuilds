@@ -19,7 +19,6 @@ export PAPERSIZE=A4  # libpaper
 
 export CPdoc=$CrPl/documenting
     export LTXj=$CPdoc/LaTeX/jo  # $LTXj
-export DWp=$ITstack/DokuWiki/pages  # $DWp
 export GHrCl=$Storage/IT-Copied/GHrepos  # $GHrCl  GitHub Repositories Clone
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export lclm=$ulL/clm  # $lclm  linux command-line mail, was  GNULE
@@ -28,7 +27,15 @@ export Openbox=$ABjo/wm/Openbox
 export TeNo=$core/TextNotes  # used in  $TeNo
     export TNt=$TeNo/tex  # *.tex's - used in  $Bash/bashrc-wm
 
-#==> $DJH
+#==> rooting on $Drpbx
+export COT=$Drpbx/COutThere  # $COT  used in  $TeNo
+export GHrUse=$Drpbx/CGHrepos
+    # - GitHub Repositories Use, used in  $OSAB/bs-symlinks/jo-1-awesome.sh
+    [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
+    export jkll=$GHrUse/CP/Ruby/Jekyll
+        export mnm=$jkll/Jekyll-jekyll-minima
+
+#==> rooting on $DJH
 export Cfzd=$DJH/Cafezoide
     export CzMa=$Cfzd/manage  # $CzMa
     export CzPeo=$Cfzd/people  # $CzPeo
@@ -43,7 +50,7 @@ export copied=$DJH/copied  # used in  $TeNo
         export cIThul=$cITh/unix-like  # $cIThul
     export copOT=$copied/OutThere  # $copOT  used in  $TeNo
     export Pr0=$copied/Practical0
-        export Pr0t=$Pr0/technos
+        export Pr0t=$Pr0/technos  # $Pr0t
 export DaLi=$DJH/now/DailyLife  #  $DaLi  used in  $TeNo
 export ess=$DJH/now/essential
     export eFr=$ess/France  # $eFr
@@ -68,15 +75,11 @@ export Thb=$DJH/Thb-dr  # $Thb, used in
 export Then0=$DJH/Then0  # used in  $TeNo
     export T0Fr=$Then0/Europe/France  # $T0Fr  used in  $TeNo
 
-#==> $Drpbx
-export COT=$Drpbx/COutThere  # $COT  used in  $TeNo
-export GHrUse=$Drpbx/CGHrepos
-    # - GitHub Repositories Use, used in  $OSAB/bs-symlinks/jo-1-awesome.sh
-    [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
-    export jkll=$GHrUse/CP/Ruby/Jekyll
-        export mnm=$jkll/Jekyll-jekyll-minima
+#==> rooting on $ITstack
+export DWp=$ITstack/DokuWiki/pages  # $DWp
+export ITsc=$ITstack/copied  # $ITsc  - needed resources
 
-#==> $onGH
+#==> rooting on $onGH
 export OSAT=$onGH/OS-Android-Termux
 export MD4PDF=$onGH/pandoc-md4pdf  # $MD4PDF  is unambiguous
 export misc=$onGH/misc  # $misc

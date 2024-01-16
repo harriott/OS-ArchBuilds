@@ -19,7 +19,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> clifm 0 (re)install
 # gAUR clifm
-# nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
+# nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
 # makepkg -sic
 # cd /usr/share/clifm/plugins
 # sudo gcc -o kbgen kbgen.c -lcurses
@@ -73,12 +73,12 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox 0 (re)install
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# # - if missed, in  ~/Arch/AUR/dropbox/,  sudo pacman -U  dropbox-185.4.6054-1-x86_64.pkg.tar.zst
-# true
+#=> Dropbox 0 (re)install
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+# - if missed, in  ~/Arch/AUR/dropbox/,  sudo pacman -U  dropbox-185.4.6054-1-x86_64.pkg.tar.zst
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -86,11 +86,11 @@ trap read debug  # puts a read request after each executable line
 # #=> Dropbox 2 uninstall
 # sudo pacman -Rs dropbox
 
-#=> epson-inkjet-printer-escpr
-gAUR epson-inkjet-printer-escpr
-nvim -c "silent! /download3.ebz.epson.net" PKGBUILD
-makepkg -sic
-true
+# #=> epson-inkjet-printer-escpr
+# gAUR epson-inkjet-printer-escpr
+# nvim -c "silent! /download3.ebz.epson.net" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> epson-printer-utility
 # gAUR epson-printer-utility
@@ -116,14 +116,14 @@ true
 # makepkg -sic
 # true
 
-# #=> nomacs
-# gAUR nomacs
-# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
-# makepkg -sic  # takes ages...
-# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
-# # after first install
-# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-# true
+#=> nomacs
+gAUR nomacs
+nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+makepkg -sic  # takes ages...
+# - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
+# after first install
+#  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+true
 
 # #=> Pacfinder
 # gAUR pacfinder
@@ -267,8 +267,9 @@ true
 # # for MPD
 # gAUR ymuse
 # nvim -c "silent! /github.com\/yktoo" PKGBUILD
-# makepkg -sic  # takes ages
+# makepkg -sic  # takes ages to work through languages
 # true
+# #  ~/Arch/AUR/ymuse  makepkg --install  if you're too late
 
 # #=> Zoom
 # gAUR zoom

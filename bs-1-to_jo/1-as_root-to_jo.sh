@@ -170,10 +170,15 @@ pacman -S udiskie
 # pacman -S tealdeer
 # tldr -u
 
-# #=> 2 limit systemd Journal size
-# # helpful for storage-limited installations
-# sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
-# grep SystemMaxUse /etc/systemd/journald.conf
+#=> 2 systemd Journal size
+grep SystemMaxUse /etc/systemd/journald.conf
+
+#==> 0 limit
+# helpful for storage-limited installations
+sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
+
+#==> 1 unlimit
+sed -i 's/^SystemMaxUse=300/#SystemMaxUse=/' /etc/systemd/journald.conf
 
 #=> 2 networking
 # arp-scan

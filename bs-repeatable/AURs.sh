@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# $OSAB/bs-repeatable/AURs.sh
+
 # softwares that can be used in a cli
 
 if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
@@ -25,10 +27,10 @@ trap read debug  # puts a read request after each executable line
 # rAUR ~/Arch/AUR/bfg
 # sudo pacman -Rs bfg
 
-#=> cheat
-gAUR cheat
-nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
-makepkg -sic
+# #=> cheat
+# gAUR cheat
+# nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
+# makepkg -sic
 
 # #=> code-minimap
 # gAUR code-minimap
@@ -41,11 +43,11 @@ makepkg -sic
 # makepkg -sic
 # true
 
-# #=> cpu-x 1 cpu-x
-# gAUR cpu-x
-# nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
-# makepkg -sic
-# true
+#=> cpu-x 1 cpu-x
+gAUR cpu-x
+nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
+makepkg -sic
+true
 
 # #=> dict-moby-thesaurus
 # gAUR dict-moby-thesaurus
@@ -95,6 +97,17 @@ makepkg -sic
 
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer --now
+
+# #=> gsamokovarov jump 0 install
+# gAUR jump
+# nvim -c "silent! /gsamokovarov" PKGBUILD
+# makepkg -sic
+
+# #=> gsamokovarov jump 1 remove
+# cd ~/Arch/AUR
+# rAUR jump
+# sudo pacman -Rs jump
+# true
 
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3
@@ -173,11 +186,6 @@ true
 # nvim -c "silent! /https:\/\/github.com\/eafer\/rdrview" PKGBUILD
 # makepkg -sic
 # true
-
-# #=> Samokovarov's jump
-# gAUR jump
-# nvim -c "silent! /gsamokovarov" PKGBUILD
-# makepkg -sic
 
 # #=> shell-color-scripts
 # gAUR shell-color-scripts

@@ -31,6 +31,9 @@ rm /etc/php/php.ini.pacnew
 #=> 1 firewalld.conf
 nvim -O /etc/firewalld/firewalld.conf /etc/firewalld/firewalld.conf.pacnew -c 'windo difft'
 rm /etc/firewalld/firewalld.conf.pacnew
+bu="$ulLA/ml-$host/etc/firewalld.conf"
+cp /etc/firewalld/firewalld.conf $bu
+chown jo:jo $bu
 
 #=> 1 grub
 nvim -O /etc/default/grub /etc/default/grub.pacnew -c 'windo difft'

@@ -80,9 +80,6 @@ update-mime-database ~/.local/share/mime
 # e -la ~/.config/mimeapps.list
 # move to  $machLg/jo/mimeapps-n6g.list
 
-#=> mpv
-ln -sf $ABjo/mpv.conf ~/.config/mpv/mpv.conf
-
 #=> nanorc
 ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 
@@ -90,7 +87,8 @@ ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 ln -sf $ABjo/pinforc ~/.pinforc
 
 #=> ranger
-cr=~/.config/ranger; [ -d $cr ] && rm -r $cr; ln -sf $OSAB/ranger $cr  # e -adl ~/.config/ranger
+lnd $OSAB/ranger ~/.config/ranger
+# e -adl ~/.config/ranger
 
 #=> Ruby IRB
 ln -sf $misc/irbrc ~/.irbrc
@@ -100,7 +98,7 @@ ln -sf $misc/irbrc ~/.irbrc
 ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 
 #=> tmux
-ln -sf $tmx/tmux.conf ~/.tmux.conf
+ln -sf $OSAB/tmux/tmux.conf ~/.tmux.conf
 
 #=> vim variants 0 $vimfiles
 # symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh

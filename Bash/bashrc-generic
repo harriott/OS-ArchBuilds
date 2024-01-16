@@ -11,12 +11,12 @@
 #  sourced by  $OSAB/root/bashrc
 
 alias fin='figlet -f univers finished'
-source $GHrUse/CP/wfxr-code-minimap/completions/bash/code-minimap.bash
+export loaded_bg=1  # used in  $OSAB/bs-symlinks/repair.sh
+lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
+source $ITsc/wfxr-code-minimap/completions/bash/code-minimap.bash
 
 [ $TERM != 'screen-256color' ] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su
-
-export loaded_bg=1  # used in  $OSAB/bs-symlinks/repair.sh
 
 ft () {
   if [ "$1" ]; then

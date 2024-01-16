@@ -58,11 +58,12 @@ pacman -S efibootmgr grub ntp
 # pacman -S amd-ucode
 pacman -S intel-ucode
 
-#=> 6 bootloader
-# 2 install GRUB
-grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+#=> 6 bootloader - GRUB
+# 0 install GRUB
+grub-install --target=i386-pc /dev/sda  # BIOS
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB  # UEFI
 
-# 3 generate  grub.cfg
+# 1 generate  grub.cfg
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #=> 7 final tweaks

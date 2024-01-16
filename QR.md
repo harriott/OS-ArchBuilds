@@ -67,6 +67,7 @@ tput bel  # bell
     jump clean  # I have in fcrontab
     jump top | mo
     jump --help
+    r ~/.jump
 
 ### file searching
     find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
@@ -372,6 +373,7 @@ SED(1)
 
 - MV(1)
 - rsync(1)
+- STAT(1)
 
 ## advcpmv
     cpg --help | mo  # man advcp
@@ -654,7 +656,9 @@ gpg(1)
     http://192.168.43.249/
 
 ## storage
+    $misc/linux/slJH.sh  # check for symlinks which could bother Dropbox
     /proc/filesystems - those supported by the kernel
+    doas file -s /dev/sdx(n)
 
 CP(1)
 
@@ -715,11 +719,14 @@ optimised for SSDs
 
 #### checking
     /var/log/rsnapshot > completed successfully
-    e -l -s modified $rsnapshot
     journalctl -r | grep rsnapshot | grep Consumed | xcol weekly monthly | mo
     journalctl -u rsnapshot@daily -r
     journalctl -u rsnapshot@hourly -r
     systemctl status rsnapshot-hourly.timer
+
+#### check interval directories
+    so * | grep 700; fd 'bash_history$' */localhost/home/jo/Arch --max-depth 1 -x stat {} -c '%Y %n %y' | sort -r
+    sudo diff --no-dereference -qr hourly.0 hourly.1 > hourly0+1.gnudiff
 
 #### find
     fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
@@ -739,7 +746,12 @@ optimised for SSDs
 
 ##### versions of a particular file
     find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes/md-JH-DailyLife/roles/ -maxdepth 1 -type f -name "roles.md" -ls  # not easy to sort
-    fd roles.md $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes/md-JH-DailyLife/roles --max-depth 1 -l | sort > rsnapshots.fetl
+    fd roles.md $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes/md-JH-DailyLife/roles --max-depth 1 -l | sort > roles.fetl
+    $rsnapshot/hourly.0/localhost/$Bash/export-jo
+
+#### interval directory permissions
+- they're owned by root, but 755 so I can look inside
+- the one being backed up to can have permission reduced to 700
 
 #### quickly lists all instances of directories
 ```bash
@@ -883,6 +895,7 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
     v  # alias'd to  vimpc  in  $Bash/bashrc-wm
 
 ## mpv
+    $OSAB/jo/mpv.conf
     r /usr/share/doc/mpv
 
 MPV(1)
@@ -1126,6 +1139,7 @@ uses `fzf`
     sudo du -sh /boot /etc /home /root /usr
 
 ## systemd - journalctl
+    journalctl --disk-usage
     journalctl --list-boots
     journalctl --verify
     journalctl | grep Consumed
@@ -1207,7 +1221,7 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
     termdown -b 10
 
 ## tmux
-    $tmx/tmux.conf
+    $OSAB/tmux/tmux.conf
     C-a [ -> copy-mode
     C-a ~ -> show-messages
     resize -s 65 120  # good for half of ViewSonic VX2025wm
@@ -1349,7 +1363,10 @@ rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
     $clMail/neomutt/muttrc-accounts/zou
     echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 
-### notmuch search
+### notmuch
+    $lclm/notmuch-config-backup
+
+#### search
     nmse najac date:2022
     nmse from:/gough/ date:2023
     nmse from:/j.harriott/ date:2023
@@ -1359,11 +1376,11 @@ rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
     nmse tag:zou date:june2023
     nmse '"pattern with spaces"'
 
-#### providors
+##### providors
 - orange.fr
 - yahoo!mail
 
-#### wildcard
+##### wildcard
     nmse 'orf*'  # finds ORFILA
 
 Only possible at end of string...

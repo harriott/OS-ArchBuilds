@@ -1,14 +1,15 @@
 #!/bin/bash
 # vim: fdl=2:
 
-# Joseph Harriott, Mon 16 May 2022
+# Joseph Harriott, Wed 03 Jan 2024
 
 # machine dependent Openbox autostart tmux tweaks
 # called from  $Obc/autostart/autostart
 
-# test (or reload) this configuration with
+# test (or reload) this script with
 #  tmux kill-server
-#  bash $Obc/autostart/urxvtl.sh; bash $machBld/jo/autostart.sh
+#  bash $Obc/autostart/urxvtl.sh
+#  bash $machBld/jo/tmux_begin.sh
 
 # (chmod u+x $machBld/jo/urxvtl.sh)
 
@@ -35,4 +36,5 @@ cdm 0; tmux split-window -t 1:0; cdm 0.1
 #==> 2 launch nnn & cmus
 tmux send-keys -t 1:0.0 'n' Enter
 # tmux send-keys -t 1:0.1 'm' Enter
+tmux send-keys -t 1:0.1 'systemctl status rsnapshot-hourly.timer' Enter
 

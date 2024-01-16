@@ -171,7 +171,7 @@ error: command failed to execute correctly
 ## awesome
 ### K8GBDTIG3 load with $GHrUse
 mkdir -p /run/media/jo/K8GBDTIG3/GHrUse/linux/wm-awesome
-  rsync -iLrtv --delete --modify-window=1 $GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets/ /run/media/jo/K8GBDTIG3/GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets
+  rsync -iLrtv --delete --modify-window=1 $ITsc/awesome/streetturtle-awesome-wm-widgets /run/media/jo/K8GBDTIG3/GHrUse/linux/wm-awesome/streetturtle-awesome-wm-widgets
 mkdir -p /run/media/jo/K8GBDTIG3/GHrUse/CP/rxi-json.lua
   rsync -iLrtv --delete --modify-window=1 $GHrUse/CP/rxi-json.lua/ /run/media/jo/K8GBDTIG3/GHrUse/CP/rxi-json.lua
 ### K8GBDTIG3 loaded with $GHrUse
@@ -550,6 +550,19 @@ removed Pinta
 sudo pacman -Rs dotnet-runtime-6.0
 sudo pacman -S pinta
   Packages (4) dotnet-host-8.0.0.sdk100-3  dotnet-runtime-7.0-7.0.14.sdk114-3  webp-pixbuf-loader-0.2.5-1  pinta-2.1.1-1
+## HP ENVY 5532 IP Address changed to 128.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.128.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  :: Starting full system upgrade...
+  :: Replace onevpl with extra/libvpl? [Y/n]
+  ...
+  :: There are 2 providers available for dbus-units:
+  :: Repository core
+     1) dbus-broker-units  2) dbus-daemon-units
+  Enter a number (default=1):
 ## waiting
 apache
 MariaDB
