@@ -84,9 +84,7 @@ locx () { locate -i $1 | xcol $1; }
 #==> dts
 # date time-sorted lists of files
 
-fa () {
-  eval "find * $printfDTsort"
-}  # all files
+fa () { eval "find * $printfDTsort"; }  # all files
 
 fRs () {
   echo "directory: $1"
@@ -143,8 +141,7 @@ fdtsKS () {
 } # internal use only
 
 #===> my Arch Forum issues
-# $jtUL/Linux/Arch/dts-ft_bbcode.fetl
-# $ITstack/unix_like-linux/Arch/dts-ft_bbcode.fetl
+# $DJH/search/dts-ft_bbcode.fetl
 
 fdtsbbcode () {
   dtsfile=dts-ft_bbcode.fetl
@@ -343,7 +340,7 @@ n() {
 
 source $ulLA/jo/bashrc-console-NNN_BMS  # my bookmarks
 export NNN_COLORS='5723' # good for my tmux in urxvt
-export NNN_PLUG='c:fzcd;d:dragdrop;i:ipinfo;o:fzopen;m:mediainf;t:treeview;u:uidgid'  # quit treeview's nvim with ZQ
+export NNN_PLUG='c:fzcd;d:dragdrop;g:gitroot;i:ipinfo;j:autojump;o:fzopen;m:mediainf;s:chksum'
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
 export NNN_LOCKER='saidar -c' # for 0
 

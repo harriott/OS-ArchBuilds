@@ -9,6 +9,14 @@ alias R='R --quiet'
 alias ws='w3m -s'  # squeezing blank lines
 
 #=> AV
+fm () {
+  cd $Drpbx
+  for CAML in CAM-best CAM-good CAM-good-tA-North-US CAM-joy CAM-toSort0 CAM-toSort1; do
+    echo $CAML
+    find $CAML -iname "*$1*" | xcol "$1"
+  done
+}
+
 fv () {
   for VsL in $(cat $machBld/jo/Bash/VsLmore); do
     Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
@@ -105,23 +113,23 @@ abt () {
 # mv "t$a" "$a"
 
 #==> ffprobe
-  alias fpasr='ffprobe -v error -select_streams a:0 -show_entries stream=sample_rate -of default=nw=1:nk=1'
-  # fpd <video_file_you_want_audio_sample_rate_of>
+alias fpasr='ffprobe -v error -select_streams a:0 -show_entries stream=sample_rate -of default=nw=1:nk=1'
+# fpd <video_file_you_want_audio_sample_rate_of>
 
-  alias fpabr='ffprobe -v error -select_streams a:0 -show_entries stream=bit_rate -of default=nw=1:nk=1'
-  # fpd <video_file_you_want_audio_bit_rate_of>
+alias fpabr='ffprobe -v error -select_streams a:0 -show_entries stream=bit_rate -of default=nw=1:nk=1'
+# fpd <video_file_you_want_audio_bit_rate_of>
 
-  alias fpct='ffprobe -v error -select_streams v:0 -show_entries stream_tags=creation_time -of default=nw=1:nk=1'
-  # fpct <video_file_you_want_creation_time_of>
+alias fpct='ffprobe -v error -select_streams v:0 -show_entries stream_tags=creation_time -of default=nw=1:nk=1'
+# fpct <video_file_you_want_creation_time_of>
 
-  alias fpd='ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1'
-  # fpd <video_file_you_want_duration_of>
+alias fpd='ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1'
+# fpd <video_file_you_want_duration_of>
 
-  alias fpwh='ffprobe -v error -select_streams v:0 -show_entries stream=height,width -of csv=s=x:p=0'
-  # fpd <video_file_you_want_WxH_of>
+alias fpwh='ffprobe -v error -select_streams v:0 -show_entries stream=height,width -of csv=s=x:p=0'
+# fpd <video_file_you_want_WxH_of>
 
-  alias fpfr='ffprobe -v error -select_streams v:0 -show_entries stream=avg_frame_rate -of default=nw=1:nk=1'
-  # fpd <video_file_you_want_frame_rate_of>
+alias fpfr='ffprobe -v error -select_streams v:0 -show_entries stream=avg_frame_rate -of default=nw=1:nk=1'
+# fpd <video_file_you_want_frame_rate_of>
 
 fpcn () { ffprobe -v error -select_streams $1:0 -show_entries stream=codec_name -of default=nw=1:nk=1 $2; }
 # fpcn <a/v> <video_file_you_want_codec_of>
@@ -129,11 +137,13 @@ fpcn () { ffprobe -v error -select_streams $1:0 -show_entries stream=codec_name 
 fps () { for v in "$@"; do echo $(fpwh $v) $(fpcn v $v) $(fpfr $v) $(fpcn a $v) $(fpasr $v) $(fpabr $v) $v; done; } # fps <files_you_want_statisitics_of>
 
 #==> yt-dlp
-yf () { yt-dlp -F $1; }
-y7 () { yt-dlp -f "[height<=?720]" $1; }
+alias y='yt-dlp'
+  alias ya='y -f ba'
+  alias yf='y -F'
+  y7 () { y -f '[height<=?720]' $1; }
 
 #=> CUPS
-alias lpf='lp -o fit-to-page'
+alias lpf='lp -o fit-to-page'  # lpf *
 alias lpspd='lpstat -p -d'
 alias sc5='doas cupsenable ENVY_5530'
 

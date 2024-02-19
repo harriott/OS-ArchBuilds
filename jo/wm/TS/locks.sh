@@ -10,7 +10,7 @@
 #   e -la ~/Arch/locks.sh
 #   pb ~/Arch/locks.sh
 
-notify-send -u critical "ooooooooooooooooooooooo"
+notify-send -u critical 'test of $ABjo/wm/TS/locks.sh'
 
 host=$(uname -n)
 case $host in
@@ -28,15 +28,17 @@ llf=$Thb/linuxlock  # lockfile created by  $ABjo/wm/TS/thunderbird_safely.sh
 # if ! pgrep thunderbird; then [ $(cat $llf) = $host ] && rm $llf; fi
 # pgrep thunderbird || [ $(cat $llf) = $host ] && rm $llf; fi
 if ! pgrep thunderbird; then
-    if [ $(cat $llf) = $host ]; then
-        if (rm $llf); then
-            XDG_RUNTIME_DIR=/run/user/$(id -u) notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png 'removed $Thb/linuxlock'
+    if [ -f "$llf" ]; then
+        if [ $(cat $llf) = $host ]; then
+            if (rm $llf); then
+                XDG_RUNTIME_DIR=/run/user/$(id -u) notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png 'removed $Thb/linuxlock'
+            fi
         fi
     fi
 fi
 
 # remove linux Thunderbird's default lockfile
-rm $Thb/lock  # file $Thb/lock
+[ -f "$Thb/lock" ] && rm $Thb/lock  # file $Thb/lock
 # - because its an uninformative hanging symlink
 #   that sometimes triggers a Dropbox warning on Win10
 

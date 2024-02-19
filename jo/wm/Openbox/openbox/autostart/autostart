@@ -39,7 +39,7 @@ tint2 &
 udiskie -t &
 
 #==> 0 tmux - begin
-source $Obc/autostart/urxvtl.sh
+source $Obc/autostart/urxvtl+tmux.sh
 
 #==> 0 utilities
 blueman-applet &  # Blueman (Bluetooth manager)
@@ -54,6 +54,6 @@ nm-applet &  # NetworkManager
 mpd &
 mpDris2 &  # for notifications and link to  playerctl
 
-#==> 1 tmux - machine dependent tweaks
+# #==> 1 tmux - machine dependent tweaks
 [ -f $machBld/jo/tmux_begin.sh ] && source $machBld/jo/tmux_begin.sh
 

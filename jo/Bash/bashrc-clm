@@ -105,6 +105,7 @@ msl () { mbsync live ; nmnew ; echo '$clMail/notmuch/tags/live.sh' ; bash $clMai
 mst () { mbsync troh ; nmnew ; echo '$clMail/notmuch/tags/troh.sh' ; bash $clMail/notmuch/tags/troh.sh ; }
 msx () { mbsync gmx  ; nmnew ; echo '$clMail/notmuch/tags/gmx.sh'  ; bash $clMail/notmuch/tags/gmx.sh  ; }
 msz () { mbsync zou  ; nmnew ; echo '$clMail/notmuch/tags/zou.sh'  ; bash $clMail/notmuch/tags/zou.sh  ; }
+# (mbsync output isn't caught by xcol)
 # run these repeatedly to ensure that  notmuch  grabs all emails
 
 alias ms='

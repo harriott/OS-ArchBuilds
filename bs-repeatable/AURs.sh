@@ -12,6 +12,12 @@ trap read debug  # puts a read request after each executable line
 
 # gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
 
+# #=> ansifilter
+# gAUR ansifilter
+# nvim -c "silent! /www.andre-simon.de" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> ansiweather
 # gAUR ansiweather
 # nvim -c "silent! /fcambus" PKGBUILD
@@ -43,11 +49,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> cpu-x 1 cpu-x
-gAUR cpu-x
-nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
-makepkg -sic
-true
+# #=> cpu-x 1 cpu-x
+# gAUR cpu-x
+# nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> dict-moby-thesaurus
 # gAUR dict-moby-thesaurus
@@ -85,11 +91,11 @@ true
 # nvim -c "silent! /_fhosted" PKGBUILD
 # makepkg -sic
 
-# #=> fangfrisch 1 AUR
-# gAUR python-fangfrisch
-# nvim -c "silent! /rseichter" PKGBUILD
-# makepkg -sic
-# true
+#=> fangfrisch 1 AUR
+gAUR python-fangfrisch
+nvim -c "silent! /rseichter" PKGBUILD
+makepkg -sic
+true
 
 # #=> fangfrisch 2 settings
 # # 1 create database structure
@@ -142,11 +148,11 @@ true
 # makepkg -sic
 # true
 
-#=> moar 0 (re)install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 (re)install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
@@ -156,11 +162,11 @@ true
 # #=> nordvpn-bin 0 remove countries.dat
 # sudo rm /var/lib/nordvpn/data/countries.dat
 
-# #=> nordvpn-bin 1 (re)install
-# gAUR nordvpn-bin
-# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-# makepkg -sic
-# true
+#=> nordvpn-bin 1 (re)install
+gAUR nordvpn-bin
+nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+makepkg -sic
+true
 
 # #=> nordvpn-bin 2 configure
 # sudo usermod -aG nordvpn jo  # need to re-login

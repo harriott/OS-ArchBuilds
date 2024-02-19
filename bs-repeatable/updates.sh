@@ -18,7 +18,7 @@ sudo true
 
 #=> 2 save update log
 echo 'checkupdates'
-checkupdates > $pc/$(date '+%y%m%d-%H%M').log
+checkupdates --nocolor > $pc/$(date '+%y%m%d-%H%M').log
 
 #=> 3 now catch errors
 set -e

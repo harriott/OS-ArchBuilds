@@ -25,7 +25,7 @@ if [ -s $llf ]; then
     lh=$(cat $llf)
     [ $lh = $host ] || ll=$lh
 fi
-[ -f "$wlf" ] && wl=Win10
+[ -f "$wlf" ] && wl=$(cat $wlf)
 
 l="$ll $wl"
 echo $l

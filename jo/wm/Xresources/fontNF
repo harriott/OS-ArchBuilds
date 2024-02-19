@@ -1,14 +1,27 @@
+! vim: set ft=xdefaults:
 
-! symlinked in  $OSAB/bs-symlinks/jo-0.sh  to  ~/.Xresources-font
-!  called from my  $ABjo/wm/Xresources/Xresources
+! $ABjo/wm/Xresources/fontNF
+!  symlinked in  $OSAB/bs-symlinks/jo-0.sh  to  ~/.Xresources-font
+!   called from my  $ABjo/wm/Xresources/Xresources
 
-! Caskaydia Cove Nerd Font Complete Mono
-URxvt.letterSpace: -1
+
+!-*- Caskaydia Cove Nerd Font Complete Mono -*-
+
+! only needed for  rxvt-unicode
+	! URxvt.letterSpace: -1
+
 URxvt.font: xft:CaskaydiaCoveNerdFontMono:size=8
 !  better than Ubuntu Mono, except the hyphen runs into adjoining letters
 ! URxvt.boldFont: xft:CaskaydiaCoveNerdFontMono:bold
 !  gets too small if size of Regular is 8
 
-! Hack Bold Nerd Font Complete Monor
+
+!-*- Hack Bold Nerd Font Complete Mono -*-
+! eg directories in  nnn
+
+! for  rxvt-unicode
 URxvt.boldFont: xft:HackNerdFontMono:Bold
+
+! for  rxvt-unicode-truecolor-wide-glyphs
+URxvt.boldFont: xft:HackNerdFontMono:Bold:size=8
 

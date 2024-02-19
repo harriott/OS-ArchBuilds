@@ -47,17 +47,36 @@ URxvt.geometry: 115x24
 ! A large scrollback buffer (over 8x the default):
 URxvt.saveLines: 8192
 
-!-*- Perl extensions -*-
-URxvt.perl-ext-common: autocomplete-ALL-the-things,default,keyboard-select,matcher,resize-font,selection-to-clipboard,xresources-256
+!-*- Perl extensions 0 -*-
+
+! for  rxvt-unicode
+! URxvt.perl-ext-common: autocomplete-ALL-the-things,default,keyboard-select,matcher,resize-font,selection-to-clipboard
+
+! for  rxvt-unicode-truecolor-wide-glyphs
+URxvt.perl-ext-common: autocomplete-ALL-the-things,default,matcher,selection-to-clipboard
+
+!-*- Perl extensions 1 -*-
+
+! autocomplete-ALL-the-things
+! - completes a word (at least one letter) using whats visible in the terminals window
+! - repeat to cycle through choices
+! cant see any difference in these three tricks:
+	! alt+ctrl+/
+		URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
+	! alt+?
+		URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
+	! alt+"
+		URxvt.keysym.M-quotedbl:  perl:aAtt:skeleton-complete
+
+! keyboard-select
+	! alt+e
+		URxvt.keysym.M-e: perl:keyboard-select:activate
+	! alt+s
+		URxvt.keysym.M-s: perl:keyboard-select:search
 
 URxvt.cursorUnderline:    true
-URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
-URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
-URxvt.keysym.M-quotedbl:  perl:aAtt:skeleton-complete
 URxvt.url-launcher:       /usr/bin/firefox
 URxvt.underlineURLs:      True
-URxvt.keysym.M-e:         perl:keyboard-select:activate
-URxvt.keysym.M-s:         perl:keyboard-select:search
 URxvt.matcher.button:     1
 URxvt.clipboard.autocopy: true
 

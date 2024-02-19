@@ -55,6 +55,10 @@ rm /etc/systemd/logind.conf.pacnew
 nvim -O /etc/pacman.conf /etc/pacman.conf.pacnew -c 'windo difft'
 rm /etc/pacman.conf.pacnew
 
+#=> 1 passwd.conf
+nvim -O /etc/passwd /etc/passwd.pacnew -c 'windo difft'
+rm /etc/passwd.pacnew
+
 #=> 1 rsnapshot.conf
 nvim -O /etc/rsnapshot.conf /etc/rsnapshot.conf.pacnew -c 'windo difft'
 rm /etc/rsnapshot.conf.pacnew

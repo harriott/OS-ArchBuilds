@@ -45,7 +45,7 @@ export CfWk=$DJH/CforWork
 export copied=$DJH/copied  # used in  $TeNo
     export cFr=$copied/France  # $cFr  used in  $TeNo
     export chum=$copied/human  # used in  $TeNo
-        export chin=$chum/ingest  # used in  $TeNo
+        export chin=$chum/ingest  # $chin  used in  $TeNo
     export cITh=$copied/IT-handy
         export cIThul=$cITh/unix-like  # $cIThul
     export copOT=$copied/OutThere  # $copOT  used in  $TeNo
@@ -65,8 +65,8 @@ export JHw=$DJH/work  # $JHw - for IT websites and more
     export atone=$JHw/WB-Hugo-atiavda_one  # $atone
     export bilan=$JHw/ST/LPD/IdF/AB-TAP/bilan
     export JHm=$JHw/IT-Jekyll-harriott-minima  # $JHm
-    export rEr=$JHw/France/IdF/Paris/rueErmitage
-          export StEr=$rEr/StudioErmitage
+    export rEr=$JHw/France/IdF/Paris/20e-rueErmitage
+          export StEr=$rEr/StudioErmitage  # $StEr
 export Thb=$DJH/Thb-dr  # $Thb, used in
                         #  $ABjo/wm/TS/locks.sh
                         #  $OSAB/bs-4-whenWM/4-various.sh

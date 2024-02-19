@@ -1,6 +1,6 @@
 vim: nospell:
 
-    $OSAB; m4ps 0 1
+    $OSAB
 
     m4p $OSAB/QR.md 1
     r $misc/linux/QR  # for my more general linux QuickReference
@@ -147,10 +147,6 @@ mo <file>  # ? lists the limited moar commands
 moar -h
 ```
 
-# BBCode
-    $vimfiles/ftplugin/bbcode.vim
-    [quote]quote[/quote]
-
 # documenting
     r $Sig
 
@@ -159,31 +155,16 @@ moar -h
     dict -D
     i dict
 
-## LaTeX Polyglossia
-    \setmainfont{ArchitectsDaughter}
-    \setmainfont{Arimo}
-    \setmainfont{FingerPaint-Regular}
-
 ## PDF
     gspdfpng  # Ghostscript convert pdf to png
     i pdfinfo
 
-### TeX
-    r $GHrUse/CP/MartinThoma-LaTeX-examples
-    r $jtCP/TeX/LaTeX  # my MWEs
-    x <LaTeX_file_basename>
+### Zathura
+    $ABjo/wm/zathurarc  # set window-height <pixels>
+    i zathurarc
+    zathura -P <page> <pdf> &
 
-`mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
-
-#### fontspec
-    \setmonofont{Caskaydia Cove Regular Nerd Font Complete Mono}
-    \setmonofont{Ubuntu Mono}
-
-#### Arch package files
-    C /usr/share/texmf-dist/tex/latex/
-    /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
-
-#### copied resources
+## TeX - copied resources
     r $cITh/CP/TeX
     z $cITh/CP/TeX/LaTeX/appearance/datetime2.pdf
     z $cITh/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
@@ -197,36 +178,55 @@ moar -h
     z $cITh/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
     z $cITh/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
 
-#### my packages
+## TeX - LaTeX
+    r $GHrUse/CP/MartinThoma-LaTeX-examples
+    r $jtCP/TeX/LaTeX  # my MWEs
+    x <LaTeX_file_basename>
+
+`mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
+
+### fontspec
+    \setmonofont{Caskaydia Cove Regular Nerd Font Complete Mono}
+    \setmonofont{Ubuntu Mono}
+
+### LaTeX Polyglossia
+    \setmainfont{ArchitectsDaughter}
+    \setmainfont{Arimo}
+    \setmainfont{FingerPaint-Regular}
+
+## TeX - my packages
     r $LTXj
     r $JHt/IT/CP/TeX/LaTeX
     r ~/texmf
 
-#### native install
-    /usr/local/texlive/2023/texmf-dist/tex/latex/base/nfssfont.tex
-    z /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf
-
-### TeX Live
+## TeX Live
     pacman -Qs texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
 
-#### native install
-    /usr/local/texlive/2023/texmf-dist/doc/
-    gdu -nps /usr/local/texlive
+### Arch package files
+    C /usr/share/texmf-dist/tex/latex/
+    /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
 
-##### tcolorbox
+### native install
+    /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/README
+    /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/SYMLIST
+    /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/source/symbols.tex
+    /usr/local/texlive/2023/texmf-dist/doc/
+    /usr/local/texlive/2023/texmf-dist/tex/latex/base/nfssfont.tex
+    gdu -nps /usr/local/texlive
+    z /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/rawtables-a4.pdf
+    z /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/symbols-a4.pdf
+    z /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf
+
+#### tcolorbox
     $/usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/README.md
     /usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/tcolorbox-example-poster.tex
 
-#### TeX Live package manager
+### TeX Live package manager
     /usr/local/texlive/2023/texmf-var/web2c/tlmgr.log
     /usr/local/texlive/2023/texmf-var/web2c/tlmgr-commands.log
     tlmgr info pgfplots
     tlmgr list --only-installed > $machLg/TeXLive/tlmgr_list-$(date '+%Y%m%d%H%M').txt
     sudo tlmgr update --all
-
-### Zathura
-    $ABjo/wm/zathurarc  # set window-height <pixels>
-    i zathurarc
 
 # Emacs
     $misc/Emacs/init.el
@@ -356,6 +356,7 @@ in JH, `$DJH/search/searches.md`
 ## sed
     $cIThul/sed
     i sed
+    sed -i '/match/{n;Q}' <file>  # remove all lines after match
     tldr sed
 
 SED(1)
@@ -471,10 +472,17 @@ vid => ffmpegthumbnailer
     more in  $OSAB/Bash/bashrc-generic
 
 ## fd
-    fd --max-depth 2 -Hl -t l | xcol <keywords>  # handy for spotting snags
-    fd -e ods  # finds OpenOffice Calc spreadsheets
     fd -H  # --hidden
     fd -td font
+    fd -u '\..+'
+    fd . $OSAB
+
+- `-I` = `--no-ignore` do not respect .(git|fd)ignore files
+- recursive by default
+- sharkdp/fd
+
+### filetypes
+    fd -e ods  # finds OpenOffice Calc spreadsheets
     fd -tf -e css
     fd -tf -e fetl
     fd -tf -e gpi
@@ -483,20 +491,15 @@ vid => ffmpegthumbnailer
     fd -tf -e ogg | wc -l
     fd -tf -e md | wc -l
     fd -tf -e md -e tex
+    fd -tf -e mp3
     fd -tf -e mp4 -e mkv -e ogv -e MOV > films.fetl
     fd -tf -e svg
     fd -tf -e tex
     fd -tf -e vim
     fd -tf -e webm | wc -l
     fd -tf -e wiki
+    fd -tf -e zip
     fd -u -tf -e odt
-    fd -u '\..+'
-    fd . $OSAB
-    im fd
-
-- `-I` = `--no-ignore` do not respect .(git|fd)ignore files
-- recursive by default
-- sharkdp/fd
 
 ### git config's
     fd -HI -tf ^config$ | xargs rg -l 'remote = gh'  # ripgrep
@@ -548,11 +551,43 @@ can't cope with `utf-16le`
     :trash => current file or selection in directory
     ? => start of help dialogue
     ^r => reload
-    c-h / zh => toggle hidden
+    a => rename_append
+    backspace / c-h / zh => toggle hidden
     dd => cut
+    du => shell -p du --max-depth=1 -h --apparent-size
+    dU => shell -p du --max-depth=1 -h --apparent-size | sort -rh
+    E => edit
     F9 => open outside of tmux, for r (allowing images)
+    ge => cd /etc
+    gh => cd ~
+    gM => cd /mnt
+    gr => cd /
+    gu => cd /usr
     I => rename
     i => inspect file
+    or set sort_reverse!
+    oz set sort=random
+    os chain set sort=size;      set sort_reverse=False
+    ob chain set sort=basename;  set sort_reverse=False
+    on chain set sort=natural;   set sort_reverse=False
+    om chain set sort=mtime;     set sort_reverse=False
+    ot chain set sort=type;      set sort_reverse=False
+    oe chain set sort=extension; set sort_reverse=False
+    oS chain set sort=size;      set sort_reverse=True
+    oB chain set sort=basename;  set sort_reverse=True
+    oN chain set sort=natural;   set sort_reverse=True
+    oM chain set sort=mtime;     set sort_reverse=True
+    oT chain set sort=type;      set sort_reverse=True
+    oE chain set sort=extension; set sort_reverse=True
+    o1 tab_open 1
+    o2 tab_open 2
+    o3 tab_open 3
+    o4 tab_open 4
+    o5 tab_open 5
+    o6 tab_open 6
+    o7 tab_open 7
+    o8 tab_open 8
+    o9 tab_open 9
     pp => paste
     shift+s => open subshell
     space => mark
@@ -1014,6 +1049,7 @@ pass cz/GmailAPI/token-expire
 
 ## Bash
     [ -f $Thb/parent.lock ] && echo zero file size
+    r $ulL/Bash
 
 ### ANSI escape sequences
     $OSAB/Bash/bashrc-generic
@@ -1299,6 +1335,8 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
 ```bash
 xdg-open https://archlinux.org
 ```
+
+WGET(1)
 
 ## Apache HTTP Server
     /var/log/httpd/access_log

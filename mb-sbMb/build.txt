@@ -2275,15 +2275,23 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.69.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  :: Starting full system upgrade...
+  :: Replace onevpl with extra/libvpl? [Y/n]
+  ...
+  :: There are 2 providers available for dbus-units:
+  :: Repository core
+     1) dbus-broker-units  2) dbus-daemon-units
+  Enter a number (default=1):
+## Updates
+warning: libcamera-ipa will be installed before its libcamera dependency
+## HP ENVY 5532 IP Address changed to 179.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.179.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
-all-the-icons.el
-harriott-zenburn-emacs
 MariaDB
-nginx-mainline
-pdfsam
-surfraw
-systeroid
-~/.config/mpv/scripts
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
@@ -2360,6 +2368,7 @@ SATA2: protruding out of a back slot, with a spare power cable
 SATA3: SDU3D1TB resting at bottom of 3½" bays, under the tidied cables
 SATA4: ST4000VN008 in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
 SATA5: WD1001FALS in 3rd 5¼" tray from top, tied into a metal frame
+doas mount /dev/sdb1 /mnt/HD103SJ
 ### optical
 SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
 #### whipper

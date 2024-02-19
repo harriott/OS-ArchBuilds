@@ -563,6 +563,14 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
   :: Repository core
      1) dbus-broker-units  2) dbus-daemon-units
   Enter a number (default=1):
+## Updates
+seized while updating  linux-zen  so I  REISUB'd and saw "
+eventually got back in
+## Updates
+error: failed to synchronize all databases (unable to lock database)
+sudo rm /var/lib/pacman/db.lck
+nothing to do, but  kworker  still maxing the CPU
+sudo pacman -S linux-zen linux-zen-headers, but siezed again...
 ## waiting
 apache
 MariaDB

@@ -60,12 +60,15 @@ sudo pacman -S bat-extras  # brings in bat (used in  fzf --preview)
 # #=> 3 softwares - file manage - rsnapshot install
 # pacman -S rsnapshot
 
-# #=> 3 softwares - networking
-# # msmtp-mta
-# pacman -S msmtp-mta  # brings in  msmtp
+#=> 3 softwares - networking
+# aria2
+pacman -S aria2
 
-# # OpenSSH
-# pacman -S openssh
+# msmtp-mta
+pacman -S msmtp-mta  # brings in  msmtp
+
+# OpenSSH
+pacman -S openssh
 
 # #=> 3 softwares - systeroid
 # pacman -S systeroid

@@ -595,11 +595,18 @@ sudo pacman -Rs mozilla-common
 somehow got installed, no apparent need so  sudo pacman -Rs python-pep517
 ## enable the SysRq keys
 su  for  echo kernel.sysrq=1 >> /etc/sysctl.d/99-sysctl.conf
+## Updates
+  :: Starting full system upgrade...
+  :: Replace onevpl with extra/libvpl? [Y/n]
+  ...
+  :: There are 2 providers available for dbus-units:
+  :: Repository core
+     1) dbus-broker-units  2) dbus-daemon-units
+  Enter a number (default=1):
 ## waiting
 apache
 MariaDB
 php
-~/.config/mpv/scripts cp to ln ?
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/Elocks.sh

@@ -17,6 +17,9 @@ trap read debug  # puts a read request after each executable line
 # pacman -S mpd
 # mkdir -p ~/.mpd/playlists ~/music
 
+# #=> Bluefish
+# pacman -S bluefish
+
 #=> documenting
 # Ghostscript
 pacman -S ghostscript
@@ -27,7 +30,7 @@ pacman -S pandoc-cli
 #=> documenting - TeX Live 0 native 0 cd
 cd $JHt/IT/CP/TeX/install-tl-20230613/
 
-#=> documenting - TeX Live 0 native 1 basic 0 basic
+#=> documenting - TeX Live 0 native 1 basic
 sudo perl install-tl --scheme=basic --no-interaction
 
 #=> documenting - TeX Live 0 native 1 full
@@ -155,11 +158,4 @@ pacman -S xorg-xev
 
 # # xdotool
 # pacman -S xdotool
-
-# #=> various
-# # Bluefish
-# pacman -S bluefish
-
-# # urxvt-perls
-# pacman -S urxvt-perls  # brings in  rxvt-unicode
 
