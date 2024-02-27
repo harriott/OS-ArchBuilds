@@ -10,7 +10,7 @@
 #   e -la ~/Arch/locks.sh
 #   pb ~/Arch/locks.sh
 
-notify-send -u critical 'test of $ABjo/wm/TS/locks.sh'
+# notify-send -u critical 'test of $ABjo/wm/TS/locks.sh'
 
 host=$(uname -n)
 case $host in

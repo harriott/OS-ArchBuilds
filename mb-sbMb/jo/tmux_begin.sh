@@ -8,7 +8,7 @@
 
 # test (or reload) this script with
 #  tmux kill-server
-#  bash $Obc/autostart/urxvtl+tmux.sh
+#  bash $Obc/autostart/terminal_launch.sh
 #  bash $machBld/jo/tmux_begin.sh
 
 # (chmod u+x $machBld/jo/urxvtl.sh)

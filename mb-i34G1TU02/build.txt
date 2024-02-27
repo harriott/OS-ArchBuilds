@@ -1,5 +1,7 @@
 vim: ft=build:
 
+$machBld/build.txt
+
 Packard Bell iMedia S i34G1TU02
 
 # before Dropbox, prepare K8GBDTIG3
@@ -603,6 +605,11 @@ su  for  echo kernel.sysrq=1 >> /etc/sysctl.d/99-sysctl.conf
   :: Repository core
      1) dbus-broker-units  2) dbus-daemon-units
   Enter a number (default=1):
+## xdg-open .pdf
+handlr get .pdf  reports  qpdfview.desktop
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## rxvt-unicode + tmux v3.4 ffff mess
+switched to  rxvt-unicode-truecolor-wide-glyphs
 ## waiting
 apache
 MariaDB

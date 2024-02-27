@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh:
 
+# $machBld/export-machine
+
 # machine-specific exports that could also be useful as root
 
 # for jo:

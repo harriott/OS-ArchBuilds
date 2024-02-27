@@ -1,9 +1,0 @@
-# vim: fdl=1 ft=sh sw=2:
-
-# $machBld/jo/Bash/bashrc  symlinked in  $OSAB/bs-symlinks/jo-0.sh  e -la ~/.bashrc
-
-[[ $- != *i* ]] && return  # if not running interactively, don't do anything
-
-#=> load the rest of my bashrc
-source $Bash/bashrc
-

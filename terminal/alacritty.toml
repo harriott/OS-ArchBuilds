@@ -1,0 +1,33 @@
+
+# Alacritty
+# $OSAB/terminal/alacritty.toml ($OSAB/bs-symlinks/jo-0.sh)
+# imported by  $machBld/alacritty.toml
+
+[cursor]
+  style = { shape = "underline" }
+  thickness = 0.3
+  vi_mode_style = { shape = "block" }
+
+[font]
+  normal = { family = "CaskaydiaCoveNerdFontMono" }
+
+[[hints.enabled]]
+  action = "copy"
+  binding = { key = "P", mods = "Control|Shift" }
+  mouse.enabled = true
+  regex = "\\$[^ ]+"  # double quotes are necessary
+
+[[hints.enabled]]
+  # the defaults, necessarily repeated here due to other addition
+  binding = { key = "U", mods = "Control|Shift" }
+  command = "xdg-open"
+  hyperlinks = true
+  mouse.enabled = true
+  persist = false
+  post_processing = true
+  regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+
+[window]
+  dimensions = { columns = 115, lines = 24 }
+  opacity = 0.6
+

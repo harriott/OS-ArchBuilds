@@ -40,7 +40,7 @@ eza -la /usr/share/fonts/EmacsAllTheIcons
 
 # ln -sf $OSAB/root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 
-# ln -sf $OSAB/tmux/tmux.conf ~/.tmux.conf
+# ln -sf $OSAB/terminal/tmux.conf ~/.tmux.conf
 
 #=> 2 list root symlinks
 eza -la /root

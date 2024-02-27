@@ -39,7 +39,7 @@ tint2 &
 udiskie -t &
 
 #==> 0 tmux - begin
-source $Obc/autostart/urxvtl+tmux.sh
+source $Obc/autostart/terminal_launch.sh
 
 #==> 0 utilities
 blueman-applet &  # Blueman (Bluetooth manager)

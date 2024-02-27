@@ -6,6 +6,11 @@
 
 set -e
 
+#=> Alacritty
+ln -sf $machBld/alacritty.toml ~/.alacritty.toml
+ln -sf $OSAB/terminal/alacritty.toml ~/.alacritty-generic.toml
+# e -la ~/.alacritty*
+
 #=> ansiweather
 ln -sf $ABjo/WAN/ansiweather ~/.ansiweatherrc
 
@@ -87,7 +92,7 @@ ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 ln -sf $ABjo/pinforc ~/.pinforc
 
 #=> ranger
-lnd $OSAB/ranger ~/.config/ranger
+lnd $OSAB/terminal/ranger ~/.config/ranger
 # e -adl ~/.config/ranger
 
 #=> Ruby IRB
@@ -98,7 +103,7 @@ ln -sf $misc/irbrc ~/.irbrc
 ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 
 #=> tmux
-ln -sf $OSAB/tmux/tmux.conf ~/.tmux.conf
+ln -sf $OSAB/terminal/tmux.conf ~/.tmux.conf
 
 #=> vim variants 0 $vimfiles
 # symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh

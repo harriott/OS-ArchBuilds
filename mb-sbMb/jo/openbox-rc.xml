@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vim: fdl=1 sw=2:
 
-  sed "s/ \$urxvtGeometry/ $urxvtGeometry/" $Obc/rc/rc.xml > $machBld/jo/openbox-rc.xml
+  sed "s/ \$urxvtGeometry/ 122x78+0+0/" $Obc/rc/rc.xml > $machBld/jo/openbox-rc.xml
 
   ~/.config/openbox/rc.xml ($OSAB/bs-symlinks/jo-1-Openbox.sh)
 

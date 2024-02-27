@@ -2290,6 +2290,43 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.179.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## rxvt-unicode + tmux v3.4 ffff mess
+switched to  rxvt-unicode-truecolor-wide-glyphs
+## ST4000VN008 not mounting
+got pushed into maintenance mode
+  e2fsck -v /dev/sdd1 > fixed a load of errors
+    Pass 1: Checking inodes, blocks, and sizes
+    Pass 2: Checking directory structure
+    Problem in the HTREE directory inode ...
+    ...
+    Pass 3: Checking directory connectivity
+    Pass 3A: Optimizing directories
+    Pass 4: Checking reference counts
+    Pass 5: Checking group summary information
+    Free blocks count wrong ...
+    ...
+    Inode bitmap differences...
+    ...
+    Free inode count wrong ...
+    ...
+    Free inode count wrong ...
+    ...
+    Padding at end of inode bitmap is not set. Fix<y>?
+rebooted
+## HP ENVY 5532 IP Address changed to 74.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.74.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## xdg-open .wav
+handlr get .wav  reports  no handlers found for 'audio/vnd.wav'
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## rxvt-unicode-truecolor-wide-glyphs  crashing on  ranger
+## HP ENVY 5532 IP Address changed to 231.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.231.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 MariaDB
 # CPU frequency
@@ -2397,6 +2434,8 @@ whipper offset find -o +6
   WARNING:whipper.common.accurip:entry not found in AccurateRip database
   WARNING:whipper.command.offset:AccurateRip entry not found: drive offset can't be determined, try again with another disc
 so I added  read_offset = 6 ; JH  to  ~/.config/whipper/whipper.conf
+### waiting
+replace SD480GSSDPlus with HD103SJ
 ## monitor
 lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 1920x1080 = 16:9)
   Brightness 40 Contrast 20

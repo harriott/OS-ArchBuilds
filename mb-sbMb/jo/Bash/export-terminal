@@ -1,0 +1,19 @@
+#!/bin/bash
+# vim: fdl=1 ft=sh:
+
+# called by  $Bash/export-jo
+# definitions here are used in
+#  $Obc/autostart/terminal_launch.sh
+#  $Obc/rc/rc.xml
+
+#=> set  Alacritty  window
+export Awd='window.dimensions={columns=124,lines=78}'
+export Awp='window.position={x=5,y=5}'
+
+#=> set  urxvt  geometry appropriate for monitor
+# open urxvt from left of screen, allowing room for 106 column gVim
+
+# 1920x1080  screen:
+export urxvtGeometry='122x78+0+0'  # urxvt -geometry 122x78+0+0 &
+# for  ubuntumono 9  in  $Openbox/Xresources/Xresources
+

@@ -23,10 +23,10 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 
 # #=> 1 rxvt-unicode 0 install
-# pacman -S urxvt-perls  # provides keyboard-select and brings in  rxvt-unicode
+# sudo pacman -S urxvt-perls  # provides keyboard-select and brings in  rxvt-unicode
 
 # #=> 1 rxvt-unicode 0 remove
-# pacman -Rs urxvt-perls rxvt-unicode  # in that order
+# sudo pacman -Rs urxvt-perls rxvt-unicode  # in that order
 
 #=> 1 rxvt-unicode-truecolor-wide-glyphs
 gAUR rxvt-unicode-truecolor-wide-glyphs

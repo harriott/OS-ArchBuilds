@@ -308,6 +308,12 @@ see `$vimfiles/syntax/gems.vim`
     dym better
     i dym
 
+  <keybind key="C-space">
+    <action name="Execute">
+      <command>dunstctl close</command>
+    </action>
+  </keybind>
+  <!-- Keybinding for Qualculate! - JH -->
 # fcron
     systemctl status fcron.service  # showing recent events
 
@@ -487,6 +493,7 @@ vid => ffmpegthumbnailer
     fd -tf -e fetl
     fd -tf -e gpi
     fd -tf -e html
+    fd -tf -e jpg
     fd -tf -e ogg ' webm'
     fd -tf -e ogg | wc -l
     fd -tf -e md | wc -l
@@ -1200,6 +1207,7 @@ backed up in `$Bash/bash_profile`
 ### Openbox
     $Obc/autostart/autostart
     $Obc/schema.pl
+    openbox --reconfigure
 
 #### rc
     $Obc/rc/rc.xml
@@ -1260,10 +1268,12 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
     $OSAB/tmux/tmux.conf
     C-a [ -> copy-mode
     C-a ~ -> show-messages
+    joinp -s 2 [-t 1 ]  -> join-pane, joining pane in window 2 [to that in window 1]
     resize -s 65 120  # good for half of ViewSonic VX2025wm
     tmux list-keys | grep '~'
     tmux list-keys | mo
-    joinp -s 2 [-t 1 ]  -> join-pane, joining pane in window 2 [to that in window 1]
+    tmux show-options -g   # global
+    tmux show-options -s   # server
 
 - `send-keys` can't decode a Bash environment variable
 - TMUX(1)

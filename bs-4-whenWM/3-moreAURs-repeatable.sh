@@ -152,6 +152,12 @@ true
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
+# #=> opera
+# # for MPD
+# gAUR opera
+# nvim -c "silent! /get.geo.opera.com" PKGBUILD
+# makepkg -sic
+
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2
 # nvim -c "silent! /github.com\/py-pdf" PKGBUILD
@@ -170,11 +176,11 @@ true
 # #=> pdfCropMargins 2 pdfcropmargins 0 remove
 # sudo pacman -Rs pdfcropmargins
 
-#=> PDFsam 0 (re)install
-gAUR pdfsam
-nvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic  # choose  jdk-openjdk
-true
+# #=> PDFsam 0 (re)install
+# gAUR pdfsam
+# nvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic  # choose  jdk-openjdk
+# true
 
 # #=> PDFsam 1 remove
 # sudo pacman -Rs pdfsam

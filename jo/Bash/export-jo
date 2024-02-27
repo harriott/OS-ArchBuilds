@@ -6,7 +6,7 @@
 #  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 
 export MANPATH=/usr/share/man/
-uG=$machBld/jo/Bash/export-urxvt; [[ -f $uG ]] && source $uG
+uG="$machBld/jo/Bash/export-terminal"; [[ -f $uG ]] && source $uG
 
 export MOZ_GTK_TITLEBAR_DECORATION=client
 export PAPERSIZE=A4  # libpaper
@@ -55,7 +55,8 @@ export DaLi=$DJH/now/DailyLife  #  $DaLi  used in  $TeNo
 export ess=$DJH/now/essential
     export eFr=$ess/France  # $eFr
     export Sig=$ess/signatures  # $Sig  for use in creating documents
-export FFIdF=$DJH/F+F/France/IdF  # $FFIdF  used in  $TeNo
+export FrFa=$DJH/F+F
+    export FFIdF=$FrFa/France/IdF  # $FFIdF  used in  $TeNo
 export JHt=$DJH/technos
     export jtIT=$JHt/IT  # used in  $core  &  $jtIT
         export jtCP=$jtIT/CP  # $jtCP
