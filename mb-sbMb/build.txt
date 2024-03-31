@@ -2404,6 +2404,9 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.246.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## OBS Studio recording format
+Settings > Output > Recording Format  was  mkv, somehow became  Fragmented MP4 (.mp4)
+reset to  Matroska Video (.mkv)
 ## waiting
 gokcehan's lf
 MariaDB
@@ -2482,11 +2485,11 @@ Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard
 ## disks
 SATA?: SD480GSSDPlus resting almost at bottom of 3½" bays, under the tidied cables
-SATA?: protruding out of a back slot, with a spare power cable
 SATA?: SDU3D1TB resting at bottom of 3½" bays, under the tidied cables
 SATA?: ST4000VN008 in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
 SATA?: WD1001FALS in 3rd 5¼" tray from top, tied into a metal frame
 SATA?: WD20EZAZ in blue holder in top 5¼" tray
+spare power cable protruding out of a back slot
 ### optical
 SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
 #### whipper
