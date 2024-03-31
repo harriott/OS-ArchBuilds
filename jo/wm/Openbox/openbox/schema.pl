@@ -50,6 +50,7 @@ our $SCHEMA = [
   # {item => ['thunderbird',          'Mail',               'web-browser']},
   # {item => ['thunderbird',          'Thunderbird',        'web-browser']},
     {item => ['thunderbird_safely',   'Thunderbird safely', 'web-browser']},
+    {item => ['transmission-qt',      'Transmission Qt',    'web-browser']},
     # {item => ['gvim',               'gVim',               'terminal']},
     {item => ['exfalso',              'QL - Ex Falso',      'web-browser']},
     {item => ['quodlibet',            'QL - Quod Libet',    'web-browser']},

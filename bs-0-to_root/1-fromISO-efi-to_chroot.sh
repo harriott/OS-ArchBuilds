@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# $OSAB/bs-0-to_root/1-fromISO-efi-to_chroot.sh
+
 set -euv
 trap read debug  # puts a read request after each executable line
 
@@ -17,7 +19,7 @@ lsblk /dev/mmcblk0
 EFI=mmcblk0p1
 root=mmcblk0p3
 swap=mmcblk0p2
-# home=mmcblk1p1
+home=mmcblk1p1
 
 # #=> 01 format needed partitions
 # # EFI

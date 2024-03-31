@@ -348,7 +348,7 @@
   <!-- Keybinding for Alacritty large - JH -->
   <keybind key="s-w-a">
     <action name="execute">
-      <command>alacritty -o $Awd -o $Awp</command>
+      <command>alacritty -o window.dimensions={columns=110,lines=64} -o window.position={x=5,y=5}</command>
     </action>
   </keybind>
   <!-- Keybinding to toggle Cmus play/pause - JH -->
@@ -498,7 +498,7 @@
   <!-- Keybinding for urxvt large - JH -->
   <keybind key="s-w-u">
     <action name="Execute">
-      <command>urxvt -geometry $urxvtGeometry</command>
+      <command>urxvt -geometry 104x64+0+0</command>
     </action>
   </keybind>
   <!-- Keybinding for OpenShot - JH -->

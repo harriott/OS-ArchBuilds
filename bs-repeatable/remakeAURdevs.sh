@@ -26,10 +26,10 @@ xdgo()
     fi
 }
 
-#=> auracle-git
+#=> auracle-git 0 remake
 PQ auracle-git
-xdgo https://github.com/falconindy/auracle/commits/master
-updateMaybe auracle-git falconindy
+xdgo https://github.com/inglor/auracle/commits/master
+updateMaybe auracle-git inglor
 
 #=> clifm-git
 PQ clifm-git
@@ -61,4 +61,5 @@ updateMaybe tmux-bash-completion-git
 PQ yj-git
 xdgo https://github.com/sclevine/yj/commits/main
 updateMaybe yj-git 'https:\/\/github.com\/sclevine\/yj.git'
+exit
 

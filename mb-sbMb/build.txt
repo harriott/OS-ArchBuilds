@@ -28,7 +28,7 @@ lsmod | grep rtl8   shows it to be there
 lsblk  shows SD480GSSDPlus is /dev/sdd
   gdisk /dev/sdd > o (create a new empty GUID partition table GPT & new protective MBR) y
     w   for  gdisk /dev/sdd  (MBR: protection  GPT: present)
-##### create partitions
+
 n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
   ef00 (EFI system partition)
 n > Partition number (defaults to 2) > First sector (defaults to 1128448) > +60g > Hex code >
@@ -53,7 +53,7 @@ Del at startup for UEFI DualBIOS > BIOS Features > Boot Option #1 >
 #### K8GBDT100
 mkdir /bs   mount /dev/sdf1 /bs   cd /bs/ArchBuilds/build-scripts
 bash 00-AndroidTethers.sh  worked, but with some "ps_bpf_recvmsg: Invalid argument"
-bash 01-as_root-efi-to_chroot.sh
+bash $OSAB/bs-0-to_root/1-fromISO-efi-to_chroot.sh
   curl... signature from Felix... Invalid... PGP signature
 #### finish manually
 pacstrap /mnt base linux linux-firmware
@@ -2327,8 +2327,88 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.231.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## xdg-open .epub
+handlr get .epub  reports  calibre-ebook-viewer.desktop
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## xdg-open .ps1
+handlr get .ps1  reports  no handlers found for 'application/x-powershell'
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## Updates
+:: Replace glfw-x11 with extra/glfw? [Y/n]
+:: Replace libblockdev-utils with extra/libblockdev? [Y/n]
+## HP ENVY 5532 IP Address changed to 137.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.137.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 107.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.107.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 47.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.47.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  :: Starting full system upgrade...
+  :: Replace handlr with extra/handlr-regex? [Y/n]
+### auracle-git  libalpm.so.13  error
+sudo pacman -Rs auracle-git  then re-installed it
+## broot updated
+br
+  Broot's shell function should be upgraded.
+  Can I proceed? [Y/n]
+  Removing /home/jo/.config/broot/launcher/installed-v1.
+  Removing /home/jo/.local/share/broot/launcher/bash/1.
+  Writing br shell function in /home/jo/.local/share/broot/launcher/bash/1.
+  Removing /home/jo/.config/broot/launcher/bash/br.
+  Creating link from /home/jo/.config/broot/launcher/bash/br to /home/jo/.local/share/broot/launcher/bash/1.
+  /home/jo/.bashrc successfully patched, you can make the function immediately available with source /home/jo/.bashrc
+  /home/jo/.bash_profile successfully patched, you can make the function immediately available with source /home/jo/.bash_profile
+  Writing br shell function in /home/jo/.local/share/broot/launcher/fish/br.fish.
+  Creating link from /home/jo/.config/fish/functions/br.fish to /home/jo/.local/share/broot/launcher/fish/br.fish.
+  The br function has been successfully installed.
+  You may have to restart your shell or source your shell init files.
+  Afterwards, you should start broot with br in order to use its full power.
+removed duplicate last two lines from  $Bash/bash_profile  &  $machBld/jo/Bash/bashrc
+## vimpc
+  error while loading shared libraries: libtag.so.1: cannot open shared object file: No such file or directory
+fixed by simply re-installing  vimpc-git
+## HP ENVY 5532 IP Address changed to 42.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.42.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing jre-openjdk (22.u36-1) breaks dependency 'java-runtime=21' required by pdfsam
+sudo pacman -Rs pdfsam  - just for the updates
+## fitted  WD20EZAZ
+### won't find boot
+booted to  ARCH_202403  for
+mount /dev/2 /mnt
+mount /dev/1 /mnt/efi
+mount /dev/3 /mnt/home
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB  # UEFI
+grub-mkconfig -o /boot/grub/grub.cfg
+rebooted
+### fstab
+sudo mkdir /mnt/WD20EZAZ
+cp /etc/fstab $machLg/etc/fstab/o3s  then adjusted and diff'd
+rebooted
+sudo chown jo:jo /mnt/WD20EZAZ
+## HP ENVY 5532 IP Address changed to 246.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.246.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
+gokcehan's lf
 MariaDB
+pdfsam
+ueberzugpp
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
@@ -2396,16 +2476,17 @@ ATI Radeon HD 4870 on PCIEX16
 D-Link DUB-H7
 NETGEAR WG111v2
 TP-Link UB400
+B525 HD Webcam
 ## cbh
 Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard
 ## disks
-SATA0: SD480GSSDPlus resting almost at bottom of 3½" bays, under the tidied cables
-SATA2: protruding out of a back slot, with a spare power cable
-SATA3: SDU3D1TB resting at bottom of 3½" bays, under the tidied cables
-SATA4: ST4000VN008 in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
-SATA5: WD1001FALS in 3rd 5¼" tray from top, tied into a metal frame
-doas mount /dev/sdb1 /mnt/HD103SJ
+SATA?: SD480GSSDPlus resting almost at bottom of 3½" bays, under the tidied cables
+SATA?: protruding out of a back slot, with a spare power cable
+SATA?: SDU3D1TB resting at bottom of 3½" bays, under the tidied cables
+SATA?: ST4000VN008 in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
+SATA?: WD1001FALS in 3rd 5¼" tray from top, tied into a metal frame
+SATA?: WD20EZAZ in blue holder in top 5¼" tray
 ### optical
 SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
 #### whipper
@@ -2435,7 +2516,6 @@ whipper offset find -o +6
   WARNING:whipper.command.offset:AccurateRip entry not found: drive offset can't be determined, try again with another disc
 so I added  read_offset = 6 ; JH  to  ~/.config/whipper/whipper.conf
 ### waiting
-replace SD480GSSDPlus with HD103SJ
 ## monitor
 lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 1920x1080 = 16:9)
   Brightness 40 Contrast 20

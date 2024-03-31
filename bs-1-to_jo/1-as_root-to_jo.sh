@@ -32,72 +32,81 @@ echo "vm.swappiness=00" >> /etc/sysctl.d/99-sysctl.conf
 #==> 3 check settings
 cat /etc/sysctl.d/99-sysctl.conf
 
-# #=> 2 file manage
-# # broot
-# pacman -S broot
-# broot # to generate br command
-# echo "${tpfn}"  # reset normal text
+#=> 2 file manage
+# broot
+pacman -S broot
+broot # to generate br command
+echo "${tpfn}"  # reset normal text
 
-# # dvd+rw-tools
-# pacman -S dvd+rw-tools
+# Chafa
+pacman -S chafa
 
-# # enca
-# pacman -S enca
+# dvd+rw-tools
+pacman -S dvd+rw-tools
 
-# # eza
-# pacman -S eza
+# enca
+pacman -S enca
 
-# # fd
-# pacman -S fd
+# eza
+pacman -S eza
 
-# # FuseISO
-# pacman -S fuseiso
+# fd
+pacman -S fd
 
-# # fzf
-# pacman -S fzf
+# felix
+pacman -S felix-rs
 
-# # lsd
-# pacman -S awesome-terminal-fonts lsd
+# FuseISO
+pacman -S fuseiso
 
-# # mlocate
-# pacman -S mlocate
-# updatedb
+# fzf
+pacman -S fzf
 
-# # ncdu
-# pacman -S ncdu
+# lsd
+pacman -S awesome-terminal-fonts lsd
 
-# # perl-rename
-# pacman -S perl-rename
+# mlocate
+pacman -S mlocate
+updatedb
 
-# # perl-test-fatal
-# pacman -S perl-test-fatal  # needed for  perl-unicode-utf8
+# ncdu
+pacman -S ncdu
 
-# # p7zip
-# pacman -S p7zip
+# perl-rename
+pacman -S perl-rename
 
-# # ranger
-# pacman -S ranger
+# perl-test-fatal
+pacman -S perl-test-fatal  # needed for  perl-unicode-utf8
 
-# # rhash
-# pacman -S rhash
+# p7zip
+pacman -S p7zip
 
-# # ripgrep
-# pacman -S ripgrep
+# ranger
+pacman -S ranger
 
-# # rsync
-# pacman -S rsync
+# rhash
+pacman -S rhash
 
-# # sharkdp's bat
-# pacman -S bat
+# ripgrep
+pacman -S ripgrep
 
-# # trash-cli
-# pacman -S trash-cli
+# rsync
+pacman -S rsync
 
-# # tree
-# pacman -S tree
+# sharkdp's bat
+pacman -S bat
 
-# # Vifm
-# pacman -S vifm
+# trash-cli
+pacman -S trash-cli
+
+# tree
+pacman -S tree
+
+# Vifm
+pacman -S vifm
+
+# zoxide
+pacman -S zoxide
 
 #=> 2 hd 0
 # diskus

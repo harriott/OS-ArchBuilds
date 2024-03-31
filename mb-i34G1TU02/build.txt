@@ -610,14 +610,49 @@ handlr get .pdf  reports  qpdfview.desktop
   bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## rxvt-unicode + tmux v3.4 ffff mess
 switched to  rxvt-unicode-truecolor-wide-glyphs
+## xdg-open .jpg
+handlr get .jpg  reports  vimiv.desktop
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## move to Thunderbird v115 profile
+(Thunderbird not running)  sed -i 's/91-default-release/hb-dr/ ' ~/.thunderbird/profiles.ini
+## Updates
+:: Replace handlr with extra/handlr-regex? [Y/n]
+### auracle-git  libalpm.so.13  error
+sudo pacman -Rs auracle-git  then re-installed it
+## remove redundant Emacs lock symlink
+rm ~/Arch/Elocks.sh
+## Updates
+pmount  somehow installed  pactree -r pmount  shows it's not needed so  sudo pacman -Rs pmount
+## HP ENVY 5532 IP Address changed to 246.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.246.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## broot updated
+br
+  Broot's shell function should be upgraded.
+  Can I proceed? [Y/n]
+  Removing /home/jo/.config/broot/launcher/installed-v1.
+  Removing /home/jo/.local/share/broot/launcher/bash/1.
+  Writing br shell function in /home/jo/.local/share/broot/launcher/bash/1.
+  Removing /home/jo/.config/broot/launcher/bash/br.
+  Creating link from /home/jo/.config/broot/launcher/bash/br to /home/jo/.local/share/broot/launcher/bash/1.
+  /home/jo/.bashrc successfully patched, you can make the function immediately available with source /home/jo/.bashrc
+  /home/jo/.bash_profile successfully patched, you can make the function immediately available with source /home/jo/.bash_profile
+  Writing br shell function in /home/jo/.local/share/broot/launcher/fish/br.fish.
+  Creating link from /home/jo/.config/fish/functions/br.fish to /home/jo/.local/share/broot/launcher/fish/br.fish.
+  The br function has been successfully installed.
+  You may have to restart your shell or source your shell init files.
+  Afterwards, you should start broot with br in order to use its full power.
+removed duplicate last two lines from  $Bash/bash_profile  &  $machBld/jo/Bash/bashrc
 ## waiting
 apache
+gokcehan's lf
 MariaDB
 php
 # fcron
 fcrontab -l
-  @ 1 bash ~/Arch/Elocks.sh
-  @ 1 bash ~/Arch/Tlocks.sh
+  @ 1 bash ~/Arch/locks.sh
   @ 10 bash ~/Arch/bash_history.sh
   @ 20 jump clean
   @ 1 d bash ~/Arch/log_rsnapshot.sh
@@ -645,3 +680,4 @@ WD1600AAJS  in USB as target for  rsnapshot
 ### disks
 BX200  in  LogiLink 2.5" HDD Mounting Bracket  in space under DVD drive
 WD1600AAJS  in a USB slot as  snapshot_root
+9QG2FFEE  rsnapshot root

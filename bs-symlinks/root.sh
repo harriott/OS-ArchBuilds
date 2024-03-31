@@ -17,7 +17,7 @@ read -p "\$OSAB  is  $OSAB - looks good?"
 #=> 1 fonts - all-the-icons.el
 [ -d /usr/share/fonts/EmacsAllTheIcons ] || mkdir /usr/share/fonts/EmacsAllTheIcons
 for aif in all-the-icons file-icons fontawesome material-design-icons octicons weathericons; do
-  sudo ln -sf $ITsc/Emacs-domtronn-all-the-icons.el/fonts/$aif.ttf /usr/share/fonts/EmacsAllTheIcons/$aif.ttf
+  sudo ln -sf $ITscc/CP/Emacs-domtronn-all-the-icons.el/fonts/$aif.ttf /usr/share/fonts/EmacsAllTheIcons/$aif.ttf
 done
 eza -la /usr/share/fonts/EmacsAllTheIcons
 
@@ -26,11 +26,11 @@ eza -la /usr/share/fonts/EmacsAllTheIcons
 #   echo "need to run as root"
 #   exit
 # else
-#   lnd $ITsc/fonts-forArch /usr/share/fonts/copiedForArch
+#   lnd $ITscc/forArch/fonts /usr/share/fonts/copiedForArch
 #   e -la /usr/share/fonts
 # fi
 
-# # #=> 1 make root symlinks
+# #=> 1 make root symlinks
 # ln -sf $OSAB/Bash/GNUReadline-inputrc /root/.inputrc
 
 # ln -sf $machBld/export-machine /root/.export-machine

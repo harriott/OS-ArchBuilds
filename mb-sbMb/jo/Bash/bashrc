@@ -24,5 +24,9 @@ ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/video/OBSmkv/ignore; }
 # ignore <an_mkv_to_ignore>
 # for m in *.mkv; do ignore "$m"; done
 
-omc() { bash $ulL/video/OBSmkv/shrink.sh; fin; } # used in  $OSAB/sbMb/jo/autostart.sh
+omc() {
+  bash $ulL/video/OBSmkv/shrink.sh
+  cd $OBSmkvGrabs  # useful if an exit occured
+  fin
+} # used in  $OSAB/sbMb/jo/autostart.sh
 

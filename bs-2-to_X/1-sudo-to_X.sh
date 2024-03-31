@@ -95,12 +95,15 @@ pacman -S openssh
 # # PulseAudio
 # pacman -S pulsemixer
 
-# #=> 4 when X 0 - networking
-# # DNS Lookup utility
-# pacman -S bind-tools
+#=> 4 when X 0 - networking
+# DNS Lookup utility
+pacman -S bind-tools
 
-# # Chromium
-# pacman -S chromium
+# Chromium
+pacman -S chromium
+
+# transmission-cli
+pacman -S transmission-cli
 
 # #=> 4 when X 0 - networking - OpenSSH - grab default sshd_config
 # g=/home/jo/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; chown jo:jo $g

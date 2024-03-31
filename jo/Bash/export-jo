@@ -11,15 +11,12 @@ uG="$machBld/jo/Bash/export-terminal"; [[ -f $uG ]] && source $uG
 export MOZ_GTK_TITLEBAR_DECORATION=client
 export PAPERSIZE=A4  # libpaper
 
-# export GIT_PS1=$(__git_ps1 " (%s)")
-# - excruciatingly slow on a huge repository such as  nerd-fonts
-
 #=> storage
 # here I'm taking care to avoid variables that only differ by case
 
 export CPdoc=$CrPl/documenting
     export LTXj=$CPdoc/LaTeX/jo  # $LTXj
-export GHrCl=$Storage/IT-Copied/GHrepos  # $GHrCl  GitHub Repositories Clone
+export GHrCl=$Storage/IT-copied/GHrepos  # $GHrCl  GitHub Repositories Clone
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export lclm=$ulL/clm  # $lclm  linux command-line mail, was  GNULE
 export Openbox=$ABjo/wm/Openbox
@@ -36,18 +33,16 @@ export GHrUse=$Drpbx/CGHrepos
         export mnm=$jkll/Jekyll-jekyll-minima
 
 #==> rooting on $DJH
+export CfWk=$DJH/CforWork
+    export ScEn=$CfWk/education/Science-Engineering
 export Cfzd=$DJH/Cafezoide
     export CzMa=$Cfzd/manage  # $CzMa
     export CzPeo=$Cfzd/people  # $CzPeo
     export CzPhy=$Cfzd/PhysicalProperty  # $CzPhy
-export CfWk=$DJH/CforWork
-    export ScEn=$CfWk/education/Science-Engineering
 export copied=$DJH/copied  # used in  $TeNo
     export cFr=$copied/France  # $cFr  used in  $TeNo
     export chum=$copied/human  # used in  $TeNo
         export chin=$chum/ingest  # $chin  used in  $TeNo
-    export cITh=$copied/IT-handy
-        export cIThul=$cITh/unix-like  # $cIThul
     export copOT=$copied/OutThere  # $copOT  used in  $TeNo
     export Pr0=$copied/Practical0
         export Pr0t=$Pr0/technos  # $Pr0t
@@ -78,13 +73,15 @@ export Then0=$DJH/Then0  # used in  $TeNo
 
 #==> rooting on $ITstack
 export DWp=$ITstack/DokuWiki/pages  # $DWp
-export ITsc=$ITstack/copied  # $ITsc  - needed resources
+export ITscc=$ITstack/copied-code  # $ITscc  - needed resources
+export ITscr=$ITstack/copied-reference  # handy
+    export ITsrul=$ITscr/unix-like  # $ITsrul
 
 #==> rooting on $onGH
-export OSAT=$onGH/OS-Android-Termux
 export MD4PDF=$onGH/pandoc-md4pdf  # $MD4PDF  is unambiguous
 export misc=$onGH/misc  # $misc
 export MSWin10=$onGH/OS-MSWin10  # $MSWin10  used in  $DWp  &  $TeNo
+export OSAT=$onGH/OS-Android-Termux  # $OSAT
 export vimfiles=$onGH/vimfiles  # $vimfiles
     [ -d "$onGH" ] || export vimfiles=~/.vim  # when building Arch
     export vfp=$vimfiles/pack  # $vfp

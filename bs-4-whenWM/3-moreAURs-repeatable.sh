@@ -17,13 +17,13 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> clifm 0 (re)install
-# gAUR clifm
-# nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
-# makepkg -sic
-# cd /usr/share/clifm/plugins
-# sudo gcc -o kbgen kbgen.c -lcurses
-# true
+#=> clifm 0 (re)install
+gAUR clifm
+nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
+makepkg -sic
+cd /usr/share/clifm/plugins
+sudo gcc -o kbgen kbgen.c -lcurses
+true
 
 # #=> clifm 1 remove
 # sudo pacman -Rs clifm
@@ -152,11 +152,11 @@ true
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
-# #=> opera
-# # for MPD
-# gAUR opera
-# nvim -c "silent! /get.geo.opera.com" PKGBUILD
-# makepkg -sic
+#=> opera
+# for MPD
+gAUR opera
+nvim -c "silent! /get.geo.opera.com" PKGBUILD
+makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2
@@ -212,10 +212,10 @@ true
 # # (in Openbox)  now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 # true
 
-# #=> pscircle
-# gAUR pscircle
-# nvim -c "silent! /https:\/\/gitlab.com\/mildlyparallel\/pscircle" PKGBUILD
-# makepkg -sic
+#=> pscircle
+gAUR pscircle
+nvim -c "silent! /https:\/\/gitlab.com\/mildlyparallel\/pscircle" PKGBUILD
+makepkg -sic
 
 # #=> qpdfview 0 Adam Reichold's public key
 # gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8
@@ -257,11 +257,13 @@ true
 # nvim -c "silent! /perso.b2b2c.ca\/\~sarrazip\/dev" PKGBUILD
 # makepkg -sic
 
-# #=> vimpc-git
+# #=> vimpc-git 0 install
 # # for MPD
 # gdAUR vimpc-git
 # nvim -c "silent! /github.com\/boysetsfrog\/vimpc" PKGBUILD
 # makepkg -sic
+
+# #=> vimpc-git 1 configure
 # mkdir ~/.config/vimpc
 
 # #=> yj-git

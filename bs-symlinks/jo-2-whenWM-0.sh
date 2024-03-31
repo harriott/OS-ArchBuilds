@@ -20,11 +20,6 @@ ln -sf $onGH/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # cp -f $lclm/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
 # cp -f $lclm/notmuch-config-backup ~/.notmuch-config
 
-# #=> LanguageTool
-# # needed for command-line usage
-# sudo ln -sf $cITh/CP/LanguageTool /usr/share/java/LanguageTool
-# # e -adl /usr/share/java/LanguageTool
-
 # #=> LaTeX
 # lnd $LTXj ~/texmf/tex/latex/jo
 # # e -adl ~/texmf/tex/latex/jo

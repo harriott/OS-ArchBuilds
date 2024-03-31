@@ -79,6 +79,23 @@ CliFM (){
   [ -d "$dir" ] && cd -- "$dir"
 } # C <dir1> [<dir2> ...]
 
+if [ -s "/usr/bin/jump" ]; then
+  eval "$(jump shell)"  # o $PROMPT_COMMAND
+fi # gsamokovarov's jump
+
+alias zo='zoxide query -ls'
+if [ -s "/usr/bin/zoxide" ]; then
+  eval "$(zoxide init bash)"  # o $PROMPT_COMMAND
+fi
+
+dcp (){
+    dcpo="$machLg/dircolors-p.txt"
+    echo '# vim: ft=dircolors:' > $dcpo
+    echo '' >> $dcpo
+    dircolors -p >> $dcpo
+    echo '' >> $dcpo
+}
+
 locx () { locate -i $1 | xcol $1; }
 
 #==> dts
@@ -124,7 +141,7 @@ alias fk=fdtsKeyString
 fdtsKeyString () {
   if [ $1 ]; then
     fdtsKSlist=dts-$1_in_name.fetl
-    search='\*$1\*'
+    fdtsKSsearch="*$1*"
     eval "fdtsKS $search $dtsfile"
   fi
 }
@@ -182,6 +199,7 @@ ve () {
 # fx gitignore
 
 alias ga='git add'
+alias gcfbn='git clone --filter=blob:none'
 alias gis='git status -u'
 export BFG=$CrPl/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
@@ -208,11 +226,6 @@ ghi () {
   echo '' >> $ghil
   echo "results are in $ghil"
 }
-
-#==> gsamokovarov jump
-if [ -s "/usr/bin/jump" ]; then
-  eval "$(jump shell)"  # makes further adjustments to  PROMPT_COMMAND
-fi
 
 #==> lists of files by content
 rgIT () {

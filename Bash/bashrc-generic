@@ -13,7 +13,8 @@
 alias fin='figlet -f univers finished'
 export loaded_bg=1  # used in  $OSAB/bs-symlinks/repair.sh
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
-source $ITsc/wfxr-code-minimap/completions/bash/code-minimap.bash
+source $ITscc/wfxr-code-minimap/completions/bash/code-minimap.bash
+source $ITscc/forArch/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring
 
 [ $TERM != 'screen-256color' ] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su
@@ -76,8 +77,7 @@ cft(){
 } # count filetypes
 
 if [ -s "/usr/bin/broot" ]; then
-    # generalised from what broot added to .bashrc:
-    source ~/.config/broot/launcher/bash/br
+  source ~/.config/broot/launcher/bash/br  # (first  broot  adds to  .bashrc)
 fi # configures broot
 
 if [ -s "/usr/share/fzf" ]; then

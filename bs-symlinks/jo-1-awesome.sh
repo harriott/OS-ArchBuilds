@@ -14,13 +14,13 @@
 
 #=> Awesome WM Widgets 0
 t=~/.config/awesome/awesome-wm-widgets; rm -r $t
-ln -sf $ITsc/awesome/streetturtle-awesome-wm-widgets $t
+ln -sf $ITscc/awesome/streetturtle-awesome-wm-widgets $t
 
 #=> Awesome WM Widgets 1 for Weather widget
-ln -sf $ITsc/awesome/rxi-json.lua/json.lua ~/.config/awesome/json.lua
+ln -sf $ITscc/awesome/rxi-json.lua/json.lua ~/.config/awesome/json.lua
 
 #=> awesome-capslock_widget
-ln -sf $ITsc/awesome/stefano-m-awesome-capslock_widget/capslock.lua ~/.config/awesome/capslock.lua
+ln -sf $ITscc/awesome/stefano-m-awesome-capslock_widget/capslock.lua ~/.config/awesome/capslock.lua
 
 # #=> mute toggle
 # a=/home/jo/.config/awesome/audio; [ -d $a ] && rm $a; ln -sf $machBld/jo/awesome/audio $a

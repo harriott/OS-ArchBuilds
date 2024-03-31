@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vim: fdl=1 sw=2:
 
-  sed "s/ \$urxvtGeometry/ 122x78+0+0/" $Obc/rc/rc.xml > $machBld/jo/openbox-rc.xml
+  nvim -O /etc/xdg/openbox/rc.xml $Obc/rc/rc.xml - checked for  openbox 3.6.1-8
 
-  ~/.config/openbox/rc.xml ($OSAB/bs-symlinks/jo-1-Openbox.sh)
-
-  nvim -O /etc/xdg/openbox/rc.xml $Obc/rc/rc.xml
-    - checked for  openbox 3.6.1-8,
+  for $Obc/rc/rc_xml-make-sh
 
   reconfigure  after making changes here - JH -->
 
@@ -351,7 +348,7 @@
   <!-- Keybinding for Alacritty large - JH -->
   <keybind key="s-w-a">
     <action name="execute">
-      <command>alacritty -o 'window.dimensions={columns=124,lines=78}' -o 'window.position={x=5,y=5}'</command>
+      <command>alacritty -o window.dimensions={columns=124,lines=78} -o window.position={x=5,y=5}</command>
     </action>
   </keybind>
   <!-- Keybinding to toggle Cmus play/pause - JH -->

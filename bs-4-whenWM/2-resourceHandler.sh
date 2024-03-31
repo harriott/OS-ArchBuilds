@@ -25,6 +25,7 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .divx mpv.desktop
 # handlr set .docx libreoffice-writer.desktop
 # handlr set .el gvim.desktop
+# handlr set .epub com.github.johnfactotum.Foliate.desktop
 # handlr set .fetl gvim.desktop
 # handlr set .flac mpv.desktop
 # handlr set .flv mpv.desktop
@@ -45,6 +46,7 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .pdf org.pwmt.zathura.desktop
 # handlr set .png org.nomacs.ImageLounge.desktop
 # handlr set .pl gvim.desktop
+# handlr set .ps1 gvim.desktop
 # handlr set .mediawiki gvim.desktop  # $ABjo/mediawiki.xml
 # handlr set .mkv mpv.desktop
 # handlr set .mp4 mpv.desktop

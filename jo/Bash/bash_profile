@@ -39,5 +39,3 @@ if [ $EXITSTATUS -eq 1 ]; then
   fi
 fi  # possibly start X
 
-. ~/.config/broot/launcher/bash/br  # - carries through to X
-

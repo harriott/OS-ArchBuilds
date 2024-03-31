@@ -99,7 +99,7 @@ aet () {
   trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
   duration=$(ffprobe -i "$a" -show_format -v quiet | sed -n 's/duration=//p')
   trimmed=$(echo "$duration-$trim" | bc)
-  ffmhb -i "$a" -c copy -t $trimmed -y "t$a"
+  ffi "$a" -c copy -t $trimmed -y "t$a"
   mpv --start=-3 "t$a"
 } # aet <anAudioFileToTrimOffEnd> <trimIfGreaterThan1second>
 
@@ -126,7 +126,7 @@ alias fpd='ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1'
 # fpd <video_file_you_want_duration_of>
 
 alias fpwh='ffprobe -v error -select_streams v:0 -show_entries stream=height,width -of csv=s=x:p=0'
-# fpd <video_file_you_want_WxH_of>
+# fpwh <video_file_you_want_WxH_of>
 
 alias fpfr='ffprobe -v error -select_streams v:0 -show_entries stream=avg_frame_rate -of default=nw=1:nk=1'
 # fpd <video_file_you_want_frame_rate_of>
@@ -176,7 +176,7 @@ ltx () {
   fi
 }
 
-alias tit='rm *.aux *.listing *.log *.out *.tcbtemp'  # tidy tex = clear away TeX ancillary files
+alias tit='rm *.aux *.listing *.log *.out *.toc *.tcbtemp'  # tidy tex = clear away TeX ancillary files
 x () { max_print_line=4000 xelatex -halt-on-error $1 | xcol Missing; }
 
 #=> documenting - Pandoc my markdown notes
@@ -217,7 +217,7 @@ pdfmm () {
   echo "$1: $(PSpmm ${PSpoints[0]}) wide, $(PSpmm ${PSpoints[1]}) high"
 } # pdfmm <pdf>
 
-z () { zathura "$1" & }
+za () { zathura "$1" & }
 
 #=> Dropbox conflicted copies
 # results are noted in time-stamped logs

@@ -33,10 +33,10 @@ cfmj() {
 }
 
 #=> pdf
-alias mmsc="zathura -P 427 $cITh/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf &"
+alias mmsc="zathura -P 427 $ITscr/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf &"
 # - p.389 Appendix B Showcase B1 Chapter styles
-alias pif="zathura -P 9 $cITh/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf &"
-alias xc="zathura -P 38 $cITh/CP/TeX/LaTeX/appearance/colour/xcolor.pdf &"
+alias pif="zathura -P 9 $ITscr/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf &"
+alias xc="zathura -P 38 $ITscr/CP/TeX/LaTeX/appearance/colour/xcolor.pdf &"
 
 gspdfpng() {
     if [ -z "$1" ] ; then

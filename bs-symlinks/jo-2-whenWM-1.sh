@@ -8,7 +8,8 @@ set -e
 
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
 ln -sf $ABjo/mpv.conf ~/.config/mpv/mpv.conf
-ln -sf $ITsc/mpv/mfcc64-mpv-scripts/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
+ln -sf $ITscc/forArch/mfcc64-mpv-scripts/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
+# e -la ~/.config/mpv/scripts/visualizer.lua
 ln -sf $ABjo/wm/MPD/mpd.conf ~/.mpd/mpd.conf
 ln -sf $ABjo/wm/MPD/vimpcrc ~/.config/vimpc/vimpcrc
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
@@ -22,6 +23,7 @@ sudo ln -sf $ABjo/Emacs/spacemacs.sh /usr/local/bin/spacemacs
 
 #=> Thunderbird safely
 ln -sf $ABjo/wm/TS/locks.sh ~/Arch/locks.sh
+# e -la ~/Arch/locks.sh
 # pb ~/Arch/locks.sh
 sudo ln -sf $ABjo/wm/TS/thunderbird_safely.sh /usr/local/bin/thunderbird_safely
 # pb /usr/local/bin/thunderbird_safely

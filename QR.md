@@ -165,18 +165,18 @@ moar -h
     zathura -P <page> <pdf> &
 
 ## TeX - copied resources
-    r $cITh/CP/TeX
-    z $cITh/CP/TeX/LaTeX/appearance/datetime2.pdf
-    z $cITh/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
-    z $cITh/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
-    z $cITh/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
-    z $cITh/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
-    z $cITh/CP/TeX/LaTeX/appearance/ragged2e.pdf
-    z $cITh/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
-    z $cITh/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
-    z $cITh/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
-    z $cITh/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
-    z $cITh/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
+    r $ITscr/CP/TeX
+    za $ITscr/CP/TeX/LaTeX/appearance/datetime2.pdf
+    za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
+    za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
+    za $ITscr/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
+    za $ITscr/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
+    za $ITscr/CP/TeX/LaTeX/appearance/ragged2e.pdf
+    za $ITscr/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
+    za $ITscr/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
+    za $ITscr/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
+    za $ITscr/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
+    za $ITscr/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
 
 ## TeX - LaTeX
     r $GHrUse/CP/MartinThoma-LaTeX-examples
@@ -213,9 +213,9 @@ moar -h
     /usr/local/texlive/2023/texmf-dist/doc/
     /usr/local/texlive/2023/texmf-dist/tex/latex/base/nfssfont.tex
     gdu -nps /usr/local/texlive
-    z /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/rawtables-a4.pdf
-    z /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/symbols-a4.pdf
-    z /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf
+    za /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/rawtables-a4.pdf
+    za /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/symbols-a4.pdf
+    za /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf
 
 #### tcolorbox
     $/usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/README.md
@@ -240,7 +240,7 @@ moar -h
 ## resources
     fd -e org -p $GHrUse
     r $GHrUse/CP/emacs/syl20bnr-spacemacs-develop  # local fresh clone
-    r $cITh/CP/encoding/textWrangling/Emacs  # PDF guides
+    r $ITscr/CP/encoding/textWrangling/Emacs  # PDF guides
 
 ### Worg
     $GHrUse/emacs/_bzg-worg/orgcard.org
@@ -259,18 +259,18 @@ moar -h
     pb <codeFile>  # also reformatted
     r ~/.cache/hugo_cache
     yj -ty <file.toml >file.yml
-    z $cITh/CP/encoding/cheatsheet-a5.pdf &  # emmet
+    za $ITscr/CP/encoding/cheatsheet-a5.pdf &  # emmet
 
 ## ffprobe
     ffprobe -h | mo
     i ffprobe
 
 ## gnuplot
-    ff $cITh/CP/gnuplot/gnuplot_info-colornames.jpg
+    ff $ITscr/CP/gnuplot/gnuplot_info-colornames.jpg
     gnuplot -e 'show linetypes' 2> $ulLA/gnuplot-linetypes.txt
     gnuplot -e 'show palette colornames' 2> $ulLA/gnuplot-colornames.txt
-    z $cITh/CP/gnuplot/Gnuplot_5_4.pdf
-    z $cITh/CP/gnuplot/gpcard.pdf
+    za $ITscr/CP/gnuplot/Gnuplot_5_4.pdf
+    za $ITscr/CP/gnuplot/gpcard.pdf
 
 ## npm
     $HOME/.npmrc
@@ -331,7 +331,7 @@ see `$vimfiles/syntax/gems.vim`
     pygmentize -h
 
 ## awk
-    $cIThul/awk
+    $ITsrul/awk
 
 - `-F fs`, (`--field-separator fs`) redefines `FS`
 - GAWK(1)
@@ -357,10 +357,8 @@ outer whitespaces get ignored
     rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
     rg <someText> **/*.ext
 
-in JH, `$DJH/search/searches.md`
-
 ## sed
-    $cIThul/sed
+    $ITsrul/sed
     i sed
     sed -i '/match/{n;Q}' <file>  # remove all lines after match
     tldr sed
@@ -376,8 +374,11 @@ SED(1)
     diskus  # size of current directory
     fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
     i tree
+    i zoxide
+    lsd
     n [directory]
 
+`du` don't work in script...
 - MV(1)
 - rsync(1)
 - STAT(1)
@@ -496,10 +497,13 @@ vid => ffmpegthumbnailer
     fd -tf -e jpg
     fd -tf -e ogg ' webm'
     fd -tf -e ogg | wc -l
+    fd -tf -e otf
     fd -tf -e md | wc -l
     fd -tf -e md -e tex
+    fd -tf -e mkv
     fd -tf -e mp3
     fd -tf -e mp4 -e mkv -e ogv -e MOV > films.fetl
+    fd -tf -e part
     fd -tf -e svg
     fd -tf -e tex
     fd -tf -e vim
@@ -545,8 +549,8 @@ see `$Bash/bashrc-console`
 NCDU(1)
 
 ## ranger
-    feh $cIThul/cheatsheet.png &
-    r $OSAB/ranger  # my configurations
+    feh $ITsrul/cheatsheet.png &
+    r $OSAB/terminal/ranger  # my configurations
     r $Cfzd
     ranger --version
 
@@ -613,7 +617,7 @@ can't cope with `utf-16le`
     /usr/share/vifm/vifm-help.txt
     /usr/share/vifm/vim-doc/doc/vifm-app.txt
     /usr/share/vifm/vim-doc/doc/vifm-lua.txt
-    feh -F $cITh/CP/vifm-v0.12-builtin-normal.png &
+    feh -F $ITscr/CP/vifm-v0.12-builtin-normal.png &
     r ~/.config/vifm
 
 # forum
@@ -720,8 +724,8 @@ optimised for SSDs
 
 ### non-optical
     df -h | xcol mnt media
-    doas blkid -o list  # shows fs_type
     doas file -s /dev/sdxn | xcol bit FAT
+    findmnt
 
 #### fsck
 - FSCK(8)
@@ -778,6 +782,7 @@ optimised for SSDs
     fRs $Drpbx/CAM-toSort0 Costello
     fRs $Drpbx/CAM-good US
     fRs $JHw _config.yml
+    fRs $vfp/packs-cp/opt/vim-dokuwiki/syntax dokuwiki.vim
     fRs $vimfiles/syntax cmusq.vim
     fRs $LTXj/CzPlanning planning.cls
 
@@ -893,15 +898,15 @@ whereis languagetool
 
 # LanguageTool symlinked
 ```bash
-java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar -h
-java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
-java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --list  # languages
+java -jar $ITscc/CP/LanguageTool/languagetool-commandline.jar -h
+java -jar $ITscc/CP/LanguageTool/languagetool-commandline.jar --version
+java -jar $ITscc/CP/LanguageTool/languagetool-commandline.jar --list  # languages
 ```
 
 ## version
 ```bash
-/usr/share/java/LanguageTool/README.md
-java -jar /usr/share/java/LanguageTool/languagetool-commandline.jar --version
+$ITscc/CP/LanguageTool/README.md
+java -jar $ITscc/CP/LanguageTool/languagetool-commandline.jar --version
 ```
 
 # multimedia
@@ -1231,10 +1236,15 @@ backed up in `$Bash/bash_profile`
     $Openbox/tint2rc
     killall -SIGUSR1 tint2  # reloads
 
-# term
+# terminal
     echo $TERM
     neofetch
     watch -n1 "date '+%D%n%T' | figlet -k"
+
+## Alacritty
+    $OSAB/terminal/alacritty.toml
+
+scroll don't work in `tmux`
 
 ## colours
     bash $ulLB/colours/256/BR-color256.sh
@@ -1265,7 +1275,7 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
     termdown -b 10
 
 ## tmux
-    $OSAB/tmux/tmux.conf
+    $OSAB/terminal/tmux.conf
     C-a [ -> copy-mode
     C-a ~ -> show-messages
     joinp -s 2 [-t 1 ]  -> join-pane, joining pane in window 2 [to that in window 1]
@@ -1328,7 +1338,7 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
     ~/.local/share/copyq/copyq/copyq.log
 
 ## vi
-    n $cITh/CP/encoding/textWrangling-vi
+    n $ITscr/CP/encoding/textWrangling-vi
 
 ### Vim
     $ABjo/textEdit/Vim/vimrc
