@@ -5,7 +5,7 @@
 "   pb ~/.vimrc
 
 ""> 1 move on to  $vimfiles/vimrc-Arch.vim
-let vimrcArch = expand("$HOME/.vim/vimrc-Arch.vim")
+let vimrcArch = expand("$HOME/.vim/vimenter/vimrc-Arch.vim")
 if filereadable(vimrcArch)
   exec "source ".vimrcArch
 endif " ignored if ~/.vim isn't yet there

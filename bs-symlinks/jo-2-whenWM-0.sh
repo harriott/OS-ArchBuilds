@@ -6,14 +6,14 @@
 
 set -e
 
-#=> Emacs configure
-ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el
-ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el
-ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
-ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp
-ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
-ln -sf $onGH/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
-# e -la ~/.emacs.d/
+# #=> Emacs configure
+# ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el
+# ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el
+# ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
+# ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp
+# ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
+# ln -sf $onGH/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
+# # e -la ~/.emacs.d/
 
 # #=> email config
 # cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
@@ -51,8 +51,20 @@ ln -sf $onGH/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # # e -la ~/.ssh/config
 # # pb ~/.ssh/config
 
-# #=> vimfiles
-# sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim  # file ~/.vim
-# [ -d "~/.vimtest" ] && sudo rm -r ~/.vimtest; ln -s $misc/CP/vimtest ~/.vimtest
-# # e -adl ~/.vim*
+#=> vimfiles
+sudo rm -r ~/.vim
+mkdir -p ~/.vim/pack
+  ln -s $vimfiles/vimfiles/after ~/.vim/after
+  ln -s $vimfiles/vimfiles/ftplugin ~/.vim/ftplugin
+  ln -s $vimfiles/vimfiles/pack/packs-cp ~/.vim/pack/packs-cp
+  ln -s $vimfiles/vimfiles/pack/packs-unix ~/.vim/pack/packs-unix
+  ln -s $vimfiles/vimfiles/plugin ~/.vim/plugin
+  ln -s $vimfiles/vimfiles/spell ~/.vim/spell
+  ln -s $vimfiles/vimfiles/syntax ~/.vim/syntax
+  ln -s $vimfiles/vimfiles/thesaurus ~/.vim/thesaurus
+  ln -s $vimfiles/vimfiles/filetype.vim ~/.vim/filetype.vim
+  ln -s $vimfiles/vimenter ~/.vim/vimenter
+eza -adl ~/.vim*
+eza -adl ~/.vim/*
+eza -adl ~/.vim/pack/*
 

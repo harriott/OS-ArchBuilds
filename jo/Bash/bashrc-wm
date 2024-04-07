@@ -28,7 +28,7 @@ fv () {
 } # fv cat  fv 'Dog Vision'
 
 # Audio:
-alias v='vimpc'
+alias vp='vimpc'
 mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")   $(mediainfo --Output='Audio;%Format%' "$v")   $(mediainfo --Output='Audio;%BitRate%' "$v") b/s   $(mediainfo --Output='Audio;%SamplingRate%' "$v") Hz   "$v""; done; }  # mi *
 
 #==> ffmpeg 0

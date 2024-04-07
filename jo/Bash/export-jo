@@ -16,7 +16,6 @@ export PAPERSIZE=A4  # libpaper
 
 export CPdoc=$CrPl/documenting
     export LTXj=$CPdoc/LaTeX/jo  # $LTXj
-export GHrCl=$Storage/IT-copied/GHrepos  # $GHrCl  GitHub Repositories Clone
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
 export lclm=$ulL/clm  # $lclm  linux command-line mail, was  GNULE
 export Openbox=$ABjo/wm/Openbox
@@ -24,6 +23,9 @@ export Openbox=$ABjo/wm/Openbox
 export TeNo=$core/TextNotes  # used in  $TeNo
     export TNt=$TeNo/tex  # *.tex's - used in  $Bash/bashrc-wm
 
+if [ $host = 'sbMb' ]; then
+    export GHrCl=/mnt/WD20EZAZ/IT-copied/GHrepos  # $GHrCl  GitHub Repositories Clone
+fi
 #==> rooting on $Drpbx
 export COT=$Drpbx/COutThere  # $COT  used in  $TeNo
 export GHrUse=$Drpbx/CGHrepos

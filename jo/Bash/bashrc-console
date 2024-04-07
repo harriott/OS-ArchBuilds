@@ -52,7 +52,7 @@ shortPrompt=false
 PS1=$longPrompt
 
 # toggle short prompt
-sp (){
+pp (){
   if $shortPrompt; then
     PS1=$longPrompt
     shortPrompt=false
@@ -65,6 +65,7 @@ sp (){
 #=> file manage
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
+alias v=vifm
 
 C (){
   if [ $1 ]; then
@@ -179,7 +180,7 @@ fmtypes () {
 } # use to check within a directory
 
 #==> filetype frequencies
-exts () { fd -tf -u '\..+' | sed -n 's/..*\.//p' | sort | uniq -c; } # sorted by extensions
+exts () { fd -tf -u '\..+' | sed -n 's/..*\.//p' | sort | uniq -c; } # counted by extensions
 
 ve () {
   exts > exts0

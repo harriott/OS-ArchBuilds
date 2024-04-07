@@ -339,23 +339,7 @@ see `$vimfiles/syntax/gems.vim`
 ## ripgrep
     batgrep
     i rg
-    rg --type-list
     rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
-
-outer whitespaces get ignored
-
-### searches
-    i rg
-    rg '<someText>|<otherText>'  # searches recursively in files
-    rg '\.emacs\.d'
-    rg --no-ignore 'sometext'  # allows searching into gitignored places
-    rg -i <case-insensitive>
-    rg -thtml -tcss <webish>
-    rg -tmd '[\p{Devanagari}]'  # finds Devanagari characters
-    rg -tmd '\$Sig'
-    rg -tmd '\{TNW}'
-    rg -uu <someText>  # ignores ignore files, and searches in hidden stuff
-    rg <someText> **/*.ext
 
 ## sed
     $ITsrul/sed
@@ -478,67 +462,6 @@ vid => ffmpegthumbnailer
     i eza
     more in  $OSAB/Bash/bashrc-generic
 
-## fd
-    fd -H  # --hidden
-    fd -td font
-    fd -u '\..+'
-    fd . $OSAB
-
-- `-I` = `--no-ignore` do not respect .(git|fd)ignore files
-- recursive by default
-- sharkdp/fd
-
-### filetypes
-    fd -e ods  # finds OpenOffice Calc spreadsheets
-    fd -tf -e css
-    fd -tf -e fetl
-    fd -tf -e gpi
-    fd -tf -e html
-    fd -tf -e jpg
-    fd -tf -e ogg ' webm'
-    fd -tf -e ogg | wc -l
-    fd -tf -e otf
-    fd -tf -e md | wc -l
-    fd -tf -e md -e tex
-    fd -tf -e mkv
-    fd -tf -e mp3
-    fd -tf -e mp4 -e mkv -e ogv -e MOV > films.fetl
-    fd -tf -e part
-    fd -tf -e svg
-    fd -tf -e tex
-    fd -tf -e vim
-    fd -tf -e webm | wc -l
-    fd -tf -e wiki
-    fd -tf -e zip
-    fd -u -tf -e odt
-
-### git config's
-    fd -HI -tf ^config$ | xargs rg -l 'remote = gh'  # ripgrep
-
-see `$Bash/bashrc-console`
-
-### man
-    im fd
-
-- `-d1` = depth 1 (current dir)
-- `-E` (= `--exclude`) `<glob>`
-- `-I` = `--no-ignore` = don't respect `.(fd|git)ignore`
-- `-td` type dir
-- `-tf` type file
-- `-u` = `--unrestricted` = `--hidden --no-ignore`
-
-### recents
-    fd --changed-within 3h
-    fd -tf --changed-within 2d
-
-### symlinks
-    fd --max-depth 1 -Hl -tl
-    fd -H -tl  # only found targets, broken ones with red background
-    fd -Hl -tl  # show supposed link source
-    fd -tl -HL -X rm  # removes dead links
-
-`-L` follow links into symlinked directories
-
 ## if  trash-restore  reports  "Non parsable trashinfo file..."
     rm -r $Storage/.Trash-1000
     rm -r /mnt/ST4000VN008/.Trash-1000
@@ -613,12 +536,18 @@ can't cope with `utf-16le`
     i perl-rename
     perl-rename 's/^\.//' *  # removes leading  .
 
+## ripgrep
+    im fd
+
+### git config's
+    fd -HI -tf ^config$ | xargs rg -l 'remote = gh'  # ripgrep
+
+see `$Bash/bashrc-console`
+
 ## Vifm
-    /usr/share/vifm/vifm-help.txt
-    /usr/share/vifm/vim-doc/doc/vifm-app.txt
-    /usr/share/vifm/vim-doc/doc/vifm-lua.txt
-    feh -F $ITscr/CP/vifm-v0.12-builtin-normal.png &
-    r ~/.config/vifm
+    FF $ITscr/CP/vifm-v0.12-builtin-normal.png
+    v  # ($Bash/bashrc-console)
+    v $DJH $DJH
 
 # forum
 - Forum Rules
@@ -825,6 +754,8 @@ rm -r ~/.thumbnails/normal/*
 xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 ```
 
+ImageMagick font list: `f=$machLg/IMfonts.IMclf; convert -list font > $f`
+
 ## [n]sxiv
 ```bash
 rm -r ~/.cache/sxiv/*
@@ -938,8 +869,10 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
     pkill quodlibet
 
 ## audio - vimpc
-    $ABjo/wm/MPD/vimpcrc
     v  # alias'd to  vimpc  in  $Bash/bashrc-wm
+
+- `$ABjo/wm/MPD/vimpcrc` maps a better `q` among other things
+- normal mode command `ZZ` quits completely
 
 ## mpv
     $OSAB/jo/mpv.conf
@@ -1115,7 +1048,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     $OSAB/etc/doas.conf
     r $OSAB $ulLA
     r $ulLA/ml-$host/etc-fstab
-    vifm $OSAB $ulLA
+    v $OSAB $ulLA
 
 ## fonts
     font-manager &

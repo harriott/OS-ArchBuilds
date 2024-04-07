@@ -59,9 +59,13 @@ startxo () { ln -sf $ABjo/xinitrcs/openbox ~/.xinitrc; }
 #=> better file managing
 alias e='eza --icons'
   alias a='e -aF'  # grid, handily showing up symlinks
-  alias er='e -alR'  # show permissions and symlinks recursively
+  alias es='e -alR'  # show permissions and symlinks recursively
   alias et='e -T'  # for tree
+alias ed='eza -DT'  # show directory tree
 alias l='ls --color=auto'
+alias ll='lsd -al'  # show permissions and symlinks
+alias lt='lsd --tree'
+alias ltd='lsd -d --tree'
 alias mo='moar'
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
 alias so="stat -c '%a %n'"  # octal rights
