@@ -56,14 +56,13 @@ sudo rm -r ~/.vim
 mkdir -p ~/.vim/pack
   ln -s $vimfiles/vimfiles/after ~/.vim/after
   ln -s $vimfiles/vimfiles/ftplugin ~/.vim/ftplugin
-  ln -s $vimfiles/vimfiles/pack/packs-cp ~/.vim/pack/packs-cp
-  ln -s $vimfiles/vimfiles/pack/packs-unix ~/.vim/pack/packs-unix
-  ln -s $vimfiles/vimfiles/plugin ~/.vim/plugin
+  ln -s $vimfiles/pack/packs-cp ~/.vim/pack/packs-cp
+  ln -s $vimfiles/pack/packs-unix ~/.vim/pack/packs-unix
+  ln -s $vimfiles/plugin ~/.vim/plugin
   ln -s $vimfiles/vimfiles/spell ~/.vim/spell
   ln -s $vimfiles/vimfiles/syntax ~/.vim/syntax
   ln -s $vimfiles/vimfiles/thesaurus ~/.vim/thesaurus
   ln -s $vimfiles/vimfiles/filetype.vim ~/.vim/filetype.vim
-  ln -s $vimfiles/vimenter ~/.vim/vimenter
 eza -adl ~/.vim*
 eza -adl ~/.vim/*
 eza -adl ~/.vim/pack/*

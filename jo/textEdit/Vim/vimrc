@@ -4,9 +4,10 @@
 "  symlinked in my $OSAB/bs-symlinks/jo-0.sh
 "   pb ~/.vimrc
 
-""> 1 move on to  $vimfiles/vimrc-Arch.vim
-let vimrcArch = expand("$HOME/.vim/vimenter/vimrc-Arch.vim")
-if filereadable(vimrcArch)
-  exec "source ".vimrcArch
-endif " ignored if ~/.vim isn't yet there
+source $vimfiles/vimenter/vimrc-Arch.vim
+
+" let vimrcArch = expand("$HOME/.vim/vimenter/vimrc-Arch.vim")
+" if filereadable(vimrcArch)
+  " exec "source ".vimrcArch
+" endif " ignored if ~/.vim isn't yet there
 
