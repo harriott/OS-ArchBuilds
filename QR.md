@@ -711,9 +711,10 @@ optimised for SSDs
     fRs $Drpbx/CAM-toSort0 Costello
     fRs $Drpbx/CAM-good US
     fRs $JHw _config.yml
+    fRs $LTXj/CzPlanning planning.cls
     fRs $vfp/packs-cp/opt/vim-dokuwiki/syntax dokuwiki.vim
     fRs $vimfiles/syntax cmusq.vim
-    fRs $LTXj/CzPlanning planning.cls
+    fRs $vimfiles/vim/plugin plugin.vim
 
 ##### my OBS grabs
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
@@ -754,7 +755,7 @@ rm -r ~/.thumbnails/normal/*
 xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 ```
 
-ImageMagick font list: `f=$machLg/IMfonts.IMclf; convert -list font > $f`
+ImageMagick font list: `convert -list font > $machLg/IMfonts.IMfo`
 
 ## [n]sxiv
 ```bash
@@ -1029,6 +1030,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 - FILE-HIERARCHY(7)
 - Trusted Users
+- `uf()` in `$OSAB/Bash/bashrc-generic)`
 
 ## .desktop
     fd -tf .desktop $OSAB
@@ -1055,8 +1057,11 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 ### /usr/share/fonts/
     fd -L architects
+    fd -L broot
     fd -L consolas
     fd -L symbola
+
+`usf()` in `$OSAB/Bash/bashrc-generic)`
 
 ### Fontconfig
     cd /etc/fonts  # to explore the configuration files
@@ -1171,6 +1176,7 @@ backed up in `$Bash/bash_profile`
 
 # terminal
     echo $TERM
+    fgconsole  # reports tty number
     neofetch
     watch -n1 "date '+%D%n%T' | figlet -k"
 
@@ -1276,7 +1282,7 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
 ### Vim
     $ABjo/textEdit/Vim/vimrc
     /usr/share/vim/vim90/pack/dist/opt/
-    C /usr/share/vim/vim90
+    C /usr/share/vim/vim91
     i vim
     r $vimfiles
 

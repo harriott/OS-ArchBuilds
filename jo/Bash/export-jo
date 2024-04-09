@@ -85,6 +85,5 @@ export misc=$onGH/misc  # $misc
 export MSWin10=$onGH/OS-MSWin10  # $MSWin10  used in  $DWp  &  $TeNo
 export OSAT=$onGH/OS-Android-Termux  # $OSAT
 export vimfiles=$onGH/vimfiles  # $vimfiles
-    [ -d "$onGH" ] || export vimfiles=~/.vim  # when building Arch
-    export vfp=$vimfiles/pack  # $vfp
+    [ -d "$onGH" ] || export vimfiles=~/vimfiles  # when building Arch
 

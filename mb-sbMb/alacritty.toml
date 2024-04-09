@@ -4,5 +4,5 @@
 import = [ "~/.alacritty-generic.toml" ]
 
 [font]
-  size = 7
+  size = 7  # change is instantaneous
 

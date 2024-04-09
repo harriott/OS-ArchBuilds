@@ -19,10 +19,6 @@ ra () {
   rec -c 2 $o.flac  # SoX
 } # ra <stereoAudioRecording>
 
-# Emacs
-G (){ emacs --no-splash -fh $1 & }  # GUI
-T (){ emacs -nw $1; }  # in terminal
-
 #=> Bash interface
 alias o=echo
 
@@ -109,8 +105,10 @@ fRs () {
   echo "file glob to find: $2"
   if [ $2 ]; then
     tf=$rsnapshot/tds_find
-    echo "$1 $2" > $tf
-    echo '' >> $tf
+    echo 'vim: nowrap:' > $tf
+    echo >> $tf
+    echo "$1 $2" >> $tf
+    echo >> $tf
     eval "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" $printfDTsort" >> $tf
     echo '- now look in  $rsnapshot/tds_find'
   else
@@ -388,4 +386,22 @@ gdAUR () { gAUR $1 dev-clone; gctm $1; }; export -f gdAUR
 
 # remove an AUR repository if it's there
 rAUR(){ [ -d $1 ] && sudo rm -r $1; }; export -f rAUR
+
+#==> fonts
+usf(){
+  usft="$machLg/usr/share_fonts-tree.txt"
+  echo 'vim: set nowrap:' > $usft
+  echo >> $usft
+  echo 'output of usf() ($OSAB/Bash/bashrc-generic)' >> $usft
+  echo >> $usft
+  tree /usr/share/fonts/ >> $usft
+  echo >> $usft
+}
+
+#=> text wrangling
+alias nn=nvim
+
+# Emacs
+G (){ emacs --no-splash -fh $1 & }  # GUI
+T (){ emacs -nw $1; }  # in terminal
 

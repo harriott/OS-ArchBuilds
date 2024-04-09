@@ -52,6 +52,16 @@ seg () {
 alias u=tmux
   alias tkt='u kill-server > /dev/null 2>&1; tmux'  # rarely used
 
+uf(){
+  ufl="$machLg/usr/files.txt"
+  echo 'vim: set nowrap:' > $ufl
+  echo >> $ufl
+  echo 'output of uf() ($OSAB/Bash/bashrc-generic)' >> $ufl
+  echo >> $ufl
+  e -al /usr/* >> $ufl
+  echo >> $ufl
+}
+
 #=> awesome or Openbox on a machine
 startxa () { ln -sf $ABjo/xinitrcs/awesome ~/.xinitrc; }
 startxo () { ln -sf $ABjo/xinitrcs/openbox ~/.xinitrc; }

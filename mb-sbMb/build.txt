@@ -665,8 +665,6 @@ du -sh /var/cache/pacman/pkg
 df -h /  shows it's using  19G
 ###
 journalctl --disk-usage  reports "Archived and active journals take up 2.2G in the file system."
-## symlinks in /usr
-sudo find /usr -type l -ls > $machLg/usr-symlinks.txt
 ## DualBIOS
 1st System Fan Fail Warning (was  Disabled) Enabled
 2nd System Fan Fail Warning (was  Disabled) Enabled

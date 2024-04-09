@@ -8,8 +8,8 @@
   thickness = 0.3
   vi_mode_style = { shape = "block" }
 
-[font]
-  normal = { family = "CaskaydiaCoveNerdFontMono" }
+# [font]
+  # normal = { family = "CaskaydiaCoveNerdFontMono" }
 
 [[hints.enabled]]
   action = "copy"
