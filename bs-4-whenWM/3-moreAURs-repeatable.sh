@@ -17,13 +17,13 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> clifm 0 (re)install
-gAUR clifm
-nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
-makepkg -sic
-cd /usr/share/clifm/plugins
-sudo gcc -o kbgen kbgen.c -lcurses
-true
+# #=> clifm 0 (re)install
+# gAUR clifm
+# nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
+# makepkg -sic
+# cd /usr/share/clifm/plugins
+# sudo gcc -o kbgen kbgen.c -lcurses
+# true
 
 # #=> clifm 1 remove
 # sudo pacman -Rs clifm
@@ -98,11 +98,11 @@ true
 # makepkg -sic
 # true
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> iscan
 # gAUR iscan
@@ -116,9 +116,18 @@ true
 # makepkg -sic
 # true
 
-# #=> nomacs
-# gAUR nomacs
-# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+#=> nomacs
+gAUR nomacs
+nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+makepkg -sic  # takes ages...
+# - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
+# after first install
+#  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+true
+
+# #=> nomacs-git
+# gAUR nomacs-git
+# nvim -c "silent! /_pkgname=nomacs" PKGBUILD
 # makepkg -sic  # takes ages...
 # # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
 # # after first install
@@ -152,11 +161,11 @@ true
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
-#=> opera
-# for MPD
-gAUR opera
-nvim -c "silent! /get.geo.opera.com" PKGBUILD
-makepkg -sic
+# #=> opera
+# # for MPD
+# gAUR opera
+# nvim -c "silent! /get.geo.opera.com" PKGBUILD
+# makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2
@@ -212,10 +221,10 @@ makepkg -sic
 # # (in Openbox)  now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
 # true
 
-#=> pscircle
-gAUR pscircle
-nvim -c "silent! /https:\/\/gitlab.com\/mildlyparallel\/pscircle" PKGBUILD
-makepkg -sic
+# #=> pscircle
+# gAUR pscircle
+# nvim -c "silent! /https:\/\/gitlab.com\/mildlyparallel\/pscircle" PKGBUILD
+# makepkg -sic
 
 # #=> qpdfview 0 Adam Reichold's public key
 # gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8

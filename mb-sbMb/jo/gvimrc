@@ -8,8 +8,3 @@ let g:monitorheight='1080' " used in  $vimfiles/gvimrc.vim
 ""> 1 move on to  $vimfiles/gvimrc-Arch.vim
 source $vimfiles/vim/enter/gvimrc-Arch.vim
 
-" let gvimrcArch = expand("$HOME/.vim/vimenter/gvimrc-Arch.vim")
-" if filereadable(gvimrcArch)
-  " exec "source ".gvimrcArch
-" endif " ignored if ~/.vim isn't yet there
-

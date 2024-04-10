@@ -1,15 +1,17 @@
 
 # Alacritty
 # $OSAB/terminal/alacritty.toml ($OSAB/bs-symlinks/jo-0.sh)
-# imported by  $machBld/alacritty.toml
+# imported by  $machBld/alacritty.toml, which sets font size
 
 [cursor]
   style = { shape = "underline" }
   thickness = 0.3
   vi_mode_style = { shape = "block" }
 
-# [font]
-  # normal = { family = "CaskaydiaCoveNerdFontMono" }
+[font]
+  # normal = { family = "CourierNew" } # for checking that this is instantaneous
+  normal = { family = "CaskaydiaCoveNerdFontMono" }
+  # normal = { family = "UbuntuMonoNerdFontMono" } # needs one size larger than Caskaydia
 
 [[hints.enabled]]
   action = "copy"

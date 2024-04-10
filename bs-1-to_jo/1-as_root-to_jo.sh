@@ -32,6 +32,9 @@ echo "vm.swappiness=00" >> /etc/sysctl.d/99-sysctl.conf
 #==> 3 check settings
 cat /etc/sysctl.d/99-sysctl.conf
 
+# #=> 2 automake
+# pacman -S automake
+
 #=> 2 file manage
 # broot
 pacman -S broot
@@ -208,10 +211,7 @@ pacman -S tcpdump  # for packet analysis
 # Wget
 pacman -S wget
 
-# #=> 2 packages - automake
-# pacman -S automake
-
-# #=> 2 packages - Pacman
+# #=> 2 Pacman
 # # colorized Pacman
 # sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
@@ -294,33 +294,36 @@ true
 # # Pipe Viewer
 # pacman -S pv
 
-# #=> 2 various
-# # languagetool
-# pacman -S languagetool  # for the GUI
+#=> 2 various
+# cpanminus
+pacman -S cpanminus
 
-# # Node Package Manager 0 npm install
-# pacman -S npm
+# languagetool
+pacman -S languagetool  # for the GUI
 
-# # OpenOffice English thesaurus
-# pacman -S mythes-en
+# Node Package Manager 0 npm install
+pacman -S npm
 
-# # pass (brings in gnupg)
-# pacman -S pass
+# OpenOffice English thesaurus
+pacman -S mythes-en
 
-# # Speech Dispatcher
-# pacman -S speech-dispatcher
+# pass (brings in gnupg)
+pacman -S pass
 
-# # strace - for debugging
-# pacman -S strace
+# Speech Dispatcher
+pacman -S speech-dispatcher
 
-# # for thesaurus_query.vim
-# pacman -S python-beautifulsoup4
+# strace - for debugging
+pacman -S strace
 
-# # universal-ctags
-# pacman -S ctags
+# for thesaurus_query.vim
+pacman -S python-beautifulsoup4
 
-# # web-ish
-# pacman -S arch-wiki-docs lynx w3m
+# universal-ctags
+pacman -S ctags
+
+# web-ish
+pacman -S arch-wiki-docs lynx w3m
 
 # #=> 2 various - Emacs
 # pacman -S emacs

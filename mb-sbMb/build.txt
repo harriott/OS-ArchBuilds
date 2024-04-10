@@ -2405,6 +2405,69 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 ## OBS Studio recording format
 Settings > Output > Recording Format  was  mkv, somehow became  Fragmented MP4 (.mp4)
 reset to  Matroska Video (.mkv)
+## python-hid-parser
+went to AUR, and not clear why I need it
+sudo pacman -Rs python-hid-parser
+## Ruby neovim gem
+gem install neovim
+## Node.js - npm - neovim
+npm install -g neovim
+## Perl - Neovim::Ext
+cpanm Neovim::Ext  extremely slow
+  ! Can't write to /usr/share/perl5/site_perl and /usr/bin: Installing modules to /home/jo/perl5
+  ! To turn off this warning, you have to do one of the following:
+  !   - run me as a root or with --sudo option (to install to /usr/share/perl5/site_perl and /usr/bin)
+  !   - Configure local::lib in your existing shell to set PERL_MM_OPT etc.
+  !   - Install local::lib by running the following commands
+  !
+  !         cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
+  ...
+  Building and testing Neovim-Ext-0.06 ... FAIL
+  ! Timed out (> 1800s). Use --verbose to retry.
+  ! Installing Neovim::Ext failed. See /home/jo/.cpanm/work/1712693916.117000/build.log for details. Retry with --force to force install it.
+cpanm Neovim::Ext  extremely slow, failed again
+following  PERL QUICKSTART:  cpanm -n Neovim::Ext
+  ~/perl5/lib/perl5/x86_64-linux-thread-multi/.meta/Neovim-Ext-0.06/MYMETA.json
+still not found by  neovim, so (Deleted old install folders in  ~/.cpanm/work)
+sudo cpanm -n Neovim::Ext
+  --> Working on Neovim::Ext
+  Fetching http://www.cpan.org/authors/id/J/JA/JACQUESG/Neovim-Ext-0.06.tar.gz ... OK
+  ==> Found dependencies: Class::Accessor, IO::Async, Eval::Safe, MsgPack::Raw
+  --> Working on Class::Accessor
+  Fetching http://www.cpan.org/authors/id/K/KA/KASEI/Class-Accessor-0.51.tar.gz ... OK
+  Configuring Class-Accessor-0.51 ... OK
+  Building Class-Accessor-0.51 ... OK
+  Successfully installed Class-Accessor-0.51
+  --> Working on IO::Async
+  Fetching http://www.cpan.org/authors/id/P/PE/PEVANS/IO-Async-0.803.tar.gz ... OK
+  Configuring IO-Async-0.803 ... OK
+  ==> Found dependencies: Future, Future::Utils, Struct::Dumb
+  --> Working on Future
+  Fetching http://www.cpan.org/authors/id/P/PE/PEVANS/Future-0.50.tar.gz ... OK
+  Configuring Future-0.50 ... OK
+  Building Future-0.50 ... OK
+  Successfully installed Future-0.50
+  --> Working on Struct::Dumb
+  Fetching http://www.cpan.org/authors/id/P/PE/PEVANS/Struct-Dumb-0.14.tar.gz ... OK
+  Configuring Struct-Dumb-0.14 ... OK
+  Building Struct-Dumb-0.14 ... OK
+  Successfully installed Struct-Dumb-0.14
+  Building IO-Async-0.803 ... OK
+  Successfully installed IO-Async-0.803
+  --> Working on Eval::Safe
+  Fetching http://www.cpan.org/authors/id/M/MA/MATHIAS/Eval-Safe/Eval-Safe-0.02.tar.gz ... OK
+  Configuring Eval-Safe-0.02 ... OK
+  Building Eval-Safe-0.02 ... OK
+  Successfully installed Eval-Safe-0.02
+  --> Working on MsgPack::Raw
+  Fetching http://www.cpan.org/authors/id/J/JA/JACQUESG/MsgPack-Raw-0.05.tar.gz ... OK
+  Configuring MsgPack-Raw-0.05 ... OK
+  Building MsgPack-Raw-0.05 ... OK
+  Successfully installed MsgPack-Raw-0.05
+  Configuring Neovim-Ext-0.06 ... OK
+  Building Neovim-Ext-0.06 ... OK
+  Successfully installed Neovim-Ext-0.06
+  7 distributions installed
 ## waiting
 gokcehan's lf
 MariaDB

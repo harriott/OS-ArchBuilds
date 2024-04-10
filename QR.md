@@ -286,6 +286,10 @@ moar -h
 - mouse
 - `q` = quit
 
+## Perl
+    r ~/.cpanm
+    r ~/perl5/lib/perl5/x86_64-linux-thread-multi/.meta
+
 ## Python
     ~/.local/bin/
     ~/.local/pipx/venvs/
@@ -1060,6 +1064,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fd -L broot
     fd -L consolas
     fd -L symbola
+    C $ITscc/forArch/fonts
 
 `usf()` in `$OSAB/Bash/bashrc-generic)`
 

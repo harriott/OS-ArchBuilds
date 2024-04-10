@@ -71,8 +71,10 @@ alias e='eza --icons'
   alias a='e -aF'  # grid, handily showing up symlinks
   alias es='e -alR'  # show permissions and symlinks recursively
   alias et='e -T'  # for tree
-alias ed='eza -DT'  # show directory tree
+alias ed='eza -D'  # show directories only
+alias edt='eza -DT'  # show directory tree
 alias l='ls --color=auto'
+alias ldf='lsd --group-dirs first'
 alias ll='lsd -al'  # show permissions and symlinks
 alias lt='lsd --tree'
 alias ltd='lsd -d --tree'
