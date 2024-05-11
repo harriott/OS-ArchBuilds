@@ -10,7 +10,7 @@ trap read debug  # puts a read request after each executable line
 # mkdir -p ~/.config/awesome
 # sudo pacman -S awesome
 
-#=> 1 $GHrUse - needed until Dropbox
+#=> 1 $DCGRs - needed until Dropbox
 # see  $Bash/export-jo
-rsync -iLrtv --delete --modify-window=1 /bs/GHrUse/ $GHrUse
+rsync -iLrtv --delete --modify-window=1 /bs/GHrUse/ $DCGRs
 

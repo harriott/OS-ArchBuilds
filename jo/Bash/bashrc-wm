@@ -10,11 +10,9 @@ alias ws='w3m -s'  # squeezing blank lines
 
 #=> AV
 fm () {
-  cd $Drpbx
-  for CAML in CAM-best CAM-good CAM-good-tA-North-US CAM-joy CAM-toSort0 CAM-toSort1; do
-    echo $CAML
-    find $CAML -iname "*$1*" | xcol "$1"
-  done
+  fd $1 "/mnt/SD480GSSDPlus/music"
+  for category in best good good-tA-North-US joy toSort0 toSort1 toSort1-UK toSort1-USA; do
+    fd $1 "$Drpbx/Cop/AM-$category"; done
 }
 
 fv () {

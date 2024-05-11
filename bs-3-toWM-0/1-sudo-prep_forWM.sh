@@ -145,7 +145,7 @@ pacman -S xorg-xev
 
 # #=> system
 # # Conky
-# pacman -S conky
+# pacman -S conky gperf
 
 # # gtop
 # pacman -S gtop

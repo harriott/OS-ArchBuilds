@@ -17,44 +17,42 @@ export PAPERSIZE=A4  # libpaper
 export CPdoc=$CrPl/documenting
     export LTXj=$CPdoc/LaTeX/jo  # $LTXj
 export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
+export lazy="$HOME/.local/share/nvim/lazy"  # $lazy - neovim  plugins
 export lclm=$ulL/clm  # $lclm  linux command-line mail, was  GNULE
 export Openbox=$ABjo/wm/Openbox
     export Obc=$Openbox/openbox  # $Obc - configurations
 export TeNo=$core/TextNotes  # used in  $TeNo
     export TNt=$TeNo/tex  # *.tex's - used in  $Bash/bashrc-wm
 
-if [ $host = 'sbMb' ]; then
-    export GHrCl=/mnt/WD20EZAZ/IT-copied/GHrepos  # $GHrCl  GitHub Repositories Clone
-fi
 #==> rooting on $Drpbx
-export COT=$Drpbx/COutThere  # $COT  used in  $TeNo
-export GHrUse=$Drpbx/CGHrepos
-    # - GitHub Repositories Use, used in  $OSAB/bs-symlinks/jo-1-awesome.sh
-    [ -d "$GHrUse" ] || export GHrUse=~/GHrUse  # when building Arch
-    export jkll=$GHrUse/CP/Ruby/Jekyll
+export COT=$Drpbx/Cop/OutThere  # $COT  used in  $TeNo
+export DCGRs=$Drpbx/Cop/GRs
+    # - Copied Git Repositories Use, used in  $OSAB/bs-symlinks/jo-1-awesome.sh
+    [ -d "$DCGRs" ] || export DCGRs=~/DCGRs  # when building Arch
+    export jkll=$DCGRs/CP/Ruby/Jekyll
         export mnm=$jkll/Jekyll-jekyll-minima
 
 #==> rooting on $DJH
-export CfWk=$DJH/CforWork
+export CfWk=$DJH/Cop-work
     export ScEn=$CfWk/education/Science-Engineering
-export Cfzd=$DJH/Cafezoide
+export Cfzd=$DJH/work-Cz
     export CzMa=$Cfzd/manage  # $CzMa
     export CzPeo=$Cfzd/people  # $CzPeo
     export CzPhy=$Cfzd/PhysicalProperty  # $CzPhy
-export copied=$DJH/copied  # used in  $TeNo
-    export cFr=$copied/France  # $cFr  used in  $TeNo
-    export chum=$copied/human  # used in  $TeNo
+export JCop=$DJH/Cop  # used in  $TeNo
+    export cFr=$JCop/France  # $cFr  used in  $TeNo
+    export chum=$JCop/human  # used in  $TeNo
         export chin=$chum/ingest  # $chin  used in  $TeNo
-    export copOT=$copied/OutThere  # $copOT  used in  $TeNo
-    export Pr0=$copied/Practical0
+    export copOT=$JCop/OutThere  # $copOT  used in  $TeNo
+    export Pr0=$JCop/Practical0
         export Pr0t=$Pr0/technos  # $Pr0t
-export DaLi=$DJH/now/DailyLife  #  $DaLi  used in  $TeNo
-export ess=$DJH/now/essential
+export DaLi=$DJH/Jo-now/DailyLife  #  $DaLi  used in  $TeNo
+export ess=$DJH/Jo-now/essential
     export eFr=$ess/France  # $eFr
     export Sig=$ess/signatures  # $Sig  for use in creating documents
-export FrFa=$DJH/F+F
+export FrFa=$DJH/Jo-F+F
     export FFIdF=$FrFa/France/IdF  # $FFIdF  used in  $TeNo
-export JHt=$DJH/technos
+export JHt=$DJH/Jo-technos
     export jtIT=$JHt/IT  # used in  $core  &  $jtIT
         export jtCP=$jtIT/CP  # $jtCP
         export jtUL=$jtIT/UnixLike  # $jtUL  used in  $core  &  $jtIT
@@ -70,8 +68,8 @@ export Thb=$DJH/Thb-dr  # $Thb, used in
                         #  $OSAB/bs-4-whenWM/4-various.sh
                         #  $OSAB/jo/wm/TS/thunderbird_safely.sh
                         #  ~/.thunderbird/profiles.ini
-export Then0=$DJH/Then0  # used in  $TeNo
-    export T0Fr=$Then0/Europe/France  # $T0Fr  used in  $TeNo
+export JJt0=$DJH/Then0  # used in  $TeNo
+    export T0Fr=$JJt0/Europe/France  # $T0Fr  used in  $TeNo
 
 #==> rooting on $ITstack
 export DWp=$ITstack/DokuWiki/pages  # $DWp

@@ -9,6 +9,7 @@
 
 #==> Alacritty
 alacritty -o $Awd -o $Awp -e sh -c "tmux new; bash" & disown
+# - see  $machBld/jo/Bash/export-terminal
 # alacritty -o $Awd -o $Awp -e sh -c "tmux a" & disown  # if crashed
 
 # #==> urxvt

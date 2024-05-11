@@ -135,6 +135,9 @@ sudo pacman -S hplip
 #=> HTMLHint
 sudo pacman -S htmlhint
 
+#=> img2pdf
+sudo pacman -S img2pdf
+
 #=> Go - Hugo
 sudo pacman -S hugo
 

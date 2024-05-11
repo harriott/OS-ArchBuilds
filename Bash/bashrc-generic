@@ -13,10 +13,10 @@
 alias fin='figlet -f univers finished'
 export loaded_bg=1  # used in  $OSAB/bs-symlinks/repair.sh
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
-source $ITscc/wfxr-code-minimap/completions/bash/code-minimap.bash
+source $ITscc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash
 source $ITscc/forArch/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring
 
-[ $TERM != 'screen-256color' ] && [ $(logname) == $(whoami) ] && neofetch
+[ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su
 
 ft () {
@@ -39,28 +39,9 @@ se () {
   echo -n "${tpf2}builtins:${tpfn} "; compgen -b | awk '{print}' ORS=' : '; echo ''
   echo -n "${tpf2}commands:${tpfn} "; compgen -c | awk '{print}' ORS=' : '; echo ''
 }
-seg () {
-  e=$machLg/jo/environment.txt
-  echo 'vim: ft=build:' > $e
-  echo '' >> $e
-  echo "# commands" >> $e
-  compgen -c | awk '{print}' ORS=' : ' >> $e
-  echo '' >> $e
-}
-
 # tmux
 alias u=tmux
   alias tkt='u kill-server > /dev/null 2>&1; tmux'  # rarely used
-
-uf(){
-  ufl="$machLg/usr/files.txt"
-  echo 'vim: set nowrap:' > $ufl
-  echo >> $ufl
-  echo 'output of uf() ($OSAB/Bash/bashrc-generic)' >> $ufl
-  echo >> $ufl
-  e -al /usr/* >> $ufl
-  echo >> $ufl
-}
 
 #=> awesome or Openbox on a machine
 startxa () { ln -sf $ABjo/xinitrcs/awesome ~/.xinitrc; }
@@ -240,6 +221,46 @@ alias ptc='pactree -c '  # coloured
 alias ptr='pactree -cr '  # reversed
 
 pts () { pactree -u $1 | sort | tr '\n' '~' | sed 's/~/  /g'; echo; }  # scrunched
+
+#=> system
+plo(){
+  plof="$machLg/usr/pip-list-outdated.txt"
+  echo > $plof
+  echo 'output of plo() ($OSAB/Bash/bashrc-generic)' >> $plof
+  echo >> $plof
+  pip list --outdated >> $plof
+  echo >> $plof
+} # takes a while
+
+seg () {
+  e="$machLg/jo/environment.txt"
+  echo 'vim: fdl=0 ft=build:' > $e
+  echo '' >> $e
+  echo "# commands" >> $e
+  compgen -c | awk '{print}' ORS=' : ' >> $e
+  echo '' >> $e
+}
+
+uf(){
+  ufl="$machLg/usr/files.txt"
+  echo 'vim: set nowrap:' > $ufl
+  echo >> $ufl
+  echo 'output of uf() ($OSAB/Bash/bashrc-generic)' >> $ufl
+  echo >> $ufl
+  e -al /usr/* >> $ufl
+  echo >> $ufl
+}
+
+#==> fonts
+usf(){
+  usft="$machLg/usr/share_fonts-tree.txt"
+  echo 'vim: set nowrap:' > $usft
+  echo >> $usft
+  echo 'output of usf() ($OSAB/Bash/bashrc-generic)' >> $usft
+  echo >> $usft
+  tree /usr/share/fonts/ >> $usft
+  echo >> $usft
+}
 
 #=> turbostat
 alias ts1='sudo turbostat --interval 2 --quiet'

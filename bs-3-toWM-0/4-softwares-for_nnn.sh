@@ -14,12 +14,12 @@ trap read debug  # puts a read request after each executable line
 # gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9
 # true
 
-# #=> 1 advcpmv
-# # for nnn -r
-# gAUR advcpmv
-# nvim -c "silent! /jarun\/advcpmv" PKGBUILD
-# makepkg -sic  # the checks are long...
-# true
+#=> 1 advcpmv
+# for nnn -r
+gAUR advcpmv
+nvim -c "silent! /jarun\/advcpmv" PKGBUILD
+makepkg -sic  # the checks are long...
+true
 
 # #=> 2 go fast
 # trap - debug  # turn off debug

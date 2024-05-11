@@ -2468,10 +2468,61 @@ sudo cpanm -n Neovim::Ext
   Building Neovim-Ext-0.06 ... OK
   Successfully installed Neovim-Ext-0.06
   7 distributions installed
+## HP ENVY 5532 IP Address changed to 68.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.68.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  WARNING: '/usr/lib/perl5/5.36' contains data from at least 1 packages which will NOT be used by the installed perl interpreter.
+   -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.36'
+pacman -Qqo '/usr/lib/perl5/5.36'  returned just  perl-unicode-utf8
+## pdfsam
+brought in  jdk21-openjdk-21.0.2.u13-2-x86_64
+## HP ENVY 5532 IP Address changed to 225.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.225.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 129.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.129.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 42.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.42.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 147.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.147.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 249.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.249.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 150.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.150.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 21.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.21.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
+delta
+forgit
 gokcehan's lf
 MariaDB
-pdfsam
 ueberzugpp
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies

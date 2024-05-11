@@ -26,6 +26,9 @@ sudo sed -i '/^\[m/{n;s/#I/I/}' /etc/pacman.conf
 # #  2. tweak  ~/.config/pnmixer/config
 # true
 
+#=> 0 proselint
+pipx install proselint
+
 #=> 0 radio-active
 pipx install radio-active
 

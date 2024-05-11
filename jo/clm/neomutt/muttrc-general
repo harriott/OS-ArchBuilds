@@ -2,7 +2,7 @@
 # muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
 
 # $clMail/neomutt/muttrc-general - general settings for  neomutt
-#  based on  $GHrUse/linux/mail/LukeSmithxyz-mutt-wizard/share/mutt-wizard.muttrc
+#  based on  $DCGRs/linux/mail/LukeSmithxyz-mutt-wizard/share/mutt-wizard.muttrc
 #
 #  sourced by  $clMail/neomutt/muttrc-accounts-all
 
@@ -104,7 +104,6 @@ set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 #  T > .* ==> tags all in a folder
 #  T > ~N ==> tags all marked as new in a folder
 # ^T ==> untag messages matching a pattern
-# U ==> undo deletion
 # W ==> <clear-flag>
 # [ ==> <half-up>
 # ] ==> <half-down>

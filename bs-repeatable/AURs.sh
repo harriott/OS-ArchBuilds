@@ -38,10 +38,21 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
 # makepkg -sic
 
-# #=> code-minimap
+# #=> code-minimap 0 install
 # gAUR code-minimap
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
+
+#=> code-minimap 1 remove
+cd ~/Arch/AUR
+rAUR code-minimap
+sudo pacman -Rs code-minimap
+
+#=> code-minimap-bin
+# /usr/share/bash-completion/completions/code-minimap.bash
+gAUR code-minimap-bin
+nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
+makepkg -sic
 
 # #=> cpu-x 0 mawk
 # gAUR mawk
@@ -162,11 +173,11 @@ trap read debug  # puts a read request after each executable line
 # #=> nordvpn-bin 0 remove countries.dat
 # sudo rm /var/lib/nordvpn/data/countries.dat
 
-#=> nordvpn-bin 1 (re)install
-gAUR nordvpn-bin
-nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
-makepkg -sic
-true
+# #=> nordvpn-bin 1 (re)install
+# gAUR nordvpn-bin
+# nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> nordvpn-bin 2 configure
 # sudo usermod -aG nordvpn jo  # need to re-login
@@ -220,4 +231,11 @@ true
 # gAUR tspreed
 # nvim -c "silent! /github.com\/n-ivkovic\/tspreed" PKGBUILD
 # makepkg -sic
+
+# #=> vale
+# # Vale, for  ALE
+# gAUR vale
+# nvim -c "silent! /errata-ai\/vale" PKGBUILD
+# makepkg -sic
+# true
 

@@ -47,6 +47,8 @@ longPrompt='\[\e[1;34m\][\w$GIT_PS1]\$\[\e[0m\] '
 shortPrompt=false
 PS1=$longPrompt
 
+# see also  $OSAB/Bash/GNUReadline-inputrc
+
 # toggle short prompt
 pp (){
   if $shortPrompt; then
@@ -104,7 +106,7 @@ fRs () {
   echo "directory: $1"
   echo "file glob to find: $2"
   if [ $2 ]; then
-    tf=$rsnapshot/tds_find
+    tf="$rsnapshot/tds_find"
     echo 'vim: nowrap:' > $tf
     echo >> $tf
     echo "$1 $2" >> $tf
@@ -125,7 +127,7 @@ fdtsExt () {
   if [ $1 ]; then
     fdtsKSsearch="*.$1"; [[ $1 = 'gitignore' ]] && fdtsKSsearch=".$1"
     [[ $1 = "py" || $1 = "tex" ]] && fdtsKSprune=$'-path \'*/JH/copied/*\' -prune -o -path \'*/CGHrepos/*\' -prune -o -path \'*/vimfiles/*\' -prune -o'
-    # still allows  fx tex  in  $copied, $CGHrepos, &  $vimfiles
+    # still allows  fx tex  in  $JCop, $CGHrepos, &  $vimfiles
     fdtsKSlist=dts-$1.fetl
     fdtsKS
     # [[ $1 = @(gitignore|pl|tex|txt) ]] && sed -i "s| \.| $PWD|" $fdtsKSlist
@@ -207,7 +209,7 @@ gic () { git commit -m "$1"; }
 # $ITstack/git_config.fetl
 
 gitc () {
-  gitcl=git_config.fetl
+  gitcl=dts-git_config.fetl
   echo '' > $gitcl
   for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gitcl
   echo "results are in $gitcl"
@@ -301,7 +303,7 @@ fi
 
 #==> trash-cli
 alias gte='gio trash --empty'
-alias tl='trash-list'
+alias tl='trash-list' # can give clues if python errors
 alias tre='trash-restore'
 
 #=> human language - dict
@@ -387,19 +389,9 @@ gdAUR () { gAUR $1 dev-clone; gctm $1; }; export -f gdAUR
 # remove an AUR repository if it's there
 rAUR(){ [ -d $1 ] && sudo rm -r $1; }; export -f rAUR
 
-#==> fonts
-usf(){
-  usft="$machLg/usr/share_fonts-tree.txt"
-  echo 'vim: set nowrap:' > $usft
-  echo >> $usft
-  echo 'output of usf() ($OSAB/Bash/bashrc-generic)' >> $usft
-  echo >> $usft
-  tree /usr/share/fonts/ >> $usft
-  echo >> $usft
-}
-
 #=> text wrangling
-alias nn=nvim
+nn () { nvim $@; cd $(cat ~/.config/nvim/last_directory); } # see $vimfiles/nvim/init.vim
+# also used in  $Openbox/bashrc_for_Alacritty-nvim.sh
 
 # Emacs
 G (){ emacs --no-splash -fh $1 & }  # GUI

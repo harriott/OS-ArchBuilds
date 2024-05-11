@@ -38,7 +38,7 @@ redshift-gtk -l 48.8646:2.3984 &
 tint2 &
 udiskie -t &
 
-#==> 0 tmux - begin
+#==> 0 terminal + tmux - begin
 source $Obc/autostart/terminal_launch.sh
 
 #==> 0 utilities

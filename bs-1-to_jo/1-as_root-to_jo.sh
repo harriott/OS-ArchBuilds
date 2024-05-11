@@ -233,37 +233,53 @@ pacman -S wget
 # # pkgstats
 # pacman -S pkgstats
 
-# #=> python-pip 0 (re)install
-# pacman -S python-pip
+#=> 2 encoding - bash-language-server 0 install
+pacman -S bash-language-server
 
-# #=> 2 python-pip 1 remove
+#=> 2 encoding - bash-language-server 1 remove
+pacman -Rs bash-language-server
+
+#=> 2 encoding - git-delta
+pacman -S git-delta
+
+#=> 2 encoding - lua-language-server
+pacman -S lua-language-server
+
+#=> 2 encoding - python-pip 0 (re)install
+pacman -S python-pip
+
+# #=> 2 encoding - python-pip 1 remove
 # pacman -Rs python-pip
 
-# #=> 2 python-pipx 0 (re)install
+# #=> 2 encoding - python-pipx 0 (re)install
 # pacman -S python-pipx
 #  pipx ensurepath  # maybe not needed
 
-# #=> 2 python-pipx 1 remove
+# #=> 2 encoding - python-pipx 1 remove
 # pacman -Rs python-pipx
 
-#=> 2 R
+#=> 2 encoding - R
 pacman -S r
 
-#=> 2 Ruby 0
+#=> 2 encoding - Ruby 0
 pacman -S ruby
 
-#=> 2 Ruby 0 IRB
+#=> 2 encoding - Ruby 0 IRB
 pacman -S ruby-irb
 
-#=> 2 Ruby 1 documentation
+#=> 2 encoding - Ruby 1 documentation
 pacman -S ruby-docs ruby-rdoc
 
-#=> 2 Ruby 2 gems
+#=> 2 encoding - Ruby 2 gems
 gem update
 
-#=> 2 Ruby 3 Jekyll & bundler
+#=> 2 encoding - Ruby 3 Jekyll & bundler
 gem install bundler jekyll  # takes ages...
 true
+
+#=> 2 encoding - selene
+# Lua linter
+pacman -S selene
 
 # #=> 2 system
 # # supersedes  Bashtop
@@ -326,7 +342,7 @@ pacman -S ctags
 pacman -S arch-wiki-docs lynx w3m
 
 # #=> 2 various - Emacs
-# pacman -S emacs
+# pacman -S emacs  # brings in  tree-sitter
 
 # #=> 2 various - GNOME Terminal
 # pacman -S gnome-terminal

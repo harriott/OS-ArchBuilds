@@ -6,6 +6,9 @@
 
 set -e
 
+# #=> Alacritty with Nvim
+# ln -sf $machBld/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh
+
 # #=> Emacs configure
 # ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el
 # ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el
@@ -51,29 +54,27 @@ set -e
 # # e -la ~/.ssh/config
 # # pb ~/.ssh/config
 
-# #=> vimfiles - nvim
-# sudo rm -r ~/.config/nvim
-# mkdir -p   ~/.config/nvim
-# mkdir      ~/.config/nvim/lua
-# mkdir      ~/.config/nvim/pack
-# mkdir      ~/.config/nvim/plugin
-# ln -s $vimfiles/vim/after              ~/.config/nvim/after
-# ln -s $vimfiles/vim/filetype.vim       ~/.config/nvim/filetype.vim
-# ln -s $vimfiles/vim/ftplugin           ~/.config/nvim/ftplugin
-# ln -s $vimfiles/nvim/init.vim          ~/.config/nvim/init.vim
-# ln -s $vimfiles/vim/lua-init.lua       ~/.config/nvim/lua/init.lua
-# ln -s $vimfiles/vim/packs-cp           ~/.config/nvim/pack/packs-cp
-# ln -s $vimfiles/nvim/packs-nvim        ~/.config/nvim/pack/packs-nvim
-# ln -s $vimfiles/vim/packs-unix         ~/.config/nvim/pack/packs-unix
-# ln -s $vimfiles/vim/plugin/plugin.vim  ~/.config/nvim/plugin/plugin.vim
-# ln -s $vimfiles/nvim/plugins.lua       ~/.config/nvim/plugin/plugins.lua
-# ln -s $vimfiles/vim/plugin/plugins.vim ~/.config/nvim/plugin/plugins.vim
-# ln -s $vimfiles/vim/spell              ~/.config/nvim/spell
-# ln -s $vimfiles/vim/syntax             ~/.config/nvim/syntax
-# ln -s $vimfiles/vim/thesaurus          ~/.config/nvim/thesaurus
-# eza -adl ~/.config/nvim/*
-# eza -adl ~/.config/nvim/pack/*
-# eza -adl ~/.config/nvim/plugin/*
+#=> vimfiles - nvim
+sudo rm -r ~/.config/nvim
+mkdir -p   ~/.config/nvim/pack
+echo >     ~/.config/nvim/last_directory
+mkdir      ~/.config/nvim/plugin
+ln -s $vimfiles/vim/after              ~/.config/nvim/after
+ln -s $vimfiles/vim/filetype.vim       ~/.config/nvim/filetype.vim
+ln -s $vimfiles/vim/ftplugin           ~/.config/nvim/ftplugin
+ln -s $vimfiles/nvim/init.vim          ~/.config/nvim/init.vim
+ln -s $vimfiles/nvim/lua               ~/.config/nvim/lua
+ln -s $vimfiles/vim/packs-cp           ~/.config/nvim/pack/cp
+ln -s $vimfiles/vim/packs-unix         ~/.config/nvim/pack/unix
+ln -s $vimfiles/vim/plugin/plugin.vim  ~/.config/nvim/plugin/plugin.vim
+ln -s $vimfiles/vim/plugin/plugins.vim ~/.config/nvim/plugin/plugins.vim
+ln -s $vimfiles/vim/spell              ~/.config/nvim/spell
+ln -s $vimfiles/vim/syntax             ~/.config/nvim/syntax
+ln -s $vimfiles/vim/thesaurus          ~/.config/nvim/thesaurus
+for dir in '' pack plugin; do
+  echo  ~/.config/nvim/$dir
+  pushd ~/.config/nvim/$dir > /dev/null; eza -al; popd > /dev/null
+done
 
 # #=> vimfiles - vim
 # # vim entry points are symlinked in  $OSAB/bs-symlinks/jo-0.sh
@@ -81,8 +82,8 @@ set -e
 # mkdir -p ~/.vim/pack
 #   ln -s $vimfiles/vim/after        ~/.vim/after
 #   ln -s $vimfiles/vim/ftplugin     ~/.vim/ftplugin
-#   ln -s $vimfiles/vim/packs-cp     ~/.vim/pack/packs-cp
-#   ln -s $vimfiles/vim/packs-unix   ~/.vim/pack/packs-unix
+#   ln -s $vimfiles/vim/packs-cp     ~/.vim/pack/cp
+#   ln -s $vimfiles/vim/packs-unix   ~/.vim/pack/unix
 #   ln -s $vimfiles/vim/plugin       ~/.vim/plugin
 #   ln -s $vimfiles/vim/spell        ~/.vim/spell
 #   ln -s $vimfiles/vim/syntax       ~/.vim/syntax
@@ -92,19 +93,20 @@ set -e
 # eza -adl ~/.vim/*
 # eza -adl ~/.vim/pack/*
 
-#=> vimfiles - vimtest
-sudo rm -r ~/.vimtest
-mkdir -p ~/.vimtest/pack/packs-cp/opt
-mkdir    ~/.vimtest/plugin
-ln -s $vimfiles/test/filetype.vim               ~/.vimtest/filetype.vim
-ln -s $vimfiles/test/plugin.vim          ~/.vimtest/plugin/plugin.vim
-ln -s $vimfiles/test/plugins.vim         ~/.vimtest/plugin/plugins.vim
-ln -s $vimfiles/test/vimrc.vim                  ~/.vimtest/vimrc.vim
-ln -s $vimfiles/vim/packs-cp/opt/bufferize.vim ~/.vimtest/pack/packs-cp/opt/bufferize.vim
-ln -s $vimfiles/vim/packs-cp/opt/vim-markdown  ~/.vimtest/pack/packs-cp/opt/vim-markdown
-ln -s $vimfiles/vim/packs-cp/opt/vim-dokuwiki  ~/.vimtest/pack/packs-cp/opt/vim-dokuwiki
-ln -s $vimfiles/vim/packs-cp/opt/vim-bbcode    ~/.vimtest/pack/packs-cp/opt/vim-bbcode
-eza -adl ~/.vimtest*
-eza -adl ~/.vimtest/*
-eza -adl ~/.vimtest/pack/*
+# #=> vimfiles - vimtest
+# sudo rm -r ~/.vimtest
+# mkdir -p ~/.vimtest/pack/packs-cp/opt
+# mkdir    ~/.vimtest/plugin
+# ln -s $vimfiles/test/filetype.vim              ~/.vimtest/filetype.vim
+# ln -s $vimfiles/test/plugin.vim                ~/.vimtest/plugin/plugin.vim
+# ln -s $vimfiles/test/plugins.vim               ~/.vimtest/plugin/plugins.vim
+# ln -s $vimfiles/test/vimrc.vim                 ~/.vimtest/vimrc.vim
+# ln -s $vimfiles/vim/packs-cp/opt/bufferize.vim ~/.vimtest/pack/cp/opt/bufferize.vim
+# ln -s $vimfiles/vim/packs-cp/opt/fzf.vim       ~/.vimtest/pack/cp/opt/fzf.vim
+# ln -s $vimfiles/vim/packs-cp/opt/vim-markdown  ~/.vimtest/pack/cp/opt/vim-markdown
+# ln -s $vimfiles/vim/packs-cp/opt/vim-dokuwiki  ~/.vimtest/pack/cp/opt/vim-dokuwiki
+# ln -s $vimfiles/vim/packs-cp/opt/vim-bbcode    ~/.vimtest/pack/cp/opt/vim-bbcode
+# eza -adl ~/.vimtest*
+# eza -adl ~/.vimtest/*
+# eza -adl ~/.vimtest/pack/*
 

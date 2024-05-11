@@ -1,5 +1,5 @@
 
-% symlinked in  $OSAB/bs-symlinks/jo-0.sh
+% $ABjo/texmf.cnf ($OSAB/bs-symlinks/jo-0.sh)
 
 % let terminal handle line-wraps
 %  supplementary to  /usr/share/texmf-dist/web2c/texmf.cnf

@@ -14,7 +14,7 @@ source ~/.export-machine; source ~/.export-storage  # also in  $OSAB/root/bash_p
 
 # Useful before X:
   source ~/.bashrc-generic  # useful everywhere, including root
-  source ~/.bashrc-console  # useful also in Console as user
+  source ~/.bashrc-console  # ($Bash/bashrc-console) useful also in Console as user
 # This is commented out because I keep bashrc just for instances in X:
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc
 

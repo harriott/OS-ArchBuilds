@@ -6,7 +6,7 @@
 ## -----------------------------------------------------
 ## ranger --copy-config=all  copies from
 ##  /usr/lib/python3.10/site-packages/ranger/data/scope.sh  and makes it executable
-## diff against  $GHrUse/unix/linux/ranger-ranger/ranger/data/scope.sh
+## diff against  $DCGRs/unix/linux/ranger-ranger/ranger/data/scope.sh
 ##
 ## this file is in a directory of  ranger  configuration filess  which are symlinked in my
 ##  $OSAB/bs-symlinks/jo-0.sh

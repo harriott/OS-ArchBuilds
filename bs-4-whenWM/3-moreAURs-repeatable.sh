@@ -98,11 +98,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> iscan
 # gAUR iscan
@@ -116,14 +116,14 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> nomacs
-gAUR nomacs
-nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
-makepkg -sic  # takes ages...
-# - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
-# after first install
-#  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-true
+# #=> nomacs
+# gAUR nomacs
+# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+# makepkg -sic  # takes ages...
+# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
+# # after first install
+# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+# true
 
 # #=> nomacs-git
 # gAUR nomacs-git
@@ -164,7 +164,7 @@ true
 # #=> opera
 # # for MPD
 # gAUR opera
-# nvim -c "silent! /get.geo.opera.com" PKGBUILD
+# nvim -c "silent! /download3.operacdn.com" PKGBUILD
 # makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
@@ -188,8 +188,9 @@ true
 # #=> PDFsam 0 (re)install
 # gAUR pdfsam
 # nvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic  # choose  jdk-openjdk
+# makepkg -sic  # only needs  jdk-openjdk
 # true
+# #  ~/Arch/AUR/pdfsam  makepkg --install  if you're too late
 
 # #=> PDFsam 1 remove
 # sudo pacman -Rs pdfsam

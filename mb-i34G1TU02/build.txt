@@ -645,6 +645,11 @@ br
   You may have to restart your shell or source your shell init files.
   Afterwards, you should start broot with br in order to use its full power.
 removed duplicate last two lines from  $Bash/bash_profile  &  $machBld/jo/Bash/bashrc
+## HP ENVY 5532 IP Address changed to 21.10
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.21.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 apache
 gokcehan's lf

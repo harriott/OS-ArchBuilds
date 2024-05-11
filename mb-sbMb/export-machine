@@ -10,6 +10,7 @@
 #  symlinked in  $OSAB/bs-symlinks/root.sh
 #  sourced by  $OSAB/root/bash_profile
 
+export CITGRs=/mnt/WD20EZAZ/Cop-IT/GRs  # $CITGRs  Git Repositories
 export rsnapshot=/mnt/ST4000VN008/rsnapshot
 export startxDelay=5
 

@@ -12,75 +12,37 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S cups
 # sudo systemctl enable cups.service --now
 
-# #=> devtools
-# # mkdir /mnt/SD480GSSDPlus/chroot
-# sudo pacman -S devtools  # for package managers
-
-#=> dictd
-sudo pacman -S dictd
-
-# #=> diskonaut
-# sudo pacman -S diskonaut
-
-# #=> Dust
-# # (after Rust Toolchain)
-# sudo pacman -S dust
-
 # #=> fonts - gnu-free-fonts
 # sudo pacman -S gnu-free-fonts
 
 # #=> fonts - ttf-dejavu
 # sudo pacman -S ttf-dejavu
 
-#=> gdown
-pipx install gdown
+# #=> gdown
+# pipx install gdown
 
 # #=> Gpick
-# sudo pacman -S gpick
-
-#=> grammalecte
-sudo pacman -S grammalecte
+# sudo pacman -S gpick  # for colours
 
 #=> jre-openjdk
 sudo pacman -S jre-openjdk  # required for  PDFtk
 
-# #=> libsixel
-# sudo pacman -S libsixel  # for  sixel  graphics
-
 # #=> libva-utils - for sbMb
 # sudo pacman -S libva-utils  # provides  vainfo, for  VA-API checking
+
+#=> newsboat
+sudo pacman -S newsboat
 
 # #=> noto-fonts-cjk
 # # for  $MD4PDF/GNULinux/md4pdf.sh
 # sudo pacman -S noto-fonts-cjk
 # true
 
-# #=> npm 0 configure npm-global
-# mkdir ~/.npm-global
-# npm config set prefix=$HOME/.npm-global
-
-#=> npm 1 carbonyl
-npm i -g carbonyl
-
-# #=> npm 1 cspell
-# npm i -g cspell
-
-#=> npm 1 ffmpeg-concat 0 install
+#=> npm ffmpeg-concat 0 install
 npm i -g ffmpeg-concat  # takes time to complete
 
-#=> npm 1 ffmpeg-concat 1 uninstall
+#=> npm ffmpeg-concat 1 uninstall
 npm un -g ffmpeg-concat
-
-#=> npm 1 mapscii
-npm i -g mapscii
-
-# #=> npm 1 wikit
-# npm i -g wikit
-
-#=> pdfCropMargins
-
-# #=> Perl modules for JSON
-# sudo pacman -S perl-json perl-json-parse perl-json-xs  # can't recall why...
 
 # #=> python-pymupdf
 # sudo pacman -S python-pymupdf  # for  pdfCropMargins
@@ -91,15 +53,13 @@ npm i -g mapscii
 # sudo groupadd plugdev
 # sudo usermod -aG plugdev jo  # need to re-login
 
-# #=> ttf-croscore
-# sudo pacman -S ttf-croscore
+#=> TexLab
+# for  ALE
+sudo pacman -S texlab
 
 # #=> vorbis-tools
 # # for  oggenc
 # sudo pacman -S vorbis-tools
-
-# #=> whipper
-# sudo pacman -S whipper  # CD ripper
 
 # #=> yt-dlp
 # sudo pacman -S yt-dlp

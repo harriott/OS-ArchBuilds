@@ -34,6 +34,10 @@ tput bel  # bell
 - BASH(1)
 - UNIQ(1)
 
+## completion
+    complete 2>&1 | tee $machLg/bash.cmplt
+    r /usr/share/bash-completion
+
 ## file manage
     im ls
 
@@ -158,6 +162,7 @@ moar -h
 ## PDF
     gspdfpng  # Ghostscript convert pdf to png
     i pdfinfo
+    pdfjam
 
 ### Zathura
     $ABjo/wm/zathurarc  # set window-height <pixels>
@@ -179,7 +184,7 @@ moar -h
     za $ITscr/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
 
 ## TeX - LaTeX
-    r $GHrUse/CP/MartinThoma-LaTeX-examples
+    r $DCGRs/CP/MartinThoma-LaTeX-examples
     r $jtCP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
@@ -201,6 +206,7 @@ moar -h
 
 ## TeX Live
     pacman -Qs texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
+    pdfjam
 
 ### Arch package files
     C /usr/share/texmf-dist/tex/latex/
@@ -216,6 +222,7 @@ moar -h
     za /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/rawtables-a4.pdf
     za /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/symbols-a4.pdf
     za /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf
+    za /usr/local/texlive/2023/texmf-dist/doc/man/man1/psutils.man1.pdf
 
 #### tcolorbox
     $/usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/README.md
@@ -238,13 +245,13 @@ moar -h
 `G` & `T` defined in `$Bash/bashrc-console`
 
 ## resources
-    fd -e org -p $GHrUse
-    r $GHrUse/CP/emacs/syl20bnr-spacemacs-develop  # local fresh clone
+    fd -e org -p $DCGRs
+    r $DCGRs/CP/emacs/syl20bnr-spacemacs-develop  # local fresh clone
     r $ITscr/CP/encoding/textWrangling/Emacs  # PDF guides
 
 ### Worg
-    $GHrUse/emacs/_bzg-worg/orgcard.org
-    r $GHrUse/emacs/_bzg-worg
+    $DCGRs/emacs/_bzg-worg/orgcard.org
+    r $DCGRs/emacs/_bzg-worg
 
 ## Spacemacs
     $ulL/Emacs/sm/.spacemacs
@@ -291,9 +298,12 @@ moar -h
     r ~/perl5/lib/perl5/x86_64-linux-thread-multi/.meta
 
 ## Python
-    ~/.local/bin/
-    ~/.local/pipx/venvs/
     i python
+    r /usr/lib/python3.11/site-packages
+
+### pipx
+    r ~/.local/bin/
+    r ~/.local/pipx/venvs/
 
 ## Ruby
 ```bash
@@ -366,7 +376,7 @@ SED(1)
     lsd
     n [directory]
 
-`du` don't work in script...
+- `du` don't work in script...
 - MV(1)
 - rsync(1)
 - STAT(1)
@@ -472,6 +482,7 @@ vid => ffmpegthumbnailer
 
 ## ncdu
     ncdu --exclude rsnapshot
+    ncdu --exclude Cop-IT
 
 NCDU(1)
 
@@ -540,14 +551,6 @@ can't cope with `utf-16le`
     i perl-rename
     perl-rename 's/^\.//' *  # removes leading  .
 
-## ripgrep
-    im fd
-
-### git config's
-    fd -HI -tf ^config$ | xargs rg -l 'remote = gh'  # ripgrep
-
-see `$Bash/bashrc-console`
-
 ## Vifm
     FF $ITscr/CP/vifm-v0.12-builtin-normal.png
     v  # ($Bash/bashrc-console)
@@ -577,9 +580,11 @@ gpg(1)
 # help
     apropos
     cheat cheat
+    o $MANPAGER
 
 ## pinfo
     /etc/pinforc
+    i fzf
     i pinfo
 
 - lynx-style, but n/N don't work...
@@ -639,7 +644,9 @@ gpg(1)
     /proc/filesystems - those supported by the kernel
     doas file -s /dev/sdx(n)
 
-CP(1)
+- Asunder CD Ripper
+- CP(1)
+- optical: `growisofs`
 
 ### directories - dua-cli
     dua [i]
@@ -676,13 +683,6 @@ optimised for SSDs
     $Bash/bashrc-console
     trash-empty  # lists before query
 
-### optical
-    cdrecord dev=/dev/sr0 -checkdrive
-
-#### burning
-    cdrecord -v -sao dev=/dev/sr0 isoimage.iso
-    growisofs
-
 ### rsnapshot
     $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
     $machBld/etc/rsnapshot.conf
@@ -708,17 +708,23 @@ optimised for SSDs
     sudo diff --no-dereference -qr hourly.0 hourly.1 > hourly0+1.gnudiff
 
 #### find
-    fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
+
     fRs $Bash bashrc-console
+    fRs $Drpbx/CAM-good US
     fRs $Drpbx/CAM-toSort0 '01 '
     fRs $Drpbx/CAM-toSort0 Apache
     fRs $Drpbx/CAM-toSort0 Costello
-    fRs $Drpbx/CAM-good US
     fRs $JHw _config.yml
     fRs $LTXj/CzPlanning planning.cls
+    fRs $Obc/rc rc.xml
+    fRs $onGH/misc/CP/PerlTools mysmsMD.pl
+    fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $vfp/packs-cp/opt/vim-dokuwiki/syntax dokuwiki.vim
+    fRs $vimfiles/nvim/lua/lazy dropbar.lua
     fRs $vimfiles/syntax cmusq.vim
     fRs $vimfiles/vim/plugin plugin.vim
+
+latest is `$rsnapshot/hourly.0/localhost`
 
 ##### my OBS grabs
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
@@ -1024,7 +1030,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # system
     bat -A /etc/hosts
-    bm <command>  # batman - only good in full-screen
+    bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
     i hier
     i localectl
@@ -1054,6 +1060,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     $OSAB/etc/doas.conf
     r $OSAB $ulLA
     r $ulLA/ml-$host/etc-fstab
+    rsync -irtv --delete $OSAB/ ~/Play0/OSAB
     v $OSAB $ulLA
 
 ## fonts
@@ -1066,7 +1073,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fd -L symbola
     C $ITscc/forArch/fonts
 
-`usf()` in `$OSAB/Bash/bashrc-generic)`
+`usf()` (`$OSAB/Bash/bashrc-generic`)
 
 ### Fontconfig
     cd /etc/fonts  # to explore the configuration files
@@ -1158,7 +1165,7 @@ backed up in `$Bash/bash_profile`
     openbox --reconfigure
 
 #### rc
-    $Obc/rc/rc.xml
+    $Obc/rc/rc-generic.xml
     Alt+Space => show client menu for active window
     Ctrl+Alt+arrows => move to desktop
     Shift+Alt+arrows => move to desktop, bringing current window along
@@ -1180,9 +1187,10 @@ backed up in `$Bash/bash_profile`
     killall -SIGUSR1 tint2  # reloads
 
 # terminal
-    echo $TERM
     fgconsole  # reports tty number
     neofetch
+    o $PAGER
+    o $TERM
     watch -n1 "date '+%D%n%T' | figlet -k"
 
 ## Alacritty
@@ -1271,9 +1279,9 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
 - Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2
 
 # text-wrangling
-    $GHrUse/CP/vim/vim/README.md
-    echo $EDITOR
-    echo $VISUAL
+    $DCGRs/CP/vim/vim/README.md
+    o $EDITOR
+    o $VISUAL
 
 ## CopyQ
     bm copyq
@@ -1284,16 +1292,38 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
 ## vi
     n $ITscr/CP/encoding/textWrangling-vi
 
-### Vim
+### vim variants
+    rsync -aAivX --delete $vimfiles/ ~/Play0/vfb
+
+#### Nvim
+    /usr/share/nvim/runtime/doc/help.txt
+    /usr/share/nvim/runtime/doc/treesitter.txt
+    /usr/share/nvim/runtime/filetype.lua
+    r ~/.local/share/nvim
+    r ~/.vimswap
+
+##### log file
+    :echo $NVIM_LOG_FILE
+    ~/.local/state/nvim/log
+
+#### Vim
     $ABjo/textEdit/Vim/vimrc
     /usr/share/vim/vim90/pack/dist/opt/
     C /usr/share/vim/vim91
     i vim
+    n ~/.vimswap
     r $vimfiles
+    r /usr/share/vim/vimfiles
 
-#### gVim
+##### gVim
     gvim --help | mo
     gvim -geom 200  # height parameter is omitted as it's having no effect
+
+##### nVim
+    /usr/share/nvim/archlinux.vim
+    r /usr/share/nvim/runtime
+
+nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/parser`
 
 # WAN
 ```bash
