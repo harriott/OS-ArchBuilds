@@ -92,8 +92,7 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> epson-printer-utility
-# gAUR epson-printer-utility
+# #=> epson-printer-utility gAUR epson-printer-utility
 # nvim -c "silent! /download3.ebz.epson.net" PKGBUILD
 # makepkg -sic
 # true

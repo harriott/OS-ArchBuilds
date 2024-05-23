@@ -13,6 +13,7 @@
 alias fin='figlet -f univers finished'
 export loaded_bg=1  # used in  $OSAB/bs-symlinks/repair.sh
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
+mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 source $ITscc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash
 source $ITscc/forArch/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring
 
@@ -215,6 +216,13 @@ alias pg='ping -c 3 -n google.com'
 alias wp='curl wttr.in/Paris'  # weather
 
 Q () { pacman -Qs $1 | xcol $1; }  # or use  pacsearch
+
+suho () {
+  ipnf=$(ip neigh)
+  ipn=${ipnf:0:11}
+  mapfile -t fi < <(doas fping -g "$ipn.0/24" 2>&1)
+  printf '%s\n' "${fi[@]}" | grep 'alive$'
+} # subnet hosts
 
 #=> pactree
 alias ptc='pactree -c '  # coloured

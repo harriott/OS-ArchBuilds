@@ -93,8 +93,7 @@ ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 ln -sf $ABjo/pinforc ~/.pinforc
 
 #=> ranger
-lnd $OSAB/terminal/ranger ~/.config/ranger
-# e -adl ~/.config/ranger
+lnd $OSAB/terminal/ranger ~/.config/ranger  # e -adl ~/.config/ranger
 
 #=> Ruby IRB
 ln -sf $misc/irbrc ~/.irbrc

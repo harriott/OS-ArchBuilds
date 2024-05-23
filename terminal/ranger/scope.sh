@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 ## JH notes
-## -----------------------------------------------------
-## $OSAB/ranger/scope.sh  for  ~/.config/ranger/scope.sh
-## -----------------------------------------------------
+## --------------------------------------------------------------
+## $OSAB/terminal/ranger/scope.sh  for  ~/.config/ranger/scope.sh
+## --------------------------------------------------------------
 ## ranger --copy-config=all  copies from
 ##  /usr/lib/python3.10/site-packages/ranger/data/scope.sh  and makes it executable
 ## diff against  $DCGRs/unix/linux/ranger-ranger/ranger/data/scope.sh
 ##
-## this file is in a directory of  ranger  configuration filess  which are symlinked in my
+## $OSAB/terminal/ranger  is symlinked in my
 ##  $OSAB/bs-symlinks/jo-0.sh
 ##  $OSAB/bs-symlinks/root.sh
 
@@ -142,6 +142,11 @@ handle_extension() {
             mediainfo "${FILE_PATH}" && exit 5
             exiftool "${FILE_PATH}" && exit 5
             ;; # Continue with next handler on failure
+
+        ## Enforce bat if the extension is lua regardless of the mimetype.
+        lua | tsx)
+            bat "${FILE_PATH}" && exit 5
+
     esac
 }
 

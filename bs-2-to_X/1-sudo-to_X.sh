@@ -165,7 +165,7 @@ pacman -S transmission-cli
 pacman -Rs xorg-xbacklight
 
 # #=> 5 Vim - flake8 & Vim
-# pacman -S flake8 gvim
+# pacman -S flake8 gvim neovide
 
 # #=> 5 Vim - Neovim
 # pacman -S neovim python-pynvim

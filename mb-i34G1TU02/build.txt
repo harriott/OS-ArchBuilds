@@ -650,11 +650,22 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.21.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+:: Replace dbus-python with extra/python-dbus? [Y/n]
 ## waiting
 apache
+fping
 gokcehan's lf
 MariaDB
 php
+sudo pacman -S neovide
+# CopyQ
+CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
+  Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
+  Shortcuts >
+    Paste clipboard as plain text > Win+P (= Meta+P)  - works for Nvim/Vim, but not tmux
+    Show/hide main window > Win+Q (= Meta+Q)
+  Appearance > Theme > forest
 # fcron
 fcrontab -l
   @ 1 bash ~/Arch/locks.sh

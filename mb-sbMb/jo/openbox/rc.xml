@@ -380,9 +380,16 @@
     </action>
   </keybind>
   <!-- Keybinding for Alacritty large with Nvim - JH -->
-  <keybind key="w-n">
+  <keybind key="w-l">
     <action name="execute">
       <command>/home/jo/.config/openbox/AlacrittyNvim.sh</command>
+      <!-- $Openbox/bashrc_for_Alacritty-nvim.sh -->
+    </action>
+  </keybind>
+  <!-- Keybinding for Nvim - JH -->
+  <keybind key="W-n">
+    <action name="Execute">
+      <command>neovide --grid 109x62</command>
     </action>
   </keybind>
   <!-- Keybinding for microphone - JH -->
@@ -440,7 +447,7 @@
     </action>
   </keybind>
   <!-- Keybindings for repairing CopyQ - JH -->
-  <keybind key="W-o">
+  <keybind key="W-r">
     <action name="Execute">
       <command>/home/jo/.config/openbox/fixCopyQ.sh</command>
     </action>

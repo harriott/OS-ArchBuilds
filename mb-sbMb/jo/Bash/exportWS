@@ -1,15 +1,20 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh:
 
-# $machBld/jo/Bash/export-terminal  called by  $Bash/export-jo
+# $machBld/jo/Bash/exportWS  called by  $Bash/export-jo
 
 # definitions here are used in
 #  $Obc/autostart/terminal_launch.sh
 #  $Obc/rc/rc.xml
 
 #=> set  Alacritty  window
+# used in  $Obc/autostart/terminal_launch.sh
 export Awd='window.dimensions={columns=124,lines=78}'
 export Awp='window.position={x=5,y=5}'
+
+#=> set  Neovide  window
+# used in  $OSAB/bs-symlinks/jo-1-Openbox.sh:
+export Nwd='--grid 109x62'
 
 #=> set  urxvt  geometry appropriate for monitor
 # open urxvt from left of screen, allowing room for 106 column gVim

@@ -1,4 +1,5 @@
-#!/bin/sh # vim: fdl=1 ft=sh:
+#!/bin/sh
+# vim: fdl=1 ft=sh:
 
 # ~/.export-jo  ($Bash/export-jo)
 #  depends on  $OSAB/Bash/export-storage
@@ -6,7 +7,7 @@
 #  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 
 export MANPATH=/usr/share/man/
-uG="$machBld/jo/Bash/export-terminal"; [[ -f $uG ]] && source $uG
+uG="$machBld/jo/Bash/exportWS"; [[ -f $uG ]] && source $uG
 
 export MOZ_GTK_TITLEBAR_DECORATION=client
 export PAPERSIZE=A4  # libpaper
@@ -27,7 +28,7 @@ export TeNo=$core/TextNotes  # used in  $TeNo
 #==> rooting on $Drpbx
 export COT=$Drpbx/Cop/OutThere  # $COT  used in  $TeNo
 export DCGRs=$Drpbx/Cop/GRs
-    # - Copied Git Repositories Use, used in  $OSAB/bs-symlinks/jo-1-awesome.sh
+    # - Dropbox Copied Git Repositories, used in  $OSAB/bs-symlinks/jo-1-awesome.sh
     [ -d "$DCGRs" ] || export DCGRs=~/DCGRs  # when building Arch
     export jkll=$DCGRs/CP/Ruby/Jekyll
         export mnm=$jkll/Jekyll-jekyll-minima
@@ -68,7 +69,7 @@ export Thb=$DJH/Thb-dr  # $Thb, used in
                         #  $OSAB/bs-4-whenWM/4-various.sh
                         #  $OSAB/jo/wm/TS/thunderbird_safely.sh
                         #  ~/.thunderbird/profiles.ini
-export JJt0=$DJH/Then0  # used in  $TeNo
+export JJt0=$DJH/Jo-then0  # used in  $TeNo
     export T0Fr=$JJt0/Europe/France  # $T0Fr  used in  $TeNo
 
 #==> rooting on $ITstack
@@ -82,6 +83,7 @@ export MD4PDF=$onGH/pandoc-md4pdf  # $MD4PDF  is unambiguous
 export misc=$onGH/misc  # $misc
 export MSWin10=$onGH/OS-MSWin10  # $MSWin10  used in  $DWp  &  $TeNo
 export OSAT=$onGH/OS-Android-Termux  # $OSAT
-export vimfiles=$onGH/vimfiles  # $vimfiles
+export vimfiles=$onGH/vimfiles
     [ -d "$onGH" ] || export vimfiles=~/vimfiles  # when building Arch
+    export vfvp="$vimfiles/vim/packs"  # $vfvp
 

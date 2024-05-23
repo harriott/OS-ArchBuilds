@@ -10,5 +10,5 @@
 # pb ~/.config/openbox/AlacrittyNvim.sh
 # called by  $Obc/rc/rc.xml
 
-alacritty -o 'window.dimensions={columns=106,lines=76}' -o 'window.position={x=778,y=7}' -e sh -c 'bash -rcfile ~/.bashrc-An' & disown
+alacritty -o 'window.dimensions={columns=108,lines=76}' -o 'window.position={x=778,y=7}' -e sh -c 'bash -rcfile ~/.bashrc-An' & disown
 

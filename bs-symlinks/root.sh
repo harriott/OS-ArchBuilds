@@ -47,5 +47,5 @@ e -la /usr/share/fonts
 # eza -la /root/.config/nano
 
 # #=> 2 ranger
-# lnd $OSAB/ranger ~/.config/ranger  # e -adl ~/.config/ranger
+# lnd $OSAB/terminal/ranger ~/.config/ranger  # e -adl ~/.config/ranger
 

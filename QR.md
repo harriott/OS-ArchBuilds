@@ -282,6 +282,7 @@ moar -h
 ## npm
     $HOME/.npmrc
     r ~/.npm-global
+    wikit -l fr mois -a | less
     wikit mooji -b
 
 ### mapscii
@@ -876,8 +877,12 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
     playerctl -l  # (--list-all) available players
 
 ## audio - Quod Libet
-    pkill exfalso
     pkill quodlibet
+
+### Ex Falso
+    pkill exfalso
+
+follows my `PCManFM` folder settings
 
 ## audio - vimpc
     v  # alias'd to  vimpc  in  $Bash/bashrc-wm
@@ -1286,7 +1291,6 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
 ## CopyQ
     bm copyq
     copyq help | mo
-    pkill copyq
     ~/.local/share/copyq/copyq/copyq.log
 
 ## vi

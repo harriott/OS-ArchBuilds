@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# $OSAB/bs-repeatable/AURs.sh
+# bash $OSAB/bs-repeatable/AURs.sh
 
 # softwares that can be used in a cli
 
@@ -43,16 +43,16 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
 
-#=> code-minimap 1 remove
-cd ~/Arch/AUR
-rAUR code-minimap
-sudo pacman -Rs code-minimap
+# #=> code-minimap 1 remove
+# cd ~/Arch/AUR
+# rAUR code-minimap
+# sudo pacman -Rs code-minimap
 
-#=> code-minimap-bin
-# /usr/share/bash-completion/completions/code-minimap.bash
-gAUR code-minimap-bin
-nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
-makepkg -sic
+# #=> code-minimap-bin
+# # /usr/share/bash-completion/completions/code-minimap.bash
+# gAUR code-minimap-bin
+# nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
+# makepkg -sic
 
 # #=> cpu-x 0 mawk
 # gAUR mawk
@@ -159,11 +159,11 @@ makepkg -sic
 # makepkg -sic
 # true
 
-# #=> moar 0 (re)install
-# gAUR moar
-# nvim -c "silent! /walles" PKGBUILD
-# makepkg -sic
-# true
+#=> moar 0 (re)install
+gAUR moar
+nvim -c "silent! /walles" PKGBUILD
+makepkg -sic
+true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
@@ -197,6 +197,12 @@ makepkg -sic
 # nvim -c "silent! /GARU" PKGBUILD
 # makepkg -sic
 # true
+
+#=> powershell-bin
+gAUR powershell-bin
+nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+makepkg -sic
+true
 
 # #=> rdrview
 # gAUR rdrview-git

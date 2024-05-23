@@ -22,6 +22,9 @@ trap read debug  # puts a read request after each executable line
 # # (after Rust Toolchain)
 # sudo pacman -S dust
 
+#=> fping
+sudo pacman -S fping
+
 #=> grammalecte
 sudo pacman -S grammalecte
 

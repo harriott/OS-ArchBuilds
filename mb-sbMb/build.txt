@@ -142,11 +142,7 @@ somehow  wayland  is there
 sudo pacman -Rs chromium   removed a load
 sudo pacman -S mesa xf86-video-nouveau   then   reboot
 sudo pacman -S chromium   added a load
-## CopyQ
-CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
-  Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
-  Shortcuts > Show/hide main window > Win+P (= Meta+P)
-  Appearance > Theme > forest
+## CopyQ setup
 ## Chromium
 logged in, and LastPass
 ## failed again to connect to Moto G (4) 1367 with TL-WN821N
@@ -2518,12 +2514,35 @@ hp-setup -h  reporting SyntaxWarning
 hp-setup -r > Select > Remove
 hp-setup 192.168.21.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## downgrade pandoc-cli
+because it's pointing at wrong icu
+### 0.1.1.1-98
+sudo pacman -U https://archive.archlinux.org/packages/p/pandoc-cli/pandoc-cli-0.1.1.1-98-x86_64.pkg.tar.zst
+fd '\-stderr.txt'
+rm **/*-stderr.txt
+didn't work because: "pandoc: error while loading shared libraries: libHSpandoc-server-0.1.0.5-8wXNrkZDgAxJNlIORHloIR-ghc9.2.8.so: cannot open shared object file: No such file or directory"
+- fixing that would require downgrading  haskell-pandoc-server, and a huge consequent chain...
+## HP ENVY 5532 IP Address changed to 163.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.163.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+:: Replace dbus-python with extra/python-dbus? [Y/n]
 ## waiting
 delta
 forgit
 gokcehan's lf
 MariaDB
 ueberzugpp
+# CopyQ
+CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
+  Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
+  Shortcuts >
+    Paste clipboard as plain text > Win+P (= Meta+P)  - works for Nvim/Vim, but not tmux
+    Show/hide main window > Win+Q (= Meta+Q)
+  Appearance > Theme > forest
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers

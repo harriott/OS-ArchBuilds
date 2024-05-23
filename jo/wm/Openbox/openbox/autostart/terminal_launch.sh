@@ -5,11 +5,10 @@
 # bash $Obc/autostart/terminal_launch.sh  sourced from  $Obc/autostart/autostart
 
 #=> 1 terminal
-# $machBld/jo/Bash/export-terminal
+# $machBld/jo/Bash/exportWS
 
 #==> Alacritty
 alacritty -o $Awd -o $Awp -e sh -c "tmux new; bash" & disown
-# - see  $machBld/jo/Bash/export-terminal
 # alacritty -o $Awd -o $Awp -e sh -c "tmux a" & disown  # if crashed
 
 # #==> urxvt
