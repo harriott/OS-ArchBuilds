@@ -1,4 +1,4 @@
--- vim: ts=4 sw=3 noet ai cindent syntax=lua tw=0
+-- vim: tw=0:
 
 --[[
 Joseph Harriott - Sat 11 May 2024

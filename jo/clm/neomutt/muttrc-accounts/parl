@@ -1,4 +1,4 @@
-# muttrc-*  filetypes are set in  plugin/buffers.vim
+# ($vimfiles/vim/filetype.vim)
 
 # $clMail/neomutt/muttrc-accounts/parl  sourced from  $Bash/bashrc-clm
 
@@ -6,9 +6,9 @@ set from = $parl  # defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a parl"
 set folder = "$maild/parl"
 set header_cache = /home/jo/.cache/mutt/parl/headers
-set message_cachedir = /home/jo/.cache/mutt/parl/bodies
+set message_cache_dir = /home/jo/.cache/mutt/parl/bodies
 
-set spoolfile = "+INBOX"
+set spool_file = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+[Gmail].Bin"
 
@@ -27,7 +27,7 @@ set status_format=" -%r-NeoMutt->parl: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%
 
 set reflow_wrap=0
 source $clMail/muttrc-general
-set realname = "Parlottes Cafézoïde"
+set real_name = "Parlottes Cafézoïde"
 set mbox_type = Maildir
 
 set sort_alias = alias

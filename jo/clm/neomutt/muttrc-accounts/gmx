@@ -1,4 +1,4 @@
-# muttrc-*  filetypes are set in  plugin/buffers.vim
+# ($vimfiles/vim/filetype.vim)
 
 # $clMail/neomutt/muttrc-accounts/gmx  sourced from  $Bash/bashrc-clm
 
@@ -6,9 +6,9 @@ set from = $gmx  # = my GMX email, defined in my  $lclm/mymuttrcAddresses
 set sendmail = "msmtp -a gmx"
 set folder = "$maild/gmx"
 set header_cache = /home/jo/.cache/mutt/gmx/headers
-set message_cachedir = /home/jo/.cache/mutt/gmx/bodies
+set message_cache_dir = /home/jo/.cache/mutt/gmx/bodies
 
-set spoolfile = "+INBOX"
+set spool_file = "+INBOX"
 set record = "+Sent"
 set trash = "+Trash"
 

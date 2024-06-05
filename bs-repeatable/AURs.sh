@@ -126,6 +126,13 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs jump
 # true
 
+# #=> julia-bin
+# # for sixels
+# gdAUR julia-bin
+# nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3
 # # Can't recall what I need it for...
@@ -159,11 +166,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> moar 0 (re)install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 (re)install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
@@ -198,11 +205,11 @@ true
 # makepkg -sic
 # true
 
-#=> powershell-bin
-gAUR powershell-bin
-nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
-makepkg -sic
-true
+# #=> powershell-bin
+# gAUR powershell-bin
+# nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> rdrview
 # gAUR rdrview-git
@@ -210,11 +217,11 @@ true
 # makepkg -sic
 # true
 
-# #=> shell-color-scripts
-# gAUR shell-color-scripts
-# nvim -c "silent! /dwt1" PKGBUILD
-# makepkg -sic
-# true
+#=> shell-color-scripts-git
+gAUR shell-color-scripts-git
+nvim -c "silent! /dwt1" PKGBUILD
+makepkg -sic
+true
 
 # #=> tint-tetris
 # gAUR tint-tetris

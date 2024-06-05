@@ -1,11 +1,15 @@
 #!/bin/bash
 
-# Joseph Harriott, Mon 23 Aug 2021
+# Joseph Harriott, Fri 31 May 2024
 
 # save indications of CPU temperature for my Gigabyte GA-970A-DS3P rev.2.1
+# bash $machBld/jo/f1t2t3/log.sh
+# symlinked in  $OSAB/bs-symlinks/jo-0.sh
 # fcrontab:  @ 1 bash ~/Arch/f1t2t3/log.sh
 
-lf=~/Arch/f1t2t3/f1t2t3.log  # f1t2t3 log file
+# DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/notify-send -u critical "f1t2t3/log.sh $(date +%H%M)"  # uncomment to check if this script is being called
+
+lf="/home/jo/Arch/f1t2t3/f1t2t3.log"  # f1t2t3 log file
 # touch $lf
 
 btc=$(date -d "$(uptime -s)" +%y%m%d-%H%M)  # boot time compact

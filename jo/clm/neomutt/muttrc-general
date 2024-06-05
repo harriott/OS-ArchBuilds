@@ -1,5 +1,4 @@
-
-# muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
+# ($vimfiles/vim/filetype.vim)
 
 # $clMail/neomutt/muttrc-general - general settings for  neomutt
 #  based on  $DCGRs/linux/mail/LukeSmithxyz-mutt-wizard/share/mutt-wizard.muttrc
@@ -62,22 +61,21 @@ unset signature
 #=> the index
 set date_format="%y/%m/%d %H:%M"
 #
-set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
-# useful message status flags:
-#  D = deleted (marked for deletion)
-#  N = new
-#  r = replied
-#  ! = flagged
-#  * = tagged
-#
-# useful message recipient flags:
-#  + = to you and you only
-#  T = to you, but also to or CC'ed to others
-#  C = CC'ed to you
-#  F = from you
-#  L = sent to a subscribed mailing list
-#  R = has your address in the Reply-To field
-#  O = old (= seen but not read)
+# set index_format="%3C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
+set index_format="%3C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
+#  %3C = current message number, padded 3
+#  %Z  = three message status flags:
+#         1st N/O/r = new / old (but not read) / replied
+#         2nd marked deleted, encrypted
+#         3rd !/* = flagged/tagged
+#             :set to_chars
+#              +/C/T = to me only / cc'd to me / to me & cc'd to others
+#              F/L/R = from me / mailing list / me as Reply-To
+#  %?X?A& ? = A when attachment (%X = number of attachments)
+#  %D = date & time (:set date_format)
+#  %-15.15F = author or recipient
+#  %s = message subject
+#  (%-4.4c) = character size
 #
 # set sort = 'reverse-date'
 
@@ -85,7 +83,6 @@ set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 # ? ==> help
 # B ==> toggle sidebar
 # f ==> forward
-# v ==> view-attachments, select  text/plain > s (= save-entry) > messageContents.txt
 
 #==> browser
 #  c? ==> enter browser
@@ -109,29 +106,37 @@ set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 # ] ==> <half-down>
 
 #==> pager
-#  - ==> <previous-page> ==> page up
-#  <enter> ==> <next-line> ==> scroll down a line
-#  <space> ==> <next-page> ==> page down
-#  = ==> <previous-line> ==> scroll up a line
+# -      == <previous-page> == page up
+# <enter == <next-line>     == scroll down a line
+# <space == <next-page>     == page down
+# =      == <previous-line> == scroll up a line
+# q      == <exit>          == quit
+
+#===> message
+# H ==> view raw (in editor)
+# v ==> view-attachments, select  text/plain > s (= save-entry) > messageContents.txt
 
 #=> searching
 bind index l noop
-bind index ll limit  # ~p = to me, ~P = from me
-#  ~C <textinsendlist>
-#  ~f <textinfrom>
-#  ~U unread messages
+bind index ll limit  # ~U unread messages
 macro index lb "<limit> ~b " "limit by term in message body"
 macro index lB "<limit> ~B " "limit by term in whole message"
-# Esc l -> <show-limit> ==> show currently active limit pattern
+macro index lf "<limit> ~f " "limit by From:"  # <textinfrom>
+macro index lC "<limit> ~C " "limit by to:/[b]cc:"  # <textinsendlist>
+macro index lp "<limit> ~p\n" "limit sent to me"
+macro index lP "<limit> ~P\n" "limit sent from me"
+# Esc l : <show-limit> : show currently active limit pattern
 
 # the following two lines allow virtual folders to be populated with Notmuch queries across all of your mail folder
-set nm_default_uri = "notmuch://$maild/"
+set nm_default_url = "notmuch://$maild/"
 macro index,pager gq "<vfolder-from-query>" "go notmuch Query"
 #   search patterns:
 #     "search term with spaces"
 #     partial*
 #     searchterm1 tag:autocompletes searchterm2
 
+# need my  nmse ($Bash/bashrc-clm) to locate Deleted attachments
+#
 # reset limit to view all messages in the folder (after l > searchterm)
 macro index la "<limit>all\n" "show all messages (undo limit)"
 

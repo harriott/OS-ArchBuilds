@@ -316,6 +316,12 @@
     </action>
   </keybind>
 
+  <!-- Keybinding to pop dunst notifications - JH -->
+  <keybind key="c-BackSpace">
+    <action name="Execute">
+      <command>dunstctl history-pop</command>
+    </action>
+  </keybind>
   <!-- Keybinding to close a dunst notification - JH -->
   <keybind key="c-space">
     <action name="Execute">
@@ -389,7 +395,7 @@
   <!-- Keybinding for Nvim - JH -->
   <keybind key="W-n">
     <action name="Execute">
-      <command>neovide --grid 109x62</command>
+      <command>neovide --grid 109x72</command>
     </action>
   </keybind>
   <!-- Keybinding for microphone - JH -->

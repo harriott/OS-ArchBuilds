@@ -58,6 +58,9 @@ ln -sf $ABjo/WAN/dictrc ~/.dictrc
 #=> Dunst
 ln -sf $Openbox/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
 
+#=> fix Calibri in Thunderbird
+ln -sf $ABjo/wm/fontconfig-conf_d-20-no-embedded.conf ~/.config/fontconfig/conf.d/20-no-embedded.conf
+
 #=> Git
 if [[ $myDrA == 1 ]]; then
   ln -sf $machBld/jo/gitconfig ~/.gitconfig
@@ -98,6 +101,10 @@ lnd $OSAB/terminal/ranger ~/.config/ranger  # e -adl ~/.config/ranger
 #=> Ruby IRB
 ln -sf $misc/irbrc ~/.irbrc
 # e -la ~/.irbrc
+
+#=> sbMb motherboard temp
+ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 
 #=> Surfraw
 ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf

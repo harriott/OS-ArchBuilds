@@ -109,8 +109,8 @@ pacman -S transmission-cli
 # g=/home/jo/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; chown jo:jo $g
 
 # #=> 4 when X 0 - system
-# # espeak-ng-espeak & termdown
-# pacman -S espeak-ng-espeak termdown
+# # espeak-ng & termdown
+# pacman -S espeak-ng termdown
 
 # # moreutils
 # pacman -S moreutils

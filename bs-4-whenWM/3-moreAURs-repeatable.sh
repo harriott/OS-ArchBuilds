@@ -73,12 +73,12 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox 0 (re)install
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# # - if missed, in  ~/Arch/AUR/dropbox/,  sudo pacman -U  dropbox-185.4.6054-1-x86_64.pkg.tar.zst
-# true
+#=> Dropbox 0 (re)install
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+# - if missed, in  ~/Arch/AUR/dropbox/,  sudo pacman -U  dropbox-185.4.6054-1-x86_64.pkg.tar.zst
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -160,11 +160,11 @@ true
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
-# #=> opera
-# # for MPD
-# gAUR opera
-# nvim -c "silent! /download3.operacdn.com" PKGBUILD
-# makepkg -sic
+#=> opera
+# for MPD
+gAUR opera
+nvim -c "silent! /download3.operacdn.com" PKGBUILD
+makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2
@@ -288,8 +288,8 @@ true
 # true
 # #  ~/Arch/AUR/ymuse  makepkg --install  if you're too late
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

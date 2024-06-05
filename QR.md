@@ -182,6 +182,7 @@ moar -h
     za $ITscr/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
+    za $ITscr/CP/TeX/LaTeX/structure/pdfpages.pdf
 
 ## TeX - LaTeX
     r $DCGRs/CP/MartinThoma-LaTeX-examples
@@ -262,6 +263,7 @@ moar -h
     $CrPl/encoding/dpl/Perl/scratch.pl
     $machBld/jo/gitconfig
     $onGH/pandoc-templates/README.markdown
+    archlinux-java status
     b <codeFile>  # syntax'd cat
     pb <codeFile>  # also reformatted
     r ~/.cache/hugo_cache
@@ -323,12 +325,6 @@ see `$vimfiles/syntax/gems.vim`
     dym better
     i dym
 
-  <keybind key="C-space">
-    <action name="Execute">
-      <command>dunstctl close</command>
-    </action>
-  </keybind>
-  <!-- Keybinding for Qualculate! - JH -->
 # fcron
     systemctl status fcron.service  # showing recent events
 
@@ -725,8 +721,6 @@ optimised for SSDs
     fRs $vimfiles/syntax cmusq.vim
     fRs $vimfiles/vim/plugin plugin.vim
 
-latest is `$rsnapshot/hourly.0/localhost`
-
 ##### my OBS grabs
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "Queen*.mkv" -exec rm -f {} \;
@@ -748,6 +742,9 @@ for d in $(ls $rsnapshot/hourly.*/localhost/home/jo -dtr); do stat -c '%y %n' $d
 ls *ly.*/localhost/home/jo/.config/copyq -d  # CopyQ data directory instances
 ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
 ```
+
+#### recent directories
+    $rsnapshot/hourly.0/localhost/mnt/SDU3D1TB/Dropbox/Cop/AM-toSort0
 
 #### recover folder
     rsync -irtv --delete $rsnapshot/daily.0/localhost/home/jo/.local/share/mail/ $maild
@@ -1283,7 +1280,7 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
 - can login concurrently to jo
 - Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2
 
-# text-wrangling
+# text wrangling
     $DCGRs/CP/vim/vim/README.md
     o $EDITOR
     o $VISUAL
@@ -1303,6 +1300,7 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
     /usr/share/nvim/runtime/doc/help.txt
     /usr/share/nvim/runtime/doc/treesitter.txt
     /usr/share/nvim/runtime/filetype.lua
+    /usr/share/nvim/runtime/lua/vim/filetype.lua
     r ~/.local/share/nvim
     r ~/.vimswap
 
@@ -1312,16 +1310,23 @@ showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.tx
 
 #### Vim
     $ABjo/textEdit/Vim/vimrc
-    /usr/share/vim/vim90/pack/dist/opt/
-    C /usr/share/vim/vim91
     i vim
     n ~/.vimswap
     r $vimfiles
-    r /usr/share/vim/vimfiles
 
 ##### gVim
     gvim --help | mo
     gvim -geom 200  # height parameter is omitted as it's having no effect
+
+##### installation files - from  Arch  packages
+    /usr/share/vim/vimfiles/syntax/conkyrc.vim
+    r /usr/share/vim/vimfiles/syntax
+
+##### installation files - from  vim-runtime
+    /usr/share/vim/vimfiles/archlinux.vim
+    r /usr/share/vim/vim91/pack/dist/opt/
+    C /usr/share/vim/vim91/syntax/
+    C /usr/share/vim/vim91
 
 ##### nVim
     /usr/share/nvim/archlinux.vim

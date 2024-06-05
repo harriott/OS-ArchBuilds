@@ -1,4 +1,4 @@
-# muttrc-*  filetypes are set in  plugin/buffers.vim
+# ($vimfiles/vim/filetype.vim)
 
 # $clMail/neomutt/muttrc-accounts/cz  sourced from  $Bash/bashrc-clm
 
@@ -6,9 +6,9 @@ set from = $cz  # = one of my Gmail accounts, defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a cz"
 set folder = "$maild/cz"
 set header_cache = /home/jo/.cache/mutt/cz/headers
-set message_cachedir = /home/jo/.cache/mutt/cz/bodies
+set message_cache_dir = /home/jo/.cache/mutt/cz/bodies
 
-set spoolfile = "+INBOX"
+set spool_file = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+[Gmail].Bin"
 
@@ -26,7 +26,7 @@ virtual-mailboxes "notmuch" "notmuch://?query=tag:cz"
 set status_format=" -%r-NeoMutt->cz: %D [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)--- "
 
 source $clMail/neomutt/muttrc-accounts-all
-set realname = "Joseph - Cafézoïde"
+set real_name = "Joseph - Cafézoïde"
 
 macro index,pager ga "<change-folder>=Archives<enter>" "go to Archives"
 macro index,pager Ga "<save-message>=Archives<enter>" "move mail to Archives"

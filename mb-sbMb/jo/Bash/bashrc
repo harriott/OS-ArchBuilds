@@ -17,8 +17,8 @@ export vlogs=$Storage/Sync2/AV-Stack/vlogs
 
 #=> 1 OBS mkv grabs convert
 # for  $ulL/video/OBSmkv/shrink.sh
-export OBSmkvGrabs=/mnt/ST4000VN008/OBSmkvGrabs
-export OBSmkvGrabsConverted=$Storage/Sync2/AV-Stack/OBSmkvGrabsConverted
+export OBSmkvGrabs='/mnt/ST4000VN008/OBSmkvGrabs'
+export OBSmkvGrabsConverted='/mnt/SDU3D1TB/stack/AV/OBSmkvGrabsConverted'
 
 ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/video/OBSmkv/ignore; }
 # ignore <an_mkv_to_ignore>

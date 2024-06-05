@@ -5,7 +5,7 @@
 
 # definitions here are used in
 #  $Obc/autostart/terminal_launch.sh
-#  $Obc/rc/rc.xml
+#  $Obc/rc/rc_xml-mb_make.sh
 
 #=> set  Alacritty  window
 # used in  $Obc/autostart/terminal_launch.sh
@@ -13,8 +13,10 @@ export Awd='window.dimensions={columns=124,lines=78}'
 export Awp='window.position={x=5,y=5}'
 
 #=> set  Neovide  window
-# used in  $OSAB/bs-symlinks/jo-1-Openbox.sh:
-export Nwd='--grid 109x62'
+export Nvdg='--grid 109x72'  # UbuntuMono_Nerd_Font_Mono:  h8:72, h9:67
+# used in
+#  $Obc/autostart/autostart
+#  $Obc/rc/rc_xml-mb_make.sh
 
 #=> set  urxvt  geometry appropriate for monitor
 # open urxvt from left of screen, allowing room for 106 column gVim

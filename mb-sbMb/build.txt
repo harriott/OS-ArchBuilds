@@ -2530,6 +2530,18 @@ hp-setup 192.168.163.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Updates
 :: Replace dbus-python with extra/python-dbus? [Y/n]
+## HP ENVY 5532 IP Address changed to 219.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.219.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 183.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.183.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 delta
 forgit

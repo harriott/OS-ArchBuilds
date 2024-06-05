@@ -350,13 +350,22 @@ n() {
   fi
 }
 
-# ~/.config/nnn/.selection - only when I've selected some files
+# ~/.config/nnn/.selection - only populated when I've selected some files
 
 source $ulLA/jo/bashrc-console-NNN_BMS  # my bookmarks
 export NNN_COLORS='5723' # good for my tmux in urxvt
 export NNN_PLUG='c:fzcd;d:dragdrop;g:gitroot;i:ipinfo;j:autojump;o:fzopen;m:mediainf;s:chksum'
 export NNN_TRASH=1 # trash (needs trash-cli) instead of delete
 export NNN_LOCKER='saidar -c' # for 0
+
+# t (sort)
+#  a/d = (d &) apparent/disk usage
+#  c = clear
+#  e = extension
+#  r = reverse
+#  s = file size
+#  t = time
+#  v = version (of what?)
 
 #=> npm global directory
 export PATH="$HOME/.npm-global/bin:$PATH"

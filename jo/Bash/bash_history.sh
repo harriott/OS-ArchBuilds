@@ -5,7 +5,9 @@
 # $Bash/bash_history.sh  (see  $OSAB/bs-symlinks/jo-0.sh)
 
 # robustly save my BASH history, for finding ancient commands
-# fcrontab:  @ 20 bash ~/Arch/bash_history.sh
+# fcrontab:  @ 10 bash ~/Arch/bash_history.sh
+
+# DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/notify-send -u critical "bash_history.sh $(date +%H%M)"  # uncomment to check if this script is being called
 
 cat ~/.bash_history >> ~/Arch/bash_history-tmp
 cat ~/Arch/bash_history-tmp | awk '!a[$0]++' | sort > ~/Arch/bash_history

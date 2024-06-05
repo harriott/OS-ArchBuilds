@@ -1,4 +1,4 @@
-# muttrc-*  filetypes are set in  plugin/buffers.vim
+# ($vimfiles/vim/filetype.vim)
 
 # $clMail/neomutt/muttrc-accounts/live  sourced from  $Bash/bashrc-clm
 
@@ -6,9 +6,9 @@ set from = $live
 set sendmail = "msmtp -a live"
 set folder = "$maild/live"
 set header_cache = /home/jo/.cache/mutt/live/headers
-set message_cachedir = /home/jo/.cache/mutt/live/bodies
+set message_cache_dir = /home/jo/.cache/mutt/live/bodies
 
-set spoolfile = "+INBOX"
+set spool_file = "+INBOX"
 set record = "+Sent"
 set trash = "+Deleted"
 

@@ -8,6 +8,9 @@ if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> composer
+sudo pacman -S composer
+
 # #=> CUPS service
 # sudo pacman -S cups
 # sudo systemctl enable cups.service --now
@@ -23,6 +26,9 @@ trap read debug  # puts a read request after each executable line
 
 # #=> Gpick
 # sudo pacman -S gpick  # for colours
+
+#=> jdk-openjdk
+sudo pacman -S jdk-openjdk  # (removes  jre-openjdk) required for  :Mason
 
 #=> jre-openjdk
 sudo pacman -S jre-openjdk  # required for  PDFtk

@@ -1,4 +1,4 @@
-# muttrc-*  filetypes are set in  $vimfiles/plugin/plugin.vim
+# ($vimfiles/vim/filetype.vim)
 
 # $clMail/neomutt/muttrc-accounts/ftml  sourced from  $Bash/bashrc-clm
 
@@ -6,9 +6,9 @@ set from = $fm  # = my Fastmail email, defined in my  $LE/mymuttrcAddresses
 set sendmail = "msmtp -a fm"
 set folder = "$maild/fm"
 set header_cache = /home/jo/.cache/mutt/fm/headers
-set message_cachedir = /home/jo/.cache/mutt/fm/bodies
+set message_cache_dir = /home/jo/.cache/mutt/fm/bodies
 
-set spoolfile = "+INBOX"
+set spool_file = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+Trash"
 

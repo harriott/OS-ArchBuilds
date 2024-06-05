@@ -245,6 +245,9 @@ pacman -S git-delta
 #=> 2 encoding - lua-language-server
 pacman -S lua-language-server
 
+#=> 2 encoding - luarocks
+pacman -S luarocks
+
 #=> 2 encoding - python-pip 0 (re)install
 pacman -S python-pip
 

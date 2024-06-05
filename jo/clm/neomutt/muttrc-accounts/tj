@@ -1,4 +1,4 @@
-# muttrc-*  filetypes are set in  plugin/buffers.vim
+# ($vimfiles/vim/filetype.vim)
 
 # $clMail/neomutt/muttrc-accounts/tj  sourced from  $Bash/bashrc-clm
 
@@ -6,9 +6,9 @@ set from = $tj
 set sendmail = "msmtp -a tj"
 set folder = "$maild/tj"
 set header_cache = /home/jo/.cache/mutt/tj/headers
-set message_cachedir = /home/jo/.cache/mutt/tj/bodies
+set message_cache_dir = /home/jo/.cache/mutt/tj/bodies
 
-set spoolfile = "+INBOX"
+set spool_file = "+INBOX"
 set record = "+Sent\ Items"
 set trash = "+[Gmail].Bin"
 

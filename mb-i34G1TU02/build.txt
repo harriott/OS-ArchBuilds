@@ -654,11 +654,8 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 :: Replace dbus-python with extra/python-dbus? [Y/n]
 ## waiting
 apache
-fping
 gokcehan's lf
 MariaDB
-php
-sudo pacman -S neovide
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

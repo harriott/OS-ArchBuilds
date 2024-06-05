@@ -147,8 +147,11 @@ sudo pacman -S gopls
 #=> java-commons-lang
 sudo pacman -S java-commons-lang  # (for pdftk's functions)
 
-#=> keepassxc
+#=> keepassxc 0 install
 sudo pacman -S keepassxc
+
+#=> keepassxc 1 remove
+sudo pacman -Rs keepassxc
 
 #=> libgphoto2
 sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it

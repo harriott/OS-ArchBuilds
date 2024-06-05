@@ -1,4 +1,4 @@
-# muttrc-*  filetypes are set in  plugin/buffers.vim
+# ($vimfiles/vim/filetype.vim)
 
 # $clMail/neomutt/muttrc-accounts/troh  sourced from  $Bash/bashrc-clm
 
@@ -6,9 +6,9 @@ set from = $troh  # = one of my Gmail accounts, defined in my  $lclm/muttrc-emai
 set sendmail = "msmtp -a troh"
 set folder = "$maild/troh"
 set header_cache = /home/jo/.cache/mutt/troh/headers
-set message_cachedir = /home/jo/.cache/mutt/troh/bodies
+set message_cache_dir = /home/jo/.cache/mutt/troh/bodies
 
-set spoolfile = "+INBOX"
+set spool_file = "+INBOX"
 set record = "+[Google\ Mail].Sent\ Mail"
 set trash = "+[Google\ Mail].Bin"
 
