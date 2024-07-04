@@ -129,8 +129,11 @@ sudo pacman -S guvcview
 #=> hosts
 sudo cp $OSAB/etc/hosts/more /etc/hosts
 
-#=> HPLIP
+#=> HPLIP 0 install
 sudo pacman -S hplip
+
+#=> HPLIP 1 remove
+sudo pacman -Rs hplip
 
 #=> HTMLHint
 sudo pacman -S htmlhint

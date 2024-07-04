@@ -54,11 +54,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
 
-# #=> cpu-x 0 mawk
-# gAUR mawk
-# nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
-# makepkg -sic
-# true
+#=> cpu-x 0 mawk
+gAUR mawk
+nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
+makepkg -sic
+true
 
 # #=> cpu-x 1 cpu-x
 # gAUR cpu-x
@@ -166,11 +166,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> moar 0 (re)install
-# gAUR moar
-# nvim -c "silent! /walles" PKGBUILD
-# makepkg -sic
-# true
+#=> moar 0 (re)install
+gAUR moar
+nvim -c "silent! /walles" PKGBUILD
+makepkg -sic
+true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
@@ -205,11 +205,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> powershell-bin
-# gAUR powershell-bin
-# nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
-# makepkg -sic
-# true
+#=> powershell-bin
+gAUR powershell-bin
+nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+makepkg -sic
+true
 
 # #=> rdrview
 # gAUR rdrview-git
@@ -217,11 +217,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> shell-color-scripts-git
-gAUR shell-color-scripts-git
-nvim -c "silent! /dwt1" PKGBUILD
-makepkg -sic
-true
+# #=> shell-color-scripts-git
+# gAUR shell-color-scripts-git
+# nvim -c "silent! /dwt1" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> tint-tetris
 # gAUR tint-tetris

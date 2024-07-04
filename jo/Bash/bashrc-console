@@ -200,8 +200,8 @@ ve () {
 # fx gitignore
 
 alias ga='git add'
-alias gcfbn='git clone --filter=blob:none'
-alias gis='git status -u'
+alias gsbs='git status -bs'
+alias gsu='git status -u'
 export BFG=$CrPl/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 

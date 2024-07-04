@@ -13,7 +13,9 @@ export Awd='window.dimensions={columns=124,lines=78}'
 export Awp='window.position={x=5,y=5}'
 
 #=> set  Neovide  window
-export Nvdg='--grid 109x72'  # UbuntuMono_Nerd_Font_Mono:  h8:72, h9:67
+export Nvdg='--grid 109x72'
+# 1920x1080  monitors
+# UbuntuMono_Nerd_Font_Mono:  h8:72, h9:67
 # used in
 #  $Obc/autostart/autostart
 #  $Obc/rc/rc_xml-mb_make.sh

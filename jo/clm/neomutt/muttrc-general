@@ -136,7 +136,7 @@ macro index,pager gq "<vfolder-from-query>" "go notmuch Query"
 #     searchterm1 tag:autocompletes searchterm2
 
 # need my  nmse ($Bash/bashrc-clm) to locate Deleted attachments
-#
+
 # reset limit to view all messages in the folder (after l > searchterm)
 macro index la "<limit>all\n" "show all messages (undo limit)"
 

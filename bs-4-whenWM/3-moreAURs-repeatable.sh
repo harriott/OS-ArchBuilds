@@ -17,13 +17,13 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> clifm 0 (re)install
-# gAUR clifm
-# nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
-# makepkg -sic
-# cd /usr/share/clifm/plugins
-# sudo gcc -o kbgen kbgen.c -lcurses
-# true
+#=> clifm 0 (re)install
+gAUR clifm
+nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
+makepkg -sic
+cd /usr/share/clifm/plugins
+sudo gcc -o kbgen kbgen.c -lcurses
+true
 
 # #=> clifm 1 remove
 # sudo pacman -Rs clifm
@@ -115,7 +115,7 @@ true
 # makepkg -sic
 # true
 
-# #=> nomacs
+# #=> nomacs 0 install
 # gAUR nomacs
 # nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
 # makepkg -sic  # takes ages...
@@ -124,6 +124,8 @@ true
 # #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
 # true
 
+# #=> nomacs 1 remove
+# sudo pacman -Rs nomacs
 # #=> nomacs-git
 # gAUR nomacs-git
 # nvim -c "silent! /_pkgname=nomacs" PKGBUILD

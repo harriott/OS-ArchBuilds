@@ -673,8 +673,9 @@ fcrontab -l
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # physical configuration
-Fujitsu E19W5 1440x900
 LUPO Nano EDR
+Philips 220V4L 1680x1050
+Timetec 16G RAM
 TL-WN725N
 ## BIOS Setup Utility
 <delete> at start
@@ -689,8 +690,6 @@ Logitech M187 Wireless Mini Mouse
 Perixx PERIBOARD-407W keyboard
 ## drives
 HL Data Storage GH70N DVD rewriter
-WD1600AAJS  in USB as target for  rsnapshot
 ### disks
 BX200  in  LogiLink 2.5" HDD Mounting Bracket  in space under DVD drive
-WD1600AAJS  in a USB slot as  snapshot_root
-9QG2FFEE  rsnapshot root
+9QG2FFEE  via  inateck  plugged into a USB slot as  snapshot_root

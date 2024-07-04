@@ -15,7 +15,7 @@
 #  echo lockTest > $llf
 #  touch $wlf
 
-llf=$Thb/linuxlock     # my creation
+llf="$Thb/linuxlock"  # my creation
 #  echo $host > $Thb/linuxlock
 #  pb $Thb/linuxlock
 wlf=$Thb/Win10ProLock  # auto-created by  Thunderbird  on  Win10Pro

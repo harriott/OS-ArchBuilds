@@ -28,7 +28,6 @@ lsmod | grep rtl8   shows it to be there
 lsblk  shows SD480GSSDPlus is /dev/sdd
   gdisk /dev/sdd > o (create a new empty GUID partition table GPT & new protective MBR) y
     w   for  gdisk /dev/sdd  (MBR: protection  GPT: present)
-
 n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
   ef00 (EFI system partition)
 n > Partition number (defaults to 2) > First sector (defaults to 1128448) > +60g > Hex code >
@@ -2385,6 +2384,7 @@ booted to  ARCH_202403  for
 mount /dev/2 /mnt
 mount /dev/1 /mnt/efi
 mount /dev/3 /mnt/home
+arch-chroot /mnt
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB  # UEFI
 grub-mkconfig -o /boot/grub/grub.cfg
 rebooted
@@ -2542,11 +2542,75 @@ hp-setup -h  reporting SyntaxWarning
 hp-setup -r > Select > Remove
 hp-setup 192.168.183.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 125.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.125.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 121.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.121.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 203.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.203.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 99.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.99.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+:: Synchronising package databases...
+error: failed to synchronize all databases (unable to lock database)
+sudo rm /var/lib/pacman/db.lck
+## HP ENVY 5532 IP Address changed to 110.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.110.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## erroneously removed SD480GSSDPlus
+line deleted from  /etc/fstab, then powered off to remove the drive,
+  then realised it contained the boot partition so refitted, but failed to find boot device...
+FM32FD70E1  for  ARCH_202406
+mount /dev/sda2 /mnt
+mount /dev/sda1 /mnt/efi
+mount /dev/sda4 /mnt/home
+arch-chroot /mnt
+grub-mkconfig -o /boot/grub/grub.cfg
+ctrl-d  out of chroot  for  halt -p  then  rebooted but still not finding boot device...
+FM32FD70E1  for  ARCH_202406
+mount /dev/sda2 /mnt
+mount /dev/sda1 /mnt/efi
+mount /dev/sda4 /mnt/home
+arch-chroot /mnt
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+ctrl-d  out of chroot  for  halt -p  then  rebooted
+## nomacs won't open
+nomacs-debug  somehow there, so  sudo pacman -Rs nomacs-debug
+0x217b27a internal_error(char const*, ...)
+worked on next try
+## HP ENVY 5532 IP Address changed to 237.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.237.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 delta
 forgit
 gokcehan's lf
 MariaDB
+onefetch
+signal-desktop
 ueberzugpp
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
@@ -2626,15 +2690,14 @@ B525 HD Webcam
 ## cbh
 Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard
-## disks
-SATA?: SD480GSSDPlus resting almost at bottom of 3½" bays, under the tidied cables
-SATA?: SDU3D1TB resting at bottom of 3½" bays, under the tidied cables
-SATA?: ST4000VN008 in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
-SATA?: WD1001FALS in 3rd 5¼" tray from top, tied into a metal frame
-SATA?: WD20EZAZ in blue holder in top 5¼" tray
+## drives
+SATA0: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
+SATA1: SD480GSSDPlus resting almost at bottom of 3½" bays, under the tidied cables, containing boot partition
+SATA2: SDU3D1TB resting at bottom of 3½" bays, under the tidied cables, containing Dropbox
+SATA3: ST4000VN008 in bottom 5¼" tray (4th from top) in a plastic holder (fixed to rhs)
+SATA4: WD20EZAZ in blue holder in top 5¼" tray
+SATA5: WD1001FALS in 3rd 5¼" tray from top, tied into a metal frame
 spare power cable protruding out of a back slot
-### optical
-SATA1: Toshiba SATA TS-H653 DVD±RW Burner in 2nd 5¼" bay from top
 #### whipper
 whipper drive analyze
   INFO:whipper.command.drive:cdparanoia can defeat the audio cache on this drive

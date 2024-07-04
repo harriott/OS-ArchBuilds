@@ -5,8 +5,8 @@
 # r $machLg/pacman
 
 #=> 0 pacman log directories 0
-pc=$machLg/pacman/checkupdates
-pQ=$machLg/pacman/Q
+pc="$machLg/pacman/checkupdates"
+pQ="$machLg/pacman/Q"
 
 #=> 0 pacman log directories 1 fallback
 [ -d $pc ] || pm=~/pacman/checkupdates

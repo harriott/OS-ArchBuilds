@@ -237,7 +237,7 @@ moar -h
     sudo tlmgr update --all
 
 # Emacs
-    $misc/Emacs/init.el
+    $misc/CP/Emacs/init.el
     $TeNo/Emacs/org/org.org
     et <fileToOpenTerminal>
     im emacs
@@ -265,6 +265,7 @@ moar -h
     $onGH/pandoc-templates/README.markdown
     archlinux-java status
     b <codeFile>  # syntax'd cat
+    fd -tf -u index.lock -x rm
     pb <codeFile>  # also reformatted
     r ~/.cache/hugo_cache
     yj -ty <file.toml >file.yml
@@ -712,14 +713,18 @@ optimised for SSDs
     fRs $Drpbx/CAM-toSort0 Apache
     fRs $Drpbx/CAM-toSort0 Costello
     fRs $JHw _config.yml
+    fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
     fRs $Obc/rc rc.xml
     fRs $onGH/misc/CP/PerlTools mysmsMD.pl
-    fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
+    fRs $TeNo/md-JH-DailyLife DailyLife.md
     fRs $vfp/packs-cp/opt/vim-dokuwiki/syntax dokuwiki.vim
     fRs $vimfiles/nvim/lua/lazy dropbar.lua
     fRs $vimfiles/syntax cmusq.vim
     fRs $vimfiles/vim/plugin plugin.vim
+    n $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
+    n $rsnapshot/daily.1/localhost$MSWin10/mb
+    n $rsnapshot/hourly.0/localhost/$Drpbx/Cop/AM-toSort0
 
 ##### my OBS grabs
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
@@ -727,8 +732,8 @@ optimised for SSDs
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "2022-*.mkv" -exec rm -f {} \;
 
 ##### versions of a particular file
-    find $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes/md-JH-DailyLife/roles/ -maxdepth 1 -type f -name "roles.md" -ls  # not easy to sort
-    fd roles.md $rsnapshot/*/localhost/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes/md-JH-DailyLife/roles --max-depth 1 -l | sort > roles.fetl
+    find $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles/ -maxdepth 1 -type f -name "roles.md" -ls  # not easy to sort
+    fd roles.md $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles --max-depth 1 -l | sort > roles.fetl
     $rsnapshot/hourly.0/localhost/$Bash/export-jo
 
 #### interval directory permissions
@@ -1041,6 +1046,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     /usr/share/doc/arch-wiki/html/en
 
 - FILE-HIERARCHY(7)
+- `Qt`: `Q qt6`
 - Trusted Users
 - `uf()` in `$OSAB/Bash/bashrc-generic)`
 
@@ -1216,13 +1222,13 @@ scroll don't work in `tmux`
 ## FIGlet
     figlet Joseph Harriott
 
-figlet(6)
+- figlet(6)
+- `-t` selects terminal width (instead of `-w 80` default)
 
 ### fonts
-```bash
-ft  # $OSAB/Bash/bashrc-generic
-showfigfonts > $ulLB/FIGletFonts.txt; sed -i 's/ \+$//' $ulLB/FIGletFontsTest.txt
-```
+    ft  # $OSAB/Bash/bashrc-generic
+
+`showfigfonts Deauram > ~/FIGletFonts.txt; sed -i 's/ \+$//' ~/FIGletFonts.txt` then reduced and copied to `$ulLB/FIGletFontsDeauram.txt`
 
 ## termdown
     termdown --help | mo
@@ -1360,10 +1366,7 @@ configured in `$OSAB/bs-4-whenWM/1-softwares.sh`
     sudo systemctl stop httpd.service
     systemctl status httpd.service
 
-## cloud storage
-    s ~/.config/rclone/rclone.conf  # pw is disguised
-
-### Dropbox
+## cloud storage - Dropbox
 ```bash
 dropbox &  # as in  $Obc/autostart/autostart
 killall dropbox
@@ -1371,12 +1374,16 @@ lsof -c dropbox
 pkill dropbox; dropbox &
 ```
 
-#### conflicted copies
+### conflicted copies
 ```bash
 find $Drpbx -path $Drpbx/conflicted -prune -o -name "* conflicted copy*"
 find -name "* conflicted copy*" -exec rm -f {} \;
 find -name "*(Copie en conflit de *"
 ```
+
+## cloud storage - rclone
+    rclone lsd ZCzNc:
+    s ~/.config/rclone/rclone.conf  # pw is disguised
 
 ## email - mutt notmuch
 ```bash

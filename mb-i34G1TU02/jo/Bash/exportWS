@@ -9,17 +9,24 @@
 #  $Obc/rc/rc_xml-mb_make.sh
 
 #=> set  Alacritty  window
+export Awp='window.position={x=5,y=5}'
 # used in  $Obc/autostart/terminal_launch.sh
+
+#==> 1440x900
 export Awd='window.dimensions={columns=67,lines=64}'
 # - columns:
-#    68 is obviously too narrow, but allows  my  Neovide  with  Conky visible
-#   110 allows my  gVim
-#   110 allow  my  Neovide
-export Awp='window.position={x=5,y=5}'
+#    67 is obviously too narrow, but allows  my  Neovide  with  Conky visible
+#   110 allows my  gVim/Neovide
+
+#==> 1680x1050
+export Awd='window.dimensions={columns=106,lines=75}'
+# - allows  Neovide alongside while still seeing Conky
 
 #=> set  Neovide  window
-export Nvdg='--grid 109x59'  # UbuntuMono_Nerd_Font_Mono:  h9:59
-# used in
+export Nvdg='--grid 109x59'  # 1440x900  monitor
+export Nvdg='--grid 109x70'
+# UbuntuMono_Nerd_Font_Mono:  h9:59
+# $Nvdg  used in
 #  $Obc/autostart/autostart
 #  $Obc/rc/rc_xml-mb_make.sh
 
