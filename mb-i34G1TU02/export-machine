@@ -7,7 +7,7 @@
 
 # for jo:
 #  symlinked in  $OSAB/bs-symlinks/jo-0.sh
-#  sourced by  $Bash/bash_profile
+#  sourced by  $AjB/bash_profile
 # for root:
 #  symlinked in  $OSAB/bs-symlinks/root.sh
 #  sourced by  $OSAB/root/bash_profile

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh:
 
-# $machBld/jo/Bash/exportWS  called by  $Bash/export-jo
+# $machBld/jo/Bash/exportWS  called by  $AjB/export-jo
 
 # definitions here are used in
 #  $Obc/autostart/terminal_launch.sh

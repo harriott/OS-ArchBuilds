@@ -6,5 +6,5 @@
 # pb ~/.bashrc-An
 
 . ~/.bashrc  # $machBld/jo/Bash/bashrc
-nn  # defined in  $Bash/bashrc-console
+nn  # defined in  $AjB/bashrc-console
 

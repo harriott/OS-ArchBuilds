@@ -1,6 +1,6 @@
 # ($vimfiles/vim/filetype.vim)
 
-# $clMail/neomutt/muttrc-accounts/parl  sourced from  $Bash/bashrc-clm
+# $clMail/neomutt/muttrc-accounts/parl  sourced from  $AjB/bashrc-clm
 
 set from = $parl  # defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a parl"

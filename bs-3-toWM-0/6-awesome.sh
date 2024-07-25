@@ -11,6 +11,6 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S awesome
 
 #=> 1 $DCGRs - needed until Dropbox
-# see  $Bash/export-jo
+# see  $AjB/export-jo
 rsync -iLrtv --delete --modify-window=1 /bs/GHrUse/ $DCGRs
 

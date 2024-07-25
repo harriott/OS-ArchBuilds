@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Joseph Harriott - Sun 23 Jul 2023
+# Joseph Harriott - Thu 18 Jul 2024
 
 # run Thunderbird safely from Profile shared on Dropbox
 # -----------------------------------------------------
@@ -18,7 +18,7 @@
 llf="$Thb/linuxlock"  # my creation
 #  echo $host > $Thb/linuxlock
 #  pb $Thb/linuxlock
-wlf=$Thb/Win10ProLock  # auto-created by  Thunderbird  on  Win10Pro
+wlf="$Thb/Win10ProLock"  # $MSwin10\Thb\runSafely.ps1
 # l 2>/dev/null $llf $wlf
 
 if [ -s $llf ]; then
@@ -26,17 +26,15 @@ if [ -s $llf ]; then
     [ $lh = $host ] || ll=$lh
 fi
 [ -f "$wlf" ] && wl=$(cat $wlf)
-
-l="$ll $wl"
-echo $l
-if [ -z $l ]; then
+alf="$ll $wl"
+if [ -z $alf ]; then
     echo $host > $llf
-    if test $(find $Thb -name "* conflicted copy*" | wc -c) -eq 0; then
+    if test $(find $Thb -regex ".* conflicted copy .*\|.* (Copie en conflit de .*" | wc -c) -eq 0; then
         thunderbird
     else
         notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png -u critical 'Dropbox conflicts in $Thb.'
     fi
 else
-    notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png -u critical "? $l > Thunderbird > Thb"
+    notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png -u critical "Thunderbird locked to $alf"
 fi
 

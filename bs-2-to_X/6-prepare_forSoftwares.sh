@@ -2,7 +2,7 @@
 
 # bash $OSAB/bs-2-to_X/6-prepare_forSoftwares.sh
 
-# gdAUR  is defined in $Bash/bashrc-console
+# gdAUR  is defined in $AjB/bashrc-console
 
 set -ev
 trap read debug  # puts a read request after each executable line

@@ -1,6 +1,6 @@
 # ($vimfiles/vim/filetype.vim)
 
-# $clMail/neomutt/muttrc-accounts/ftml  sourced from  $Bash/bashrc-clm
+# $clMail/neomutt/muttrc-accounts/ftml  sourced from  $AjB/bashrc-clm
 
 set from = $fm  # = my Fastmail email, defined in my  $LE/mymuttrcAddresses
 set sendmail = "msmtp -a fm"

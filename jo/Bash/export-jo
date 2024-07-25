@@ -1,15 +1,18 @@
 #!/bin/sh
 # vim: fdl=1 ft=sh:
 
-# ~/.export-jo  ($Bash/export-jo)
+# $AjB/export-jo
+
 #  depends on  $OSAB/Bash/export-storage
-#  sourced by  $Bash/bash_profile
+#  sourced by  $AjB/bash_profile
 #  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 
-export MANPATH=/usr/share/man/
-uG="$machBld/jo/Bash/exportWS"; [[ -f $uG ]] && source $uG
+#  also sourced by  $MSWSL\bash_profile
 
-export MOZ_GTK_TITLEBAR_DECORATION=client
+export MANPATH=/usr/share/man/  # for  xman
+if [[ $(uname -r) =~ 'arch' ]]; then uG="$machBld/jo/Bash/exportWS"; [[ -f $uG ]] && source $uG; fi
+
+export MOZ_GTK_TITLEBAR_DECORATION=client  # hide title bar and window border
 export PAPERSIZE=A4  # libpaper
 
 #=> storage
@@ -17,13 +20,13 @@ export PAPERSIZE=A4  # libpaper
 
 export CPdoc=$CrPl/documenting
     export LTXj=$CPdoc/LaTeX/jo  # $LTXj
-export Imagey=$Bash/Imagey  # used in  $Bash/bashrc-wm
+export Imagey=$AjB/Imagey  # $Imagey  used in  $AjB/bashrc-wm
 export lazy="$HOME/.local/share/nvim/lazy"  # $lazy - neovim  plugins
 export lclm=$ulL/clm  # $lclm  linux command-line mail, was  GNULE
 export Openbox=$ABjo/wm/Openbox
     export Obc=$Openbox/openbox  # $Obc - configurations
 export TeNo=$core/TextNotes  # used in  $TeNo
-    export TNt=$TeNo/tex  # *.tex's - used in  $Bash/bashrc-wm
+    export TNt=$TeNo/tex  # *.tex's - used in  $AjB/bashrc-wm
 
 #==> rooting on $Drpbx
 export COT=$Drpbx/Cop/OutThere  # $COT  used in  $TeNo

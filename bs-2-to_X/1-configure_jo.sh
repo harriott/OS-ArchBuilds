@@ -25,7 +25,7 @@ trap read debug  # puts a read request after each executable line
 # mkdir $m $m/cz $m/fm $m/tj $m/live $m/parl $m/troh $m/gmx $m/zou
 
 # #=> 2 for my m4p scripts
-# mkdir -p ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $Bash/bashrc-ob
+# mkdir -p ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $AjB/bashrc-ob
 
 # #=> 2 GnuPG directory
 # gpg -k  # creates & populates  ~/.gnupg

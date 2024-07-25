@@ -5,5 +5,5 @@
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
 #=> load the rest of my bashrc
-source $Bash/bashrc
+source $AjB/bashrc
 

@@ -1,11 +1,11 @@
 # vim: fdl=1 ft=sh sw=2:
 
-# $Bash/bashrc, sourced by  $machBld/jo/Bash/bashrc
+# $AjB/bashrc, sourced by  $machBld/jo/Bash/bashrc
 
 #=> load the rest of my bashrc
 source ~/.bashrc-generic  # useful everywhere, including root
-source ~/.bashrc-console  # ($Bash/bashrc-console) useful also in Console as user
-source $Bash/bashrc-clm  # can be used before WM
-source $Bash/bashrc-wm
-source $Bash/bashrc-ob  # useful in Openbox (and awesome)
+source ~/.bashrc-console  # ($AjB/bashrc-console) useful also in Console as user
+source $AjB/bashrc-clm  # can be used before WM
+source $AjB/bashrc-wm
+source $AjB/bashrc-ob  # useful in Openbox (and awesome)
 

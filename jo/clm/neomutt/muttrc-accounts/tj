@@ -1,6 +1,6 @@
 # ($vimfiles/vim/filetype.vim)
 
-# $clMail/neomutt/muttrc-accounts/tj  sourced from  $Bash/bashrc-clm
+# $clMail/neomutt/muttrc-accounts/tj  sourced from  $AjB/bashrc-clm
 
 set from = $tj
 set sendmail = "msmtp -a tj"

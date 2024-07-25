@@ -3,7 +3,7 @@
 
 # $Imagey/Scan.sh
 # Joseph Harriott, Mon 25 Sep 2023
-# S  is defined in  $Bash/bashrc-wm
+# S  is defined in  $AjB/bashrc-wm
 
 # $1 manually chooses the scanner because there's no other easy way
 #  only one scanning device should be plugged in
@@ -22,7 +22,7 @@ if [ $1 = "248" ] ; then
 elif [ $1 = "55n" ] || [ $1 = "55u" ] ; then
   declare -a Resns=(1 2 3 6 12)
   if [ $1 = "55n" ] ; then
-    device=$'--device \'hpaio:/net/ENVY_5530_series\?ip=192.168.237.10\''
+    device=$'--device \'hpaio:/net/ENVY_5530_series\?ip=192.168.133.10\''
   fi  # from  hp-makeuri
   siPrefix="scanimage $device -p --format=tiff --mode Color --resolution"
 else

@@ -2,7 +2,7 @@
 
 # Joseph Harriott, Thu 10 Aug 2023
 
-# $Bash/bash_history.sh  (see  $OSAB/bs-symlinks/jo-0.sh)
+# $AjB/bash_history.sh  (see  $OSAB/bs-symlinks/jo-0.sh)
 
 # robustly save my BASH history, for finding ancient commands
 # fcrontab:  @ 10 bash ~/Arch/bash_history.sh

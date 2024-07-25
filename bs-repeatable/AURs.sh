@@ -10,7 +10,7 @@ if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
+# gAUR  gdAUR  rAUR  are defined in $AjB/bashrc-console
 
 # #=> ansifilter
 # gAUR ansifilter
@@ -38,10 +38,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
 # makepkg -sic
 
-# #=> code-minimap 0 install
-# gAUR code-minimap
-# nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
-# makepkg -sic
+#=> code-minimap 0 install
+gAUR code-minimap
+nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
+makepkg -sic
+true
 
 # #=> code-minimap 1 remove
 # cd ~/Arch/AUR
@@ -54,11 +55,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
 
-#=> cpu-x 0 mawk
-gAUR mawk
-nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
-makepkg -sic
-true
+# #=> cpu-x 0 mawk
+# gAUR mawk
+# nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> cpu-x 1 cpu-x
 # gAUR cpu-x
@@ -166,11 +167,11 @@ true
 # makepkg -sic
 # true
 
-#=> moar 0 (re)install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 (re)install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR

@@ -5,7 +5,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# gAUR  gdAUR  rAUR  are defined in $Bash/bashrc-console
+# gAUR  gdAUR  rAUR  are defined in $AjB/bashrc-console
 
 #=> snixembed-git
 # to get Dropbox icon down into tint2

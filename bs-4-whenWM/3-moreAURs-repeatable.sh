@@ -7,7 +7,7 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# gAUR  gdAUR  are defined in $Bash/bashrc-console
+# gAUR  gdAUR  are defined in $AjB/bashrc-console
 # softwares that require a WM
 
 # #=> archlinux-java-run
@@ -17,13 +17,13 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> clifm 0 (re)install
-gAUR clifm
-nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
-makepkg -sic
-cd /usr/share/clifm/plugins
-sudo gcc -o kbgen kbgen.c -lcurses
-true
+# #=> clifm 0 (re)install
+# gAUR clifm
+# nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
+# makepkg -sic
+# cd /usr/share/clifm/plugins
+# sudo gcc -o kbgen kbgen.c -lcurses
+# true
 
 # #=> clifm 1 remove
 # sudo pacman -Rs clifm
@@ -73,12 +73,12 @@ true
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-#=> Dropbox 0 (re)install
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-# - if missed, in  ~/Arch/AUR/dropbox/,  sudo pacman -U  dropbox-185.4.6054-1-x86_64.pkg.tar.zst
-true
+# #=> Dropbox 0 (re)install
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# # - if missed, in  ~/Arch/AUR/dropbox/,  sudo pacman -U  dropbox-185.4.6054-1-x86_64.pkg.tar.zst
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -115,14 +115,14 @@ true
 # makepkg -sic
 # true
 
-# #=> nomacs 0 install
-# gAUR nomacs
-# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
-# makepkg -sic  # takes ages...
-# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
-# # after first install
-# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-# true
+#=> nomacs 0 install
+gAUR nomacs
+nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+makepkg -sic  # takes ages...
+# - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
+# after first install
+#  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+true
 
 # #=> nomacs 1 remove
 # sudo pacman -Rs nomacs
@@ -165,7 +165,7 @@ true
 #=> opera
 # for MPD
 gAUR opera
-nvim -c "silent! /download3.operacdn.com" PKGBUILD
+nvim -c "silent! /www.opera.com" PKGBUILD
 makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
@@ -290,8 +290,8 @@ makepkg -sic
 # true
 # #  ~/Arch/AUR/ymuse  makepkg --install  if you're too late
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

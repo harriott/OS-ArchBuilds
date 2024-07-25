@@ -11,7 +11,7 @@
 # for initial build of Arch (after $machBld/export-machine):
 # for jo:
 #  symlinked in  $OSAB/bs-symlinks/jo-0.sh
-#  sourced by  $Bash/bash_profile
+#  sourced by  $AjB/bash_profile
 # for root:
 #  symlinked in  $OSAB/bs-symlinks/root.sh
 #  sourced by  $OSAB/root/bash_profile
@@ -34,7 +34,7 @@ if [[ $myDrA == 1 ]]; then
     # - keep  DROPBOX  capitalised for finding it without need for $
       export core=$DJH/core
         export ITstack=$core/IT_stack
-          export CrPl=$ITstack/CP  # $CrPl  used in  $Bash/bashrc-console  & build scripts
+          export CrPl=$ITstack/CP  # $CrPl  used in  $AjB/bashrc-console  & build scripts
           export onGH=$ITstack/onGitHub
             export vimfiles=$onGH/vimfiles
           export ulL=$ITstack/unix_like-linux
@@ -53,7 +53,7 @@ else
 fi  # depends on  onGH=
 if [ $OSAB ]; then
   export ABjo=$OSAB/jo
-    export Bash=$ABjo/Bash
+    export AjB=$ABjo/Bash
     export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
     export clMail=$ABjo/clm  # used in  bashrc-clm  and  muttrc-*
   export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg

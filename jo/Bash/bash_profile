@@ -2,7 +2,7 @@
 #
 # my generic  ~/.bash_profile
 # ---------------------------
-# $Bash/bash_profile  symlinked in  $OSAB/bs-symlinks/jo-0.sh
+# $AjB/bash_profile  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 #  supplements and overrides  /etc/profile
 
 # exports defined here so they can be accessed pre-X, by
@@ -14,7 +14,7 @@ source ~/.export-machine; source ~/.export-storage  # also in  $OSAB/root/bash_p
 
 # Useful before X:
   source ~/.bashrc-generic  # useful everywhere, including root
-  source ~/.bashrc-console  # ($Bash/bashrc-console) useful also in Console as user
+  source ~/.bashrc-console  # ($AjB/bashrc-console) useful also in Console as user
 # This is commented out because I keep bashrc just for instances in X:
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc
 

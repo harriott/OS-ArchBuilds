@@ -15,7 +15,7 @@
 #  $clMail/neomutt/muttrc-accounts/tj
 #  $clMail/neomutt/muttrc-accounts/troh
 #  $clMail/neomutt/muttrc-accounts/zou
-# - which are called through aliases in my  ~/.bashrc  (specifically  $Bash/bashrc-clm)
+# - which are called through aliases in my  ~/.bashrc  (specifically  $AjB/bashrc-clm)
 
 attachments +A image/jpeg  # doesn't seem to help
 

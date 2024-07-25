@@ -20,7 +20,7 @@ tty-clock -bcs
 SORT(1)
 
 # Bash
-    $Bash/bash_profile
+    $AjB/bash_profile
     $core/IT_stack/unix_like-linux/Bash/colours
     /etc/profile
 
@@ -155,7 +155,7 @@ moar -h
     r $Sig
 
 ## dict
-    $Bash/bashrc-console
+    $AjB/bashrc-console
     dict -D
     i dict
 
@@ -178,6 +178,7 @@ moar -h
     za $ITscr/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/ragged2e.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
+    za $ITscr/CP/TeX/LaTeX/appearance/url.pdf
     za $ITscr/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
@@ -189,7 +190,7 @@ moar -h
     r $jtCP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
-`mmsc`, `pif`, `xc` defined in `$Bash/bashrc-ob`
+`mmsc`, `pif`, `xc` defined in `$AjB/bashrc-ob`
 
 ### fontspec
     \setmonofont{Caskaydia Cove Regular Nerd Font Complete Mono}
@@ -243,7 +244,7 @@ moar -h
     im emacs
     ~/.emacs.d/.cache
 
-`G` & `T` defined in `$Bash/bashrc-console`
+`G` & `T` defined in `$AjB/bashrc-console`
 
 ## resources
     fd -e org -p $DCGRs
@@ -551,7 +552,7 @@ can't cope with `utf-16le`
 
 ## Vifm
     FF $ITscr/CP/vifm-v0.12-builtin-normal.png
-    v  # ($Bash/bashrc-console)
+    v  # ($AjB/bashrc-console)
     v $DJH $DJH
 
 # forum
@@ -586,7 +587,7 @@ gpg(1)
     i pinfo
 
 - lynx-style, but n/N don't work...
-- see `$Bash/bashrc-console`
+- see `$AjB/bashrc-console`
 
 ### commands
 - no backwards search
@@ -678,7 +679,7 @@ optimised for SSDs
     sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
 
 #### trash-cli
-    $Bash/bashrc-console
+    $AjB/bashrc-console
     trash-empty  # lists before query
 
 ### rsnapshot
@@ -707,7 +708,7 @@ optimised for SSDs
 
 #### find
 
-    fRs $Bash bashrc-console
+    fRs $AjB bashrc-console
     fRs $Drpbx/CAM-good US
     fRs $Drpbx/CAM-toSort0 '01 '
     fRs $Drpbx/CAM-toSort0 Apache
@@ -734,7 +735,7 @@ optimised for SSDs
 ##### versions of a particular file
     find $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles/ -maxdepth 1 -type f -name "roles.md" -ls  # not easy to sort
     fd roles.md $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles --max-depth 1 -l | sort > roles.fetl
-    $rsnapshot/hourly.0/localhost/$Bash/export-jo
+    $rsnapshot/hourly.0/localhost/$AjB/export-jo
 
 #### interval directory permissions
 - they're owned by root, but 755 so I can look inside
@@ -759,11 +760,15 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
 
 UDISKIE(8)
 
+## suspend
+- `/sys/power/mem_sleep` contains the possible states
+- `fn+f12` invokes `XF86Sleep` = `systemctl suspend`
+
 # imagey
 ```bash
 convert -list color > $ulLA/IM-convert-list_color.txt
 im gs
-jpo  # defined in my $Bash/bashrc-wm
+jpo  # defined in my $AjB/bashrc-wm
 rm -r ~/.thumbnails/normal/*
 xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 ```
@@ -821,12 +826,12 @@ thumbnail mode: `R` reload all
 ### nsxiv
 ```bash
 i nsxiv
-ns  # see $Bash/bashrc-wm
+ns  # see $AjB/bashrc-wm
 tree ~/.cache/nsxiv
 ```
 
 ## pqiv
-    pq  # pqiv (recursive, no info, sorted, 2s fade - $Bash/bashrc-wm)
+    pq  # pqiv (recursive, no info, sorted, 2s fade - $AjB/bashrc-wm)
 
 pqiv(1)
 
@@ -874,6 +879,10 @@ mediainfo -h | mo
 #### manually
 get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 
+### queue
+    $ABjo/wm/cmusqueue.sh
+    $Drpbx/Cop/AM-toSort0/cmusq
+
 ## audio - playerctl
     playerctl  # quick guide
     playerctl -l  # (--list-all) available players
@@ -887,7 +896,7 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 follows my `PCManFM` folder settings
 
 ## audio - vimpc
-    v  # alias'd to  vimpc  in  $Bash/bashrc-wm
+    v  # alias'd to  vimpc  in  $AjB/bashrc-wm
 
 - `$ABjo/wm/MPD/vimpcrc` maps a better `q` among other things
 - normal mode command `ZZ` quits completely
@@ -1150,7 +1159,7 @@ uses `fzf`
     journalctl --verify
     journalctl | grep Consumed
 
-backed up in `$Bash/bash_profile`
+backed up in `$AjB/bash_profile`
 
 ### messages, paged
     journalctl -b  # for this boot
@@ -1387,7 +1396,7 @@ find -name "*(Copie en conflit de *"
 
 ## email - mutt notmuch
 ```bash
-$Bash/bashrc-clm
+$AjB/bashrc-clm
 grep -r "Georita" *
 rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
 ```

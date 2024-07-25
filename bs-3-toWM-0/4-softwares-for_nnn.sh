@@ -3,7 +3,7 @@
 
 # $OSAB/bs-3-toWM-0/4-softwares-for_nnn.sh
 
-# gAUR  rAUR  are defined in $Bash/bashrc-console
+# gAUR  rAUR  are defined in $AjB/bashrc-console
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line

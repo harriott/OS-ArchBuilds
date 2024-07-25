@@ -2,7 +2,7 @@
 
 # bash $OSAB/bs-repeatable/remakeAURdevs.sh
 
-#  gctm  is defined in  $Bash/bashrc-console
+#  gctm  is defined in  $AjB/bashrc-console
 #  sudo aura -Aakux --devel  is good for identifying locally installed developer repositories
 
 PQ(){ echo; echo $1; pacman -Qs $1; }

@@ -6,7 +6,7 @@
 
 # $OSAB/Bash/bashrc-generic  symlinked in  $OSAB/bs-symlinks/jo-0.sh
 # for jo:
-#  sourced by  $Bash/bash_profile  &  $Bash/bashrc
+#  sourced by  $AjB/bash_profile  &  $AjB/bashrc
 # for root:
 #  sourced by  $OSAB/root/bashrc
 
@@ -16,6 +16,7 @@ lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 source $ITscc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash
 source $ITscc/forArch/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring
+source $OSAB/Bash/bashrc-generic-CP
 
 [ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su
@@ -55,41 +56,25 @@ alias e='eza --icons'
   alias et='e -T'  # for tree
 alias ed='eza -D'  # show directories only
 alias edt='eza -DT'  # show directory tree
+
 alias l='ls --color=auto'
+
 alias ldf='lsd --group-dirs first'
 alias ll='lsd -al'  # show permissions and symlinks
 alias lt='lsd --tree'
 alias ltd='lsd -d --tree'
+
 alias mo='moar'
+
 alias s="stat -c '%A %a %h %U %G %s %y %n'"
 alias so="stat -c '%a %n'"  # octal rights
 alias sm="stat -c '%y %n'"  # modification time
-export PAGER=less
-shopt -s autocd dotglob extglob globstar nullglob
 
 c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
 # - https://superuser.com/a/1244522/242800
 
-cft(){
-  find . -path './.git' -prune -o -type f -name "*" | rev | cut -d . -f1 | rev | sort | uniq -ic | sort -rn''
-} # count filetypes
-
-if [ -s "/usr/bin/broot" ]; then
-  source ~/.config/broot/launcher/bash/br  # (first  broot  adds to  .bashrc)
-fi # configures broot
-
-if [ -s "/usr/share/fzf" ]; then
-  # alias f="fzf --preview 'bat --color=always {} | head -500'"
-  alias f="fzf --preview 'bat --color=always {}'"
-  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --no-ignore'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  source /usr/share/fzf/key-bindings.bash
-  source /usr/share/fzf/completion.bash
-fi
-
-locd () {
-    locate -0 -b -A "$@" | xargs -0 -I {} bash -c '[ -d "{}" ] && echo "{}"'
-} # directories
+export PAGER=less
+source $OSAB/Bash/bashrc-generic-CP
 
 r () {
   [ $TERM != 'screen-256color' ] && pi="--cmd='set preview_images true'"
@@ -167,36 +152,6 @@ csF () {
     echo "- need a datecode"
   fi
 }  # make clamscanFOUND log file - should be enough
-
-#=> colours
-source $OSAB/Bash/xcol.sh
-
-#==> tput foreground
-# inspired by nachoparker
-export tpfn=$'\e[0m' # normal
-export tpfb=$(tput bold)
-
-#===> bold colours
-export tpf0b="$tpfb$tpf0" # bold black
-export tpf1b="$tpfb$tpf1" # bold red
-export tpf2b="$tpfb$tpf2" # bold green
-export tpf3b="$tpfb$tpf3" # bold yellow
-export tpf4b="$tpfb$tpf4" # bold blue
-export tpf5b="$tpfb$tpf5" # bold magenta
-export tpf6b="$tpfb$tpf6" # bold cyan
-export tpf7b="$tpfb$tpf7" # bold white =  echo -e '\033[1;37m bold white \e[0m'
-# echo "${tpf0b}black ${tpf1b}red ${tpf2b}green ${tpf3b}yellow ${tpf4b}blue ${tpf5b}magenta ${tpf6b}cyan ${tpf7b}white${tpfn}"
-
-#===> normal colours
-export tpf0=$(tput setaf 0) # black
-export tpf1=$(tput setaf 1) # red
-export tpf2=$(tput setaf 2) # green, slightly duller than  echo -e '\e[92m  green \e[0m'
-export tpf3=$(tput setaf 3) # yellow
-export tpf4=$(tput setaf 4) # blue
-export tpf5=$(tput setaf 5) # magenta
-export tpf6=$(tput setaf 6) # cyan
-export tpf7=$(tput setaf 7) # white
-# echo "${tpf0}black ${tpf1}red ${tpf2}green ${tpf3}yellow ${tpf4}blue ${tpf5}magenta ${tpf6}cyan ${tpf7}white${tpfn}"
 
 #=> command history
 alias h='history'

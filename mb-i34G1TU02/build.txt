@@ -644,7 +644,7 @@ br
   The br function has been successfully installed.
   You may have to restart your shell or source your shell init files.
   Afterwards, you should start broot with br in order to use its full power.
-removed duplicate last two lines from  $Bash/bash_profile  &  $machBld/jo/Bash/bashrc
+removed duplicate last two lines from  $AjB/bash_profile  &  $machBld/jo/Bash/bashrc
 ## HP ENVY 5532 IP Address changed to 21.10
 fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
@@ -652,6 +652,17 @@ hp-setup 192.168.21.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Updates
 :: Replace dbus-python with extra/python-dbus? [Y/n]
+## sleep
+systemctl --version  reports  systemd 256
+fn+f12 (= systemctl suspend)  works, but bring back with case power button
+## Updates - code-minimap
+==> Starting build()...
+error: package `anstyle-query v1.0.2` cannot be built because it requires rustc 1.70.0 or newer, while the currently active rustc version is 1.66.0
+rustc -V  reports  rustc 1.66.0 (69f9c33d7 2022-12-12)
+## /etc/sudoers
+sudo cp /etc/sudoers $machLg/etc/sudoers-o9p
+sudo chown jo:jo $machLg/etc/sudoers-o9p
+chmod 644 $machLg/etc/sudoers-o9p
 ## waiting
 apache
 gokcehan's lf

@@ -2365,7 +2365,7 @@ br
   The br function has been successfully installed.
   You may have to restart your shell or source your shell init files.
   Afterwards, you should start broot with br in order to use its full power.
-removed duplicate last two lines from  $Bash/bash_profile  &  $machBld/jo/Bash/bashrc
+removed duplicate last two lines from  $AjB/bash_profile  &  $machBld/jo/Bash/bashrc
 ## vimpc
   error while loading shared libraries: libtag.so.1: cannot open shared object file: No such file or directory
 fixed by simply re-installing  vimpc-git
@@ -2604,6 +2604,27 @@ hp-setup -h  reporting SyntaxWarning
 hp-setup -r > Select > Remove
 hp-setup 192.168.237.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 104.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.104.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## sleep failing
+systemctl --version  reports  systemd 256
+xev reports  fn+f12  to be  150 XF86Sleep, which then siezes the system,
+  as does  systemctl suspend
+$OSAB/etc/systemd/disable_freeze_user_session.conf
+## HP ENVY 5532 IP Address changed to 133.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.133.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## fix /etc/sudoers
+sudo nvim -O /etc/sudoers $ulLA/ml-i34G1TU02/etc/sudoers-o9p -c 'windo difft'
+  diff over changes then  :wq!
+  visudo -c -f /etc/sudoers
 ## waiting
 delta
 forgit

@@ -1,6 +1,6 @@
 # ($vimfiles/vim/filetype.vim)
 
-# $clMail/neomutt/muttrc-accounts/gmx  sourced from  $Bash/bashrc-clm
+# $clMail/neomutt/muttrc-accounts/gmx  sourced from  $AjB/bashrc-clm
 
 set from = $gmx  # = my GMX email, defined in my  $lclm/mymuttrcAddresses
 set sendmail = "msmtp -a gmx"

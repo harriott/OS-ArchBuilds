@@ -4,7 +4,7 @@
 set -v
 trap read debug  # puts a read request after each executable line
 
-# gAUR  is defined in $Bash/bashrc-console
+# gAUR  is defined in $AjB/bashrc-console
 
 # #=> 0 ATI DDX driver
 # sudo pacman -S xf86-video-ati  # should probably reboot

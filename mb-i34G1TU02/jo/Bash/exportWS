@@ -3,7 +3,7 @@
 
 # $machBld/jo/Bash/exportWS
 
-# called by  $Bash/export-jo
+# called by  $AjB/export-jo
 # definitions here are used in
 #  $Obc/autostart/terminal_launch.sh
 #  $Obc/rc/rc_xml-mb_make.sh

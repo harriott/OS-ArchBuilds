@@ -1,0 +1,27 @@
+#!/bin/bash
+# vim: ft=sh sw=2:
+
+# $AjB/bashrc-console-prompt  sourced by  $AjB/bashrc-console  &  $MSWSL\bashrc
+
+# a colorised (bold blue) prompt, with git support
+# need to`ve  source'd  git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1=$(__git_ps1 " (%s)")  # comment out if entering a huge repository such as  nerd-fonts
+longPrompt='\[\e[1;34m\][\w$GIT_PS1]\$\[\e[0m\] '
+shortPrompt=false
+PS1=$longPrompt
+
+# see also  $OSAB/Bash/GNUReadline-inputrc
+
+# toggle short prompt
+pp (){
+  if $shortPrompt; then
+    PS1=$longPrompt
+    shortPrompt=false
+  else
+    PS1='\[\e[1;34m\][\W]\$\[\e[0m\] '
+    shortPrompt=true
+  fi
+}
+

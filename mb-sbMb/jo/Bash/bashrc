@@ -8,7 +8,7 @@
 export CHROOT=/mnt/SD480GSSDPlus/chroot
 
 #=> 0 load the rest of my bashrc
-source $Bash/bashrc
+source $AjB/bashrc
 
 #=> 0 various video directories
 # echo -e "/mnt/ST4000VN008\n/mnt/SDU3D1TB\n/mnt/WD1001FALS" > $machBld/jo/Bash/VsLmore

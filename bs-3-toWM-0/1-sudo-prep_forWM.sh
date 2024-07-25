@@ -65,7 +65,7 @@ sudo rm -r /var/lib/texmf
 
 #=> documenting - TeX Live 1 max_print_line
 sudo sed -i 's/^max_print_line = 79/max_print_line = 4000/' /etc/texmf/web2c/texmf.cnf
-# - works, but I prefer my function  x  in  $Bash/bashrc-wm
+# - works, but I prefer my function  x  in  $AjB/bashrc-wm
 
 # #=> ebook - Calibre
 # pacman -S calibre

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: se fdl=2:
 
-# $OSAB/bs-repeatable/as_root-mirrorlist_pacnew.sh
+# sudo bash $OSAB/bs-repeatable/as_root-mirrorlist_pacnew.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 

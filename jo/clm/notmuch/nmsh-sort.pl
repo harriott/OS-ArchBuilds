@@ -3,7 +3,7 @@
 # ----------------------------------------------------
 # sorts nmsh output by date - incredibly useful
 #
-# I call this from my $Bash/bashrc-clm
+# I call this from my $AjB/bashrc-clm
 # ----------------------------------------------------
 
 use strict;  use warnings;

@@ -1,6 +1,8 @@
 # vim: ft=bash sw=2:
 
-# $Bash/bashrc-wm   sourced by  $Bash/bashrc
+# Joseph Harriott, Thu 18 Jul 2024
+
+# $AjB/bashrc-wm   sourced by  $AjB/bashrc
 
 # stuff that's useful when a Window Manager is installed
 
@@ -226,7 +228,7 @@ dcc0 () {
   echo 'scanning for conflicted copies'
   echo 'vim: nowrap:' > $DropboxConflictedLog
   echo '' >> $DropboxConflictedLog
-  find $PWD -path $Drpbx/conflicted -prune -o -name "* conflicted copy*" -print >> $DropboxConflictedLog
+  find $PWD -path $Drpbx/conflicted -prune -o -regex ".*'s conflicted copy .*\|.* (Copie en conflit de .*" -print >> $DropboxConflictedLog
   gvim $DropboxConflictedLog
   popd
 }  # lists them

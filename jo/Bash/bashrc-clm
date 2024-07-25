@@ -1,6 +1,6 @@
 # vim: ft=sh:
 
-# $Bash/bashrc-clm  sourced by  $Bash/bashrc
+# $AjB/bashrc-clm  sourced by  $AjB/bashrc
 
 # $clMail/msmtprc/msmtprc-template  includes tests for sends
 
@@ -23,7 +23,7 @@ maf () {
     fA=$maild/$account/muttAliases
     echo 'vim: set ft=muttaliases:' > $fA
     echo "" >> $fA
-    echo '$maild/'$account'/muttAliases  gathered by my function  maf ($Bash/bashrc-clm)' >> $fA
+    echo '$maild/'$account'/muttAliases  gathered by my function  maf ($AjB/bashrc-clm)' >> $fA
     echo "" >> $fA
     sort -u $fAt >> $fA  # save as a rough collection, sorted
     rm $fAt

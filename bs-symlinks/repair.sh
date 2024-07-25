@@ -11,7 +11,7 @@ set -e
 #=> 0 machine specific environment
 source "../mb-$host/export-machine"
 
-#=> 1 $OSAB (& $Bash), $machBld
+#=> 1 $OSAB (& $AjB), $machBld
 source ../Bash/export-storage  # essential
 
 #=> 1 functioning root
@@ -19,10 +19,10 @@ source ../Bash/export-storage  # essential
 sudo bash $OSAB/bs-symlinks/root.sh
 
 #=> 2 functioning console
-[[ -z $loaded_bc ]] && source $Bash/bashrc-console
+[[ -z $loaded_bc ]] && source $AjB/bashrc-console
 
 #=> 2 helpful environment
-source $Bash/export-jo
+source $AjB/export-jo
 
 #=> 2 reset symlinks
 source $OSAB/bs-symlinks/jo-0.sh
