@@ -6,7 +6,6 @@
 
 if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 
-# bash <thisfile>.sh
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
@@ -38,22 +37,27 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
 # makepkg -sic
 
-#=> code-minimap 0 install
-gAUR code-minimap
-nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
-makepkg -sic
-true
+# #=> code-minimap 0 install
+# gAUR code-minimap
+# nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> code-minimap 1 remove
 # cd ~/Arch/AUR
 # rAUR code-minimap
 # sudo pacman -Rs code-minimap
 
-# #=> code-minimap-bin
+# #=> code-minimap-bin 0 install
 # # /usr/share/bash-completion/completions/code-minimap.bash
 # gAUR code-minimap-bin
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
+
+# #=> code-minimap-bin 1 remove
+# cd ~/Arch/AUR
+# rAUR code-minimap-bin
+# sudo pacman -Rs code-minimap-bin
 
 # #=> cpu-x 0 mawk
 # gAUR mawk
@@ -61,11 +65,14 @@ true
 # makepkg -sic
 # true
 
-# #=> cpu-x 1 cpu-x
+# #=> cpu-x 1 cpu-x 0 install
 # gAUR cpu-x
 # nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
 # makepkg -sic
 # true
+
+# #=> cpu-x 1 cpu-x 1 remove
+# sudo pacman -Rs cpu-x
 
 # #=> dict-moby-thesaurus
 # gAUR dict-moby-thesaurus
@@ -129,7 +136,7 @@ true
 
 # #=> julia-bin
 # # for sixels
-# gdAUR julia-bin
+# gAUR julia-bin
 # nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
 # makepkg -sic
 # true
@@ -200,26 +207,26 @@ true
 # makepkg -sic
 # true
 
-# #=> perl-data-printer
-# gAUR perl-data-printer
-# nvim -c "silent! /GARU" PKGBUILD
-# makepkg -sic
-# true
-
-#=> powershell-bin
-gAUR powershell-bin
-nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+#=> perl-data-printer
+gAUR perl-data-printer
+nvim -c "silent! /GARU" PKGBUILD
 makepkg -sic
 true
 
-# #=> rdrview
-# gAUR rdrview-git
+# #=> powershell-bin
+# gAUR powershell-bin
+# nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> rdrview-git
+# gdAUR rdrview-git
 # nvim -c "silent! /https:\/\/github.com\/eafer\/rdrview" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> shell-color-scripts-git
-# gAUR shell-color-scripts-git
+# gdAUR shell-color-scripts-git
 # nvim -c "silent! /dwt1" PKGBUILD
 # makepkg -sic
 # true
@@ -235,7 +242,7 @@ true
 # makepkg -sic
 
 # #=> ncurses-git
-# # - temporary - try moving back to  ncurses
+# # prefer the core package
 # gdAUR ncurses-git
 # nvim -c "silent! /https:\/\/github.com\/ThomasDickey\/ncurses-snapshots" PKGBUILD
 # makepkg -sic  # takes a long time...

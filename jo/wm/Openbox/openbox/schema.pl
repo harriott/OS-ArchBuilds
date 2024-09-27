@@ -49,6 +49,7 @@ our $SCHEMA = [
     {item => ['opera',                'opera',              'web-browser']},
   # {item => ['thunderbird',          'Mail',               'web-browser']},
     {item => ['gnome-terminal',       'Terminal',           'utilities-terminal']},
+    {item => ['signal-desktop',       'Signal',             'web-browser']},
   # {item => ['thunderbird',          'Thunderbird',        'web-browser']},
     {item => ['thunderbird_safely',   'Thunderbird safely', 'web-browser']},
     {item => ['transmission-qt',      'Transmission Qt',    'web-browser']},

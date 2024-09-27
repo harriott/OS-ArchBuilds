@@ -12,21 +12,21 @@ ln -sf $OSAB/terminal/alacritty.toml ~/.alacritty-generic.toml
 # e -la ~/.alacritty*
 
 #=> ansiweather
-ln -sf $ABjo/WAN/ansiweather ~/.ansiweatherrc
+ln -sf $ABjo/WAN/ansiweather ~/.ansiweatherrc  # e -l ~/.ansiweatherrc
 
 #=> Bash
 # sort this list by last use of "~":  :sort /,*\~/
 
-ln -sf $AjB/bash_profile                    ~/.bash_profile
+ln -sf $AjB/bash_profile                     ~/.bash_profile
 ln -sf $machBld/jo/Bash/bashrc               ~/.bashrc
 ln -sf $Openbox/bashrc_for_Alacritty-nvim.sh ~/.bashrc-An
-ln -sf $AjB/bashrc-console                  ~/.bashrc-console
+ln -sf $AjB/bashrc-console                   ~/.bashrc-console
 ln -sf $OSAB/Bash/bashrc-generic             ~/.bashrc-generic
-ln -sf $AjB/export-jo                       ~/.export-jo
+ln -sf $OSL/export-jo                        ~/.export-jo
 ln -sf $machBld/export-machine               ~/.export-machine
 ln -sf $OSAB/Bash/export-storage             ~/.export-storage
-ln -sf $OSAB/Bash/GNUReadline-inputrc        ~/.inputrc
-ln -sf $AjB/bash_history.sh                 ~/Arch/bash_history.sh
+ln -sf $OSL/GNUReadline-inputrc              ~/.inputrc  # e -l ~/.inputrc
+ln -sf $AjB/bash_history.sh                  ~/Arch/bash_history.sh
 
 # e -la ~
 
@@ -110,14 +110,14 @@ ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 
 #=> tmux
-ln -sf $OSAB/terminal/tmux.conf ~/.tmux.conf  # ls -l ~/.tmux.conf
+ln -sf $OSL/tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf
 
-#=> vim variants 0 $vimfiles
-# symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
-
-#=> vim variants 1 vim entry points
+#=> vim variants 0 vim entry points
 ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
 ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
+
+#=> vim variants 1 $vimfiles
+# symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 
 #=> w3m
 ln -sf $ABjo/WAN/w3m/config ~/.w3m/config

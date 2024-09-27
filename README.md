@@ -1,6 +1,8 @@
 
 vim: set fdl=2:
 
+    $OSAB/README.md
+
 # my Arch Linux installation notes
 Notes for my system build up, with all my software installation steps and most of my configurations, minus a few private settings.
 

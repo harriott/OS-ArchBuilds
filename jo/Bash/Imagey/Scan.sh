@@ -2,8 +2,8 @@
 # vim: sw=2:
 
 # $Imagey/Scan.sh
-# Joseph Harriott, Mon 25 Sep 2023
-# S  is defined in  $AjB/bashrc-wm
+# Joseph Harriott, Thu 26 Sep 2024
+# S (and  s53)  defined in  $AjB/bashrc-wm
 
 # $1 manually chooses the scanner because there's no other easy way
 #  only one scanning device should be plugged in
@@ -22,7 +22,8 @@ if [ $1 = "248" ] ; then
 elif [ $1 = "55n" ] || [ $1 = "55u" ] ; then
   declare -a Resns=(1 2 3 6 12)
   if [ $1 = "55n" ] ; then
-    device=$'--device \'hpaio:/net/ENVY_5530_series\?ip=192.168.133.10\''
+    # device=$'--device \'hpaio:/net/ENVY_5530_series\?ip=192.168.175.10\''
+    device=$'--device \'hpaio:/net/ENVY_Inspire_7200_series?ip=192.168.6.239\''
   fi  # from  hp-makeuri
   siPrefix="scanimage $device -p --format=tiff --mode Color --resolution"
 else
@@ -38,6 +39,7 @@ for Resn in "${Resns[@]}"; do
   if [[ $Resn = $2 ]]; then
     resolution=$2"00"
     goscan="$siPrefix $resolution $height > $3.tiff"
+    # echo $goscan
     eval $goscan
   fi
 done

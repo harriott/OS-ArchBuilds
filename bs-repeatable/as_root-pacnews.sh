@@ -51,6 +51,10 @@ rm /etc/locale.gen.pacnew
 nvim -O /etc/systemd/logind.conf /etc/systemd/logind.conf.pacnew -c 'windo difft'
 rm /etc/systemd/logind.conf.pacnew
 
+#=> 1 makepkg.conf
+nvim -O /etc/makepkg.conf.d/rust.conf /etc/makepkg.conf.d/rust.conf.pacnew -c 'windo difft'
+rm /etc/makepkg.conf.d/rust.conf.pacnew
+
 #=> 1 pacman.conf
 nvim -O /etc/pacman.conf /etc/pacman.conf.pacnew -c 'windo difft'
 rm /etc/pacman.conf.pacnew

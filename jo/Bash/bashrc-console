@@ -1,8 +1,9 @@
 #!/bin/bash
 # vim: ft=sh sw=2:
 
-# $AjB/bashrc-console  symlinked in  $OSAB/bs-symlinks/jo-0.sh  to  /home/jo/.bashrc-console
-# sourced by  $AjB/bash_profile  &  $machBld/jo/Bash/bashrc
+# $AjB/bashrc-console  symlink ($OSAB/bs-symlinks/jo-0.sh)
+#  sourced by  $AjB/bash_profile  &  $machBld/jo/Bash/bashrc
+
 # useful also in Console as user
 
 # -----------------------------------------------------------
@@ -12,6 +13,7 @@
 # Joseph Harriott
 
 export loaded_bc=1  # used in  $OSAB/bs-symlinks/repair.sh
+export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
 
 ra () {
   pactl set-sink-volume 0 60%  # master volume to non-distorting level
@@ -23,7 +25,7 @@ ra () {
 alias o=echo
 
 # bigger command history
-export HISTFILESIZE=10000  # lines
+export HISTFILESIZE=20000  # lines
 export HISTSIZE=1000  # commands
 # defaults are 500
 
@@ -38,14 +40,13 @@ export VISUAL=gvim
 eval "$(register-python-argcomplete pipx)"
 
 #==> prompt
-source "/usr/share/git/completion/git-prompt.sh"
-  source $AjB/bashrc-console-prompt
+source "/usr/share/git/completion/git-prompt.sh"; source $OSL/bashrc-console-prompt
 
 #=> file manage
-source $AjB/bashrc-console-fm
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
 alias v=vifm
+source $OSL/bashrc-console-fm
 
 C (){
   if [ $1 ]; then
@@ -59,6 +60,22 @@ CliFM (){
   dir="$(grep "^\*" "/home/jo/.config/clifm/.last" 2>/dev/null | cut -d':' -f2)";
   [ -d "$dir" ] && cd -- "$dir"
 } # C <dir1> [<dir2> ...]
+
+fRs () {
+  echo "directory: $1"
+  echo "file glob to find: $2"
+  if [ $2 ]; then
+    tf="$rsnapshot/tds_find"
+    echo 'vim: nowrap:' > $tf
+    echo >> $tf
+    echo "$1 $2" >> $tf
+    echo >> $tf
+    eval "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" $printfDTsort" >> $tf
+    echo '- now look in  $rsnapshot/tds_find'
+  else
+    echo "fdtsRsnapshot <directoryToSearchIn> <fileToSearchFor>"
+  fi
+} # no spaces in arguments
 
 if [ -s "/usr/bin/jump" ]; then
   eval "$(jump shell)"  # o $PROMPT_COMMAND
@@ -76,8 +93,6 @@ dcp (){
     dircolors -p >> $dcpo
     echo '' >> $dcpo
 }
-
-locx () { locate -i $1 | xcol $1; }
 
 #==> Git
 # fx gitignore

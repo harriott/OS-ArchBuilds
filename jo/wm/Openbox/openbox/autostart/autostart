@@ -19,8 +19,7 @@
 #xfce-mcs-manager &
 
 #=> JH additions
-# $Obc/autostart/autostart
-#  symlinked to  ~/.config/openbox/autostart  in my  $OSAB/bs-symlinks/jo-1-Openbox.sh
+# $Obc/autostart/autostart ($OSAB/bs-symlinks/jo-1-Openbox.sh) e -l ~/.config/openbox/autostart
 #  depends on  $OSAB/Bash/export-storage
 
 # #==> 0 gVim

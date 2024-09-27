@@ -248,6 +248,9 @@ pacman -S lua-language-server
 #=> 2 encoding - luarocks
 pacman -S luarocks
 
+#=> 2 encoding - onefetch
+pacman -S onefetch
+
 #=> 2 encoding - python-pip 0 (re)install
 pacman -S python-pip
 

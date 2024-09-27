@@ -53,6 +53,9 @@ npm i -g mapscii
  #=> perlcritic
 sudo pacman -S perl-perl-critic
 
+#=> Signal
+sudo pacman -S signal-desktop
+
 # #=> ttf-croscore
 # sudo pacman -S ttf-croscore
 

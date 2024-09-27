@@ -1,13 +1,13 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# bash 28-Zen.sh
+# bash $OSAB/bs-repeatable/Zen.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-#=> 0 Zen
-sudo pacman -S linux-zen linux-zen-headers
+# #=> 0 Zen
+# sudo pacman -S linux-zen linux-zen-headers
 
 #=> 1 tweak GRUB
 sudo sed -i 's/^GRUB_DEFAULT=0/GRUB_DEFAULT=saved/' /etc/default/grub
@@ -19,5 +19,7 @@ rg GRUB_DISABLE_SUBMENU /etc/default/grub
 
 #=> 1 update GRUB
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-# now  reboot
+
+#=> 2 reboot
+echo "Now  reboot !"
 

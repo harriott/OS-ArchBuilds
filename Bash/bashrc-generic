@@ -15,8 +15,8 @@ export loaded_bg=1  # used in  $OSAB/bs-symlinks/repair.sh
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 source $ITscc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash
-source $ITscc/forArch/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring
-source $OSAB/Bash/bashrc-generic-CP
+source $ITscc/forArch/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, o "$LS_COLORS"
+source $OSL/bashrc-generic
 
 [ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su
@@ -66,30 +66,29 @@ alias ltd='lsd -d --tree'
 
 alias mo='moar'
 
-alias s="stat -c '%A %a %h %U %G %s %y %n'"
-alias so="stat -c '%a %n'"  # octal rights
-alias sm="stat -c '%y %n'"  # modification time
-
 c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
 # - https://superuser.com/a/1244522/242800
 
 export PAGER=less
-source $OSAB/Bash/bashrc-generic-CP
+source $OSL/bashrc-generic
+
+if [ -s "/usr/bin/broot" ]; then
+  source ~/.config/broot/launcher/bash/br  # (first  broot  adds to  .bashrc)
+fi # configures broot
+
+if [ -s "/usr/share/fzf" ]; then
+  # alias f="fzf --preview 'bat --color=always {} | head -500'"
+  alias f="fzf --preview 'bat --color=always {}'"
+  eval "$(fzf --bash)"
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --no-ignore'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
 
 r () {
   [ $TERM != 'screen-256color' ] && pi="--cmd='set preview_images true'"
   eval "ranger --choosedir=$HOME/Arch/ranger_last_visited $pi $@"
   cd "$(cat /home/jo/Arch/ranger_last_visited)"
 }  # r "$Drpbx/CAM-best/Classic Yo-Yo"
-
-up(){
-  local dir=""
-  uplimit=$1
-  for ((upshift=1 ; upshift <= uplimit ; upshift++)); do dir=$dir/..; done
-  dir=$(echo $dir | sed 's/^\///')
-  if [ -z "$dir" ]; then dir=..; fi
-  cd $dir
-} # move up [n] directories
 
 #==> bat
 alias b='bat'  # syntax highlit cat
@@ -153,23 +152,12 @@ csF () {
   fi
 }  # make clamscanFOUND log file - should be enough
 
-#=> command history
-alias h='history'
-export HISTCONTROL=ignoreboth:erasedups
-# export HISTIGNORE='?:??'  # one or two character commands
-PROMPT_COMMAND='history -a' # store immediately (Samokovarov's  jump  later tweaks this)
-shopt -s histappend
-
 #=> f1t2t3
 if [ $host = 'sbMb' ]; then
   alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"
 fi
 
 #=> internetish
-alias p='ping -c 3 8.8.8.8'
-alias pg='ping -c 3 -n google.com'
-alias wp='curl wttr.in/Paris'  # weather
-
 Q () { pacman -Qs $1 | xcol $1; }  # or use  pacsearch
 
 suho () {

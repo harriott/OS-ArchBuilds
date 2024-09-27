@@ -2625,13 +2625,204 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 sudo nvim -O /etc/sudoers $ulLA/ml-i34G1TU02/etc/sudoers-o9p -c 'windo difft'
   diff over changes then  :wq!
   visudo -c -f /etc/sudoers
+## HP ENVY 5532 IP Address changed to 100.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.100.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## yt-dlp
+y7 <url>
+  nsig extraction failed: Some formats may be missing. Install PhantomJS to workaround the issue.
+## Updates
+  :: Starting full system upgrade...
+  :: Replace ruby-abbrev with extra/ruby? [Y/n]
+  :: Replace ruby-base64 with extra/ruby? [Y/n]
+  :: Replace ruby-benchmark with extra/ruby? [Y/n]
+  :: Replace ruby-bigdecimal with extra/ruby? [Y/n]
+  :: Replace ruby-bundledgems with extra/ruby-bundled-gems? [Y/n]
+  :: Replace ruby-cgi with extra/ruby? [Y/n]
+  :: Replace ruby-csv with extra/ruby? [Y/n]
+  :: Replace ruby-date with extra/ruby? [Y/n]
+  :: Replace ruby-delegate with extra/ruby? [Y/n]
+  :: Replace ruby-did_you_mean with extra/ruby? [Y/n]
+  :: Replace ruby-digest with extra/ruby? [Y/n]
+  :: Replace ruby-drb with extra/ruby? [Y/n]
+  :: Replace ruby-english with extra/ruby? [Y/n]
+  :: Replace ruby-etc with extra/ruby? [Y/n]
+  :: Replace ruby-fcntl with extra/ruby? [Y/n]
+  :: Replace ruby-fiddle with extra/ruby? [Y/n]
+  :: Replace ruby-fileutils with extra/ruby? [Y/n]
+  :: Replace ruby-find with extra/ruby? [Y/n]
+  :: Replace ruby-forwardable with extra/ruby? [Y/n]
+  :: Replace ruby-getoptlong with extra/ruby? [Y/n]
+  :: Replace ruby-io-console with extra/ruby? [Y/n]
+  :: Replace ruby-io-nonblock with extra/ruby? [Y/n]
+  :: Replace ruby-io-wait with extra/ruby? [Y/n]
+  :: Replace ruby-ipaddr with extra/ruby? [Y/n]
+  :: Replace ruby-json with extra/ruby? [Y/n]
+  :: Replace ruby-logger with extra/ruby? [Y/n]
+  :: Replace ruby-mutex_m with extra/ruby? [Y/n]
+  :: Replace ruby-net-http with extra/ruby? [Y/n]
+  :: Replace ruby-open-uri with extra/ruby? [Y/n]
+  :: Replace ruby-psych with extra/ruby? [Y/n]
+  :: Replace ruby-reline with extra/ruby? [Y/n]
+  :: Replace ruby-ruby2_keywords with extra/ruby? [Y/n]
+  :: Replace ruby-stringio with extra/ruby? [Y/n]
+  :: Replace ruby-time with extra/ruby? [Y/n]
+  :: Replace ruby-tmpdir with extra/ruby? [Y/n]
+  :: Replace ruby-uri with extra/ruby? [Y/n]
+## HP ENVY 5532 IP Address changed to 57.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.57.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP ENVY 5532 IP Address changed to 139.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.139.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## ST4000VN008 not mounting
+got pushed into maintenance mode, so root pw
+  e2fsck -v /dev/sdc1
+    Pass 1: Checking inodes, blocks, and sizes
+    ...
+    init-mu4e.el ... deleted/unused inode ... Clear<y> > y
+
+    Pass 2: Checking directory structure
+    Problem in the HTREE directory inode ...
+    ...
+    Pass 3: Checking directory connectivity
+    Pass 3A: Optimizing directories
+    Pass 4: Checking reference counts
+    Pass 5: Checking group summary information
+    Free blocks count wrong ...
+    ...
+    Inode bitmap differences...
+    ...
+    Free inode count wrong ...
+    ...
+    Free inode count wrong ...
+    ...
+    Padding at end of inode bitmap is not set. Fix<y>?
+rebooted
+## HP ENVY 5532 IP Address changed to 86.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.86.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  error: vim-runtime: signature from "T.J. Townsend <blakkheim@archlinux.org>" is invalid
+  :: File /var/cache/pacman/pkg/vim-runtime-9.1.0707-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]
+  error: linux: signature from "Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>" is invalid
+  :: File /var/cache/pacman/pkg/linux-6.10.7.arch1-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]error: linux: signature from "Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>" is invalid
+  :: File /var/cache/pacman/pkg/linux-6.10.7.arch1-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]
+## xdg-open .mka
+handlr get .mka  reports  vlc.desktop
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## HP ENVY 5532 IP Address changed to 69.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.69.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## rest
+something installed it, then gone to AUR
+pactree -r rest  returns nothing, so  sudo pacman -Rs rest
+## Updates
+:: Replace mlocate with extra/plocate? [Y/n]
+## auracle-git  libalpm.so.14  error
+sudo pacman -Rs auracle-git  then re-installed it
+## rest
+something installed it, then gone to AUR
+pactree -r rest  returns nothing, so  sudo pacman -Rs rest
+## sleep failing again
+(working for zen on i34G1TU02)
+restarting after shutdown
+removal of  $ssssd  caused  sleep attempt to just freeze the keyboard
+## Updates
+:: Replace tracker3 with extra/tinysparql? [Y/n]
+## CPU-X
+cpu-x -h
+  cpu-x: error while loading shared libraries: libcpuid.so.16: cannot open shared object file: No such file or directorycpu-x: error while loading shared libraries: libcpuid.so.16: cannot open shared object file: No such file or directory
+removing and reinstalling got it working
+## Zen
+bash $OSAB/bs-repeatable/Zen.sh  reboot
+### sleep still failing
+$OSAB/etc/systemd/disable_freeze_user_session.conf  reboot
+## HP ENVY 5532 IP Address changed to 175.10
+fixed in  $Imagey/Scan.sh
+hp-setup -h  reporting SyntaxWarning
+hp-setup -r > Select > Remove
+hp-setup 192.168.175.10 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## switched to HP Envy Inspire 7220e
+hp-makeuri 192.168.48.239
+  CUPS URI: hp:/net/ENVY_Inspire_7200_series?ip=192.168.48.239
+  SANE URI: hpaio:/net/ENVY_Inspire_7200_series?ip=192.168.48.239
+fixed in  $Imagey/Scan.sh
+scanimage -L
+  device `hpaio:/net/ENVY_5530_series?ip=192.168.175.10' is a Hewlett-Packard ENVY_5530_series all-in-one
+hp-setup -r > Select > Remove
+hp-setup 192.168.48.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+scanimage -L
+  device `hpaio:/net/ENVY_Inspire_7200_series?ip=192.168.48.239' is a Hewlett-Packard ENVY_Inspire_7200_series all-in-one
+hp-setup -i 192.168.48.239
+Still can't scan...
+## HP Envy Inspire 7220e changed to 175.239
+fixed in  $Imagey/Scan.sh
+## sudoers tweaks
+sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
+sudo visudo -c -f /etc/sudoers
+no immediate change of pw timeout
+## attempted fix of hplip SyntaxWarning
+removed then  reboot  for  sudo pacman -S hplip
+  WARNING: '/usr/lib/perl5/5.38' contains data from at least 2 packages which will NOT be used by the installed perl interpreter.
+   -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.38'
+  WARNING: 14 file(s) in /usr/lib/perl5/5.38 are not tracked by pacman and need to be rebuilt.
+   -> These were most likely installed directly by cpan or a similar tool.
+      Run the following command to get a list of these files:
+      LC_ALL=C find "/usr/lib/perl5/5.38" -type f -exec pacman -Qqo {} + |& sed -n 's/^error: No package owns \(.*\)$/\1/p'
+  /usr/lib/perl5/5.38/core_perl/perllocal.pod
+  /usr/lib/perl5/5.38/site_perl/MsgPack/Raw/Unpacker.pm
+  /usr/lib/perl5/5.38/site_perl/MsgPack/Raw/Ext.pm
+  /usr/lib/perl5/5.38/site_perl/MsgPack/Raw/Packer.pm
+  /usr/lib/perl5/5.38/site_perl/MsgPack/Raw/Bool.pm
+  /usr/lib/perl5/5.38/site_perl/MsgPack/Raw.pm
+  /usr/lib/perl5/5.38/site_perl/auto/MsgPack/Raw/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/MsgPack/Raw/Raw.so
+  /usr/lib/perl5/5.38/site_perl/auto/Eval/Safe/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/Struct/Dumb/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/Future/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/Class/Accessor/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/Neovim/Ext/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/IO/Async/.packlist
+pacman -Qqo '/usr/lib/perl5/5.38'
+  perl-data-printer
+  perl-unicode-utf8
+so re-installed them
+hp-setup 192.168.175.239 > Next > Add Printer
+scanimage -L
+  device `hpaio:/net/ENVY_Inspire_7200_series?ip=192.168.175.239' is a Hewlett-Packard ENVY_Inspire_7200_series all-in-one
+fixed in  $Imagey/Scan.sh
+## HP Envy Inspire 7220e changed to 6.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.6.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Signal
+installed then scanned QR from Signal app in Sony Xperia 10 II
 ## waiting
 delta
-forgit
 gokcehan's lf
 MariaDB
-onefetch
-signal-desktop
 ueberzugpp
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
@@ -2745,7 +2936,6 @@ whipper offset find -o +6
   WARNING:whipper.common.accurip:entry not found in AccurateRip database
   WARNING:whipper.command.offset:AccurateRip entry not found: drive offset can't be determined, try again with another disc
 so I added  read_offset = 6 ; JH  to  ~/.config/whipper/whipper.conf
-### waiting
 ## monitor
 lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 1920x1080 = 16:9)
   Brightness 40 Contrast 20

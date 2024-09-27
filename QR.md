@@ -38,42 +38,16 @@ tput bel  # bell
     complete 2>&1 | tee $machLg/bash.cmplt
     r /usr/share/bash-completion
 
-## file manage
+## file manage - ls
+    dircolors --print-ls-colors
     im ls
 
-### broot
-    i broot
-
-#### commands
-    alt+enter => quit to current directory
-    alt+h => toggle hidden
-    ctrl+q [<enter>] => quit
-    F5 => refresh
-
-#### launch
-    br
-    br -c :count
-    br -d => br --dates => the last modified date
-    br -g => br --show-git-info
-    br -h => br --hidden
-    br -i => br --show-gitignored
-    br -p => br --permissions
-    br -s => br --sizes
-
-### directory structures
+## file manage - directory structures
     <directory>  # cd <directory>  ( shopt autocd )
     file ~/.vim  # shows symlink source
     namei ~/.vim  # shows tree, including symlink sources
 
-#### Samokovarov's jump
-    i jump
-    j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
-    jump clean  # I have in fcrontab
-    jump top | mo
-    jump --help
-    r ~/.jump
-
-### file searching
+## file manage - file searching
     find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
     find . -type d -name .git
     find . -type f -name .gitignore
@@ -82,61 +56,41 @@ tput bel  # bell
 
 as root: `find / -xdev -iname "*fmtutil.cnf*"`
 
-#### for configuration files
+### for configuration files
     fd -I -e conf
     find . -type f -name "*.conf"
 
-#### grepping
+### grepping
     grep -E '<someText>|<otherText>'
     grep -r --include "*.sh" ' -f ' .
     grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
     grep -ri --include "*.conf" '#=> ' .
     man grep | grep egrep | xcol egrep fgrep
 
-##### manual
+#### manual
 - GNU Grep Manual
 - GREP(1)
 
-#### mlocate
+### mlocate
     i locate
     im locate
 
-##### regex searches
+#### regex searches
     locate -r '\.conf$'
     locate -r '\.json$' | mo
     locate -i 'nick cave'
 
-##### updatedb
+#### updatedb
     $machBld/etc/updatedb.conf
     doas updatedb
     systemctl status updatedb.timer
 
-#### list symlinks
+### list symlinks
     find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
 
-##### recursively
+#### recursively
     find . -type l -ls
     find ~ -path '*/.virtualenvs' -prune -o -type l -ls
-
-### fzf
-    <someCommand> Ctrl-t - gets the selected node on the command-line
-    FZF_DEFAULT_COMMAND
-
-```bash
-Alt+c  # to change directory
-bm fzf
-cat $(fzf)
-cd [directory/][fuzzy_pattern]**<tab>
-f  # defined in  $OSAB/Bash/bashrc-generic
-gvim -o `f`  # calling upon fzf
-kill -9 <tab>
-ls -l $(fzf -m)
-unalias **<tab>
-```
-
-### fzy
-find . -type f | fzy  # selecta
-i fzy
 
 ## pager - less
     less <file>
@@ -266,6 +220,7 @@ moar -h
     $onGH/pandoc-templates/README.markdown
     archlinux-java status
     b <codeFile>  # syntax'd cat
+    bluefish -v
     fd -tf -u index.lock -x rm
     pb <codeFile>  # also reformatted
     r ~/.cache/hugo_cache
@@ -379,10 +334,30 @@ SED(1)
 - MV(1)
 - rsync(1)
 - STAT(1)
+- WC(1)
 
 ## advcpmv
     cpg --help | mo  # man advcp
     mvg --help | mo  # man advmv
+
+## broot
+    i broot
+
+### commands
+    alt+enter => quit to current directory
+    alt+h => toggle hidden
+    ctrl+q [<enter>] => quit
+    F5 => refresh
+
+### launch
+    br
+    br -c :count
+    br -d => br --dates => the last modified date
+    br -g => br --show-git-info
+    br -h => br --hidden
+    br -i => br --show-gitignored
+    br -p => br --permissions
+    br -s => br --sizes
 
 ## CliFM
     C [dir1 [dir2 ...]]
@@ -475,6 +450,26 @@ vid => ffmpegthumbnailer
     i eza
     more in  $OSAB/Bash/bashrc-generic
 
+## fzf
+    <someCommand> Ctrl-t - gets the selected node on the command-line
+    FZF_DEFAULT_COMMAND
+
+```bash
+Alt+c  # to change directory
+bm fzf
+cat $(fzf)
+cd [directory/][fuzzy_pattern]**<tab>
+f  # defined in  $OSAB/Bash/bashrc-generic
+gvim -o `f`  # calling upon fzf
+kill -9 <tab>
+ls -l $(fzf -m)
+unalias **<tab>
+```
+
+## fzy
+    find . -type f | fzy  # selecta
+    i fzy
+
 ## if  trash-restore  reports  "Non parsable trashinfo file..."
     rm -r $Storage/.Trash-1000
     rm -r /mnt/ST4000VN008/.Trash-1000
@@ -505,7 +500,7 @@ can't cope with `utf-16le`
     du => shell -p du --max-depth=1 -h --apparent-size
     dU => shell -p du --max-depth=1 -h --apparent-size | sort -rh
     E => edit
-    F9 => open outside of tmux, for r (allowing images)
+    f9 => open outside of tmux, for r (allowing images)
     ge => cd /etc
     gh => cd ~
     gM => cd /mnt
@@ -549,6 +544,14 @@ can't cope with `utf-16le`
 ### perl-rename
     i perl-rename
     perl-rename 's/^\.//' *  # removes leading  .
+
+## Samokovarov's jump
+    i jump
+    j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
+    jump clean  # I have in fcrontab
+    jump top | mo
+    jump --help
+    r ~/.jump
 
 ## Vifm
     FF $ITscr/CP/vifm-v0.12-builtin-normal.png
@@ -722,7 +725,8 @@ optimised for SSDs
     fRs $vfp/packs-cp/opt/vim-dokuwiki/syntax dokuwiki.vim
     fRs $vimfiles/nvim/lua/lazy dropbar.lua
     fRs $vimfiles/syntax cmusq.vim
-    fRs $vimfiles/vim/plugin plugin.vim
+    fRs $vfv/plugin plugin.vim
+    fRs /etc sudoers
     n $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
     n $rsnapshot/daily.1/localhost$MSWin10/mb
     n $rsnapshot/hourly.0/localhost/$Drpbx/Cop/AM-toSort0
@@ -761,7 +765,7 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
 UDISKIE(8)
 
 ## suspend
-- `/sys/power/mem_sleep` contains the possible states
+- `/sys/power/mem_sleep` states [current]
 - `fn+f12` invokes `XF86Sleep` = `systemctl suspend`
 
 # imagey
@@ -933,6 +937,7 @@ systemctl status nordvpnd.service
 ```
 
 ## NetworkManager
+    nmcli connection delete Jo-OPPO-A76
     nmcli connection delete Jo-X10II
     nmcli connection delete cafezoide
     nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
@@ -979,11 +984,13 @@ sudo pacman -U package.pkg.tar.xz
 sudo pacman -Rs <packagetoremove>
 ```
 
-- `-i` (`--info`) on a package
-- `-ii` shows packages depend on this package
 - `-S` (`--sync`) synchronize packages from servers
-- `-y` (`--refresh`) refresh copy of the master package list (use with `-u`)
-- `-yy` (`--refresh`) force refresh
+    - `Sc` (`--clean`) remove unused packages from the cache
+        - `Scc` clean out the cache
+    - `Si` (`--info`) on a package
+        - `Sii` shows packages depend on this package
+    - `Sy` (`--refresh`) refresh copy of the master package list (use with `-u`)
+        - `Syy` force refresh
 
 ### list local and remote packages
 ```bash
@@ -1048,6 +1055,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     bat -A /etc/hosts
     bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
+    find /boot/vmli*  # lists available kernels
     i hier
     i localectl
     slock  # unlocks when correct user pw is entered
@@ -1351,6 +1359,7 @@ nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/par
 
 # WAN
 ```bash
+i yt-dlp
 xdg-open https://archlinux.org
 ```
 
@@ -1402,7 +1411,7 @@ rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
 ```
 
 ### $maild
-    fd . */*/cur |wc -l  # all of my seen emails
+    fd . */*/cur | wc -l  # all of my seen emails
     fd . */*/new  # as yet unseen, a few
     fd . */*/tmp  # usually nothing here, can be ignored
     ~/.local/share/mail/.notmuch

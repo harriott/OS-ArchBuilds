@@ -46,7 +46,7 @@ bash 36-symlinks-sshd.sh
 ## fixed updatedb.conf
 ## got rsnapshot working
 ## Zen kernel
-bash 28-Zen.sh
+bash $OSAB/bs-repeatable/Zen.sh
   Warning: os-prober will not be executed to detect other bootable partitions.
 ## ethernet
 altname somehow:
@@ -663,10 +663,29 @@ rustc -V  reports  rustc 1.66.0 (69f9c33d7 2022-12-12)
 sudo cp /etc/sudoers $machLg/etc/sudoers-o9p
 sudo chown jo:jo $machLg/etc/sudoers-o9p
 chmod 644 $machLg/etc/sudoers-o9p
+## rest
+something installed it, then gone to AUR
+pactree -r rest  returns nothing, so  sudo pacman -Rs rest
+## Updates
+:: Replace mlocate with extra/plocate? [Y/n]
+## auracle-git  libalpm.so.14  error
+sudo pacman -Rs auracle-git  then re-installed it
+## Updates
+:: Replace tracker3 with extra/tinysparql? [Y/n]
+## pw timeout become too short
+sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
+sudo visudo -c -f /etc/sudoers
+no immediate effect
+## Perl packages
+pacman -Qqo '/usr/lib/perl5/5.38'
+  perl-data-printer
+so re-installed it
 ## waiting
 apache
 gokcehan's lf
 MariaDB
+onefetch
+Signal
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

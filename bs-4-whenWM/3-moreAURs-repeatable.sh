@@ -97,10 +97,19 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
+
+#=> hplip-plugin 0 HPLIP key
+gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
+
+#=> hplip-plugin 1 install
+gAUR hplip-plugin
+nvim -c "silent! /developers.hp.com\/hp-linux-imaging-and-printing" PKGBUILD
+makepkg -sic  # requires  perl-test-fatal
 true
 
 # #=> iscan
@@ -115,19 +124,19 @@ true
 # makepkg -sic
 # true
 
-#=> nomacs 0 install
-gAUR nomacs
-nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
-makepkg -sic  # takes ages...
-# - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
-# after first install
-#  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-true
+# #=> nomacs 0 install
+# gAUR nomacs
+# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+# makepkg -sic  # takes ages...
+# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
+# # after first install
+# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+# true
 
 # #=> nomacs 1 remove
 # sudo pacman -Rs nomacs
 # #=> nomacs-git
-# gAUR nomacs-git
+# gdAUR nomacs-git
 # nvim -c "silent! /_pkgname=nomacs" PKGBUILD
 # makepkg -sic  # takes ages...
 # # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
@@ -162,11 +171,11 @@ true
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
-#=> opera
-# for MPD
-gAUR opera
-nvim -c "silent! /www.opera.com" PKGBUILD
-makepkg -sic
+# #=> opera
+# # for MPD
+# gAUR opera
+# nvim -c "silent! /www.opera.com" PKGBUILD
+# makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2
@@ -208,7 +217,7 @@ makepkg -sic
 # makepkg -sic
 
 # #=> pinta-git 0 install
-# gAUR pinta-git
+# gdAUR pinta-git
 # nvim -c "silent! /github.com\/PintaProject\/Pinta.git" PKGBUILD
 # makepkg -sic  # takes a while, using .NET
 # true

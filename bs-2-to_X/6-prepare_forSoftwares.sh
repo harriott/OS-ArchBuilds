@@ -15,7 +15,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> 0 auracle-git
 gdAUR auracle-git
-nvim -c "silent! /inglor" PKGBUILD
+nvim -c "silent! /https:\/\/github.com\/falconindy\/auracle" PKGBUILD
 makepkg -sic  # takes a while
 true
 
