@@ -136,7 +136,7 @@ root ALL=(ALL:ALL) ALL
 
 Defaults editor=/usr/bin/rnano
 Defaults insults
-Defaults timestamp_timeout=1
+Defaults timestamp_timeout=3
 
 ## allow root access to dhcpcd (stackexchange 18830)
 jo ALL = (root) NOPASSWD: /usr/bin/dhcpcd

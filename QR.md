@@ -296,6 +296,7 @@ see `$vimfiles/syntax/gems.vim`
     sudo cat /var/spool/fcron/jo.orig
 
 # file contents
+    fd -tf -e md -x du -h | sort -hr  # sorted by size
     pygmentize -h
 
 ## awk
@@ -943,12 +944,18 @@ systemctl status nordvpnd.service
     nmcli connection up uuid 0b2a10d5-d801-4c46-bfc6-392f6d77cd01
     nmcli connection up uuid 667c759d-382a-4875-9021-2258cdba8dad
     nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
-    nmcli device wifi connect cafezoide password <password>
-    nmcli device wifi connect Jo-X10II password <password>
+    nmcli device wifi connect cafezoide password <pw>
+    nmcli device wifi connect Jo-X10II password <pw>
     sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
     sudo ls /etc/NetworkManager/system-connections/
     systemctl status NetworkManager
     systemctl status NetworkManager-dispatcher
+
+### applet
+    nm-applet &
+    pgrep nm-applet
+
+can fail to start after waking system
 
 # packages
 ```bash
@@ -1126,10 +1133,6 @@ uses `fzf`
 - HVD Steinzeit
 - icomoon
 
-## groups
-    cat /etc/group  # list all groups on the system
-    id jo  # show uid, gid, and groups for jo
-
 ## mimeapps
     gio mime
     handlr -h
@@ -1155,6 +1158,13 @@ uses `fzf`
 ##### tree view
     e toggles it
     spacebar toggles open/closed a branch
+
+## security
+    $OSAB/etc/sudoers/sudoers
+
+### groups
+    cat /etc/group  # list all groups on the system
+    id jo  # show uid, gid, and groups for jo
 
 ## sizes
     sudo du -h --max-depth=1 /usr

@@ -97,20 +97,20 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
-
-#=> hplip-plugin 0 HPLIP key
-gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
-
-#=> hplip-plugin 1 install
-gAUR hplip-plugin
-nvim -c "silent! /developers.hp.com\/hp-linux-imaging-and-printing" PKGBUILD
-makepkg -sic  # requires  perl-test-fatal
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
 true
+
+# #=> hplip-plugin 0 HPLIP key
+# gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
+
+# #=> hplip-plugin 1 install
+# gAUR hplip-plugin
+# nvim -c "silent! /developers.hp.com\/hp-linux-imaging-and-printing" PKGBUILD
+# makepkg -sic  # requires  perl-test-fatal
+# true
 
 # #=> iscan
 # gAUR iscan
@@ -195,12 +195,12 @@ true
 # #=> pdfCropMargins 2 pdfcropmargins 0 remove
 # sudo pacman -Rs pdfcropmargins
 
-# #=> PDFsam 0 (re)install
-# gAUR pdfsam
-# nvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic  # only needs  jdk-openjdk
-# true
-# #  ~/Arch/AUR/pdfsam  makepkg --install  if you're too late
+#=> PDFsam 0 (re)install
+gAUR pdfsam
+nvim -c "silent! /torakiki" PKGBUILD
+makepkg -sic  # only needs  jdk-openjdk
+true
+#  ~/Arch/AUR/pdfsam  makepkg --install  if you're too late
 
 # #=> PDFsam 1 remove
 # sudo pacman -Rs pdfsam
@@ -299,8 +299,8 @@ true
 # true
 # #  ~/Arch/AUR/ymuse  makepkg --install  if you're too late
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

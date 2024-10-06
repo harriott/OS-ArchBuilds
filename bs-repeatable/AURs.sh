@@ -200,6 +200,11 @@ trap read debug  # puts a read request after each executable line
 # sudo systemctl enable nordvpnd.service --now
 # true
 
+#=> nordvpn-bin 3 remove
+cd ~/Arch/AUR
+rAUR nordvpn-bin
+sudo pacman -Rs nordvpn-bin
+
 # #=> perl-clone-pp
 # # for  perl-data-printer
 # gAUR perl-clone-pp
@@ -207,11 +212,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> perl-data-printer
-gAUR perl-data-printer
-nvim -c "silent! /GARU" PKGBUILD
-makepkg -sic
-true
+# #=> perl-data-printer
+# gAUR perl-data-printer
+# nvim -c "silent! /GARU" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> powershell-bin
 # gAUR powershell-bin

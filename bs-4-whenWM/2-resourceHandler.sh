@@ -53,6 +53,7 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .mp4 mpv.desktop
 # handlr set .mpg mpv.desktop
 # handlr set .py gvim.desktop
+# handlr set .rmj mpv.desktop
 # handlr set .sh gvim.desktop
 # handlr set .sifw gvim.desktop
 # handlr set .svg gpicview.desktop

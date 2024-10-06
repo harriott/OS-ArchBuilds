@@ -264,8 +264,7 @@ gdAUR () { gAUR $1 dev-clone; gctm $1; }; export -f gdAUR
 rAUR(){ [ -d $1 ] && sudo rm -r $1; }; export -f rAUR
 
 #=> text wrangling
-nn () { nvim $@; cd $(cat ~/last_directory); } # see $vimfiles/nvim/init.vim
-# also used in  $Openbox/bashrc_for_Alacritty-nvim.sh
+nn () { nvim $@; cd $(cat ~/lastVimDirectory); } # see  $vfv/enter/vimrc.vim
 
 # Emacs
 G (){ emacs --no-splash -fh $1 & }  # GUI

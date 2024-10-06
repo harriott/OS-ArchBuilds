@@ -2817,8 +2817,18 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.6.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
-## Signal
+### Signal
 installed then scanned QR from Signal app in Sony Xperia 10 II
+## sudoers tweaks
+sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
+sudo visudo -c -f /etc/sudoers
+no immediate change of pw timeout
+## Updates
+  warning: dependency cycle detected:
+  warning: libcamera-ipa will be installed before its libcamera dependency
+## xdg-open .rmj
+handlr get .rmj  reports  vlc.desktop
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## waiting
 delta
 gokcehan's lf

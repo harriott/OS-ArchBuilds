@@ -57,7 +57,7 @@ set -e
 # #=> vimfiles - nvim 0 empty 0
 # sudo rm -r ~/.config/nvim
 # mkdir -p   ~/.config/nvim/pack
-# echo >     ~/.config/nvim/last_directory
+# echo >     ~/lastVimDirectory
 # mkdir      ~/.config/nvim/plugin
 
 # #=> vimfiles - nvim 0 empty 1 site/autoload

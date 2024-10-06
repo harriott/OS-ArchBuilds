@@ -680,12 +680,14 @@ no immediate effect
 pacman -Qqo '/usr/lib/perl5/5.38'
   perl-data-printer
 so re-installed it
+## sudoers tweaks
+sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
+sudo visudo -c -f /etc/sudoers
+no immediate change of pw timeout
 ## waiting
 apache
 gokcehan's lf
 MariaDB
-onefetch
-Signal
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

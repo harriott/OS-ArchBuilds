@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# bash $OSAB/bs-3-toWM-1-Openbox/1-Openbox.sh
+
 set -ev
 trap read debug  # puts a read request after each executable line
 
@@ -16,20 +18,20 @@ trap read debug  # puts a read request after each executable line
 # # perl-data-dump
 # sudo pacman -S perl-data-dump  # for  obmenu-generator
 
-# #=> 0 perl-linux-desktopfiles
-# # for  obmenu-generator
-# gAUR perl-linux-desktopfiles
-# nvim -c "silent! /trizen" PKGBUILD
-# makepkg -sic
+#=> 0 perl-linux-desktopfiles
+# for  obmenu-generator
+gAUR perl-linux-desktopfiles
+nvim -c "silent! /trizen" PKGBUILD
+makepkg -sic
 
 # #=> 1 Openbox configuration folders
 # mkdir ~/.config/openbox
 # mkdir ~/.config/obmenu-generator
 
-#=> 2 obmenu-generator
-gAUR obmenu-generator
-nvim -c "silent! /trizen" PKGBUILD
-makepkg -sic
+# #=> 2 obmenu-generator
+# gAUR obmenu-generator
+# nvim -c "silent! /trizen" PKGBUILD
+# makepkg -sic
 
 # #=> 2 openbox-themes
 # gAUR openbox-themes

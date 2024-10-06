@@ -7,17 +7,17 @@
 set -ev
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 Aura
-# gAUR aura
-# nvim -c "silent! /https:\/\/github.com\/fosskers\/aura" PKGBUILD
-# makepkg -sic  # takes ages
-# true
-
-#=> 0 auracle-git
-gdAUR auracle-git
-nvim -c "silent! /https:\/\/github.com\/falconindy\/auracle" PKGBUILD
-makepkg -sic  # takes a while
+#=> 0 Aura
+gAUR aura
+nvim -c "silent! /https:\/\/github.com\/fosskers\/aura" PKGBUILD
+makepkg -sic  # takes ages
 true
+
+# #=> 0 auracle-git
+# gdAUR auracle-git
+# nvim -c "silent! /https:\/\/github.com\/falconindy\/auracle" PKGBUILD
+# makepkg -sic  # takes a while
+# true
 
 # #=> 0 Dropbox public key
 # gpg --keyserver keyserver.ubuntu.com --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E
