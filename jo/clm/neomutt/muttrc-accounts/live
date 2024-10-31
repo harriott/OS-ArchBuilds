@@ -1,6 +1,6 @@
 # ($vimfiles/vim/filetype.vim)
 
-# $clMail/neomutt/muttrc-accounts/live  sourced from  $AjB/bashrc-clm
+# $clMail/neomutt/muttrc-accounts/live  for  nml  defined in  $AjB/bashrc-clm
 
 set from = $live
 set sendmail = "msmtp -a live"

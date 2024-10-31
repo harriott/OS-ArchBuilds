@@ -2055,6 +2055,7 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 ## nomacs print landscape image
 $CfWk/activities/Songs-English/partitionsdechansons-ThisLittleBird-music.jpg
 $CfWk/activities/l7c-PLAN-VILLETTE-WEB.jpg
+FF $Cwet/ecology-globalBiomass/Distribution-of-earths-mammals.png
 ## HP ENVY 5532 IP Address changed to 36.10
 fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
@@ -2817,7 +2818,7 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.6.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
-### Signal
+## Signal
 installed then scanned QR from Signal app in Sony Xperia 10 II
 ## sudoers tweaks
 sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
@@ -2829,6 +2830,81 @@ no immediate change of pw timeout
 ## xdg-open .rmj
 handlr get .rmj  reports  vlc.desktop
   bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## HP Envy Inspire 7220e changed to 209.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.209.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 28.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.28.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## ENVY_Inspire_7200 set as default
+lpoptions -d ENVY_Inspire_7200
+## Updates
+  error: jdk-openjdk: signature from "Frederik Schwan <frederik.schwan@linux.com>" is invalid
+  :: File /var/cache/pacman/pkg/jdk-openjdk-23.u37-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]
+- fixed by re-running
+## HP Envy Inspire 7220e changed to 56.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.56.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 43.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.43.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Time 1h3.0s slow
+as revealed by   http://time.is/
+sudo ntpd -qg
+sudo hwclock --systohc
+## KeePassXC
+keepassxc  gets  Illegal instruction (core dumped)
+removed it, rebooted, reinstalled, still failing
+### coredumpctl list -1
+#### coredumpctl info 6426
+appears to point to  libc.so.6, so  sudo pacman -S glibc
+#### coredumpctl info 22759
+appears to point to  libbotan-3.so.6, so  sudo pacman -S botan
+#### coredumpctl info 5038
+appears to point to  libglib-2.0.so.0, so  sudo pacman -S glib2
+#### coredumpctl info 9435
+appears to point to  libQt5DBus.so.5, so  sudo pacman -S qt5-base
+### switch to keepassxc-git
+still getting  Illegal instruction (core dumped), so removed it
+### Flatpak
+flatpak install org.keepassxc.KeePassXC
+  Note that the directories
+  '/var/lib/flatpak/exports/share'
+  '/home/jo/.local/share/flatpak/exports/share'
+  are not in the search path set by the XDG_DATA_DIRS environment variable, so applications installed by Flatpak may not appear on your desktop until the session is restarted.
+  Looking for matches…
+  Required runtime for org.keepassxc.KeePassXC/x86_64/stable (runtime/org.kde.Platform/x86_64/5.15-23.08) found in remote flathub
+  Do you want to install it? [Y/n]:
+  org.keepassxc.KeePassXC permissions:
+      ipc                    network  pcsc            ssh-auth        wayland
+      x11                    devices  file access [1] dbus access [2] bus ownership [3]
+      system dbus access [4]
+      [1] /tmp, host, xdg-config/kdeglobals:ro, xdg-run/gvfs
+      [2] com.canonical.AppMenu.Registrar, com.canonical.Unity.Session, org.freedesktop.Notifications, org.freedesktop.ScreenSaver,
+          org.gnome.ScreenSaver, org.gnome.SessionManager, org.gnome.SessionManager.Presence, org.kde.KGlobalSettings,
+          org.kde.StatusNotifierWatcher, org.kde.kconfig.notify
+      [3] org.freedesktop.secrets
+      [4] org.freedesktop.login1
+       ID                                  Branch      Op Remote  Download
+   1.  org.freedesktop.Platform.GL.default 23.08       i  flathub < 163.9 MB
+   2.  org.freedesktop.Platform.GL.default 23.08-extra i  flathub < 163.9 MB
+   3.  org.freedesktop.Platform.openh264   2.2.0       i  flathub < 944.3 kB
+   4.  org.kde.KStyle.Adwaita              5.15-23.08  i  flathub < 6.6 MB
+   5.  org.kde.Platform.Locale             5.15-23.08  i  flathub < 394.3 MB (partial)
+   6.  org.kde.Platform                    5.15-23.08  i  flathub < 340.5 MB
+   7.  org.keepassxc.KeePassXC             stable      i  flathub < 21.0 MB
+  Proceed with these changes to the system installation? [Y/n]:
+rebooted for  org.keepassxc.KeePassXC &  Opened  $core/encrypted/JH.kdbx
+  Settings > Browser Integration > Enable browser integration
 ## waiting
 delta
 gokcehan's lf
@@ -2986,7 +3062,7 @@ random reboots happen any time
   Failed to start File System Check on /dev/disk/by-label/ST4000VN008.
   Dependency failed for /mnt/ST4000VN008.
 ### fix with e2fsck
-root pw > nvim /etc/fstab > commented out ST4000VN008, reboot  for
+root pw > nvim /etc/fstab > comment out ST4000VN008, reboot  for
   sudo bash $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh > disable
   sudo e2fsck -v /dev/sdc1
   sudo nvim /etc/fstab  to reinstate  ST4000VN008, reboot

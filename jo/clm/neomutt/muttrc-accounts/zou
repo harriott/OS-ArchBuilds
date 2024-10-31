@@ -1,6 +1,6 @@
 # ($vimfiles/vim/filetype.vim)
 
-# $clMail/neomutt/muttrc-accounts/zou  sourced from  $AjB/bashrc-clm
+# $clMail/neomutt/muttrc-accounts/zou  for  nmz  defined in  $AjB/bashrc-clm
 
 set from = $zou  # = my Zourit email, defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a zou"

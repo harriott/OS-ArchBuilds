@@ -20,7 +20,7 @@
 # $myDrA  &  $Storage  are pre-defined in  $machBld/export-machine
 
 #=> 0 mail
-export maild=/home/jo/.local/share/mail  # $maild  used also in  muttrc-*
+export maild=/home/jo/.local/share/mail  # $maild  for  mutt
 
 #=> 1 host
 export host=$(uname -n)
@@ -56,7 +56,7 @@ if [ $OSAB ]; then
   export ABjo=$OSAB/jo
     export AjB=$ABjo/Bash
     export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
-    export clMail=$ABjo/clm  # used in  bashrc-clm  and  muttrc-*
+    export clMail=$ABjo/clm  # used in  $AjB/bashrc-clm  and  $clMail/neomutt/muttrc-accounts/
   export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg
 fi
 

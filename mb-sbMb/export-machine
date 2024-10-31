@@ -11,6 +11,7 @@
 #  sourced by  $OSAB/root/bash_profile
 
 export CITGRs=/mnt/WD20EZAZ/Cop-IT/GRs  # $CITGRs  Git Repositories
+export OBSmkvGrabs='/mnt/ST4000VN008/OBSmkvGrabs'
 export rsnapshot=/mnt/ST4000VN008/rsnapshot
 export startxDelay=5
 

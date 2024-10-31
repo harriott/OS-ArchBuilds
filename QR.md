@@ -23,6 +23,7 @@ SORT(1)
     $AjB/bash_profile
     $core/IT_stack/unix_like-linux/Bash/colours
     /etc/profile
+    ~/Arch/bash_history
 
 ```bash
 im time
@@ -125,6 +126,7 @@ moar -h
 
 ## TeX - copied resources
     r $ITscr/CP/TeX
+    za $ITscr/CP/TeX/LaTeX/etoolbox.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/datetime2.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
@@ -134,8 +136,10 @@ moar -h
     za $ITscr/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/url.pdf
     za $ITscr/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
+    za $ITscr/CP/TeX/LaTeX/structure/CV/Currvita/currvita.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
+    za $ITscr/CP/TeX/LaTeX/structure/parts/lists/enumitem.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
     za $ITscr/CP/TeX/LaTeX/structure/pdfpages.pdf
 
@@ -309,6 +313,8 @@ see `$vimfiles/syntax/gems.vim`
     batgrep
     i rg
     rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
+
+RG(1)
 
 ## sed
     $ITsrul/sed
@@ -627,17 +633,16 @@ gpg(1)
 
     :Tabularize /-->/r1c1l0
 
-## printing - CUPS - HP ENVY 5532 WiFi
-    doas cupsenable ENVY_5530  # if it's paused
-    lpoptions -d ENVY_5530  # set as default
-    lpoptions -d ENVY_5530_249  # set as default
+## printing - CUPS - HP ENVY WiFi
+    doas cupsenable ENVY_Inspire_7200  # if it's paused
+    lpoptions -d ENVY_Inspire_7200  # sets as default in  ~/.cups/lpoptions
     lpoptions -p Envy5532 -o PageSize=A4
 
 ### see selected options
     lpoptions -p ENVY_5530 -l | xcol '\*'
     lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 
-## printing - HPLIP - HP ENVY 5532 WiFi
+## printing - HPLIP - HP ENVY WiFi
     hp-levels -p ENVY_5530
     hp-setup -b net 192.168.43.249  # when online
     http://192.168.43.249/
@@ -685,6 +690,7 @@ optimised for SSDs
 #### trash-cli
     $AjB/bashrc-console
     trash-empty  # lists before query
+    trash-put
 
 ### rsnapshot
     $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
@@ -761,7 +767,10 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     rsync -irtv --delete $rsnapshot/daily.0/localhost/home/jo/.local/share/mail/ $maild
 
 ### udiskie
+    $Obc/autostart/autostart
+    pgrep udiskie
     pkill udiskie
+    udiskie -h
 
 UDISKIE(8)
 
@@ -771,14 +780,14 @@ UDISKIE(8)
 
 # imagey
 ```bash
-convert -list color > $ulLA/IM-convert-list_color.txt
 im gs
 jpo  # defined in my $AjB/bashrc-wm
 rm -r ~/.thumbnails/normal/*
 xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 ```
 
-ImageMagick font list: `convert -list font > $machLg/IMfonts.IMfo`
+ImageMagick font list: `magick -list font > $machLg/IMfonts.IMfo`
+magick -list color > $ulLA/IM-magick-list_color.txt
 
 ## [n]sxiv
 ```bash
@@ -969,6 +978,10 @@ grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
     aura -Pa  # security analysis of all installed AUR packages
     i aura
     sudo aura -Aakux --devel > n  # just for info
+
+## Flatpak
+    /var/lib/flatpak/exports/bin
+    org.keepassxc.KeePassXC &
 
 ## groups
 ```bash
@@ -1235,16 +1248,19 @@ scroll don't work in `tmux`
 
 ## colours
     bash $ulLB/colours/256/BR-color256.sh
-    bash $ulLB/colours/256/SO-BrunoBronosky.sh
     bash $ulLB/colours/256/SE269077-numbers-ordered.sh
-    bash $ulLB/colours/256/SE269077-FHauri.sh
     bash $ulLB/colours/awk-rgb-test.sh  # nice one-line gradient
-    bash $ulLB/colours/ss64.sh
-    bash $ulLB/colours/tripleee+isntn.sh
-    colorscript -r
+    colorscript -r  # shell-color-scripts
     terminal-colors  # shows what the terminal can do (console only 8 colours)
     terminal-colors -l  # with #xxxxxx's
     terminal-colors -o  # ANSI escape codes
+
+### using tput
+    $OSL/bashrc-generic
+    bash $ulLB/colours/256/SO-BrunoBronosky.sh
+    bash $ulLB/colours/256/SE269077-FHauri.sh
+    bash $ulLB/colours/ss64.sh
+    bash $ulLB/colours/tripleee+isntn.sh
 
 ## FIGlet
     figlet Joseph Harriott
@@ -1320,6 +1336,7 @@ scroll don't work in `tmux`
 
 ## CopyQ
     bm copyq
+    pgrep copyq
     copyq help | mo
     ~/.local/share/copyq/copyq/copyq.log
 
@@ -1334,6 +1351,8 @@ scroll don't work in `tmux`
     /usr/share/nvim/runtime/doc/treesitter.txt
     /usr/share/nvim/runtime/filetype.lua
     /usr/share/nvim/runtime/lua/vim/filetype.lua
+    C /usr/share/nvim/runtime/ftplugin
+    C /usr/share/nvim/runtime/syntax
     r ~/.local/share/nvim
     r ~/.vimswap
 

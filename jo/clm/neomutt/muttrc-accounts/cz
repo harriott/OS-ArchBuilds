@@ -1,6 +1,6 @@
 # ($vimfiles/vim/filetype.vim)
 
-# $clMail/neomutt/muttrc-accounts/cz  sourced from  $AjB/bashrc-clm
+# $clMail/neomutt/muttrc-accounts/cz  for  nmc  defined in  $AjB/bashrc-clm
 
 set from = $cz  # = one of my Gmail accounts, defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a cz"

@@ -139,9 +139,8 @@ fps () { for v in "$@"; do echo $(fpwh $v) $(fpcn v $v) $(fpfr $v) $(fpcn a $v) 
 #==> yt-dlp
 alias y='yt-dlp'
   alias ya='y -f ba'
-  alias yf='y -F'
-  y7 () { y -f '[height<=?720]' "$1"; }  # fails if unquoted
-  # y7 () { yt-dlp -f '[height<=?720]' "$1"; }
+  alias yf='y -F'  # --list-formats
+  y7 () { yt-dlp -f "bv[height<=?720]" "$1"; }
 
 #=> CUPS
 alias lpf='lp -o fit-to-page'  # lpf *
@@ -281,7 +280,7 @@ ir () { mapfile -t images < <(fd -e jpg)
 # while :; do ir; sleep 9; tput reset; done
 
 S () { bash $Imagey/Scan.sh $1 $2 $3 $4; }
-  s53 () { S 55n 3 $1 $2; t $1.tiff; }  # call SANE's scanimage tool, and convert to jpg
+  sH () { S HPEn 3 $1 $2; t $1.tiff; }  # call SANE's scanimage tool, and convert to jpg
 
 #==> convert all webp to jpg
 w2j () {

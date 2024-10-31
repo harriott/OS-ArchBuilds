@@ -99,6 +99,12 @@ sudo pacman -S firefox
 #=> Firefox 1 remove
 sudo pacman -Rs firefox
 
+#=> Flatpak
+sudo pacman -S flatpak
+
+#=> Flatpak - KeePassXC
+flatpak install org.keepassxc.KeePassXC
+
 #=> Font Manager
 sudo pacman -S font-manager
 

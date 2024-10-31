@@ -1,6 +1,6 @@
 # ($vimfiles/vim/filetype.vim)
 
-# $clMail/neomutt/muttrc-accounts/troh  sourced from  $AjB/bashrc-clm
+# $clMail/neomutt/muttrc-accounts/troh  for  nmt  defined in  $AjB/bashrc-clm
 
 set from = $troh  # = one of my Gmail accounts, defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a troh"

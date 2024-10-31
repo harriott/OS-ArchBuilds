@@ -23,7 +23,7 @@ ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/video/OBSmkv/ignore; }
 # ignore <an_mkv_to_ignore>
 # for m in *.mkv; do ignore "$m"; done
 
-export OBSmkvGrabs='/mnt/ST4000VN008/OBSmkvGrabs'
+# $OBSmkvGrabs  is exported in  $machBld/export-machine
 export OBSmkvGrabsConverted='/mnt/SDU3D1TB/stack/AV/OBSmkvGrabsConverted'
 
 omc() {

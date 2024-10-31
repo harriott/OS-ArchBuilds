@@ -10,6 +10,8 @@
 #  248 selects Epson Perfection 2480 Photo
 #  55n selects HP ENVY 5532 via network
 #  55u selects HP ENVY 5532 via USB
+#  HPEn selects an HP ENVY printer (5532, 7220e) via network
+#  HPEU selects an HP ENVY printer (5532, 7220e) via USB
 # $2 an integer equivalent to scan resolution/100
 #  2 is good for Epson Perfection 2480 Photo
 #  3 is good for HP ENVY 5532
@@ -19,11 +21,11 @@
 if [ $1 = "248" ] ; then
   siPrefix="scanimage --format=tiff -p --resolution"
   declare -a Resns=(1 2 3 4 6 12)
-elif [ $1 = "55n" ] || [ $1 = "55u" ] ; then
+elif [ $1 = "HPEn" ] || [ $1 = "HPEU" ] ; then
   declare -a Resns=(1 2 3 6 12)
-  if [ $1 = "55n" ] ; then
+  if [ $1 = "HPEn" ] ; then
     # device=$'--device \'hpaio:/net/ENVY_5530_series\?ip=192.168.175.10\''
-    device=$'--device \'hpaio:/net/ENVY_Inspire_7200_series?ip=192.168.6.239\''
+    device=$'--device \'hpaio:/net/ENVY_Inspire_7200_series?ip=192.168.43.239\''
   fi  # from  hp-makeuri
   siPrefix="scanimage $device -p --format=tiff --mode Color --resolution"
 else

@@ -152,6 +152,21 @@ SE () {
   echo 'now open $DJH/search/'$f
 } # /stackexchange\|stackoverflow\|superuser
 
+#==> my Arch Forum issues
+# $DJH/search/bbcode.fetl
+
+fbbcode () {
+  bbcf='bbcode.fetl'
+  fListHeader $bbcf  # ($OSL/bashrc-console-fm)
+  fdb='fd -tf -e bbcode'
+  { echo $fdb; echo; } >> $bbcf
+  $fdb >> $bbcf; echo >> $bbcf
+  rgb="rg -ttxt -l --sort modified 'ft=bbcode'"
+  { echo $rgb; echo; } >> $bbcf
+  eval $rgb >> $bbcf; echo >> $bbcf
+  echo "results are in $bbcf"
+}
+
 #==> my Encrypted directories
 #  fa | grep Digital0
 #  fa | grep Secure0

@@ -44,7 +44,7 @@ alias nmj='neomutt -F $clMail/neomutt/muttrc-accounts/tj'
 alias nml='neomutt -F $clMail/neomutt/muttrc-accounts/live'
 alias nmt='neomutt -F $clMail/neomutt/muttrc-accounts/troh'
 alias nmx='neomutt -F $clMail/neomutt/muttrc-accounts/gmx'
-alias nmz='neomutt -F $clMail/neomutt/muttrc-accounts/zou'
+alias nmz='neomutt -F $clMail/neomutt/muttrc-accounts/zou' # see  $OSAB/QR.md
 
 #=> notmuch
 # $clMail/notmuch/config-template

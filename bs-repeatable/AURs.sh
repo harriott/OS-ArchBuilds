@@ -134,12 +134,12 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs jump
 # true
 
-# #=> julia-bin
-# # for sixels
-# gAUR julia-bin
-# nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
-# makepkg -sic
-# true
+#=> julia-bin
+# for sixels
+gAUR julia-bin
+nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
+makepkg -sic
+true
 
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3
@@ -200,10 +200,10 @@ trap read debug  # puts a read request after each executable line
 # sudo systemctl enable nordvpnd.service --now
 # true
 
-#=> nordvpn-bin 3 remove
-cd ~/Arch/AUR
-rAUR nordvpn-bin
-sudo pacman -Rs nordvpn-bin
+# #=> nordvpn-bin 3 remove
+# cd ~/Arch/AUR
+# rAUR nordvpn-bin
+# sudo pacman -Rs nordvpn-bin
 
 # #=> perl-clone-pp
 # # for  perl-data-printer

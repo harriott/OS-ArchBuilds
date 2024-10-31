@@ -1,8 +1,9 @@
 
 # Alacritty - $machBld/alacritty.toml ($OSAB/bs-symlinks/jo-0.sh)
 
-import = [ "~/.alacritty-generic.toml" ]
-
 [font]
   size = 7  # change is instantaneous
+
+[general]
+  import = [ "~/.alacritty-generic.toml" ]
 

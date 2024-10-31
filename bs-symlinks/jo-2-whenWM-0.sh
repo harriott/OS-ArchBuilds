@@ -80,20 +80,20 @@ set -e
 # # ln -s $vimfiles/vim/syntax            ~/.config/nvim/syntax
 # # ln -s $vimfiles/vim/thesaurus         ~/.config/nvim/thesaurus
 
-#=> vimfiles - nvim 1 populate use
-ln -s $vimfiles/vim/after             ~/.config/nvim/after
-ln -s $vimfiles/vim/filetype.vim      ~/.config/nvim/filetype.vim
-ln -s $vimfiles/vim/ftplugin          ~/.config/nvim/ftplugin
-ln -s $vimfiles/nvim/init.vim         ~/.config/nvim/init.vim
-ln -s $vimfiles/nvim/lua              ~/.config/nvim/lua
-ln -s $vimfiles/vim/packs/packs-colo  ~/.config/nvim/pack/colo
-ln -s $vimfiles/vim/packs/packs-cp    ~/.config/nvim/pack/cp
-ln -s $vimfiles/vim/packs/packs-unix  ~/.config/nvim/pack/unix
-ln -s $vfv/plugin/packs.vim  ~/.config/nvim/plugin/packs.vim
-ln -s $vfv/plugin/plugin.vim ~/.config/nvim/plugin/plugin.vim
-ln -s $vimfiles/vim/spell             ~/.config/nvim/spell
-ln -s $vimfiles/vim/syntax            ~/.config/nvim/syntax
-ln -s $vimfiles/vim/thesaurus         ~/.config/nvim/thesaurus
+# #=> vimfiles - nvim 1 populate use
+# ln -s $vimfiles/vim/after             ~/.config/nvim/after
+# ln -s $vimfiles/vim/filetype.vim      ~/.config/nvim/filetype.vim
+# ln -s $vimfiles/vim/ftplugin          ~/.config/nvim/ftplugin
+# ln -s $vimfiles/nvim/init.vim         ~/.config/nvim/init.vim
+# ln -s $vimfiles/nvim/lua              ~/.config/nvim/lua
+# ln -s $vimfiles/vim/packs/packs-colo  ~/.config/nvim/pack/colo
+# ln -s $vimfiles/vim/packs/packs-cp    ~/.config/nvim/pack/cp
+# ln -s $vimfiles/vim/packs/packs-unix  ~/.config/nvim/pack/unix
+# ln -s $vfv/plugin/packs.vim  ~/.config/nvim/plugin/packs.vim
+# ln -s $vfv/plugin/plugin.vim ~/.config/nvim/plugin/plugin.vim
+# ln -s $vimfiles/vim/spell             ~/.config/nvim/spell
+# ln -s $vimfiles/vim/syntax            ~/.config/nvim/syntax
+# ln -s $vimfiles/vim/thesaurus         ~/.config/nvim/thesaurus
 
 #=> vimfiles - nvim 2 check
 for dir in '' pack plugin; do
@@ -101,26 +101,26 @@ for dir in '' pack plugin; do
   pushd ~/.config/nvim/$dir > /dev/null; eza -al; popd > /dev/null
 done
 
-#=> vimfiles - vim
-# vim entry points are symlinked in  $OSAB/bs-symlinks/jo-0.sh
-sudo rm -r ~/.vim
-mkdir -p ~/.vim/pack
-mkdir ~/.vim/plugin
-ln -s $vimfiles/vim/after            ~/.vim/after
-ln -s $vimfiles/vim/ftplugin         ~/.vim/ftplugin
-ln -s $vimfiles/vim/packs/packs-colo ~/.vim/pack/colo
-ln -s $vimfiles/vim/packs/packs-cp   ~/.vim/pack/cp
-ln -s $vimfiles/vim/packs/packs-unix ~/.vim/pack/unix
-ln -s $vfv/plugin/packs.vim          ~/.vim/plugin/packs.vim
-ln -s $vfv/plugin/packsVim.vim       ~/.vim/plugin/packsVim.vim
-ln -s $vfv/plugin/plugin.vim         ~/.vim/plugin/plugin.vim
-ln -s $vimfiles/vim/spell            ~/.vim/spell
-ln -s $vimfiles/vim/syntax           ~/.vim/syntax
-ln -s $vimfiles/vim/thesaurus        ~/.vim/thesaurus
-ln -s $vimfiles/vim/filetype.vim     ~/.vim/filetype.vim
-eza -adl ~/.vim*
-eza -adl ~/.vim/*
-eza -adl ~/.vim/pack/*
+# #=> vimfiles - vim
+# # vim entry points are symlinked in  $OSAB/bs-symlinks/jo-0.sh
+# sudo rm -r ~/.vim
+# mkdir -p ~/.vim/pack
+# mkdir ~/.vim/plugin
+# ln -s $vimfiles/vim/after            ~/.vim/after
+# ln -s $vimfiles/vim/ftplugin         ~/.vim/ftplugin
+# ln -s $vimfiles/vim/packs/packs-colo ~/.vim/pack/colo
+# ln -s $vimfiles/vim/packs/packs-cp   ~/.vim/pack/cp
+# ln -s $vimfiles/vim/packs/packs-unix ~/.vim/pack/unix
+# ln -s $vfv/plugin/packs.vim          ~/.vim/plugin/packs.vim
+# ln -s $vfv/plugin/packsVim.vim       ~/.vim/plugin/packsVim.vim
+# ln -s $vfv/plugin/plugin.vim         ~/.vim/plugin/plugin.vim
+# ln -s $vimfiles/vim/spell            ~/.vim/spell
+# ln -s $vimfiles/vim/syntax           ~/.vim/syntax
+# ln -s $vimfiles/vim/thesaurus        ~/.vim/thesaurus
+# ln -s $vimfiles/vim/filetype.vim     ~/.vim/filetype.vim
+# eza -adl ~/.vim*
+# eza -adl ~/.vim/*
+# eza -adl ~/.vim/pack/*
 
 # #=> vimfiles - vimtest
 # sudo rm -r ~/.vimtest

@@ -4,9 +4,10 @@
 # cp $OSAB/root/bash_profile /root/.bash_profile
 # nvim -O $OSAB/root/bash_profile /root/.bash_profile -c 'windo difft'
 
-source ~/.export-machine; source ~/.export-storage
+source ~/.export-machine  # $machBld/export-machine
+source ~/.export-storage  # $OSAB/Bash/export-storage
 
-[[ -f /root/.bashrc ]] && . /root/.bashrc
+[[ -f /root/.bashrc ]] && . /root/.bashrc  # $OSAB/root/bashrc
 
 . ~/.config/broot/launcher/bash/br  # - carries through to X
 
