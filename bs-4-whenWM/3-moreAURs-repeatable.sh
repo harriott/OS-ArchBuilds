@@ -97,11 +97,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
@@ -130,8 +130,8 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a long, long, long time, with endless warnings
 # true
 
-#=> keepassxc-git 1 remove
-sudo pacman -Rs keepassxc-git
+# #=> keepassxc-git 1 remove
+# sudo pacman -Rs keepassxc-git
 
 # #=> nomacs 0 install
 # gAUR nomacs

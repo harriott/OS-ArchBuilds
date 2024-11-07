@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# $clMail/msmtprc/oauth2tool.sh
 # Joseph Harriott - Tue 30 Aug 2022
 
 

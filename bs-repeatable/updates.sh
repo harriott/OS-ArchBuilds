@@ -2,15 +2,15 @@
 # vim: fdl=1 sw=2:
 
 # bash $OSAB/bs-repeatable/updates.sh
-# r $machLg/pacman
+# r $ulLAb/ml-$host/pm
 
 #=> 0 pacman log directories 0
-pc="$machLg/pacman/checkupdates"
-pQ="$machLg/pacman/Q"
+pc="$ulLAb/ml-$host/pm/cu"
+pQ="$ulLAb/ml-$host/pm/Q"
 
 #=> 0 pacman log directories 1 fallback
-[ -d $pc ] || pm=~/pacman/checkupdates
-[ -d $pQ ] || pm=~/pacman/Q
+[ -d $pc ] || pm=~/pm/cu
+[ -d $pQ ] || pm=~/pm/Q
 
 #=> 1 get into sudo
 echo 'Get into sudo:'

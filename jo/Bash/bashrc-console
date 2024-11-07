@@ -103,15 +103,12 @@ alias gsu='git status -u'
 export BFG=$CrPl/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
-#===> time-sorted - .git/config
-# $ITstack/git_config.fetl
-
 gitc () {
   gitcl=dts-git_config.fetl
   echo '' > $gitcl
   for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gitcl
   echo "results are in $gitcl"
-}
+} # $Drpbx/JH/search/dts-git_config.fetl
 
 #===> time-sorted - my GitHub issues
 # $jtIT/GitHubIssues.fetl
@@ -168,6 +165,8 @@ fbbcode () {
 }
 
 #==> my Encrypted directories
+# fa  defined in  $OSL/bashrc-console-fm
+# in  $Enc
 #  fa | grep Digital0
 #  fa | grep Secure0
 #  fa | grep Secure1

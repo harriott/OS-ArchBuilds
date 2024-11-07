@@ -221,7 +221,7 @@ temorarily allowed password login in  /etc/ssh/sshd_config  for
 temporarily added the keys to  ~/.ssh  for
   ssh-copy-id -f -i ~/.ssh/id_ed25519-forAVT661 localhost
 ## import GnuPG key 13F327EF
-in  /mnt/SD480GSSDPlus/Encrypted/Secure1/GnuPG/13F327EF
+in  $Enc/Secure1/GnuPG/13F327EF
   gpg --import sprbMb-Arch-private.asc
 ## NETGEAR WG111v2 in highest 2nd from top back USB port
 nmcli device  reports it as  wlan0
@@ -1146,7 +1146,7 @@ mt  to update  headings.sty
 [$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/build-scripts]$ su > root pw
 bash 37-as_root-symlink_fonts.sh
 ### fix my OBS grabs
-symlinks as in  $ITstack/unix_like-linux/OBSmkv/shrink.sh
+symlinks as in  $ulL/video/OBSmkv/shrink.sh
 ### fix tmux'ing into CAM-toSort0
 $machBld/jo/autostart.sh
 ## remove WD30EZRZ from mlocate path
@@ -2905,6 +2905,10 @@ flatpak install org.keepassxc.KeePassXC
   Proceed with these changes to the system installation? [Y/n]:
 rebooted for  org.keepassxc.KeePassXC &  Opened  $core/encrypted/JH.kdbx
   Settings > Browser Integration > Enable browser integration
+## Updates - revert to Arch KeePassXC
+flatpak uninstall org.keepassxc.KeePassXC
+flatpak uninstall --unused
+sudo pacman -S keepassxc
 ## waiting
 delta
 gokcehan's lf
@@ -3030,7 +3034,7 @@ upper DVI: DVI-D to DVI-D: Packard Bell Viseo 223DX (wide 1920x1080 = 16:9) Brig
 ## motherboard
 Antec Neo HE550
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
-  AMD FX 8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
+  AMD FX-8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
     Cooler Master Hyper 212 EVO v2
   HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
 ### fans
@@ -3057,6 +3061,7 @@ Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB3
   /dev/sda2: clean, 874157/3932160 files, 14687050/15728640 blocks
 when finally booted,  /dev/sda2 = /
 # snags
+failing under CPU pressure off ffmpeg + YouTube
 random reboots happen any time
 ## fails to boot due to ST4000VN008
   Failed to start File System Check on /dev/disk/by-label/ST4000VN008.

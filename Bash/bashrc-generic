@@ -59,10 +59,7 @@ alias edt='eza -DT'  # show directory tree
 
 alias l='ls --color=auto'
 
-alias ldf='lsd --group-dirs first'
-alias ll='lsd -al'  # show permissions and symlinks
-alias lt='lsd --tree'
-alias ltd='lsd -d --tree'
+alias ltd='lsd -d --tree'  # more in  $OSL/bashrc-generic
 
 alias mo='moar'
 
@@ -108,21 +105,21 @@ export WORKON_HOME=~/.virtualenvs  # $WORKON_HOME
 #=> clamscan 0 preferred log basename
 # cslbn=$clamscan/clamscan
 if [ $myDrA ]; then
-  cslLocation=$machLg
+  cslLocation="$ulLAb/ml-$host"
 else
-  cslLocation=/home/jo/Arch
+  cslLocation="/home/jo/Arch"
 fi
-cslbn=$cslLocation/clamscan
+cslbn=$cslLocation/cs
 
 #=> clamscan 1 scan
 scs () {
   echo "about to clamscan /"
-  sudo clamscan -r --exclude-dir='/media|/mnt|/sys' / 2>&1 | tee $cslbn.log
+  sudo clamscan -r --exclude-dir='/media|/mnt|/sys' / 2>&1 | tee $cslbn/$(date '+%y%m%d-%H%M').log
   sudo chown jo:jo $cslbn.log
 }  # end of log shows time taken
 
 #=> clamscan 2 filter the results
-# $vimfiles/syntax/cslF.vim
+# $vfv/syntax/cslF.vim
 
 csF () {
   if [ $1 ]; then
@@ -193,10 +190,10 @@ seg () {
 }
 
 uf(){
-  ufl="$machLg/usr/files.txt"
+  ufl="$ulLAb/ml-$host/usr-files.txt"
   echo 'vim: set nowrap:' > $ufl
   echo >> $ufl
-  echo 'output of uf() ($OSAB/Bash/bashrc-generic)' >> $ufl
+  echo 'output of  uf() ($OSAB/Bash/bashrc-generic)' >> $ufl
   echo >> $ufl
   e -al /usr/* >> $ufl
   echo >> $ufl

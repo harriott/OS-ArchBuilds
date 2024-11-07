@@ -5,7 +5,7 @@ vim: nospell:
     m4p $OSAB/QR.md 1
     r $misc/linux/QR  # for my more general linux QuickReference
 
-my Arch QuickReference
+my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
 ```bash
 bm  # (in a wide enough terminal) fuzzy search for manuals
@@ -21,7 +21,7 @@ SORT(1)
 
 # Bash
     $AjB/bash_profile
-    $core/IT_stack/unix_like-linux/Bash/colours
+    $ulL/Bash/colours
     /etc/profile
     ~/Arch/bash_history
 
@@ -214,7 +214,7 @@ moar -h
     r $DCGRs/emacs/_bzg-worg
 
 ## Spacemacs
-    $ulL/Emacs/sm/.spacemacs
+    $ulLAb/Emacs/sm/.spacemacs
     n ~/.sm/.emacs.d
     nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
@@ -272,7 +272,7 @@ moar -h
 ## Ruby
 ```bash
 gem list --no-versions | tr '\n' ' ' | xcol bundler github-pages jekyll liquid
-gem list > $ulLA/$host/gems.gems
+gem list > $ulLA/ml-$host/gems.gems
 r $GEM_HOME
 ```
 
@@ -578,13 +578,17 @@ can't cope with `utf-16le`
     man cmatrix
 
 # GNU Privacy Guard
-    gpg --export-ownertrust > $ulLA/$host/jo/gnupg-trustdb.txt
-    gpg -k | xcol 049956B6 13F327EF Asus expired expires jharr sprbMb trohib
-    gpg -K | xcol 049956B6 13F327EF Asus expired expires jharr sprbMb trohib
+    gpg --export-ownertrust > $ulLA/ml-$host/jo/gnupg-trustdb.txt
     im gpg
     r ~/.gnupg
 
 gpg(1)
+
+## show keys
+    xcgpgk() { xcol 049956B6 13F327EF Asus expired expires jharr sprbMb trohib; }
+
+- all keys `gpg -k | xcgpgk`
+- secret keys `gpg -K | xcgpgk`
 
 # help
     apropos
@@ -1037,6 +1041,8 @@ pass zou
     pb ~/.password-store/.gpg-id
     r ~/.password-store
 
+PASS(1)
+
 ## Gmail API expiry
 ```bash
 date -d @$(pass cz/GmailAPI/token-expire)
@@ -1104,7 +1110,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 ## build
     $OSAB/etc/doas.conf
     r $OSAB $ulLA
-    r $ulLA/ml-$host/etc-fstab
+    r $ulLA/ml-$host/etc/fstab
     rsync -irtv --delete $OSAB/ ~/Play0/OSAB
     v $OSAB $ulLA
 
@@ -1489,10 +1495,9 @@ URLs (such as in an email sent from `mutt`) unclickable - so better to send to t
 locks: `pb $Thb/linuxlock; pb $Thb/Win10ProLock`
 
 ## Jekyll
-```bash
-js
-r $JHm
-```
+	r $JHm
+
+`js`, `jt` defined in `$AjB/bashrc-wm`
 
 ## Nginx
     /etc/nginx/nginx.conf  # http://127.0.0.3

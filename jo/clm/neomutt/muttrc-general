@@ -1,8 +1,7 @@
 # ($vimfiles/vim/filetype.vim)
 
 # $clMail/neomutt/muttrc-general - general settings for  neomutt
-#  based on  $DCGRs/linux/mail/LukeSmithxyz-mutt-wizard/share/mutt-wizard.muttrc
-#
+#  based on  $DCGRs/unix/linux/mail/LukeSmithxyz-mutt-wizard/share/mutt-wizard.muttrc
 #  sourced by  $clMail/neomutt/muttrc-accounts-all
 
 set editor = 'nvim'

@@ -31,8 +31,9 @@ trap read debug  # puts a read request after each executable line
 # updatedb
 
 #=> 2 save grub.cfg
-gcs=$ulLA/ml-$host/boot-grub-grub.cfg; cp /boot/grub/grub.cfg $gcs; chown jo:jo $gcs
-# pb $ulLA/ml-$host/boot-grub-grub.cfg
+gcs="$ulLA/ml-$host/boot-grub-grub.cfg"
+cp /boot/grub/grub.cfg $gcs; chown jo:jo $gcs
+# pb $gcs
 
 #=> 3 softwares - encoding - entr
 # entr (also used by batwatch)
@@ -49,7 +50,7 @@ pacman -S python-black
 pacman -S shfmt
 
 # #=> 3 softwares - encoding - NeoMutt
-# pacman -S neomutt
+# pacman -S neomutt  # brings in  notmuch-runtime
 
 #=> 3 softwares - file manage - bat-extras
 sudo pacman -S bat-extras  # brings in bat (used in  fzf --preview)

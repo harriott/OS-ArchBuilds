@@ -20,10 +20,6 @@ trap read debug  # puts a read request after each executable line
 # #=> 2 for Dunst
 # mkdir -p ~/.config/dunst
 
-# #=> 2 for *mutt
-# m=~/.local/share/mail
-# mkdir $m $m/cz $m/fm $m/tj $m/live $m/troh $m/gmx $m/zou
-
 # #=> 2 for my m4p scripts
 # mkdir -p ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $AjB/bashrc-ob
 

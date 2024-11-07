@@ -112,13 +112,6 @@ ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 #=> tmux
 ln -sf $OSL/tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf
 
-#=> vim variants 0 vim entry points
-ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
-ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
-
-#=> vim variants 1 $vimfiles
-# symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
-
 #=> w3m
 ln -sf $ABjo/WAN/w3m/config ~/.w3m/config
 ln -sf $ABjo/WAN/w3m/keymap ~/.w3m/keymap

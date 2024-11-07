@@ -1,8 +1,6 @@
 # vim: fdc=1 fdl=1 fdm=marker ft=mbsync:
 
-# -------------------------
-# template, for the curious
-# -------------------------
+# $clMail/mbsyncrc-template, for the curious
 
 # my working  ~/.mbsyncrc  is backed up offline at  $lclm/mbsyncrc-backup
 

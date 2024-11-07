@@ -1,4 +1,8 @@
 
+$clMail/README.md
+
+see also [email tools across platforms](https://harriott.github.io/email_tools_across_platforms/)
+
 # my neomutt + notmuch setup
 This folder of configuration files may well be useful to someone else.
 
@@ -15,7 +19,7 @@ I started with help from Luke Smith. [Mutt Wizard: Command Line Email at 156% Ef
 - **Searching for text** in a folder, an account, or all accounts is easy, either using `notmuch` (I've made a couple of small tools in my `bashrc-email` for pulling out the text of emails to `gVim`) or by doing something like a `ripgrep`, `~/.local/share/mail$ rg Miscov`.
 
 # configuration
-I configure access to these files in my `$AjB/bashrc-clm` which defines aliases like this:
+I configure access to these files in my [$AjB/bashrc-clm](https://github.com/harriott/OS-ArchBuilds/blob/master/jo/Bash/bashrc-clm) which defines aliases like this:
 
 - `msx` = "mail sync <xAccount>" - runs `mbsync` and then updates `notmuch` tags on a local account
     - `~/.mbsyncrc` (my `$clMail/mbsyncrc-template`)

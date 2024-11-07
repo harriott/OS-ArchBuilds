@@ -1,8 +1,8 @@
 " vim: fdl=1:
 
 " $ABjo/textEdit/Vim/vimrc
-"  symlinked in my $OSAB/bs-symlinks/jo-0.sh
+"  symlinked in my  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 "   pb ~/.vimrc
 
-source $vimfiles/vim/enter/vimrc-Arch.vim
+source $vfv/enter/vimrc-Arch.vim
 

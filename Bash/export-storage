@@ -23,8 +23,7 @@
 export maild=/home/jo/.local/share/mail  # $maild  for  mutt
 
 #=> 1 host
-export host=$(uname -n)
-# - for  $ABjo/Openbox/conkyrc  &  $OSAB/Bash/bashrc-generic
+export host=$(uname -n) # $host
 
 #=> 2 $Drpbx, or not
 export vimfiles=~/.vim
@@ -37,10 +36,11 @@ if [[ $myDrA == 1 ]]; then
           export CrPl=$ITstack/CP  # $CrPl  used in  $AjB/bashrc-console  & build scripts
           export onGH=$ITstack/onGitHub
             export vimfiles=$onGH/vimfiles
-          export ulL=$ITstack/unix_like-linux
+          export ulL=$ITstack/ulLinux
             export ulLA=$ulL/Arch
               export machLg=$ulLA/ml-$host  # as opposed to  $machBld
             export ulLB=$ulL/Bash  # used in  $OSAB/QR.md
+          export ulLAb="$ITstack/ulLinuxArch-big" # $ulLAb
 fi  # depends on  myDrA=  defined in  $machBld/export-machine
 
 #=> 3 (rooting on $onGH) $OSAB, $OSL, and some build dependencies
