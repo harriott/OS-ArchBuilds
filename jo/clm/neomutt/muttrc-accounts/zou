@@ -1,4 +1,4 @@
-# ($vimfiles/vim/filetype.vim)
+# vim: ft=neomuttrc
 
 # $clMail/neomutt/muttrc-accounts/zou  for  nmz  defined in  $AjB/bashrc-clm
 
@@ -6,7 +6,7 @@ set from = $zou  # = my Zourit email, defined in my  $lclm/muttrc-emails
 set sendmail = "msmtp -a zou"
 set folder = "$maild/zou"
 set header_cache = /home/jo/.cache/mutt/zou/headers
-set message_cache_dir = /home/jo/.cache/mutt/zou/bodies
+# set message_cache_dir = /home/jo/.cache/mutt/zou/bodies
 
 set spool_file = "+INBOX"
 set record = "+Sent"

@@ -1,6 +1,6 @@
 # vim: set et:
 
-# symlinked in my  $OSAB/bs-symlinks/jo-0.sh  to  ~/.config/dunst/dunstrc
+# $Openbox/dunstrc ($OSAB/bs-symlinks/jo-0.sh) es ~/.config/dunst/dunstrc
 
 #   see  /etc/dunst/dunstrc
 
@@ -16,7 +16,7 @@
     follow = mouse
     font = Cantarell 10
     format = "%s %p\n%b"
-    height = 300
+    height = (0, 300)
     history_length = 20
     horizontal_padding = 10
     icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/

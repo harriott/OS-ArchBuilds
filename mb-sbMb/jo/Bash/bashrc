@@ -18,7 +18,7 @@ export vlogs=$Storage/Sync2/AV-Stack/vlogs
 #=> 1 OBS mkv grabs convert
 # for  $ulL/video/OBSmkv/shrink.sh
 # alias Ni="figlet -t -f nancyj 'Now ignore ...?'"
-Ni () { echo; figlet -t -f nancyj '... now ignore ...?'; }
+Ni () { echo; figlet -t -f nancyj '... now ignore ...'; }
 ignore () { stat -c '%Y  %s  %n' "$1" >> $ulL/video/OBSmkv/ignore; }
 # ignore <an_mkv_to_ignore>
 # for m in *.mkv; do ignore "$m"; done

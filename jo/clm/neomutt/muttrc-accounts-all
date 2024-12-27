@@ -1,4 +1,4 @@
-# ($vimfiles/vim/filetype.vim)
+# vim: ft=neomuttrc
 
 # $clMail/neomutt/muttrc-accounts-all
 # ------------------------------------------------------------------
@@ -10,7 +10,7 @@
 #  $clMail/neomutt/muttrc-accounts/cz
 #  $clMail/neomutt/muttrc-accounts/ftml
 #  $clMail/neomutt/muttrc-accounts/gmx
-#  $clMail/neomutt/muttrc-accounts/live
+#  $clMail/neomutt/muttrc-accounts/jnbh
 #  $clMail/neomutt/muttrc-accounts/parl
 #  $clMail/neomutt/muttrc-accounts/tj
 #  $clMail/neomutt/muttrc-accounts/troh

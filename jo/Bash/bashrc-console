@@ -64,7 +64,7 @@ CliFM (){
 fRs () {
   echo "directory: $1"
   echo "file glob to find: $2"
-  if [ $2 ]; then
+  if [ "$2" ]; then
     tf="$rsnapshot/tds_find"
     echo 'vim: nowrap:' > $tf
     echo >> $tf
@@ -95,8 +95,6 @@ dcp (){
 }
 
 #==> Git
-# fx gitignore
-
 alias ga='git add'
 alias gsbs='git status -bs'
 alias gsu='git status -u'
@@ -197,26 +195,6 @@ fdtsEncryptedChanges () {
     fi
   done
 }
-
-#==> only useful in sbMb
-# and not needed as root
-
-if [ $host = 'sbMb' ]; then
-
-  alias rsM='bash $onGH/FM-rsync-drives/sbMb/Music.sh'
-  alias rsV='bash $onGH/FM-rsync-drives/sbMb/Vs.sh'
-  alias rsVe='bash $onGH/FM-rsync-drives/sbMb/Vs-extra.sh'
-
-  fS () {
-    find /mnt/WD30EZRZ/Sync2 -type f -name "*$1*"
-  }
-
-fi
-
-#==> trash-cli
-alias gte='gio trash --empty'
-alias tl='trash-list' # can give clues if python errors
-alias tre='trash-restore'
 
 #=> human language - dict
 alias del='dict -d elements'  # del iron

@@ -26,9 +26,9 @@ trap read debug  # puts a read request after each executable line
 # # xsel
 # pacman -S xsel
 
-# #=> 2 prepare for X - updatedb.conf
-# cp $machBld/etc/updatedb.conf /etc/updatedb.conf
-# updatedb
+#=> 2 prepare for X - updatedb.conf
+cp $machBld/etc/updatedb.conf /etc/updatedb.conf
+updatedb
 
 #=> 2 save grub.cfg
 gcs="$ulLA/ml-$host/boot-grub-grub.cfg"

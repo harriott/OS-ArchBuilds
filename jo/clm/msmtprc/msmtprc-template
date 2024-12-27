@@ -32,15 +32,6 @@ from ...@gmx.com
 user ...@gmx.com
 passwordeval pass gmx
 
-# {{{1 Outlook
-account live
-auth on
-host smtp.office365.com
-port 587
-from ...@live.co.uk
-user ...@live.co.uk
-passwordeval pass live
-
 # {{{1 Zourit
 account zou
 auth on

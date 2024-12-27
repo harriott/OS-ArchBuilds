@@ -180,11 +180,18 @@ true
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
-# #=> opera
+# #=> oama
 # # for MPD
-# gAUR opera
-# nvim -c "silent! /www.opera.com" PKGBUILD
+# gAUR oama-bin
+# nvim -c "silent! /github.com\/pdobsan" PKGBUILD
 # makepkg -sic
+# [ -f ~/.config/oama/config.yaml ] || oama
+
+#=> opera
+# for MPD
+gAUR opera
+nvim -c "silent! /www.opera.com" PKGBUILD
+makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2
@@ -295,6 +302,11 @@ true
 # #=> vimpc-git 1 configure
 # mkdir ~/.config/vimpc
 
+# #=> xnviewmp
+# gAUR xnviewmp
+# nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
+# makepkg -sic
+
 # #=> yj-git
 # gdAUR yj-git
 # nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
@@ -308,8 +320,8 @@ true
 # true
 # #  ~/Arch/AUR/ymuse  makepkg --install  if you're too late
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

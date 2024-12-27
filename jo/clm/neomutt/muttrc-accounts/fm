@@ -1,4 +1,4 @@
-# ($vimfiles/vim/filetype.vim)
+# vim: ft=neomuttrc
 
 # $clMail/neomutt/muttrc-accounts/ftml  for  nmf  defined in  $AjB/bashrc-clm
 
@@ -6,7 +6,7 @@ set from = $fm  # = my Fastmail email, defined in my  $LE/mymuttrcAddresses
 set sendmail = "msmtp -a fm"
 set folder = "$maild/fm"
 set header_cache = /home/jo/.cache/mutt/fm/headers
-set message_cache_dir = /home/jo/.cache/mutt/fm/bodies
+# set message_cache_dir = /home/jo/.cache/mutt/fm/bodies
 
 set spool_file = "+INBOX"
 set record = "+Sent\ Items"

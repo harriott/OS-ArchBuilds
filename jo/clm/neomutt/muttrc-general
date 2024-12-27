@@ -1,4 +1,4 @@
-# ($vimfiles/vim/filetype.vim)
+# vim: ft=neomuttrc
 
 # $clMail/neomutt/muttrc-general - general settings for  neomutt
 #  based on  $DCGRs/unix/linux/mail/LukeSmithxyz-mutt-wizard/share/mutt-wizard.muttrc

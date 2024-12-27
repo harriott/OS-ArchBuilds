@@ -2909,9 +2909,154 @@ rebooted for  org.keepassxc.KeePassXC &  Opened  $core/encrypted/JH.kdbx
 flatpak uninstall org.keepassxc.KeePassXC
 flatpak uninstall --unused
 sudo pacman -S keepassxc
+## pass - previously
+pass init jharr@ftml.net
+$ pass ls
+  Password Store
+  ├── cz
+  │   ├── GmailAPI
+  │   │   ├── CID
+  │   │   ├── CS
+  │   │   ├── refresh
+  │   │   ├── token-expire
+  │   │   └── token
+  │   └── mbsync
+  ├── jnbh
+  ├── mutt-wizard-fm
+  ├── mutt-wizard-gmx
+  ├── parl
+  │   ├── GmailAPI
+  │   │   ├── CID
+  │   │   ├── CS
+  │   │   ├── refresh
+  │   │   ├── token-expire
+  │   │   └── token
+  │   └── mbsync
+  ├── tj
+  │   └── mbsync
+  ├── troh
+  │   ├── GmailAPI
+  │   │   ├── CID
+  │   │   ├── CS
+  │   │   ├── refresh
+  │   │   ├── token-expire
+  │   │   └── token
+  │   └── neomutt
+  └── zou
+rsync -irtv --delete ~/.password-store/ $Enc/Secure1/password-store-sbMb
+## pass - reorganise
+pass mv cz/mbsync cz-mbsync
+pass rm -r cz
+pass mv cz-mbsync cz
+pass mv mutt-wizard-fm fm
+pass mv mutt-wizard-gmx gmx
+pass rm -r parl
+pass rm -r tj
+pass mv troh/neomutt trohib
+pass rm -fr troh
+pass mv trohib troh
+rsync -irtv --delete ~/.password-store/ $Enc/Secure1/password-store
+## refresh GnuPG keys
+gpg --refresh-keys
+## sudoers tweaks
+sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
+sudo visudo -c -f /etc/sudoers
+sudo grep timestamp_timeout /etc/sudoers
+## HP Envy Inspire 7220e changed to 23.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.23.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates - Perl v5.40
+  error: No package owns /usr/lib/perl5/5.38
+  WARNING: 14 file(s) in /usr/lib/perl5/5.38 are not tracked by pacman and need to be rebuilt.
+   -> These were most likely installed directly by cpan or a similar tool.
+      Run the following command to get a list of these files:
+      LC_ALL=C find "/usr/lib/perl5/5.38" -type f -exec pacman -Qqo {} + |& sed -n 's/^error: No package owns \(.*\)$/\1/p'
+  /usr/lib/perl5/5.38/core_perl/perllocal.pod
+  /usr/lib/perl5/5.38/site_perl/MsgPack/Raw/Unpacker.pm
+  /usr/lib/perl5/5.38/site_perl/MsgPack/Raw/Ext.pm
+  /usr/lib/perl5/5.38/site_perl/MsgPack/Raw/Packer.pm
+  /usr/lib/perl5/5.38/site_perl/MsgPack/Raw/Bool.pm
+  /usr/lib/perl5/5.38/site_perl/MsgPack/Raw.pm
+  /usr/lib/perl5/5.38/site_perl/auto/MsgPack/Raw/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/MsgPack/Raw/Raw.so
+  /usr/lib/perl5/5.38/site_perl/auto/Eval/Safe/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/Struct/Dumb/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/Future/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/Class/Accessor/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/Neovim/Ext/.packlist
+  /usr/lib/perl5/5.38/site_perl/auto/IO/Async/.packlist
+sudo rm -r /usr/lib/perl5/5.38
+## Updates
+:: Replace libva-mesa-driver with extra/mesa? [Y/n]
+## HP Envy Inspire 7220e changed to 131.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.131.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## ST4000VN008 not mounting
+sudo e2fsck -v /dev/sdc1
+  e2fsck 1.47.1 (20-May-2024)
+  ST4000VN008 contains a file system with errors, check forced.
+  Pass 1: Checking inodes, blocks, and sizes
+  Pass 2: Checking directory structure
+  Problem in HTREE directory inode 207765502: block #9 has bad max hash
+  Invalid HTREE directory inode 207765502 (/rsnapshot/daily.0/localhost/usr/local/texlive/2023/texmf-dist/fonts/tfm/huerta/alegreya).  Clear HTree index<y>? yes
+  Pass 3: Checking directory connectivity
+  Pass 3A: Optimizing directories
+  Pass 4: Checking reference counts
+  Pass 5: Checking group summary information
+  Block bitmap differences:  +9349789
+  Fix<y>? yes
+  Free blocks count wrong (105068632, counted=104790145).
+  Fix<y>? yes
+  Free inodes count wrong (233394029, counted=233420308).
+  Fix<y>? yes
+  ST4000VN008: ***** FILE SYSTEM WAS MODIFIED *****
+    10775020 inodes used (4.41%, out of 244195328)
+       57469 non-contiguous files (0.5%)
+       12587 non-contiguous directories (0.1%)
+             # of inodes with ind/dind/tind blocks: 0/0/0
+             Extent depth histogram: 10720311/9759/18
+   871964031 blocks used (89.27%, out of 976754176)
+           0 bad blocks
+          91 large files
+     4224446 regular files
+     6504312 directories
+           0 character device files
+           0 block device files
+           6 fifos
+    47492728 links
+       46232 symbolic links (44903 fast symbolic links)
+          15 sockets
+    58267739 files
+## sleep failing again
+$OSAB/etc/systemd/disable_freeze_user_session.conf  copy removed
+  but got system seizes, so recopied and discovered it works if  WD30EZRZ  ain't plugged in
+## xdg-open .wma
+handlr get .wma  reports  vlc.desktop
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## Updates
+  :: There are 2 providers available for qt6-multimedia-backend:
+  :: Repository extra
+     1) qt6-multimedia-ffmpeg  2) qt6-multimedia-gstreamer
+   Enter a number (default=1): 1
+## HP Envy Inspire 7220e changed to 28.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.28.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 216.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.216.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 delta
 gokcehan's lf
+imapbox
+maildir-rank-addr
 MariaDB
 ueberzugpp
 # CopyQ
@@ -2948,41 +3093,6 @@ gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
 # locale.gen.pacnew
 sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 sudo rm /etc/locale.gen.pacnew
-# pass
-$ pass ls
-  Password Store
-  ├── cz
-  │   ├── GmailAPI
-  │   │   ├── CID
-  │   │   ├── CS
-  │   │   ├── refresh
-  │   │   ├── token-expire
-  │   │   └── token
-  │   └── mbsync
-  ├── jnbh
-  ├── mutt-wizard-fm
-  ├── mutt-wizard-gmx
-  ├── parl
-  │   ├── GmailAPI
-  │   │   ├── CID
-  │   │   ├── CS
-  │   │   ├── refresh
-  │   │   ├── token-expire
-  │   │   └── token
-  │   └── mbsync
-  ├── tj
-  │   └── mbsync
-  ├── troh
-  │   ├── GmailAPI
-  │   │   ├── CID
-  │   │   ├── CS
-  │   │   ├── refresh
-  │   │   ├── token-expire
-  │   │   └── token
-  │   └── neomutt
-  └── zou
-pass init jharr@ftml.net
-rsync -irtv --delete ~/.password-store/ $Enc/Secure1/password-store-sbMb
 # physical configuration
 ATI Radeon HD 4870 on PCIEX16
 D-Link DUB-H7
@@ -3067,7 +3177,7 @@ random reboots happen any time
   Failed to start File System Check on /dev/disk/by-label/ST4000VN008.
   Dependency failed for /mnt/ST4000VN008.
 ### fix with e2fsck
-root pw > nvim /etc/fstab > comment out ST4000VN008, reboot  for
+root pw > nvim /etc/fstab > comment out ST4000VN008, ctrl+d (reboots)  for
   sudo bash $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh > disable
   sudo e2fsck -v /dev/sdc1
   sudo nvim /etc/fstab  to reinstate  ST4000VN008, reboot

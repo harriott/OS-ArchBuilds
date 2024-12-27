@@ -2,7 +2,7 @@
 
 # Joseph Harriott
 # cp $OSAB/root/bashrc /root/.bashrc
-# nvim -O $OSAB/root/bashrc /root/.bashrc -c 'windo difft'
+# sudo nvim -O $OSAB/root/bashrc /root/.bashrc -c 'windo difft'
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
@@ -13,6 +13,7 @@ alias l='ls --color=auto'
 # ---------------
 # my preferences:
 # ---------------
+alias o=echo
 set -o vi
 if [ -f /home/jo/.bashrc-generic ]; then
     . /home/jo/.bashrc-generic

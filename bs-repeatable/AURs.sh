@@ -65,14 +65,20 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> cpu-x 1 cpu-x 0 install
-# gAUR cpu-x
-# nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
-# makepkg -sic
-# true
+#=> cpu-x 1 cpu-x 0 install
+gAUR cpu-x
+nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
+makepkg -sic
+true
 
 # #=> cpu-x 1 cpu-x 1 remove
 # sudo pacman -Rs cpu-x
+
+# #=> cyrus-sasl-xoauth2-git
+# gAUR cyrus-sasl-xoauth2-git
+# nvim -c "silent! /github.com\/moriyoshi" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> dict-moby-thesaurus
 # gAUR dict-moby-thesaurus
@@ -134,12 +140,12 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs jump
 # true
 
-# #=> julia-bin
-# # for sixels
-# gAUR julia-bin
-# nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
-# makepkg -sic
-# true
+#=> julia-bin
+# for sixels
+gAUR julia-bin
+nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
+makepkg -sic
+true
 
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3
@@ -174,11 +180,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> moar 0 (re)install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 (re)install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR

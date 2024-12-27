@@ -4,45 +4,28 @@
 
 # my working  ~/.mbsyncrc  is backed up offline at  $lclm/mbsyncrc-backup
 
+# isync v1.4.4 (as in Ubuntu) requires reverting  $ sed -i 's!TLSType!SSLType!' ~/.mbsyncrc
+
 Create Both
 Expunge Both
 SyncState *
 
-# {{{1 IMAPAccount xxx
+# {{{1 IMAPAccount fm
 
-IMAPStore xxx-remote
-Host imap.gmail.com
-User xxx@gmail.com
-PassCmd "pass xxx/mbsync"
+IMAPStore fm-remote
+Host imap.fastmail.com
+User you@fastmail.net
+PassCmd "pass fm"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-MaildirStore xxx-local
-Path ~/.local/share/mail/xxx/
-Inbox ~/.local/share/mail/xxx/INBOX
+MaildirStore fm-local
+Path ~/.local/share/mail/fm/
+Inbox ~/.local/share/mail/fm/INBOX
 Flatten .
 
-Channel xxx
-Far :xxx-remote:
-Near :xxx-local:
-Patterns *
-
-# {{{1 IMAPAccount yyy
-
-IMAPStore yyy-remote
-Host imap.gmail.com
-User yyy@gmail.com
-PassCmd "pass yyy/mbsync"
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-MaildirStore yyy-local
-Path ~/.local/share/mail/yyy/
-Inbox ~/.local/share/mail/yyy/INBOX
-Flatten .
-
-Channel yyy
-Far :yyy-remote:
-Near :yyy-local:
+Channel fm
+Far :fm-remote:
+Near :fm-local:
 Patterns *
 

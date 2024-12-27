@@ -197,7 +197,7 @@ uf(){
   echo >> $ufl
   e -al /usr/* >> $ufl
   echo >> $ufl
-}
+} # usr files
 
 #==> fonts
 usf(){

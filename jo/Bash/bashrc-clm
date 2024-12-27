@@ -1,11 +1,8 @@
 # vim: ft=sh:
 
-# $AjB/bashrc-clm  sourced by  $AjB/bashrc
+# $AjB/bashrc-clm  sourced by  $AjB/bashrc  $MSn/WSL/bash_profile
 
 # $clMail/msmtprc/msmtprc-template  includes tests for sends
-
-#=> backup my Mutt Wizard files
-alias mwb='bash $clMail/backup.sh'
 
 #=> find mutt aliases
 maf () {
@@ -28,22 +25,15 @@ maf () {
     sort -u $fAt >> $fA  # save as a rough collection, sorted
     rm $fAt
 } # adds found aliases to existing collections
-mafc (){ account=cz;   maf; }
 maff (){ account=fm;   maf; }
 mafx (){ account=gmx;  maf; }
-mafl (){ account=live; maf; }
-maft (){ account=troh; maf; }
 mafz (){ account=zou;  maf; }  # $maild/zou/muttAliases
 
 # r $lclm/muttAliases/$account
 
 #=> neomutt
-alias nmc='neomutt -F $clMail/neomutt/muttrc-accounts/cz'
-alias nmf='neomutt -F $clMail/neomutt/muttrc-accounts/ftml'
+alias nmf='neomutt -F $clMail/neomutt/muttrc-accounts/fm' # FastMail
 alias nmx='neomutt -F $clMail/neomutt/muttrc-accounts/gmx'
-alias nml='neomutt -F $clMail/neomutt/muttrc-accounts/live'
-alias nmj='neomutt -F $clMail/neomutt/muttrc-accounts/tj'
-alias nmt='neomutt -F $clMail/neomutt/muttrc-accounts/troh'
 alias nmz='neomutt -F $clMail/neomutt/muttrc-accounts/zou' # see  $OSAB/QR.md
 
 #=> notmuch
@@ -66,11 +56,8 @@ nmse () {
       subjectSpace="${subjectTags%(*}"
       tagsUnbracket="${subjectTags##*\(}"
       tags="${tagsUnbracket/)/}"
-      tags="${tags/cz/${tpf1}cz}"
       tags="${tags/fm/${tpf2b}fm${tpfn}}"
       tags="${tags/friends/${tpf7}friends}"
-      tags="${tags/live/${tpf4}live}"
-      tags="${tags/troh/${tpf6}troh}"
       tags="${tags/gmx/${tpf3}gmx}"
       tags="${tags/unread/${tpf7}unread}"
       tags="${tags/waiting/${tpf7}waiting}"
@@ -98,23 +85,15 @@ nmsh () {
 nmnew () { echo "notmuch new:"; notmuch new; } # see $clMail/notmuch/config-template
 
 # see  $clMail/mbsyncrc-template  (~/.mbsyncrc)
-msc () { mbsync cz   ; nmnew ; echo '$clMail/notmuch/tags/cz.sh'   ; bash $clMail/notmuch/tags/cz.sh   ; }
 msf () { mbsync fm   ; nmnew ; echo '$clMail/notmuch/tags/fm.sh'   ; bash $clMail/notmuch/tags/fm.sh   ; }
 msx () { mbsync gmx  ; nmnew ; echo '$clMail/notmuch/tags/gmx.sh'  ; bash $clMail/notmuch/tags/gmx.sh  ; }
-msl () { mbsync live ; nmnew ; echo '$clMail/notmuch/tags/live.sh' ; bash $clMail/notmuch/tags/live.sh ; }
-msj () { mbsync tj   ; nmnew ; echo '$clMail/notmuch/tags/tj.sh'   ; bash $clMail/notmuch/tags/tj.sh   ; }
-mst () { mbsync troh ; nmnew ; echo '$clMail/notmuch/tags/troh.sh' ; bash $clMail/notmuch/tags/troh.sh ; }
 msz () { mbsync zou  ; nmnew ; echo '$clMail/notmuch/tags/zou.sh'  ; bash $clMail/notmuch/tags/zou.sh  ; }
 # (mbsync output isn't caught by xcol)
 # run these repeatedly to ensure that  notmuch  grabs all emails
 
 alias ms='
-echo -e "${tpf2b}-- cz   --${tpfn}"; msc;
 echo -e "${tpf2b}-- fm   --${tpfn}"; msf;
 echo -e "${tpf2b}-- gmx  --${tpfn}"; msx;
-echo -e "${tpf2b}-- live --${tpfn}"; msl;
-echo -e "${tpf2b}-- tj   --${tpfn}"; msj;
-echo -e "${tpf2b}-- troh --${tpfn}"; mst;
 echo -e "${tpf2b}-- zou  --${tpfn}"; msz;
 '
 

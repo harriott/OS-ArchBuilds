@@ -69,7 +69,7 @@ pacman -S fzf
 pacman -S awesome-terminal-fonts lsd
 
 # mlocate
-pacman -S mlocate
+pacman -S plocate
 updatedb
 
 # ncdu
@@ -112,6 +112,9 @@ pacman -S vifm
 pacman -S zoxide
 
 #=> 2 hd 0
+# atop
+pacman -S atop
+
 # diskus
 pacman -S diskus
 
@@ -120,6 +123,9 @@ pacman -S duf
 
 # hdparm
 pacman -S hdparm
+
+# ioping
+pacman -S ioping
 
 # NTFS-3G
 pacman -S ntfs-3g
@@ -287,34 +293,37 @@ true
 # Lua linter
 pacman -S selene
 
-# #=> 2 system
-# # supersedes  Bashtop
-# pacman -S bpytop
+#=> 2 system
+# supersedes  Bashtop
+pacman -S bpytop
 
-# # beep
-# pacman -S beep
+# beep
+pacman -S beep
 
-# # btop
-# pacman -S btop
+# btop
+pacman -S btop
 
-# # fcron
-# pacman -S fcron
-# systemctl enable fcron.service
+# dool
+pacman -S dool
 
-# # glances
-# pacman -S glances
+# fcron
+pacman -S fcron
+systemctl enable fcron.service
 
-# # GNU time
-# pacman -S time
+# glances
+pacman -S glances
 
-# # Mesa demos
-# pacman -S mesa-demos  # probably brings in  mesa
+# GNU time
+pacman -S time
 
-# # meson, for auracle later
-# pacman -S meson
+# Mesa demos
+pacman -S mesa-demos  # probably brings in  mesa
 
-# # Pipe Viewer
-# pacman -S pv
+# meson, for auracle later
+pacman -S meson
+
+# Pipe Viewer
+pacman -S pv
 
 #=> 2 various
 # cpanminus

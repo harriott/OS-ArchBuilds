@@ -684,9 +684,52 @@ so re-installed it
 sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
 sudo visudo -c -f /etc/sudoers
 no immediate change of pw timeout
+## pass - reorganise
+mkdir $Enc
+rsync -irtv --delete $Enc/Secure1/password-store-sbMb/ ~/.password-store
+## update GnuPG key 13F327EF
+gpg --edit-key 13F327EF > 1 > expire > 2y > y > key 1 > expire > 2y > y > q > y
+in  $Enc/Secure1/GnuPG/13F327EF
+  gpg -ao sprbMbArch-ob8-public.asc --export jharr
+  gpg -ao sprbMbArch-ob8-private.asc --export-secret-keys jharr
+gpg --send-keys 13F327EF
+  gpg: sending key 842A4DEE13F327EF to hkps://keyserver.ubuntu.com
+## sudoers tweaks
+sudo nvim -O /etc/sudoers $OSAB/etc/sudoers/sudoers -c 'windo difft'
+sudo visudo -c -f /etc/sudoers
+sudo grep timestamp_timeout /etc/sudoers
+## XeTeX snag
+seemingly after  texlive-bin 2024.2-3 -> 2024.2-4
+x $JHt/IT/CP/TeX/LaTeX/hello.tex
+  This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024/Arch Linux) (preloaded format=xelatex) restricted \write18 enabled.
+  ---! /var/lib/texmf/web2c/xetex/xelatex.fmt made by different executable version, strings are different
+  (Fatal format file error; I'm stymied)
+cp /etc/texmf/web2c/fmtutil.cnf.pacsave $machLg/TeXLive-etc-texmf-web2c-fmtutil_pacsave-$(date '+%Y%m%d%H%M').cnf
+sudo rm /etc/texmf/web2c/fmtutil.cnf.pacsave
+cp /etc/texmf/web2c/fmtutil.cnf $machLg/TeXLive-etc-texmf-web2c-fmtutil-$(date '+%Y%m%d%H%M').cnf
+fmtutil --all --sys
+  fmtutil [ERROR]: format directory not writable: /var/lib/texmf/web2c
+sudo fmtutil --all --sys  slowly spewed out loads of info, and, even after a reboot, didn't fix it
+sudo fmtutil-sys --all  no better
+sudo pacman -S texlive-formatsextra
+  (3/4) Updating TeXLive format files...  took ages, still didn't fix it
+sudo pacman -S texlive-latexextra
+  (3/4) Updating TeXLive format files...  took ages
+sudo pacman -S texlive-xetex  finally got  x hello.tex  working
+fd '\-stderr.txt'
+rm **/*-stderr.txt
+## python-future
+no reported requirements, so  sudo pacman -Rs python-future
+## Dropbox signed in
+from Firefox page that appeared after a boot
+tray icon > Sign in  fired up another page > Connect
+## Updates
+:: Replace p7zip with extra/7zip? [Y/n]
 ## waiting
 apache
+dool
 gokcehan's lf
+ioping
 MariaDB
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700

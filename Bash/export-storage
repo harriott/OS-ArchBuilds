@@ -56,7 +56,8 @@ if [ $OSAB ]; then
   export ABjo=$OSAB/jo
     export AjB=$ABjo/Bash
     export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
-    export clMail=$ABjo/clm  # used in  $AjB/bashrc-clm  and  $clMail/neomutt/muttrc-accounts/
+    export clMail=$ABjo/clm  # used in  $AjB/bashrc-clm  and  $clMn/muttrc-accounts/
+      export clMn=$clMail/neomutt  # $clMn
   export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg
 fi
 

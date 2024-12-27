@@ -38,7 +38,6 @@ sudo perl install-tl --no-interaction
 
 #=> documenting - TeX Live 0 native 2 tidy up
 mv texlive.profile $machLg/TeXLive/install-tl-example.profile-$(date '+%Y%m%d%H%M')
-cd $OSAB/bs-3-toWM-0
 
 # #=> documenting - TeX Live 0 native 3 basic - more
 # sudo tlmgr install currfile
@@ -53,6 +52,7 @@ cd $OSAB/bs-3-toWM-0
 
 #=> documenting - TeX Live 0 Arch packaged 0 install
 pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all
+pacman -S texlive-xetex
 
 #=> documenting - TeX Live 0 Arch packaged 1 remove 0 packages
 # sudo pacman -Rs  as per  $machLg/TeXLive/Arch_packages-<date>.txt

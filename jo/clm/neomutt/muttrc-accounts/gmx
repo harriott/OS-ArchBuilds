@@ -1,4 +1,4 @@
-# ($vimfiles/vim/filetype.vim)
+# vim: ft=neomuttrc
 
 # $clMail/neomutt/muttrc-accounts/gmx  for  nmx  defined in  $AjB/bashrc-clm
 
@@ -6,7 +6,7 @@ set from = $gmx  # = my GMX email, defined in my  $lclm/mymuttrcAddresses
 set sendmail = "msmtp -a gmx"
 set folder = "$maild/gmx"
 set header_cache = /home/jo/.cache/mutt/gmx/headers
-set message_cache_dir = /home/jo/.cache/mutt/gmx/bodies
+# set message_cache_dir = /home/jo/.cache/mutt/gmx/bodies
 
 set spool_file = "+INBOX"
 set record = "+Sent"

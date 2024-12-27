@@ -63,6 +63,7 @@ makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 # handlr set .txt gvim.desktop
 # handlr set .url gvim.desktop
 # handlr set .wav mpv.desktop
+# handlr set .wma mpv.desktop
 # handlr set .webm mpv.desktop
 # handlr set .webp feh.desktop
 # handlr set .xml gvim.desktop

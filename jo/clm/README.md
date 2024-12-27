@@ -1,7 +1,5 @@
 
-$clMail/README.md
-
-see also [email tools across platforms](https://harriott.github.io/email_tools_across_platforms/)
+this node `$clMail/README.md` and see also [email tools across platforms](https://harriott.github.io/email_tools_across_platforms/)
 
 # my neomutt + notmuch setup
 This folder of configuration files may well be useful to someone else.

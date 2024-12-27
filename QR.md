@@ -55,11 +55,14 @@ tput bel  # bell
     find . -type f -name "*.pl"
     find . -type f -name "python.vim"
 
-as root: `find / -xdev -iname "*fmtutil.cnf*"`
-
 ### for configuration files
     fd -I -e conf
     find . -type f -name "*.conf"
+
+### fmtutil.cnf
+    /etc/texmf/web2c/fmtutil.cnf
+
+as root: `find / -xdev -iname "*fmtutil.cnf*"`
 
 ### grepping
     grep -E '<someText>|<otherText>'
@@ -141,6 +144,7 @@ moar -h
     za $ITscr/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/lists/enumitem.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
+    za $ITscr/CP/TeX/LaTeX/structure/parts/scalerel.pdf
     za $ITscr/CP/TeX/LaTeX/structure/pdfpages.pdf
 
 ## TeX - LaTeX
@@ -165,6 +169,7 @@ moar -h
     r ~/texmf
 
 ## TeX Live
+    locx .fmt
     pacman -Qs texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
     pdfjam
 
@@ -302,6 +307,8 @@ see `$vimfiles/syntax/gems.vim`
 # file contents
     fd -tf -e md -x du -h | sort -hr  # sorted by size
     pygmentize -h
+
+TAIL(1)
 
 ## awk
     $ITsrul/awk
@@ -616,7 +623,6 @@ gpg(1)
 # hw
     cd /sys/devices/system/cpu/cpu0/cpufreq
     doas showkey  # keycodes
-    HP ENVY 5532: d0:bf:9c:a2:2f:0e
 
 ## avio
     /sys/class/backlight/intel_backlight/max_brightness
@@ -637,16 +643,19 @@ gpg(1)
 
     :Tabularize /-->/r1c1l0
 
-## printing - CUPS - HP ENVY WiFi
+## printing - HP ENVY WiFi
+    HP ENVY 5532: d0:bf:9c:a2:2f:0e
+
+### CUPS
     doas cupsenable ENVY_Inspire_7200  # if it's paused
     lpoptions -d ENVY_Inspire_7200  # sets as default in  ~/.cups/lpoptions
     lpoptions -p Envy5532 -o PageSize=A4
 
-### see selected options
+#### see selected options
     lpoptions -p ENVY_5530 -l | xcol '\*'
     lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 
-## printing - HPLIP - HP ENVY WiFi
+### HPLIP
     hp-levels -p ENVY_5530
     hp-setup -b net 192.168.43.249  # when online
     http://192.168.43.249/
@@ -655,6 +664,7 @@ gpg(1)
     $misc/linux/slJH.sh  # check for symlinks which could bother Dropbox
     /proc/filesystems - those supported by the kernel
     doas file -s /dev/sdx(n)
+    i ioping
 
 - Asunder CD Ripper
 - CP(1)
@@ -721,15 +731,18 @@ optimised for SSDs
     sudo diff --no-dereference -qr hourly.0 hourly.1 > hourly0+1.gnudiff
 
 #### find
+    n $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
+    n $rsnapshot/daily.1/localhost$MSWin10/mb
+    n $rsnapshot/hourly.0/localhost/$Drpbx/Cop/AM-toSort0
 
+##### fRs
+    $AjB/bashrc-console
     fRs $AjB bashrc-console
-    fRs $Drpbx/CAM-good US
-    fRs $Drpbx/CAM-toSort0 '01 '
-    fRs $Drpbx/CAM-toSort0 Apache
-    fRs $Drpbx/CAM-toSort0 Costello
+    fRs $Drpbx/Cop/AM-toSort0 'ZZ Top'
     fRs $JHw _config.yml
     fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
+    fRs $machBld/jo/Bash VsLmore
     fRs $Obc/rc rc.xml
     fRs $onGH/misc/CP/PerlTools mysmsMD.pl
     fRs $TeNo/md-JH-DailyLife DailyLife.md
@@ -738,9 +751,6 @@ optimised for SSDs
     fRs $vimfiles/syntax cmusq.vim
     fRs $vfv/plugin plugin.vim
     fRs /etc sudoers
-    n $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
-    n $rsnapshot/daily.1/localhost$MSWin10/mb
-    n $rsnapshot/hourly.0/localhost/$Drpbx/Cop/AM-toSort0
 
 ##### my OBS grabs
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
@@ -765,6 +775,9 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
 ```
 
 #### recent directories
+    $rsnapshot/hourly.0/localhost$CzMa/planning/m1-n/n9t-_benevoles-appels-Joseph
+    $rsnapshot/hourly.0/localhost$CzMa/expenses/mine/oab-/noReceipts
+    $rsnapshot/hourly.1/localhost$CzMa/expenses/mine/oab-/noReceipts
     $rsnapshot/hourly.0/localhost/mnt/SDU3D1TB/Dropbox/Cop/AM-toSort0
 
 #### recover folder
@@ -1082,16 +1095,13 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
     find /boot/vmli*  # lists available kernels
-    i hier
     i localectl
     slock  # unlocks when correct user pw is entered
     XF86Sleep
     /usr/share/doc/arch-wiki/html/en
 
-- FILE-HIERARCHY(7)
 - `Qt`: `Q qt6`
 - Trusted Users
-- `uf()` in `$OSAB/Bash/bashrc-generic)`
 
 ## .desktop
     fd -tf .desktop $OSAB
@@ -1113,6 +1123,12 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     r $ulLA/ml-$host/etc/fstab
     rsync -irtv --delete $OSAB/ ~/Play0/OSAB
     v $OSAB $ulLA
+
+## filesystem hierarchy
+    i hier
+
+- FILE-HIERARCHY(7)
+- `uf()` (= usr files) in `$OSAB/Bash/bashrc-generic)`
 
 ## fonts
     font-manager &
@@ -1163,6 +1179,8 @@ uses `fzf`
 
 ## monitoring
     btop
+
+IOSTAT(1)
 
 ### BpyTOP
     bpytop  # supersedes  bashtop
@@ -1270,6 +1288,7 @@ scroll don't work in `tmux`
 
 ## FIGlet
     figlet Joseph Harriott
+    watch -n1 "date '+%T'|figlet" # clock
 
 - figlet(6)
 - `-t` selects terminal width (instead of `-w 80` default)
@@ -1283,37 +1302,6 @@ scroll don't work in `tmux`
     termdown --help | mo
     termdown -b 10
 
-## tmux
-    $OSAB/terminal/tmux.conf
-    C-a [ -> copy-mode
-    C-a ~ -> show-messages
-    joinp -s 2 [-t 1 ]  -> join-pane, joining pane in window 2 [to that in window 1]
-    resize -s 65 120  # good for half of ViewSonic VX2025wm
-    tmux list-keys | grep '~'
-    tmux list-keys | mo
-    tmux show-options -g   # global
-    tmux show-options -s   # server
-
-- `send-keys` can't decode a Bash environment variable
-- TMUX(1)
-
-### session window pane
-    M-PgDn/PgUp -> (= C-a (/) ) previous/next session
-
-#### panes
-    C-a C-o -> Rotate through the panes
-    C-a M-1 -> switch to even-horizontal layout
-    C-a M-2 -> switch to even-vertical layout
-    C-a M-3 -> switch to main-horizontal layout
-    C-a M-4 -> switch to main-vertical layout
-    C-a q -> show numbers
-    C-a { = swap-pane -U
-    C-a } = swap-pane -D
-
-#### windows
-    C-a w -> choose window from a list
-    M-n -> (= C-a n ) select window n
-
 ## urxvt
     $ABjo/wm/urxvt/keystrokes.md
     Alt+s --> urxvt-searchable-scrollback
@@ -1326,6 +1314,12 @@ scroll don't work in `tmux`
     printf '\e]710;%s\007' "xft:Hack:Bold:pixelsize=12"
     printf '\e]710;%s\007' "xft:UbuntuMono:Bold:pixelsize=12"
     printf '\e]710;%s\007' "xft:Consolas:Bold:pixelsize=12"
+
+## tmux
+    resize -s 65 120  # good for half of ViewSonic VX2025wm
+
+- `send-keys` can't decode a Bash environment variable
+- TMUX(1)
 
 ## virtual consoles
     stty -a

@@ -1,6 +1,6 @@
 # vim: ft=bash sw=2:
 
-# Joseph Harriott, Thu 18 Jul 2024
+# Joseph Harriott, Fri 15 Nov 2024
 
 # $AjB/bashrc-wm   sourced by  $AjB/bashrc
 
@@ -18,7 +18,7 @@ fm () {
 }
 
 fv () {
-  for VsL in $(cat $machBld/jo/Bash/VsLmore); do
+  for VsL in /mnt/*; do
     Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
     for Vs in "${Vss[@]}"; do
       echo $Vs
@@ -105,10 +105,10 @@ aet () {
 
 abt () {
   export a="$1"
-  trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
+  trim=1; [[ $2 ]] && trim=$2
   ffmhb -ss $trim -i "$a" -c copy -y "t$a"
   mpv --end=3 "t$a"
-} # abt <anAudioFileToTrimOffBeginning> <trimIfGreaterThan1second>
+} # abt <an_audio_file_to_trim_half_second_off_beginning> 0.3
 
 # mv "t$a" "$a"
 
@@ -228,7 +228,8 @@ dcc0 () {
   echo 'scanning for conflicted copies'
   echo 'vim: nowrap:' > $DropboxConflictedLog
   echo '' >> $DropboxConflictedLog
-  find $PWD -path $Drpbx/conflicted -prune -o -regex ".*'s conflicted copy .*\|.* (Copie en conflit de .*" -print >> $DropboxConflictedLog
+  find $PWD -path $Drpbx/conflicted -prune -o -regex ".*'s conflicted copy.*\|.* (Copie en conflit de .*" -print >> $DropboxConflictedLog
+  # fd -E conflicted conflicted
   gvim $DropboxConflictedLog
   popd
 }  # lists them

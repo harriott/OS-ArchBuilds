@@ -9,7 +9,6 @@
 
 alias gpr='gprename &'
 alias psci='pscShots=/home/jo/Arch/AUR/pscircle-git-shots;pscLatest="$pscShots/$(date +%Y%m%d%H%M%S).png";pscircle --output=$pscLatest;sxiv -fn $(ls $pscShots | wc -l) $pscShots &'
-rpd () { bash $onGH/FM-rsync-drives/rsync0.sh $1; }  # I manually backup occasionally to  $ITstack/ulLinuxArch-ml-sbMb-rpd
 
 # find conversions to latin1
 fcL1 () { sed -r '/(Â[^a-z]|Ã|Å|É[^a-z]|â[^,a-z])/!d' $1 > "${1/./_}-Latin1.txt"; }
