@@ -40,7 +40,7 @@ export VISUAL=gvim
 eval "$(register-python-argcomplete pipx)"
 
 #==> prompt
-source "/usr/share/git/completion/git-prompt.sh"; source $OSL/bashrc-console-prompt
+source "/usr/share/git/completion/git-prompt.sh"; source $OSL/nodes/bashrc-console-prompt
 
 #=> file manage
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'

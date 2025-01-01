@@ -3052,8 +3052,14 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.216.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+:: Replace p7zip with extra/7zip? [Y/n]
+## python-future
+no reported requirements, so  sudo pacman -Rs python-future
 ## waiting
+$OSL/jo/export
 delta
+fix ~/.tmux.conf
 gokcehan's lf
 imapbox
 maildir-rank-addr

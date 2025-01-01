@@ -52,12 +52,12 @@ else
   AB=~/OS-ArchBuilds; [ -d $AB ] && export OSAB=$AB
   hjAB=/home/jo/OS-ArchBuilds; [ -d $hjAB ] && export OSAB=$hjAB
 fi  # depends on  onGH=
+export clMail=$OSL/jo/clm  # used in  $clMail  &  $OSL/nodes/bashrc-clm
+  export clMn=$clMail/neomutt  # $clMn
 if [ $OSAB ]; then
   export ABjo=$OSAB/jo
     export AjB=$ABjo/Bash
     export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
-    export clMail=$ABjo/clm  # used in  $AjB/bashrc-clm  and  $clMn/muttrc-accounts/
-      export clMn=$clMail/neomutt  # $clMn
   export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg
 fi
 

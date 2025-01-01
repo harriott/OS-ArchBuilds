@@ -39,7 +39,7 @@ e -la /usr/share/fonts
 
 # ln -sf $OSAB/root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 
-# ln -sf $OSL/tmux/tmux.conf ~/.tmux.conf
+# ln -sf $OSL/nodes/tmux/tmux.conf ~/.tmux.conf
 
 # #=> 2 list root symlinks
 # eza -la /root

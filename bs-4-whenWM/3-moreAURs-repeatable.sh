@@ -187,11 +187,11 @@ true
 # makepkg -sic
 # [ -f ~/.config/oama/config.yaml ] || oama
 
-#=> opera
-# for MPD
-gAUR opera
-nvim -c "silent! /www.opera.com" PKGBUILD
-makepkg -sic
+# #=> opera
+# # for MPD
+# gAUR opera
+# nvim -c "silent! /www.opera.com" PKGBUILD
+# makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2

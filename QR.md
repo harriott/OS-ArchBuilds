@@ -738,6 +738,7 @@ optimised for SSDs
 ##### fRs
     $AjB/bashrc-console
     fRs $AjB bashrc-console
+    fRs $CfWk/technos/civil/catering/CM-DeLonghiDinamica/Fr staplable.tex
     fRs $Drpbx/Cop/AM-toSort0 'ZZ Top'
     fRs $JHw _config.yml
     fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex

@@ -56,6 +56,10 @@ sudo find /etc -type f -name "*pacnew"
 # nvim -O /etc/makepkg.conf.d/rust.conf /etc/makepkg.conf.d/rust.conf.pacnew -c 'windo difft'
 # rm /etc/makepkg.conf.d/rust.conf.pacnew
 
+#=> 1 nginx.conf
+nvim -O /etc/nginx/nginx.conf.pacnew $OSAB/etc/Nginx/pristine.conf -c 'windo difft'
+rm /etc/nginx/nginx.conf.pacnew
+
 # #=> 1 pacman.conf
 # nvim -O /etc/pacman.conf /etc/pacman.conf.pacnew -c 'windo difft'
 # rm /etc/pacman.conf.pacnew

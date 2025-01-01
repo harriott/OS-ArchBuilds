@@ -22,7 +22,7 @@ ln -sf $machBld/jo/Bash/bashrc               ~/.bashrc
 ln -sf $Openbox/bashrc_for_Alacritty-nvim.sh ~/.bashrc-An
 ln -sf $AjB/bashrc-console                   ~/.bashrc-console
 ln -sf $OSAB/Bash/bashrc-generic             ~/.bashrc-generic
-ln -sf $OSL/export-jo                        ~/.export-jo
+ln -sf $OSL/jo/export                        ~/.export-jo
 ln -sf $machBld/export-machine               ~/.export-machine
 ln -sf $OSAB/Bash/export-storage             ~/.export-storage
 ln -sf $OSL/GNUReadline-inputrc              ~/.inputrc  # e -l ~/.inputrc
@@ -110,7 +110,7 @@ ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 
 #=> tmux
-ln -sf $OSL/tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf
+ln -sf $OSL/nodes/tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf
 
 #=> w3m
 ln -sf $ABjo/WAN/w3m/config ~/.w3m/config
