@@ -3056,10 +3056,13 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 :: Replace p7zip with extra/7zip? [Y/n]
 ## python-future
 no reported requirements, so  sudo pacman -Rs python-future
+## HP Envy Inspire 7220e changed to 147.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.147.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
-$OSL/jo/export
 delta
-fix ~/.tmux.conf
 gokcehan's lf
 imapbox
 maildir-rank-addr
@@ -3152,7 +3155,10 @@ Antec Neo HE550
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
   AMD FX-8350 Black Edition 8 Core AM3+ 4 GHz 8 MB L3 Cache 125 W CPU
     Cooler Master Hyper 212 EVO v2
-  HyperX FURY 2 x 4 GB DDR3 1866 MHz CL10 DIMM Memory
+  DDR3_1: Patriot Viper 3 1866 8GB
+  DDR3_2: Patriot Viper 3 1866 8GB
+  DDR3_3: HyperX FURY 4 GB DDR3 1866 MHz CL10 DIMM Memory
+  DDR3_4: HyperX FURY 4 GB DDR3 1866 MHz CL10 DIMM Memory
 ### fans
 PWR FAN: unused
 SYS FAN1: lower front pull air in

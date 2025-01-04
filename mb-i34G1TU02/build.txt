@@ -726,10 +726,7 @@ tray icon > Sign in  fired up another page > Connect
 ## Updates
 :: Replace p7zip with extra/7zip? [Y/n]
 ## waiting
-$OSL/jo/export
 apache
-dool
-fix ~/.tmux.conf
 gokcehan's lf
 ioping
 MariaDB

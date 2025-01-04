@@ -16,7 +16,7 @@ lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 source $ITscc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash
 source $ITscc/forArch/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, o "$LS_COLORS"
-source $OSL/bashrc-generic
+source $OSL/nodes/bashrc-generic
 
 [ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su
@@ -67,7 +67,7 @@ c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
 # - https://superuser.com/a/1244522/242800
 
 export PAGER=less
-source $OSL/bashrc-generic
+source $OSL/nodes/bashrc-generic
 
 if [ -s "/usr/bin/broot" ]; then
   source ~/.config/broot/launcher/bash/br  # (first  broot  adds to  .bashrc)

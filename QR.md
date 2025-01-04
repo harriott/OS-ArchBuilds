@@ -587,6 +587,7 @@ can't cope with `utf-16le`
 # GNU Privacy Guard
     gpg --export-ownertrust > $ulLA/ml-$host/jo/gnupg-trustdb.txt
     im gpg
+    pgpdump -h
     r ~/.gnupg
 
 gpg(1)
@@ -700,11 +701,6 @@ optimised for SSDs
 ##### snags
     rm -r .Trash-1000/info
     sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
-
-#### trash-cli
-    $AjB/bashrc-console
-    trash-empty  # lists before query
-    trash-put
 
 ### rsnapshot
     $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
@@ -1435,7 +1431,7 @@ find -name "*(Copie en conflit de *"
 
 ## email - mutt notmuch
 ```bash
-$AjB/bashrc-clm
+$OSL/nodes/bashrc-clm
 grep -r "Georita" *
 rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
 ```

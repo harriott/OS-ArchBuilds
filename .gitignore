@@ -1,9 +1,4 @@
 
 *.pdf
 *.png
-tmux-copy-toolkit
-tmux-current-pane-hostname
-tmux-logging/
-tmux-prefix-highlight/
-tmux-resurrect/
 

@@ -46,7 +46,7 @@ source "/usr/share/git/completion/git-prompt.sh"; source $OSL/nodes/bashrc-conso
 alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
 alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
 alias v=vifm
-source $OSL/bashrc-console-fm
+source $OSL/nodes/bashrc-console-fm
 
 C (){
   if [ $1 ]; then
