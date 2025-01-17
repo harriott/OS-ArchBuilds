@@ -6,7 +6,7 @@
 # ---------------------------------------------
 
 # (chmod 755 $ABjo/Emacs/spacemacs.sh)
-# symlinked in my  $OSAB/bs-symlinks/jo-2-whenWM-1.sh
+# symlinked in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
 #  to provide command  spacemacs
 #   used in  $Obc/schema.pl
 

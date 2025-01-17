@@ -6,7 +6,7 @@
 # robustly save my last cmus queue
 
 # bash $ABjo/wm/cmusqueue.sh
-# symlinked in my  $OSAB/bs-symlinks/jo-0.sh
+# symlinked in my  $OSAB/nodes-set/jo-0.sh
 # ll ~/Arch/cmusqueue.sh
 # fcrontab:  @ 1 bash ~/Arch/cmusqueue.sh
 

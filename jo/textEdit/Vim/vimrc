@@ -1,7 +1,7 @@
 " vim: fdl=1:
 
 " $ABjo/textEdit/Vim/vimrc
-"  symlinked in my  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
+"  symlinked in my  $OSAB/nodes-set/jo-2-whenWM-0.sh
 "   pb ~/.vimrc
 
 source $vfv/enter/vimrc-Arch.vim

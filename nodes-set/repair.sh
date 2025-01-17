@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# $OSAB/bs-symlinks/repair.sh
+# $OSAB/nodes-set/repair.sh
 # for occasions when I've renamed directories, breaking symlinks
 
 # bash repair.sh
@@ -12,11 +12,11 @@ set -e
 source "../mb-$host/export-machine"
 
 #=> 1 $OSAB (& $AjB), $machBld
-source ../Bash/export-storage  # essential
+source ../nodes-Bash/export-storage  # essential
 
 #=> 1 functioning root
-[[ -z $loaded_bg ]] && source $OSAB/Bash/bashrc-generic
-sudo bash $OSAB/bs-symlinks/root.sh
+[[ -z $loaded_bg ]] && source $OSAB/nodes-Bash/bashrc-generic
+sudo bash $OSAB/nodes-set/root.sh
 
 #=> 2 functioning console
 [[ -z $loaded_bc ]] && source $AjB/bashrc-console
@@ -25,11 +25,11 @@ sudo bash $OSAB/bs-symlinks/root.sh
 source $AjB/export-jo
 
 #=> 2 reset symlinks
-source $OSAB/bs-symlinks/jo-0.sh
+source $OSAB/nodes-set/jo-0.sh
 
 #=> 3 awesome
-[[ -z $(pstree | grep awesome-) ]] || source $OSAB/bs-symlinks/jo-1-awesome.sh
+[[ -z $(pstree | grep awesome-) ]] || source $OSAB/nodes-set/jo-1-awesome.sh
 
 #=> 3 Openbox
-[[ -z $(pstree | grep openbox-) ]] || source $OSAB/bs-symlinks/jo-1-Openbox.sh
+[[ -z $(pstree | grep openbox-) ]] || source $OSAB/nodes-set/jo-1-Openbox.sh
 

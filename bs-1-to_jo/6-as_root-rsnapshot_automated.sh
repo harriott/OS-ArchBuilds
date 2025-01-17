@@ -7,7 +7,7 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 #=> 0 $OSAB
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../mb-$(uname -n)/export-machine
-. ../Bash/export-storage
+. ../nodes-Bash/export-storage
 read -p "\$OSAB is $OSAB - looks good?"
 
 # #=> 1 rsnapshot systemd files

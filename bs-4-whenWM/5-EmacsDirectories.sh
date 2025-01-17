@@ -6,7 +6,7 @@
 set -e
 
 #=> Emacs 0 directories
-# these directories will be populated in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
+# these directories will be populated in  $OSAB/nodes-set/jo-2-whenWM-0.sh
 
 mkdir ~/.emacs.d
 # e -la ~/.emacs.d

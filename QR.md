@@ -1142,7 +1142,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fd -L broot
     fd -L consolas
     fd -L symbola
-    C $ITscc/forArch/fonts
+    C $ITscc/forArch-fonts
 
 `usf()` (`$OSAB/Bash/bashrc-generic`)
 

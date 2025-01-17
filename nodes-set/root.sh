@@ -1,14 +1,14 @@
 #!/bin/bash
 # vim: sw=2:
 
-# su > root pw for  source $OSAB/bs-symlinks/root.sh
+# su > root pw for  source $OSAB/nodes-set/root.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 $OSAB
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../mb-$(uname -n)/export-machine
-. ../Bash/export-storage
+. ../nodes-Bash/export-storage
 . ../../OS-Linux/nodes/jo/export
 read -p "\$OSAB  is  $OSAB - looks good?"
 
@@ -20,16 +20,16 @@ done
 eza -la /usr/share/fonts/EmacsAllTheIcons
 
 #=> 1 fonts-forArch 0 install
-lnd $ITscc/forArch/fonts /usr/share/fonts/copiedForArch
+lnd $ITscc/forArch-fonts /usr/share/fonts/copiedForArch
 e -la /usr/share/fonts
 
-# #=> 1 fonts-forArch 0 remove
-# rm -r /usr/share/fonts/copiedForArch
-# # kills nice icons in  eza  in new  Alacritty  instances
+#=> 1 fonts-forArch 0 remove
+rm -r /usr/share/fonts/copiedForArch
+# kills nice icons in  eza  in new  Alacritty  instances
 
 #=> 1 make root symlinks
 ln -sf $machBld/export-machine /root/.export-machine
-  ln -sf $OSAB/Bash/export-storage /root/.export-storage
+  ln -sf $OSAB/nodes-Bash/export-storage /root/.export-storage
 ln -sf $OSAB/root/nanorc ~/.config/nano/nanorc
 ln -sf $OSAB/root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 ln -sf $OSL/nodes/GNUReadline-inputrc /root/.inputrc

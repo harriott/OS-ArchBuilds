@@ -6,7 +6,7 @@
 # calls  $Openbox/bashrc_for_Alacritty-nvim.sh
 
 # chmod 755 $machBld/jo/openbox/AlacrittyNvim.sh
-# symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
+# symlinked in  $OSAB/nodes-set/jo-2-whenWM-0.sh
 # pb ~/.config/openbox/AlacrittyNvim.sh
 # called by  $Obc/rc/rc.xml
 

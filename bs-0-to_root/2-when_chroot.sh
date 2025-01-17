@@ -6,7 +6,7 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 0 $OSAB
-# check  $OSAB/Bash/export-storage  has leveraged  /bs
+# check  $OSAB/nodes-Bash/export-storage  has leveraged  /bs
 echo $OSAB
 true
 

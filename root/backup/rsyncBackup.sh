@@ -6,7 +6,7 @@
 # Full system backup
 # ------------------
 # this is only needed until I've setup  rsnapshot
-#  symlinked in  $OSAB/bs-symlinks/root.sh
+#  symlinked in  $OSAB/nodes-set/root.sh
 
 # -----------------------------
 # run this script from Arch ISO

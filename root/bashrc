@@ -17,7 +17,7 @@ alias o=echo
 set -o vi
 if [ -f /home/jo/.bashrc-generic ]; then
     . /home/jo/.bashrc-generic
-elif [ -f $OSAB/Bash/bashrc-generic ]; then
+elif [ -f $OSAB/nodes-Bash/bashrc-generic ]; then
     . $OSAB/Bash/bashrc-generic
 fi
 

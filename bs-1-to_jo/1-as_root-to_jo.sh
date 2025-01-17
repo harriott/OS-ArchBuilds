@@ -8,7 +8,7 @@ set -v  # prints each statement here, including comments
 
 # #=> 0 set $OSAB & $machBld
 # cd $(dirname "${BASH_SOURCE[0]}")
-# . ../../Bash/export-storage
+# . ../../nodes-Bash/export-storage
 # read -p "\$OSAB is $OSAB - looks good?"
 
 # #=> 1 go slow

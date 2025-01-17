@@ -2,9 +2,7 @@
 # vim: sw=2:
 
 # build script
-# . $OSAB/bs-symlinks/jo-0.sh
-
-set -e
+# source $OSAB/nodes-set/jo-0.sh
 
 #=> Alacritty
 ln -sf $machBld/alacritty.toml ~/.alacritty.toml
@@ -21,10 +19,10 @@ ln -sf $AjB/bash_profile                     ~/.bash_profile
 ln -sf $machBld/jo/Bash/bashrc               ~/.bashrc
 ln -sf $Openbox/bashrc_for_Alacritty-nvim.sh ~/.bashrc-An
 ln -sf $AjB/bashrc-console                   ~/.bashrc-console
-ln -sf $OSAB/Bash/bashrc-generic             ~/.bashrc-generic
+ln -sf $OSAB/nodes-Bash/bashrc-generic       ~/.bashrc-generic
 ln -sf $OSL/nodes/jo/export                  ~/.export-jo
 ln -sf $machBld/export-machine               ~/.export-machine
-ln -sf $OSAB/Bash/export-storage             ~/.export-storage
+ln -sf $OSAB/nodes-Bash/export-storage       ~/.export-storage
 ln -sf $OSL/nodes/GNUReadline-inputrc        ~/.inputrc  # e -l ~/.inputrc
 ln -sf $AjB/bash_history.sh                  ~/Arch/bash_history.sh
 
@@ -80,7 +78,7 @@ sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 #=> MIME database
 cd $ABjo/mime
 for x in *; do ln -sf $ABjo/mime/$x ~/.local/share/mime/packages/$x; done
-cd $OSAB/bs-symlinks
+cd $OSAB/nodes-set
 eza -al ~/.local/share/mime/packages
 update-mime-database ~/.local/share/mime
 

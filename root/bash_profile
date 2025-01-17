@@ -5,7 +5,7 @@
 # nvim -O $OSAB/root/bash_profile /root/.bash_profile -c 'windo difft'
 
 source ~/.export-machine  # $machBld/export-machine
-source ~/.export-storage  # $OSAB/Bash/export-storage
+source ~/.export-storage  # $OSAB/nodes-Bash/export-storage
 
 [[ -f /root/.bashrc ]] && . /root/.bashrc  # $OSAB/root/bashrc
 

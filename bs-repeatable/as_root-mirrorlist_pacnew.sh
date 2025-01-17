@@ -12,7 +12,7 @@ set -e  # quit on error
 . /home/jo/.export-storage
 
 #=> 1 check $OSAB
-# check  $OSAB/Bash/export-storage  has leveraged  /ArchBuilds
+# check  $OSAB/nodes-Bash/export-storage  has leveraged  /ArchBuilds
 read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 2 verbose

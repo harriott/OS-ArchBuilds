@@ -298,5 +298,5 @@ sudo pacman -S yamllint
 
 #=> Zathura
 sudo pacman -S zathura-pdf-mupdf
-# zathurarc  symlinked in  $OSAB/bs-symlinks/jo-0.sh
+# zathurarc  symlinked in  $OSAB/nodes-set/jo-0.sh
 

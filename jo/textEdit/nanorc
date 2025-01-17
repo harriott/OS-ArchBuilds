@@ -9,7 +9,7 @@
 ## double quote on the line will be seen as the closing quote.
 
 # JH changes =====================================================
-# $ABjo/textEdit/nanorc  symlinked in  $OSAB/bs-symlinks/jo-0.sh
+# $ABjo/textEdit/nanorc  symlinked in  $OSAB/nodes-set/jo-0.sh
 # this file has been diff'd against  /etc/nanorc  from  nano 7.2-1
 # ================================================================
 

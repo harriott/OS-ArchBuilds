@@ -1,5 +1,5 @@
 
-# Alacritty - $machBld/alacritty.toml ($OSAB/bs-symlinks/jo-0.sh)
+# Alacritty - $machBld/alacritty.toml ($OSAB/nodes-set/jo-0.sh)
 
 [font]
   size = 8

@@ -6,10 +6,10 @@
 # machine-specific exports that could also be useful as root
 
 # for jo:
-#  symlinked in  $OSAB/bs-symlinks/jo-0.sh
+#  symlinked in  $OSAB/nodes-set/jo-0.sh
 #  sourced by  $AjB/bash_profile
 # for root:
-#  symlinked in  $OSAB/bs-symlinks/root.sh
+#  symlinked in  $OSAB/nodes-set/root.sh
 #  sourced by  $OSAB/root/bash_profile
 
 export csm=i34G1TU02-clamscan
@@ -17,7 +17,7 @@ export rsnapshot=/run/media/jo/9QG2FFEE/rsnapshot/
 # export rsnapshot=/run/media/jo/KDTG311282/rsnapshot/
 export startxDelay=5
 
-#=> for  $OSAB/Bash/export-storage
+#=> for  $OSAB/nodes-Bash/export-storage
 export myDrA=1  # only when my Dropbox is active
 export Storage=/mnt/BX200  # where I keep stuff
     export Enc=$Storage/encrypted  # mkdir $Enc

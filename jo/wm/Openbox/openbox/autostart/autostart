@@ -19,8 +19,8 @@
 #xfce-mcs-manager &
 
 #=> JH additions
-# $Obc/autostart/autostart ($OSAB/bs-symlinks/jo-1-Openbox.sh) e -l ~/.config/openbox/autostart
-#  depends on  $OSAB/Bash/export-storage
+# $Obc/autostart/autostart ($OSAB/nodes-set/jo-1-Openbox.sh) e -l ~/.config/openbox/autostart
+#  depends on  $OSAB/nodes-Bash/export-storage
 
 # #==> 0 gVim
 # # gVim's  columns  lines  are set in  $vimfiles/gvimrc.vim

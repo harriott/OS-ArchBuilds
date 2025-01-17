@@ -4,7 +4,7 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 $OSAB
 sd=$(dirname "${BASH_SOURCE[0]}")
-. ${sd%/*}/Bash/export-storage
+. ${sd%/*}/nodes-Bash/export-storage
 read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 1 go slow

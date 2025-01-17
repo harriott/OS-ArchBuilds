@@ -2,14 +2,14 @@
 #
 # my generic  ~/.bash_profile
 # ---------------------------
-# $AjB/bash_profile  symlinked in  $OSAB/bs-symlinks/jo-0.sh
+# $AjB/bash_profile  symlinked in  $OSAB/nodes-set/jo-0.sh
 #  supplements and overrides  /etc/profile
 
 # exports defined here so they can be accessed pre-X, by
 #  $ABjo/Openbox/openbox/autostart, & by gvim
 # kill tmux sessions if you've made changes here
 source ~/.export-machine  # $machBld/export-machine
-source ~/.export-storage  # $OSAB/Bash/export-storage
+source ~/.export-storage  # $OSAB/nodes-Bash/export-storage
   source ~/.export-jo  # $OSL/export-jo
 # - carry through to X
 

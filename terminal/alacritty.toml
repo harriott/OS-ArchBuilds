@@ -1,6 +1,6 @@
 
 # Alacritty
-# $OSAB/terminal/alacritty.toml ($OSAB/bs-symlinks/jo-0.sh)
+# $OSAB/terminal/alacritty.toml ($OSAB/nodes-set/jo-0.sh)
 # imported by  $machBld/alacritty.toml, which sets font size
 
 [cursor]

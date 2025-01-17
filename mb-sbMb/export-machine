@@ -4,10 +4,10 @@
 # $machBld/export-machine - machine-specific exports that could also be useful as root
 
 # for jo:
-#  symlinked in  $OSAB/bs-symlinks/jo-0.sh
+#  symlinked in  $OSAB/nodes-set/jo-0.sh
 #  sourced by  $AjB/bash_profile
 # for root:
-#  symlinked in  $OSAB/bs-symlinks/root.sh
+#  symlinked in  $OSAB/nodes-set/root.sh
 #  sourced by  $OSAB/root/bash_profile
 
 export CITGRs=/mnt/WD20EZAZ/Cop-IT/GRs  # $CITGRs  Git Repositories
@@ -15,7 +15,7 @@ export OBSmkvGrabs='/mnt/ST4000VN008/OBSmkvGrabs'
 export rsnapshot=/mnt/ST4000VN008/rsnapshot
 export startxDelay=5
 
-#=> for  $OSAB/Bash/export-storage
+#=> for  $OSAB/nodes-Bash/export-storage
 export Enc=/mnt/SD480GSSDPlus/Encrypted  # $Enc
 export myDrA=1  # only when my Dropbox is active
 export Storage=/mnt/SDU3D1TB  # where I keep stuff

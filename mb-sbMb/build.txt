@@ -913,7 +913,7 @@ rsync -inrtv --delete /mnt/SD480GSSDPlus/Dropbox/ /mnt/WD30EZRZ/Dropbox >
 find ~/ -type l -ls | xcol SD480GSSDPlus WD30EZRZ
 sudo bash 05-root_symlinks.sh
 bash anytime/symlinks-jo-0.sh
-source $OSAB/Bash/export-storage
+source $OSAB/nodes-Bash/export-storage
 bash 31-symlinks-Openbox.sh
 nvim 05-exports.sh
 sudo rm -r ~/.vim; ln -s $vimfiles ~/.vim

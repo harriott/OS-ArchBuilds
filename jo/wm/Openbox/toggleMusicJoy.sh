@@ -5,7 +5,7 @@
 # -----------------------------------------
 
 # chmod 755 $Openbox/toggleMusicJoy.sh
-# symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh  to  ~/.config/openbox/toggleMusicJoy.sh
+# symlinked in  $OSAB/nodes-set/jo-2-whenWM-0.sh  to  ~/.config/openbox/toggleMusicJoy.sh
 # called by  $Obc/rc/rc.xml
 
 if [ -f ~/music/joy ]; then

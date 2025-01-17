@@ -6,7 +6,7 @@
 # -----------------------------------------------------
 
 # (chmod 755 $OSAB/jo/wm/TS/thunderbird_safely.sh)
-# symlinked in my  $OSAB/bs-symlinks/jo-2-whenWM-1.sh
+# symlinked in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
 #  to provide my command  thunderbird_safely
 #   used in  $Obc/schema.pl
 

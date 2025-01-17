@@ -5,8 +5,8 @@
 
 # chmod 755 $ABjo/wm/importScreenshot.sh
 # symlinked in
-#   $OSAB/bs-symlinks/jo-1-awesome.sh
-#   $OSAB/bs-symlinks/jo-1-Openbox.sh
+#   $OSAB/nodes-set/jo-1-awesome.sh
+#   $OSAB/nodes-set/jo-1-Openbox.sh
 # to  ~/.config/openbox/importScreenshot.sh
 
 # Called by  $Obc/rc.xml  because:

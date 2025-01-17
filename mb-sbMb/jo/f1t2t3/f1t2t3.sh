@@ -3,7 +3,7 @@
 # Joseph Harriott, Mon 23 Aug 2021
 
 # bash $machBld/jo/f1t2t3/f1t2t3.sh
-# symlinked in  $OSAB/bs-symlinks/jo-0.sh
+# symlinked in  $OSAB/nodes-set/jo-0.sh
 #  ll ~/Arch/f1t2t3/f1t2t3.sh
 
 # indications of CPU temperature for my Gigabyte GA-970A-DS3P rev.2.1

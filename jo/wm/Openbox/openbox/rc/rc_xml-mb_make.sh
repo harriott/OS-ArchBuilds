@@ -1,7 +1,7 @@
 
 
 # bash $Obc/rc/rc_xml-mb_make.sh
-# - preparing for  $OSAB/bs-symlinks/jo-1-Openbox.sh:
+# - preparing for  $OSAB/nodes-set/jo-1-Openbox.sh:
 
 mb_orx="$machBld/jo/openbox/rc.xml"
 cp $Obc/rc/rc-mb-header.xml $mb_orx

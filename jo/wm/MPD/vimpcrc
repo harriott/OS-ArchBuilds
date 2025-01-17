@@ -5,7 +5,7 @@
 " $ABjo/wm/MPD/vimpcrc
 
 " based on  /usr/share/doc/vimpc/vimpcrc.example
-" symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-1.sh
+" symlinked in  $OSAB/nodes-set/jo-2-whenWM-1.sh
 " pb ~/.config/vimpc/vimpcrc
 
 " help

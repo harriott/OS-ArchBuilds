@@ -9,8 +9,8 @@
 ## diff against  $DCGRs/unix/linux/ranger-ranger/ranger/data/scope.sh
 ##
 ## $OSAB/terminal/ranger  is symlinked in my
-##  $OSAB/bs-symlinks/jo-0.sh
-##  $OSAB/bs-symlinks/root.sh
+##  $OSAB/nodes-set/jo-0.sh
+##  $OSAB/nodes-set/root.sh
 
 set -o noclobber -o noglob -o nounset -o pipefail
 IFS=$'\n'

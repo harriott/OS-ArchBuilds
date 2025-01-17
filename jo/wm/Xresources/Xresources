@@ -12,7 +12,7 @@ Xft.rgba: rgb
 ! ------------
 ! ------------
 
-! symlinked in  $OSAB/bs-symlinks/jo-0.sh  to  ~/.Xresources
+! symlinked in  $OSAB/nodes-set/jo-0.sh  to  ~/.Xresources
 
 ! called from my  $ABjo/xinitrcs/xinitrc
 

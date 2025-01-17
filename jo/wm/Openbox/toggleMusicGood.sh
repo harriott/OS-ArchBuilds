@@ -5,7 +5,7 @@
 # -----------------------------------------
 
 # chmod 755 $Openbox/toggleMusicGood.sh
-# symlinked in  $OSAB/bs-symlinks/jo-2-whenWM-0.sh  to  ~/.config/openbox/toggleMusicGood0.sh
+# symlinked in  $OSAB/nodes-set/jo-2-whenWM-0.sh  to  ~/.config/openbox/toggleMusicGood0.sh
 # called by  $Obc/rc/rc.xml
 
 if [ $host = 'sbMb' ]; then

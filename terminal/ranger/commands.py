@@ -1,5 +1,5 @@
 
-# commands.py  of  $OSAB/terminal/ranger, symlinked in  $OSAB/bs-symlinks/jo-0.sh
+# commands.py  of  $OSAB/terminal/ranger, symlinked in  $OSAB/nodes-set/jo-0.sh
 
 # ---------------------------- #
 # ~/.config/ranger/commands.py #

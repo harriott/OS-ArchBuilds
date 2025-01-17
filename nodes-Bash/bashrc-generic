@@ -4,14 +4,14 @@
 
 # Bash configurations that are also useful in Console and as root.
 
-# $OSAB/Bash/bashrc-generic  symlinked in  $OSAB/bs-symlinks/jo-0.sh
+# $OSAB/nodes-Bash/bashrc-generic  symlinked in  $OSAB/nodes-set/jo-0.sh
 # for jo:
 #  sourced by  $AjB/bash_profile  &  $AjB/bashrc
 # for root:
 #  sourced by  $OSAB/root/bashrc
 
 alias fin='figlet -f univers finished'
-export loaded_bg=1  # used in  $OSAB/bs-symlinks/repair.sh
+export loaded_bg=1  # used in  $OSAB/nodes-set/repair.sh
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 source $ITscc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash

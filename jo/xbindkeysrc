@@ -1,5 +1,5 @@
 
-# symlinked in  $OSAB/bs-symlinks/jo-0.sh  to  ~/.xbindkeysrc
+# symlinked in  $OSAB/nodes-set/jo-0.sh  to  ~/.xbindkeysrc
 
 # mouse wheel click acts as double left click
 "/usr/bin/xte 'usleep 10000' 'mouseclick 1' 'mouseclick 1'"
