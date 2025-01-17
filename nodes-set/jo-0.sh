@@ -4,9 +4,12 @@
 # build script
 # source $OSAB/nodes-set/jo-0.sh
 
+# #=> $LS_COLORS
+# rsync -irtv --delete $DCGRs/d-unix/d-linux/r-trapd00r-LS_COLORS/ $ITscc/linux/forArch-trapd00r-LS_COLORS
+
 #=> Alacritty
 ln -sf $machBld/alacritty.toml ~/.alacritty.toml
-ln -sf $OSAB/terminal/alacritty.toml ~/.alacritty-generic.toml
+ln -sf $OSAB/nodes-terminal/alacritty.toml ~/.alacritty-generic.toml
 # e -la ~/.alacritty*
 
 #=> ansiweather
@@ -94,7 +97,7 @@ ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 ln -sf $ABjo/pinforc ~/.pinforc
 
 #=> ranger
-lnd $OSAB/terminal/ranger ~/.config/ranger  # e -adl ~/.config/ranger
+lnd $OSAB/nodes-terminal/ranger ~/.config/ranger  # e -adl ~/.config/ranger
 
 #=> Ruby IRB
 ln -sf $misc/irbrc ~/.irbrc

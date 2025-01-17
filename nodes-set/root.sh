@@ -19,19 +19,19 @@ for aif in all-the-icons file-icons fontawesome material-design-icons octicons w
 done
 eza -la /usr/share/fonts/EmacsAllTheIcons
 
-#=> 1 fonts-forArch 0 install
-lnd $ITscc/forArch-fonts /usr/share/fonts/copiedForArch
-e -la /usr/share/fonts
+#=> 1 fonts 0 install
+lnd $ITscc/linux/forArch-fonts /usr/share/fonts/copiedForArch
+eza -la /usr/share/fonts
 
-#=> 1 fonts-forArch 0 remove
-rm -r /usr/share/fonts/copiedForArch
-# kills nice icons in  eza  in new  Alacritty  instances
+# #=> 1 fonts 0 remove
+# rm -r /usr/share/fonts/copiedForArch
+# # kills nice icons in  eza  in new  Alacritty  instances
 
 #=> 1 make root symlinks
 ln -sf $machBld/export-machine /root/.export-machine
   ln -sf $OSAB/nodes-Bash/export-storage /root/.export-storage
-ln -sf $OSAB/root/nanorc ~/.config/nano/nanorc
-ln -sf $OSAB/root/backup/rsyncBackup.sh /root/rsyncBackup.sh
+ln -sf $OSAB/nodes-root/nanorc ~/.config/nano/nanorc
+ln -sf $OSAB/nodes-root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 ln -sf $OSL/nodes/GNUReadline-inputrc /root/.inputrc
 ln -sf $OSL/nodes/tmux/tmux.conf ~/.tmux.conf
 
@@ -41,5 +41,5 @@ eza -la /root
 eza -la /root/.config/nano
 
 #=> 2 ranger
-lnd $OSAB/terminal/ranger ~/.config/ranger  # e -adl ~/.config/ranger
+lnd $OSAB/nodes-terminal/ranger ~/.config/ranger  # e -adl ~/.config/ranger
 

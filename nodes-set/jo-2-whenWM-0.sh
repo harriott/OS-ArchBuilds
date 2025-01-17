@@ -5,16 +5,14 @@
 # not dependent on  $OSAB
 #  except  lnd  defined in  $OSAB/Bash/bashrc-generic
 
-set -e
-
-# #=> Emacs configure
-# ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el
-# ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el
-# ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
-# ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp
-# ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
-# ln -sf $onGH/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
-# # e -la ~/.emacs.d/
+#=> Emacs configure
+ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el
+ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el
+ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
+ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp
+ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
+ln -sf $onGH/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
+# e -la ~/.emacs.d/
 
 #=> CLM config
 cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
@@ -103,9 +101,9 @@ for dir in '' pack plugin; do
   pushd $nvim/$dir > /dev/null; lsd -al; popd > /dev/null
 done
 
-# #=> vimfiles - vim entry points
-# ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
-# ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
+#=> vimfiles - vim entry points
+ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
+ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
 
 #=> vimfiles - vim configurations
 sudo rm -r ~/.vim

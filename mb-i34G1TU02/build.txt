@@ -354,7 +354,7 @@ New > BX200  (119.34GiB  ext4)
 mkdir /mnt/home /mnt/root
 mount /dev/sda1 /mnt/root
 mount /dev/sda2 /mnt/home
-restore /home  ($OSAB/root/backup/rsnapshot/from_rescue_boot-rsyncSystemRestore.sh)
+restore /home  ($OSAB/nodes-root/backup/rsnapshot/from_rescue_boot-rsyncSystemRestore.sh)
 arch-chroot /mnt/root  (reports "cp: cannot stat /root/bashrc")
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg

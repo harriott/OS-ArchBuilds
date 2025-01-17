@@ -10,7 +10,7 @@
 #  sourced by  $AjB/bash_profile
 # for root:
 #  symlinked in  $OSAB/nodes-set/root.sh
-#  sourced by  $OSAB/root/bash_profile
+#  sourced by  $OSAB/nodes-root/bash_profile
 
 export csm=i34G1TU02-clamscan
 export rsnapshot=/run/media/jo/9QG2FFEE/rsnapshot/

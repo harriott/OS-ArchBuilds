@@ -8,14 +8,14 @@
 # for jo:
 #  sourced by  $AjB/bash_profile  &  $AjB/bashrc
 # for root:
-#  sourced by  $OSAB/root/bashrc
+#  sourced by  $OSAB/nodes-root/bashrc
 
 alias fin='figlet -f univers finished'
 export loaded_bg=1  # used in  $OSAB/nodes-set/repair.sh
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 source $ITscc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash
-source $ITscc/forArch/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, o "$LS_COLORS"
+source $ITscc/linux/forArch-trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, o "$LS_COLORS"
 source $OSL/nodes/bashrc-generic
 
 [ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ] && neofetch

@@ -5,7 +5,7 @@
 for AURd in AUR AURdev-clone AURdev-make; do
     # echo "${tpf5b}$AURd${tpfn}"
     mapfile -t AURs < <(ls ~/Arch/$AURd)
-    source $OSAB/Bash/xcol.sh
+    source $ITscc/linux/xcol.sh  # necessary?
     for AUR in "${AURs[@]}"; do
         echo; echo; echo "$AURd $AUR"
         pacman -Qs $AUR | xcol $AUR

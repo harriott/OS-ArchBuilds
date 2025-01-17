@@ -1,13 +1,13 @@
 # vim: set ft=sh:
 
 # get my  .bashrc  settings working in  Console  &  su
-# cp $OSAB/root/bash_profile /root/.bash_profile
-# nvim -O $OSAB/root/bash_profile /root/.bash_profile -c 'windo difft'
+# cp $OSAB/nodes-root/bash_profile /root/.bash_profile
+# nvim -O $OSAB/nodes-root/bash_profile /root/.bash_profile -c 'windo difft'
 
 source ~/.export-machine  # $machBld/export-machine
 source ~/.export-storage  # $OSAB/nodes-Bash/export-storage
 
-[[ -f /root/.bashrc ]] && . /root/.bashrc  # $OSAB/root/bashrc
+[[ -f /root/.bashrc ]] && . /root/.bashrc  # $OSAB/nodes-root/bashrc
 
 . ~/.config/broot/launcher/bash/br  # - carries through to X
 

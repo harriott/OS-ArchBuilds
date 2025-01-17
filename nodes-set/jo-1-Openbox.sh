@@ -3,8 +3,6 @@
 
 # bash $OSAB/nodes-set/jo-1-Openbox.sh
 
-set -e
-
 #=> symlinks for Openbox
 
 ln -sf $Obc/schema.pl ~/.config/obmenu-generator/schema.pl

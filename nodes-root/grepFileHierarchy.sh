@@ -5,7 +5,7 @@
 
 # search for a setting in the system file-hierarchy
 
-# bash $OSAB/root/grepFileHierarchy.sh
+# bash $OSAB/nodes-root/grepFileHierarchy.sh
 
 grepsfile=grepFileHierarchy
 greps=/home/jo/$grepsfile.txt

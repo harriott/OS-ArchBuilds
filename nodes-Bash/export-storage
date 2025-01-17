@@ -17,7 +17,7 @@
 #  sourced by  $AjB/bash_profile
 # for root:
 #  symlinked in  $OSAB/nodes-set/root.sh
-#  sourced by  $OSAB/root/bash_profile
+#  sourced by  $OSAB/nodes-root/bash_profile
 
 #=> 0 core
 # $myDrA  &  $Storage  are pre-defined in  $machBld/export-machine
@@ -44,7 +44,7 @@ if [[ $myDrA == 1 ]]; then
               export machLg=$ulLA/ml-$host  # as opposed to  $machBld
             export ulLB=$ulL/Bash  # used in  $OSAB/QR.md
           export ulLAb="$coreIT/ulLinuxArch-big" # $ulLAb
-          export ulLAh="$coreIT/ulLinuxArch-huge" # $ulLAh
+          export hmlA="$coreIT/ulLinuxArch-huge" # $hmlA
 fi  # depends on  myDrA=  defined in  $machBld/export-machine
 
 #=> 3 (rooting on $onGH) $OSAB, $OSL, and some build dependencies
@@ -59,9 +59,9 @@ fi  # depends on  onGH=
 export clMail="$OSL/nodes/jo/clm" # used in  $clMail  &  $OSL/nodes/bashrc-clm
   export clMn=$clMail/neomutt  # $clMn
 if [ $OSAB ]; then
-  export ABjo=$OSAB/jo
+  export ABjo=$OSAB/nodes-jo
     export AjB=$ABjo/Bash
-    export BAT_CONFIG_PATH=$ABjo/bat.conf  # for the bat pager
+    export BAT_CONFIG_PATH="$ABjo/bat.conf"  # for the bat pager
   export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg
 fi
 

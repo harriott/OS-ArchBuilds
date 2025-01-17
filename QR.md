@@ -501,7 +501,7 @@ NCDU(1)
 
 ## ranger
     feh $ITsrul/cheatsheet.png &
-    r $OSAB/terminal/ranger  # my configurations
+    r $OSAB/nodes-terminal/ranger  # my configurations
     r $Cfzd
     ranger --version
 
@@ -1142,7 +1142,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fd -L broot
     fd -L consolas
     fd -L symbola
-    C $ITscc/forArch-fonts
+    C $ITscc/linux/forArch-fonts
 
 `usf()` (`$OSAB/Bash/bashrc-generic`)
 
@@ -1270,7 +1270,7 @@ backed up in `$AjB/bash_profile`
     watch -n1 "date '+%D%n%T' | figlet -k"
 
 ## Alacritty
-    $OSAB/terminal/alacritty.toml
+    $OSAB/nodes-terminal/alacritty.toml
 
 scroll don't work in `tmux`
 
