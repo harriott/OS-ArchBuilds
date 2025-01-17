@@ -32,15 +32,16 @@ if [[ $myDrA == 1 ]]; then
     export DJH=$Drpbx/JH
     # - keep  DROPBOX  capitalised for finding it without need for $
       export core=$DJH/core
-        export ITstack=$core/IT_stack
-          export CrPl=$ITstack/CP  # $CrPl  used in  $AjB/bashrc-console  & build scripts
-          export onGH=$ITstack/onGitHub
+        export coreIT=$core/IT
+          export CrPl=$coreIT/CP  # $ITsCP  used in  $AjB/bashrc-console  & build scripts
+          export onGH=$coreIT/onGitHub
             export vimfiles=$onGH/vimfiles
-          export ulL=$ITstack/ulLinux
+          export ulL=$coreIT/ulLinux
             export ulLA=$ulL/Arch
               export machLg=$ulLA/ml-$host  # as opposed to  $machBld
             export ulLB=$ulL/Bash  # used in  $OSAB/QR.md
-          export ulLAb="$ITstack/ulLinuxArch-big" # $ulLAb
+          export ulLAb="$coreIT/ulLinuxArch-big" # $ulLAb
+          export ulLAh="$coreIT/ulLinuxArch-huge" # $ulLAh
 fi  # depends on  myDrA=  defined in  $machBld/export-machine
 
 #=> 3 (rooting on $onGH) $OSAB, $OSL, and some build dependencies
@@ -52,7 +53,7 @@ else
   AB=~/OS-ArchBuilds; [ -d $AB ] && export OSAB=$AB
   hjAB=/home/jo/OS-ArchBuilds; [ -d $hjAB ] && export OSAB=$hjAB
 fi  # depends on  onGH=
-export clMail="$OSL/jo/clm" # used in  $clMail  &  $OSL/nodes/bashrc-clm
+export clMail="$OSL/nodes/jo/clm" # used in  $clMail  &  $OSL/nodes/bashrc-clm
   export clMn=$clMail/neomutt  # $clMn
 if [ $OSAB ]; then
   export ABjo=$OSAB/jo

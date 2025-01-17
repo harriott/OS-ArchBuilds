@@ -18,10 +18,10 @@ sudo mkdir /usr/share/fonts/EmacsAllTheIcons
 
 #=> Spacemacs 0 load
 sd=~/.sm; [ -d $sd ] && sudo rm -r $sd; cp -r $ulLAb/Emacs/sm $sd
-# e -dla ~/.sm
+# e -dla ~/.sm/*
 # HOME=~/.sm emacs &
 # - still adjusts  ~/.emacs.d/.cache  and  creates  ~/.emacs.d~
 
 #=> Spacemacs 1 backup
-sd="$ulLAb/Emacs/sm"; [ -d $sd ] && sudo rm -r $sd; cp -r ~/.sm $sd
+sd="$ulLAb/Emacs/sm"; [ -d $sd ] && sudo rm -r $sd; cp -r ~/.sm $sd  # & see  $ulLAb/Emacs/readme.md
 

@@ -3,9 +3,10 @@
 # $AjB/bashrc, sourced by  $machBld/jo/Bash/bashrc
 
 #=> load the rest of my bashrc
-source ~/.bashrc-generic  # useful everywhere, including root
-source ~/.bashrc-console  # ($AjB/bashrc-console) useful also in Console as user
-source $OSL/nodes/bashrc-clm  # can be used before WM
 source $AjB/bashrc-wm
 source $AjB/bashrc-ob  # useful in Openbox (and awesome)
+source $OSL/nodes/bashrc-clm  # can be used before WM
+source $OSL/nodes/bashrc-wm
+source ~/.bashrc-generic  # useful everywhere, including root
+source ~/.bashrc-console  # ($AjB/bashrc-console) useful also in Console as user
 

@@ -343,7 +343,7 @@ sudo rm /etc/sane.d/canon_lide70.conf.pacnew /etc/sane.d/escl.conf.pacnew /etc/d
 sudo archlinux-java set java-11-openjdk
 sudo archlinux-java set java-15-openjdk
 ## LanguageTool
-sudo cp -R $CrPl/LanguageTool-5.2 /usr/share/java/LanguageTool-5.2
+sudo cp -R $ITsCP/LanguageTool-5.2 /usr/share/java/LanguageTool-5.2
 java -jar /usr/share/java/LanguageTool-5.2/languagetool-commandline.jar -h
 ## Spotify
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
@@ -480,7 +480,7 @@ sudo rm -r /mnt/WD1001FALS/rsnapshot/daily.*/localhost/mnt/ST3500413AS
 sudo rm -r /mnt/WD1001FALS/rsnapshot/hourly.*/localhost/mnt/ST3500413AS
 ## recover Thunderbird v78 profile
 cleared out contents of  ~/.thunderbird/xggwhyu0.default-release
-bash $CrPl/Thunderbird/LastVersion.sh
+bash $ITsCP/Thunderbird/LastVersion.sh
 rsync -irtv --delete /mnt/WD1001FALS/rsnapshot/daily.3/localhost/mnt/SD480GSSDPlus/Dropbox/JH/TP.default-release/ $DJH/TP-default-release
 ## lm_sensors
 sudo sensors-detect
@@ -928,7 +928,7 @@ ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $ABjo/TS/locks.sh ~/Arch/locks.sh
-ln -sf $CrPl/SSHconfig/sbMb ~/.ssh/config
+ln -sf $ITsCP/SSHconfig/sbMb ~/.ssh/config
 rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
 sudo bash 37-as_root-symlink_fonts.sh
 ## move swap, for growing /
@@ -1136,7 +1136,7 @@ ln -sf $ABjo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
 ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 ln -sf $ABjo/textEdit/nanorc /home/jo/.config/nano/nanorc
 ln -sf $ABjo/TS/locks.sh ~/Arch/locks.sh
-ln -sf $CrPl/SSHconfig/sbMb ~/.ssh/config
+ln -sf $ITsCP/SSHconfig/sbMb ~/.ssh/config
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $OSAB/tmux/tmux.conf ~/.tmux.conf
@@ -3061,13 +3061,49 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.147.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## etckeeper
+sudo etckeeper init
+sudo etckeeper git status -u  got me  etckeeper: /etc/etckeeper/git.d does not exist
+## HP Envy Inspire 7220e changed to 160.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.160.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+nomacs not opening, only clue from  $ulLAb/ml-$host/pm/cu/250109-1049.log  is  opencv
+switched to  nomacs-git
+## mbsync
+still failing to get FastMail  removal and re-installation of  isync  didn't fix it
+CA certificates  are identical to those on  i34G1TU02, on which  mbsync  gets my  FastMail
+Q sasl  reveals that  sbMb  has  cyrus-sasl-xoauth2-git  cyrus-sasl-xoauth2-git-debug
+  while  i34G1TU02  does not
+pactree -r cyrus-sasl-xoauth2-git  reveals no need, so removed it
+## HP Envy Inspire 7220e changed to 240.240
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.240.240 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 57.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.57.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## SSHconfig
+when I'd broken the link to  $ITsCP/networking-SSHconfig/$host, system became painfully slow
+  and a process  RTRACE, which I can't subsequently find, was hogging the CPU
+hard reboot and fixed the symlink
+## Jekyll
+gem update
+  ...
+  sass-embedded's executable "sass" conflicts with sass
+  Overwrite the executable? [yN] y
 ## waiting
-delta
 gokcehan's lf
-imapbox
-maildir-rank-addr
 MariaDB
 ueberzugpp
+# clm possible extras
+imapbox
+maildir-rank-addr
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

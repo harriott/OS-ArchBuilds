@@ -10,7 +10,7 @@ set -v  # prints each statement here, including comments
 cp gitconfig-JH ~/gitconfig-JH  # pb ~/gitconfig-JH
 
 #=> ~/.ssh 0 make
-skd=~/.ssh
+skd="~/.ssh"
   [ -d $skd ] || mkdir $skd
 
 #=> ~/.ssh 1 keys for GitHub
@@ -21,5 +21,5 @@ id=id_ed25519-forGitHub
   s ~/.ssh/*
 
 #=> ~/.ssh 2 configuration
-cp SSHconfig $skd/config  # cp $CrPl/networking/SSHconfig/sbMb ~/.ssh/config
+cp SSHconfig $skd/config  # cp $ITsCP/networking/SSHconfig/sbMb ~/.ssh/config
 

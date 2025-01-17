@@ -1,6 +1,6 @@
 # vim: ft=bash sw=2:
 
-# Joseph Harriott, Fri 15 Nov 2024
+# Joseph Harriott, Sat 11 Jan 2025
 
 # $AjB/bashrc-wm   sourced by  $AjB/bashrc
 
@@ -9,13 +9,13 @@
 alias aw='ansiweather -f 7'
 alias R='R --quiet'
 alias ws='w3m -s'  # squeezing blank lines
+source $OSL/nodes/bashrc-wm
 
 #=> AV
 fm () {
-  fd $1 "/mnt/SD480GSSDPlus/music"
   for category in best good good-tA-North-US joy toSort0 toSort1 toSort1-UK toSort1-USA; do
     fd $1 "$Drpbx/Cop/AM-$category"; done
-}
+} # fm lowlands | grep Baez
 
 fv () {
   for VsL in /mnt/*; do
@@ -256,18 +256,6 @@ dcc1 () {
     echo "you should've ${tpf7b}dcc0${tpfn}"
   fi
 }  # moves them to  $Drpbx/conflicted
-
-#=> gVim cautious
-gvc () {
-    textfilefullpath=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
-    vimswapfile=${textfilefullpath//\//%}.swp
-    vimswapfilepath=~/.vimswap/$vimswapfile
-    if [[ -f $vimswapfilepath ]]; then
-       echo "$vimswapfilepath exists"
-    else
-       gvim $1
-    fi
-} # opens the file in gVim only if there's no swap file present for it
 
 #=> imagey
 alias ns='nsxiv -frt * &'  # using fullscreen, recursively open all flat

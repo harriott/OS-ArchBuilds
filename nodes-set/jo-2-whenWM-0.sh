@@ -1,13 +1,11 @@
 #!/bin/bash
 # vim: sw=2:
 
-# bash $OSAB/bs-symlinks/jo-2-whenWM-0.sh
+# . $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 # not dependent on  $OSAB
+#  except  lnd  defined in  $OSAB/Bash/bashrc-generic
 
 set -e
-
-# #=> Alacritty with Nvim
-# ln -sf $machBld/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh
 
 # #=> Emacs configure
 # ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el
@@ -18,49 +16,53 @@ set -e
 # ln -sf $onGH/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # # e -la ~/.emacs.d/
 
-# #=> CLM config
-# cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
-# cp -f $lclm/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
-# cp -f $lclm/notmuch-config-backup ~/.notmuch-config
-# m=~/.local/share/mail
-# mkdir $m $m/cz $m/fm $m/tj $m/live $m/troh $m/gmx $m/zou
+#=> CLM config
+cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
+cp -f $lclm/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
+cp -f $lclm/notmuch-config-backup ~/.notmuch-config
+maild=~/.local/share/mail
+for m in $maild $maild/fm $maild/gmx $maild/zou; do
+  [ -d $m ] || mkdir $m; done
 
-# #=> LaTeX
-# lnd $LTXj ~/texmf/tex/latex/jo
-# # e -adl ~/texmf/tex/latex/jo
+#=> LaTeX
+lnd $LTXj ~/texmf/tex/latex/jo
+# e -adl ~/texmf/tex/latex/jo
 
-# #=> mdfpdf Pandoc defaults
-# ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
-# ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
-# # er ~/.pandoc/defaults/*
+#=> mdfpdf Pandoc defaults
+ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
+ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
+e -adl ~/.pandoc/defaults/*
 
-# #=> MPD - music directories gathered
-# if [ $host = 'i34G1TU02' ]; then
-#   ln -sf $Openbox/toggleMusicGood.sh ~/.config/openbox/toggleMusicGood.sh
-#   ln -sf $Openbox/toggleMusicJoy.sh ~/.config/openbox/toggleMusicJoy.sh
-# elif [ $host = 'sbMb' ]; then
-#   ln -sf $Openbox/toggleMusicGood.sh ~/.config/openbox/toggleMusicGood.sh
-#   ln -sf $machBld/jo/toggleMusicJoy.sh ~/.config/openbox/toggleMusicJoy.sh
-# fi
+#=> Openbox - MPD - music directories gathered
+if [ $host = 'i34G1TU02' ]; then
+  ln -sf $Openbox/toggleMusicGood.sh ~/.config/openbox/toggleMusicGood.sh
+  ln -sf $Openbox/toggleMusicJoy.sh ~/.config/openbox/toggleMusicJoy.sh
+elif [ $host = 'sbMb' ]; then
+  ln -sf $Openbox/toggleMusicGood.sh ~/.config/openbox/toggleMusicGood.sh
+  ln -sf $machBld/jo/toggleMusicJoy.sh ~/.config/openbox/toggleMusicJoy.sh
+fi
 
-# #=> Pandoc templates
-# lnd $onGH/pandoc-templates ~/.pandoc/templates
-# # e -adl ~/.pandoc/templates
+#=> Openbox - Alacritty with Nvim
+ln -sf $machBld/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh
 
-# #=> shift+PrtSc disabled - notification
-# # for  i34G1TU02  &  sbMb
-# ln -sf $Openbox/shiftPrtSc.sh ~/.config/openbox/shiftPrtSc.sh
+#=> Openbox - shift+PrtSc disabled - notification
+# for  i34G1TU02  &  sbMb
+ln -sf $Openbox/shiftPrtSc.sh ~/.config/openbox/shiftPrtSc.sh
 
-# #=> SSH config
-# ln -sf $CrPl/networking/SSHconfig/$host ~/.ssh/config
-# # e -la ~/.ssh/config
-# # pb ~/.ssh/config
+#=> Pandoc templates
+lnd $onGH/pandoc-templates ~/.pandoc/templates
+# e -adl ~/.pandoc/templates
 
-# #=> vimfiles - nvim 0 empty 0
-# [ -d "$nvim" ] && sudo rm -r $nvim
-# mkdir -p $nvim/pack
-# echo > ~/lastVimDirectory  # ($vfv/enter/vimrc.vim)
-# mkdir $nvim/plugin
+#=> SSH config
+ln -sf $ITsCP/networking-SSHconfig/$host ~/.ssh/config
+# e -la ~/.ssh/config
+# pb ~/.ssh/config
+
+#=> vimfiles - nvim 0 empty 0
+[ -d "$nvim" ] && sudo rm -r $nvim
+mkdir -p $nvim/pack
+echo > ~/lastVimDirectory  # ($vfv/enter/vimrc.vim)
+mkdir $nvim/plugin
 
 # #=> vimfiles - nvim 1 populate test
 # ln -s $DCGRs/CP/Vim/junegunn-vim-plug/plug.vim ~/.local/share/nvim/site/autoload/plug.vim
@@ -78,29 +80,28 @@ set -e
 # # ln -s $vimfiles/vim/syntax            $nvim/syntax
 # # ln -s $vimfiles/vim/thesaurus         $nvim/thesaurus
 
-# #=> vimfiles - nvim 1 populate use
-# ln -s $vimfiles/vim/after               $nvim/after
-# ln -s $vimfiles/vim/filetype.vim        $nvim/filetype.vim
-# ln -s $vimfiles/vim/ftplugin            $nvim/ftplugin
-# ln -s $vimfiles/nvim/init.vim           $nvim/init.vim
-# ln -s $vimfiles/nvim/lua                $nvim/lua
-# ln -s $vimfiles/vim/packs/packs-colo    $nvim/pack/colo
-# ln -s $vimfiles/vim/packs/packs-cp      $nvim/pack/cp
-# ln -s $vimfiles/vim/packs/packs-cp-all  $nvim/pack/cp-all
-# ln -s $vimfiles/vim/packs/packs-cp-full $nvim/pack/cp-full
-# ln -s $vimfiles/vim/packs/packs-unix    $nvim/pack/unix
-# ln -s $vfv/plugin/packs.vim             $nvim/plugin/packs.vim
-# ln -s $vfv/plugin/plugin.vim            $nvim/plugin/plugin.vim
-# ln -s $vimfiles/vim/spell               $nvim/spell
-# ln -s $vimfiles/vim/syntax              $nvim/syntax
-# ln -s $vimfiles/vim/thesaurus           $nvim/thesaurus
+#=> vimfiles - nvim 1 populate use
+ln -s $vimfiles/vim/after               $nvim/after
+ln -s $vimfiles/vim/filetype.vim        $nvim/filetype.vim
+ln -s $vimfiles/vim/ftplugin            $nvim/ftplugin
+ln -s $vimfiles/nvim/init.vim           $nvim/init.vim
+ln -s $vimfiles/nvim/lua                $nvim/lua
+ln -s $vimfiles/vim/packs/packs-colo    $nvim/pack/colo
+ln -s $vimfiles/vim/packs/packs-cp-all  $nvim/pack/cp-all
+ln -s $vimfiles/vim/packs/packs-cp-full $nvim/pack/cp-full
+ln -s $vimfiles/vim/packs/packs-unix    $nvim/pack/unix
+ln -s $vfv/plugin/packs.vim             $nvim/plugin/packs.vim
+ln -s $vfv/plugin/plugin.vim            $nvim/plugin/plugin.vim
+ln -s $vimfiles/vim/spell               $nvim/spell
+ln -s $vimfiles/vim/syntax              $nvim/syntax
+ln -s $vimfiles/vim/thesaurus           $nvim/thesaurus
 
-# #=> vimfiles - nvim 2 check
-# lsd -al $nvim
-# for dir in '' pack plugin; do
-#   echo  $nvim/$dir
-#   pushd $nvim/$dir > /dev/null; lsd -al; popd > /dev/null
-# done
+#=> vimfiles - nvim 2 check
+lsd -al $nvim
+for dir in '' pack plugin; do
+  echo  $nvim/$dir
+  pushd $nvim/$dir > /dev/null; lsd -al; popd > /dev/null
+done
 
 # #=> vimfiles - vim entry points
 # ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
@@ -113,7 +114,6 @@ mkdir ~/.vim/plugin
 ln -s $vimfiles/vim/after               ~/.vim/after
 ln -s $vimfiles/vim/ftplugin            ~/.vim/ftplugin
 ln -s $vimfiles/vim/packs/packs-colo    ~/.vim/pack/colo
-ln -s $vimfiles/vim/packs/packs-cp      ~/.vim/pack/cp
 ln -s $vimfiles/vim/packs/packs-cp-all  ~/.vim/pack/cp-all
 ln -s $vimfiles/vim/packs/packs-cp-full ~/.vim/pack/cp-full
 ln -s $vimfiles/vim/packs/packs-unix    ~/.vim/pack/unix

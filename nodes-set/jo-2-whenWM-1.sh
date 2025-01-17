@@ -7,7 +7,7 @@
 set -e
 
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
-ln -sf $ABjo/mpv.conf ~/.config/mpv/mpv.conf
+ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf
 ln -sf $ITscc/forArch/mfcc64-mpv-scripts/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
 # e -la ~/.config/mpv/scripts/visualizer.lua
 ln -sf $ABjo/wm/MPD/mpd.conf ~/.mpd/mpd.conf

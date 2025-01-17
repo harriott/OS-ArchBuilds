@@ -98,7 +98,7 @@ dcp (){
 alias ga='git add'
 alias gsbs='git status -bs'
 alias gsu='git status -u'
-export BFG=$CrPl/bfg-1.13.0.jar
+export BFG=$ITsCP/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
 gitc () {
@@ -110,7 +110,7 @@ gitc () {
 
 #===> time-sorted - my GitHub issues
 # $jtIT/GitHubIssues.fetl
-# $ITstack/GitHubIssues.fetl
+# $coreIT/GitHubIssues.fetl
 
 ghi () {
   ghil=GitHubIssues.fetl
@@ -126,7 +126,7 @@ rgIT () {
   cd $DJH/search
   f=IT-rg.fetl  # $DJH/search/IT-rg.fetl
   echo '' > $f
-  for ITd in $jtIT $ITstack; do
+  for ITd in $jtIT $coreIT; do
     rgc="rg -l $1 $ITd"
     echo '' >> $f; echo $rgc >> $f
     echo '' >> $f; $rgc >> $f; echo '' >> $f
@@ -139,7 +139,7 @@ SE () {
   f=SEN.fetl
   [ -s $f ] && rm $f
   echo '' > $f; echo 'SE  -see  $AjB/bashrc-console'
-  for ITd in $jtIT $ITstack $JHw/France; do
+  for ITd in $jtIT $coreIT $JHw/France; do
     echo '' >> $f
     rg -l -tmd 'stackexchange|stackoverflow|superuser' $ITd | sort >> $f
   done
@@ -160,7 +160,7 @@ fbbcode () {
   { echo $rgb; echo; } >> $bbcf
   eval $rgb >> $bbcf; echo >> $bbcf
   echo "results are in $bbcf"
-}
+} # $DJH; fbbcode
 
 #==> my Encrypted directories
 # fa  defined in  $OSL/bashrc-console-fm

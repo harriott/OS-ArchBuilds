@@ -22,6 +22,9 @@ trap read debug  # puts a read request after each executable line
 # # (after Rust Toolchain)
 # sudo pacman -S dust
 
+#=> etckeeper
+sudo pacman -S etckeeper
+
 #=> fping
 sudo pacman -S fping
 

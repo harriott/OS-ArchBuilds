@@ -5,7 +5,7 @@ $machBld/build.txt
 Packard Bell iMedia S i34G1TU02
 
 # before Dropbox, prepare K8GBDTIG3
-cp -f $ITstack/unix_like-GNULinux/iwctl-connect.sh /run/media/jo/K8GBDTIG3
+cp -f $coreIT/unix_like-GNULinux/iwctl-connect.sh /run/media/jo/K8GBDTIG3
 rsync -irtv --delete --modify-window=1 $onGH/ArchBuilds/ /run/media/jo/K8GBDTIG3/ArchBuilds
 rsync -irtv --delete --modify-window=1 $core/ /run/media/jo/K8GBDTIG3/core
 # build
@@ -318,7 +318,7 @@ parted /dev/sda -s mklabel msdos mkpart primary 0% 100%
 ### ARCH_202312 failing to use syslinux
 GNU GRUB version 2:2.12rc1-5  first default selection "Arch Linux install medium (x86_64, x64 UEFI)" gets "[    0.265386] Initramfs unpacking failed: invalid magic at start of compressed archive"
 ### requested help
-$jtUL/linux/Arch/ISO/syslinux.bbcode
+$jtULl/Arch/ISO/syslinux.bbcode
 ### SystemRescue 10.02
 parted /dev/sda -s mklabel msdos mkpart primary ext4 1MiB 40GiB set 1 boot on
 uname -m  reports  x86_64
@@ -330,7 +330,7 @@ for
   linux /arch/boot/;x86_64/vmlinuz-linux archisobasedir=arch archisodevice\=UUID=$(ARCHISO_UUID} acpi=off
 still getting "[    0.265386] Initramfs unpacking failed: invalid magic at start of compressed archive"
 ### posted my fails to forum
-$jtUL/linux/Arch/ISO/syslinux.bbcode
+$jtULl/Arch/ISO/syslinux.bbcode
 ### SystemRescue 10.02
 startx, connected via  Jo-X10II
 #### probably unneeded pacman Updates
@@ -725,10 +725,14 @@ from Firefox page that appeared after a boot
 tray icon > Sign in  fired up another page > Connect
 ## Updates
 :: Replace p7zip with extra/7zip? [Y/n]
+## HP Envy Inspire 7220e changed to 160.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.160.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 apache
 gokcehan's lf
-ioping
 MariaDB
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700

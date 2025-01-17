@@ -37,7 +37,7 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
 # makepkg -sic
 
-# #=> code-minimap 0 install
+# #=> code-minimap 0 (re)install
 # gAUR code-minimap
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
@@ -74,11 +74,14 @@ trap read debug  # puts a read request after each executable line
 # #=> cpu-x 1 cpu-x 1 remove
 # sudo pacman -Rs cpu-x
 
-# #=> cyrus-sasl-xoauth2-git
+# #=> cyrus-sasl-xoauth2-git 0 install
 # gAUR cyrus-sasl-xoauth2-git
 # nvim -c "silent! /github.com\/moriyoshi" PKGBUILD
 # makepkg -sic
 # true
+
+# #=> cyrus-sasl-xoauth2-git 1 remove
+# sudo pacman -Rs cyrus-sasl-xoauth2-git cyrus-sasl-xoauth2-git-debug
 
 # #=> dict-moby-thesaurus
 # gAUR dict-moby-thesaurus
@@ -116,11 +119,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /_fhosted" PKGBUILD
 # makepkg -sic
 
-#=> fangfrisch 1 AUR
-gAUR python-fangfrisch
-nvim -c "silent! /rseichter" PKGBUILD
-makepkg -sic
-true
+# #=> fangfrisch 1 AUR
+# gAUR python-fangfrisch
+# nvim -c "silent! /rseichter" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> fangfrisch 2 settings
 # # 1 create database structure
@@ -180,11 +183,11 @@ true
 # makepkg -sic
 # true
 
-# #=> moar 0 (re)install
-# gAUR moar
-# nvim -c "silent! /walles" PKGBUILD
-# makepkg -sic
-# true
+#=> moar 0 (re)install
+gAUR moar
+nvim -c "silent! /walles" PKGBUILD
+makepkg -sic
+true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR

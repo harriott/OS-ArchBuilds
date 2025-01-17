@@ -224,7 +224,7 @@ moar -h
     nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
 # encoding
-    $CrPl/encoding/dpl/Perl/scratch.pl
+    $ITsCP/encoding/dpl/Perl/scratch.pl
     $machBld/jo/gitconfig
     $onGH/pandoc-templates/README.markdown
     archlinux-java status
@@ -247,16 +247,21 @@ moar -h
     za $ITscr/CP/gnuplot/Gnuplot_5_4.pdf
     za $ITscr/CP/gnuplot/gpcard.pdf
 
-## npm
+## Node.js
+    node -h
+    node -v
+
+### npm
     $HOME/.npmrc
     r ~/.npm-global
     wikit -l fr mois -a | less
     wikit mooji -b
+    ~/.npm/_logs
 
-### mapscii
+#### mapscii
     mapscii
 
-#### control
+##### control
 - `a`/`z` = zoom in/out
 - arrows scroll around
 - mouse
@@ -573,11 +578,13 @@ can't cope with `utf-16le`
     v $DJH $DJH
 
 # forum
+    fbbcode
+
 - Forum Rules
 - Topics by ttoirrah https://bbs.archlinux.org/search.php?action=show_user_topics&user_id=88384
 
 # fun
-    cat $CrPl/encoding/EMOJI_CHEAT_SHEET.gfm
+    cat $ITsCP/encoding/EMOJI_CHEAT_SHEET.gfm
     tint  # tetris
 
 ## CMatrix
@@ -736,6 +743,7 @@ optimised for SSDs
     fRs $AjB bashrc-console
     fRs $CfWk/technos/civil/catering/CM-DeLonghiDinamica/Fr staplable.tex
     fRs $Drpbx/Cop/AM-toSort0 'ZZ Top'
+    fRs $DWp/pn/internet internet.dw
     fRs $JHw _config.yml
     fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
@@ -930,7 +938,6 @@ follows my `PCManFM` folder settings
 - normal mode command `ZZ` quits completely
 
 ## mpv
-    $OSAB/jo/mpv.conf
     r /usr/share/doc/mpv
 
 MPV(1)
@@ -1378,7 +1385,6 @@ scroll don't work in `tmux`
     C /usr/share/vim/vim91
 
 ##### nVim
-    /usr/share/nvim/archlinux.vim
     r /usr/share/nvim/runtime
 
 nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/parser`
@@ -1496,7 +1502,7 @@ locks: `pb $Thb/linuxlock; pb $Thb/Win10ProLock`
     /usr/share/nginx/html/index.html
     r /usr/share/nginx/html
 
-    rsync -irtv --delete /usr/share/nginx/test/ $JHw/usr-share-nginx-test
+    rsync -irtv --delete /usr/share/nginx/test/ $jtULl/Arch/networking-usr-share-nginx-test
 
 ### nginx.service
     sudo systemctl disable nginx.service --now
@@ -1505,7 +1511,7 @@ locks: `pb $Thb/linuxlock; pb $Thb/Win10ProLock`
     systemctl status nginx.service
 
 ## SSH
-    $CrPl/networking/SSHconfig/$host
+    $ITsCP/networking-SSHconfig/$host
     i sshd_config
     ~/.ssh/config
 

@@ -202,9 +202,6 @@ sed -i 's/^SystemMaxUse=300/#SystemMaxUse=/' /etc/systemd/journald.conf
 # arp-scan
 pacman -S arp-scan
 
-# isync
-pacman -S isync  # for mbsync
-
 # netcat - for network connection tests
 pacman -S openbsd-netcat
 
@@ -216,6 +213,12 @@ pacman -S tcpdump  # for packet analysis
 
 # Wget
 pacman -S wget
+
+#=> 2 networking - isync 0 install
+pacman -S isync  # for mbsync
+
+#=> 2 networking - isync 0 remove
+pacman -Rs isync
 
 # #=> 2 Pacman
 # # colorized Pacman
@@ -338,7 +341,7 @@ pacman -S npm
 # OpenOffice English thesaurus
 pacman -S mythes-en
 
-# pass (brings in gnupg)
+# pass (brings in gnupg, which brings in pinentry)
 pacman -S pass
 
 # Speech Dispatcher

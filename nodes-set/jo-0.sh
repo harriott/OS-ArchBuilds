@@ -2,7 +2,7 @@
 # vim: sw=2:
 
 # build script
-# bash $OSAB/bs-symlinks/jo-0.sh
+# . $OSAB/bs-symlinks/jo-0.sh
 
 set -e
 
@@ -22,10 +22,10 @@ ln -sf $machBld/jo/Bash/bashrc               ~/.bashrc
 ln -sf $Openbox/bashrc_for_Alacritty-nvim.sh ~/.bashrc-An
 ln -sf $AjB/bashrc-console                   ~/.bashrc-console
 ln -sf $OSAB/Bash/bashrc-generic             ~/.bashrc-generic
-ln -sf $OSL/jo/export                        ~/.export-jo
+ln -sf $OSL/nodes/jo/export                  ~/.export-jo
 ln -sf $machBld/export-machine               ~/.export-machine
 ln -sf $OSAB/Bash/export-storage             ~/.export-storage
-ln -sf $OSL/GNUReadline-inputrc              ~/.inputrc  # e -l ~/.inputrc
+ln -sf $OSL/nodes/GNUReadline-inputrc        ~/.inputrc  # e -l ~/.inputrc
 ln -sf $AjB/bash_history.sh                  ~/Arch/bash_history.sh
 
 # e -la ~
@@ -67,11 +67,11 @@ if [[ $myDrA == 1 ]]; then
 else
   ln -sf $OSAB/bs-2-to_X/1-gitconfig ~/.gitconfig
 fi
-# points to further convigurations on  $ITstack
+# points to further convigurations on  $coreIT
 # e -la ~/.gitconfig
 
 #=> gpg-agent configuration
-ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
+ln -sf $OSL/nodes/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 #=> for Tex Live Arch packaged install
 sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
@@ -81,7 +81,7 @@ sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 cd $ABjo/mime
 for x in *; do ln -sf $ABjo/mime/$x ~/.local/share/mime/packages/$x; done
 cd $OSAB/bs-symlinks
-e -al ~/.local/share/mime/packages
+eza -al ~/.local/share/mime/packages
 update-mime-database ~/.local/share/mime
 
 #=> mimeapps.list
