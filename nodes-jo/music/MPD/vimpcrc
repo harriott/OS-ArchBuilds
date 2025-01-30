@@ -1,11 +1,11 @@
 " vim: se ft=vim:
 
-" vimpc  configuration file
-
-" $ABjo/wm/MPD/vimpcrc
+" $ABjo/music/MPD/vimpcrc
+" vimpc (MPD client) configuration file
 
 " based on  /usr/share/doc/vimpc/vimpcrc.example
 " symlinked in  $OSAB/nodes-set/jo-2-whenWM-1.sh
+" ll ~/.config/vimpc/vimpcrc
 " pb ~/.config/vimpc/vimpcrc
 
 " help
@@ -18,15 +18,17 @@ map q :stop playback <C-M>q
 echo Parsing config file
 hi status default bold_white
 update
+set mouse
 set stoponquit
 set window playlist
 set windows playlist
 
-" automatic shuffle
+" shuffle, play first, then random
 deleteall
 addall
 shuffle
 play 1
+random
 
 echo Config File Complete
 

@@ -3097,6 +3097,22 @@ gem update
   ...
   sass-embedded's executable "sass" conflicts with sass
   Overwrite the executable? [yN] y
+## HP Envy Inspire 7220e changed to 153.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.153.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## etckeeper
+removed
+## pwd.lock
+/etc/.pwd.lock  is from 2020!
+## music
+rm ~/.config/openbox/toggleMusicGood.sh
+rm ~/.config/openbox/toggleMusicJoy.sh
+## Updates
+:: Replace webrtc-audio-processing with extra/webrtc-audio-processing-0.3? [Y/n]
+## enabled rsnapshot timers
+that'd been left disabled: $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
 ## waiting
 gokcehan's lf
 MariaDB

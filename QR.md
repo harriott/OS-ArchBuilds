@@ -350,6 +350,7 @@ SED(1)
     n [directory]
 
 - `du` don't work in script...
+- FIND(1)
 - MV(1)
 - rsync(1)
 - STAT(1)
@@ -640,7 +641,10 @@ gpg(1)
     lspci -vnn | grep VGA -A 12 | xcol Intel Radeon size VGA
     sudo lshw -C display | xcol Radeon size VGA
 
-## cbh - Logitech K280e
+## cbh - keyboard
+    xev | grep keycode
+
+### Logitech K280e
       alt+3 --> €
       alt+5 --> ½
        rh | --> ~
@@ -729,10 +733,6 @@ optimised for SSDs
     journalctl -u rsnapshot@hourly -r
     systemctl status rsnapshot-hourly.timer
 
-#### check interval directories
-    so * | grep 700; fd 'bash_history$' */localhost/home/jo/Arch --max-depth 1 -x stat {} -c '%Y %n %y' | sort -r
-    sudo diff --no-dereference -qr hourly.0 hourly.1 > hourly0+1.gnudiff
-
 #### find
     n $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
     n $rsnapshot/daily.1/localhost$MSWin10/mb
@@ -742,7 +742,11 @@ optimised for SSDs
     $AjB/bashrc-console
     fRs $AjB bashrc-console
     fRs $CfWk/technos/civil/catering/CM-DeLonghiDinamica/Fr staplable.tex
+    fRs $Drpbx/Cop Björk
     fRs $Drpbx/Cop/AM-toSort0 'ZZ Top'
+    fRs $Drpbx/Cop/AM-toSort0 Europe
+    fRs $Drpbx/Cop/AM-toSort0/Europe Nordic
+    fRs $Drpbx/Cop/AM-toSort0/Europe/Nordic Björk
     fRs $DWp/pn/internet internet.dw
     fRs $JHw _config.yml
     fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
@@ -767,7 +771,12 @@ optimised for SSDs
     fd roles.md $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles --max-depth 1 -l | sort > roles.fetl
     $rsnapshot/hourly.0/localhost/$AjB/export-jo
 
-#### interval directory permissions
+#### interval directories
+    for y in h d w m; do find $rsnapshot -maxdepth 1 -mindepth 1 -type d -name "$y*" | sort -V; done | while read -r rsd; do o $rsd; done
+    so * | grep 700; fd 'bash_history$' */localhost/home/jo/Arch --max-depth 1 -x stat {} -c '%Y %n %y' | sort -r
+    sudo diff --no-dereference -qr hourly.0 hourly.1 > hourly0+1.gnudiff
+
+##### permissions
 - they're owned by root, but 755 so I can look inside
 - the one being backed up to can have permission reduced to 700
 
@@ -782,8 +791,8 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
 #### recent directories
     $rsnapshot/hourly.0/localhost$CzMa/planning/m1-n/n9t-_benevoles-appels-Joseph
     $rsnapshot/hourly.0/localhost$CzMa/expenses/mine/oab-/noReceipts
-    $rsnapshot/hourly.1/localhost$CzMa/expenses/mine/oab-/noReceipts
     $rsnapshot/hourly.0/localhost/mnt/SDU3D1TB/Dropbox/Cop/AM-toSort0
+    $rsnapshot/hourly.1/localhost$CzMa/expenses/mine/oab-/noReceipts
 
 #### recover folder
     rsync -irtv --delete $rsnapshot/daily.0/localhost/home/jo/.local/share/mail/ $maild
@@ -932,10 +941,8 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 follows my `PCManFM` folder settings
 
 ## audio - vimpc
-    v  # alias'd to  vimpc  in  $AjB/bashrc-wm
-
 - `$ABjo/wm/MPD/vimpcrc` maps a better `q` among other things
-- normal mode command `ZZ` quits completely
+- `vp` (`$AjB/bashrc-wm`)
 
 ## mpv
     r /usr/share/doc/mpv
@@ -1284,7 +1291,7 @@ scroll don't work in `tmux`
     terminal-colors -o  # ANSI escape codes
 
 ### using tput
-    $OSL/bashrc-generic
+    $OSL/nodes/bashrc-generic
     bash $ulLB/colours/256/SO-BrunoBronosky.sh
     bash $ulLB/colours/256/SE269077-FHauri.sh
     bash $ulLB/colours/ss64.sh
@@ -1449,16 +1456,16 @@ rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
     ~/.local/share/mail/.notmuch
 
 ### mutt
-    $clMail/neomutt/muttrc-general
+    $clMn/muttrc-general
     f => forward
     F => toggle important flag (= Star in Gmail)
 
 #### accounts
-    $clMail/neomutt/muttrc-accounts/ftml
-    $clMail/neomutt/muttrc-accounts/troh
+    $clMn/muttrc-accounts/fm
+    $clMn/muttrc-accounts/troh
 
 ##### zou
-    $clMail/neomutt/muttrc-accounts/zou
+    $clMn/muttrc-accounts/zou
     echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
 
 ### notmuch

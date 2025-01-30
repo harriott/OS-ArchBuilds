@@ -31,14 +31,8 @@ ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
 ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 e -adl ~/.pandoc/defaults/*
 
-#=> Openbox - MPD - music directories gathered
-if [ $host = 'i34G1TU02' ]; then
-  ln -sf $Openbox/toggleMusicGood.sh ~/.config/openbox/toggleMusicGood.sh
-  ln -sf $Openbox/toggleMusicJoy.sh ~/.config/openbox/toggleMusicJoy.sh
-elif [ $host = 'sbMb' ]; then
-  ln -sf $Openbox/toggleMusicGood.sh ~/.config/openbox/toggleMusicGood.sh
-  ln -sf $machBld/jo/toggleMusicJoy.sh ~/.config/openbox/toggleMusicJoy.sh
-fi
+#=> music scripts
+ln -sf $ABjo/music/music.sh ~/.config/music.sh
 
 #=> Openbox - Alacritty with Nvim
 ln -sf $machBld/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh

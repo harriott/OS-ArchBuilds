@@ -140,7 +140,7 @@ fps () { for v in "$@"; do echo $(fpwh $v) $(fpcn v $v) $(fpfr $v) $(fpcn a $v) 
 alias y='yt-dlp'
   alias ya='y -f ba'
   alias yf='y -F'  # --list-formats
-  y7 () { yt-dlp -f "bv[height<=?720]" "$1"; }
+  y7 () { yt-dlp -S "height:720" "$1"; }
 
 #=> CUPS
 alias lpf='lp -o fit-to-page'  # lpf *

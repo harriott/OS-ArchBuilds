@@ -62,16 +62,17 @@ CliFM (){
 } # C <dir1> [<dir2> ...]
 
 fRs () {
-  echo "directory: $1"
-  echo "file glob to find: $2"
+  echo "${tpf2}directory${tpfn}: $1"
+  echo "${tpf2}file glob to find${tpfn}: $2"
+  echo
   if [ "$2" ]; then
     tf="$rsnapshot/tds_find"
-    echo 'vim: nowrap:' > $tf
-    echo >> $tf
-    echo "$1 $2" >> $tf
-    echo >> $tf
-    eval "find $rsnapshot/*/localhost$1 -type f -name \"*$2*\" $printfDTsort" >> $tf
-    echo '- now look in  $rsnapshot/tds_find'
+    echo 'vim: nowrap:' > $tf; echo >> $tf echo "$1 $2" >> $tf; echo >> $tf
+    for y in h d w m; do find $rsnapshot -maxdepth 1 -mindepth 1 -type d -name "$y*" | sort -V; done | while read -r rsd; do
+      tput cuu 1; tput el; echo "${tpf5}searching in $rsd${tpfn}"
+      find $rsd/localhost$1 -name "*$2*" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n 2> /dev/null | sort >> $tf
+    done
+    echo "${tpf2}- now look in  \$rsnapshot/tds_find${tpfn}"
   else
     echo "fdtsRsnapshot <directoryToSearchIn> <fileToSearchFor>"
   fi
@@ -101,19 +102,19 @@ alias gsu='git status -u'
 export BFG=$ITsCP/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
-gitc () {
-  gitcl=dts-git_config.fetl
-  echo '' > $gitcl
-  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gitcl
-  echo "results are in $gitcl"
-} # $Drpbx/JH/search/dts-git_config.fetl
+fgc () {
+  gcf=dts-git_config.fgc
+  echo '' > $gcf
+  for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gcf
+  echo "results are in $gcf"
+} # $Drpbx/JH/search/dts-git_config.fgc  using  $vfv/syntax/fgc.vim
 
 #===> time-sorted - my GitHub issues
-# $jtIT/GitHubIssues.fetl
-# $coreIT/GitHubIssues.fetl
+# $jtIT/GitHubIssues.ffl
+# $coreIT/GitHubIssues.ffl
 
 ghi () {
-  ghil=GitHubIssues.fetl
+  ghil=GitHubIssues.ffl
   for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
   sed -i '/copied\/IT-handy\//d' $ghil
   sed -i '1s/^/\n/' $ghil
@@ -124,19 +125,19 @@ ghi () {
 #==> lists of files by content
 rgIT () {
   cd $DJH/search
-  f=IT-rg.fetl  # $DJH/search/IT-rg.fetl
+  f=IT-rg.ffl  # $DJH/search/IT-rg.ffl
   echo '' > $f
   for ITd in $jtIT $coreIT; do
     rgc="rg -l $1 $ITd"
     echo '' >> $f; echo $rgc >> $f
     echo '' >> $f; $rgc >> $f; echo '' >> $f
   done
-  echo "- now open  $DJH/search/IT-rg.fetl"
+  echo "- now open  $DJH/search/IT-rg.ffl"
 } # rgIT <text_to_find_in_many_filetypes>
 
 SE () {
   cd $DJH/search
-  f=SEN.fetl
+  f=SEN.ffl
   [ -s $f ] && rm $f
   echo '' > $f; echo 'SE  -see  $AjB/bashrc-console'
   for ITd in $jtIT $coreIT $JHw/France; do
@@ -148,11 +149,12 @@ SE () {
 } # /stackexchange\|stackoverflow\|superuser
 
 #==> my Arch Forum issues
-# $DJH/search/bbcode.fetl
+# $DJH/search/ffl
 
 fbbcode () {
-  bbcf='bbcode.fetl'
-  fListHeader $bbcf  # ($OSL/bashrc-console-fm)
+  bbcf='fbbcode.ffl'
+  # fListHeader $bbcf  # ($OSL/bashrc-console-fm)
+  echo "" > $bbcf; echo $PWD >> $bbcf; echo "" >> $bbcf
   fdb='fd -tf -e bbcode'
   { echo $fdb; echo; } >> $bbcf
   $fdb >> $bbcf; echo >> $bbcf
@@ -187,9 +189,10 @@ fdtsEncryptedChanges () {
     ed7z=$(eval "$f7z")
     if [ $ed7z ]; then
       tput setaf 5
-      eval "find . -iname \"$E*.7z\" $printfDTsort"
+      find . -iname "$E*.7z" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort
       tput setaf 7
-      eval "find -path \"./$E*\" -newer $ed7z $printfDTsort"
+      # eval "find -path \"./$E*\" -newer $ed7z $printfDTsort"
+      find -path "./$E*" -newer $ed7z -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort
       # - fails to detect change of year
       eval "find \"$core/encrypted\" -name \"$E*\" -newer $ed7z"
     fi

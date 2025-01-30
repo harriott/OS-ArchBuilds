@@ -249,18 +249,19 @@
   <keybind key="A-space">
     <action name="ShowMenu"><menu>client-menu</menu></action>
   </keybind>
+
   <!-- toggle the window from/to monitor 2 - JH (mystery why this don't work in <placement>) -->
-  <keybind key="W-2">
+  <keybind key="w-2">
     <action name="MoveResizeTo">
       <monitor>2</monitor>
     </action>
   </keybind>
-  <!-- Keybinding for toggling maximize (Full screen a window) - JH -->
-  <keybind key="W-f">
+  <!-- toggle maximize (Full screen a window) - JH -->
+  <keybind key="w-f">
     <action name="ToggleMaximize"/>
   </keybind>
-  <!-- Keybinding for Resize - JH -->
-  <keybind key="W-r">
+  <!-- Resize - JH -->
+  <keybind key="w-r">
     <action name="Resize"/>
   </keybind>
 
@@ -294,6 +295,19 @@
     </action>
   </keybind>
 
+  <!-- PrintScreen - JH -->
+  <keybind key="Print">
+    <action name="Execute">
+      <command>/home/jo/.config/openbox/importScreenshot.sh</command>
+    </action>
+  </keybind>
+  <!-- PrtSc disable - JH -->
+  <keybind key="S-Print">
+    <action name="Execute">
+      <command>/home/jo/.config/openbox/shiftPrtSc.sh</command>
+    </action>
+  </keybind>
+
   <!-- Keybindings for window switching with the arrow keys -->
   <keybind key="W-S-Right">
     <action name="DirectionalCycleWindows">
@@ -316,122 +330,74 @@
     </action>
   </keybind>
 
-  <!-- Keybinding to pop dunst notifications - JH -->
+  <!-- dunst notification pop - JH -->
   <keybind key="c-BackSpace">
     <action name="Execute">
       <command>dunstctl history-pop</command>
     </action>
   </keybind>
-  <!-- Keybinding to close a dunst notification - JH -->
+  <!-- dunst notification close - JH -->
   <keybind key="c-space">
     <action name="Execute">
       <command>dunstctl close</command>
     </action>
   </keybind>
-  <!-- Keybinding for Qualculate! - JH -->
+
+  <!-- Qualculate! - JH -->
   <keybind key="s-w-1">
     <action name="Execute">
       <command>qalculate-gtk</command>
     </action>
   </keybind>
-  <!-- Keybinding for galculator - JH -->
+  <!-- galculator - JH -->
   <keybind key="w-1">
     <action name="Execute">
       <command>galculator</command>
     </action>
   </keybind>
-  <!-- Keybinding for Alacritty small - JH -->
+  <!-- galculator - JH -->
+  <keybind key="XF86Calculator">
+    <action name="Execute">
+      <command>galculator</command>
+    </action>
+  </keybind>
+
+  <!-- urxvt large - JH -->
+  <keybind key="s-w-u">
+    <action name="Execute">
+      <command>urxvt -geometry 104x64+0+0</command>
+    </action>
+  </keybind>
+  <!-- urxvt small - JH -->
+  <keybind key="w-u">
+    <action name="Execute">
+      <command>urxvt</command>
+    </action>
+  </keybind>
+  <!-- Alacritty small - JH -->
   <keybind key="w-a">
     <action name="Execute">
       <command>alacritty</command>
     </action>
   </keybind>
-  <!-- Keybinding to toggle Cmus play/pause - JH -->
-  <keybind key="W-c">
-    <action name="Execute">
-      <command>cmus-remote -u</command>
-    </action>
-  </keybind>
-  <keybind key="W-e">
-    <action name="Execute">
-      <startupnotify>
-        <enabled>true</enabled>
-        <name>Konqueror</name>
-      </startupnotify>
-      <command>kfmclient openProfile filemanagement</command>
-    </action>
-  </keybind>
-  <!-- Keybinding for gVim - JH -->
-  <keybind key="W-g">
-    <action name="Execute">
-      <command>gvim -geometry +760+0</command>
-    </action>
-  </keybind>
-  <!-- Keybinding for Firefox - JH -->
-  <keybind key="W-i">
-    <action name="Execute">
-      <command>firefox</command>
-    </action>
-  </keybind>
-  <!-- Keybinding for KeePassXC - JH -->
-  <keybind key="W-k">
-    <action name="Execute">
-      <command>keepassxc</command>
-    </action>
-  </keybind>
-  <!-- Keybinding for Openbox Menu - JH -->
-  <keybind key="W-m">
-    <action name="ShowMenu">
-      <menu>root-menu</menu>
-    </action>
-  </keybind>
-  <!-- Keybinding for Alacritty large with Nvim - JH -->
+  <!-- Alacritty large with Nvim - JH -->
   <keybind key="w-l">
     <action name="execute">
       <command>/home/jo/.config/openbox/AlacrittyNvim.sh</command>
       <!-- $Openbox/bashrc_for_Alacritty-nvim.sh -->
     </action>
   </keybind>
-  <!-- Keybinding for Nvim - JH -->
-  <keybind key="W-n">
+
+  <!-- Cmus play/pause - JH -->
+  <keybind key="w-c">
     <action name="Execute">
-      <command>neovide --grid 109x70</command>
+      <command>cmus-remote -u</command>
     </action>
   </keybind>
-  <!-- Keybinding for microphone - JH -->
-  <keybind key="XF86AudioMicMute">
+  <!-- music rotate - JH -->
+  <keybind key="w-m">
     <action name="Execute">
-      <command>pactl set-source-mute 1 toggle</command>
-    </action>
-  </keybind>
-  <!-- Keybinding to toggle music good symlink - JH -->
-  <keybind key="XF86Search">
-    <action name="Execute">
-      <command>/home/jo/.config/openbox/toggleMusicGood.sh</command>
-    </action>
-  </keybind>
-  <!-- Keybinding to toggle music joy only symlink - JH -->
-  <keybind key="XF86HomePage">
-    <action name="Execute">
-      <command>/home/jo/.config/openbox/toggleMusicJoy.sh</command>
-    </action>
-  </keybind>
-  <!-- Keybinding for MPD stop - JH -->
-  <keybind key="XF86AudioPrev">
-    <action name="Execute">
-      <command>playerctl -p mpd previous</command>
-    </action>
-  </keybind>
-  <!-- Keybinding for MPD stop - JH -->
-  <keybind key="XF86AudioStop">
-    <action name="Execute">
-      <command>playerctl -a stop</command>
-    </action>
-  </keybind>
-  <!-- Keybinding for MPD play - JH -->
-  <keybind key="XF86AudioPlay">
-    <action name="Execute">
-      <command>playerctl -p mpd play-pause</command>
+      <command>/home/jo/.config/music.sh</command>
     </action>
   </keybind>
   <!-- Keybinding for MPD next - JH -->
@@ -440,48 +406,94 @@
       <command>playerctl -p mpd next</command>
     </action>
   </keybind>
-  <!-- Keybinding for PrintScreen - JH -->
-  <keybind key="Print">
+  <!-- Keybinding for MPD stop - JH -->
+  <keybind key="XF86AudioPlay">
     <action name="Execute">
-      <command>/home/jo/.config/openbox/importScreenshot.sh</command>
+      <command>playerctl -a stop</command>
     </action>
   </keybind>
-  <!-- Keybinding to disable shift PrtSc - JH -->
-  <keybind key="S-Print">
+  <!-- Keybinding for MPD previous - JH -->
+  <keybind key="XF86AudioPrev">
     <action name="Execute">
-      <command>/home/jo/.config/openbox/shiftPrtSc.sh</command>
+      <command>playerctl -p mpd previous</command>
     </action>
   </keybind>
-  <!-- Keybindings for repairing CopyQ - JH -->
-  <keybind key="W-o">
+  <!-- Keybinding for MPD play - JH -->
+  <keybind key="XF86Tools">
+    <action name="Execute">
+      <command>playerctl -p mpd play-pause</command>
+    </action>
+  </keybind>
+
+  <!-- KeePassXC - JH -->
+  <keybind key="w-k">
+    <action name="Execute">
+      <command>keepassxc</command>
+    </action>
+  </keybind>
+  <!-- Openbox Menu - JH -->
+  <keybind key="XF86Search">
+    <action name="ShowMenu">
+      <menu>root-menu</menu>
+    </action>
+  </keybind>
+  <!-- CopyQ repair - JH -->
+  <keybind key="w-o">
     <action name="Execute">
       <command>/home/jo/.config/openbox/fixCopyQ.sh</command>
     </action>
   </keybind>
-  <!-- Keybinding for Thunderbird safely - JH -->
+  <!-- slock - JH -->
+  <keybind key="w-s">
+    <action name="Execute">
+      <command>slock</command>
+    </action>
+  </keybind>
+  <!-- OpenShot - JH -->
+  <keybind key="W-v">
+    <action name="Execute">
+      <command>openshot-qt</command>
+    </action>
+  </keybind>
+  <!-- xman - JH -->
+  <keybind key="w-x">
+    <action name="Execute">
+      <command>xman -notopbox</command>
+    </action>
+  </keybind>
+  <!-- Firefox - JH -->
+  <keybind key="XF86HomePage">
+    <action name="Execute">
+      <command>firefox</command>
+    </action>
+  </keybind>
+  <!-- Thunderbird safely - JH -->
   <keybind key="XF86Mail">
     <action name="Execute">
       <command>thunderbird_safely</command>
     </action>
   </keybind>
-  <!-- Keybindings for screen brightness - JH -->
-  <keybind key="XF86MonBrightnessDown">
+
+  <!-- gVim - JH -->
+  <keybind key="w-g">
     <action name="Execute">
-      <command>xbacklight -dec 10</command>
+      <command>gvim -geometry +760+0</command>
     </action>
   </keybind>
-  <keybind key="XF86MonBrightnessUp">
+  <!-- Nvim - JH -->
+  <keybind key="w-n">
     <action name="Execute">
-      <command>xbacklight -inc 10</command>
+      <command>neovide --grid 109x70</command>
     </action>
   </keybind>
-  <!-- Keybinding for slock - JH -->
-  <keybind key="W-s">
+
+  <!-- microphone - JH -->
+  <keybind key="XF86AudioMicMute">
     <action name="Execute">
-      <command>slock</command>
+      <command>pactl set-source-mute 1 toggle</command>
     </action>
   </keybind>
-  <!-- Keybindings for speaker - JH -->
+  <!-- speaker - JH -->
   <keybind key="XF86AudioMute">
     <action name="Execute">
       <command>pactl set-sink-mute 0 toggle</command>
@@ -497,30 +509,19 @@
       <command>pactl set-sink-volume 0 +5%</command>
     </action>
   </keybind>
-  <!-- Keybinding for urxvt small - JH -->
-  <keybind key="w-u">
+
+  <!-- screen brightness - JH -->
+  <keybind key="XF86MonBrightnessDown">
     <action name="Execute">
-      <command>urxvt</command>
+      <command>xbacklight -dec 10</command>
     </action>
   </keybind>
-  <!-- Keybinding for urxvt large - JH -->
-  <keybind key="s-w-u">
+  <keybind key="XF86MonBrightnessUp">
     <action name="Execute">
-      <command>urxvt -geometry 104x64+0+0</command>
+      <command>xbacklight -inc 10</command>
     </action>
   </keybind>
-  <!-- Keybinding for OpenShot - JH -->
-  <keybind key="W-v">
-    <action name="Execute">
-      <command>openshot-qt</command>
-    </action>
-  </keybind>
-  <!-- Keybinding for xman - JH -->
-  <keybind key="W-x">
-    <action name="Execute">
-      <command>xman -notopbox</command>
-    </action>
-  </keybind>
+
 </keyboard>
 
 <mouse>

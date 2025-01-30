@@ -21,8 +21,6 @@ trap read debug  # puts a read request after each executable line
 # gAUR clifm
 # nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
 # makepkg -sic
-# cd /usr/share/clifm/plugins
-# sudo gcc -o kbgen kbgen.c -lcurses
 # true
 
 # #=> clifm 1 remove
@@ -180,12 +178,13 @@ true
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
-# #=> oama
+# #=> oama-bin
 # # for MPD
 # gAUR oama-bin
 # nvim -c "silent! /github.com\/pdobsan" PKGBUILD
 # makepkg -sic
 # [ -f ~/.config/oama/config.yaml ] || oama
+# true
 
 # #=> opera
 # # for MPD
@@ -260,6 +259,11 @@ true
 # gAUR qpdfview
 # nvim -c "silent! /launchpad" PKGBUILD
 # makepkg -sic  # takes a long time...
+
+#=> sdl3
+gAUR sdl3
+nvim -c "silent! /libsdl-org" PKGBUILD
+makepkg -sic  # vulkan-intel
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -

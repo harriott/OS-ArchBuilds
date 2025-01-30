@@ -56,6 +56,6 @@ nm-applet &  # NetworkManager
 mpd &
 mpDris2 &  # for notifications and link to  playerctl
 
-# #==> 1 tmux - machine dependent tweaks
+#==> 1 tmux - machine dependent tweaks
 [ -f $machBld/jo/tmux_begin.sh ] && source $machBld/jo/tmux_begin.sh
 

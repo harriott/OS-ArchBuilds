@@ -183,11 +183,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> moar 0 (re)install
-gAUR moar
-nvim -c "silent! /walles" PKGBUILD
-makepkg -sic
-true
+# #=> moar 0 (re)install
+# gAUR moar
+# nvim -c "silent! /walles" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> moar 1 remove
 # cd ~/Arch/AUR
@@ -227,11 +227,11 @@ true
 # makepkg -sic
 # true
 
-# #=> powershell-bin
-# gAUR powershell-bin
-# nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
-# makepkg -sic
-# true
+#=> powershell-bin
+gAUR powershell-bin
+nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+makepkg -sic
+true
 
 # #=> rdrview-git
 # gdAUR rdrview-git

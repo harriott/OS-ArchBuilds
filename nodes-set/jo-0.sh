@@ -86,7 +86,7 @@ eza -al ~/.local/share/mime/packages
 update-mime-database ~/.local/share/mime
 
 #=> mimeapps.list
-[ $host = 'i34G1TU02' ] && ln -sf $machBld/jo/mimeappsList ~/.config/mimeapps.list
+[ $host = 'i34G1TU02' ] && ln -sf $machBld/jo/mimeapps.list ~/.config/mimeapps.list
 # e -la ~/.config/mimeapps.list
 # move to  $machLg/jo/mimeapps-n6g.list
 

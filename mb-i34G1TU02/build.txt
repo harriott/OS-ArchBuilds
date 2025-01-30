@@ -730,7 +730,15 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.160.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+:: Replace webrtc-audio-processing with extra/webrtc-audio-processing-0.3? [Y/n]
+## music
+rm ~/.config/openbox/toggleMusicGood.sh
+rm ~/.config/openbox/toggleMusicJoy.sh
+## Updates
+:: Replace sdl2 with extra/sdl2-compat? [Y/n]
 ## waiting
+slock
 apache
 gokcehan's lf
 MariaDB

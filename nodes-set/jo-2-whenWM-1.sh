@@ -8,8 +8,8 @@ ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
 ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf
 ln -sf $ITscc/linux/mfcc64-mpv-scripts/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
 # e -la ~/.config/mpv/scripts/visualizer.lua
-ln -sf $ABjo/wm/MPD/mpd.conf ~/.mpd/mpd.conf
-ln -sf $ABjo/wm/MPD/vimpcrc ~/.config/vimpc/vimpcrc
+ln -sf $ABjo/music/MPD/mpd.conf ~/.mpd/mpd.conf
+ln -sf $ABjo/music/MPD/vimpcrc ~/.config/vimpc/vimpcrc
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
 
