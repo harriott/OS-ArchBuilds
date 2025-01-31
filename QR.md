@@ -24,13 +24,10 @@ SORT(1)
     $ulL/Bash/colours
     /etc/profile
     ~/Arch/bash_history
-
-```bash
-im time
-pinfo bash
-pinfo -m bash
-tput bel  # bell
-```
+    im time
+    pinfo bash
+    pinfo -m bash
+    tput bel  # bell
 
 - BASH(1)
 - UNIQ(1)
@@ -169,6 +166,7 @@ moar -h
     r ~/texmf
 
 ## TeX Live
+    /usr/local/texlive/2024/texmf-dist/doc/info
     locx .fmt
     pacman -Qs texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
     pdfjam
@@ -609,10 +607,14 @@ gpg(1)
 # help
     apropos
     cheat cheat
+
+## manpages
     o $MANPAGER
+    o $MANPATH
 
 ## pinfo
     /etc/pinforc
+    fd '\.info' /usr
     i fzf
     i pinfo
 
@@ -1149,7 +1151,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fd -L broot
     fd -L consolas
     fd -L symbola
-    C $ITscc/linux/forArch-fonts
+    C $ITscc/unix-linux/forArch-fonts
 
 `usf()` (`$OSAB/Bash/bashrc-generic`)
 
@@ -1391,7 +1393,8 @@ scroll don't work in `tmux`
     C /usr/share/vim/vim91/syntax/
     C /usr/share/vim/vim91
 
-##### nVim
+##### Nvim
+    C /usr/share/nvim/runtime/syntax
     r /usr/share/nvim/runtime
 
 nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/parser`

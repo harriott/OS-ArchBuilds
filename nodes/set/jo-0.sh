@@ -9,7 +9,7 @@
 
 #=> Alacritty
 ln -sf $machBld/alacritty.toml ~/.alacritty.toml
-ln -sf $OSAB/nodes-terminal/alacritty.toml ~/.alacritty-generic.toml
+ln -sf $OSAB/nodes/alacritty-all.toml ~/.alacritty-all.toml
 # e -la ~/.alacritty*
 
 #=> ansiweather
@@ -22,10 +22,10 @@ ln -sf $AjB/bash_profile                     ~/.bash_profile
 ln -sf $machBld/jo/Bash/bashrc               ~/.bashrc
 ln -sf $Openbox/bashrc_for_Alacritty-nvim.sh ~/.bashrc-An
 ln -sf $AjB/bashrc-console                   ~/.bashrc-console
-ln -sf $OSAB/nodes-Bash/bashrc-generic       ~/.bashrc-generic
+ln -sf $OSAB/nodes/Bash/bashrc-generic       ~/.bashrc-generic
 ln -sf $OSL/nodes/jo/export                  ~/.export-jo
 ln -sf $machBld/export-machine               ~/.export-machine
-ln -sf $OSAB/nodes-Bash/export-storage       ~/.export-storage
+ln -sf $OSAB/nodes/Bash/export-storage       ~/.export-storage
 ln -sf $OSL/nodes/GNUReadline-inputrc        ~/.inputrc  # e -l ~/.inputrc
 ln -sf $AjB/bash_history.sh                  ~/Arch/bash_history.sh
 
@@ -97,7 +97,8 @@ ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 ln -sf $ABjo/pinforc ~/.pinforc
 
 #=> ranger
-lnd $OSAB/nodes-terminal/ranger ~/.config/ranger  # e -adl ~/.config/ranger
+lnd $OSL/nodes/terminal-ranger ~/.config/ranger
+e -adl ~/.config/ranger
 
 #=> Ruby IRB
 ln -sf $misc/irbrc ~/.irbrc

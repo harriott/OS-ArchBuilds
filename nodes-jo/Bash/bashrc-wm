@@ -148,7 +148,9 @@ alias lpspd='lpstat -p -d'
 alias sc5='doas cupsenable ENVY_5530'
 
 #=> documenting - LaTeX
-export PATH="/usr/local/texlive/2023/bin/x86_64-linux:$PATH"
+export MANPATH="/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH"
+export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
+export INFOPATH="/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH" # for  pinfo
 
 ltx () {
   if [[ ! -z $TNt ]]; then

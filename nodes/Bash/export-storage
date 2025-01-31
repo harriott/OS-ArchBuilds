@@ -1,9 +1,9 @@
 #!/bin/sh
 # vim: ft=sh sw=2:
 
-# $OSAB/nodes-Bash/export-storage
-#  $OSAB/nodes-set/jo-0.sh
-#  $OSAB/nodes-set/root.sh
+# $OSAB/nodes/Bash/export-storage
+#  $OSAB/nodes/set/jo-0.sh
+#  $OSAB/nodes/set/root.sh
 
 # here I export variables that could also be useful as root
 

@@ -8,7 +8,7 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 #=> 0 $OSAB
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../mb-$(uname -n)/export-machine
-. ../nodes-Bash/export-storage
+. ../nodes/Bash/export-storage
 . ../../OS-Linux/nodes/jo/export
 read -p "\$OSAB  is  $OSAB - looks good?"
 
@@ -20,7 +20,7 @@ done
 eza -la /usr/share/fonts/EmacsAllTheIcons
 
 #=> 1 fonts 0 install
-lnd $ITscc/linux/forArch-fonts /usr/share/fonts/copiedForArch
+lnd $ITscc/unix-linux/forArch-fonts /usr/share/fonts/copiedForArch
 eza -la /usr/share/fonts
 
 # #=> 1 fonts 0 remove
@@ -29,11 +29,13 @@ eza -la /usr/share/fonts
 
 #=> 1 make root symlinks
 ln -sf $machBld/export-machine /root/.export-machine
-  ln -sf $OSAB/nodes-Bash/export-storage /root/.export-storage
+  ln -sf $OSAB/nodes/Bash/export-storage /root/.export-storage
 ln -sf $OSAB/nodes-root/nanorc ~/.config/nano/nanorc
 ln -sf $OSAB/nodes-root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 ln -sf $OSL/nodes/GNUReadline-inputrc /root/.inputrc
 ln -sf $OSL/nodes/tmux/tmux.conf ~/.tmux.conf
+
+# eza -la ~
 
 #=> 2 list root symlinks
 eza -la /root
@@ -41,5 +43,6 @@ eza -la /root
 eza -la /root/.config/nano
 
 #=> 2 ranger
-lnd $OSAB/nodes-terminal/ranger ~/.config/ranger  # e -adl ~/.config/ranger
+lnd $OSL/nodes/terminal-ranger ~/.config/ranger
+e -adl ~/.config/ranger
 

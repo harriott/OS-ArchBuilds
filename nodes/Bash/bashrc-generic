@@ -4,18 +4,16 @@
 
 # Bash configurations that are also useful in Console and as root.
 
-# $OSAB/nodes-Bash/bashrc-generic  symlinked in  $OSAB/nodes-set/jo-0.sh
-# for jo:
-#  sourced by  $AjB/bash_profile  &  $AjB/bashrc
-# for root:
-#  sourced by  $OSAB/nodes-root/bashrc
+# $OSAB/nodes/Bash/bashrc-generic  symlinked in  $OSAB/nodes/set/jo-0.sh
+#  for jo: sourced by  $AjB/bash_profile  &  $AjB/bashrc
+#  for root: sourced by  $OSAB/nodes-root/bashrc
 
 alias fin='figlet -f univers finished'
 export loaded_bg=1  # used in  $OSAB/nodes-set/repair.sh
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 source $ITscc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash
-source $ITscc/linux/forArch-trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, o "$LS_COLORS"
+source $ITscc/unix-linux/forArch-trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, o "$LS_COLORS"
 source $OSL/nodes/bashrc-generic
 
 [ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ] && neofetch
@@ -83,8 +81,8 @@ fi
 
 r () {
   [ $TERM != 'screen-256color' ] && pi="--cmd='set preview_images true'"
-  eval "ranger --choosedir=$HOME/Arch/ranger_last_visited $pi $@"
-  cd "$(cat /home/jo/Arch/ranger_last_visited)"
+  eval "ranger --choosedir=$HOME/.ranger_last_visited $pi $@"
+  cd "$(cat $HOME/.ranger_last_visited)"
 }  # r "$Drpbx/CAM-best/Classic Yo-Yo"
 
 #==> bat

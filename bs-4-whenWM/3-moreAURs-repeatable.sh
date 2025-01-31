@@ -263,7 +263,7 @@ true
 #=> sdl3
 gAUR sdl3
 nvim -c "silent! /libsdl-org" PKGBUILD
-makepkg -sic  # vulkan-intel
+makepkg -sic  # vulkan-intel or vulkan-radeon
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -

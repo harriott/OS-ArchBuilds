@@ -1,9 +1,10 @@
 
 # Alacritty - $machBld/alacritty.toml ($OSAB/nodes-set/jo-0.sh)
+#  importing  $OSAB/nodes/alacritty-all.toml
 
 [font]
   size = 8
 
 [general]
-  import = [ "~/.alacritty-generic.toml" ]
+  import = [ "~/.alacritty-all.toml" ]
 

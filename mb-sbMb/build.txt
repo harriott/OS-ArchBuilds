@@ -3113,9 +3113,25 @@ rm ~/.config/openbox/toggleMusicJoy.sh
 :: Replace webrtc-audio-processing with extra/webrtc-audio-processing-0.3? [Y/n]
 ## enabled rsnapshot timers
 that'd been left disabled: $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
+## Updates
+:: Replace sdl2 with extra/sdl2-compat? [Y/n]
+vulkan-radeon
+## TeX Live release 2024 full
+su > <root_pw>  for  fss texlive
+  old stuff lingering in   /var/cache/pacman/pkg  which is 18G, so  yes | sudo pacman -Scc
+  only other relevant directory is  /usr/local/texlive/2023  which is 9.5G
+### installation
+/usr/local/texlive/2024/ 8.9G
+  Add /usr/local/texlive/2024/texmf-dist/doc/man to MANPATH.
+  Add /usr/local/texlive/2024/texmf-dist/doc/info to INFOPATH.
+  Most importantly, add /usr/local/texlive/2024/bin/x86_64-linux
+  to your PATH for current and future sessions.
+  Logfile: /usr/local/texlive/2024/install-tl.log
+$PATH  tweaked in  $AjB/bashrc-wm
 ## waiting
 gokcehan's lf
 MariaDB
+rm ~/.alacritty-generic.toml
 ueberzugpp
 # clm possible extras
 imapbox

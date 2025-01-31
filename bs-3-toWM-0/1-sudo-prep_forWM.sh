@@ -28,13 +28,14 @@ pacman -S ghostscript
 pacman -S pandoc-cli
 
 #=> documenting - TeX Live 0 native 0 cd
-cd $JHt/IT/CP/TeX/install-tl-20230613/
+cd $ITscc/unix-TL-install-tl-2024
 
 #=> documenting - TeX Live 0 native 1 basic
 sudo perl install-tl --scheme=basic --no-interaction
 
 #=> documenting - TeX Live 0 native 1 full
 sudo perl install-tl --no-interaction
+# took 90m, would be preferable to install from an rsync'd local mirror
 
 #=> documenting - TeX Live 0 native 2 tidy up
 mv texlive.profile $machLg/TeXLive/install-tl-example.profile-$(date '+%Y%m%d%H%M')
@@ -49,6 +50,10 @@ mv texlive.profile $machLg/TeXLive/install-tl-example.profile-$(date '+%Y%m%d%H%
 # sudo tlmgr install wrapfig
 # sudo tlmgr install xetex
 # sudo tlmgr install xcolor
+
+#=> documenting - TeX Live 0 native 4 remove
+rm -r /usr/local/texlive
+rm -rf ~/.texlive2023
 
 #=> documenting - TeX Live 0 Arch packaged 0 install
 pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all

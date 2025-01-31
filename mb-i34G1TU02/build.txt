@@ -737,8 +737,8 @@ rm ~/.config/openbox/toggleMusicGood.sh
 rm ~/.config/openbox/toggleMusicJoy.sh
 ## Updates
 :: Replace sdl2 with extra/sdl2-compat? [Y/n]
+vulkan-intel
 ## waiting
-slock
 apache
 gokcehan's lf
 MariaDB
