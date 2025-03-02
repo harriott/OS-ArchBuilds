@@ -163,10 +163,6 @@
   </popupFixedPosition>
 </resize>
 
-<!-- You can reserve a portion of your screen where windows will not cover when
-     they are maximized, or when they are initially placed.
-     Many programs reserve space automatically, but you can use this in other
-     cases. -->
 <margins>
   <top>0</top>
   <bottom>0</bottom>
@@ -394,31 +390,37 @@
       <command>cmus-remote -u</command>
     </action>
   </keybind>
+  <!-- Ex Falso - JH -->
+  <keybind key="w-e">
+    <action name="Execute">
+      <command>exfalso</command>
+    </action>
+  </keybind>
   <!-- music rotate - JH -->
   <keybind key="w-m">
     <action name="Execute">
       <command>/home/jo/.config/music.sh</command>
     </action>
   </keybind>
-  <!-- Keybinding for MPD next - JH -->
+  <!-- MPD next - JH -->
   <keybind key="XF86AudioNext">
     <action name="Execute">
       <command>playerctl -p mpd next</command>
     </action>
   </keybind>
-  <!-- Keybinding for MPD stop - JH -->
+  <!-- MPD stop - JH -->
   <keybind key="XF86AudioPlay">
     <action name="Execute">
       <command>playerctl -a stop</command>
     </action>
   </keybind>
-  <!-- Keybinding for MPD previous - JH -->
+  <!-- MPD previous - JH -->
   <keybind key="XF86AudioPrev">
     <action name="Execute">
       <command>playerctl -p mpd previous</command>
     </action>
   </keybind>
-  <!-- Keybinding for MPD play - JH -->
+  <!-- MPD play - JH -->
   <keybind key="XF86Tools">
     <action name="Execute">
       <command>playerctl -p mpd play-pause</command>
@@ -431,14 +433,14 @@
       <command>keepassxc</command>
     </action>
   </keybind>
-  <!-- Openbox Menu - JH -->
-  <keybind key="XF86Search">
-    <action name="ShowMenu">
-      <menu>root-menu</menu>
+  <!-- Google Chrome - JH -->
+  <keybind key="w-o">
+    <action name="Execute">
+      <command>google-chrome-stable</command>
     </action>
   </keybind>
   <!-- CopyQ repair - JH -->
-  <keybind key="w-o">
+  <keybind key="w-q">
     <action name="Execute">
       <command>/home/jo/.config/openbox/fixCopyQ.sh</command>
     </action>
@@ -471,6 +473,12 @@
   <keybind key="XF86Mail">
     <action name="Execute">
       <command>thunderbird_safely</command>
+    </action>
+  </keybind>
+  <!-- Openbox Menu - JH -->
+  <keybind key="XF86Search">
+    <action name="ShowMenu">
+      <menu>root-menu</menu>
     </action>
   </keybind>
 

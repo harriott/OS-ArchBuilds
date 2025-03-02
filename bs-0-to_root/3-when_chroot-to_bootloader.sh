@@ -34,6 +34,7 @@ echo KEYMAP=uk > /etc/vconsole.conf
 #=> 3 hostname
 cat /etc/hostname  # shows it ain't there
 hostname=AsusW202
+# hostname=DOP3040D11S
 # hostname=i34G1TU02
 # hostname=LIP120s81A4
 # hostname=sbMb

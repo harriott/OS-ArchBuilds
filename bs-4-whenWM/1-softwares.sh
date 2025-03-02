@@ -66,6 +66,9 @@ sudo chown jo:jo /srv/http/phpinfo.php
 echo '<?php phpinfo(); ?>' > /srv/http/test/phpinfo.php  # sudo rm /srv/http/test/phpinfo.php
 # http://test/phpinfo.php
 
+#=> Apostrophe
+sudo pacman -S apostrophe
+
 #=> acpilight - configure
 gpasswd -a jo video  # groups jo
 sudo cp $machBld/etc/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
@@ -74,6 +77,9 @@ sudo cp $machBld/etc/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
 
 #=> asunder
 sudo pacman -S asunder  # graphical Audio CD ripper
+
+#=> Blanket
+sudo pacman -S blanket
 
 #=> cameractrls
 sudo pacman -S cameractrls
@@ -286,6 +292,9 @@ sudo pacman -S vimiv
 
 #=> vlc
 sudo pacman -S vlc
+
+#=> Wike
+sudo pacman -S wike
 
 #=> xfd
 sudo pacman -S xorg-xfd  # for checking fonts

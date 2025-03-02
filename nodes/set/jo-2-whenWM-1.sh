@@ -1,13 +1,13 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $OSAB/nodes-set/jo-2-whenWM-1.sh
+# bash $OSAB/nodes/set/jo-2-whenWM-1.sh
 # dependent on  $OSAB
 
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
 ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf
 ln -sf $ITscc/unix-linux/mfcc64-mpv-scripts/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
-# e -la ~/.config/mpv/scripts/visualizer.lua
+# $misc/GRs/needed.sh, e -la ~/.config/mpv/scripts/visualizer.lua
 ln -sf $ABjo/music/MPD/mpd.conf ~/.mpd/mpd.conf
 ln -sf $ABjo/music/MPD/vimpcrc ~/.config/vimpc/vimpcrc
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc

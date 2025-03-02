@@ -25,9 +25,9 @@ sudo find /etc -type f -name "*pacnew"
 # nvim -O /etc/papersize /etc/papersize.pacnew -c 'windo difft'
 # rm /etc/papersize.pacnew
 
-# #=> 1 etc/php/php.ini
-# nvim -O /etc/php/php.ini /etc/php/php.ini.pacnew -c 'windo difft'
-# rm /etc/php/php.ini.pacnew
+#=> 1 etc/php/php.ini
+nvim -O /etc/php/php.ini /etc/php/php.ini.pacnew -c 'windo difft'
+rm /etc/php/php.ini.pacnew
 
 # #=> 1 firewalld.conf
 # # nvim -O /etc/firewalld/firewalld.conf /etc/firewalld/firewalld.conf.pacnew -c 'windo difft'
@@ -57,20 +57,20 @@ sudo find /etc -type f -name "*pacnew"
 # rm /etc/makepkg.conf.d/rust.conf.pacnew
 
 #=> 1 nginx.conf
-nvim -O /etc/nginx/nginx.conf.pacnew $OSAB/etc/Nginx/pristine.conf -c 'windo difft'
+nvim -O /etc/nginx/nginx.conf.pacnew $OSAB/extra-etc/Nginx/pristine.conf -c 'windo difft'
 rm /etc/nginx/nginx.conf.pacnew
 
-# #=> 1 pacman.conf
-# nvim -O /etc/pacman.conf /etc/pacman.conf.pacnew -c 'windo difft'
-# rm /etc/pacman.conf.pacnew
+#=> 1 pacman.conf
+nvim -O /etc/pacman.conf /etc/pacman.conf.pacnew -c 'windo difft'
+rm /etc/pacman.conf.pacnew
 
 # #=> 1 passwd.conf
 # nvim -O /etc/passwd /etc/passwd.pacnew -c 'windo difft'
 # rm /etc/passwd.pacnew
 
-# #=> 1 rsnapshot.conf
-# nvim -O /etc/rsnapshot.conf /etc/rsnapshot.conf.pacnew -c 'windo difft'
-# rm /etc/rsnapshot.conf.pacnew
+#=> 1 rsnapshot.conf
+nvim -O /etc/rsnapshot.conf /etc/rsnapshot.conf.pacnew -c 'windo difft'
+rm /etc/rsnapshot.conf.pacnew
 
 # #=> 1 shells
 # nvim -O /etc/shells /etc/shells.pacnew -c 'windo difft'

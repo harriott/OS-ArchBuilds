@@ -36,6 +36,7 @@ ln -sf $ABjo/music/music.sh ~/.config/music.sh
 
 #=> Openbox - Alacritty with Nvim
 ln -sf $machBld/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh
+# e -la ~/.config/openbox/AlacrittyNvim.sh
 
 #=> Openbox - shift+PrtSc disabled - notification
 # for  i34G1TU02  &  sbMb

@@ -3127,11 +3127,57 @@ su > <root_pw>  for  fss texlive
   Most importantly, add /usr/local/texlive/2024/bin/x86_64-linux
   to your PATH for current and future sessions.
   Logfile: /usr/local/texlive/2024/install-tl.log
-$PATH  tweaked in  $AjB/bashrc-wm
+tweaks in  $AjB/bashrc-wm
+## TeX Live update packages
+su > <root_pw>  for  tlmgr update --all
+## TeX Live test
+$jtCP/TeX/LaTeX  for  x hello
+## Updates
+  :: Starting full system upgrade...
+  warning: sdl3: local (1:3.2.0-3) is newer than extra (3.2.2-1)
+  ....
+  warning: removing 'nodejs-23.7.0-1' from target list because it conflicts with 'nodejs-lts-jod-22.13.1-1'
+  :: nodejs-lts-jod-22.13.1-1 and nodejs-23.4.0-1 are in conflict. Remove nodejs? [y/N] y
+sudo pacman -S sdl3
+## HP Envy Inspire 7220e changed to 143.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.143.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 186.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.186.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 221.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.221.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 87.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.87.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  :: File /var/cache/pacman/pkg/linux-zen-6.13.5.zen1-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]
+- fixed by re-running  $OSAB/bs-repeatable/updates.sh
+## ibus in gvim
+IBUS-WARNING ... gvim has no capability of surrounding-text feature
+## HP Envy Inspire 7220e changed to 205.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.205.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 131.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.131.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 gokcehan's lf
 MariaDB
-rm ~/.alacritty-generic.toml
 ueberzugpp
 # clm possible extras
 imapbox

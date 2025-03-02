@@ -1,0 +1,72 @@
+vim: ft=build:
+
+$machBld/build.txt
+
+Dell OptiPlex 3040 D11S - DOP3040D11S
+
+# build
+## mature Arch install from i34G1TU02
+on BX200, no EFI partition
+## waiting
+apache
+apostrophe
+Blanket
+cozy-audiobooks
+EFI install
+gokcehan's lf
+MariaDB
+Wike
+# CopyQ
+CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
+  Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
+  Shortcuts >
+    Paste clipboard as plain text > Win+P (= Meta+P)  - works for Nvim/Vim, but not tmux
+    Show/hide main window > Win+Q (= Meta+Q)
+  Appearance > Theme > forest
+# fcron
+fcrontab -l
+  @ 1 bash ~/Arch/locks.sh
+  @ 10 bash ~/Arch/bash_history.sh
+  @ 20 jump clean
+  @ 1 d bash ~/Arch/log_rsnapshot.sh
+## temperatures
+ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+# physical configuration
+LUPO Nano EDR
+Philips 220V4L 1680x1050
+TL-WN725N
+## audio
+back out is good
+front headphone out is dead
+## cbh
+Logitech M187 Wireless Mini Mouse
+Perixx PERIBOARD-407W keyboard
+## drives
+HL Data Storage GH70N DVD rewriter
+### disks
+BX200  in  LogiLink 2.5" HDD Mounting Bracket  in space under DVD drive
+9QG2FFEE  via  inateck  plugged into a USB slot as  snapshot_root
+## motherboard
+i3-6100
+Intel Corporation HD Graphics 530 (rev 06) 256M]
+Timetec 16G RAM
+### BIOS
+BIOS version 1.4.6, 2016
+f2 at start
+M187 wireless mouse works
+Service Tag 5VCB9LG2
+#### Settings
+POST Behavious > Fastboot > Auto
+Secure Boot > Secure Boot Enable > Disabled
+SupportAssist System Resolution > Auto OS Recovery Threshold > Off
+##### General > Boot Sequence
+UEFI shows no Boot Sequence list, and can detect nothing...
+###### Legacy > Boot Sequence list
+1 CD/DVD/CD-RW Drive
+2 P0: CT240BX200SSD1
+3 USB Storage Device
+##### Security
+Chassis Intrusion > Disabled
+CPU XD Support > Enable
+TPM 2.0 Security > TPM On

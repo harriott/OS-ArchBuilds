@@ -2,10 +2,7 @@
 # vim: sw=2:
 
 # build script
-# source $OSAB/nodes-set/jo-0.sh
-
-# #=> $LS_COLORS
-# rsync -irtv --delete $DCGRs/d-unix/d-linux/r-trapd00r-LS_COLORS/ $ITscc/linux/forArch-trapd00r-LS_COLORS
+# source $OSAB/nodes/set/jo-0.sh
 
 #=> Alacritty
 ln -sf $machBld/alacritty.toml ~/.alacritty.toml
@@ -86,6 +83,7 @@ eza -al ~/.local/share/mime/packages
 update-mime-database ~/.local/share/mime
 
 #=> mimeapps.list
+[ $host = 'DOP3040D11S' ] && ln -sf $machBld/jo/mimeapps.list ~/.config/mimeapps.list
 [ $host = 'i34G1TU02' ] && ln -sf $machBld/jo/mimeapps.list ~/.config/mimeapps.list
 # e -la ~/.config/mimeapps.list
 # move to  $machLg/jo/mimeapps-n6g.list
@@ -107,12 +105,13 @@ ln -sf $misc/irbrc ~/.irbrc
 #=> sbMb motherboard temp
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+# e -la ~/Arch/f1t2t3
 
 #=> Surfraw
 ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 
 #=> tmux
-ln -sf $OSL/nodes/tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf
+ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf
 
 #=> w3m
 ln -sf $ABjo/WAN/w3m/config ~/.w3m/config

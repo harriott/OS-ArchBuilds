@@ -187,16 +187,18 @@ moar -h
     za /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf
     za /usr/local/texlive/2023/texmf-dist/doc/man/man1/psutils.man1.pdf
 
-#### tcolorbox
-    $/usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/README.md
-    /usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/tcolorbox-example-poster.tex
-
-### TeX Live package manager
+#### package manager
     /usr/local/texlive/2023/texmf-var/web2c/tlmgr.log
     /usr/local/texlive/2023/texmf-var/web2c/tlmgr-commands.log
     tlmgr info pgfplots
-    tlmgr list --only-installed > $machLg/TeXLive/tlmgr_list-$(date '+%Y%m%d%H%M').txt
-    sudo tlmgr update --all
+    tlmgr conf > $machLg/TeXLive/tlmgr/conf-$(date '+%y%m%d%H%M').txt
+    tlmgr info > $machLg/TeXLive/tlmgr/info-$(date '+%y%m%d%H%M').txt
+
+`su > <root_pw>` for `tlmgr update --all`
+
+#### tcolorbox
+    $/usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/README.md
+    /usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/tcolorbox-example-poster.tex
 
 # Emacs
     $misc/CP/Emacs/init.el
@@ -744,6 +746,7 @@ optimised for SSDs
     $AjB/bashrc-console
     fRs $AjB bashrc-console
     fRs $CfWk/technos/civil/catering/CM-DeLonghiDinamica/Fr staplable.tex
+    fRs $DaLi SNCF
     fRs $Drpbx/Cop Björk
     fRs $Drpbx/Cop/AM-toSort0 'ZZ Top'
     fRs $Drpbx/Cop/AM-toSort0 Europe
@@ -819,8 +822,10 @@ rm -r ~/.thumbnails/normal/*
 xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 ```
 
-ImageMagick font list: `magick -list font > $machLg/IMfonts.IMfo`
-magick -list color > $ulLA/IM-magick-list_color.txt
+## ImageMagick
+    magick -list color > $ulLA/IM-magick-list_color.txt
+
+font list: `magick -list font > $machLg/IMfonts.IMfo`
 
 ## [n]sxiv
 ```bash
@@ -871,11 +876,8 @@ thumbnail mode: `R` reload all
 - `+` `-` zoom in out
 
 ### nsxiv
-```bash
-i nsxiv
-ns  # see $AjB/bashrc-wm
-tree ~/.cache/nsxiv
-```
+    i nsxiv
+    ns  # see $AjB/bashrc-wm
 
 ## pqiv
     pq  # pqiv (recursive, no info, sorted, 2s fade - $AjB/bashrc-wm)
@@ -1025,22 +1027,25 @@ sudo rm /var/lib/pacman/db.lck  # delete the stale lock
 
 ## pacman
     /etc/pacman.conf
+    checkupdates
+    pacman <operation> [options] [targets]
+    pacman -Qdt  # lists all orphans
+    pacman -Qu | grep -Eo '^[^ ]+' | xargs pacman -Si | grep -E 'Name|Depends On' | grep -B1 'nodejs-lts-jod'
     sudo du -sh /var/cache/pacman/pkg
+    sudo pacman -U package.pkg.tar.xz
+    sudo pacman -Rs <packagetoremove>
 
-```bash
-checkupdates
-pacman -Qdt  # lists all orphans
-sudo pacman -U package.pkg.tar.xz
-sudo pacman -Rs <packagetoremove>
-```
-
+- `-Q` (`--query`)
 - `-S` (`--sync`) synchronize packages from servers
-    - `Sc` (`--clean`) remove unused packages from the cache
+    - `-c` (`--clean`) remove unused packages from the cache
         - `Scc` clean out the cache
-    - `Si` (`--info`) on a package
+    - `-i` (`--info`) on a package
         - `Sii` shows packages depend on this package
-    - `Sy` (`--refresh`) refresh copy of the master package list (use with `-u`)
+    - `-s <regexp>` (`--search`)
+    - `-u` (`--sysupgrade`)
+    - `-y` (`--refresh`) refresh copy of the master package list (use with `-u`)
         - `Syy` force refresh
+- pacman(8)
 
 ### list local and remote packages
 ```bash
@@ -1151,7 +1156,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fd -L broot
     fd -L consolas
     fd -L symbola
-    C $ITscc/unix-linux/forArch-fonts
+    C $ITscc/unix-linux-forArch-fonts
 
 `usf()` (`$OSAB/Bash/bashrc-generic`)
 

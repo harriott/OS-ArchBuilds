@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1:
 
-# bash $OSAB/nodes-set/jo-1-awesome.sh
+# bash $OSAB/nodes/set/jo-1-awesome.sh
 
 # e -la ~/.config/awesome
 
@@ -14,18 +14,15 @@
 # ln -sf $machBld/jo/awesome/themes-zenburn ~/.config/awesome/zenburn
 
 #=> Awesome WM Widgets 0
-W0=$ITscc/awesome/streetturtle-awesome-wm-widgets
-# rsync -inrtv --delete $DCGRs/d-unix/d-linux/d-wm-awesome/r-streetturtle-awesome-wm-widgets/ $W0
-W1=~/.config/awesome/awesome-wm-widgets; rm -r $W1
-ln -sf W0 $W1
+ln -sf $ITscc/unix-linux/awesome-streetturtle-awesome-wm-widgets ~/.config/awesome/awesome-wm-widgets
+# - $misc/GRs/needed.sh
 
 #=> Awesome WM Widgets 1 for Weather widget
-# $DCGRs/d-CP/d-encoding/r-rxi-json_lua/json.lua
-ln -sf $ITscc/awesome/rxi-json.lua/json.lua ~/.config/awesome/json.lua
+ln -sf $ITscc/CP/rxi-json_lua/json.lua ~/.config/awesome/json.lua  # $misc/GRs/needed.sh
 
 #=> awesome-capslock_widget
-# $DCGRs/d-unix/d-linux/d-wm-awesome/r-stefano-m-awesome-capslock_widget/capslock.lua
-ln -sf $ITscc/awesome/stefano-m-awesome-capslock_widget/capslock.lua ~/.config/awesome/capslock.lua
+ln -sf $ITscc/unix-linux/awesome-stefano-m-awesome-capslock_widget ~/.config/awesome/capslock.lua
+# - $misc/GRs/needed.sh
 
 # #=> mute toggle
 # a=/home/jo/.config/awesome/audio; [ -d $a ] && rm $a; ln -sf $machBld/jo/awesome/audio $a

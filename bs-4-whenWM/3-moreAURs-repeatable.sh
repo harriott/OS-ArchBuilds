@@ -46,6 +46,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /Jack12816" PKGBUILD
 # makepkg -sic
 
+#=> cozy-audiobooks
+gAUR cozy-audiobooks
+nvim -c "silent! /geigi\/cozy" PKGBUILD
+makepkg -sic
+
 # #=> davfs2 0 Ali Abdallah's key
 # gpg --recv-keys B94556F81C85D0D5
 
@@ -95,11 +100,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
@@ -259,11 +264,6 @@ true
 # gAUR qpdfview
 # nvim -c "silent! /launchpad" PKGBUILD
 # makepkg -sic  # takes a long time...
-
-#=> sdl3
-gAUR sdl3
-nvim -c "silent! /libsdl-org" PKGBUILD
-makepkg -sic  # vulkan-intel or vulkan-radeon
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
