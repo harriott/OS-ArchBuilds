@@ -439,7 +439,7 @@
     </action>
   </keybind>
   <!-- CopyQ repair - JH -->
-  <keybind key="w-q">
+  <keybind key="s-w-q">
     <action name="Execute">
       <command>/home/jo/.config/openbox/fixCopyQ.sh</command>
     </action>

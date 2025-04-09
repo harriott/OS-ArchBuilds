@@ -13,7 +13,7 @@ source $OSL/nodes/bashrc-wm
 
 #=> AV
 fm () {
-  for category in best good good-tA-North-US joy toSort0 toSort1 toSort1-UK toSort1-USA; do
+  for category in best good good-tA-North-US joy-copies toSort0 toSort1 toSort1-UK toSort1-USA; do
     fd $1 "$Drpbx/Cop/AM-$category"; done
 } # fm lowlands | grep Baez
 
@@ -140,7 +140,7 @@ fps () { for v in "$@"; do echo $(fpwh $v) $(fpcn v $v) $(fpfr $v) $(fpcn a $v) 
 alias y='yt-dlp'
   alias ya='y -f ba'
   alias yf='y -F'  # --list-formats
-  y7 () { yt-dlp -S "height:720" "$1"; o '- now check for unwanted characters and mkv'; }
+  y7 () { yt-dlp -S "height:720" "$1"; o "${tpf3} - now check for unwanted characters and mkv!${tpfn}"; }
 
 #=> CUPS
 alias lpf='lp -o fit-to-page'  # lpf *

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# cd $OSAB/nodes-set; source repair.sh
+# cd $OSAB/nodes/set; source repair.sh
 # for occasions when I've renamed directories, breaking symlinks
 
 # bash repair.sh
@@ -13,10 +13,10 @@ source "../mb-$host/export-machine"
 source ../nodes-Bash/export-storage  # essential
 
 #=> 1 Bash generic
-[[ -z $loaded_bg ]] && source $OSAB/nodes-Bash/bashrc-generic
+[[ $(alias fin) =~ 'figlet' ]] && source $OSAB/nodes/Bash/bashrc-generic
 
 #=> 2 Bash also for console
-[[ -z $loaded_bc ]] && source $AjB/bashrc-console
+[[ $(type ra) =~ 'function' ]] && source $AjB/bashrc-console
 
 #=> 2 helpful environment
 source $OSL/nodes/jo/export

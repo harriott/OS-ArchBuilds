@@ -12,22 +12,6 @@ ln -sf $OSAB/nodes/alacritty-all.toml ~/.alacritty-all.toml
 #=> ansiweather
 ln -sf $ABjo/WAN/ansiweather ~/.ansiweatherrc  # e -l ~/.ansiweatherrc
 
-#=> Bash
-# sort this list by last use of "~":  :sort /,*\~/
-
-ln -sf $AjB/bash_profile                     ~/.bash_profile
-ln -sf $machBld/jo/Bash/bashrc               ~/.bashrc
-ln -sf $Openbox/bashrc_for_Alacritty-nvim.sh ~/.bashrc-An
-ln -sf $AjB/bashrc-console                   ~/.bashrc-console
-ln -sf $OSAB/nodes/Bash/bashrc-generic       ~/.bashrc-generic
-ln -sf $OSL/nodes/jo/export                  ~/.export-jo
-ln -sf $machBld/export-machine               ~/.export-machine
-ln -sf $OSAB/nodes/Bash/export-storage       ~/.export-storage
-ln -sf $OSL/nodes/GNUReadline-inputrc        ~/.inputrc  # e -l ~/.inputrc
-ln -sf $AjB/bash_history.sh                  ~/Arch/bash_history.sh
-
-# e -la ~
-
 #=> CliFM
 [ -d ~/.config/clifm ] || mkdir -p ~/.config/clifm
 [ -d ~/.config/clifm/plugins ] || mkdir -p ~/.config/clifm/plugins
@@ -117,13 +101,4 @@ ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf
 ln -sf $ABjo/WAN/w3m/config ~/.w3m/config
 ln -sf $ABjo/WAN/w3m/keymap ~/.w3m/keymap
 ln -sf $ABjo/WAN/w3m/omnibar_duckduckgo.cgi ~/.w3m/cgi-bin/omnibar_duckduckgo.cgi
-
-#=> X
-ln -sf $ABjo/wm/Xresources/Xresources                       ~/.Xresources
-  ln -sf $ABjo/wm/Xresources/fontUM                         ~/.Xresources-font
-  [[ $myDrA == 1 ]] && ln -sf $ABjo/wm/Xresources/fontNF    ~/.Xresources-font
-  ln -sf $ABjo/wm/Xresources/colorschemes/LukeSmith-gruvbox ~/.Xresources-LukeSmith-gruvbox
-ln -sf $ABjo/xbindkeysrc                                    ~/.xbindkeysrc  # mouse wheel
-ln -sf $ABjo/xinitrcs/openbox                               ~/.xinitrc
-  [ $host = 'AsusW202' ] && ln -sf $ABjo/xinitrcs/awesome   ~/.xinitrc
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-# bash 10-as_root-to_jo.sh
+# bash $OSAB/bs-repeatable/as_root-RootkitHunt.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
@@ -14,7 +14,7 @@ rkhunter -c -sk  # --check --skip-keypress
 A=/home/jo/Arch
 [ -d $A ] || exit
 jHM=$(date "+%j-%H%M")
-l=/home/jo/Arch/rkhunter-$jHM.log
+l="/home/jo/Arch/root/rkhunter-$jHM.log" # ~/Arch/root
 cp /var/log/rkhunter.log $l
 chown jo:jo $l
 echo "now look in $l"

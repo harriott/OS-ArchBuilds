@@ -2,9 +2,6 @@
 # vim: ft=sh sw=2:
 
 # $OSAB/nodes/Bash/export-storage
-#  $OSAB/nodes/set/jo-0.sh
-#  $OSAB/nodes/set/root.sh
-
 # here I export variables that could also be useful as root
 
 # Variable naming constraints:
@@ -13,11 +10,11 @@
 
 # for initial build of Arch (after $machBld/export-machine):
 # for jo:
-#  symlinked in  $OSAB/nodes-set/jo-0.sh
-#  sourced by  $AjB/bash_profile
+#  symlinked in  $OSAB/nodes/set/jo-0.sh
+#   then sourced by  $AjB/bash_profile
 # for root:
-#  symlinked in  $OSAB/nodes-set/root.sh
-#  sourced by  $OSAB/nodes-root/bash_profile
+#  symlinked in  $OSAB/nodes/set/root.sh
+#   then sourced by  $OSAB/nodes-root/bash_profile
 
 #=> 0 core
 # $myDrA  &  $Storage  are pre-defined in  $machBld/export-machine

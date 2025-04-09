@@ -9,8 +9,9 @@
   vi_mode_style = { shape = "block" }
 
 [font]
-  # normal = { family = "CourierNew" } # for checking that this is instantaneous
-  normal = { family = "CaskaydiaCoveNerdFontMono" }
+  # changes are instantaneous
+  # normal = { family = "CaskaydiaCoveNerdFontMono" } # titchy
+  normal = { family = "DejaVuSansMono" } # higher letters than  CaskaydiaCoveNerdFontMono
   # normal = { family = "UbuntuMonoNerdFontMono" } # needs one size larger than Caskaydia
 
 [[hints.enabled]]

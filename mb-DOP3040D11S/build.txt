@@ -7,15 +7,27 @@ Dell OptiPlex 3040 D11S - DOP3040D11S
 # build
 ## mature Arch install from i34G1TU02
 on BX200, no EFI partition
+## HP Envy Inspire 7220e changed to 202.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.202.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## tree-sitter-bash
+no clue what installed it
+## python-async-timeout
+appeared as AUR, pactree -r python-async-timeout  shows no need
+    sudo pacman -Rs python-async-timeout
+## Pacman keys
+gpg --homedir /etc/pacman.d/gnupg --list-keys
+  gpg: WARNING: unsafe ownership on homedir '/etc/pacman.d/gnupg'
+  gpg: Note: trustdb not writable
+s /etc/pacman.d/gnupg  returns 755
+s /home/jo/.gnupg/trustdb.gpg  returns 600
 ## waiting
 apache
-apostrophe
-Blanket
-cozy-audiobooks
 EFI install
 gokcehan's lf
 MariaDB
-Wike
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
@@ -33,8 +45,8 @@ fcrontab -l
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # physical configuration
+Dell E2214HB 1920x1080
 LUPO Nano EDR
-Philips 220V4L 1680x1050
 TL-WN725N
 ## audio
 back out is good

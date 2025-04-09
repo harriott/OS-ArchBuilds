@@ -12,13 +12,13 @@ Xft.rgba: rgb
 ! ------------
 ! ------------
 
-! symlinked in  $OSAB/nodes-set/jo-0.sh  to  ~/.Xresources
+! symlinked in  $OSAB/nodes/set/jo-0-Bash-X.sh  to  ~/.Xresources
 
 ! called from my  $ABjo/xinitrcs/xinitrc
 
 ! after changes here, either quit & restart X or
-!  xrdb $ABjo/wm/Xresources/Xresources  or  xrdb ~/.Xresources
-! apostrophes in comments can trigger warnings, so dont use them
+!  xrdb $ABjo/wm/Xresources/Xresources  or  xrdb ~/.Xresources, then see changes in new terminal
+! comments indented or containing quotes trigger warnings
 
 ! These dont have any visible effect:
 xman*directoryFontNormal: -*-ubuntumono-*-r-*-*-*-120-*-*-*-*-*-*
@@ -60,19 +60,19 @@ URxvt.perl-ext-common: autocomplete-ALL-the-things,default,matcher,selection-to-
 ! autocomplete-ALL-the-things
 ! - completes a word (at least one letter) using whats visible in the terminals window
 ! - repeat to cycle through choices
-! cant see any difference in these three tricks:
-	! alt+ctrl+/
-		URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
-	! alt+?
-		URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
-	! alt+"
-		URxvt.keysym.M-quotedbl:  perl:aAtt:skeleton-complete
+! cant see any difference in these three tricks
+!   alt+ctrl+/
+	URxvt.keysym.M-C-slash:   perl:aAtt:word-complete
+!   alt+?
+	URxvt.keysym.M-question:  perl:aAtt:fuzzy-complete
+!   alt+double-quote
+	URxvt.keysym.M-quotedbl:  perl:aAtt:skeleton-complete
 
 ! keyboard-select
-	! alt+e
-		URxvt.keysym.M-e: perl:keyboard-select:activate
-	! alt+s
-		URxvt.keysym.M-s: perl:keyboard-select:search
+!   alt+e
+	URxvt.keysym.M-e: perl:keyboard-select:activate
+!   alt+s
+	URxvt.keysym.M-s: perl:keyboard-select:search
 
 URxvt.cursorUnderline:    true
 URxvt.url-launcher:       /usr/bin/firefox
@@ -86,5 +86,5 @@ URxvt.clipboard.autocopy: true
 ! cmus  &  tmux  folders show in  URxvt.boldFont
 
 #include "/home/jo/.Xresources-font"
-! $ABjo/wm/Xresources/fontUM
+! see  $OSAB/nodes/set/jo-0.sh
 

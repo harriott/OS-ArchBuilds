@@ -21,7 +21,6 @@ done
 eza -la /usr/share/fonts/EmacsAllTheIcons
 
 #=> 1 fonts 0 install
-lnd $ITscc/unix-linux/forArch-fonts /usr/share/fonts/copiedForArch
 lnd $ITscc/unix-linux-forArch-fonts /usr/share/fonts/copiedForArch
 eza -la /usr/share/fonts
 

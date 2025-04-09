@@ -99,6 +99,9 @@ pacman -S rsync
 # sharkdp's bat
 pacman -S bat
 
+# skim
+pacman -S skim
+
 # trash-cli
 pacman -S trash-cli
 
@@ -250,6 +253,9 @@ pacman -Rs bash-language-server
 
 #=> 2 encoding - git-delta
 pacman -S git-delta
+
+#=> 2 encoding - lazygit
+pacman -S lazygit
 
 #=> 2 encoding - lua-language-server
 pacman -S lua-language-server

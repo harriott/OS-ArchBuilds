@@ -3163,8 +3163,6 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
   :: File /var/cache/pacman/pkg/linux-zen-6.13.5.zen1-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
   Do you want to delete it? [Y/n]
 - fixed by re-running  $OSAB/bs-repeatable/updates.sh
-## ibus in gvim
-IBUS-WARNING ... gvim has no capability of surrounding-text feature
 ## HP Envy Inspire 7220e changed to 205.239
 fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
@@ -3175,9 +3173,47 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.131.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 245.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.245.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 103.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.103.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## OBS Studio
+Recording Quality > Same as stream
+### sound
+DOP3040D11S back audio plugged into control pod, got metallic sound distortions, so
+  Audio Mixer > Mic/Aux > off
+## gVim launch warning
+  (gvim:83069): IBUS-WARNING **: 03:31:16.144: gvim has no capability of surrounding-text feature
+not happening with  nvim, or  vim
+IBUS-WARNING no capability of surrounding-text feature
+## fzf crashing urxvt
+fzf  anywhere, c-r  from  tmux
+## MRU
+~/.vim_mru_files  became empty
+## HP Envy Inspire 7220e changed to 202.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.202.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## python-async-timeout
+appeared as AUR, pactree -r python-async-timeout  shows no need
+    sudo pacman -Rs python-async-timeout
+## /var/lib/flatpak/.removed
+full of  Error loading plugin: libvoikko.so.1unspell  junk, not cleared by  sudo flatpak update
+du -sh /var/lib/flatpak/.removed  904M
+flatpak uninstall --unused  changed nothing
+flatpak repair  got  Erasing .removed
 ## waiting
 gokcehan's lf
 MariaDB
+sd
+skim
 ueberzugpp
 # clm possible extras
 imapbox
@@ -3218,6 +3254,7 @@ sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 sudo rm /etc/locale.gen.pacnew
 # physical configuration
 ATI Radeon HD 4870 on PCIEX16
+Bose Companion 20
 D-Link DUB-H7
 NETGEAR WG111v2
 TP-Link UB400

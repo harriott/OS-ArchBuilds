@@ -440,7 +440,7 @@
     </action>
   </keybind>
   <!-- CopyQ repair - JH -->
-  <keybind key="w-q">
+  <keybind key="s-w-q">
     <action name="Execute">
       <command>/home/jo/.config/openbox/fixCopyQ.sh</command>
     </action>
@@ -491,7 +491,7 @@
   <!-- Nvim - JH -->
   <keybind key="w-n">
     <action name="Execute">
-      <command>neovide --grid 109x70</command>
+      <command>neovide --grid 109x68</command>
     </action>
   </keybind>
 

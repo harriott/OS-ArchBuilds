@@ -46,10 +46,10 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /Jack12816" PKGBUILD
 # makepkg -sic
 
-#=> cozy-audiobooks
-gAUR cozy-audiobooks
-nvim -c "silent! /geigi\/cozy" PKGBUILD
-makepkg -sic
+# #=> cozy-audiobooks
+# gAUR cozy-audiobooks
+# nvim -c "silent! /geigi\/cozy" PKGBUILD
+# makepkg -sic
 
 # #=> davfs2 0 Ali Abdallah's key
 # gpg --recv-keys B94556F81C85D0D5
@@ -100,11 +100,11 @@ makepkg -sic
 # makepkg -sic
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
@@ -294,7 +294,7 @@ makepkg -sic
 
 # #=> verbiste
 # gAUR verbiste
-# nvim -c "silent! /perso.b2b2c.ca\/\~sarrazip\/dev" PKGBUILD
+# nvim -c "silent! /sarrazip\.com\/dev" PKGBUILD
 # makepkg -sic
 
 # #=> vimpc-git 0 install

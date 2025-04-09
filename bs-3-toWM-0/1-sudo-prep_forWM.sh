@@ -27,6 +27,9 @@ pacman -S ghostscript
 # Pandoc
 pacman -S pandoc-cli
 
+# pylatexenc
+pacman -S python-pylatexenc  # for render-markdown.nvim
+
 #=> documenting - TeX Live 0 native 0 cd
 cd $ITscc/unix-TL-install-tl-2024
 

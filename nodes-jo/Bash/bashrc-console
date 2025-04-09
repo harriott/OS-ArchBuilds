@@ -1,8 +1,9 @@
 #!/bin/bash
 # vim: ft=sh sw=2:
 
-# $AjB/bashrc-console  symlink ($OSAB/nodes/set/jo-0.sh)
-#  sourced by  $AjB/bash_profile  &  $machBld/jo/Bash/bashrc
+# $AjB/bashrc-console  symlinked in  $OSAB/nodes/set/jo-0.sh
+#  then sourced by  $AjB/bash_profile  &  $machBld/jo/Bash/bashrc
+# see  $OSAB/nodes/set/repair.sh  for checking if this was sourced
 
 # useful also in Console as user
 
@@ -12,14 +13,13 @@
 
 # Joseph Harriott
 
-export loaded_bc=1  # used in  $OSAB/nodes-set/repair.sh
 export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
 
 ra () {
   pactl set-sink-volume 0 60%  # master volume to non-distorting level
   if [ $1 ]; then o=$1; else o=a; fi
   rec -c 2 $o.flac  # SoX
-} # ra <stereoAudioRecording>
+}; export -f ra  # ra <stereoAudioRecording>
 
 #=> Bash interface
 alias o=echo
@@ -108,6 +108,17 @@ fgc () {
   for f in $(fd -HI -tf ^config$); do sm $f; done | sort >> $gcf
   echo "results are in $gcf"
 } # $Drpbx/JH/search/dts-git_config.fgc  using  $vfv/syntax/fgc.vim
+
+lg() {
+  export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+  lazygit "$@"
+  if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+    cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+    rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+  fi }
+# recommend in  $DCGRs/d-CP/d-encoding/r-jesseduffield-lazygit/README.md
+# ($DCGRs/d-CP/d-encoding/r-jesseduffield-lazygit/pkg/gui/controllers/helpers/record_directory_helper.go)
+# but I can't see it doing anything...
 
 #===> time-sorted - my GitHub issues
 # $jtIT/GitHubIssues.ffl

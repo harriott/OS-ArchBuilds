@@ -18,7 +18,7 @@
 llf="$Thb/linuxlock"  # my creation
 #  echo $host > $Thb/linuxlock
 #  pb $Thb/linuxlock
-wlf="$Thb/Win10ProLock"  # $MSwin10\Thb\runSafely.ps1
+wlf="$Thb/Win10ProLock"  # $MSWin10\Thb\runSafely.ps1
 # l 2>/dev/null $llf $wlf
 
 if [ -s $llf ]; then

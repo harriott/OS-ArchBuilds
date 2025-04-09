@@ -105,7 +105,7 @@ sudo pacman -S firefox
 #=> Firefox 1 remove
 sudo pacman -Rs firefox
 
-#=> Flatpak
+#=> Flatpak 0 install
 sudo pacman -S flatpak
 
 #=> Flatpak - KeePassXC

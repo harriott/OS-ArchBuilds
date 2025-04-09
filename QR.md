@@ -20,10 +20,11 @@ tty-clock -bcs
 SORT(1)
 
 # Bash
+    $AjB/bash_history.sh
     $AjB/bash_profile
+    $OSAB/nodes-root/bashrc
     $ulL/Bash/colours
     /etc/profile
-    ~/Arch/bash_history
     im time
     pinfo bash
     pinfo -m bash
@@ -38,6 +39,10 @@ SORT(1)
 
 ## file manage - ls
     dircolors --print-ls-colors
+    ls ~/{go,mus*,*Shot}; o
+
+### man
+    :Man ls
     im ls
 
 ## file manage - directory structures
@@ -111,7 +116,8 @@ moar -h
 
 ## dict
     $AjB/bashrc-console
-    dict -D
+    :Man dict
+    client for the Dictionary Server Protocol - nothing stored locally
     i dict
 
 ## PDF
@@ -282,11 +288,9 @@ moar -h
 ## Ruby
 ```bash
 gem list --no-versions | tr '\n' ' ' | xcol bundler github-pages jekyll liquid
-gem list > $ulLA/ml-$host/gems.gems
+gem list > $ulLA/ml-$host/gems.gems  # using  $vfv/syntax/gems.vim
 r $GEM_HOME
 ```
-
-see `$vimfiles/syntax/gems.vim`
 
 ## Rust
     cargo version
@@ -295,6 +299,8 @@ see `$vimfiles/syntax/gems.vim`
 ### didyoumean
     dym better
     i dym
+
+spelling corrector
 
 # fcron
     systemctl status fcron.service  # showing recent events
@@ -343,12 +349,11 @@ SED(1)
 
 # file manage
     diskus  # size of current directory
-    fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
-    i tree
     i zoxide
     lsd
     n [directory]
 
+- better file managing in `$OSAB/nodes/Bash/bashrc-generic`
 - `du` don't work in script...
 - FIND(1)
 - MV(1)
@@ -470,7 +475,11 @@ vid => ffmpegthumbnailer
     i eza
     more in  $OSAB/Bash/bashrc-generic
 
-## fzf
+## fd
+    :Man fd
+    fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
+
+## fuzzy - fzf
     <someCommand> Ctrl-t - gets the selected node on the command-line
     FZF_DEFAULT_COMMAND
 
@@ -486,9 +495,14 @@ ls -l $(fzf -m)
 unalias **<tab>
 ```
 
-## fzy
+## fuzzy - fzy
     find . -type f | fzy  # selecta
     i fzy
+
+## fuzzy - skim
+    i sk
+    i sk
+    i sk-tmux
 
 ## if  trash-restore  reports  "Non parsable trashinfo file..."
     rm -r $Storage/.Trash-1000
@@ -573,6 +587,11 @@ can't cope with `utf-16le`
     jump --help
     r ~/.jump
 
+## tree lists
+    i tree
+
+`$OSAB/nodes/Bash/bashrc-generic`
+
 ## Vifm
     FF $ITscr/CP/vifm-v0.12-builtin-normal.png
     v  # ($AjB/bashrc-console)
@@ -634,6 +653,7 @@ gpg(1)
     f       -> next search term
 
 # hw
+    $machBld/jo/f1t2t3/f1t2t3.sh
     cd /sys/devices/system/cpu/cpu0/cpufreq
     doas showkey  # keycodes
 
@@ -750,6 +770,7 @@ optimised for SSDs
     fRs $Drpbx/Cop Björk
     fRs $Drpbx/Cop/AM-toSort0 'ZZ Top'
     fRs $Drpbx/Cop/AM-toSort0 Europe
+    fRs $Drpbx/Cop/AM-toSort0 France
     fRs $Drpbx/Cop/AM-toSort0/Europe Nordic
     fRs $Drpbx/Cop/AM-toSort0/Europe/Nordic Björk
     fRs $DWp/pn/internet internet.dw
@@ -761,7 +782,7 @@ optimised for SSDs
     fRs $onGH/misc/CP/PerlTools mysmsMD.pl
     fRs $TeNo/md-JH-DailyLife DailyLife.md
     fRs $vfp/packs-cp/opt/vim-dokuwiki/syntax dokuwiki.vim
-    fRs $vimfiles/nvim/lua/lazy dropbar.lua
+    fRs $vfn/lua/lazy dropbar.lua
     fRs $vimfiles/syntax cmusq.vim
     fRs $vfv/plugin plugin.vim
     fRs /etc sudoers
@@ -1028,6 +1049,7 @@ sudo rm /var/lib/pacman/db.lck  # delete the stale lock
 ## pacman
     /etc/pacman.conf
     checkupdates
+    gpg --homedir /etc/pacman.d/gnupg --list-keys > ~/Arch/root/PacmanKeys-$(date +%y%m%d).txt
     pacman <operation> [options] [targets]
     pacman -Qdt  # lists all orphans
     pacman -Qu | grep -Eo '^[^ ]+' | xargs pacman -Si | grep -E 'Name|Depends On' | grep -B1 'nodejs-lts-jod'
@@ -1088,7 +1110,7 @@ pass cz/GmailAPI/token-expire
     r $ulL/Bash
 
 ### ANSI escape sequences
-    $OSAB/Bash/bashrc-generic
+    $OSL/nodes/bashrc-generic
 
 #### colours
     bash $ulL/Bash/colours/color-bash.sh
@@ -1108,7 +1130,15 @@ for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done
 tput setaf 95; tput setaf 95 | cat -v; echo =95
 ```
 
+# spelling resources
+    ss="$HOME/Arch/root/spell_sources.ffl"; rhash --sha256 /usr/share/hunspell/* > $ss; rhash --sha256 /usr/share/myspell/dicts/* >> $ss; sort -o $ss $ss
+
+## Hunspell
+    /usr/share/hunspell
+    i hunspell
+
 # system
+    $ABjo/wm/Xresources/Xresources
     bat -A /etc/hosts
     bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
@@ -1155,6 +1185,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fd -L architects
     fd -L broot
     fd -L consolas
+    fd -L nerd
     fd -L symbola
     C $ITscc/unix-linux-forArch-fonts
 
@@ -1336,16 +1367,15 @@ scroll don't work in `tmux`
 ## tmux
     resize -s 65 120  # good for half of ViewSonic VX2025wm
 
-- `send-keys` can't decode a Bash environment variable
-- TMUX(1)
+TMUX(1)
 
 ## virtual consoles
     stty -a
     tput works
 
-- `$TERM` is set to 'linux'
-- can login concurrently to jo
-- Ctrl+Alt+F2  anywhere brings up getty for virtual console tty2
+- `$TERM` is set to `linux`
+- can login concurrently to `jo`
+- `ctrl+alt+f2` anywhere brings up getty for virtual console `tty2`
 
 # text wrangling
     $DCGRs/CP/vim/vim/README.md
@@ -1371,6 +1401,7 @@ scroll don't work in `tmux`
     /usr/share/nvim/runtime/lua/vim/filetype.lua
     C /usr/share/nvim/runtime/ftplugin
     C /usr/share/nvim/runtime/syntax
+    nn  # $AjB/bashrc-console
     r ~/.local/share/nvim
     r ~/.vimswap
 
@@ -1395,6 +1426,7 @@ scroll don't work in `tmux`
 ##### installation files - from  vim-runtime
     /usr/share/vim/vimfiles/archlinux.vim
     r /usr/share/vim/vim91/pack/dist/opt/
+    C /usr/share/vim/vim91/ftplugin/
     C /usr/share/vim/vim91/syntax/
     C /usr/share/vim/vim91
 

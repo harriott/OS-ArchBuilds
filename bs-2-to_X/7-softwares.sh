@@ -25,8 +25,18 @@ trap read debug  # puts a read request after each executable line
 #=> fping
 sudo pacman -S fping
 
-#=> grammalecte
+#=> language
+# aspell
+sudo pacman -S aspell-en aspell-fr
+
+# hunspell-en_gb
+sudo pacman -S hunspell-en_gb
+
+# ngrammalecte
 sudo pacman -S grammalecte
+
+# nuspell
+sudo pacman -S nuspell
 
 # #=> libsixel
 # sudo pacman -S libsixel  # for  sixel  graphics
@@ -52,6 +62,9 @@ npm i -g mapscii
 
  #=> perlcritic
 sudo pacman -S perl-perl-critic
+
+ #=> sd
+sudo pacman -S sd
 
 #=> Signal
 sudo pacman -S signal-desktop

@@ -16,12 +16,13 @@ URxvt.font: xft:CaskaydiaCoveNerdFontMono:size=8
 !  gets too small if size of Regular is 8
 
 
-!-*- Hack Bold Nerd Font Complete Mono -*-
+!! Nerd Font Hack Bold !!
+
 ! eg directories in  nnn
 
 ! for  rxvt-unicode
-URxvt.boldFont: xft:HackNerdFontMono:Bold
+! URxvt.boldFont: xft:HackNerdFont:Bold
 
 ! for  rxvt-unicode-truecolor-wide-glyphs
-URxvt.boldFont: xft:HackNerdFontMono:Bold:size=8
+URxvt.boldFont: xft:HackNerdFont:Bold:size=8
 

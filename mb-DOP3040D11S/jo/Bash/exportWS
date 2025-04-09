@@ -21,9 +21,13 @@ export Awd='window.dimensions={columns=67,lines=64}'
 export Awd='window.dimensions={columns=106,lines=75}'
 # - allows  Neovide alongside while still seeing Conky
 
+#==> 1920x1080 Dell E2214HB monitor
+export Awd='window.dimensions={columns=116,lines=72}' # no idea why it needs to be less tall
+
 #=> set  Neovide  window
-export Nvdg='--grid 109x59'  # 1440x900  monitor
-export Nvdg='--grid 109x70'
+# export Nvdg='--grid 109x59'  # 1440x900 monitor
+export Nvdg='--grid 109x68'  # 1920x1080 Dell E2214HB monitor, only 65 lines of buffer
+# export Nvdg='--grid 109x70'  # 1680x1050 monitor (Philips 220V4L), 67 lines of buffer
 # UbuntuMono_Nerd_Font_Mono:  h9:59
 # $Nvdg  used in
 #  $Obc/autostart/autostart

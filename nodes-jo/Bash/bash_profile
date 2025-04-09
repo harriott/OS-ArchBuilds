@@ -5,16 +5,18 @@
 # $AjB/bash_profile  symlinked in  $OSAB/nodes-set/jo-0.sh
 #  supplements and overrides  /etc/profile
 
+export loaded_bp=1
+
 # exports defined here so they can be accessed pre-X, by
 #  $ABjo/Openbox/openbox/autostart, & by gvim
 # kill tmux sessions if you've made changes here
 source ~/.export-machine  # $machBld/export-machine
-source ~/.export-storage  # $OSAB/nodes-Bash/export-storage
+source ~/.export-storage  # $OSAB/nodes/Bash/export-storage
   source ~/.export-jo  # $OSL/export-jo
 # - carry through to X
 
-# Useful before X:
-  source ~/.bashrc-generic  # useful everywhere, including root
+# Useful before X (repeated in  $AjB/bashrc):
+  source ~/.bashrc-generic  # ($OSAB/nodes/Bash/bashrc-generic) useful everywhere, including root
   source ~/.bashrc-console  # ($AjB/bashrc-console) useful also in Console as user
 # This is commented out because I keep bashrc just for instances in X:
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc

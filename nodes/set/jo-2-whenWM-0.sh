@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# . $OSAB/nodes-set/jo-2-whenWM-0.sh
+# . $OSAB/nodes/set/jo-2-whenWM-0.sh
 # not dependent on  $OSAB
 #  except  lnd  defined in  $OSAB/Bash/bashrc-generic
 
@@ -63,7 +63,7 @@ mkdir $nvim/plugin
 # # ln -s $vimfiles/vim/filetype.vim      $nvim/filetype.vim
 # # ln -s $vimfiles/vim/ftplugin          $nvim/ftplugin
 # ln -s $vimfiles/test/configs/init.vim $nvim/init.vim
-# # ln -s $vimfiles/nvim/lua              $nvim/lua
+# # ln -s $vfn/lua              $nvim/lua
 # # ln -s $vimfiles/vim/packs/packs-colo  $nvim/pack/colo
 # # ln -s $vimfiles/vim/packs/packs-cp    $nvim/pack/cp
 # # ln -s $vimfiles/vim/packs/packs-unix  $nvim/pack/unix
@@ -77,8 +77,8 @@ mkdir $nvim/plugin
 ln -s $vimfiles/vim/after               $nvim/after
 ln -s $vimfiles/vim/filetype.vim        $nvim/filetype.vim
 ln -s $vimfiles/vim/ftplugin            $nvim/ftplugin
-ln -s $vimfiles/nvim/init.vim           $nvim/init.vim
-ln -s $vimfiles/nvim/lua                $nvim/lua
+ln -s $vfn/init.vim           $nvim/init.vim
+ln -s $vfn/lua                $nvim/lua
 ln -s $vimfiles/vim/packs/packs-colo    $nvim/pack/colo
 ln -s $vimfiles/vim/packs/packs-cp-all  $nvim/pack/cp-all
 ln -s $vimfiles/vim/packs/packs-cp-full $nvim/pack/cp-full

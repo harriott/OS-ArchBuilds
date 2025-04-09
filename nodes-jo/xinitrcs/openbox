@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# symlinked in  $OSAB/nodes-set/jo-0.sh  to  ~/.xinitrc
+# symlinked in  $OSAB/nodes/set/jo-0.sh  to  ~/.xinitrc
 
 source $ABjo/xinitrcs/xinitrc  # calls $machBld/jo/Xresources
 
