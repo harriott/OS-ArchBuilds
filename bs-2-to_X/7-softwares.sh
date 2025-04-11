@@ -25,6 +25,10 @@ trap read debug  # puts a read request after each executable line
 #=> fping
 sudo pacman -S fping
 
+#=> igrep
+rustup update
+sudo pacman -S igrep
+
 #=> language
 # aspell
 sudo pacman -S aspell-en aspell-fr

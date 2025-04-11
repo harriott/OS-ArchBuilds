@@ -121,17 +121,19 @@ lg() {
 # but I can't see it doing anything...
 
 #===> time-sorted - my GitHub issues
-# $jtIT/GitHubIssues.ffl
-# $coreIT/GitHubIssues.ffl
-
 ghi () {
   ghil=GitHubIssues.ffl
-  for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
-  sed -i '/copied\/IT-handy\//d' $ghil
-  sed -i '1s/^/\n/' $ghil
-  echo '' >> $ghil
-  echo "results are in $ghil"
+  for ITd in $jtIT $coreIT; do
+    cd $ITd
+    for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
+    sed -i '/copied\/IT-handy\//d' $ghil
+    sed -i '1s/^/\n/' $ghil
+    echo '' >> $ghil
+    echo "results are in $ITd/$ghil"
+  done
 }
+# $coreIT/GitHubIssues.ffl
+# $jtIT/GitHubIssues.ffl
 
 #==> lists of files by content
 rgIT () {

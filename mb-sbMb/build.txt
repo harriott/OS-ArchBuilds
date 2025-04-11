@@ -3209,8 +3209,14 @@ full of  Error loading plugin: libvoikko.so.1unspell  junk, not cleared by  sudo
 du -sh /var/lib/flatpak/.removed  904M
 flatpak uninstall --unused  changed nothing
 flatpak repair  got  Erasing .removed
+## HP Envy Inspire 7220e changed to 13.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.13.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 gokcehan's lf
+igrep
 MariaDB
 sd
 skim

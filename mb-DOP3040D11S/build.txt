@@ -27,6 +27,7 @@ s /home/jo/.gnupg/trustdb.gpg  returns 600
 apache
 EFI install
 gokcehan's lf
+igrep
 MariaDB
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700

@@ -27,6 +27,13 @@ fv () {
   done
 } # fv cat  fv 'Dog Vision'
 
+fVs () {
+  for VsL in /mnt/*; do
+    Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
+    for Vs in "${Vss[@]}"; do du -hs $Vs; done
+  done
+} # fv cat  fv 'Dog Vision'
+
 # Audio:
 alias vp='vimpc'
 mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")   $(mediainfo --Output='Audio;%Format%' "$v")   $(mediainfo --Output='Audio;%BitRate%' "$v") b/s   $(mediainfo --Output='Audio;%SamplingRate%' "$v") Hz   "$v""; done; }  # mi *

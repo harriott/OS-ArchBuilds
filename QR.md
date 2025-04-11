@@ -1379,6 +1379,7 @@ TMUX(1)
 
 # text wrangling
     $DCGRs/CP/vim/vim/README.md
+    :s#/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes#    $TeNo
     o $EDITOR
     o $VISUAL
 
@@ -1392,7 +1393,7 @@ TMUX(1)
     n $ITscr/CP/encoding/textWrangling-vi
 
 ### vim variants
-    rsync -aAivX --delete $vimfiles/ ~/Play0/vfb
+    rsync -irtv --delete $vimfiles/ ~/Play0/vfb
 
 #### Nvim
     /usr/share/nvim/runtime/doc/help.txt
@@ -1404,6 +1405,9 @@ TMUX(1)
     nn  # $AjB/bashrc-console
     r ~/.local/share/nvim
     r ~/.vimswap
+    r /usr/share/nvim/runtime
+
+nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/parser`
 
 ##### log file
     :echo $NVIM_LOG_FILE
@@ -1429,12 +1433,6 @@ TMUX(1)
     C /usr/share/vim/vim91/ftplugin/
     C /usr/share/vim/vim91/syntax/
     C /usr/share/vim/vim91
-
-##### Nvim
-    C /usr/share/nvim/runtime/syntax
-    r /usr/share/nvim/runtime
-
-nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/parser`
 
 # WAN
 ```bash
