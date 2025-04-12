@@ -19,6 +19,39 @@ tty-clock -bcs
 
 SORT(1)
 
+# audio - cmus
+    $ABjo/wm/cmus-rc.conf
+    :Man cmus
+    :Man cmus-remote
+    cmus_notify -h
+    pgrep cmus
+
+## kill
+    kill -9 "$(pidof cmus)"
+
+### manually
+get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
+
+## queue
+    $ABjo/wm/cmusqueue.sh
+    $Drpbx/Cop/AM-toSort0/cmusq
+
+# audio - playerctl
+    playerctl  # quick guide
+    playerctl -l  # (--list-all) available players
+
+# audio - Quod Libet
+    pkill quodlibet
+
+## Ex Falso
+    pkill exfalso
+
+follows my `PCManFM` folder settings
+
+# audio - vimpc
+- `$ABjo/wm/MPD/vimpcrc` maps a better `q` among other things
+- `vp` (`$AjB/bashrc-wm`)
+
 # Bash
     $AjB/bash_history.sh
     $AjB/bash_profile
@@ -721,6 +754,7 @@ optimised for SSDs
 `/etc/mke2fs.conf` has bytes-per-inode ratios for usage types
 
 ### non-optical
+    df -h /run/media/jo/*
     df -h | xcol mnt media
     doas file -s /dev/sdxn | xcol bit FAT
     findmnt
@@ -937,37 +971,6 @@ java -jar $ITscc/CP/LanguageTool/languagetool-commandline.jar --version
 for t in *.mp3; do aet "$t" 3; done
 mediainfo -h | mo
 ```
-
-## audio - cmus
-    $ABjo/wm/cmus-rc.conf
-    cmus_notify -h
-    pgrep cmus
-
-### kill
-    kill -9 "$(pidof cmus)"
-
-#### manually
-get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
-
-### queue
-    $ABjo/wm/cmusqueue.sh
-    $Drpbx/Cop/AM-toSort0/cmusq
-
-## audio - playerctl
-    playerctl  # quick guide
-    playerctl -l  # (--list-all) available players
-
-## audio - Quod Libet
-    pkill quodlibet
-
-### Ex Falso
-    pkill exfalso
-
-follows my `PCManFM` folder settings
-
-## audio - vimpc
-- `$ABjo/wm/MPD/vimpcrc` maps a better `q` among other things
-- `vp` (`$AjB/bashrc-wm`)
 
 ## mpv
     r /usr/share/doc/mpv

@@ -3214,6 +3214,9 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.13.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## cmus-notify
+
+cmus_notify -h  reporting tracebacks, fixed by uninstalling and re-installing
 ## waiting
 gokcehan's lf
 igrep
