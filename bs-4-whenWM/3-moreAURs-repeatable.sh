@@ -214,12 +214,12 @@ true
 # #=> pdfCropMargins 2 pdfcropmargins 0 remove
 # sudo pacman -Rs pdfcropmargins
 
-# #=> PDFsam 0 (re)install
-# gAUR pdfsam
-# nvim -c "silent! /torakiki" PKGBUILD
-# makepkg -sic  # only needs  jdk-openjdk
-# true
-# #  ~/Arch/AUR/pdfsam  makepkg --install  if you're too late
+#=> PDFsam 0 (re)install
+gAUR pdfsam
+nvim -c "silent! /torakiki" PKGBUILD
+makepkg -sic  # only needs  jdk-openjdk
+true
+#  ~/Arch/AUR/pdfsam  makepkg --install  if you're too late
 
 # #=> PDFsam 1 remove
 # sudo pacman -Rs pdfsam
@@ -332,8 +332,8 @@ true
 # true
 # #  ~/Arch/AUR/ymuse  makepkg --install  if you're too late
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

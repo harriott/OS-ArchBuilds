@@ -78,13 +78,8 @@ fRs () {
   fi
 } # no spaces in arguments
 
-if [ -s "/usr/bin/jump" ]; then
-  eval "$(jump shell)"  # o $PROMPT_COMMAND
-fi # gsamokovarov's jump
-
-alias zo='zoxide query -ls'
 if [ -s "/usr/bin/zoxide" ]; then
-  eval "$(zoxide init bash)"  # o $PROMPT_COMMAND
+  eval "$(zoxide init bash --cmd j)"  # o $PROMPT_COMMAND
 fi
 
 dcp (){

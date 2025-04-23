@@ -23,11 +23,12 @@ gpg --homedir /etc/pacman.d/gnupg --list-keys
   gpg: Note: trustdb not writable
 s /etc/pacman.d/gnupg  returns 755
 s /home/jo/.gnupg/trustdb.gpg  returns 600
+## Updates
+:: Replace flake8 with extra/python-flake8? [Y/n]
 ## waiting
 apache
 EFI install
 gokcehan's lf
-igrep
 MariaDB
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700

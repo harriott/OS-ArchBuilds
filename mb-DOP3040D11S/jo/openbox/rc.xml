@@ -383,6 +383,12 @@
       <!-- $Openbox/bashrc_for_Alacritty-nvim.sh -->
     </action>
   </keybind>
+  <!-- WezTerm - JH -->
+  <keybind key="w-w">
+    <action name="execute">
+      <command>wezterm</command>
+    </action>
+  </keybind>
 
   <!-- Cmus play/pause - JH -->
   <keybind key="w-c">

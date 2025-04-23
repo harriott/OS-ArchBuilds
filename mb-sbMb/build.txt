@@ -3240,7 +3240,6 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 ## waiting
 gokcehan's lf
 MariaDB
-ueberzugpp
 # clm possible extras
 imapbox
 maildir-rank-addr

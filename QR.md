@@ -385,7 +385,6 @@ SED(1)
 
 # file manage
     diskus  # size of current directory
-    i zoxide
     lsd
     n [directory]
 
@@ -632,6 +631,15 @@ can't cope with `utf-16le`
     FF $ITscr/CP/vifm-v0.12-builtin-normal.png
     v  # ($AjB/bashrc-console)
     v $DJH $DJH
+
+## zoxide
+    ~/.local/share/zoxide/db.zo
+    i zoxide
+    i zoxide-add
+    i zoxide-import
+    i zoxide-query
+    ji <fuzzy_pattern> > Enter > <more_fuzzy_patter> > Enter/Esc
+    zoxide query -ls | mo
 
 # forum
     fbbcode
