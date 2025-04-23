@@ -119,11 +119,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /_fhosted" PKGBUILD
 # makepkg -sic
 
-#=> fangfrisch 1 AUR
-gAUR python-fangfrisch
-nvim -c "silent! /rseichter" PKGBUILD
-makepkg -sic
-true
+# #=> fangfrisch 1 AUR
+# gAUR python-fangfrisch
+# nvim -c "silent! /rseichter" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> fangfrisch 2 settings
 # # 1 create database structure
@@ -150,12 +150,12 @@ true
 # makepkg -sic
 # true
 
-# #=> julia-bin 1 install
-# # for sixels
-# gAUR julia-bin
-# nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
-# makepkg -sic
-# true
+#=> julia-bin 1 install
+# for sixels
+gAUR julia-bin
+nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
+makepkg -sic
+true
 
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3

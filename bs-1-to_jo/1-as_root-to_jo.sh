@@ -111,6 +111,9 @@ pacman -S tree
 # Vifm
 pacman -S vifm
 
+# Yazi
+pacman -S yazi
+
 # zoxide
 pacman -S zoxide
 

@@ -8,6 +8,9 @@ if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> chmln.sd
+sudo pacman -S sd
+
 # #=> devtools
 # # mkdir /mnt/SD480GSSDPlus/chroot
 # sudo pacman -S devtools  # for package managers
@@ -67,14 +70,14 @@ npm i -g mapscii
  #=> perlcritic
 sudo pacman -S perl-perl-critic
 
- #=> sd
-sudo pacman -S sd
-
 #=> Signal
 sudo pacman -S signal-desktop
 
 # #=> ttf-croscore
 # sudo pacman -S ttf-croscore
+
+#=> WezTerm
+sudo pacman -S wezterm
 
 #=> whipper
 sudo pacman -S whipper  # for audio CDs

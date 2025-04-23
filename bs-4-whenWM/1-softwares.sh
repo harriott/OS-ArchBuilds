@@ -253,11 +253,6 @@ sudo pacman -S perl-image-exiftool
 #=> perl-tk
 sudo pacman -S perl-tk  # needed for  tlmgr -gui
 
-#=> Pinta 0 install
-sudo pacman -S pinta
-#=> Pinta 0 remove
-sudo pacman -Rs pinta
-
 #=> playerctl
 sudo pacman -S playerctl  # for MPD
 

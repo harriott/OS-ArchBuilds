@@ -192,7 +192,6 @@ true
 # true
 
 # #=> opera
-# # for MPD
 # gAUR opera
 # nvim -c "silent! /www.opera.com" PKGBUILD
 # makepkg -sic
@@ -235,6 +234,15 @@ true
 # gAUR photocollage
 # nvim -c "silent! /adrienverge" PKGBUILD
 # makepkg -sic
+
+# #=> pinta 0 install
+# gdAUR pinta
+# nvim -c "silent! /github.com\/PintaProject\/Pinta" PKGBUILD
+# makepkg -sic  # takes a while, using .NET
+# true
+
+# #=> pinta 0 remove
+# sudo pacman -Rs pinta
 
 # #=> pinta-git 0 install
 # gdAUR pinta-git

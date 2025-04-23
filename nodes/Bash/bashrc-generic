@@ -107,7 +107,7 @@ export WORKON_HOME=~/.virtualenvs  # $WORKON_HOME
 #=> clamscan 0 preferred log basename
 # cslbn=$clamscan/clamscan
 if [ $myDrA ]; then
-  cslLocation="$ulLAb/ml-$host"
+  cslLocation="$hmlA/ml-$host"
 else
   cslLocation="/home/jo/Arch"
 fi

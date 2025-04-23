@@ -95,6 +95,8 @@ dcp (){
     echo '' >> $dcpo
 }
 
+skl () { sk --ansi -i -c 'rg --color=always --line-number "{}"'; } # for finding text in files
+
 #==> Git
 alias ga='git add'
 alias gsbs='git status -bs'

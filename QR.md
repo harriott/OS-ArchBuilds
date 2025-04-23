@@ -23,7 +23,6 @@ SORT(1)
     $ABjo/wm/cmus-rc.conf
     :Man cmus
     :Man cmus-remote
-    cmus_notify -h
     pgrep cmus
 
 ## kill
@@ -152,6 +151,10 @@ moar -h
     :Man dict
     client for the Dictionary Server Protocol - nothing stored locally
     i dict
+
+## LibreOffice Calc
+- `:Man localc` is basic
+- `localc french.csv` then `Character set > Unicode (UTF-8)`
 
 ## PDF
     gspdfpng  # Ghostscript convert pdf to png
@@ -325,11 +328,7 @@ gem list > $ulLA/ml-$host/gems.gems  # using  $vfv/syntax/gems.vim
 r $GEM_HOME
 ```
 
-## Rust
-    cargo version
-    rustup update
-
-### didyoumean
+## Rust - didyoumean
     dym better
     i dym
 
@@ -351,6 +350,7 @@ spelling corrector
 # file contents
     fd -tf -e md -x du -h | sort -hr  # sorted by size
     pygmentize -h
+    skl
 
 TAIL(1)
 
@@ -362,10 +362,13 @@ TAIL(1)
 
 ## ripgrep
     batgrep
-    i rg
     rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
 
 RG(1)
+
+### man
+    :Man rg
+    i rg
 
 ## sed
     $ITsrul/sed
@@ -735,7 +738,7 @@ gpg(1)
     doas file -s /dev/sdx(n)
     i ioping
 
-- Asunder CD Ripper
+- `Asunder CD Ripper` rips to `~`
 - CP(1)
 - optical: `growisofs`
 

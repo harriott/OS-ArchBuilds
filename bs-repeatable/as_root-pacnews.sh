@@ -76,9 +76,9 @@ rm /etc/rsnapshot.conf.pacnew
 # nvim -O /etc/shells /etc/shells.pacnew -c 'windo difft'
 # rm /etc/shells.pacnew
 
-# #=> 1 sshd_config
-# nvim -O /etc/ssh/sshd_config /etc/ssh/sshd_config.pacnew -c 'windo difft'
-# rm /etc/ssh/sshd_config.pacnew
+#=> 1 sshd_config
+nvim -O /etc/ssh/sshd_config /etc/ssh/sshd_config.pacnew -c 'windo difft'
+rm /etc/ssh/sshd_config.pacnew
 
 #=> 1 sudoers
 nvim -O /etc/sudoers /etc/sudoers.pacnew -c 'windo difft'  # diff over changes then  :wq!
