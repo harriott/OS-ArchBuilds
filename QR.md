@@ -57,6 +57,7 @@ follows my `PCManFM` folder settings
     $OSAB/nodes-root/bashrc
     $ulL/Bash/colours
     /etc/profile
+    :Man bash
     im time
     pinfo bash
     pinfo -m bash
@@ -1322,6 +1323,7 @@ backed up in `$AjB/bash_profile`
     killall -SIGUSR1 tint2  # reloads
 
 # terminal
+    $OSAB/nodes/wezterm.lua
     fgconsole  # reports tty number
     neofetch
     o $PAGER

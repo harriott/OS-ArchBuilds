@@ -1,6 +1,6 @@
 # # vim: set ft=pinfo:
 #
-# pinfo  configuration
+# pinfo  configuration ($OSAB/nodes/set/jo-0.sh)
 #
 # nvim -O /etc/pinforc $ABjo/pinforc -c 'windo difft'  # done for v0.6.13-2
 #

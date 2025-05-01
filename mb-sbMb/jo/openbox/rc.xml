@@ -386,7 +386,7 @@
   <!-- WezTerm - JH -->
   <keybind key="w-w">
     <action name="execute">
-      <command>wezterm</command>
+      <command>wezterm start --always-new-process --position 5,5</command>
     </action>
   </keybind>
 

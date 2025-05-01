@@ -12,6 +12,12 @@ ln -sf $OSAB/nodes/alacritty-all.toml ~/.alacritty-all.toml
 #=> ansiweather
 ln -sf $ABjo/WAN/ansiweather ~/.ansiweatherrc  # e -l ~/.ansiweatherrc
 
+#=> Chawan
+[ -d ~/.config/chawan ] || mkdir -p ~/.config/chawan
+ln -sf $ABjo/Chawan/all.toml ~/.config/chawan/config.toml
+# e -l ~/.config/chawan/config.toml
+# pb ~/.config/chawan/config.toml
+
 #=> CliFM
 [ -d ~/.config/clifm ] || mkdir -p ~/.config/clifm
 [ -d ~/.config/clifm/plugins ] || mkdir -p ~/.config/clifm/plugins

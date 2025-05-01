@@ -9,6 +9,9 @@ trap read debug  # puts a read request after each executable line
 sudo sed -i 's/#\[multilib]/[multilib]/' /etc/pacman.conf
 sudo sed -i '/^\[m/{n;s/#I/I/}' /etc/pacman.conf
 
+#=> 0 fcitx5-configtool
+sudo pacman -S fcitx5-configtool  # because  fcitx  somehow installed, bringing its clipboard
+
 # #=> 0 LibreOffice Fresh install
 # sudo pacman -S libreoffice-fresh-en-gb
 # libreoffice  # first-run of LibreOffice - close it

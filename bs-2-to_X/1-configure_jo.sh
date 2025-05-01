@@ -1,8 +1,11 @@
 #!/bin/bash
 
-#=> 0 GitHub CLI
+#=> 0 GitHub CLI 0 install
 sudo pacman -S github-cli
+
+#=> 0 GitHub CLI 1 configure
 gh config set -h github.com git_protocol ssh
+gh extension install gennaro-tedesco/gh-s
 
 #=> 0 set $OSAB
 read -p "\$OSAB is $OSAB - looks good?"

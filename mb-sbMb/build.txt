@@ -3237,7 +3237,17 @@ hp-setup 192.168.52.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Updates
 :: Replace flake8 with extra/python-flake8? [Y/n]
+## HP Envy Inspire 7220e changed to 167.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.167.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Corepack
+sudo corepack enable  gave no info
+r /usr/lib/node_modules/corepack/shims
+yarn --version  wanted to download  yarn classic
 ## waiting
+Glow
 gokcehan's lf
 MariaDB
 # clm possible extras

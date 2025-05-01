@@ -15,7 +15,10 @@ git clone https://github.com/harriott/ArchBuilds.git
 [Arch Linux](https://harriott.github.io/2023/02/11/Arch_Linux.html)
 
 ## some platforms I use
+- a `Dell OptiPlex 3040`
 - a self-build around a `Gigabyte GA-970A-DS3P` motherboard
+
+### previously
 - an `Asus VivoBook W202`
-- an old Lenovo ThinkCentre M58 (Type 7637)
+- an old `Lenovo ThinkCentre M58 (Type 7637)`
 

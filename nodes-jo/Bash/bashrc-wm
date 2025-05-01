@@ -6,9 +6,8 @@
 
 # stuff that's useful when a Window Manager is installed
 
-alias aw='ansiweather -f 7'
 alias R='R --quiet'
-alias ws='w3m -s'  # squeezing blank lines
+alias y='yazi'
 source $OSL/nodes/bashrc-wm
 
 #=> AV
@@ -144,9 +143,9 @@ fpcn () { ffprobe -v error -select_streams $1:0 -show_entries stream=codec_name 
 fps () { for v in "$@"; do echo $(fpwh $v) $(fpcn v $v) $(fpfr $v) $(fpcn a $v) $(fpasr $v) $(fpabr $v) $v; done; } # fps <files_you_want_statisitics_of>
 
 #==> yt-dlp
-alias y='yt-dlp'
-  alias ya='y -f ba'
-  alias yf='y -F'  # --list-formats
+alias yt='yt-dlp'
+  alias ya='yt -f ba'  # overrides  Yazi
+  alias ytf='yt -F'  # --list-formats
   y7 () { yt-dlp -S "height:720" "$1"; o "${tpf3} - now check for unwanted characters and mkv!${tpfn}"; }
 
 #=> CUPS
@@ -229,44 +228,6 @@ pdfmm () {
 
 za () { zathura "$1" & }
 
-#=> Dropbox conflicted copies
-# results are noted in time-stamped logs
-dcc0 () {
-  pushd $Drpbx
-  jHMS=$(date "+%y%m%d-%H%M%S")  # o $jHMS
-  export DropboxConflictedLog="$Drpbx/conflicted/$jHMS.log"
-  echo 'scanning for conflicted copies'
-  echo 'vim: nowrap:' > $DropboxConflictedLog
-  echo '' >> $DropboxConflictedLog
-  find $PWD -path $Drpbx/conflicted -prune -o -regex ".*'s conflicted copy.*\|.* (Copie en conflit de .*" -print >> $DropboxConflictedLog
-  # fd -E conflicted conflicted
-  gvim $DropboxConflictedLog
-  popd
-}  # lists them
-dcc1 () {
-  if [ -s "$DropboxConflictedLog" ]; then
-    DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
-    mkdir $DropboxConflictedRemoved
-    removedRestore="$DropboxConflictedRemoved-restore.sh"
-    echo '# vim: nowrap:' > $removedRestore
-    echo '' >> $removedRestore
-    sed -i '1,2d' $DropboxConflictedLog  # remove the vim modeline
-    while IFS= read -r dcc; do
-      removedRelativePath=${dcc/$Drpbx\//}
-      removedFlattenedPath=${removedRelativePath//\//--}
-      removedFPNS=${removedFlattenedPath// /_}
-      removed="$DropboxConflictedRemoved/$removedFPNS"
-      mv "$dcc" "$removed"
-      echo $"mv $'${removed//\'/\\\'}' $'${dcc//\'/\\\'}'" >> $removedRestore
-    done < $DropboxConflictedLog
-    rm $DropboxConflictedLog
-    gvim $removedRestore
-    cd $Drpbx/conflicted
-  else
-    echo "you should've ${tpf7b}dcc0${tpfn}"
-  fi
-}  # moves them to  $Drpbx/conflicted
-
 #=> imagey
 alias ns='nsxiv -frt * &'  # using fullscreen, recursively open all flat
 ff () { feh "$1" & }
@@ -347,4 +308,56 @@ alias pqs='pqiv -d 2 -F -s * &'  # 2s fade slideshow
 #=> Jekyll
 js () { cd $JHm; echo $JHm; bundle exec jekyll serve --drafts; }
 jt () { cd $JHm; rm tag/*; python $JHm/_plugins/compile_tags.py; cd tag; }
+
+#=> WAN
+alias aw='ansiweather -f 7'
+
+#==> browsing
+alias ws='w3m -s'  # squeezing blank lines
+
+ch () {
+  if [ $TERM_PROGRAM == 'WezTerm' ]; then
+    cha -C $ABjo/Chawan/WezTerm.toml $1
+  else
+    cha $1
+  fi
+} # Chawan
+
+#==> Dropbox conflicted copies
+# results are noted in time-stamped logs
+dcc0 () {
+  pushd $Drpbx
+  jHMS=$(date "+%y%m%d-%H%M%S")  # o $jHMS
+  export DropboxConflictedLog="$Drpbx/conflicted/$jHMS.log"
+  echo 'scanning for conflicted copies'
+  echo 'vim: nowrap:' > $DropboxConflictedLog
+  echo '' >> $DropboxConflictedLog
+  find $PWD -path $Drpbx/conflicted -prune -o -regex ".*'s conflicted copy.*\|.* (Copie en conflit de .*" -print >> $DropboxConflictedLog
+  # fd -E conflicted conflicted
+  gvim $DropboxConflictedLog
+  popd
+}  # lists them
+dcc1 () {
+  if [ -s "$DropboxConflictedLog" ]; then
+    DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
+    mkdir $DropboxConflictedRemoved
+    removedRestore="$DropboxConflictedRemoved-restore.sh"
+    echo '# vim: nowrap:' > $removedRestore
+    echo '' >> $removedRestore
+    sed -i '1,2d' $DropboxConflictedLog  # remove the vim modeline
+    while IFS= read -r dcc; do
+      removedRelativePath=${dcc/$Drpbx\//}
+      removedFlattenedPath=${removedRelativePath//\//--}
+      removedFPNS=${removedFlattenedPath// /_}
+      removed="$DropboxConflictedRemoved/$removedFPNS"
+      mv "$dcc" "$removed"
+      echo $"mv $'${removed//\'/\\\'}' $'${dcc//\'/\\\'}'" >> $removedRestore
+    done < $DropboxConflictedLog
+    rm $DropboxConflictedLog
+    gvim $removedRestore
+    cd $Drpbx/conflicted
+  else
+    echo "you should've ${tpf7b}dcc0${tpfn}"
+  fi
+}  # moves them to  $Drpbx/conflicted
 

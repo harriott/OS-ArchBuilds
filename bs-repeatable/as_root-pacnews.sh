@@ -36,9 +36,12 @@ rm /etc/php/php.ini.pacnew
 # cp /etc/firewalld/firewalld.conf $bu
 # chown jo:jo $bu
 
-# #=> 1 grub
-# nvim -O /etc/default/grub /etc/default/grub.pacnew -c 'windo difft'
-# rm /etc/default/grub.pacnew
+#=> 1 grub
+nvim -O /etc/default/grub /etc/default/grub.pacnew -c 'windo difft'
+rm /etc/default/grub.pacnew
+
+#=> 1 http.conf
+# see  $OSAB/nodes/etc/httpd.conf
 
 # #=> 1 journald.conf
 # nvim -O /etc/systemd/journald.conf /etc/systemd/journald.conf.pacnew -c 'windo difft'

@@ -1,11 +1,11 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh sw=2:
 
-# $machBld/jo/Bash/bashrc  symlinked in  $OSAB/nodes-set/jo-0.sh  e -la ~/.bashrc
+# $machBld/jo/Bash/bashrc ($OSAB/nodes-set/jo-0.sh) e -la ~/.bashrc
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
-export CHROOT=/mnt/SD480GSSDPlus/chroot
+export CHROOT=/mnt/SD480GSSDPlus/chroot  # o $CHROOT
 
 #=> 0 load the rest of my bashrc
 source $AjB/bashrc

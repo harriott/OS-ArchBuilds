@@ -17,6 +17,19 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
+# #=> browsh
+# # for PDFsam
+# gAUR browsh
+# nvim -c "silent! /browsh" PKGBUILD
+# makepkg -sic
+# true
+
+#=> Chawan
+gAUR chawan-git
+nvim -c "silent! /chawan-git" PKGBUILD
+makepkg -sic
+true
+
 # #=> clifm 0 (re)install
 # gAUR clifm
 # nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
@@ -100,11 +113,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
@@ -214,12 +227,12 @@ true
 # #=> pdfCropMargins 2 pdfcropmargins 0 remove
 # sudo pacman -Rs pdfcropmargins
 
-#=> PDFsam 0 (re)install
-gAUR pdfsam
-nvim -c "silent! /torakiki" PKGBUILD
-makepkg -sic  # only needs  jdk-openjdk
-true
-#  ~/Arch/AUR/pdfsam  makepkg --install  if you're too late
+# #=> PDFsam 0 (re)install
+# gAUR pdfsam
+# nvim -c "silent! /torakiki" PKGBUILD
+# makepkg -sic  # only needs  jdk-openjdk
+# true
+# #  ~/Arch/AUR/pdfsam  makepkg --install  if you're too late
 
 # #=> PDFsam 1 remove
 # sudo pacman -Rs pdfsam
@@ -332,8 +345,8 @@ true
 # true
 # #  ~/Arch/AUR/ymuse  makepkg --install  if you're too late
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 
