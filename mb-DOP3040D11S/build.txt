@@ -25,6 +25,8 @@ s /etc/pacman.d/gnupg  returns 755
 s /home/jo/.gnupg/trustdb.gpg  returns 600
 ## Updates
 :: Replace flake8 with extra/python-flake8? [Y/n]
+## Corepack
+sudo corepack enable
 ## waiting
 apache
 EFI install

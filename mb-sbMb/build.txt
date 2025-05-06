@@ -3243,8 +3243,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.167.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Corepack
-sudo corepack enable  gave no info
-r /usr/lib/node_modules/corepack/shims
+sudo corepack enable
 yarn --version  wanted to download  yarn classic
 ## waiting
 Glow

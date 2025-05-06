@@ -1,6 +1,6 @@
 
 -- Joseph Harriott - Thu 24 Apr 2025
--- $OSAB/nodes/wezterm.lua ($OSAB/nodes/set/jo-0.sh)
+-- $OSAB/nodes-terminal/wezterm.lua ($OSAB/nodes-set/jo-0.sh)
 
 local wezterm = require 'wezterm'
 

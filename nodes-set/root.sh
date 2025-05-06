@@ -30,7 +30,7 @@ eza -la /usr/share/fonts
 
 #=> 1 make root symlinks
 ln -sf $machBld/export-machine /root/.export-machine
-  ln -sf $OSAB/nodes/Bash/export-storage /root/.export-storage
+  ln -sf $OSAB/nodes-Bash/export-storage /root/.export-storage
 ln -sf $OSAB/nodes-root/nanorc ~/.config/nano/nanorc
 ln -sf $OSAB/nodes-root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 ln -sf $OSL/nodes/GNUReadline-inputrc /root/.inputrc

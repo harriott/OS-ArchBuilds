@@ -5,7 +5,7 @@
 #=> already done in  $AjB/bash_profile
 # - but only the exports are transferred, no problem repeating those here
   source ~/.bashrc-generic
-  source ~/.bashrc-console
+  source ~/.bashrc-console  # $AjB/bashrc-console
 
 #=> load the rest of my bashrc
 source $AjB/bashrc-wm

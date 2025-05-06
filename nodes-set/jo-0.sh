@@ -6,7 +6,7 @@
 
 #=> Alacritty
 ln -sf $machBld/alacritty.toml ~/.alacritty.toml
-ln -sf $OSAB/nodes/alacritty-all.toml ~/.alacritty-all.toml
+ln -sf $OSAB/nodes-terminal/alacritty-all.toml ~/.alacritty-all.toml
 # e -la ~/.alacritty*
 
 #=> ansiweather
@@ -109,5 +109,6 @@ ln -sf $ABjo/WAN/w3m/keymap ~/.w3m/keymap
 ln -sf $ABjo/WAN/w3m/omnibar_duckduckgo.cgi ~/.w3m/cgi-bin/omnibar_duckduckgo.cgi
 
 #=> WezTerm
-ln -sf $OSAB/nodes/wezterm.lua ~/.wezterm.lua
+ln -sf $OSAB/nodes-terminal/wezterm.lua ~/.wezterm.lua
+# e -la ~/.wezterm.lua
 
