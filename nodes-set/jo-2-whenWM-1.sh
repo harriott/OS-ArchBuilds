@@ -30,8 +30,7 @@ sudo ln -sf $ABjo/wm/TS/thunderbird_safely.desktop /usr/share/applications/thund
 
 #=> urxvt extensions
 [ -d ~/.urxvt ] || mkdir ~/.urxvt
-# r $ABjo/wm/urxvt/Perls
-lnd $ABjo/wm/urxvt/Perls ~/.urxvt/ext
+lnd $ABjo/wm/terminal/urxvt/Perls ~/.urxvt/ext
 # rm -r ~/.urxvt/ext; ln -s $ABjo/wm/urxvt/Perls ~/.urxvt/ext
 # e -la ~/.urxvt
 # r ~/.urxvt

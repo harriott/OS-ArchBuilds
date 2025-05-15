@@ -1,0 +1,8 @@
+
+/* $ABjo/wm/Xfce/config_gtk30_gtk.css */
+/* symlinked in  $OSAB/nodes-Bash/bashrc-generic */
+
+/* after changes, xfce4-panel -r */
+
+.tasklist button:checked { background-image: none; background-color: Black ; border-color: yellow; }
+

@@ -113,11 +113,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
@@ -126,6 +126,12 @@ trap read debug  # puts a read request after each executable line
 # gAUR hplip-plugin
 # nvim -c "silent! /developers.hp.com\/hp-linux-imaging-and-printing" PKGBUILD
 # makepkg -sic  # requires  perl-test-fatal
+# true
+
+# #=> Insync
+# gAUR insync
+# nvim -c "silent! /cdn.insynchq.com" PKGBUILD
+# makepkg -sic  # takes a long time...
 # true
 
 # #=> iscan
@@ -318,11 +324,11 @@ makepkg -sic
 # nvim -c "silent! /sarrazip\.com\/dev" PKGBUILD
 # makepkg -sic
 
-# #=> vimpc-git 0 install
-# # for MPD
-# gdAUR vimpc-git
-# nvim -c "silent! /github.com\/boysetsfrog\/vimpc" PKGBUILD
-# makepkg -sic
+#=> vimpc-git 0 install
+# for MPD
+gdAUR vimpc-git
+nvim -c "silent! /github.com\/boysetsfrog\/vimpc" PKGBUILD
+makepkg -sic
 
 # #=> vimpc-git 1 configure
 # mkdir ~/.config/vimpc

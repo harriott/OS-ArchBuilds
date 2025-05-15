@@ -5,7 +5,7 @@
 
 # Bash configurations that are also useful in Console and as root.
 
-# $OSAB/nodes/Bash/bashrc-generic  symlinked in  $OSAB/nodes/set/jo-0.sh, then
+# $OSAB/nodes-Bash/bashrc-generic  symlinked in  $OSAB/nodes/set/jo-0.sh, then
 #  for jo: sourced by  $AjB/bash_profile  &  $AjB/bashrc
 #  for root: sourced by  $OSAB/nodes-root/bashrc
 # see  $OSAB/nodes/set/repair.sh  for checking if this was sourced
@@ -47,9 +47,20 @@ se () {
 alias u=tmux
   alias tkt='u kill-server > /dev/null 2>&1; tmux'  # rarely used
 
-#=> awesome or Openbox on a machine
+#=> awesome  or  Openbox  or Xfce  on a machine
 startxa () { ln -sf $ABjo/xinitrcs/awesome ~/.xinitrc; }
-startxo () { ln -sf $ABjo/xinitrcs/openbox ~/.xinitrc; }
+startxo () {
+  ln -sf $ABjo/xinitrcs/openbox ~/.xinitrc
+  ln -sf $machBld/Alacritty/Openbox.toml ~/.alacritty.toml
+}
+startxx () {
+  ln -sf $ABjo/xinitrcs/xfce ~/.xinitrc
+  ln -sf $machBld/Alacritty/Xfce.toml ~/.alacritty.toml
+  ln -sf $ABjo/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh
+  ln -sf $ABjo/wm/Xfce/config_gtk30_gtk.css ~/.config/gtk-3.0/gtk.css
+  # - for  ~/.config/autostart/Alacritty.desktop
+  ln -sf $machBld/jo/conkyrc ~/.conkyrc
+}
 
 #=> better file managing
 alias e='eza --icons'

@@ -40,6 +40,10 @@ rm /etc/php/php.ini.pacnew
 nvim -O /etc/default/grub /etc/default/grub.pacnew -c 'windo difft'
 rm /etc/default/grub.pacnew
 
+#=> 1 hosts
+nvim -O /etc/hosts /etc/hosts.pacnew -c 'windo difft'
+rm /etc/hosts.pacnew
+
 #=> 1 http.conf
 # see  $OSAB/nodes/etc/httpd.conf
 

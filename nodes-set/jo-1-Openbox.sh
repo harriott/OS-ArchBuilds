@@ -10,7 +10,7 @@ eza -la ~/.config/obmenu-generator/schema.pl
 
 # sort by last use of "~":  :sort /,*\~/
 
-ln -sf $Obc/autostart/autostart     ~/.config/openbox/autostart
+ln -sf $Obc/autostart               ~/.config/openbox/autostart
 ln -sf $Obc/rc/fixCopyQ.sh          ~/.config/openbox/fixCopyQ.sh
 ln -sf $ABjo/wm/importScreenshot.sh ~/.config/openbox/importScreenshot.sh
 ln -sf $Obc/menu.xml                ~/.config/openbox/menu.xml

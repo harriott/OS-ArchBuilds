@@ -2,7 +2,9 @@
 # vim: fdl=2:
 
 # terminal launch
-# bash $Obc/autostart/terminal_launch.sh  sourced from  $Obc/autostart/autostart
+# bash $ABjo/wm/terminal/startup.sh
+#  sourced from  $Obc/autostart
+#  symlinked in  $OSAB/nodes-Bash/bashrc-generic
 
 #=> 1 terminal
 # $machBld/jo/Bash/exportWS

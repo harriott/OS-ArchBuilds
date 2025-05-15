@@ -3189,7 +3189,7 @@ Recording Quality > Same as stream
 DOP3040D11S back audio plugged into control pod, got metallic sound distortions, so
   Audio Mixer > Mic/Aux > off
 ## gVim launch warning
-  (gvim:83069): IBUS-WARNING **: 03:31:16.144: gvim has no capability of surrounding-text feature
+  (gvim:...): IBUS-WARNING **: ... gvim has no capability of surrounding-text feature
 not happening with  nvim, or  vim
 IBUS-WARNING no capability of surrounding-text feature
 ## fzf crashing urxvt
@@ -3245,9 +3245,87 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 ## Corepack
 sudo corepack enable
 yarn --version  wanted to download  yarn classic
+## HP Envy Inspire 7220e changed to 181.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.181.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## xdg-open .opus
+handlr get .opus  reports  Error: NotFound("audio/x-opus+ogg")
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+    implemented no change in  ~/.config/mimeapps.list
+## HP Envy Inspire 7220e changed to 59.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.59.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## french-conjugator error
+possibly due to  libxml2 2.14.2-2
+fixed by re-installing  verbiste
+## Insync
+insync start > Add Dropbox > Allow
+## IBus Preferences
+ibus-setup & > Advanced > Use system keyboard layout  reboot
+  didn't get rid of the annoying gVim launch warning
+## Insync Dropbox fix location
+stuck at  ~/Insync/jharr@ftml.net/Dropbox
+insync account remove jharr@ftml.net
+closed the  Insync  window, relaunched > Add Dropbox > Allow
+  Insync > Sync to (~/Insync/jharr@ftml.net/Dropbox) > Change location > /mnt/SDU3D1TB/Dropbox >
+    Select all > Finish
+nothing appearing in  Actions, same after a  reboot
+insync status  is slow to report the current scan,
+  which is slow too, and not catching recent changes...
+rm -r ~/Insync
+after a reboot, pulled in all recent changed files to Dropbox root...
+might be introducing random symlinks of parent directories
+## Insync not at login
+App Settings > Start Insync on login off-ticked > Apply
+## Xfce
+Desktop > Style > None  for each monitor
+Terminal > Edit > Preferences > Appearance
+### Applications > Settings
+Keyboard > Application Shortcuts >
+  /usr/bin/neovide > Super+N
+  cmus-remote -u > Super+C
+  wezterm > Super+W
+Session and Startup >
+  Alacritty > /home/jo/.terminal_launch.sh
+  Conky > conky -c $machBld/jo/conkyrc
+  CopyQ > copyq
+  Dropbox > dropbox
+  Neovide > neovide
+Window Manager >
+  Keyboard >
+    Move window to left monitor > Super+1
+    Move window to right monitor > Super+2
+Window Manager Tweaks >
+  Cycle through windows in a list
+  Raise windows while cycling
+### Panel Preferences > Panel 1 > Items
+  Show Desktop
+  Screenshot
+  Whisker Menu
+  Applications Menu
+  Windows Buttons
+  Separator
+  Eyes
+  Workspace Switcher
+  Separator
+  Clock
+  Weather Update
+  MPD Client Plugin > ymuse
+  System Load Monitor
+  Status Tray Plugin
+  Separator
+  Wavelan
+  Dictionary
+  Notification Plugin
+  PulseAudio Plugin
+  Action Buttons
 ## waiting
-Glow
 gokcehan's lf
+Insync
 MariaDB
 # clm possible extras
 imapbox

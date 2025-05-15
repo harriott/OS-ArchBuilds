@@ -333,7 +333,7 @@
     </action>
   </keybind>
   <!-- dunst notification close - JH -->
-  <keybind key="c-space">
+  <keybind key="w-space">
     <action name="Execute">
       <command>dunstctl close</command>
     </action>

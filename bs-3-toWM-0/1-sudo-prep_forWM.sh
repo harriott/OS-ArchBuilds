@@ -17,6 +17,9 @@ trap read debug  # puts a read request after each executable line
 # pacman -S mpd
 # mkdir -p ~/.mpd/playlists ~/music
 
+#=> audio - WildMIDI
+pacman -S wildmidi
+
 # #=> Bluefish
 # pacman -S bluefish
 

@@ -1,8 +1,11 @@
 #!/bin/sh
 
-# symlinked in  $OSAB/nodes/set/jo-0.sh  to  ~/.xinitrc
+# $ABjo/xinitrcs/openbox
+#  symlinked in 
+#   $OSAB/nodes-Bash/bashrc-generic
+#   $OSAB/nodes-set/jo-0-Bash-X.sh
 
-source $ABjo/xinitrcs/xinitrc  # calls $machBld/jo/Xresources
+source $ABjo/xinitrcs/xinitrc  # calls  $machBld/jo/Xresources
 
 ## Openbox
 export QT_QPA_PLATFORMTHEME=qt5ct  # QPA set here so qt5ct works from Openbox Menu too

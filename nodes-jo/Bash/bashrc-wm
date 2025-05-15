@@ -7,7 +7,16 @@
 # stuff that's useful when a Window Manager is installed
 
 alias R='R --quiet'
-alias y='yazi'
+
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+} # extra safe  q  to Yazi's cwd
+
 source $OSL/nodes/bashrc-wm
 
 #=> AV

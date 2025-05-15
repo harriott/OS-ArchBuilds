@@ -1,12 +1,12 @@
 #!/bin/sh
 
-# $ABjo/xinitrcs/awesome
+# $ABjo/xinitrcs/openbox
 #  symlinked in 
 #   $OSAB/nodes-Bash/bashrc-generic
 #   $OSAB/nodes-set/jo-0-Bash-X.sh
 
 source $ABjo/xinitrcs/xinitrc  # calls  $ABjo/wm/Xresources/Xresources
 
-## awesome
-exec /usr/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+## Xfce
+exec startxfce4
 

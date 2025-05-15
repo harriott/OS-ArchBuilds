@@ -11,7 +11,7 @@ ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el
 ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
 ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp
 ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
-ln -sf $onGH/harriott-zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
+ln -sf $onGH/zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
 # e -la ~/.emacs.d/
 
 #=> CLM config
@@ -59,35 +59,35 @@ mkdir $nvim/plugin
 
 # #=> vimfiles - nvim 1 populate test
 # ln -s $DCGRs/CP/Vim/junegunn-vim-plug/plug.vim ~/.local/share/nvim/site/autoload/plug.vim
-# # ln -s $vimfiles/vim/after             $nvim/after
-# # ln -s $vimfiles/vim/filetype.vim      $nvim/filetype.vim
-# # ln -s $vimfiles/vim/ftplugin          $nvim/ftplugin
+# # ln -s $vfv/after             $nvim/after
+# # ln -s $vfv/filetype.vim      $nvim/filetype.vim
+# # ln -s $vfv/ftplugin          $nvim/ftplugin
 # ln -s $vimfiles/test/configs/init.vim $nvim/init.vim
-# # ln -s $vfn/lua              $nvim/lua
-# # ln -s $vimfiles/vim/packs/packs-colo  $nvim/pack/colo
-# # ln -s $vimfiles/vim/packs/packs-cp    $nvim/pack/cp
-# # ln -s $vimfiles/vim/packs/packs-unix  $nvim/pack/unix
+# # ln -s $vfn/lua               $nvim/lua
+# # ln -s $vfv/packs/packs-colo  $nvim/pack/colo
+# # ln -s $vfv/packs/packs-cp    $nvim/pack/cp
+# # ln -s $vfv/packs/packs-unix  $nvim/pack/unix
 # # ln -s $vfv/plugin/packs.vim  $nvim/plugin/packs.vim
 # # ln -s $vfv/plugin/plugin.vim $nvim/plugin/plugin.vim
-# # ln -s $vimfiles/vim/spell             $nvim/spell
-# # ln -s $vimfiles/vim/syntax            $nvim/syntax
-# # ln -s $vimfiles/vim/thesaurus         $nvim/thesaurus
+# # ln -s $vfv/spell             $nvim/spell
+# # ln -s $vfv/syntax            $nvim/syntax
+# # ln -s $vfv/thesaurus         $nvim/thesaurus
 
 #=> vimfiles - nvim 1 populate use
-ln -s $vimfiles/vim/after               $nvim/after
-ln -s $vimfiles/vim/filetype.vim        $nvim/filetype.vim
-ln -s $vimfiles/vim/ftplugin            $nvim/ftplugin
-ln -s $vfn/init.vim           $nvim/init.vim
-ln -s $vfn/lua                $nvim/lua
-ln -s $vimfiles/vim/packs/packs-colo    $nvim/pack/colo
-ln -s $vimfiles/vim/packs/packs-cp-all  $nvim/pack/cp-all
-ln -s $vimfiles/vim/packs/packs-cp-full $nvim/pack/cp-full
-ln -s $vimfiles/vim/packs/packs-unix    $nvim/pack/unix
-ln -s $vfv/plugin/packs.vim             $nvim/plugin/packs.vim
-ln -s $vfv/plugin/plugin.vim            $nvim/plugin/plugin.vim
-ln -s $vimfiles/vim/spell               $nvim/spell
-ln -s $vimfiles/vim/syntax              $nvim/syntax
-ln -s $vimfiles/vim/thesaurus           $nvim/thesaurus
+ln -s $vfv/after               $nvim/after
+ln -s $vfv/filetype.vim        $nvim/filetype.vim
+ln -s $vfv/ftplugin            $nvim/ftplugin
+ln -s $vfn/init.vim            $nvim/init.vim
+ln -s $vfn/lua                 $nvim/lua
+ln -s $vfv/packs/packs-colo    $nvim/pack/colo
+ln -s $vfv/packs/packs-cp-all  $nvim/pack/cp-all
+ln -s $vfv/packs/packs-cp-full $nvim/pack/cp-full
+ln -s $vfv/packs/packs-unix    $nvim/pack/unix
+ln -s $vfv/plugin/packs.vim    $nvim/plugin/packs.vim
+ln -s $vfv/plugin/plugin.vim   $nvim/plugin/plugin.vim
+ln -s $vfv/spell               $nvim/spell
+ln -s $vfv/syntax              $nvim/syntax
+ln -s $vfv/thesaurus           $nvim/thesaurus
 
 #=> vimfiles - nvim 2 check
 lsd -al $nvim
@@ -104,18 +104,18 @@ ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
 sudo rm -r ~/.vim
 mkdir -p ~/.vim/pack
 mkdir ~/.vim/plugin
-ln -s $vimfiles/vim/after               ~/.vim/after
-ln -s $vimfiles/vim/ftplugin            ~/.vim/ftplugin
-ln -s $vimfiles/vim/packs/packs-colo    ~/.vim/pack/colo
-ln -s $vimfiles/vim/packs/packs-cp-all  ~/.vim/pack/cp-all
-ln -s $vimfiles/vim/packs/packs-cp-full ~/.vim/pack/cp-full
-ln -s $vimfiles/vim/packs/packs-unix    ~/.vim/pack/unix
-ln -s $vfv/plugin/packs.vim             ~/.vim/plugin/packs.vim
-ln -s $vfv/plugin/plugin.vim            ~/.vim/plugin/plugin.vim
-ln -s $vimfiles/vim/spell               ~/.vim/spell
-ln -s $vimfiles/vim/syntax              ~/.vim/syntax
-ln -s $vimfiles/vim/thesaurus           ~/.vim/thesaurus
-ln -s $vimfiles/vim/filetype.vim        ~/.vim/filetype.vim
+ln -s $vfv/after               ~/.vim/after
+ln -s $vfv/ftplugin            ~/.vim/ftplugin
+ln -s $vfv/packs/packs-colo    ~/.vim/pack/colo
+ln -s $vfv/packs/packs-cp-all  ~/.vim/pack/cp-all
+ln -s $vfv/packs/packs-cp-full ~/.vim/pack/cp-full
+ln -s $vfv/packs/packs-unix    ~/.vim/pack/unix
+ln -s $vfv/plugin/packs.vim    ~/.vim/plugin/packs.vim
+ln -s $vfv/plugin/plugin.vim   ~/.vim/plugin/plugin.vim
+ln -s $vfv/spell               ~/.vim/spell
+ln -s $vfv/syntax              ~/.vim/syntax
+ln -s $vfv/thesaurus           ~/.vim/thesaurus
+ln -s $vfv/filetype.vim        ~/.vim/filetype.vim
 eza -adl ~/.vim*
 eza -adl ~/.vim/*
 eza -adl ~/.vim/pack/*
@@ -129,11 +129,11 @@ eza -adl ~/.vim/plugin/*
 # ln -s $vimfiles/test/plugin.vim                ~/.vimtest/plugin/plugin.vim
 # ln -s $vimfiles/test/plugins.vim               ~/.vimtest/plugin/plugins.vim
 # ln -s $vimfiles/test/vimrc.vim                 ~/.vimtest/vimrc.vim
-# ln -s $vimfiles/vim/packs-cp/opt/bufferize.vim ~/.vimtest/pack/cp/opt/bufferize.vim
-# ln -s $vimfiles/vim/packs-cp/opt/fzf.vim       ~/.vimtest/pack/cp/opt/fzf.vim
-# ln -s $vimfiles/vim/packs-cp/opt/vim-markdown  ~/.vimtest/pack/cp/opt/vim-markdown
-# ln -s $vimfiles/vim/packs-cp/opt/vim-dokuwiki  ~/.vimtest/pack/cp/opt/vim-dokuwiki
-# ln -s $vimfiles/vim/packs-cp/opt/vim-bbcode    ~/.vimtest/pack/cp/opt/vim-bbcode
+# ln -s $vfv/packs-cp/opt/bufferize.vim ~/.vimtest/pack/cp/opt/bufferize.vim
+# ln -s $vfv/packs-cp/opt/fzf.vim       ~/.vimtest/pack/cp/opt/fzf.vim
+# ln -s $vfv/packs-cp/opt/vim-markdown  ~/.vimtest/pack/cp/opt/vim-markdown
+# ln -s $vfv/packs-cp/opt/vim-dokuwiki  ~/.vimtest/pack/cp/opt/vim-dokuwiki
+# ln -s $vfv/packs-cp/opt/vim-bbcode    ~/.vimtest/pack/cp/opt/vim-bbcode
 # eza -adl ~/.vimtest*
 # eza -adl ~/.vimtest/*
 # eza -adl ~/.vimtest/pack/*

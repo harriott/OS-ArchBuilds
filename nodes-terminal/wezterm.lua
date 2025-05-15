@@ -1,3 +1,4 @@
+-- vim: set fdl=1:
 
 -- Joseph Harriott - Thu 24 Apr 2025
 -- $OSAB/nodes-terminal/wezterm.lua ($OSAB/nodes-set/jo-0.sh)
@@ -21,9 +22,13 @@ local config = wezterm.config_builder()
   }
   config.use_dead_keys = false
   config.initial_cols = 106
-  config.initial_rows = 80
-    -- 70 good when  JetBrains Mono
+  config.initial_rows = 76
+    -- Openbox
+      -- 70 good when  JetBrains Mono
+      -- 80 good when  DejaVuSansMono
     -- seems to not overreach
+    -- Xfce
+      -- 76 good when  DejaVuSansMono
   config.tab_bar_at_bottom = true
   config.use_fancy_tab_bar = false
   config.use_ime = false -- thus avoid triggering  fcitx clipboard  with ctrl+;

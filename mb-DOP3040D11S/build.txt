@@ -27,11 +27,16 @@ s /home/jo/.gnupg/trustdb.gpg  returns 600
 :: Replace flake8 with extra/python-flake8? [Y/n]
 ## Corepack
 sudo corepack enable
+## vimpc
+  vimpc: error while loading shared libraries: libtag.so.1: cannot open shared object file: No such file or directory
+fixed by simply re-installing  vimpc-git
 ## waiting
 apache
 EFI install
 gokcehan's lf
+Insync
 MariaDB
+verbiste
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

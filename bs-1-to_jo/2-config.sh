@@ -18,9 +18,6 @@ trap read debug  # puts a read request after each executable line
 # #=> 2 for broot
 # broot -- install  # gets  br
 
-#=> 2 grab mimeapps.list
-cp ~/.config/mimeapps.list $machLg/jo/mimeappsList-m91
-
 # #=> 2 for MediaWiki
 # mkdir -p ~/.local/share/mime/packages
 

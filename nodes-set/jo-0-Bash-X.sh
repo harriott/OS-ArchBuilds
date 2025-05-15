@@ -2,7 +2,7 @@
 # vim: sw=2:
 
 # build script
-# source $OSAB/nodes/set/jo-0-Bash-X.sh
+# source $OSAB/nodes-set/jo-0-Bash-X.sh
 
 #=> Bash 0 set
 # sort this list by last use of "~":  :sort /,*\~/

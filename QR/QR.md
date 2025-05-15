@@ -46,7 +46,7 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 follows my `PCManFM` folder settings
 
 # audio - vimpc
-- `$ABjo/wm/MPD/vimpcrc` maps a better `q` among other things
+- `$ABjo/music/MPD/vimpcrc` maps a better `q` among other things
 - `vp` (`$AjB/bashrc-wm`)
 
 # Bash
@@ -56,6 +56,7 @@ follows my `PCManFM` folder settings
     $ulL/Bash/colours
     /etc/profile
     :Man bash
+    :Man mktemp
     im time
     pinfo bash
     pinfo -m bash
@@ -438,7 +439,7 @@ vid => ffmpegthumbnailer
     e -adl <directory_to_check>  # reports for the directory (not its contents)
     e <symlink>  # red if no reference
     i eza
-    more in  $OSAB/Bash/bashrc-generic
+    more in  $OSAB/nodes-Bash/bashrc-generic
 
 ## fd
     :Man fd
@@ -1088,6 +1089,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     cat /proc/cpuinfo
     find /boot/vmli*  # lists available kernels
     i localectl
+    r /usr/share/applications  # the  *.desktop  files
     slock  # unlocks when correct user pw is entered
     XF86Sleep
     /usr/share/doc/arch-wiki/html/en
@@ -1162,13 +1164,15 @@ uses `fzf`
 - icomoon
 
 ## mimeapps
-    gio mime
+    /usr/share/applications/mimeinfo.cache
+    gio yime
     handlr -h
     handlr get .png
     handlr list  # neatly presented [Default Applications]
+    mimeo -h
     mimeo -m <fileToOpen>  # reports mimetype
-    r /usr/share/applications  # the  *.desktop  files
     ~/.config/mimeapps.list  # the default applications
+    ~/.local/share/applications/mimeapps.list  # empty, deprecated
 
 ## monitoring
     btop
@@ -1229,6 +1233,8 @@ backed up in `$AjB/bash_profile`
     $Obc/schema.pl
     openbox --reconfigure
 
+`XDG_CURRENT_DESKTOP` ain't set
+
 #### rc
     $Obc/rc/rc-generic.xml
     Alt+Space => show client menu for active window
@@ -1251,7 +1257,14 @@ backed up in `$AjB/bash_profile`
     $Openbox/tint2rc
     killall -SIGUSR1 tint2  # reloads
 
+## Xfce
+    ~/.config/autostart/Alacritty.desktop
+    ~/.config/autostart/Conky.desktop
+    ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+    ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+
 # terminal
+    $OSAB/nodes-terminal/wezterm.lua ($OSAB/nodes-set/jo-0.sh)
     $OSAB/nodes/wezterm.lua
     fgconsole  # reports tty number
     neofetch
@@ -1260,7 +1273,7 @@ backed up in `$AjB/bash_profile`
     watch -n1 "date '+%D%n%T' | figlet -k"
 
 ## Alacritty
-    $OSAB/nodes-terminal/alacritty.toml
+    $machBld/alacritty.toml
 
 scroll don't work in `tmux`
 
