@@ -45,7 +45,7 @@ source $ABjo/wm/terminal/startup.sh
 
 #==> 0 utilities
 blueman-applet &  # Blueman (Bluetooth manager)
-conky -c $machBld/jo/conkyrc
+conky -c $machBld/jo/Conky/Openbox
 copyq &  # because CopyQ's internal Autostart doesn't work
 # dropbox &
 # hp-systray & disown   doesn't launch...

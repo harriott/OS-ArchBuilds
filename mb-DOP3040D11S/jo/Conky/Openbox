@@ -1,9 +1,9 @@
--- vim: tw=0:
+-- vim: ft=conkyrc tw=0:
 
 --[[
 Joseph Harriott - Sat 11 May 2024
-$machBld/jo/conkyrc  adapted from output of  conky --print-config
-conky -c <thisfile>, as in  $Obc/autostart/autostart
+$machBld/jo/Conky/Openbox  adapted from output of  conky --print-config
+conky -c <thisfile>, as in  $Obc/autostart
 some settings are machine specific (and there's no easy way to generalise this file)
 
 :%s/lightgreen/#90ee90/gc
@@ -26,7 +26,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-    font = 'DejaVu Sans Mono:size=10',
+	font = 'DejaVuSansMono:size=10',
     gap_x = 60,
     gap_y = 60,
     minimum_height = 5,

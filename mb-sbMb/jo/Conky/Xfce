@@ -1,9 +1,10 @@
--- vim: tw=0:
+-- vim: ft=conkyrc tw=0:
 
 --[[
 Joseph Harriott - Sat 11 May 2024
-$machBld/jo/conkyrc  adapted from output of  conky --print-config
-conky -c <thisfile>, as in  $Obc/autostart/autostart
+$machBld/jo/Conky/Xfce  adapted from output of  conky --print-config
+see  $OSAB/nodes-Bash/bashrc-generic
+pb ~/.conkyrc
 some settings are machine specific (and there's no easy way to generalise this file)
 
 :%s/lightgreen/#90ee90/gc
@@ -42,7 +43,8 @@ conky.config = {
 	own_window_transparent = false,
 	own_window_argb_visual = true,
 	own_window_argb_value = 120,
-    own_window_type = 'normal',
+    own_window_type = 'dock',
+	own_window_hints = "below",
     show_graph_range = false,
     show_graph_scale = false,
     stippled_borders = 0,
@@ -55,7 +57,7 @@ conky.config = {
 -- (seems to be limited to 10 processes) no padding:
 -- ${alignc} would only work on the first line of the calendar...
 conky.text = [[
-
+#
 #-- system
   ${color #ffffff}$nodename - $sysname $kernel
 $hr

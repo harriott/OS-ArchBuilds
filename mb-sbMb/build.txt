@@ -3288,7 +3288,13 @@ Terminal > Edit > Preferences > Appearance
 Keyboard > Application Shortcuts >
   /usr/bin/neovide > Super+N
   cmus-remote -u > Super+C
+  exfalso > Super+F
+  keepassxc > Super+K
   wezterm > Super+W
+Power Manager >
+  Display > Display power management
+  General > When sleep button is pressed > Suspend
+  Screensaver Management > (= Screensaver Preferences) > Activate off
 Session and Startup >
   Alacritty > /home/jo/.terminal_launch.sh
   Conky > conky -c $machBld/jo/conkyrc
@@ -3320,9 +3326,17 @@ Window Manager Tweaks >
   Separator
   Wavelan
   Dictionary
-  Notification Plugin
+  Notification Plugin > Notifications > Log > Log notifications > always
   PulseAudio Plugin
   Action Buttons
+### Dunst
+dunstctl history-pop
+  Error org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.dunstproject.cmd0” on object at path /org/freedesktop/Notifications
+  Failed to communicate with dunst, is it running? Or maybe the version is outdated. You can try 'dunstctl debug' as a next debugging step.
+dunst
+  ...
+  CRITICAL: [dbus_cb_name_lost:1402] Cannot acquire 'org.freedesktop.Notifications': Name is acquired by 'Xfce Notify Daemon' with PID '1243'.
+pgrep dunst  shows it's not up
 ## waiting
 gokcehan's lf
 Insync

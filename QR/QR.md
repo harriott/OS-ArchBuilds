@@ -315,6 +315,7 @@ SED(1)
     tldr tldr
 
 # file manage
+    cd $DJH; fd -tf -u index.lock -x rm
     diskus  # size of current directory
     lsd
     n [directory]
@@ -754,6 +755,7 @@ optimised for SSDs
     fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
     fRs $machBld/jo/Bash VsLmore
+    fRs $machBld/jo conkyrc
     fRs $Obc/rc rc.xml
     fRs $onGH/misc/CP/PerlTools mysmsMD.pl
     fRs $TeNo/md-JH-DailyLife DailyLife.md

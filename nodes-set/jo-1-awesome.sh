@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1:
 
-# bash $OSAB/nodes/set/jo-1-awesome.sh
+# bash $OSAB/nodes-set/jo-1-awesome.sh
 
 # e -la ~/.config/awesome
 
