@@ -143,12 +143,12 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs jump
 # true
 
-#=> julia-bin 0 execstack
-# for julia-bin
-gAUR execstack
-nvim -c "silent! /jwilk-mirrors\/prelink" PKGBUILD
-makepkg -sic
-true
+# #=> julia-bin 0 execstack
+# # for julia-bin
+# gAUR execstack
+# nvim -c "silent! /jwilk-mirrors\/prelink" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> julia-bin 1 install
 # # for sixels

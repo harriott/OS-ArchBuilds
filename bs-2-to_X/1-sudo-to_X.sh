@@ -31,7 +31,7 @@ cp $machBld/etc/updatedb.conf /etc/updatedb.conf
 updatedb
 
 #=> 2 save grub.cfg
-gcs="$ulLA/ml-$host/boot-grub-grub.cfg"
+gcs="$culLA/ml-$host/boot-grub-grub.cfg"
 cp /boot/grub/grub.cfg $gcs; chown jo:jo $gcs
 # pb $gcs
 

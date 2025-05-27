@@ -113,8 +113,8 @@ lg() {
     cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
     rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
   fi }
-# recommend in  $DCGRs/d-CP/d-encoding/r-jesseduffield-lazygit/README.md
-# ($DCGRs/d-CP/d-encoding/r-jesseduffield-lazygit/pkg/gui/controllers/helpers/record_directory_helper.go)
+# recommend in  $cGRs/d-CP/d-encoding/r-jesseduffield-lazygit/README.md
+# ($cGRs/d-CP/d-encoding/r-jesseduffield-lazygit/pkg/gui/controllers/helpers/record_directory_helper.go)
 # but I can't see it doing anything...
 
 #===> time-sorted - my GitHub issues
@@ -133,6 +133,8 @@ ghi () {
 # $jtIT/GitHubIssues.ffl
 
 #==> lists of files by content
+alias rgo="rg --field-match-separator ':::'" # rgo rsync $DJH > $DJH/search/rsync.rgo
+
 rgIT () {
   cd $DJH/search
   f=IT-rg.ffl  # $DJH/search/IT-rg.ffl

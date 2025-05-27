@@ -12,13 +12,13 @@ source $AjB/bashrc
 
 #=> 0 various video directories
 # echo -e "/mnt/ST4000VN008\n/mnt/SDU3D1TB\n/mnt/WD1001FALS" > $machBld/jo/Bash/VsLmore
-#  used in  $ulL/video/OBSmkv/shrink.sh  &  fv()
+#  used in  $culL/video/OBSmkv/shrink.sh  &  fv()
 export vlogs=$Storage/Sync2/AV-Stack/vlogs
 
 #=> 1 OBS mkv grabs convert
-# for  $ulL/video/OBSmkv/shrink.sh
+# for  $culL/video/OBSmkv/shrink.sh
 Ni () { echo; figlet -t -f nancyj '... now ignore ...'; }
-ign() { stat -c '%Y  %s  %n' "$1" >> $ulL/video/OBSmkv/ignore; }
+ign() { stat -c '%Y  %s  %n' "$1" >> $culL/video/OBSmkv/ignore; }
 # ign <an_mkv_to_ignore>
 # for m in *.mkv; do ign "$m"; done
 
@@ -26,7 +26,7 @@ ign() { stat -c '%Y  %s  %n' "$1" >> $ulL/video/OBSmkv/ignore; }
 export OBSmkvGrabsConverted='/mnt/SDU3D1TB/stack/AV/OBSmkvGrabsConverted'
 
 omc() {
-  bash $ulL/video/OBSmkv/shrink.sh
+  bash $culL/video/OBSmkv/shrink.sh
   cd $OBSmkvGrabs  # useful if an exit occured
   fin
 } # used in  $OSAB/sbMb/jo/autostart.sh

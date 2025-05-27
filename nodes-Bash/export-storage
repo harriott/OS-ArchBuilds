@@ -36,11 +36,11 @@ if [[ $myDrA == 1 ]]; then
           export CrPl=$coreIT/CP  # $ITsCP  used in  $AjB/bashrc-console  & build scripts
           export onGH=$coreIT/onGitHub
             export vimfiles=$onGH/vimfiles
-          export ulL=$coreIT/ulLinux
-            export ulLA=$ulL/Arch
-              export machLg=$ulLA/ml-$host  # as opposed to  $machBld
-            export ulLB=$ulL/Bash  # used in  $OSAB/QR.md
-          export ulLAb="$coreIT/ulLinuxArch-big" # $ulLAb
+          export culL=$coreIT/ulLinux
+            export culLA=$culL/Arch
+              export machLg=$culLA/ml-$host  # as opposed to  $machBld
+            export culLB=$culL/Bash  # $culLB  used in  $OSAB/QR/QR.md
+          export ulLAb="$coreIT/ulLinuxArch-big" # $culLAb
           export hmlA="$coreIT/ulLinuxArch-huge" # $hmlA
 fi  # depends on  myDrA=  defined in  $machBld/export-machine
 

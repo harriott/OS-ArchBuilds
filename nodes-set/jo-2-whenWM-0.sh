@@ -58,7 +58,7 @@ echo > ~/lastVimDirectory  # ($vfv/enter/vimrc.vim)
 mkdir $nvim/plugin
 
 # #=> vimfiles - nvim 1 populate test
-# ln -s $DCGRs/CP/Vim/junegunn-vim-plug/plug.vim ~/.local/share/nvim/site/autoload/plug.vim
+# ln -s $cGRs/CP/Vim/junegunn-vim-plug/plug.vim ~/.local/share/nvim/site/autoload/plug.vim
 # # ln -s $vfv/after             $nvim/after
 # # ln -s $vfv/filetype.vim      $nvim/filetype.vim
 # # ln -s $vfv/ftplugin          $nvim/ftplugin

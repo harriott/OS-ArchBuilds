@@ -1146,7 +1146,7 @@ mt  to update  headings.sty
 [$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/build-scripts]$ su > root pw
 bash 37-as_root-symlink_fonts.sh
 ### fix my OBS grabs
-symlinks as in  $ulL/video/OBSmkv/shrink.sh
+symlinks as in  $culL/video/OBSmkv/shrink.sh
 ### fix tmux'ing into CAM-toSort0
 $machBld/jo/autostart.sh
 ## remove WD30EZRZ from mlocate path
@@ -1499,7 +1499,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.235.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## gnupg trustdb backup
-gpg --export-ownertrust > $ulLA/$host/jo/gnupg-trustdb-n4e.txt
+gpg --export-ownertrust > $culLA/$host/jo/gnupg-trustdb-n4e.txt
 ## GnuPG my key 13F327EF backup
 gpg -ao sbMb-backup-n4e.asc --export-secret-keys --export-options backup jh
 ## SystemRescueCd public signing key
@@ -2623,7 +2623,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.133.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## fix /etc/sudoers
-sudo nvim -O /etc/sudoers $ulLA/ml-i34G1TU02/etc/sudoers-o9p -c 'windo difft'
+sudo nvim -O /etc/sudoers $culLA/ml-i34G1TU02/etc/sudoers-o9p -c 'windo difft'
   diff over changes then  :wq!
   visudo -c -f /etc/sudoers
 ## HP ENVY 5532 IP Address changed to 100.10
@@ -3070,7 +3070,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.160.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Updates
-nomacs not opening, only clue from  $ulLAb/ml-$host/pm/cu/250109-1049.log  is  opencv
+nomacs not opening, only clue from  $culLAb/ml-$host/pm/cu/250109-1049.log  is  opencv
 switched to  nomacs-git
 ## mbsync
 still failing to get FastMail  removal and re-installation of  isync  didn't fix it
@@ -3282,53 +3282,7 @@ might be introducing random symlinks of parent directories
 ## Insync not at login
 App Settings > Start Insync on login off-ticked > Apply
 ## Xfce
-Desktop > Style > None  for each monitor
-Terminal > Edit > Preferences > Appearance
-### Applications > Settings
-Keyboard > Application Shortcuts >
-  /usr/bin/neovide > Super+N
-  cmus-remote -u > Super+C
-  exfalso > Super+F
-  keepassxc > Super+K
-  wezterm > Super+W
-Power Manager >
-  Display > Display power management
-  General > When sleep button is pressed > Suspend
-  Screensaver Management > (= Screensaver Preferences) > Activate off
-Session and Startup >
-  Alacritty > /home/jo/.terminal_launch.sh
-  Conky > conky -c $machBld/jo/conkyrc
-  CopyQ > copyq
-  Dropbox > dropbox
-  Neovide > neovide
-Window Manager >
-  Keyboard >
-    Move window to left monitor > Super+1
-    Move window to right monitor > Super+2
-Window Manager Tweaks >
-  Cycle through windows in a list
-  Raise windows while cycling
-### Panel Preferences > Panel 1 > Items
-  Show Desktop
-  Screenshot
-  Whisker Menu
-  Applications Menu
-  Windows Buttons
-  Separator
-  Eyes
-  Workspace Switcher
-  Separator
-  Clock
-  Weather Update
-  MPD Client Plugin > ymuse
-  System Load Monitor
-  Status Tray Plugin
-  Separator
-  Wavelan
-  Dictionary
-  Notification Plugin > Notifications > Log > Log notifications > always
-  PulseAudio Plugin
-  Action Buttons
+$ABjo/xinitrcs/xfce
 ### Dunst
 dunstctl history-pop
   Error org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.dunstproject.cmd0” on object at path /org/freedesktop/Notifications
@@ -3337,9 +3291,32 @@ dunst
   ...
   CRITICAL: [dbus_cb_name_lost:1402] Cannot acquire 'org.freedesktop.Notifications': Name is acquired by 'Xfce Notify Daemon' with PID '1243'.
 pgrep dunst  shows it's not up
+## HP Envy Inspire 7220e changed to 28.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.28.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## ncdu - panic
+ST3500630A, ST905004EXD101:
+  thread nnnnnn panic: reached unreachable code
+## Insync removed
+## auracle-git  error
+  error while loading shared libraries: libabsl_raw_hash_set.so.2501.0.0: cannot open shared object file: No such file or directory
+sudo pacman -Rs auracle-git  then re-installed it
+## TeX Live release 2025 full
+$OSAB/bs-3-toWM-0/1-sudo-prep_forWM.sh
+  Add /usr/local/texlive/2025/texmf-dist/doc/man to MANPATH.
+  Add /usr/local/texlive/2025/texmf-dist/doc/info to INFOPATH.
+  Most importantly, add /usr/local/texlive/2025/bin/x86_64-linux to your PATH for current and future sessions.
+  Logfile: /usr/local/texlive/2025/install-tl.log
+## TeX Live update packages
+su ...  for  tlmgr update --all  got 12
+$machLg/TeXLive/tlmgr/conf-2505272123.txt
+$machLg/TeXLive/tlmgr/info-2505272123.txt
+## TeX Live test
+$jtCP/TeX/LaTeX  for  x hello
 ## waiting
 gokcehan's lf
-Insync
 MariaDB
 # clm possible extras
 imapbox
@@ -3477,3 +3454,55 @@ journalctl -b -1 -r  shows no snags
 regularly: clock stuck, no CBH, so hard reboot
 ### orphaned inodes on /dev/sda2
 journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS
+# Xfce
+Desktop > Style > None  for each monitor
+Terminal > Edit > Preferences > Appearance
+## Applications > Settings
+Keyboard >
+  Application Shortcuts >
+    /usr/bin/neovide > Super+N
+    cmus-remote -u > Super+C
+    google-chrome-stable > Super+G
+    exfalso > Super+F
+    keepassxc > Super+K
+    wezterm > Super+W
+  Behaviour > General > Restore numlock state on startup
+Power Manager >
+  Display > Display power management
+  General > When sleep button is pressed > Suspend
+  Screensaver Management > (= Screensaver Preferences) > Activate off
+  System > Security > Lock screen when system is going to sleep off
+Session and Startup >
+  Alacritty > /home/jo/.terminal_launch.sh
+  Conky > conky -c $machBld/jo/conkyrc
+  CopyQ > copyq
+  Dropbox > dropbox
+  Neovide > neovide
+Window Manager >
+  Keyboard >
+    Move window to left monitor > Super+1
+    Move window to right monitor > Super+2
+Window Manager Tweaks >
+  Cycle through windows in a list
+  Raise windows while cycling
+## Panel Preferences > Panel 1 > Items
+  Show Desktop
+  Screenshot
+  Whisker Menu
+  Applications Menu
+  Windows Buttons
+  Separator
+  Eyes
+  Workspace Switcher
+  Separator
+  Clock
+  Weather Update
+  MPD Client Plugin > ymuse
+  System Load Monitor
+  Status Tray Plugin
+  Separator
+  Wavelan
+  Dictionary
+  Notification Plugin > Notifications > Log > Log notifications > always
+  PulseAudio Plugin
+  Action Buttons

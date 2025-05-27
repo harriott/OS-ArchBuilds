@@ -1,9 +1,16 @@
 
-% $ABjo/texmf.cnf ($OSAB/nodes/set/jo-0.sh)
+% $ABjo/texmf.cnf ($OSAB/nodes-set/jo-0.sh)
+% runtime configuration file for  Kpathsea
+%  supplementary to
+%   Arch install
+%    /usr/share/texmf-dist/web2c/texmf.cnf
+%     which is copied from  /etc/texmf/web2c/texmf.cnf
+%   native install
+%    /usr/local/texlive/2024/texmf.cnf
+%     which is supplementary to  /usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf`
 
 % let terminal handle line-wraps
-%  supplementary to  /usr/share/texmf-dist/web2c/texmf.cnf
 %  see  stackexchange.com  83600  &  171246
 
-max_print_line = 4000
+max_print_line = 4000  % works, but I prefer my function  x  in  $AjB/bashrc-wm
 

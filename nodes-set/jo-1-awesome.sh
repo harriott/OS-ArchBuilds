@@ -8,7 +8,7 @@
 # #=> awesome
 # ln -sf $machBld/jo/awesome/autorun.sh ~/.config/awesome/autorun.sh
 # ln -sf $machBld/jo/awesome/rc.lua     ~/.config/awesome/rc.lua
-# - last version was  $ulL/Arch/build/mb-AsusW202/jo/awesome/rc.lua
+# - last version was  $culL/Arch/build/mb-AsusW202/jo/awesome/rc.lua
 
 # t=~/.config/awesome/zenburn; rm -r $t
 # ln -sf $machBld/jo/awesome/themes-zenburn ~/.config/awesome/zenburn

@@ -21,7 +21,7 @@ source $OSL/nodes/bashrc-wm
 
 #=> AV
 fm () {
-  for category in best good good-tA-North-US joy-copies toSort0 toSort1 toSort1-UK toSort1-USA; do
+  for category in best good good-US joy-copies toSort0 toSort1-UK toSort1-USA; do
     fd $1 "$Drpbx/Cop/AM-$category"; done
 } # fm lowlands | grep Baez
 
@@ -163,9 +163,9 @@ alias lpspd='lpstat -p -d'
 alias sc5='doas cupsenable ENVY_5530'
 
 #=> documenting - LaTeX
-export MANPATH="/usr/local/texlive/2024/texmf-dist/doc/man:$MANPATH" # for  man <command>
-export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH" # essential
-export INFOPATH="/usr/local/texlive/2024/texmf-dist/doc/info:$INFOPATH" # for  pinfo
+export MANPATH="/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH" # for  man <command>
+export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH" # essential
+export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH" # for  pinfo
 
 ltx () {
   if [[ ! -z $TNt ]]; then

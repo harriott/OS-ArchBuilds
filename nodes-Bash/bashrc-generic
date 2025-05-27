@@ -25,7 +25,7 @@ source $ITscc/CP/ohmybash-sudo.plugin.sh
 
 ft () {
   if [ "$1" ]; then
-    of="$ulLB/FIGletFontsTest.txt"
+    of="$culLB/FIGletFontsTest.txt"
     echo "$1" > $of; echo '' >> $of
     for font in big doh doom isometric1 isometric2 larry3d nancyj-fancy nancyj nancyj-underlined ogre poison puffy radical_ rowancap shadow standard starwars stellar stop straight tombstone trashman ttyb tty univers usaflag utopia xbriteb xttyb; do
       figlet -t -f $font -w 250 "$1" >> $of
@@ -204,7 +204,7 @@ seg () {
 }
 
 uf(){
-  ufl="$ulLAb/ml-$host/usr-files.txt"
+  ufl="$culLAb/ml-$host/usr-files.txt"
   echo 'vim: set nowrap:' > $ufl
   echo >> $ufl
   echo 'output of  uf() ($OSAB/Bash/bashrc-generic)' >> $ufl

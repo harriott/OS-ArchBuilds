@@ -6,6 +6,7 @@ Dell OptiPlex 3040 D11S - DOP3040D11S
 
 # build
 ## mature Arch install from i34G1TU02
+see $jtULlA
 on BX200, no EFI partition
 ## HP Envy Inspire 7220e changed to 202.239
 fixed in  $Imagey/Scan.sh
@@ -31,12 +32,11 @@ sudo corepack enable
   vimpc: error while loading shared libraries: libtag.so.1: cannot open shared object file: No such file or directory
 fixed by simply re-installing  vimpc-git
 ## waiting
+adobe-source-code-pro-fonts
 apache
 EFI install
 gokcehan's lf
-Insync
 MariaDB
-verbiste
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

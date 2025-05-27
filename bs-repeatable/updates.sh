@@ -4,9 +4,9 @@
 # bash $OSAB/bs-repeatable/updates.sh
 
 #=> 0 log directories
-CAC="$ulLAb/ml-$host/CAC"
-pc="$ulLAb/ml-$host/pm/cu"
-pQ="$ulLAb/ml-$host/pm/Q"
+CAC="$culLAb/ml-$host/CAC"
+pc="$culLAb/ml-$host/pm/cu"
+pQ="$culLAb/ml-$host/pm/Q"
 
 #=> 1 log directories 1 fallback
 [ -d $CAC ] || CAC=~/CAC

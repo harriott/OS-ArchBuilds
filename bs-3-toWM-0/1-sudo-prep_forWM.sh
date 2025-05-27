@@ -33,20 +33,27 @@ pacman -S pandoc-cli
 # pylatexenc
 pacman -S python-pylatexenc  # for render-markdown.nvim
 
-#=> documenting - TeX Live 0 native 0 cd
-cd $ITscc/unix-TL-install-tl-2024
+# #=> documenting - TeX Live 0 native 0 install 0 source online
+# cd $ITscc/unix-TL-install-tl-20250525  # will download 6GB of code
 
-#=> documenting - TeX Live 0 native 1 basic
-sudo perl install-tl --scheme=basic --no-interaction
+#=> documenting - TeX Live 0 native 0 install 0 source local
+for s in $tricky/ircam_fr_pub_CTAN_systems_texlive_tlnet /usr/local/texlive; do find "$s" | echo "$(wc -l) $s"; done
+cd $tricky/ircam_fr_pub_CTAN_systems_texlive_tlnet
+find /usr/local/texlive | wc -l
 
-#=> documenting - TeX Live 0 native 1 full
-sudo perl install-tl --no-interaction
-# took 90m, would be preferable to install from an rsync'd local mirror
+# #=> documenting - TeX Live 0 native 0 install 1 basic
+# sudo perl install-tl --scheme=basic --no-interaction
 
-#=> documenting - TeX Live 0 native 2 tidy up
-mv texlive.profile $machLg/TeXLive/install-tl-example.profile-$(date '+%Y%m%d%H%M')
+#=> documenting - TeX Live 0 native 0 install 1 full
+sudo perl install-tl --no-interaction  # sbMb: 2024 online 90m; 2025 local 26m
 
-# #=> documenting - TeX Live 0 native 3 basic - more
+#=> documenting - TeX Live 0 native 0 install 2 paths
+# fix  MANPATH, PATH, INFOPATH  in  $AjB/bashrc-wm
+
+#=> documenting - TeX Live 0 native 0 install 3 save profile
+cp /usr/local/texlive/2025/tlpkg/texlive.profile $machLg/TeXLive/install-tl-$(date '+%Y%m%d%H%M').profile
+
+# #=> documenting - TeX Live 0 native 0 install 4 basic - more packages
 # sudo tlmgr install currfile
 # sudo tlmgr install easylist
 # sudo tlmgr install etoolbox
@@ -57,9 +64,9 @@ mv texlive.profile $machLg/TeXLive/install-tl-example.profile-$(date '+%Y%m%d%H%
 # sudo tlmgr install xetex
 # sudo tlmgr install xcolor
 
-#=> documenting - TeX Live 0 native 4 remove
-rm -r /usr/local/texlive
-rm -rf ~/.texlive2023
+#=> documenting - TeX Live 0 native 1 remove
+rm -rf ~/.texlive2024
+sudo rm -r /usr/local/texlive
 
 #=> documenting - TeX Live 0 Arch packaged 0 install
 pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all
@@ -75,8 +82,7 @@ sudo rm -r /etc/texmf
 sudo rm -r /var/lib/texmf
 
 #=> documenting - TeX Live 1 max_print_line
-sudo sed -i 's/^max_print_line = 79/max_print_line = 4000/' /etc/texmf/web2c/texmf.cnf
-# - works, but I prefer my function  x  in  $AjB/bashrc-wm
+# $ABjo/texmf.cnf
 
 # #=> ebook - Calibre
 # pacman -S calibre

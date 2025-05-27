@@ -18,6 +18,9 @@ sudo pacman -S composer
 # #=> fonts - gnu-free-fonts
 # sudo pacman -S gnu-free-fonts
 
+#=> fonts - Source Code Pro
+sudo pacman -S adobe-source-code-pro-fonts  # for  Source Code Pro
+
 # #=> fonts - ttf-dejavu
 # sudo pacman -S ttf-dejavu
 
@@ -66,6 +69,9 @@ sudo pacman -S texlab
 # #=> vorbis-tools
 # # for  oggenc
 # sudo pacman -S vorbis-tools
+
+#=> xkill
+sudo pacman -S xorg-xkill
 
 # #=> yt-dlp
 # sudo pacman -S yt-dlp

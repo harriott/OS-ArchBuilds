@@ -2,7 +2,12 @@
 # vim: sw=2:
 
 # build script
-# source $OSAB/nodes/set/jo-0.sh
+# source $OSAB/nodes-set/jo-0.sh
+
+#=> $tricky
+[ -d $tricky/GR-NF ] || mkdir -p $tricky/GR-NF
+ln -sf $misc/tricky/tricky.md $tricky/readme.md
+ln -sf $misc/tricky/NF.md $tricky/GR-NF/readme.md
 
 #=> Alacritty
 ln -sf $machBld/alacritty.toml ~/.alacritty.toml

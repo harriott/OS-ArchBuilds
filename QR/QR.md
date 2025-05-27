@@ -1,6 +1,6 @@
 vim: nospell:
 
-    $OSAB/QR.md; m4ps 0 1
+    $OSAB/QR/QR.md; m4ps 0 1
     r $misc/linux/QR  # for my more general linux QuickReference
 
 my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
@@ -53,7 +53,7 @@ follows my `PCManFM` folder settings
     $AjB/bash_history.sh
     $AjB/bash_profile
     $OSAB/nodes-root/bashrc
-    $ulL/Bash/colours
+    $culLB/colours
     /etc/profile
     :Man bash
     :Man mktemp
@@ -187,7 +187,7 @@ moar -h
     za $ITscr/CP/TeX/LaTeX/structure/pdfpages.pdf
 
 ## TeX - LaTeX
-    r $DCGRs/CP/MartinThoma-LaTeX-examples
+    r $cGRs/CP/MartinThoma-LaTeX-examples
     r $jtCP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
@@ -208,7 +208,7 @@ moar -h
     r ~/texmf
 
 ## TeX Live
-    /usr/local/texlive/2024/texmf-dist/doc/info
+    /usr/local/texlive/2025/texmf-dist/doc/info
     locx .fmt
     pacman -Qs texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
     pdfjam
@@ -218,20 +218,20 @@ moar -h
     /usr/share/texmf-dist/tex/latex/memoir/memoir.cls
 
 ### native install
-    /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/README
-    /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/SYMLIST
-    /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/source/symbols.tex
-    /usr/local/texlive/2023/texmf-dist/doc/
-    /usr/local/texlive/2023/texmf-dist/tex/latex/base/nfssfont.tex
+    /usr/local/texlive/2025/texmf-dist/doc/latex/comprehensive/README
+    /usr/local/texlive/2025/texmf-dist/doc/latex/comprehensive/SYMLIST
+    /usr/local/texlive/2025/texmf-dist/doc/latex/comprehensive/source/symbols.tex
+    /usr/local/texlive/2025/texmf-dist/doc/
+    /usr/local/texlive/2025/texmf-dist/tex/latex/base/nfssfont.tex
     gdu -nps /usr/local/texlive
-    za /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/rawtables-a4.pdf
-    za /usr/local/texlive/2023/texmf-dist/doc/latex/comprehensive/symbols-a4.pdf
-    za /usr/local/texlive/2023/texmf-dist/doc/latex/memoir/memman.pdf
-    za /usr/local/texlive/2023/texmf-dist/doc/man/man1/psutils.man1.pdf
+    za /usr/local/texlive/2025/texmf-dist/doc/latex/comprehensive/rawtables-a4.pdf
+    za /usr/local/texlive/2025/texmf-dist/doc/latex/comprehensive/symbols-a4.pdf
+    za /usr/local/texlive/2025/texmf-dist/doc/latex/memoir/memman.pdf
+    za /usr/local/texlive/2025/texmf-dist/doc/man/man1/psutils.man1.pdf
 
 #### package manager
-    /usr/local/texlive/2023/texmf-var/web2c/tlmgr.log
-    /usr/local/texlive/2023/texmf-var/web2c/tlmgr-commands.log
+    /usr/local/texlive/2025/texmf-var/web2c/tlmgr.log
+    /usr/local/texlive/2025/texmf-var/web2c/tlmgr-commands.log
     tlmgr info pgfplots
     tlmgr conf > $machLg/TeXLive/tlmgr/conf-$(date '+%y%m%d%H%M').txt
     tlmgr info > $machLg/TeXLive/tlmgr/info-$(date '+%y%m%d%H%M').txt
@@ -239,8 +239,8 @@ moar -h
 `su > <root_pw>` for `tlmgr update --all`
 
 #### tcolorbox
-    $/usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/README.md
-    /usr/local/texlive/2023/texmf-dist/doc/latex/tcolorbox/tcolorbox-example-poster.tex
+    /usr/local/texlive/2025/texmf-dist/doc/latex/tcolorbox/README.md
+    /usr/local/texlive/2025/texmf-dist/doc/latex/tcolorbox/tcolorbox-example-poster.tex
 
 # Emacs
     $misc/CP/Emacs/init.el
@@ -252,16 +252,16 @@ moar -h
 `G` & `T` defined in `$AjB/bashrc-console`
 
 ## resources
-    fd -e org -p $DCGRs
-    r $DCGRs/CP/emacs/syl20bnr-spacemacs-develop  # local fresh clone
+    fd -e org -p $cGRs
+    r $cGRs/CP/emacs/syl20bnr-spacemacs-develop  # local fresh clone
     r $ITscr/CP/encoding/textWrangling/Emacs  # PDF guides
 
 ### Worg
-    $DCGRs/emacs/_bzg-worg/orgcard.org
-    r $DCGRs/emacs/_bzg-worg
+    $cGRs/emacs/_bzg-worg/orgcard.org
+    r $cGRs/emacs/_bzg-worg
 
 ## Spacemacs
-    $ulLAb/Emacs/sm/.spacemacs
+    $culLAb/Emacs/sm/.spacemacs
     n ~/.sm/.emacs.d
     nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
@@ -588,7 +588,7 @@ can't cope with `utf-16le`
     man cmatrix
 
 # GNU Privacy Guard
-    gpg --export-ownertrust > $ulLA/ml-$host/jo/gnupg-trustdb.txt
+    gpg --export-ownertrust > $culLA/ml-$host/jo/gnupg-trustdb.txt
     im gpg
     pgpdump -h
     r ~/.gnupg
@@ -751,6 +751,7 @@ optimised for SSDs
     fRs $Drpbx/Cop/AM-toSort0/Europe Nordic
     fRs $Drpbx/Cop/AM-toSort0/Europe/Nordic Björk
     fRs $DWp/pn/internet internet.dw
+    fRs $ITscc unix-linux-forArch-fonts
     fRs $JHw _config.yml
     fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
@@ -822,7 +823,7 @@ xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 ```
 
 ## ImageMagick
-    magick -list color > $ulLA/IM-magick-list_color.txt
+    magick -list color > $culLA/IM-magick-list_color.txt
 
 font list: `magick -list font > $machLg/IMfonts.IMfo`
 
@@ -1054,13 +1055,13 @@ pass cz/GmailAPI/token-expire
 
 ## Bash
     [ -f $Thb/parent.lock ] && echo zero file size
-    r $ulL/Bash
+    r $culLB
 
 ### ANSI escape sequences
     $OSL/nodes/bashrc-generic
 
 #### colours
-    bash $ulL/Bash/colours/color-bash.sh
+    bash $culLB/colours/color-bash.sh
     echo -e "\e[1m\e[95m[1m[95m\e[0m"
     echo -e "=\e[0;31m=Red=\e[0m="
     echo -e "=\e[0;32m=Green=\e[0m="
@@ -1115,10 +1116,10 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 ## build
     $OSAB/etc/doas.conf
-    r $OSAB $ulLA
-    r $ulLA/ml-$host/etc/fstab
+    r $OSAB $culLA
+    r $culLA/ml-$host/etc/fstab
     rsync -irtv --delete $OSAB/ ~/Play0/OSAB
-    v $OSAB $ulLA
+    v $OSAB $culLA
 
 ## filesystem hierarchy
     i hier
@@ -1130,14 +1131,14 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     font-manager &
 
 ### /usr/share/fonts/
+    $ITscc/unix-linux-forArch-fonts/readme.md
     fd -L architects
     fd -L broot
     fd -L consolas
     fd -L nerd
     fd -L symbola
-    C $ITscc/unix-linux-forArch-fonts
 
-`usf()` (`$OSAB/Bash/bashrc-generic`)
+`usf()` (`$OSAB/nodes-Bash/bashrc-generic`)
 
 ### Fontconfig
     cd /etc/fonts  # to explore the configuration files
@@ -1145,6 +1146,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fc-list | grep Caskaydia
     fc-list | grep Deja
     fc-list | grep Lohit
+    fc-list | grep Source
     fc-list | grep ubuntu
     fc-list -v ubuntumono
     fc-list > $machLg/fclist.txt
@@ -1280,9 +1282,9 @@ backed up in `$AjB/bash_profile`
 scroll don't work in `tmux`
 
 ## colours
-    bash $ulLB/colours/256/BR-color256.sh
-    bash $ulLB/colours/256/SE269077-numbers-ordered.sh
-    bash $ulLB/colours/awk-rgb-test.sh  # nice one-line gradient
+    bash $culLB/colours/256/BR-color256.sh
+    bash $culLB/colours/256/SE269077-numbers-ordered.sh
+    bash $culLB/colours/awk-rgb-test.sh  # nice one-line gradient
     colorscript -r  # shell-color-scripts
     terminal-colors  # shows what the terminal can do (console only 8 colours)
     terminal-colors -l  # with #xxxxxx's
@@ -1290,10 +1292,10 @@ scroll don't work in `tmux`
 
 ### using tput
     $OSL/nodes/bashrc-generic
-    bash $ulLB/colours/256/SO-BrunoBronosky.sh
-    bash $ulLB/colours/256/SE269077-FHauri.sh
-    bash $ulLB/colours/ss64.sh
-    bash $ulLB/colours/tripleee+isntn.sh
+    bash $culLB/colours/256/SO-BrunoBronosky.sh
+    bash $culLB/colours/256/SE269077-FHauri.sh
+    bash $culLB/colours/ss64.sh
+    bash $culLB/colours/tripleee+isntn.sh
 
 ## FIGlet
     figlet Joseph Harriott
@@ -1305,7 +1307,7 @@ scroll don't work in `tmux`
 ### fonts
     ft  # $OSAB/Bash/bashrc-generic
 
-`showfigfonts Deauram > ~/FIGletFonts.txt; sed -i 's/ \+$//' ~/FIGletFonts.txt` then reduced and copied to `$ulLB/FIGletFontsDeauram.txt`
+`showfigfonts Deauram > ~/FIGletFonts.txt; sed -i 's/ \+$//' ~/FIGletFonts.txt` then reduced and copied to `$culLB/FIGletFontsDeauram.txt`
 
 ## termdown
     termdown --help | mo
@@ -1338,7 +1340,7 @@ TMUX(1)
 - `ctrl+alt+f2` anywhere brings up getty for virtual console `tty2`
 
 # text wrangling
-    $DCGRs/CP/vim/vim/README.md
+    $cGRs/CP/vim/vim/README.md
     :s#/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes#    $TeNo
     o $EDITOR
     o $VISUAL

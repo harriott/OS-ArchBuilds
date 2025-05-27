@@ -18,8 +18,8 @@ vim: nospell:
 
 # gnuplot
     ff $ITscr/CP/gnuplot/gnuplot_info-colornames.jpg
-    gnuplot -e 'show linetypes' 2> $ulLA/gnuplot-linetypes.txt
-    gnuplot -e 'show palette colornames' 2> $ulLA/gnuplot-colornames.txt
+    gnuplot -e 'show linetypes' 2> $culLA/gnuplot-linetypes.txt
+    gnuplot -e 'show palette colornames' 2> $culLA/gnuplot-colornames.txt
     za $ITscr/CP/gnuplot/Gnuplot_5_4.pdf
     za $ITscr/CP/gnuplot/gpcard.pdf
 
@@ -61,7 +61,7 @@ vim: nospell:
 # Ruby
 ```bash
 gem list --no-versions | tr '\n' ' ' | xcol bundler github-pages jekyll liquid
-gem list > $ulLA/ml-$host/gems.gems  # using  $vfv/syntax/gems.vim
+gem list > $culLA/ml-$host/gems.gems  # using  $vfv/syntax/gems.vim
 r $GEM_HOME
 ```
 
