@@ -33,9 +33,26 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
     $ABjo/wm/cmusqueue.sh
     $Drpbx/Cop/AM-toSort0/cmusq
 
+# audio - MPD
+    $ABjo/music/MPD/mpd.conf
+
+## mpd.service
+    systemctl --user enable mpd.service --now
+    systemctl status mpd.service
+
+## vimpc
+    pgrep vimpc
+
+- `$ABjo/music/MPD/vimpcrc` maps a better `q` among other things
+- `vp` (`$AjB/bashrc-wm`)
+
 # audio - playerctl
     playerctl  # quick guide
     playerctl -l  # (--list-all) available players
+    playerctl metadata  # reports from  MPD  database, even when paused
+    playerctl pause
+    playerctl play
+    playerctl status
 
 # audio - Quod Libet
     pkill quodlibet
@@ -44,10 +61,6 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
     pkill exfalso
 
 follows my `PCManFM` folder settings
-
-# audio - vimpc
-- `$ABjo/music/MPD/vimpcrc` maps a better `q` among other things
-- `vp` (`$AjB/bashrc-wm`)
 
 # Bash
     $AjB/bash_history.sh

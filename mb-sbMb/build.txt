@@ -3496,8 +3496,11 @@ Window Manager Tweaks >
   Workspace Switcher
   Separator
   Clock
+  Separator
   Weather Update
+  Separator
   MPD Client Plugin > ymuse
+  Separator
   System Load Monitor
   Status Tray Plugin
   Separator
