@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Joseph Harriott - Thu 18 Jul 2024
+# Joseph Harriott - Wed 11 Jun 2025
 
 # run Thunderbird safely from Profile shared on Dropbox
 # -----------------------------------------------------
@@ -8,6 +8,7 @@
 # (chmod 755 $OSAB/jo/wm/TS/thunderbird_safely.sh)
 # symlinked in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
 #  to provide my command  thunderbird_safely
+#   target for  Xfce > Application Shortcuts > Mail
 #   used in  $Obc/schema.pl
 
 # Tests:

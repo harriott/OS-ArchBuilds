@@ -17,47 +17,42 @@ tty-clock -bcs
 
 SORT(1)
 
-# audio - cmus
+# audio
+pulseaudio(1)
+
+## cmus
     $ABjo/wm/cmus-rc.conf
     :Man cmus
     :Man cmus-remote
     pgrep cmus
 
-## kill
+### kill
     kill -9 "$(pidof cmus)"
 
-### manually
+#### manually
 get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 
-## queue
+### queue
     $ABjo/wm/cmusqueue.sh
     $Drpbx/Cop/AM-toSort0/cmusq
 
-# audio - MPD
+## MPD
     $ABjo/music/MPD/mpd.conf
 
-## mpd.service
+### mpd.service
     systemctl --user enable mpd.service --now
     systemctl status mpd.service
 
-## vimpc
+### vimpc
     pgrep vimpc
 
 - `$ABjo/music/MPD/vimpcrc` maps a better `q` among other things
 - `vp` (`$AjB/bashrc-wm`)
 
-# audio - playerctl
-    playerctl  # quick guide
-    playerctl -l  # (--list-all) available players
-    playerctl metadata  # reports from  MPD  database, even when paused
-    playerctl pause
-    playerctl play
-    playerctl status
-
-# audio - Quod Libet
+## Quod Libet
     pkill quodlibet
 
-## Ex Falso
+### Ex Falso
     pkill exfalso
 
 follows my `PCManFM` folder settings
@@ -748,9 +743,10 @@ optimised for SSDs
     systemctl status rsnapshot-hourly.timer
 
 #### find
-    n $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
     n $rsnapshot/daily.1/localhost$MSWin10/mb
-    n $rsnapshot/hourly.0/localhost/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/daily.1/localhost/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/hourly.0/localhost/$Drpbx/Cop/AM-toSort0
 
 ##### fRs
     $AjB/bashrc-console
@@ -1275,6 +1271,9 @@ backed up in `$AjB/bash_profile`
     killall -SIGUSR1 tint2  # reloads
 
 ## Xfce
+    o $XDG_CACHE_HOME
+    o $XDG_CONFIG_HOME
+    o $XDG_CONFIG_DIRS
     ~/.config/autostart/Alacritty.desktop
     ~/.config/autostart/Conky.desktop
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml

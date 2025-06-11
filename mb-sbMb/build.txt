@@ -3315,6 +3315,26 @@ $machLg/TeXLive/tlmgr/conf-2505272123.txt
 $machLg/TeXLive/tlmgr/info-2505272123.txt
 ## TeX Live test
 $jtCP/TeX/LaTeX  for  x hello
+## HP Envy Inspire 7220e changed to 90.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.90.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 252.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.252.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 56.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.56.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## PulseAudio fail
+nothing heard from  cmus, firefox, ymuse
+pavucontrol  showing output
+speaker-test -c 2  works
+pulseaudio -k  fixed it
 ## waiting
 gokcehan's lf
 MariaDB
@@ -3465,6 +3485,7 @@ Keyboard >
     google-chrome-stable > Super+G
     exfalso > Super+F
     keepassxc > Super+K
+    Mail > thunderbird_safely
     wezterm > Super+W
   Behaviour > General > Restore numlock state on startup
 Power Manager >
