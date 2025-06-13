@@ -12,7 +12,7 @@ export loaded_bp=1
 # kill tmux sessions if you've made changes here
 source ~/.export-machine  # $machBld/export-machine
 source ~/.export-storage  # $OSAB/nodes/Bash/export-storage
-  source ~/.export-jo  # $OSL/export-jo
+  source ~/.export-jo  # $OSL/nodes/jo/export
 # - carry through to X
 
 # Useful before X (repeated in  $AjB/bashrc):

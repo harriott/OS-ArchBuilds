@@ -1280,8 +1280,7 @@ backed up in `$AjB/bash_profile`
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
 # terminal
-    $OSAB/nodes-terminal/wezterm.lua ($OSAB/nodes-set/jo-0.sh)
-    $OSAB/nodes/wezterm.lua
+    $OSAB/nodes-terminal/wezterm.lua
     fgconsole  # reports tty number
     neofetch
     o $PAGER

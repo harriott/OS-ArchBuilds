@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdl=2 ft=sh:
+# vim: fdl=3 ft=sh:
 
 # $machBld/jo/Bash/exportWS
 
@@ -9,20 +9,25 @@
 #  $Obc/rc/rc_xml-mb_make.sh
 
 #=> set  Alacritty  window
-export Awp='window.position={x=5,y=5}'  # used in  $Obc/autostart/terminal_launch.sh
+export Awp='window.position={x=5,y=5}'
+# used in  $ABjo/wm/terminal/startup.sh
 
-#==> 1440x900
+#==> for screens
+# depending on font set in  $OSAB/nodes-terminal/alacritty-all.toml
+
+#===> 1440x900
 export Awd='window.dimensions={columns=67,lines=64}'
 # - columns:
 #    67 is obviously too narrow, but allows  my  Neovide  with  Conky visible
 #   110 allows my  gVim/Neovide
 
-#==> 1680x1050
+#===> 1680x1050
 export Awd='window.dimensions={columns=106,lines=75}'
 # - allows  Neovide alongside while still seeing Conky
 
-#==> 1920x1080 Dell E2214HB monitor
-export Awd='window.dimensions={columns=116,lines=72}' # no idea why it needs to be less tall
+#===> 1920x1080 Dell E2214HB monitor
+export Awd='window.dimensions={columns=100,lines=72}'
+# - allows  Neovide alongside while still seeing Conky
 
 #=> set  Neovide  window
 # export Nvdg='--grid 109x59'  # 1440x900 monitor

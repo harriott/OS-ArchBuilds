@@ -3335,9 +3335,15 @@ nothing heard from  cmus, firefox, ymuse
 pavucontrol  showing output
 speaker-test -c 2  works
 pulseaudio -k  fixed it
+## HP Envy Inspire 7220e changed to 40.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.40.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 gokcehan's lf
 MariaDB
+thunar-dropbox
 # clm possible extras
 imapbox
 maildir-rank-addr

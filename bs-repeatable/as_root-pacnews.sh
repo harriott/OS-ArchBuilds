@@ -59,7 +59,7 @@ rm /etc/hosts.pacnew
 # nvim -O /etc/systemd/logind.conf /etc/systemd/logind.conf.pacnew -c 'windo difft'
 # rm /etc/systemd/logind.conf.pacnew
 
-# #=> 1 makepkg.conf
+# #=> 1 rust.conf
 # nvim -O /etc/makepkg.conf.d/rust.conf /etc/makepkg.conf.d/rust.conf.pacnew -c 'windo difft'
 # rm /etc/makepkg.conf.d/rust.conf.pacnew
 

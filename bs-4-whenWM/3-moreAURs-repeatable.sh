@@ -10,6 +10,8 @@ trap read debug  # puts a read request after each executable line
 # gAUR  gdAUR  are defined in $AjB/bashrc-console
 # softwares that require a WM
 
+# if too late with pw,  C ~/Arch/AUR/  then move into the relevant directory for  makepkg --install
+
 # #=> archlinux-java-run
 # # for PDFsam
 # gAUR archlinux-java-run
@@ -93,7 +95,6 @@ trap read debug  # puts a read request after each executable line
 # gAUR dropbox
 # nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
 # makepkg -sic
-# # - if missed, in  ~/Arch/AUR/dropbox/,  sudo pacman -U  dropbox-185.4.6054-1-x86_64.pkg.tar.zst
 # true
 
 # #=> Dropbox 1 dropbox-dist folder
@@ -113,11 +114,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
@@ -153,7 +154,6 @@ true
 # gAUR nomacs
 # nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
 # makepkg -sic  # takes ages...
-# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
 # # after first install
 # #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
 # true
@@ -164,7 +164,6 @@ true
 # gdAUR nomacs-git
 # nvim -c "silent! /_pkgname=nomacs" PKGBUILD
 # makepkg -sic  # takes ages...
-# # - if missed, in  ~/Arch/AUR/nomacs/,  sudo pacman -U nomacs-1:3.17.2287-1-x86_64.pkg.tar.zst
 # # after first install
 # #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
 # true
@@ -204,10 +203,10 @@ true
 # [ -f ~/.config/oama/config.yaml ] || oama
 # true
 
-#=> opera
-gAUR opera
-nvim -c "silent! /www.opera.com" PKGBUILD
-makepkg -sic
+# #=> opera
+# gAUR opera
+# nvim -c "silent! /www.opera.com" PKGBUILD
+# makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2
@@ -232,7 +231,6 @@ makepkg -sic
 # nvim -c "silent! /torakiki" PKGBUILD
 # makepkg -sic  # only needs  jdk-openjdk
 # true
-# #  ~/Arch/AUR/pdfsam  makepkg --install  if you're too late
 
 # #=> PDFsam 1 remove
 # sudo pacman -Rs pdfsam
@@ -327,10 +325,11 @@ makepkg -sic
 # #=> vimpc-git 1 configure
 # mkdir ~/.config/vimpc
 
-# #=> xnviewmp
-# gAUR xnviewmp
-# nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
-# makepkg -sic
+#=> xnviewmp
+gAUR xnviewmp
+nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
+makepkg -sic
+true
 
 # #=> yj-git
 # gdAUR yj-git
@@ -343,7 +342,6 @@ makepkg -sic
 # nvim -c "silent! /github.com\/yktoo" PKGBUILD
 # makepkg -sic  # takes ages to work through languages
 # true
-# #  ~/Arch/AUR/ymuse  makepkg --install  if you're too late
 
 # #=> Zoom
 # gAUR zoom

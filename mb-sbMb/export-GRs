@@ -1,0 +1,10 @@
+#!/bin/bash
+# vim: fdl=1 ft=sh:
+
+# $machBld/export-GRs  # sourced by  $OSL/nodes/jo/export
+
+export GRs=$cGRs
+# $GRs  used in
+#  $misc/GRs/cGRs.sh
+#  $misc/GRs/needed.sh
+
