@@ -71,6 +71,9 @@ pacman -S msmtp-mta  # brings in  msmtp
 # OpenSSH
 pacman -S openssh
 
+#=> 3 softwares - rebuild-detector
+pacman -S rebuild-detector
+
 # #=> 3 softwares - systeroid
 # pacman -S systeroid
 

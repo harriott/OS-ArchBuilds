@@ -30,8 +30,10 @@ ln -sf $ABjo/wm/Xresources/Xresources                       ~/.Xresources
   [[ $myDrA == 1 ]] && ln -sf $ABjo/wm/Xresources/fontNF    ~/.Xresources-font
   ln -sf $ABjo/wm/Xresources/colorschemes/LukeSmith-gruvbox ~/.Xresources-LukeSmith-gruvbox
 ln -sf $ABjo/xbindkeysrc                                    ~/.xbindkeysrc  # mouse wheel
-ln -sf $ABjo/xinitrcs/openbox                               ~/.xinitrc
-  [ $host = 'AsusW202' ] && ln -sf $ABjo/xinitrcs/awesome   ~/.xinitrc
+ln -sf $ABjo/xinitrcs/xfce                                  ~/.xinitrc
+# ln -sf $ABjo/xinitrcs/openbox                               ~/.xinitrc
+# ln -sf $ABjo/xinitrcs/awesome                               ~/.xinitrc
+                                                       # es ~/.xinitrc
 
 #=> X 1 check
 e -la ~/.Xresources ~/.Xresources-font ~/.Xresources-LukeSmith-gruvbox ~/.xbindkeysrc ~/.xinitrc

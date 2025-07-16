@@ -4,6 +4,7 @@
 #  called by
 #   $ABjo/xinitrcs/awesome
 #   $ABjo/xinitrcs/openbox
+#   $ABjo/xinitrcs/xfce
 #   so that it is used instead of the default
 #  I built this from default, with my additions marked JH.
 #  nvim -O /etc/X11/xinit/xinitrc $ABjo/xinitrcs/xinitrc

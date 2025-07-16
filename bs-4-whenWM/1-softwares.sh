@@ -94,9 +94,6 @@ sudo pacman -S hplip
 #=> HPLIP 1 remove
 sudo pacman -Rs hplip
 
-#=> HTMLHint
-sudo pacman -S htmlhint
-
 #=> img2pdf
 sudo pacman -S img2pdf
 

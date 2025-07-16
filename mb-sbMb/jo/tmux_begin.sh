@@ -3,8 +3,10 @@
 
 # Joseph Harriott, Wed 08 May 2024
 
-# machine dependent Openbox autostart tmux tweaks
-# called from  $Obc/autostart/autostart
+# machine dependent  tmux  startup
+# called from
+#  $ABjo/wm/Xfce/terminal_startup.sh
+#  $Obc/autostart
 
 # test (or reload) this script with
 #  tmux kill-server

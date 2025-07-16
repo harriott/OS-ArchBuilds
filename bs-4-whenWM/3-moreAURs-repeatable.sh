@@ -114,11 +114,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
@@ -127,6 +127,12 @@ trap read debug  # puts a read request after each executable line
 # gAUR hplip-plugin
 # nvim -c "silent! /developers.hp.com\/hp-linux-imaging-and-printing" PKGBUILD
 # makepkg -sic  # requires  perl-test-fatal
+# true
+
+# #=> HTMLHint
+# gAUR htmlhint
+# nvim -c "silent! /github\.com\/htmlhint\/HTMLHint\/archive\/refs\/tags" PKGBUILD
+# makepkg -sic
 # true
 
 # #=> iscan
@@ -160,13 +166,17 @@ trap read debug  # puts a read request after each executable line
 
 # #=> nomacs 1 remove
 # sudo pacman -Rs nomacs nomacs-debug
-# #=> nomacs-git
+
+# #=> nomacs-git 0 install
 # gdAUR nomacs-git
 # nvim -c "silent! /_pkgname=nomacs" PKGBUILD
 # makepkg -sic  # takes ages...
 # # after first install
 # #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
 # true
+
+# #=> nomacs-git 1 remove
+# sudo pacman -Rs nomacs-git nomacs-git-debug
 
 # #=> Pacfinder
 # gAUR pacfinder
@@ -325,11 +335,11 @@ trap read debug  # puts a read request after each executable line
 # #=> vimpc-git 1 configure
 # mkdir ~/.config/vimpc
 
-#=> xnviewmp
-gAUR xnviewmp
-nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
-makepkg -sic
-true
+# #=> xnviewmp
+# gAUR xnviewmp
+# nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> yj-git
 # gdAUR yj-git

@@ -3,15 +3,15 @@
 
 # terminal launch
 # bash $ABjo/wm/terminal/startup.sh
-#  sourced from  $Obc/autostart
-#  symlinked in  $OSAB/nodes-Bash/bashrc-generic
+#  sourced from
+#   $ABjo/wm/Xfce/terminal_startup.sh
+#   $Obc/autostart
 
 #=> 1 terminal
 # $machBld/jo/Bash/exportWS
 
 #==> Alacritty
 alacritty -o $Awd -o $Awp -e sh -c "tmux new; bash" & disown
-# alacritty -o $Awd -o $Awp -e sh -c "tmux a" & disown  # if crashed
 
 # #==> urxvt
 # urxvt -geometry $urxvtGeometry -e sh -c "tmux new; bash" &

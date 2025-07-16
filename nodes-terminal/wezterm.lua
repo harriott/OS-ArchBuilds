@@ -15,6 +15,7 @@ local config = wezterm.config_builder()
   config.font = wezterm.font 'DejaVuSansMono'
     -- more readable than default  JetBrains Mono, and around 10% less tall
   config.font_size = 8.0
+  config.inactive_pane_hsb = { saturation = 0.9, brightness = 0.5, }
   config.keys = {
     { key = 'h', mods = 'ALT|CTRL', action = wezterm.action.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
       -- needs IME off

@@ -26,7 +26,8 @@ export Awd='window.dimensions={columns=106,lines=75}'
 # - allows  Neovide alongside while still seeing Conky
 
 #===> 1920x1080 Dell E2214HB monitor
-export Awd='window.dimensions={columns=100,lines=72}'
+export Awd='window.dimensions={columns=100,lines=72}' # Openbox
+export Awd='window.dimensions={columns=126,lines=77}' # Xfce
 # - allows  Neovide alongside while still seeing Conky
 
 #=> set  Neovide  window

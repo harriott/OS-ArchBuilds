@@ -3,7 +3,7 @@
 " $machBld/jo/gvimrc  symlinked in  $OSAB/nodes/set/jo-2-whenWM-0.sh
 
 ""> 0 monitor height
-let g:monitorheight='1080' " used in  $vimfiles/gvimrc.vim
+let g:monitorheight='1080' " used in  $vfv/enter/gvimrc.vim
 
 ""> 1 move on to  $vimfiles/gvimrc-Arch.vim
 source $vimfiles/vim/enter/gvimrc-Arch.vim

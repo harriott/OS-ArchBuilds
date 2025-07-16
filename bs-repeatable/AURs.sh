@@ -150,10 +150,16 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> julia-bin 1 install
-# # for sixels
-# gAUR julia-bin
-# nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
+#=> julia-bin 1 install
+# for sixels
+gAUR julia-bin
+nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
+makepkg -sic
+true
+
+# #=> kittypack
+# gAUR kittypack
+# nvim -c "silent! /pkgname=kittypack" PKGBUILD
 # makepkg -sic
 # true
 

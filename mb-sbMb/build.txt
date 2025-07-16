@@ -3291,6 +3291,63 @@ dunst
   ...
   CRITICAL: [dbus_cb_name_lost:1402] Cannot acquire 'org.freedesktop.Notifications': Name is acquired by 'Xfce Notify Daemon' with PID '1243'.
 pgrep dunst  shows it's not up
+### Xfce configuration
+Desktop > Style > None  for each monitor
+Terminal > Edit > Preferences > Appearance > Font > 8
+#### Applications > Settings
+Keyboard >
+  Application Shortcuts >
+    cmus-remote -u > Super+C
+    google-chrome-stable > Super+G
+    exfalso > Super+F
+    gvim > Super+V
+    keepassxc > Super+K
+    thunderbird_safely > Mail
+    neovide > Super+N
+    wezterm > Super+W
+  Behaviour > General > Restore numlock state on startup
+Power Manager >
+  Display > Display power management
+  General > When sleep button is pressed > Suspend
+  Screensaver Management > (= Screensaver Preferences) > Activate off
+  System > Security > Lock screen when system is going to sleep off
+Session and Startup >
+  Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
+  Conky > [ Conky  conky ]
+  CopyQ > copyq
+  Dropbox > dropbox
+  Neovide > [ Neovide  neovide ]
+Window Manager >
+  Keyboard >
+    Move window to left monitor > Super+1
+    Move window to right monitor > Super+2
+Window Manager Tweaks >
+  Cycle through windows in a list
+  Raise windows while cycling
+#### Panel Preferences > Panel 1 > Items
+Show Desktop
+Screenshot
+Whisker Menu
+Applications Menu
+Windows Buttons
+Separator
+Eyes
+Workspace Switcher
+Separator
+Clock
+Separator
+Weather Update
+Separator
+MPD Client Plugin > ymuse
+Separator
+System Load Monitor
+Status Tray Plugin
+Separator
+Wavelan
+Dictionary
+Notification Plugin > Notifications > Log > Log notifications > always
+PulseAudio Plugin
+  Action Buttons
 ## HP Envy Inspire 7220e changed to 28.239
 fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
@@ -3340,10 +3397,80 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 192.168.40.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 175.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.175.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 183.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.183.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 72.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.72.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 221.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.221.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e changed to 184.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 192.168.184.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## PulseAudio fail
+after trying to  Suspend  with  WD30EZRZ  plugged in
+nothing heard from  cmus, firefox
+speaker-test -c 2  works
+pulseaudio -k  then  pavucontrol  fixed it
+## WD20EZAZ/lost+found
+sudo chown -R jo:jo /mnt/WD20EZAZ/lost+found
+## Updates - linux-firmware
+  linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad103 exists in filesystem
+  linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad104 exists in filesystem
+  linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad106 exists in filesystem
+  linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad107 exists in filesystem
+So, as advised:
+  sudo pacman -Rdd linux-firmware  took a while
+  sudo pacman -Syu linux-firmware
+## odt's failed to open
+  problem with  libswlo.so - fixed by a reboot
+## xdg-open .jpg
+handlr get .jpg  reports  org.nomacs.ImageLounge.desktop, but  nomacs  not opening
+.png, .JPG  also not opening.
+### nomacs-git
+nomacs -v  got  nomacs: error while loading shared libraries: libopencv_imgproc.so.411: cannot open shared object file: No such file or directory
+sudo pacman -Rs nomacs-git nomacs-git-debug  then re-installed, still not launching
+## Alacritty font
+DejaVuSansMono 8 became distorted - fixed in  $OSAB/nodes-terminal/alacritty-all.toml
+## nomacs
+## Thunderbird outdated
+profile, once used for v140.0 (from W inget) on  Win10Pro, won't work here
+Q Thunderbird
+  local/thunderbird 139.0.2-1
+  local/thunderbird-i18n-en-gb 139.0.2-1
+  - both flagged out-of-date, 7 days gone
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.77.224.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.77.224.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.240.142.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.240.142.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## neovide v0.15.0 draw error on fullscreen
+fd neovim /var/cache/pacman/pkg
+sudo pacman -U file:///var/cache/pacman/pkg/neovim-0.11.2-3-x86_64.pkg.tar.zst
 ## waiting
 gokcehan's lf
 MariaDB
-thunar-dropbox
+rebuild-detector
 # clm possible extras
 imapbox
 maildir-rank-addr
@@ -3480,59 +3607,3 @@ journalctl -b -1 -r  shows no snags
 regularly: clock stuck, no CBH, so hard reboot
 ### orphaned inodes on /dev/sda2
 journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS
-# Xfce
-Desktop > Style > None  for each monitor
-Terminal > Edit > Preferences > Appearance
-## Applications > Settings
-Keyboard >
-  Application Shortcuts >
-    /usr/bin/neovide > Super+N
-    cmus-remote -u > Super+C
-    google-chrome-stable > Super+G
-    exfalso > Super+F
-    keepassxc > Super+K
-    Mail > thunderbird_safely
-    wezterm > Super+W
-  Behaviour > General > Restore numlock state on startup
-Power Manager >
-  Display > Display power management
-  General > When sleep button is pressed > Suspend
-  Screensaver Management > (= Screensaver Preferences) > Activate off
-  System > Security > Lock screen when system is going to sleep off
-Session and Startup >
-  Alacritty > /home/jo/.terminal_launch.sh
-  Conky > conky -c $machBld/jo/conkyrc
-  CopyQ > copyq
-  Dropbox > dropbox
-  Neovide > neovide
-Window Manager >
-  Keyboard >
-    Move window to left monitor > Super+1
-    Move window to right monitor > Super+2
-Window Manager Tweaks >
-  Cycle through windows in a list
-  Raise windows while cycling
-## Panel Preferences > Panel 1 > Items
-  Show Desktop
-  Screenshot
-  Whisker Menu
-  Applications Menu
-  Windows Buttons
-  Separator
-  Eyes
-  Workspace Switcher
-  Separator
-  Clock
-  Separator
-  Weather Update
-  Separator
-  MPD Client Plugin > ymuse
-  Separator
-  System Load Monitor
-  Status Tray Plugin
-  Separator
-  Wavelan
-  Dictionary
-  Notification Plugin > Notifications > Log > Log notifications > always
-  PulseAudio Plugin
-  Action Buttons

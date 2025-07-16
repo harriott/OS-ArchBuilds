@@ -2,6 +2,7 @@ vim: nospell:
 
     $OSAB/QR/QR.md; m4ps 0 1
     r $misc/linux/QR  # for my more general linux QuickReference
+    wezterm show-keys --lua > $ITscr/WezTerm-show-keys.lua
 
 my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
@@ -177,6 +178,7 @@ moar -h
 ## TeX - copied resources
     r $ITscr/CP/TeX
     za $ITscr/CP/TeX/LaTeX/etoolbox.pdf
+    za $ITscr/CP/TeX/LaTeX/appearance/colour/xcolor.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/datetime2.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
@@ -185,9 +187,12 @@ moar -h
     za $ITscr/CP/TeX/LaTeX/appearance/ragged2e.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/url.pdf
+    za $ITscr/CP/TeX/LaTeX/LaTeX3/tabularray.pdf
     za $ITscr/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
     za $ITscr/CP/TeX/LaTeX/structure/CV/Currvita/currvita.pdf
+    za $ITscr/CP/TeX/LaTeX/structure/multicol.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
+    za $ITscr/CP/TeX/LaTeX/structure/parts/labelling/fancyref.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/lists/enumitem.pdf
     za $ITscr/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
@@ -754,9 +759,11 @@ optimised for SSDs
     fRs $CfWk/technos/civil/catering/CM-DeLonghiDinamica/Fr staplable.tex
     fRs $DaLi SNCF
     fRs $Drpbx/Cop Björk
+    fRs $Drpbx/Cop AM-toSort0
     fRs $Drpbx/Cop/AM-toSort0 'ZZ Top'
     fRs $Drpbx/Cop/AM-toSort0 Europe
     fRs $Drpbx/Cop/AM-toSort0 France
+    fRs $Drpbx/Cop/AM-toSort0 UK
     fRs $Drpbx/Cop/AM-toSort0/Europe Nordic
     fRs $Drpbx/Cop/AM-toSort0/Europe/Nordic Björk
     fRs $DWp/pn/internet internet.dw
@@ -984,7 +991,9 @@ pacfinder
 grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
 ```
 
-## Aura
+downgrade
+
+## AUR - Aura
     aura -Pa  # security analysis of all installed AUR packages
     i aura
     sudo aura -Aakux --devel > n  # just for info
@@ -1000,8 +1009,8 @@ pacman -Sg base-devel  # lists all
 ```
 
 ## package database locked
-pgrep pacman  # to ensure it's not running
-sudo rm /var/lib/pacman/db.lck  # delete the stale lock
+    pgrep pacman  # to ensure it's not running
+    sudo rm /var/lib/pacman/db.lck  # delete the stale lock
 
 ## pacman
     /etc/pacman.conf
@@ -1010,6 +1019,7 @@ sudo rm /var/lib/pacman/db.lck  # delete the stale lock
     pacman <operation> [options] [targets]
     pacman -Qdt  # lists all orphans
     pacman -Qu | grep -Eo '^[^ ]+' | xargs pacman -Si | grep -E 'Name|Depends On' | grep -B1 'nodejs-lts-jod'
+    pacman -v  # --verbose - lists local paths
     sudo du -sh /var/cache/pacman/pkg
     sudo pacman -U package.pkg.tar.xz
     sudo pacman -Rs <packagetoremove>
@@ -1274,6 +1284,7 @@ backed up in `$AjB/bash_profile`
     o $XDG_CACHE_HOME
     o $XDG_CONFIG_HOME
     o $XDG_CONFIG_DIRS
+    rsync -irtv --delete ~/.config/xfce4/xfconf/xfce-perchannel-xml/ $machLg/jo/xfce-perchannel
     ~/.config/autostart/Alacritty.desktop
     ~/.config/autostart/Conky.desktop
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
@@ -1289,6 +1300,7 @@ backed up in `$AjB/bash_profile`
 
 ## Alacritty
     $machBld/alacritty.toml
+    $machBld/Alacritty
 
 scroll don't work in `tmux`
 
@@ -1376,7 +1388,6 @@ TMUX(1)
     C /usr/share/nvim/runtime/ftplugin
     C /usr/share/nvim/runtime/syntax
     nn  # $AjB/bashrc-console
-    r ~/.local/share/nvim
     r ~/.vimswap
     r /usr/share/nvim/runtime
 
@@ -1385,6 +1396,11 @@ nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/par
 ##### log file
     :echo $NVIM_LOG_FILE
     ~/.local/state/nvim/log
+
+##### stdpath
+    r ~/.cache/nvim        " =vim.fn.stdpath('cache')
+    r ~/.config/nvim       " =vim.fn.stdpath('config')
+    r ~/.local/share/nvim  " =vim.fn.stdpath('data')
 
 #### Vim
     $ABjo/textEdit/Vim/vimrc
@@ -1452,10 +1468,6 @@ find $Drpbx -path $Drpbx/conflicted -prune -o -name "* conflicted copy*"
 find -name "* conflicted copy*" -exec rm -f {} \;
 find -name "*(Copie en conflit de *"
 ```
-
-## cloud storage - rclone
-    rclone lsd ZCzNc:
-    s ~/.config/rclone/rclone.conf  # pw is disguised
 
 ## email - mutt notmuch
 ```bash

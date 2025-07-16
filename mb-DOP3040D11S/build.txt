@@ -35,8 +35,36 @@ fixed by simply re-installing  vimpc-git
 ## auracle-git  error
   error while loading shared libraries: libabsl_raw_hash_set.so.2501.0.0: cannot open shared object file: No such file or directory
 sudo pacman -Rs auracle-git  then re-installed it
+## Updates - linux-firmware
+  linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad103 exists in filesystem
+  linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad104 exists in filesystem
+  linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad106 exists in filesystem
+  linux-firmware-nvidia: /usr/lib/firmware/nvidia/ad107 exists in filesystem
+So, as advised:
+  sudo pacman -Rdd linux-firmware  took a while
+  sudo pacman -Syu linux-firmware
+## Dropbox v227.4.4774
+No more tray icon...
+## nomacs not launching
+nomacs -v  got  "nomacs: error while loading shared libraries: libopencv_imgproc.so.411: cannot open shared object file: No such file or directory"
+checkrebuild -v
+  ldd /usr/bin/nomacs
+    libopencv_imgproc.so.411 => not found
+    libopencv_core.so.411 => not found
+fixed by re-installing
+## Xfce
+$ABjo/xinitrcs/xfce
+Terminal > Edit > Preferences > Appearance
+rsync -irtv --delete ~/.config/xfce4/xfconf/xfce-perchannel-xml/ $machLg/jo/xfce-perchannel
+rsync -irtv --delete $culLA/ml-sbMb/jo/xfce-perchannel/ ~/.config/xfce4/xfconf/xfce-perchannel-xml
+bash $OSAB/nodes-set/jo-1-Xfce.sh
+Desktop Settings > [ Folder > WallpaperFlare  Style > Stretched ]
+#### Applications > Settings
+Session and Startup >
+  Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
+  Conky > [ Conky  conky ]
+  Neovide > [ Neovide  neovide ]
 ## waiting
-adobe-source-code-pro-fonts
 apache
 EFI install
 gokcehan's lf

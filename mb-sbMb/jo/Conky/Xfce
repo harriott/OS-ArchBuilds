@@ -3,7 +3,9 @@
 --[[
 Joseph Harriott - Sat 11 May 2024
 $machBld/jo/Conky/Xfce  adapted from output of  conky --print-config
-see  $OSAB/nodes-Bash/bashrc-generic
+symlinked in
+  $OSAB/nodes-Bash/bashrc-generic
+  $OSAB/nodes-set/jo-1-Xfce.sh
 pb ~/.conkyrc
 some settings are machine specific (and there's no easy way to generalise this file)
 
