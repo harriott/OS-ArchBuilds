@@ -34,5 +34,5 @@ rsnapshot configtest
 # cp $OSAB/bs-repeatable/from_rescue_boot-rsyncSystemRestore.sh $rsnapshot/from_rescue_boot-rsyncSystemRestore.sh
 
 #=> 5 backup  /var/log/rsnapshot
-ln -sf $ABjo/log_rsnapshot.sh ~/Arch/root/log_rsnapshot.sh
+ln -sf $ABjo/log_rsnapshot.sh ~/Arch/log_rsnapshot.sh
 

@@ -114,11 +114,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
@@ -143,7 +143,7 @@ true
 
 # #=> js-beautify
 # gAUR js-beautify
-# nvim -c "silent! /registry.npmjs.org\/js-beautify" PKGBUILD
+# nvim -c "silent! /github.com\/beautifier\/js-beautify" PKGBUILD
 # makepkg -sic
 # true
 
@@ -250,6 +250,16 @@ true
 # nvim -c "silent! /metacpan.org" PKGBUILD
 # makepkg -sic  # requires  perl-test-fatal
 # true
+
+#=> phonon-qt5
+gAUR phonon-qt5
+nvim -c "silent! /download.kde.org\/stable\/phonon" PKGBUILD
+makepkg -sic
+
+# #=> phonon-qt5-vlc
+# gAUR phonon-qt5-vlc
+# nvim -c "silent! /download.kde.org\/stable\/phonon\/phonon-backend-vlc" PKGBUILD
+# makepkg -sic
 
 # #=> PhotoCollage
 # gAUR photocollage

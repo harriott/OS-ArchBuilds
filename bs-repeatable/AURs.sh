@@ -103,11 +103,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> fonts - figlet-fonts
-# # brings in figlet
-# gAUR figlet-fonts
-# nvim -c "silent! /ftp.figlet.org" PKGBUILD
-# makepkg -sic
+#=> fonts - figlet-fonts
+# brings in figlet
+gAUR figlet-fonts
+nvim -c "silent! /ftp.figlet.org" PKGBUILD
+makepkg -sic
 
 # #=> fonts - fontpreview-git
 # gdAUR fontpreview-git
@@ -240,11 +240,11 @@ true
 # makepkg -sic
 # true
 
-# #=> powershell-bin
-# gAUR powershell-bin
-# nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
-# makepkg -sic
-# true
+#=> powershell-bin
+gAUR powershell-bin
+nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+makepkg -sic
+true
 
 # #=> rdrview-git
 # gdAUR rdrview-git

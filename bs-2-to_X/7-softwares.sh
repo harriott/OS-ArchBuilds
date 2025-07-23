@@ -28,11 +28,7 @@ sudo pacman -S sd
 #=> fping
 sudo pacman -S fping
 
-#=> igrep
-rustup update
-sudo pacman -S igrep
-
-#=> language
+#=> human language
 # aspell
 sudo pacman -S aspell-en aspell-fr
 
@@ -44,6 +40,10 @@ sudo pacman -S grammalecte
 
 # nuspell
 sudo pacman -S nuspell
+
+#=> igrep
+rustup update
+sudo pacman -S igrep
 
 # #=> libsixel
 # sudo pacman -S libsixel  # for  sixel  graphics
@@ -64,7 +64,16 @@ npm i -g mapscii
 # #=> npm 1 wikit
 # npm i -g wikit
 
- #=> Perl modules for JSON
+#=> Perl File::Slurp
+sudo pacman -S perl-file-slurp
+
+#=> Perl File::Slurper
+sudo pacman -S perl-file-slurper
+
+#=> Perl Regexp::Common
+sudo pacman -S perl-regexp-common
+
+# #=> Perl modules for JSON
 # sudo pacman -S perl-json perl-json-parse perl-json-xs  # can't recall why...
 
  #=> perlcritic

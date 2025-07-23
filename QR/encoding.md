@@ -23,6 +23,8 @@ vim: nospell:
     za $ITscr/CP/gnuplot/Gnuplot_5_4.pdf
     za $ITscr/CP/gnuplot/gpcard.pdf
 
+GNUPLOT(1)
+
 # JavaScript
     r /usr/lib/node_modules/corepack/shims
 
@@ -49,6 +51,7 @@ vim: nospell:
 # Perl
     r ~/.cpanm
     r ~/perl5/lib/perl5/x86_64-linux-thread-multi/.meta
+    whereis perl
 
 # Python
     i python

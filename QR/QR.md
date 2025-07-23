@@ -103,7 +103,7 @@ follows my `PCManFM` folder settings
     find . -type f -name "*.conf"
 
 ### fmtutil.cnf
-    /etc/texmf/web2c/fmtutil.cnf
+    cp /etc/texmf/web2c/fmtutil.cnf.pacsave $machLg/etc/texmf-web2c-fmtutil/$(date '+%y%m%d-%H%M').cnf
 
 as root: `find / -xdev -iname "*fmtutil.cnf*"`
 
@@ -602,6 +602,7 @@ can't cope with `utf-16le`
 
 # GNU Privacy Guard
     gpg --export-ownertrust > $culLA/ml-$host/jo/gnupg-trustdb.txt
+    gpg -k > $machLg/jo/GnuPGkeys/$(date +%y%m%d-%H%M).gpgk  # $vfv/syntax/gpgk.vim
     im gpg
     pgpdump -h
     r ~/.gnupg
@@ -991,7 +992,8 @@ pacfinder
 grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
 ```
 
-downgrade
+- Arch Linux Package Maintainers
+- downgrade
 
 ## AUR - Aura
     aura -Pa  # security analysis of all installed AUR packages
@@ -1015,11 +1017,11 @@ pacman -Sg base-devel  # lists all
 ## pacman
     /etc/pacman.conf
     checkupdates
-    gpg --homedir /etc/pacman.d/gnupg --list-keys > ~/Arch/root/PacmanKeys-$(date +%y%m%d).txt
     pacman <operation> [options] [targets]
     pacman -Qdt  # lists all orphans
     pacman -Qu | grep -Eo '^[^ ]+' | xargs pacman -Si | grep -E 'Name|Depends On' | grep -B1 'nodejs-lts-jod'
     pacman -v  # --verbose - lists local paths
+    pkgfile -l <package>  # lists all installed files
     sudo du -sh /var/cache/pacman/pkg
     sudo pacman -U package.pkg.tar.xz
     sudo pacman -Rs <packagetoremove>
@@ -1035,6 +1037,14 @@ pacman -Sg base-devel  # lists all
     - `-y` (`--refresh`) refresh copy of the master package list (use with `-u`)
         - `Syy` force refresh
 - pacman(8)
+
+### keys
+    gpg --homedir /etc/pacman.d/gnupg -k > $machLg/etc/PacmanKeys/$(date +%y%m%d-%H%M).gpgk  # $vfv/syntax/gpgk.vim
+
+#### archlinux-keyring
+    /usr/share/pacman/keyrings/archlinux-revoked
+    /usr/share/pacman/keyrings/archlinux-trusted
+    /usr/share/pacman/keyrings/archlinux.gpg
 
 ### list local and remote packages
 ```bash
@@ -1098,7 +1108,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 ```
 
 # spelling resources
-    ss="$HOME/Arch/root/spell_sources.ffl"; rhash --sha256 /usr/share/hunspell/* > $ss; rhash --sha256 /usr/share/myspell/dicts/* >> $ss; sort -o $ss $ss
+    ss="$HOME/Arch/usr-share-spell_sources.ffl"; rhash --sha256 /usr/share/hunspell/* > $ss; rhash --sha256 /usr/share/myspell/dicts/* >> $ss; sort -o $ss $ss
 
 ## Hunspell
     /usr/share/hunspell
@@ -1117,6 +1127,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     /usr/share/doc/arch-wiki/html/en
 
 - `Qt`: `Q qt6`
+- `su` > root pw for `st="$culLAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`
 - Trusted Users
 
 ## .desktop
@@ -1168,7 +1179,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fc-list | grep Source
     fc-list | grep ubuntu
     fc-list -v ubuntumono
-    fc-list > $machLg/fclist.txt
+    fc-list > $machLg/fc-list/$(date +%y%m%d-%H%M).fclist
 
 #### fc-scan
     fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf

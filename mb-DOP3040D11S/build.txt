@@ -64,6 +64,23 @@ Session and Startup >
   Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
   Conky > [ Conky  conky ]
   Neovide > [ Neovide  neovide ]
+## Updates
+:: Replace python-cgi with extra/python-standard-cgi? [Y/n]
+## Perl v5.xx
+WARNING: '/usr/lib/perl5/5.36' contains data from at least 2 packages which will NOT be used by the installed perl interpreter. -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.36'
+WARNING: '/usr/lib/perl5/5.40' contains data from at least 2 packages which will NOT be used by the installed perl interpreter. -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.40'
+sudo rm -r /usr/lib/perl5/5.36
+sudo rm -r /usr/lib/perl5/5.40
+## phonon-qt5
+makepkg -sic
+  ==> Verifying source file signatures with gpg...
+      phonon-4.12.0.tar.xz ... FAILED (unknown public key D7574483BB57B18D)
+  ==> ERROR: One or more PGP signatures could not be verified!
+gpg --recv-keys D7574483BB57B18D
+  gpg: key D7574483BB57B18D: public key "Jonathan Riddell <jr@jriddell.org>" imported
+  gpg: Total number processed: 1
+  gpg:               imported: 1
+gpg -k D7574483BB57B18D  finds it, and it's in  $machLg/jo/GnuPGkeys
 ## waiting
 apache
 EFI install

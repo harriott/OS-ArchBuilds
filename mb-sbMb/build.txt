@@ -405,7 +405,7 @@ lpoptions -d ENVY_5530
 ## auracle needs rebuilding
 auracle: error while loading shared libraries: libalpm.so.12: cannot open shared object file: No such file or directory
 ## Updates
-pacman -Qqo '/usr/lib/perl5/5.32'
+ '/usr/lib/perl5/5.32'
   perl-clone-pp
   perl-data-printer
 so re-installed them
@@ -3467,6 +3467,16 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 ## neovide v0.15.0 draw error on fullscreen
 fd neovim /var/cache/pacman/pkg
 sudo pacman -U file:///var/cache/pacman/pkg/neovim-0.11.2-3-x86_64.pkg.tar.zst
+## Perl v5.40
+WARNING: '/usr/lib/perl5/5.40' contains data from at least 2 packages which will NOT be used by the installed perl interpreter. -> Run the following command to get a list of affected packages: pacman -Qqo '/usr/lib/perl5/5.40'
+  perl-data-printer
+  perl-unicode-utf8
+so re-installed them
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.239.198.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.239.198.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 gokcehan's lf
 MariaDB

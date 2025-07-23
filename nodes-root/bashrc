@@ -2,7 +2,7 @@
 
 # Joseph Harriott
 # cp $OSAB/nodes-root/bashrc /root/.bashrc
-# rbh="/home/jo/Arch/root/bash_history"; sudo cp /root/.bash_history $rbh; sudo chown jo:jo $rbh
+# rbh="/home/jo/Arch/root-bash_history"; sudo cp /root/.bash_history $rbh; sudo chown jo:jo $rbh
 # sudo nvim -O $OSAB/nodes-root/bashrc /root/.bashrc -c 'windo difft'
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
