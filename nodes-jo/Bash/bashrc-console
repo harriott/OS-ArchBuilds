@@ -187,7 +187,7 @@ fbbcode () {
 #===> quick-check
 alias fe='fdtsEncryptedChanges'
 
-Encrypted=(Digital0 Digital1 Secure0 Secure1 SHG Stack)
+Encrypted=(CZs Digital0 Digital1 Secure0 Secure1 SHG Stack)
 fdtsEncryptedChanges () {
   if [ "$PWD" != $Enc ]; then
     if [ -d "$Enc" ]; then

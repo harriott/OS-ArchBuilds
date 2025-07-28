@@ -182,6 +182,7 @@ moar -h
     za $ITscr/CP/TeX/LaTeX/appearance/datetime2.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
+    za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/worldflags.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
     za $ITscr/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
     za $ITscr/CP/TeX/LaTeX/appearance/ragged2e.pdf
@@ -496,7 +497,8 @@ NCDU(1)
 
 ## ranger
     feh $ITsrul/cheatsheet.png &
-    r $OSAB/nodes-terminal/ranger  # my configurations
+    r $OSL/nodes/terminal-ranger  # my configurations
+    r /mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/OS-Linux/nodes/terminal-ranger/scope.sh
     r $Cfzd
     ranger --version
 

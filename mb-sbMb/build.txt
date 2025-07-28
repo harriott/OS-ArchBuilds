@@ -3291,63 +3291,6 @@ dunst
   ...
   CRITICAL: [dbus_cb_name_lost:1402] Cannot acquire 'org.freedesktop.Notifications': Name is acquired by 'Xfce Notify Daemon' with PID '1243'.
 pgrep dunst  shows it's not up
-### Xfce configuration
-Desktop > Style > None  for each monitor
-Terminal > Edit > Preferences > Appearance > Font > 8
-#### Applications > Settings
-Keyboard >
-  Application Shortcuts >
-    cmus-remote -u > Super+C
-    google-chrome-stable > Super+G
-    exfalso > Super+F
-    gvim > Super+V
-    keepassxc > Super+K
-    thunderbird_safely > Mail
-    neovide > Super+N
-    wezterm > Super+W
-  Behaviour > General > Restore numlock state on startup
-Power Manager >
-  Display > Display power management
-  General > When sleep button is pressed > Suspend
-  Screensaver Management > (= Screensaver Preferences) > Activate off
-  System > Security > Lock screen when system is going to sleep off
-Session and Startup >
-  Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
-  Conky > [ Conky  conky ]
-  CopyQ > copyq
-  Dropbox > dropbox
-  Neovide > [ Neovide  neovide ]
-Window Manager >
-  Keyboard >
-    Move window to left monitor > Super+1
-    Move window to right monitor > Super+2
-Window Manager Tweaks >
-  Cycle through windows in a list
-  Raise windows while cycling
-#### Panel Preferences > Panel 1 > Items
-Show Desktop
-Screenshot
-Whisker Menu
-Applications Menu
-Windows Buttons
-Separator
-Eyes
-Workspace Switcher
-Separator
-Clock
-Separator
-Weather Update
-Separator
-MPD Client Plugin > ymuse
-Separator
-System Load Monitor
-Status Tray Plugin
-Separator
-Wavelan
-Dictionary
-Notification Plugin > Notifications > Log > Log notifications > always
-PulseAudio Plugin
-  Action Buttons
 ## HP Envy Inspire 7220e changed to 28.239
 fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
@@ -3476,6 +3419,28 @@ so re-installed them
 fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.239.198.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## TeX Live 2025 full - update packages
+su ...  for  tlmgr update --all  got
+  tlmgr  itself needs to be updated. Please do this via either  tlmgr update --self
+  tlmgr: saving backups to /usr/local/texlive/2025/tlpkg/backups
+  [1/1, ??:??/??:??] update: texlive.infra [610k] (75215 -> 75590) ... done
+  running mktexlsr ...
+  done running mktexlsr.
+  tlmgr: package log updated: /usr/local/texlive/2025/texmf-var/web2c/tlmgr.log
+  tlmgr: command log updated: /usr/local/texlive/2025/texmf-var/web2c/tlmgr-commands.log
+tlmgr update --all  very slowly updated 301 packages
+  tlmgr: package log updated: /usr/local/texlive/2025/texmf-var/web2c/tlmgr.log
+  tlmgr: command log updated: /usr/local/texlive/2025/texmf-var/web2c/tlmgr-commands.log
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.121.198.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.121.198.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.212.131.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.212.131.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 gokcehan's lf
@@ -3617,3 +3582,61 @@ journalctl -b -1 -r  shows no snags
 regularly: clock stuck, no CBH, so hard reboot
 ### orphaned inodes on /dev/sda2
 journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS
+# Xfce configuration
+Desktop > Style > None  for each monitor
+Terminal > Edit > Preferences > Appearance > Font > 8
+## Applications > Settings
+Keyboard >
+  Application Shortcuts >
+    cmus-remote -u > Super+C
+    google-chrome-stable > Super+G
+    exfalso > Super+F
+    gvim > Super+V
+    keepassxc > Super+K
+    signal-desktop > Super+S
+    thunderbird_safely > Mail
+    neovide > Super+N
+    wezterm > Super+W
+  Behaviour > General > Restore numlock state on startup
+Power Manager >
+  Display > Display power management
+  General > When sleep button is pressed > Suspend
+  Screensaver Management > (= Screensaver Preferences) > Activate off
+  System > Security > Lock screen when system is going to sleep off
+Session and Startup >
+  Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
+  Conky > [ Conky  conky ]
+  CopyQ > copyq
+  Dropbox > dropbox
+  Neovide > [ Neovide  neovide ]
+Window Manager >
+  Keyboard >
+    Move window to left monitor > Super+1
+    Move window to right monitor > Super+2
+Window Manager Tweaks >
+  Cycle through windows in a list
+  Raise windows while cycling
+## Panel Preferences > Panel 1 > Items
+Show Desktop
+Screenshot
+Whisker Menu
+Applications Menu
+Windows Buttons
+Separator
+Eyes
+Workspace Switcher
+Separator
+Clock
+Separator
+Weather Update
+Separator
+MPD Client Plugin > ymuse
+Separator
+System Load Monitor
+Status Tray Plugin
+Separator
+Wavelan
+Dictionary
+Notification Plugin > Notifications > Log > Log notifications > always
+PulseAudio Plugin
+  Action Buttons

@@ -24,7 +24,7 @@ if [ $1 = "248" ] ; then
 elif [ $1 = "HPEn" ] || [ $1 = "HPEU" ] ; then
   declare -a Resns=(1 2 3 6 12)
   if [ $1 = "HPEn" ] ; then
-    device=$'--device \'hpaio:/net/ENVY_Inspire_7200_series?ip=10.239.198.239\''
+    device=$'--device \'hpaio:/net/ENVY_Inspire_7200_series?ip=10.212.131.239\''
   fi  # from  hp-makeuri
   siPrefix="scanimage $device -p --format=tiff --mode Color --resolution"
 else
