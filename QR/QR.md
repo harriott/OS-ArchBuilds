@@ -161,7 +161,10 @@ moar -h
     client for the Dictionary Server Protocol - nothing stored locally
     i dict
 
-## LibreOffice Calc
+## LibreOffice
+    bash $OSAB/bs-4-whenWM/5-LibreOfficeConfig.sh
+
+### Calc
 - `:Man localc` is basic
 - `localc french.csv` then `Character set > Unicode (UTF-8)`
 
@@ -585,7 +588,8 @@ can't cope with `utf-16le`
     i zoxide-add
     i zoxide-import
     i zoxide-query
-    ji <fuzzy_pattern> > Enter > <more_fuzzy_patter> > Enter/Esc
+    zi <fuzzy_pattern> > Enter > <more_fuzzy_patter> > Enter/Esc
+    zq <case_insensitive>  # greps relevant lines from the database
     zoxide query -ls | mo
 
 # forum
@@ -989,7 +993,6 @@ can fail to start after waking system
 # packages
 ```bash
 expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500.log  # 500 most recent installs
-makepkg --install
 pacfinder
 grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
 ```
@@ -1001,6 +1004,11 @@ grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
     aura -Pa  # security analysis of all installed AUR packages
     i aura
     sudo aura -Aakux --devel > n  # just for info
+
+## AUR - trizen
+    bm trizen
+    trizen  # trizen --help
+    trizen -C trizen
 
 ## Flatpak
     /var/lib/flatpak/exports/bin
@@ -1019,8 +1027,11 @@ pacman -Sg base-devel  # lists all
 ## pacman
     /etc/pacman.conf
     checkupdates
+    makepkg --install
     pacman <operation> [options] [targets]
     pacman -Qdt  # lists all orphans
+    pacman -Qq sd > ~/pacman_sd
+    pacman -Qqs xfce
     pacman -Qu | grep -Eo '^[^ ]+' | xargs pacman -Si | grep -E 'Name|Depends On' | grep -B1 'nodejs-lts-jod'
     pacman -v  # --verbose - lists local paths
     pkgfile -l <package>  # lists all installed files
@@ -1028,7 +1039,11 @@ pacman -Sg base-devel  # lists all
     sudo pacman -U package.pkg.tar.xz
     sudo pacman -Rs <packagetoremove>
 
-- `-Q` (`--query`)
+- `-Q` (`--query`) (`Q ()` in `$OSAB/nodes-Bash/bashrc-generic`)
+    - `-q` (`--quiet`) even omits version
+    - `-s` (`--search <regexp>`)
+- `-R` (`--remove`)
+    - `-s` (`--recursive`)
 - `-S` (`--sync`) synchronize packages from servers
     - `-c` (`--clean`) remove unused packages from the cache
         - `Scc` clean out the cache
@@ -1053,6 +1068,11 @@ pacman -Sg base-devel  # lists all
 pacman -Ss <keyword>
 pacsearch <keyword>  # better search
 ```
+
+### re-install Haskells
+    pacman -Qqs haskell > ~/pacman_haskell
+    sudo pacman -S $(< ~/pacman_haskell) # no installations if errors reported
+    rm ~/pacman_haskell
 
 ## pactree
     i pactree
@@ -1391,6 +1411,7 @@ TMUX(1)
     n $ITscr/CP/encoding/textWrangling-vi
 
 ### vim variants
+    lt $vfvp > $vfvp/all.tree
     rsync -irtv --delete $vimfiles/ ~/Play0/vfb
 
 #### Nvim
@@ -1472,6 +1493,7 @@ configured in `$OSAB/bs-4-whenWM/1-softwares.sh`
 dropbox &  # as in  $Obc/autostart/autostart
 killall dropbox
 lsof -c dropbox
+pgrep dropbox
 pkill dropbox; dropbox &
 ```
 

@@ -37,8 +37,8 @@ pacman -S python-pylatexenc  # for render-markdown.nvim
 # cd $ITscc/unix-TL-install-tl-20250525  # will download 6GB of code
 
 #=> documenting - TeX Live 0 native 0 install 0 source local
-for s in $tricky/ircam_fr_pub_CTAN_systems_texlive_tlnet /usr/local/texlive; do find "$s" | echo "$(wc -l) $s"; done
-cd $tricky/ircam_fr_pub_CTAN_systems_texlive_tlnet
+for s in $notDr/ircam_fr_pub_CTAN_systems_texlive_tlnet /usr/local/texlive; do find "$s" | echo "$(wc -l) $s"; done
+cd $notDr/ircam_fr_pub_CTAN_systems_texlive_tlnet
 find /usr/local/texlive | wc -l
 
 # #=> documenting - TeX Live 0 native 0 install 1 basic

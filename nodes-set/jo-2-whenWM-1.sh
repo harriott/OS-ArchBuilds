@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $OSAB/nodes/set/jo-2-whenWM-1.sh
+# bash $OSAB/nodes-set/jo-2-whenWM-1.sh
 # dependent on  $OSAB
 
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini

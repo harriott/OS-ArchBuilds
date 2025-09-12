@@ -81,6 +81,15 @@ gpg --recv-keys D7574483BB57B18D
   gpg: Total number processed: 1
   gpg:               imported: 1
 gpg -k D7574483BB57B18D  finds it, and it's in  $machLg/jo/GnuPGkeys
+## auracle
+auracle sync
+  auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2505.0.0: cannot open shared object file: No such file or directory
+sudo pacman -Rs auracle-git  then re-installed it
+#### hplip-plugin
+==> Verifying source file signatures with gpg...
+    hplip-plugin-3.25.6.run ... FAILED (unknown public key 5E4E4D24A34ECD57)
+    ==> ERROR: One or more PGP signatures could not be verified!
+gpg --delete-key 4ABA2F66DBD5A95894910E0673D770CDA59047B9
 ## waiting
 apache
 EFI install

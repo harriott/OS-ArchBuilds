@@ -62,8 +62,11 @@ sed -i '1i\\' $p
 sed -i "/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s:Path=.*:Path=$Thb: }" $p
 
 #=> 2 Thunderbird 2 backup profile
-rsync -irtv --delete ~/.thunderbird/ $machLg/jo/thunderbird
+rsync -irtv --delete ~/.thunderbird/ $machLg/jo/$(date +%y%m%d)thunderbird
 
 #=> 2 Thunderbird 3 first run
-thunderbird > (default-release) > Start
+o 'thunderbird > (default-release) > Start'
+
+#=> 3 Thunderbird 4 remove
+sudo pacman -Rs thunderbird thunderbird-i18n-en-gb
 

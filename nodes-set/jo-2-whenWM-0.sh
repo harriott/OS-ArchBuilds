@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# . $OSAB/nodes/set/jo-2-whenWM-0.sh
+# . $OSAB/nodes-set/jo-2-whenWM-0.sh
 # not dependent on  $OSAB
 #  except  lnd  defined in  $OSAB/Bash/bashrc-generic
 

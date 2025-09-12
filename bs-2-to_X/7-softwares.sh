@@ -25,6 +25,9 @@ sudo pacman -S sd
 # # (after Rust Toolchain)
 # sudo pacman -S dust
 
+#=> fortune-mod
+sudo pacman -S fortune-mod
+
 #=> fping
 sudo pacman -S fping
 

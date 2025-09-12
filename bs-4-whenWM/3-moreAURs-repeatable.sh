@@ -71,7 +71,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> davfs2 1 (re)install
 # gAUR davfs2
-# nvim -c "silent! /savannah.nongnu.org\/projects" PKGBUILD
+# nvim -c "silent! /github.com\/alisarctl" PKGBUILD
 # makepkg -sic
 # true
 
@@ -114,14 +114,15 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> hplip-plugin 0 HPLIP key
-# gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 4ABA2F66DBD5A95894910E0673D770CDA59047B9
+# gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
+# # from  ~/Arch/AUR/hplip-plugin/PKGBUILD
 
 # #=> hplip-plugin 1 install
 # gAUR hplip-plugin
@@ -129,11 +130,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # requires  perl-test-fatal
 # true
 
-# #=> HTMLHint
-# gAUR htmlhint
-# nvim -c "silent! /github\.com\/htmlhint\/HTMLHint\/archive\/refs\/tags" PKGBUILD
-# makepkg -sic
-# true
+#=> HTMLHint
+gAUR htmlhint
+nvim -c "silent! /github\.com\/htmlhint\/HTMLHint\/archive\/refs\/tags" PKGBUILD
+makepkg -sic
+true
 
 # #=> iscan
 # gAUR iscan
@@ -251,10 +252,10 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # requires  perl-test-fatal
 # true
 
-#=> phonon-qt5
-gAUR phonon-qt5
-nvim -c "silent! /download.kde.org\/stable\/phonon" PKGBUILD
-makepkg -sic
+# #=> phonon-qt5
+# gAUR phonon-qt5
+# nvim -c "silent! /download.kde.org\/stable\/phonon" PKGBUILD
+# makepkg -sic
 
 # #=> phonon-qt5-vlc
 # gAUR phonon-qt5-vlc
@@ -320,6 +321,15 @@ makepkg -sic
 # #=> Spotify AUR 2 remove
 # sudo pacman -Rs spotify
 
+# #=> thunderbird-bin
+# # first check if  extra/x86_64/thunderbird  has come up-to-date with  Winget
+# gAUR thunderbird-bin
+# nvim -c "silent! /https:\/\/archive.mozilla.org\/pub\/thunderbird\/releases\/" PKGBUILD
+# makepkg -sic
+# sudo pacman -S thunderbird-i18n-en-gb
+# # referring to  $machLg/jo/thunderbird, tweaked  ~/.thunderbird/profiles.ini
+# cp ~/.thunderbird/profiles.ini $machLg/jo/thunderbird/$(date +%y%m%d)-profiles.ini
+
 # #=> urlview
 # # creates a numbered list of url's in a resource
 # gAUR urlview
@@ -345,11 +355,11 @@ makepkg -sic
 # #=> vimpc-git 1 configure
 # mkdir ~/.config/vimpc
 
-# #=> xnviewmp
-# gAUR xnviewmp
-# nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
-# makepkg -sic
-# true
+#=> xnviewmp
+gAUR xnviewmp
+nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
+makepkg -sic
+true
 
 # #=> yj-git
 # gdAUR yj-git
@@ -363,8 +373,8 @@ makepkg -sic
 # makepkg -sic  # takes ages to work through languages
 # true
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

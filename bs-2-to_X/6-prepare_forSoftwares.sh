@@ -1,3 +1,4 @@
+# vim: set fdl=1:
 #!/bin/bash
 
 # bash $OSAB/bs-2-to_X/6-prepare_forSoftwares.sh
@@ -5,7 +6,7 @@
 # gdAUR  is defined in $AjB/bashrc-console
 
 set -ev
-trap read debug  # puts a read request after each executable line
+# trap read debug  # puts a read request after each executable line
 
 # #=> 0 Aura
 # gAUR aura

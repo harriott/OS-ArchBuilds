@@ -4,7 +4,7 @@
 
 # tidy up  Thunderbird  lockfiles
 # -------------------------------
-# $ABjo/wm/TS/locks.sh  symlinked in  $OSAB/nodes/set/jo-2-whenWM-1.sh
+# $ABjo/wm/TS/locks.sh  symlinked in  $OSAB/nodes-set/jo-2-whenWM-1.sh
 # fcrontab:  @ 1 bash ~/Arch/locks.sh
 
 # DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/notify-send -u critical "TS/locks.sh $(date +%H%M)"  # uncomment to check if this script is being called

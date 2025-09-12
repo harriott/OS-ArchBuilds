@@ -4,10 +4,10 @@
 # build script
 # source $OSAB/nodes-set/jo-0.sh
 
-#=> $tricky
-[ -d $tricky/GR-NF ] || mkdir -p $tricky/GR-NF
-ln -sf $misc/tricky/tricky.md $tricky/readme.md
-ln -sf $misc/tricky/NF.md $tricky/GR-NF/readme.md
+#=> $notDr
+[ -d $notDr/GR-NF ] || mkdir -p $notDr/GR-NF
+ln -sf $misc/notDr/notDr.md $notDr/readme.md  # e -la $notDr/readme.md
+ln -sf $misc/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
 
 #=> Alacritty
 ln -sf $machBld/alacritty.toml ~/.alacritty.toml

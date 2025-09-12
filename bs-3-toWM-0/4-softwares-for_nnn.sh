@@ -21,11 +21,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # the checks are long...
 # true
 
-# #=> 2 go fast
-# trap - debug  # turn off debug
+#=> 2 go fast
+trap - debug  # turn off debug
 
 #=> 3 nnn plugins
-pcmanfm ~/.config/nnn/plugins &
+[[ $distro =~ 'Arch' ]] && thunar ~/.config/nnn/plugins &
 shopt -s dotglob; [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
 sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
 echo $(date "+%Y%m%d") > ~/.config/nnn/plugins/updated

@@ -26,10 +26,10 @@ xdgo()
     fi
 }
 
-#=> auracle-git 0 remake
-PQ auracle-git
-xdgo https://github.com/falconindy/auracle/commits/master/
-updateMaybe auracle-git 'falconindy'
+# #=> auracle-git 0 remake
+# PQ auracle-git
+# xdgo https://github.com/falconindy/auracle/commits/master/
+# updateMaybe auracle-git 'falconindy'
 
 #=> clifm-git
 PQ clifm-git

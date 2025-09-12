@@ -3390,9 +3390,8 @@ nomacs -v  got  nomacs: error while loading shared libraries: libopencv_imgproc.
 sudo pacman -Rs nomacs-git nomacs-git-debug  then re-installed, still not launching
 ## Alacritty font
 DejaVuSansMono 8 became distorted - fixed in  $OSAB/nodes-terminal/alacritty-all.toml
-## nomacs
 ## Thunderbird outdated
-profile, once used for v140.0 (from W inget) on  Win10Pro, won't work here
+profile, once used for v140.0 (from  Winget) on  Win10Pro, won't work here
 Q Thunderbird
   local/thunderbird 139.0.2-1
   local/thunderbird-i18n-en-gb 139.0.2-1
@@ -3442,6 +3441,107 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.212.131.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Signal
+scanned QR from Signal app in Sony Xperia 10 II
+## Thunderbird outdated
+Q Thunderbird  reports v140.0.1
+profile, once used for v141.0 (from  Winget) on  Win10Pro, won't work here
+### Updates
+:: Replace python-cgi with extra/python-standard-cgi? [Y/n]
+## keyboard partially functioning
+Applications > Settings > Keyboard, Ctrl+Alt+Delete, XF86HomePage  among others not working. Fixed by a reboot.
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.115.160.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.115.160.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.93.61.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.93.61.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+no space in  /, so  yes | sudo pacman -Scc
+### Ctrl+c error
+accidentally hit Ctrl+c at  (20/30) Registering Haskell modules... ^C Interrupt signal received
+pacman -Qqs haskell > ~/pacman_haskell
+sudo pacman -S $(< ~/pacman_haskell)
+sudo pacman -S haskell-x509-store
+  ...
+  error: target not found: haskell-connection
+  ...
+  error: target not found: haskell-data-array-byte
+  ...
+  error: target not found: haskell-haddock-library1.9
+  ...
+  error: target not found: haskell-x509-store
+  error: target not found: haskell-x509-system
+  error: target not found: haskell-x509-validation
+  ...
+  so no installations done, so  sudo pacman -Rs haskell-connection haskell-data-array-byte haskell-haddock-library1.9 haskell-x509-store haskell-x509-system haskell-x509-validation
+  :: Running pre-transaction hooks...
+  (1/1) Unregistering Haskell modules...
+  error: command failed to execute correctly
+  :: Processing package changes...
+  (1/8) removing haskell-haddock-library1.9
+  (2/8) removing haskell-data-array-byte
+  (3/8) removing haskell-connection
+  (4/8) removing haskell-x509-validation
+  (5/8) removing haskell-byteable
+  (6/8) removing haskell-x509-system
+  (7/8) removing haskell-x509-store
+  (8/8) removing haskell-x509
+  :: Running post-transaction hooks.
+removed those packages from  ~/pacman_haskell  for  sudo pacman -S $(< ~/pacman_haskell)  308 packages
+  ...
+  :: Running pre-transaction hooks...
+  (1/1) Unregistering Haskell modules...
+  :: Processing package changes...
+  (  1/308) reinstalling ghc-libs
+  WARNING: settings file doesn't exist "/usr/lib/ghc-9.4.8/lib/settings"
+  cannot know target platform so guessing target == host (native compiler).
+  ...
+### auracle
+auracle sync
+  auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2505.0.0: cannot open shared object file: No such file or directory
+sudo pacman -Rs auracle-git  then re-installed it
+#### hplip-plugin
+==> Verifying source file signatures with gpg...
+    hplip-plugin-3.25.6.run ... FAILED (unknown public key 5E4E4D24A34ECD57)
+    ==> ERROR: One or more PGP signatures could not be verified!
+gpg --delete-key 4ABA2F66DBD5A95894910E0673D770CDA59047B9
+## Thunderbird outdated
+Q Thunderbird  reports v141.0.1
+profile, once used for v142.0 (from  Winget) on  Win10Pro, won't work here
+### testing Thunderbird (fail)
+etxt=~/Arch/extra-testing-x86_64-thunderbird
+mkdir $etxt
+appt="$GRs/d-unix/d-linux/d-Arch/r-archlinux-packaging-packages-thunderbird"
+#### start with  PKGBUILD
+cp $appt/PKGBUILD $etxt
+makepkg -sic (but should've  makepkg -sicL)
+  Packages (9) compiler-rt-20.1.8-1  cbindgen-0.29.0-1  clang-20.1.8-1  libotr-4.1.1-6  lld-20.1.8-1  wasi-compiler-rt-20.1.6-1  wasi-libc-1:0+440+3f7eb4c7-1 wasi-libc++-20.1.6-2  wasi-libc++abi-20.1.6-2
+failed, so  cp $appt/vendor-prefs.js $etxt
+  sudo pacman -U thunderbird-142.0.source.tar.xz
+failed, so started again, failed again, missing another file
+#### use whole directory
+rm -r $etxt
+git clone https://gitlab.archlinux.org/archlinux/packaging/packages/thunderbird $etxt
+makepkg -sicL
+  ==> Validating source files with sha512sums...
+  ...
+  0022-bmo-1982569-allocator-api2-fix-unsafe-autoref-lint-error.patch ... FAILED
+  ...
+  ==> ERROR: One or more files did not pass the validity check!
+rm -r $etxt
+### thunderbird-bin
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.147.230.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.147.230.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## nomacs
+Edit > Settings > GENERAL > Nomacs Theme > System
 ## waiting
 gokcehan's lf
 MariaDB

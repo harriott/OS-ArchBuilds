@@ -4,15 +4,15 @@
 # bash $OSAB/bs-repeatable/updates.sh
 
 #=> 0 log directories
-CAC="$culLAb/ml-$host/CAC"
-pc="$culLAb/ml-$host/pm/cu"
-pQ="$culLAb/ml-$host/pm/Q"
+CAC="$culLAb/ml-$host/CAC" # ca-certificates
+pc="$culLAb/ml-$host/pm/cu" # checkupdates
+pQa="$culLAb/ml-$host/pm/Qa" # pacman -Q
 ymdHM=$(date '+%y%m%d-%H%M')
 
 #=> 1 log directories 1 fallback
 [ -d $CAC ] || CAC=~/CAC
 [ -d $pc ] || pc=~/pm/cu
-[ -d $pQ ] || pQ=~/pm/Q
+[ -d $pQa ] || pQa=~/pm/Qa
 
 #=> 2 get into sudo
 echo 'Get into sudo:'
@@ -44,7 +44,7 @@ chmod 600 $crt
 
 #=> 7 save full query
 echo 'saving full package log'
-pacman -Q > $pQ/$ymdHM.log
+pacman -Q > $pQa/$ymdHM.log
 
 #=> 8 /var/cache/pacman/pkg
 echo 'minimising /var/cache/pacman/pkg'

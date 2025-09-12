@@ -7,4 +7,5 @@ export GRs=$ITr/GRs
 # $GRs  used in
 #  $misc/GRs/cGRs.sh
 #  $misc/GRs/needed.sh
+# $ITr  defined in  $OSL/nodes/jo/export
 

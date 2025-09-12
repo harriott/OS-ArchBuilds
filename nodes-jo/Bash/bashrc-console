@@ -79,7 +79,8 @@ fRs () {
 } # no spaces in arguments
 
 if [ -s "/usr/bin/zoxide" ]; then
-  eval "$(zoxide init bash --cmd j)"  # o $PROMPT_COMMAND
+  eval "$(zoxide init bash)"  # o $PROMPT_COMMAND
+  zq () { zoxide query -ls | grep -i $1; }
 fi
 
 dcp (){
@@ -184,19 +185,30 @@ fbbcode () {
 #  fa | grep Secure1
 #  fa | grep Stack
 
-#===> quick-check
-alias fe='fdtsEncryptedChanges'
-
-Encrypted=(CZs Digital0 Digital1 Secure0 Secure1 SHG Stack)
-fdtsEncryptedChanges () {
+#===> checks
+Encrypted=(Czm Digital0 Digital1 Secure0 Secure1 SHG Stack)
+EncThere () {
   if [ "$PWD" != $Enc ]; then
-    if [ -d "$Enc" ]; then
-      cd $Enc; pwd
-    else
-      echo "$Enc ain't there"; return
-    fi
+    if [ -d "$Enc" ]; then cd $Enc; pwd; else echo "$Enc ain't there"; return; fi
   fi
+}
+EncChanges1 () {
+  EncThere
+  cel="$core/encrypted/last"
+  lr=$(tail -1 $cel) # last recorded
+  lrts=${lr:0:17}; echo "last: $lrts"
+  mapfile -t ll < <(find . ! -wholename '*/.git/*' -printf %TY%Tm%Td-%TH:%TM:%.2TS\ %p\\n | sort) # local list
+  # echo ${#ll[@]}  # number of elements
+  lll=${ll[-1]:0:17}; echo "here: $lll"
+  if [[ ${lll} > ${lrts} ]]; then
+    echo "# $(uname -n)" >> $cel
+    printf '%s\n' "${ll[@]}" >> $cel
+  fi
+}
+EncChanges2 () {
+  EncThere
   for E in ${Encrypted[@]}; do
+    o $E
     f7z="find . -iname \"$E*.7z\" | sort | tail -1"
     ed7z=$(eval "$f7z")
     if [ $ed7z ]; then
@@ -262,6 +274,7 @@ gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; 
 
 # get into an AUR repository
 gAUR () { cd "$HOME/Arch/AUR$2"; rAUR $1; trizen -G $1; cd $1; }; export -f gAUR
+# $2  is for  gdAUR
 # if fail to enter pw in time for trizen, pacman -U package_name-version.pkg.tar.xz
 
 # get into an AUR development repository
