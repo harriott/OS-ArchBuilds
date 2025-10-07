@@ -1,10 +1,8 @@
 #!/bin/bash
 # vim: sw=2:
 
-# cd $OSAB/nodes/set; source repair.sh
+# cd $OSAB/nodes-set; source repair.sh
 # for occasions when I've renamed directories, breaking symlinks
-
-# bash repair.sh
 
 #=> 0 machine specific environment
 source "../mb-$host/export-machine"

@@ -3542,10 +3542,52 @@ hp-setup 10.147.230.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## nomacs
 Edit > Settings > GENERAL > Nomacs Theme > System
+## VLC can't play VOB
+could not decode the format a52 mpgv - fixed by  vlc-plugin-ffmpeg
+## $Drpbx/Photos/OppoA76-DCIM-Camera  mess
+after  WezTerm  &  nomacs  tweaks
+all photos opening as duplicates of one - fixed by a reboot
+it's a  nomacs  snag
+## Updates
+:: thunderbird-143.0.1-1 and thunderbird-bin-142.0-1 are in conflict. Remove thunderbird-bin? [y/N] y
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.11.242.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.11.242.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.131.185.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.131.185.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## auracle
+auracle sync
+  error: UNKNOWN: TLS connect error: error:0A000126:SSL routines::unexpected eof while reading
+  because  aur.archlinux.org  is down
+## Thunderbird not finding profile
+Q Thunderbird  reports v143.0.1, same as on  HPEB840G37, where it's working fine
+removed old  ~/.thunderbird/pxwhxeiv.default-release-1
+in  ~/.thunderbird/profiles.ini
+  removed references to  jenqv32e ([Profile1], [InstallFDC34C9F024745EB])
+  running  Thunderbird  just created  g96rgnrw  so removed the new sections referring to it
+    and line  Default=1
+  running  Thunderbird  just created  ep1dm6ap  so removed the new sections referring to it
+    and line  Default=1  and section  [General]
+    got me  Thunderbird - Choose User Profile > default-release > Start Thunderbird
+## python-nspektr
+appeared as AUR, pactree -r python-nspektr  shows no need
+  sudo pacman -Rs python-nspektr
+## MSI GT 710 2GD3H LP
+(removed ATI Radeon HD 4870) installed
+### only  DVI  connected
+got  1024x768  needing  Desktop Background reset
+reboot got  1920x1080  needing  Desktop Background reset
 ## waiting
 gokcehan's lf
 MariaDB
 rebuild-detector
+rm ~/.config/music.sh
+sudo rm /usr/share/applications/emacs_safely.desktop 
 # clm possible extras
 imapbox
 maildir-rank-addr
@@ -3555,7 +3597,7 @@ CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 
   Shortcuts >
     Paste clipboard as plain text > Win+P (= Meta+P)  - works for Nvim/Vim, but not tmux
     Show/hide main window > Win+Q (= Meta+Q)
-  Appearance > Theme > forest
+  Appearance > [ Set colors for tabs, tool bar and menus  Theme > dark ]
 # CPU frequency
 /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
 ## drivers
@@ -3584,9 +3626,9 @@ gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
 sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
 sudo rm /etc/locale.gen.pacnew
 # physical configuration
-ATI Radeon HD 4870 on PCIEX16
 Bose Companion 20
 D-Link DUB-H7
+MSI GT 710 2GD3H LP  on  PCIEX16 (2013)
 NETGEAR WG111v2
 TP-Link UB400
 B525 HD Webcam
@@ -3627,11 +3669,11 @@ whipper offset find -o +6
   WARNING:whipper.common.accurip:entry not found in AccurateRip database
   WARNING:whipper.command.offset:AccurateRip entry not found: drive offset can't be determined, try again with another disc
 so I added  read_offset = 6 ; JH  to  ~/.config/whipper/whipper.conf
-## monitor
-lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 1920x1080 = 16:9)
+## monitors
+lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 21.5" 1920x1080 = 16:9)
   Brightness 40 Contrast 20
   SmartContrast overrides, until turned off
-upper DVI: DVI-D to DVI-D: Packard Bell Viseo 223DX (wide 1920x1080 = 16:9) Brightness 50
+upper DVI: DVI-D to DVI-D: Packard Bell Viseo 223DX (wide 21.5" 1920x1080 = 16:9) Brightness 50
 ## motherboard
 Antec Neo HE550
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0
@@ -3684,6 +3726,7 @@ regularly: clock stuck, no CBH, so hard reboot
 journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS
 # Xfce configuration
 Desktop > Style > None  for each monitor
+Desktop Settings > (Background >) [ Other > Folder > WallpaperFlare > Open  Style > Stretched ]
 Terminal > Edit > Preferences > Appearance > Font > 8
 ## Applications > Settings
 Keyboard >

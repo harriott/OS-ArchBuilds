@@ -29,7 +29,7 @@ handlr set .divx mpv.desktop
 handlr set .docx libreoffice-writer.desktop
 handlr set .el gvim.desktop
 handlr set .epub com.github.johnfactotum.Foliate.desktop
-handlr set .fetl gvim.desktop
+handlr set .ffl gvim.desktop
 handlr set .flac mpv.desktop
 handlr set .flv mpv.desktop
 handlr set .html gvim.desktop  # still feeds to  Firefox...

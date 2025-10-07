@@ -1,0 +1,14 @@
+
+# for  $ABjo/music/music.sh
+#  to reveal my command  music_rotate  to Desktop
+#  I don't strictly need this, but it's nice to have.
+
+[Desktop Entry]
+Name=Music Rotate
+Comment=run  music_rotate.sh
+Exec=/usr/local/bin/music_rotate
+Terminal=false
+Type=Application
+Icon=mpv
+Categories=AudioVideo;Audio;Player;
+

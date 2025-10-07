@@ -6,15 +6,14 @@ vim: nospell:
 
 my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
-```bash
-bm  # (in a wide enough terminal) fuzzy search for manuals
-i bc
-i datediff
-r $TeNo/TN
-spd-say hi
-tty-clock -bcs
-~/.config/pnmixer/config
-```
+    bm  # (in a wide enough terminal) fuzzy search for manuals
+    gsimplecal &  # toggle the little month pop-up
+    i bc
+    i datediff
+    r $TeNo/TN
+    spd-say hi
+    tty-clock -bcs
+    ~/.config/pnmixer/config
 
 SORT(1)
 
@@ -164,9 +163,11 @@ moar -h
 ## LibreOffice
     bash $OSAB/bs-4-whenWM/5-LibreOfficeConfig.sh
 
+`lowriter &` = `libreoffice --writer &`
+
 ### Calc
 - `:Man localc` is basic
-- `localc french.csv` then `Character set > Unicode (UTF-8)`
+- `localc french.csv &` then `Character set > Unicode (UTF-8)`
 
 ## PDF
     gspdfpng  # Ghostscript convert pdf to png
@@ -297,7 +298,6 @@ moar -h
 
 # file contents
     fd -tf -e md -x du -h | sort -hr  # sorted by size
-    pygmentize -h
     skl
 
 TAIL(1)
@@ -505,7 +505,8 @@ NCDU(1)
     r $Cfzd
     ranger --version
 
-can't cope with `utf-16le`
+- can't cope with `utf-16le`
+- preview snags
 
 ### commands
     :delete => (permanently) current file or selection in directory
@@ -588,7 +589,7 @@ can't cope with `utf-16le`
     i zoxide-add
     i zoxide-import
     i zoxide-query
-    zi <fuzzy_pattern> > Enter > <more_fuzzy_patter> > Enter/Esc
+    zi <fuzzy_tail_pattern> > Enter > <fuzzy_pattern> > Enter/Esc
     zq <case_insensitive>  # greps relevant lines from the database
     zoxide query -ls | mo
 
@@ -679,6 +680,7 @@ gpg(1)
     HP ENVY 5532: d0:bf:9c:a2:2f:0e
 
 ### CUPS
+    $AjB/bashrc-wm
     doas cupsenable ENVY_Inspire_7200  # if it's paused
     lpoptions -d ENVY_Inspire_7200  # sets as default in  ~/.cups/lpoptions
     lpoptions -p Envy5532 -o PageSize=A4
@@ -757,8 +759,13 @@ optimised for SSDs
 #### find
     n $rsnapshot/daily.1/localhost$MSWin10/mb
     r $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/daily.0/localhost/$Drpbx/Photos
     r $rsnapshot/daily.1/localhost/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/daily.1/localhost/$Drpbx/Photos
+    r $rsnapshot/daily.6/localhost/$Drpbx/Photos
     r $rsnapshot/hourly.0/localhost/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/hourly.1/localhost/$Drpbx/Photos
+    r $rsnapshot/hourly.6/localhost/$Drpbx/Photos
 
 ##### fRs
     $AjB/bashrc-console
@@ -796,7 +803,7 @@ optimised for SSDs
 
 ##### versions of a particular file
     find $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles/ -maxdepth 1 -type f -name "roles.md" -ls  # not easy to sort
-    fd roles.md $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles --max-depth 1 -l | sort > roles.fetl
+    fd roles.md $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles --max-depth 1 -l | sort > roles.ffl
     $rsnapshot/hourly.0/localhost/$AjB/export-jo
 
 #### interval directories
@@ -932,6 +939,7 @@ java -jar $ITscc/CP/LanguageTool/languagetool-commandline.jar --version
 ```
 
 # multimedia
+    /usr/lib/vlc/plugins
     i sox
     ~/.config/obs-studio/logs
 
@@ -1147,6 +1155,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     slock  # unlocks when correct user pw is entered
     XF86Sleep
     /usr/share/doc/arch-wiki/html/en
+    ~/.local/share/xorg/Xorg.0.log
 
 - `Qt`: `Q qt6`
 - `su` > root pw for `st="$culLAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`

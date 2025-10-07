@@ -12,7 +12,7 @@
 host=$(uname -n)
 case $host in
 # case $(uname -n) in
-    i34G1TU02) Storage=/mnt/BX200 ;;
+    DOP3040D11S) Storage=/mnt/BX200 ;;
     sbMb) Storage=/mnt/SDU3D1TB ;;
 esac
 Thb=$Storage/Dropbox/JH/Thb-dr

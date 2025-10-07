@@ -231,6 +231,10 @@ sudo pacman -S vimiv
 
 #=> vlc
 sudo pacman -S vlc
+sudo pacman -S vlc-plugin-ffmpeg
+
+#=> vlc-gui-ncurses
+sudo pacman -S vlc-gui-ncurses
 
 #=> Wike
 sudo pacman -S wike

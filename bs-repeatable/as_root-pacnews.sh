@@ -17,6 +17,10 @@ sudo find /etc -type f -name "*pacnew"
 # nvim -O /etc/clamav/clamd.conf /etc/clamav/clamd.conf.pacnew -c 'windo difft'
 # rm /etc/clamav/clamd.conf.pacnew
 
+#=> 1 davfs2.conf
+nvim -O /etc/davfs2/davfs2.conf /etc/davfs2/davfs2.conf.pacnew -c 'windo difft'
+rm /etc/davfs2/davfs2.conf.pacnew
+
 #=> 1 dhcpcd.conf
 nvim -O /etc/dhcpcd.conf /etc/dhcpcd.conf.pacnew -c 'windo difft'
 rm /etc/dhcpcd.conf.pacnew
@@ -45,7 +49,7 @@ nvim -O /etc/hosts /etc/hosts.pacnew -c 'windo difft'
 rm /etc/hosts.pacnew
 
 #=> 1 http.conf
-# see  $OSAB/nodes/etc/httpd.conf
+# see  $OSAB/nodes-etc_httpd_conf/httpd.conf
 
 # #=> 1 journald.conf
 # nvim -O /etc/systemd/journald.conf /etc/systemd/journald.conf.pacnew -c 'windo difft'

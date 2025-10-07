@@ -58,12 +58,6 @@ Terminal > Edit > Preferences > Appearance
 rsync -irtv --delete ~/.config/xfce4/xfconf/xfce-perchannel-xml/ $machLg/jo/xfce-perchannel
 rsync -irtv --delete $culLA/ml-sbMb/jo/xfce-perchannel/ ~/.config/xfce4/xfconf/xfce-perchannel-xml
 bash $OSAB/nodes-set/jo-1-Xfce.sh
-Desktop Settings > [ Folder > WallpaperFlare  Style > Stretched ]
-#### Applications > Settings
-Session and Startup >
-  Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
-  Conky > [ Conky  conky ]
-  Neovide > [ Neovide  neovide ]
 ## Updates
 :: Replace python-cgi with extra/python-standard-cgi? [Y/n]
 ## Perl v5.xx
@@ -90,6 +84,14 @@ sudo pacman -Rs auracle-git  then re-installed it
     hplip-plugin-3.25.6.run ... FAILED (unknown public key 5E4E4D24A34ECD57)
     ==> ERROR: One or more PGP signatures could not be verified!
 gpg --delete-key 4ABA2F66DBD5A95894910E0673D770CDA59047B9
+## python-nspektr
+appeared as AUR, pactree -r python-nspektr  shows no need
+  sudo pacman -Rs python-nspektr
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.79.45.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.79.45.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 apache
 EFI install
@@ -112,7 +114,7 @@ fcrontab -l
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # physical configuration
-Dell E2214HB 1920x1080
+Dell E2214HB (wide 21.5" 1920x1080 = 16:9)
 LUPO Nano EDR
 TL-WN725N
 ## audio
@@ -149,3 +151,15 @@ UEFI shows no Boot Sequence list, and can detect nothing...
 Chassis Intrusion > Disabled
 CPU XD Support > Enable
 TPM 2.0 Security > TPM On
+# Xfce configuration
+Desktop Settings > [ Folder > WallpaperFlare  Style > Stretched ]
+## Applications > Settings
+Keyboard >
+  Application Shortcuts >
+    music_rotate > Super+M
+Session and Startup >
+  Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
+  Conky > [ Conky  conky ]
+  Neovide > [ Neovide  neovide ]
+## Panel Preferences > Panel 1 > Items
+following  sbMb

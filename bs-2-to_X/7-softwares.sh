@@ -25,6 +25,10 @@ sudo pacman -S sd
 # # (after Rust Toolchain)
 # sudo pacman -S dust
 
+#=> typos
+# (after Rust Toolchain)
+sudo pacman -S typos
+
 #=> fortune-mod
 sudo pacman -S fortune-mod
 

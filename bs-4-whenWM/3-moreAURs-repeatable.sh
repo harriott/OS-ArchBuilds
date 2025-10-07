@@ -32,11 +32,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a while
 # true
 
-# #=> clifm 0 (re)install
-# gAUR clifm
-# nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
-# makepkg -sic
-# true
+#=> clifm 0 (re)install
+gAUR clifm
+nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
+makepkg -sic
+true
 
 # #=> clifm 1 remove
 # sudo pacman -Rs clifm
@@ -91,11 +91,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox 0 (re)install
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -214,10 +214,10 @@ true
 # [ -f ~/.config/oama/config.yaml ] || oama
 # true
 
-# #=> opera
-# gAUR opera
-# nvim -c "silent! /www.opera.com" PKGBUILD
-# makepkg -sic
+#=> opera
+gAUR opera
+nvim -c "silent! /www.opera.com" PKGBUILD
+makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2
@@ -373,8 +373,8 @@ true
 # makepkg -sic  # takes ages to work through languages
 # true
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

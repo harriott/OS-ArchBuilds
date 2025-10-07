@@ -31,9 +31,6 @@ ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
 ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
 e -adl ~/.pandoc/defaults/*
 
-#=> music scripts
-ln -sf $ABjo/music/music.sh ~/.config/music.sh
-
 #=> Openbox - Alacritty with Nvim
 ln -sf $machBld/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh
 # e -la ~/.config/openbox/AlacrittyNvim.sh
@@ -57,21 +54,9 @@ mkdir -p $nvim/pack
 echo > ~/lastVimDirectory  # ($vfv/enter/vimrc.vim)
 mkdir $nvim/plugin
 
-# #=> vimfiles - nvim 1 populate test
-# ln -s $cGRs/CP/Vim/junegunn-vim-plug/plug.vim ~/.local/share/nvim/site/autoload/plug.vim
-# # ln -s $vfv/after             $nvim/after
-# # ln -s $vfv/filetype.vim      $nvim/filetype.vim
-# # ln -s $vfv/ftplugin          $nvim/ftplugin
-# ln -s $vimfiles/test/configs/init.vim $nvim/init.vim
-# # ln -s $vfn/lua               $nvim/lua
-# # ln -s $vfv/packs/packs-colo  $nvim/pack/colo
-# # ln -s $vfv/packs/packs-cp    $nvim/pack/cp
-# # ln -s $vfv/packs/packs-unix  $nvim/pack/unix
-# # ln -s $vfv/plugin/packs.vim  $nvim/plugin/packs.vim
-# # ln -s $vfv/plugin/plugin.vim $nvim/plugin/plugin.vim
-# # ln -s $vfv/spell             $nvim/spell
-# # ln -s $vfv/syntax            $nvim/syntax
-# # ln -s $vfv/thesaurus         $nvim/thesaurus
+#=> vimfiles - nvim 1 populate test
+ln -s $cGRs/CP/Vim/junegunn-vim-plug/plug.vim ~/.local/share/nvim/site/autoload/plug.vim
+ln -s $vimfiles/test/configs/init.vim $nvim/init.vim
 
 #=> vimfiles - nvim 1 populate use
 ln -s $vfv/after               $nvim/after
@@ -79,6 +64,7 @@ ln -s $vfv/filetype.vim        $nvim/filetype.vim
 ln -s $vfv/ftplugin            $nvim/ftplugin
 ln -s $vfn/init.vim            $nvim/init.vim
 ln -s $vfn/lua                 $nvim/lua
+ln -s $vfn/lsp                 $nvim/lsp
 ln -s $vfv/packs/packs-colo    $nvim/pack/colo
 ln -s $vfv/packs/packs-cp-all  $nvim/pack/cp-all
 ln -s $vfv/packs/packs-cp-full $nvim/pack/cp-full
@@ -88,6 +74,7 @@ ln -s $vfv/plugin/plugin.vim   $nvim/plugin/plugin.vim
 ln -s $vfv/spell               $nvim/spell
 ln -s $vfv/syntax              $nvim/syntax
 ln -s $vfv/thesaurus           $nvim/thesaurus
+eza -adl $nvim/*
 
 #=> vimfiles - nvim 2 check
 lsd -al $nvim

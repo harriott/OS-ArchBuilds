@@ -3,7 +3,7 @@
 
 # $AjB/bashrc-console  symlinked in  $OSAB/nodes/set/jo-0.sh
 #  then sourced by  $AjB/bash_profile  &  $machBld/jo/Bash/bashrc
-# see  $OSAB/nodes/set/repair.sh  for checking if this was sourced
+# see  $OSAB/nodes-set/repair.sh  for checking if this was sourced
 
 # useful also in Console as user
 
