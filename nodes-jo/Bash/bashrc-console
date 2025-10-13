@@ -210,12 +210,12 @@ EncChanges2 () {
   for E in ${Encrypted[@]}; do
     o $E
     f7z="find . -iname \"$E*.7z\" | sort | tail -1"
+    # find . -iname \"Czm*.7z\"
     ed7z=$(eval "$f7z")
     if [ $ed7z ]; then
       tput setaf 5
       find . -iname "$E*.7z" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort
       tput setaf 7
-      # eval "find -path \"./$E*\" -newer $ed7z $printfDTsort"
       find -path "./$E*" -newer $ed7z -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort
       # - fails to detect change of year
       eval "find \"$core/encrypted\" -name \"$E*\" -newer $ed7z"

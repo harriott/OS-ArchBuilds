@@ -3579,15 +3579,37 @@ appeared as AUR, pactree -r python-nspektr  shows no need
   sudo pacman -Rs python-nspektr
 ## MSI GT 710 2GD3H LP
 (removed ATI Radeon HD 4870) installed
-### only  DVI  connected
+### only  DVI  connected to left monitor
 got  1024x768  needing  Desktop Background reset
-reboot got  1920x1080  needing  Desktop Background reset
+reboot got X11 refining to  1920x1080  needing  Desktop Background reset
+### HDMI  connected to right monitor
+while Arch is up, no signal yet
+reboot got it, needing  Desktop Background reset
+### updated  $machBld/etc/grub
+reboot
+## Pierre Schmitz gpg key
+gpg -k pierre
+  pub   rsa2048 2011-04-10 [SC]
+    4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC
+    uid           [ unknown] Pierre Schmitz <pierre@archlinux.de>
+    uid           [ unknown] Pierre Schmitz <pierre@archlinux.org>
+    sub   rsa2048 2011-04-10 [E]
+but  0x9741E8AC  is gone, so
+  gpg --delete-key 9741E8AC
+  gpg --recv-keys 3E80CA1A8B89F69CBA57D98A76A5EF9054449A5C
+## auracle-git  error
+  auracle: error while loading shared libraries: libfmt.so.11: cannot open shared object file: No such file or directory
+sudo pacman -Rs auracle-git  then re-installed it
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.81.74.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.81.74.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
+fcrontab > jump
 gokcehan's lf
 MariaDB
 rebuild-detector
-rm ~/.config/music.sh
-sudo rm /usr/share/applications/emacs_safely.desktop 
 # clm possible extras
 imapbox
 maildir-rank-addr
@@ -3628,7 +3650,6 @@ sudo rm /etc/locale.gen.pacnew
 # physical configuration
 Bose Companion 20
 D-Link DUB-H7
-MSI GT 710 2GD3H LP  on  PCIEX16 (2013)
 NETGEAR WG111v2
 TP-Link UB400
 B525 HD Webcam
@@ -3669,11 +3690,11 @@ whipper offset find -o +6
   WARNING:whipper.common.accurip:entry not found in AccurateRip database
   WARNING:whipper.command.offset:AccurateRip entry not found: drive offset can't be determined, try again with another disc
 so I added  read_offset = 6 ; JH  to  ~/.config/whipper/whipper.conf
-## monitors
-lower DVI: DVI-D to DVI-D: Philips 221V2 (wide 21.5" 1920x1080 = 16:9)
-  Brightness 40 Contrast 20
-  SmartContrast overrides, until turned off
-upper DVI: DVI-D to DVI-D: Packard Bell Viseo 223DX (wide 21.5" 1920x1080 = 16:9) Brightness 50
+## graphics
+MSI GT 710 2GD3H LP  on  PCIEX16 (2013)
+### monitors
+DVI: (DVI-D to DVI-D cable, left) Dell E2214HB (wide 21.5" 1920x1080 = 16:9)
+HDMI: (HDMI to DVI-D cable, right) Packard Bell Viseo 223DX (wide 21.5" 1920x1080 = 16:9) Brightness 50
 ## motherboard
 Antec Neo HE550
 Gigabyte GA-970A-DS3P rev.2.1 ATX Socket AM3+ DDR3 S-ATA 600 PCI Express 2.0 x16 USB 3.0

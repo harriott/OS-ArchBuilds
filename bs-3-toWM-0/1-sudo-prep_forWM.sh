@@ -110,14 +110,20 @@ pacman -S noto-fonts-emoji  # don't work in  urxvt  or  xterm...
 # #=> cmatrix
 # pacman -S cmatrix
 
-# #=> hw
-# # exFAT utilities
-# pacman -S exfatprogs
+#=> hw
+# exFAT utilities
+pacman -S exfatprogs
 
-# # lm_sensors
-# pacman -S lm_sensors
+# hwinfo
+pacman -S hwinfo
 
-#=> hw - xorg-xev
+# lm_sensors
+pacman -S lm_sensors
+
+# xorg-xdpyinfo
+pacman -S xorg-xdpyinfo
+
+# xorg-xev
 pacman -S xorg-xev
 
 # #=> PulseAudio - pulsemixer

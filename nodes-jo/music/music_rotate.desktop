@@ -1,5 +1,7 @@
 
-# for  $ABjo/music/music.sh
+# $ABjo/music/music_rotate.desktop
+#  for  $ABjo/music/music_rotate.sh
+#  symlinked in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
 #  to reveal my command  music_rotate  to Desktop
 #  I don't strictly need this, but it's nice to have.
 

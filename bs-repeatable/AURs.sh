@@ -150,12 +150,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> julia-bin 1 install
-# # for sixels
-# gAUR julia-bin
-# nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
-# makepkg -sic
-# true
+#=> julia-bin 1 install
+# for sixels
+gAUR julia-bin
+nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
+makepkg -sic
+true
 
 # #=> kittypack
 # gAUR kittypack
@@ -240,11 +240,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> powershell-bin
-gAUR powershell-bin
-nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
-makepkg -sic
-true
+# #=> powershell-bin
+# gAUR powershell-bin
+# nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> rdrview-git
 # gdAUR rdrview-git

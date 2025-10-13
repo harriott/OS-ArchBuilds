@@ -341,6 +341,7 @@ SED(1)
 - `du` don't work in script...
 - FIND(1)
 - MV(1)
+- PV(1), used to make `ARCH_nnnnnn`
 - rsync(1)
 - STAT(1)
 - WC(1)
@@ -422,7 +423,6 @@ vid => ffmpegthumbnailer
 #### directory navigation
     ++ => fuzzy directory jumper
     b/f => back/forward in directories
-    j [fuzzyPath] => jump [to fuzzyPath]
 
 #### help
     F1 => manpage
@@ -565,14 +565,6 @@ NCDU(1)
     i perl-rename
     perl-rename 's/^\.//' *  # removes leading  .
 
-## Samokovarov's jump
-    i jump
-    j <fuzzysearch> [<FuzzyLook> ...]  then j for subsequent matches
-    jump clean  # I have in fcrontab
-    jump top | mo
-    jump --help
-    r ~/.jump
-
 ## tree lists
     i tree
 
@@ -660,7 +652,7 @@ gpg(1)
 ### graphics card details
     doas cat /sys/kernel/debug/dri/0/radeon_pm_info
     lspci -vnn | grep VGA -A 12 | xcol Intel Radeon size VGA
-    sudo lshw -C display | xcol Radeon size VGA
+    sudo lshw -C display | xcol GeForce NVIDIA Radeon size VGA
 
 ## cbh - keyboard
     xev | grep keycode

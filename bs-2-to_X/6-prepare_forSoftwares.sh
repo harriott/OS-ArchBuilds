@@ -1,5 +1,5 @@
-# vim: set fdl=1:
 #!/bin/bash
+# vim: set fdl=1:
 
 # bash $OSAB/bs-2-to_X/6-prepare_forSoftwares.sh
 

@@ -32,11 +32,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a while
 # true
 
-#=> clifm 0 (re)install
-gAUR clifm
-nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
-makepkg -sic
-true
+# #=> clifm 0 (re)install
+# gAUR clifm
+# nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> clifm 1 remove
 # sudo pacman -Rs clifm
@@ -130,11 +130,11 @@ true
 # makepkg -sic  # requires  perl-test-fatal
 # true
 
-#=> HTMLHint
-gAUR htmlhint
-nvim -c "silent! /github\.com\/htmlhint\/HTMLHint\/archive\/refs\/tags" PKGBUILD
-makepkg -sic
-true
+# #=> HTMLHint
+# gAUR htmlhint
+# nvim -c "silent! /github\.com\/htmlhint\/HTMLHint\/archive\/refs\/tags" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> iscan
 # gAUR iscan
@@ -355,11 +355,11 @@ makepkg -sic
 # #=> vimpc-git 1 configure
 # mkdir ~/.config/vimpc
 
-#=> xnviewmp
-gAUR xnviewmp
-nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
-makepkg -sic
-true
+# #=> xnviewmp
+# gAUR xnviewmp
+# nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> yj-git
 # gdAUR yj-git

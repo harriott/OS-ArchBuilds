@@ -92,6 +92,18 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.79.45.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## auracle-git  error
+  auracle: error while loading shared libraries: libfmt.so.11: cannot open shared object file: No such file or directory
+sudo pacman -Rs auracle-git  then re-installed it
+## nomacs-git
+nomacs -v  got  nomacs: error while loading shared libraries: libopencv_imgproc.so.411: cannot open shared object file: No such file or directory
+sudo pacman -Rs nomacs-git nomacs-git-debug  then re-installed, still not launching
+## xdg-open .mp3
+handlr get .mp3  reports  vlc.desktop
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## xdg-open .docx
+handlr get .docx  reports  calibre-ebook-viewer.desktop
+  bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## waiting
 apache
 EFI install
@@ -114,14 +126,14 @@ fcrontab -l
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # physical configuration
-Dell E2214HB (wide 21.5" 1920x1080 = 16:9)
-LUPO Nano EDR
-TL-WN725N
+Bluetooth: LUPO Nano EDR in lower front USB
+Philips 220V4L 1680x1050 (VGA-VGA cable)
+WiFi: TL-WN725N in lower front USB
 ## audio
 back out is good
 front headphone out is dead
 ## cbh
-Logitech M187 Wireless Mini Mouse
+Logitech M187 Wireless Mini Mouse, with receiver in lower back USB
 Perixx PERIBOARD-407W keyboard
 ## drives
 HL Data Storage GH70N DVD rewriter

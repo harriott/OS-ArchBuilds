@@ -12,7 +12,11 @@ ln -sf $ABjo/music/MPD/mpd.conf ~/.config/mpd/mpd.conf
 ln -sf $ABjo/music/MPD/vimpcrc ~/.config/vimpc/vimpcrc
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
+
+#=> music_rotate
 sudo ln -sf $ABjo/music/music_rotate.sh /usr/local/bin/music_rotate
+sudo ln -sf $ABjo/music/music_rotate.desktop /usr/share/applications/music_rotate.desktop
+# pb /usr/share/applications/music_rotate.desktop
 
 #=> Spacemacs
 sudo ln -sf $ABjo/Emacs/spacemacs.desktop /usr/share/applications/spacemacs.desktop
