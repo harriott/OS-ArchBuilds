@@ -214,10 +214,10 @@ true
 # [ -f ~/.config/oama/config.yaml ] || oama
 # true
 
-#=> opera
-gAUR opera
-nvim -c "silent! /www.opera.com" PKGBUILD
-makepkg -sic
+# #=> opera
+# gAUR opera
+# nvim -c "silent! /www.opera.com" PKGBUILD
+# makepkg -sic
 
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2

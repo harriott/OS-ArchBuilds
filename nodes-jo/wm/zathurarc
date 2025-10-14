@@ -15,8 +15,6 @@ set first-page-column 1:1
 # for  xdg-open http://...
 set sandbox none
 
-# use full height
-# set window-height 500
-set window-height 1100
-# - taller than a 1080 screen
+set window-height 970
+# - good for a 1050 screen
 
