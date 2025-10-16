@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# bash <this_script>
+# bash $OSAB/bs-2-to_X/4-vimfiles.sh
 
 set -ev
 trap read debug  # puts a read request after each executable line

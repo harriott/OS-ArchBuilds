@@ -104,6 +104,8 @@ handlr get .mp3  reports  vlc.desktop
 ## xdg-open .docx
 handlr get .docx  reports  calibre-ebook-viewer.desktop
   bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+## switched to  ASUS Designo MX239H
+got seized  xfdesktop  pop-up
 ## waiting
 apache
 EFI install
@@ -126,8 +128,8 @@ fcrontab -l
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # physical configuration
+Monitor: ASUS Designo MX239H 1920x1080 (VGA-VGA cable)
 Bluetooth: LUPO Nano EDR in lower front USB
-Philips 220V4L 1680x1050 (VGA-VGA cable)
 WiFi: TL-WN725N in lower front USB
 ## audio
 back out is good
@@ -172,6 +174,9 @@ Keyboard >
 Session and Startup >
   Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
   Conky > [ Conky  conky ]
+  Dunst > [ Dunst  dunst ]
+  Dunst > [ Dunst  dunst ]
+  Dunst > [ Dunst  dunst ]
   Neovide > [ Neovide  neovide ]
 ## Panel Preferences > Panel 1 > Items
 following  sbMb

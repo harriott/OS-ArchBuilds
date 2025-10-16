@@ -49,7 +49,7 @@ ln -sf $ABjo/WAN/davfs2.conf ~/.davfs2/davfs2.conf
 ln -sf $ABjo/WAN/dictrc ~/.dictrc
 
 #=> Dunst
-ln -sf $Openbox/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
+ln -sf $ABjo/wm/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
 
 #=> fix Calibri in Thunderbird
 ln -sf $ABjo/wm/fontconfig-conf_d-20-no-embedded.conf ~/.config/fontconfig/conf.d/20-no-embedded.conf

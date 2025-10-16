@@ -3605,7 +3605,19 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.81.74.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## PulseAudio fail
+after  Suspend  nothing heard from  cmus, firefox, mpv
+speaker-test -c 2  works
+pulseaudio -k  was enough
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.248.51.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.248.51.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Dropbox Panel icon invisible
+not fixed by killing and restarting  Dropbox
 ## waiting
+dunstrc
 fcrontab > jump
 gokcehan's lf
 MariaDB

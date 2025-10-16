@@ -1138,6 +1138,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 # system
     $ABjo/wm/Xresources/Xresources
+    $Openbox/dunstrc
     bat -A /etc/hosts
     bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
@@ -1319,6 +1320,7 @@ backed up in `$AjB/bash_profile`
     o $XDG_CONFIG_HOME
     o $XDG_CONFIG_DIRS
     rsync -irtv --delete ~/.config/xfce4/xfconf/xfce-perchannel-xml/ $machLg/jo/xfce-perchannel
+    ~/.cache/xfce4
     ~/.config/autostart/Alacritty.desktop
     ~/.config/autostart/Conky.desktop
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml

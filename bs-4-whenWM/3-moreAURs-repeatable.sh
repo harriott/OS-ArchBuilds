@@ -91,11 +91,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-#=> Dropbox 0 (re)install
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -355,11 +355,11 @@ true
 # #=> vimpc-git 1 configure
 # mkdir ~/.config/vimpc
 
-# #=> xnviewmp
-# gAUR xnviewmp
-# nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
-# makepkg -sic
-# true
+#=> xnviewmp
+gAUR xnviewmp
+nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
+makepkg -sic
+true
 
 # #=> yj-git
 # gdAUR yj-git

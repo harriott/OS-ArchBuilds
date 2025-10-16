@@ -1,0 +1,122 @@
+# vim: et:
+
+# $ABjo/wm/dunstrc ($OSAB/nodes-set/jo-0.sh) es ~/.config/dunst/dunstrc
+
+#  reduced from  /etc/dunst/dunstrc ($cGRs/d-unix/d-linux/r-dunst-project-dunst/dunstrc)
+
+# $ eval $(dbus-launch)   if you make changes here
+
+# errors are reported on  dunst &
+
+# test with  dunstify "First test message."; dunstify "Second test message, which is longer."
+
+# my old settings
+#   browser = chromium
+#   follow = mouse
+#   horizontal_padding = 10
+#   icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
+#   offset = 20x30
+#   sort = no
+
+[global]
+
+    alignment = left
+    always_run_script = true
+    browser = /usr/bin/xdg-open
+    class = Dunst
+    corner_radius = 0
+    corners = all
+    dmenu = /usr/bin/dmenu -p dunst:
+    ellipsize = middle
+    enable_recursive_icon_lookup = true
+    follow = none
+    font = Cantarell 10
+    force_xinerama = false
+    force_xwayland = false
+    format = "<b>%s</b>\n%b"
+    frame_color = "#aaaaaa"
+    frame_width = 3
+    gap_size = 0
+    height = (0, 300)
+    hide_duplicate_count = false
+    history_length = 20
+    horizontal_padding = 8
+    icon_corner_radius = 0
+    icon_corners = all
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_position = left
+    icon_theme = Adwaita
+    idle_threshold = 120
+    ignore_dbusclose = false
+    ignore_newline = no
+    indicate_hidden = yes
+    line_height = 0
+    markup = full
+    max_icon_size = 128
+    min_icon_size = 32
+    monitor = 0
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+    notification_limit = 20
+    offset = (10, 50)
+    origin = top-right
+    padding = 8
+    progress_bar = true
+    progress_bar_corner_radius = 0
+    progress_bar_corners = all
+    progress_bar_frame_width = 1
+    progress_bar_height = 10
+    progress_bar_max_width = 300
+    progress_bar_min_width = 150
+    scale = 0
+    separator_color = frame
+    separator_height = 2
+    show_age_threshold = 60
+    show_indicators = yes
+    sort = yes
+    stack_duplicates = true
+    sticky_history = yes
+    text_icon_padding = 0
+    title = Dunst
+    transparency = 0
+    vertical_alignment = center
+    width = (0, 1200)
+    word_wrap = no
+
+[experimental]
+
+    per_monitor_dpi = false
+
+[urgency_low]
+
+#   background = "#ffffff"
+#   foreground = "#31363d"
+    background = "#222222"
+    foreground = "#888888"
+    frame_color = "#888888"
+    timeout = 5
+    default_icon = dialog-information
+
+[urgency_normal]
+
+#   background = "#323e49"
+#   foreground = "#e7ed50"
+    background = "#285577"
+    foreground = "#ffffff"
+    timeout = 10
+    override_pause_level = 30
+    default_icon = dialog-information
+
+[urgency_critical]
+
+    background = "#610024"
+    foreground = "#ffe500"
+    frame_color = "#ff0000"
+#   background = "#900000"
+#   foreground = "#ffffff"
+#   frame_color = "#ff0000"
+    timeout = 0
+    override_pause_level = 60
+    default_icon = dialog-warning
+
