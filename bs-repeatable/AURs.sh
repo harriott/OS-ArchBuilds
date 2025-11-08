@@ -13,7 +13,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> ansifilter
 # gAUR ansifilter
-# nvim -c "silent! /www.andre-simon.de" PKGBUILD
+# nvim -c "silent! /gitlab.com\/saalen\/ansifilter" PKGBUILD
 # makepkg -sic
 # true
 
@@ -31,6 +31,11 @@ trap read debug  # puts a read request after each executable line
 # #=> bfg 1 remove
 # rAUR ~/Arch/AUR/bfg
 # sudo pacman -Rs bfg
+
+# #=> blesh-git
+# gAUR blesh-git
+# nvim -c "silent! /akinomyoga\/ble.sh" PKGBUILD
+# makepkg -sic
 
 # #=> cheat
 # gAUR cheat
@@ -150,12 +155,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> julia-bin 1 install
-# for sixels
-gAUR julia-bin
-nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
-makepkg -sic
-true
+# #=> julia-bin 1 install
+# # for sixels
+# gAUR julia-bin
+# nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> kittypack
 # gAUR kittypack
@@ -257,6 +262,11 @@ true
 # nvim -c "silent! /dwt1" PKGBUILD
 # makepkg -sic
 # true
+
+#=> sysz
+gAUR sysz
+nvim -c "silent! /joehillen\/sysz" PKGBUILD
+makepkg -sic
 
 # #=> tint-tetris
 # gAUR tint-tetris

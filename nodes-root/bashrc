@@ -35,3 +35,6 @@ fs () { find / \
     -iname "*$1*" -print; }
 fss () { fs "$1" > /home/jo/fs.lst; chown jo:jo /home/jo/fs.ffl; }
 
+# ble.sh
+[[ ! ${BLE_VERSION-} ]] || ble-attach
+

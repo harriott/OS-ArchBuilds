@@ -170,9 +170,12 @@ moar -h
 - `localc french.csv &` then `Character set > Unicode (UTF-8)`
 
 ## PDF
-    gspdfpng  # Ghostscript convert pdf to png
     i pdfinfo
     pdfjam
+
+### Ghostscript
+    gspdfpng  # Ghostscript convert pdf to png
+    gswin64c -h  # version and available devices
 
 ### Zathura
     $ABjo/wm/zathurarc  # set window-height <pixels>
@@ -462,6 +465,7 @@ vid => ffmpegthumbnailer
 ## fd
     :Man fd
     fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
+    im fd
 
 ## fuzzy - fzf
     <someCommand> Ctrl-t - gets the selected node on the command-line
@@ -1027,7 +1031,7 @@ pacman -Sg base-devel  # lists all
 ## pacman
     /etc/pacman.conf
     checkupdates
-    makepkg --install
+    makepkg -i  # --install
     pacman <operation> [options] [targets]
     pacman -Qdt  # lists all orphans
     pacman -Qq sd > ~/pacman_sd
@@ -1137,8 +1141,8 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     i hunspell
 
 # system
+    $ABjo/wm/dunstrc
     $ABjo/wm/Xresources/Xresources
-    $Openbox/dunstrc
     bat -A /etc/hosts
     bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
@@ -1263,7 +1267,10 @@ IOSTAT(1)
     sudo du -h --max-depth=1 /usr/share
     sudo du -sh /boot /etc /home /root /usr
 
-## systemd - journalctl
+## systemd
+    sysz  # fzf systemctl
+
+### journalctl
     journalctl --disk-usage
     journalctl --list-boots
     journalctl --verify
@@ -1271,7 +1278,7 @@ IOSTAT(1)
 
 backed up in `$AjB/bash_profile`
 
-### messages, paged
+#### messages, paged
     journalctl -b  # for this boot
     journalctl -b -1  # for previous boot
     journalctl -b -1 -e  # shows end of  -n1000

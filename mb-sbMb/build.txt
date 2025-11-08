@@ -1635,7 +1635,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.208.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## grow /home
-KDTG311282  with  systemrescue-10.01-amd64.iso > UEFI: KingstonDataTraveler 3.0MAP > Default >
+K128GBDTG3B  with  systemrescue-10.01-amd64.iso > UEFI: KingstonDataTraveler 3.0MAP > Default >
   startx > GParted > [ /dev/sda5 > Delete > /dev/sda4 > Resize > New size (MiB) 60068 > Apply
   unallocated > New > Label > SD480GSSDPlus ] Logout > Reboot
 sudo chown jo:jo /mnt/SD480GSSDPlus  & rebuilt directories
@@ -3616,9 +3616,40 @@ hp-setup 10.248.51.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Dropbox Panel icon invisible
 not fixed by killing and restarting  Dropbox
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.73.60.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.73.60.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+:: libfm-gtk3-1.4.0-2 and libfm-gtk2-1.4.0-1 are in conflict. Remove libfm-gtk2? [y/N] y
+## Time 1h 3.1s slow
+as revealed by   http://time.is/
+sudo ntpd -qg
+sudo hwclock --systohc
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.73.60.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.73.60.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  :: Replace libappindicator-gtk3 with extra/libappindicator? [Y/n]
+  :: Replace libindicator-gtk3 with extra/libindicator? [Y/n]
+  ...
+  (551/551) checking for file conflicts
+  error: failed to commit transaction (conflicting files)
+  bash-completion: /usr/share/bash-completion/completions/tmux exists in filesystem (owned by tmux-bash-completion-git)
+  Errors occurred, no packages were upgraded.
+sudo mv /usr/share/bash-completion/completions/tmux /usr/share/bash-completion/completions/tmux_old
+after successful Updates
+  sudo rm /usr/share/bash-completion/completions/tmux_old
+## auracle-git  error
+  error: UNKNOWN: TLS connect error: error:0A000126:SSL routines::unexpected eof while reading
+later it worked again
+## qt5-doc
+pactree -r qt5-doc  shows no need, so  sudo pacman -Rs qt5-doc
 ## waiting
-dunstrc
-fcrontab > jump
+Atuin
 gokcehan's lf
 MariaDB
 rebuild-detector

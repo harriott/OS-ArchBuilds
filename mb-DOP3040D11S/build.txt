@@ -106,11 +106,26 @@ handlr get .docx  reports  calibre-ebook-viewer.desktop
   bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
 ## switched to  ASUS Designo MX239H
 got seized  xfdesktop  pop-up
+## Updates
+  :: Replace libappindicator-gtk3 with extra/libappindicator? [Y/n]
+  :: Replace libindicator-gtk3 with extra/libindicator? [Y/n]
+  ...
+  :: libfm-gtk3-1.4.0-2 and libfm-gtk2-1.4.0-1 are in conflict. Remove libfm-gtk2? [y/N] y
+  ...
+  error: failed to commit transaction (conflicting files)
+  bash-completion: /usr/share/bash-completion/completions/tmux exists in filesystem (owned by tmux-bash-completion-git)
+  Errors occurred, no packages were upgraded.
+sudo rm /usr/share/bash-completion/completions/tmux  then Updates again
+## gtk-sharp-2
+pactree -r gtk-sharp-2  shows no need, so  sudo pacman -Rs gtk-sharp-2
 ## waiting
 apache
+blesh-git  for  Atuin
 EFI install
+for  Thunar
 gokcehan's lf
 MariaDB
+sysz
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

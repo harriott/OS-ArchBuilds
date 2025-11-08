@@ -7,4 +7,5 @@ trap read debug  # puts a read request after each executable line
 
 sudo pacman -S xfce4 xfce4-goodies
 sudo pacman -S xfce4-indicator-plugin  # supposedly needed for Dropbox icon
+sudo pacman -S libgsf thunar-archive-plugin xarchiver  # for  Thunar
 

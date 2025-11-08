@@ -1,18 +1,19 @@
 # vim: et:
 
-# $ABjo/wm/dunstrc ($OSAB/nodes-set/jo-0.sh) es ~/.config/dunst/dunstrc
+# $ABjo/wm/dunstrc ($OSAB/nodes-set/jo-0.sh)
 
-#  reduced from  /etc/dunst/dunstrc ($cGRs/d-unix/d-linux/r-dunst-project-dunst/dunstrc)
+#  reduced from
+#   /etc/dunst/dunstrc ($cGRs/d-unix/d-linux/r-dunst-project-dunst/dunstrc)
+#   which also contains explanations of each setting
 
 # $ eval $(dbus-launch)   if you make changes here
 
 # errors are reported on  dunst &
 
-# test with  dunstify "First test message."; dunstify "Second test message, which is longer."
+# dunstify  tests in  $misc/linux/QR/QR.md
 
 # my old settings
 #   browser = chromium
-#   follow = mouse
 #   horizontal_padding = 10
 #   icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
 #   offset = 20x30
@@ -29,7 +30,7 @@
     dmenu = /usr/bin/dmenu -p dunst:
     ellipsize = middle
     enable_recursive_icon_lookup = true
-    follow = none
+    follow = mouse
     font = Cantarell 10
     force_xinerama = false
     force_xwayland = false
@@ -46,7 +47,7 @@
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
     icon_position = left
     icon_theme = Adwaita
-    idle_threshold = 120
+    idle_threshold = 0
     ignore_dbusclose = false
     ignore_newline = no
     indicate_hidden = yes

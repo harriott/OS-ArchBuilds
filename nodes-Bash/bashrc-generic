@@ -10,6 +10,7 @@
 #  for root: sourced by  $OSAB/nodes-root/bashrc
 # see  $OSAB/nodes/set/repair.sh  for checking if this was sourced
 
+[[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$OSAB/nodes-Bash/blerc"
 alias fin='figlet -f univers finished'
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
@@ -117,7 +118,9 @@ export WORKON_HOME=~/.virtualenvs  # $WORKON_HOME
 [[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper_lazy.sh
 
 #=> clamscan 0 preferred log basename
-# cslbn=$clamscan/clamscan
+# $hmlA/ml-$host/cs
+
+#==> 0 preferred log basename
 if [ $myDrA ]; then
   cslLocation="$hmlA/ml-$host"
 else
@@ -125,23 +128,23 @@ else
 fi
 cslbn=$cslLocation/cs
 
-#=> clamscan 1 scan
+#==> 1 scan
 scs () {
   echo "about to clamscan /"
   sudo clamscan -r --exclude-dir='/media|/mnt|/sys' / 2>&1 | tee $cslbn/$(date '+%y%m%d-%H%M').log
   sudo chown jo:jo $cslbn.log
 }  # end of log shows time taken
 
-#=> clamscan 2 filter the results
+#==> 2 filter the results
 # $vfv/syntax/cslF.vim
 
 csF () {
   if [ $1 ]; then
     cslFbn=$cslbn"-$1-FOUND"
-      cslF="$cslFbn.log"
+      cslF="$cslFbn.cslF"
     if [ $2 ]; then
       # filter down to some remaining threats - might not catch all
-      cslFt="$cslFbn-threats.log"
+      cslFt="$cslFbn-threats.cslF"
       if [ -f $cslF ]; then
         cp $cslF $cslFt
         sed -i '/Heuristics.Phishing.Email.SpoofedDomain\|Sanesecurity\|Urlhaus/!d' $cslFt
@@ -152,7 +155,7 @@ csF () {
       fi
     else
       # make clamscanFOUND log file - should be enough
-      cp $cslbn.log $cslF
+      cp $cslbn.cslF $cslF
       sed -i '/ FOUND$/!d' $cslF
       sed -i 's/ FOUND$//' $cslF
       sed -i '1s/^/vim: ft=cslF:\n\n/' $cslF
@@ -161,7 +164,7 @@ csF () {
   else
     echo "- need a datecode"
   fi
-}  # make clamscanFOUND log file - should be enough
+}
 
 #=> f1t2t3
 if [ $host = 'sbMb' ]; then

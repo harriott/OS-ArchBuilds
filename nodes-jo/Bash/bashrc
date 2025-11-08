@@ -12,4 +12,5 @@ source $AjB/bashrc-wm
 source $AjB/bashrc-ob  # useful in Openbox (and awesome)
 source $OSL/nodes/bashrc-clm  # can be used before WM
 source $OSL/nodes/bashrc-wm
+[[ ! ${BLE_VERSION-} ]] || ble-attach  # ble.sh
 

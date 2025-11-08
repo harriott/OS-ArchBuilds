@@ -109,22 +109,22 @@ vs () {
   fi
 }  # stabilize a video
 
-#==> ffmpeg 1 audio trimming
-aet () {
+#==> ffmpeg 1 trimming
+avte () {
   export a="$1"
   trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
   duration=$(ffprobe -i "$a" -show_format -v quiet | sed -n 's/duration=//p')
   trimmed=$(echo "$duration-$trim" | bc)
   ffi "$a" -c copy -t $trimmed -y "t$a"
   mpv --start=-3 "t$a"
-} # aet <anAudioFileToTrimOffEnd> <trimIfGreaterThan1second>
+} # aet <anAVFileToTrimOffEnd> <trimIfGreaterThan1second>
 
-abt () {
+avtb () {
   export a="$1"
   trim=1; [[ $2 ]] && trim=$2
   ffmhb -ss $trim -i "$a" -c copy -y "t$a"
   mpv --end=3 "t$a"
-} # abt <an_audio_file_to_trim_half_second_off_beginning> 0.3
+} # abt <an_av_file_to_trim_half_second_off_beginning> 0.3
 
 # mv "t$a" "$a"
 

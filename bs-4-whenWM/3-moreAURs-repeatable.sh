@@ -10,7 +10,7 @@ trap read debug  # puts a read request after each executable line
 # gAUR  gdAUR  are defined in $AjB/bashrc-console
 # softwares that require a WM
 
-# if too late with pw,  C ~/Arch/AUR/  then move into the relevant directory for  makepkg --install
+# if too late with pw,  C ~/Arch/AUR/  then move into the relevant directory for  makepkg -i
 
 # #=> archlinux-java-run
 # # for PDFsam
@@ -114,11 +114,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
@@ -355,11 +355,11 @@ true
 # #=> vimpc-git 1 configure
 # mkdir ~/.config/vimpc
 
-#=> xnviewmp
-gAUR xnviewmp
-nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
-makepkg -sic
-true
+# #=> xnviewmp
+# gAUR xnviewmp
+# nvim -c "silent! /XnViewMP-linux-x64" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> yj-git
 # gdAUR yj-git
@@ -373,8 +373,8 @@ true
 # makepkg -sic  # takes ages to work through languages
 # true
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 
