@@ -2,15 +2,17 @@
 
 # $AjB/bashrc, sourced by  $machBld/jo/Bash/bashrc
 
-#=> already done in  $AjB/bash_profile
+#=> 0 already done in  $AjB/bash_profile
 # - but only the exports are transferred, no problem repeating those here
   source ~/.bashrc-generic
   source ~/.bashrc-console  # $AjB/bashrc-console
 
-#=> load the rest of my bashrc
+#=> 0 load the rest of my bashrc
 source $AjB/bashrc-wm
 source $AjB/bashrc-ob  # useful in Openbox (and awesome)
 source $OSL/nodes/bashrc-clm  # can be used before WM
 source $OSL/nodes/bashrc-wm
-[[ ! ${BLE_VERSION-} ]] || ble-attach  # ble.sh
+
+#=> 1 ble.sh, Atuin
+. $OSAB/nodes-Bash/ble-atuin
 

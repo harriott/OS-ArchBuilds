@@ -6,7 +6,7 @@
 
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
 ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf
-ln -sf $ITscc/unix-linux/mfcc64-mpv-scripts/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
+ln -sf $cITcc/unix-linux/mfcc64-mpv-scripts/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
 # $misc/GRs/needed.sh, e -la ~/.config/mpv/scripts/visualizer.lua
 ln -sf $ABjo/music/MPD/mpd.conf ~/.config/mpd/mpd.conf
 ln -sf $ABjo/music/MPD/vimpcrc ~/.config/vimpc/vimpcrc

@@ -8,6 +8,9 @@ if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+#=> atuin
+sudo pacman -S atuin
+
 #=> chmln.sd
 sudo pacman -S sd
 
@@ -25,15 +28,15 @@ sudo pacman -S sd
 # # (after Rust Toolchain)
 # sudo pacman -S dust
 
-#=> typos
-# (after Rust Toolchain)
-sudo pacman -S typos
-
 #=> fortune-mod
 sudo pacman -S fortune-mod
 
 #=> fping
 sudo pacman -S fping
+
+#=> gitui
+# (after Rust Toolchain)
+sudo pacman -S gitui
 
 #=> human language
 # aspell
@@ -91,6 +94,10 @@ sudo pacman -S signal-desktop
 
 # #=> ttf-croscore
 # sudo pacman -S ttf-croscore
+
+#=> typos
+# (after Rust Toolchain)
+sudo pacman -S typos
 
 #=> WezTerm
 sudo pacman -S wezterm

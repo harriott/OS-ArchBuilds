@@ -118,14 +118,20 @@ got seized  xfdesktop  pop-up
 sudo rm /usr/share/bash-completion/completions/tmux  then Updates again
 ## gtk-sharp-2
 pactree -r gtk-sharp-2  shows no need, so  sudo pacman -Rs gtk-sharp-2
+## Carburetor
+flatpak install flathub io.frama.tractor.carburetor
+  took a while, brought in a load of dependencies
+flatpak info io.frama.tractor.carburetor
+rebooted to be able to find it from  Application Finder
+ran it for  Main Menu > Set Proxy  got me an exit point in  Brandenburg
+## Updates
+& reboots, then both  Firefox  &  Thunderbird  reporting  "The proxy server is refusing connections"
+  Carburetor > Connect > Disconnect  fixed it
 ## waiting
 apache
-blesh-git  for  Atuin
 EFI install
-for  Thunar
 gokcehan's lf
 MariaDB
-sysz
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

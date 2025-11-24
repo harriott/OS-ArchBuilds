@@ -48,7 +48,7 @@ pacman -Q > $pQa/$ymdHM.log
 
 #=> 8 /var/cache/pacman/pkg
 echo 'minimising /var/cache/pacman/pkg'
-if [ $host = "AsusW202" ]; then
+if [ $host = "DOP3040D11S" ]; then
   yes | sudo pacman -Scc  # empty completely
 else
   sudo paccache -qr  # reduce to last 3 versions

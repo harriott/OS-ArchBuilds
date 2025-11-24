@@ -70,7 +70,7 @@ fRs () {
     echo 'vim: nowrap:' > $tf; echo >> $tf; echo "$1 $2" >> $tf; echo >> $tf
     for y in h d w m; do find $rsnapshot -maxdepth 1 -mindepth 1 -type d -name "$y*" | sort -V; done | while read -r rsd; do
       tput cuu 1; tput el; echo "${tpf5}searching in $rsd${tpfn}"
-      find $rsd/localhost$1 -name "*$2*" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n 2> /dev/null | sort >> $tf
+      # find $rsd/localhost$1 -name "*$2*" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n 2> /dev/null | sort >> $tf
     done
     echo "${tpf2}- now look in  \$rsnapshot/tds_find${tpfn}"
   else
@@ -97,7 +97,7 @@ skl () { sk --ansi -i -c 'rg --color=always --line-number "{}"'; } # for finding
 alias ga='git add'
 alias gsbs='git status -bs'
 alias gsu='git status -u'
-export BFG=$ITsCP/bfg-1.13.0.jar
+export BFG=$cITCP/bfg-1.13.0.jar
 gic () { git commit -m "$1"; }
 
 fgc () {
@@ -162,7 +162,7 @@ SE () {
 } # /stackexchange\|stackoverflow\|superuser
 
 #==> my Arch Forum issues
-# $DJH/search/ffl
+# $DJH/search
 
 fbbcode () {
   bbcf='fbbcode.ffl'

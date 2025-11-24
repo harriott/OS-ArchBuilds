@@ -21,5 +21,5 @@ id=id_ed25519-forGitHub
   s ~/.ssh/*
 
 #=> ~/.ssh 2 configuration
-cp SSHconfig $skd/config  # cp $ITsCP/networking/SSHconfig/sbMb ~/.ssh/config
+cp SSHconfig $skd/config  # cp $cITCP/networking/SSHconfig/sbMb ~/.ssh/config
 

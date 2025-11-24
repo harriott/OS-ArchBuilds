@@ -36,6 +36,7 @@ trap read debug  # puts a read request after each executable line
 # gAUR blesh-git
 # nvim -c "silent! /akinomyoga\/ble.sh" PKGBUILD
 # makepkg -sic
+# true
 
 # #=> cheat
 # gAUR cheat
@@ -136,6 +137,12 @@ trap read debug  # puts a read request after each executable line
 
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer --now
+
+#=> git-extras
+gAUR git-extras
+nvim -c "silent! /github.com\/tj" PKGBUILD
+makepkg -sic
+true
 
 # #=> gsamokovarov jump 0 install
 # gAUR jump
@@ -263,10 +270,10 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> sysz
-gAUR sysz
-nvim -c "silent! /joehillen\/sysz" PKGBUILD
-makepkg -sic
+# #=> sysz
+# gAUR sysz
+# nvim -c "silent! /joehillen\/sysz" PKGBUILD
+# makepkg -sic
 
 # #=> tint-tetris
 # gAUR tint-tetris

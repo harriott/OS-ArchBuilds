@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-# after  $ITsCP/encoding/git/remote2.sh
+# after  $cITCP/encoding/git/remote2.sh
 
 set -ev
 trap read debug  # puts a read request after each executable line

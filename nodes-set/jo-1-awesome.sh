@@ -14,14 +14,14 @@
 # ln -sf $machBld/jo/awesome/themes-zenburn ~/.config/awesome/zenburn
 
 #=> Awesome WM Widgets 0
-ln -sf $ITscc/unix-linux/awesome-streetturtle-awesome-wm-widgets ~/.config/awesome/awesome-wm-widgets
+ln -sf $cITcc/unix-linux/awesome-streetturtle-awesome-wm-widgets ~/.config/awesome/awesome-wm-widgets
 # - $misc/GRs/needed.sh
 
 #=> Awesome WM Widgets 1 for Weather widget
-ln -sf $ITscc/CP/rxi-json_lua/json.lua ~/.config/awesome/json.lua  # $misc/GRs/needed.sh
+ln -sf $cITcc/CP/rxi-json_lua/json.lua ~/.config/awesome/json.lua  # $misc/GRs/needed.sh
 
 #=> awesome-capslock_widget
-ln -sf $ITscc/unix-linux/awesome-stefano-m-awesome-capslock_widget ~/.config/awesome/capslock.lua
+ln -sf $cITcc/unix-linux/awesome-stefano-m-awesome-capslock_widget ~/.config/awesome/capslock.lua
 # - $misc/GRs/needed.sh
 
 # #=> mute toggle

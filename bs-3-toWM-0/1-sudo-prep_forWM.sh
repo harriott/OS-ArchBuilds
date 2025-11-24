@@ -34,7 +34,7 @@ pacman -S pandoc-cli
 pacman -S python-pylatexenc  # for render-markdown.nvim
 
 # #=> documenting - TeX Live 0 native 0 install 0 source online
-# cd $ITscc/unix-TL-install-tl-20250525  # will download 6GB of code
+# cd $cITcc/unix-TL-install-tl-20250525  # will download 6GB of code
 
 #=> documenting - TeX Live 0 native 0 install 0 source local
 for s in $notDr/ircam_fr_pub_CTAN_systems_texlive_tlnet /usr/local/texlive; do find "$s" | echo "$(wc -l) $s"; done

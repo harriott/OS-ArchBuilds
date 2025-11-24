@@ -114,17 +114,17 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
 # # from  ~/Arch/AUR/hplip-plugin/PKGBUILD
 
-# #=> hplip-plugin 1 install
+# #=> hplip-plugin 1 (re)install
 # gAUR hplip-plugin
 # nvim -c "silent! /developers.hp.com\/hp-linux-imaging-and-printing" PKGBUILD
 # makepkg -sic  # requires  perl-test-fatal
@@ -373,8 +373,8 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes ages to work through languages
 # true
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

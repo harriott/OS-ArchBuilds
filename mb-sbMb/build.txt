@@ -343,7 +343,7 @@ sudo rm /etc/sane.d/canon_lide70.conf.pacnew /etc/sane.d/escl.conf.pacnew /etc/d
 sudo archlinux-java set java-11-openjdk
 sudo archlinux-java set java-15-openjdk
 ## LanguageTool
-sudo cp -R $ITsCP/LanguageTool-5.2 /usr/share/java/LanguageTool-5.2
+sudo cp -R $cITCP/LanguageTool-5.2 /usr/share/java/LanguageTool-5.2
 java -jar /usr/share/java/LanguageTool-5.2/languagetool-commandline.jar -h
 ## Spotify
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | gpg --import -
@@ -480,7 +480,7 @@ sudo rm -r /mnt/WD1001FALS/rsnapshot/daily.*/localhost/mnt/ST3500413AS
 sudo rm -r /mnt/WD1001FALS/rsnapshot/hourly.*/localhost/mnt/ST3500413AS
 ## recover Thunderbird v78 profile
 cleared out contents of  ~/.thunderbird/xggwhyu0.default-release
-bash $ITsCP/Thunderbird/LastVersion.sh
+bash $cITCP/Thunderbird/LastVersion.sh
 rsync -irtv --delete /mnt/WD1001FALS/rsnapshot/daily.3/localhost/mnt/SD480GSSDPlus/Dropbox/JH/TP.default-release/ $DJH/TP-default-release
 ## lm_sensors
 sudo sensors-detect
@@ -928,7 +928,7 @@ ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $ABjo/TS/locks.sh ~/Arch/locks.sh
-ln -sf $ITsCP/SSHconfig/sbMb ~/.ssh/config
+ln -sf $cITCP/SSHconfig/sbMb ~/.ssh/config
 rm -r ~/.urxvt/ext; ln -s $Openbox/urxvt/Perls ~/.urxvt/ext
 sudo bash 37-as_root-symlink_fonts.sh
 ## move swap, for growing /
@@ -1136,7 +1136,7 @@ ln -sf $ABjo/configGtk30Settings.ini $HOME/.config/gtk-3.0/settings.ini
 ln -sf $ABjo/gpg-agent.conf  ~/.gnupg/gpg-agent.conf
 ln -sf $ABjo/textEdit/nanorc /home/jo/.config/nano/nanorc
 ln -sf $ABjo/TS/locks.sh ~/Arch/locks.sh
-ln -sf $ITsCP/SSHconfig/sbMb ~/.ssh/config
+ln -sf $cITCP/SSHconfig/sbMb ~/.ssh/config
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $OSAB/tmux/tmux.conf ~/.tmux.conf
@@ -3089,7 +3089,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.57.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## SSHconfig
-when I'd broken the link to  $ITsCP/networking-SSHconfig/$host, system became painfully slow
+when I'd broken the link to  $cITCP/networking-SSHconfig/$host, system became painfully slow
   and a process  RTRACE, which I can't subsequently find, was hogging the CPU
 hard reboot and fixed the symlink
 ## Jekyll
@@ -3648,8 +3648,31 @@ after successful Updates
 later it worked again
 ## qt5-doc
 pactree -r qt5-doc  shows no need, so  sudo pacman -Rs qt5-doc
+## GnuPG - Tails signing key
+gpg --import $cITcc/CP/tails-signing.key
+  gpg: key DBB802B258ACD84F: 2172 signatures not checked due to missing keys
+  gpg: key DBB802B258ACD84F: public key "Tails developers <tails@boum.org>" imported
+  gpg: Total number processed: 1
+  gpg:               imported: 1
+  gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+  gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+  gpg: next trustdb check due at 2026-11-08
+## Carburetor
+(probably wasn't necessary)
+  flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub io.frama.tractor.carburetor
+  took a while, brought in a load of dependencies
+flatpak info io.frama.tractor.carburetor
+ran it for  Main Menu > Set Proxy  got me an exit point in  Brandenburg
+## yt-dlp
+y7 https://youtu.be/bHS58qpr4VU
+  ... Sign in to confirm you’re not a bot...
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.205.216.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.205.216.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
-Atuin
 gokcehan's lf
 MariaDB
 rebuild-detector

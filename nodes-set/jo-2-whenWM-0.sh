@@ -44,7 +44,7 @@ lnd $onGH/pandoc-templates ~/.pandoc/templates
 # e -adl ~/.pandoc/templates
 
 #=> SSH config
-ln -sf $ITsCP/networking-SSHconfig/$host ~/.ssh/config
+ln -sf $cITCP/networking-SSHconfig/$host ~/.ssh/config
 # e -la ~/.ssh/config
 # pb ~/.ssh/config
 

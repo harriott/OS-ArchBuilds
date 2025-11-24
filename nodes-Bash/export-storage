@@ -33,7 +33,7 @@ if [[ $myDrA == 1 ]]; then
     # - keep  DROPBOX  capitalised for finding it without need for $
       export core=$DJH/core
         export coreIT=$core/IT
-          export CrPl=$coreIT/CP  # $ITsCP  used in  $AjB/bashrc-console  & build scripts
+          export CrPl=$coreIT/CP  # $cITCP  used in  $AjB/bashrc-console  & build scripts
           export onGH=$coreIT/onGitHub
             export vimfiles=$onGH/vimfiles
           export culL=$coreIT/ulLinux
@@ -59,6 +59,6 @@ if [ $OSAB ]; then
   export ABjo=$OSAB/nodes-jo
     export AjB=$ABjo/Bash
     export BAT_CONFIG_PATH="$ABjo/bat.conf"  # for the bat pager
-  export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg
+  export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg  /machLg=
 fi
 

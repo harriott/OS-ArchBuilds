@@ -1,6 +1,6 @@
 vim: nospell:
 
-    $ITsCP/encoding/dpl/Perl/scratch.pl
+    $cITCP/encoding/dpl/Perl/scratch.pl
     $machBld/jo/gitconfig
     $onGH/pandoc-templates/README.markdown
     archlinux-java status
@@ -10,18 +10,18 @@ vim: nospell:
     pb <codeFile>  # also reformatted
     r ~/.cache/hugo_cache
     yj -ty <file.toml >file.yml
-    za $ITscr/CP/encoding/cheatsheet-a5.pdf &  # emmet
+    za $cITcr/CP/encoding/cheatsheet-a5.pdf &  # emmet
 
 # ffprobe
     ffprobe -h | mo
     i ffprobe
 
 # gnuplot
-    ff $ITscr/CP/gnuplot/gnuplot_info-colornames.jpg
+    ff $cITcr/CP/gnuplot/gnuplot_info-colornames.jpg
     gnuplot -e 'show linetypes' 2> $culLA/gnuplot-linetypes.txt
     gnuplot -e 'show palette colornames' 2> $culLA/gnuplot-colornames.txt
-    za $ITscr/CP/gnuplot/Gnuplot_5_4.pdf
-    za $ITscr/CP/gnuplot/gpcard.pdf
+    za $cITcr/CP/gnuplot/Gnuplot_5_4.pdf
+    za $cITcr/CP/gnuplot/gpcard.pdf
 
 GNUPLOT(1)
 

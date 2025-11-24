@@ -2,7 +2,7 @@ vim: nospell:
 
     $OSAB/QR/QR.md; m4ps 0 1
     r $misc/linux/QR  # for my more general linux QuickReference
-    wezterm show-keys --lua > $ITscr/WezTerm-show-keys.lua
+    wezterm show-keys --lua > $cITcr/WezTerm-show-keys.lua
 
 my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
@@ -65,13 +65,20 @@ follows my `PCManFM` folder settings
     /etc/profile
     :Man bash
     :Man mktemp
+    env | fzf
+    esc esc  # toggle sudo
     im time
     pinfo bash
     pinfo -m bash
+    sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
     tput bel  # bell
 
 - BASH(1)
 - UNIQ(1)
+
+### ble.sh
+    ble-bind -P | fzf
+    $OSAB/nodes-Bash/blerc
 
 ## completion
     complete 2>&1 | tee $machLg/bash.cmplt
@@ -183,29 +190,29 @@ moar -h
     zathura -P <page> <pdf> &
 
 ## TeX - copied resources
-    r $ITscr/CP/TeX
-    za $ITscr/CP/TeX/LaTeX/etoolbox.pdf
-    za $ITscr/CP/TeX/LaTeX/appearance/colour/xcolor.pdf
-    za $ITscr/CP/TeX/LaTeX/appearance/datetime2.pdf
-    za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
-    za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
-    za $ITscr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/worldflags.pdf
-    za $ITscr/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
-    za $ITscr/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
-    za $ITscr/CP/TeX/LaTeX/appearance/ragged2e.pdf
-    za $ITscr/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
-    za $ITscr/CP/TeX/LaTeX/appearance/url.pdf
-    za $ITscr/CP/TeX/LaTeX/LaTeX3/tabularray.pdf
-    za $ITscr/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
-    za $ITscr/CP/TeX/LaTeX/structure/CV/Currvita/currvita.pdf
-    za $ITscr/CP/TeX/LaTeX/structure/multicol.pdf
-    za $ITscr/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
-    za $ITscr/CP/TeX/LaTeX/structure/parts/labelling/fancyref.pdf
-    za $ITscr/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
-    za $ITscr/CP/TeX/LaTeX/structure/parts/lists/enumitem.pdf
-    za $ITscr/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
-    za $ITscr/CP/TeX/LaTeX/structure/parts/scalerel.pdf
-    za $ITscr/CP/TeX/LaTeX/structure/pdfpages.pdf
+    r $cITcr/CP/TeX
+    za $cITcr/CP/TeX/LaTeX/etoolbox.pdf
+    za $cITcr/CP/TeX/LaTeX/appearance/colour/xcolor.pdf
+    za $cITcr/CP/TeX/LaTeX/appearance/datetime2.pdf
+    za $cITcr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
+    za $cITcr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
+    za $cITcr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/worldflags.pdf
+    za $cITcr/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
+    za $cITcr/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
+    za $cITcr/CP/TeX/LaTeX/appearance/ragged2e.pdf
+    za $cITcr/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
+    za $cITcr/CP/TeX/LaTeX/appearance/url.pdf
+    za $cITcr/CP/TeX/LaTeX/LaTeX3/tabularray.pdf
+    za $cITcr/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
+    za $cITcr/CP/TeX/LaTeX/structure/CV/Currvita/currvita.pdf
+    za $cITcr/CP/TeX/LaTeX/structure/multicol.pdf
+    za $cITcr/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
+    za $cITcr/CP/TeX/LaTeX/structure/parts/labelling/fancyref.pdf
+    za $cITcr/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
+    za $cITcr/CP/TeX/LaTeX/structure/parts/lists/enumitem.pdf
+    za $cITcr/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
+    za $cITcr/CP/TeX/LaTeX/structure/parts/scalerel.pdf
+    za $cITcr/CP/TeX/LaTeX/structure/pdfpages.pdf
 
 ## TeX - LaTeX
     r $cGRs/CP/MartinThoma-LaTeX-examples
@@ -275,7 +282,7 @@ moar -h
 ## resources
     fd -e org -p $cGRs
     r $cGRs/CP/emacs/syl20bnr-spacemacs-develop  # local fresh clone
-    r $ITscr/CP/encoding/textWrangling/Emacs  # PDF guides
+    r $cITcr/CP/encoding/textWrangling/Emacs  # PDF guides
 
 ### Worg
     $cGRs/emacs/_bzg-worg/orgcard.org
@@ -575,7 +582,7 @@ NCDU(1)
 `$OSAB/nodes/Bash/bashrc-generic`
 
 ## Vifm
-    FF $ITscr/CP/vifm-v0.12-builtin-normal.png
+    FF $cITcr/CP/vifm-v0.12-builtin-normal.png
     v  # ($AjB/bashrc-console)
     v $DJH $DJH
 
@@ -596,7 +603,7 @@ NCDU(1)
 - Topics by ttoirrah https://bbs.archlinux.org/search.php?action=show_user_topics&user_id=88384
 
 # fun
-    cat $ITsCP/encoding/EMOJI_CHEAT_SHEET.gfm
+    cat $cITCP/encoding/EMOJI_CHEAT_SHEET.gfm
     tint  # tetris
 
 ## CMatrix
@@ -777,7 +784,7 @@ optimised for SSDs
     fRs $Drpbx/Cop/AM-toSort0/Europe Nordic
     fRs $Drpbx/Cop/AM-toSort0/Europe/Nordic Björk
     fRs $DWp/pn/internet internet.dw
-    fRs $ITscc unix-linux-forArch-fonts
+    fRs $cITcc unix-linux-forArch-fonts
     fRs $JHw _config.yml
     fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
@@ -791,6 +798,7 @@ optimised for SSDs
     fRs $vimfiles/syntax cmusq.vim
     fRs $vfv/plugin plugin.vim
     fRs /etc sudoers
+    fRs /home/jo/.Arch/f1t2t3 f1t2t3.log
 
 ##### my OBS grabs
     find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
@@ -854,6 +862,8 @@ xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 font list: `magick -list font > $machLg/IMfonts.IMfo`
 
 ## [n]sxiv
+    ns  # $AjB/bashrc-wm
+
 ```bash
 rm -r ~/.cache/sxiv/*
 ```
@@ -923,15 +933,15 @@ whereis languagetool
 
 # LanguageTool symlinked
 ```bash
-java -jar $ITscc/CP/LanguageTool/languagetool-commandline.jar -h
-java -jar $ITscc/CP/LanguageTool/languagetool-commandline.jar --version
-java -jar $ITscc/CP/LanguageTool/languagetool-commandline.jar --list  # languages
+java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar -h
+java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
+java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --list  # languages
 ```
 
 ## version
 ```bash
-$ITscc/CP/LanguageTool/README.md
-java -jar $ITscc/CP/LanguageTool/languagetool-commandline.jar --version
+$cITcc/CP/LanguageTool/README.md
+java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
 ```
 
 # multimedia
@@ -1040,6 +1050,7 @@ pacman -Sg base-devel  # lists all
     pacman -v  # --verbose - lists local paths
     pkgfile -l <package>  # lists all installed files
     sudo du -sh /var/cache/pacman/pkg
+    sudo paccache -k2 -qr  # --quiet --remove --keep (only 2)
     sudo pacman -U package.pkg.tar.xz
     sudo pacman -Rs <packagetoremove>
 
@@ -1189,7 +1200,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     font-manager &
 
 ### /usr/share/fonts/
-    $ITscc/unix-linux-forArch-fonts/readme.md
+    $cITcc/unix-linux-forArch-fonts/readme.md
     fd -L architects
     fd -L broot
     fd -L consolas
@@ -1397,6 +1408,62 @@ scroll don't work in `tmux`
 
 TMUX(1)
 
+### key binds
+    $OSL/nodes/terminal-tmux/tmux.conf
+    C-a :  # command prompt
+    C-a ?  # list-keys -Na
+    C-a [  # copy-mode
+    C-a <  # display-menu
+    C-a >  # display-menu
+    C-a ~  # show-messages (q to quit)
+    C-a t  # time (q to quit)
+
+- `a-m` begins `set mouse`
+- `c-a c-s` begins `easycopy` (`tmux-copy-toolkit`)
+- `send-keys` can't decode a Bash environment variable
+
+#### buffers
+    C-a ]  # paste-buffer -p
+    C-a #  # list-buffers
+    C-a =  # choose-buffer -Z
+
+#### copy mode
+    C-a [  # copy-mode
+    C-a e  # easycopy
+    C-a P (C-p)  # quickopen (abspath, URL)
+    Enter  # quits
+    Pg Up/Dn
+    S  # copytk mode
+    s  # easymotion
+
+##### copytk mode
+    j  # easymotion forward
+    k  # easymotion backward
+    n  # easymotion lines
+    s  # easymotion
+
+#### session window pane
+    M-PgDn/PgUp  # (= C-a (/) ) previous/next session
+
+##### panes
+    C-a C-o  # Rotate through the panes
+    C-a M-1  # switch to even-horizontal layout
+    C-a M-2  # switch to even-vertical layout
+    C-a M-3  # switch to main-horizontal layout
+    C-a M-4  # switch to main-vertical layout
+    C-a M+arrow  # resize by 5
+    C-a q  # show numbers
+    C-a {  # swap-pane -U
+    C-a }  # swap-pane -D
+    C-a z  # toggle zoom
+    C-a q  # display-panes
+    C-a { / }  # swap-pane -U / -D
+    C-a Space  # next-layout (of 5 defaults)
+
+##### windows
+    C-a w  # choose window from a list
+    M-n  # (= C-a n ) select window n
+
 ## virtual consoles
     stty -a
     tput works
@@ -1418,7 +1485,7 @@ TMUX(1)
     ~/.local/share/copyq/copyq/copyq.log
 
 ## vi
-    n $ITscr/CP/encoding/textWrangling-vi
+    n $cITcr/CP/encoding/textWrangling-vi
 
 ### vim variants
     lt $vfvp > $vfvp/all.tree
@@ -1468,10 +1535,7 @@ nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/par
     C /usr/share/vim/vim91
 
 # WAN
-```bash
-i yt-dlp
-xdg-open https://archlinux.org
-```
+    i yt-dlp
 
 WGET(1)
 
@@ -1494,9 +1558,20 @@ configured in `$OSAB/bs-4-whenWM/1-softwares.sh`
     sudo systemctl stop httpd.service
     systemctl status httpd.service
 
-## Chawan
+## browse
+    xdg-open https://archlinux.org
+    ncdu ~/.config/google-chrome
+
+### Chawan
     ch https://en.wikipedia.org
     ~/.config/chawan/history.uri
+
+### w3m
+    /usr/share/doc/w3m/keymap.default
+    i w3m
+    ws 'https://lite.duckduckgo.com/lite?q=non+duality'
+    ws http://en.wikipedia.org/wiki/W3m
+    ~/.w3m/config
 
 ## cloud storage - Dropbox
 ```bash
@@ -1590,16 +1665,9 @@ locks: `pb $Thb/linuxlock; pb $Thb/Win10ProLock`
     systemctl status nginx.service
 
 ## SSH
-    $ITsCP/networking-SSHconfig/$host
+    $cITCP/networking-SSHconfig/$host
     i sshd_config
     ~/.ssh/config
-
-## w3m
-    /usr/share/doc/w3m/keymap.default
-    i w3m
-    ws 'https://lite.duckduckgo.com/lite?q=non+duality'
-    ws http://en.wikipedia.org/wiki/W3m
-    ~/.w3m/config
 
 ## weather
     aw

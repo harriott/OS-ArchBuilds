@@ -1,0 +1,15 @@
+# vim: fdl=2 ft=sh sw=2:
+
+# $OSAB/nodes-Bash/ble-atuin
+#  sourced at end of
+#   $AjB/bashrc
+#   $OSAB/nodes-root/bashrc /root/.bashrc
+
+#=> ble.sh
+[[ ! ${BLE_VERSION-} ]] || ble-attach
+
+#=> Atuin
+export ATUIN_NOBIND=1
+eval "$(atuin init bash)"
+bind -x '"\C-u": __atuin_history'
+

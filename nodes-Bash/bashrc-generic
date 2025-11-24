@@ -14,15 +14,15 @@
 alias fin='figlet -f univers finished'
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
-source $ITscc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
-source $ITscc/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"
+source $cITcc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
+source $cITcc/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"
 source $OSL/nodes/bashrc-generic
 
 [ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ] && neofetch
 # - won't run in  tmux  or after  su
 
 # <esc> <esc> prefixes sudo on last command
-source $ITscc/CP/ohmybash-sudo.plugin.sh
+source $cITcc/CP/ohmybash-sudo.plugin.sh
 
 ft () {
   if [ "$1" ]; then
@@ -39,11 +39,6 @@ ft () {
   fi
 }
 
-se () {
-  echo -n "${tpf2}aliases:${tpfn}  "; compgen -a | awk '{print}' ORS=' : '; echo ''
-  echo -n "${tpf2}builtins:${tpfn} "; compgen -b | awk '{print}' ORS=' : '; echo ''
-  echo -n "${tpf2}commands:${tpfn} "; compgen -c | awk '{print}' ORS=' : '; echo ''
-}
 # tmux
 alias u=tmux
   alias tkt='u kill-server > /dev/null 2>&1; tmux'  # rarely used
@@ -197,13 +192,15 @@ plo(){
   echo >> $plof
 } # takes a while
 
-seg () {
-  e="$machLg/jo/environment.txt"
-  echo 'vim: fdl=0 ft=build:' > $e
-  echo '' >> $e
+cgabc () {
+  e="$machLg/jo/shell/compgen_abc.txt"
+  echo 'vim: fdl=0 ft=build:' > $e; echo '' >> $e
+  echo "# aliases" >> $e
+  compgen -a | sort | awk '{print}' ORS=' : ' >> $e; echo '' >> $e
+  echo "# builtins" >> $e
+  compgen -b | sort | awk '{print}' ORS=' : ' >> $e; echo '' >> $e
   echo "# commands" >> $e
-  compgen -c | awk '{print}' ORS=' : ' >> $e
-  echo '' >> $e
+  compgen -c | sort | awk '{print}' ORS=' : ' >> $e; echo '' >> $e
 }
 
 uf(){

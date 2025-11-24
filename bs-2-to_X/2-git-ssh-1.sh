@@ -10,10 +10,10 @@ s=/run/media/jo/$u/GHssh
 [ -d $s ] || mkdir $s
 
 #=> 1 grab configurations
-cp $ITsCP/encoding/gitconfig-JH $s/gitconfig-JH
-cp $ITsCP/networking/SSHconfig/AsusW202 $s/SSHconfig
-cp $ITsCP/networking/SSHconfig/i34G1TU02 $s/SSHconfig
-cp $ITsCP/networking/SSHconfig/sbMb $s/SSHconfig
+cp $cITCP/encoding/gitconfig-JH $s/gitconfig-JH
+cp $cITCP/networking/SSHconfig/AsusW202 $s/SSHconfig
+cp $cITCP/networking/SSHconfig/i34G1TU02 $s/SSHconfig
+cp $cITCP/networking/SSHconfig/sbMb $s/SSHconfig
 
 #=> 1 grab SSH keys
 S1="$Enc/Secure1/networking/SSH"
