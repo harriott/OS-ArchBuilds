@@ -3672,7 +3672,55 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.205.216.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## rsnapshot not completing
+  [2025-11-24T12:06:37] mv /mnt/ST4000VN008/rsnapshot/hourly.1/ /mnt/ST4000VN008/rsnapshot/hourly.2/
+  [2025-11-24T12:06:37] /usr/bin/cp -al /mnt/ST4000VN008/rsnapshot/hourly.0 /mnt/ST4000VN008/rsnapshot/hourly.1
+  [2025-11-24T12:19:16] /usr/bin/rsnapshot hourly: ERROR: /usr/bin/cp -al /mnt/ST4000VN008/rsnapshot/hourly.0 /mnt/ST4000VN008/rsnapshot/hourly.1 failed (result 256, exit status 1).
+  [2025-11-24T12:19:16] /usr/bin/rsnapshot hourly: ERROR: Error! cp_al("/mnt/ST4000VN008/rsnapshot/hourly.0/", "/mnt/ST4000VN008/rsnapshot/hourly.1/")
+  [2025-11-24T12:19:16] rm -f /var/run/rsnapshot.pid
+sudo /usr/bin/cp -al /mnt/ST4000VN008/rsnapshot/hourly.0 /mnt/ST4000VN008/rsnapshot/hourly.1
+  just began making  /mnt/ST4000VN008/rsnapshot/hourly.1/hourly.0/
+    so  rm -r /mnt/ST4000VN008/rsnapshot/hourly.1/hourly.0
+journalctl -u rsnapshot@hourly -r -n 22 --no-pager  reveals  Nov 24 15:18:07 sbMb rsnapshot[446519]: cp: cannot stat '/mnt/ST4000VN008/rsnapshot/hourly.0/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin/python/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/cython/SimpylFold.vim': File name too long
+fRs $vimfiles/vim/packs/packs-cp-full/opt SimpylFold  led me to
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.0/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin/python/cython
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.1/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin/python/cython
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.2/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin/cython
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.3/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.4/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.5/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.6/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.7/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.8/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.9/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.10/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.11/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.12/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.13/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.14/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.15/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.16/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.17/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.18/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.19/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.20/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.21/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.22/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/hourly.23/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/daily.0/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/daily.1/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/daily.2/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/daily.3/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/daily.4/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/daily.5/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/daily.6/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/weekly.0/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/weekly.1/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/weekly.2/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/weekly.3/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+  rm -r /mnt/ST4000VN008/rsnapshot/monthly.0/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
 ## waiting
+sudo rm /root/rsyncBackup.sh
 gokcehan's lf
 MariaDB
 rebuild-detector

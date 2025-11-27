@@ -12,6 +12,7 @@
 
 [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$OSAB/nodes-Bash/blerc"
 alias fin='figlet -f univers finished'
+if [ $host = 'sbMb' ]; then alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"; fi
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 source $cITcc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
@@ -160,11 +161,6 @@ csF () {
     echo "- need a datecode"
   fi
 }
-
-#=> f1t2t3
-if [ $host = 'sbMb' ]; then
-  alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"
-fi
 
 #=> internetish
 Q () { pacman -Qs $1 | xcol $1; }  # or use  pacsearch

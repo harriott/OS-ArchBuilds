@@ -1,18 +1,22 @@
 #!/bin/bash
+# vim: sw=2
 
-# Full system restore from an rsnapshot
+# full system restore from an rsnapshot
 # -------------------------------------
+# cp $OSAB/nodes-root/backup/from_rescue_boot-rsyncSystemRestore.sh $rsnapshot/restore.sh
+#  then from a rescue boot, cd into  $rsnapshot  for  bash restore.sh
 
-# Joseph Harriott  Thu 23 Sep 2021
+# Joseph Harriott  Thu 27 Nov 2025
 
 read -p "You are in a rescue environment? " sure
 [ ! $sure ] || [ $sure != "y" ] && exit
 
 # Check, then go:
-echo "Snapshot that you wish to restore from: "
-read snapshot
-if [ $snapshot ]; then
-  if [ -d $snapshot ]; then
+echo "rsnapshot that you wish to restore from: "
+read rs
+if [ $rs ] && [ -d $rs ]; then
+  if false; then
+    read -p "going to restore  boot, etc, root, usr, var"
     for sysfolder in boot etc root usr var; do
       # (bin  a symlink for usr/bin)
       # boot
@@ -32,7 +36,7 @@ if [ $snapshot ]; then
       # (tmp)
       # usr
       # var  a mixed bag, including pacman stuff
-      rsync -aAivX --delete $snapshot/localhost/$sysfolder/ /$sysfolder
+      rsync -aAivX --delete $rs/localhost/$sysfolder/ /$sysfolder
       # -a => archive mode; equals -rlptgoD
       #   -D => same as --devices --specials
       #   -g => preserve group
@@ -45,5 +49,7 @@ if [ $snapshot ]; then
       # --delete => delete extraneous files from dest dirs
     done
   fi
+  read -p 'going to restore  home'
+  rsync -a --info=progress2 $rs/localhost/home/ /mnt/home
 fi
 

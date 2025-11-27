@@ -69,8 +69,8 @@ fRs () {
     tf="$rsnapshot/tds_find"
     echo 'vim: nowrap:' > $tf; echo >> $tf; echo "$1 $2" >> $tf; echo >> $tf
     for y in h d w m; do find $rsnapshot -maxdepth 1 -mindepth 1 -type d -name "$y*" | sort -V; done | while read -r rsd; do
-      tput cuu 1; tput el; echo "${tpf5}searching in $rsd${tpfn}"
-      # find $rsd/localhost$1 -name "*$2*" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n 2> /dev/null | sort >> $tf
+      tput cuu 1; tput el; echo "${tpf5}searching in $rsd${tpfn}"; sleep .3
+      find $rsd/localhost$1 -name "*$2*" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n 2> /dev/null | sort >> $tf
     done
     echo "${tpf2}- now look in  \$rsnapshot/tds_find${tpfn}"
   else

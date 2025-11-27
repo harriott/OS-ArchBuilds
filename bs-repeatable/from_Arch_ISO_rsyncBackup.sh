@@ -1,16 +1,14 @@
 #!/bin/bash
 # vim: set sw=2:
 
-# Tue 07 Dec 2021
-
 # Full system backup
 # ------------------
 # this is only needed until I've setup  rsnapshot
-#  symlinked in  $OSAB/nodes-set/root.sh
 
-# -----------------------------
-# run this script from Arch ISO
-# -----------------------------
+# Thu 27 Nov 2025
+
+# sudo cp $OSAB/nodes-root/backup/rsyncBackup.sh /root/rsyncBackup.sh
+#  then run this script from Arch ISO
 
 # UTC -> CEST:
 #  timedatectl set-timezone Europe/Paris
@@ -40,7 +38,7 @@ read -p "about to rsync to $bd - any key to continue" null
 
 # do the backups
 mkdir $bd
-for sysfolder in boot etc home root usr var; do
+for sysfolder in boot etc root usr var; do
   mkdir $bd/$sysfolder
   rsync -aiv /as/$sysfolder/ $bd/$sysfolder 2>&1 | tee $bd/$sysfolder.txt
 done

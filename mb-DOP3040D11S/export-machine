@@ -13,7 +13,7 @@
 #  sourced by  $OSAB/nodes-root/bash_profile
 
 export csm=DOP3040D11S-clamscan
-export rsnapshot=/run/media/jo/9QG2FFEE/rsnapshot/
+export rsnapshot=/run/media/jo/9QG2FFEE/rsnapshot/  # $rsnapshot
 export startxDelay=5
 
 #=> for  $OSAB/nodes-Bash/export-storage

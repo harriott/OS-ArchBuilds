@@ -91,11 +91,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox 0 (re)install
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -114,21 +114,21 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
 # # from  ~/Arch/AUR/hplip-plugin/PKGBUILD
 
-# #=> hplip-plugin 1 (re)install
-# gAUR hplip-plugin
-# nvim -c "silent! /developers.hp.com\/hp-linux-imaging-and-printing" PKGBUILD
-# makepkg -sic  # requires  perl-test-fatal
-# true
+#=> hplip-plugin 1 (re)install
+gAUR hplip-plugin
+nvim -c "silent! /developers.hp.com\/hp-linux-imaging-and-printing" PKGBUILD
+makepkg -sic  # requires  perl-test-fatal
+true
 
 # #=> HTMLHint
 # gAUR htmlhint

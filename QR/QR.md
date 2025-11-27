@@ -67,7 +67,6 @@ follows my `PCManFM` folder settings
     :Man mktemp
     env | fzf
     esc esc  # toggle sudo
-    im time
     pinfo bash
     pinfo -m bash
     sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
@@ -76,7 +75,7 @@ follows my `PCManFM` folder settings
 - BASH(1)
 - UNIQ(1)
 
-### ble.sh
+## ble.sh
     ble-bind -P | fzf
     $OSAB/nodes-Bash/blerc
 
@@ -157,6 +156,10 @@ as root: `find / -xdev -iname "*fmtutil.cnf*"`
 mo <file>  # ? lists the limited moar commands
 moar -h
 ```
+
+## time
+    $OSAB/mb-sbMb/rsnapshots.sh
+    im time
 
 # documenting
     r $Sig
@@ -313,7 +316,7 @@ moar -h
 TAIL(1)
 
 ## awk
-    $ITsrul/awk
+    $cITcr/unix-like/awk
 
 - `-F fs`, (`--field-separator fs`) redefines `FS`
 - GAWK(1)
@@ -329,7 +332,7 @@ RG(1)
     i rg
 
 ## sed
-    $ITsrul/sed
+    $cITcr/unix-like/sed
     i sed
     sed -i '/match/{n;Q}' <file>  # remove all lines after match
     tldr sed
@@ -347,7 +350,8 @@ SED(1)
     lsd
     n [directory]
 
-- better file managing in `$OSAB/nodes/Bash/bashrc-generic`
+- better file managing in `$OSAB/nodes-Bash/bashrc-generic`
+- CP(1)
 - `du` don't work in script...
 - FIND(1)
 - MV(1)
@@ -364,6 +368,7 @@ SED(1)
     i broot
 
 ### commands
+    ?
     alt+enter => quit to current directory
     alt+h => toggle hidden
     ctrl+q [<enter>] => quit
@@ -510,7 +515,7 @@ unalias **<tab>
 NCDU(1)
 
 ## ranger
-    feh $ITsrul/cheatsheet.png &
+    feh $cITcr/unix-like/cheatsheet.png &
     r $OSL/nodes/terminal-ranger  # my configurations
     r /mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/OS-Linux/nodes/terminal-ranger/scope.sh
     r $Cfzd
@@ -575,6 +580,119 @@ NCDU(1)
 ### perl-rename
     i perl-rename
     perl-rename 's/^\.//' *  # removes leading  .
+
+## rsnapshot
+    $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
+    $machBld/etc/rsnapshot.conf
+    doas rsnapshot aaa &
+    pgrep rsnapshot
+    snapshot_root
+    sudo du -sh $rsnapshot
+    sudo pkill rsnapshot
+    sm $rsnapshot/monthly.6
+
+### backup localhost without mnt
+    lastMonthly=/mnt/WD1001FALS/rsnapshot/monthly.6/localhost/; month=$(date -r $lastMonthly +%y%m%d); echo $month
+    sudo rsync -aAivX --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
+
+### checking
+    journalctl -r | grep rsnapshot | grep Consumed | xcol weekly monthly | mo
+    journalctl -u rsnapshot@daily -r
+    journalctl -u rsnapshot@hourly -r
+    rsnapshot configtest
+    systemctl status rsnapshot-hourly.timer
+    tail -n 44 /var/log/rsnapshot | xcolorize green 'completed successfully' yellow started
+
+#### counts
+    find $rsnapshot/hourly.0/localhost$Drpbx | wc -l
+    sudo find $rsnapshot/hourly.1/localhost | wc -l
+    sudo find $rsnapshot/manual.0/localhost | wc -l
+    sudo find $rsnapshot/manual.1/localhost | wc -l
+
+#### sizes on sbMb
+    cd $rsnapshot/aaa.0/localhost; sudo du -chs boot etc root usr var  # 54G total
+    du -hs /mnt/ST4000VN008/rsnapshot/aaa.0/localhost/$Drpbx
+    time sudo du -hs /mnt/ST4000VN008/rsnapshot/aaa.0/localhost/home  # took 2m to report 34G
+
+##### $rsnapshot
+    df -h /mnt/ST4000VN008
+    du -chs /mnt/ST4000VN008/Vs-*
+
+### find
+    r $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/daily.0/localhost/$Drpbx/Photos
+    r $rsnapshot/daily.1/localhost/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/daily.1/localhost/$Drpbx/Photos
+    r $rsnapshot/daily.6/localhost/$Drpbx/Photos
+    r $rsnapshot/hourly.0/localhost/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/hourly.1/localhost/$Drpbx/Photos
+    r $rsnapshot/hourly.6/localhost/$Drpbx/Photos
+
+#### fRs
+    $AjB/bashrc-console
+    fRs $AjB bashrc-console
+    fRs $CfWk/technos/civil/catering/CM-DeLonghiDinamica/Fr staplable.tex
+    fRs $DaLi SNCF
+    fRs $Drpbx/Cop Björk
+    fRs $Drpbx/Cop AM-toSort0
+    fRs $Drpbx/Cop/AM-toSort0 'ZZ Top'
+    fRs $Drpbx/Cop/AM-toSort0 Europe
+    fRs $Drpbx/Cop/AM-toSort0 France
+    fRs $Drpbx/Cop/AM-toSort0 UK
+    fRs $Drpbx/Cop/AM-toSort0/Europe Nordic
+    fRs $Drpbx/Cop/AM-toSort0/Europe/Nordic Björk
+    fRs $DWp/pn/internet internet.dw
+    fRs $cITcc unix-linux-forArch-fonts
+    fRs $JHw _config.yml
+    fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
+    fRs $LTXj/CzPlanning planning.cls
+    fRs $machBld/jo/Bash VsLmore
+    fRs $machBld/jo conkyrc
+    fRs $Obc/rc rc.xml
+    fRs $onGH/misc/CP/PerlTools mysmsMD.pl
+    fRs $TeNo/md-JH-DailyLife DailyLife.md
+    fRs $vfp/packs-cp/opt/vim-dokuwiki/syntax dokuwiki.vim
+    fRs $vfn/lua/lazy dropbar.lua
+    fRs $vimfiles/syntax cmusq.vim
+    fRs $vfv/plugin plugin.vim
+    fRs /etc sudoers
+
+#### my OBS grabs
+    find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
+    find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "Queen*.mkv" -exec rm -f {} \;
+    find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "2022-*.mkv" -exec rm -f {} \;
+
+#### versions of a particular file
+    find $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles/ -maxdepth 1 -type f -name "roles.md" -ls  # not easy to sort
+    fd roles.md $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles --max-depth 1 -l | sort > roles.ffl
+    $rsnapshot/hourly.0/localhost/$AjB/export-jo
+
+### interval directories
+    for y in h d w m; do find $rsnapshot -maxdepth 1 -mindepth 1 -type d -name "$y*" | sort -V; done | while read -r rsd; do o $rsd; done
+    so * | grep 700; fd 'bash_history$' */localhost/home/jo/Arch --max-depth 1 -x stat {} -c '%Y %n %y' | sort -r
+    sudo diff --no-dereference -qr hourly.0 hourly.1 > hourly0+1.gnudiff
+
+#### permissions
+- they're owned by root, but 755 so I can look inside
+- the one being backed up to can have permission reduced to 700
+
+### quickly lists all instances of directories
+```bash
+find $rsnapshot/*ly.*/localhost/mnt/SDU3D1TB/Dropbox/JH/Cafezoide/manage/online/* -type d
+for d in $(ls $rsnapshot/hourly.*/localhost/home/jo -dtr); do stat -c '%y %n' $d; done  # hourly instances in time order, but not much use as the dates are original creation
+ls *ly.*/localhost/home/jo/.config/copyq -d  # CopyQ data directory instances
+ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
+```
+
+### recent directories
+    $rsnapshot/hourly.0/localhost$CzMa/planning/m1-n/n9t-_benevoles-appels-Joseph
+    $rsnapshot/hourly.0/localhost$CzMa/expenses/mine/oab-/noReceipts
+    $rsnapshot/hourly.0/localhost/mnt/SDU3D1TB/Dropbox/Cop/AM-toSort0
+    $rsnapshot/hourly.1/localhost$CzMa/expenses/mine/oab-/noReceipts
+
+### recover folder
+    rsync -irtv --delete $rsnapshot/aaa.0/localhost/$maild/ $maild
+    sudo rsync -a --info=progress2 $rsnapshot/aaa.0/localhost/home/jo/
 
 ## tree lists
     i tree
@@ -653,7 +771,6 @@ gpg(1)
     f       -> next search term
 
 # hw
-    $machBld/jo/f1t2t3/f1t2t3.sh
     cd /sys/devices/system/cpu/cpu0/cpufreq
     doas showkey  # keycodes
 
@@ -678,6 +795,10 @@ gpg(1)
           " --> @
 
     :Tabularize /-->/r1c1l0
+
+## f1t2t3
+    $machBld/jo/f1t2t3/f1t2t3.sh
+    fRs /home/jo/Arch/f1t2t3 f1t2t3.log
 
 ## printing - HP ENVY WiFi
     HP ENVY 5532: d0:bf:9c:a2:2f:0e
@@ -704,7 +825,6 @@ gpg(1)
     i ioping
 
 - `Asunder CD Ripper` rips to `~`
-- CP(1)
 - optical: `growisofs`
 
 ### directories - dua-cli
@@ -738,103 +858,6 @@ optimised for SSDs
 ##### snags
     rm -r .Trash-1000/info
     sudo rm -r .Trash-1000/files/<something-thats-stuck>  # can take a while...
-
-### rsnapshot
-    $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
-    $machBld/etc/rsnapshot.conf
-    pgrep rsnapshot
-    snapshot_root
-    sudo du -sh $rsnapshot
-    sudo pkill rsnapshot
-    sm $rsnapshot/monthly.6
-
-#### backup localhost without mnt
-    lastMonthly=/mnt/WD1001FALS/rsnapshot/monthly.6/localhost/; month=$(date -r $lastMonthly +%y%m%d); echo $month
-    sudo rsync -aAivX --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
-
-#### checking
-    /var/log/rsnapshot > completed successfully
-    journalctl -r | grep rsnapshot | grep Consumed | xcol weekly monthly | mo
-    journalctl -u rsnapshot@daily -r
-    journalctl -u rsnapshot@hourly -r
-    systemctl status rsnapshot-hourly.timer
-
-#### find
-    n $rsnapshot/daily.1/localhost$MSWin10/mb
-    r $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
-    r $rsnapshot/daily.0/localhost/$Drpbx/Photos
-    r $rsnapshot/daily.1/localhost/$Drpbx/Cop/AM-toSort0
-    r $rsnapshot/daily.1/localhost/$Drpbx/Photos
-    r $rsnapshot/daily.6/localhost/$Drpbx/Photos
-    r $rsnapshot/hourly.0/localhost/$Drpbx/Cop/AM-toSort0
-    r $rsnapshot/hourly.1/localhost/$Drpbx/Photos
-    r $rsnapshot/hourly.6/localhost/$Drpbx/Photos
-
-##### fRs
-    $AjB/bashrc-console
-    fRs $AjB bashrc-console
-    fRs $CfWk/technos/civil/catering/CM-DeLonghiDinamica/Fr staplable.tex
-    fRs $DaLi SNCF
-    fRs $Drpbx/Cop Björk
-    fRs $Drpbx/Cop AM-toSort0
-    fRs $Drpbx/Cop/AM-toSort0 'ZZ Top'
-    fRs $Drpbx/Cop/AM-toSort0 Europe
-    fRs $Drpbx/Cop/AM-toSort0 France
-    fRs $Drpbx/Cop/AM-toSort0 UK
-    fRs $Drpbx/Cop/AM-toSort0/Europe Nordic
-    fRs $Drpbx/Cop/AM-toSort0/Europe/Nordic Björk
-    fRs $DWp/pn/internet internet.dw
-    fRs $cITcc unix-linux-forArch-fonts
-    fRs $JHw _config.yml
-    fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
-    fRs $LTXj/CzPlanning planning.cls
-    fRs $machBld/jo/Bash VsLmore
-    fRs $machBld/jo conkyrc
-    fRs $Obc/rc rc.xml
-    fRs $onGH/misc/CP/PerlTools mysmsMD.pl
-    fRs $TeNo/md-JH-DailyLife DailyLife.md
-    fRs $vfp/packs-cp/opt/vim-dokuwiki/syntax dokuwiki.vim
-    fRs $vfn/lua/lazy dropbar.lua
-    fRs $vimfiles/syntax cmusq.vim
-    fRs $vfv/plugin plugin.vim
-    fRs /etc sudoers
-    fRs /home/jo/.Arch/f1t2t3 f1t2t3.log
-
-##### my OBS grabs
-    find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "*.mkv"
-    find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "Queen*.mkv" -exec rm -f {} \;
-    find $rsnapshot/*/localhost/home/jo/ -maxdepth 1 -type f -name "2022-*.mkv" -exec rm -f {} \;
-
-##### versions of a particular file
-    find $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles/ -maxdepth 1 -type f -name "roles.md" -ls  # not easy to sort
-    fd roles.md $rsnapshot/*/localhost/$TeNo/md-JH-DailyLife/roles --max-depth 1 -l | sort > roles.ffl
-    $rsnapshot/hourly.0/localhost/$AjB/export-jo
-
-#### interval directories
-    for y in h d w m; do find $rsnapshot -maxdepth 1 -mindepth 1 -type d -name "$y*" | sort -V; done | while read -r rsd; do o $rsd; done
-    so * | grep 700; fd 'bash_history$' */localhost/home/jo/Arch --max-depth 1 -x stat {} -c '%Y %n %y' | sort -r
-    sudo diff --no-dereference -qr hourly.0 hourly.1 > hourly0+1.gnudiff
-
-##### permissions
-- they're owned by root, but 755 so I can look inside
-- the one being backed up to can have permission reduced to 700
-
-#### quickly lists all instances of directories
-```bash
-find $rsnapshot/*ly.*/localhost/mnt/SDU3D1TB/Dropbox/JH/Cafezoide/manage/online/* -type d
-for d in $(ls $rsnapshot/hourly.*/localhost/home/jo -dtr); do stat -c '%y %n' $d; done  # hourly instances in time order, but not much use as the dates are original creation
-ls *ly.*/localhost/home/jo/.config/copyq -d  # CopyQ data directory instances
-ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
-```
-
-#### recent directories
-    $rsnapshot/hourly.0/localhost$CzMa/planning/m1-n/n9t-_benevoles-appels-Joseph
-    $rsnapshot/hourly.0/localhost$CzMa/expenses/mine/oab-/noReceipts
-    $rsnapshot/hourly.0/localhost/mnt/SDU3D1TB/Dropbox/Cop/AM-toSort0
-    $rsnapshot/hourly.1/localhost$CzMa/expenses/mine/oab-/noReceipts
-
-#### recover folder
-    rsync -irtv --delete $rsnapshot/daily.0/localhost/home/jo/.local/share/mail/ $maild
 
 ### udiskie
     $Obc/autostart/autostart
@@ -1152,7 +1175,6 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     i hunspell
 
 # system
-    $ABjo/wm/dunstrc
     $ABjo/wm/Xresources/Xresources
     bat -A /etc/hosts
     bm <command>  # batman (replacing man) only good in full-screen
@@ -1266,6 +1288,11 @@ IOSTAT(1)
     e toggles it
     spacebar toggles open/closed a branch
 
+## notification - Dunst
+    $ABjo/wm/dunstrc
+
+to fix appearance `pkill xfce4-notifyd`
+
 ## security
     $OSAB/etc/sudoers/sudoers
 
@@ -1282,19 +1309,9 @@ IOSTAT(1)
     sysz  # fzf systemctl
 
 ### journalctl
-    journalctl --disk-usage
-    journalctl --list-boots
-    journalctl --verify
     journalctl | grep Consumed
 
 backed up in `$AjB/bash_profile`
-
-#### messages, paged
-    journalctl -b  # for this boot
-    journalctl -b -1  # for previous boot
-    journalctl -b -1 -e  # shows end of  -n1000
-    journalctl -b -1 -r  # newest first
-    journalctl -b -g 'EFI v'  # shows EFI version
 
 ## windows managers
     xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
