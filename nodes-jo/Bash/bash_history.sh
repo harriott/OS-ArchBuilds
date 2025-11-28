@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# Joseph Harriott, Sun 09 Nov 2025
+# Joseph Harriott, Thu 27 Nov 2025
 
 # $AjB/bash_history.sh  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
 
@@ -19,5 +19,7 @@ rm ~/Arch/bash_history-tmp
 #=> backup to Dropbox
 source ~/.export-machine
 source ~/.export-storage
-cp ~/.bash_history $machLg/jo/shell/bash_history
+cp ~/.bash_history $machLg/jo/bash_history
+#  $culLA/ml-DOP3040D11S/jo/bash_history
+#  $culLA/ml-sbMb/jo/bash_history
 

@@ -62,7 +62,7 @@ startxx () {
 #=> better file managing
 alias e='eza --icons'
   alias a='e -aF'  # grid, handily showing up symlinks
-  alias es='e -alR'  # show permissions and symlinks recursively
+  alias es='e -alR'  # show permissions, rough sizes, and symlinks recursively
   alias et='e -T'  # for tree
 alias ed='eza -D'  # show directories only
 alias edt='eza -DT'  # show directory tree
@@ -113,54 +113,39 @@ alias gl='glances'
 export WORKON_HOME=~/.virtualenvs  # $WORKON_HOME
 [[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper_lazy.sh
 
-#=> clamscan 0 preferred log basename
+#=> clamscan
 # $hmlA/ml-$host/cs
 
-#==> 0 preferred log basename
-if [ $myDrA ]; then
-  cslLocation="$hmlA/ml-$host"
-else
-  cslLocation="/home/jo/Arch"
-fi
-cslbn=$cslLocation/cs
-
-#==> 1 scan
+#==> 0 scan
 scs () {
+  cslbn="/home/jo/Arch/cs"
+  [ $myDrA ] && cslbn="$hmlA/ml-$host/cs"
+  cslmn=$(date '+%y%m%d-%H%M').log  # clamscan log make name
+  cslm=~/Arch/clamscan-$cslmn
   echo "about to clamscan /"
-  sudo clamscan -r --exclude-dir='/media|/mnt|/sys' / 2>&1 | tee $cslbn/$(date '+%y%m%d-%H%M').log
-  sudo chown jo:jo $cslbn.log
-}  # end of log shows time taken
+  # sudo clamscan -r --exclude-dir='/media|/mnt|/sys' /opt/zoom/ 2>&1 | tee $cslm
+  sudo clamscan -r --exclude-dir='/media|/mnt|/sys' $1 2>&1 | tee $cslm
+  mv $cslm $cslbn/$cslmn
+} # scs /opt/zoom  to test
+# end of log shows time taken
+# sbMb: scs /  took 21h to scan almost 2m files
 
-#==> 2 filter the results
+#==> 1 filter the results
 # $vfv/syntax/cslF.vim
 
 csF () {
   if [ $1 ]; then
-    cslFbn=$cslbn"-$1-FOUND"
-      cslF="$cslFbn.cslF"
-    if [ $2 ]; then
-      # filter down to some remaining threats - might not catch all
-      cslFt="$cslFbn-threats.cslF"
-      if [ -f $cslF ]; then
-        cp $cslF $cslFt
-        sed -i '/Heuristics.Phishing.Email.SpoofedDomain\|Sanesecurity\|Urlhaus/!d' $cslFt
-        sed -i '1s/^/vim: ft=cslF:\n\n/' $cslFt
-        echo "- possible threats are now listed in ${tpf7}$cslFt${tpfn}"
-      else
-        echo "$cslF  ain't there"
-      fi
-    else
-      # make clamscanFOUND log file - should be enough
-      cp $cslbn.cslF $cslF
-      sed -i '/ FOUND$/!d' $cslF
-      sed -i 's/ FOUND$//' $cslF
-      sed -i '1s/^/vim: ft=cslF:\n\n/' $cslF
-      echo "- now look in ${tpf7}$cslF${tpfn}"
-    fi
+    cslF="${1:0:6}-FOUND.cslF"
+    # make clamscan FOUND log file - should be enough
+    cp $1 $cslF
+    sed -i '/ FOUND$/!d' $cslF
+    sed -i 's/ FOUND$//' $cslF
+    sed -i '1s/^/vim \/Heuristics.Phishing.Email.SpoofedDomain\\|Sanesecurity\\|Urlhaus\n\n/' $cslF
+    echo "- now look in  ${tpf7}$cslF${tpfn}"
   else
-    echo "- need a datecode"
+    echo "- need a clamscan nnnnnn-nnnn.log"
   fi
-}
+} # csF <log_file>
 
 #=> internetish
 Q () { pacman -Qs $1 | xcol $1; }  # or use  pacsearch

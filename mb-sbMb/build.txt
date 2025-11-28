@@ -3719,6 +3719,14 @@ fRs $vimfiles/vim/packs/packs-cp-full/opt SimpylFold  led me to
   rm -r /mnt/ST4000VN008/rsnapshot/weekly.2/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
   rm -r /mnt/ST4000VN008/rsnapshot/weekly.3/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
   rm -r /mnt/ST4000VN008/rsnapshot/monthly.0/localhost/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/SimpylFold/ftplugin
+## Firefox stuck
+reboot, getting  xauth  timeout on  ~/.Xauthority, so
+  # bash $OSAB/bs-repeatable/su-RootkitHunt.sh  for  $machLg/rkhunter/251127-1354.log
+  $ scs  for  $hmlA/ml-$host/cs
+Google Chrome  also snagging
+seems to be due to  transmission-qt
+## Finnix Release Signing Key
+gpg --recv-keys 867279B83BF8E815A236D39E7D6F85C04356E6C2
 ## waiting
 sudo rm /root/rsyncBackup.sh
 gokcehan's lf

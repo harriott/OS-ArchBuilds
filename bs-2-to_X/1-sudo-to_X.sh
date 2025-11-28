@@ -109,6 +109,9 @@ pacman -S chromium
 # transmission-cli
 pacman -S transmission-cli
 
+# rtorrent
+pacman -S rtorrent
+
 # #=> 4 when X 0 - networking - OpenSSH - grab default sshd_config
 # g=/home/jo/sshd_config-m8f; sudo cp /etc/ssh/sshd_config $g; chown jo:jo $g
 

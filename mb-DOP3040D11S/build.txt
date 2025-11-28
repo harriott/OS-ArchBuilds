@@ -127,11 +127,14 @@ ran it for  Main Menu > Set Proxy  got me an exit point in  Brandenburg
 ## Updates
 & reboots, then both  Firefox  &  Thunderbird  reporting  "The proxy server is refusing connections"
   Carburetor > Connect > Disconnect  fixed it
+## .dropbox.cache
+/mnt/BX200/Dropbox/.dropbox.cache  up to 19.5 GiB  so quit Dropbox for  rm -r $Drpbx/.dropbox.cache/*
 ## waiting
 apache
 EFI install
 gokcehan's lf
 MariaDB
+rtorrent
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

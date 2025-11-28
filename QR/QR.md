@@ -355,7 +355,6 @@ SED(1)
 - `du` don't work in script...
 - FIND(1)
 - MV(1)
-- PV(1), used to make `ARCH_nnnnnn`
 - rsync(1)
 - STAT(1)
 - WC(1)
@@ -514,6 +513,13 @@ unalias **<tab>
 
 NCDU(1)
 
+## pv
+      # pv ARCH_nnnnnn -Yo /dev/sdx
+
+- also works for `RESCUEnnnn`
+- nice progress line, but doesn't report bytes
+- PV(1)
+
 ## ranger
     feh $cITcr/unix-like/cheatsheet.png &
     r $OSL/nodes/terminal-ranger  # my configurations
@@ -586,6 +592,7 @@ NCDU(1)
     $machBld/etc/rsnapshot.conf
     doas rsnapshot aaa &
     pgrep rsnapshot
+    rsnapshot -t aaa
     snapshot_root
     sudo du -sh $rsnapshot
     sudo pkill rsnapshot
