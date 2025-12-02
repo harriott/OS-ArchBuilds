@@ -91,11 +91,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-#=> Dropbox 0 (re)install
-gAUR dropbox
-nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-makepkg -sic
-true
+# #=> Dropbox 0 (re)install
+# gAUR dropbox
+# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -124,11 +124,11 @@ true
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
 # # from  ~/Arch/AUR/hplip-plugin/PKGBUILD
 
-#=> hplip-plugin 1 (re)install
-gAUR hplip-plugin
-nvim -c "silent! /developers.hp.com\/hp-linux-imaging-and-printing" PKGBUILD
-makepkg -sic  # requires  perl-test-fatal
-true
+# #=> hplip-plugin 1 (re)install
+# gAUR hplip-plugin
+# nvim -c "silent! /developers.hp.com\/hp-linux-imaging-and-printing" PKGBUILD
+# makepkg -sic  # requires  perl-test-fatal
+# true
 
 # #=> HTMLHint
 # gAUR htmlhint
@@ -304,6 +304,12 @@ true
 # gAUR qpdfview
 # nvim -c "silent! /launchpad" PKGBUILD
 # makepkg -sic  # takes a long time...
+
+#=> spectroterm
+gAUR spectroterm
+nvim -c "silent! /github.com\/sparklost" PKGBUILD
+makepkg -sic
+true
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -

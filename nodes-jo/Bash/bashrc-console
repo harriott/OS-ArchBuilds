@@ -166,7 +166,6 @@ SE () {
 
 fbbcode () {
   bbcf='fbbcode.ffl'
-  # fListHeader $bbcf  # ($OSL/bashrc-console-fm)
   echo "" > $bbcf; echo $PWD >> $bbcf; echo "" >> $bbcf
   fdb='fd -tf -e bbcode'
   { echo $fdb; echo; } >> $bbcf

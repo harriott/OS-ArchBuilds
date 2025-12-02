@@ -138,11 +138,11 @@ trap read debug  # puts a read request after each executable line
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer --now
 
-#=> git-extras
-gAUR git-extras
-nvim -c "silent! /github.com\/tj" PKGBUILD
-makepkg -sic
-true
+# #=> git-extras
+# gAUR git-extras
+# nvim -c "silent! /github.com\/tj" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> gsamokovarov jump 0 install
 # gAUR jump
@@ -252,11 +252,11 @@ true
 # makepkg -sic
 # true
 
-# #=> powershell-bin
-# gAUR powershell-bin
-# nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
-# makepkg -sic
-# true
+#=> powershell-bin
+gAUR powershell-bin
+nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+makepkg -sic
+true
 
 # #=> rdrview-git
 # gdAUR rdrview-git

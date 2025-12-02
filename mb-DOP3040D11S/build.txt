@@ -129,6 +129,7 @@ ran it for  Main Menu > Set Proxy  got me an exit point in  Brandenburg
   Carburetor > Connect > Disconnect  fixed it
 ## .dropbox.cache
 /mnt/BX200/Dropbox/.dropbox.cache  up to 19.5 GiB  so quit Dropbox for  rm -r $Drpbx/.dropbox.cache/*
+again, rebooted
 ## waiting
 apache
 EFI install
@@ -172,7 +173,13 @@ Intel Corporation HD Graphics 530 (rev 06) 256M]
 Timetec 16G RAM
 ### BIOS
 BIOS version 1.4.6, 2016
-f2 at start
+f2  at start
+f9  at start gets  Pre-boot System Assessment
+f12  at start gets  boot list
+    ePSA Build: 4302.11 UEFI ROM
+    Service Tag: 5CB9LG2
+  hardware tests automatic
+  memory test took another 30m-ish for All tests passed. Validation 87842
 M187 wireless mouse works
 Service Tag 5VCB9LG2
 #### Settings

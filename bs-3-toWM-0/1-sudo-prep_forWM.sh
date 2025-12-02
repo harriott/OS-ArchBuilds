@@ -10,8 +10,11 @@ trap read debug  # puts a read request after each executable line
 # #=> android-tools
 # pacman -S android-tools
 
-# #=> audio - Cmus
-# pacman -S cmus
+#=> audio - Cmus 0 (re)install
+pacman -S cmus
+
+#=> audio - Cmus 1 uninstall
+pacman -Rs cmus
 
 # #=> audio - MPD
 # pacman -S mpd
@@ -141,8 +144,11 @@ pacman -S xorg-xev
 # # mailcap
 # pacman -S mailcap
 
-# # Transmission
-# pacman -S transmission-qt
+#=> networking 0 transmission-qt 0 install
+pacman -S transmission-qt
+
+#=> networking 0 transmission-qt 1 remove
+pacman -Rs transmission-qt
 
 # #=> WM environment
 # # cbatticon

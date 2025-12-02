@@ -20,12 +20,17 @@ function y() {
 
 source $OSL/nodes/bashrc-wm
 
-#=> AV
+#=> Audio
+alias vp='vimpc'
+alias st='spectroterm -acp --green 235 --orange 235 --red 235'
+mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")   $(mediainfo --Output='Audio;%Format%' "$v")   $(mediainfo --Output='Audio;%BitRate%' "$v") b/s   $(mediainfo --Output='Audio;%SamplingRate%' "$v") Hz   "$v""; done; }  # mi *
+
 fm () {
   for category in best good good-US joy-copies toSort0 toSort1-UK toSort1-USA; do
     fd $1 "$Drpbx/Cop/AM-$category"; done
 } # fm lowlands | grep Baez
 
+#=> AV
 fv () {
   for VsL in /mnt/*; do
     Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
@@ -41,11 +46,7 @@ fVs () {
     Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
     for Vs in "${Vss[@]}"; do du -hs $Vs; done
   done
-} # fv cat  fv 'Dog Vision'
-
-# Audio:
-alias vp='vimpc'
-mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")   $(mediainfo --Output='Audio;%Format%' "$v")   $(mediainfo --Output='Audio;%BitRate%' "$v") b/s   $(mediainfo --Output='Audio;%SamplingRate%' "$v") Hz   "$v""; done; }  # mi *
+} # find VS directory sizes
 
 #==> ffmpeg 0
 alias ffmhb='nice -n 19 ffmpeg -hide_banner'; alias ffi='ffmhb -i'

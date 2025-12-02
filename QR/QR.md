@@ -49,6 +49,10 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 - `$ABjo/music/MPD/vimpcrc` maps a better `q` among other things
 - `vp` (`$AjB/bashrc-wm`)
 
+### ymuse
+- run `vimpc` to refresh the tracks
+- Xfce Panel (`$OSAB/mb-sbMb/build.txt`)
+
 ## Quod Libet
     pkill quodlibet
 
@@ -61,7 +65,6 @@ follows my `PCManFM` folder settings
     $AjB/bash_history.sh
     $AjB/bash_profile
     $OSAB/nodes-root/bashrc
-    $culLB/colours
     /etc/profile
     :Man bash
     :Man mktemp

@@ -149,7 +149,9 @@ echo "${tpf5}aaa.0${tpfn}"
 head -n1 $rsnapshot/aaa.0/localhost/home/jo/Arch/f1t2t3/f1t2t3.log
 stat -c '%y %n' $rsnapshot/aaa.0/localhost/$TeNo/md-JH-Private/Private.md
 stat -c '%y %n' $rsnapshot/aaa.0/localhost/var/log/wtmp
-# 251127-11h, time (sudo find $rsnapshot/aaa.0/localhost | wc -l)  took 8m to report  2063941
+# time (sudo find $rsnapshot/aaa.0/localhost | wc -l)
+#  251127-11h, took 8m to report  2063941
+#  251202-08h43m, took 2m to report  2056214
 
 #=> manual - aaa.1
 echo "${tpf5}aaa.1${tpfn}"
@@ -164,4 +166,11 @@ head -n1 $rsnapshot/aaa.2/localhost/home/jo/Arch/f1t2t3/f1t2t3.log
 stat -c '%y %n' $rsnapshot/aaa.2/localhost/$TeNo/md-JH-Private/Private.md
 stat -c '%y %n' $rsnapshot/aaa.2/localhost/var/log/wtmp
 # 251125, time (sudo find $rsnapshot/aaa.2/localhost | wc -l)  took 8m to report  2063013
+
+#=> manual - aaa.3
+echo "${tpf5}aaa.3${tpfn}"
+head -n1 $rsnapshot/aaa.3/localhost/home/jo/Arch/f1t2t3/f1t2t3.log
+stat -c '%y %n' $rsnapshot/aaa.3/localhost/$TeNo/md-JH-Private/Private.md
+stat -c '%y %n' $rsnapshot/aaa.3/localhost/var/log/wtmp
+# 251125, time (sudo find $rsnapshot/aaa.3/localhost | wc -l)  took 8m to report  2063013
 
