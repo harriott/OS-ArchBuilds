@@ -225,7 +225,7 @@ moar -h
     r $jtCP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
-`mmsc`, `pif`, `xc` defined in `$AjB/bashrc-ob`
+`mmsc`, `pif`, `xc` defined in `$AjB/bashrc-wm`
 
 ### fontspec
     \setmonofont{Caskaydia Cove Regular Nerd Font Complete Mono}
@@ -591,14 +591,11 @@ NCDU(1)
     perl-rename 's/^\.//' *  # removes leading  .
 
 ## rsnapshot
-    $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
     $machBld/etc/rsnapshot.conf
     doas rsnapshot aaa &
     pgrep rsnapshot
-    rsnapshot -t aaa
     snapshot_root
     sudo du -sh $rsnapshot
-    sudo pkill rsnapshot
     sm $rsnapshot/monthly.6
 
 ### backup localhost without mnt
@@ -704,6 +701,11 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     rsync -irtv --delete $rsnapshot/aaa.0/localhost/$maild/ $maild
     sudo rsync -a --info=progress2 $rsnapshot/aaa.0/localhost/home/jo/
 
+### run
+    $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
+    rsnapshot -t aaa
+    sudo pkill rsnapshot
+
 ## tree lists
     i tree
 
@@ -739,7 +741,7 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     man cmatrix
 
 # GNU Privacy Guard
-    gpg --export-ownertrust > $culLA/ml-$host/jo/gnupg-trustdb.txt
+    gpg --export-ownertrust > $machLg/jo/gnupg-trustdb.txt
     gpg -k > $machLg/jo/GnuPGkeys/$(date +%y%m%d-%H%M).gpgk  # $vfv/syntax/gpgk.vim
     im gpg
     pgpdump -h
@@ -856,6 +858,8 @@ optimised for SSDs
     df -h | xcol mnt media
     doas file -s /dev/sdxn | xcol bit FAT
     findmnt
+
+GPT fdisk
 
 #### fsck
 - FSCK(8)
@@ -1008,14 +1012,12 @@ won't open if `cmus` is playing a track
     r ~/.local/share/openshot
 
 # network
-```bash
-cat /etc/hostname
-curl ifconfig.co  # IP address
-curl ifconfig.co/country
-sudo dhcpcd wlwg111v2
-sudo ls /var/lib/dhcpcd/
-systemctl status nordvpnd.service
-```
+    cat /etc/hostname
+    curl ifconfig.co  # IP address
+    curl ifconfig.co/country
+    sudo dhcpcd wlwg111v2
+    sudo ls /var/lib/dhcpcd/
+    systemctl status nordvpnd.service
 
 ## NetworkManager
     nmcli connection delete Jo-OPPO-A76
@@ -1189,10 +1191,11 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     bat -A /etc/hosts
     bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
-    find /boot/vmli*  # lists available kernels
     i localectl
     r /usr/share/applications  # the  *.desktop  files
     slock  # unlocks when correct user pw is entered
+    swapoff -a
+    swapon --show
     XF86Sleep
     /usr/share/doc/arch-wiki/html/en
     ~/.local/share/xorg/Xorg.0.log
@@ -1218,7 +1221,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 ## build
     $OSAB/etc/doas.conf
     r $OSAB $culLA
-    r $culLA/ml-$host/etc/fstab
+    r $machLg/etc/fstab
     rsync -irtv --delete $OSAB/ ~/Play0/OSAB
     v $OSAB $culLA
 
@@ -1278,6 +1281,20 @@ uses `fzf`
     mimeo -m <fileToOpen>  # reports mimetype
     ~/.config/mimeapps.list  # the default applications
     ~/.local/share/applications/mimeapps.list  # empty, deprecated
+
+## boot
+    find /boot/vmli*  # lists available kernels
+    find /dev/disk/by-designator -type l -ls
+
+as root user, `genfstab -U / >> /etc/fstab`
+
+### mkinitcpio
+    mkinitcpio -h  # --help
+    mkinitcpio -H systemd  # --hookhelp
+    mkinitcpio -L  # --lishooks
+    mkinitcpio -V  # --version
+
+creates an initial ramdisk environment
 
 ## monitoring
     btop

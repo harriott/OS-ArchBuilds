@@ -6,9 +6,9 @@
 # robustly save my last cmus queue
 
 # bash $ABjo/wm/cmusqueue.sh
-# symlinked in my  $OSAB/nodes-set/jo-0.sh
-# ll ~/Arch/cmusqueue.sh
-# fcrontab:  @ 1 bash ~/Arch/cmusqueue.sh
+#  symlinked in my  $OSAB/nodes-set/jo-0.sh
+#  ll ~/Arch/cmusqueue.sh
+#  fcrontab:  @ 1 bash ~/Arch/cmusqueue.sh
 
 # DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/notify-send -u critical "cmusqueue.sh $(date +%H%M)"  # uncomment to check if this script is being called
 

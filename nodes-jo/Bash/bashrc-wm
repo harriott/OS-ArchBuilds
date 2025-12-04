@@ -1,13 +1,21 @@
 # vim: ft=bash sw=2:
 
-# Joseph Harriott, Sat 11 Jan 2025
+# Joseph Harriott, Thu 04 Dec 2025
 
 # $AjB/bashrc-wm   sourced by  $AjB/bashrc
 
 # stuff that's useful when a Window Manager is installed
 
+alias gpr='gprename &'
 alias R='R --quiet'
 alias th='thunar' # Xfce
+
+function psc() {
+  pscs="$hmlA/ml-$host/pscircle" # pscircle shots
+  pscsn="$pscs/$(date +%Y%m%d%H%M%S).png" # pscircle shot now
+  pscircle --output=$pscsn --output-height=3600 --output-width=5000
+  nsxiv -fn $(ls $pscs | wc -l) $pscs &
+} # visualise all processes
 
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -21,6 +29,7 @@ function y() {
 source $OSL/nodes/bashrc-wm
 
 #=> Audio
+alias m='cmus'
 alias vp='vimpc'
 alias st='spectroterm -acp --green 235 --orange 235 --red 235'
 mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")   $(mediainfo --Output='Audio;%Format%' "$v")   $(mediainfo --Output='Audio;%BitRate%' "$v") b/s   $(mediainfo --Output='Audio;%SamplingRate%' "$v") Hz   "$v""; done; }  # mi *
@@ -232,12 +241,43 @@ m4ps() {
 } # m4ps 0 (= don't redo) [1 (= no ToC)]
 
 #=> documenting - PDF
+alias mmsc="zathura -P 427 $cITcr/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf &"
+# - p.389 Appendix B Showcase B1 Chapter styles
+alias pif="zathura -P 9 $cITcr/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf &"
+alias xc="zathura -P 38 $cITcr/CP/TeX/LaTeX/appearance/colour/xcolor.pdf &"
+za () { zathura "$1" & }
+
+gspdfpng() {
+    if [ -z "$1" ] ; then
+        echo "${tpf5}gspdfpng <pdf> [<pagelist>] [<png_basename>]${tpfn}"
+        return 1
+    fi # reminder of syntax
+    if [[ "$1" =~ ' ' ]] || [[ "$2" =~ ' ' ]]; then
+        echo "${tpf1}can't work with spaces in names${tpfn}"; return 1
+    fi # no spaces
+    if [ ! -f "$1" ]; then
+        echo "${tpf1}$1 not there${tpfn}"; return 1
+    elif [ ! -s "$1" ] ; then
+        echo "${tpf1}$1 zero size${tpfn}"; return 1
+    fi # check the input file exists
+    png=${1::-4}
+    if [ -z $2 ]; then
+        pl='1'
+    else
+        pl="$2"
+        [ $3 ] && png=$3
+    fi # PageList
+    gs -sDEVICE=png16m -r400 -sPageList=$pl -o $png-%02d.png $1
+} # for f in `find . -maxdepth 1 -type f -iname "*.pdf"`; do gspdfpng "$f"; done
+
 pdfmm () {
   PSpoints=($(pdfinfo $1 | grep ' x ' | sed 's/Page size: //;s/x //;s/ pts//'))
   echo "$1: $(PSpmm ${PSpoints[0]}) wide, $(PSpmm ${PSpoints[1]}) high"
 } # pdfmm <pdf>
 
-za () { zathura "$1" & }
+zr0() {
+    sed -i 's/^rotate=\(9\|18\|27\)0/rotate=0/g' ~/.local/share/zathura/history
+} # zathura rotation 0
 
 #=> imagey
 alias ns='nsxiv -frt * &'  # using fullscreen, recursively open all flat
@@ -333,6 +373,14 @@ ch () {
     cha $1
   fi
 } # Chawan
+
+#==> convert a FM json
+cfmj() {
+    if [ -s $1 ]; then
+        bn=${1%.json}
+        cp $1 $bn.md
+        perl $misc/CP/PerlTools/FM-json-md.pl $bn.md
+    fi }
 
 #==> Dropbox conflicted copies
 # results are noted in time-stamped logs

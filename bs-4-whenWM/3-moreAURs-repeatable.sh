@@ -47,6 +47,13 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
 # makepkg -sic
 
+#=> cmus-git
+# try switching back to  cmus  if it's > v2.12.0-4
+gAUR cmus-git
+nvim -c "silent! /cmus.github.io" PKGBUILD
+makepkg -sic  # takes a while
+true
+
 # #=> cmus-notify 0 install
 # gAUR cmus-notify
 # nvim -c "silent! /AntoineGagne" PKGBUILD
@@ -305,11 +312,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /launchpad" PKGBUILD
 # makepkg -sic  # takes a long time...
 
-#=> spectroterm
-gAUR spectroterm
-nvim -c "silent! /github.com\/sparklost" PKGBUILD
-makepkg -sic
-true
+# #=> spectroterm
+# gAUR spectroterm
+# nvim -c "silent! /github.com\/sparklost" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -

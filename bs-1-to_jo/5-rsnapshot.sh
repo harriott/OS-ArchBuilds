@@ -30,8 +30,8 @@ rsnapshot configtest
 # rsnapshot -t hourly
 # # could  sudo rsnapshot hourly  and monitor progress with  du -sh rsnapshot
 
-# #=> 4 rsyncSystemRestore
-# cp $OSAB/bs-repeatable/from_rescue_boot-rsyncSystemRestore.sh $rsnapshot/from_rescue_boot-rsyncSystemRestore.sh
+# #=> 4 prepare restore script
+# cp $OSAB/bs-repeatable\from_rescue_boot-rsnapshot_restore.sh $rsnapshot/restore.sh
 
 #=> 5 backup  /var/log/rsnapshot
 ln -sf $ABjo/log_rsnapshot.sh ~/Arch/log_rsnapshot.sh

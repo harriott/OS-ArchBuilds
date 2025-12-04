@@ -3,7 +3,7 @@
 
 # full system restore from an rsnapshot
 # -------------------------------------
-# cp $OSAB/nodes-root/backup/from_rescue_boot-rsyncSystemRestore.sh $rsnapshot/restore.sh
+# cp $OSAB/bs-repeatable\from_rescue_boot-rsnapshot_restore.sh $rsnapshot/restore.sh
 #  then from a rescue boot, cd into  $rsnapshot  for  bash restore.sh
 
 # Joseph Harriott  Thu 27 Nov 2025

@@ -24,7 +24,7 @@ trap read debug  # puts a read request after each executable line
 # mkdir -p ~/.config/dunst
 
 # #=> 2 for my m4p scripts
-# mkdir -p ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $AjB/bashrc-ob
+# mkdir -p ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $AjB/bashrc-wm
 
 # #=> 2 GnuPG directory
 # gpg -k  # creates & populates  ~/.gnupg

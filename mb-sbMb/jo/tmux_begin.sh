@@ -37,6 +37,6 @@ cdm 0; tmux split-window -t 1:0; cdm 0.1
 
 #==> 2 launch nnn & cmus
 tmux send-keys -t 1:0.0 'n' Enter
-# tmux send-keys -t 1:0.1 'm' Enter
-tmux send-keys -t 1:0.1 'systemctl status rsnapshot-hourly.timer' Enter
+tmux send-keys -t 1:0.1 'm' Enter
+# tmux send-keys -t 1:0.1 'systemctl status rsnapshot-hourly.timer' Enter
 

@@ -28,17 +28,17 @@ lsmod | grep rtl8   shows it to be there
 lsblk  shows SD480GSSDPlus is /dev/sdd
   gdisk /dev/sdd > o (create a new empty GUID partition table GPT & new protective MBR) y
     w   for  gdisk /dev/sdd  (MBR: protection  GPT: present)
-n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
-  ef00 (EFI system partition)
-n > Partition number (defaults to 2) > First sector (defaults to 1128448) > +60g > Hex code >
-  8304 Linux x86-64 root (/)
-n > Partition number (defaults to 3) > First sector (defaults to the sector after partition 2) >
-  +4g > 8200 (Linux swap)
-n > Partition number (defaults to 4) > First sector (defaults to the sector after partition 3) >
-  +60g > Hex code > 8302 (Linux home)
-n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 5) >
-  Enter > Enter > 8300 (Linux filesystem)
-w
+    n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +550m >
+      ef00 (EFI system partition)
+    n > Partition number (defaults to 2) > First sector (defaults to 1128448) > +60g > Hex code >
+      8304 Linux x86-64 root (/)
+    n > Partition number (defaults to 3) > First sector (defaults to the sector after partition 2) >
+      +4g > 8200 (Linux swap)
+    n > Partition number (defaults to 4) > First sector (defaults to the sector after partition 3) >
+      +60g > Hex code > 8302 (Linux home)
+    n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 5) >
+      Enter > Enter > 8300 (Linux filesystem)
+    w
 #### repositioned hd's
 #### no write-back cache on K16GB500
 so occasionally getting "...No Caching mode page found..."
@@ -3741,6 +3741,44 @@ gpg --fingerprint 827C8569F2518CC677FECA1AED65462EC8D5E4C5
 ## cmus v2.12.0-4  not playing wma's
 not fixed by uninstalling & reinstalling
 cmus --plugins  doesn't list  ffmpeg
+switched to  cmus-git, which needed  libmp4v2
+## grow /
+want  /=120GB  swap=30GB  /home=60GB  /mnt/SD480GSSDPlus the rest
+### swap off
+sudo swapoff -a
+$machLg/etc/fstab/pc3
+reboot, but swap is still active on sda3
+sudo gdisk -l /dev/sda
+### backup boot info
+bootctl > $machLg/bootctl-pc3
+gcs="$machLg/boot-grub-grub/pc3.cfg"; sudo cp /boot/grub/grub.cfg $gcs; sudo chown jo:jo $gcs
+
+### Systemrescue
+K8GBDTIG3 loaded with RESCUE1202 in USB, f12 at boot > UEFI/ KingstonDataTraveler G3 PAMP
+startx  for  GParted > Deleted  sda5, sda4, sda3  Resize  sda2  to  120000  Apply
+gdisk /dev/sda  p
+  n > Partition number (defaults to 3) > Enter
+    (First sector defaults to the sector after partition 2) > +30g > Hex code > 8200 (Linux swap)
+  n > Partition number (defaults to 4) > Enter
+    First sector (defaults to the sector after partition 3) > +60g > Hex code > 8302 (Linux /home)
+  n > Partition number (defaults to 5) > First sector (defaults to the sector after partition 5) >
+    Enter > Enter > 8300 (Linux filesystem)
+  w > y
+GParted > Format to:  sda3 linux-swap  sda4, sda5 ext4
+### reboot into Arch
+dumped into emergency mode because forgot to comment out  SD480GSSDPlus  in  /etc/fstab
+mkfs.ext4 -L SD480GSSDPlus/dev/sda4  reboot
+swapon --show  finding  /dev/sda3
+mount /dev/sda4 /home
+su > root pw  for  genfstab -U / >> /etc/fstab
+reboot
+sudo mkdir /home/jo
+sudo chown jo:jo /home/jo
+in  /mnt/ST4000VN008/rsnapshot/aaa.0/localhost/home,
+rsync -av jo/ /home/jo  forgot to run again
+reboot  got a Dropbox page to log in, then lengthy hidden indexing
+### aaa.0 check
+rsync -ainv $rsnapshot/aaa.0/localhost/home/jo/ /home/jo 2>&1 | tee ~/rsync_aaa0_jo
 ## waiting
 Parrot v6.4 to USB key
 gokcehan's lf

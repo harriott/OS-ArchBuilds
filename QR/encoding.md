@@ -64,7 +64,7 @@ GNUPLOT(1)
 # Ruby
 ```bash
 gem list --no-versions | tr '\n' ' ' | xcol bundler github-pages jekyll liquid
-gem list > $culLA/ml-$host/gems.gems  # using  $vfv/syntax/gems.vim
+gem list > $machLg/gems.gems  # using  $vfv/syntax/gems.vim
 r $GEM_HOME
 ```
 
