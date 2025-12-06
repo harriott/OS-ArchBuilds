@@ -283,12 +283,13 @@ moar -h
     im emacs
     ~/.emacs.d/.cache
 
-`G` & `T` defined in `$AjB/bashrc-console`
+- `T` defined in `$AjB/bashrc-console`
+- `G` defined in `$AjB/bashrc-wm`
 
 ## resources
     fd -e org -p $cGRs
-    r $cGRs/CP/emacs/syl20bnr-spacemacs-develop  # local fresh clone
-    r $cITcr/CP/encoding/textWrangling/Emacs  # PDF guides
+    r $cGRs/d-CP/d-emacs/r-syl20bnr-spacemacs  # local fresh clone
+    r $cITcr/CP/encoding/Emacs  # PDF guides
 
 ### Worg
     $cGRs/emacs/_bzg-worg/orgcard.org
@@ -899,54 +900,9 @@ xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 font list: `magick -list font > $machLg/IMfonts.IMfo`
 
 ## [n]sxiv
-    ns  # $AjB/bashrc-wm
-
 ```bash
 rm -r ~/.cache/sxiv/*
 ```
-
-### commands
-thumbnail mode: `R` reload all
-
-#### image mode
-- `n` `p` next previous
-- `[` `]` 10x backwards forwards
-- `|` `_` flip horizontal vertical
-- changes aren't saved
-
-##### pan
-- `h` `left`
-- `j` `down`
-- `k` `up`
-- `l` `right`
-
-##### rotate
-- `<` 90° ccw
-- `>` 90° cw
-- `?` 180°
-
-##### scroll
-- `H` to left
-- `J` to down
-- `K` to up
-- `L` to right
-- `z` to center
-
-##### zoom
-- `=` by 100%
-- `e` `E` fit width height
-- `F` fill (often getting only part of the image)
-- `w` fit or 100%
-- `W` fit (the default)
-
-#### general
-- `q` quit
-- `return` toggle image/thumbnail
-- `f` toggle fullscreen
-- `b` toggle statusbar
-- `g` `G` first last
-- `r` reload
-- `+` `-` zoom in out
 
 ### nsxiv
     i nsxiv

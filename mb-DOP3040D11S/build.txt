@@ -1,8 +1,6 @@
 vim: ft=build:
 
-$machBld/build.txt
-
-Dell OptiPlex 3040 D11S - DOP3040D11S
+$machBld/build.txt ($OSAB/mb-DOP3040D11S/build.txt) Dell OptiPlex 3040 D11S
 
 # build
 ## mature Arch install from i34G1TU02
@@ -130,12 +128,30 @@ ran it for  Main Menu > Set Proxy  got me an exit point in  Brandenburg
 ## .dropbox.cache
 /mnt/BX200/Dropbox/.dropbox.cache  up to 19.5 GiB  so quit Dropbox for  rm -r $Drpbx/.dropbox.cache/*
 again, rebooted
+## $thb
+rm -r $thb/*
+cp $OSAB/nodes-jo/WAN/thunderbird-profiles.ini $thb/profiles.ini
+## Emacs  'cl
+changed to  'cl-lib in
+  ~/.emacs.d/straight/repos/dash.el/dash.el
+  ~/.emacs.d/straight/repos/dash.el/dev/examples.el
+  ~/.emacs.d/straight/repos/origami.el/origami-parsers.el
+  ~/.emacs.d/straight/repos/paradox/helpers/paradox-counter.el
+  ~/.emacs.d/straight/repos/s.el/dev/ert.el
+then Deleted  ~/.emacs.d/straight/build  and ran Emacs
+## Updates
+  :: Starting full system upgrade...
+  :: Replace vulkan-mesa-device-select with extra/vulkan-mesa-implicit-layers? [Y/n]
+## AUR Updates
+  Environment contains multiple differing definitions for 'thb'.
+  Using value from 'Thb' (/mnt/BX200/Dropbox/JH/Thb) and ignoring 'thb' (/home/jo/.thunderbird) at /usr/share/perl5/vendor_perl/LWP/UserAgent.pm line 1174.
 ## waiting
 apache
 EFI install
 gokcehan's lf
 MariaDB
 rtorrent
+zenburn-emacs
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

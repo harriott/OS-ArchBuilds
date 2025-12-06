@@ -8,7 +8,7 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 #=> 0 $OSAB
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../mb-$(uname -n)/export-machine
-. ../nodes/Bash/export-storage
+. ../nodes/Bash/export-Arch
 . ../../OS-Linux/nodes/jo/export
 read -p "\$OSAB  is  $OSAB - looks good?"
 
@@ -30,7 +30,7 @@ eza -la /usr/share/fonts
 
 #=> 1 make root symlinks
 ln -sf $machBld/export-machine /root/.export-machine
-  ln -sf $OSAB/nodes-Bash/export-storage /root/.export-storage
+  ln -sf $OSAB/nodes-Bash/export-Arch /root/.export-Arch
 ln -sf $OSAB/nodes-root/nanorc ~/.config/nano/nanorc
 ln -sf $OSL/nodes/GNUReadline-inputrc /root/.inputrc
 ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf

@@ -1,10 +1,9 @@
 #!/bin/bash
 # vim: sw=2:
 
-# chmod 755 $ABjo/music/music_rotate.sh
+# rotate contents of  ~/music
+#  managed in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
 #  bash ~/.config/music_rotate.sh  or just  music_rotate
-#  symlinked in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
-#  rotate contents of  ~/music
 
 #  this could be faster on the db with different db_file's ($ABjo/music/MPD/mpd.conf),
 #   but advantage here is anything could be dumped into  ~/music
@@ -24,6 +23,7 @@ mdlm () {
   fi
 }
 nsmpv(){ notify-send -i /usr/share/icons/hicolor/16x16/apps/mpv.png "$1"; }
+# notify-send -i /usr/share/icons/hicolor/16x16/apps/mpv.png "= mpv notification"
 nsmpv '~/music  now empty'
 if [ $mmf == 'best' ]; then
   mdlm joy-copies joy

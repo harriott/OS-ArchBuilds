@@ -11,8 +11,8 @@ export loaded_bp=1
 #  $ABjo/Openbox/openbox/autostart, & by gvim
 # kill tmux sessions if you've made changes here
 source ~/.export-machine  # $machBld/export-machine
-source ~/.export-storage  # $OSAB/nodes-Bash/export-storage
-  source ~/.export-jo  # $OSL/nodes/jo/export
+source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
+  source ~/.export-linux  # $OSL/nodes/jo/export
 # - carry through to X
 
 # Useful before X (repeated in  $AjB/bashrc):

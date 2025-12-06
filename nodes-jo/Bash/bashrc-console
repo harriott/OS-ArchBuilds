@@ -14,6 +14,7 @@
 # Joseph Harriott
 
 export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
+T (){ emacs -nw $1; }  # in terminal
 
 ra () {
   pactl set-sink-volume 0 60%  # master volume to non-distorting level
@@ -284,10 +285,6 @@ rAUR(){ [ -d $1 ] && sudo rm -r $1; }; export -f rAUR
 
 #=> text wrangling
 nn () { nvim $@; cd $(cat ~/lastVimDirectory); } # see  $vfv/enter/vimrc.vim
-
-# Emacs
-G (){ emacs --no-splash -fh $1 & }  # GUI
-T (){ emacs -nw $1; }  # in terminal
 
 # find conversions to latin1 in a directory
 fcL1 () { sed -r '/(Â[^a-z]|Ã|Å|É[^a-z]|â[^,a-z])/!d' $1 > "${1/./_}-latin1.txt"; }

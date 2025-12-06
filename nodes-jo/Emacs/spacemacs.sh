@@ -1,12 +1,11 @@
 #!/bin/bash
 
-# Joseph Harriott - Tue 06 Sep 2022
+# Joseph Harriott - Fri 05 Dec 2025
 
 # run Spacemacs from its seperate configuration
 # ---------------------------------------------
 
-# (chmod 755 $ABjo/Emacs/spacemacs.sh)
-# symlinked in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
+# managed in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
 #  to provide command  spacemacs
 #   used in  $Obc/schema.pl
 

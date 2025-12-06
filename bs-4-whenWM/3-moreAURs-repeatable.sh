@@ -47,12 +47,12 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
 # makepkg -sic
 
-#=> cmus-git
-# try switching back to  cmus  if it's > v2.12.0-4
-gAUR cmus-git
-nvim -c "silent! /cmus.github.io" PKGBUILD
-makepkg -sic  # takes a while
-true
+# #=> cmus-git
+# # try switching back to  cmus  if it's > v2.12.0-4
+# gAUR cmus-git
+# nvim -c "silent! /cmus.github.io" PKGBUILD
+# makepkg -sic  # takes a while
+# true
 
 # #=> cmus-notify 0 install
 # gAUR cmus-notify
@@ -120,6 +120,12 @@ true
 # nvim -c "silent! /download3.ebz.epson.net" PKGBUILD
 # makepkg -sic
 # true
+
+#=> fastmail
+gAUR fastmail
+nvim -c "silent! /dl.fastmailcdn.com\/desktop\/production\/linux\/x64" PKGBUILD
+makepkg -sic  # takes a while
+true
 
 # #=> Google Chrome
 # gAUR google-chrome
@@ -253,6 +259,12 @@ true
 # #=> PDFsam 1 remove
 # sudo pacman -Rs pdfsam
 
+# #=> peazip
+# gAUR peazip
+# nvim -c "silent! /github.com\/peazip\/PeaZip" PKGBUILD
+# makepkg -sic  # takes a while
+# true
+
 # #=> perl-unicode-utf8
 # gAUR perl-unicode-utf8
 # nvim -c "silent! /metacpan.org" PKGBUILD
@@ -340,8 +352,6 @@ true
 # nvim -c "silent! /https:\/\/archive.mozilla.org\/pub\/thunderbird\/releases\/" PKGBUILD
 # makepkg -sic
 # sudo pacman -S thunderbird-i18n-en-gb
-# # referring to  $machLg/jo/thunderbird, tweaked  ~/.thunderbird/profiles.ini
-# cp ~/.thunderbird/profiles.ini $machLg/jo/thunderbird/$(date +%y%m%d)-profiles.ini
 
 # #=> urlview
 # # creates a numbered list of url's in a resource

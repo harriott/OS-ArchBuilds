@@ -39,9 +39,12 @@ pipx install radio-active
 mkdir ~/.config/surfraw
 sudo pacman -S surfraw
 
-# #=> 0 Thunderbird - install
+# #=> 0 Thunderbird 0 install
 # sudo pacman -S thunderbird-i18n-en-gb
 # thunderbird  # generates a dummy Profile, not to be hereafter used
+
+#=> 0 Thunderbird 1 remove
+sudo pacman -Rs thunderbird thunderbird-i18n-en-gb
 
 #=> 0 yaml2toml
 pipx install yaml2toml
@@ -54,19 +57,4 @@ read -p "\$OSAB is $OSAB - looks good?"
 # sudo cp $OSAB/etc/NMdispatcher-ntpd.sh /etc/NetworkManager/dispatcher.d/ntpd.sh
 # sudo chmod 755 /etc/NetworkManager/dispatcher.d/ntpd.sh
 # # vifm /etc/NetworkManager/dispatcher.d /usr/lib/NetworkManager/dispatcher.d
-
-#=> 2 Thunderbird 1 $Thb
-p="~/.thunderbird/profiles.ini"
-sed -i '2i\\;vim: fdl=1:' $p
-sed -i '1i\\' $p
-sed -i "/Name=default-release/,/^$/ { s/IsRelative=1/IsRelative=0/; s:Path=.*:Path=$Thb: }" $p
-
-#=> 2 Thunderbird 2 backup profile
-rsync -irtv --delete ~/.thunderbird/ $machLg/jo/$(date +%y%m%d)thunderbird
-
-#=> 2 Thunderbird 3 first run
-o 'thunderbird > (default-release) > Start'
-
-#=> 3 Thunderbird 4 remove
-sudo pacman -Rs thunderbird thunderbird-i18n-en-gb
 

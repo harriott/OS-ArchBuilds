@@ -9,6 +9,7 @@
 alias gpr='gprename &'
 alias R='R --quiet'
 alias th='thunar' # Xfce
+G (){ emacs --no-splash -fh $1 & }  # GUI
 
 function psc() {
   pscs="$hmlA/ml-$host/pscircle" # pscircle shots
@@ -419,4 +420,17 @@ dcc1 () {
     echo "you should've ${tpf7b}dcc0${tpfn}"
   fi
 }  # moves them to  $Drpbx/conflicted
+
+#==> Thb
+function Tg() {
+  # rsync -irtv --delete $Thb/ ~/.thunderbird/jo
+  rsync -irtv --delete $Thb/ $thb/jo
+  echo "- you can now run Thunderbird on this machine"
+} # Thunderbird get from Dropbox
+
+function Tp() {
+  # find $thb | wc -l
+  rsync -irtv --delete $thb/jo/ $Thb
+  echo "$(find $Thb -type f -printf '%Ty%Tm%Td-%TH%TM%.2TS\n' | sort -k1,1r | head -1)  $host  \$Thb $(find $Thb | wc -l)" >> $cITCP/WAN/email-Thunderbird/activity
+}
 

@@ -5,14 +5,13 @@
 # run Thunderbird safely from Profile shared on Dropbox
 # -----------------------------------------------------
 
-# (chmod 755 $OSAB/jo/wm/TS/thunderbird_safely.sh)
-# symlinked in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
+# managed in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
 #  to provide my command  thunderbird_safely
 #   target for  Xfce > Application Shortcuts > Mail
 #   used in  $Obc/schema.pl
 
 # Tests:
-#  bash $OSAB/jo/wm/TS/thunderbird_safely.sh
+#  bash $ABjo/wm/TS/thunderbird_safely.sh
 #  echo lockTest > $llf
 #  touch $wlf
 
@@ -29,8 +28,9 @@ fi
 [ -f "$wlf" ] && wl=$(cat $wlf)
 alf="$ll $wl"
 if [ -z $alf ]; then
-    echo $host > $llf
+    # echo $host > $llf  # deprecated
     if test $(find $Thb -regex ".* conflicted copy .*\|.* (Copie en conflit de .*" | wc -c) -eq 0; then
+        echo "$(date +%y%m%d-%H%M%S)  $host  \$thb" >> $cITCP/WAN/email-Thunderbird/activity
         thunderbird
     else
         notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png -u critical 'Dropbox conflicts in $Thb.'

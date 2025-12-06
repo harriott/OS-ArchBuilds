@@ -1,6 +1,6 @@
 vim: set ft=build nospell:
 
-$OSAB/mb-sbMb/build.txt
+$machBld/build.txt ($OSAB/mb-sbMb/build.txt)
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 # build
 ## Arch install - from the ISO
@@ -3779,11 +3779,24 @@ rsync -av jo/ /home/jo  forgot to run again
 reboot  got a Dropbox page to log in, then lengthy hidden indexing
 ### aaa.0 check
 rsync -ainv $rsnapshot/aaa.0/localhost/home/jo/ /home/jo 2>&1 | tee ~/rsync_aaa0_jo
+### use SD480GSSDPlus
+sudo chown jo:jo /mnt/SD480GSSDPlus
+## $thb
+rm -r $thb/*
+cp $OSAB/nodes-jo/WAN/thunderbird-profiles.ini $thb/profiles.ini
+## FastMail app
+flatpak install flathub com.fastmail.Fastmail  around 1GB!
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.166.155.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.166.155.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 Parrot v6.4 to USB key
 gokcehan's lf
 MariaDB
 rebuild-detector
+switch to fastmail
 # clm possible extras
 imapbox
 maildir-rank-addr

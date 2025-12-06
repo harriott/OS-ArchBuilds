@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Joseph Harriott - Fri 31 May 2024
+# Joseph Harriott - Sat 06 Dec 2025
 
 # tidy up  Thunderbird  lockfiles
 # -------------------------------
@@ -15,7 +15,7 @@ case $host in
     DOP3040D11S) Storage=/mnt/BX200 ;;
     sbMb) Storage=/mnt/SDU3D1TB ;;
 esac
-Thb=$Storage/Dropbox/JH/Thb-dr
+Thb=$Storage/Dropbox/JH/Thb  # as exported in  $OSL/nodes/jo/export
 
 # remove this machine's lockfile if Thunderbird isn't running
 llf="$Thb/linuxlock"  # lockfile created by  $ABjo/wm/TS/thunderbird_safely.sh

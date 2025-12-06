@@ -14,6 +14,7 @@ ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
 
 #=> music_rotate
+chmod 755 $ABjo/music/music_rotate.sh
 sudo ln -sf $ABjo/music/music_rotate.sh /usr/local/bin/music_rotate
 sudo ln -sf $ABjo/music/music_rotate.desktop /usr/share/applications/music_rotate.desktop
 # pb /usr/share/applications/music_rotate.desktop
@@ -21,6 +22,7 @@ sudo ln -sf $ABjo/music/music_rotate.desktop /usr/share/applications/music_rotat
 #=> Spacemacs
 sudo ln -sf $ABjo/Emacs/spacemacs.desktop /usr/share/applications/spacemacs.desktop
 # e -la /usr/share/applications/spacemacs.desktop
+chmod 755 $ABjo/Emacs/spacemacs.sh
 sudo ln -sf $ABjo/Emacs/spacemacs.sh /usr/local/bin/spacemacs
 # pb /usr/local/bin/spacemacs
 
@@ -28,6 +30,7 @@ sudo ln -sf $ABjo/Emacs/spacemacs.sh /usr/local/bin/spacemacs
 ln -sf $ABjo/wm/TS/locks.sh ~/Arch/locks.sh
 # es ~/Arch/locks.sh
 # pb ~/Arch/locks.sh
+chmod 755 $ABjo/wm/TS/thunderbird_safely.sh
 sudo ln -sf $ABjo/wm/TS/thunderbird_safely.sh /usr/local/bin/thunderbird_safely
 # pb /usr/local/bin/thunderbird_safely
 sudo ln -sf $ABjo/wm/TS/thunderbird_safely.desktop /usr/share/applications/thunderbird_safely.desktop

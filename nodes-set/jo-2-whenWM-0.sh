@@ -11,8 +11,9 @@ ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el
 ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
 ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp
 ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
-ln -sf $onGH/zenburn-emacs ~/.emacs.d/harriott-zenburn-emacs
+ln -sf $onGH/zenburn-emacs ~/.emacs.d/zenburn-emacs
 # e -la ~/.emacs.d/
+# pb ~/.emacs.d/early-init.el
 
 #=> CLM config
 cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
