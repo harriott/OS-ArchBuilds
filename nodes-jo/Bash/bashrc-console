@@ -185,15 +185,15 @@ fbbcode () {
 #  fa | grep Secure1
 #  fa | grep Stack
 
-#===> checks
+#===> Encrypted Changes
 Encrypted=(Czm Digital0 Digital1 Secure0 Secure1 SHG Stack)
-EncThere () {
+EC0 () {
   if [ "$PWD" != $Enc ]; then
     if [ -d "$Enc" ]; then cd $Enc; pwd; else echo "$Enc ain't there"; return; fi
   fi
 }
-EncChanges1 () {
-  EncThere
+EC1 () {
+  EC0
   cel="$core/encrypted/last"
   lr=$(tail -1 $cel) # last recorded
   lrts=${lr:0:17}; echo "last: $lrts"
@@ -205,20 +205,21 @@ EncChanges1 () {
     printf '%s\n' "${ll[@]}" >> $cel
   fi
 }
-EncChanges2 () {
-  EncThere
+EC2 () {
+  EC0
   for E in ${Encrypted[@]}; do
-    o $E
+    # o $E
     f7z="find . -iname \"$E*.7z\" | sort | tail -1"
-    # find . -iname \"Czm*.7z\"
     ed7z=$(eval "$f7z")
     if [ $ed7z ]; then
-      tput setaf 5
-      find . -iname "$E*.7z" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort
-      tput setaf 7
-      find -path "./$E*" -newer $ed7z -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n | sort
-      # - fails to detect change of year
-      eval "find \"$core/encrypted\" -name \"$E*\" -newer $ed7z"
+      # En = $Enc
+      mapfile -t all < <(find . -iname "$E*.7z" -printf %TY-%Tm-%Td\ %TH:%TM\ En\ %P\\n | sort)
+      mapfile -t ch < <(find -path "./$E*" -newer $ed7z -printf %TY-%Tm-%Td\ %TH:%TM\ En\ %P\\n | sort) # changes
+      all+=("${ch[@]}")
+      # ce = $core/encrypted
+      mapfile -t ce < <(find "$core/encrypted" -name "$E*" -printf %TY-%Tm-%Td\ %TH:%TM\ ce\ %P\\n) # $core/encrypted
+      all+=("${ce[@]}")
+      printf '%s\n' "${all[@]}" | sort
     fi
   done
 }

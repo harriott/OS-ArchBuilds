@@ -35,7 +35,7 @@ if [[ $myDrA == 1 ]]; then
     # - keep  DROPBOX  capitalised for finding it without need for $
       export core=$DJH/core
         export coreIT=$core/IT
-          export CrPl=$coreIT/CP  # $cITCP  used in  $AjB/bashrc-console  & build scripts
+          export CrPl=$cITCP  # $cITCP  used in  $AjB/bashrc-console  & build scripts
           export onGH=$coreIT/onGitHub
             export vimfiles=$onGH/vimfiles
           export culL=$coreIT/ulLinux

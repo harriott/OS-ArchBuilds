@@ -122,22 +122,22 @@ vs () {
 
 #==> ffmpeg 1 trimming
 avte () {
-  export a="$1"
+  export av="$1"
   trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
-  duration=$(ffprobe -i "$a" -show_format -v quiet | sed -n 's/duration=//p')
+  duration=$(ffprobe -i "$av" -show_format -v quiet | sed -n 's/duration=//p')
   trimmed=$(echo "$duration-$trim" | bc)
-  ffi "$a" -c copy -t $trimmed -y "t$a"
-  mpv --start=-3 "t$a"
+  ffi "$av" -c copy -t $trimmed -y "t$av"
+  mpv --start=-3 "t$av"
 } # aet <anAVFileToTrimOffEnd> <trimIfGreaterThan1second>
 
 avtb () {
-  export a="$1"
+  export av="$1"
   trim=1; [[ $2 ]] && trim=$2
-  ffmhb -ss $trim -i "$a" -c copy -y "t$a"
-  mpv --end=3 "t$a"
+  ffmhb -ss $trim -i "$av" -c copy -y "t$av"
+  mpv --end=3 "t$av"
 } # abt <an_av_file_to_trim_half_second_off_beginning> 0.3
 
-# mv "t$a" "$a"
+# mv "t$av" "$av"
 
 #==> ffprobe
 alias fpasr='ffprobe -v error -select_streams a:0 -show_entries stream=sample_rate -of default=nw=1:nk=1'
@@ -172,7 +172,8 @@ alias yt='yt-dlp'
 #=> CUPS
 alias lpf='lp -o fit-to-page'  # lpf *
 alias lpspd='lpstat -p -d'
-alias sc5='doas cupsenable ENVY_5530'
+alias dceE5='doas cupsenable ENVY_5530'
+alias dceEI7='doas cupsenable ENVY_Inspire_7200'
 
 #=> documenting - LaTeX
 export MANPATH="/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH" # for  man <command>
@@ -423,14 +424,14 @@ dcc1 () {
 
 #==> Thb
 function Tg() {
-  # rsync -irtv --delete $Thb/ ~/.thunderbird/jo
-  rsync -irtv --delete $Thb/ $thb/jo
+  # rsync -irtv --delete $JHThb/ ~/.thunderbird/jo
+  rsync -irtv --delete $JHThb/ $thb/jo
   echo "- you can now run Thunderbird on this machine"
 } # Thunderbird get from Dropbox
 
 function Tp() {
   # find $thb | wc -l
-  rsync -irtv --delete $thb/jo/ $Thb
-  echo "$(find $Thb -type f -printf '%Ty%Tm%Td-%TH%TM%.2TS\n' | sort -k1,1r | head -1)  $host  \$Thb $(find $Thb | wc -l)" >> $cITCP/WAN/email-Thunderbird/activity
+  rsync -irtv --delete $thb/jo/ $JHThb
+  echo "$(find $JHThb -type f -printf '%Ty%Tm%Td-%TH%TM%.2TS\n' | sort -k1,1r | head -1)  $host  \$JHThb $(find $JHThb | wc -l)" >> $cITCP/WAN/email-Thunderbird/activity
 }
 

@@ -86,64 +86,67 @@ follows my `PCManFM` folder settings
     complete 2>&1 | tee $machLg/bash.cmplt
     r /usr/share/bash-completion
 
-## file manage - ls
+## file manage
+FIND(1)
+
+### ls
     dircolors --print-ls-colors
     ls ~/{go,mus*,*Shot}; o
 
-### man
+#### man
     :Man ls
     im ls
 
-## file manage - directory structures
+### directory structures
     <directory>  # cd <directory>  ( shopt autocd )
     file ~/.vim  # shows symlink source
     namei ~/.vim  # shows tree, including symlink sources
 
-## file manage - file searching
+### file searching
     find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
     find . -type d -name .git
     find . -type f -name .gitignore
     find . -type f -name "*.pl"
     find . -type f -name "python.vim"
 
-### for configuration files
+#### for configuration files
     fd -I -e conf
     find . -type f -name "*.conf"
 
-### fmtutil.cnf
+#### fmtutil.cnf
     cp /etc/texmf/web2c/fmtutil.cnf.pacsave $machLg/etc/texmf-web2c-fmtutil/$(date '+%y%m%d-%H%M').cnf
 
 as root: `find / -xdev -iname "*fmtutil.cnf*"`
 
-### grepping
+#### grepping
     grep -E '<someText>|<otherText>'
     grep -r --include "*.sh" ' -f ' .
     grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
     grep -ri --include "*.conf" '#=> ' .
     man grep | grep egrep | xcol egrep fgrep
 
-#### manual
+##### manual
 - GNU Grep Manual
 - GREP(1)
 
-### mlocate
+#### mlocate
     i locate
     im locate
 
-#### regex searches
+##### regex searches
     locate -r '\.conf$'
     locate -r '\.json$' | mo
     locate -i 'nick cave'
 
-#### updatedb
+##### updatedb
     $machBld/etc/updatedb.conf
     doas updatedb
     systemctl status updatedb.timer
 
-### list symlinks
+#### list symlinks
     find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
 
-#### recursively
+##### recursively
     find . -type l -ls
     find ~ -path '*/.virtualenvs' -prune -o -type l -ls
 
@@ -525,10 +528,9 @@ NCDU(1)
 - PV(1)
 
 ## ranger
+    $OSL/nodes/terminal-ranger/JH.md
     feh $cITcr/unix-like/cheatsheet.png &
-    r $OSL/nodes/terminal-ranger  # my configurations
     r /mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/OS-Linux/nodes/terminal-ranger/scope.sh
-    r $Cfzd
     ranger --version
 
 - can't cope with `utf-16le`
@@ -1111,7 +1113,7 @@ pass cz/GmailAPI/token-expire
     kill -9 "$(pidof perl)"
 
 ## Bash
-    [ -f $Thb/parent.lock ] && echo zero file size
+    [ -f $JHThb/parent.lock ] && echo zero file size
     r $culLB
 
 ### ANSI escape sequences
@@ -1125,9 +1127,8 @@ pass cz/GmailAPI/token-expire
     echo -e "=\e[0;34m=Blue=\e[0m=\e[1;34m=BoldBlue=\e[0m"
 
 ### tput
-    tput bold; echo hello
-
-nachoparker
+- nachoparker
+- tput(1)
 
 #### cat --show-nonprinting
 ```bash
@@ -1261,7 +1262,7 @@ IOSTAT(1)
     bpytop  # supersedes  bashtop
 
 #### keybinds
-    h = F1
+    shift+h = F1
 
 ##### sorting columns
     b = left = previous
@@ -1643,7 +1644,7 @@ URLs (such as in an email sent from `mutt`) unclickable - so better to send to t
 ## email - Thunderbird
     default-release:  find -name "* conflicted copy*" -exec rm -f {} \;
 
-locks: `pb $Thb/linuxlock; pb $Thb/Win10ProLock`
+locks: `pb $JHThb/linuxlock; pb $JHThb/Win10ProLock`
 
 ## Jekyll
 	r $JHm

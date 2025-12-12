@@ -15,10 +15,10 @@
 #  echo lockTest > $llf
 #  touch $wlf
 
-llf="$Thb/linuxlock"  # my creation
-#  echo $host > $Thb/linuxlock
-#  pb $Thb/linuxlock
-wlf="$Thb/Win10ProLock"  # $MSWin10\Thb\runSafely.ps1
+llf="$JHThb/linuxlock"  # my creation
+#  echo $host > $JHThb/linuxlock
+#  pb $JHThb/linuxlock
+wlf="$JHThb/Win10ProLock"  # $MSWin10\Thb\runSafely.ps1
 # l 2>/dev/null $llf $wlf
 
 if [ -s $llf ]; then
@@ -29,11 +29,11 @@ fi
 alf="$ll $wl"
 if [ -z $alf ]; then
     # echo $host > $llf  # deprecated
-    if test $(find $Thb -regex ".* conflicted copy .*\|.* (Copie en conflit de .*" | wc -c) -eq 0; then
+    if test $(find $JHThb -regex ".* conflicted copy .*\|.* (Copie en conflit de .*" | wc -c) -eq 0; then
         echo "$(date +%y%m%d-%H%M%S)  $host  \$thb" >> $cITCP/WAN/email-Thunderbird/activity
         thunderbird
     else
-        notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png -u critical 'Dropbox conflicts in $Thb.'
+        notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png -u critical 'Dropbox conflicts in $JHThb.'
     fi
 else
     notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png -u critical "Thunderbird locked to $alf"
