@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set sw=2:
 
-# Joseph Harriott, Wed 08 May 2024
+# Joseph Harriott, Mon 15 Dec 2025
 
 # robustly save my last cmus queue
 
@@ -12,7 +12,7 @@
 
 # DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/notify-send -u critical "cmusqueue.sh $(date +%H%M)"  # uncomment to check if this script is being called
 
-source ~/.export-machine; source ~/.export-storage  # get  $Drpbx  into cron shell
+source ~/.export-machine; source ~/.export-Arch  # get  $Drpbx  into cron shell
 rwd="$Drpbx/Cop/AM-toSort0"  # root working directory
 if pgrep cmus; then
   cmus-remote --server /run/user/1000/cmus-socket -C "cd $rwd"

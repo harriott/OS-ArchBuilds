@@ -5,18 +5,20 @@
 # source $OSAB/nodes-set/jo-0-Bash-X.sh
 
 #=> Bash 0 set
-# sort this list by last use of "~":  :sort /,*\~/
+# sort these lists by last use of "~":  :sort /,*\~/
 
 ln -sf $AjB/bash_profile                     ~/.bash_profile
 ln -sf $machBld/jo/Bash/bashrc               ~/.bashrc
 ln -sf $Openbox/bashrc_for_Alacritty-nvim.sh ~/.bashrc-An
 ln -sf $AjB/bashrc-console                   ~/.bashrc-console
 ln -sf $OSAB/nodes-Bash/bashrc-generic       ~/.bashrc-generic  # e -l ~/.bashrc-generic
-ln -sf $OSL/nodes/jo/export                  ~/.export-linux
-ln -sf $machBld/export-machine               ~/.export-machine
-ln -sf $OSAB/nodes-Bash/export-Arch          ~/.export-Arch  # e -l ~/.export-Arch
 ln -sf $OSL/nodes/GNUReadline-inputrc        ~/.inputrc  # e -l ~/.inputrc
 ln -sf $AjB/bash_history.sh                  ~/Arch/bash_history.sh
+
+ln -sf $OSAB/nodes-Bash/export-Arch          ~/.export-Arch
+ln -sf $OSL/nodes/jo/export                  ~/.export-linux
+ln -sf $machBld/export-machine               ~/.export-machine
+# ll ~/.export-*
 
 # #=> Bash 1 check
 # e -la ~/.bash_profile ~/.bashrc ~/.bashrc-An ~/.bashrc-console ~/.bashrc-generic ~/.export-jo ~/.export-machine ~/.export-storage ~/.inputrc ~/Arch/bash_history.sh

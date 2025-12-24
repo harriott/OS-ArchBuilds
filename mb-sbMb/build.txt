@@ -3803,6 +3803,21 @@ hp-setup 10.186.106.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## HPLIP Status Service tray icon
 HP Device Manager > Configure > Preferences > System Tray Icon > Hide when inactive
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.12.20.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.12.20.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+:: Replace vulkan-mesa-device-select with extra/vulkan-mesa-implicit-layers? [Y/n]
+## auracle-git  error
+  auracle: error while loading shared libraries: libfmt.so.15: cannot open shared object file: No such file or directory
+sudo pacman -Rs auracle-git  then re-installed it
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.200.231.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.200.231.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 Parrot v6.4 to USB key
 gokcehan's lf

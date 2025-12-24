@@ -121,17 +121,17 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> fastmail
-gAUR fastmail
-nvim -c "silent! /dl.fastmailcdn.com\/desktop\/production\/linux\/x64" PKGBUILD
-makepkg -sic  # takes a while
-true
-
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
+# #=> fastmail
+# gAUR fastmail
+# nvim -c "silent! /dl.fastmailcdn.com\/desktop\/production\/linux\/x64" PKGBUILD
+# makepkg -sic  # takes a while
 # true
+
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
@@ -170,6 +170,18 @@ true
 # #=> keepassxc-git 1 remove
 # sudo pacman -Rs keepassxc-git
 
+#=> libopenshot
+gAUR libopenshot
+nvim -c "silent! /github.com\/openshot\/libopenshot" PKGBUILD
+makepkg -sic  # takes a long, long time...
+true
+
+#=> libopenshot-audio
+gAUR libopenshot-audio
+nvim -c "silent! /github.com\/openshot\/libopenshot-audio" PKGBUILD
+makepkg -sic
+true
+
 # #=> nomacs 0 install
 # gAUR nomacs
 # nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
@@ -191,6 +203,12 @@ true
 
 # #=> nomacs-git 1 remove
 # sudo pacman -Rs nomacs-git nomacs-git-debug
+
+#=> openshot
+gAUR openshot
+nvim -c "silent! /www\.openshot\.org" PKGBUILD
+makepkg -sic
+true
 
 # #=> Pacfinder
 # gAUR pacfinder
@@ -324,11 +342,11 @@ true
 # nvim -c "silent! /launchpad" PKGBUILD
 # makepkg -sic  # takes a long time...
 
-# #=> spectroterm
-# gAUR spectroterm
-# nvim -c "silent! /github.com\/sparklost" PKGBUILD
-# makepkg -sic
-# true
+#=> spectroterm
+gAUR spectroterm
+nvim -c "silent! /github.com\/sparklost" PKGBUILD
+makepkg -sic
+true
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
@@ -396,8 +414,8 @@ true
 # makepkg -sic  # takes ages to work through languages
 # true
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 

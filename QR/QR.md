@@ -72,15 +72,21 @@ follows my `PCManFM` folder settings
     esc esc  # toggle sudo
     pinfo bash
     pinfo -m bash
-    sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
     tput bel  # bell
 
 - BASH(1)
 - UNIQ(1)
 
+## Atuin
+    sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
+
+`$OSAB/nodes-Bash/ble-atuin` sets `Ctrl+u`
+
 ## ble.sh
     ble-bind -P | fzf
     $OSAB/nodes-Bash/blerc
+
+Stopped jobs might need `kill -9 %1` twice...
 
 ## completion
     complete 2>&1 | tee $machLg/bash.cmplt
@@ -149,6 +155,11 @@ as root: `find / -xdev -iname "*fmtutil.cnf*"`
 ##### recursively
     find . -type l -ls
     find ~ -path '*/.virtualenvs' -prune -o -type l -ls
+
+## jobs
+    i jobs
+
+JOBS(1P)
 
 ## pager - less
     less <file>
@@ -360,6 +371,7 @@ SED(1)
 - better file managing in `$OSAB/nodes-Bash/bashrc-generic`
 - CP(1)
 - `du` don't work in script...
+- filetype frequencies in `$OSL/nodes/bashrc-console-fm`
 - FIND(1)
 - MV(1)
 - rsync(1)
@@ -710,9 +722,8 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     sudo pkill rsnapshot
 
 ## tree lists
+    $OSAB/nodes/Bash/bashrc-generic
     i tree
-
-`$OSAB/nodes/Bash/bashrc-generic`
 
 ## Vifm
     FF $cITcr/CP/vifm-v0.12-builtin-normal.png
@@ -1198,11 +1209,12 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fd -L consolas
     fd -L nerd
     fd -L symbola
+    lt /usr/share/fonts > $machLg/fonts/$(date +%y%m%d-%H%M).tree
 
 `usf()` (`$OSAB/nodes-Bash/bashrc-generic`)
 
 ### Fontconfig
-    cd /etc/fonts  # to explore the configuration files
+    r /etc/fonts  # to explore the configuration files
     doas fc-cache -f  # regenerates the cache
     fc-list | grep Caskaydia
     fc-list | grep Deja
@@ -1210,7 +1222,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fc-list | grep Source
     fc-list | grep ubuntu
     fc-list -v ubuntumono
-    fc-list > $machLg/fc-list/$(date +%y%m%d-%H%M).fclist
+    fc-list > $machLg/fonts/$(date +%y%m%d-%H%M).fclist
 
 #### fc-scan
     fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf
@@ -1489,7 +1501,6 @@ TMUX(1)
     n $cITcr/CP/encoding/textWrangling-vi
 
 ### vim variants
-    lt $vfvp > $vfvp/all.tree
     rsync -irtv --delete $vimfiles/ ~/Play0/vfb
 
 #### Nvim

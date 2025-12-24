@@ -40,7 +40,7 @@ export VISUAL=gvim
 # pipx shell completions
 eval "$(register-python-argcomplete pipx)"
 
-#==> prompt
+# prompt
 source "/usr/share/git/completion/git-prompt.sh"; source $OSL/nodes/bashrc-console-prompt
 
 #=> file manage
@@ -213,12 +213,12 @@ EC2 () {
     ed7z=$(eval "$f7z")
     if [ $ed7z ]; then
       # En = $Enc
-      mapfile -t all < <(find . -iname "$E*.7z" -printf %TY-%Tm-%Td\ %TH:%TM\ En\ %P\\n | sort)
-      mapfile -t ch < <(find -path "./$E*" -newer $ed7z -printf %TY-%Tm-%Td\ %TH:%TM\ En\ %P\\n | sort) # changes
-      all+=("${ch[@]}")
+        mapfile -t all < <(find . -iname "$E*.7z" -printf %TY-%Tm-%Td\ %TH:%TM\ En\ %P\\n | sort)
+        mapfile -t ch < <(find -path "./$E*" -newer $ed7z -printf %TY-%Tm-%Td\ %TH:%TM\ En\ %P\\n | sort) # changes
+        all+=("${ch[@]}")
       # ce = $core/encrypted
-      mapfile -t ce < <(find "$core/encrypted" -name "$E*" -printf %TY-%Tm-%Td\ %TH:%TM\ ce\ %P\\n) # $core/encrypted
-      all+=("${ce[@]}")
+        mapfile -t ce < <(find "$core/encrypted" -name "$E*" -printf %TY-%Tm-%Td\ %TH:%TM\ ce\ %P\\n) # $core/encrypted
+        all+=("${ce[@]}")
       printf '%s\n' "${all[@]}" | sort
     fi
   done

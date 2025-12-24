@@ -5,7 +5,7 @@
 
 # Bash configurations that are also useful in Console and as root.
 
-# $OSAB/nodes-Bash/bashrc-generic  symlinked in  $OSAB/nodes/set/jo-0.sh, then
+# $OSAB/nodes-Bash/bashrc-generic  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh, then
 #  for jo: sourced by  $AjB/bash_profile  &  $AjB/bashrc
 #  for root: sourced by  $OSAB/nodes-root/bashrc
 # see  $OSAB/nodes/set/repair.sh  for checking if this was sourced

@@ -144,10 +144,10 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> gsamokovarov jump 0 install
-# gAUR jump
-# nvim -c "silent! /gsamokovarov" PKGBUILD
-# makepkg -sic
+#=> gsamokovarov jump 0 install
+gAUR jump
+nvim -c "silent! /gsamokovarov" PKGBUILD
+makepkg -sic
 
 # #=> gsamokovarov jump 1 remove
 # cd ~/Arch/AUR
@@ -252,11 +252,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> powershell-bin
-gAUR powershell-bin
-nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
-makepkg -sic
-true
+# #=> powershell-bin
+# gAUR powershell-bin
+# nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> rdrview-git
 # gdAUR rdrview-git

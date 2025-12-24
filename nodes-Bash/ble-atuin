@@ -3,7 +3,7 @@
 # $OSAB/nodes-Bash/ble-atuin
 #  sourced at end of
 #   $AjB/bashrc
-#   $OSAB/nodes-root/bashrc /root/.bashrc
+#   $OSAB/nodes-root/bashrc
 
 #=> ble.sh
 [[ ! ${BLE_VERSION-} ]] || ble-attach
