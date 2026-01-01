@@ -125,6 +125,12 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /_fhosted" PKGBUILD
 # makepkg -sic
 
+# #=> fonts - ttf-poppins
+# gAUR ttf-poppins
+# nvim -c "silent! /github.com\/itfoundry\/poppins" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> fangfrisch 1 AUR
 # gAUR python-fangfrisch
 # nvim -c "silent! /rseichter" PKGBUILD
@@ -144,10 +150,10 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> gsamokovarov jump 0 install
-gAUR jump
-nvim -c "silent! /gsamokovarov" PKGBUILD
-makepkg -sic
+# #=> gsamokovarov jump 0 install
+# gAUR jump
+# nvim -c "silent! /gsamokovarov" PKGBUILD  # ~/Arch/AUR/jump/PKGBUILD
+# makepkg -sic
 
 # #=> gsamokovarov jump 1 remove
 # cd ~/Arch/AUR
@@ -174,6 +180,12 @@ makepkg -sic
 # nvim -c "silent! /pkgname=kittypack" PKGBUILD
 # makepkg -sic
 # true
+
+#=> lazyjournal
+gAUR lazyjournal
+nvim -c "silent! /github.com\/Lifailon\/lazyjournal" PKGBUILD
+makepkg -sic
+true
 
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3

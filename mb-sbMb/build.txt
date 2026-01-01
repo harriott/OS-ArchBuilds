@@ -3818,8 +3818,28 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.200.231.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Thunderbird outdated
+Q Thunderbird  reports v145.0-1
+profile, once used for v146.0 (from  Winget) on  Win10Pro, won't work here
+switched to  thunderbird-bin
+## pipx
+pipx list
+  ...
+  One or more packages have a missing python interpreter.
+    To fix, execute: pipx reinstall-all
+## toolong
+pipx install toolong
+## FSearch
+Preferences > Database > Exclude > /mnt/ST4000VN008/rsnapshot
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.156.23.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.156.23.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## thunderbird-bin
+launched, then closed for  $thb  cleared all but  jo  &  profiles.ini, then
+  sudo nvim -o $OSAB/nodes-jo/WAN/thunderbird-profiles.ini $thb/profiles.ini -c 'windo difft'
 ## waiting
-Parrot v6.4 to USB key
 gokcehan's lf
 MariaDB
 rebuild-detector
@@ -3840,13 +3860,12 @@ CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 
 ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
   acpi-cpufreq.ko.zst          p4-clockmod.ko.zst  powernow-k8.ko.zst
   amd_freq_sensitivity.ko.zst  pcc-cpufreq.ko.zst  speedstep-lib.ko.zst
-# fcron
-fcrontab -l
+# fcrontab
+  !m(0)
   @ 1 bash ~/Arch/f1t2t3/log.sh
   @ 1 bash ~/Arch/locks.sh
   @ 3 bash ~/Arch/cmusqueue.sh
   @ 10 bash ~/Arch/bash_history.sh
-  @ 20 jump clean
 ## temperatures
 ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
 ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh

@@ -18,11 +18,23 @@ sudo pacman -S composer
 # #=> fonts - gnu-free-fonts
 # sudo pacman -S gnu-free-fonts
 
+#=> fonts - noto-fonts
+sudo pacman -S noto-fonts  # for  Firefox  text and  Xfce  window labels
+
+# #=> fonts - noto-fonts-cjk
+# sudo pacman -S noto-fonts-cjk  # for  $MD4PDF/GNULinux/md4pdf.sh
+
 #=> fonts - Source Code Pro
 sudo pacman -S adobe-source-code-pro-fonts  # for  Source Code Pro
 
 # #=> fonts - ttf-dejavu
 # sudo pacman -S ttf-dejavu
+
+#=> fonts - ttf-hack
+sudo pacman -S ttf-hack
+
+#=> fonts - ttf-opensans
+sudo pacman -S ttf-opensans
 
 # #=> gdown
 # pipx install gdown
@@ -41,11 +53,6 @@ sudo pacman -S jre-openjdk  # required for  PDFtk
 
 #=> newsboat
 sudo pacman -S newsboat
-
-# #=> noto-fonts-cjk
-# # for  $MD4PDF/GNULinux/md4pdf.sh
-# sudo pacman -S noto-fonts-cjk
-# true
 
 #=> npm ffmpeg-concat 0 install
 npm i -g ffmpeg-concat  # takes time to complete

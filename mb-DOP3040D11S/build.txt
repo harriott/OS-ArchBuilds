@@ -150,12 +150,30 @@ then Deleted  ~/.emacs.d/straight/build  and ran Emacs
 sudo pacman -Rs auracle-git  then re-installed it
 ## reiserfsprogs
 pactree -r reiserfsprogs  shows no need, so  sudo pacman -Rs reiserfsprogs
+## Updates
+sudo pacman -Scc
+  error: could not remove /var/cache/pacman/pkg/download-MTXCJX: Is a directory
+  error: could not remove /var/cache/pacman/pkg/download-wodtCy: Is a directory
+  error: could not remove /var/cache/pacman/pkg/download-dxSlRY: Is a directory
+  error: could not remove /var/cache/pacman/pkg/download-OmpIcB: Is a directory
+  error: could not remove /var/cache/pacman/pkg/download-JVMK3f: Is a directory
+  error: could not remove /var/cache/pacman/pkg/download-T26c6t: Is a directory
+sudo rm -rf /var/cache/pacman/pkg/download*
 ## waiting
+$cITcc/unix-linux-forArch-fonts/NF - get what possible from Arch
 apache
 EFI install
+fcrontab
+fsearch
 gokcehan's lf
+lazyjournal
+lnav
 MariaDB
+noto-fonts
 rtorrent
+toolong
+ttf-hack
+ttf-opensans
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
@@ -163,8 +181,7 @@ CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 
     Paste clipboard as plain text > Win+P (= Meta+P)  - works for Nvim/Vim, but not tmux
     Show/hide main window > Win+Q (= Meta+Q)
   Appearance > Theme > forest
-# fcron
-fcrontab -l
+# fcrontab
   @ 1 bash ~/Arch/locks.sh
   @ 10 bash ~/Arch/bash_history.sh
   @ 20 jump clean

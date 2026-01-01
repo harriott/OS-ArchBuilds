@@ -81,6 +81,7 @@ fRs () {
 
 if [ -s "/usr/bin/zoxide" ]; then
   eval "$(zoxide init bash)"  # o $PROMPT_COMMAND
+  zf () { cd "$(zoxide query -l | fzf -0 -1)"; }
   zq () { zoxide query -ls | grep -i $1; }
 fi
 

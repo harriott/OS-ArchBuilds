@@ -58,6 +58,9 @@ sudo pacman -S igrep
 # #=> libsixel
 # sudo pacman -S libsixel  # for  sixel  graphics
 
+#=> lnav
+sudo pacman -S lnav
+
 # #=> npm 0 configure npm-global
 # mkdir ~/.npm-global
 # npm config set prefix=$HOME/.npm-global

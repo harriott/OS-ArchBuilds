@@ -503,11 +503,11 @@ vid => ffmpegthumbnailer
 
 ```bash
 Alt+c  # to change directory
-bm fzf
 cat $(fzf)
 cd [directory/][fuzzy_pattern]**<tab>
-f  # defined in  $OSAB/Bash/bashrc-generic
+f  # with  bat, $OSAB/nodes-Bash/bashrc-generic
 gvim -o `f`  # calling upon fzf
+i fzf
 kill -9 <tab>
 ls -l $(fzf -m)
 unalias **<tab>
@@ -611,7 +611,7 @@ NCDU(1)
     pgrep rsnapshot
     snapshot_root
     sudo du -sh $rsnapshot
-    sm $rsnapshot/monthly.6
+    sm $rsnapshot/aaa.0
 
 ### backup localhost without mnt
     lastMonthly=/mnt/WD1001FALS/rsnapshot/monthly.6/localhost/; month=$(date -r $lastMonthly +%y%m%d); echo $month
@@ -641,6 +641,7 @@ NCDU(1)
     du -chs /mnt/ST4000VN008/Vs-*
 
 ### find
+    r $rsnapshot/aaa.0/localhost/$Drpbx/Cop/AM-toSort0
     r $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
     r $rsnapshot/daily.0/localhost/$Drpbx/Photos
     r $rsnapshot/daily.1/localhost/$Drpbx/Cop/AM-toSort0
@@ -673,6 +674,7 @@ NCDU(1)
     fRs $Obc/rc rc.xml
     fRs $onGH/misc/CP/PerlTools mysmsMD.pl
     fRs $TeNo/md-JH-DailyLife DailyLife.md
+    fRs $thb profiles.ini
     fRs $vfp/packs-cp/opt/vim-dokuwiki/syntax dokuwiki.vim
     fRs $vfn/lua/lazy dropbar.lua
     fRs $vimfiles/syntax cmusq.vim
@@ -708,9 +710,9 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
 
 ### recent directories
     $rsnapshot/hourly.0/localhost$CzMa/planning/m1-n/n9t-_benevoles-appels-Joseph
-    $rsnapshot/hourly.0/localhost$CzMa/expenses/mine/oab-/noReceipts
+    $rsnapshot/hourly.0/localhost$CzMaEx/mine/oab-/noReceipts
     $rsnapshot/hourly.0/localhost/mnt/SDU3D1TB/Dropbox/Cop/AM-toSort0
-    $rsnapshot/hourly.1/localhost$CzMa/expenses/mine/oab-/noReceipts
+    $rsnapshot/hourly.1/localhost$CzMaEx/mine/oab-/noReceipts
 
 ### recover folder
     rsync -irtv --delete $rsnapshot/aaa.0/localhost/$maild/ $maild
@@ -737,7 +739,8 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     i zoxide-import
     i zoxide-query
     zi <fuzzy_tail_pattern> > Enter > <fuzzy_pattern> > Enter/Esc
-    zq <case_insensitive>  # greps relevant lines from the database
+    zq <case_insensitive>  # greps relevant lines from the database  # $AjB/bashrc-console
+    zoxide query -i <fuzzy_tail_pattern>
     zoxide query -ls | mo
 
 # forum
@@ -1160,6 +1163,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
     i localectl
+    lnav /var/log  # then  Esc  to get out of weird editing mode
     r /usr/share/applications  # the  *.desktop  files
     slock  # unlocks when correct user pw is entered
     swapoff -a
@@ -1187,7 +1191,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 1. b reBoot
 
 ## build
-    $OSAB/etc/doas.conf
+    $OSAB/extra-etc/doas.conf
     r $OSAB $culLA
     r $machLg/etc/fstab
     rsync -irtv --delete $OSAB/ ~/Play0/OSAB
@@ -1209,7 +1213,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fd -L consolas
     fd -L nerd
     fd -L symbola
-    lt /usr/share/fonts > $machLg/fonts/$(date +%y%m%d-%H%M).tree
+    lsd -L --tree /usr/share/fonts > $machLg/fonts/$(date +%y%m%d-%H%M).tree
 
 `usf()` (`$OSAB/nodes-Bash/bashrc-generic`)
 
@@ -1219,6 +1223,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fc-list | grep Caskaydia
     fc-list | grep Deja
     fc-list | grep Lohit
+    fc-list | grep OpenSans
     fc-list | grep Source
     fc-list | grep ubuntu
     fc-list -v ubuntumono
@@ -1395,7 +1400,7 @@ scroll don't work in `tmux`
 - `-t` selects terminal width (instead of `-w 80` default)
 
 ### fonts
-    ft  # $OSAB/Bash/bashrc-generic
+    ft  # $OSAB/nodes-Bash/bashrc-generic
 
 `showfigfonts Deauram > ~/FIGletFonts.txt; sed -i 's/ \+$//' ~/FIGletFonts.txt` then reduced and copied to `$culLB/FIGletFontsDeauram.txt`
 
