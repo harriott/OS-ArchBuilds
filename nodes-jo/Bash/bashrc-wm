@@ -1,6 +1,6 @@
 # vim: ft=bash sw=2:
 
-# Joseph Harriott, Thu 04 Dec 2025
+# Joseph Harriott, Mon 05 Jan 2026
 
 # $AjB/bashrc-wm   sourced by  $AjB/bashrc
 
@@ -18,6 +18,17 @@ function psc() {
   nsxiv -fn $(ls $pscs | wc -l) $pscs &
 } # visualise all processes
 
+function xn() {
+  sqlite3 ~/.cache/xfce4/notifyd/log.sqlite .dump > $machLg/jo/xfce/notifyd-dump.sql
+  # tail -4 $machLg/jo/xfce/notifyd-dump.sql | head -1  # the last one
+  awk -F, '{if($1~/INSERT/){print strftime("%y/%m/%d-%H:%M:%S", $2/1000000),substr($4,2,length($4)-2),substr($7,2,length($7)-2),substr($8,2,length($8)-2)}}' OFS='\t' $machLg/jo/xfce/notifyd-dump.sql > $machLg/jo/xfce/notifyd.tsv
+  sed -i 's/Current Status: //' $machLg/jo/xfce/notifyd.tsv
+  sed -i "s/unistr('<b>Title:<\/b> //" $machLg/jo/xfce/notifyd.tsv
+  sed -i 's/\\u000a<b>/  /g' $machLg/jo/xfce/notifyd.tsv
+  sed -i 's/<\/b>//g' $machLg/jo/xfce/notifyd.tsv
+  tail -2 $machLg/jo/xfce/notifyd.tsv | awk -F'\t' '{print $1,$2,$3}' # a little info
+}
+
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
   yazi "$@" --cwd-file="$tmp"
@@ -34,6 +45,7 @@ alias m='cmus'
 alias vp='vimpc'
 alias st='spectroterm -acp --green 235 --orange 235 --red 235'
 mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")   $(mediainfo --Output='Audio;%Format%' "$v")   $(mediainfo --Output='Audio;%BitRate%' "$v") b/s   $(mediainfo --Output='Audio;%SamplingRate%' "$v") Hz   "$v""; done; }  # mi *
+# music_rotate
 
 fm () {
   for category in best good good-US joy-copies toSort0 toSort1-USA; do

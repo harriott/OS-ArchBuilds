@@ -217,6 +217,9 @@ sudo pacman -S quodlibet
 #=> Rclone
 sudo pacman -S rclone
 
+#=> resvg
+sudo pacman -S resvg  # for  WezTerm
+
 #=> SANE
 sudo pacman -S sane
 

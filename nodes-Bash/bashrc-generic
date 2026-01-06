@@ -196,7 +196,7 @@ uf(){
 
 #==> fonts
 usf(){
-  usft="$machLg/usr/share_fonts-tree.txt"
+  usft="$machLg/usr/share/fonts-tree.txt"
   echo 'vim: set nowrap:' > $usft
   echo >> $usft
   echo 'output of usf() ($OSAB/Bash/bashrc-generic)' >> $usft

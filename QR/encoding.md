@@ -68,7 +68,10 @@ gem list > $machLg/gems.gems  # using  $vfv/syntax/gems.vim
 r $GEM_HOME
 ```
 
-# Rust - didyoumean
+# Rust
+    r ~/.cargo/bin
+
+## didyoumean
     dym better
     i dym
 

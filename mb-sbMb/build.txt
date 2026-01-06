@@ -3839,6 +3839,12 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 ## thunderbird-bin
 launched, then closed for  $thb  cleared all but  jo  &  profiles.ini, then
   sudo nvim -o $OSAB/nodes-jo/WAN/thunderbird-profiles.ini $thb/profiles.ini -c 'windo difft'
+## xfce4-settings 4.20.3
+monitors partially switched over, so
+  Applications > Settings > Display > dragged  Dell Inc. 22"  to left of  PKB 22" > Apply
+## mathieu-lemay/cmus-notify
+rustup update  took a while
+cargo install cmus-notify
 ## waiting
 gokcehan's lf
 MariaDB
@@ -3990,6 +3996,7 @@ Keyboard >
     exfalso > Super+F
     gvim > Super+V
     keepassxc > Super+K
+    music_rotate > Super+M
     signal-desktop > Super+S
     thunderbird_safely > Mail
     neovide > Super+N

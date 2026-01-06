@@ -38,10 +38,10 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> cheat
-# gAUR cheat
-# nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
-# makepkg -sic
+#=> cheat
+gAUR cheat
+nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
+makepkg -sic
 
 # #=> code-minimap 0 (re)install
 # gAUR code-minimap
@@ -181,11 +181,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> lazyjournal
-gAUR lazyjournal
-nvim -c "silent! /github.com\/Lifailon\/lazyjournal" PKGBUILD
-makepkg -sic
-true
+# #=> lazyjournal
+# gAUR lazyjournal
+# nvim -c "silent! /github.com\/Lifailon\/lazyjournal" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3

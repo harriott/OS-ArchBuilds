@@ -2,7 +2,7 @@
 #
 # my generic  ~/.bash_profile
 # ---------------------------
-# $AjB/bash_profile  symlinked in  $OSAB/nodes-set/jo-0.sh
+# $AjB/bash_profile  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
 #  supplements and overrides  /etc/profile
 
 export loaded_bp=1

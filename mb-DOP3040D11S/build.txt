@@ -159,6 +159,8 @@ sudo pacman -Scc
   error: could not remove /var/cache/pacman/pkg/download-JVMK3f: Is a directory
   error: could not remove /var/cache/pacman/pkg/download-T26c6t: Is a directory
 sudo rm -rf /var/cache/pacman/pkg/download*
+## Updates
+more cache errors, so  sudo rm -rf /var/cache/pacman/pkg/download*
 ## waiting
 $cITcc/unix-linux-forArch-fonts/NF - get what possible from Arch
 apache
@@ -170,6 +172,7 @@ lazyjournal
 lnav
 MariaDB
 noto-fonts
+resvg
 rtorrent
 toolong
 ttf-hack

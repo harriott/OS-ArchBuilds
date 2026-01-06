@@ -15,7 +15,8 @@ my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
     tty-clock -bcs
     ~/.config/pnmixer/config
 
-SORT(1)
+- DATE(1)
+- SORT(1)
 
 # audio
 pulseaudio(1)
@@ -1061,21 +1062,12 @@ pacman -Sg base-devel  # lists all
     sudo pacman -U package.pkg.tar.xz
     sudo pacman -Rs <packagetoremove>
 
-- `-Q` (`--query`) (`Q ()` in `$OSAB/nodes-Bash/bashrc-generic`)
-    - `-q` (`--quiet`) even omits version
-    - `-s` (`--search <regexp>`)
-- `-R` (`--remove`)
-    - `-s` (`--recursive`)
-- `-S` (`--sync`) synchronize packages from servers
-    - `-c` (`--clean`) remove unused packages from the cache
-        - `Scc` clean out the cache
-    - `-i` (`--info`) on a package
-        - `Sii` shows packages depend on this package
-    - `-s <regexp>` (`--search`)
-    - `-u` (`--sysupgrade`)
-    - `-y` (`--refresh`) refresh copy of the master package list (use with `-u`)
-        - `Syy` force refresh
-- pacman(8)
+pacman(8)
+
+### find package owner of /usr/bin/not
+- `pacman -Qo not` only if `not` is installed
+- `sudo pkgfile -u` then `pkgfile not`
+- `sudo pacman -Fy` then `pacman -F not`
 
 ### keys
     gpg --homedir /etc/pacman.d/gnupg -k > $machLg/etc/PacmanKeys/$(date +%y%m%d-%H%M).gpgk  # $vfv/syntax/gpgk.vim
@@ -1090,6 +1082,25 @@ pacman -Sg base-devel  # lists all
 pacman -Ss <keyword>
 pacsearch <keyword>  # better search
 ```
+
+### operators
+- `-F` (`--files`) query the files database
+    - `-y` (`--refresh`) the master package list
+- `-Q` (`--query`) (`Q ()` in `$OSAB/nodes-Bash/bashrc-generic`)
+    - `-o` (`--owns`)
+    - `-q` (`--quiet`) even omits version
+    - `-s` (`--search <regexp>`)
+- `-R` (`--remove`)
+    - `-s` (`--recursive`)
+- `-S` (`--sync`) synchronize packages from servers
+    - `-c` (`--clean`) remove unused packages from the cache
+        - `Scc` clean out the cache
+    - `-i` (`--info`) on a package
+        - `Sii` shows packages depend on this package
+    - `-s <regexp>` (`--search`)
+    - `-u` (`--sysupgrade`)
+    - `-y` (`--refresh`) refresh copy of the master package list (use with `-u`)
+        - `Syy` force refresh
 
 ### re-install Haskells
     pacman -Qqs haskell > ~/pacman_haskell
@@ -1162,6 +1173,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     bat -A /etc/hosts
     bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
+    fd -tf -u -e bmp -e gif -e ico -e jfif -e jp2 -e jpeg -e jpg -e png -e sog -e tif -e tiff . /usr/share > $machLg/usr/share/imagey.ffl
     i localectl
     lnav /var/log  # then  Esc  to get out of weird editing mode
     r /usr/share/applications  # the  *.desktop  files
@@ -1292,7 +1304,7 @@ IOSTAT(1)
 ## notification - Dunst
     $ABjo/wm/dunstrc
 
-to fix appearance `pkill xfce4-notifyd`
+to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
 
 ## security
     $OSAB/etc/sudoers/sudoers
@@ -1355,10 +1367,13 @@ backed up in `$AjB/bash_profile`
     o $XDG_CACHE_HOME
     o $XDG_CONFIG_HOME
     o $XDG_CONFIG_DIRS
-    rsync -irtv --delete ~/.config/xfce4/xfconf/xfce-perchannel-xml/ $machLg/jo/xfce-perchannel
-    ~/.cache/xfce4
     ~/.config/autostart/Alacritty.desktop
     ~/.config/autostart/Conky.desktop
+
+`xn` defined in `$AjB/bashrc-wm`
+
+### xfce-perchannel
+    rsync -irtv --delete ~/.config/xfce4/xfconf/xfce-perchannel-xml/ $machLg/jo/xfce/perchannel
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 

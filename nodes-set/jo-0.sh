@@ -40,6 +40,7 @@ fi
 #=> cmus
 ln -sf $ABjo/wm/cmusqueue.sh   ~/Arch/cmusqueue.sh
 ln -sf $ABjo/wm/cmus_notify.sh ~/.local/share/cmus_notify.sh
+ln -sf $culLA/jo/cmushnotify.sh ~/.local/share/cmushnotify.sh
 ln -sf $ABjo/wm/cmus-rc.conf   ~/.config/cmus/rc  # pb ~/.config/cmus/rc
 
 #=> davfs2.conf

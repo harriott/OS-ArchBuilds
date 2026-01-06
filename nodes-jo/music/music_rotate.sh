@@ -2,8 +2,12 @@
 # vim: sw=2:
 
 # rotate contents of  ~/music
+#  . $ABjo/music/music_rotate.sh
 #  managed in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
-#  bash ~/.config/music_rotate.sh  or just  music_rotate
+#  music_rotate
+#   $OSAB/mb-DOP3040D11S/build.txt
+#   $OSAB/mb-sbMb/build.txt
+#   $ABjo/music/music_rotate.desktop
 
 #  this could be faster on the db with different db_file's ($ABjo/music/MPD/mpd.conf),
 #   but advantage here is anything could be dumped into  ~/music
@@ -36,4 +40,5 @@ else
   mdlm best best
   # echo best > $mm
 fi
+cd ~/music  # only works if this file is sourced
 

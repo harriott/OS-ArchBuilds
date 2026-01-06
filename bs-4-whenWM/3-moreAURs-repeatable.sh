@@ -65,7 +65,7 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> cmus-notify 1 remove
+# #=> cmus-notify 2 remove
 # sudo pacman -Rs cmus-notify
 
 # #=> colorpicker
@@ -132,11 +132,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a while
 # true
 
-#=> fsearch
-gAUR fsearch
-nvim -c "silent! /github.com\/cboxdoerfer\/fsearch" PKGBUILD
-makepkg -sic  # takes a while
-true
+# #=> fsearch
+# gAUR fsearch
+# nvim -c "silent! /github.com\/cboxdoerfer\/fsearch" PKGBUILD
+# makepkg -sic  # takes a while
+# true
 
 # #=> Google Chrome
 # gAUR google-chrome
@@ -348,11 +348,11 @@ true
 # nvim -c "silent! /launchpad" PKGBUILD
 # makepkg -sic  # takes a long time...
 
-# #=> spectroterm
-# gAUR spectroterm
-# nvim -c "silent! /github.com\/sparklost" PKGBUILD
-# makepkg -sic
-# true
+#=> spectroterm
+gAUR spectroterm
+nvim -c "silent! /github.com\/sparklost" PKGBUILD
+makepkg -sic
+true
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
@@ -420,8 +420,8 @@ true
 # makepkg -sic  # takes ages to work through languages
 # true
 
-# #=> Zoom
-# gAUR zoom
-# nvim -c "silent! /zoom.us" PKGBUILD
-# makepkg -sic
+#=> Zoom
+gAUR zoom
+nvim -c "silent! /zoom.us" PKGBUILD
+makepkg -sic
 
