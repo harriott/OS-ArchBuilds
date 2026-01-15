@@ -5,6 +5,6 @@
 
 # #=> Xfce
 ln -sf $ABjo/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh  # es ~/.startup_terminal.sh
-ln -sf $machBld/jo/Conky/Xfce ~/.conkyrc  # es ~/.conkyrc
+ln -sf $machBld/jo/Conky/Xfce.lua ~/.conkyrc  # es ~/.conkyrc
 sudo ln -sf $core/IT/copied-WallpaperFlare /usr/share/backgrounds/xfce/WallpaperFlare
 

@@ -1225,7 +1225,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fd -L consolas
     fd -L nerd
     fd -L symbola
-    lsd -L --tree /usr/share/fonts > $machLg/fonts/$(date +%y%m%d-%H%M).tree
+    lsd -L --tree /usr/share/fonts > $machLg/usr/share/fonts/$(date +%y%m%d-%H%M).tree
 
 `usf()` (`$OSAB/nodes-Bash/bashrc-generic`)
 
@@ -1239,7 +1239,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     fc-list | grep Source
     fc-list | grep ubuntu
     fc-list -v ubuntumono
-    fc-list > $machLg/fonts/$(date +%y%m%d-%H%M).fclist
+    fc-list > $machLg/usr/share/fonts/$(date +%y%m%d-%H%M).fclist
 
 #### fc-scan
     fc-scan /usr/share/fonts/ubuntu/UbuntuMono-R.ttf

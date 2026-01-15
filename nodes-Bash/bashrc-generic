@@ -1,7 +1,7 @@
 #!/bin/sh
 # vim: ft=sh sw=2:
 
-# Joseph Harriott
+# Joseph Harriott - Thu 15 Jan 2026
 
 # Bash configurations that are also useful in Console and as root.
 
@@ -56,7 +56,7 @@ startxx () {
   ln -sf $ABjo/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh
   ln -sf $ABjo/wm/Xfce/config_gtk30_gtk.css ~/.config/gtk-3.0/gtk.css
   # - for  ~/.config/autostart/Alacritty.desktop
-  ln -sf $machBld/jo/Conky/Xfce ~/.conkyrc
+  ln -sf $machBld/jo/Conky/Xfce.lua ~/.conkyrc
 }
 
 #=> better file managing
@@ -194,15 +194,15 @@ uf(){
   echo >> $ufl
 } # usr files
 
-#==> fonts
 usf(){
-  usft="$machLg/usr/share/fonts-tree.txt"
-  echo 'vim: set nowrap:' > $usft
+  usft="$machLg/usr/share/fonts/usf.tree"
+  echo 'output of usf() ($OSAB/Bash/bashrc-generic)' > $usft
   echo >> $usft
-  echo 'output of usf() ($OSAB/Bash/bashrc-generic)' >> $usft
-  echo >> $usft
-  tree /usr/share/fonts/ >> $usft
-  echo >> $usft
+  tree -l /usr/share/fonts/ >> $usft
+  # move count line of  tree
+    cl=$(tail -n1 $usft)
+    sed -i '$d' $usft
+    sed -i "3s/$/ - $cl\n/" $usft
 }
 
 #=> turbostat

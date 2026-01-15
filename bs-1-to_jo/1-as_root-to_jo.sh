@@ -305,6 +305,15 @@ true
 # Lua linter
 pacman -S selene
 
+#=> 2 fonts
+sudo pacman -S ttf-arimo-nerd
+sudo pacman -S ttf-cascadia-mono-nerd
+sudo pacman -S ttf-croscore
+sudo pacman -S ttf-hack-nerd
+sudo pacman -S ttf-jetbrains-mono-nerd
+sudo pacman -S ttf-meslo-nerd
+sudo pacman -S ttf-ubuntu-mono-nerd
+
 #=> 2 system
 # supersedes  Bashtop
 pacman -S bpytop

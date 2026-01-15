@@ -161,6 +161,8 @@ sudo pacman -Scc
 sudo rm -rf /var/cache/pacman/pkg/download*
 ## Updates
 more cache errors, so  sudo rm -rf /var/cache/pacman/pkg/download*
+## Updates
+:: Replace moar with extra/moor? [Y/n]
 ## waiting
 $cITcc/unix-linux-forArch-fonts/NF - get what possible from Arch
 apache
@@ -175,8 +177,14 @@ noto-fonts
 resvg
 rtorrent
 toolong
+ttf-arimo-nerd
+ttf-cascadia-mono-nerd
 ttf-hack
+ttf-hack-nerd
+ttf-jetbrains-mono-nerd
+ttf-meslo-nerd
 ttf-opensans
+ttf-ubuntu-mono-nerd
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

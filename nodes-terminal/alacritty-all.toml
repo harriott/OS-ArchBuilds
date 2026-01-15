@@ -10,7 +10,8 @@
 
 [font]
   # changes are instantaneous
-  normal = { family = "CaskaydiaCoveNerdFontMono" } # titchy
+  normal = { family = "CaskaydiaMonoNF" } # ttf-cascadia-mono-nerd, titchy
+  # normal = { family = "CaskaydiaCoveNerdFontMono" } # (from  $notDr) titchy
   # normal = { family = "DejaVuSansMono" } # higher letters than  CaskaydiaCoveNerdFontMono, but blurry at 8
   # normal = { family = "UbuntuMonoNerdFontMono" } # needs one size larger than Caskaydia
 

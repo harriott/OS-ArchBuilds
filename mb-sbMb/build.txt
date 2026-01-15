@@ -1007,7 +1007,7 @@ mkdir $VsLocation/OBSmkvGrabs
 ## ST4000VN008 fail
 ceased to be accessible
 ### reboot long delay
-Failed unmounting /mnt/ST4000VN008  - maybe the cause of a long slow shutdwon...
+Failed unmounting /mnt/ST4000VN008  - maybe the cause of a long slow shutdown...
   Remounting /mnt/ST4000VN008 read-only ... timed out
   Failed to unmount /mnt/ST4000VN008
   Remounting /oldroot/mnt/ST4000VN008 read-only
@@ -3845,6 +3845,16 @@ monitors partially switched over, so
 ## mathieu-lemay/cmus-notify
 rustup update  took a while
 cargo install cmus-notify
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.165.239.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.165.239.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+:: Replace moar with extra/moor? [Y/n]
+got stuck on shutdown, force restarted
+## nomacs not opening
+nomacs -v  got  "nomacs: error while loading shared libraries: libraw.so.23: cannot open shared object file: No such file or directory"  fix was to remove  nomacs  &  nomacs-debug, then re-install  nomacs
 ## waiting
 gokcehan's lf
 MariaDB

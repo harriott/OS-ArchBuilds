@@ -5,15 +5,20 @@
 !   called from my  $ABjo/wm/Xresources/Xresources
 
 
-!-*- Caskaydia Cove Nerd Font Complete Mono -*-
+!-*- Nerd Font Caskaydia -*-
 
 ! only needed for  rxvt-unicode
-	! URxvt.letterSpace: -1
+! URxvt.letterSpace: -1
 
-URxvt.font: xft:CaskaydiaCoveNerdFontMono:size=8
+! using from  $notDr
+! URxvt.font: xft:CaskaydiaCoveNerdFontMono:size=8
 !  better than Ubuntu Mono, except the hyphen runs into adjoining letters
+
 ! URxvt.boldFont: xft:CaskaydiaCoveNerdFontMono:bold
 !  gets too small if size of Regular is 8
+
+! using  ttf-cascadia-mono-nerd
+URxvt.font: xft:CaskaydiaMonoNF:size=8
 
 
 !! Nerd Font Hack Bold !!

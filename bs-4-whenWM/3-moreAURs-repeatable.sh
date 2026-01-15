@@ -103,11 +103,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
-# #=> Dropbox 0 (re)install
-# gAUR dropbox
-# nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
-# makepkg -sic
-# true
+#=> Dropbox 0 (re)install
+gAUR dropbox
+nvim -c "silent! /dropboxstatic.com\/dbx-releng\/client\/dropbox-lnx.x86_64-" PKGBUILD
+makepkg -sic
+true
 
 # #=> Dropbox 1 dropbox-dist folder
 # install -dm0 ~/.dropbox-dist  # prevents automatic updates, allowing Arch installation to work
@@ -138,11 +138,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a while
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
@@ -348,11 +348,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /launchpad" PKGBUILD
 # makepkg -sic  # takes a long time...
 
-#=> spectroterm
-gAUR spectroterm
-nvim -c "silent! /github.com\/sparklost" PKGBUILD
-makepkg -sic
-true
+# #=> spectroterm
+# gAUR spectroterm
+# nvim -c "silent! /github.com\/sparklost" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
@@ -420,8 +420,8 @@ true
 # makepkg -sic  # takes ages to work through languages
 # true
 
-#=> Zoom
-gAUR zoom
-nvim -c "silent! /zoom.us" PKGBUILD
-makepkg -sic
+# #=> Zoom
+# gAUR zoom
+# nvim -c "silent! /zoom.us" PKGBUILD
+# makepkg -sic
 

@@ -2,6 +2,8 @@
 
 --[[
 Joseph Harriott - Sat 11 May 2024
+here still using old syntax, as highlighted by  conky-syntax.vim
+
 $machBld/jo/Conky/Xfce  adapted from output of  conky --print-config
 symlinked in
   $OSAB/nodes-Bash/bashrc-generic
@@ -29,7 +31,7 @@ conky.config = {
     draw_outline = false,
     draw_shades = false,
     extra_newline = false,
-	font = 'DejaVuSansMono:size=10',
+	font = 'DejaVuSansMono:size=10', -- from  $notDr
     gap_x = 60,
     gap_y = 60,
     minimum_height = 5,
