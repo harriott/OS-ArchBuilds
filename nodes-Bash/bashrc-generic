@@ -10,7 +10,7 @@
 #  for root: sourced by  $OSAB/nodes-root/bashrc
 # see  $OSAB/nodes/set/repair.sh  for checking if this was sourced
 
-[[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$OSAB/nodes-Bash/blerc"
+[[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$OSAB/nodes-Bash/blerc"
 alias fin='figlet -f univers finished'
 if [ $host = 'sbMb' ]; then alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"; fi
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
@@ -196,6 +196,7 @@ uf(){
 
 usf(){
   usft="$machLg/usr/share/fonts/usf.tree"
+  [ $host == 'DOP3040D11S' ] && usft="$machLg/usr-share-fonts/usf.tree"
   echo 'output of usf() ($OSAB/Bash/bashrc-generic)' > $usft
   echo >> $usft
   tree -l /usr/share/fonts/ >> $usft

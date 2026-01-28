@@ -285,7 +285,9 @@ moar -h
     tlmgr conf > $machLg/TeXLive/tlmgr/conf-$(date '+%y%m%d%H%M').txt
     tlmgr info > $machLg/TeXLive/tlmgr/info-$(date '+%y%m%d%H%M').txt
 
-`su > <root_pw>` for `tlmgr update --all`
+##### update as su
+    tlmgr update --all
+    tlmgr update --self
 
 #### tcolorbox
     /usr/local/texlive/2025/texmf-dist/doc/latex/tcolorbox/README.md

@@ -89,19 +89,16 @@ ${color #d3d3d3}${top name 10} ${top pid 10} ${top cpu 10} ${top mem 10}
 ${color #ffffff}
 #-- hard drives
 # (can't figure how to feed  $Storage  to  fs_*  commands)
-$font${color #ffa500}/ $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color #ffffff}
-${color #ffa500}/home $color${fs_used /home} (${fs_size /home}) ${fs_bar 6 /home} ${color #ffffff}
-/mnt/SD480GSSDPlus $color${fs_used /mnt/SD480GSSDPlus} (${fs_size /mnt/SD480GSSDPlus}) ${fs_bar 6 /mnt/SD480GSSDPlus} ${color #ffffff}
-${color #ffa500}$Storage $color${fs_used /mnt/SDU3D1TB} (${fs_size /mnt/SDU3D1TB}) ${fs_bar 6 /mnt/SDU3D1TB} ${color #ffffff}
-/mnt/ST4000VN008 $color${fs_used /mnt/ST4000VN008} (${fs_size /mnt/ST4000VN008}) ${fs_bar 6 /mnt/ST4000VN008} ${color #ffffff}
-/mnt/WD1001FALS $color${fs_used /mnt/WD1001FALS} (${fs_size /mnt/WD1001FALS}) ${fs_bar 6 /mnt/WD1001FALS} ${color #ffffff}
+${font :size=9}/ $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color #ffffff}
+/home $color${fs_used /home} (${fs_size /home}) ${fs_bar 6 /home} ${color #ffffff}
+$Storage $color${fs_used /mnt/BX200} (${fs_size /mnt/BX200}) ${fs_bar 6 /mnt/BX200}
+${color #ffffff}
 #-- WAN
-${color #ffffff}enp0s25  Up $color${upspeed enp0s25} ${color #ffffff} Down $color${downspeed enp0s25}
+${color #ffffff}eno1  Up $color${upspeed eno1} ${color #ffffff} Down $color${downspeed eno1}
 ${color #ffffff}wlan0  Up $color${upspeed wlan0} ${color #ffffff} Down $color${downspeed wlan0}
 ${color #ffffff}
 #-- weather (blank if not online)
-${alignc}${color #d3d3d3}${execpi 100 curl wttr.in/Paris?T0 -s -m 3}
+${alignc}${color #d3d3d3}${execpi 300 curl wttr.in/Paris?T0 -s -m 3}
 
-   ${color #d3d3d3}${execpi 100 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
+   ${color #d3d3d3}${execpi 300 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
 ]]
-

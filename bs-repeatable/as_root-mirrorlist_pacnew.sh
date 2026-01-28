@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: se fdl=2:
+# vim: se fdl=2 sw=2:
 
 # sudo bash $OSAB/bs-repeatable/as_root-mirrorlist_pacnew.sh
 
@@ -8,8 +8,13 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 set -e  # quit on error
 
 #=> 0 get $OSAB
-. /home/jo/.export-machine  # if you've got Dropbox
-. /home/jo/.export-storage
+. ~/.export-machine  # $machBld/export-machine
+  Drpbx=$Storage/Dropbox
+    DJH=$Drpbx/JH
+      core=$DJH/core
+        coreIT=$core/IT
+          onGH=$coreIT/onGitHub
+            OSAB=$onGH/OS-ArchBuilds
 
 #=> 1 check $OSAB
 # check  $OSAB/nodes-Bash/export-storage  has leveraged  /ArchBuilds

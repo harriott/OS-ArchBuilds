@@ -181,11 +181,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> lazyjournal
-# gAUR lazyjournal
-# nvim -c "silent! /github.com\/Lifailon\/lazyjournal" PKGBUILD
-# makepkg -sic
-# true
+#=> lazyjournal
+gAUR lazyjournal
+nvim -c "silent! /github.com\/Lifailon\/lazyjournal" PKGBUILD
+makepkg -sic
+true
 
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3

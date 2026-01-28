@@ -15,27 +15,6 @@ sudo pacman -S composer
 # sudo pacman -S cups
 # sudo systemctl enable cups.service --now
 
-# #=> fonts - gnu-free-fonts
-# sudo pacman -S gnu-free-fonts
-
-#=> fonts - noto-fonts
-sudo pacman -S noto-fonts  # for  Firefox  text and  Xfce  window labels
-
-# #=> fonts - noto-fonts-cjk
-# sudo pacman -S noto-fonts-cjk  # for  $MD4PDF/GNULinux/md4pdf.sh
-
-#=> fonts - Source Code Pro
-sudo pacman -S adobe-source-code-pro-fonts  # for  Source Code Pro
-
-# #=> fonts - ttf-dejavu
-# sudo pacman -S ttf-dejavu
-
-#=> fonts - ttf-hack
-sudo pacman -S ttf-hack
-
-#=> fonts - ttf-opensans
-sudo pacman -S ttf-opensans
-
 # #=> gdown
 # pipx install gdown
 
