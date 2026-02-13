@@ -3864,10 +3864,26 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.18.114.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+:: thunderbird-147.0.1-1 and thunderbird-bin-147.0-1 are in conflict. Remove thunderbird-bin? [y/N] y
+$thb/profiles.ini  updated to  InstallFDC34C9F024745EB, see  $machBld/jo/thunderbird-profiles.ini
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.116.202.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.116.202.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.117.43.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.117.43.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 gokcehan's lf
 MariaDB
+mermaid-cli
+python-shtab
 rebuild-detector
+Recoll
 switch to fastmail
 # clm possible extras
 imapbox

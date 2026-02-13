@@ -1,5 +1,5 @@
 
-    $ABjo/wm/terminal/urxvt/Perls
+    $ABjo/wm/terminal/urxvt-Perls
 
 symlinked in `$OSAB/nodes-set/jo-2-whenWM-1.sh`
 

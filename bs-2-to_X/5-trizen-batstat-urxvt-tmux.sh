@@ -1,10 +1,11 @@
 #!/bin/bash
 # vim: fdl=1:
 
+# bash $OSAB/bs-2-to_X/5-trizen-batstat-urxvt-tmux.sh
+
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# bash $OSAB/bs-2-to_X/5-trizen-batstat-urxvt-tmux.sh
 # gdAUR  &  rAUR  are defined in $AjB/bashrc-console
 
 # #=> 0 trizen install

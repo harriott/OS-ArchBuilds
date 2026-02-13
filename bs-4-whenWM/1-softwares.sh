@@ -22,9 +22,6 @@ sudo cp $machBld/etc/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
 #  pb /etc/udev/rules.d/90-backlight.rules
 # after a reboot can  xbacklight -inc 12
 
-#=> asunder
-sudo pacman -S asunder  # graphical Audio CD ripper
-
 #=> Blanket
 sudo pacman -S blanket
 
@@ -118,6 +115,9 @@ sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
 
 #=> LibreCAD
 sudo pacman -S librecad
+
+#=> mermaid-cli
+sudo pacman -S mermaid-cli
 
 #=> metis 1 remove
 sudo pacman -Rs metis
@@ -216,6 +216,9 @@ sudo pacman -S quodlibet
 
 #=> Rclone
 sudo pacman -S rclone
+
+#=> Recoll
+sudo pacman -S recoll
 
 #=> resvg
 sudo pacman -S resvg  # for  WezTerm

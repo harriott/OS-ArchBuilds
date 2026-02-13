@@ -10,7 +10,8 @@ ln -sf $misc/notDr/notDr.md $notDr/readme.md  # e -la $notDr/readme.md
 ln -sf $misc/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
 
 #=> Alacritty
-ln -sf $machBld/alacritty.toml ~/.alacritty.toml
+ln -sf $machBld/alacritty.toml ~/.alacritty.toml  # DOP3040D11S
+ln -sf $machBld/Alacritty/Xfce.toml ~/.alacritty.toml  # sbMb
 ln -sf $OSAB/nodes-terminal/alacritty-all.toml ~/.alacritty-all.toml
 # e -la ~/.alacritty*
 
@@ -22,6 +23,12 @@ ln -sf $ABjo/WAN/ansiweather ~/.ansiweatherrc  # e -l ~/.ansiweatherrc
 ln -sf $ABjo/Chawan/all.toml ~/.config/chawan/config.toml
 # e -l ~/.config/chawan/config.toml
 # pb ~/.config/chawan/config.toml
+
+#=> cheat
+[ -d ~/.config/cheat ] || mkdir -p ~/.config/cheat
+ln -sf $ABjo/cheat-conf.yml ~/.config/cheat/conf.yml
+# e -l ~/.config/cheat/conf.yml
+# pb ~/.config/cheat/conf.yml
 
 #=> CliFM
 [ -d ~/.config/clifm ] || mkdir -p ~/.config/clifm

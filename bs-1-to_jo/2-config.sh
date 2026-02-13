@@ -27,9 +27,6 @@ trap read debug  # puts a read request after each executable line
 # #=> 1 for Rootkit Hunter
 # mkdir /home/jo/Arch
 
-# #=> 1 tealdeer
-# tldr --update
-
 # #=> 1 w3m
 # mkdir ~/.w3m/cgi-bin
 

@@ -169,11 +169,10 @@ JOBS(1P)
     h -> help
     j,k -> down/up
 
-## pager - moar
-```bash
-mo <file>  # ? lists the limited moar commands
-moar -h
-```
+## pager - moor
+    mo -h
+
+`mo` aliased in `$OSAB/nodes-Bash/bashrc-generic`
 
 ## time
     $OSAB/mb-sbMb/rsnapshots.sh
@@ -360,8 +359,9 @@ RG(1)
 
 SED(1)
 
-### tealdeer
+### tldr
     tldr -h
+    tldr -l  # --list  is vast
     tldr -u  # --update
     tldr tldr
 
@@ -645,6 +645,7 @@ NCDU(1)
 
 ### find
     r $rsnapshot/aaa.0/localhost/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/aaa.0/localhost/home/jo/.recoll
     r $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
     r $rsnapshot/daily.0/localhost/$Drpbx/Photos
     r $rsnapshot/daily.1/localhost/$Drpbx/Cop/AM-toSort0
@@ -777,7 +778,12 @@ gpg(1)
 
 # help
     apropos
-    cheat cheat
+
+## cheat
+    $ABjo/cheat-conf.yml
+    ea cheat
+
+`ea` aliased in `$OSAB/nodes-Bash/bashrc-generic`
 
 ## manpages
     o $MANPAGER
@@ -1426,10 +1432,30 @@ scroll don't work in `tmux`
     termdown -b 10
 
 ## urxvt
-    $ABjo/wm/urxvt/keystrokes.md
+    $ABjo/wm/terminal/urxvt/keystrokes.md
     Alt+s --> urxvt-searchable-scrollback
     appres urxvt
     rxvt-unicode
+
+## keystrokes - autocomplete-ALL-the-things
+    M-C-slash  => word-complete
+    M-question => fuzzy-complete
+    M-quotedbl => skeleton-complete
+
+## keystrokes - font resizing
+    C+- => smaller
+    C++ => bigger
+    C+= => reset
+    C+? => show
+
+## keystrokes - searching
+    Alt+s => scrollback search
+
+### keyboard-select
+    Alt+e => keyboard-select:activate
+
+- Cursor movements don't work in `cmus`, `neomutt pager`, or `nnn`.
+- Right end of status line shows "Bot" when it's active.
 
 ## test fonts
     Ctrl-Shift-leftClick

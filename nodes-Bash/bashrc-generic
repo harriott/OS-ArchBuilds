@@ -1,7 +1,7 @@
 #!/bin/sh
 # vim: ft=sh sw=2:
 
-# Joseph Harriott - Thu 15 Jan 2026
+# Joseph Harriott - Thu 12 Feb 2026
 
 # Bash configurations that are also useful in Console and as root.
 
@@ -11,10 +11,7 @@
 # see  $OSAB/nodes/set/repair.sh  for checking if this was sourced
 
 [[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$OSAB/nodes-Bash/blerc"
-alias fin='figlet -f univers finished'
-if [ $host = 'sbMb' ]; then alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"; fi
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
-mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 source $cITcc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
 source $cITcc/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"
 source $OSL/nodes/bashrc-generic
@@ -24,21 +21,6 @@ source $OSL/nodes/bashrc-generic
 
 # <esc> <esc> prefixes sudo on last command
 source $cITcc/CP/ohmybash-sudo.plugin.sh
-
-ft () {
-  if [ "$1" ]; then
-    of="$culLB/FIGletFontsTest.txt"
-    echo "$1" > $of; echo '' >> $of
-    for font in big doh doom isometric1 isometric2 larry3d nancyj-fancy nancyj nancyj-underlined ogre poison puffy radical_ rowancap shadow standard starwars stellar stop straight tombstone trashman ttyb tty univers usaflag utopia xbriteb xttyb; do
-      figlet -t -f $font -w 250 "$1" >> $of
-      echo "- $font" >> $of
-    done
-    sed -i 's/ \+$//' $of
-    echo "results are in $of"
-  else
-    echo "ft 'some text'"
-  fi
-}
 
 # tmux
 alias u=tmux
@@ -72,7 +54,7 @@ alias l='ls --color=auto'
 
 alias ltd='lsd -d --tree'  # more in  $OSL/bashrc-generic
 
-alias mo='moar'
+alias mo='moor -style monokai'
 
 c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
 # - https://superuser.com/a/1244522/242800
@@ -147,6 +129,32 @@ csF () {
   fi
 } # csF <log_file>
 
+#=> figlet
+alias fin='figlet -f univers finished'
+
+ft () {
+  if [ "$1" ]; then
+    of="$culLB/FIGletFontsTest.txt"
+    echo "$1" > $of; echo '' >> $of
+    for font in big doh doom isometric1 isometric2 larry3d nancyj-fancy nancyj nancyj-underlined ogre poison puffy radical_ rowancap shadow standard starwars stellar stop straight tombstone trashman ttyb tty univers usaflag utopia xbriteb xttyb; do
+      figlet -t -f $font -w 250 "$1" >> $of
+      echo "- $font" >> $of
+    done
+    sed -i 's/ \+$//' $of
+    echo "results are in $of"
+  else
+    echo "ft 'some text'"
+  fi
+}
+
+#=> help
+alias ea='cheat'
+export TLDR_COLOR_COMMAND="white"
+export TLDR_COLOR_DESCRIPTION='yellow'
+export TLDR_COLOR_NAME='yellow'
+export TLDR_COLOR_PARAMETER="red"
+mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
+
 #=> internetish
 Q () { pacman -Qs $1 | xcol $1; }  # or use  pacsearch
 
@@ -164,6 +172,8 @@ alias ptr='pactree -cr '  # reversed
 pts () { pactree -u $1 | sort | tr '\n' '~' | sed 's/~/  /g'; echo; }  # scrunched
 
 #=> system
+if [ $host = 'sbMb' ]; then alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"; fi
+
 plo(){
   plof="$machLg/usr/pip-list-outdated.txt"
   echo > $plof

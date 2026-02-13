@@ -89,8 +89,11 @@ sudo pacman -S perl-regexp-common
 # #=> Perl modules for JSON
 # sudo pacman -S perl-json perl-json-parse perl-json-xs  # can't recall why...
 
- #=> perlcritic
+#=> perlcritic
 sudo pacman -S perl-perl-critic
+
+#=> python-shtab
+sudo pacman -S python-shtab  # for  tldr  autocompletion
 
 #=> Signal
 sudo pacman -S signal-desktop

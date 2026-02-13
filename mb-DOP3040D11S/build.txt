@@ -167,19 +167,30 @@ more cache errors, so  sudo rm -rf /var/cache/pacman/pkg/download*
 nomacs -v  got  "nomacs: error while loading shared libraries: libraw.so.23: cannot open shared object file: No such file or directory"  fix was simply to reinstall  nomacs
 ## toolong
 pipx install toolong
+## Updates
+:: Replace vi with extra/ex-vi-compat? [Y/n]
+cache errors again, so  sudo rm -rf /var/cache/pacman/pkg/download*
+## Updates
+cache errors again, so  sudo rm -rf /var/cache/pacman/pkg/download*
+## Recoll
+ran it to immediately quit for  ~/.recoll/recoll.conf
+ran it again
+## Updates
+cache errors again, so  sudo rm -rf /var/cache/pacman/pkg/download*
 ## waiting
 apache
 EFI install
 gokcehan's lf
 MariaDB
 rtorrent
+tldr-pages/tldr-python-client
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
   Shortcuts >
     Paste clipboard as plain text > Win+P (= Meta+P)  - works for Nvim/Vim, but not tmux
     Show/hide main window > Win+Q (= Meta+Q)
-  Appearance > Theme > forest
+  Appearance > [ Set colors for tabs, tool bar and menus  Theme > dark ]
 # fcrontab
   @ 1 bash ~/Arch/locks.sh
   @ 10 bash ~/Arch/bash_history.sh

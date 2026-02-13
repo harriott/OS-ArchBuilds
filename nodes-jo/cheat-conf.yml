@@ -1,0 +1,17 @@
+# $ABjo/cheat-conf.yml
+#  based of  /etc/cheat/conf.yml
+#  symlinked by  $OSAB/nodes-set/jo-0.sh
+
+colorize: true
+formatter: terminal256
+pager: less -FRX
+
+# Chroma style
+style: monokai
+
+cheatpaths:
+  - name: community
+    path: /usr/share/cheat/cheatsheets/community
+    tags: [community]
+    readonly: true
+# check with  cheat -d

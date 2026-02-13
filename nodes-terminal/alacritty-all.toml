@@ -1,7 +1,7 @@
 
 # Alacritty
 # $OSAB/nodes-terminal/alacritty-all.toml ($OSAB/nodes-set/jo-0.sh)
-# imported by  $machBld/alacritty.toml, which sets font size
+#  imported by  $machBld/alacritty.toml, $machBld/Alacritty/Xfce.toml  which set font size
 
 [cursor]
   style = { shape = "underline" }

@@ -190,9 +190,9 @@ pacman -S udiskie
 # # sysstat
 # pacman -S sysstat
 
-# # tealdeer
-# pacman -S tealdeer
-# tldr -u
+#=> 2 info - tldr 0 install
+pacman -S tldr
+tldr -u
 
 #=> 2 systemd Journal size
 grep SystemMaxUse /etc/systemd/journald.conf

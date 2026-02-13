@@ -19,6 +19,13 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
+# #=> asunder
+# # graphical Audio CD ripper
+# gAUR asunder
+# nvim -c "silent! /littlesvr.ca\/asunder\/releases" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> briss
 # gAUR briss
 # nvim -c "silent! /sourceforge.net\/projects\/briss" PKGBUILD
@@ -35,6 +42,12 @@ trap read debug  # puts a read request after each executable line
 # gAUR chawan-git
 # nvim -c "silent! /chawan-git" PKGBUILD
 # makepkg -sic  # takes a while
+# true
+
+# #=> Clapgrep
+# gAUR clapgrep
+# nvim -c "silent! /github.com\/luleyleo" PKGBUILD
+# makepkg -sic
 # true
 
 # #=> clifm 0 (re)install
@@ -154,11 +167,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # requires  perl-test-fatal
 # true
 
-# #=> HTMLHint
-# gAUR htmlhint
-# nvim -c "silent! /github\.com\/htmlhint\/HTMLHint\/archive\/refs\/tags" PKGBUILD
-# makepkg -sic
-# true
+#=> HTMLHint
+gAUR htmlhint
+nvim -c "silent! /github\.com\/htmlhint\/HTMLHint\/archive\/refs\/tags" PKGBUILD
+makepkg -sic
+true
 
 # #=> iscan
 # gAUR iscan
@@ -193,40 +206,6 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> nomacs 0 install
-gAUR nomacs
-nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
-makepkg -sic  # takes ages...
-# after first install
-#  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-true
-
-# #=> nomacs 1 remove
-# sudo pacman -Rs nomacs nomacs-debug
-
-# #=> nomacs-git 0 install
-# gdAUR nomacs-git
-# nvim -c "silent! /_pkgname=nomacs" PKGBUILD
-# makepkg -sic  # takes ages...
-# # after first install
-# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
-# true
-
-# #=> nomacs-git 1 remove
-# sudo pacman -Rs nomacs-git nomacs-git-debug
-
-# #=> openshot
-# gAUR openshot
-# nvim -c "silent! /www\.openshot\.org" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> Pacfinder
-# gAUR pacfinder
-# nvim -c "silent! /stevenbenner\/pacfinder" PKGBUILD
-# makepkg -sic
-# true
-
 # #=> mod_fcgid 0 install
 # # for Apache
 # gAUR mod_fcgid
@@ -243,6 +222,28 @@ true
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
+# #=> nomacs 0 install
+# gAUR nomacs
+# nvim -c "silent! /https:\/\/github.com\/nomacs\/nomacs.git" PKGBUILD
+# makepkg -sic  # takes ages...
+# # after first install
+# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+# true
+
+# #=> nomacs 1 remove
+# sudo pacman -Rs nomacs nomacs-debug
+
+# #=> nomacs-git 0 install
+# gdAUR nomacs-git
+# nvim -c "silent! /_pkgname=nomacs" PKGBUILD
+# makepkg -sic  # takes ages...
+# # after first install
+# #  run it for  English  then  Close and run it again for  Ctrl+Shift+p > Close on ESC
+# true
+
+# #=> nomacs-git 1 remove
+# sudo pacman -Rs nomacs-git nomacs-git-debug
+
 # #=> oama-bin
 # # for MPD
 # gAUR oama-bin
@@ -251,10 +252,22 @@ true
 # [ -f ~/.config/oama/config.yaml ] || oama
 # true
 
+# #=> openshot
+# gAUR openshot
+# nvim -c "silent! /www\.openshot\.org" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> opera
 # gAUR opera
 # nvim -c "silent! /www.opera.com" PKGBUILD
 # makepkg -sic
+
+# #=> Pacfinder
+# gAUR pacfinder
+# nvim -c "silent! /stevenbenner\/pacfinder" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> pdfCropMargins 0 python-pypdf2
 # gAUR python-pypdf2
@@ -328,7 +341,7 @@ true
 # #=> pinta-git 0 remove
 # sudo pacman -Rs pinta-git
 
-# #=> audio PNMixer
+# #=> PNMixer
 # gAUR pnmixer
 # nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
 # makepkg -sic
