@@ -11,7 +11,7 @@
 # These are more settings that can also be useful in Console.
 # -----------------------------------------------------------
 
-# Joseph Harriott
+# Joseph Harriott, Sat 14 Feb 2026
 
 export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
 T (){ emacs -nw $1; }  # in terminal
@@ -64,14 +64,18 @@ CliFM (){
 
 fRs () {
   echo "${tpf2}directory${tpfn}: $1"
-  echo "${tpf2}file glob to find${tpfn}: $2"
+  echo "${tpf2}glob to find${tpfn}: $2"
+  if [ "$3" ]; then
+    echo "${tpf2}not recursive${tpfn}"
+    nodepth='-maxdepth 1 -mindepth 1'
+  fi  # probably much faster
   echo
   if [ "$2" ]; then
     tf="$rsnapshot/tds_find"
     echo 'vim: nowrap:' > $tf; echo >> $tf; echo "$1 $2" >> $tf; echo >> $tf
-    for y in h d w m; do find $rsnapshot -maxdepth 1 -mindepth 1 -type d -name "$y*" | sort -V; done | while read -r rsd; do
+    find $rsnapshot -maxdepth 1 -mindepth 1 -type d -name "$y*" | sort -V | while read -r rsd; do
       tput cuu 1; tput el; echo "${tpf5}searching in $rsd${tpfn}"; sleep .3
-      find $rsd/localhost$1 -name "*$2*" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n 2> /dev/null | sort >> $tf
+      find $rsd/localhost$1 $nodepth -name "*$2*" -printf %TY-%Tm-%Td\ %TH:%TM\ %p\\n 2> /dev/null | sort >> $tf
     done
     echo "${tpf2}- now look in  \$rsnapshot/tds_find${tpfn}"
   else

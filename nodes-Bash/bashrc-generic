@@ -12,8 +12,9 @@
 
 [[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$OSAB/nodes-Bash/blerc"
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
-source $cITcc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
 source $cITcc/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"
+[ -f /usr/bin/grc ] && export grc='grc'
+[ -f /usr/bin/rainbow ] && export rainbow='rainbow'
 source $OSL/nodes/bashrc-generic
 
 [ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ] && neofetch
@@ -40,60 +41,6 @@ startxx () {
   # - for  ~/.config/autostart/Alacritty.desktop
   ln -sf $machBld/jo/Conky/Xfce.lua ~/.conkyrc
 }
-
-#=> better file managing
-alias e='eza --icons'
-  alias a='e -aF'  # grid, handily showing up symlinks
-  alias es='e -alR'  # show permissions, rough sizes, and symlinks recursively
-  alias et='e -T'  # for tree
-alias ed='eza -D'  # show directories only
-alias edt='eza -DT'  # show directory tree
-alias ig='ig --editor nvim'  # igrep
-
-alias l='ls --color=auto'
-
-alias ltd='lsd -d --tree'  # more in  $OSL/bashrc-generic
-
-alias mo='moor -style monokai'
-
-c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
-# - https://superuser.com/a/1244522/242800
-
-export PAGER=less
-source $OSL/nodes/bashrc-generic
-
-if [ -s "/usr/bin/broot" ]; then
-  source ~/.config/broot/launcher/bash/br  # (first  broot  adds to  .bashrc)
-fi # configures broot
-
-if [ -s "/usr/share/fzf" ]; then
-  # alias f="fzf --preview 'bat --color=always {} | head -500'"
-  alias f="fzf --preview 'bat --color=always {}'"
-  eval "$(fzf --bash)"  # key bindings and fuzzy completion
-  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --no-ignore'
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-fi
-
-r () {
-  [ $TERM != 'screen-256color' ] && pi="--cmd='set preview_images true'"
-  eval "ranger --choosedir=$HOME/.ranger_last_visited $pi $@"
-  cd "$(cat $HOME/.ranger_last_visited)"
-}  # r "$Drpbx/CAM-best/Classic Yo-Yo"
-
-#==> bat
-alias b='bat'  # syntax highlit cat
-alias bd='bat -d'  # showing changes from git index
-alias bm='batman'  # better manual (in wide enough terminal)
-alias pb='prettybat'  # tidied code
-export BAT_PAGER=less
-
-#==> system monitoring
-alias bt='bashtop'
-alias gl='glances'
-
-#==> virtualenvwrapper
-export WORKON_HOME=~/.virtualenvs  # $WORKON_HOME
-[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper_lazy.sh
 
 #=> clamscan
 # $hmlA/ml-$host/cs
@@ -147,6 +94,55 @@ ft () {
   fi
 }
 
+#=> file contents
+alias mo='moor -style monokai'
+alias pz='pygmentize -O style=paraiso-dark'
+source $cITcc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
+
+#==> bat
+alias b='bat'  # syntax highlit cat
+alias bd='bat -d'  # showing changes from git index
+alias bm='batman'  # better manual (in wide enough terminal)
+alias pb='prettybat'  # tidied code
+export BAT_PAGER=less
+
+#=> file managing
+alias e='eza --icons'
+  alias a='e -aF'  # grid, handily showing up symlinks
+  alias es='e -alR'  # show permissions, rough sizes, and symlinks recursively
+  alias et='e -T'  # for tree
+alias ed='eza -D'  # show directories only
+alias edt='eza -DT'  # show directory tree
+alias ig='ig --editor nvim'  # igrep
+
+alias l='ls --color=auto'
+
+alias ltd='lsd -d --tree'  # more in  $OSL/bashrc-generic
+
+c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
+# - https://superuser.com/a/1244522/242800
+
+export PAGER=less
+source $OSL/nodes/bashrc-generic
+
+if [ -s "/usr/bin/broot" ]; then
+  source ~/.config/broot/launcher/bash/br  # (first  broot  adds to  .bashrc)
+fi # configures broot
+
+if [ -s "/usr/share/fzf" ]; then
+  # alias f="fzf --preview 'bat --color=always {} | head -500'"
+  alias f="fzf --preview 'bat --color=always {}'"
+  eval "$(fzf --bash)"  # key bindings and fuzzy completion
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --no-ignore'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
+
+r () {
+  [ $TERM != 'screen-256color' ] && pi="--cmd='set preview_images true'"
+  eval "ranger --choosedir=$HOME/.ranger_last_visited $pi $@"
+  cd "$(cat $HOME/.ranger_last_visited)"
+}  # r "$Drpbx/CAM-best/Classic Yo-Yo"
+
 #=> help
 alias ea='cheat'
 export TLDR_COLOR_COMMAND="white"
@@ -156,6 +152,9 @@ export TLDR_COLOR_PARAMETER="red"
 mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 
 #=> internetish
+if [ -f /usr/bin/grc ]; then
+  alias g='grc ping -c 3 8.8.8.8'
+fi
 Q () { pacman -Qs $1 | xcol $1; }  # or use  pacsearch
 
 suho () {
@@ -172,8 +171,6 @@ alias ptr='pactree -cr '  # reversed
 pts () { pactree -u $1 | sort | tr '\n' '~' | sed 's/~/  /g'; echo; }  # scrunched
 
 #=> system
-if [ $host = 'sbMb' ]; then alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"; fi
-
 plo(){
   plof="$machLg/usr/pip-list-outdated.txt"
   echo > $plof
@@ -216,6 +213,12 @@ usf(){
     sed -i "3s/$/ - $cl\n/" $usft
 }
 
+#==> monitoring
+alias bt='bashtop'
+alias gl='glances'
+
+if [ $host = 'sbMb' ]; then alias f1t2t3="bash ~/Arch/f1t2t3/f1t2t3.sh"; fi
+
 #=> turbostat
 alias ts1='sudo turbostat --interval 2 --quiet'
 
@@ -238,4 +241,8 @@ ts2 () {
     tmux a
   fi  # tmux
 } # widen terminal for turbostat
+
+#=> virtualenvwrapper
+export WORKON_HOME=~/.virtualenvs  # $WORKON_HOME
+[[ -f /usr/bin/virtualenvwrapper.sh ]] && source /usr/bin/virtualenvwrapper_lazy.sh
 

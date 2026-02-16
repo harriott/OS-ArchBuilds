@@ -38,6 +38,9 @@ sudo pacman -S fping
 # (after Rust Toolchain)
 sudo pacman -S gitui
 
+#=> grc
+sudo pacman -S grc
+
 #=> human language
 # aspell
 sudo pacman -S aspell-en aspell-fr

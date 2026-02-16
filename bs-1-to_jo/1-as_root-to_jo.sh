@@ -160,6 +160,9 @@ pacman -S udiskie
 # # Dateutils
 # pacman -S dateutils
 
+# # Fastfetch
+# pacman -S fastfetch
+
 # # htop
 # pacman -S htop
 

@@ -180,10 +180,9 @@ cache errors again, so  sudo rm -rf /var/cache/pacman/pkg/download*
 ## waiting
 apache
 EFI install
+fastfetch
 gokcehan's lf
 MariaDB
-rtorrent
-tldr-pages/tldr-python-client
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

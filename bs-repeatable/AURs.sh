@@ -259,6 +259,12 @@ makepkg -sic
 # makepkg -sic
 # true
 
+# #=> rainbow
+# gdAUR rainbow
+# nvim -c "silent! /pkgname=rainbow" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> rdrview-git
 # gdAUR rdrview-git
 # nvim -c "silent! /https:\/\/github.com\/eafer\/rdrview" PKGBUILD

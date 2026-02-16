@@ -57,6 +57,8 @@ GNUPLOT(1)
     i python
     r /usr/lib/python3.11/site-packages
 
+PYGMENTIZE(1)
+
 ## pipx
     r ~/.local/bin/
     r ~/.local/pipx/venvs/

@@ -151,11 +151,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a while
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
@@ -167,11 +167,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # requires  perl-test-fatal
 # true
 
-#=> HTMLHint
-gAUR htmlhint
-nvim -c "silent! /github\.com\/htmlhint\/HTMLHint\/archive\/refs\/tags" PKGBUILD
-makepkg -sic
-true
+# #=> HTMLHint
+# gAUR htmlhint
+# nvim -c "silent! /github\.com\/htmlhint\/HTMLHint\/archive\/refs\/tags" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> iscan
 # gAUR iscan

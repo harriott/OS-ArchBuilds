@@ -69,7 +69,6 @@ follows my `PCManFM` folder settings
     /etc/profile
     :Man bash
     :Man mktemp
-    env | fzf
     esc esc  # toggle sudo
     pinfo bash
     pinfo -m bash
@@ -77,6 +76,12 @@ follows my `PCManFM` folder settings
 
 - BASH(1)
 - UNIQ(1)
+
+## env
+    env | fzf
+    grc env
+
+ENV(1)
 
 ## Atuin
     sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
@@ -661,8 +666,8 @@ NCDU(1)
     fRs $CfWk/technos/civil/catering/CM-DeLonghiDinamica/Fr staplable.tex
     fRs $DaLi SNCF
     fRs $Drpbx/Cop Björk
-    fRs $Drpbx/Cop AM-toSort0
-    fRs $Drpbx/Cop/AM-toSort0 'ZZ Top'
+    fRs $Drpbx/Cop AM-toSort0 1
+    fRs $Drpbx/Cop US 1
     fRs $Drpbx/Cop/AM-toSort0 Europe
     fRs $Drpbx/Cop/AM-toSort0 France
     fRs $Drpbx/Cop/AM-toSort0 UK
@@ -728,7 +733,7 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     sudo pkill rsnapshot
 
 ## tree lists
-    $OSAB/nodes/Bash/bashrc-generic
+    $OSAB/nodes-Bash/bashrc-generic
     i tree
 
 ## Vifm
@@ -860,6 +865,7 @@ gpg(1)
     $misc/linux/slJH.sh  # check for symlinks which could bother Dropbox
     /proc/filesystems - those supported by the kernel
     doas file -s /dev/sdx(n)
+    grc lsblk -f
     i ioping
 
 - `Asunder CD Ripper` rips to `~`

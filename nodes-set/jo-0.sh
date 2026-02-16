@@ -60,6 +60,10 @@ ln -sf $ABjo/WAN/dictrc ~/.dictrc
 ln -sf $ABjo/wm/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
 # es ~/.config/dunst/dunstrc
 
+#=> fastfetch
+ln -sf $OSAB/nodes-terminal/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
+# e -la ~/.config/fastfetch/config.jsonc
+
 #=> fix Calibri in Thunderbird
 ln -sf $ABjo/wm/fontconfig-conf_d-20-no-embedded.conf ~/.config/fontconfig/conf.d/20-no-embedded.conf
 
@@ -97,6 +101,9 @@ ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 
 #=> pinfo
 ln -sf $ABjo/pinforc ~/.pinforc
+
+#=> pipecolor
+ln -sf $ABjo/pipecolor.toml ~/.pipecolor.toml
 
 #=> ranger
 lnd $OSL/nodes/terminal-ranger ~/.config/ranger
