@@ -140,7 +140,8 @@ ghi () {
 # $jtIT/GitHubIssues.ffl
 
 #==> lists of files by content
-alias rgo="rg --field-match-separator ':::'" # rgo rsync $DJH > $DJH/search/rsync.rgo
+alias rgo="rg --field-match-separator ':::'"
+# rgo rsync $DJH > $DJH/search/rsync.rgo ($vfv/syntax/rgo.vim)
 
 rgIT () {
   cd $DJH/search

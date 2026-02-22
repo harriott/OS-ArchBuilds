@@ -2,7 +2,6 @@ vim: nospell:
 
     $cITCP/encoding/dpl/Perl/scratch.pl
     $machBld/jo/gitconfig
-    $onGH/pandoc-templates/README.markdown
     archlinux-java status
     b <codeFile>  # syntax'd cat
     bluefish -v
@@ -47,6 +46,10 @@ GNUPLOT(1)
 - arrows scroll around
 - mouse
 - `q` = quit
+
+# Pandoc
+    $onGH/pandoc-templates/README.markdown
+    i pandoc
 
 # Perl
     r ~/.cpanm

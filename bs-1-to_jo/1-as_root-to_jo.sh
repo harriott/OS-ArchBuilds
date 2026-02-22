@@ -162,6 +162,7 @@ pacman -S udiskie
 
 # # Fastfetch
 # pacman -S fastfetch
+# mkdir ~/.config/fastfetch
 
 # # htop
 # pacman -S htop

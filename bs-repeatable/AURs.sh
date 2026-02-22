@@ -38,10 +38,10 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> cheat
-gAUR cheat
-nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
-makepkg -sic
+# #=> cheat
+# gAUR cheat
+# nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
+# makepkg -sic
 
 # #=> code-minimap 0 (re)install
 # gAUR code-minimap
@@ -270,6 +270,12 @@ makepkg -sic
 # nvim -c "silent! /https:\/\/github.com\/eafer\/rdrview" PKGBUILD
 # makepkg -sic
 # true
+
+#=> riffdiff
+gdAUR riffdiff
+nvim -c "silent! /pkgname=riffdiff" PKGBUILD
+makepkg -sic
+true
 
 # #=> shell-color-scripts-git
 # gdAUR shell-color-scripts-git

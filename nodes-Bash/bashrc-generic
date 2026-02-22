@@ -17,7 +17,13 @@ source $cITcc/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo
 [ -f /usr/bin/rainbow ] && export rainbow='rainbow'
 source $OSL/nodes/bashrc-generic
 
-[ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ] && neofetch
+if [ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ]; then
+  if [ $TERM_PROGRAM == 'WezTerm' ]; then
+    fastfetch -c neofetch.jsonc
+  else
+    fastfetch
+  fi
+fi
 # - won't run in  tmux  or after  su
 
 # <esc> <esc> prefixes sudo on last command

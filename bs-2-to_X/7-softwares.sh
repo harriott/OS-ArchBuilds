@@ -113,3 +113,6 @@ sudo pacman -S whipper  # for audio CDs
 cp $ABjo/whipper.conf ~/.config/whipper/whipper.conf
 # pb ~/.config/whipper/whipper.conf
 
+#=> Zellij
+sudo pacman -S zellij
+

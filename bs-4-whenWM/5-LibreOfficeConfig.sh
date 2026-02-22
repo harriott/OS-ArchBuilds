@@ -17,8 +17,8 @@ uc0="$HOME/.config/libreoffice/4/user"
 # cp -r $uc1/config $uc0/config
 # cp $uc1/registrymodifications.xcu $uc0/registrymodifications.xcu
 
-#=> 1 export p9c-sbMb
-uc1=$cITCP/documenting/LibreOffice/user-p9c-sbMb
+#=> 1 export q2l-sbMb
+uc1=$cITCP/documenting/LibreOffice/user-q2l-sbMb
 mkdir $uc1
 cp -r $uc0/config $uc1/config
 cp $uc0/registrymodifications.xcu $uc1/registrymodifications.xcu

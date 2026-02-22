@@ -180,7 +180,6 @@ cache errors again, so  sudo rm -rf /var/cache/pacman/pkg/download*
 ## waiting
 apache
 EFI install
-fastfetch
 gokcehan's lf
 MariaDB
 # CopyQ

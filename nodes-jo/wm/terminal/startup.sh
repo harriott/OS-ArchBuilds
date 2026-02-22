@@ -17,7 +17,8 @@ alacritty -o $Awd -o $Awp -e sh -c "tmux new; bash" & disown
 # urxvt -geometry $urxvtGeometry -e sh -c "tmux new; bash" &
 # # urxvt -geometry $urxvtGeometry -e sh -c "tmux a" &  # if crashed
 
-#=> 2 neofetch
+#=> 2 neofetchy
 sleep 3  # for slow-starting  /mnt/WD30EZRZ/Dropbox
-tmux send neofetch Enter
+tmux send fastfetch Enter
+# tmux send neofetch Enter
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=2:
 
-# Joseph Harriott, Wed 08 May 2024
+# Joseph Harriott, Mon 16 Feb 2026
 
 # machine dependent Openbox autostart tmux tweaks
 # called from
@@ -18,5 +18,6 @@
 #=> 0 launch btop and open a new tmux window
 tmux send btop Enter
 tmux new-window
-tmux send neofetch Enter
+tmux send fastfetch Enter
+# tmux send neofetch Enter
 

@@ -3877,6 +3877,11 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.117.43.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## TeX Live 2025 full - update packages
+su ...  for  tlmgr update --all  got
+  tlmgr update --all  got me 1121 updates
+  ...
+  tlmgr: An error has occurred. See above messages. Exiting.  but I couldn't find any trace...
 ## waiting
 gokcehan's lf
 MariaDB
@@ -3928,6 +3933,7 @@ NETGEAR WG111v2
 TP-Link UB400
 B525 HD Webcam
 ## cbh
+Logitech K120 UK keyboard
 Logitech Wireless Mouse M525 works fine
 Perixx PERIBOARD-407W keyboard
 ## drives

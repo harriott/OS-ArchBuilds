@@ -49,6 +49,7 @@ pacman -Q > $pQa/$ymdHM.log
 #=> 8 /var/cache/pacman/pkg
 echo "${tpf5b}minimising /var/cache/pacman/pkg/${tpfn}"
 if [ $host = "DOP3040D11S" ]; then
+  set +e
   yes | sudo pacman -Scc  # empty completely
   sudo rm -rf /var/cache/pacman/pkg/download*  # workaround
 else

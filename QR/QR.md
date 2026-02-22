@@ -2,7 +2,6 @@ vim: nospell:
 
     $OSAB/QR/QR.md; m4ps 0 1
     r $misc/linux/QR  # for my more general linux QuickReference
-    wezterm show-keys --lua > $cITcr/WezTerm-show-keys.lua
 
 my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
@@ -216,6 +215,7 @@ JOBS(1P)
 
 ## TeX - copied resources
     r $cITcr/CP/TeX
+    za $cITcr/CP/TeX/albatross-manual.pdf
     za $cITcr/CP/TeX/LaTeX/etoolbox.pdf
     za $cITcr/CP/TeX/LaTeX/appearance/colour/xcolor.pdf
     za $cITcr/CP/TeX/LaTeX/appearance/datetime2.pdf
@@ -378,7 +378,7 @@ SED(1)
 
 - better file managing in `$OSAB/nodes-Bash/bashrc-generic`
 - CP(1)
-- `du` don't work in script...
+- DIFF(1)
 - filetype frequencies in `$OSL/nodes/bashrc-console-fm`
 - FIND(1)
 - MV(1)
@@ -529,10 +529,6 @@ unalias **<tab>
     i sk
     i sk
     i sk-tmux
-
-## if  trash-restore  reports  "Non parsable trashinfo file..."
-    rm -r $Storage/.Trash-1000
-    rm -r /mnt/ST4000VN008/.Trash-1000
 
 ## ncdu
     ncdu --exclude rsnapshot
@@ -732,6 +728,10 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     rsnapshot -t aaa
     sudo pkill rsnapshot
 
+## trash-restore "Non parsable trashinfo file..."
+    rm -r $Storage/.Trash-1000
+    rm -r /mnt/ST4000VN008/.Trash-1000
+
 ## tree lists
     $OSAB/nodes-Bash/bashrc-generic
     i tree
@@ -886,10 +886,10 @@ optimised for SSDs
 `/etc/mke2fs.conf` has bytes-per-inode ratios for usage types
 
 ### non-optical
-    df -h /run/media/jo/*
     df -h | xcol mnt media
     doas file -s /dev/sdxn | xcol bit FAT
     findmnt
+    grc df -h /run/media/jo/*
 
 GPT fdisk
 
@@ -1230,10 +1230,10 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 - `uf()` (= usr files) in `$OSAB/Bash/bashrc-generic)`
 
 ## fonts
+    $cITcc/unix-linux-forArch-fonts/readme.md
     font-manager &
 
 ### /usr/share/fonts/
-    $cITcc/unix-linux-forArch-fonts/readme.md
     fd -L architects
     fd -L broot
     fd -L consolas
@@ -1392,11 +1392,11 @@ backed up in `$AjB/bash_profile`
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
 # terminal
-    $OSAB/nodes-terminal/wezterm.lua
     fgconsole  # reports tty number
     neofetch
     o $PAGER
     o $TERM
+    o $TERM_PROGRAM
     watch -n1 "date '+%D%n%T' | figlet -k"
 
 ## Alacritty
@@ -1538,6 +1538,10 @@ TMUX(1)
 - `$TERM` is set to `linux`
 - can login concurrently to `jo`
 - `ctrl+alt+f2` anywhere brings up getty for virtual console `tty2`
+
+## WezTerm
+    $OSAB/nodes-terminal/wezterm.lua
+    wezterm show-keys --lua > $cITcr/WezTerm-show-keys.lua
 
 # text wrangling
     $cGRs/CP/vim/vim/README.md
