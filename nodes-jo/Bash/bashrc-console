@@ -124,21 +124,6 @@ lg() {
 # ($cGRs/d-CP/d-encoding/r-jesseduffield-lazygit/pkg/gui/controllers/helpers/record_directory_helper.go)
 # but I can't see it doing anything...
 
-#===> time-sorted - my GitHub issues
-ghi () {
-  ghil=GitHubIssues.ffl
-  for ITd in $jtIT $coreIT; do
-    cd $ITd
-    for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
-    sed -i '/copied\/IT-handy\//d' $ghil
-    sed -i '1s/^/\n/' $ghil
-    echo '' >> $ghil
-    echo "results are in $ITd/$ghil"
-  done
-}
-# $coreIT/GitHubIssues.ffl
-# $jtIT/GitHubIssues.ffl
-
 #==> lists of files by content
 alias rgo="rg --field-match-separator ':::'"
 # rgo rsync $DJH > $DJH/search/rsync.rgo ($vfv/syntax/rgo.vim)
@@ -168,7 +153,7 @@ SE () {
   echo 'now open $DJH/search/'$f
 } # /stackexchange\|stackoverflow\|superuser
 
-#==> my Arch Forum issues
+#===> my Arch Forum issues
 # $DJH/search
 
 fbbcode () {
@@ -182,6 +167,21 @@ fbbcode () {
   eval $rgb >> $bbcf; echo >> $bbcf
   echo "results are in $bbcf"
 } # $DJH; fbbcode
+
+#===> time-sorted - my GitHub issues
+ghi () {
+  ghil=GitHubIssues.ffl
+  for ITd in $jtIT $coreIT; do
+    cd $ITd
+    for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
+    sed -i '/copied\/IT-handy\//d' $ghil
+    sed -i '1s/^/\n/' $ghil
+    echo '' >> $ghil
+    echo "results are in $ITd/$ghil"
+  done
+}
+# $coreIT/GitHubIssues.ffl
+# $jtIT/GitHubIssues.ffl
 
 #==> my Encrypted directories
 # fa  defined in  $OSL/bashrc-console-fm
@@ -225,7 +225,7 @@ EC2 () {
       # ce = $core/encrypted
         mapfile -t ce < <(find "$core/encrypted" -name "$E*" -printf %TY-%Tm-%Td\ %TH:%TM\ ce\ %P\\n) # $core/encrypted
         all+=("${ce[@]}")
-      printf '%s\n' "${all[@]}" | sort
+      printf '%s\n' "${all[@]}" | sort | xcol ${Encrypted[@]}
     fi
   done
 }

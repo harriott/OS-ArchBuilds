@@ -182,6 +182,7 @@ apache
 EFI install
 gokcehan's lf
 MariaDB
+Mousai
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

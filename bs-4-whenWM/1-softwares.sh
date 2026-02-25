@@ -122,6 +122,9 @@ sudo pacman -S mermaid-cli
 #=> metis 1 remove
 sudo pacman -Rs metis
 
+#=> Mousai
+sudo pacman -S mousai
+
 #=> mpv
 sudo pacman -S mpv
 mkdir ~/.config/mpv/scripts
