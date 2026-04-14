@@ -49,6 +49,9 @@ pacman -S python-black
 # shfmt
 pacman -S shfmt
 
+#=> 3 softwares - encoding - for easyplayer
+pacman -S python-numpy
+
 # #=> 3 softwares - encoding - NeoMutt
 # pacman -S neomutt  # brings in  notmuch-runtime
 

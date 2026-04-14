@@ -33,17 +33,17 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -S nvidia  # will need to reboot
 
 #=> 0 nvidia-470xx-utils install
-# brings in  nvidia-470xx-dkms
+# bring in  nvidia-470xx-dkms (not apparent from the AUR page)
 gAUR nvidia-470xx-utils
 nvim -c "silent! /nvidia-470xx-" PKGBUILD
 makepkg -sic  # installation takes time
 true
 
-#=> 0 nvidia-settings
-sudo pacman -S nvidia-settings
+# #=> 0 nvidia-settings
+# sudo pacman -S nvidia-settings
 
-#=> 0 nvidia-utils install 0
-sudo pacman -S nvidia-utils
+# #=> 0 nvidia-utils install 0
+# sudo pacman -S nvidia-utils
 
 # #=> 0 nvidia-beta 0 nvidia-utils-beta install
 # # required by nvidia-beta
@@ -62,8 +62,8 @@ sudo pacman -S nvidia-utils
 # nvim -c "silent! /individual" PKGBUILD
 # makepkg -sic
 
-#=> 0 xorg-xvidtune
-sudo pacman -S xorg-xvidtune
+# #=> 0 xorg-xvidtune
+# sudo pacman -S xorg-xvidtune
 
 # #=> 0 xrandr
 # sudo pacman -S xorg-xrandr

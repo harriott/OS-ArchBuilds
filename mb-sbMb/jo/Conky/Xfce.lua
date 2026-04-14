@@ -1,26 +1,25 @@
 -- vim: tw=0:
 
 --[[
-Joseph Harriott - Thu 15 Jan 2026
-$machBld/jo/Conky/Xfce.lua  adapted from output of  conky -C
+Joseph Harriott - Mon 23 Mar 2026
+$OSAB/mb-sbMb/jo/Conky/Xfce.lua  adapted from output of  conky -C
 symlinked in
   $OSAB/nodes-Bash/bashrc-generic
   $OSAB/nodes-set/jo-1-Xfce.sh
 pb ~/.conkyrc
-should  require <machine_independent_settings>
-
-:%s/lightgreen/#90ee90/gc
-:%s/lightgrey/#d3d3d3/gc
-:%s/orange/#ffa500/gc
-:%s/white/#ffffff/gc
 ]]
 
 conky.config = {
     alignment = 'top_right',
     background = true,
     border_width = 1,
+    color1 = 'd3d3d3', -- lightgrey #d3d3d3
+    color2 = 'ffa500', -- orange #ffa500
+    color3 = '8FBC8F', -- DarkSeaGreen #8FBC8F
+    color4 = '808080', -- Gray #808080
+    color5 = '1E90FF', -- DodgerBlue #1E90FF
     cpu_avg_samples = 2,
-	default_color = '#90ee90',
+	default_color = '#ffffff',  -- ${color}, white
     default_outline_color = '#ffffff',
     default_shade_color = '#ffffff',
 	double_buffer = true,
@@ -56,52 +55,51 @@ conky.config = {
     use_xft = true,
 }
 
--- (seems to be limited to 10 processes)
+-- ()
 conky.text = [[
 #-- system
-${color #ffffff}$nodename - $sysname $kernel
-
 #-- time
-${color #d3d3d3}${font Arial:pixelsize=44}${time %k:%M}${font Arial:pixelsize=38}${time :%S} $font
+${color1}${font Arial:pixelsize=44}${time %k:%M}${font Arial:pixelsize=38}${time :%S} $font
 
 #-- calendar
 # ${alignc} would only work on the first line
-${font DejaVuSansMono:size=10}${color #d3d3d3}${execpi 1800 DA=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$DA"'\b'/'\1${color #ffa500}'"$DA"'${color #d3d3d3}'/}$font
+${font DejaVuSansMono:size=10}${color1}${execpi 1800 DA=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$DA"'\b'/'\1${color2}'"$DA"'${color1}'/}$font
+
 #-- system stats
-${color #ffffff}Uptime $color$uptime  ${color #ffffff}Frequency $color$freq MHz
-${color #ffffff}RAM $color$mem ($memmax) = $memperc% ${membar 4}
-${color #ffffff}Swap $color$swap ($swapmax) = $swapperc% ${swapbar 4}
-${color #ffffff}CPU $color$cpu% ${cpubar 4}
-${color #ffffff}Processes $color$processes  ${color #ffffff}Running $color$running_processes
-${color #ffffff}
+${color}Uptime ${color2}$uptime  ${color}Frequency ${color2}$freq MHz
+${color}RAM ${color2}$mem ($memmax) = $memperc% ${membar 4}
+${color}Swap ${color2}$swap ($swapmax) = $swapperc% ${swapbar 4}
+${color}CPU ${color2}$cpu% ${cpubar 4}
+${color}Processes ${color2}$processes  ${color}Running ${color2}$running_processes
+${color}
 #-- top processes
-${color #ffffff}Name               PID   CPU%   MEM%
-${color #d3d3d3}${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
-${color #d3d3d3}${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
-${color #d3d3d3}${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
-${color #d3d3d3}${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
-${color #d3d3d3}${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
-${color #d3d3d3}${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6}
-${color #d3d3d3}${top name 7} ${top pid 7} ${top cpu 7} ${top mem 7}
-${color #d3d3d3}${top name 8} ${top pid 8} ${top cpu 8} ${top mem 8}
-${color #d3d3d3}${top name 9} ${top pid 9} ${top cpu 9} ${top mem 9}
-${color #d3d3d3}${top name 10} ${top pid 10} ${top cpu 10} ${top mem 10}
-${color #ffffff}
+${color}Name               PID   CPU%   MEM%
+${color1}${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color1}${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color1}${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color1}${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${color1}${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
+${color1}${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6}
+${color1}${top name 7} ${top pid 7} ${top cpu 7} ${top mem 7}
+${color1}${top name 8} ${top pid 8} ${top cpu 8} ${top mem 8}
+${color1}${top name 9} ${top pid 9} ${top cpu 9} ${top mem 9}
+${color1}${top name 10} ${top pid 10} ${top cpu 10} ${top mem 10}
+${color}
 #-- hard drives
 # (can't figure how to feed  $Storage  to  fs_*  commands)
-$font${color #ffa500}/ $color${fs_used /} (${fs_size /}) ${fs_bar 6 /} ${color #ffffff}
-${color #ffa500}/home $color${fs_used /home} (${fs_size /home}) ${fs_bar 6 /home} ${color #ffffff}
-/mnt/SD480GSSDPlus $color${fs_used /mnt/SD480GSSDPlus} (${fs_size /mnt/SD480GSSDPlus}) ${fs_bar 6 /mnt/SD480GSSDPlus} ${color #ffffff}
-${color #ffa500}$Storage $color${fs_used /mnt/SDU3D1TB} (${fs_size /mnt/SDU3D1TB}) ${fs_bar 6 /mnt/SDU3D1TB} ${color #ffffff}
-/mnt/ST4000VN008 $color${fs_used /mnt/ST4000VN008} (${fs_size /mnt/ST4000VN008}) ${fs_bar 6 /mnt/ST4000VN008} ${color #ffffff}
-/mnt/WD1001FALS $color${fs_used /mnt/WD1001FALS} (${fs_size /mnt/WD1001FALS}) ${fs_bar 6 /mnt/WD1001FALS} ${color #ffffff}
+$font${color}/ ${color3}${fs_used /} (${fs_size /}) ${color4}${fs_bar 6 /} ${color}
+${color}/home ${color3}${fs_used /home} (${fs_size /home}) ${color4}${fs_bar 6 /home} ${color}
+${color5}/mnt/SD480GSSDPlus ${color3}${fs_used /mnt/SD480GSSDPlus} (${fs_size /mnt/SD480GSSDPlus}) ${color4}${fs_bar 6 /mnt/SD480GSSDPlus} ${color}
+${color}$Storage ${color3}${fs_used /mnt/SDU3D1TB} (${fs_size /mnt/SDU3D1TB}) ${color4}${fs_bar 6 /mnt/SDU3D1TB} ${color}
+${color5}/mnt/ST4000VN008 ${color3}${fs_used /mnt/ST4000VN008} (${fs_size /mnt/ST4000VN008}) ${color4}${fs_bar 6 /mnt/ST4000VN008} ${color}
+${color5}/mnt/WD1001FALS ${color3}${fs_used /mnt/WD1001FALS} (${fs_size /mnt/WD1001FALS}) ${color4}${fs_bar 6 /mnt/WD1001FALS} ${color}
 #-- WAN
-${color #ffffff}enp0s25  Up $color${upspeed enp0s25} ${color #ffffff} Down $color${downspeed enp0s25}
-${color #ffffff}wlan0  Up $color${upspeed wlan0} ${color #ffffff} Down $color${downspeed wlan0}
-${color #ffffff}
+${color}enp0s25  Up ${color2}${upspeed enp0s25} ${color} Down ${color2}${downspeed enp0s25}
+${color}wlan0  Up ${color2}${upspeed wlan0} ${color} Down ${color2}${downspeed wlan0}
+${color}
 #-- weather (blank if not online)
-${alignc}${color #d3d3d3}${execpi 100 curl wttr.in/Paris?T0 -s -m 3}
+${alignc}${color1}${execpi 100 curl wttr.in/Paris?T0 -s -m 3}
 
-   ${color #d3d3d3}${execpi 100 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
+   ${color1}${execpi 100 curl wttr.in/Paris\?format="sunrise/set:+%S+%s" -s -m 3}
 ]]
 

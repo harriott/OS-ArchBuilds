@@ -94,6 +94,9 @@ sudo pacman -Rs hplip
 #=> img2pdf
 sudo pacman -S img2pdf
 
+#=> kew
+sudo pacman -S kew
+
 #=> Go - Hugo
 sudo pacman -S hugo
 
@@ -208,6 +211,9 @@ sudo pacman -S pqiv
 
 #=> qalculate-gtk
 sudo pacman -S qalculate-gtk
+
+#=> qrtool
+sudo pacman -S qrtool
 
 #=> qt5ct
 # - Qt5 theme - allows better tab differentiation in CopyQ

@@ -120,10 +120,9 @@ alias e='eza --icons'
 alias ed='eza -D'  # show directories only
 alias edt='eza -DT'  # show directory tree
 alias ig='ig --editor nvim'  # igrep
+# more in  $OSL/nodes/bashrc-generic
 
 alias l='ls --color=auto'
-
-alias ltd='lsd -d --tree'  # more in  $OSL/bashrc-generic
 
 c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
 # - https://superuser.com/a/1244522/242800

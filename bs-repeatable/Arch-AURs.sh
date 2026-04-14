@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# see what directories to tidy
+# see what directories to tidy:  . $OSAB/bs-repeatable/Arch-AURs.sh
 
 for AURd in AUR AURdev-clone AURdev-make; do
     # echo "${tpf5b}$AURd${tpfn}"

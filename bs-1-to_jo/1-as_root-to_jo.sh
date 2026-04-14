@@ -224,6 +224,9 @@ pacman -S tcpdump  # for packet analysis
 # Wget
 pacman -S wget
 
+# whois
+pacman -S whois
+
 #=> 2 networking - isync 0 install
 pacman -S isync  # for mbsync
 
@@ -326,11 +329,14 @@ sudo pacman -S ttf-opensans
 sudo pacman -S ttf-ubuntu-mono-nerd
 
 #=> 2 system
-# supersedes  Bashtop
-pacman -S bpytop
-
 # beep
 pacman -S beep
+
+# BpyTOP
+pacman -S bpytop  # supersedes  Bashtop
+
+# bottom
+pacman -S bottom
 
 # btop
 pacman -S btop

@@ -18,6 +18,8 @@ my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 - SORT(1)
 
 # audio
+    $ABjo/music/music_rotate.sh
+
 pulseaudio(1)
 
 ## cmus
@@ -35,6 +37,10 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 ### queue
     $ABjo/wm/cmusqueue.sh
     $Drpbx/Cop/AM-toSort0/cmusq
+
+## Kew
+    $ABjo/kewrc
+    kew play $Drpbx/Cop
 
 ## MPD
     $ABjo/music/MPD/mpd.conf
@@ -373,7 +379,7 @@ SED(1)
 # file manage
     cd $DJH; fd -tf -u index.lock -x rm
     diskus  # size of current directory
-    lsd
+    i lsd
     n [directory]
 
 - better file managing in `$OSAB/nodes-Bash/bashrc-generic`
@@ -611,8 +617,6 @@ NCDU(1)
 
 ## rsnapshot
     $machBld/etc/rsnapshot.conf
-    doas rsnapshot aaa &
-    pgrep rsnapshot
     snapshot_root
     sudo du -sh $rsnapshot
     sm $rsnapshot/aaa.0
@@ -622,11 +626,7 @@ NCDU(1)
     sudo rsync -aAivX --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
 
 ### checking
-    journalctl -r | grep rsnapshot | grep Consumed | xcol weekly monthly | mo
-    journalctl -u rsnapshot@daily -r
-    journalctl -u rsnapshot@hourly -r
     rsnapshot configtest
-    systemctl status rsnapshot-hourly.timer
     tail -n 44 /var/log/rsnapshot | xcolorize green 'completed successfully' yellow started
 
 #### counts
@@ -643,6 +643,12 @@ NCDU(1)
 ##### $rsnapshot
     df -h /mnt/ST4000VN008
     du -chs /mnt/ST4000VN008/Vs-*
+
+#### when I had it automated
+    journalctl -r | grep rsnapshot | grep Consumed | xcol weekly monthly | mo
+    journalctl -u rsnapshot@daily -r
+    journalctl -u rsnapshot@hourly -r
+    systemctl status rsnapshot-hourly.timer
 
 ### find
     r $rsnapshot/aaa.0/localhost/$Drpbx/Cop/AM-toSort0
@@ -723,8 +729,10 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     rsync -irtv --delete $rsnapshot/aaa.0/localhost/$maild/ $maild
     sudo rsync -a --info=progress2 $rsnapshot/aaa.0/localhost/home/jo/
 
-### run
+### running
     $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
+    doas rsnapshot aaa &
+    pgrep rsnapshot
     rsnapshot -t aaa
     sudo pkill rsnapshot
 
@@ -843,11 +851,13 @@ gpg(1)
     $machBld/jo/f1t2t3/f1t2t3.sh
     fRs /home/jo/Arch/f1t2t3 f1t2t3.log
 
+## printing - CUPS
+    $AjB/bashrc-wm
+
 ## printing - HP ENVY WiFi
     HP ENVY 5532: d0:bf:9c:a2:2f:0e
 
 ### CUPS
-    $AjB/bashrc-wm
     doas cupsenable ENVY_Inspire_7200  # if it's paused
     lpoptions -d ENVY_Inspire_7200  # sets as default in  ~/.cups/lpoptions
     lpoptions -p Envy5532 -o PageSize=A4
@@ -979,9 +989,14 @@ mediainfo -h | mo
 ```
 
 ## mpv
+    :Man mpv
     r /usr/share/doc/mpv
+    rg mpv --sort=modified -l $culLAb/ml-$host/pm/cu
+    ~/.config/mpv/mpv.conf
 
-MPV(1)
+- `c` cycles through visualisations (`$cITcc/CP/mpv/visualizer.lua`)
+- `Ctrl+e` invokes equalizer (`$cITcc/CP/mpv/firequalizer15.lua`)
+- MPV(1)
 
 ## OBS Studio Settings
     Hotkeys > [ Start Recording  Stop Recording ] > Win+Space (= Super + Space)
@@ -1002,6 +1017,7 @@ won't open if `cmus` is playing a track
     cat /etc/hostname
     curl ifconfig.co  # IP address
     curl ifconfig.co/country
+    doas bandwhich
     sudo dhcpcd wlwg111v2
     sudo ls /var/lib/dhcpcd/
     systemctl status nordvpnd.service
@@ -1027,11 +1043,10 @@ won't open if `cmus` is playing a track
 can fail to start after waking system
 
 # packages
-```bash
-expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500.log  # 500 most recent installs
-pacfinder
-grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
-```
+    checkrebuild
+    expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500.log  # 500 most recent installs
+    pacfinder
+    grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
 
 - Arch Linux Package Maintainers
 - downgrade
@@ -1063,6 +1078,7 @@ pacman -Sg base-devel  # lists all
 ## pacman
     /etc/pacman.conf
     checkupdates
+    fd neovim /var/cache/pacman/pkg
     makepkg -i  # --install
     pacman <operation> [options] [targets]
     pacman -Qdt  # lists all orphans
@@ -1382,9 +1398,12 @@ backed up in `$AjB/bash_profile`
     o $XDG_CONFIG_HOME
     o $XDG_CONFIG_DIRS
     ~/.config/autostart/Alacritty.desktop
-    ~/.config/autostart/Conky.desktop
 
 `xn` defined in `$AjB/bashrc-wm`
+
+### Conky
+    ~/.config/autostart/Conky.desktop
+    killall -9 conky; pgrep conky; conky  # resets it
 
 ### xfce-perchannel
     rsync -irtv --delete ~/.config/xfce4/xfconf/xfce-perchannel-xml/ $machLg/jo/xfce/perchannel
@@ -1606,6 +1625,7 @@ nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/par
 
 # WAN
     i yt-dlp
+    whois
 
 WGET(1)
 
@@ -1738,6 +1758,10 @@ locks: `pb $JHThb/linuxlock; pb $JHThb/Win10ProLock`
     $cITCP/networking-SSHconfig/$host
     i sshd_config
     ~/.ssh/config
+
+## speed
+    cloudflare-speed-cli --help
+    speedtest-cli -h
 
 ## weather
     aw

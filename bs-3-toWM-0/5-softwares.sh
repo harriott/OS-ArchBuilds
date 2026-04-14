@@ -48,6 +48,9 @@ npm un -g ffmpeg-concat
 # sudo groupadd plugdev
 # sudo usermod -aG plugdev jo  # need to re-login
 
+#=> speedtest-cli
+sudo pacman -S speedtest-cli
+
 #=> TexLab
 # for  ALE
 sudo pacman -S texlab

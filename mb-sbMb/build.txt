@@ -3623,10 +3623,6 @@ hp-setup 10.73.60.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Updates
 :: libfm-gtk3-1.4.0-2 and libfm-gtk2-1.4.0-1 are in conflict. Remove libfm-gtk2? [y/N] y
-## Time 1h 3.1s slow
-as revealed by   http://time.is/
-sudo ntpd -qg
-sudo hwclock --systohc
 ## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.73.60.239
 fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
@@ -3882,13 +3878,121 @@ su ...  for  tlmgr update --all  got
   tlmgr update --all  got me 1121 updates
   ...
   tlmgr: An error has occurred. See above messages. Exiting.  but I couldn't find any trace...
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 172.28.142.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 172.28.142.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.47.144.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.47.144.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  error: lazarus: signature from "Ike Devolder <ike.devolder@archlinux.org>" is invalid
+  :: File /var/cache/pacman/pkg/lazarus-4.6-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n]
+## Updates
+  ...
+  (13/21) Install DKMS modules
+  ==> dkms install --no-depmod nvidia/470.256.02 -k 6.19.6-zen1-1-zen
+  Error! Bad return status for module build on kernel: 6.19.6-zen1-1-zen (x86_64)
+  Consult /var/lib/dkms/nvidia/470.256.02/build/make.log for more information.
+  ==> WARNING: `dkms install --no-depmod nvidia/470.256.02 -k 6.19.6-zen1-1-zen' exited 10
+  ==> dkms install --no-depmod nvidia/470.256.02 -k 6.19.6-arch1-1
+  Error! Bad return status for module build on kernel: 6.19.6-arch1-1 (x86_64)
+  Consult /var/lib/dkms/nvidia/470.256.02/build/make.log for more information.
+  ==> WARNING: `dkms install --no-depmod nvidia/470.256.02 -k 6.19.6-arch1-1' exited 10
+  (14/21) Updating linux initcpios.
+reboot got me
+  (==) Using system config file: "/etc/X11/xorg.conf"
+  ...
+  xf86EnableIO: failed to enable I/O ports 0000-03ff (Operation not permitted)
+  ...
+  ... (EE) NVIDIA: Failed to initialize the NVIDIA kernel module.
+  ...
+  ... (EE) No devices detected.
+Updating  nvidia-470xx-utils  from v470.256.02-8.00 to v470.256.02-8.01  got X working again
+## Updates
+pactree -r botan2  shows it's not required by anything, so  sudo pacman -Rs botan2
+## Updates
+  3 high severity vulnerabilities
+  To address all issues (including breaking changes), run: npm audit fix --force
+npm up -g
+## mypaint v2.0.1-7 failing to run
+fix failed, so  sudo pacman -Rs mypaint
+## GIMP
+Keep the image's colour profile > Don't ask me again > Convert
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.228.117.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+  /usr/bin/hp-setup:82: SyntaxWarning: "\*" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\*"? A raw string is also an option. ("To specify the port on a multi-port JetDirect:", "--port=<port> (Valid values are 1\*, 2, and 3. \*default)", "option", False),
+  /usr/bin/hp-setup:86: SyntaxWarning: "\*" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\*"? A raw string is also an option. ("Type of queue(s) to install:", "-t<typelist> or --type=<typelist>. <typelist>: print*, fax\* (\*default) (-i mode only)", "option", False),
+### attempted fix of hplip SyntaxWarning
+sudo pacman -S hplip  didn't find or fix anything, so re-installed  hplip-plugin, still  SyntaxWarning, so
+  sudo pacman -Rs hplip hplip-plugin  then re-installed  hplip-plugin, still  SyntaxWarning, so
+  sudo pacman -Rs hplip hplip-plugin  then  reboot  then re-installed  hplip-plugin, still  SyntaxWarning
+  python -V  reports  Python 3.14.3
+### continue for  10.228.117.239
+fixed in  $Imagey/Scan.sh
+hp-setup 10.228.117.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+rebooted to get  CopyQ  working again
+## Updates
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing protobuf (34.1-1) breaks dependency 'libprotobuf.so=33.1.0-64' required by libopenshot
+sudo pacman -Rs openshot
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.118.171.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+fixed in  $Imagey/Scan.sh
+hp-setup 10.118.171.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.69.85.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+fixed in  $Imagey/Scan.sh
+hp-setup 10.69.85.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## time ~1h fast
+as revealed by   http://time.is/
+sudo ntpd -qg
+sudo hwclock --systohc
+## Updates
+  error: chromium: signature from "Christian Heusel (gromit packager key) <gromit@archlinux.org>" is invalid
+  :: File /var/cache/pacman/pkg/chromium-146.0.7680.177-1-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n] n
+fixed by re-running the update, but then got
+  error: haskell-wai-app-static: signature from "Felix Yan <felixonmars@archlinux.org>" is invalid
+  :: File /var/cache/pacman/pkg/haskell-wai-app-static-3.1.9-248-x86_64.pkg.tar.zst is corrupted (invalid or corrupted package (PGP signature)).
+  Do you want to delete it? [Y/n] n
+fixed by re-running the update
+## auracle-git  error
+auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2508.0.0: cannot open shared object file: No such file or directory
+sudo pacman -Rs auracle-git  then re-installed it
+## Updates
+sudo pacman -Rs pdfsam
+## nomacs not opening
+nomacs -v  got  "nomacs: error while loading shared libraries: libraw.so.24: cannot open shared object file: No such file or directory"  fix was to remove  nomacs  &  nomacs-debug, then re-install  nomacs
+## Updates
+  error: failed to prepare transaction (could not satisfy dependencies)
+  :: installing protobuf (34.1-1) breaks dependency 'libprotobuf.so=33.1.0-64' required by libopenshot
+sudo pacman -Rs openshot
+## firefox 149.0.2-1 snags
+won't display PDFs
+bouyguestelecom > Mes Factures  is empty
+## mpv wma snag
+(mpv updated to v1:0.41.0-3 a while ago)
+  mpv --force-window <audio_file> not launching window
+  (when audio file dragged into the window) mfcc64's script no longer showing
+sudo pacman -Rs mpv  then re-install didn't fix it, neither did emptying  ~/.config/mpv
+handlr get .wma  correctly reports  wma.desktop
+mpv --force-window=immediate some.wma  launches the window, but without  visualizer.lua
 ## waiting
-flexible file names on Dropbox
 gokcehan's lf
 MariaDB
-mermaid-cli
-python-shtab
-rebuild-detector
+PDFsam, when it works on  java-runtime 26
 Recoll
 switch to fastmail
 # clm possible extras
@@ -3922,6 +4026,9 @@ ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 /var/cache/ 8.9GB
 /var/cache/pacman/ 8.6GB
 /var/log/journal/ 2.2 GB
+# Firefox
+~/.mozilla/firefox/6qq4cnaa.default-release/cookies.sqlite
+~/.mozilla/firefox/6qq4cnaa.default-release/prefs.js
 # GnuPG - SystemRescueCd public signing key
 gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
 # locale.gen.pacnew
@@ -4036,11 +4143,12 @@ Keyboard >
     cmus-remote -u > Super+C
     google-chrome-stable > Super+G
     exfalso > Super+F
+    firefox > Super+X
     gvim > Super+V
     keepassxc > Super+K
     music_rotate > Super+M
     signal-desktop > Super+S
-    thunderbird_safely > Mail
+    thunderbird_safely > Super+T (= win+t)
     neovide > Super+N
     wezterm > Super+W
   Behaviour > General > Restore numlock state on startup
@@ -4049,7 +4157,7 @@ Power Manager >
   General > When sleep button is pressed > Suspend
   Screensaver Management > (= Screensaver Preferences) > Activate off
   System > Security > Lock screen when system is going to sleep off
-Session and Startup >
+Session and Startup > Application Autostart >
   Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
   Conky > [ Conky  conky ]
   CopyQ > copyq

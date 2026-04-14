@@ -16,7 +16,7 @@ source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
 # - carry through to X
 
 # Useful before X (repeated in  $AjB/bashrc):
-  source ~/.bashrc-generic  # ($OSAB/nodes/Bash/bashrc-generic) useful everywhere, including root
+  source ~/.bashrc-generic  # ($OSAB/nodes-Bash/bashrc-generic) useful everywhere, including root
   source ~/.bashrc-console  # ($AjB/bashrc-console) useful also in Console as user
 # This is commented out because I keep bashrc just for instances in X:
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc

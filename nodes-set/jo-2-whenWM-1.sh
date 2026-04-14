@@ -1,17 +1,29 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
+# https://harriott.github.io/ - Tue 14 Apr 2026
+
 # bash $OSAB/nodes-set/jo-2-whenWM-1.sh
 # dependent on  $OSAB
 
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
-ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf
-ln -sf $cITcc/unix-linux/mfcc64-mpv-scripts/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
-# $misc/GRs/needed.sh, e -la ~/.config/mpv/scripts/visualizer.lua
 ln -sf $ABjo/music/MPD/mpd.conf ~/.config/mpd/mpd.conf
 ln -sf $ABjo/music/MPD/vimpcrc ~/.config/vimpc/vimpcrc
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
+
+#=> mpv
+ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf
+
+# $misc/GRs/cGRs-needed.sh
+ln -sf $cITcc/CP/mpv/show_filename.lua ~/.config/mpv/scripts/show_filename.lua
+ln -sf $cITcc/CP/mpv/firequalizer15.lua ~/.config/mpv/scripts/firequalizer15.lua
+ln -sf $cITcc/CP/mpv/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
+# e -la ~/.config/mpv/scripts
+
+ln -sf $cITcc/CP/mpv-scripts ~/.config/mpv/scripts
+
+# e -la ~/.config/mpv
 
 #=> music_rotate
 chmod 755 $ABjo/music/music_rotate.sh

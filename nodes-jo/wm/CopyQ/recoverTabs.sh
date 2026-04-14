@@ -6,7 +6,7 @@
 #=> restore from rsnapshot
 cd ~/Play0
 [[ -d copyq ]] && rm -r copyq
-cp -r $rsnapshot/hourly.2/localhost/home/jo/.config/copyq copyq
+cp -r $rsnapshot/aaa.0/localhost/home/jo/.config/copyq copyq
 pkill copyq
 sleep 2
 rsync -rt --delete copyq ~/.config/

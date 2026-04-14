@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: sw=1:
+# vim: sw=2:
 
 # bash $OSAB/bs-3-toWM-0/4-softwares-for_nnn.sh
 
@@ -14,12 +14,12 @@ trap read debug  # puts a read request after each executable line
 # gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9
 # true
 
-# #=> 1 advcpmv
-# # for nnn -r
-# gAUR advcpmv
-# nvim -c "silent! /jarun\/advcpmv" PKGBUILD
-# makepkg -sic  # the checks are long...
-# true
+#=> 1 advcpmv
+# for nnn -r
+gAUR advcpmv
+nvim -c "silent! /jarun\/advcpmv" PKGBUILD
+makepkg -sic  # the checks are long...
+true
 
 #=> 2 go fast
 trap - debug  # turn off debug
@@ -28,5 +28,9 @@ trap - debug  # turn off debug
 [[ $distro =~ 'Arch' ]] && thunar ~/.config/nnn/plugins &
 shopt -s dotglob; [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
 sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
-echo $(date "+%Y%m%d") > ~/.config/nnn/plugins/updated
+if [ $host = "sbMb" ]; then
+  echo $(date "+%Y%m%d") >> $machLg/terminal/nnn_plugins_updated
+else
+  echo $(date "+%Y%m%d") >> $machLg/nnn_plugins_updated
+fi
 

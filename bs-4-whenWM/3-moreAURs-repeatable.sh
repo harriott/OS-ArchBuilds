@@ -145,17 +145,29 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a while
 # true
 
+# #=> fotowall
+# gAUR fotowall
+# nvim -c "silent! /www.enricoros.com\/opensource\/fotowall" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> fsearch
 # gAUR fsearch
 # nvim -c "silent! /github.com\/cboxdoerfer\/fsearch" PKGBUILD
 # makepkg -sic  # takes a while
 # true
 
-#=> Google Chrome
-gAUR google-chrome
-nvim -c "silent! /dl.google.com" PKGBUILD
-makepkg -sic
-true
+# #=> Google Chrome
+# gAUR google-chrome
+# nvim -c "silent! /dl.google.com" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> gst123
+# gAUR gst123
+# nvim -c "silent! /github\.com\/swesterfeld" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
@@ -194,16 +206,20 @@ true
 # #=> keepassxc-git 1 remove
 # sudo pacman -Rs keepassxc-git
 
-# #=> libopenshot
+# #=> libopenshot 0 install
 # gAUR libopenshot
 # nvim -c "silent! /github.com\/openshot\/libopenshot" PKGBUILD
 # makepkg -sic  # takes a long, long time...
 # true
 
+# #=> libopenshot 1 remove
+# sudo pacman -Rs libopenshot
+
 # #=> libopenshot-audio
+# # also updates  libopenshot-audio-docs
 # gAUR libopenshot-audio
 # nvim -c "silent! /github.com\/openshot\/libopenshot-audio" PKGBUILD
-# makepkg -sic
+# makepkg -sic  # takes some time
 # true
 
 # #=> mod_fcgid 0 install
@@ -221,6 +237,24 @@ true
 # gAUR mpdris2
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
+
+# #=> mpv - easyplayer
+# gAUR easyplayer
+# nvim -c "silent! /github.com\/kanehekili\/EasyPlayer" PKGBUILD
+# makepkg -sic
+# true
+
+#=> mpv - mpv-uosc
+gAUR mpv-uosc
+nvim -c "silent! /github.com\/tomasklaen\/uosc" PKGBUILD
+makepkg -sic
+true
+
+# #=> mpv - mpv-uosc-git
+# gAUR mpv-uosc-git
+# nvim -c "silent! /github.com\/tomasklaen\/uosc" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> nomacs 0 install
 # gAUR nomacs
@@ -382,6 +416,11 @@ true
 
 # #=> Spotify AUR 2 remove
 # sudo pacman -Rs spotify
+
+# #=> Textadept
+# gAUR textadept
+# nvim -c "silent! /orbitalquark\/textadept" PKGBUILD
+# makepkg -sic
 
 # #=> thunderbird-bin
 # # first check if  extra/x86_64/thunderbird  has come up-to-date with  Winget

@@ -187,6 +187,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
+# #=> librespeed-cli
+# gAUR librespeed-cli
+# nvim -c "silent! /github.com\/librespeed\/speedtest" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3
 # # Can't recall what I need it for...
@@ -271,11 +277,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> riffdiff
-gdAUR riffdiff
-nvim -c "silent! /pkgname=riffdiff" PKGBUILD
-makepkg -sic
-true
+# #=> riffdiff
+# gdAUR riffdiff
+# nvim -c "silent! /pkgname=riffdiff" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> shell-color-scripts-git
 # gdAUR shell-color-scripts-git

@@ -11,8 +11,15 @@ trap read debug  # puts a read request after each executable line
 #=> atuin
 sudo pacman -S atuin
 
+#=> bandwhich
+sudo pacman -S bandwhich
+
 #=> chmln.sd
 sudo pacman -S sd
+
+#=> cloudflare-speed-cli
+# (after Rust Toolchain)
+sudo pacman -S cloudflare-speed-cli
 
 # #=> devtools
 # # mkdir /mnt/SD480GSSDPlus/chroot
@@ -33,6 +40,9 @@ sudo pacman -S fortune-mod
 
 #=> fping
 sudo pacman -S fping
+
+#=> gping
+sudo pacman -S gping
 
 #=> gitui
 # (after Rust Toolchain)
@@ -63,6 +73,9 @@ sudo pacman -S igrep
 
 #=> lnav
 sudo pacman -S lnav
+
+#=> mtr
+sudo pacman -S mtr
 
 # #=> npm 0 configure npm-global
 # mkdir ~/.npm-global
@@ -100,6 +113,12 @@ sudo pacman -S python-shtab  # for  tldr  autocompletion
 
 #=> Signal
 sudo pacman -S signal-desktop
+
+#=> superfile
+sudo pacman -S superfile
+
+#=> tree-sitter-cli
+sudo pacman -S tree-sitter-cli
 
 #=> typos
 # (after Rust Toolchain)

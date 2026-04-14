@@ -63,6 +63,10 @@ rm /etc/systemd/logind.conf.pacnew
 nvim -O /etc/nginx/nginx.conf.pacnew $OSAB/extra-etc/Nginx/pristine.conf -c 'windo difft'
 rm /etc/nginx/nginx.conf.pacnew
 
+#=> 1 nims
+nvim -o /etc/nim/config.nims /etc/nim/config.nims.pacnew -c 'windo difft'
+rm /etc/nim/config.nims.pacnew
+
 #=> 1 pacman
 nvim -O /etc/pacman.conf /etc/pacman.conf.pacnew -c 'windo difft'
 rm /etc/pacman.conf.pacnew

@@ -6,8 +6,8 @@
 
 #=> $notDr
 [ -d $notDr/GR-NF ] || mkdir -p $notDr/GR-NF
-ln -sf $misc/notDr/notDr.md $notDr/readme.md  # e -la $notDr/readme.md
-ln -sf $misc/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
+ln -sf $coreIT/notDr/readme.md $notDr/readme.md  # e -la $notDr/readme.md
+ln -sf $coreIT/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
 
 #=> Alacritty
 ln -sf $machBld/alacritty.toml ~/.alacritty.toml  # DOP3040D11S
@@ -82,6 +82,10 @@ ln -sf $OSL/nodes/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 #=> for Tex Live Arch packaged install
 sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 # e -la /usr/share/texmf.cnf
+
+#=> kew
+ln -sf $ABjo/kewrc ~/.config/kew/kewrc
+# b ~/.config/kew/kewrc
 
 #=> MIME database
 cd $ABjo/mime
