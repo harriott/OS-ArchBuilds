@@ -3989,7 +3989,22 @@ bouyguestelecom > Mes Factures  is empty
 sudo pacman -Rs mpv  then re-install didn't fix it, neither did emptying  ~/.config/mpv
 handlr get .wma  correctly reports  wma.desktop
 mpv --force-window=immediate some.wma  launches the window, but without  visualizer.lua
+It was only some wma's, but converting them to ogg didn't get the window launching...
+## pipx packages outdated
+after  Python 3.14.4,  all reporting "invalid interpreter /usr/bin/python3.13", so
+  for p in emailproxy gdown pandoc-latex-fontsize proselint radio-active terminal-colors toolong yaml2toml; do pipx uninstall $p; done
+  for p in emailproxy gdown pandoc-latex-fontsize proselint radio-active terminal-colors toolong yaml2toml; do pipx install $p; done
+## Rclone deobscure
+pipx install rclonedeobscure
+## Perl modules
+cpan -l  added lines to end of  $machBld/jo/Bash/bashrc
+cpan utf8::all  after much output, failed, so  cpan
+  o conf make_install_make_command 'sudo make'
+  o conf commit
+  q
+cpan Log::Log4perl  got a great deal of output
 ## waiting
+gitleaks
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
@@ -4117,7 +4132,8 @@ Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB3
 when finally booted,  /dev/sda2 = /
 # snags
 failing under CPU pressure off ffmpeg + YouTube
-random reboots happen any time
+PulseAudio  fail after  Suspend (but  speaker-test -c 2  works): pulseaudio -k
+random reboots were regular, no more
 ## fails to boot due to ST4000VN008
   Failed to start File System Check on /dev/disk/by-label/ST4000VN008.
   Dependency failed for /mnt/ST4000VN008.

@@ -42,8 +42,10 @@ source $OSL/nodes/bashrc-wm
 
 #=> Audio
 alias m='cmus'
+alias mi='mediainfo'
 alias vp='vimpc'
 alias st='spectroterm -acp --green 235 --orange 235 --red 235'
+alias miA="mediainfo --Output='General;%Album%'"
 mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")   $(mediainfo --Output='Audio;%Format%' "$v")   $(mediainfo --Output='Audio;%BitRate%' "$v") b/s   $(mediainfo --Output='Audio;%SamplingRate%' "$v") Hz   "$v""; done; }  # mi *
 # music_rotate
 

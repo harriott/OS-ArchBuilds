@@ -192,7 +192,7 @@ ghi () {
 #  fa | grep Stack
 
 #===> Encrypted Changes
-Encrypted=(Czm Digital0 Digital1 Secure0 Secure1 SHG Stack)
+Encrypted=(Czm Digital0 Digital1 RGPD Secure0 Secure1 SHG Stack) # echo ${Encrypted[@]}
 EC0 () {
   if [ "$PWD" != $Enc ]; then
     if [ -d "$Enc" ]; then cd $Enc; pwd; else echo "$Enc ain't there"; return; fi
@@ -213,6 +213,7 @@ EC1 () {
 }
 EC2 () {
   EC0
+  echo "(${Encrypted[@]})" | xcol ${Encrypted[@]}
   for E in ${Encrypted[@]}; do
     # o $E
     f7z="find . -iname \"$E*.7z\" | sort | tail -1"

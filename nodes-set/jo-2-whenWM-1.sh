@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdl=1 sw=2:
+# vim: fdl=2 sw=2:
 
 # https://harriott.github.io/ - Tue 14 Apr 2026
 
@@ -15,15 +15,16 @@ ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
 #=> mpv
 ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf
 
-# $misc/GRs/cGRs-needed.sh
-ln -sf $cITcc/CP/mpv/show_filename.lua ~/.config/mpv/scripts/show_filename.lua
-ln -sf $cITcc/CP/mpv/firequalizer15.lua ~/.config/mpv/scripts/firequalizer15.lua
-ln -sf $cITcc/CP/mpv/visualizer.lua ~/.config/mpv/scripts/visualizer.lua
-# e -la ~/.config/mpv/scripts
-
-ln -sf $cITcc/CP/mpv-scripts ~/.config/mpv/scripts
-
 # e -la ~/.config/mpv
+
+#==> minimal
+# $misc/GRs/cGRs-needed.sh
+[ -d ~/.config/mpv/scripts ] && rm -r ~/.config/mpv/scripts; ln -sf $cITcc/CP/mpv-scripts ~/.config/mpv/scripts
+
+#==> mpv-uosc 0 install
+ln -sf /usr/share/mpv/fonts ~/.config/mpv/fonts
+[ -d ~/.config/mpv/scripts ] && rm -r ~/.config/mpv/scripts; ln -sf /usr/share/mpv/scripts ~/.config/mpv/scripts
+ln -sf /usr/share/mpv/script-opts ~/.config/mpv/script-opts
 
 #=> music_rotate
 chmod 755 $ABjo/music/music_rotate.sh

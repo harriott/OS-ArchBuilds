@@ -191,6 +191,8 @@ sudo pacman -Rs auracle-git  then re-installed it
 nomacs -v  got  "nomacs: error while loading shared libraries: libraw.so.24: cannot open shared object file: No such file or directory"  fix was to remove  nomacs  &  nomacs-debug, then re-install  nomacs
 ## Updates
 sudo pacman -Rs pdfsam
+## Updates
+:: geocode-glib-3.26.4-6 and geocode-glib-common-3.26.4-5 are in conflict. Remove geocode-glib-common? [y/N] y
 ## waiting
 apache
 EFI install

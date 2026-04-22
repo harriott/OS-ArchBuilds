@@ -98,8 +98,8 @@ sudo rm -r /var/lib/texmf
 # # cdrtools
 # pacman -S cdrtools
 
-# # GVFS
-# pacman -S gvfs
+# # GVFS-dnssd
+# pacman -S gvfs-dnssd
 
 # # gvfs-mtp - for accessing phone memory
 # pacman -S gvfs-mtp

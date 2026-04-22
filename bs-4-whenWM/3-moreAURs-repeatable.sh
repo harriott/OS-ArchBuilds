@@ -238,17 +238,17 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
-# #=> mpv - easyplayer
-# gAUR easyplayer
-# nvim -c "silent! /github.com\/kanehekili\/EasyPlayer" PKGBUILD
-# makepkg -sic
-# true
-
-#=> mpv - mpv-uosc
-gAUR mpv-uosc
-nvim -c "silent! /github.com\/tomasklaen\/uosc" PKGBUILD
+#=> mpv - easyplayer
+gAUR easyplayer
+nvim -c "silent! /github.com\/kanehekili\/EasyPlayer" PKGBUILD
 makepkg -sic
 true
+
+# #=> mpv - mpv-uosc
+# gAUR mpv-uosc
+# nvim -c "silent! /github.com\/tomasklaen\/uosc" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> mpv - mpv-uosc-git
 # gAUR mpv-uosc-git
