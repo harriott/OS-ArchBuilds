@@ -238,11 +238,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
 
-#=> mpv - easyplayer
-gAUR easyplayer
-nvim -c "silent! /github.com\/kanehekili\/EasyPlayer" PKGBUILD
-makepkg -sic
-true
+# #=> mpv - easyplayer
+# gAUR easyplayer
+# nvim -c "silent! /github.com\/kanehekili\/EasyPlayer" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> mpv - mpv-uosc
 # gAUR mpv-uosc
@@ -421,6 +421,12 @@ true
 # gAUR textadept
 # nvim -c "silent! /orbitalquark\/textadept" PKGBUILD
 # makepkg -sic
+
+#=> thunar-dropbox
+gAUR thunar-dropbox
+nvim -c "silent! /Jeinzi\/thunar-dropbox" PKGBUILD
+makepkg -sic
+true
 
 # #=> thunderbird-bin
 # # first check if  extra/x86_64/thunderbird  has come up-to-date with  Winget

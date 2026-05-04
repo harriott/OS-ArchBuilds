@@ -4003,11 +4003,40 @@ cpan utf8::all  after much output, failed, so  cpan
   o conf commit
   q
 cpan Log::Log4perl  got a great deal of output
+## .docx
+handlr get .docx  returns  libreoffice-writer.desktop
+  but it's overriden by  Thunar > Properties > Open with > Peazip
+  changed to  LibreOffice Writer
+## OpenJDK Java 25 development kit
+(for PDFsam) sudo pacman -S jdk25-openjdk
+sudo pacman -Rs jdk21-openjdk
+  checking dependencies...
+  :: languagetool optionally requires java-runtime: needed for the GUI version
+  :: libbluray optionally requires java-runtime: BD-J library
+  :: libjpeg-turbo optionally requires java-runtime>11: for TurboJPEG Java wrapper
+  :: libjxl optionally requires java-runtime: for JNI bindings
+  :: libreoffice-fresh optionally requires java-runtime: adds java support
+  :: libreoffice-fresh optionally requires java-environment>=17: required by extension-wiki-publisher and extension-nlpsolver
+  :: opencv optionally requires java-runtime: Java interface
+  :: subversion optionally requires java-environment: for Java support
+- same after a reboot
+:: Do you want to remove these packages? [Y/n]
+## dropbox &
+  desktop/dropbox/sync_engine/nucleus/classic_client/modern_client/modern_thin_client.py:17: UserWarning: google.protobuf.service module is deprecated. RPC implementations should provide code generator plugins which generate code specific to the RPC implementation. service.py will be removed in Jan 2025
+  (dropbox:57090): libayatana-appindicator-WARNING **: 11:48:21.475: libayatana-appindicator is deprecated. Please use libayatana-appindicator-glib in newly written code.
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.146.65.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+fixed in  $Imagey/Scan.sh
+hp-setup 10.146.65.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## webkit2gtk
+pactree -r webkit2gtk  found nothing, so  sudo pacman -Rs webkit2gtk
 ## waiting
-gitleaks
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
+pdftl
 Recoll
 switch to fastmail
 # clm possible extras

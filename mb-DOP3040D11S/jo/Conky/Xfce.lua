@@ -1,7 +1,7 @@
 -- vim: tw=0:
 
 --[[
-Joseph Harriott - Thu 15 Jan 2026
+Joseph Harriott - Mon 04 May 2026
 $machBld/jo/Conky/Xfce.lua  adapted from output of  conky -C
 symlinked in
   $OSAB/nodes-Bash/bashrc-generic
@@ -18,7 +18,7 @@ conky.config = {
     color2 = 'ffa500', -- orange #ffa500
     color3 = '8FBC8F', -- DarkSeaGreen #8FBC8F
     color4 = '808080', -- Gray #808080
-    color5 = '1E90FF', -- DodgerBlue #1E90FF
+    color5 = 'DEB887', -- BurlyWood #DEB887
     cpu_avg_samples = 2,
 	default_color = '#ffffff',  -- ${color}, white
     default_outline_color = '#ffffff',
@@ -56,7 +56,6 @@ conky.config = {
     use_xft = true,
 }
 
--- (seems to be limited to 10 processes)
 conky.text = [[
 #-- system
 ${color #ffffff}$nodename - $sysname $kernel
@@ -94,8 +93,9 @@ $font${color}/ ${color3}${fs_used /} (${fs_size /}) ${color4}${fs_bar 6 /} ${col
 ${color}/home ${color3}${fs_used /home} (${fs_size /home}) ${color4}${fs_bar 6 /home} ${color}
 ${color}$Storage ${color3}${fs_used /mnt/BX200} (${fs_size /mnt/BX200}) ${color4}${fs_bar 6 /mnt/BX200} ${color}
 #-- WAN
-${color}eno1  Up ${color2}${upspeed eno1} ${color} Down ${color2}${downspeed eno1}
-${color}wlan0  Up ${color2}${upspeed wlan0} ${color} Down ${color2}${downspeed wlan0}
+${color}eno1  down ${color2}${downspeed eno1} ${color}up ${color2}${upspeed eno1}
+${color}wlan0 down ${color4}${downspeedgraph wlan0 8,180 555555 555555 150} ${color2}${downspeed wlan0}
+${color}wlan0 up   ${color4}${upspeedgraph wlan0 8,180 555555 555555 150} ${color2}${upspeed wlan0}
 ${color}
 #-- weather (blank if not online)
 ${alignc}${color1}${execpi 100 curl wttr.in/Paris?T0 -s -m 3}

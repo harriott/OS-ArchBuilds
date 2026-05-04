@@ -222,6 +222,7 @@ JOBS(1P)
 ## TeX - copied resources
     r $cITcr/CP/TeX
     za $cITcr/CP/TeX/albatross-manual.pdf
+    za $cITcr/CP/TeX/blindtext.pdf
     za $cITcr/CP/TeX/LaTeX/etoolbox.pdf
     za $cITcr/CP/TeX/LaTeX/appearance/colour/xcolor.pdf
     za $cITcr/CP/TeX/LaTeX/appearance/datetime2.pdf
@@ -1232,6 +1233,24 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 1. u Unmount all
 1. b reBoot
 
+## boot
+    find /boot/vmli*  # lists available kernels
+    find /dev/disk/by-designator -type l -ls
+
+as root user, `genfstab -U / >> /etc/fstab`
+
+### init
+    $ file /lib/systemd/systemd
+    $ readlink /usr/bin/init
+
+### mkinitcpio
+    mkinitcpio -h  # --help
+    mkinitcpio -H systemd  # --hookhelp
+    mkinitcpio -L  # --lishooks
+    mkinitcpio -V  # --version
+
+creates an initial ramdisk environment
+
 ## build
     $OSAB/extra-etc/doas.conf
     r $OSAB $culLA
@@ -1297,20 +1316,6 @@ uses `fzf`
     mimeo -m <fileToOpen>  # reports mimetype
     ~/.config/mimeapps.list  # the default applications
     ~/.local/share/applications/mimeapps.list  # empty, deprecated
-
-## boot
-    find /boot/vmli*  # lists available kernels
-    find /dev/disk/by-designator -type l -ls
-
-as root user, `genfstab -U / >> /etc/fstab`
-
-### mkinitcpio
-    mkinitcpio -h  # --help
-    mkinitcpio -H systemd  # --hookhelp
-    mkinitcpio -L  # --lishooks
-    mkinitcpio -V  # --version
-
-creates an initial ramdisk environment
 
 ## monitoring
     btop

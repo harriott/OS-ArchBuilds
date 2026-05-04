@@ -168,12 +168,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> julia-bin 1 install
-# # for sixels
-# gAUR julia-bin
-# nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
-# makepkg -sic
-# true
+#=> julia-bin 1 install
+# for sixels
+gAUR julia-bin
+nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
+makepkg -sic
+true
 
 # #=> kittypack
 # gAUR kittypack
@@ -187,11 +187,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> librespeed-cli
-# gAUR librespeed-cli
-# nvim -c "silent! /github.com\/librespeed\/speedtest" PKGBUILD
-# makepkg -sic
-# true
+#=> librespeed-cli
+gAUR librespeed-cli
+nvim -c "silent! /github.com\/librespeed\/speedtest" PKGBUILD
+makepkg -sic
+true
 
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3

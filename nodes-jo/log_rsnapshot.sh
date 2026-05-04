@@ -10,7 +10,7 @@
 # symlinked in my  $OSAB/bs-1-to_jo/5-rsnapshot.sh
 
 d=$(date +%Y%m%d)
-l="~/Arch/root/log_rsnapshot-$d"
+l="$HOME/Arch/root/log_rsnapshot-$d"
 echo 'vim: ft=rsnapshotlog:' > $l
 echo '' >> $l
 cat /var/log/rsnapshot >> $l

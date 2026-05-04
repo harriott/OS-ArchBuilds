@@ -13,7 +13,10 @@ alias l='ls --color=auto'
 
 #=> 0 find system stuff
 # ------------------
-# fd -p <regex> / --xdev  is simpler
+# fd -p -tf /init$ / --xdev
+# fd -p <regex> / --xdev
+
+#==> using find
 fs () { find / \
     -path /home/jo -prune -o \
     -path /mnt -prune -o \

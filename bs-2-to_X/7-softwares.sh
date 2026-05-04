@@ -44,6 +44,9 @@ sudo pacman -S fping
 #=> gping
 sudo pacman -S gping
 
+#=> gitleaks
+sudo pacman -S gitleaks
+
 #=> gitui
 # (after Rust Toolchain)
 sudo pacman -S gitui
