@@ -217,8 +217,9 @@ pactree -r libayatana-appindicator  returns nowt, so  sudo pacman -Rs libayatana
 apache
 EFI install
 gokcehan's lf
+localsend
 MariaDB
-PDFsam, when it works on  java-runtime 26
+thunar-dropbox
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

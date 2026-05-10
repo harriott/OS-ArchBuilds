@@ -68,12 +68,12 @@ ${color1}${font Arial:pixelsize=44}${time %k:%M}${font Arial:pixelsize=38}${time
 ${font DejaVuSansMono:size=10}${color1}${execpi 1800 DA=`date +%_d`; cal | sed s/"\(^\|[^0-9]\)$DA"'\b'/'\1${color2}'"$DA"'${color1}'/}$font
 
 #-- system stats
-${color}Uptime ${color2}$uptime  ${color}Frequency ${color2}$freq MHz
-${color}RAM ${color2}$mem ($memmax) = $memperc% ${membar 4}
-${color}Swap ${color2}$swap ($swapmax) = $swapperc% ${swapbar 4}
+${color}uptime ${color2}$uptime  ${color}frequency ${color2}$freq MHz
 ${color}CPU ${color2}$cpu% ${cpubar 4}
-${color}Processes ${color2}$processes  ${color}Running ${color2}$running_processes
-${color}
+${color}RAM ${color2}$mem ($memmax) = $memperc% ${membar 4}
+${color}swap ${color2}$swap ($swapmax) = $swapperc% ${swapbar 4}
+
+${color}Processes: ${color2}$processes ${color1}(running ${color2}$running_processes${color1})
 #-- top processes
 ${color}Name               PID   CPU%   MEM%
 ${color1}${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
@@ -94,8 +94,8 @@ ${color}/home ${color3}${fs_used /home} (${fs_size /home}) ${color4}${fs_bar 6 /
 ${color}$Storage ${color3}${fs_used /mnt/BX200} (${fs_size /mnt/BX200}) ${color4}${fs_bar 6 /mnt/BX200} ${color}
 #-- WAN
 ${color}eno1  down ${color2}${downspeed eno1} ${color}up ${color2}${upspeed eno1}
-${color}wlan0 down ${color4}${downspeedgraph wlan0 8,180 555555 555555 150} ${color2}${downspeed wlan0}
-${color}wlan0 up   ${color4}${upspeedgraph wlan0 8,180 555555 555555 150} ${color2}${upspeed wlan0}
+${color}wlan0 down ${color4}${downspeedgraph wlan0 8,140 555555 555555 150} ${color2}${downspeed wlan0}
+${color}wlan0 up   ${color4}${upspeedgraph wlan0 8,140 555555 555555 150} ${color2}${upspeed wlan0}
 ${color}
 #-- weather (blank if not online)
 ${alignc}${color1}${execpi 100 curl wttr.in/Paris?T0 -s -m 3}

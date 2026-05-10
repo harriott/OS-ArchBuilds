@@ -4032,6 +4032,19 @@ hp-setup 10.146.65.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## webkit2gtk
 pactree -r webkit2gtk  found nothing, so  sudo pacman -Rs webkit2gtk
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.235.244.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.235.244.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+  xf86EnableIO: failed to enable I/O ports 0000-03ff (Operation not permitted) ... no screens found
+  ...
+  xinit: ubable to connect to X server: Connection refused
+Q nvidia-  reports
+  nvidia-470xx-dkms v470.256.02-8.01
+  nvidia-470xx-utils v470.256.02-8.01
+Updated to  nvidia-470xx-utils v470.256.02-8.02, got me  nvidia-470xx-dkms v470.256.02-8.02
 ## waiting
 gokcehan's lf
 MariaDB

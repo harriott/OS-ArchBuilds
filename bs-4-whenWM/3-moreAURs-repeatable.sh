@@ -222,6 +222,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes some time
 # true
 
+#=> localsend
+gAUR localsend
+nvim -c "silent! /github.com\/localsend\/localsend" PKGBUILD
+makepkg -sic  # takes some time
+true
+
 # #=> mod_fcgid 0 install
 # # for Apache
 # gAUR mod_fcgid
@@ -310,7 +316,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> pdfCropMargins 1 python-pysimplegui
 # gAUR python-pysimplegui
-# nvim -c "silent! /github.com\/MikeTheWatchGuy\/PySimpleGUI" PKGBUILD
+# nvim -c "silent! /github.com\/PySimpleGUI\/PySimpleGUI" PKGBUILD
 # makepkg -sic
 
 # #=> pdfCropMargins 2 pdfcropmargins 0 install
@@ -422,11 +428,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /orbitalquark\/textadept" PKGBUILD
 # makepkg -sic
 
-#=> thunar-dropbox
-gAUR thunar-dropbox
-nvim -c "silent! /Jeinzi\/thunar-dropbox" PKGBUILD
-makepkg -sic
-true
+# #=> thunar-dropbox
+# gAUR thunar-dropbox
+# nvim -c "silent! /Jeinzi\/thunar-dropbox" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> thunderbird-bin
 # # first check if  extra/x86_64/thunderbird  has come up-to-date with  Winget

@@ -150,7 +150,7 @@ pacman -S rtorrent
 
 # #=> 4 when X 1 IO hw - xorg.conf.d 1 monitor settings
 # # disable DPMS
-# cp $OSAB/etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
+# cp $OSAB/extra-etc/10-monitor.conf /etc/X11/xorg.conf.d/10-monitor.conf
 
 # #=> 4 when X 1 IO hw - xorg.conf.d 1 touch settings
 # # will need a reboot
