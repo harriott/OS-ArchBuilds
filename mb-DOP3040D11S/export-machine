@@ -16,7 +16,7 @@ export csm=DOP3040D11S-clamscan
 export rsnapshot=/run/media/jo/9QG2FFEE/rsnapshot/  # $rsnapshot
 export startxDelay=5
 
-#=> for  $OSAB/nodes-Bash/export-storage
+#=> for  $OSAB/nodes-Bash/export-Arch
 export myDrA=1  # only when my Dropbox is active
 export Storage=/mnt/BX200  # where I keep stuff
     export Enc=$Storage/encrypted  # mkdir $Enc

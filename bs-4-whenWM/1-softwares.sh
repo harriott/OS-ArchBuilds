@@ -103,6 +103,9 @@ sudo pacman -S hugo
 #=> Go - gopls
 sudo pacman -S gopls
 
+#=> Go - glow
+sudo pacman -S glow
+
 #=> java-commons-lang
 sudo pacman -S java-commons-lang  # (for pdftk's functions)
 
@@ -193,6 +196,11 @@ sudo sed -i 's#^;date.timezone =#date.timezone = Europe/Paris#' /etc/php/php.ini
 sudo pacman -S php-cgi
 sudo mkdir /srv/http/fcgid-bin
 sudo ln -s /usr/bin/php-cgi /srv/http/fcgid-bin/php-fcgid-wrapper
+
+#=> php-fpm
+sudo pacman -S php-fpm
+sudo systemctl enable php-fpm.service --now
+sudo usermod -aG http jo
 
 #=> peek
 sudo pacman -S peek  # (GIF Screen Recorder)

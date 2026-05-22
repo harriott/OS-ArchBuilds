@@ -97,7 +97,8 @@ ENV(1)
     ble-bind -P | fzf
     $OSAB/nodes-Bash/blerc
 
-Stopped jobs might need `kill -9 %1` twice...
+- ` ` expands
+- Stopped jobs might need `kill -9 %1` twice...
 
 ## completion
     complete 2>&1 | tee $machLg/bash.cmplt
@@ -345,7 +346,8 @@ JOBS(1P)
     fd -tf -e md -x du -h | sort -hr  # sorted by size
     skl
 
-TAIL(1)
+- CAT(1)
+- TAIL(1)
 
 ## awk
     $cITcr/unix-like/awk
@@ -509,6 +511,7 @@ vid => ffmpegthumbnailer
 
 ## fd
     :Man fd
+    fd -e dw -x mv {} {.}.txt  # recursively renames all  *.dw  to  *.txt
     fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
     im fd
 
@@ -618,6 +621,7 @@ NCDU(1)
 
 ## rsnapshot
     $machBld/etc/rsnapshot.conf
+    r $rsnapshot
     snapshot_root
     sudo du -sh $rsnapshot
     sm $rsnapshot/aaa.0
@@ -652,16 +656,18 @@ NCDU(1)
     systemctl status rsnapshot-hourly.timer
 
 ### find
-    r $rsnapshot/aaa.0/localhost/$Drpbx/Cop/AM-toSort0
-    r $rsnapshot/aaa.0/localhost/home/jo/.recoll
-    r $rsnapshot/daily.0/localhost/$Drpbx/Cop/AM-toSort0
-    r $rsnapshot/daily.0/localhost/$Drpbx/Photos
-    r $rsnapshot/daily.1/localhost/$Drpbx/Cop/AM-toSort0
-    r $rsnapshot/daily.1/localhost/$Drpbx/Photos
-    r $rsnapshot/daily.6/localhost/$Drpbx/Photos
-    r $rsnapshot/hourly.0/localhost/$Drpbx/Cop/AM-toSort0
-    r $rsnapshot/hourly.1/localhost/$Drpbx/Photos
-    r $rsnapshot/hourly.6/localhost/$Drpbx/Photos
+    r $rsnapshot/aaa.0/$host/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/aaa.0/$host/$DWp
+    r $rsnapshot/aaa.1/localhost/$DWp
+    r $rsnapshot/aaa.0/$host/home/jo/.recoll
+    r $rsnapshot/daily.0/$host/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/daily.0/$host/$Drpbx/Photos
+    r $rsnapshot/daily.1/$host/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/daily.1/$host/$Drpbx/Photos
+    r $rsnapshot/daily.6/$host/$Drpbx/Photos
+    r $rsnapshot/hourly.0/$host/$Drpbx/Cop/AM-toSort0
+    r $rsnapshot/hourly.1/$host/$Drpbx/Photos
+    r $rsnapshot/hourly.6/$host/$Drpbx/Photos
 
 #### fRs
     $AjB/bashrc-console
@@ -990,10 +996,10 @@ mediainfo -h | mo
 ```
 
 ## mpv
+    $misc/CP/mpv.conf
     :Man mpv
     r /usr/share/doc/mpv
     rg mpv --sort=modified -l $culLAb/ml-$host/pm/cu
-    ~/.config/mpv/mpv.conf
 
 - `c` cycles through visualisations (`$cITcc/CP/mpv/visualizer.lua`)
 - `Ctrl+e` invokes equalizer (`$cITcc/CP/mpv/firequalizer15.lua`)
@@ -1015,13 +1021,17 @@ won't open if `cmus` is playing a track
     r ~/.local/share/openshot
 
 # network
-    cat /etc/hostname
     curl ifconfig.co  # IP address
     curl ifconfig.co/country
     doas bandwhich
     sudo dhcpcd wlwg111v2
     sudo ls /var/lib/dhcpcd/
     systemctl status nordvpnd.service
+
+## hostnames
+    https://localhost/
+
+`/etc/hosts` defines various local standards
 
 ## NetworkManager
     nmcli connection delete Jo-OPPO-A76
@@ -1658,6 +1668,7 @@ configured in `$OSAB/bs-4-whenWM/1-softwares.sh`
     ncdu ~/.config/google-chrome
 
 ### Chawan
+    ch -v
     ch https://en.wikipedia.org
     ~/.config/chawan/history.uri
 
@@ -1778,4 +1789,14 @@ curl wttr.in/Moscow
 curl wttr.in/Salt+Lake+City
 wp  # in Paris
 ```
+
+# web serving
+    /etc/php/php.ini
+
+## Caddy
+    /etc/caddy/Caddyfile
+    caddy build-info | mo
+    r $HOME/.config/caddy  # configuration directory
+    r $HOME/.local/share/caddy  # data directory
+    systemctl status caddy.service
 

@@ -60,11 +60,13 @@ GNUPLOT(1)
     i python
     r /usr/lib/python3.11/site-packages
 
-PYGMENTIZE(1)
-
 ## pipx
     r ~/.local/bin/
     r ~/.local/pipx/venvs/
+
+## Pygments
+- PYGMENTIZE(1)
+- `pz` (`$OSAB/nodes-Bash/bashrc-generic`)
 
 # Ruby
 ```bash
@@ -72,6 +74,13 @@ gem list --no-versions | tr '\n' ' ' | xcol bundler github-pages jekyll liquid
 gem list > $machLg/gems.gems  # using  $vfv/syntax/gems.vim
 r $GEM_HOME
 ```
+
+## bundler
+    /usr/bin/bundle version
+    whereis bundle
+    ~/.local/share/gem/ruby/3.4.0/bin/bundle version
+
+package is `ruby-bundler`
 
 # Rust
     r ~/.cargo/bin

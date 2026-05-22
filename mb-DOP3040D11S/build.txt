@@ -195,7 +195,7 @@ sudo pacman -Rs pdfsam
 :: geocode-glib-3.26.4-6 and geocode-glib-common-3.26.4-5 are in conflict. Remove geocode-glib-common? [y/N] y
 ## pdftl
 pipx upgrade-all
-  /home/jo/.local/pipx/venvs/radio-active/bin/python: No module named pip
+/home/jo/.local/pipx/venvs/radio-active/bin/python: No module named pip
   '/home/jo/.local/pipx/venvs/radio-active/bin/python -m pip --no-input install --upgrade radio-active -q' failed
   /home/jo/.local/pipx/venvs/terminal-colors/bin/python: No module named pip
   '/home/jo/.local/pipx/venvs/terminal-colors/bin/python -m pip --no-input install --upgrade terminal-colors -q' failed
@@ -208,17 +208,24 @@ pipx upgrade-all
 pipx reinstall-all
   The following package(s) failed to reinstall: radio-active
 pipx install radio-active
-pipx install 'pdftl[full]'  didn't download the extra packages
+pipx install 'pdftl[full]'  didn't download the supposed extra (full) packages
 ## dropbox &
   desktop/dropbox/sync_engine/nucleus/classic_client/modern_client/modern_thin_client.py:17: UserWarning: google.protobuf.service module is deprecated. RPC implementations should provide code generator plugins which generate code specific to the RPC implementation. service.py will be removed in Jan 2025
   (dropbox:117508): libayatana-appindicator-WARNING **: 15:45:19.230: libayatana-appindicator is deprecated. Please use libayatana-appindicator-glib in newly written code.
 pactree -r libayatana-appindicator  returns nowt, so  sudo pacman -Rs libayatana-appindicator
+## rakudo GnuPG key
+gpg --import $cITcc/CP/Raku/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2.asc
+## moar-debug  remove
+(for  moarvm) sudo pacman -Rs moar-debug
 ## waiting
 apache
+Caddy
+dos2unix
 EFI install
+glow
 gokcehan's lf
-localsend
 MariaDB
+moar-debug  remove
 thunar-dropbox
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700

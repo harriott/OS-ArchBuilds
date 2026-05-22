@@ -5,6 +5,8 @@
 #  gctm  is defined in  $AjB/bashrc-console
 #  sudo aura -Aakux --devel  is good for identifying locally installed developer repositories
 
+set -v  # show code lines as they're used
+
 PQ(){ echo; echo $1; pacman -Qs $1; }
 
 updateMaybe()
@@ -31,29 +33,44 @@ PQ auracle-git
 xdgo https://github.com/falconindy/auracle/commits/master/
 updateMaybe auracle-git 'falconindy'
 
-#=> clifm-git
-PQ clifm-git
-xdgo https://github.com/leo-arch/clifm/commits/master
-updateMaybe clifm-git 'https:\/\/github.com\/leo-arch\/clifm'
+#=> chawan-git
+PQ chawan-git
+xdgo https://git.sr.ht/~bptato/chawan
+updateMaybe chawan-git 'chawan-git'
+
+#=> blesh-git
+PQ blesh-git
+xdgo https://github.com/akinomyoga/ble.sh/commits
+updateMaybe blesh-git 'akinomyoga\/ble.sh'
+
+# #=> clifm-git
+# PQ clifm-git
+# xdgo https://github.com/leo-arch/clifm/commits
+# updateMaybe clifm-git 'https:\/\/github.com\/leo-arch\/clifm'
 
 #=> fontpreview-git
 PQ fontpreview-git
 xdgo https://github.com/sdushantha/fontpreview/commits/master/
 updateMaybe fontpreview-git 'https:\/\/github.com\/sdushantha\/fontpreview'
 
+# #=> keepassxc-git
+# PQ keepassxc-git
+# xdgo https://github.com/keepassxreboot/keepassxc/commits
+# updateMaybe keepassxc-git 'keepassxreboot\/keepassxc'
+
 #=> lsix-git
 PQ lsix-git
-xdgo https://github.com/hackerb9/lsix/commits/master
+xdgo https://github.com/hackerb9/lsix/commits
 updateMaybe lsix-git 'https:\/\/github.com\/hackerb9\/lsix'
 
-#=> rdrview-git
-PQ rdrview-git
-xdgo https://github.com/eafer/rdrview/commits/master/
-updateMaybe rdrview-git 'https:\/\/github.com\/eafer\/rdrview'
+# #=> rdrview-git
+# PQ rdrview-git
+# xdgo https://github.com/eafer/rdrview/commits
+# updateMaybe rdrview-git 'https:\/\/github.com\/eafer\/rdrview'
 
 #=> shell-color-scripts-git
 PQ shell-color-scripts-git
-xdgo https://gitlab.com/dwt1/shell-color-scripts
+xdgo https://gitlab.com/dwt1/shell-color-scripts/commits
 updateMaybe shell-color-scripts-git 'https:\/\/gitlab.com\/dwt1\/shell-color-scripts'
 
 # #=> snixembed-git
@@ -64,17 +81,17 @@ updateMaybe shell-color-scripts-git 'https:\/\/gitlab.com\/dwt1\/shell-color-scr
 
 #=> tmux-bash-completion-git
 PQ tmux-bash-completion-git
-xdgo https://github.com/imomaliev/tmux-bash-completion/commits/master
+xdgo https://github.com/imomaliev/tmux-bash-completion/commits
 updateMaybe tmux-bash-completion-git
 
 #=> vimpc-git
 PQ vimpc-git
-xdgo https://github.com/boysetsfrog/vimpc/commits/master/
+xdgo https://github.com/boysetsfrog/vimpc/commits
 updateMaybe vimpc-git 'https:\/\/github.com\/boysetsfrog\/vimpc'
 
 #=> yj-git
 PQ yj-git
-xdgo https://github.com/sclevine/yj/commits/main
+xdgo https://github.com/sclevine/yj/commits
 updateMaybe yj-git 'https:\/\/github.com\/sclevine\/yj.git'
 exit
 

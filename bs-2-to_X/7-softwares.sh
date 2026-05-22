@@ -31,6 +31,9 @@ sudo pacman -S cloudflare-speed-cli
 # #=> diskonaut
 # sudo pacman -S diskonaut
 
+#=> dos2unix
+sudo pacman -S dos2unix
+
 # #=> Dust
 # # (after Rust Toolchain)
 # sudo pacman -S dust

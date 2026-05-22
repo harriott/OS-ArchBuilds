@@ -8,7 +8,7 @@
 source "../mb-$host/export-machine"
 
 #=> 1 $OSAB (& $AjB), $machBld
-source ../nodes-Bash/export-storage  # essential
+source ../nodes-Bash/export-Arch  # essential
 
 #=> 1 Bash generic
 [[ $(alias fin) =~ 'figlet' ]] && source $OSAB/nodes/Bash/bashrc-generic

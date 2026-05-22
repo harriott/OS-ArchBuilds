@@ -20,7 +20,7 @@
 
 #=> JH additions
 # $Obc/autostart ($OSAB/nodes-set/jo-1-Openbox.sh) e -l ~/.config/openbox/autostart
-#  depends on  $OSAB/nodes-Bash/export-storage
+#  depends on  $OSAB/nodes-Bash/export-Arch
 
 # #==> 0 gVim
 # # gVim's  columns  lines  are set in  $vimfiles/gvimrc.vim

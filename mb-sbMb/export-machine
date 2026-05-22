@@ -15,7 +15,7 @@ export OBSmkvGrabs='/mnt/ST4000VN008/OBSmkvGrabs'
 export rsnapshot='/mnt/ST4000VN008/rsnapshot'  # $rsnapshot
 export startxDelay=5
 
-#=> for  $OSAB/nodes-Bash/export-storage
+#=> for  $OSAB/nodes-Bash/export-Arch
 export Enc=/mnt/SD480GSSDPlus/Encrypted  # $Enc
 export myDrA=1  # only when my Dropbox is active
 export Storage=/mnt/SDU3D1TB  # $Storage, where I keep stuff

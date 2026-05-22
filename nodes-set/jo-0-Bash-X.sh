@@ -21,10 +21,10 @@ ln -sf $machBld/export-machine               ~/.export-machine
 # ll ~/.export-*
 
 # #=> Bash 1 check
-# e -la ~/.bash_profile ~/.bashrc ~/.bashrc-An ~/.bashrc-console ~/.bashrc-generic ~/.export-jo ~/.export-machine ~/.export-storage ~/.inputrc ~/Arch/bash_history.sh
+# e -la ~/.bash_profile ~/.bashrc ~/.bashrc-An ~/.bashrc-console ~/.bashrc-generic ~/.export-jo ~/.export-machine ~/.export-Arch ~/.inputrc ~/Arch/bash_history.sh
 
 # #=> Bash 2 remove
-# Rm ~/.bash_profile ~/.bashrc ~/.bashrc-An ~/.bashrc-console ~/.bashrc-generic ~/.export-jo ~/.export-machine ~/.export-storage ~/.inputrc ~/Arch/bash_history.sh
+# Rm ~/.bash_profile ~/.bashrc ~/.bashrc-An ~/.bashrc-console ~/.bashrc-generic ~/.export-jo ~/.export-machine ~/.export-Arch ~/.inputrc ~/Arch/bash_history.sh
 
 #=> X 0 set
 ln -sf $ABjo/wm/Xresources/Xresources                       ~/.Xresources

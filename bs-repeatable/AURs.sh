@@ -32,11 +32,11 @@ trap read debug  # puts a read request after each executable line
 # rAUR ~/Arch/AUR/bfg
 # sudo pacman -Rs bfg
 
-# #=> blesh-git
-# gAUR blesh-git
-# nvim -c "silent! /akinomyoga\/ble.sh" PKGBUILD
-# makepkg -sic
-# true
+#=> blesh-git
+gdAUR blesh-git
+nvim -c "silent! /akinomyoga\/ble.sh" PKGBUILD
+makepkg -sic
+true
 
 # #=> cheat
 # gAUR cheat
@@ -81,7 +81,7 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs cpu-x
 
 # #=> cyrus-sasl-xoauth2-git 0 install
-# gAUR cyrus-sasl-xoauth2-git
+# gdAUR cyrus-sasl-xoauth2-git
 # nvim -c "silent! /github.com\/moriyoshi" PKGBUILD
 # makepkg -sic
 # true
@@ -168,12 +168,12 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> julia-bin 1 install
-# for sixels
-gAUR julia-bin
-nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
-makepkg -sic
-true
+# #=> julia-bin 1 install
+# # for sixels
+# gAUR julia-bin
+# nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> kittypack
 # gAUR kittypack
@@ -187,11 +187,11 @@ true
 # makepkg -sic
 # true
 
-#=> librespeed-cli
-gAUR librespeed-cli
-nvim -c "silent! /github.com\/librespeed\/speedtest" PKGBUILD
-makepkg -sic
-true
+# #=> librespeed-cli
+# gAUR librespeed-cli
+# nvim -c "silent! /github.com\/librespeed\/speedtest" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3
@@ -271,6 +271,28 @@ true
 # makepkg -sic
 # true
 
+# #=> Raku 0 moarvm
+# # needs Will Coleda's key
+# # for  nqp
+# gdAUR moarvm
+# nvim -c "silent! /moarvm.com\/releases\/MoarVM" PKGBUILD
+# makepkg -sic  # loads of output
+# true
+
+# #=> Raku 1 nqp
+# # for  rakudo
+# gdAUR nqp
+# nvim -c "silent! /github.com\/Raku" PKGBUILD
+# makepkg -sic  # loads of output
+# true
+
+# #=> Raku 2 rakudo
+# # qfter  nqp
+# gdAUR rakudo
+# nvim -c "silent! /rakudo.org\/dl" PKGBUILD
+# makepkg -sic  # takes a while
+# true
+
 # #=> rdrview-git
 # gdAUR rdrview-git
 # nvim -c "silent! /https:\/\/github.com\/eafer\/rdrview" PKGBUILD
@@ -320,6 +342,12 @@ true
 # # Vale, for  ALE
 # gAUR vale
 # nvim -c "silent! /errata-ai\/vale" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> yay-bin
+# gAUR yay-bin
+# nvim -c "silent! /github.com\/Jguer\/yay\/releases\/download\/v" PKGBUILD
 # makepkg -sic
 # true
 

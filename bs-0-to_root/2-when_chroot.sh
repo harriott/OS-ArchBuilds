@@ -6,7 +6,7 @@ set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 0 $OSAB
-# check  $OSAB/nodes-Bash/export-storage  has leveraged  /bs
+# check  $OSAB/nodes-Bash/export-Arch  has leveraged  ~/OS-ArchBuilds
 echo $OSAB
 true
 
@@ -14,7 +14,7 @@ true
 mkdir -p ~/.config/nano
 
 #=> 1 grab fstab
-cp /etc/fstab /bs/fstab-$(date "+%F-%H-%M")
+cp /etc/fstab ~/OS-ArchBuilds/fstab-$(date "+%F-%H-%M")
 
 #=> 1 internet check
 ping -c 3 8.8.8.8

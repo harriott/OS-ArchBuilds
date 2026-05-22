@@ -26,7 +26,7 @@ ra () {
 alias o=echo
 
 # bigger command history
-export HISTFILESIZE=20000  # lines
+export HISTFILESIZE=20000  # lines saved into  ~/.bash_history ($AjB/bash_history.sh)
 export HISTSIZE=1000  # commands
 # defaults are 500
 

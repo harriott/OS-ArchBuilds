@@ -8,7 +8,7 @@ set -e
 #=> 0 $OSAB
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../../$(uname -n)/export-machine
-. ../../nodes-Bash/export-storage
+. ../../nodes-Bash/export-Arch
 read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 1 go slow

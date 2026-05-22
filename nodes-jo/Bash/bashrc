@@ -4,7 +4,7 @@
 
 #=> 0 already done in  $AjB/bash_profile
 # - but only the exports are transferred, no problem repeating those here
-  source ~/.bashrc-generic
+  source ~/.bashrc-generic  # $OSL/nodes/bashrc-generic
   source ~/.bashrc-console  # $AjB/bashrc-console
 
 #=> 0 load the rest of my bashrc

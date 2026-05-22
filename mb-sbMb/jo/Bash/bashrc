@@ -2,6 +2,7 @@
 # vim: fdl=1 ft=sh sw=2:
 
 # $machBld/jo/Bash/bashrc ($OSAB/nodes-set/jo-0.sh) e -la ~/.bashrc
+#  (before this, $AjB/bash_profile  sets up  X11  consoles)
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
@@ -9,11 +10,6 @@ export CHROOT=/mnt/SD480GSSDPlus/chroot  # o $CHROOT
 
 #=> 0 load the rest of my bashrc
 source $AjB/bashrc
-
-#=> 0 various video directories
-# echo -e "/mnt/ST4000VN008\n/mnt/SDU3D1TB\n/mnt/WD1001FALS" > $machBld/jo/Bash/VsLmore
-#  used in  $culL/video/OBSmkv/shrink.sh  &  fv()
-export vlogs=$Storage/Sync2/AV-Stack/vlogs
 
 #=> 1 OBS mkv grabs convert
 # for  $culL/video/OBSmkv/shrink.sh

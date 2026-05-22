@@ -38,11 +38,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> Chawan
-# gAUR chawan-git
-# nvim -c "silent! /chawan-git" PKGBUILD
-# makepkg -sic  # takes a while
-# true
+#=> chawan-git
+gdAUR chawan-git
+nvim -c "silent! /chawan-git" PKGBUILD
+makepkg -sic  # takes a while
+true
 
 # #=> Clapgrep
 # gAUR clapgrep
@@ -67,7 +67,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> cmus-git
 # # try switching back to  cmus  if it's > v2.12.0-4
-# gAUR cmus-git
+# gdAUR cmus-git
 # nvim -c "silent! /cmus.github.io" PKGBUILD
 # makepkg -sic  # takes a while
 # true
@@ -151,6 +151,16 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
+# #=> frankenphp-bin 0 install
+# # for Caddy
+# gAUR frankenphp-bin
+# nvim -c "silent! /frankenphp-bin" PKGBUILD
+# makepkg -sic
+# true
+
+# #=> frankenphp-bin 1 remove
+# sudo pacman -Rs frankenphp-bin
+
 # #=> fsearch
 # gAUR fsearch
 # nvim -c "silent! /github.com\/cboxdoerfer\/fsearch" PKGBUILD
@@ -198,7 +208,7 @@ trap read debug  # puts a read request after each executable line
 # true
 
 # #=> keepassxc-git 0 install
-# gAUR keepassxc-git
+# gdAUR keepassxc-git
 # nvim -c "silent! /keepassxreboot\/keepassxc" PKGBUILD
 # makepkg -sic  # takes a long, long, long time, with endless warnings
 # true
@@ -222,11 +232,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes some time
 # true
 
-#=> localsend
-gAUR localsend
-nvim -c "silent! /github.com\/localsend\/localsend" PKGBUILD
-makepkg -sic  # takes some time
-true
+# #=> localsend
+# gAUR localsend
+# nvim -c "silent! /github.com\/localsend\/localsend" PKGBUILD
+# makepkg -sic  # takes some time
+# true
 
 # #=> mod_fcgid 0 install
 # # for Apache
@@ -257,7 +267,7 @@ true
 # true
 
 # #=> mpv - mpv-uosc-git
-# gAUR mpv-uosc-git
+# gdAUR mpv-uosc-git
 # nvim -c "silent! /github.com\/tomasklaen\/uosc" PKGBUILD
 # makepkg -sic
 # true
@@ -472,10 +482,10 @@ true
 # makepkg -sic
 # true
 
-# #=> yj-git
-# gdAUR yj-git
-# nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
-# makepkg -sic
+#=> yj-git
+gdAUR yj-git
+nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
+makepkg -sic
 
 # #=> ymuse
 # # for MPD
