@@ -32,11 +32,11 @@ trap read debug  # puts a read request after each executable line
 # rAUR ~/Arch/AUR/bfg
 # sudo pacman -Rs bfg
 
-#=> blesh-git
-gdAUR blesh-git
-nvim -c "silent! /akinomyoga\/ble.sh" PKGBUILD
-makepkg -sic
-true
+# #=> blesh-git
+# gdAUR blesh-git
+# nvim -c "silent! /akinomyoga\/ble.sh" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> cheat
 # gAUR cheat
@@ -253,17 +253,17 @@ true
 # makepkg -sic
 # true
 
-# #=> perl-data-printer
-# gAUR perl-data-printer
-# nvim -c "silent! /GARU" PKGBUILD
-# makepkg -sic
-# true
+#=> perl-data-printer
+gAUR perl-data-printer
+nvim -c "silent! /GARU" PKGBUILD
+makepkg -sic
+true
 
-# #=> powershell-bin
-# gAUR powershell-bin
-# nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
-# makepkg -sic
-# true
+#=> powershell-bin
+gAUR powershell-bin
+nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
+makepkg -sic
+true
 
 # #=> rainbow
 # gdAUR rainbow

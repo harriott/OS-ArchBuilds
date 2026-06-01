@@ -83,6 +83,9 @@ sudo pacman -S lnav
 #=> mtr
 sudo pacman -S mtr
 
+#=> nodejs
+sudo pacman -S nodejs
+
 # #=> npm 0 configure npm-global
 # mkdir ~/.npm-global
 # npm config set prefix=$HOME/.npm-global

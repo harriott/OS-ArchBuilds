@@ -43,41 +43,41 @@ PQ blesh-git
 xdgo https://github.com/akinomyoga/ble.sh/commits
 updateMaybe blesh-git 'akinomyoga\/ble.sh'
 
-# #=> clifm-git
-# PQ clifm-git
-# xdgo https://github.com/leo-arch/clifm/commits
-# updateMaybe clifm-git 'https:\/\/github.com\/leo-arch\/clifm'
+#=> clifm-git
+PQ clifm-git
+xdgo https://github.com/leo-arch/clifm/commits
+updateMaybe clifm-git 'https:\/\/github.com\/leo-arch\/clifm'
 
 #=> fontpreview-git
 PQ fontpreview-git
 xdgo https://github.com/sdushantha/fontpreview/commits/master/
 updateMaybe fontpreview-git 'https:\/\/github.com\/sdushantha\/fontpreview'
 
-# #=> keepassxc-git
-# PQ keepassxc-git
-# xdgo https://github.com/keepassxreboot/keepassxc/commits
-# updateMaybe keepassxc-git 'keepassxreboot\/keepassxc'
+#=> keepassxc-git
+PQ keepassxc-git
+xdgo https://github.com/keepassxreboot/keepassxc/commits
+updateMaybe keepassxc-git 'keepassxreboot\/keepassxc'
 
 #=> lsix-git
 PQ lsix-git
 xdgo https://github.com/hackerb9/lsix/commits
 updateMaybe lsix-git 'https:\/\/github.com\/hackerb9\/lsix'
 
-# #=> rdrview-git
-# PQ rdrview-git
-# xdgo https://github.com/eafer/rdrview/commits
-# updateMaybe rdrview-git 'https:\/\/github.com\/eafer\/rdrview'
+#=> rdrview-git
+PQ rdrview-git
+xdgo https://github.com/eafer/rdrview/commits
+updateMaybe rdrview-git 'https:\/\/github.com\/eafer\/rdrview'
 
 #=> shell-color-scripts-git
 PQ shell-color-scripts-git
 xdgo https://gitlab.com/dwt1/shell-color-scripts/commits
 updateMaybe shell-color-scripts-git 'https:\/\/gitlab.com\/dwt1\/shell-color-scripts'
 
-# #=> snixembed-git
-# # not installed on  i34G1TU02
-# PQ snixembed-git
-# xdgo https://git.sr.ht/~steef/snixembed
-# updateMaybe snixembed-git 'https:\/\/git.sr.ht\/\~steef\/snixembed'
+#=> snixembed-git
+# not installed on  i34G1TU02
+PQ snixembed-git
+xdgo https://git.sr.ht/~steef/snixembed
+updateMaybe snixembed-git 'https:\/\/git.sr.ht\/\~steef\/snixembed'
 
 #=> tmux-bash-completion-git
 PQ tmux-bash-completion-git

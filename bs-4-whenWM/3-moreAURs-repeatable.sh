@@ -38,11 +38,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> chawan-git
-gdAUR chawan-git
-nvim -c "silent! /chawan-git" PKGBUILD
-makepkg -sic  # takes a while
-true
+# #=> chawan-git
+# gdAUR chawan-git
+# nvim -c "silent! /chawan-git" PKGBUILD
+# makepkg -sic  # takes a while
+# true
 
 # #=> Clapgrep
 # gAUR clapgrep
@@ -238,6 +238,12 @@ true
 # makepkg -sic  # takes some time
 # true
 
+# #=> marktext-deb
+# gAUR marktext-deb
+# nvim -c "silent! /https:\/\/github.com\/marktext\/marktext" PKGBUILD
+# makepkg -sic
+# true
+
 # #=> mod_fcgid 0 install
 # # for Apache
 # gAUR mod_fcgid
@@ -301,6 +307,18 @@ true
 # makepkg -sic
 # [ -f ~/.config/oama/config.yaml ] || oama
 # true
+
+# #=> onlyoffice
+# gAUR onlyoffice
+# nvim -c "silent! /https:\/\/www.onlyoffice.com\/desktop.aspx" PKGBUILD
+# makepkg -sic
+# true
+
+#=> onlyoffice-bin
+gAUR onlyoffice-bin
+nvim -c "silent! /https:\/\/www.onlyoffice.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> openshot
 # gAUR openshot
@@ -482,10 +500,10 @@ true
 # makepkg -sic
 # true
 
-#=> yj-git
-gdAUR yj-git
-nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
-makepkg -sic
+# #=> yj-git
+# gdAUR yj-git
+# nvim -c "silent! /github.com\/sclevine\/yj" PKGBUILD
+# makepkg -sic
 
 # #=> ymuse
 # # for MPD

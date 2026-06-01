@@ -218,6 +218,8 @@ gpg --import $cITcc/CP/Raku/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2
 ## moar-debug  remove
 (for  moarvm) sudo pacman -Rs moar-debug
 ## waiting
+:MasonInstall ltex-ls-plus
+:MasonUninstall ltex-ls
 apache
 Caddy
 dos2unix
@@ -225,7 +227,9 @@ EFI install
 glow
 gokcehan's lf
 MariaDB
+marktext-deb
 moar-debug  remove
+onlyoffice-bin
 thunar-dropbox
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700

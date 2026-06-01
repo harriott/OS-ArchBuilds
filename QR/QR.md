@@ -22,6 +22,15 @@ my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
 pulseaudio(1)
 
+## SoX
+    i sox
+
+### rec
+    rec -c 2 sox.flac  # record in stereo
+    rec -h
+
+symlinked to `rec_ng`
+
 ## cmus
     $ABjo/wm/cmus-rc.conf
     :Man cmus
@@ -882,6 +891,7 @@ gpg(1)
     $misc/linux/slJH.sh  # check for symlinks which could bother Dropbox
     /proc/filesystems - those supported by the kernel
     doas file -s /dev/sdx(n)
+    for hd in /mnt/* /run/media/jo/*; do o $hd; done
     grc lsblk -f
     i ioping
 
@@ -987,7 +997,6 @@ java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
 
 # multimedia
     /usr/lib/vlc/plugins
-    i sox
     ~/.config/obs-studio/logs
 
 ```bash
@@ -1352,7 +1361,7 @@ IOSTAT(1)
 to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
 
 ## security
-    $OSAB/etc/sudoers/sudoers
+    $OSAB/extra-etc/sudoers/sudoers
 
 ### groups
     cat /etc/group  # list all groups on the system

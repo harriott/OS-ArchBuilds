@@ -56,9 +56,11 @@ fm () {
 } # fm lowlands | grep Baez
 
 #=> AV
+# $onGH/FM-rsync-drives/rsync0-sbMb-Vs.sh
+
 fv () {
-  for VsL in /mnt/*; do
-    Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
+  for hd in /mnt/* /run/media/jo/*; do
+    Vss=($(find $hd -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
     for Vs in "${Vss[@]}"; do
       echo $Vs
       find $Vs -iname "*$1*" | xcol "$1"
@@ -67,8 +69,9 @@ fv () {
 } # fv cat  fv 'Dog Vision'
 
 fVs () {
-  for VsL in /mnt/*; do
-    Vss=($(find $VsL -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
+  for hd in /mnt/* /run/media/jo/*; do
+  # for VsL in /mnt/*; do
+    Vss=($(find $hd -mindepth 1 -maxdepth 1 -type d -name "Vs*" 2>/dev/null))
     for Vs in "${Vss[@]}"; do du -hs $Vs; done
   done
 } # find VS directory sizes

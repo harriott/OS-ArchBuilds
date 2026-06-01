@@ -4075,7 +4075,30 @@ journalctl -b | tl  didn't reveal anything obvious
 gpg --import $cITcc/CP/Raku/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2.asc
 ## moar-debug  remove
 (for  moarvm) sudo pacman -Rs moar-debug
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.18.191.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.18.191.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.74.91.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.74.91.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## qt5-remoteobjects
+pactree -r qt5-remoteobjects  shows nothing so  sudo pacman -Rs qt5-remoteobjects
+## nomacs not opening
+nomacs -v  got  "nomacs: error while loading shared libraries: libquazip1-qt6.so.1.5.0: cannot open shared object file: No such file or directory"  fix was to remove  nomacs  &  nomacs-debug, then re-install  nomacs
+## trailing  keepassxc-git-debug
+sudo pacman -Rs keepassxc-git-debug
+## Updates
+:: Synchronising package databases...
+error: failed to synchronize all databases (unable to lock database)
+sudo rm /var/lib/pacman/db.lck
+## nodejs
+:: nodejs-26.2.0-1 and nodejs-lts-jod-22.22.2-1 are in conflict. Remove nodejs-lts-jod? [y/N] y
 ## waiting
+delete  /run/media/jo/WD30EZRZ/Vs-inform-war
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
