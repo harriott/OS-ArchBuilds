@@ -12,7 +12,7 @@ alias th='thunar' # Xfce
 G (){ emacs --no-splash -fh $1 & }  # GUI
 
 function psc() {
-  pscs="$hmlA/ml-$host/pscircle" # pscircle shots
+  pscs="$ulLAhml/ml-$host/pscircle" # pscircle shots
   pscsn="$pscs/$(date +%Y%m%d%H%M%S).png" # pscircle shot now
   pscircle --output=$pscsn --output-height=3600 --output-width=5000
   nsxiv -fn $(ls $pscs | wc -l) $pscs &

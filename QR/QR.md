@@ -56,6 +56,7 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 
 ### mpd.service
     systemctl --user enable mpd.service --now
+    systemctl --user disable mpd.service --now
     systemctl status mpd.service
 
 ### vimpc
@@ -258,7 +259,7 @@ JOBS(1P)
 
 ## TeX - LaTeX
     r $cGRs/CP/MartinThoma-LaTeX-examples
-    r $jtCP/TeX/LaTeX  # my MWEs
+    r $ITmCP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
 `mmsc`, `pif`, `xc` defined in `$AjB/bashrc-wm`
@@ -390,7 +391,6 @@ SED(1)
 
 # file manage
     cd $DJH; fd -tf -u index.lock -x rm
-    diskus  # size of current directory
     i lsd
     n [directory]
 
@@ -549,12 +549,6 @@ unalias **<tab>
     i sk
     i sk-tmux
 
-## ncdu
-    ncdu --exclude rsnapshot
-    ncdu --exclude Cop-IT
-
-NCDU(1)
-
 ## pv
       # pv ARCH_nnnnnn -Yo /dev/sdx
 
@@ -694,7 +688,7 @@ NCDU(1)
     fRs $DWp/pn/internet internet.dw
     fRs $cITcc unix-linux-forArch-fonts
     fRs $JHw _config.yml
-    fRs $jtCP/TeX/LaTeX/tikz shadows-glow.tex
+    fRs $ITmCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
     fRs $machBld/jo/Bash VsLmore
     fRs $machBld/jo conkyrc
@@ -751,6 +745,15 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     pgrep rsnapshot
     rsnapshot -t aaa
     sudo pkill rsnapshot
+
+## sizes
+    diskus  # size of current directory
+
+### ncdu
+    ncdu --exclude rsnapshot
+    ncdu --exclude Cop-IT
+
+NCDU(1)
 
 ## trash-restore "Non parsable trashinfo file..."
     rm -r $Storage/.Trash-1000
@@ -1681,6 +1684,10 @@ configured in `$OSAB/bs-4-whenWM/1-softwares.sh`
     ch https://en.wikipedia.org
     ~/.config/chawan/history.uri
 
+### Firefox
+    st="$HOME/.mozilla/firefox/6qq4cnaa.default-release/storage"
+        for big in $st/archives $st/default; do find $big | wc -l; done
+
 ### w3m
     /usr/share/doc/w3m/keymap.default
     i w3m
@@ -1771,7 +1778,7 @@ locks: `pb $JHThb/linuxlock; pb $JHThb/Win10ProLock`
     /usr/share/nginx/html/index.html
     r /usr/share/nginx/html
 
-    rsync -irtv --delete /usr/share/nginx/test/ $jtULl/Arch/networking-usr-share-nginx-test
+    rsync -irtv --delete /usr/share/nginx/test/ $ITmULl/Arch/networking-usr-share-nginx-test
 
 ### nginx.service
     sudo systemctl disable nginx.service --now

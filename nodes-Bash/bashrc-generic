@@ -51,12 +51,15 @@ startxx () {
 }
 
 #=> clamscan
-# $hmlA/ml-$host/cs
+# $ulLAhml/ml-$host/cs
+
+#==> 0 prepare
+# go clean -modcache
 
 #==> 0 scan
 scs () {
   cslbn="/home/jo/Arch/cs"
-  [ $myDrA ] && cslbn="$hmlA/ml-$host/cs"
+  [ $myDrA ] && cslbn="$ulLAhml/ml-$host/cs"
   cslmn=$(date '+%y%m%d-%H%M').log  # clamscan log make name
   cslm=~/Arch/clamscan-$cslmn
   echo "about to clamscan /"

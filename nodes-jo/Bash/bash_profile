@@ -22,7 +22,7 @@ source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # backup the previous boot's systemd journal
-journalctl -b -1 > $hmlA/ml-$host/jc/$(date '+%y%m%d-%H%M').jctl &
+journalctl -b -1 > $ulLAhml/ml-$host/jc/$(date '+%y%m%d-%H%M').jctl &
 
 # first, test that X hasn't launched for this user
 ps aux | grep $USER | grep -v grep | grep "/usr/lib/Xorg" >& /dev/null

@@ -151,27 +151,17 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> frankenphp-bin 0 install
-# # for Caddy
-# gAUR frankenphp-bin
-# nvim -c "silent! /frankenphp-bin" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> frankenphp-bin 1 remove
-# sudo pacman -Rs frankenphp-bin
-
 # #=> fsearch
 # gAUR fsearch
 # nvim -c "silent! /github.com\/cboxdoerfer\/fsearch" PKGBUILD
 # makepkg -sic  # takes a while
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> gst123
 # gAUR gst123
@@ -314,11 +304,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-#=> onlyoffice-bin
-gAUR onlyoffice-bin
-nvim -c "silent! /https:\/\/www.onlyoffice.com" PKGBUILD
-makepkg -sic
-true
+# #=> onlyoffice-bin
+# gAUR onlyoffice-bin
+# nvim -c "silent! /https:\/\/www.onlyoffice.com" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> openshot
 # gAUR openshot

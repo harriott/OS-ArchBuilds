@@ -22,15 +22,18 @@ sudo chmod 775 /var/lib/dokuwiki/data/{media,pages}
 sudo chmod 775 /var/lib/dokuwiki/data/media/wiki
 
 #=> DokuWiki 1 conf/
-cp $coreIT/DokuWiki/userstyle.css /usr/share/webapps/dokuwiki/conf/userstyle.css
-cp $coreIT/DokuWiki/stopwords/non_technical_words.txt /usr/share/webapps/dokuwiki/conf/stopwords.txt
+sudo usermod -aG http jo  # needs a reboot
 
-#=> 0 enable multilib
-sudo sed -i 's/#\[multilib]/[multilib]/' /etc/pacman.conf
-sudo sed -i '/^\[m/{n;s/#I/I/}' /etc/pacman.conf
+#=> DokuWiki 2 conf/
+cp $ITcore/DokuWiki/userstyle.css /usr/share/webapps/dokuwiki/conf/userstyle.css
+cp $ITcore/DokuWiki/stopwords/non_technical_words.txt /usr/share/webapps/dokuwiki/conf/stopwords.txt
 
-#=> 0 fcitx5-configtool
-sudo pacman -S fcitx5-configtool  # because  fcitx  somehow installed, bringing its clipboard
+# #=> 0 enable multilib
+# sudo sed -i 's/#\[multilib]/[multilib]/' /etc/pacman.conf
+# sudo sed -i '/^\[m/{n;s/#I/I/}' /etc/pacman.conf
+
+# #=> 0 fcitx5-configtool
+# sudo pacman -S fcitx5-configtool  # because  fcitx  somehow installed, bringing its clipboard
 
 # #=> 0 LibreOffice Fresh install
 # sudo pacman -S libreoffice-fresh-en-gb
@@ -49,28 +52,28 @@ sudo pacman -S fcitx5-configtool  # because  fcitx  somehow installed, bringing 
 # #  2. tweak  ~/.config/pnmixer/config
 # true
 
-#=> 0 proselint
-pipx install proselint
+# #=> 0 proselint
+# pipx install proselint
 
-#=> 0 radio-active
-pipx install radio-active
+# #=> 0 radio-active
+# pipx install radio-active
 
-#=> 0 surfraw
-mkdir ~/.config/surfraw
-sudo pacman -S surfraw
+# #=> 0 surfraw
+# mkdir ~/.config/surfraw
+# sudo pacman -S surfraw
 
 # #=> 0 Thunderbird 0 install
 # sudo pacman -S thunderbird-i18n-en-gb
 # thunderbird  # generates a dummy Profile, not to be hereafter used
 
-#=> 0 Thunderbird 1 remove
-sudo pacman -Rs thunderbird thunderbird-i18n-en-gb
+# #=> 0 Thunderbird 1 remove
+# sudo pacman -Rs thunderbird thunderbird-i18n-en-gb
 
-#=> 0 yaml2toml
-pipx install yaml2toml
+# #=> 0 yaml2toml
+# pipx install yaml2toml
 
-#=> 1 check $OSAB
-read -p "\$OSAB is $OSAB - looks good?"
+# #=> 1 check $OSAB
+# read -p "\$OSAB is $OSAB - looks good?"
 
 # #=> 2 NetworkManager dispatcher
 # sudo systemctl enable NetworkManager-dispatcher --now

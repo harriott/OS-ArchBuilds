@@ -261,6 +261,9 @@ pacman -S bash-language-server
 #=> 2 encoding - bash-language-server 1 remove
 pacman -Rs bash-language-server
 
+#=> 2 encoding - dart
+pacman -S dart
+
 #=> 2 encoding - git-delta
 pacman -S git-delta
 
@@ -292,14 +295,29 @@ pacman -S python-pip
 #=> 2 encoding - R
 pacman -S r
 
-#=> 2 encoding - Ruby 0
+#=> 2 encoding - Ruby 0 install
 pacman -S ruby
 
-#=> 2 encoding - Ruby 0 IRB
+#=> 2 encoding - Ruby 1 remove
+pacman -Rs ruby
+
+#=> 2 encoding - Ruby 0 IRB 0 install
 pacman -S ruby-irb
 
-#=> 2 encoding - Ruby 1 documentation
+#=> 2 encoding - Ruby 0 IRB 1 remove
+pacman -Rs ruby-irb
+
+#=> 2 encoding - Ruby 0 ruby-stdlib 1 remove
+pacman -Rs ruby-stdlib
+
+#=> 2 encoding - Ruby 1 documentation 0 install
 pacman -S ruby-docs ruby-rdoc
+
+#=> 2 encoding - Ruby 1 documentation 1 remove
+pacman -Rs ruby-rdoc
+
+#=> 2 encoding - Ruby 1 rbenv
+pacman -S rbenv ruby-build
 
 #=> 2 encoding - Ruby 2 gems
 gem update

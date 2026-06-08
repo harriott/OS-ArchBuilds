@@ -132,11 +132,9 @@ rgIT () {
   cd $DJH/search
   f=IT-rg.ffl  # $DJH/search/IT-rg.ffl
   echo '' > $f
-  for ITd in $jtIT $coreIT; do
-    rgc="rg -l $1 $ITd"
-    echo '' >> $f; echo $rgc >> $f
-    echo '' >> $f; $rgc >> $f; echo '' >> $f
-  done
+  rgc="rg -l $1 $Drpbx/IT"
+  echo '' >> $f; echo $rgc >> $f
+  echo '' >> $f; $rgc >> $f; echo '' >> $f
   echo "- now open  $DJH/search/IT-rg.ffl"
 } # rgIT <text_to_find_in_many_filetypes>
 
@@ -145,7 +143,7 @@ SE () {
   f=SEN.ffl
   [ -s $f ] && rm $f
   echo '' > $f; echo 'SE  -see  $AjB/bashrc-console'
-  for ITd in $jtIT $coreIT $JHw/France; do
+  for ITd in $Drpbx/IT $JHw/France; do
     echo '' >> $f
     rg -l -tmd 'stackexchange|stackoverflow|superuser' $ITd | sort >> $f
   done
@@ -171,17 +169,13 @@ fbbcode () {
 #===> time-sorted - my GitHub issues
 ghi () {
   ghil=GitHubIssues.ffl
-  for ITd in $jtIT $coreIT; do
-    cd $ITd
-    for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
-    sed -i '/copied\/IT-handy\//d' $ghil
-    sed -i '1s/^/\n/' $ghil
-    echo '' >> $ghil
-    echo "results are in $ITd/$ghil"
-  done
+  cd $Drpbx/IT
+  for f in $(rg -l -tmd 'github.com.+issues'); do sm $f; done | sort > $ghil
+  sed -i '/copied\/IT-handy\//d' $ghil
+  sed -i '1s/^/\n/' $ghil
+  echo '' >> $ghil
+  echo "results are in $ITd/$ghil"
 }
-# $coreIT/GitHubIssues.ffl
-# $jtIT/GitHubIssues.ffl
 
 #==> my Encrypted directories
 # fa  defined in  $OSL/bashrc-console-fm
@@ -260,16 +254,21 @@ con () {
 } # con <a_French_infinitive>, con être
 
 #=> npm global directory
-export PATH="$HOME/.npm-global/bin:$PATH"
+[[ $PATH =~ npm-global ]] || export PATH="$HOME/.npm-global/bin:$PATH"
 
 #=> pipx exposed binaries
-export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
+[[ $PATH =~ \.local/bin ]] || export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
 
-#=> Ruby gems
-if [ -s "/usr/bin/ruby" ]; then
-  export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-  export PATH="$PATH:$GEM_HOME/bin"
+#=> Ruby - ruby - gems
+if [[ ! $PATH =~ ruby ]];then
+  if [ -s "/usr/bin/ruby" ]; then
+    export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+    export PATH="$PATH:$GEM_HOME/bin"
+  fi
 fi
+
+#=> Ruby - rbenv
+[[ $PATH =~ shims ]] || eval "$(rbenv init - --no-rehash bash)" # r ~/.rbenv
 
 #=> system
 alias i=pinfo

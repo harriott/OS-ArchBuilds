@@ -36,7 +36,6 @@ if [[ $myDrA == 1 ]]; then
     # - keep  DROPBOX  capitalised for finding it without need for $
       export core=$DJH/core
         export coreIT=$core/IT
-          export CrPl=$cITCP  # $cITCP  used in  $AjB/bashrc-console  & build scripts
           export onGH=$coreIT/onGitHub
             export vimfiles=$onGH/vimfiles
           export culL=$coreIT/ulLinux
@@ -44,7 +43,14 @@ if [[ $myDrA == 1 ]]; then
               export machLg=$culLA/ml-$host  # as opposed to  $machBld
             export culLB=$culL/Bash  # $culLB  used in  $OSAB/QR/QR.md
           export culLAb="$coreIT/ulLinuxArch-big" # $culLAb
-          export hmlA="$coreIT/ulLinuxArch-huge" # $hmlA
+    export ITcore=$Drpbx/IT/core
+      export onGH=$ITcore/onGitHub
+        export vimfiles=$onGH/vimfiles
+      export culL=$ITcore/ulLinux
+        export culLA=$culL/Arch
+          export machLg=$culLA/ml-$host  # as opposed to  $machBld
+        export culLB=$culL/Bash  # $culLB  used in  $OSAB/QR/QR.md
+      export culLAb="$ITcore/ulLinuxArch-big" # $culLAb
 fi  # depends on  myDrA=  defined in  $machBld/export-machine
 
 #=> 3 (rooting on $onGH) $OSAB, $OSL, and some build dependencies

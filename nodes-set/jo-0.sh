@@ -6,8 +6,8 @@
 
 #=> $notDr
 [ -d $notDr/GR-NF ] || mkdir -p $notDr/GR-NF
-ln -sf $coreIT/notDr/readme.md $notDr/readme.md  # e -la $notDr/readme.md
-ln -sf $coreIT/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
+ln -sf $ITcore/notDr/readme.md $notDr/readme.md  # e -la $notDr/readme.md
+ln -sf $ITcore/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
 
 #=> Alacritty
 ln -sf $machBld/alacritty.toml ~/.alacritty.toml  # DOP3040D11S
@@ -73,7 +73,7 @@ if [[ $myDrA == 1 ]]; then
 else
   ln -sf $OSAB/bs-2-to_X/1-gitconfig ~/.gitconfig
 fi
-# points to further convigurations on  $coreIT
+# points to further convigurations on  $ITcore
 # e -la ~/.gitconfig
 
 #=> gpg-agent configuration

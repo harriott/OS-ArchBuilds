@@ -3131,7 +3131,7 @@ tweaks in  $AjB/bashrc-wm
 ## TeX Live update packages
 su > <root_pw>  for  tlmgr update --all
 ## TeX Live test
-$jtCP/TeX/LaTeX  for  x hello
+$ITmCP/TeX/LaTeX  for  x hello
 ## Updates
   :: Starting full system upgrade...
   warning: sdl3: local (1:3.2.0-3) is newer than extra (3.2.2-1)
@@ -3314,7 +3314,7 @@ su ...  for  tlmgr update --all  got 12
 $machLg/TeXLive/tlmgr/conf-2505272123.txt
 $machLg/TeXLive/tlmgr/info-2505272123.txt
 ## TeX Live test
-$jtCP/TeX/LaTeX  for  x hello
+$ITmCP/TeX/LaTeX  for  x hello
 ## HP Envy Inspire 7220e changed to 90.239
 fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
@@ -3719,7 +3719,7 @@ fRs $vimfiles/vim/packs/packs-cp-full/opt SimpylFold  led me to
 Firefox, Google Chrome stuck
 reboot, getting  xauth  timeout on  ~/.Xauthority, so
   # bash $OSAB/bs-repeatable/su-RootkitHunt.sh  for  $machLg/rkhunter/251127-1354.log
-  $ scs  for  $hmlA/ml-$host/cs
+  $ scs  for  $ulLAhml/ml-$host/cs
 ## Finnix Release Signing Key
 gpg --recv-keys 867279B83BF8E815A236D39E7D6F85C04356E6C2
 ## transmission-qt snag again
@@ -4097,6 +4097,123 @@ error: failed to synchronize all databases (unable to lock database)
 sudo rm /var/lib/pacman/db.lck
 ## nodejs
 :: nodejs-26.2.0-1 and nodejs-lts-jod-22.22.2-1 are in conflict. Remove nodejs-lts-jod? [y/N] y
+## vast  ~/go/
+1.65 GB with 32k files in  ~/go/pkg/mod/github.com
+go clean -modcache
+## Ruby rdoc fix
+Warnings about already initialized constants
+sudo pacman -Rs ruby-stdlib
+  Packages (33) ruby-abbrev-0.1.2-1  ruby-base64-0.3.0-1  ruby-bigdecimal-3.3.1-2  ruby-bundled-gems-3.4.8-2  ruby-bundler-4.0.3-1  ruby-csv-3.3.5-1  ruby-debug-1.11.1-1  ruby-default-gems-3.4.8-2  ruby-drb-2.2.3-1  ruby-getoptlong-0.2.1-1  ruby-matrix-0.4.3-1  ruby-minitest-5.26.1-1  ruby-mutex_m-0.3.0-2  ruby-net-ftp-0.3.9-1  ruby-net-imap-0.5.12-1  ruby-net-pop-0.1.2-5  ruby-net-smtp-0.5.1-1  ruby-nkf-0.2.0-3  ruby-observer-0.1.2-3  ruby-power_assert-2.0.5-4  ruby-prime-0.1.4-1  ruby-racc-1.8.1-2  ruby-rake-13.3.1-1  ruby-rbs-3.8.0-2  ruby-repl_type_completor-0.1.15-1  ruby-resolv-replace-0.2.0-1  ruby-rexml-3.4.4-1  ruby-rinda-0.2.0-2  ruby-rss-0.3.2-1  ruby-syslog-0.4.0-1  ruby-test-unit-3.7.7-1  ruby-typeprof-0.30.1-2  ruby-stdlib-3.4.8-2
+sudo pacman -Rs ruby-irb
+  Packages (3) ruby-erb-4.0.4-9  ruby-rdoc-6.14.0-1  ruby-irb-1.15.0-1
+## gem update
+gem up
+  WARN: Unresolved or ambiguous specs during Gem::Specification.reset:
+    psych (>= 4.0.0)
+    Available/installed versions of this gem:
+    - 5.3.1
+    - 5.2.2
+  WARN: Clearing out unresolved specs. Try 'gem cleanup <gem>'
+  ...
+  sass-embedded's executable "sass" conflicts with sass
+  Overwrite the executable? [yN] y
+  ...
+gem up
+  WARN: Unresolved or ambiguous specs during Gem::Specification.reset:
+    psych (>= 4.0.0)
+    Available/installed versions of this gem:
+    - 5.4.0
+    - 5.3.1
+    - 5.2.2
+  WARN: Clearing out unresolved specs. Try 'gem cleanup <gem>'
+  ...
+gem list psych
+  psych (5.4.0, default: 5.2.2)
+## $JHm
+jekyll s
+  /home/jo/.local/share/gem/ruby/3.4.0/gems/bundler-4.0.13/lib/bundler/runtime.rb:328:in 'Bundler::Runtime#check_for_activated_spec!': You have already activated public_suffix 7.0.5, but your Gemfile requires public_suffix 5.1.1. Prepending `bundle exec` to your command may solve this. (Gem::LoadError)
+bundle exec jekyll s
+  bundler: failed to load command: jekyll (/home/jo/.local/share/gem/ruby/3.4.0/bin/jekyll)
+bundle clean --force
+gem up
+  Error loading RubyGems plugin "/home/jo/.local/share/gem/ruby/3.4.0/plugins/rdoc_plugin.rb": cannot load such file -- /home/jo/.local/share/gem/ruby/3.4.0/gems/rdoc-7.2.0/lib/rubygems_plugin.rb (LoadError)
+  ...
+jekyll s
+  <internal:/usr/lib/ruby/3.4.0/rubygems/core_ext/kernel_require.rb>:136:in 'Kernel#require': cannot load such file -- erb (LoadError)
+gem uninstall *
+  Error loading RubyGems plugin "/home/jo/.local/share/gem/ruby/3.4.0/plugins/rdoc_plugin.rb": cannot load such file -- /home/jo/.local/share/gem/ruby/3.4.0/gems/rdoc-7.2.0/lib/rubygems_plugin.rb (LoadError)
+  Gem '3.4.0' is not installed
+  Gem 'gems' is not installed
+  Gem 'vendor_ruby' is not installed
+rm -r ~/.local/share/gem/ruby/*
+sudo rm -r ~/.local/share/gem/specs/*
+## Ruby rbenv global
+rbenv install 4.0.5  (could've just 4)
+rbenv global 4.0.5
+## Ruby rbenv Jekyll fails
+but  gem up  updated to  ~/.local/share/gem/ruby/3.4.0/
+  so  sudo rm -r ~/.local/share/gem/  to avoid more  rdoc  warnings
+locx bigdecimal.rb  shows system versions more recent
+rbenv which gem
+sudo rm -r ~/.local/share/gem/ruby/3.4.0
+  then hoping to correspond with  gem en, mkdir ~/.local/share/gem/ruby/4.0.0
+    but  gem up  still updated to  ~/.local/share/gem/ruby/3.4.0/
+pacman -Rs asciidoctor ruby
+sudo rm -r ~/.local/share/gem
+then  reboot  to have a fresh  gem en
+finally, gem up  added more recent gems to   ~/.rbenv/versions/4.0.5/lib/ruby/gems/4.0.0/gems
+$JHm/Gemfile  snags, so  rbenv uninstall 4.0.5  then  rbenv install 4
+  then  gem ins github-pages, but that got me outdated versions...
+gem update --system
+but  gem up  snags, so  rbenv uninstall 4.0.5  then  rbenv install 4  then  gem update --system
+  then  gem ins github-pages  still outdated, with loads of other packages
+gem up
+  Updating jekyll-commonmark
+  ERROR:  While executing gem ... (NoMethodError)
+    undefined method 'request' for nil
+    [@failed_dep.dependency, @activated.request.dependency]
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/resolver/conflict.rb:48:in 'Gem::Resolver::Conflict#conflicting_dependencies'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/exceptions.rb:51:in 'Gem::DependencyResolutionError#conflicting_dependencies'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/exceptions.rb:45:in 'Gem::DependencyResolutionError#initialize'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/resolver.rb:189:in 'Exception.exception'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/resolver.rb:189:in 'Kernel#raise'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/resolver.rb:189:in 'Gem::Resolver#resolve'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/request_set.rb:410:in 'Gem::RequestSet#resolve'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/dependency_installer.rb:254:in 'Gem::DependencyInstaller#resolve_dependencies'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/dependency_installer.rb:151:in 'Gem::DependencyInstaller#install'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/commands/update_command.rb:248:in 'Gem::Commands::UpdateCommand#update_gem'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/commands/update_command.rb:260:in 'block in Gem::Commands::UpdateCommand#update_gems'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/commands/update_command.rb:259:in 'Array#each'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/commands/update_command.rb:259:in 'Gem::Commands::UpdateCommand#update_gems'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/commands/update_command.rb:120:in 'Gem::Commands::UpdateCommand#execute'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/command.rb:326:in 'Gem::Command#invoke_with_build_args'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/command_manager.rb:252:in 'Gem::CommandManager#invoke_command'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/command_manager.rb:193:in 'Gem::CommandManager#process_args'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/command_manager.rb:151:in 'Gem::CommandManager#run'
+      /home/jo/.rbenv/versions/4.0.5/lib/ruby/site_ruby/4.0.0/rubygems/gem_runner.rb:56:in 'Gem::GemRunner#run'
+      /home/jo/.rbenv/versions/4.0.5/bin/gem:12:in '<main>'
+rbenv uninstall 4.0.5  then  rbenv install 4  then  gem update --system
+gem ins -v 232 github-pages
+## Ruby rbenv $JHm
+rbenv install 3.3.4
+cd $JHm
+rbenv local 3.3.4
+gem ins -v 232 github-pages
+bundle ins
+  ...
+  Installing commonmarker 0.17.13 with native extensions
+  Gem::Ext::BuildError: ERROR: Failed to build gem native extension
+gem ins -v 0.17.13 commonmarker  kept failing still until I'd Deleted  Gemfile.lock
+bundle ins  succeeded, and also  jekyll s
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.36.50.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.36.50.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## fvm
+somehow installed
+find ~/.pub-cache | wc -l  reported  33459
+dart pub cache clean
 ## waiting
 delete  /run/media/jo/WD30EZRZ/Vs-inform-war
 gokcehan's lf

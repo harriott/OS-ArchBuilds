@@ -11,10 +11,9 @@ set -e  # quit on error
 . ~/.export-machine  # $machBld/export-machine
   Drpbx=$Storage/Dropbox
     DJH=$Drpbx/JH
-      core=$DJH/core
-        coreIT=$core/IT
-          onGH=$coreIT/onGitHub
-            OSAB=$onGH/OS-ArchBuilds
+      ITcore=$Drpbx/IT/core
+        onGH=$ITcore/onGitHub
+          OSAB=$onGH/OS-ArchBuilds
 
 #=> 1 check $OSAB
 # check  $OSAB/nodes-Bash/export-Arch  has leveraged  /ArchBuilds

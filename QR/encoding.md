@@ -1,5 +1,7 @@
 vim: nospell:
 
+    $OSAB/QR/encoding.md
+
     $cITCP/encoding/dpl/Perl/scratch.pl
     $machBld/jo/gitconfig
     archlinux-java status
@@ -68,19 +70,37 @@ GNUPLOT(1)
 - PYGMENTIZE(1)
 - `pz` (`$OSAB/nodes-Bash/bashrc-generic`)
 
-# Ruby
+# Ruby - gem list
 ```bash
+gem list
 gem list --no-versions | tr '\n' ' ' | xcol bundler github-pages jekyll liquid
-gem list > $machLg/gems.gems  # using  $vfv/syntax/gems.vim
-r $GEM_HOME
+rv=$(ruby -v); gem list > "$machLg/ruby${rv:5:1}${rv:7:1}${rv:9:1}.gems"  # using  $vfv/syntax/gems.vim
 ```
+
+includes system-wide gems
 
 ## bundler
     /usr/bin/bundle version
     whereis bundle
-    ~/.local/share/gem/ruby/3.4.0/bin/bundle version
+    ~/.local/share/gem/ruby/3.4.0/bin/bundle
 
 package is `ruby-bundler`
+
+# Ruby - rbenv
+    du -h --max-depth=0 ~/.rbenv/versions/4.0.5/
+    r ~/.rbenv/versions
+    rbenv versions  # reports from  ~/.rbenv/version
+    whereis gem
+
+# Ruby - ruby
+    du -h --max-depth=0 /usr/lib/ruby/
+    r /usr/lib/ruby  # from  extra/x86_64/ruby
+
+## gems
+```bash
+r ~/.local/share/gem
+r $GEM_HOME  # exported from  $AjB/bashrc-console
+```
 
 # Rust
     r ~/.cargo/bin

@@ -4,7 +4,7 @@ $machBld/build.txt ($OSAB/mb-DOP3040D11S/build.txt) Dell OptiPlex 3040 D11S
 
 # build
 ## mature Arch install from i34G1TU02
-see $jtULlA
+see $ITmULlA
 on BX200, no EFI partition
 ## HP Envy Inspire 7220e changed to 202.239
 fixed in  $Imagey/Scan.sh
@@ -217,20 +217,15 @@ pactree -r libayatana-appindicator  returns nowt, so  sudo pacman -Rs libayatana
 gpg --import $cITcc/CP/Raku/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2.asc
 ## moar-debug  remove
 (for  moarvm) sudo pacman -Rs moar-debug
+## qt5-remoteobjects
+pactree -r qt5-remoteobjects  shows nothing so  sudo pacman -Rs qt5-remoteobjects
 ## waiting
-:MasonInstall ltex-ls-plus
-:MasonUninstall ltex-ls
 apache
-Caddy
-dos2unix
 EFI install
-glow
 gokcehan's lf
 MariaDB
-marktext-deb
-moar-debug  remove
-onlyoffice-bin
-thunar-dropbox
+Ruby rdoc fix
+Ruby rbenv
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
