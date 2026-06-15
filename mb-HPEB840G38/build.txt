@@ -1,0 +1,89 @@
+vim: set ft=build nospell:
+
+$machBld/build.txt ($OSAB/mb-HPEB840G38/build.txt)
+
+journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
+# build
+## Arch install - from the ISO
+SDCB32G2  with  ARCH_202606  in rh USB
+F9 at start > UEFI - SanDisk Cruzer Blade 00016523090725025529
+loadkeys fr
+iwctl station wlan0 scan  for  iwctl station wlan0 get-networks
+iwctl station wlan0 connect Jo-OPPO-A76 > pw
+timedatectl
+### partitions
+lsblk  shows  Samsung MZNLN128  is  /dev/sdb
+  gdisk /dev/sda > o (create a new empty GUID partition table GPT & new protective MBR) y
+    w > y
+  gdisk /dev/sdb  (MBR: protection  GPT: present)
+    n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +1g >
+      ef00 (EFI system partition)
+    n > Partition number (defaults to 2) > First sector (defaults to the sector after partition 2) >
+      +4g > 8200 (Linux swap)
+    n > Partition number (defaults to 3) > First sector (defaults to 250068991) > Hex code >
+      8304 Linux x86-64 root (/)
+    w > y
+lsblk  shows  BX500  is  /dev/sda
+  gdisk /dev/sda > o (create a new empty GUID partition table GPT & new protective MBR) y
+    w > y
+  gdisk /dev/sda  (MBR: protection  GPT: present)
+    n > Partition number (defaults to 1) > First sector (defaults to the sector after partition 3) >
+      +60g > Hex code > 8302 (Linux home)
+    n > Partition number (defaults to 2) > First sector (defaults to the sector after partition 5) >
+      Enter > Enter > 8300 (Linux filesystem)
+mkfs.fat -F32 /dev/sdb1
+mkswap /dev/sdb2
+lsblk -f  # --fs - filesystems
+mkfs.ext4 /dev/sdb3 > y
+mkfs.ext4 /dev/sda1
+mkfs.ext4 /dev/sda2
+mount /dev/sdb3 /mnt
+mount --mkdir /dev/sdb1 /mnt/efi
+mount --mkdir /dev/sda1 /mnt/home
+swapon /dev/sdb2
+swapon -s
+timedatectl set-timezone Europe/Paris
+### chroot
+genfstab -U /mnt >> /mnt/etc/fstab
+cat /mnt/etc/fstab
+arch-chroot /mnt
+### in chroot
+ping -c 3 8.8.8.8
+mkdir -p ~/.config/nano
+pacman -S acpi cpupower fbset sudo tig tk turbostat
+fbset -i
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime  (Don't cat it!)
+hwclock --systohc
+not sure if still in chroot so Ctrl+d   arch-chroot /mnt
+sed -i 's/#fr_FR.U/fr_FR.U/' /etc/locale.gen
+grep '^f' /etc/locale.gen
+locale-gen
+echo 'LANG=fr_FR.UTF-8' > /etc/locale.conf
+cat /etc/locale.conf
+loadkeys fr-latin1
+echo KEYMAP=fr-latin1 > /etc/vconsole.conf
+echo HPEB840G38 > /etc/hostname
+
+mount /dev/sdc1 /mnt
+rsync -irtv --delete /mnt/Dr-IT/core/onGitHub/ /onGH
+bash /mnt/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-to_root/1-Bash.sh
+## waiting
+noclear.conf
+no-wait.conf
+# physical configuration
+1366x768 screen
+Intel Core i5-6300U
+RAM CT2K8G4SFRA32A
+## storage
+(essential) M.2 SSD: 119Go Samsung MZNLN128
+LITEON CV1-8B128-HP
+(optional) 2.5" SSD: BX500 shimmed to prevent disconnection
+## Startup Menu
+hold  esc  at start to get into  Startup Menu
+hold  f9  at start to get into  Boot Menu
+hold  f10  at start to get into  BIOS Setup
+### BIOS Setup
+Main > System Information > System BIOS : N75 Ver. 01.53 11/19/2021
+#### Advanced
+Built-in Device Options > Backlit keyboard timeout > 30 secs.
+Secure Boot Configuration > Legacy Support Enable and Secure Boot Disable

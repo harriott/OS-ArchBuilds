@@ -98,7 +98,7 @@ ${color5}/mnt/WD1001FALS ${color3}${fs_used /mnt/WD1001FALS} (${fs_size /mnt/WD1
 
 ${color}enp0s25  down ${color2}${downspeed enp0s25} ${color}up ${color2}${upspeed enp0s25}
 
-${color}wlan0  ${color2}${wireless_essid wlan0}
+${color}wlan0  ${color2}${wireless_essid wlan0} ${color4}${addr wlan0}
 ${color}  down ${color4}${downspeedgraph wlan0 8,140 555555 555555 170} ${color2}${downspeed wlan0}
 ${color}  up   ${color4}${upspeedgraph wlan0 8,140 555555 555555 170} ${color2}${upspeed wlan0}
 ${color}

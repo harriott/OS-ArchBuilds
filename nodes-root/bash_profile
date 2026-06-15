@@ -1,13 +1,16 @@
-# vim: set ft=sh:
+# vim: set ft=sh sw=2:
+
+# $OSAB/nodes-root/bash_profile ($OSAB/nodes-set/root.sh)
 
 # get my  .bashrc  settings working in  Console  &  su
-# cp $OSAB/nodes-root/bash_profile /root/.bash_profile
-# nvim -O $OSAB/nodes-root/bash_profile /root/.bash_profile -c 'windo difft'
+# I'm using symlinks into  /root  to allow easier temporary configurations.
 
-source ~/.export-machine  # $machBld/export-machine
-source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
+# source ~/.export-machine  # $machBld/export-machine
+source ~/.start  # $machBld/Bash_start
+  source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
+    source $OSL/nodes/jo/export  # needed for  $ITccl
 
-[[ -f /root/.bashrc ]] && . /root/.bashrc  # $OSAB/nodes-root/bashrc
+[[ -f /root/.bashrc ]] && source /root/.bashrc  # $OSAB/nodes-root/bashrc
 
-. ~/.config/broot/launcher/bash/br  # - carries through to X
+source ~/.config/broot/launcher/bash/br  # - carries through to X
 

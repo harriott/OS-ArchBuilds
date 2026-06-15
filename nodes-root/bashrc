@@ -1,9 +1,10 @@
-# vim: set ft=sh tw=0:
+# vim: set fdl=2 ft=sh tw=0:
 
 # Joseph Harriott
-# sudo cp $OSAB/nodes-root/bashrc /root/.bashrc
+
+# $OSAB/nodes-root/bashrc ($OSAB/nodes-set/root.sh)
+
 # rbh="/home/jo/Arch/root-bash_history"; sudo cp /root/.bash_history $rbh; sudo chown jo:jo $rbh
-# sudo nvim -O $OSAB/nodes-root/bashrc /root/.bashrc -c 'windo difft'
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
@@ -27,15 +28,15 @@ fss () { fs "$1" > /home/jo/fs.lst; chown jo:jo /home/jo/fs.ffl; }
 #=> 0 more useful tweaks
 alias o=echo
 set -o vi
-if [ -f /home/jo/.bashrc-generic ]; then
-    . /home/jo/.bashrc-generic
-elif [ -f $OSAB/nodes-Bash/bashrc-generic ]; then
-    . $OSAB/Bash/bashrc-generic
+if [ -f $OSAB/nodes-Bash/bashrc-generic ]; then
+    source $OSAB/nodes-Bash/bashrc-generic
+elif [ -f /home/jo/.bashrc-generic ]; then
+    source /home/jo/.bashrc-generic
 fi
 
 # a colorised (bold red) prompt:
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 
 #=> 1 ble.sh, Atuin
-. $OSAB/nodes-Bash/ble-atuin
+source $OSAB/nodes-Bash/ble-atuin
 

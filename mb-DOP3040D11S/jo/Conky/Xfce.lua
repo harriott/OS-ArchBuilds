@@ -96,7 +96,7 @@ ${color}$Storage ${color3}${fs_used /mnt/BX200} (${fs_size /mnt/BX200}) ${color4
 
 ${color}eno1  down ${color2}${downspeed eno1} ${color}up ${color2}${upspeed eno1}
 
-${color}wlan0  ${color2}${wireless_essid wlan0}
+${color}wlan0  ${color2}${wireless_essid wlan0} ${color4}${addr wlan0}
 ${color}  down ${color4}${downspeedgraph wlan0 8,140 555555 555555 150} ${color2}${downspeed wlan0}
 ${color}  up   ${color4}${upspeedgraph wlan0 8,140 555555 555555 150} ${color2}${upspeed wlan0}
 ${color}

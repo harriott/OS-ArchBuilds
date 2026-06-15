@@ -32,11 +32,13 @@ tmux new-window
 tmux select-window -t 1:0
 
 #==> 1 open two panes on my new music directory
-cdm () { tmux send-keys -t 1:0 'cd /mnt/SDU3D1TB/Dropbox/Cop/AM-toSort0' Enter; }
-cdm 0; tmux split-window -t 1:0; cdm 0.1
+cdm () { tmux send-keys -t 1:0 'cd /mnt/SDU3D1TB/Dropbox/music/toSort0' Enter; }
+# cdm 0; tmux split-window -t 1:0; cdm 0.1
+cdm; tmux split-window -t 1:0; cdm
 
 #==> 2 launch nnn & cmus
 tmux send-keys -t 1:0.0 'n' Enter
 tmux send-keys -t 1:0.1 'm' Enter
+tmux select-pane -t 0
 # tmux send-keys -t 1:0.1 'systemctl status rsnapshot-hourly.timer' Enter
 

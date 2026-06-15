@@ -1,11 +1,14 @@
 #!/bin/bash
 # vim: sw=2:
 
+# Sat 13 Jun 2026: haven't used this in ages...
+
 # cd $OSAB/nodes-set; source repair.sh
 # for occasions when I've renamed directories, breaking symlinks
 
 #=> 0 machine specific environment
-source "../mb-$host/export-machine"
+source ~/.start  # $machBld/Bash_start
+  source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
 
 #=> 1 $OSAB (& $AjB), $machBld
 source ../nodes-Bash/export-Arch  # essential

@@ -12,8 +12,8 @@
 
 # DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/notify-send -u critical "cmusqueue.sh $(date +%H%M)"  # uncomment to check if this script is being called
 
-source ~/.export-machine; source ~/.export-Arch  # get  $Drpbx  into cron shell
-rwd="$Drpbx/Cop/AM-toSort0"  # root working directory
+source ~/.start; source ~/.export-Arch  # get  $Drpbx  into cron shell
+rwd="$Drpbx/music/toSort0"  # root working directory
 if pgrep cmus; then
   cmus-remote --server /run/user/1000/cmus-socket -C "cd $rwd"
   cmus-remote --server /run/user/1000/cmus-socket -C 'save -q cmusqueue'

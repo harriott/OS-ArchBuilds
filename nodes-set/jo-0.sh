@@ -10,8 +10,11 @@ ln -sf $ITcore/notDr/readme.md $notDr/readme.md  # e -la $notDr/readme.md
 ln -sf $ITcore/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
 
 #=> Alacritty
-ln -sf $machBld/alacritty.toml ~/.alacritty.toml  # DOP3040D11S
-ln -sf $machBld/Alacritty/Xfce.toml ~/.alacritty.toml  # sbMb
+if [ $host = 'DOP3040D11S' ]; then
+  ln -sf $machBld/alacritty.toml ~/.alacritty.toml
+else
+  ln -sf $machBld/Alacritty/Xfce.toml ~/.alacritty.toml  # sbMb
+fi
 ln -sf $OSAB/nodes-terminal/alacritty-all.toml ~/.alacritty-all.toml
 # e -la ~/.alacritty*
 
@@ -51,7 +54,7 @@ ln -sf $culLA/jo/cmushnotify.sh ~/.local/share/cmushnotify.sh
 ln -sf $ABjo/wm/cmus-rc.conf   ~/.config/cmus/rc  # pb ~/.config/cmus/rc
 
 #=> davfs2.conf
-ln -sf $ABjo/WAN/davfs2.conf ~/.davfs2/davfs2.conf
+[ -d ~/.davfs2/davfs2.conf ] && ln -sf $ABjo/WAN/davfs2.conf ~/.davfs2/davfs2.conf
 
 #=> dictrc
 ln -sf $ABjo/WAN/dictrc ~/.dictrc
@@ -65,6 +68,7 @@ ln -sf $OSAB/nodes-terminal/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
 # e -la ~/.config/fastfetch/config.jsonc
 
 #=> fix Calibri in Thunderbird
+[ -d ~/.config/fontconfig/conf.d ] || mkdir -p ~/.config/fontconfig/conf.d
 ln -sf $ABjo/wm/fontconfig-conf_d-20-no-embedded.conf ~/.config/fontconfig/conf.d/20-no-embedded.conf
 
 #=> Git
@@ -112,12 +116,14 @@ ln -sf $misc/irbrc ~/.irbrc
 # e -la ~/.irbrc
 
 #=> sbMb motherboard temp
-ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
-ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
-# e -la ~/Arch/f1t2t3
+if [ $host = 'sbMb' ]; then
+  ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+  ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+  # e -la ~/Arch/f1t2t3
+fi
 
 #=> Surfraw
-ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
+[ -d ~/.config/surfraw/conf ] && ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 
 #=> tmux
 ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf

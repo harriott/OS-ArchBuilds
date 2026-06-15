@@ -1,0 +1,23 @@
+#!/bin/bash
+# vim: ft=sh sw=2:
+
+# Joseph Harriott, Sat 13 Jun 2026
+
+# $AjB/bashrc-terminal ($OSAB/nodes-set/jo-0-Bash-X.sh) sourced by  $AjB/bashrc
+# see  $OSAB/nodes-set/repair.sh  for checking if this was sourced
+
+# -----------------------
+# working in the terminal
+# -----------------------
+
+# pipx shell completions
+eval "$(register-python-argcomplete pipx)"
+
+ra () {
+  pactl set-sink-volume 0 60%  # master volume to non-distorting level
+  if [ $1 ]; then o=$1; else o=a; fi
+  rec -c 2 $o.flac  # SoX
+}; export -f ra  # ra <stereoAudioRecording>
+
+T (){ emacs -nw $1; }  # in terminal
+

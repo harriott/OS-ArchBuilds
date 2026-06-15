@@ -3,24 +3,26 @@
 
 # Joseph Harriott - Thu 12 Feb 2026
 
-# Bash configurations that are also useful in Console and as root.
+# Bash configurations that are also useful everywhere, including in  Console  and as  root.
 
-# $OSAB/nodes-Bash/bashrc-generic  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh, then
-#  for jo: sourced by  $AjB/bash_profile  &  $AjB/bashrc
-#  for root: sourced by  $OSAB/nodes-root/bashrc
+# $OSAB/nodes-Bash/bashrc-generic
+#  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
+#   for jo: sourced by  $AjB/bash_profile  &  $AjB/bashrc
+#   for root: sourced by  $OSAB/nodes-root/bashrc
 # see  $OSAB/nodes/set/repair.sh  for checking if this was sourced
 
+alias sl='su -l'
 [[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$OSAB/nodes-Bash/blerc"
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
-source $cITcc/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"
+source $ITccl/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"
 [ -f /usr/bin/grc ] && export grc='grc'
 [ -f /usr/bin/rainbow ] && export rainbow='rainbow'
 source $OSL/nodes/bashrc-generic
 
 alias fe=fastfetch
-if [ $TERM_PROGRAM != 'WezTerm' ]; then
-  if [ $TERM != 'screen-256color' ] && [[ -z $in_nvim ]] && [ $(logname) == $(whoami) ]; then
-    if [ $TERM_PROGRAM == 'WezTerm' ]; then
+if [[ $TERM_PROGRAM != 'WezTerm' ]]; then
+  if [[ $TERM != 'screen-256color' ]] && [[ -z $in_nvim ]] && [[ $(logname) == $(whoami) ]]; then
+    if [[ $TERM_PROGRAM == 'WezTerm' ]]; then
       fastfetch -c neofetch.jsonc
     else
       fastfetch
@@ -29,7 +31,7 @@ if [ $TERM_PROGRAM != 'WezTerm' ]; then
 fi
 
 # <esc> <esc> prefixes sudo on last command
-source $cITcc/CP/ohmybash-sudo.plugin.sh
+source $ITccl/unix-linux/ohmybash-sudo.plugin.sh
 
 # tmux
 alias u=tmux
@@ -51,7 +53,7 @@ startxx () {
 }
 
 #=> clamscan
-# $ulLAhml/ml-$host/cs
+# $ITculLAh/ml-$host/cs
 
 #==> 0 prepare
 # go clean -modcache
@@ -59,7 +61,7 @@ startxx () {
 #==> 0 scan
 scs () {
   cslbn="/home/jo/Arch/cs"
-  [ $myDrA ] && cslbn="$ulLAhml/ml-$host/cs"
+  [ $myDrA ] && cslbn="$ITculLAh/ml-$host/cs"
   cslmn=$(date '+%y%m%d-%H%M').log  # clamscan log make name
   cslm=~/Arch/clamscan-$cslmn
   echo "about to clamscan /"
@@ -108,7 +110,7 @@ ft () {
 #=> file contents
 alias mo='moor -style monokai'
 alias pz='pygmentize -O style=paraiso-dark'
-source $cITcc/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
+source $ITccl/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
 
 #==> bat
 alias b='bat'  # syntax highlit cat
@@ -133,7 +135,6 @@ c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
 # - https://superuser.com/a/1244522/242800
 
 export PAGER=less
-source $OSL/nodes/bashrc-generic
 
 if [ -s "/usr/bin/broot" ]; then
   source ~/.config/broot/launcher/bash/br  # (first  broot  adds to  .bashrc)

@@ -7,22 +7,21 @@ vim: nospell:
     archlinux-java status
     b <codeFile>  # syntax'd cat
     bluefish -v
-    fd -tf -u index.lock -x rm
     pb <codeFile>  # also reformatted
     r ~/.cache/hugo_cache
     yj -ty <file.toml >file.yml
-    za $cITcr/CP/encoding/cheatsheet-a5.pdf &  # emmet
+    za $ITref/CP/encoding/cheatsheet-a5.pdf &  # emmet
 
 # ffprobe
     ffprobe -h | mo
     i ffprobe
 
 # gnuplot
-    ff $cITcr/CP/gnuplot/gnuplot_info-colornames.jpg
+    ff $ITref/CP/gnuplot/gnuplot_info-colornames.jpg
     gnuplot -e 'show linetypes' 2> $culLA/gnuplot-linetypes.txt
     gnuplot -e 'show palette colornames' 2> $culLA/gnuplot-colornames.txt
-    za $cITcr/CP/gnuplot/Gnuplot_5_4.pdf
-    za $cITcr/CP/gnuplot/gpcard.pdf
+    za $ITref/CP/documenting/gnuplot/Gnuplot_5_4.pdf
+    za $ITref/CP/documenting/gnuplot/gpcard.pdf
 
 GNUPLOT(1)
 

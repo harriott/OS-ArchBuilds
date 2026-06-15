@@ -109,6 +109,12 @@ sudo pacman -S glow
 #=> java-commons-lang
 sudo pacman -S java-commons-lang  # (for pdftk's functions)
 
+#=> java-environment-common
+sudo pacman -S java-environment-common  # for  JDK
+
+#=> java-runtime-common
+sudo pacman -S java-runtime-common  # supposedly for  JRE, but anyway provides  /usr/bin/java
+
 #=> keepassxc 0 install
 sudo pacman -S keepassxc
 

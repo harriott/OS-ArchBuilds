@@ -12,5 +12,6 @@ trap read debug  # puts a read request after each executable line
 
 #=> 1 $cGRs - needed until Dropbox
 # see  $AjB/export-jo
+# $ITcore/notDr/readme.md
 rsync -iLrtv --delete --modify-window=1 ~/OS-ArchBuilds/GHrUse/ $cGRs
 

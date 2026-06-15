@@ -10,19 +10,20 @@ export loaded_bp=1
 # exports defined here so they can be accessed pre-X, by
 #  $ABjo/Openbox/openbox/autostart, & by gvim
 # kill tmux sessions if you've made changes here
-source ~/.export-machine  # $machBld/export-machine
-source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
-  source ~/.export-linux  # $OSL/nodes/jo/export
+# source ~/.export-machine  # $machBld/export-machine
+source ~/.start  # $machBld/Bash_start
+  source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
+    source ~/.export-linux  # $OSL/nodes/jo/export
 # - carry through to X
 
-# Useful before X (repeated in  $AjB/bashrc):
+# Useful before X:
   source ~/.bashrc-generic  # ($OSAB/nodes-Bash/bashrc-generic) useful everywhere, including root
   source ~/.bashrc-console  # ($AjB/bashrc-console) useful also in Console as user
 # This is commented out because I keep bashrc just for instances in X:
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # backup the previous boot's systemd journal
-journalctl -b -1 > $ulLAhml/ml-$host/jc/$(date '+%y%m%d-%H%M').jctl &
+journalctl -b -1 > $ITculLAh/ml-$host/jc/$(date '+%y%m%d-%H%M').jctl &
 
 # first, test that X hasn't launched for this user
 ps aux | grep $USER | grep -v grep | grep "/usr/lib/Xorg" >& /dev/null

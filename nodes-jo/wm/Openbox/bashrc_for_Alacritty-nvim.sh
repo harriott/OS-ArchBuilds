@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # $Openbox/bashrc_for_Alacritty-nvim.sh
-#  symlinked in  $OSAB/nodes-set/jo-0.sh
+#  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
 #  for  $machBld/jo/openbox/AlacrittyNvim.sh
 #   (bash <this_script>  fails)
 #   size dictated by  nvim

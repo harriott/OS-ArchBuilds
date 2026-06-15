@@ -8,12 +8,8 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 set -e  # quit on error
 
 #=> 0 get $OSAB
-. ~/.export-machine  # $machBld/export-machine
-  Drpbx=$Storage/Dropbox
-    DJH=$Drpbx/JH
-      ITcore=$Drpbx/IT/core
-        onGH=$ITcore/onGitHub
-          OSAB=$onGH/OS-ArchBuilds
+source ~/.start  # $machBld/Bash_start
+  source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
 
 #=> 1 check $OSAB
 # check  $OSAB/nodes-Bash/export-Arch  has leveraged  /ArchBuilds

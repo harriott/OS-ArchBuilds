@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh sw=2:
 
-# $machBld/jo/Bash/bashrc ($OSAB/nodes-set/jo-0.sh) e -la ~/.bashrc
+# $machBld/jo/Bash/bashrc ($OSAB/nodes-set/jo-0-Bash-X.sh) e -la ~/.bashrc
 #  (before this, $AjB/bash_profile  sets up  X11  consoles)
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
@@ -18,7 +18,7 @@ ign() { stat -c '%Y  %s  %n' "$1" >> $culL/video/OBSmkv/ignore; }
 # ign <an_mkv_to_ignore>
 # for m in *.mkv; do ign "$m"; done
 
-# $OBSmkvGrabs  is exported in  $machBld/export-machine
+# $OBSmkvGrabs  is exported in  $machBld/Bash_start
 export OBSmkvGrabsConverted='/mnt/SDU3D1TB/stack/AV/OBSmkvGrabsConverted'
 
 omc() {

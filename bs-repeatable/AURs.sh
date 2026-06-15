@@ -144,12 +144,12 @@ trap read debug  # puts a read request after each executable line
 # # 2 enable systemd timer
 # sudo systemctl enable fangfrisch.timer --now
 
-#=> gcc6
-# maybe for  rbenv
-gAUR gcc6
-nvim -c "silent! /gcc.gnu.org\/gcc-6" PKGBUILD
-makepkg -sic
-true
+# #=> gcc6
+# # maybe for  rbenv
+# gAUR gcc6
+# nvim -c "silent! /gcc.gnu.org\/gcc-6" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> git-extras
 # gAUR git-extras
@@ -352,9 +352,9 @@ true
 # makepkg -sic
 # true
 
-# #=> yay-bin
-# gAUR yay-bin
-# nvim -c "silent! /github.com\/Jguer\/yay\/releases\/download\/v" PKGBUILD
-# makepkg -sic
-# true
+#=> yay-bin
+gAUR yay-bin
+nvim -c "silent! /github.com\/Jguer\/yay\/releases\/download\/v" PKGBUILD
+makepkg -sic
+true
 

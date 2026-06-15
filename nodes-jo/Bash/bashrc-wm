@@ -12,7 +12,7 @@ alias th='thunar' # Xfce
 G (){ emacs --no-splash -fh $1 & }  # GUI
 
 function psc() {
-  pscs="$ulLAhml/ml-$host/pscircle" # pscircle shots
+  pscs="$ITculLAh/ml-$host/pscircle" # pscircle shots
   pscsn="$pscs/$(date +%Y%m%d%H%M%S).png" # pscircle shot now
   pscircle --output=$pscsn --output-height=3600 --output-width=5000
   nsxiv -fn $(ls $pscs | wc -l) $pscs &
@@ -49,11 +49,6 @@ alias st='spectroterm -acp --green 235 --orange 235 --red 235'
 alias miA="mediainfo --Output='General;%Album%'"
 mia () { for v in "$@"; do echo "$(mediainfo --Output='Audio;%Channels%' "$v")   $(mediainfo --Output='Audio;%Format%' "$v")   $(mediainfo --Output='Audio;%BitRate%' "$v") b/s   $(mediainfo --Output='Audio;%SamplingRate%' "$v") Hz   "$v""; done; }  # mi *
 # music_rotate
-
-fm () {
-  for category in best good good-US joy-copies toSort0 toSort1-USA; do
-    fd $1 "$Drpbx/Cop/AM-$category"; done
-} # fm lowlands | grep Baez
 
 #=> AV
 # $onGH/FM-rsync-drives/rsync0-sbMb-Vs.sh
@@ -261,10 +256,10 @@ m4ps() {
 } # m4ps 0 (= don't redo) [1 (= no ToC)]
 
 #=> documenting - PDF
-alias mmsc="zathura -P 427 $cITcr/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf &"
+alias mmsc="zathura -P 435 $ITref/CP/documenting/TeX/LaTeX/structure/classes/memoir/memman.pdf &"
 # - p.389 Appendix B Showcase B1 Chapter styles
-alias pif="zathura -P 9 $cITcr/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf &"
-alias xc="zathura -P 38 $cITcr/CP/TeX/LaTeX/appearance/colour/xcolor.pdf &"
+alias pif="zathura -P 9 $ITref/CP/documenting/TeX/LaTeX/appearance/font/psnfss2e.pdf &"
+alias xc="zathura -P 38 $ITref/CP/documenting/TeX/LaTeX/appearance/colour/xcolor.pdf &"
 za () { zathura "$1" & }
 
 gspdfpng() {
@@ -377,8 +372,8 @@ alias pq='pqiv * &'
 alias pqs='pqiv -d 2 -F -s * &'  # 2s fade slideshow
 
 #=> Jekyll
-js () { cd $JHm; echo $JHm; bundle exec jekyll serve --drafts; }
-jt () { cd $JHm; rm tag/*; python $JHm/_plugins/compile_tags.py; cd tag; }
+js () { cd $Jhm; echo $Jhm; bundle exec jekyll serve --drafts; }
+jt () { cd $Jhm; rm tag/*; python $Jhm/_plugins/compile_tags.py; cd tag; }
 
 #=> WAN
 alias aw='ansiweather -f 7'
@@ -442,14 +437,14 @@ dcc1 () {
 
 #==> Thb
 function Tg() {
-  # rsync -irtv --delete $JHThb/ ~/.thunderbird/jo
-  rsync -irtv --delete $JHThb/ $thb/jo
+  # rsync -irtv --delete $DrThb/ ~/.thunderbird/jo
+  rsync -irtv --delete $DrThb/ $thb/jo
   echo "- you can now run Thunderbird on this machine"
 } # Thunderbird get from Dropbox
 
 function Tp() {
   # find $thb | wc -l
-  rsync -irtv --delete $thb/jo/ $JHThb
-  echo "$(find $JHThb -type f -printf '%Ty%Tm%Td-%TH%TM%.2TS\n' | sort -k1,1r | head -1)  $host  \$JHThb $(find $JHThb | wc -l)" >> $cITCP/WAN/email-Thunderbird/activity
+  rsync -irtv --delete $thb/jo/ $DrThb
+  echo "$(find $DrThb -type f -printf '%Ty%Tm%Td-%TH%TM%.2TS\n' | sort -k1,1r | head -1)  $host  \$DrThb $(find $DrThb | wc -l)" >> $cITCP/WAN/email-Thunderbird/activity
 }
 

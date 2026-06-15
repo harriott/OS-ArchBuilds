@@ -1,26 +1,19 @@
 #!/bin/bash
 # vim: ft=sh sw=2:
 
-# $AjB/bashrc-console  symlinked in  $OSAB/nodes/set/jo-0.sh
-#  then sourced by  $AjB/bash_profile  &  $machBld/jo/Bash/bashrc
+# $AjB/bashrc-console  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
+#  then sourced by  $AjB/bash_profile  &  $AjB/bashrc
 # see  $OSAB/nodes-set/repair.sh  for checking if this was sourced
 
 # useful also in Console as user
 
-# -----------------------------------------------------------
-# These are more settings that can also be useful in Console.
-# -----------------------------------------------------------
+# -------------------------------------------
+# settings that can also be useful in Console
+# -------------------------------------------
 
 # Joseph Harriott, Sat 14 Feb 2026
 
 export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
-T (){ emacs -nw $1; }  # in terminal
-
-ra () {
-  pactl set-sink-volume 0 60%  # master volume to non-distorting level
-  if [ $1 ]; then o=$1; else o=a; fi
-  rec -c 2 $o.flac  # SoX
-}; export -f ra  # ra <stereoAudioRecording>
 
 #=> Bash interface
 alias o=echo
@@ -37,15 +30,10 @@ source /usr/share/doc/pkgfile/command-not-found.bash
 export EDITOR=nvim
 export VISUAL=gvim
 
-# pipx shell completions
-eval "$(register-python-argcomplete pipx)"
-
 # prompt
 source "/usr/share/git/completion/git-prompt.sh"; source $OSL/nodes/bashrc-console-prompt
 
 #=> file manage
-alias rsA0='bash $onGH/rsync-portabledrives/rsync-Dr0archive.sh'
-alias rsA1='bash $onGH/rsync-portabledrives/rsync-Dr1archive.sh'
 alias v=vifm
 source $OSL/nodes/bashrc-console-fm
 
@@ -103,7 +91,7 @@ skl () { sk --ansi -i -c 'rg --color=always --line-number "{}"'; } # for finding
 alias ga='git add'
 alias gsbs='git status -bs'
 alias gsu='git status -u'
-export BFG=$cITCP/bfg-1.13.0.jar
+export BFG="$ITccl/CP/bfg-1.15.0.jar"
 gic () { git commit -m "$1"; }
 
 fgc () {
@@ -126,33 +114,33 @@ lg() {
 
 #==> lists of files by content
 alias rgo="rg --field-match-separator ':::'"
-# rgo rsync $DJH > $DJH/search/rsync.rgo ($vfv/syntax/rgo.vim)
+# rgo rsync $DrJo > $Drpbx/search/rsync.rgo ($vfv/syntax/rgo.vim)
 
 rgIT () {
-  cd $DJH/search
-  f=IT-rg.ffl  # $DJH/search/IT-rg.ffl
+  cd $Drpbx/search
+  f=IT-rg.ffl  # $Drpbx/search/IT-rg.ffl
   echo '' > $f
   rgc="rg -l $1 $Drpbx/IT"
   echo '' >> $f; echo $rgc >> $f
   echo '' >> $f; $rgc >> $f; echo '' >> $f
-  echo "- now open  $DJH/search/IT-rg.ffl"
+  echo "- now open  $Drpbx/search/IT-rg.ffl"
 } # rgIT <text_to_find_in_many_filetypes>
 
 SE () {
-  cd $DJH/search
+  cd $Drpbx/search
   f=SEN.ffl
   [ -s $f ] && rm $f
   echo '' > $f; echo 'SE  -see  $AjB/bashrc-console'
-  for ITd in $Drpbx/IT $JHw/France; do
+  for ITd in $Drpbx/IT $Jwk/France; do
     echo '' >> $f
     rg -l -tmd 'stackexchange|stackoverflow|superuser' $ITd | sort >> $f
   done
   echo '' >> $f
-  echo 'now open $DJH/search/'$f
+  echo 'now open $Drpbx/search/'$f
 } # /stackexchange\|stackoverflow\|superuser
 
 #===> my Arch Forum issues
-# $DJH/search
+# $Drpbx/search
 
 fbbcode () {
   bbcf='fbbcode.ffl'
@@ -164,7 +152,7 @@ fbbcode () {
   { echo $rgb; echo; } >> $bbcf
   eval $rgb >> $bbcf; echo >> $bbcf
   echo "results are in $bbcf"
-} # $DJH; fbbcode
+} # $DrJo; fbbcode
 
 #===> time-sorted - my GitHub issues
 ghi () {
@@ -194,7 +182,7 @@ EC0 () {
 }
 EC1 () {
   EC0
-  cel="$core/encrypted/last"
+  cel="$DrJo/now/encrypted/last"
   lr=$(tail -1 $cel) # last recorded
   lrts=${lr:0:17}; echo "last: $lrts"
   mapfile -t ll < <(find . ! -wholename '*/.git/*' -printf %TY%Tm%Td-%TH:%TM:%.2TS\ %p\\n | sort) # local list
@@ -217,8 +205,8 @@ EC2 () {
         mapfile -t all < <(find . -iname "$E*.7z" -printf %TY-%Tm-%Td\ %TH:%TM\ En\ %P\\n | sort)
         mapfile -t ch < <(find -path "./$E*" -newer $ed7z -printf %TY-%Tm-%Td\ %TH:%TM\ En\ %P\\n | sort) # changes
         all+=("${ch[@]}")
-      # ce = $core/encrypted
-        mapfile -t ce < <(find "$core/encrypted" -name "$E*" -printf %TY-%Tm-%Td\ %TH:%TM\ ce\ %P\\n) # $core/encrypted
+      # ce = $DrJo/now/encrypted
+        mapfile -t ce < <(find "$DrJo/now/encrypted" -name "$E*" -printf %TY-%Tm-%Td\ %TH:%TM\ ce\ %P\\n) # $DrJo/now/encrypted
         all+=("${ce[@]}")
       printf '%s\n' "${all[@]}" | sort | xcol ${Encrypted[@]}
     fi

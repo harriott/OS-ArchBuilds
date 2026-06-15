@@ -4214,13 +4214,17 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 somehow installed
 find ~/.pub-cache | wc -l  reported  33459
 dart pub cache clean
+## Java fix
+java -version  wasn't working until I re-installed  java-runtime-common
+## root nvim
+somehow there, so  rm 
 ## waiting
-delete  /run/media/jo/WD30EZRZ/Vs-inform-war
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
 Recoll
 switch to fastmail
+TeX Live release 2026 full
 # clm possible extras
 imapbox
 maildir-rank-addr
@@ -4367,6 +4371,7 @@ Terminal > Edit > Preferences > Appearance > Font > 8
 ## Applications > Settings
 Keyboard >
   Application Shortcuts >
+    alacritty > Super+A
     cmus-remote -u > Super+C
     google-chrome-stable > Super+G
     exfalso > Super+F

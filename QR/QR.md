@@ -45,7 +45,7 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 
 ### queue
     $ABjo/wm/cmusqueue.sh
-    $Drpbx/Cop/AM-toSort0/cmusq
+    $Drpbx/music/toSort0/cmusq
 
 ## Kew
     $ABjo/kewrc
@@ -84,7 +84,7 @@ follows my `PCManFM` folder settings
     /etc/profile
     :Man bash
     :Man mktemp
-    esc esc  # toggle sudo
+    EscEsc  # toggle sudo
     pinfo bash
     pinfo -m bash
     tput bel  # bell
@@ -108,6 +108,8 @@ ENV(1)
     $OSAB/nodes-Bash/blerc
 
 - ` ` expands
+- `Ctrl-xCtrl-v` = `display-shell-version`
+- `F1` = `vi_xmap/command-help`
 - Stopped jobs might need `kill -9 %1` twice...
 
 ## completion
@@ -231,31 +233,31 @@ JOBS(1P)
     zathura -P <page> <pdf> &
 
 ## TeX - copied resources
-    r $cITcr/CP/TeX
-    za $cITcr/CP/TeX/albatross-manual.pdf
-    za $cITcr/CP/TeX/blindtext.pdf
-    za $cITcr/CP/TeX/LaTeX/etoolbox.pdf
-    za $cITcr/CP/TeX/LaTeX/appearance/colour/xcolor.pdf
-    za $cITcr/CP/TeX/LaTeX/appearance/datetime2.pdf
-    za $cITcr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
-    za $cITcr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
-    za $cITcr/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/worldflags.pdf
-    za $cITcr/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
-    za $cITcr/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
-    za $cITcr/CP/TeX/LaTeX/appearance/ragged2e.pdf
-    za $cITcr/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
-    za $cITcr/CP/TeX/LaTeX/appearance/url.pdf
-    za $cITcr/CP/TeX/LaTeX/LaTeX3/tabularray.pdf
-    za $cITcr/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
-    za $cITcr/CP/TeX/LaTeX/structure/CV/Currvita/currvita.pdf
-    za $cITcr/CP/TeX/LaTeX/structure/multicol.pdf
-    za $cITcr/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
-    za $cITcr/CP/TeX/LaTeX/structure/parts/labelling/fancyref.pdf
-    za $cITcr/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
-    za $cITcr/CP/TeX/LaTeX/structure/parts/lists/enumitem.pdf
-    za $cITcr/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
-    za $cITcr/CP/TeX/LaTeX/structure/parts/scalerel.pdf
-    za $cITcr/CP/TeX/LaTeX/structure/pdfpages.pdf
+    r $ITref/CP/TeX
+    za $ITref/CP/TeX/albatross-manual.pdf
+    za $ITref/CP/TeX/blindtext.pdf
+    za $ITref/CP/TeX/LaTeX/etoolbox.pdf
+    za $ITref/CP/TeX/LaTeX/appearance/colour/xcolor.pdf
+    za $ITref/CP/TeX/LaTeX/appearance/datetime2.pdf
+    za $ITref/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
+    za $ITref/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
+    za $ITref/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/worldflags.pdf
+    za $ITref/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
+    za $ITref/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
+    za $ITref/CP/TeX/LaTeX/appearance/ragged2e.pdf
+    za $ITref/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
+    za $ITref/CP/TeX/LaTeX/appearance/url.pdf
+    za $ITref/CP/TeX/LaTeX/LaTeX3/tabularray.pdf
+    za $ITref/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
+    za $ITref/CP/TeX/LaTeX/structure/CV/Currvita/currvita.pdf
+    za $ITref/CP/TeX/LaTeX/structure/multicol.pdf
+    za $ITref/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
+    za $ITref/CP/TeX/LaTeX/structure/parts/labelling/fancyref.pdf
+    za $ITref/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
+    za $ITref/CP/TeX/LaTeX/structure/parts/lists/enumitem.pdf
+    za $ITref/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
+    za $ITref/CP/TeX/LaTeX/structure/parts/scalerel.pdf
+    za $ITref/CP/TeX/LaTeX/structure/pdfpages.pdf
 
 ## TeX - LaTeX
     r $cGRs/CP/MartinThoma-LaTeX-examples
@@ -275,7 +277,7 @@ JOBS(1P)
 
 ## TeX - my packages
     r $LTXj
-    r $JHt/IT/CP/TeX/LaTeX
+    r $ITmore/CP/TeX/LaTeX
     r ~/texmf
 
 ## TeX Live
@@ -294,7 +296,6 @@ JOBS(1P)
     /usr/local/texlive/2025/texmf-dist/doc/latex/comprehensive/source/symbols.tex
     /usr/local/texlive/2025/texmf-dist/doc/
     /usr/local/texlive/2025/texmf-dist/tex/latex/base/nfssfont.tex
-    gdu -nps /usr/local/texlive
     za /usr/local/texlive/2025/texmf-dist/doc/latex/comprehensive/rawtables-a4.pdf
     za /usr/local/texlive/2025/texmf-dist/doc/latex/comprehensive/symbols-a4.pdf
     za /usr/local/texlive/2025/texmf-dist/doc/latex/memoir/memman.pdf
@@ -310,6 +311,11 @@ JOBS(1P)
 ##### update as su
     tlmgr update --all
     tlmgr update --self
+
+#### size
+    13 GiB
+    du -h --max-depth=0 /usr/local/texlive
+    gdu -nps /usr/local/texlive
 
 #### tcolorbox
     /usr/local/texlive/2025/texmf-dist/doc/latex/tcolorbox/README.md
@@ -328,7 +334,7 @@ JOBS(1P)
 ## resources
     fd -e org -p $cGRs
     r $cGRs/d-CP/d-emacs/r-syl20bnr-spacemacs  # local fresh clone
-    r $cITcr/CP/encoding/Emacs  # PDF guides
+    r $ITref/CP/encoding/Emacs  # PDF guides
 
 ### Worg
     $cGRs/emacs/_bzg-worg/orgcard.org
@@ -360,7 +366,7 @@ JOBS(1P)
 - TAIL(1)
 
 ## awk
-    $cITcr/unix-like/awk
+    $ITref/unix-like/awk
 
 - `-F fs`, (`--field-separator fs`) redefines `FS`
 - GAWK(1)
@@ -376,7 +382,7 @@ RG(1)
     i rg
 
 ## sed
-    $cITcr/unix-like/sed
+    $ITref/unix-like/sed
     i sed
     sed -i '/match/{n;Q}' <file>  # remove all lines after match
     tldr sed
@@ -390,7 +396,7 @@ SED(1)
     tldr tldr
 
 # file manage
-    cd $DJH; fd -tf -u index.lock -x rm
+    cd $Drpbx; fd -tf -u index.lock -x rm  # in  .git/  folders
     i lsd
     n [directory]
 
@@ -558,7 +564,7 @@ unalias **<tab>
 
 ## ranger
     $OSL/nodes/terminal-ranger/JH.md
-    feh $cITcr/unix-like/cheatsheet.png &
+    feh $ITref/unix-like/cheatsheet.png &
     r /mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/OS-Linux/nodes/terminal-ranger/scope.sh
     ranger --version
 
@@ -659,16 +665,12 @@ unalias **<tab>
     systemctl status rsnapshot-hourly.timer
 
 ### find
-    r $rsnapshot/aaa.0/$host/$Drpbx/Cop/AM-toSort0
     r $rsnapshot/aaa.0/$host/$DWp
     r $rsnapshot/aaa.1/localhost/$DWp
     r $rsnapshot/aaa.0/$host/home/jo/.recoll
-    r $rsnapshot/daily.0/$host/$Drpbx/Cop/AM-toSort0
     r $rsnapshot/daily.0/$host/$Drpbx/Photos
-    r $rsnapshot/daily.1/$host/$Drpbx/Cop/AM-toSort0
     r $rsnapshot/daily.1/$host/$Drpbx/Photos
     r $rsnapshot/daily.6/$host/$Drpbx/Photos
-    r $rsnapshot/hourly.0/$host/$Drpbx/Cop/AM-toSort0
     r $rsnapshot/hourly.1/$host/$Drpbx/Photos
     r $rsnapshot/hourly.6/$host/$Drpbx/Photos
 
@@ -678,16 +680,9 @@ unalias **<tab>
     fRs $CfWk/technos/civil/catering/CM-DeLonghiDinamica/Fr staplable.tex
     fRs $DaLi SNCF
     fRs $Drpbx/Cop Björk
-    fRs $Drpbx/Cop AM-toSort0 1
     fRs $Drpbx/Cop US 1
-    fRs $Drpbx/Cop/AM-toSort0 Europe
-    fRs $Drpbx/Cop/AM-toSort0 France
-    fRs $Drpbx/Cop/AM-toSort0 UK
-    fRs $Drpbx/Cop/AM-toSort0/Europe Nordic
-    fRs $Drpbx/Cop/AM-toSort0/Europe/Nordic Björk
     fRs $DWp/pn/internet internet.dw
     fRs $cITcc unix-linux-forArch-fonts
-    fRs $JHw _config.yml
     fRs $ITmCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
     fRs $machBld/jo/Bash VsLmore
@@ -732,7 +727,6 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
 ### recent directories
     $rsnapshot/hourly.0/localhost$CzMa/planning/m1-n/n9t-_benevoles-appels-Joseph
     $rsnapshot/hourly.0/localhost$CzMaEx/mine/oab-/noReceipts
-    $rsnapshot/hourly.0/localhost/mnt/SDU3D1TB/Dropbox/Cop/AM-toSort0
     $rsnapshot/hourly.1/localhost$CzMaEx/mine/oab-/noReceipts
 
 ### recover folder
@@ -764,9 +758,9 @@ NCDU(1)
     i tree
 
 ## Vifm
-    FF $cITcr/CP/vifm-v0.12-builtin-normal.png
+    FF $ITref/CP/vifm-v0.12-builtin-normal.png
     v  # ($AjB/bashrc-console)
-    v $DJH $DJH
+    v $DrJo $DrJo
 
 ## zoxide
     ~/.local/share/zoxide/db.zo
@@ -841,8 +835,11 @@ gpg(1)
     f       -> next search term
 
 # hw
+    :e /run/media/jo
     cd /sys/devices/system/cpu/cpu0/cpufreq
     doas showkey  # keycodes
+
+WIPEFS(8)
 
 ## avio
     /sys/class/backlight/intel_backlight/max_brightness
@@ -979,25 +976,6 @@ pqiv(1)
 
 see `$Imagey/Scan.sh`
 
-# LanguageTool package
-```bash
-languagetool  # GUI
-whereis languagetool
-```
-
-# LanguageTool symlinked
-```bash
-java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar -h
-java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
-java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --list  # languages
-```
-
-## version
-```bash
-$cITcc/CP/LanguageTool/README.md
-java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
-```
-
 # multimedia
     /usr/lib/vlc/plugins
     ~/.config/obs-studio/logs
@@ -1032,13 +1010,42 @@ won't open if `cmus` is playing a track
     r ~/.cache/openshot
     r ~/.local/share/openshot
 
+# natural languages
+    grammalecte-cli -h
+
+## LanguageTool package
+```bash
+languagetool  # GUI
+whereis languagetool
+```
+
+## LanguageTool symlinked
+```bash
+java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar -h
+java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
+java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --list  # languages
+```
+
+### version
+```bash
+$cITcc/CP/LanguageTool/README.md
+java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
+```
+
 # network
+    :Man iwctl
     curl ifconfig.co  # IP address
     curl ifconfig.co/country
     doas bandwhich
+    s="$machLg/network/services"; o 'vim: ft=services:' > $s; echo '' >> $s; cat /etc/services >> $s
     sudo dhcpcd wlwg111v2
     sudo ls /var/lib/dhcpcd/
     systemctl status nordvpnd.service
+
+## ss
+    ss -aO > $machLg/network/ss-$(date +%y%m%d-%H%M)
+
+SS(8)
 
 ## hostnames
     https://localhost/
@@ -1108,6 +1115,7 @@ pacman -Sg base-devel  # lists all
     pacman -Qq sd > ~/pacman_sd
     pacman -Qqs xfce
     pacman -Qu | grep -Eo '^[^ ]+' | xargs pacman -Si | grep -E 'Name|Depends On' | grep -B1 'nodejs-lts-jod'
+    pacman -Sy archlinux-keyring  # refreshes it
     pacman -v  # --verbose - lists local paths
     pkgfile -l <package>  # lists all installed files
     sudo du -sh /var/cache/pacman/pkg
@@ -1132,6 +1140,7 @@ pacman(8)
 
 ### list local and remote packages
 ```bash
+pacman -Qqs ruby
 pacman -Ss <keyword>
 pacsearch <keyword>  # better search
 ```
@@ -1191,7 +1200,7 @@ pass cz/GmailAPI/token-expire
     kill -9 "$(pidof perl)"
 
 ## Bash
-    [ -f $JHThb/parent.lock ] && echo zero file size
+    [ -f $DrThb/parent.lock ] && echo zero file size
     r $culLB
 
 ### ANSI escape sequences
@@ -1227,7 +1236,6 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
     fd -tf -u -e bmp -e gif -e ico -e jfif -e jp2 -e jpeg -e jpg -e png -e sog -e tif -e tiff . /usr/share > $machLg/usr/share/imagey.ffl
-    i localectl
     lnav /var/log  # then  Esc  to get out of weird editing mode
     r /usr/share/applications  # the  *.desktop  files
     slock  # unlocks when correct user pw is entered
@@ -1239,6 +1247,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 - `Qt`: `Q qt6`
 - `su` > root pw for `st="$culLAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`
+- SU(1)
 - Trusted Users
 
 ## .desktop
@@ -1256,6 +1265,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 1. b reBoot
 
 ## boot
+    cat /sys/firmware/efi/fw_platform_size  # 64 indicates booted in UEFI
     find /boot/vmli*  # lists available kernels
     find /dev/disk/by-designator -type l -ls
 
@@ -1328,6 +1338,10 @@ uses `fzf`
 - HVD Steinzeit
 - icomoon
 
+## locale
+    i localectl
+    localectl list-locales
+
 ## mimeapps
     /usr/share/applications/mimeinfo.cache
     gio yime
@@ -1382,6 +1396,14 @@ to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
     journalctl | grep Consumed
 
 backed up in `$AjB/bash_profile`
+
+## time
+    sudo hwclock --show
+
+### timedatectl
+    sudo timedatectl set-timezone Europe/Paris
+
+TIMEDATECTL(1)
 
 ## windows managers
     xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
@@ -1438,11 +1460,11 @@ backed up in `$AjB/bash_profile`
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
 # terminal
-    fgconsole  # reports tty number
     neofetch
     o $PAGER
     o $TERM
     o $TERM_PROGRAM
+    sudo fgconsole  # reports tty number
     watch -n1 "date '+%D%n%T' | figlet -k"
 
 ## Alacritty
@@ -1524,6 +1546,10 @@ TMUX(1)
 ### key binds
     $OSL/nodes/terminal-tmux/tmux.conf
     C-a :  # command prompt
+      $ 3       # rename current session to 3
+      new -s 1  # new session named 1
+      selectp -t 0
+      selectw -t 0:0
     C-a ?  # list-keys -Na
     C-a [  # copy-mode
     C-a <  # display-menu
@@ -1587,7 +1613,7 @@ TMUX(1)
 
 ## WezTerm
     $OSAB/nodes-terminal/wezterm.lua
-    wezterm show-keys --lua > $cITcr/WezTerm-show-keys.lua
+    wezterm show-keys --lua > $ITref/WezTerm-show-keys.lua
 
 # text wrangling
     $cGRs/CP/vim/vim/README.md
@@ -1602,7 +1628,7 @@ TMUX(1)
     ~/.local/share/copyq/copyq/copyq.log
 
 ## vi
-    n $cITcr/CP/encoding/textWrangling-vi
+    n $ITref/CP/encoding/textWrangling-vi
 
 ### vim variants
     rsync -irtv --delete $vimfiles/ ~/Play0/vfb
@@ -1649,162 +1675,6 @@ nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/par
     C /usr/share/vim/vim91/ftplugin/
     C /usr/share/vim/vim91/syntax/
     C /usr/share/vim/vim91
-
-# WAN
-    i yt-dlp
-    whois
-
-WGET(1)
-
-## Apache HTTP Server
-    /var/log/httpd/access_log
-    /var/log/httpd/error_log
-    r /etc/httpd/conf
-    sudo rm -r /srv/http/*
-
-HTTP Server
-
-### /etc/httpd/conf/httpd.conf
-configured in `$OSAB/bs-4-whenWM/1-softwares.sh`
-
-### httpd.service
-    sudo systemctl disable httpd.service --now
-    sudo systemctl enable httpd.service --now
-    sudo systemctl restart httpd.service; systemctl status httpd.service
-    sudo systemctl start httpd.service
-    sudo systemctl stop httpd.service
-    systemctl status httpd.service
-
-## browse
-    xdg-open https://archlinux.org
-    ncdu ~/.config/google-chrome
-
-### Chawan
-    ch -v
-    ch https://en.wikipedia.org
-    ~/.config/chawan/history.uri
-
-### Firefox
-    st="$HOME/.mozilla/firefox/6qq4cnaa.default-release/storage"
-        for big in $st/archives $st/default; do find $big | wc -l; done
-
-### w3m
-    /usr/share/doc/w3m/keymap.default
-    i w3m
-    ws 'https://lite.duckduckgo.com/lite?q=non+duality'
-    ws http://en.wikipedia.org/wiki/W3m
-    ~/.w3m/config
-
-## cloud storage - Dropbox
-```bash
-dropbox &  # as in  $Obc/autostart/autostart
-killall dropbox
-lsof -c dropbox
-pgrep dropbox
-pkill dropbox; dropbox &
-```
-
-### conflicted copies
-```bash
-find $Drpbx -path $Drpbx/conflicted -prune -o -name "* conflicted copy*"
-find -name "* conflicted copy*" -exec rm -f {} \;
-find -name "*(Copie en conflit de *"
-```
-
-## email - mutt notmuch
-```bash
-$OSL/nodes/bashrc-clm
-grep -r "Georita" *
-rsync -irtv --delete $maild/ ~/Arch/maild-$(date '+%Y%m%d%H%M')
-```
-
-### $maild
-    fd . */*/cur | wc -l  # all of my seen emails
-    fd . */*/new  # as yet unseen, a few
-    fd . */*/tmp  # usually nothing here, can be ignored
-    ~/.local/share/mail/.notmuch
-
-### mutt
-    $clMn/muttrc-general
-    f => forward
-    F => toggle important flag (= Star in Gmail)
-
-#### accounts
-    $clMn/muttrc-accounts/fm
-    $clMn/muttrc-accounts/troh
-
-##### zou
-    $clMn/muttrc-accounts/zou
-    echo "content" | nmz -s "subject" jharr@ftml.net -a <attachment1> -a <attachment2> ...
-
-### notmuch
-    $lclm/notmuch-config-backup
-
-#### search
-    nmse najac date:2022
-    nmse from:/gough/ date:2023
-    nmse from:/j.harriott/ date:2023
-    nmse tag:cz tag:zou '*lait*'
-    nmse tag:cz tag:zou | wc -l
-    nmse tag:zou date:2023
-    nmse tag:zou date:june2023
-    nmse '"pattern with spaces"'
-
-##### providors
-- orange.fr
-- yahoo!mail
-
-##### wildcard
-    nmse 'orf*'  # finds ORFILA
-
-Only possible at end of string...
-
-### URLs unclickable by receiver
-URLs (such as in an email sent from `mutt`) unclickable - so better to send to them with `Thunderbird`
-
-## email - Thunderbird
-    default-release:  find -name "* conflicted copy*" -exec rm -f {} \;
-
-locks: `pb $JHThb/linuxlock; pb $JHThb/Win10ProLock`
-
-## Jekyll
-	r $JHm
-
-`js`, `jt` defined in `$AjB/bashrc-wm`
-
-## Nginx
-    /etc/nginx/nginx.conf  # http://127.0.0.3
-    /etc/nginx/mime.types
-    /usr/share/nginx/html/index.html
-    r /usr/share/nginx/html
-
-    rsync -irtv --delete /usr/share/nginx/test/ $ITmULl/Arch/networking-usr-share-nginx-test
-
-### nginx.service
-    sudo systemctl disable nginx.service --now
-    sudo systemctl enable nginx.service --now
-    sudo systemctl restart nginx.service
-    systemctl status nginx.service
-
-## SSH
-    $cITCP/networking-SSHconfig/$host
-    i sshd_config
-    ~/.ssh/config
-
-## speed
-    cloudflare-speed-cli --help
-    speedtest-cli -h
-
-## weather
-    aw
-
-### wttr.in
-```bash
-curl wttr.in/London
-curl wttr.in/Moscow
-curl wttr.in/Salt+Lake+City
-wp  # in Paris
-```
 
 # web serving
     /etc/php/php.ini

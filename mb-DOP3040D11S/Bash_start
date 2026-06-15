@@ -1,12 +1,12 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh:
 
-# $machBld/export-machine
+# $machBld/Bash_start
 
 # machine-specific exports that could also be useful as root
 
 # for jo:
-#  symlinked in  $OSAB/nodes-set/jo-0.sh
+#  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
 #  sourced by  $AjB/bash_profile
 # for root:
 #  symlinked in  $OSAB/nodes-set/root.sh
