@@ -143,7 +143,8 @@ SE () {
 # $Drpbx/search
 
 fbbcode () {
-  bbcf='fbbcode.ffl'
+  cd $Drpbx/IT
+  bbcf='bbcode.ffl'
   echo "" > $bbcf; echo $PWD >> $bbcf; echo "" >> $bbcf
   fdb='fd -tf -e bbcode'
   { echo $fdb; echo; } >> $bbcf
@@ -151,8 +152,8 @@ fbbcode () {
   rgb="rg -ttxt -l --sort modified 'ft=bbcode'"
   { echo $rgb; echo; } >> $bbcf
   eval $rgb >> $bbcf; echo >> $bbcf
-  echo "results are in $bbcf"
-} # $DrJo; fbbcode
+  echo 'results are in $Drpbx/IT/'$bbcf
+}
 
 #===> time-sorted - my GitHub issues
 ghi () {

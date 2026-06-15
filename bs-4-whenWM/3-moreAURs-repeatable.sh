@@ -157,11 +157,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes a while
 # true
 
-# #=> Google Chrome
-# gAUR google-chrome
-# nvim -c "silent! /dl.google.com" PKGBUILD
-# makepkg -sic
-# true
+#=> Google Chrome
+gAUR google-chrome
+nvim -c "silent! /dl.google.com" PKGBUILD
+makepkg -sic
+true
 
 # #=> gst123
 # gAUR gst123
@@ -228,11 +228,11 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic  # takes some time
 # true
 
-# #=> marktext-deb
-# gAUR marktext-deb
-# nvim -c "silent! /https:\/\/github.com\/marktext\/marktext" PKGBUILD
-# makepkg -sic
-# true
+#=> marktext-deb
+gAUR marktext-deb
+nvim -c "silent! /https:\/\/github.com\/marktext\/marktext" PKGBUILD
+makepkg -sic
+true
 
 # #=> mod_fcgid 0 install
 # # for Apache
@@ -316,10 +316,10 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> opera
-# gAUR opera
-# nvim -c "silent! /www.opera.com" PKGBUILD
-# makepkg -sic
+#=> opera
+gAUR opera
+nvim -c "silent! /www.opera.com" PKGBUILD
+makepkg -sic
 
 # #=> Pacfinder
 # gAUR pacfinder
@@ -419,11 +419,11 @@ trap read debug  # puts a read request after each executable line
 # nvim -c "silent! /launchpad" PKGBUILD
 # makepkg -sic  # takes a long time...
 
-#=> spectroterm
-gAUR spectroterm
-nvim -c "silent! /github.com\/sparklost" PKGBUILD
-makepkg -sic
-true
+# #=> spectroterm
+# gAUR spectroterm
+# nvim -c "silent! /github.com\/sparklost" PKGBUILD
+# makepkg -sic
+# true
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1:
 
-# bash $OSAB/bs-2-to_X/6-prepare_forSoftwares.sh
+# bash $OSAB/bs-2-into_X/6-prepare_forSoftwares.sh
 
 # gdAUR  is defined in $AjB/bashrc-console
 

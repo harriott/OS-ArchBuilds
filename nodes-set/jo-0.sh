@@ -72,11 +72,7 @@ ln -sf $OSAB/nodes-terminal/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
 ln -sf $ABjo/wm/fontconfig-conf_d-20-no-embedded.conf ~/.config/fontconfig/conf.d/20-no-embedded.conf
 
 #=> Git
-if [[ $myDrA == 1 ]]; then
-  ln -sf $machBld/jo/gitconfig ~/.gitconfig
-else
-  ln -sf $OSAB/bs-2-to_X/1-gitconfig ~/.gitconfig
-fi
+ln -sf $machBld/jo/gitconfig ~/.gitconfig
 # points to further convigurations on  $ITcore
 # e -la ~/.gitconfig
 

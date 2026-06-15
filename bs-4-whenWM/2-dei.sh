@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# bash $OSAB/bs-4-whenWM/2-resourceHandler.sh
+# bash $OSAB/bs-4-whenWM/2-dei.sh  # desktop environment integration
 
 # gAUR  is defined in $AjB/bashrc-console
 
@@ -10,8 +10,11 @@ trap read debug  # puts a read request after each executable line
 #=> grab mimeapps.list
 cp ~/.config/mimeapps.list $machLg/jo/mimeapps_list/$(date +%y%m%d).ini
 
-#=> handlr 0 handlr
-sudo pacman -S handlr
+#=> handlr 0 handlr 0 install
+sudo pacman -S handlr-regex
+
+#=> handlr 0 handlr 1 remove
+sudo pacman -Rs handlr-regex
 
 #=> handlr 1 xdg-utils-handlr
 # sudo pacman -Rs xdg-utils[-mimeo]  can't be done as needed by several other packages
@@ -86,4 +89,8 @@ handlr set inode/directory pcmanfm.desktop
 # nvim -c "silent! /freedesktop" PKGBUILD
 # makepkg -sic
 # cd ~
+
+#=> xdg-utils 0 install
+# enough for  open-browser.vim
+sudo pacman -S xdg-utils
 

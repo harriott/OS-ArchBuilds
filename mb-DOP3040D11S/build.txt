@@ -219,6 +219,33 @@ gpg --import $cITcc/CP/Raku/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2
 (for  moarvm) sudo pacman -Rs moar-debug
 ## qt5-remoteobjects
 pactree -r qt5-remoteobjects  shows nothing so  sudo pacman -Rs qt5-remoteobjects
+## handlr list
+  ERROR handlr::error: No such file or directory (os error 2)
+not fixed by removing & re-installing
+## auracle-git  error
+auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2601.0.0: cannot open shared object file: No such file or directory
+sudo pacman -Rs auracle-git  then re-installed it
+## marktext-deb
+  Error while writing index for `/usr/lib/debug/opt/marktext/libEGL.so.debug': No debugging symbols
+  Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/libEGL.so': No debugging symbols
+  gdb-add-index: No index was created for ./opt/marktext/libEGL.so
+  gdb-add-index: [Was there no debuginfo? Was there already an index?]
+  Error while writing index for `/usr/lib/debug/opt/marktext/libvk_swiftshader.so.debug': No debugging symbols
+  Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/libvk_swiftshader.so': No debugging symbols
+  gdb-add-index: No index was created for ./opt/marktext/libvk_swiftshader.so
+  gdb-add-index: [Was there no debuginfo? Was there already an index?]
+  Error while writing index for `/usr/lib/debug/opt/marktext/chrome-sandbox.debug': No debugging symbols
+  Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/chrome-sandbox': No debugging symbols
+  gdb-add-index: No index was created for ./opt/marktext/chrome-sandbox
+  gdb-add-index: [Was there no debuginfo? Was there already an index?]
+  Error while writing index for `/usr/lib/debug/opt/marktext/marktext.debug': No debugging symbols
+  Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/marktext': No debugging symbols
+  gdb-add-index: No index was created for ./opt/marktext/marktext
+  gdb-add-index: [Was there no debuginfo? Was there already an index?]
+  Error while writing index for `/usr/lib/debug/opt/marktext/libffmpeg.so.debug': No debugging symbols
+  Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/libffmpeg.so': No debugging symbols
+## xdg-utils
+  :: xdg-utils-1.2.1-2 and xdg-utils-handlr-0.6.4-2 are in conflict. Remove xdg-utils-handlr? [y/N] y
 ## waiting
 apache
 EFI install
