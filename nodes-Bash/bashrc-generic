@@ -54,6 +54,7 @@ startxx () {
 
 #=> clamscan
 # $ITculLAh/ml-$host/cs
+# ClamAV
 
 #==> 0 prepare
 # go clean -modcache

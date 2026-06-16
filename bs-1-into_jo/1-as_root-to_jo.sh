@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# sudo bash $OSAB/bs-1-to_jo/1-as_root-to_jo.sh
+# sudo bash $OSAB/bs-1-into_jo/1-as_root-to_jo.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
@@ -432,7 +432,7 @@ pacman -S arch-wiki-docs lynx w3m
 
 # #=> 3 doas
 # pacman -S opendoas
-# cp $OSAB/etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
+# cp $OSAB/extra-etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
 # chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
 # # after a reboot, test with  doas updatedb
 

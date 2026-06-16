@@ -8,12 +8,13 @@ if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
+# #=> Avahi & CUPS services
+# sudo pacman -S cups
+# sudo systemctl enable avahi-daemon.service --now
+# sudo systemctl enable cups.service --now
+
 #=> composer
 sudo pacman -S composer
-
-# #=> CUPS service
-# sudo pacman -S cups
-# sudo systemctl enable cups.service --now
 
 # #=> gdown
 # pipx install gdown

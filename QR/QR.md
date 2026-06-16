@@ -1042,6 +1042,10 @@ java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
     sudo ls /var/lib/dhcpcd/
     systemctl status nordvpnd.service
 
+## Avahi
+    avahi-browse --all --ignore-local --resolve --terminate  # services & hosts running on LAN
+    sudo systemctl status avahi-daemon.service
+
 ## ss
     ss -aO > $machLg/network/ss-$(date +%y%m%d-%H%M)
 
@@ -1265,7 +1269,6 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 1. b reBoot
 
 ## boot
-    cat /sys/firmware/efi/fw_platform_size  # 64 indicates booted in UEFI
     find /boot/vmli*  # lists available kernels
     find /dev/disk/by-designator -type l -ls
 
@@ -1282,6 +1285,10 @@ as root user, `genfstab -U / >> /etc/fstab`
     mkinitcpio -V  # --version
 
 creates an initial ramdisk environment
+
+### UEFI?
+    cat /sys/firmware/efi/fw_platform_size  # 64 is good
+    ls /sys/firmware/efi/efivars  # populated is good
 
 ## build
     $OSAB/extra-etc/doas.conf

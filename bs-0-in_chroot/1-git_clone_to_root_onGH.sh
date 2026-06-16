@@ -20,4 +20,5 @@ git clone https://github.com/harriott/vimfiles /root/onGH/vimfiles
 #=> 1 $host
 archiso=1
 host=HPEB840G38
+mkdir /root/Arch
 

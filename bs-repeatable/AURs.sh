@@ -132,6 +132,7 @@ trap read debug  # puts a read request after each executable line
 # true
 
 # #=> fangfrisch 1 AUR
+# further databases/signatures for  ClamAV
 # gAUR python-fangfrisch
 # nvim -c "silent! /rseichter" PKGBUILD
 # makepkg -sic

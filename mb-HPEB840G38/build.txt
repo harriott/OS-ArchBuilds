@@ -37,6 +37,7 @@ lsblk -f  # --fs - filesystems
 mkfs.ext4 /dev/sdb3 > y
 mkfs.ext4 /dev/sda1
 mkfs.ext4 /dev/sda2
+### prepare for chroot
 mount /dev/sdb3 /mnt
 mount --mkdir /dev/sdb1 /mnt/efi
 mount --mkdir /dev/sda1 /mnt/home
@@ -72,15 +73,28 @@ umount /dev/sdd1
 ### get environment
 cd /root/onGH/OS-ArchBuilds; git pull
 source nodes-Bash/export-Arch
-
-source nodes-Bash/export-Arch
-
-bash 1-Bash_start.sh
-
-rsync -irtv --delete /mnt/Dr-IT/core/onGitHub/ /onGH
+source nodes-set/jo-0-Bash-X.sh
+passwd > pw > pw
+### ClamAV
+pacman -S clamav
+freshclam  # takes a long time to update the database!
+  WARNING: Clamd was NOT notified: Cannot connect to clamd through /var/lib/clamav/clamd.sock connect(): No such file or directory
+### Avahi
+pacman -S avahi
+systemctl enable avahi-daemon.service --now
+  Skipped. Running in chroot.
+### systemd-boot
+bootctl install
+  Not booted with EFI or rumming in a container, skipping EFI variable modifications.
+so  Ctrl-d  then  arch-chroot -S /mnt  for  bootctl install
+Ctrl-d  then  reboot
 ## waiting
+cp $OSAB/nodes-etc/pacman_d-hooks-95-systemd-boot.hook /etc/pacman.d/hooks/95-systemd-boot.hook
 noclear.conf
 no-wait.conf
+sed -i 's/fmask=0022,dmask=0022/umask=0077/' /etc/fstab
+when firewall, avahi-daemon.service
+when firewall, freshclam
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U

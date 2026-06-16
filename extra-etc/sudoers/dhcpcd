@@ -1,3 +1,0 @@
-
-## allow root access to dhcpcd (stackexchange 18830)
-jo ALL = (root) NOPASSWD: /usr/bin/dhcpcd

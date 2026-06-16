@@ -12,13 +12,13 @@ set -ev  # quits on error, prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
 #=> 2 allow dhcpcd without pw
-bash -c "cat $OSAB/etc/sudoers/dhcpcd >> /etc/sudoers"
+bash -c "cat $OSAB/extra-etc/sudoers/dhcpcd >> /etc/sudoers"
 visudo -c -f /etc/sudoers
 tail -n 2 /etc/sudoers
 
 #=> 2 ClamAV 0 install
 pacman -S clamav
-freshclam  # takes a long time!
+freshclam  # takes a long time to update the database!
 
 #=> 2 Firewalld 0
 # 1 get & enable
