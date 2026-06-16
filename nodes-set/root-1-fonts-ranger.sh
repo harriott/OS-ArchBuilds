@@ -22,3 +22,8 @@ eza -la /usr/share/fonts
 # rm -r /usr/share/fonts/copiedForArch
 # # kills nice icons in  eza  in new  Alacritty  instances
 
+#=> 1 ranger
+# no file preview
+lnd $OSL/nodes/terminal-ranger ~/.config/ranger
+eza -adl ~/.config/ranger
+

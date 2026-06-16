@@ -28,8 +28,3 @@ ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf
 eza -la /root
 eza -la /root/.config/nano
 
-#=> 2 ranger
-# no file preview
-lnd $OSL/nodes/terminal-ranger ~/.config/ranger
-e -adl ~/.config/ranger
-
