@@ -13,7 +13,7 @@ export loaded_bp=1
 # source ~/.export-machine  # $machBld/export-machine
 source ~/.start  # $machBld/Bash_start
   source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
-    source ~/.export-linux  # $OSL/nodes/jo/export
+    source $OSL/nodes/jo/export
 # - carry through to X
 
 # Useful before X:
