@@ -17,7 +17,6 @@ ln -sf $AjB/bash_history.sh                  ~/Arch/bash_history.sh
 ln -sf $OSAB/nodes-Bash/export-Arch          ~/.export-Arch
 ln -sf $OSL/nodes/jo/export                  ~/.export-linux
 ln -sf $machBld/Bash_start                   ~/.start
-# ln -sf $machBld/export-machine               ~/.export-machine
 
 # e -la ~/.bash* ~/.export-* ~/.inputrc ~/.start ~/Arch/bash_history.sh
 

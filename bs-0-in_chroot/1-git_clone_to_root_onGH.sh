@@ -6,7 +6,7 @@
 
 set -v  # prints each statement here, including comments
 
-#=> 0 get repositories
+#=> 0 repositories 0 get
 trap read debug  # puts a read request after each executable line
 [ -d /root/onGH ] || mkdir /root/onGH
 git clone https://github.com/harriott/misc /root/onGH/misc
@@ -14,6 +14,10 @@ git clone https://github.com/harriott/OS-ArchBuilds /root/onGH/OS-ArchBuilds
 git clone https://github.com/harriott/OS-Linux /root/onGH/OS-Linux
 git clone https://github.com/harriott/vimfiles /root/onGH/vimfiles
 
-#=> 1 refresh repositories
+#=> 0 repositories 1 refresh
 #  for r in misc OS-ArchBuilds OS-Linux vimfiles; do cd /root/onGH/$r; git pull; done
+
+#=> 1 $host
+archiso=1
+host=HPEB840G38
 

@@ -24,7 +24,7 @@ export thb="/home/jo/.thunderbird" # $thb
 export maild=/home/jo/.local/share/mail  # $maild  for  mutt
 
 #=> 1 host
-export host=$(uname -n) # $host
+[[ $archiso ]] || export host=$(uname -n) # $host
 
 #=> 2 $Drpbx, or not
 if [[ $myDrA == 1 ]]; then

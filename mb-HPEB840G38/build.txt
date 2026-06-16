@@ -70,8 +70,8 @@ moved it to  HPEB840G38  for  mount /dev/sdd1 /mnt
 bash /mnt/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-in_chroot/1-git_clone_to_root_onGH.sh
 umount /dev/sdd1
 ### get environment
-cd /root/onGH
-source OS-ArchBuilds/nodes-Bash/export-Arch
+cd /root/onGH/OS-ArchBuilds; git pull
+source nodes-Bash/export-Arch
 
 source nodes-Bash/export-Arch
 
