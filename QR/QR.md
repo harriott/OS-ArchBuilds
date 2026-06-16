@@ -1409,6 +1409,7 @@ backed up in `$AjB/bash_profile`
 
 ### timedatectl
     sudo timedatectl set-timezone Europe/Paris
+    timedatectl
 
 TIMEDATECTL(1)
 

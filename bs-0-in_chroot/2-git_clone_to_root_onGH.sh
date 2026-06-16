@@ -7,7 +7,6 @@
 set -v  # prints each statement here, including comments
 
 #=> 0 repositories 0 get
-trap read debug  # puts a read request after each executable line
 [ -d /root/onGH ] || mkdir /root/onGH
 git clone https://github.com/harriott/misc /root/onGH/misc
 git clone https://github.com/harriott/OS-ArchBuilds /root/onGH/OS-ArchBuilds

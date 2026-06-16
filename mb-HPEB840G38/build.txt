@@ -4,12 +4,14 @@ $machBld/build.txt ($OSAB/mb-HPEB840G38/build.txt)
 
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 # build
-## Arch install - from the ISO
+## Arch install - from the ISO fail
 SDCB32G2  with  ARCH_202606  in rh USB
 F9 at start > UEFI - SanDisk Cruzer Blade 00016523090725025529
 loadkeys fr
-iwctl station wlan0 scan  for  iwctl station wlan0 get-networks
-iwctl station wlan0 connect Jo-OPPO-A76 > pw
+iwctl station wlan0 scan
+  for  iwctl station wlan0 get-networks
+    wireless button does toggle
+iwctl station wlan0 connect Jo-OPPO-A76 --passphrase=v5qkc95h
 timedatectl
 ### partitions
 lsblk  shows  Samsung MZNLN128  is  /dev/sdb
@@ -38,18 +40,19 @@ mkfs.ext4 /dev/sdb3 > y
 mkfs.ext4 /dev/sda1
 mkfs.ext4 /dev/sda2
 ### prepare for chroot
-mount /dev/sdb3 /mnt
+mount /dev/sdb3 /mnt  /
 mount --mkdir /dev/sdb1 /mnt/efi
 mount --mkdir /dev/sda1 /mnt/home
 swapon /dev/sdb2
 swapon -s
+pacstrap /mnt base linux linux-firmware
 timedatectl set-timezone Europe/Paris
-### chroot
+### into chroot
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 arch-chroot /mnt
 ### in chroot
-ping -c 3 8.8.8.8
+ping -c 8.8.8.8
 mkdir -p ~/.config/nano
 pacman -S acpi cpupower fbset sudo tig tk turbostat
 fbset -i
@@ -87,7 +90,23 @@ systemctl enable avahi-daemon.service --now
 bootctl install
   Not booted with EFI or rumming in a container, skipping EFI variable modifications.
 so  Ctrl-d  then  arch-chroot -S /mnt  for  bootctl install
-Ctrl-d  then  reboot
+Ctrl-d  then  reboot, but failed, so rebooted from  SDCB32G2, got online again
+(probably shouldn't've) pacman -Syu (because) arch-chroot -S /mnt  failed, so  arch-chroot /mnt
+pacman -Syu  took ages to not complete "Running build hook: [systemd]"  I Ctrl-c'd out
+pacman -S iwd
+/usr/share/systemd/bootctl/loader.conf  looks fine, but still  reboot  only gets me back into BIOS
+## Arch install - from the ISO again
+rebooted from  SDCB32G2, got online again, remounted  /  /efi  /home
+rm -r /mnt/*
+### start from  K16GBDTG2
+rsync -iLrtv --delete --modify-window=1 $Drpbx/IT/ /run/media/jo/K16GBDTG2/Dr-IT
+moved it to  HPEB840G38  for  mkdir K; mount /dev/sdd1 K
+bash /K/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-in_chroot/1-into_chroot.sh
+mount /dev/sdd1 /mnt
+pacman -S tig
+bash /mnt/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-in_chroot/1-git_clone_to_root_onGH.sh
+
+umount /dev/sdd1
 ## waiting
 cp $OSAB/nodes-etc/pacman_d-hooks-95-systemd-boot.hook /etc/pacman.d/hooks/95-systemd-boot.hook
 noclear.conf
