@@ -316,10 +316,10 @@ true
 # makepkg -sic
 # true
 
-#=> opera
-gAUR opera
-nvim -c "silent! /www.opera.com" PKGBUILD
-makepkg -sic
+# #=> opera
+# gAUR opera
+# nvim -c "silent! /www.opera.com" PKGBUILD
+# makepkg -sic
 
 # #=> Pacfinder
 # gAUR pacfinder

@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: sw=2:
+# vim: fdl=1 sw=2:
 
 # source $OSAB/nodes-set/jo-0-Bash-X.sh
 

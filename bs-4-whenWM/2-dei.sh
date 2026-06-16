@@ -17,6 +17,7 @@ sudo pacman -S handlr-regex
 sudo pacman -Rs handlr-regex
 
 #=> handlr 1 xdg-utils-handlr
+sudo pacman -Rs xdg-utils-handlr
 # sudo pacman -Rs xdg-utils[-mimeo]  can't be done as needed by several other packages
 gAUR xdg-utils-handlr
 nvim -c "silent! /chmln\/handlr" PKGBUILD

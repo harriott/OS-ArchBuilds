@@ -1033,7 +1033,7 @@ java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
 ```
 
 # network
-    :Man iwctl
+    :Man iwctl  " minimal
     curl ifconfig.co  # IP address
     curl ifconfig.co/country
     doas bandwhich

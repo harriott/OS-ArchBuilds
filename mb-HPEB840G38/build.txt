@@ -63,17 +63,21 @@ cat /etc/locale.conf
 loadkeys fr-latin1
 echo KEYMAP=fr-latin1 > /etc/vconsole.conf
 echo HPEB840G38 > /etc/hostname
+iwctl station wlan0 disconnect
+### start from  K16GBDTG2
+rsync -iLrtv --delete --modify-window=1 $Drpbx/IT/ /run/media/jo/K16GBDTG2/Dr-IT
+moved it to  HPEB840G38  for  mount /dev/sdd1 /mnt
+bash /mnt/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-in_chroot/1-git_clone_to_root_onGH.sh
+umount /dev/sdd1
+### get environment
+cd /root/onGH
+source OS-ArchBuilds/nodes-Bash/export-Arch
 
-mkdir /home/onGH
+source nodes-Bash/export-Arch
 
-git clone https://github.com/harriott/OS-ArchBuilds /home/onGH/OS-ArchBuilds
-git clone https://github.com/harriott/OS-Linux /home/onGH/OS-Linux
-git clone https://github.com/harriott/misc /home/onGH/misc
-git clone https://github.com/harriott/vimfiles /home/onGH/vimfiles
+bash 1-Bash_start.sh
 
-mount /dev/sdc1 /mnt
 rsync -irtv --delete /mnt/Dr-IT/core/onGitHub/ /onGH
-bash /mnt/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-to_root/1-Bash.sh
 ## waiting
 noclear.conf
 no-wait.conf
