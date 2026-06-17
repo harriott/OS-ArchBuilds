@@ -128,7 +128,11 @@ mount /dev/sdd1 /mnt  (= K16GBDTG2)
 bash /mnt/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-into_root/2-git_clone_to_root_onGH.sh
 cd /root/onGH/OS-ArchBuilds; git pull; host=HPEB840G38; . bs-0-into_root/3-into_root.sh
 exit; reboot  worked, but I'd forgotten to set root pw, so rebooted to  ARCH_202606
-mount /dev/sdb3 /mnt  for  arch-chroot /mnt  for  passwd > pw
+mount /dev/sdb3 /mnt  for  arch-chroot /mnt  for  passwd > pw  reboot
+## root
+logged in, connected to  Jo-OPPO-A76  but no  dhcpcd  so rebooted to  ARCH_202606  loadkeys fr
+mount /dev/sdb3 /mnt  for  arch-chroot /mnt  for  pacman -S dhcpcd  exit; reboot
+logged in, connected to  Jo-OPPO-A76 (pw wasn't needed)  dhcpcd wlan0
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U

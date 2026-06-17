@@ -1038,13 +1038,16 @@ java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
     curl ifconfig.co/country
     doas bandwhich
     s="$machLg/network/services"; o 'vim: ft=services:' > $s; echo '' >> $s; cat /etc/services >> $s
-    sudo dhcpcd wlwg111v2
     sudo ls /var/lib/dhcpcd/
-    systemctl status nordvpnd.service
 
 ## Avahi
     avahi-browse --all --ignore-local --resolve --terminate  # services & hosts running on LAN
     sudo systemctl status avahi-daemon.service
+
+## dhcpcd
+    sudo dhcpcd wlwg111v2
+    systemctl status nordvpnd.service
+    systemctl list-unit-files | grep dhcpcd
 
 ## ss
     ss -aO > $machLg/network/ss-$(date +%y%m%d-%H%M)
