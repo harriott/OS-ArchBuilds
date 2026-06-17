@@ -11,9 +11,9 @@ set -v  # prints each statement here, including comments
 #=> 0 set $OSAB
 read -p "\$OSAB is $OSAB - looks good?"
 
-#=> 1 ttf-nerd-fonts-symbols
-# for Yazi
-pacman -S ttf-nerd-fonts-symbols
+# #=> 1 ttf-nerd-fonts-symbols
+# # for Yazi
+# pacman -S ttf-nerd-fonts-symbols
 
 # #=> 2 99-sysctl.conf
 # # show that  /etc/sysctl.d  is empty
