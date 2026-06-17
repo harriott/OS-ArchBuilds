@@ -72,6 +72,7 @@ ln -sf $ABjo/wm/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
 # es ~/.config/dunst/dunstrc
 
 #=> fastfetch
+[ -d ~/.config/fastfetch ] || mkdir -p ~/.config/fastfetch
 ln -sf $OSAB/nodes-terminal/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
 # e -la ~/.config/fastfetch/config.jsonc
 
