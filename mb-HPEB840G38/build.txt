@@ -132,7 +132,7 @@ mount /dev/sdb3 /mnt  for  arch-chroot /mnt  for  passwd > pw  reboot
 ## root
 logged in, connected to  Jo-OPPO-A76  but no  dhcpcd  so rebooted to  ARCH_202606  loadkeys fr
 mount /dev/sdb3 /mnt  for  arch-chroot /mnt  for  pacman -S dhcpcd  exit; reboot
-logged in, connected to  Jo-OPPO-A76 (pw wasn't needed)  dhcpcd wlan0
+logged in, connected to  Jo-OPPO-A76  dhcpcd wlan0
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U
