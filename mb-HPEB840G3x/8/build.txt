@@ -146,7 +146,6 @@ git pull  was throwing  TLS connect error, fixed by  sudo ip l set wlan0 down; s
 bash $OSAB/nodes-set/jo-0.sh
 bash $OSAB/bs-1-into_jo/3-NetworkManager.sh
 nmcli device wifi connect Jo-MotoG86 password <pw>
-
 bash $OSAB/nodes-set/jo-1-encoding.sh
 
 bash $OSAB/nodes-set/jo-1-Xfce.sh

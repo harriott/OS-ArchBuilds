@@ -17,7 +17,7 @@ fi
 #=> Alacritty
 if [ $host = 'DOP3040D11S' ]; then
   ln -sf $OSAB/mb-DOP3040D11S/alacritty.toml ~/.alacritty.toml
-if [[ $host =~ HPEB840G3 ]]; then
+elif [[ $host =~ HPEB840G3 ]]; then
   ln -sf $OSAB/mb-HPEB840G3x/hi/alacritty.toml ~/.alacritty.toml
 else
   ln -sf $OSAB/mb-sbMb/Alacritty/Xfce.toml ~/.alacritty.toml
