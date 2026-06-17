@@ -86,6 +86,7 @@ ln -sf $machBld/jo/gitconfig ~/.gitconfig
 # e -la ~/.gitconfig
 
 #=> gpg-agent configuration
+gpg --list-keys  # creates populated  ~/.gnupg
 ln -sf $OSL/nodes/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 #=> for Tex Live Arch packaged install
