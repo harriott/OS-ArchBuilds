@@ -1,6 +1,6 @@
 # vim: fdl=1 ft=sh sw=2:
 
-# $machBld/jo/Bash/bashrc (= $OSAB/mb-HPEB840G38/jo/Bash/bashrc)
+# $OSAB/mb-HPEB840G3x/jo/Bash/bashrc
 #  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything

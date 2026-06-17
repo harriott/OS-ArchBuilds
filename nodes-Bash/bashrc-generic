@@ -11,12 +11,11 @@
 #   for root: sourced by  $OSAB/nodes-root/bashrc
 # see  $OSAB/nodes/set/repair.sh  for checking if this was sourced
 
-alias sl='su -l'
-[[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$OSAB/nodes-Bash/blerc"
-lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
-source $ITccl/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"
 [ -f /usr/bin/grc ] && export grc='grc'
 [ -f /usr/bin/rainbow ] && export rainbow='rainbow'
+[ -f /usr/share/blesh/ble.sh ] && [[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$OSAB/nodes-Bash/blerc"
+alias sl='su -l'
+lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 source $OSL/nodes/bashrc-generic
 
 alias fe=fastfetch
@@ -30,12 +29,15 @@ if [[ $TERM_PROGRAM != 'WezTerm' ]]; then
   fi  # won't run in  tmux  or after  su
 fi
 
-# <esc> <esc> prefixes sudo on last command
-source $ITccl/unix-linux/ohmybash-sudo.plugin.sh
-
 # tmux
 alias u=tmux
   alias tkt='u kill-server > /dev/null 2>&1; tmux'  # rarely used
+
+if [ -d $ITccl ]; then
+  source $ITccl/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
+  source $ITccl/unix-linux/ohmybash-sudo.plugin.sh # <esc> <esc> prefixes sudo on last command
+  source $ITccl/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"
+fi
 
 #=> awesome  or  Openbox  or Xfce  on a machine
 startxa () { ln -sf $ABjo/xinitrcs/awesome ~/.xinitrc; }
@@ -111,7 +113,6 @@ ft () {
 #=> file contents
 alias mo='moor -style monokai'
 alias pz='pygmentize -O style=paraiso-dark'
-source $ITccl/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
 
 #==> bat
 alias b='bat'  # syntax highlit cat

@@ -1,7 +1,8 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh sw=2:
 
-# $machBld/jo/Bash/bashrc ($OSAB/nodes-set/jo-0-Bash-X.sh) e -la ~/.bashrc
+# $machBld/jo/Bash/bashrc ($OSAB/mb-sbMb/jo/Bash/bashrc)
+#  ($OSAB/nodes-set/jo-0-Bash-X.sh) e -la ~/.bashrc
 #  (before this, $AjB/bash_profile  sets up  X11  consoles)
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything

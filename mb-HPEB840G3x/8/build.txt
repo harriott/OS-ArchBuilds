@@ -1,6 +1,6 @@
 vim: set ft=build nospell:
 
-$machBld/build.txt ($OSAB/mb-HPEB840G38/build.txt)
+$OSAB/mb-HPEB840G3x/8/build.txt
 
 HP EliteBook 840 G3 barcoded PC117860 (labelled BC PNB 18 by last owner) = HPEB840G38
 

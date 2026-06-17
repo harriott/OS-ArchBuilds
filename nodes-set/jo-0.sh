@@ -15,12 +15,12 @@ if [[ $myDrA == 1 ]]; then
 fi
 
 #=> Alacritty
-if [ $host = 'sbMb' ]; then
-  ln -sf $machBld/Alacritty/Xfce.toml ~/.alacritty.toml  # $OSAB/mb-sbMb/Alacritty/Xfce.toml
+if [ $host = 'DOP3040D11S' ]; then
+  ln -sf $OSAB/mb-DOP3040D11S/alacritty.toml ~/.alacritty.toml
+if [[ $host =~ HPEB840G3 ]]; then
+  ln -sf $OSAB/mb-HPEB840G3x/hi/alacritty.toml ~/.alacritty.toml
 else
-  ln -sf $machBld/alacritty.toml ~/.alacritty.toml
-   # $OSAB/mb-DOP3040D11S/alacritty.toml
-   # $OSAB/mb-HPEB840G38/alacritty.toml
+  ln -sf $OSAB/mb-sbMb/Alacritty/Xfce.toml ~/.alacritty.toml
 fi
 ln -sf $OSAB/nodes-terminal/alacritty-all.toml ~/.alacritty-all.toml
 # e -la ~/.alacritty*
@@ -100,7 +100,7 @@ ln -sf $ABjo/kewrc ~/.config/kew/kewrc
 cd $ABjo/mime
 for x in *; do ln -sf $ABjo/mime/$x ~/.local/share/mime/packages/$x; done
 cd $OSAB/nodes-set
-eza -al ~/.local/share/mime/packages
+# eza -al ~/.local/share/mime/packages
 update-mime-database ~/.local/share/mime
 
 #=> nanorc

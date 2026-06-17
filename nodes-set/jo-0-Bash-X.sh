@@ -7,16 +7,26 @@
 # sort these lists by last use of "~":  :sort /,*\~/
 
 ln -sf $AjB/bash_profile                     ~/.bash_profile
-ln -sf $machBld/jo/Bash/bashrc               ~/.bashrc
+if [[ $host =~ HPEB840G3 ]]; then
+  ln -sf $OSAB/mb-HPEB840G3x/jo/Bash/bashrc  ~/.bashrc
+else
+  ln -sf $machBld/jo/Bash/bashrc             ~/.bashrc
+fi
 ln -sf $Openbox/bashrc_for_Alacritty-nvim.sh ~/.bashrc-An
 ln -sf $AjB/bashrc-console                   ~/.bashrc-console
 ln -sf $OSAB/nodes-Bash/bashrc-generic       ~/.bashrc-generic
 ln -sf $OSL/nodes/GNUReadline-inputrc        ~/.inputrc
 [ -d ~/Arch ] || mkdir ~/Arch
-  ln -sf $AjB/bash_history.sh                  ~/Arch/bash_history.sh
+  ln -sf $AjB/bash_history.sh                ~/Arch/bash_history.sh
 
 ln -sf $OSAB/nodes-Bash/export-Arch          ~/.export-Arch
-ln -sf $machBld/Bash_start                   ~/.start
+if   [[ $host =~ HPEB840G37 ]]; then
+  ln -sf $OSAB/mb-HPEB840G3x/7/Bash_start    ~/.start
+elif [[ $host =~ HPEB840G38 ]]; then
+  ln -sf $OSAB/mb-HPEB840G3x/8/Bash_start    ~/.start
+else
+  ln -sf $machBld/Bash_start                 ~/.start
+fi
 
 e -la ~/.bash* ~/.export-* ~/.inputrc ~/.start ~/Arch/bash_history.sh
 
