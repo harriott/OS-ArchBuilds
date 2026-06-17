@@ -18,7 +18,7 @@ ln -sf $OSL/nodes/GNUReadline-inputrc        ~/.inputrc
 ln -sf $OSAB/nodes-Bash/export-Arch          ~/.export-Arch
 ln -sf $machBld/Bash_start                   ~/.start
 
-# e -la ~/.bash* ~/.export-* ~/.inputrc ~/.start ~/Arch/bash_history.sh
+e -la ~/.bash* ~/.export-* ~/.inputrc ~/.start ~/Arch/bash_history.sh
 
 #=> X
 ln -sf $ABjo/wm/Xresources/Xresources                       ~/.Xresources
@@ -29,5 +29,5 @@ ln -sf $ABjo/xbindkeysrc                                    ~/.xbindkeysrc  # mo
 ln -sf $ABjo/xinitrcs/xfce                                  ~/.xinitrc
 # ln -sf $ABjo/xinitrcs/openbox                               ~/.xinitrc
 # ln -sf $ABjo/xinitrcs/awesome                               ~/.xinitrc
-# e -la ~/.Xresources* ~/.xbindkeysrc ~/.xinitrc
+e -la ~/.Xresources* ~/.xbindkeysrc ~/.xinitrc
 

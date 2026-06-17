@@ -7,7 +7,6 @@ set -e
 
 #=> 1 go slow
 set -v  # prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
 
 #=> 2 for broot
 broot -- install  # gets  br
