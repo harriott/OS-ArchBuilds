@@ -114,8 +114,7 @@ ln -sf $ABjo/pinforc ~/.pinforc
 ln -sf $ABjo/pipecolor.toml ~/.pipecolor.toml
 
 #=> ranger
-lnd $OSL/nodes/terminal-ranger ~/.config/ranger
-e -adl ~/.config/ranger
+lnd $OSL/nodes/terminal-ranger ~/.config/ranger  # e -adl ~/.config/ranger
 
 #=> Ruby IRB
 ln -sf $misc/irbrc ~/.irbrc
@@ -128,8 +127,9 @@ if [ $host = 'sbMb' ]; then
   # e -la ~/Arch/f1t2t3
 fi
 
-#=> Surfraw
-[ -d ~/.config/surfraw/conf ] && ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
+# #=> Surfraw
+# [ -d ~/.config/surfraw ] || mkdir -p ~/.config/surfraw
+# ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 
 #=> tmux
 ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf
