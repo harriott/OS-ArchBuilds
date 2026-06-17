@@ -31,12 +31,13 @@ if [[ $myDrA == 1 ]]; then
   export Drpbx=$Storage/Dropbox
     export DrJo=$Drpbx/Jo
     export ITcore=$Drpbx/IT/core
-      export onGH=$ITcore/onGitHub
       export culL=$ITcore/ulLinux
         export culLA="$culL/Arch"
           export machLg=$culLA/ml-$host  # as opposed to  $machBld
         export culLB=$culL/Bash  # rg -l '\$culLB' $ITcore
       export culLAb="$ITcore/ulLinuxArch-big" # rg -l '\$culLAb' $ITcore
+      export ITccl=$ITcore/copied-linked  # $ITccl
+      export onGH=$ITcore/onGitHub
 else
     export onGH=$HOME/onGH  # when building  root / user
 fi  # $myDrA, $Storage  defined in  $machBld/export-machine

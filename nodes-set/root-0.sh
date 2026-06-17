@@ -2,7 +2,6 @@
 # vim: fdl=1 sw=2:
 
 # su > root pw for  source $OSAB/nodes-set/root-0.sh
-#  lnd  defined in  $OSAB/nodes-Bash/bashrc-generic
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
@@ -16,7 +15,6 @@ ln -sf $OSAB/nodes-root/bashrc ~/.bashrc
 #=> 1 root symlinks 0 shell
 ln -sf $machBld/Bash_start ~/.start
   ln -sf $OSAB/nodes-Bash/export-Arch ~/.export-Arch
-    ln -sf $OSL/nodes/jo/export ~/.export-linux
 ln -sf $OSAB/nodes-root/bash_history.sh ~/bash_history.sh
 ln -sf $OSL/nodes/GNUReadline-inputrc ~/.inputrc
 

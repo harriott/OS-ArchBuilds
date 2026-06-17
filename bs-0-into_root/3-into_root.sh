@@ -2,7 +2,8 @@
 # vim: fdl=1 sw=2:
 
 # $OSAB/bs-0-into_root/3-into_root.sh
-# cd /root/onGH/OS-ArchBuilds; git pull; . bs-0-into_root/3-into_root.sh
+# cd /root/onGH/OS-ArchBuilds; git pull
+#  then set  host  for  . bs-0-into_root/3-into_root.sh
 
 #=> 0 prepare
 set -v  # prints each statement here, including comments
@@ -28,8 +29,9 @@ source nodes-set/root-0.sh
 
 #=> systemd-boot
 bootctl install
-cp nodes-efi_loader/entries_arch_conf/$host.conf /boot/efi/loader/entries/arch.conf
-cp nodes-efi_loader/loader.conf /boot/efi/loader/loader.conf
+cp nodes-efi_loader/entries_arch_conf/$host.conf /boot/loader/entries/arch.conf
+cp nodes-efi_loader/loader.conf /boot/loader/loader.conf
+passwd
 
 echo; echo 'now  exit; reboot'
 

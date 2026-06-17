@@ -1,6 +1,6 @@
 # vim: set ft=sh sw=2:
 
-# $OSAB/nodes-root/bash_profile ($OSAB/nodes-set/root.sh)
+# $OSAB/nodes-root/bash_profile ($OSAB/nodes-set/root-0.sh)
 
 # get my  .bashrc  settings working in  Console  &  su
 # I'm using symlinks into  /root  to allow easier temporary configurations.
@@ -8,7 +8,6 @@
 # source ~/.export-machine  # $machBld/export-machine
 source ~/.start  # $machBld/Bash_start
   source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
-    source $OSL/nodes/jo/export  # needed for  $ITccl
 
 [[ -f /root/.bashrc ]] && source /root/.bashrc  # $OSAB/nodes-root/bashrc
 

@@ -4,16 +4,13 @@
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
+set -e
+
 set -v  # prints each statement here, including comments
+trap read debug  # puts a read request after each executable line
 
-# #=> 0 set $OSAB & $machBld
-# cd $(dirname "${BASH_SOURCE[0]}")
-# . ../../nodes-Bash/export-Arch
-# read -p "\$OSAB is $OSAB - looks good?"
-
-# #=> 1 go slow
-# set -v  # prints each statement here, including comments
-# trap read debug  # puts a read request after each executable line
+#=> 0 set $OSAB
+read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 2 99-sysctl.conf
 # show that  /etc/sysctl.d  is empty
@@ -38,8 +35,6 @@ cat /etc/sysctl.d/99-sysctl.conf
 #=> 2 file manage
 # broot
 pacman -S broot
-broot # to generate br command
-echo "${tpfn}"  # reset normal text
 
 # Chafa
 pacman -S chafa
@@ -50,14 +45,11 @@ pacman -S dvd+rw-tools
 # enca
 pacman -S enca
 
-# eza
-pacman -S eza
-
 # fd
 pacman -S fd
 
 # felix
-pacman -S felix-rs
+# pacman -S felix-rs
 
 # FuseISO
 pacman -S fuseiso
@@ -142,71 +134,71 @@ pacman -S smartmontools
 # udiskie
 pacman -S udiskie
 
-# #=> 2 hd 1 SSDs
-# # dua-cli
-# pacman -S dua-cli  # dua  for SSDs
+#=> 2 hd 1 SSDs
+# dua-cli
+pacman -S dua-cli  # dua  for SSDs
 
-# # gdu
-# pacman -S gdu
+# gdu
+pacman -S gdu
 
-# # weekly TRIM
-# # systemctl status fstrim.timer
-# systemctl enable fstrim.timer --now
+# weekly TRIM (util-linux)
+# systemctl status fstrim.timer
+systemctl enable fstrim.timer --now
 
-# #=> 2 info
-# # Bashtop
-# pacman -S bashtop  # later superseded by AUR bpytop
+#=> 2 info
+# Bashtop
+pacman -S bashtop  # later superseded by AUR bpytop
 
-# # Dateutils
-# pacman -S dateutils
+# Dateutils
+pacman -S dateutils
 
-# # Fastfetch
-# pacman -S fastfetch
-# mkdir ~/.config/fastfetch
+# Fastfetch
+pacman -S fastfetch
+mkdir ~/.config/fastfetch
 
-# # htop
-# pacman -S htop
+# htop
+pacman -S htop
 
-# # iotop
-# pacman -S iotop
+# iotop
+pacman -S iotop
 
-# # lshw
-# pacman -S lshw
+# lshw
+pacman -S lshw
 
-# # lsof
-# pacman -S lsof
+# lsof
+pacman -S lsof
 
-# # man-db
-# pacman -S man-db
+# man-db
+pacman -S man-db
 
-# # man-pages
-# pacman -S man-pages
+# man-pages
+pacman -S man-pages
 
-# # Neofetch
+# Neofetch
 # pacman -S neofetch
 
-# # pinfo
-# pacman -S pinfo
+# pinfo
+pacman -S pinfo
 
-# # progress
-# pacman -S progress
+# progress
+pacman -S progress
 
-# # sysstat
-# pacman -S sysstat
+# sysstat
+pacman -S sysstat
 
 #=> 2 info - tldr 0 install
 pacman -S tldr
 tldr -u
 
-#=> 2 systemd Journal size
-grep SystemMaxUse /etc/systemd/journald.conf
+# #=> 2 systemd Journal size
+# grep SystemMaxUse /etc/systemd/journald.conf
 
-#==> 0 limit
-# helpful for storage-limited installations
-sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
+# #==> 0 limit
+# # helpful for storage-limited installations
+# sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
 
-#==> 1 unlimit
-sed -i 's/^SystemMaxUse=300/#SystemMaxUse=/' /etc/systemd/journald.conf
+# #==> 1 unlimit
+# sed -i 's/^SystemMaxUse=300/#SystemMaxUse=/' /etc/systemd/journald.conf
 
 #=> 2 networking
 # arp-scan
@@ -230,36 +222,36 @@ pacman -S whois
 #=> 2 networking - isync 0 install
 pacman -S isync  # for mbsync
 
-#=> 2 networking - isync 0 remove
-pacman -Rs isync
+# #=> 2 networking - isync 0 remove
+# pacman -Rs isync
 
-# #=> 2 Pacman
-# # colorized Pacman
-# sudo sed -i 's/#Color/Color/' /etc/pacman.conf
+#=> 2 Pacman
+# colorized Pacman
+sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
-# # expac
-# pacman -S expac
+# expac
+pacman -S expac
 
-# # pacman-contrib, for paccache
-# pacman -S pacman-contrib
+# pacman-contrib, for paccache
+pacman -S pacman-contrib
 
-# # pacutils
-# pacman -S pacutils
+# pacutils
+pacman -S pacutils
 
-# # pkgfile - for finding possible packages
-# pacman -S pkgfile
-# pkgfile -u
-# systemctl enable pkgfile-update.timer --now
-# systemctl list-timers
+# pkgfile - for finding possible packages
+pacman -S pkgfile
+pkgfile -u
+systemctl enable pkgfile-update.timer --now
+systemctl list-timers
 
-# # pkgstats
-# pacman -S pkgstats
+# pkgstats
+pacman -S pkgstats
 
-#=> 2 encoding - bash-language-server 0 install
-pacman -S bash-language-server
+# #=> 2 encoding - bash-language-server 0 install
+# pacman -S bash-language-server
 
-#=> 2 encoding - bash-language-server 1 remove
-pacman -Rs bash-language-server
+# #=> 2 encoding - bash-language-server 1 remove
+# pacman -Rs bash-language-server
 
 #=> 2 encoding - dart
 pacman -S dart
@@ -270,8 +262,11 @@ pacman -S git-delta
 #=> 2 encoding - lazygit
 pacman -S lazygit
 
-#=> 2 encoding - lua-language-server
-pacman -S lua-language-server
+# #=> 2 encoding - lua-language-server 0 install
+# pacman -S lua-language-server
+
+# #=> 2 encoding - lua-language-server 1 remove
+# pacman -Rs lua-language-server
 
 #=> 2 encoding - luarocks
 pacman -S luarocks
@@ -285,9 +280,9 @@ pacman -S python-pip
 # #=> 2 encoding - python-pip 1 remove
 # pacman -Rs python-pip
 
-# #=> 2 encoding - python-pipx 0 (re)install
-# pacman -S python-pipx
-#  pipx ensurepath  # maybe not needed
+#=> 2 encoding - python-pipx 0 (re)install
+pacman -S python-pipx
+ # pipx ensurepath  # maybe not needed
 
 # #=> 2 encoding - python-pipx 1 remove
 # pacman -Rs python-pipx
@@ -295,36 +290,29 @@ pacman -S python-pip
 #=> 2 encoding - R
 pacman -S r
 
-#=> 2 encoding - Ruby 0 install
-pacman -S ruby
+# #=> 2 encoding - Ruby 0 install
+# pacman -S ruby
 
-#=> 2 encoding - Ruby 1 remove
-pacman -Rs ruby
+# #=> 2 encoding - Ruby 1 remove
+# pacman -Rs ruby
 
-#=> 2 encoding - Ruby 0 IRB 0 install
-pacman -S ruby-irb
+# #=> 2 encoding - Ruby 0 IRB 0 install
+# pacman -S ruby-irb
 
-#=> 2 encoding - Ruby 0 IRB 1 remove
-pacman -Rs ruby-irb
+# #=> 2 encoding - Ruby 0 IRB 1 remove
+# pacman -Rs ruby-irb
 
-#=> 2 encoding - Ruby 0 ruby-stdlib 1 remove
-pacman -Rs ruby-stdlib
+# #=> 2 encoding - Ruby 0 ruby-stdlib 1 remove
+# pacman -Rs ruby-stdlib
 
 #=> 2 encoding - Ruby 1 documentation 0 install
-pacman -S ruby-docs ruby-rdoc
+pacman -S ruby-docs
 
-#=> 2 encoding - Ruby 1 documentation 1 remove
-pacman -Rs ruby-rdoc
+# #=> 2 encoding - Ruby 1 documentation 1 remove
+# pacman -Rs ruby-rdoc
 
 #=> 2 encoding - Ruby 1 rbenv
 pacman -S rbenv ruby-build
-
-#=> 2 encoding - Ruby 2 gems
-gem update
-
-#=> 2 encoding - Ruby 3 Jekyll & bundler
-gem install bundler jekyll  # takes ages...
-true
 
 #=> 2 encoding - selene
 # Lua linter
@@ -412,33 +400,33 @@ pacman -S ctags
 # web-ish
 pacman -S arch-wiki-docs lynx w3m
 
-# #=> 2 various - Emacs
-# pacman -S emacs  # brings in  tree-sitter
+#=> 2 various - Emacs
+pacman -S emacs  # brings in  tree-sitter
 
 # #=> 2 various - GNOME Terminal
 # pacman -S gnome-terminal
 
-# #=> 2 users
-# # activate wheel group
-# sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
-# grep wheel /etc/sudoers
-# # check that  /etc/sudoers  parses OK
-# visudo -c -f /etc/sudoers
+#=> 2 users
+# activate wheel group
+sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
+grep wheel /etc/sudoers
+# check that  /etc/sudoers  parses OK
+visudo -c -f /etc/sudoers
 
-# # User jo, creating the home directory and adding to group wheel
-# useradd -m -G wheel jo
-# until passwd jo; do echo "try again"; done
-# cat /etc/passwd
+# User jo, creating the home directory and adding to group wheel
+useradd -m -G wheel jo
+until passwd jo; do echo "try again"; done
+cat /etc/passwd
 
-# #=> 3 doas
-# pacman -S opendoas
-# cp $OSAB/extra-etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
-# chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
-# # after a reboot, test with  doas updatedb
+#=> 3 doas
+pacman -S opendoas
+cp $OSAB/extra-etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
+chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
+# after a reboot, test with  doas updatedb
 
-# #=> 3 Rootkit Hunter
-# pacman -S rkhunter
+#=> 3 Rootkit Hunter
+pacman -S rkhunter
 
-# #=> 4 end
-# # you're ready to reboot and login to jo
+#=> 4 end
+# you're ready to reboot and login to jo
 
