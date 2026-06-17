@@ -6,7 +6,7 @@
 # Bash configurations that are also useful everywhere, including in  Console  and as  root.
 
 # $OSAB/nodes-Bash/bashrc-generic
-#  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
+#  symlinked in  $OSAB/nodes-set/shell.sh
 #   for jo: sourced by  $AjB/bash_profile  &  $AjB/bashrc
 #   for root: sourced by  $OSAB/nodes-root/bashrc
 # see  $OSAB/nodes/set/repair.sh  for checking if this was sourced
@@ -33,7 +33,7 @@ fi
 alias u=tmux
   alias tkt='u kill-server > /dev/null 2>&1; tmux'  # rarely used
 
-if [ -d $ITccl ]; then
+if [ ! -z $ITccl ] && [ -d $ITccl ]; then
   source $ITccl/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
   source $ITccl/unix-linux/ohmybash-sudo.plugin.sh # <esc> <esc> prefixes sudo on last command
   source $ITccl/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"

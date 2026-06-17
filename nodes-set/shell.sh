@@ -2,6 +2,7 @@
 # vim: fdl=1 sw=2:
 
 # source $OSAB/nodes-set/shell.sh
+# for both  root  and  user
 
 #=> shell
 # sort these lists by last use of "~":  :sort /,*\~/
@@ -17,4 +18,6 @@ fi
 ln -sf $OSAB/nodes-Bash/bashrc-generic       ~/.bashrc-generic
 ln -sf $OSL/nodes/GNUReadline-inputrc        ~/.inputrc
 ln -sf $OSL/nodes/terminal-tmux/tmux.conf    ~/.tmux.conf
+
+e -la ~/.bash* ~/.export-* ~/.inputrc ~/.start ~/.tmux.conf
 

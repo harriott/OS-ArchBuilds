@@ -17,7 +17,7 @@ ln -sf $AjB/bashrc-console                   ~/.bashrc-console
 [ -d ~/Arch ] || mkdir ~/Arch
   ln -sf $AjB/bash_history.sh                ~/Arch/bash_history.sh
 
-e -la ~/.bash* ~/.export-* ~/.inputrc ~/.start ~/Arch/bash_history.sh
+e -la ~/.bash* ~/Arch/bash_history.sh
 
 #=> X
 ln -sf $ABjo/wm/Xresources/Xresources                       ~/.Xresources
