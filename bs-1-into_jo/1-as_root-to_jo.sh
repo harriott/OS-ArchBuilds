@@ -11,97 +11,102 @@ set -v  # prints each statement here, including comments
 #=> 0 set $OSAB
 read -p "\$OSAB is $OSAB - looks good?"
 
-#=> 2 99-sysctl.conf
-# show that  /etc/sysctl.d  is empty
-ls /etc/sysctl.d
-true
+#=> 1 ttf-nerd-fonts-symbols
+# for Yazi
+pacman -S ttf-nerd-fonts-symbols
 
-#==> 0 enable the SysRq keys
-echo kernel.sysrq=1 > /etc/sysctl.d/99-sysctl.conf
+# #=> 2 99-sysctl.conf
+# # show that  /etc/sysctl.d  is empty
+# ls /etc/sysctl.d
+# true
 
-#==> 0 swappiness to 10
-# check the default
-sysctl vm.swappiness
-# fix lower value, which will become effective after reboot
-echo "vm.swappiness=00" >> /etc/sysctl.d/99-sysctl.conf
+# #==> 0 enable the SysRq keys
+# echo kernel.sysrq=1 > /etc/sysctl.d/99-sysctl.conf
 
-#==> 3 check settings
-cat /etc/sysctl.d/99-sysctl.conf
+# #==> 0 swappiness to 10
+# # check the default
+# sysctl vm.swappiness
+# # fix lower value, which will become effective after reboot
+# echo "vm.swappiness=00" >> /etc/sysctl.d/99-sysctl.conf
+
+# #==> 3 check settings
+# cat /etc/sysctl.d/99-sysctl.conf
 
 # #=> 2 automake
 # pacman -S automake
 
-#=> 2 file manage
-# broot
-pacman -S broot
+# #=> 2 file manage 1
+# # broot
+# pacman -S broot
 
-# Chafa
-pacman -S chafa
+# # Chafa
+# pacman -S chafa
 
-# dvd+rw-tools
-pacman -S dvd+rw-tools
+# # dvd+rw-tools
+# pacman -S dvd+rw-tools
 
-# enca
-pacman -S enca
+# # enca
+# pacman -S enca
 
-# fd
-pacman -S fd
+# # fd
+# pacman -S fd
 
-# felix
-# pacman -S felix-rs
+# # felix
+# # pacman -S felix-rs
 
-# FuseISO
-pacman -S fuseiso
+# # FuseISO
+# pacman -S fuseiso
 
-# fzf
-pacman -S fzf
+# # fzf
+# pacman -S fzf
 
-# lsd
-pacman -S awesome-terminal-fonts lsd
+# # lsd
+# pacman -S awesome-terminal-fonts lsd
 
-# mlocate
-pacman -S plocate
-updatedb
+# # mlocate
+# pacman -S plocate
+# updatedb
 
-# ncdu
-pacman -S ncdu
+# # ncdu
+# pacman -S ncdu
 
-# perl-rename
-pacman -S perl-rename
+# # perl-rename
+# pacman -S perl-rename
 
-# perl-test-fatal
-pacman -S perl-test-fatal  # needed for  perl-unicode-utf8
+# # perl-test-fatal
+# pacman -S perl-test-fatal  # needed for  perl-unicode-utf8
 
-# p7zip
-pacman -S p7zip
+# # p7zip
+# pacman -S p7zip
 
-# ranger
-pacman -S ranger
+# # ranger
+# pacman -S ranger
 
-# rhash
-pacman -S rhash
+# # rhash
+# pacman -S rhash
 
-# ripgrep
-pacman -S ripgrep
+# # ripgrep
+# pacman -S ripgrep
 
-# rsync
-pacman -S rsync
+# # rsync
+# pacman -S rsync
 
-# sharkdp's bat
-pacman -S bat
+# # sharkdp's bat
+# pacman -S bat
 
-# skim
-pacman -S skim
+# # skim
+# pacman -S skim
 
-# trash-cli
-pacman -S trash-cli
+# # trash-cli
+# pacman -S trash-cli
 
-# tree
-pacman -S tree
+# # tree
+# pacman -S tree
 
-# Vifm
-pacman -S vifm
+# # Vifm
+# pacman -S vifm
 
+#=> 2 file manage 2
 # Yazi
 pacman -S yazi
 
