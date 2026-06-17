@@ -67,6 +67,7 @@ ln -sf $ABjo/wm/cmus-rc.conf   ~/.config/cmus/rc  # pb ~/.config/cmus/rc
 ln -sf $ABjo/WAN/dictrc ~/.dictrc
 
 #=> Dunst
+[ -d ~/.config/dunst ] || mkdir -p ~/.config/dunst
 ln -sf $ABjo/wm/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
 # es ~/.config/dunst/dunstrc
 
