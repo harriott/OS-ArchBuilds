@@ -7,7 +7,7 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 set -e
 set -v  # prints each statement here, including comments
 
-#=> 0 set $OSAB
+#=> 0 check $OSAB
 read -p "\$OSAB is $OSAB - looks good?"
 
 # #=> 1 ttf-nerd-fonts-symbols
