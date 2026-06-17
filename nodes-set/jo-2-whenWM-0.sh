@@ -23,6 +23,10 @@ maild=~/.local/share/mail
 for m in $maild $maild/fm $maild/gmx $maild/zou; do
   [ -d $m ] || mkdir $m; done
 
+# #=> for Tex Live Arch packaged install
+# sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
+# # e -la /usr/share/texmf.cnf
+
 #=> LaTeX
 lnd $LTXj ~/texmf/tex/latex/jo
 # e -adl ~/texmf/tex/latex/jo

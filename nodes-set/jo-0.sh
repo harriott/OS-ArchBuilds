@@ -89,10 +89,6 @@ ln -sf $machBld/jo/gitconfig ~/.gitconfig
 gpg --list-keys  # creates populated  ~/.gnupg
 ln -sf $OSL/nodes/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
-#=> for Tex Live Arch packaged install
-sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
-# e -la /usr/share/texmf.cnf
-
 #=> kew
 ln -sf $ABjo/kewrc ~/.config/kew/kewrc
 # b ~/.config/kew/kewrc
