@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: se fdl=2:
 
-# bash $OSAB/bs-1-to_jo/2-config.sh
+# bash $OSAB/bs-1-into_jo/3-config.sh
 
 set -e
 
@@ -12,15 +12,15 @@ trap read debug  # puts a read request after each executable line
 #=> 2 for broot
 broot -- install  # gets  br
 
-# #=> 2 for MediaWiki
-# mkdir -p ~/.local/share/mime/packages
+#=> 2 for  MIME database
+mkdir -p ~/.local/share/mime/packages
 
-# #=> 2 prepare for nanorc
-# mkdir -p /home/jo/.config/nano
+#=> 2 prepare for nanorc
+mkdir -p /home/jo/.config/nano
 
-# #=> 1 for Rootkit Hunter
-# mkdir /home/jo/Arch
+#=> 1 ~/Arch
+mkdir /home/jo/Arch
 
-# #=> 1 w3m
-# mkdir ~/.w3m/cgi-bin
+#=> 1 w3m
+mkdir ~/.w3m/cgi-bin
 

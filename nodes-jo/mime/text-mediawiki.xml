@@ -3,7 +3,7 @@
 <!--
 vim: fdl=2:
 $ABjo/mime/text-mediawiki.xml
-    $OSAB/nodes-set/jo-0.sh > mime  for  ~/.local/share/mime/packages/mediawiki.xml
+ see  MIME database  in  $OSAB/nodes-set/jo-0.sh
 -->
 
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">

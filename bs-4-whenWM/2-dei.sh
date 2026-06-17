@@ -55,7 +55,7 @@ handlr set .pdf org.pwmt.zathura.desktop
 handlr set .png org.nomacs.ImageLounge.desktop
 handlr set .pl gvim.desktop
 handlr set .ps1 gvim.desktop
-handlr set .mediawiki gvim.desktop  # $ABjo/mediawiki.xml
+handlr set .mediawiki gvim.desktop  # $ABjo/mime/text-mediawiki.xml
 handlr set .mka mpv.desktop
 handlr set .mkv mpv.desktop
 handlr set .mp4 mpv.desktop
