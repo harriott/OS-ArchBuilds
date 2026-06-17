@@ -172,19 +172,14 @@ read -p "\$OSAB is $OSAB - looks good?"
 # # lsof
 # pacman -S lsof
 
+# #=> 2 info 2
+# # man-db
+# pacman -S man-db
+
+# # man-pages
+# pacman -S man-pages
+
 #=> 2 info 2
-# man-db
-pacman -S man-db
-
-# man-pages
-pacman -S man-pages
-
-# Neofetch
-# pacman -S neofetch
-
-# pinfo
-pacman -S pinfo
-
 # progress
 pacman -S progress
 
