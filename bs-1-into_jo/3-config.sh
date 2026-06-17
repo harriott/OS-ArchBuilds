@@ -9,14 +9,10 @@ set -e
 set -v  # prints each statement here, including comments
 
 #=> 2 for broot
-broot -- install  # gets  br
+broot -- install
+#  adds  source ~/.config/broot/launcher/bash/br  which gets me  br
+#  but I keep that line in  $OSAB/nodes-Bash/bashrc-generic
 
 #=> 2 for  MIME database
 mkdir -p ~/.local/share/mime/packages
-
-#=> 2 prepare for nanorc
-mkdir -p /home/jo/.config/nano
-
-#=> 1 w3m
-mkdir ~/.w3m/cgi-bin
 

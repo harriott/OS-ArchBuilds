@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdl=1 ft=sh:
+# vim: fdl=1 ft=sh sw=2:
 
 # $machBld/Bash_start - machine-specific exports that could also be useful as root
 
@@ -16,5 +16,5 @@ export startxDelay=5
 #=> for  $OSAB/nodes-Bash/export-Arch
 # export myDrA=1  # only when my Dropbox is active
 export Storage=/mnt/MZNLN128  # $Storage, where I keep stuff
-    export Enc=$Storage/encrypted  # mkdir $Enc
+  export Enc=$Storage/encrypted  # mkdir $Enc
 

@@ -5,7 +5,6 @@
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 set -e
-
 set -v  # prints each statement here, including comments
 
 #=> 0 set $OSAB

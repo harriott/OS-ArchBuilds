@@ -1,19 +1,25 @@
 #!/bin/bash
 # vim: sw=2:
 
-# build script
 # source $OSAB/nodes-set/jo-0.sh
 
+set -e
+set -v  # prints each statement here, including comments
+
 #=> $notDr
-[ -d $notDr/GR-NF ] || mkdir -p $notDr/GR-NF
-ln -sf $ITcore/notDr/readme.md $notDr/readme.md  # e -la $notDr/readme.md
-ln -sf $ITcore/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
+if [[ $myDrA == 1 ]]; then
+  [ -d $notDr/GR-NF ] || mkdir -p $notDr/GR-NF
+  ln -sf $ITcore/notDr/readme.md $notDr/readme.md  # e -la $notDr/readme.md
+  ln -sf $ITcore/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
+fi
 
 #=> Alacritty
-if [ $host = 'DOP3040D11S' ]; then
-  ln -sf $machBld/alacritty.toml ~/.alacritty.toml
+if [ $host = 'sbMb' ]; then
+  ln -sf $machBld/Alacritty/Xfce.toml ~/.alacritty.toml  # $OSAB/mb-sbMb/Alacritty/Xfce.toml
 else
-  ln -sf $machBld/Alacritty/Xfce.toml ~/.alacritty.toml  # sbMb
+  ln -sf $machBld/alacritty.toml ~/.alacritty.toml
+   # $OSAB/mb-DOP3040D11S/alacritty.toml
+   # $OSAB/mb-HPEB840G38/alacritty.toml
 fi
 ln -sf $OSAB/nodes-terminal/alacritty-all.toml ~/.alacritty-all.toml
 # e -la ~/.alacritty*
@@ -95,6 +101,7 @@ eza -al ~/.local/share/mime/packages
 update-mime-database ~/.local/share/mime
 
 #=> nanorc
+[ -d ~/.config/nano ] || mkdir -p ~/.config/nano
 ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 
 #=> pinfo
@@ -125,6 +132,7 @@ fi
 ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf
 
 #=> w3m
+[ -d ~/.w3m/cgi-bin ] || mkdir -p ~/.w3m/cgi-bin
 ln -sf $ABjo/WAN/w3m/config ~/.w3m/config
 ln -sf $ABjo/WAN/w3m/keymap ~/.w3m/keymap
 ln -sf $ABjo/WAN/w3m/omnibar_duckduckgo.cgi ~/.w3m/cgi-bin/omnibar_duckduckgo.cgi
