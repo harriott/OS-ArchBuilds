@@ -2,8 +2,7 @@
 # vim: sw=2:
 
 # bash $OSAB/nodes-set/jo-1-encoding.sh
-# not dependent on  $OSAB
-#  except  lnd  defined in  $OSAB/Bash/bashrc-generic
+# Vim's won't work unless the  $vfv/packs/packs-*  are populated, which is the case in my  $Drpbx
 
 #=> Emacs configure
 ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el

@@ -10,17 +10,11 @@ read -p "\$OSAB  is  $OSAB - looks good?"
 
 #=> 0 Bash
 ln -sf $OSAB/nodes-root/bash_profile ~/.bash_profile
-ln -sf $OSAB/nodes-root/bashrc ~/.bashrc
-
-#=> 1 root symlinks 0 shell
-ln -sf $machBld/Bash_start ~/.start
-  ln -sf $OSAB/nodes-Bash/export-Arch ~/.export-Arch
-ln -sf $OSAB/nodes-root/bash_history.sh ~/bash_history.sh
-ln -sf $OSL/nodes/GNUReadline-inputrc ~/.inputrc
+ln -sf $OSAB/nodes-root/bashrc       ~/.bashrc
+ln -sf $OSAB/nodes-root/bash_history.sh       ~/bash_history.sh
 
 #=> 1 root symlinks 1 more
-ln -sf $OSAB/nodes-root/nanorc ~/.config/nano/nanorc
-ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf
+ln -sf $OSAB/nodes-root/nanorc            ~/.config/nano/nanorc
 
 #=> 1 root symlinks 2 show
 eza -la /root

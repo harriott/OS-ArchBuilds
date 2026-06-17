@@ -10,7 +10,7 @@ read -p "\$OSAB is $OSAB - looks good?"
 #=> 2 allow dhcpcd without pw
 bash -c "cat $OSAB/nodes-etc/sudoers/dhcpcd >> /etc/sudoers"
 visudo -c -f /etc/sudoers
-tail -n 2 /etc/sudoers
+tail -n 7 /etc/sudoers
 
 #=> 2 ClamAV 0 install
 pacman -S clamav

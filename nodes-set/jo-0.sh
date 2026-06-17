@@ -131,9 +131,6 @@ fi
 # [ -d ~/.config/surfraw ] || mkdir -p ~/.config/surfraw
 # ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 
-#=> tmux
-ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf  # e -l ~/.tmux.conf
-
 #=> w3m
 [ -d ~/.w3m/cgi-bin ] || mkdir -p ~/.w3m/cgi-bin
 ln -sf $ABjo/WAN/w3m/config ~/.w3m/config

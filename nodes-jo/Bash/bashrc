@@ -6,7 +6,6 @@
 # $AjB/bash_profile  ensured the exports
   source $OSAB/nodes-Bash/bashrc-generic
   #   source $AjB/bashrc-console  # sources  $OSL/nodes/bashrc-console-fm
-# source ~/.bashrc-generic  # $OSL/nodes/bashrc-generic
   source ~/.bashrc-console  # $AjB/bashrc-console
 
 #=> 1 up to terminal
