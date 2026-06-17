@@ -42,6 +42,8 @@ mkdir $nvim/plugin
 # ln -s $cGRs/d-CP/d-Vim-Vim/r-junegunn-vim-plug/plug.vim ~/.local/share/nvim/site/autoload/plug.vim
 # ln -s $vimfiles/test/init.vim $nvim/init.vim
 
+#=> pause for small screen before tmux
+
 #=> vimfiles - nvim 1 populate use
 ln -s $vfv/after               $nvim/after
 ln -s $vfv/filetype.vim        $nvim/filetype.vim

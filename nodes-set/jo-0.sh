@@ -3,6 +3,7 @@
 
 # bash $OSAB/nodes-set/jo-0.sh
 
+lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 set -e
 set -v  # prints each statement here, including comments
 
