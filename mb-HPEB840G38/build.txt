@@ -138,12 +138,12 @@ reboot into jo
 ## jo
 su > root pw  for  rsync -irtv --delete /root/onGH/ /home/jo/onGH
 sudo chown -R jo:jo /home/jo/onGH
-bash $OSAB/bs-0-in_root/0-iwctl-Jo-MotoG86.sh
+bash $OSAB/bs-0-into_root/0-iwctl-Jo-MotoG86.sh
 dhcpcd wlan0
 source $OSAB/nodes-Bash/export-Arch
 source $OSAB/nodes-set/jo-0-Bash-X.sh
-
-source $OSAB/nodes-set/jo-0.sh
+git pull  was throwing  TLS connect error, fixed by  sudo ip l set wlan0 down; sudo ip l set wlan0 up
+bash $OSAB/nodes-set/jo-0.sh
 ## waiting
 hyperfine
 # physical configuration

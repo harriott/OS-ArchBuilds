@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# source $OSAB/nodes-set/jo-0.sh
+# bash $OSAB/nodes-set/jo-0.sh
 
 set -e
 set -v  # prints each statement here, including comments
@@ -57,6 +57,7 @@ fi
 ln -sf $ABjo/wm/cmusqueue.sh   ~/Arch/cmusqueue.sh
 ln -sf $ABjo/wm/cmus_notify.sh ~/.local/share/cmus_notify.sh
 ln -sf $culLA/jo/cmushnotify.sh ~/.local/share/cmushnotify.sh
+[ -d ~/.config/cmus ] || mkdir -p ~/.config/cmus
 ln -sf $ABjo/wm/cmus-rc.conf   ~/.config/cmus/rc  # pb ~/.config/cmus/rc
 
 #=> davfs2.conf

@@ -73,6 +73,9 @@ read -p "\$OSAB is $OSAB - looks good?"
 # # ncdu
 # pacman -S ncdu
 
+# # nnn
+# pacman -S nnn
+
 # # perl-rename
 # pacman -S perl-rename
 

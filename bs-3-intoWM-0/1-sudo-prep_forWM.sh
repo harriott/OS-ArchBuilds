@@ -104,9 +104,6 @@ sudo rm -r /var/lib/texmf
 # # gvfs-mtp - for accessing phone memory
 # pacman -S gvfs-mtp
 
-# # nnn
-# pacman -S nnn
-
 # #=> for CliFM
 pacman -S noto-fonts-emoji  # don't work in  urxvt  or  xterm...
 

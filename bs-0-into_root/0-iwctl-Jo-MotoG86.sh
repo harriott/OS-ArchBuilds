@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $OSAB/bs-0-in_root/0-iwctl-Jo-MotoG86.sh
+# bash $OSAB/bs-0-into_root/0-iwctl-Jo-MotoG86.sh
 
 loadkeys fr
 iwctl device list  # shows MAC address
