@@ -90,6 +90,8 @@ gpg --list-keys  # creates populated  ~/.gnupg
 ln -sf $OSL/nodes/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 #=> kew
+[ -d ~/music ] || mkdir -p ~/music
+kew ~/music
 ln -sf $ABjo/kewrc ~/.config/kew/kewrc
 # b ~/.config/kew/kewrc
 

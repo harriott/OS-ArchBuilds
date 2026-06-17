@@ -375,39 +375,45 @@ read -p "\$OSAB is $OSAB - looks good?"
 # # Pipe Viewer
 # pacman -S pv
 
-# #=> 2 various
-# # cpanminus
-# pacman -S cpanminus
+#=> 2 various
+# cpanminus
+pacman -S cpanminus
 
-# # hyperfine
-# pacman -S hyperfine
+# hyperfine
+pacman -S hyperfine
 
-# # languagetool
-# pacman -S languagetool  # for the GUI
+# kew
+pacman -S kew
 
-# # Node Package Manager 0 npm install
-# pacman -S npm
+# languagetool
+pacman -S languagetool  # for the GUI
 
-# # OpenOffice English thesaurus
-# pacman -S mythes-en
+# Node Package Manager 0 npm install
+pacman -S npm
 
-# # pass (brings in gnupg, which brings in pinentry)
-# pacman -S pass
+# OpenOffice English thesaurus
+pacman -S mythes-en
 
-# # Speech Dispatcher
-# pacman -S speech-dispatcher
+# pass (brings in gnupg, which brings in pinentry)
+pacman -S pass
 
-# # strace - for debugging
-# pacman -S strace
+# Speech Dispatcher
+pacman -S speech-dispatcher
 
-# # for thesaurus_query.vim
-# pacman -S python-beautifulsoup4
+# strace - for debugging
+pacman -S strace
 
-# # universal-ctags
-# pacman -S ctags
+# for thesaurus_query.vim
+pacman -S python-beautifulsoup4
 
-# # web-ish
-# pacman -S arch-wiki-docs lynx w3m
+# tmux
+pacman -S tmux
+
+# universal-ctags
+pacman -S ctags
+
+# web-ish
+pacman -S arch-wiki-docs lynx w3m
 
 # #=> 2 various - Emacs
 # pacman -S emacs  # brings in  tree-sitter
