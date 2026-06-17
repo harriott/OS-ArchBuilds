@@ -2,17 +2,13 @@
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-#=> 0 $OSAB
-sd=$(dirname "${BASH_SOURCE[0]}")
-. ${sd%/*}/nodes-Bash/export-Arch
+set -ev  # quits on error, prints each statement here, including comments
+
+#=> 0 check $OSAB
 read -p "\$OSAB is $OSAB - looks good?"
 
-#=> 1 go slow
-set -ev  # quits on error, prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
-
 #=> 2 allow dhcpcd without pw
-bash -c "cat $OSAB/extra-etc/sudoers/dhcpcd >> /etc/sudoers"
+bash -c "cat $OSAB/nodes-etc/sudoers/dhcpcd >> /etc/sudoers"
 visudo -c -f /etc/sudoers
 tail -n 2 /etc/sudoers
 

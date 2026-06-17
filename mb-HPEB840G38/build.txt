@@ -144,6 +144,10 @@ source $OSAB/nodes-Bash/export-Arch
 source $OSAB/nodes-set/jo-0-Bash-X.sh
 git pull  was throwing  TLS connect error, fixed by  sudo ip l set wlan0 down; sudo ip l set wlan0 up
 bash $OSAB/nodes-set/jo-0.sh
+bash $OSAB/bs-1-into_jo/3-NetworkManager.sh
+nmcli device wifi connect Jo-MotoG86 password <pw>
+
+bash $OSAB/nodes-set/jo-1-encoding.sh
 
 bash $OSAB/nodes-set/jo-1-Xfce.sh
 ## waiting

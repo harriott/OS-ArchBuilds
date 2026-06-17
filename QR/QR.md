@@ -1068,6 +1068,7 @@ SS(8)
     nmcli connection up uuid 667c759d-382a-4875-9021-2258cdba8dad
     nmcli connection up uuid 9348d395-9e92-45a5-9b4b-5fc9e7b6a472
     nmcli device wifi connect cafezoide password <pw>
+    nmcli device wifi connect Jo-MotoG86 password <pw>
     nmcli device wifi connect Jo-X10II password <pw>
     sudo grep -r '^psk=' /etc/NetworkManager/system-connections/
     sudo ls /etc/NetworkManager/system-connections/

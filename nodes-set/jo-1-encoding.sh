@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# . $OSAB/nodes-set/jo-2-whenWM-0.sh
+# bash $OSAB/nodes-set/jo-1-encoding.sh
 # not dependent on  $OSAB
 #  except  lnd  defined in  $OSAB/Bash/bashrc-generic
 
@@ -23,30 +23,9 @@ maild=~/.local/share/mail
 for m in $maild $maild/fm $maild/gmx $maild/zou; do
   [ -d $m ] || mkdir $m; done
 
-# #=> for Tex Live Arch packaged install
-# sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
-# # e -la /usr/share/texmf.cnf
-
-#=> LaTeX
-lnd $LTXj ~/texmf/tex/latex/jo
-# e -adl ~/texmf/tex/latex/jo
-
-#=> mdfpdf Pandoc defaults
-ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
-ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
-e -adl ~/.pandoc/defaults/*
-
 #=> Openbox - Alacritty with Nvim
 ln -sf $machBld/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh
 # e -la ~/.config/openbox/AlacrittyNvim.sh
-
-#=> Openbox - shift+PrtSc disabled - notification
-# for  i34G1TU02  &  sbMb
-ln -sf $Openbox/shiftPrtSc.sh ~/.config/openbox/shiftPrtSc.sh
-
-#=> Pandoc templates
-lnd $onGH/pandoc-templates ~/.pandoc/templates
-# e -adl ~/.pandoc/templates
 
 #=> SSH config
 ln -sf $cITCP/networking-SSHconfig/$host ~/.ssh/config

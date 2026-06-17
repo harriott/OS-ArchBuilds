@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# NetworkManager
+# bash $OSAB/bs-1-into_jo/3-NetworkManager.sh
 
 set -v  # prints each statement here, including comments
 

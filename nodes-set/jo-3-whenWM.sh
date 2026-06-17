@@ -1,16 +1,32 @@
 #!/bin/bash
-# vim: fdl=2 sw=2:
+# vim: sw=2:
 
-# https://harriott.github.io/ - Tue 14 Apr 2026
+# https://harriott.github.io/ - Wed 17 Jun 2026
 
-# source $OSAB/nodes-set/jo-2-whenWM-1.sh
-# dependent on  $OSAB
+# bash $OSAB/nodes-set/jo-2-whenWM-0.sh
 
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
 ln -sf $ABjo/music/MPD/mpd.conf ~/.config/mpd/mpd.conf
 ln -sf $ABjo/music/MPD/vimpcrc ~/.config/vimpc/vimpcrc
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
+
+# #=> for Tex Live Arch packaged install
+# sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
+# # e -la /usr/share/texmf.cnf
+
+#=> Openbox - shift+PrtSc disabled - notification
+# for  i34G1TU02  &  sbMb
+ln -sf $Openbox/shiftPrtSc.sh ~/.config/openbox/shiftPrtSc.sh
+
+#=> LaTeX
+lnd $LTXj ~/texmf/tex/latex/jo
+# e -adl ~/texmf/tex/latex/jo
+
+#=> mdfpdf Pandoc defaults
+ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
+ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
+e -adl ~/.pandoc/defaults/*
 
 #=> mpv
 ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf
@@ -31,6 +47,10 @@ chmod 755 $ABjo/music/music_rotate.sh
 sudo ln -sf $ABjo/music/music_rotate.sh /usr/local/bin/music_rotate
 sudo ln -sf $ABjo/music/music_rotate.desktop /usr/share/applications/music_rotate.desktop
 # pb /usr/share/applications/music_rotate.desktop
+
+#=> Pandoc templates
+lnd $onGH/pandoc-templates ~/.pandoc/templates
+# e -adl ~/.pandoc/templates
 
 #=> Spacemacs
 sudo ln -sf $ABjo/Emacs/spacemacs.desktop /usr/share/applications/spacemacs.desktop
