@@ -436,6 +436,3 @@ chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
 #=> 3 Rootkit Hunter
 pacman -S rkhunter
 
-#=> 4 end
-# you're ready to reboot and login to jo
-

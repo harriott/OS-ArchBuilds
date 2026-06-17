@@ -133,6 +133,11 @@ mount /dev/sdb3 /mnt  for  arch-chroot /mnt  for  passwd > pw  reboot
 logged in, connected to  Jo-OPPO-A76  but no  dhcpcd  so rebooted to  ARCH_202606  loadkeys fr
 mount /dev/sdb3 /mnt  for  arch-chroot /mnt  for  pacman -S dhcpcd  exit; reboot
 logged in, connected to  Jo-OPPO-A76  dhcpcd wlan0
+$OSAB/bs-1-into_jo/1-as_root.sh
+reboot into jo
+## jo
+su > root pw  for  rsync -irtv --delete /root/onGH/ /home/jo/onGH
+sudo chown -R jo:jo /home/jo/onGH
 ## waiting
 hyperfine
 # physical configuration
