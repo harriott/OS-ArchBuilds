@@ -15,6 +15,10 @@ read -p "\$OSAB is $OSAB - looks good?"
 # # for Yazi
 # pacman -S ttf-nerd-fonts-symbols
 
+# #=> 1 jdk-openjdk
+# # for  languagetool
+# pacman -S jdk-openjdk
+
 # #=> 2 99-sysctl.conf
 # # show that  /etc/sysctl.d  is empty
 # ls /etc/sysctl.d
@@ -179,16 +183,16 @@ read -p "\$OSAB is $OSAB - looks good?"
 # # man-pages
 # pacman -S man-pages
 
-#=> 2 info 2
-# progress
-pacman -S progress
+# #=> 2 info 2
+# # progress
+# pacman -S progress
 
-# sysstat
-pacman -S sysstat
+# # sysstat
+# pacman -S sysstat
 
-#=> 2 info - tldr 0 install
-pacman -S tldr
-tldr -u
+# #=> 2 info - tldr 0 install
+# pacman -S tldr
+# tldr -u
 
 # #=> 2 systemd Journal size
 # grep SystemMaxUse /etc/systemd/journald.conf
@@ -200,52 +204,52 @@ tldr -u
 # #==> 1 unlimit
 # sed -i 's/^SystemMaxUse=300/#SystemMaxUse=/' /etc/systemd/journald.conf
 
-#=> 2 networking
-# arp-scan
-pacman -S arp-scan
+# #=> 2 networking
+# # arp-scan
+# pacman -S arp-scan
 
-# netcat - for network connection tests
-pacman -S openbsd-netcat
+# # netcat - for network connection tests
+# pacman -S openbsd-netcat
 
-# NetworkManager
-pacman -S networkmanager
+# # NetworkManager
+# pacman -S networkmanager
 
-# tcpdump
-pacman -S tcpdump  # for packet analysis
+# # tcpdump
+# pacman -S tcpdump  # for packet analysis
 
-# Wget
-pacman -S wget
+# # Wget
+# pacman -S wget
 
-# whois
-pacman -S whois
+# # whois
+# pacman -S whois
 
-#=> 2 networking - isync 0 install
-pacman -S isync  # for mbsync
+# #=> 2 networking - isync 0 install
+# pacman -S isync  # for mbsync
 
 # #=> 2 networking - isync 0 remove
 # pacman -Rs isync
 
-#=> 2 Pacman
-# colorized Pacman
-sudo sed -i 's/#Color/Color/' /etc/pacman.conf
+# #=> 2 Pacman
+# # colorized Pacman
+# sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
-# expac
-pacman -S expac
+# # expac
+# pacman -S expac
 
-# pacman-contrib, for paccache
-pacman -S pacman-contrib
+# # pacman-contrib, for paccache
+# pacman -S pacman-contrib
 
-# pacutils
-pacman -S pacutils
+# # pacutils
+# pacman -S pacutils
 
-# pkgfile - for finding possible packages
-pacman -S pkgfile
-pkgfile -u
-systemctl enable pkgfile-update.timer --now
-systemctl list-timers
+# # pkgfile - for finding possible packages
+# pacman -S pkgfile
+# pkgfile -u
+# systemctl enable pkgfile-update.timer --now
+# systemctl list-timers
 
-# pkgstats
-pacman -S pkgstats
+# # pkgstats
+# pacman -S pkgstats
 
 # #=> 2 encoding - bash-language-server 0 install
 # pacman -S bash-language-server
@@ -253,14 +257,14 @@ pacman -S pkgstats
 # #=> 2 encoding - bash-language-server 1 remove
 # pacman -Rs bash-language-server
 
-#=> 2 encoding - dart
-pacman -S dart
+# #=> 2 encoding - dart
+# pacman -S dart
 
-#=> 2 encoding - git-delta
-pacman -S git-delta
+# #=> 2 encoding - git-delta
+# pacman -S git-delta
 
-#=> 2 encoding - lazygit
-pacman -S lazygit
+# #=> 2 encoding - lazygit
+# pacman -S lazygit
 
 # #=> 2 encoding - lua-language-server 0 install
 # pacman -S lua-language-server
@@ -268,27 +272,27 @@ pacman -S lazygit
 # #=> 2 encoding - lua-language-server 1 remove
 # pacman -Rs lua-language-server
 
-#=> 2 encoding - luarocks
-pacman -S luarocks
+# #=> 2 encoding - luarocks
+# pacman -S luarocks
 
-#=> 2 encoding - onefetch
-pacman -S onefetch
+# #=> 2 encoding - onefetch
+# pacman -S onefetch
 
-#=> 2 encoding - python-pip 0 (re)install
-pacman -S python-pip
+# #=> 2 encoding - python-pip 0 (re)install
+# pacman -S python-pip
 
 # #=> 2 encoding - python-pip 1 remove
 # pacman -Rs python-pip
 
-#=> 2 encoding - python-pipx 0 (re)install
-pacman -S python-pipx
- # pipx ensurepath  # maybe not needed
+# #=> 2 encoding - python-pipx 0 (re)install
+# pacman -S python-pipx
+#  # pipx ensurepath  # maybe not needed
 
 # #=> 2 encoding - python-pipx 1 remove
 # pacman -Rs python-pipx
 
-#=> 2 encoding - R
-pacman -S r
+# #=> 2 encoding - R
+# pacman -S r
 
 # #=> 2 encoding - Ruby 0 install
 # pacman -S ruby
@@ -305,122 +309,127 @@ pacman -S r
 # #=> 2 encoding - Ruby 0 ruby-stdlib 1 remove
 # pacman -Rs ruby-stdlib
 
-#=> 2 encoding - Ruby 1 documentation 0 install
-pacman -S ruby-docs
+# #=> 2 encoding - Ruby 1 documentation 0 install
+# pacman -S ruby-docs
 
 # #=> 2 encoding - Ruby 1 documentation 1 remove
 # pacman -Rs ruby-rdoc
 
-#=> 2 encoding - Ruby 1 rbenv
-pacman -S rbenv ruby-build
+# #=> 2 encoding - Ruby 1 rbenv
+# pacman -S rbenv ruby-build
 
-#=> 2 encoding - selene
-# Lua linter
-pacman -S selene
+# #=> 2 encoding - selene
+# # Lua linter
+# pacman -S selene
 
-#=> 2 fonts
-sudo pacman -S adobe-source-code-pro-fonts  # for  Source Code Pro
-sudo pacman -S gnu-free-fonts
-sudo pacman -S noto-fonts  # for  Firefox  text and  Xfce  window labels
-sudo pacman -S noto-fonts-cjk  # for  $MD4PDF/GNULinux/md4pdf.sh
-sudo pacman -S ttf-arimo-nerd
-sudo pacman -S ttf-cascadia-mono-nerd
-sudo pacman -S ttf-croscore
-sudo pacman -S ttf-dejavu
-sudo pacman -S ttf-hack
-sudo pacman -S ttf-hack-nerd
-sudo pacman -S ttf-jetbrains-mono-nerd
-sudo pacman -S ttf-meslo-nerd
-sudo pacman -S ttf-opensans
-sudo pacman -S ttf-ubuntu-mono-nerd
+# #=> 2 fonts
+# sudo pacman -S adobe-source-code-pro-fonts  # for  Source Code Pro
+# sudo pacman -S gnu-free-fonts
+# sudo pacman -S noto-fonts  # for  Firefox  text and  Xfce  window labels
+# sudo pacman -S noto-fonts-cjk  # for  $MD4PDF/GNULinux/md4pdf.sh
+# sudo pacman -S ttf-arimo-nerd
+# sudo pacman -S ttf-cascadia-mono-nerd
+# sudo pacman -S ttf-croscore
+# sudo pacman -S ttf-dejavu
+# sudo pacman -S ttf-hack
+# sudo pacman -S ttf-hack-nerd
+# sudo pacman -S ttf-jetbrains-mono-nerd
+# sudo pacman -S ttf-meslo-nerd
+# sudo pacman -S ttf-opensans
+# sudo pacman -S ttf-ubuntu-mono-nerd
 
-#=> 2 system
-# beep
-pacman -S beep
+# #=> 2 system
+# # beep
+# pacman -S beep
 
-# BpyTOP
-pacman -S bpytop  # supersedes  Bashtop
+# # BpyTOP
+# pacman -S bpytop  # supersedes  Bashtop
 
-# bottom
-pacman -S bottom
+# # bottom
+# pacman -S bottom
 
-# btop
-pacman -S btop
+# # btop
+# pacman -S btop
 
-# dool
-pacman -S dool
+# # dool
+# pacman -S dool
 
-# fcron
-pacman -S fcron
-systemctl enable fcron.service
+# # fcron
+# pacman -S fcron
+# systemctl enable fcron.service
 
-# glances
-pacman -S glances
+# # glances
+# pacman -S glances
 
-# GNU time
-pacman -S time
+# # GNU time
+# pacman -S time
 
-# Mesa demos
-pacman -S mesa-demos  # probably brings in  mesa
+# # Mesa demos
+# # pacman -S mesa-demos
 
-# meson, for auracle later
-pacman -S meson
+# # meson, for  auracle-git  later
+# pacman -S meson
 
-# Pipe Viewer
-pacman -S pv
+# # Pipe Viewer
+# pacman -S pv
 
-#=> 2 various
-# cpanminus
-pacman -S cpanminus
+# #=> 2 various
+# # cpanminus
+# pacman -S cpanminus
 
-# languagetool
-pacman -S languagetool  # for the GUI
+# # hyperfine
+# pacman -S hyperfine
 
-# Node Package Manager 0 npm install
-pacman -S npm
+# # languagetool
+# pacman -S languagetool  # for the GUI
 
-# OpenOffice English thesaurus
-pacman -S mythes-en
+# # Node Package Manager 0 npm install
+# pacman -S npm
 
-# pass (brings in gnupg, which brings in pinentry)
-pacman -S pass
+# # OpenOffice English thesaurus
+# pacman -S mythes-en
 
-# Speech Dispatcher
-pacman -S speech-dispatcher
+# # pass (brings in gnupg, which brings in pinentry)
+# pacman -S pass
 
-# strace - for debugging
-pacman -S strace
+# # Speech Dispatcher
+# pacman -S speech-dispatcher
 
-# for thesaurus_query.vim
-pacman -S python-beautifulsoup4
+# # strace - for debugging
+# pacman -S strace
 
-# universal-ctags
-pacman -S ctags
+# # for thesaurus_query.vim
+# pacman -S python-beautifulsoup4
 
-# web-ish
-pacman -S arch-wiki-docs lynx w3m
+# # universal-ctags
+# pacman -S ctags
 
-#=> 2 various - Emacs
-pacman -S emacs  # brings in  tree-sitter
+# # web-ish
+# pacman -S arch-wiki-docs lynx w3m
 
-# #=> 2 various - GNOME Terminal
-# pacman -S gnome-terminal
+# #=> 2 various - Emacs
+# pacman -S emacs  # brings in  tree-sitter
 
-#=> 2 users
-# activate wheel group
-sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
-grep wheel /etc/sudoers
-# check that  /etc/sudoers  parses OK
-visudo -c -f /etc/sudoers
+# # #=> 2 various - GNOME Terminal
+# # pacman -S gnome-terminal
 
-# User jo, creating the home directory and adding to group wheel
-useradd -m -G wheel jo
-until passwd jo; do echo "try again"; done
-cat /etc/passwd
+# #=> 2 users
+# # activate wheel group
+# sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
+# grep wheel /etc/sudoers
+# # check that  /etc/sudoers  parses OK
+# visudo -c -f /etc/sudoers
 
-#=> 3 doas
-pacman -S opendoas
-cp $OSAB/extra-etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
+# # User jo, creating the home directory and adding to group wheel
+# useradd -m -G wheel jo
+# until passwd jo; do echo "try again"; done
+# cat /etc/passwd
+
+# #=> 3 doas 0 install
+# pacman -S opendoas
+
+#=> 3 doas 1 configure
+cp $OSAB/nodes-etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
 chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
 # after a reboot, test with  doas updatedb
 

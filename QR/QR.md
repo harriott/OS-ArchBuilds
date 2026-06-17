@@ -6,6 +6,7 @@ vim: nospell:
 my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
     bm  # (in a wide enough terminal) fuzzy search for manuals
+    ch /usr/share/doc/arch-wiki/html/en
     gsimplecal &  # toggle the little month pop-up
     i bc
     i datediff

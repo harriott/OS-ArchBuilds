@@ -250,6 +250,7 @@ sudo pacman -Rs auracle-git  then re-installed it
 apache
 EFI install
 gokcehan's lf
+hyperfine
 MariaDB
 Ruby rdoc fix
 Ruby rbenv
