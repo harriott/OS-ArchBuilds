@@ -77,7 +77,7 @@ bash /mnt/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-in_chroot/1-git_clone_to_root_o
 umount /dev/sdd1
 ### get environment
 cd /root/onGH/OS-ArchBuilds; git pull
-source nodes-Bash/export-Arch
+source nodes-Bash/export-Arch (= $OSAB/nodes-Bash/export-Arch)
 source nodes-set/jo-0-Bash-X.sh
 passwd > pw > pw
 ### ClamAV
@@ -138,6 +138,10 @@ reboot into jo
 ## jo
 su > root pw  for  rsync -irtv --delete /root/onGH/ /home/jo/onGH
 sudo chown -R jo:jo /home/jo/onGH
+bash $OSAB/bs-0-in_root/0-iwctl-Jo-MotoG86.sh
+dhcpcd wlan0
+source $OSAB/nodes-Bash/export-Arch
+source $OSAB/nodes-set/jo-0-Bash-X.sh
 ## waiting
 hyperfine
 # physical configuration

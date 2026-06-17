@@ -18,9 +18,6 @@ mkdir -p ~/.local/share/mime/packages
 #=> 2 prepare for nanorc
 mkdir -p /home/jo/.config/nano
 
-#=> 1 ~/Arch
-mkdir /home/jo/Arch
-
 #=> 1 w3m
 mkdir ~/.w3m/cgi-bin
 
