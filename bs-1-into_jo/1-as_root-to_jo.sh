@@ -106,72 +106,73 @@ pacman -S ttf-nerd-fonts-symbols
 # # Vifm
 # pacman -S vifm
 
-#=> 2 file manage 2
-# Yazi
-pacman -S yazi
+# #=> 2 file manage 2
+# # Yazi
+# pacman -S yazi
 
-# zoxide
-pacman -S zoxide
+# # zoxide
+# pacman -S zoxide
 
-#=> 2 hd 0
-# atop
-pacman -S atop
+# #=> 2 hd 0
+# # atop
+# pacman -S atop
 
-# diskus
-pacman -S diskus
+# # diskus
+# pacman -S diskus
 
-# duf
-pacman -S duf
+# # duf
+# pacman -S duf
 
-# hdparm
-pacman -S hdparm
+# # hdparm
+# pacman -S hdparm
 
-# ioping
-pacman -S ioping
+# # ioping
+# pacman -S ioping
 
-# NTFS-3G
-pacman -S ntfs-3g
+# # NTFS-3G
+# pacman -S ntfs-3g
 
-# smartmontools
-pacman -S smartmontools
+# # smartmontools
+# pacman -S smartmontools
 
-# udiskie
-pacman -S udiskie
+# # udiskie
+# pacman -S udiskie
 
-#=> 2 hd 1 SSDs
-# dua-cli
-pacman -S dua-cli  # dua  for SSDs
+# #=> 2 hd 1 SSDs
+# # dua-cli
+# pacman -S dua-cli  # dua  for SSDs
 
-# gdu
-pacman -S gdu
+# # gdu
+# pacman -S gdu
 
-# weekly TRIM (util-linux)
-# systemctl status fstrim.timer
-systemctl enable fstrim.timer --now
+# # weekly TRIM (util-linux)
+# # systemctl status fstrim.timer
+# systemctl enable fstrim.timer --now
 
-#=> 2 info
-# Bashtop
-pacman -S bashtop  # later superseded by AUR bpytop
+# #=> 2 info 1
+# # Bashtop
+# pacman -S bashtop  # later superseded by AUR bpytop
 
-# Dateutils
-pacman -S dateutils
+# # Dateutils
+# pacman -S dateutils
 
-# Fastfetch
-pacman -S fastfetch
-mkdir ~/.config/fastfetch
+# # Fastfetch
+# pacman -S fastfetch
+# mkdir ~/.config/fastfetch
 
-# htop
-pacman -S htop
+# # htop
+# pacman -S htop
 
-# iotop
-pacman -S iotop
+# # iotop
+# pacman -S iotop
 
-# lshw
-pacman -S lshw
+# # lshw
+# pacman -S lshw
 
-# lsof
-pacman -S lsof
+# # lsof
+# pacman -S lsof
 
+#=> 2 info 2
 # man-db
 pacman -S man-db
 
