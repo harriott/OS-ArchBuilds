@@ -16,6 +16,8 @@ export startxDelay=5
 
 #=> for  $OSAB/nodes-Bash/export-Arch
 # export myDrA=1  # only when my Dropbox is active
+export user_jo=1  # only when user  jo  is active
+  # for  $OSAB/nodes-Bash/export-Arch, because [ -d /home/jo/onGh ] fails from  ~/.bash_profile
 export Storage=/mnt/MZNLN128  # $Storage, where I keep stuff
   export Enc=$Storage/encrypted  # mkdir $Enc
 

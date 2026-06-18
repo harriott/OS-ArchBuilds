@@ -40,9 +40,9 @@ if [[ $myDrA == 1 ]]; then
       export ITccl=$ITcore/copied-linked  # $ITccl
       export onGH=$ITcore/onGitHub
 else
-  # Building  root / user:
+  # No  $Drpbx  yet, building  root / user:
     export onGH=$HOME/onGH  # because following test fails in  user
-    [ -d /home/jo/onGh ] && export onGH=/home/jo/onGH
+    [[ $user_jo ==1 ]] && export onGH=/home/jo/onGH  # see  Bash_start's
 fi
 
 #=> 4 rooting on  $onGH

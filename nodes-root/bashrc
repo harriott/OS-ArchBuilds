@@ -28,7 +28,7 @@ fss () { fs "$1" > /home/jo/fs.lst; chown jo:jo /home/jo/fs.ffl; }
 #=> 0 more useful tweaks
 alias o=echo
 set -o vi
-source /home/jo/.bashrc-generic
+source /home/jo/.bashrc-generic  # $OSAB/nodes-Bash/bashrc-generic
 
 # a colorised (bold red) prompt:
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
