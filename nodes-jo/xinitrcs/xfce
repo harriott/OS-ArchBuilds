@@ -5,7 +5,11 @@
 #   $OSAB/nodes-Bash/bashrc-generic
 #   $OSAB/nodes-set/jo-0-Bash-X.sh
 
-source $ABjo/xinitrcs/xinitrc  # calls  $ABjo/wm/Xresources/Xresources
+if [[ $ABjo ]]; then
+    source $ABjo/xinitrcs/xinitrc  # calls  $ABjo/wm/Xresources/Xresources
+else
+    echo '$ABjo undefined!'
+fi
 
 ## Xfce
 exec startxfce4

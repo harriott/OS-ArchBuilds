@@ -42,7 +42,7 @@ if [[ $myDrA == 1 ]]; then
 else
   # No  $Drpbx  yet, building  root / user:
     export onGH=$HOME/onGH  # because following test fails in  user
-    [[ $user_jo ==1 ]] && export onGH=/home/jo/onGH  # see  Bash_start's
+    [ $user_jo == 1 ] && export onGH=/home/jo/onGH  # because following test fails in  user
 fi
 
 #=> 4 rooting on  $onGH
