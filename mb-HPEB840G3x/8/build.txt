@@ -148,8 +148,8 @@ bash $OSAB/bs-1-into_jo/3-NetworkManager.sh
 nmcli connecttion up Jo-MotoG86
 nmcli device wifi connect Jo-MotoG86 password <pw>
 bash $OSAB/nodes-set/jo-1-encoding.sh
+$OSAB/bs-1-into_jo/4-as_root-sudoers.sh
 
-sudo bash $OSAB/bs-1-into_jo/4-as_root-sudoers.sh
 ## waiting
 $OSAB/nodes-etc/sudoers
 hyperfine

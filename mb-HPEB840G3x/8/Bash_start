@@ -21,7 +21,7 @@ export user_jo=1  # only when user  jo  is active
   # once set and integrated into  /root, can  rm -r /root/onGH
 
 # 1 once  $Drpbx:
-# export myDrA=1  # only when my Dropbox is active
+# export myDrA=1  # $myDrA, only when my Dropbox is active
 
 # 2 Machine:
 export Storage=/mnt/MZNLN128  # $Storage, where I keep stuff

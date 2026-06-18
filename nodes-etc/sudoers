@@ -1,5 +1,6 @@
 
-## managed by  $OSAB/bs-1-into_jo/4-as_root-sudoers.sh
+## $OSAB/nodes-etc/sudoers
+##  managed by  $OSAB/bs-1-into_jo/4-as_root-sudoers.sh
 
 ## Reference:
 ##  $GRs/d-unix-like/r-sudo-project-sudo/plugins/sudoers/regress/cvtsudoers/sudoers
@@ -19,12 +20,14 @@ Defaults!/usr/bin/visudo env_keep += "SUDO_EDITOR EDITOR VISUAL"
 
 %wheel ALL=(ALL:ALL) ALL
 root ALL=(ALL:ALL) ALL
-@includedir /etc/sudoers.d
 
 ## allow root access to dhcpcd (stackexchange 18830)
 jo ALL = (root) NOPASSWD: /usr/bin/dhcpcd
 
 ## allow root access to ip
 jo ALL = (root) NOPASSWD: /usr/bin/ip
+
+## Last, for some reason, read drop-in files from /etc/sudoers.d
+@includedir /etc/sudoers.d
 
 ## vim: set ft=sudoers:

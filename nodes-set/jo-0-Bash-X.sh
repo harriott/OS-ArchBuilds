@@ -17,7 +17,7 @@ ln -sf $AjB/bashrc-console                   ~/.bashrc-console
 [ -d ~/Arch ] || mkdir ~/Arch
   ln -sf $AjB/bash_history.sh                ~/Arch/bash_history.sh
 
-e -la ~/.bash* ~/Arch/bash_history.sh
+eza -la ~/.bash* ~/Arch/bash_history.sh
 
 #=> X
 ln -sf $ABjo/wm/Xresources/Xresources                       ~/.Xresources
@@ -28,5 +28,5 @@ ln -sf $ABjo/xbindkeysrc                                    ~/.xbindkeysrc  # mo
 ln -sf $ABjo/xinitrcs/xfce                                  ~/.xinitrc
 # ln -sf $ABjo/xinitrcs/openbox                               ~/.xinitrc
 # ln -sf $ABjo/xinitrcs/awesome                               ~/.xinitrc
-e -la ~/.Xresources* ~/.xbindkeysrc ~/.xinitrc
+eza -la ~/.Xresources* ~/.xbindkeysrc ~/.xinitrc
 

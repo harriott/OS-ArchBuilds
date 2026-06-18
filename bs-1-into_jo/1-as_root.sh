@@ -265,6 +265,9 @@ read -p "\$OSAB is $OSAB - looks good?"
 # #=> 2 encoding - git-delta
 # pacman -S git-delta
 
+# #=> 2 encoding - gvim
+# pacman -S gvim
+
 # #=> 2 encoding - lazygit
 # pacman -S lazygit
 
