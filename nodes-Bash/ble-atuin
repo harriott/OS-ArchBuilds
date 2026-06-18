@@ -9,7 +9,10 @@
 [[ ! ${BLE_VERSION-} ]] || ble-attach
 
 #=> Atuin
-export ATUIN_NOBIND=1
-eval "$(atuin init bash)"
-bind -x '"\C-u": __atuin_history'
+# command history
+if [ -f /usr/bin/atuin ]; then
+  export ATUIN_NOBIND=1
+  eval "$(atuin init bash)"
+  bind -x '"\C-u": __atuin_history'
+fi
 
