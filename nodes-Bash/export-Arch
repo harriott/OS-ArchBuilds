@@ -41,11 +41,8 @@ if [[ $myDrA == 1 ]]; then
       export onGH=$ITcore/onGitHub
 else
   # Building  root / user:
-    if [ -d /home/jo/onGh ]; then
-      export onGH=/home/jo/onGH
-    else
-      export onGH=/root/onGH
-    fi
+    export onGH=$HOME/onGH  # because following test fails in  user
+    [ -d /home/jo/onGh ] && export onGH=/home/jo/onGH
 fi
 
 #=> 4 rooting on  $onGH
