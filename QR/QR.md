@@ -1391,6 +1391,7 @@ to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
 
 ## security
     $OSAB/extra-etc/sudoers/sudoers
+    sudo freshclam
 
 ### groups
     cat /etc/group  # list all groups on the system

@@ -9,16 +9,17 @@ set -ev  # quits on error, prints each statement here, including comments
 #=> 0 check $OSAB
 read -p "\$OSAB is $OSAB - looks good?"
 
-# #=> 2 ClamAV 0 install
-# freshclam  # takes a long time to update the database!
+#=> 2 ClamAV 0 install
+freshclam  # takes a long time to update the database!
 
-# #=> 2 Firewalld 0
-# # 1 get & enable
-# pacman -S firewalld
-# systemctl enable firewalld --now
+#=> 2 Firewalld 0
+# 1 get & enable
+pacman -S firewalld
+systemctl enable firewalld --now
+sleep 2
 
-# # 2 active zone
-# firewall-cmd --set-default-zone=home
+# 2 active zone
+firewall-cmd --set-default-zone=home
 
 #=> 2 Firewalld 1 port for Avahi
 # open UDP port 5353
@@ -30,6 +31,7 @@ firewall-cmd --permanent --zone=home --add-port 5353/udp
 
 #=> 2 Firewalld 2 restart
 systemctl restart firewalld.service
+sleep 2
 
 #=> 2 Firewalld 3 check
 firewall-cmd --state
