@@ -1,5 +1,5 @@
 
-##  sudo nvim -O /etc/sudoers $OSAB/extra-etc/sudoers/sudoers -c 'windo difft'
+##  sudo nvim -O /etc/sudoers $OSAB/nodes-etc/sudoers/sudoers -c 'windo difft'
 ##  sudo visudo -c -f /etc/sudoers  # essential!
 ##  sudo grep timestamp_timeout /etc/sudoers
 ##  sudo tail -n 7 /etc/sudoers

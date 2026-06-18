@@ -15,9 +15,15 @@ export rsnapshot=a_portable_drive  # $rsnapshot
 export startxDelay=5
 
 #=> for  $OSAB/nodes-Bash/export-Arch
-# export myDrA=1  # only when my Dropbox is active
+# 0 during initial build, before  $Drpbx:
 export user_jo=1  # only when user  jo  is active
   # for  $OSAB/nodes-Bash/export-Arch, because [ -d /home/jo/onGh ] fails from  ~/.bash_profile
+  # once set and integrated into  /root, can  rm -r /root/onGH
+
+# 1 once  $Drpbx:
+# export myDrA=1  # only when my Dropbox is active
+
+# 2 Machine:
 export Storage=/mnt/MZNLN128  # $Storage, where I keep stuff
   export Enc=$Storage/encrypted  # mkdir $Enc
 
