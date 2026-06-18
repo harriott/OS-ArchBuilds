@@ -1,10 +1,12 @@
 #!/bin/bash
 # vim: sw=2:
 
-# bash $OSAB/nodes-set/jo-1-encoding.sh
+# bash $OSAB/nodes-set/jo-3-encoding.sh
 # Vim's won't work unless the  $vfv/packs/packs-*  are populated, which is the case in my  $Drpbx
 
 #=> Emacs configure
+[ -d "~/.emacs.d" ] && sudo rm -r ~/.emacs.d
+mkdir -p ~/.emacs.d
 ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el
 ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el
 ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
@@ -80,7 +82,7 @@ ln -s $vfv/packs/packs-colo    ~/.vim/pack/colo
 ln -s $vfv/packs/packs-cp-all  ~/.vim/pack/cp-all
 ln -s $vfv/packs/packs-cp-full ~/.vim/pack/cp-full
 ln -s $vfv/packs/packs-unix    ~/.vim/pack/unix
-ln -s $vfv/plugin/packs.vim    ~/.vim/plugin/packs.vim
+ln -s $vfv/plugin/packs.vim    ~/.vim/plugin/packs.vim  # remove this one before  $Drpbx
 ln -s $vfv/plugin/plugin.vim   ~/.vim/plugin/plugin.vim
 ln -s $vfv/spell               ~/.vim/spell
 ln -s $vfv/syntax              ~/.vim/syntax

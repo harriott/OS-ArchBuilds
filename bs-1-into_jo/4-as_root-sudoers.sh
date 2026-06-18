@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# sudo bash $OSAB/bs-1-into_jo/3-NetworkManager.sh
+# sudo bash $OSAB/bs-1-into_jo/4-as_root-sudoers.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
