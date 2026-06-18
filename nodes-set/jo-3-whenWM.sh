@@ -60,6 +60,11 @@ sudo ln -sf $ABjo/music/music_rotate.desktop /usr/share/applications/music_rotat
 lnd $onGH/pandoc-templates ~/.pandoc/templates
 # e -adl ~/.pandoc/templates
 
+#=> SSH config
+ln -sf $cITCP/networking-SSHconfig/$host ~/.ssh/config
+# e -la ~/.ssh/config
+# pb ~/.ssh/config
+
 #=> Spacemacs
 sudo ln -sf $ABjo/Emacs/spacemacs.desktop /usr/share/applications/spacemacs.desktop
 # e -la /usr/share/applications/spacemacs.desktop

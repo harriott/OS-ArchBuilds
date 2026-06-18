@@ -15,11 +15,6 @@ ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
 ln -sf $onGH/zenburn-emacs ~/.emacs.d/zenburn-emacs
 eza -adl ~/.emacs.d/*
 
-#=> SSH config
-ln -sf $cITCP/networking-SSHconfig/$host ~/.ssh/config
-# e -la ~/.ssh/config
-# pb ~/.ssh/config
-
 #=> vimfiles - nvim 0 empty 0
 [ -d "$nvim" ] && sudo rm -r $nvim
 mkdir -p $nvim/pack
