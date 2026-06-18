@@ -11,5 +11,3 @@ source ~/.start  # $machBld/Bash_start
 
 [[ -f /root/.bashrc ]] && source /root/.bashrc  # $OSAB/nodes-root/bashrc
 
-source ~/.config/broot/launcher/bash/br  # - carries through to X
-
