@@ -8,25 +8,12 @@
 [ -d "~/.emacs.d" ] && sudo rm -r ~/.emacs.d
 mkdir -p ~/.emacs.d
 ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el
-ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el
+ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el  # pb ~/.emacs.d/early-init.el
 ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
 ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp
 ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
 ln -sf $onGH/zenburn-emacs ~/.emacs.d/zenburn-emacs
-# e -la ~/.emacs.d/
-# pb ~/.emacs.d/early-init.el
-
-#=> CLM config
-cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
-cp -f $lclm/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
-cp -f $lclm/notmuch-config-backup ~/.notmuch-config
-maild=~/.local/share/mail
-for m in $maild $maild/fm $maild/gmx $maild/zou; do
-  [ -d $m ] || mkdir $m; done
-
-#=> Openbox - Alacritty with Nvim
-ln -sf $machBld/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh
-# e -la ~/.config/openbox/AlacrittyNvim.sh
+eza -adl ~/.emacs.d/*
 
 #=> SSH config
 ln -sf $cITCP/networking-SSHconfig/$host ~/.ssh/config

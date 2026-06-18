@@ -3,7 +3,7 @@
 
 # bash $OSAB/nodes-set/jo-1-Openbox.sh
 
-#=> symlinks for Openbox
+#=> Openbox
 
 ln -sf $Obc/schema.pl ~/.config/obmenu-generator/schema.pl
 eza -la ~/.config/obmenu-generator/schema.pl
@@ -19,4 +19,8 @@ ln -sf $machBld/jo/openbox/rc.xml   ~/.config/openbox/rc.xml
 # :Tabularize /\~/l1r0
 
 eza -la ~/.config/openbox
+
+#=> Openbox - Alacritty with Nvim
+ln -sf $machBld/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh
+# e -la ~/.config/openbox/AlacrittyNvim.sh
 

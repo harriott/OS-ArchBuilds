@@ -11,6 +11,14 @@ ln -sf $ABjo/music/MPD/vimpcrc ~/.config/vimpc/vimpcrc
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
 
+#=> CLM config
+cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
+cp -f $lclm/msmtprc-backup ~/.msmtprc; chmod 600 ~/.msmtprc
+cp -f $lclm/notmuch-config-backup ~/.notmuch-config
+maild=~/.local/share/mail
+for m in $maild $maild/fm $maild/gmx $maild/zou; do
+  [ -d $m ] || mkdir $m; done
+
 # #=> for Tex Live Arch packaged install
 # sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 # # e -la /usr/share/texmf.cnf
