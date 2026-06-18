@@ -4,8 +4,7 @@
 
 #=> 0 up to Console
 # $AjB/bash_profile  ensured the exports
-  source $OSAB/nodes-Bash/bashrc-generic
-  #   source $AjB/bashrc-console  # sources  $OSL/nodes/bashrc-console-fm
+  source ~/.bashrc-generic  # $OSAB/nodes-Bash/bashrc-generic
   source ~/.bashrc-console  # $AjB/bashrc-console
 
 #=> 1 up to terminal

@@ -28,6 +28,7 @@ export maild=/home/jo/.local/share/mail  # $maild  for  mutt
 
 #=> 2 $Drpbx, or not
 if [[ $myDrA == 1 ]]; then
+  # $myDrA, $Storage  defined in  $machBld/export-machine
   export Drpbx=$Storage/Dropbox
     export DrJo=$Drpbx/Jo
     export ITcore=$Drpbx/IT/core
@@ -39,8 +40,13 @@ if [[ $myDrA == 1 ]]; then
       export ITccl=$ITcore/copied-linked  # $ITccl
       export onGH=$ITcore/onGitHub
 else
-    export onGH=$HOME/onGH  # when building  root / user
-fi  # $myDrA, $Storage  defined in  $machBld/export-machine
+  # Building  root / user:
+    if [ -d /home/jo/onGh ]; then
+      export onGH=/home/jo/onGH
+    else
+      export onGH=/root/onGH
+    fi
+fi
 
 #=> 4 rooting on  $onGH
 export OSAB=$onGH/OS-ArchBuilds
