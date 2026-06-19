@@ -641,7 +641,7 @@ unalias **<tab>
     sudo rsync -aAivX --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
 
 ### checking
-    rsnapshot configtest
+    ncdu --exclude rsnapshot
     tail -n 44 /var/log/rsnapshot | xcolorize green 'completed successfully' yellow started
 
 #### counts
@@ -745,7 +745,6 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     diskus  # size of current directory
 
 ### ncdu
-    ncdu --exclude rsnapshot
     ncdu --exclude Cop-IT
 
 NCDU(1)

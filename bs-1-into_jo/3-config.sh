@@ -3,8 +3,7 @@
 
 # bash $OSAB/bs-1-into_jo/3-config.sh
 
-set -e
-set -v  # prints each statement here, including comments
+set -ev  # quits on error, prints each statement here, including comments
 
 #=> for broot
 broot -- install

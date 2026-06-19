@@ -6,8 +6,8 @@
 # --------------------------
 # because on  DOP3040D11S  it gets refreshed sometimes, losing old records
 
-# fcrontab:  @ 1 d bash ~/Arch/log_rsnapshot.sh
-# symlinked in my  $OSAB/bs-1-to_jo/5-rsnapshot.sh
+# ln -sf $ABjo/log_rsnapshot.sh ~/Arch/log_rsnapshot.sh
+#  fcrontab:  @ 1 d bash ~/Arch/log_rsnapshot.sh
 
 d=$(date +%Y%m%d)
 l="$HOME/Arch/root/log_rsnapshot-$d"

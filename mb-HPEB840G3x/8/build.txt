@@ -151,9 +151,9 @@ bash $OSAB/nodes-set/jo-1-encoding.sh
 $OSAB/bs-1-into_jo/4-as_root-sudoers.sh
 $OSAB/bs-1-into_jo/6-sudo-configure_freshclam.sh
 
+sudo pacman -Syu
+pacman -S hyperfine
 ## waiting
-$OSAB/nodes-etc/sudoers
-hyperfine
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U

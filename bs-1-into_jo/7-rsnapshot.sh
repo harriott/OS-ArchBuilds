@@ -1,38 +1,30 @@
 #!/bin/bash
-# vim: sw=2:
+# vim: fdl=1 sw=2:
 
-# sudo bash $OSAB/bs-1-to_jo/5-rsnapshot.sh
+# sudo bash $OSAB/bs-1-into_jo/7-rsnapshot.sh
 
-set -v  # prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
+set -ev  # quits on error, prints each statement here, including comments
 
-# #=> 0 inotify-tools
-# # supplies  inotifywait, for monitoring file changes
-# pacman -S inotify-tools
-
-# #=> 0 grab default rsnapshot conf
-# cp /etc/rsnapshot.conf ~/la5-rsnapshot.conf
+#=> 0 inotify-tools
+# supplies  inotifywait, for monitoring file changes
+pacman -S inotify-tools
 
 #=> 1 set my rsnapshot conf 1 working
-sudo cp $machBld/etc/rsnapshot.conf /etc/rsnapshot.conf
-
-#=> 1 sync my rsnapshot configurations
-A=$OSAB; erc=etc/rsnapshot.conf; nvim -O $A/AsusW202/$erc $A/i34G1TU02/$erc $A/sbMb/$erc -c 'windo difft'
+if   [[ $host =~ HPEB840G37 ]]; then
+  sudo cp $OSAB/mb-HPEB840G3x/7/etc/rsnapshot.conf /etc/rsnapshot.conf
+elif [[ $host =~ HPEB840G38 ]]; then
+  sudo cp $OSAB/mb-HPEB840G3x/8/etc/rsnapshot.conf /etc/rsnapshot.conf
+else
+  sudo cp $machBld/etc/rsnapshot.conf /etc/rsnapshot.conf
+fi
 
 #=> 2 rsnapshot needed locations
-mkdir $rsnapshot  # see $machBld/export-machine
+mkdir $rsnapshot  # /rsnapshot=
 sudo touch /var/log/rsnapshot
 
 #=> 3 test rsnapshot conf
 rsnapshot configtest
 
-# #=> 4 test hourly
-# rsnapshot -t hourly
-# # could  sudo rsnapshot hourly  and monitor progress with  du -sh rsnapshot
-
-# #=> 4 prepare restore script
-# cp $OSAB/bs-repeatable\from_rescue_boot-rsnapshot_restore.sh $rsnapshot/restore.sh
-
-#=> 5 backup  /var/log/rsnapshot
-ln -sf $ABjo/log_rsnapshot.sh ~/Arch/log_rsnapshot.sh
+#=> 4 prepare restore script
+cp $OSAB/bs-repeatable/from_rescue_boot-rsnapshot_restore.sh $rsnapshot/restore.sh
 

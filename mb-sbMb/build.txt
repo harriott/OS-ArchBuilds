@@ -4231,6 +4231,8 @@ nmcli device wifi connect Jo-MotoG86 password 6ApHuy8v
 ssssd="/etc/systemd/system/systemd-suspend.service.d"
 sudo rm -r $ssssd
 - but it was a drive plugged in that was causing it
+## sudden reboots
+27°C in studio,  temp2 +46
 ## waiting
 gokcehan's lf
 MariaDB

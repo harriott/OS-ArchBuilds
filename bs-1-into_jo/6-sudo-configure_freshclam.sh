@@ -2,7 +2,7 @@
 
 # from root,  bash $OSAB/bs-1-into_jo/6-sudo-configure_freshclam.sh
 
-set -ev  # quits on error, prints each statement here, including comments
+set -v  # prints each statement here, including comments
 
 # #=> ClamAV 0 empty sock file
 # # when freshclam triggered warning "Clamd was NOT notified"
@@ -19,6 +19,6 @@ systemctl status clamav-freshclam
 
 #=> ClamAV 2 test
 #  be patient after the curl
-curl https://secure.eicar.org/eicar.com.txt | clamscan -
+# curl https://secure.eicar.org/eicar.com.txt | clamscan -
 echo "- should've seen  \"stdin: Eicar-Test-Signature FOUND\""
 
