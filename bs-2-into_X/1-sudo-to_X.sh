@@ -100,7 +100,7 @@ pacman -S rebuild-detector
 # pacman -S mediainfo
 
 # # PulseAudio
-# pacman -S pulsemixer
+# pacman -S pulsemixer  # does this bring in  pulseaudio?
 
 #=> 4 when X 0 - networking
 # DNS Lookup utility

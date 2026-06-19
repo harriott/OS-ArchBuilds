@@ -144,10 +144,11 @@ URLs (such as in an email sent from `mutt`) unclickable - so better to send to t
     cloudflare-speed-cli --help
     speedtest-cli -h
 
-# weather
-    aw
+# weather - ansiweather
+    ansiweather  # today
+    aw  # 7 day ($AjB/bashrc-wmA)
 
-## wttr.in
+# weather - wttr.in
 ```bash
 curl wttr.in/London
 curl wttr.in/Moscow

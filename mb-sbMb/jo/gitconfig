@@ -1,6 +1,6 @@
 # vim: ft=gitconfig
 
-# $machBld/jo/gitconfig  symlinked in  $OSAB/nodes-set/jo-0.sh
+# $machBld/jo/gitconfig  ($OSAB/nodes-set/jo-3-whenWM.sh)
 #  e -la ~/.gitconfig
 #  pb ~/.gitconfig
 

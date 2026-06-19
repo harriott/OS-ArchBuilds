@@ -10,15 +10,17 @@ trap read debug  # puts a read request after each executable line
 # #=> android-tools
 # pacman -S android-tools
 
-#=> audio - Cmus 0 (re)install
+#=> audio - Cmus 0 install
 pacman -S cmus
+[ -d ~/.config/cmus ] || mkdir ~/.config/cmus
 
-#=> audio - Cmus 1 uninstall
+#=> audio - Cmus 1 remove
 pacman -Rs cmus
 
-# #=> audio - MPD
-# pacman -S mpd
-# mkdir -p ~/.mpd/playlists ~/music
+#=> audio - MPD
+pacman -S mpd
+[ -d ~/.mpd/playlists ] || mkdir -p ~/.mpd/playlists
+[ -d ~/music ] || mkdir -p ~/music
 
 #=> audio - WildMIDI
 pacman -S wildmidi

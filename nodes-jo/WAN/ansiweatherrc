@@ -1,0 +1,15 @@
+
+# $ABjo/WAN/ansiweatherrc ($OSAB/nodes-set/jo-0.sh)
+
+# $cGRs/d-unix-like/d-linux/r-fcambus-ansiweather/ansiweatherrc.example
+
+background:\033[40m
+location:Paris,FR
+symbols:true
+show_daylight:true
+show_humidity:true
+show_pressure:true
+show_wind:true
+dateformat:%a %b %d
+timeformat:%b %d %r
+

@@ -7,26 +7,8 @@ lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 set -e
 set -v  # prints each statement here, including comments
 
-#=> $notDr
-if [[ $myDrA == 1 ]]; then
-  [ -d $notDr/GR-NF ] || mkdir -p $notDr/GR-NF
-  ln -sf $ITcore/notDr/readme.md $notDr/readme.md  # e -la $notDr/readme.md
-  ln -sf $ITcore/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
-fi
-
-#=> Alacritty
-if [ $host = 'DOP3040D11S' ]; then
-  ln -sf $OSAB/mb-DOP3040D11S/alacritty.toml ~/.alacritty.toml
-elif [[ $host =~ HPEB840G3 ]]; then
-  ln -sf $OSAB/mb-HPEB840G3x/hi/alacritty.toml ~/.alacritty.toml
-else
-  ln -sf $OSAB/mb-sbMb/Alacritty/Xfce.toml ~/.alacritty.toml
-fi
-ln -sf $OSAB/nodes-terminal/alacritty-all.toml ~/.alacritty-all.toml
-# e -la ~/.alacritty*
-
 #=> ansiweather
-ln -sf $ABjo/WAN/ansiweather ~/.ansiweatherrc  # e -l ~/.ansiweatherrc
+ln -sf $ABjo/WAN/ansiweatherrc ~/.ansiweatherrc  # e -l ~/.ansiweatherrc
 
 #=> Chawan
 [ -d ~/.config/chawan ] || mkdir -p ~/.config/chawan
@@ -54,37 +36,16 @@ if [ -s "/usr/bin/clifm" ]; then
   done
 fi
 
-#=> cmus
-ln -sf $ABjo/wm/cmusqueue.sh   ~/Arch/cmusqueue.sh
-ln -sf $ABjo/wm/cmus_notify.sh ~/.local/share/cmus_notify.sh
-ln -sf $culLA/jo/cmushnotify.sh ~/.local/share/cmushnotify.sh
-[ -d ~/.config/cmus ] || mkdir -p ~/.config/cmus
-ln -sf $ABjo/wm/cmus-rc.conf   ~/.config/cmus/rc  # pb ~/.config/cmus/rc
-
 #=> davfs2.conf
 [ -d ~/.davfs2/davfs2.conf ] && ln -sf $ABjo/WAN/davfs2.conf ~/.davfs2/davfs2.conf
 
 #=> dictrc
 ln -sf $ABjo/WAN/dictrc ~/.dictrc
 
-#=> Dunst
-[ -d ~/.config/dunst ] || mkdir -p ~/.config/dunst
-ln -sf $ABjo/wm/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
-# es ~/.config/dunst/dunstrc
-
 #=> fastfetch
 [ -d ~/.config/fastfetch ] || mkdir -p ~/.config/fastfetch
 ln -sf $OSAB/nodes-terminal/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
 # e -la ~/.config/fastfetch/config.jsonc
-
-#=> fix Calibri in Thunderbird
-[ -d ~/.config/fontconfig/conf.d ] || mkdir -p ~/.config/fontconfig/conf.d
-ln -sf $ABjo/wm/fontconfig-conf_d-20-no-embedded.conf ~/.config/fontconfig/conf.d/20-no-embedded.conf
-
-#=> Git
-ln -sf $machBld/jo/gitconfig ~/.gitconfig
-# points to further convigurations on  $ITcore
-# e -la ~/.gitconfig
 
 #=> gpg-agent configuration
 gpg --list-keys  # creates populated  ~/.gnupg
@@ -136,8 +97,4 @@ fi
 ln -sf $ABjo/WAN/w3m/config ~/.w3m/config
 ln -sf $ABjo/WAN/w3m/keymap ~/.w3m/keymap
 ln -sf $ABjo/WAN/w3m/omnibar_duckduckgo.cgi ~/.w3m/cgi-bin/omnibar_duckduckgo.cgi
-
-#=> WezTerm
-ln -sf $OSAB/nodes-terminal/wezterm.lua ~/.wezterm.lua
-# e -la ~/.wezterm.lua
 

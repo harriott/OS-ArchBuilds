@@ -3,13 +3,29 @@
 
 # https://harriott.github.io/ - Wed 17 Jun 2026
 
-# bash $OSAB/nodes-set/jo-2-whenWM-0.sh
+# bash $OSAB/nodes-set/jo-3-whenWM.sh
 
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
 ln -sf $ABjo/music/MPD/mpd.conf ~/.config/mpd/mpd.conf
 ln -sf $ABjo/music/MPD/vimpcrc ~/.config/vimpc/vimpcrc
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
+
+#=> $notDr
+[ -d $notDr/GR-NF ] || mkdir -p $notDr/GR-NF
+ln -sf $ITcore/notDr/readme.md $notDr/readme.md  # e -la $notDr/readme.md
+ln -sf $ITcore/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.md
+
+#=> Alacritty
+if [ $host = 'DOP3040D11S' ]; then
+  ln -sf $OSAB/mb-DOP3040D11S/alacritty.toml ~/.alacritty.toml
+elif [[ $host =~ HPEB840G3 ]]; then
+  ln -sf $OSAB/mb-HPEB840G3x/hi/alacritty.toml ~/.alacritty.toml
+else
+  ln -sf $OSAB/mb-sbMb/Alacritty/Xfce.toml ~/.alacritty.toml
+fi
+ln -sf $OSAB/nodes-terminal/alacritty-all.toml ~/.alacritty-all.toml
+# e -la ~/.alacritty*
 
 #=> CLM config
 cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
@@ -19,9 +35,40 @@ maild=~/.local/share/mail
 for m in $maild $maild/fm $maild/gmx $maild/zou; do
   [ -d $m ] || mkdir $m; done
 
+#=> cmus
+ln -sf $ABjo/wm/cmusqueue.sh   ~/Arch/cmusqueue.sh
+ln -sf $ABjo/wm/cmus_notify.sh ~/.local/share/cmus_notify.sh
+ln -sf $culLA/jo/cmushnotify.sh ~/.local/share/cmushnotify.sh
+[ -d ~/.config/cmus ] || mkdir -p ~/.config/cmus
+ln -sf $ABjo/wm/cmus-rc.conf   ~/.config/cmus/rc  # pb ~/.config/cmus/rc
+
+#=> Dunst
+[ -d ~/.config/dunst ] || mkdir -p ~/.config/dunst
+ln -sf $ABjo/wm/dunstrc ~/.config/dunst/dunstrc  # requires restarting X
+# es ~/.config/dunst/dunstrc
+
+#=> fix Calibri in Thunderbird
+[ -d ~/.config/fontconfig/conf.d ] || mkdir -p ~/.config/fontconfig/conf.d
+ln -sf $ABjo/wm/fontconfig-conf_d-20-no-embedded.conf ~/.config/fontconfig/conf.d/20-no-embedded.conf
+
+#=> 2 for my m4p scripts
+[ -d ~/texmf/tex/latex/m4p ] || mkdir -p mkdir -p ~/texmf/tex/latex/m4p  # needed eventually for Pandoc in $AjB/bashrc-wm
+
 # #=> for Tex Live Arch packaged install
 # sudo ln -sf $ABjo/texmf.cnf /usr/share/texmf.cnf  # has no effect...
 # # e -la /usr/share/texmf.cnf
+
+#=> gitconfig
+ln -sf $machBld/jo/gitconfig ~/.gitconfig
+# points to further convigurations on  $ITcore
+# e -la ~/.gitconfig
+
+#=> GitHub CLI 0 install
+sudo pacman -S github-cli
+
+#=> GitHub CLI 1 configure
+gh config set -h github.com git_protocol ssh
+gh extension install gennaro-tedesco/gh-s
 
 #=> Openbox - shift+PrtSc disabled - notification
 # for  i34G1TU02  &  sbMb
@@ -85,4 +132,8 @@ sudo ln -sf $ABjo/wm/TS/thunderbird_safely.desktop /usr/share/applications/thund
 lnd $ABjo/wm/terminal/urxvt-Perls ~/.urxvt/ext
 # e -la ~/.urxvt
 # r ~/.urxvt
+
+#=> WezTerm
+ln -sf $OSAB/nodes-terminal/wezterm.lua ~/.wezterm.lua
+# e -la ~/.wezterm.lua
 

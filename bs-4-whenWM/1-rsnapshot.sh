@@ -1,13 +1,13 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# sudo bash $OSAB/bs-1-into_jo/7-rsnapshot.sh
+# bash $OSAB/bs-1-into_jo/7-rsnapshot.sh
 
 set -ev  # quits on error, prints each statement here, including comments
 
 #=> 0 inotify-tools
 # supplies  inotifywait, for monitoring file changes
-pacman -S inotify-tools
+sudo pacman -S inotify-tools
 
 #=> 1 set my rsnapshot conf 1 working
 if   [[ $host =~ HPEB840G37 ]]; then
@@ -19,6 +19,7 @@ else
 fi
 
 #=> 2 rsnapshot needed locations
+read -p "going to  mdir $rsnapshot"
 mkdir $rsnapshot  # /rsnapshot=
 sudo touch /var/log/rsnapshot
 

@@ -150,9 +150,10 @@ nmcli device wifi connect Jo-MotoG86 password <pw>
 bash $OSAB/nodes-set/jo-1-encoding.sh
 $OSAB/bs-1-into_jo/4-as_root-sudoers.sh
 $OSAB/bs-1-into_jo/6-sudo-configure_freshclam.sh
-
 sudo pacman -Syu
 pacman -S hyperfine
+
+$OSAB/bs-1-into_jo/7-rsnapshot.sh
 ## waiting
 # physical configuration
 1366x768 screen
