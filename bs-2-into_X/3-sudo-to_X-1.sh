@@ -25,9 +25,9 @@ read -p "\$OSAB is $OSAB - looks good?"
 # #=> X 0 - AV 0 mediainfo
 # pacman -S mediainfo
 
-#=> X 0 - AV 0 PipeWire
-pacman -S pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse wiremix
-# - bring in  pipewire-audio
+# #=> X 0 - AV 0 PipeWire
+# pacman -S pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse wiremix
+# # - bring in  pipewire-audio
 
 #=> X 0 - AV 1 GStreamer
 # (after  pipewire-jack) GStreamer Plug-ins
