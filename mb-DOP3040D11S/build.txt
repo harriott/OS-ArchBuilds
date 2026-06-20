@@ -253,6 +253,7 @@ apache
 EFI install
 gokcehan's lf
 hyperfine
+libva-utils
 MariaDB
 Ruby rdoc fix
 Ruby rbenv

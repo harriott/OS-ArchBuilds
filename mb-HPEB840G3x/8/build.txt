@@ -152,11 +152,14 @@ lsblk  shows  Samsung MZNLN128  is  /dev/sda
     w > o
   mkfs.ext4 -L MZNLN128 /dev/sda1 > o
 ## X
-$OSAB/bs-2-into_X/3-sudo-to_X.sh
+$OSAB/bs-2-into_X/2-jo.sh
+sl > pw  for  $OSAB/bs-2-into_X/3-sudo-to_X-0.sh
 
   chown jo:jo /run/media/jo/HDTB330EK3CA''
 ## waiting
 $OSAB/bs-1-into_jo/7-rsnapshot.sh
+libva-utils
+nbfc-linux
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U

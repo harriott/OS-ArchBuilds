@@ -157,6 +157,9 @@ pacman -S udiskie
 # # systemctl status fstrim.timer
 # systemctl enable fstrim.timer --now
 
+#=> 2 hw - linux-firmware-intel
+pacman -S linux-firmware-intel
+
 # #=> 2 info 1
 # # Bashtop
 # pacman -S bashtop  # later superseded by AUR bpytop
@@ -345,40 +348,44 @@ pacman -S python-pipx
 # sudo pacman -S ttf-opensans
 # sudo pacman -S ttf-ubuntu-mono-nerd
 
-# #=> 2 system
-# # beep
-# pacman -S beep
+#=> 2 graphics
+# Mesa demos
+# pacman -S mesa-demos
 
-# # BpyTOP
-# pacman -S bpytop  # supersedes  Bashtop
+# libva-utils
+pacman -S libva-utils
 
-# # bottom
-# pacman -S bottom
+#=> 2 system
+# beep
+pacman -S beep
 
-# # btop
-# pacman -S btop
+# BpyTOP
+pacman -S bpytop  # supersedes  Bashtop
 
-# # dool
-# pacman -S dool
+# bottom
+pacman -S bottom
 
-# # fcron
-# pacman -S fcron
-# systemctl enable fcron.service
+# btop
+pacman -S btop
 
-# # glances
-# pacman -S glances
+# dool
+pacman -S dool
 
-# # GNU time
-# pacman -S time
+# fcron
+pacman -S fcron
+systemctl enable fcron.service
 
-# # Mesa demos
-# # pacman -S mesa-demos
+# glances
+pacman -S glances
 
-# # meson, for  auracle-git  later
-# pacman -S meson
+# GNU time
+pacman -S time
 
-# # Pipe Viewer
-# pacman -S pv
+# meson, for  auracle-git  later
+pacman -S meson
+
+# Pipe Viewer
+pacman -S pv
 
 #=> 2 various
 # cpanminus

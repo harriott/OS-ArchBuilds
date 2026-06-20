@@ -169,6 +169,13 @@ true
 # makepkg -sic
 # true
 
+#=> intel-hybrid-codec-driver-git
+# for  HPEB840G3x
+gAUR intel-hybrid-codec-driver-git
+nvim -c "silent! /github\.com\/kcning\/intel-hybrid-driver" PKGBUILD
+makepkg -sic
+true
+
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
 # # from  ~/Arch/AUR/hplip-plugin/PKGBUILD

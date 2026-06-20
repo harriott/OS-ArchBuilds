@@ -20,6 +20,8 @@ my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
 # audio
     $ABjo/music/music_rotate.sh
+    pactl set-sink-volume @DEFAULT_SINK@ 75%
+    sudo fuser --all --verbose /dev/snd/*
 
 pulseaudio(1)
 
@@ -847,6 +849,7 @@ WIPEFS(8)
 ### graphics card details
     doas cat /sys/kernel/debug/dri/0/radeon_pm_info
     lspci -vnn | grep VGA -A 12 | xcol Intel Radeon size VGA
+    lspci -vnnd ::03xx
     sudo lshw -C display | xcol GeForce NVIDIA Radeon size VGA
 
 ## cbh - keyboard

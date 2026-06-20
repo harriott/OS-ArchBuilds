@@ -234,6 +234,13 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
+#=> nbfc-linux
+# fan control for  HPEB840G3x
+gAUR nbfc-linux
+nvim -c "silent! /github.com\/nbfc-linux\/nbfc-linux" PKGBUILD
+makepkg -sic
+true
+
 # #=> nordvpn-bin 0 remove countries.dat
 # sudo rm /var/lib/nordvpn/data/countries.dat
 
