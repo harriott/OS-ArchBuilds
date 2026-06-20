@@ -7,8 +7,8 @@ set -ev  # quits on error, prints each statement here, including comments
 
 read -p "\$OSAB is $OSAB - looks good?"
 
-#=> 1 neovim
-pacman -S neovim
+# #=> 1 neovim
+# pacman -S neovim
 
 # #=> X 0 - appearance - hicolor-icon-theme
 # pacman -S hicolor-icon-theme
@@ -22,15 +22,15 @@ pacman -S neovim
 # #=> X 0 - AV - AlsaUtils
 # pacman -S alsa-utils
 
-#=> X 0 - AV 0 mediainfo
-pacman -S mediainfo
+# #=> X 0 - AV 0 mediainfo
+# pacman -S mediainfo
 
 #=> X 0 - AV 0 PipeWire
-pacman -S pipewire-alsa pipewire-audio pipewire-pulse wiremix
+pacman -S pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse wiremix
 # - bring in  pipewire-audio
 
 #=> X 0 - AV 1 GStreamer
-# GStreamer Plug-ins
+# (after  pipewire-jack) GStreamer Plug-ins
 pacman -S gst-libav gst-plugin-pipewire gst-plugins-base gst-plugins-good gst-plugins-ugly
 
 #=> X 0 - networking
