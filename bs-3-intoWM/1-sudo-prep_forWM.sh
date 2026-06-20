@@ -34,6 +34,7 @@ pacman -S ghostscript
 
 # Pandoc
 pacman -S pandoc-cli
+mkdir -p ~/.pandoc/defaults
 
 # pylatexenc
 pacman -S python-pylatexenc  # for render-markdown.nvim

@@ -3,15 +3,12 @@
 # $OSAB/bs-2-to_X/1-sudo-to_X.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
+set -ev  # quits on error, prints each statement here, including comments
 
 #=> 0 set $OSAB & $machBld
 cd $(dirname "${BASH_SOURCE[0]}")
 . ../../nodes-Bash/export-Arch
 read -p "\$OSAB is $OSAB - looks good?"
-
-#=> 1 go slow
-set -ev  # quits on error, prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
 
 # #=> 2 prepare for X
 # # Xorg

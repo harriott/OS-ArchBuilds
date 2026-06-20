@@ -23,7 +23,13 @@ source ~/.start  # $machBld/Bash_start
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # backup the previous boot's systemd journal
-journalctl -b -1 > $ITculLAh/ml-$host/jc/$(date '+%y%m%d-%H%M').jctl &
+# journalctl -b -1 > $ITculLAh/ml-$host/jc/$(date '+%y%m%d-%H%M').jctl &
+if [ $myDrA == 1 ]]; then
+  jc=$ITculLAh/ml-$host/jc
+else
+  jc=~/Arch
+fi
+journalctl -b -1 > $jc/$(date '+%y%m%d-%H%M').jctl &
 
 # first, test that X hasn't launched for this user
 ps aux | grep $USER | grep -v grep | grep "/usr/lib/Xorg" >& /dev/null

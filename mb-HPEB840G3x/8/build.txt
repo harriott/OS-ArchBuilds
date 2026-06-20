@@ -152,9 +152,11 @@ $OSAB/bs-1-into_jo/4-as_root-sudoers.sh
 $OSAB/bs-1-into_jo/6-sudo-configure_freshclam.sh
 sudo pacman -Syu
 pacman -S hyperfine
+$OSAB/bs-2-into_X/1-sudo-autoLoginTTY.sh
 
-$OSAB/bs-1-into_jo/7-rsnapshot.sh
+$OSAB/bs-0-into_root/2-git_clone_to_root_onGH.sh
 ## waiting
+$OSAB/bs-1-into_jo/7-rsnapshot.sh
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U

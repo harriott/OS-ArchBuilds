@@ -288,9 +288,9 @@ read -p "\$OSAB is $OSAB - looks good?"
 # #=> 2 encoding - python-pip 1 remove
 # pacman -Rs python-pip
 
-# #=> 2 encoding - python-pipx 0 (re)install
-# pacman -S python-pipx
-#  # pipx ensurepath  # maybe not needed
+#=> 2 encoding - python-pipx 0 (re)install
+pacman -S python-pipx
+ # pipx ensurepath  # maybe not needed
 
 # #=> 2 encoding - python-pipx 1 remove
 # pacman -Rs python-pipx
@@ -398,6 +398,7 @@ pacman -S mythes-en
 
 # pass (brings in gnupg, which brings in pinentry)
 pacman -S pass
+gpg -k  # creates & populates  ~/.gnupg
 
 # Speech Dispatcher
 pacman -S speech-dispatcher

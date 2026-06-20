@@ -12,6 +12,7 @@ git clone https://github.com/harriott/misc /root/onGH/misc
 git clone https://github.com/harriott/OS-ArchBuilds /root/onGH/OS-ArchBuilds
 git clone https://github.com/harriott/OS-Linux /root/onGH/OS-Linux
 git clone https://github.com/harriott/vimfiles /root/onGH/vimfiles
+git clone https://github.com/harriott/misc /root/onGH/misc
 
 #=> 0 repositories 1 refresh
 #  for r in misc OS-ArchBuilds OS-Linux vimfiles; do cd /root/onGH/$r; git pull; done
