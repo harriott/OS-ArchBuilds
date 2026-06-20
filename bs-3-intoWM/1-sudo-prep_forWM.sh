@@ -130,7 +130,7 @@ pacman -S xorg-xdpyinfo
 pacman -S xorg-xev
 
 # #=> PulseAudio - pulsemixer
-# pacman -S pulsemixer
+# pacman -S pulsemixer  # does this bring in  pulseaudio?
 
 # #=> networking
 # # bluetooth
@@ -187,4 +187,9 @@ pacman -Rs transmission-qt
 
 # # xdotool
 # pacman -S xdotool
+
+#=> whipper
+sudo pacman -S whipper  # for audio CDs
+cp $ABjo/whipper.conf ~/.config/whipper/whipper.conf
+# pb ~/.config/whipper/whipper.conf
 

@@ -1249,6 +1249,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     slock  # unlocks when correct user pw is entered
     swapoff -a
     swapon --show
+    systeroid -T > $machLg/systeroid/$(date '+%y%m%d-%H%M').tree
     XF86Sleep
     /usr/share/doc/arch-wiki/html/en
     ~/.local/share/xorg/Xorg.0.log
@@ -1317,6 +1318,8 @@ creates an initial ramdisk environment
     fd -L consolas
     fd -L nerd
     fd -L symbola
+
+#### trees
     lsd -L --tree /usr/share/fonts > $machLg/usr/share/fonts/$(date +%y%m%d-%H%M).tree
 
 `usf()` (`$OSAB/nodes-Bash/bashrc-generic`)

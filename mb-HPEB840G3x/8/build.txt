@@ -17,7 +17,7 @@ iwctl station wlan0 connect Jo-OPPO-A76
 timedatectl
 ### partitions
 lsblk  shows  Samsung MZNLN128  is  /dev/sdb
-  gdisk /dev/sda > o (create a new empty GUID partition table GPT & new protective MBR) y
+  gdisk /dev/sdb > o (create a new empty GUID partition table GPT & new protective MBR) y
     w > y
   gdisk /dev/sdb  (MBR: protection  GPT: present)
     n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +1g >
@@ -27,14 +27,6 @@ lsblk  shows  Samsung MZNLN128  is  /dev/sdb
     n > Partition number (defaults to 3) > First sector (defaults to 250068991) > Hex code >
       8304 Linux x86-64 root (/)
     w > y
-lsblk  shows  BX500  is  /dev/sda
-  gdisk /dev/sda > o (create a new empty GUID partition table GPT & new protective MBR) y
-    w > y
-  gdisk /dev/sda  (MBR: protection  GPT: present)
-    n > Partition number (defaults to 1) > First sector (defaults to the sector after partition 3) >
-      +60g > Hex code > 8302 (Linux home)
-    n > Partition number (defaults to 2) > First sector (defaults to the sector after partition 5) >
-      Enter > Enter > 8300 (Linux filesystem)
 mkfs.fat -F32 /dev/sdb1
 mkswap /dev/sdb2
 lsblk -f  # --fs - filesystems
@@ -153,8 +145,16 @@ $OSAB/bs-1-into_jo/6-sudo-configure_freshclam.sh
 sudo pacman -Syu
 pacman -S hyperfine
 $OSAB/bs-2-into_X/1-sudo-autoLoginTTY.sh
+## repartition MZNLN128
+lsblk  shows  Samsung MZNLN128  is  /dev/sda
+  gdisk /dev/sda > o (create a new empty GUID partition table GPT & new protective MBR) > o
+    n > accepted defaults of 1, 2048-976773134, 8300
+    w > o
+  mkfs.ext4 -L MZNLN128 /dev/sda1 > o
+## X
+$OSAB/bs-2-into_X/3-sudo-to_X.sh
 
-$OSAB/bs-0-into_root/2-git_clone_to_root_onGH.sh
+  chown jo:jo /run/media/jo/HDTB330EK3CA''
 ## waiting
 $OSAB/bs-1-into_jo/7-rsnapshot.sh
 # physical configuration

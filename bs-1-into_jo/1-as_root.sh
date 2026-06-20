@@ -118,30 +118,33 @@ read -p "\$OSAB is $OSAB - looks good?"
 # # zoxide
 # pacman -S zoxide
 
-# #=> 2 hd 0
-# # atop
-# pacman -S atop
+#=> 2 hd 0
+# atop
+pacman -S atop
 
-# # diskus
-# pacman -S diskus
+# diskus
+pacman -S diskus
 
-# # duf
-# pacman -S duf
+# duf
+pacman -S duf
 
-# # hdparm
-# pacman -S hdparm
+# gptfdisk
+pacman -S gptfdisk
 
-# # ioping
-# pacman -S ioping
+# hdparm
+pacman -S hdparm
 
-# # NTFS-3G
-# pacman -S ntfs-3g
+# ioping
+pacman -S ioping
 
-# # smartmontools
-# pacman -S smartmontools
+# NTFS-3G
+pacman -S ntfs-3g
 
-# # udiskie
-# pacman -S udiskie
+# smartmontools
+pacman -S smartmontools
+
+# udiskie
+pacman -S udiskie
 
 # #=> 2 hd 1 SSDs
 # # dua-cli
@@ -424,17 +427,18 @@ pacman -S arch-wiki-docs lynx w3m
 # # #=> 2 various - GNOME Terminal
 # # pacman -S gnome-terminal
 
-# #=> 2 users
-# # activate wheel group
-# sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
-# grep wheel /etc/sudoers
-# # check that  /etc/sudoers  parses OK
-# visudo -c -f /etc/sudoers
+#=> 2 users
+# activate wheel group
+sed -i '0,/%wheel/ s/^# %wheel/%wheel/' /etc/sudoers
+grep wheel /etc/sudoers
+# check that  /etc/sudoers  parses OK
+visudo -c -f /etc/sudoers
 
-# # User jo, creating the home directory and adding to group wheel
-# useradd -m -G wheel jo
-# until passwd jo; do echo "try again"; done
-# cat /etc/passwd
+# having decided whether or not to mount  /home separately,
+#  user jo, creating the home directory and adding to group wheel
+useradd -m -G wheel jo
+until passwd jo; do echo "try again"; done
+cat /etc/passwd
 
 # #=> 3 doas 0 install
 # pacman -S opendoas

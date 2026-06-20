@@ -102,26 +102,23 @@ npm i -g mapscii
 # #=> npm 1 wikit
 # npm i -g wikit
 
-#=> Perl File::Slurp
-sudo pacman -S perl-file-slurp
+# #=> Perl File::Slurp
+# sudo pacman -S perl-file-slurp
 
-#=> Perl File::Slurper
-sudo pacman -S perl-file-slurper
+# #=> Perl File::Slurper
+# sudo pacman -S perl-file-slurper
 
-#=> Perl Regexp::Common
-sudo pacman -S perl-regexp-common
+# #=> Perl Regexp::Common
+# sudo pacman -S perl-regexp-common
 
 # #=> Perl modules for JSON
 # sudo pacman -S perl-json perl-json-parse perl-json-xs  # can't recall why...
 
-#=> perlcritic
-sudo pacman -S perl-perl-critic
+# #=> perlcritic
+# sudo pacman -S perl-perl-critic
 
 #=> python-shtab
 sudo pacman -S python-shtab  # for  tldr  autocompletion
-
-#=> Signal
-sudo pacman -S signal-desktop
 
 #=> superfile
 sudo pacman -S superfile
@@ -132,14 +129,6 @@ sudo pacman -S tree-sitter-cli
 #=> typos
 # (after Rust Toolchain)
 sudo pacman -S typos
-
-#=> WezTerm
-sudo pacman -S wezterm
-
-#=> whipper
-sudo pacman -S whipper  # for audio CDs
-cp $ABjo/whipper.conf ~/.config/whipper/whipper.conf
-# pb ~/.config/whipper/whipper.conf
 
 #=> Zellij
 sudo pacman -S zellij

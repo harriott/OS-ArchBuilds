@@ -249,11 +249,21 @@ sudo pacman -S resvg  # for  WezTerm
 #=> SANE
 sudo pacman -S sane
 
+#=> Signal
+sudo pacman -S signal-desktop
+
 #=> sqlitebrowser
 sudo pacman -S sqlitebrowser
 
 #=> sxiv
 sudo pacman -S sxiv
+
+#=> Vim - stuff
+pacman -S flake8 neovide python-pynvim
+
+#=> Vim - ShellCheck
+# (for bash linting in xVim)
+pacman -S shellcheck  # brings in Haskell
 
 #=> Vimiv
 sudo pacman -S vimiv
@@ -264,6 +274,9 @@ sudo pacman -S vlc-plugin-ffmpeg
 
 #=> vlc-gui-ncurses
 sudo pacman -S vlc-gui-ncurses
+
+#=> WezTerm
+sudo pacman -S wezterm
 
 #=> Wike
 sudo pacman -S wike
@@ -279,5 +292,6 @@ sudo pacman -S yamllint
 
 #=> Zathura
 sudo pacman -S zathura-pdf-mupdf
+mkdir ~/.config/zathura
 # zathurarc  symlinked in  $OSAB/nodes-set/jo-0.sh
 

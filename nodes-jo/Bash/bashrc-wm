@@ -73,7 +73,16 @@ fVs () {
 
 #==> ffmpeg 0
 alias ffmhb='nice -n 19 ffmpeg -hide_banner'; alias ffi='ffmhb -i'
-cw () { for f in **/*.webm; do echo ''; echo ''; ffi "$f" -c:a libvorbis -aq 4 "${f/%.webm/ webm}.ogg"; rm "$f"; done; fin; } # for Poweramp.  fd -tf -e webm
+cw () {
+  mapfile -t wfs < <( fd -tf -e webm )
+  echo 'Going to convert these to ogg (and remove the originals):'
+  for wf in "${wfs[@]}"; do o " $wf"; done
+  read -p ' - good to go?'
+  for wf in "${wfs[@]}"; do
+    ffi "$wf" -c:a libvorbis -aq 4 "${wf/%.webm/ webm}.ogg"
+    rm "$wf"
+  done
+} # for  Poweramp
 
 frames () {
   ffmpeg -i $1 -vcodec copy -f rawvideo -y /dev/null 2>&1
