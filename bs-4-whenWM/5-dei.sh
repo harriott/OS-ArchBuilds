@@ -2,7 +2,7 @@
 
 # bash $OSAB/bs-4-whenWM/2-dei.sh  # desktop environment integration
 
-# gAUR  is defined in $AjB/bashrc-console
+# trzAUR  is defined in $AjB/bashrc-console
 
 set -v
 trap read debug  # puts a read request after each executable line
@@ -19,7 +19,7 @@ sudo pacman -Rs handlr-regex
 #=> handlr 1 xdg-utils-handlr
 sudo pacman -Rs xdg-utils-handlr
 # sudo pacman -Rs xdg-utils[-mimeo]  can't be done as needed by several other packages
-gAUR xdg-utils-handlr
+trzAUR xdg-utils-handlr
 nvim -c "silent! /chmln\/handlr" PKGBUILD
 makepkg -sic  # don't forget to allow Removal of other  xdg-utils
 
@@ -78,7 +78,7 @@ handlr set .xml gvim.desktop
 handlr set inode/directory pcmanfm.desktop
 
 # #=> mimeo 0 mimeo 0 install
-# gAUR mimeo
+# trzAUR mimeo
 # nvim -c "silent! /https:\/\/xyne.dev\/projects\/mimeo" PKGBUILD
 # makepkg -sic
 
@@ -86,7 +86,7 @@ handlr set inode/directory pcmanfm.desktop
 # sudo pacman -Rs mimeo
 
 # #=> mimeo 1 xdg-utils-mimeo
-# gAUR xdg-utils-mimeo
+# trzAUR xdg-utils-mimeo
 # nvim -c "silent! /freedesktop" PKGBUILD
 # makepkg -sic
 # cd ~

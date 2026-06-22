@@ -247,14 +247,13 @@ sudo pacman -Rs auracle-git  then re-installed it
 ## xdg-utils
   :: xdg-utils-1.2.1-2 and xdg-utils-handlr-0.6.4-2 are in conflict. Remove xdg-utils-handlr? [y/N] y
 ## waiting
-$machBld/etc/rsnapshot.conf
-$OSAB/bs-1-into_jo/4-as_root-sudoers.sh
+$culL/Arch/handlr-regex_error.bbcode
 apache
 EFI install
 gokcehan's lf
-hyperfine
-libva-utils
+isd
 MariaDB
+ouch
 Ruby rdoc fix
 Ruby rbenv
 # CopyQ

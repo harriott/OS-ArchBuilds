@@ -4233,6 +4233,25 @@ sudo rm -r $ssssd
 - but it was a drive plugged in that was causing it
 ## sudden reboots
 27°C in studio,  temp2 +46
+## pikaur -Syu
+  Reading AUR packages info...
+  🚛 warning: Following packages cannot be found in AUR:
+    advcpmv-debug asunder-debug aura-debug auracle-git-debug cheat-debug clifm-git-debug cmus-git-debug code-minimap-bin-debug cpu-x-debug davfs2-debug dotnet-runtime-7.0 dragon-drag-and-drop execstack-debug fotowall-debug fsearch-debug gst123-debug haskell-fsnotify0.3 hplip-plugin-debug iscan-debug joshuto-debug js102 js115 js68 js78 js91 jump-debug lazyjournal-debug libopenaptx libopenshot-audio-debug libopenshot-debug librespeed-cli-debug libsidplay libvterm01 localsend-debug marktext-deb-debug mawk-debug moarvm-debug mpv-uosc-debug nomacs-debug nordvpn-bin-debug nqp-debug oama-bin-debug obconf pnmixer-debug powershell-bin-debug pscircle-debug python-backports-zstd python-contextlib2 qpdfview-debug rakudo-debug rdrview-git-debug riffdiff-debug rxvt-unicode-truecolor-wide-glyphs-debug sdl3-debug snixembed-git-debug textadept-debug tmux-bash-completion-git vale-debug verbiste-debug vimpc-git-debug xnviewmp-debug yj-git-debug
+sudo pacman -Rs advcpmv-debug asunder-debug aura-debug auracle-git-debug cheat-debug clifm-git-debug cmus-git-debug code-minimap-bin-debug cpu-x-debug davfs2-debug dotnet-runtime-7.0 dragon-drag-and-drop execstack-debug fotowall-debug fsearch-debug gst123-debug haskell-fsnotify0.3 hplip-plugin-debug iscan-debug joshuto-debug js102 js115 js68 js78 js91 jump-debug lazyjournal-debug libopenaptx libopenshot-audio-debug libopenshot-debug librespeed-cli-debug libsidplay libvterm01 localsend-debug marktext-deb-debug mawk-debug moarvm-debug mpv-uosc-debug nomacs-debug nordvpn-bin-debug nqp-debug oama-bin-debug obconf pnmixer-debug powershell-bin-debug pscircle-debug python-backports-zstd python-contextlib2 qpdfview-debug rakudo-debug rdrview-git-debug riffdiff-debug rxvt-unicode-truecolor-wide-glyphs-debug sdl3-debug snixembed-git-debug textadept-debug vale-debug verbiste-debug vimpc-git-debug xnviewmp-debug yj-git-debug
+sudo pacman -Rs tmux-bash-completion-git  wants to remove  tmux, which would be chaotic...
+## unmaintained AURs
+pactree -r perl-clone-pp
+pactree -r python-senf
+pacman -Rs cmus-notify perl-clone-pp python-senf
+## BIOS crash
+attempted to restore from backup, but then refused to boot, so
+  booted into  SDCB32G2  with  ARCH_202606
+mount /dev/2 /mnt
+mount /dev/1 /mnt/efi
+arch-chroot /mnt
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB  # UEFI
+grub-mkconfig -o /boot/grub/grub.cfg
+reboot
 ## waiting
 gokcehan's lf
 MariaDB
@@ -4364,6 +4383,7 @@ when finally booted,  /dev/sda2 = /
 failing under CPU pressure off ffmpeg + YouTube
 PulseAudio  fail after  Suspend (but  speaker-test -c 2  works): pulseaudio -k
 random reboots were regular, no more
+studio at 29°C, BIOS corrupt, can't boot
 ## fails to boot due to ST4000VN008
   Failed to start File System Check on /dev/disk/by-label/ST4000VN008.
   Dependency failed for /mnt/ST4000VN008.

@@ -168,7 +168,12 @@ mn () { MANPAGER='nvim +Man!' MANWIDTH=999 man $1; }
 if [ -f /usr/bin/grc ]; then
   alias g='grc ping -c 3 8.8.8.8'
 fi
-Q () { pacman -Qs $1 | xcol $1; }  # or use  pacsearch
+if [ $myDrA ]; then
+  Q () { pacman -Qs $1 | xcol $1; }
+else
+  Q () { pacman -Qs $1; }
+fi
+# or use  pacsearch
 
 suho () {
   ipnf=$(ip neigh)

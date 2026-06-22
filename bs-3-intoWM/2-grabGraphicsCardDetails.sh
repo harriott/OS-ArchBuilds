@@ -11,7 +11,7 @@ sudo pacman -Rs lshw
 lspci -vnn | grep VGA -A 12 > /home/jo/lspci-display.txt
 
 #=> 1 lshw-git
-gdAUR lshw-git
+trzAURd lshw-git
 nvim -c "silent! /https:\/\/ezix.org\/src\/pkg\/lshw.git" PKGBUILD
 makepkg -sic
 true

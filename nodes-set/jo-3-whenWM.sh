@@ -37,7 +37,6 @@ for m in $maild $maild/fm $maild/gmx $maild/zou; do
 
 #=> cmus
 ln -sf $ABjo/wm/cmusqueue.sh   ~/Arch/cmusqueue.sh
-ln -sf $ABjo/wm/cmus_notify.sh ~/.local/share/cmus_notify.sh
 ln -sf $culLA/jo/cmushnotify.sh ~/.local/share/cmushnotify.sh
 [ -d ~/.config/cmus ] || mkdir -p ~/.config/cmus
 ln -sf $ABjo/wm/cmus-rc.conf   ~/.config/cmus/rc  # pb ~/.config/cmus/rc

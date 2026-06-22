@@ -7,8 +7,8 @@ set -ev  # quits on error, prints each statement here, including comments
 
 read -p "\$OSAB is $OSAB - looks good?"
 
-# #=> 1 neovim
-# pacman -S neovim
+#=> 1 neovim
+pacman -S neovim
 
 # #=> X 0 - appearance - hicolor-icon-theme
 # pacman -S hicolor-icon-theme

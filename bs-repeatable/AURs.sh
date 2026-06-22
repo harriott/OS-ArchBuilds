@@ -9,22 +9,22 @@ if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# gAUR  gdAUR  rAUR  are defined in $AjB/bashrc-console
+# trzAUR  trzAURd  rAUR  are defined in $AjB/bashrc-console
 
 # #=> ansifilter
-# gAUR ansifilter
+# trzAUR ansifilter
 # nvim -c "silent! /gitlab.com\/saalen\/ansifilter" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> ansiweather
-# gAUR ansiweather
+# trzAUR ansiweather
 # nvim -c "silent! /fcambus" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> bfg 0 (re)install
-# gAUR bfg
+# trzAUR bfg
 # nvim -c "silent! /madgag" PKGBUILD
 # makepkg -sic  # jre-openjdk
 
@@ -33,18 +33,18 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs bfg
 
 # #=> blesh-git
-# gdAUR blesh-git
+# trzAURd blesh-git
 # nvim -c "silent! /akinomyoga\/ble.sh" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> cheat
-# gAUR cheat
+# trzAUR cheat
 # nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
 # makepkg -sic
 
 # #=> code-minimap 0 (re)install
-# gAUR code-minimap
+# trzAUR code-minimap
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
 # true
@@ -56,7 +56,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> code-minimap-bin 0 install
 # # /usr/share/bash-completion/completions/code-minimap.bash
-# gAUR code-minimap-bin
+# trzAUR code-minimap-bin
 # nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
 # makepkg -sic
 
@@ -66,13 +66,13 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs code-minimap-bin
 
 # #=> cpu-x 0 mawk
-# gAUR mawk
+# trzAUR mawk
 # nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> cpu-x 1 cpu-x 0 install
-# gAUR cpu-x
+# trzAUR cpu-x
 # nvim -c "silent! /thetumultuousunicornofdarkness.github.io\/CPU-X" PKGBUILD
 # makepkg -sic
 # true
@@ -81,7 +81,7 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs cpu-x
 
 # #=> cyrus-sasl-xoauth2-git 0 install
-# gdAUR cyrus-sasl-xoauth2-git
+# trzAURd cyrus-sasl-xoauth2-git
 # nvim -c "silent! /github.com\/moriyoshi" PKGBUILD
 # makepkg -sic
 # true
@@ -90,7 +90,7 @@ trap read debug  # puts a read request after each executable line
 # sudo pacman -Rs cyrus-sasl-xoauth2-git cyrus-sasl-xoauth2-git-debug
 
 # #=> dict-moby-thesaurus
-# gAUR dict-moby-thesaurus
+# trzAUR dict-moby-thesaurus
 # nvim -c "silent! /www.gutenberg.org\/ebooks\/3202" PKGBUILD
 # makepkg -sic
 # true
@@ -98,42 +98,42 @@ trap read debug  # puts a read request after each executable line
 # #=> didyoumean
 # # provides  dym
 # rustup update
-# gAUR didyoumean
+# trzAUR didyoumean
 # nvim -c "silent! /hisbaan\/didyoumean" PKGBUILD
 # makepkg -sic  # takes ages
 # true
 
 # #=> downgrade
-# gAUR downgrade
+# trzAUR downgrade
 # nvim -c "silent! /github.com\/archlinux-downgrade" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> fonts - figlet-fonts
 # # brings in figlet
-# gAUR figlet-fonts
+# trzAUR figlet-fonts
 # nvim -c "silent! /ftp.figlet.org" PKGBUILD
 # makepkg -sic
 
 # #=> fonts - fontpreview-git
-# gdAUR fontpreview-git
+# trzAURd fontpreview-git
 # nvim -c "silent! /sdushantha" PKGBUILD
 # makepkg -sic
 
 # #=> fonts - lohit-fonts
-# gAUR lohit-fonts
+# trzAUR lohit-fonts
 # nvim -c "silent! /_fhosted" PKGBUILD
 # makepkg -sic
 
 # #=> fonts - ttf-poppins
-# gAUR ttf-poppins
+# trzAUR ttf-poppins
 # nvim -c "silent! /github.com\/itfoundry\/poppins" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> fangfrisch 1 AUR
 # further databases/signatures for  ClamAV
-# gAUR python-fangfrisch
+# trzAUR python-fangfrisch
 # nvim -c "silent! /rseichter" PKGBUILD
 # makepkg -sic
 # true
@@ -147,19 +147,19 @@ trap read debug  # puts a read request after each executable line
 
 # #=> gcc6
 # # maybe for  rbenv
-# gAUR gcc6
+# trzAUR gcc6
 # nvim -c "silent! /gcc.gnu.org\/gcc-6" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> git-extras
-# gAUR git-extras
+# trzAUR git-extras
 # nvim -c "silent! /github.com\/tj" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> gsamokovarov jump 0 install
-# gAUR jump
+# trzAUR jump
 # nvim -c "silent! /gsamokovarov" PKGBUILD  # ~/Arch/AUR/jump/PKGBUILD
 # makepkg -sic
 
@@ -171,32 +171,32 @@ trap read debug  # puts a read request after each executable line
 
 # #=> julia-bin 0 execstack
 # # for julia-bin
-# gAUR execstack
+# trzAUR execstack
 # nvim -c "silent! /jwilk-mirrors\/prelink" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> julia-bin 1 install
 # # for sixels
-# gAUR julia-bin
+# trzAUR julia-bin
 # nvim -c "silent! /julialang-s3.julialang.org" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> kittypack
-# gAUR kittypack
+# trzAUR kittypack
 # nvim -c "silent! /pkgname=kittypack" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> lazyjournal
-# gAUR lazyjournal
+# trzAUR lazyjournal
 # nvim -c "silent! /github.com\/Lifailon\/lazyjournal" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> librespeed-cli
-# gAUR librespeed-cli
+# trzAUR librespeed-cli
 # nvim -c "silent! /github.com\/librespeed\/speedtest" PKGBUILD
 # makepkg -sic
 # true
@@ -204,39 +204,39 @@ trap read debug  # puts a read request after each executable line
 # #=> libstdc++5-bin
 # # GNU Standard C++ Library v3
 # # Can't recall what I need it for...
-# gAUR libstdc++5-bin
+# trzAUR libstdc++5-bin
 # nvim -c "silent! /ftp.de.debian.org" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> lsix-git
 # # for sixels
-# gdAUR lsix-git
+# trzAURd lsix-git
 # nvim -c "silent! /https:\/\/github.com\/hackerb9\/lsix" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> Mbrola
-# gAUR mbrola
+# trzAUR mbrola
 # nvim -c "silent! /numediart" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> Mbrola American English female
-# gAUR mbrola-voices-us1
+# trzAUR mbrola-voices-us1
 # nvim -c "silent! /numediart" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> Mbrola British English male
-# gAUR mbrola-voices-en1
+# trzAUR mbrola-voices-en1
 # nvim -c "silent! /numediart" PKGBUILD
 # makepkg -sic
 # true
 
 #=> nbfc-linux
 # fan control for  HPEB840G3x
-gAUR nbfc-linux
+trzAUR nbfc-linux
 nvim -c "silent! /github.com\/nbfc-linux\/nbfc-linux" PKGBUILD
 makepkg -sic
 true
@@ -245,7 +245,7 @@ true
 # sudo rm /var/lib/nordvpn/data/countries.dat
 
 # #=> nordvpn-bin 1 (re)install
-# gAUR nordvpn-bin
+# trzAUR nordvpn-bin
 # nvim -c "silent! /https:\/\/nordvpn.com\/download\/linux\/" PKGBUILD
 # makepkg -sic
 # true
@@ -263,25 +263,25 @@ true
 
 # #=> perl-clone-pp
 # # for  perl-data-printer
-# gAUR perl-clone-pp
+# trzAUR perl-clone-pp
 # nvim -c "silent! /NEILB" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> perl-data-printer
-# gAUR perl-data-printer
+# trzAUR perl-data-printer
 # nvim -c "silent! /GARU" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> powershell-bin
-# gAUR powershell-bin
+# trzAUR powershell-bin
 # nvim -c "silent! /github.com\/Powershell\/Powershell" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> rainbow
-# gdAUR rainbow
+# trzAURd rainbow
 # nvim -c "silent! /pkgname=rainbow" PKGBUILD
 # makepkg -sic
 # true
@@ -289,79 +289,79 @@ true
 # #=> Raku 0 moarvm
 # # needs Will Coleda's key
 # # for  nqp
-# gdAUR moarvm
+# trzAURd moarvm
 # nvim -c "silent! /moarvm.com\/releases\/MoarVM" PKGBUILD
 # makepkg -sic  # loads of output
 # true
 
 # #=> Raku 1 nqp
 # # for  rakudo
-# gdAUR nqp
+# trzAURd nqp
 # nvim -c "silent! /github.com\/Raku" PKGBUILD
 # makepkg -sic  # loads of output
 # true
 
 # #=> Raku 2 rakudo
 # # qfter  nqp
-# gdAUR rakudo
+# trzAURd rakudo
 # nvim -c "silent! /rakudo.org\/dl" PKGBUILD
 # makepkg -sic  # takes a while
 # true
 
 # #=> rdrview-git
-# gdAUR rdrview-git
+# trzAURd rdrview-git
 # nvim -c "silent! /https:\/\/github.com\/eafer\/rdrview" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> riffdiff
-# gdAUR riffdiff
+# trzAURd riffdiff
 # nvim -c "silent! /pkgname=riffdiff" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> shell-color-scripts-git
-# gdAUR shell-color-scripts-git
+# trzAURd shell-color-scripts-git
 # nvim -c "silent! /dwt1" PKGBUILD
 # makepkg -sic
 # true
 
 # #=> sysz
-# gAUR sysz
+# trzAUR sysz
 # nvim -c "silent! /joehillen\/sysz" PKGBUILD
 # makepkg -sic
 
 # #=> tint-tetris
-# gAUR tint-tetris
+# trzAUR tint-tetris
 # nvim -c "silent! /debian" PKGBUILD
 # makepkg -sic
 
 # #=> tty-clock
-# gAUR tty-clock
+# trzAUR tty-clock
 # nvim -c "silent! /github.com\/xorg62" PKGBUILD
 # makepkg -sic
 
 # #=> ncurses-git
 # # prefer the core package
-# gdAUR ncurses-git
+# trzAURd ncurses-git
 # nvim -c "silent! /https:\/\/github.com\/ThomasDickey\/ncurses-snapshots" PKGBUILD
 # makepkg -sic  # takes a long time...
 # true
 
 # #=> tspreed
-# gAUR tspreed
+# trzAUR tspreed
 # nvim -c "silent! /github.com\/n-ivkovic\/tspreed" PKGBUILD
 # makepkg -sic
 
 # #=> vale
 # # Vale, for  ALE
-# gAUR vale
+# trzAUR vale
 # nvim -c "silent! /errata-ai\/vale" PKGBUILD
 # makepkg -sic
 # true
 
 #=> yay-bin
-gAUR yay-bin
+trzAUR yay-bin
 nvim -c "silent! /github.com\/Jguer\/yay\/releases\/download\/v" PKGBUILD
 makepkg -sic
 true

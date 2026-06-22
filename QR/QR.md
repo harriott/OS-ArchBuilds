@@ -1092,12 +1092,46 @@ can fail to start after waking system
 - Arch Linux Package Maintainers
 - downgrade
 
-## AUR - Aura
-    aura -Pa  # security analysis of all installed AUR packages
+## AUR
+`$AjB/bashrc-console` > trizen
+
+### ks-aur-scanner
+    aur-scan scan <package_directory>  # detailed report
+    aur-scan system  # all installed AURs, quick info
+
+### yay
+- reports installed but abandoned, unmaintained, and outdated AUR's
+- updates AURs
+- `yay > pw`
+
+### Aura
+    aura --help
     i aura
     sudo aura -Aakux --devel > n  # just for info
 
-## AUR - trizen
+### paru
+    ~/.cache/paru/clone
+
+- `paru` (= `paru -Syu`)
+- `paru --gendb` is required to include `*-git` packages
+    1. `paru -Qua` lists AURs to update
+    1. `paru -Sua` updates AURs
+
+### Pikaur
+    pikaur -h
+    pikaur -Syu  # wants pw, offers to redo if connection fails
+    ~/.config/pikaur.conf
+    ~/.local/share/pikaur/aur_repos/
+
+- `-a` (`--aur`) only AUR packages will be upgraded
+- `--devel` doesn't reliably offer upgrades
+
+### traur
+    ~/.cache/traur/git
+
+`traur scan` trust scoring of installed AURs
+
+### trizen
     bm trizen
     trizen  # trizen --help
     trizen -C trizen
@@ -1120,7 +1154,6 @@ pacman -Sg base-devel  # lists all
     /etc/pacman.conf
     checkupdates
     fd neovim /var/cache/pacman/pkg
-    makepkg -i  # --install
     pacman <operation> [options] [targets]
     pacman -Qdt  # lists all orphans
     pacman -Qq sd > ~/pacman_sd
@@ -1156,6 +1189,13 @@ pacman -Ss <keyword>
 pacsearch <keyword>  # better search
 ```
 
+### makepkg
+- `-f` (= `--force`)
+- `-i` (= `--install`)
+- `-r` (= `--rmdeps`) remove any installed dependencies
+- `-s` (= `--syncdeps`) install missing dependencies using `pacman`
+- makepkg(8)
+
 ### operators
 - `-F` (`--files`) query the files database
     - `-y` (`--refresh`) the master package list
@@ -1166,6 +1206,7 @@ pacsearch <keyword>  # better search
 - `-R` (`--remove`)
     - `-s` (`--recursive`)
 - `-S` (`--sync`) synchronize packages from servers
+    - `--needed` only install if not yet there
     - `-c` (`--clean`) remove unused packages from the cache
         - `Scc` clean out the cache
     - `-i` (`--info`) on a package

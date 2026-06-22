@@ -27,7 +27,8 @@ set -e
 
 #=> 5 updates
 echo 'Do updates:'
-sudo pacman -Syu
+pikaur -Syu  # because it's informative, and offers to continue after connection failure
+# sudo pacman -Syu
 ################################
 ## reboot if kernel updated ! ##
 ################################

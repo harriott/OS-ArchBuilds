@@ -75,6 +75,9 @@ read -p "\$OSAB is $OSAB - looks good?"
 # # nnn
 # pacman -S nnn
 
+# # ouch
+# pacman -S ouch
+
 # # perl-rename
 # pacman -S perl-rename
 
@@ -380,6 +383,9 @@ pacman -S glances
 
 # GNU time
 pacman -S time
+
+# GNU isd
+pacman -S isd
 
 # meson, for  auracle-git  later
 pacman -S meson

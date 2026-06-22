@@ -3,7 +3,8 @@
 
 # Tue 06 Jan 2026
 
-# bash $OSAB/bs-4-whenWM/4-sudo-cmus-notify-icons.sh
+# bash $OSAB/bs-4-whenWM/7-sudo-cmus-notify-icons.sh
+# for  $culLA/jo/cmushnotify.sh
 
 # #=> cmus-notify icons - IcoMoon-Free-64px 0 $ITcore
 # magick $GRs/d-CP/d-icons/r-Keyamoon-IcoMoon-Free/PNG/32px/279-pause.png -fill orange -colorize 100% $ITcore/ulLinux/Arch/usr-share-IcoMoon-Free/32x-279-pause-orange.ico

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# obviated by  paru --gendb, as necessary  followed by  paru
+
 # bash $OSAB/bs-repeatable/remakeAURdevs.sh
 
 #  gctm  is defined in  $AjB/bashrc-console
@@ -17,6 +19,7 @@ updateMaybe()
         nvim -c "silent! /$2" PKGBUILD
         read -p "    <Enter> if the PKGBUILD is good "
         makepkg -sic
+        # makepkg -sic OPTIONS=-debug  causes  /usr/bin/makepkg: line 1180: OPTIONS: readonly variable
     fi
 }
 xdgo()
@@ -35,7 +38,7 @@ updateMaybe auracle-git 'falconindy'
 
 #=> chawan-git
 PQ chawan-git
-xdgo https://git.sr.ht/~bptato/chawan
+xdgo https://git.sr.ht/~bptato/chawan/log
 updateMaybe chawan-git 'chawan-git'
 
 #=> blesh-git
@@ -76,7 +79,7 @@ updateMaybe shell-color-scripts-git 'https:\/\/gitlab.com\/dwt1\/shell-color-scr
 #=> snixembed-git
 # not installed on  i34G1TU02
 PQ snixembed-git
-xdgo https://git.sr.ht/~steef/snixembed
+xdgo https://git.sr.ht/~steef/snixembed/log
 updateMaybe snixembed-git 'https:\/\/git.sr.ht\/\~steef\/snixembed'
 
 #=> tmux-bash-completion-git

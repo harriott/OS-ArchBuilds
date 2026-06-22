@@ -5,11 +5,11 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# gAUR  gdAUR  rAUR  are defined in $AjB/bashrc-console
+# trzAUR  trzAURd  rAUR  are defined in $AjB/bashrc-console
 
 #=> snixembed-git
 # to get Dropbox icon down into tint2
-gdAUR snixembed-git
+trzAURd snixembed-git
 gvim -c "silent! /https:\/\/git.sr.ht\/~steef\/snixembed" PKGBUILD
 makepkg -sic  # takes a while
 

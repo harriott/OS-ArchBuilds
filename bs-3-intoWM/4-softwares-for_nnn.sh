@@ -3,7 +3,7 @@
 
 # bash $OSAB/bs-3-toWM-0/4-softwares-for_nnn.sh
 
-# gAUR  rAUR  are defined in $AjB/bashrc-console
+# trzAUR  rAUR  are defined in $AjB/bashrc-console
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -16,7 +16,7 @@ trap read debug  # puts a read request after each executable line
 
 # #=> 1 advcpmv
 # # for nnn -r
-# gAUR advcpmv
+# trzAUR advcpmv
 # nvim -c "silent! /jarun\/advcpmv" PKGBUILD
 # makepkg -sic  # the checks are long...
 # true

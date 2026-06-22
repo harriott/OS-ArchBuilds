@@ -1,5 +1,5 @@
 
-vim: set fdl=2:
+vim: set fdl=3:
 
     $OSAB/README.md
 
@@ -21,4 +21,5 @@ git clone https://github.com/harriott/ArchBuilds.git
 ### previously
 - an `Asus VivoBook W202`
 - an old `Lenovo ThinkCentre M58 (Type 7637)`
+- (old notes in `$ITcore/ulLinux/Arch/build/`)
 

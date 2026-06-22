@@ -22,6 +22,10 @@ sudo cp $machBld/etc/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
 #  pb /etc/udev/rules.d/90-backlight.rules
 # after a reboot can  xbacklight -inc 12
 
+#=> batstat-git
+# battery status
+pikaur -s batstat-git
+
 #=> Blanket
 sudo pacman -S blanket
 
@@ -245,6 +249,15 @@ sudo pacman -S recoll
 
 #=> resvg
 sudo pacman -S resvg  # for  WezTerm
+
+# #=> rxvt-unicode 0 install
+# sudo pacman -S urxvt-perls  # provides keyboard-select and brings in  rxvt-unicode
+
+# #=> rxvt-unicode 0 remove
+# sudo pacman -Rs urxvt-perls rxvt-unicode  # in that order
+
+#=> rxvt-unicode-truecolor-wide-glyphs
+pikaur -S rxvt-unicode-truecolor-wide-glyphs
 
 #=> SANE
 sudo pacman -S sane

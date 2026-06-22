@@ -6,7 +6,7 @@
 set -v
 trap read debug  # puts a read request after each executable line
 
-# gAUR  is defined in  $AjB/bashrc-console
+# trzAUR  is defined in  $AjB/bashrc-console
 
 # #=> 0 ATI DDX driver
 # sudo pacman -S xf86-video-ati  # should probably reboot
@@ -18,7 +18,7 @@ trap read debug  # puts a read request after each executable line
 # sudo localectl --no-convert set-x11-keymap gb pc105  # will need to restart X to get GB key maps
 
 # #=> 0 mictray
-# gAUR mictray
+# trzAUR mictray
 # nvim -c "silent! /Junker" PKGBUILD
 # makepkg -sic
 
@@ -34,7 +34,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> 0 nvidia-470xx-utils install
 # bring in  nvidia-470xx-dkms (not apparent from the AUR page)
-gAUR nvidia-470xx-utils
+trzAUR nvidia-470xx-utils
 nvim -c "silent! /nvidia-470xx-" PKGBUILD
 makepkg -sic  # installation takes time
 true
@@ -47,18 +47,18 @@ true
 
 # #=> 0 nvidia-beta 0 nvidia-utils-beta install
 # # required by nvidia-beta
-# gAUR nvidia-utils-beta
+# trzAUR nvidia-utils-beta
 # nvim PKGBUILD
 # makepkg -sic
 
 # #=> 0 nvidia-beta 1 install
-# gAUR nvidia-beta
+# trzAUR nvidia-beta
 # nvim PKGBUILD
 # makepkg -sic
 
 # #=> 0 xorg-xkbprint
 # # for keyboard maps
-# gAUR xorg-xkbprint
+# trzAUR xorg-xkbprint
 # nvim -c "silent! /individual" PKGBUILD
 # makepkg -sic
 

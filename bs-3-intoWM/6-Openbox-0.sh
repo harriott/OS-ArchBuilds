@@ -20,7 +20,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> 0 perl-linux-desktopfiles
 # for  obmenu-generator
-gAUR perl-linux-desktopfiles
+trzAUR perl-linux-desktopfiles
 nvim -c "silent! /trizen" PKGBUILD
 makepkg -sic
 
@@ -29,12 +29,12 @@ makepkg -sic
 # mkdir ~/.config/obmenu-generator
 
 # #=> 2 obmenu-generator
-# gAUR obmenu-generator
+# trzAUR obmenu-generator
 # nvim -c "silent! /trizen" PKGBUILD
 # makepkg -sic
 
 # #=> 2 openbox-themes
-# gAUR openbox-themes
+# trzAUR openbox-themes
 # nvim -c "silent! /http:\/\/ftp.debian.org\/debian\/pool\/main\/o\/openbox-themes\/openbox-themes" PKGBUILD
 # makepkg -sic
 

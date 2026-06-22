@@ -140,8 +140,6 @@ SE () {
 } # /stackexchange\|stackoverflow\|superuser
 
 #===> my Arch Forum issues
-# $Drpbx/search
-
 fbbcode () {
   cd $Drpbx/IT
   bbcf='bbcode.ffl'
@@ -152,7 +150,7 @@ fbbcode () {
   rgb="rg -ttxt -l --sort modified 'ft=bbcode'"
   { echo $rgb; echo; } >> $bbcf
   eval $rgb >> $bbcf; echo >> $bbcf
-  echo 'results are in $Drpbx/IT/'$bbcf
+  echo 'results are in $Drpbx/IT/bbcode.ffl'
 }
 
 #===> time-sorted - my GitHub issues
@@ -163,7 +161,7 @@ ghi () {
   sed -i '/copied\/IT-handy\//d' $ghil
   sed -i '1s/^/\n/' $ghil
   echo '' >> $ghil
-  echo "results are in $ITd/$ghil"
+  echo 'results are in $Drpbx/IT/GitHubIssues.ffl'
 }
 
 #==> my Encrypted directories
@@ -264,17 +262,20 @@ alias i=pinfo
 alias im='pinfo -m'
 export GPG_TTY=$(tty)  # correct TTY for GnuPG
 
-#==> for AUR packages
+#==> AUR packages
+chAURpds () { for pd in ~/.cache/paru/clone ~/.cache/traur/git ~/Arch/AUR; do [ -d $pd/$1 ] && s $pd/$1; done }
+
+#==> trizen AUR packages
 # "Get Clone To Make" - for my building of AUR development packages
 gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; }; export -f gctm
 
 # get into an AUR repository
-gAUR () { cd "$HOME/Arch/AUR$2"; rAUR $1; trizen -G $1; cd $1; }; export -f gAUR
-# $2  is for  gdAUR
+trzAUR () { cd "$HOME/Arch/AUR$2"; rAUR $1; trizen -G $1; cd $1; }; export -f trzAUR
+# $2  is for  trzAURd
 # if fail to enter pw in time for trizen, pacman -U package_name-version.pkg.tar.xz
 
 # get into an AUR development repository
-gdAUR () { gAUR $1 dev-clone; gctm $1; }; export -f gdAUR
+trzAURd () { trzAUR $1 dev-clone; gctm $1; }; export -f trzAURd
 
 # remove an AUR repository if it's there
 rAUR(){ [ -d $1 ] && sudo rm -r $1; }; export -f rAUR
