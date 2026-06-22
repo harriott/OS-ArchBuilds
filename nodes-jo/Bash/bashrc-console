@@ -245,6 +245,7 @@ con () {
 
 #=> packages
 alias pikn='pikaur -S --needed'
+alias prs='pikaur -Rs'
 
 #==> AUR packages
 chAURpds () { for pd in ~/.cache/paru/clone ~/.cache/traur/git ~/Arch/AUR ~/Arch/AURdev-clone; do [ -d $pd/$1 ] && s $pd/$1; done }

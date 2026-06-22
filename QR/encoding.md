@@ -35,8 +35,6 @@ GNUPLOT(1)
 ### npm
     $HOME/.npmrc
     r ~/.npm-global
-    wikit -l fr mois -a | less
-    wikit mooji -b
     ~/.npm/_logs
 
 #### mapscii
@@ -47,6 +45,12 @@ GNUPLOT(1)
 - arrows scroll around
 - mouse
 - `q` = quit
+
+#### wikit
+    wikit -l fr mois -a | less
+    wikit mooji -b
+
+open Wikipedia page in browser from terminal
 
 # Pandoc
     $onGH/pandoc-templates/README.markdown

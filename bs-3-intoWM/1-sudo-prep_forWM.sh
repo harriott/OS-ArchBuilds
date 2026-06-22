@@ -10,21 +10,6 @@ trap read debug  # puts a read request after each executable line
 # #=> android-tools
 # pacman -S android-tools
 
-#=> audio - Cmus 0 install
-pacman -S cmus
-[ -d ~/.config/cmus ] || mkdir ~/.config/cmus
-
-#=> audio - Cmus 1 remove
-pacman -Rs cmus
-
-#=> audio - MPD
-pacman -S mpd
-[ -d ~/.mpd/playlists ] || mkdir -p ~/.mpd/playlists
-[ -d ~/music ] || mkdir -p ~/music
-
-#=> audio - WildMIDI
-pacman -S wildmidi
-
 # #=> Bluefish
 # pacman -S bluefish
 
@@ -107,28 +92,6 @@ sudo rm -r /var/lib/texmf
 # # gvfs-mtp - for accessing phone memory
 # pacman -S gvfs-mtp
 
-# #=> for CliFM
-pacman -S noto-fonts-emoji  # don't work in  urxvt  or  xterm...
-
-# #=> cmatrix
-# pacman -S cmatrix
-
-#=> hw
-# exFAT utilities
-pacman -S exfatprogs
-
-# hwinfo
-pacman -S hwinfo
-
-# lm_sensors
-pacman -S lm_sensors
-
-# xorg-xdpyinfo
-pacman -S xorg-xdpyinfo
-
-# xorg-xev
-pacman -S xorg-xev
-
 # #=> PulseAudio - pulsemixer
 # pacman -S pulsemixer  # does this bring in  pulseaudio?
 
@@ -172,24 +135,22 @@ pacman -Rs transmission-qt
 # #=> redshift
 # pacman -S redshift
 
-# #=> system
-# # Conky
-# pacman -S conky gperf
+#=> system
+# Conky
+pacman -S conky gperf
 
-# # gtop
-# pacman -S gtop
-
-# # python-virtualenvwrapper
-# pacman -S python-virtualenvwrapper
-
-# # sysstat
-# pacman -S sysstat
-
-# # xdotool
-# pacman -S xdotool
+# xdotool
+pacman -S xdotool
 
 #=> whipper
 sudo pacman -S whipper  # for audio CDs
 cp $ABjo/whipper.conf ~/.config/whipper/whipper.conf
 # pb ~/.config/whipper/whipper.conf
+
+#=> X - hw
+# xorg-xdpyinfo
+pacman -S xorg-xdpyinfo
+
+# xorg-xev
+pacman -S xorg-xev
 

@@ -13,14 +13,8 @@ trap read debug  # puts a read request after each executable line
 # sudo systemctl enable avahi-daemon.service --now
 # sudo systemctl enable cups.service --now
 
-#=> composer
-sudo pacman -S composer
-
-# #=> gdown
-# pipx install gdown
-
 # #=> Gpick
-# sudo pacman -S gpick  # for colours
+# sudo pacman -S gpick  # for getting onscreen colours
 
 #=> jdk-openjdk
 sudo pacman -S jdk-openjdk  # (removes  jre-openjdk) required for  :Mason
@@ -31,14 +25,11 @@ sudo pacman -S jre-openjdk  # required for  PDFtk
 # #=> libva-utils - for sbMb
 # sudo pacman -S libva-utils  # provides  vainfo, for  VA-API checking
 
-#=> newsboat
-sudo pacman -S newsboat
+# #=> newsboat
+# sudo pacman -S newsboat
 
-#=> npm ffmpeg-concat 0 install
-npm i -g ffmpeg-concat  # takes time to complete
-
-#=> npm ffmpeg-concat 1 uninstall
-npm un -g ffmpeg-concat
+#=> PHP - composer
+sudo pacman -S composer
 
 # #=> python-pymupdf
 # sudo pacman -S python-pymupdf  # for  pdfCropMargins
@@ -48,9 +39,6 @@ npm un -g ffmpeg-concat
 # sudo pacman -S solaar
 # sudo groupadd plugdev
 # sudo usermod -aG plugdev jo  # need to re-login
-
-#=> speedtest-cli
-sudo pacman -S speedtest-cli
 
 #=> TexLab
 # for  ALE

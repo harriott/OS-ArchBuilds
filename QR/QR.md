@@ -21,6 +21,8 @@ my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 # audio
     $ABjo/music/music_rotate.sh
     pactl set-sink-volume @DEFAULT_SINK@ 75%
+    spectroterm -acp --green 17 --orange 17 --red 17
+    spectroterm -acp --green 235 --orange 235 --red 235
     sudo fuser --all --verbose /dev/snd/*
 
 pulseaudio(1)
@@ -807,7 +809,7 @@ gpg(1)
 # help
     apropos
 
-## cheat
+## cheat/cheat
     $ABjo/cheat-conf.yml
     ea cheat
 
@@ -1083,6 +1085,10 @@ SS(8)
 
 can fail to start after waking system
 
+## systemd-resolved
+    resolvectl query archlinux.org
+    systemctl status systemd-resolved.service
+
 # packages
     checkrebuild
     expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500.log  # 500 most recent installs
@@ -1131,7 +1137,8 @@ can fail to start after waking system
 ### traur
     ~/.cache/traur/git
 
-`traur scan` trust scoring of installed AURs
+- checks an AUR after `pikaur -S`
+- `traur scan` trust scoring of installed AURs
 
 ### trizen
     bm trizen
@@ -1424,6 +1431,10 @@ uses `fzf`
 
 IOSTAT(1)
 
+## pscircle
+    cd $ITmULlA; fd pscircle
+    pscircle --output="pscircle-$(date +%Y%m%d%H%M%S).png" --output-height=2600 --output-width=4600
+
 ### BpyTOP
     bpytop  # supersedes  bashtop
 
@@ -1446,6 +1457,7 @@ to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
 ## security
     $OSAB/extra-etc/sudoers/sudoers
     sudo freshclam
+    systemctl status fangfrisch.timer
 
 ### groups
     cat /etc/group  # list all groups on the system
@@ -1528,6 +1540,7 @@ TIMEDATECTL(1)
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 
 # terminal
+    /etc/grc.conf
     neofetch
     o $PAGER
     o $TERM
@@ -1746,6 +1759,7 @@ nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/par
 
 # web serving
     /etc/php/php.ini
+    $machLg/etc/hosts/more
 
 ## Caddy
     /etc/caddy/Caddyfile

@@ -26,94 +26,22 @@ trap read debug  # puts a read request after each executable line
 # makepkg -sic
 # true
 
-# #=> briss
-# trzAUR briss
-# nvim -c "silent! /sourceforge.net\/projects\/briss" PKGBUILD
-# makepkg -sic
+#=> briss
+# Java tool for PDF cropping
+trzAUR briss
+nvim -c "silent! /sourceforge.net\/projects\/briss" PKGBUILD
+makepkg -sic
 
-# #=> browsh
-# # for PDFsam
-# trzAUR browsh
-# nvim -c "silent! /browsh" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> chawan-git
-# trzAURd chawan-git
-# nvim -c "silent! /chawan-git" PKGBUILD
-# makepkg -sic  # takes a while
-# true
-
-# #=> Clapgrep
-# trzAUR clapgrep
-# nvim -c "silent! /github.com\/luleyleo" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> clifm 0 (re)install
-# trzAUR clifm
-# nvim -c "silent! /https:\/\/github.com\/leo-arch" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> clifm 1 remove
-# sudo pacman -Rs clifm
-# rm -r ~/.config/clifm
-
-# #=> clifm-git
-# trzAURd clifm-git
-# nvim -c "silent! /https:\/\/github.com\/leo-arch\/clifm" PKGBUILD
-# makepkg -sic
-
-# #=> cmus-git
-# # try switching back to  cmus  if it's > v2.12.0-4
-# trzAURd cmus-git
-# nvim -c "silent! /cmus.github.io" PKGBUILD
-# makepkg -sic  # takes a while
-# true
-
-# #=> cmus-notify 0 install
-# trzAUR cmus-notify
-# nvim -c "silent! /AntoineGagne" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> cmus-notify 2 remove
-# sudo pacman -Rs cmus-notify
-
-# #=> colorpicker
-# trzAUR colorpicker
-# nvim -c "silent! /Jack12816" PKGBUILD
-# makepkg -sic
+#=> browsh
+# Firefox in the terminal, for PDFsam
+trzAUR browsh
+nvim -c "silent! /browsh" PKGBUILD
+makepkg -sic
+true
 
 # #=> cozy-audiobooks
 # trzAUR cozy-audiobooks
 # nvim -c "silent! /geigi\/cozy" PKGBUILD
-# makepkg -sic
-
-# #=> davfs2 0 Ali Abdallah's key
-# gpg --recv-keys B94556F81C85D0D5
-
-# #=> davfs2 1 (re)install
-# trzAUR davfs2
-# nvim -c "silent! /github.com\/alisarctl" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> davfs2 2 dav_group
-# sudo sed -i 's/^# dav_group/dav_group/' /etc/davfs2/davfs2.conf
-# sudo groupadd davfs2
-# sudo gpasswd -a jo davfs2
-
-# #=> davfs2 3 secrets
-# mkdir ~/.davfs2
-# cp $Enc/Digital1/davfs2Secrets ~/.davfs2/secrets
-# chmod -c 0600 ~/.davfs2/secrets
-# s ~/.davfs2/secrets
-
-# #=> dragon-drop
-# trzAUR dragon-drop
-# nvim -c "silent! /mwh\/dragon" PKGBUILD
 # makepkg -sic
 
 # #=> Dropbox 0 (re)install
@@ -163,19 +91,6 @@ nvim -c "silent! /dl.google.com" PKGBUILD
 makepkg -sic
 true
 
-# #=> gst123
-# trzAUR gst123
-# nvim -c "silent! /github\.com\/swesterfeld" PKGBUILD
-# makepkg -sic
-# true
-
-#=> intel-hybrid-codec-driver-git
-# for  HPEB840G3x
-trzAUR intel-hybrid-codec-driver-git
-nvim -c "silent! /github\.com\/kcning\/intel-hybrid-driver" PKGBUILD
-makepkg -sic
-true
-
 # #=> hplip-plugin 0 HPLIP key
 # gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
 # # from  ~/Arch/AUR/hplip-plugin/PKGBUILD
@@ -186,22 +101,10 @@ true
 # makepkg -sic  # requires  perl-test-fatal
 # true
 
-# #=> HTMLHint
-# trzAUR htmlhint
-# nvim -c "silent! /github\.com\/htmlhint\/HTMLHint\/archive\/refs\/tags" PKGBUILD
-# makepkg -sic
-# true
-
 # #=> iscan
 # trzAUR iscan
 # nvim -c "silent! /support.epson.net" PKGBUILD
 # makepkg -sic  # takes a long time...
-# true
-
-# #=> js-beautify
-# trzAUR js-beautify
-# nvim -c "silent! /github.com\/beautifier\/js-beautify" PKGBUILD
-# makepkg -sic
 # true
 
 # #=> keepassxc-git 0 install
@@ -256,24 +159,6 @@ true
 # trzAUR mpdris2
 # nvim -c "silent! /github.com\/eonpatapon\/mpDris2\/archive" PKGBUILD
 # makepkg -sic
-
-# #=> mpv - easyplayer
-# trzAUR easyplayer
-# nvim -c "silent! /github.com\/kanehekili\/EasyPlayer" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> mpv - mpv-uosc
-# trzAUR mpv-uosc
-# nvim -c "silent! /github.com\/tomasklaen\/uosc" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> mpv - mpv-uosc-git
-# trzAURd mpv-uosc-git
-# nvim -c "silent! /github.com\/tomasklaen\/uosc" PKGBUILD
-# makepkg -sic
-# true
 
 # #=> nomacs 0 install
 # trzAUR nomacs
@@ -367,12 +252,6 @@ true
 # makepkg -sic  # takes a while
 # true
 
-# #=> perl-unicode-utf8
-# trzAUR perl-unicode-utf8
-# nvim -c "silent! /metacpan.org" PKGBUILD
-# makepkg -sic  # requires  perl-test-fatal
-# true
-
 # #=> phonon-qt5
 # trzAUR phonon-qt5
 # nvim -c "silent! /download.kde.org\/stable\/phonon" PKGBUILD
@@ -406,13 +285,6 @@ true
 # #=> pinta-git 0 remove
 # sudo pacman -Rs pinta-git
 
-# #=> PNMixer
-# trzAUR pnmixer
-# nvim -c "silent! /https:\/\/github.com\/nicklan\/pnmixer" PKGBUILD
-# makepkg -sic
-# # (in Openbox)  now  Multimedia > PNMixer > Preferences > View > Draw Volume Meter on Tray Icon
-# true
-
 # #=> pscircle
 # trzAUR pscircle
 # nvim -c "silent! /https:\/\/gitlab.com\/mildlyparallel\/pscircle" PKGBUILD
@@ -425,12 +297,6 @@ true
 # trzAUR qpdfview
 # nvim -c "silent! /launchpad" PKGBUILD
 # makepkg -sic  # takes a long time...
-
-# #=> spectroterm
-# trzAUR spectroterm
-# nvim -c "silent! /github.com\/sparklost" PKGBUILD
-# makepkg -sic
-# true
 
 # #=> Spotify 0 signing key 0 import
 # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --import -
@@ -447,11 +313,6 @@ true
 
 # #=> Spotify AUR 2 remove
 # sudo pacman -Rs spotify
-
-# #=> Textadept
-# trzAUR textadept
-# nvim -c "silent! /orbitalquark\/textadept" PKGBUILD
-# makepkg -sic
 
 # #=> thunar-dropbox
 # trzAUR thunar-dropbox
@@ -476,20 +337,6 @@ true
 # trzAUR usbimager
 # nvim -c "silent! /usbimager" PKGBUILD
 # makepkg -sic
-
-# #=> verbiste
-# trzAUR verbiste
-# nvim -c "silent! /sarrazip\.com\/dev" PKGBUILD
-# makepkg -sic
-
-# #=> vimpc-git 0 install
-# # for MPD
-# trzAURd vimpc-git
-# nvim -c "silent! /github.com\/boysetsfrog\/vimpc" PKGBUILD
-# makepkg -sic
-
-# #=> vimpc-git 1 configure
-# mkdir ~/.config/vimpc
 
 # #=> xnviewmp
 # trzAUR xnviewmp

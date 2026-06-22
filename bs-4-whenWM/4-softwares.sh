@@ -22,10 +22,6 @@ sudo cp $machBld/etc/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
 #  pb /etc/udev/rules.d/90-backlight.rules
 # after a reboot can  xbacklight -inc 12
 
-#=> batstat-git
-# battery status
-pikaur -s batstat-git
-
 #=> Blanket
 sudo pacman -S blanket
 
@@ -85,9 +81,6 @@ sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode
 
 #=> guvcview
 sudo pacman -S guvcview
-
-#=> hosts
-sudo cp $OSAB/etc/hosts/more /etc/hosts
 
 #=> HPLIP 0 install
 sudo pacman -S hplip
@@ -215,6 +208,22 @@ sudo usermod -aG http jo
 #=> peek
 sudo pacman -S peek  # (GIF Screen Recorder)
 
+#=> Perl File::Slurp
+# for  $misc/CP/workHours/makeDats.pl
+pikn perl-file-slurp
+
+# #=> Perl File::Slurper
+# pikn perl-file-slurper
+
+# #=> Perl Regexp::Common
+# pikn perl-regexp-common
+
+# #=> Perl modules for JSON
+# pikn perl-json perl-json-parse perl-json-xs  # can't recall why...
+
+# #=> perlcritic
+# pikn perl-perl-critic
+
 #=> perl-image-exiftool
 sudo pacman -S perl-image-exiftool
 
@@ -270,6 +279,9 @@ sudo pacman -S sqlitebrowser
 
 #=> sxiv
 sudo pacman -S sxiv
+
+#=> tree-sitter-cli
+pikn tree-sitter-cli
 
 #=> Vim - stuff
 pacman -S flake8 neovide python-pynvim

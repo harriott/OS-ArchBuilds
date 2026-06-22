@@ -52,12 +52,6 @@ cp $ITcore/DokuWiki/stopwords/non_technical_words.txt /usr/share/webapps/dokuwik
 # #  2. tweak  ~/.config/pnmixer/config
 # true
 
-# #=> 0 proselint
-# pipx install proselint
-
-# #=> 0 radio-active
-# pipx install radio-active
-
 # #=> 0 surfraw
 # mkdir ~/.config/surfraw
 # sudo pacman -S surfraw
@@ -68,9 +62,6 @@ cp $ITcore/DokuWiki/stopwords/non_technical_words.txt /usr/share/webapps/dokuwik
 
 # #=> 0 Thunderbird 1 remove
 # sudo pacman -Rs thunderbird thunderbird-i18n-en-gb
-
-# #=> 0 yaml2toml
-# pipx install yaml2toml
 
 # #=> 1 check $OSAB
 # read -p "\$OSAB is $OSAB - looks good?"

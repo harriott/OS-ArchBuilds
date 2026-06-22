@@ -3,7 +3,7 @@
 
 # bash $OSAB/bs-2-into_X/4-AUR_handlers.sh
 
-set -v  # quits on error, prints each statement here, including comments
+set -v  # prints each statement here, including comments
 shopt -s expand_aliases; alias pikn='pikaur -S --needed'
 
 # rAUR, trzAUR, trzAURd  are defined in  $AjB/bashrc-console
@@ -29,7 +29,8 @@ shopt -s expand_aliases; alias pikn='pikaur -S --needed'
 # sed -i 's/^noedit = no/noedit = yes/' ~/.config/pikaur.conf
 
 #=> 3 Glaze
-pikn glaze
+# for  auracle-git
+pikn fmt glaze pod2man
 
 # #=> 3 Rust
 # # for  Alacritty, aur-scanner, Dust
@@ -38,6 +39,7 @@ pikn glaze
 #=> 3 Rust Toolchain
 # for  auracle-git, Dust, paru
 rustup toolchain install stable
+rustup default stable
 
 # #=> 4 aur-scanner
 # gpg --recv-keys 25631EAE3F43999050B7D7021132BF893C33FB51
@@ -47,7 +49,7 @@ rustup toolchain install stable
 pikn auracle-git
 
 #=> 4 paru
-pikn paru
+pikn paru  # downloads a load crates, then takes a while to build
 
 # #=> 4 yay
 # pikn yay

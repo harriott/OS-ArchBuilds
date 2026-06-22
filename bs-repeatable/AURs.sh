@@ -11,60 +11,6 @@ trap read debug  # puts a read request after each executable line
 
 # trzAUR  trzAURd  rAUR  are defined in $AjB/bashrc-console
 
-# #=> ansifilter
-# trzAUR ansifilter
-# nvim -c "silent! /gitlab.com\/saalen\/ansifilter" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> ansiweather
-# trzAUR ansiweather
-# nvim -c "silent! /fcambus" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> bfg 0 (re)install
-# trzAUR bfg
-# nvim -c "silent! /madgag" PKGBUILD
-# makepkg -sic  # jre-openjdk
-
-# #=> bfg 1 remove
-# rAUR ~/Arch/AUR/bfg
-# sudo pacman -Rs bfg
-
-# #=> blesh-git
-# trzAURd blesh-git
-# nvim -c "silent! /akinomyoga\/ble.sh" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> cheat
-# trzAUR cheat
-# nvim -c "silent! /https:\/\/github.com\/cheat\/cheatsheets\.git" PKGBUILD
-# makepkg -sic
-
-# #=> code-minimap 0 (re)install
-# trzAUR code-minimap
-# nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> code-minimap 1 remove
-# cd ~/Arch/AUR
-# rAUR code-minimap
-# sudo pacman -Rs code-minimap
-
-# #=> code-minimap-bin 0 install
-# # /usr/share/bash-completion/completions/code-minimap.bash
-# trzAUR code-minimap-bin
-# nvim -c "silent! /https:\/\/github.com\/wfxr\/code-minimap" PKGBUILD
-# makepkg -sic
-
-# #=> code-minimap-bin 1 remove
-# cd ~/Arch/AUR
-# rAUR code-minimap-bin
-# sudo pacman -Rs code-minimap-bin
-
 # #=> cpu-x 0 mawk
 # trzAUR mawk
 # nvim -c "silent! /invisible-island.net\/mawk" PKGBUILD
@@ -80,41 +26,6 @@ trap read debug  # puts a read request after each executable line
 # #=> cpu-x 1 cpu-x 1 remove
 # sudo pacman -Rs cpu-x
 
-# #=> cyrus-sasl-xoauth2-git 0 install
-# trzAURd cyrus-sasl-xoauth2-git
-# nvim -c "silent! /github.com\/moriyoshi" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> cyrus-sasl-xoauth2-git 1 remove
-# sudo pacman -Rs cyrus-sasl-xoauth2-git cyrus-sasl-xoauth2-git-debug
-
-# #=> dict-moby-thesaurus
-# trzAUR dict-moby-thesaurus
-# nvim -c "silent! /www.gutenberg.org\/ebooks\/3202" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> didyoumean
-# # provides  dym
-# rustup update
-# trzAUR didyoumean
-# nvim -c "silent! /hisbaan\/didyoumean" PKGBUILD
-# makepkg -sic  # takes ages
-# true
-
-# #=> downgrade
-# trzAUR downgrade
-# nvim -c "silent! /github.com\/archlinux-downgrade" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> fonts - figlet-fonts
-# # brings in figlet
-# trzAUR figlet-fonts
-# nvim -c "silent! /ftp.figlet.org" PKGBUILD
-# makepkg -sic
-
 # #=> fonts - fontpreview-git
 # trzAURd fontpreview-git
 # nvim -c "silent! /sdushantha" PKGBUILD
@@ -129,44 +40,6 @@ trap read debug  # puts a read request after each executable line
 # trzAUR ttf-poppins
 # nvim -c "silent! /github.com\/itfoundry\/poppins" PKGBUILD
 # makepkg -sic
-# true
-
-# #=> fangfrisch 1 AUR
-# further databases/signatures for  ClamAV
-# trzAUR python-fangfrisch
-# nvim -c "silent! /rseichter" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> fangfrisch 2 settings
-# # 1 create database structure
-# sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
-
-# # 2 enable systemd timer
-# sudo systemctl enable fangfrisch.timer --now
-
-# #=> gcc6
-# # maybe for  rbenv
-# trzAUR gcc6
-# nvim -c "silent! /gcc.gnu.org\/gcc-6" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> git-extras
-# trzAUR git-extras
-# nvim -c "silent! /github.com\/tj" PKGBUILD
-# makepkg -sic
-# true
-
-# #=> gsamokovarov jump 0 install
-# trzAUR jump
-# nvim -c "silent! /gsamokovarov" PKGBUILD  # ~/Arch/AUR/jump/PKGBUILD
-# makepkg -sic
-
-# #=> gsamokovarov jump 1 remove
-# cd ~/Arch/AUR
-# rAUR jump
-# sudo pacman -Rs jump
 # true
 
 # #=> julia-bin 0 execstack

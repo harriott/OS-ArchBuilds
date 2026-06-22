@@ -81,9 +81,6 @@ read -p "\$OSAB is $OSAB - looks good?"
 # # perl-rename
 # pacman -S perl-rename
 
-# # perl-test-fatal
-# pacman -S perl-test-fatal  # needed for  perl-unicode-utf8
-
 # # p7zip
 # pacman -S p7zip
 
@@ -407,7 +404,7 @@ pacman -S kew
 pacman -S languagetool  # for the GUI
 
 # Node Package Manager 0 npm install
-pacman -S npm
+pacman -S npm  # brings in  nodejs
 
 # OpenOffice English thesaurus
 pacman -S mythes-en
