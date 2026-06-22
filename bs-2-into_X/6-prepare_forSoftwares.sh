@@ -22,10 +22,6 @@ set -ev
 # #=> 1 Alacritty
 # sudo pacman -S alacritty
 
-# #=> 1 Rust Toolchain
-# # for  Dust
-# rustup toolchain install stable
-
 # #=> 2 dalance/pipecolor
 # cargo install pipecolor  # but it's not available...
 

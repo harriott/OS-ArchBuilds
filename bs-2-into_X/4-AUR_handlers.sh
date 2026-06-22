@@ -28,23 +28,30 @@ shopt -s expand_aliases; alias pikn='pikaur -S --needed'
 # pikaur -Syu  # to generate  ~/.config/pikaur.conf
 # sed -i 's/^noedit = no/noedit = yes/' ~/.config/pikaur.conf
 
-#=> 3 Rust
-# for  Alacritty, aur-scanner, Dust
-pikn rustup
+#=> 3 Glaze
+pikn glaze
 
-#=> 3 aur-scanner
-gpg --recv-keys 25631EAE3F43999050B7D7021132BF893C33FB51
-pikn aur-scanner  # downloads a load crates, then takes a while to build
+# #=> 3 Rust
+# # for  Alacritty, aur-scanner, Dust
+# pikn rustup
 
-#=> 3 auracle-git
+#=> 3 Rust Toolchain
+# for  auracle-git, Dust, paru
+rustup toolchain install stable
+
+# #=> 4 aur-scanner
+# gpg --recv-keys 25631EAE3F43999050B7D7021132BF893C33FB51
+# pikn aur-scanner  # downloads a load crates, then takes a while to build
+
+#=> 4 auracle-git
 pikn auracle-git
 
-#=> 3 paru
+#=> 4 paru
 pikn paru
 
-#=> 3 yay
-pikn yay
+# #=> 4 yay
+# pikn yay
 
-#=> 3 traur
-pikn traur  # downloads a load crates, then takes a while to build
+# #=> 4 traur
+# pikn traur  # downloads a load crates, then takes a while to build
 
