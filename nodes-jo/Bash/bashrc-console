@@ -243,6 +243,27 @@ con () {
 #=> npm global directory
 [[ $PATH =~ npm-global ]] || export PATH="$HOME/.npm-global/bin:$PATH"
 
+#=> packages
+alias pikn='pikaur -S --needed'
+
+#==> AUR packages
+chAURpds () { for pd in ~/.cache/paru/clone ~/.cache/traur/git ~/Arch/AUR ~/Arch/AURdev-clone; do [ -d $pd/$1 ] && s $pd/$1; done }
+
+#===> using  trizen
+# "Get Clone To Make" - for my building of AUR development packages
+gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; }; export -f gctm
+
+# get into an AUR repository
+trzAUR () { cd "$HOME/Arch/AUR$2"; rAUR $1; trizen -G $1; cd $1; }; export -f trzAUR
+# $2  is for  trzAURd
+# if fail to enter pw in time for trizen, pacman -U package_name-version.pkg.tar.xz
+
+# get into an AUR development repository
+trzAURd () { trzAUR $1 dev-clone; gctm $1; }; export -f trzAURd
+
+# remove an AUR repository if it's there
+rAUR(){ [ -d $1 ] && sudo rm -r $1; }; export -f rAUR
+
 #=> pipx exposed binaries
 [[ $PATH =~ \.local/bin ]] || export PATH="$PATH:$HOME/.local/bin"  # for  pipx  installed commands
 
@@ -261,24 +282,6 @@ fi
 alias i=pinfo
 alias im='pinfo -m'
 export GPG_TTY=$(tty)  # correct TTY for GnuPG
-
-#==> AUR packages
-chAURpds () { for pd in ~/.cache/paru/clone ~/.cache/traur/git ~/Arch/AUR; do [ -d $pd/$1 ] && s $pd/$1; done }
-
-#==> trizen AUR packages
-# "Get Clone To Make" - for my building of AUR development packages
-gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; }; export -f gctm
-
-# get into an AUR repository
-trzAUR () { cd "$HOME/Arch/AUR$2"; rAUR $1; trizen -G $1; cd $1; }; export -f trzAUR
-# $2  is for  trzAURd
-# if fail to enter pw in time for trizen, pacman -U package_name-version.pkg.tar.xz
-
-# get into an AUR development repository
-trzAURd () { trzAUR $1 dev-clone; gctm $1; }; export -f trzAURd
-
-# remove an AUR repository if it's there
-rAUR(){ [ -d $1 ] && sudo rm -r $1; }; export -f rAUR
 
 #=> text wrangling
 nn () { nvim $@; cd $(cat ~/lastVimDirectory); } # see  $vfv/enter/vimrc.vim

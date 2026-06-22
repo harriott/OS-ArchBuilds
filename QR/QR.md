@@ -1093,16 +1093,18 @@ can fail to start after waking system
 - downgrade
 
 ## AUR
+    chAURpds <AUR_package>
+
 `$AjB/bashrc-console` > trizen
+
+### auracle-git
+    auracle -h
+    auracle --version
+    auracle sync  # checks for updates (not `*-git` packages)
 
 ### ks-aur-scanner
     aur-scan scan <package_directory>  # detailed report
     aur-scan system  # all installed AURs, quick info
-
-### yay
-- reports installed but abandoned, unmaintained, and outdated AUR's
-- updates AURs
-- `yay > pw`
 
 ### Aura
     aura --help
@@ -1123,7 +1125,7 @@ can fail to start after waking system
     ~/.config/pikaur.conf
     ~/.local/share/pikaur/aur_repos/
 
-- `-a` (`--aur`) only AUR packages will be upgraded
+- `-a` (`--aur`) only AUR packages will be upgraded, but wants to downgrade `auracle-git`
 - `--devel` doesn't reliably offer upgrades
 
 ### traur
@@ -1135,6 +1137,12 @@ can fail to start after waking system
     bm trizen
     trizen  # trizen --help
     trizen -C trizen
+
+### yay
+- fuzzy searches for packages (try `yay paru`)
+- reports installed but abandoned, unmaintained, and outdated AUR's
+- updates AURs
+- `yay > pw`
 
 ## Flatpak
     /var/lib/flatpak/exports/bin

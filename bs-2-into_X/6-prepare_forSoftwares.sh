@@ -14,10 +14,6 @@ set -ev
 # #=> 0 pgpdump
 # sudo pacman -S pgpdump
 
-# #=> 0 Rust
-# # for  Alacritty  &  Dust
-# sudo pacman -S rustup
-
 # #=> 0 systemd-resolved
 # # Can't recall the advantage of this...
 # sudo systemctl enable systemd-resolved.service --now
