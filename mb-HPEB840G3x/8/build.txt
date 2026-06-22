@@ -157,6 +157,8 @@ sl > pw  for  $OSAB/bs-2-into_X/3-sudo-to_X-0.sh
 $OSAB/nodes-set/jo-1-encoding.sh
 $OSAB/bs-2-into_X/4-AUR_handlers.sh
 
+$OSAB/bs-2-into_X/5-softwares.sh
+
 chown jo:jo /mnt/HDTB330EK3CA
 ## waiting
 $OSAB/bs-1-into_jo/7-rsnapshot.sh

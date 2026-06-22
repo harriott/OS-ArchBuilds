@@ -153,11 +153,20 @@ pikn igrep
 # for  HPEB840G3x
 pikn intel-hybrid-codec-driver-git
 
+#=> julia-bin
+pikn julia-bin  # for displaying sixels
+
+#=> librespeed-cli
+pikn librespeed-cli
+
 #=> libsixel
 pikn libsixel  # for  sixel  graphics
 
 #=> lnav
 pikn lnav
+
+#=> lsix-git
+pikn lsix-git  # for sixels
 
 #=> MPD
 pikn mpd
@@ -170,6 +179,9 @@ pikn vimpc-git
 #=> mtr
 # network diagnostic tool
 pikn mtr
+
+#=> nbfc-linux
+pikn nbfc-linux  # fan control for  HPEB840G3x
 
 #=> npm 0 configure npm-global
 [ -d ~/.npm-global ] ||  mkdir ~/.npm-global
@@ -189,6 +201,12 @@ npm i -g mapscii  # world map in terminal
 
 #=> npm 1 wikit
 npm i -g wikit  # open Wikipedia page in browser from terminal
+
+#=> perl-clone-pp
+pikn perl-clone-pp  # for  perl-data-printer
+
+#=> perl-data-printer
+pikn perl-data-printer  # provides  Data::Printer
 
 #=> pgpdump
 pikn pgpdump
@@ -215,6 +233,12 @@ sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
 # 2 enable systemd timer
 sudo systemctl enable fangfrisch.timer --now
 
+#=> rdrview-git
+pikn rdrview-git
+
+#=> shell-color-scripts-git
+pikn shell-color-scripts-git  # DT's  colorscript -r
+
 #=> spectroterm
 pikn spectroterm
 
@@ -237,9 +261,24 @@ pikn sysstat  # brings in  lm_sensors
 #=> systemd-resolved
 sudo systemctl enable systemd-resolved.service --now
 
+#=> sysz
+pikn sysz  # fzf terminal UI for systemctl
+
+#=> tint-tetris
+pikn tint-tetris  # tint (tetris)
+
+#=> tspreed
+pikn tspreed
+
+#=> tty-clock-git
+pikn tty-clock-git
+
 #=> typos
 # (rustup update) for correcting mistakes in source code
 pikn typos
+
+#=> vale
+pikn vale  # Vale prose linting from cli, also for  ALE
 
 #=> Zellij
 pikn zellij
