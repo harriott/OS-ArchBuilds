@@ -4,6 +4,7 @@
 # bash $OSAB/bs-2-into_X/4-AUR_handlers.sh
 
 set -v  # quits on error, prints each statement here, including comments
+shopt -s expand_aliases
 
 # rAUR, trzAUR, trzAURd  are defined in  $AjB/bashrc-console
 
