@@ -7,16 +7,19 @@ shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
 pikn vorbis-tools  # for  oggenc
 
-#=> Bluefish
-pikn bluefish
+# #=> Bluefish
+# pikn bluefish
 
-#=> documenting
-pikn ghostscript  # Ghostscript
-pikn python-pylatexenc  # for render-markdown.nvim
-pikn texlab  # for  ALE
+# #=> documenting
+# pikn ghostscript  # Ghostscript
+# pikn python-pylatexenc  # for render-markdown.nvim
+# pikn texlab  # for  ALE
 
-pikn pandoc-cli  # Pandoc
-mkdir -p ~/.pandoc/defaults
+# pikn pandoc-cli  # Pandoc
+# mkdir -p ~/.pandoc/defaults
+
+#=> ebook - Calibre - qt6-multimedia-ffmpeg
+pikn qt6-multimedia-ffmpeg
 
 #=> ebook - Calibre
 pikn calibre
