@@ -4,25 +4,8 @@
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-set -ev
-trap read debug  # puts a read request after each executable line
-
-# #=> android-tools
-# pacman -S android-tools
-
-# #=> Bluefish
-# pacman -S bluefish
-
-#=> documenting
-# Ghostscript
-pacman -S ghostscript
-
-# Pandoc
-pacman -S pandoc-cli
-mkdir -p ~/.pandoc/defaults
-
-# pylatexenc
-pacman -S python-pylatexenc  # for render-markdown.nvim
+set -v  # prints each statement here, including comments
+shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
 # #=> documenting - TeX Live 0 native 0 install 0 source online
 # cd $cITcc/unix-TL-install-tl-20250525  # will download 6GB of code
@@ -60,8 +43,8 @@ rm -rf ~/.texlive2024
 sudo rm -r /usr/local/texlive
 
 #=> documenting - TeX Live 0 Arch packaged 0 install
-pacman -S texlive-most texlive-langchinese texlive-langgreek  # select all
-pacman -S texlive-xetex
+pikn texlive-most texlive-langchinese texlive-langgreek  # select all
+pikn texlive-xetex
 
 #=> documenting - TeX Live 0 Arch packaged 1 remove 0 packages
 # sudo pacman -Rs  as per  $machLg/TeXLive/Arch_packages-<date>.txt
@@ -74,83 +57,4 @@ sudo rm -r /var/lib/texmf
 
 #=> documenting - TeX Live 1 max_print_line
 # $ABjo/texmf.cnf
-
-# #=> ebook - Calibre
-# pacman -S calibre
-
-# #=> ebook - Foliate
-# pacman -S foliate
-# # Openbox Menu > Office > Foliate > Menu > Advanced > Continuous
-
-# #=> file manage
-# # cdrtools
-# pacman -S cdrtools
-
-# # GVFS-dnssd
-# pacman -S gvfs-dnssd
-
-# # gvfs-mtp - for accessing phone memory
-# pacman -S gvfs-mtp
-
-# #=> PulseAudio - pulsemixer
-# pacman -S pulsemixer  # does this bring in  pulseaudio?
-
-# #=> networking
-# # bluetooth
-# gpasswd -a jo lp
-# pacman -S blueman bluez bluez-utils pulseaudio-bluetooth
-# systemctl enable bluetooth.service --now
-
-# # iptraf-ng
-# pacman -S iptraf-ng
-
-# # mailcap
-# pacman -S mailcap
-
-#=> networking 0 transmission-qt 0 install
-pacman -S transmission-qt
-
-#=> networking 0 transmission-qt 1 remove
-pacman -Rs transmission-qt
-
-# #=> WM environment
-# # cbatticon
-# pacman -S cbatticon
-
-# # CopyQ
-# pacman -S copyq
-
-# # Dunst
-# pacman -S dunst
-
-# # galculator
-# pacman -S galculator
-
-# # gsimplecal
-# pacman -S gsimplecal
-
-# #=> pkgconf
-# pacman -S --needed pkgconf
-
-# #=> redshift
-# pacman -S redshift
-
-#=> system
-# Conky
-pacman -S conky gperf
-
-# xdotool
-pacman -S xdotool
-
-#=> whipper
-sudo pacman -S whipper  # for audio CDs
-cp $ABjo/whipper.conf ~/.config/whipper/whipper.conf
-# pb ~/.config/whipper/whipper.conf
-
-#=> X - hw
-# xorg-xdpyinfo
-pacman -S xorg-xdpyinfo
-
-# xorg-xev
-pacman -S xorg-xev
 

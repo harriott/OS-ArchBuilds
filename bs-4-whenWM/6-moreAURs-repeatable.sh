@@ -219,6 +219,9 @@ true
 # makepkg -sic
 # true
 
+# #=> pdfCropMargins 0 python-pymupdf
+# pikn python-pymupdf  # for  pdfCropMargins
+
 # #=> pdfCropMargins 0 python-pypdf2
 # trzAUR python-pypdf2
 # nvim -c "silent! /github.com\/py-pdf" PKGBUILD
@@ -233,9 +236,6 @@ true
 # trzAUR pdfcropmargins
 # nvim -c "silent! /pypi.org\/project\/pdfCropMargins" PKGBUILD
 # makepkg -sic
-
-# #=> pdfCropMargins 2 pdfcropmargins 0 remove
-# sudo pacman -Rs pdfcropmargins
 
 # #=> PDFsam 0 (re)install
 # trzAUR pdfsam

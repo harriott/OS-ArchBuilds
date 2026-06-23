@@ -36,9 +36,10 @@ if [[ $myDrA == 1 ]]; then
         export culLA="$culL/Arch"
           export machLg=$culLA/ml-$host  # as opposed to  $machBld
         export culLB=$culL/Bash  # rg -l '\$culLB' $ITcore
-      export culLAb="$ITcore/ulLinuxArch-big" # rg -l '\$culLAb' $ITcore
       export ITccl=$ITcore/copied-linked  # $ITccl
       export onGH=$ITcore/onGitHub
+    export ITculLAb="$Drpbx/IT-culLAb"  # IT core unix-like Linux Arch big  $ITculLAb
+    export ITculLAh="$Drpbx/IT-culLAh"  # IT core unix-like Linux Arch huge  $ITculLAh
 else
   # No  $Drpbx  yet, building  root / user:
     export onGH=$HOME/onGH  # because following test fails in  user

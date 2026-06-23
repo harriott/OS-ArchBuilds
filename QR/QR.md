@@ -346,7 +346,7 @@ JOBS(1P)
     r $cGRs/emacs/_bzg-worg
 
 ## Spacemacs
-    $culLAb/Emacs/sm/.spacemacs
+    $ITculLAb/Emacs/sm/.spacemacs
     n ~/.sm/.emacs.d
     nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
@@ -852,7 +852,7 @@ WIPEFS(8)
     doas cat /sys/kernel/debug/dri/0/radeon_pm_info
     lspci -vnn | grep VGA -A 12 | xcol Intel Radeon size VGA
     lspci -vnnd ::03xx
-    sudo lshw -C display | xcol GeForce NVIDIA Radeon size VGA
+    doas lshw -C display | xcol GeForce NVIDIA Radeon size VGA
 
 ## cbh - keyboard
     xev | grep keycode
@@ -994,7 +994,7 @@ mediainfo -h | mo
     $misc/CP/mpv.conf
     :Man mpv
     r /usr/share/doc/mpv
-    rg mpv --sort=modified -l $culLAb/ml-$host/pm/cu
+    rg mpv --sort=modified -l $ITculLAb/ml-$host/pm/cu
 
 - `c` cycles through visualisations (`$cITcc/CP/mpv/visualizer.lua`)
 - `Ctrl+e` invokes equalizer (`$cITcc/CP/mpv/firequalizer15.lua`)
@@ -1314,7 +1314,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     ~/.local/share/xorg/Xorg.0.log
 
 - `Qt`: `Q qt6`
-- `su` > root pw for `st="$culLAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`
+- `su` > root pw for `st="$ITculLAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`
 - SU(1)
 - Trusted Users
 
@@ -1355,7 +1355,7 @@ creates an initial ramdisk environment
     ls /sys/firmware/efi/efivars  # populated is good
 
 ## build
-    $OSAB/extra-etc/doas.conf
+    $OSAB/nodes-etc/doas.conf
     r $OSAB $culLA
     r $machLg/etc/fstab
     rsync -irtv --delete $OSAB/ ~/Play0/OSAB
@@ -1413,7 +1413,9 @@ uses `fzf`
 
 ## locale
     i localectl
+    localectl list-keymaps
     localectl list-locales
+    localectl status
 
 ## mimeapps
     /usr/share/applications/mimeinfo.cache

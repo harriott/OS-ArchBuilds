@@ -3070,7 +3070,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.160.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Updates
-nomacs not opening, only clue from  $culLAb/ml-$host/pm/cu/250109-1049.log  is  opencv
+nomacs not opening, only clue from  $ITculLAb/ml-$host/pm/cu/250109-1049.log  is  opencv
 switched to  nomacs-git
 ## mbsync
 still failing to get FastMail  removal and re-installation of  isync  didn't fix it

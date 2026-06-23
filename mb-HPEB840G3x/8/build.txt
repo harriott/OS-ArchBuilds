@@ -151,20 +151,25 @@ lsblk  shows  Samsung MZNLN128  is  /dev/sda
     n > accepted defaults of 1, 2048-976773134, 8300
     w > o
   mkfs.ext4 -L MZNLN128 /dev/sda1 > o
-## X
+## prepare for X
 $OSAB/bs-2-into_X/2-jo.sh
 sl > pw  for  $OSAB/bs-2-into_X/3-sudo-to_X-0.sh
 $OSAB/nodes-set/jo-1-encoding.sh
 $OSAB/bs-2-into_X/4-AUR_handlers.sh
-
 $OSAB/bs-2-into_X/5-softwares.sh
+## vimpc-git  fail
+pikn vimpc-git  gets  error: boostthread-dev library is required
+boost, boost-libs, libmpdclient, pcre  are all there
+## prepare for X
+prs perl-test-fatal
 
+$OSAB/bs-3-intoWM/1-prepare.sh
 chown jo:jo /mnt/HDTB330EK3CA
 ## waiting
 $OSAB/bs-1-into_jo/7-rsnapshot.sh
 # physical configuration
 1366x768 screen
-Intel Core i5-6300U
+Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
 RAM CT2K8G4SFRA32A
 ## storage
 (essential) M.2 SSD: 119Go Samsung MZNLN128

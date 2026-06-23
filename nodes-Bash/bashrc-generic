@@ -210,7 +210,7 @@ cgabc () {
 }
 
 uf(){
-  ufl="$culLAb/ml-$host/usr-files.txt"
+  ufl="$ITculLAb/ml-$host/usr-files.txt"
   echo 'vim: set nowrap:' > $ufl
   echo >> $ufl
   echo 'output of  uf() ($OSAB/Bash/bashrc-generic)' >> $ufl

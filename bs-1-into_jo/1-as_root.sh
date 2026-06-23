@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# sudo bash $OSAB/bs-1-into_jo/1-as_root-to_jo.sh
+# sudo bash $OSAB/bs-1-into_jo/1-as_root.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
@@ -456,7 +456,6 @@ cat /etc/passwd
 #=> 3 doas 1 configure
 cp $OSAB/nodes-etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
 chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
-# after a reboot, test with  doas updatedb
 
 #=> 3 Rootkit Hunter
 pacman -S rkhunter

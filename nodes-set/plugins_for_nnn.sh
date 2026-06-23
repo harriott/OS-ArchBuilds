@@ -8,26 +8,16 @@
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
-# #=> 0 Pádraig Brady's key for coreutils
-# # for advcp
-# gpg -k
-# gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9
-# true
-
-# #=> 1 advcpmv
-# # for nnn -r
-# trzAUR advcpmv
-# nvim -c "silent! /jarun\/advcpmv" PKGBUILD
-# makepkg -sic  # the checks are long...
-# true
-
-#=> 2 go fast
-trap - debug  # turn off debug
-
-#=> 3 nnn plugins
+#=> nnn plugins 0 show
 [[ $distro =~ 'Arch' ]] && thunar ~/.config/nnn/plugins &
+
+#=> nnn plugins 1 clear
 shopt -s dotglob; [[ -d ~/.config/nnn/plugins ]] && rm -r ~/.config/nnn/plugins/*
+
+#=> nnn plugins 2 get
 sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs)"
+
+#=> nnn plugins 3 put
 if [ $host = "sbMb" ]; then
   echo $(date "+%Y%m%d") >> $machLg/terminal/nnn_plugins_updated
 else

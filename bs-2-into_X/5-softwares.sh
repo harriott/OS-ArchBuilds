@@ -3,9 +3,7 @@
 # bash $OSAB/bs-2-into_X/5-softwares.sh
 
 set -v  # prints each statement here, including comments
-shopt -s expand_aliases; alias pikn='pikaur -S --needed'
-
-prs perl-test-fatal
+shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
 #=> Alacritty
 pikn alacritty
@@ -28,8 +26,8 @@ pikn blesh-git
 #=> chawan-git
 pikn chawan-git
 
-#=> cheat/cheat
-pikn cheat
+#=> cheat-bin
+pikn cheat-bin
 
 #=> chmln.sd
 pikn sd
@@ -263,9 +261,6 @@ sudo systemctl enable systemd-resolved.service --now
 
 #=> sysz
 pikn sysz  # fzf terminal UI for systemctl
-
-#=> tint-tetris
-pikn tint-tetris  # tint (tetris)
 
 #=> tspreed
 pikn tspreed
