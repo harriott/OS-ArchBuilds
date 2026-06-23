@@ -2,8 +2,6 @@
 
 # $OSAB/bs-3-intoWM/1-prepare.sh
 
-if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
-
 set -v  # prints each statement here, including comments
 shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
