@@ -18,17 +18,20 @@ pikn vorbis-tools  # for  oggenc
 # pikn pandoc-cli  # Pandoc
 # mkdir -p ~/.pandoc/defaults
 
-#=> ebook - Calibre - qt6-multimedia-ffmpeg
-pikn qt6-multimedia-ffmpeg
+# #=> ebook - Calibre - qt6-multimedia-ffmpeg
+# pikn qt6-multimedia-ffmpeg
 
-#=> ebook - Calibre
-pikn calibre
+# #=> ebook - Calibre
+# pikn calibre
 
-#=> ebook - Foliate
-pikn foliate
-# Openbox Menu > Office > Foliate > Menu > Advanced > Continuous
+# #=> ebook - Foliate
+# pikn foliate
+# # Openbox Menu > Office > Foliate > Menu > Advanced > Continuous
 
-#=> file manage
+#=> file manage 0 Pádraig Brady's key for coreutils
+gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9  # for jarun's advcp patch
+
+#=> file manage 1
 pikn advcpmv  # for nnn -r
 pikn cdrtools
 pikn gvfs-dnssd  # GVFS-dnssd
