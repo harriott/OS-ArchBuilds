@@ -7,29 +7,30 @@ shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
 pikn vorbis-tools  # for  oggenc
 
-# #=> Bluefish
-# pikn bluefish
+#=> Bluefish
+pikn bluefish
 
-# #=> documenting
-# pikn ghostscript  # Ghostscript
-# pikn python-pylatexenc  # for render-markdown.nvim
-# pikn texlab  # for  ALE
+#=> documenting
+pikn ghostscript  # Ghostscript
+pikn python-pylatexenc  # for render-markdown.nvim
+pikn texlab  # for  ALE
 
-# pikn pandoc-cli  # Pandoc
-# mkdir -p ~/.pandoc/defaults
+pikn pandoc-cli  # Pandoc
+[ -d ~/.pandoc/defaults ] || mkdir -p ~/.pandoc/defaults
 
-# #=> ebook - Calibre - qt6-multimedia-ffmpeg
-# pikn qt6-multimedia-ffmpeg
+#=> ebook - Calibre - qt6-multimedia-ffmpeg
+pikn qt6-multimedia-ffmpeg
 
-# #=> ebook - Calibre
-# pikn calibre
+#=> ebook - Calibre
+pikn calibre
 
-# #=> ebook - Foliate
-# pikn foliate
-# # Openbox Menu > Office > Foliate > Menu > Advanced > Continuous
+#=> ebook - Foliate
+pikn foliate
 
 #=> file manage 0 Pádraig Brady's key for coreutils
-gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9  # for jarun's advcp patch
+# for jarun's advcp patch
+gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9
+# gpg -k DF6FD971306037D9
 
 #=> file manage 1
 pikn advcpmv  # for nnn -r
@@ -77,8 +78,6 @@ pikn libva-utils  # provides  vainfo, for  VA-API checking
 
 #=> hw - lshw
 pikn lshw
-
-# #=> hw - lshw-git
 # pikn lshw-git
 
 # #=> hw - PulseAudio - mictray
