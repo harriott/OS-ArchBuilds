@@ -115,13 +115,16 @@ pikn newsboat
 pikn transmission-qt
 pikn yt-dlp
 
-#=> WM environment
+#=> WM environment 0
 pikn cbatticon
 pikn conky gperf  # Conky
-pikn copyq  # CopyQ
 pikn dunst  # Dunst
 pikn galculator
 pikn gsimplecal
+pikn keepassxc  # for  copyq
+
+#=> WM environment 1 CopyQ
+pikn copyq
 
 #=> xorg tools
 pikn xdotool

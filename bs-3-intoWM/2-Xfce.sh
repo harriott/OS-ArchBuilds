@@ -3,9 +3,9 @@
 
 # bash <thisfile>.sh
 set -v  # prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
+shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
-sudo pacman -S xfce4 xfce4-goodies
-sudo pacman -S xfce4-indicator-plugin  # supposedly needed for Dropbox icon
-sudo pacman -S libgsf thunar-archive-plugin xarchiver  # for  Thunar
+pikn xfce4 xfce4-goodies
+pikn xfce4-indicator-plugin  # supposedly needed for Dropbox icon
+pikn libgsf thunar-archive-plugin xarchiver  # for  Thunar
 
