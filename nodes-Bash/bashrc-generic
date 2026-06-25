@@ -198,8 +198,8 @@ plo(){
   echo >> $plof
 } # takes a while
 
-cgabc () {
-  e="$machLg/jo/shell/compgen_abc.txt"
+cgabck () {
+  e="$machLg/jo/shell/compgen_abck.txt"
   echo 'vim: fdl=0 ft=build:' > $e; echo '' >> $e
   echo "# aliases" >> $e
   compgen -a | sort | awk '{print}' ORS=' : ' >> $e; echo '' >> $e
@@ -207,6 +207,8 @@ cgabc () {
   compgen -b | sort | awk '{print}' ORS=' : ' >> $e; echo '' >> $e
   echo "# commands" >> $e
   compgen -c | sort | awk '{print}' ORS=' : ' >> $e; echo '' >> $e
+  echo "# keywords" >> $e
+  compgen -k | sort | awk '{print}' ORS=' : ' >> $e; echo '' >> $e
 }
 
 uf(){

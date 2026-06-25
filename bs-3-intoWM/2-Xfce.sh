@@ -7,5 +7,5 @@ shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
 pikn xfce4 xfce4-goodies
 pikn xfce4-indicator-plugin  # supposedly needed for Dropbox icon
-pikn libgsf thunar-archive-plugin xarchiver  # for  Thunar
+pikn libgsf xarchiver  # for  Thunar
 

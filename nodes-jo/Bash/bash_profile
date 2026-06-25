@@ -24,7 +24,7 @@ source ~/.start  # $machBld/Bash_start, $OSAB/mb-HPEB840G3x/8/Bash_start
 
 # backup the previous boot's systemd journal
 # journalctl -b -1 > $ITculLAh/ml-$host/jc/$(date '+%y%m%d-%H%M').jctl &
-if [ $myDrA == 1 ]]; then
+if [[ $myDrA == 1 ]]; then
   jc=$ITculLAh/ml-$host/jc
 else
   jc=~/Arch
