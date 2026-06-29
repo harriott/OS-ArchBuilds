@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # bash $OSAB/bs-4-whenWM/2-dei.sh  # desktop environment integration
+# but see  $OSAB/QR/QR.md > mimeapps
 
 # trzAUR  is defined in $AjB/bashrc-console
 

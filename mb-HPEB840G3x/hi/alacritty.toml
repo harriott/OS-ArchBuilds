@@ -2,7 +2,7 @@
 # $OSAB/mb-HPEB840G3hi/alacritty.toml ($OSAB/nodes-set/jo-0.sh)
 
 [font]
-  size = 8
+  size = 9
 
 [general]
   import = [ "~/.alacritty-all.toml" ] # $OSAB/nodes-terminal/alacritty-all.toml

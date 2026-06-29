@@ -234,6 +234,6 @@ pikn thunderbird-i18n-en-gb
 thunderbird &
 read -p '- first-run of  Thunderbird  to generate a dummy  Profile, not to be hereafter used'
 
-#==> Thunderbird 1 remove
-prs thunderbird thunderbird-i18n-en-gb
+# #==> Thunderbird 1 remove
+# prs thunderbird thunderbird-i18n-en-gb
 
