@@ -5,7 +5,6 @@
 # trzAUR  is defined in $AjB/bashrc-console
 
 set -v
-trap read debug  # puts a read request after each executable line
 
 #=> grab mimeapps.list
 cp ~/.config/mimeapps.list $machLg/jo/mimeapps_list/$(date +%y%m%d).ini

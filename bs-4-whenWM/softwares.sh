@@ -6,7 +6,7 @@
 
 if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 
-set -ev  # prints each statement here, including comments
+set -ev  # quits on error, prints each statement here, including comments
 shopt -s expand_aliases; alias pikn='pikaur -S --needed'
 # prs  defined in  $AjB/bashrc-console
 
@@ -14,15 +14,14 @@ read -p 'Have you run  pikaur -Syu  ?'
 
 #=> audio
 pikn blanket  # Blanket
-pikn kew
 pikn mousai  # similar to Shazam
 pikn mpdris2  # for MPD
 pikn quodlibet  # Quod Libet
-pikn ymuse  # for MPD
+pikn ymuse  # for MPD, takes ages to compile
 
 #==> mpv
 pikn mpv
-[ -d ~/.config/mpv/scripts ] || mkdir ~/.config/mpv/scripts
+[ -d ~/.config/mpv/scripts ] || mkdir -p ~/.config/mpv/scripts
 
 #=> AV
 pikn ffmpeg

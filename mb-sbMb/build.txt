@@ -4421,9 +4421,9 @@ Keyboard >
   Behaviour > General > Restore numlock state on startup
 Power Manager >
   Display > Display power management
-  General > When sleep button is pressed > Suspend
-  Screensaver Management > (= Screensaver Preferences) > Activate off
-  System > Security > Lock screen when system is going to sleep off
+    General > When sleep button is pressed > Suspend
+    Screensaver Management > (= Screensaver Preferences) > Activate off
+    System > Security > Lock screen when system is going to sleep off
 Session and Startup > Application Autostart >
   Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
   Conky > [ Conky  conky ]
