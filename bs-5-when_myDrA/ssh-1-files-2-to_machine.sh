@@ -1,13 +1,15 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-# after  $OSAB/bs-2-to_X/2-git-ssh-1.sh,
-# from the directory  $s  defined therein, bash $OSAB/bs-2-to_X/2-git-ssh-2.sh
+# $OSAB/bs-5-when_myDrA/ssh-1-files-2-to_machine.sh
+#  after  $OSAB/bs-5-when_myDrA/ssh-1-files-1-to_USB.sh
+#   on the new machine, from the directory  $s
+#    bash files-to_machine.sh
 
 set -v  # prints each statement here, including comments
 
 #=> gitconfig-JH
-cp gitconfig-JH ~/gitconfig-JH  # pb ~/gitconfig-JH
+cp gitconfig-JH ~/gitconfig-JH  # would need temporary change in  $machBld/jo/gitconfig
 
 #=> ~/.ssh 0 make
 skd="~/.ssh"
@@ -21,5 +23,5 @@ id=id_ed25519-forGitHub
   s ~/.ssh/*
 
 #=> ~/.ssh 2 configuration
-cp SSHconfig $skd/config  # cp $cITCP/networking/SSHconfig/sbMb ~/.ssh/config
+cp $cITCP/networking-SSHconfig/$host $skd/config
 

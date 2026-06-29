@@ -1,7 +1,7 @@
 -- vim: set fdl=1:
 
 -- Joseph Harriott - Thu 24 Apr 2025
--- $OSAB/nodes-terminal/wezterm.lua ($OSAB/nodes-set/jo-0.sh)
+-- $OSAB/nodes-terminal/wezterm.lua ($OSAB/nodes-set/jo-3-whenWM.sh)
 
 local wezterm = require 'wezterm'
 

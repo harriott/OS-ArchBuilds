@@ -3645,7 +3645,7 @@ later it worked again
 ## qt5-doc
 pactree -r qt5-doc  shows no need, so  sudo pacman -Rs qt5-doc
 ## GnuPG - Tails signing key
-gpg --import $cITcc/CP/tails-signing.key
+gpg --import $ITcop/CP/tails-signing.key
   gpg: key DBB802B258ACD84F: 2172 signatures not checked due to missing keys
   gpg: key DBB802B258ACD84F: public key "Tails developers <tails@boum.org>" imported
   gpg: Total number processed: 1
@@ -4072,7 +4072,7 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 maxing out the CPU so  pkill java
 journalctl -b | tl  didn't reveal anything obvious
 ## rakudo GnuPG key
-gpg --import $cITcc/CP/Raku/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2.asc
+gpg --import $ITcop/CP/Raku/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2.asc
 ## moar-debug  remove
 (for  moarvm) sudo pacman -Rs moar-debug
 ## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.18.191.239

@@ -5,6 +5,9 @@ $OSAB/mb-HPEB840G3x/8/build.txt
 HP EliteBook 840 G3 barcoded PC117860 (labelled BC PNB 18 by last owner) = HPEB840G38
 
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
+
+pikn, prs  defined in  $AjB/bashrc-console
+
 # build
 ## Arch install - from the ISO fail
 SDCB32G2  with  ARCH_202606  in rh USB

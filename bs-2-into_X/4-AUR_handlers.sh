@@ -4,7 +4,6 @@
 # bash $OSAB/bs-2-into_X/4-AUR_handlers.sh
 
 set -v  # prints each statement here, including comments
-shopt -s expand_aliases; alias pikn='pikaur -S --needed'
 
 # rAUR, trzAUR, trzAURd  are defined in  $AjB/bashrc-console
 
@@ -21,12 +20,15 @@ shopt -s expand_aliases; alias pikn='pikaur -S --needed'
 # # needed for  Pikaur, yay
 # sudo pacman -S --needed base-devel
 
-# #=> 2 Pikaur
+# #=> 2 Pikaur 0 install
 # trzAUR pikaur
 # nvim -c "silent! /github.com\/actionless\/pikaur" PKGBUILD
 # makepkg -sic
 # pikaur -Syu  # to generate  ~/.config/pikaur.conf
 # sed -i 's/^noedit = no/noedit = yes/' ~/.config/pikaur.conf
+
+#=> 2 Pikaur 1 pikn
+shopt -s expand_aliases; alias pikn='pikaur -S --needed'
 
 #=> 3 Glaze
 # for  auracle-git

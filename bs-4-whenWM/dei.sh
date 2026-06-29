@@ -10,12 +10,6 @@ trap read debug  # puts a read request after each executable line
 #=> grab mimeapps.list
 cp ~/.config/mimeapps.list $machLg/jo/mimeapps_list/$(date +%y%m%d).ini
 
-#=> handlr 0 handlr 0 install
-sudo pacman -S handlr-regex
-
-#=> handlr 0 handlr 1 remove
-sudo pacman -Rs handlr-regex
-
 #=> handlr 1 xdg-utils-handlr
 sudo pacman -Rs xdg-utils-handlr
 # sudo pacman -Rs xdg-utils[-mimeo]  can't be done as needed by several other packages

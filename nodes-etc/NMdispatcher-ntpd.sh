@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# implemented by my  $OSAB/bs-4-whenWM/4-various.sh
+# $OSAB/nodes-etc/NMdispatcher-ntpd.sh ($OSAB/bs-4-whenWM/1-softwares.sh)
 #  r /etc/NetworkManager/dispatcher.d
 
 if [ "$2" = "up" ]; then

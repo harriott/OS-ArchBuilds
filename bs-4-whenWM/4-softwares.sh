@@ -7,316 +7,232 @@
 if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 
 set -ev  # prints each statement here, including comments
-trap read debug  # puts a read request after each executable line
+shopt -s expand_aliases; alias pikn='pikaur -S --needed'
+# prs  defined in  $AjB/bashrc-console
 
-#=> Apache HTTP Server 0 install
-sudo pacman -S apache
-echo 'now sync  $OSAB/nodes/etc_httpd_conf/httpd.conf'
+read -p 'Have you run  pikaur -Syu  ?'
 
-#=> Apostrophe
-sudo pacman -S apostrophe
+#=> audio
+pikn blanket  # Blanket
+pikn kew
+pikn mousai  # similar to Shazam
+pikn mpdris2  # for MPD
+pikn quodlibet  # Quod Libet
+pikn ymuse  # for MPD
 
-#=> acpilight - configure
-gpasswd -a jo video  # groups jo
-sudo cp $machBld/etc/90-backlight.rules /etc/udev/rules.d/90-backlight.rules
-#  pb /etc/udev/rules.d/90-backlight.rules
-# after a reboot can  xbacklight -inc 12
+#==> mpv
+pikn mpv
+[ -d ~/.config/mpv/scripts ] || mkdir ~/.config/mpv/scripts
 
-#=> Blanket
-sudo pacman -S blanket
+#=> AV
+pikn ffmpeg
+pikn obs-studio  # OBS Studio
+pikn libopenshot libopenshot-audio libopenshot-audio-docs openshot  # OpenShot
+pikn playerctl  # $OSL/QR
+pikn vlc vlc-gui-ncurses vlc-plugin-ffmpeg
 
-#=> cameractrls
-sudo pacman -S cameractrls
+#=> coding
+pikn gopls  # Go language server
+pikn tree-sitter-cli
+pikn yamllint
+pikn yj-git  # convert between HCL, JSON, TOML, YAML
 
-#=> FeatherPad
-sudo pacman -S featherpad
+#==> Perl module File::Slurp
+pikn perl-file-slurp  # $misc/CP/workHours/makeDats.pl
 
-#=> feh
-sudo pacman -S feh
+#==> Perl module JSON
+pikn perl-json  # $misc/CP/PerlTools/FM-json-md.pl
 
-#=> ffmpeg
-sudo pacman -S ffmpeg
+#==> Perl module Regexp::Common
+pikn perl-regexp-common  # $cITCP/encoding/dpl/Perl/numbers_or_not.pl
 
-#=> ffmpegthumbnailer
-sudo pacman -S ffmpegthumbnailer  # for  /usr/share/clifm/plugins/vid_viewer.sh
+#==> Perl modules JSON::Parse, JSON::Tokenize, JSON::Whitespace
+perl-json-parse  # $misc/CP/PerlTools/FM-json-md.pl
 
-#=> Falkon
-sudo pacman -S falkon
+#=> de - fcitx5-configtool
+# for  Input Method  tray icon
+sudo pacman -S fcitx5-configtool
+read -p '- now Alt+F3 > Fcitx 5 Configuration > Addon > Clipboard  off'
 
-#=> Firefox 0 install
-sudo pacman -S firefox
+#=> de - NetworkManager - network-manager-applet
+sudo pacman -S network-manager-applet  # tray icon
 
-#=> Firefox 1 remove
-sudo pacman -Rs firefox
+#=> documenting
+pikn apostrophe  # Apostrophe markdown editor
+pikn odt2txt
 
-#=> Flatpak 0 install
-sudo pacman -S flatpak
+#==> LibreOffice Fresh install
+sudo pacman -S libreoffice-fresh-en-gb
+libreoffice &
+read -p '- first-run of LibreOffice - close it'
 
-#=> Flatpak - KeePassXC
-flatpak install org.keepassxc.KeePassXC
+#==> markdown
+pikn glow
+pikn marktext-bin  # MarkText
 
-#=> Font Manager
-sudo pacman -S font-manager
+#==> qpdfview
+gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8  # Adam Reichold's public key
+    pikn qpdfview
 
-#=> gifski
-sudo pacman -S gifski  # (for making animated GIFs)
+#==> TeX Live - perl-tk
+pikn perl-tk  # needed for  tlmgr -gui
 
-#=> gnome-disk-utility
-sudo pacman -S gnome-disk-utility  # (for Menu > Accessories > Disks)
+#==> Zathura
+pikn zathura-pdf-mupdf
+[ -d ~/.config/zathura ] || mkdir ~/.config/zathura
+# zathurarc  symlinked in  $OSAB/nodes-set/jo-3-whenWM.sh
 
-#=> gnuplot
-sudo pacman -S gnuplot
+#=> file manage
+pikn fsearch
+pikn peazip
+pikn vimiv  # Vimiv
 
-#=> GPicView
-# Menu > Graphics > Image Viewer
-sudo pacman -S gpicview
-gpicview  # Preferences > Automatically save
-true
-
-#=> GraphicsMagick
-sudo pacman -S graphicsmagick
-
-#=> gucharmap
-sudo pacman -S gucharmap  # (for Accessories > Character Map > View > By Unicode Block)
-
-#=> guvcview
-sudo pacman -S guvcview
-
-#=> HPLIP 0 install
-sudo pacman -S hplip
-
-#=> HPLIP 1 remove
-sudo pacman -Rs hplip
-
-#=> img2pdf
-sudo pacman -S img2pdf
-
-#=> kew
-sudo pacman -S kew
-
-#=> Go - Hugo
-sudo pacman -S hugo
-
-#=> Go - gopls
-sudo pacman -S gopls
-
-#=> Go - glow
-sudo pacman -S glow
-
-#=> java-commons-lang
-sudo pacman -S java-commons-lang  # (for pdftk's functions)
-
-#=> java-environment-common
-sudo pacman -S java-environment-common  # for  JDK
-
-#=> java-runtime-common
-sudo pacman -S java-runtime-common  # supposedly for  JRE, but anyway provides  /usr/bin/java
-
-#=> keepassxc 0 install
-sudo pacman -S keepassxc
-
-#=> keepassxc 1 remove
-sudo pacman -Rs keepassxc
-
-#=> libgphoto2
-sudo pacman -S gphoto2  # brings in  libgphoto2  & gives cli access to it
-sudo pacman -S gvfs-gphoto2  # for GNOME Files integration
-
-#=> LibreCAD
-sudo pacman -S librecad
-
-#=> mermaid-cli
-sudo pacman -S mermaid-cli
-
-#=> metis 1 remove
-sudo pacman -Rs metis
-
-#=> Mousai
-sudo pacman -S mousai
-
-#=> mpv
-sudo pacman -S mpv
-mkdir ~/.config/mpv/scripts
-
-#=> MusicBrainz Picard
-sudo pacman -S chromaprint picard
-# Options > Options > [ General > Check for updates  offticked
-#   (Fingerprinting > Fingerprint calculator > /usr/bin/fpcalc)
-#   User Interface > Show a quit confirmation  off ]
-true
-
-#=> MyPaint
-sudo pacman -S mypaint
-true
-
-#=> nasm
-sudo pacman -S nasm  # for  cpu-x
-
-#=> nawk
-sudo pacman -S nawk  # for  cpu-x
-
-#=> nginx-mainline
-sudo pacman -S nginx-mainline
-cp /etc/nginx/nginx.conf $OSAB/etc/Nginx/pristine.conf
-sudo cp $OSAB/etc/Nginx/jo.conf /etc/nginx/nginx.conf
-sudo mkdir /usr/share/nginx/test
-
-#=> nsxiv
-sudo pacman -S nsxiv
-
-#=> OBS Studio 0 install
-sudo pacman -S obs-studio
-
-# #=> OBS Studio 0 remove
-# sudo pacman -Rs obs-studio
-# rm -r ~/.config/obs-studio
-
-#=> odt2txt
-sudo pacman -S odt2txt
-
-#=> opencl-headers
-sudo pacman -S opencl-headers  # for  cpu-x
-
-#=> OpenShot
-sudo pacman -S openshot
-
-#=> PCManFM
-sudo pacman -S pcmanfm
-# now run it to set some of my preferences:  Edit > Preferences >
+#==> PCManFM
+pikn pcmanfm
+pcmanfm &
+# Edit > Preferences >
 #  General > Confirm before moving files into "trash can"   off-ticked
 #  Volume Management > Show available options  off-ticked
 #  Advanced > Terminal > urxvt
-true
+read -p ' - settings done?'
 
-#=> pdftk
-sudo pacman -S pdftk
+#=> fonts
+pikn font-manager
+pikn xorg-xfd
 
-#=> php
-sudo pacman -S php
+#=> hw
+pikn asunder  # graphical Audio CD ripper
+pikn cameractrls
+pikn gnome-disk-utility  # (for Menu > Accessories > Disks)
+pikn guvcview  # (GTK+ UVC Viewer) webcam application (V4L2 camera devices)
+pikn hplip
+pikn iscan  # epkowa SANE backend
+pikn localsend
+pikn cpu-x
+pikn sane  # SANE
+
+#==> acpilight - configure
+gpasswd -a jo video  # groups jo
+sudo cp $OSAB/mb-HPEB840G3x/etc-backlight.rules /etc/udev/rules.d/backlight.rules
+#  pb /etc/udev/rules.d/backlight.rules
+# after a reboot can  xbacklight -inc 12
+
+#==> gPhoto (digital cameras)
+pikn gphoto2  # brings in  libgphoto2
+pikn gvfs-gphoto2  # for GNOME Files integration
+
+#==> hplip-plugin 0 HPLIP key
+gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
+# - see  ~/Arch/AUR/hplip-plugin/PKGBUILD
+
+#==> hplip-plugin 1 install
+pikn hplip-plugin
+
+#=> imagey
+pikn feh
+pikn ffmpegthumbnailer  # for  /usr/share/clifm/plugins/vid_viewer.sh
+pikn gifski  # (for making animated GIFs)
+pikn gnuplot
+pikn gpicview  # GPicView
+pikn graphicsmagick  # GraphicsMagick
+pikn img2pdf
+pikn librecad  # LibreCAD
+pikn mermaid-cli  # flowcharts
+pikn mypaint
+pikn nsxiv
+pikn peek  # (GIF Screen Recorder)
+pikn pqiv
+pikn resvg  # for SVG's in Yazi in WezTerm
+pikn sxiv
+pikn xnviewmp  # XnViewMP
+
+#==> nomacs
+pikn nomacs
+read -p 'nomacs > English > Close  then  nomacs > Ctrl+Shift+p > Close on ESC'
+
+#==> qrtool
+# (rustup update)
+pikn qrtool  # for QR code
+
+#=> Java
+pikn java-commons-lang  # (for pdftk's functions)
+pikn java-environment-common  # for  JDK
+pikn java-runtime-common  # supposedly for  JRE, but anyway provides  /usr/bin/java
+pikn pdftk
+
+#=> serve
+pikn hugo  # Hugo
+
+#==> php
+pikn php
 sudo sed -i 's#^;date.timezone =#date.timezone = Europe/Paris#' /etc/php/php.ini
 
-#=> php-cgi
-sudo pacman -S php-cgi
-sudo mkdir /srv/http/fcgid-bin
-sudo ln -s /usr/bin/php-cgi /srv/http/fcgid-bin/php-fcgid-wrapper
-
-#=> php-fpm
-sudo pacman -S php-fpm
+#==> php-fpm
+pikn php-fpm
 sudo systemctl enable php-fpm.service --now
 sudo usermod -aG http jo
 
-#=> peek
-sudo pacman -S peek  # (GIF Screen Recorder)
+#=> softwares
+pikn flatpak
+pikn gucharmap
+pikn handlr-regex
+pikn keepassxc
+pikn pacfinder
+pikn pscircle
+pikn qalculate-gtk
+pikn sqlitebrowser
 
-#=> Perl File::Slurp
-# for  $misc/CP/workHours/makeDats.pl
-pikn perl-file-slurp
+#==> enable multilib
+sudo sed -i 's/#\[multilib]/[multilib]/' /etc/pacman.conf
+sudo sed -i '/^\[m/{n;s/#I/I/}' /etc/pacman.conf
 
-# #=> Perl File::Slurper
-# pikn perl-file-slurper
+#=> terminal
+pikn wezterm  # WezTerm
 
-# #=> Perl Regexp::Common
-# pikn perl-regexp-common
+# #==> rxvt-unicode
+# pikn urxvt-perls  # provides keyboard-select and brings in  rxvt-unicode
+# # prs urxvt-perls rxvt-unicode  # in that order
 
-# #=> Perl modules for JSON
-# pikn perl-json perl-json-parse perl-json-xs  # can't recall why...
+#==> rxvt-unicode-truecolor-wide-glyphs
+pikn rxvt-unicode-truecolor-wide-glyphs
 
-# #=> perlcritic
-# pikn perl-perl-critic
+#=> text wrangling
+pikn featherpad  # FeatherPad
 
-#=> perl-image-exiftool
-sudo pacman -S perl-image-exiftool
+#==> Vim
+pacman -S neovide python-flake8 python-pynvim
 
-#=> perl-tk
-sudo pacman -S perl-tk  # needed for  tlmgr -gui
-
-#=> playerctl
-sudo pacman -S playerctl  # for MPD
-
-#=> pqiv
-sudo pacman -S pqiv
-
-#=> qalculate-gtk
-sudo pacman -S qalculate-gtk
-
-#=> qrtool
-sudo pacman -S qrtool
-
-#=> qt5ct
-# - Qt5 theme - allows better tab differentiation in CopyQ
-sudo pacman -S qt5ct
-#  QT_QPA_PLATFORMTHEME=qt5ct  is set in  ~/.xinitrc
-
-#=> Quod Libet
-sudo pacman -S quodlibet
-
-#=> Rclone
-sudo pacman -S rclone
-
-#=> Recoll
-sudo pacman -S recoll
-
-#=> resvg
-sudo pacman -S resvg  # for  WezTerm
-
-# #=> rxvt-unicode 0 install
-# sudo pacman -S urxvt-perls  # provides keyboard-select and brings in  rxvt-unicode
-
-# #=> rxvt-unicode 0 remove
-# sudo pacman -Rs urxvt-perls rxvt-unicode  # in that order
-
-#=> rxvt-unicode-truecolor-wide-glyphs
-pikaur -S rxvt-unicode-truecolor-wide-glyphs
-
-#=> SANE
-sudo pacman -S sane
-
-#=> Signal
-sudo pacman -S signal-desktop
-
-#=> sqlitebrowser
-sudo pacman -S sqlitebrowser
-
-#=> sxiv
-sudo pacman -S sxiv
-
-#=> tree-sitter-cli
-pikn tree-sitter-cli
-
-#=> Vim - stuff
-pacman -S flake8 neovide python-pynvim
-
-#=> Vim - ShellCheck
-# (for bash linting in xVim)
+#===> Vim - ShellCheck
+# (after  pandoc, for bash linting in xVim)
 pacman -S shellcheck  # brings in Haskell
 
-#=> Vimiv
-sudo pacman -S vimiv
+#=> WAN
+pikn falkon firefox
+pikn fastmail
+pikn rclone  # Rclone
+pikn signal-desktop  # Signal
+pikn Google Chrome
+pikn zoom
 
-#=> vlc
-sudo pacman -S vlc
-sudo pacman -S vlc-plugin-ffmpeg
+#==> Dropbox 0 install
+# (once  Dropbox public key)
+pikn dropbox thunar-dropbox
 
-#=> vlc-gui-ncurses
-sudo pacman -S vlc-gui-ncurses
+#==> Dropbox 1 prevent automatic updates
+# allowing Arch installation to work
+install -dm0 ~/.dropbox-dist  # s ~/.dropbox-dist
 
-#=> WezTerm
-sudo pacman -S wezterm
+#==> NetworkManager dispatcher
+sudo systemctl enable NetworkManager-dispatcher --now
+sudo cp $OSAB/nodes-etc/NMdispatcher-ntpd.sh /etc/NetworkManager/dispatcher.d/ntpd.sh
+sudo chmod 755 /etc/NetworkManager/dispatcher.d/ntpd.sh
+# vifm /etc/NetworkManager/dispatcher.d /usr/lib/NetworkManager/dispatcher.d
 
-#=> Wike
-sudo pacman -S wike
+#==> Thunderbird 0 install
+pikn thunderbird-i18n-en-gb
+thunderbird &
+read -p '- first-run of  Thunderbird  to generate a dummy  Profile, not to be hereafter used'
 
-#=> xfd
-sudo pacman -S xorg-xfd  # for checking fonts
-
-#=> Xournal++
-sudo pacman -S xournalpp  # for hand-writing pad
-
-#=> yamllint
-sudo pacman -S yamllint
-
-#=> Zathura
-sudo pacman -S zathura-pdf-mupdf
-mkdir ~/.config/zathura
-# zathurarc  symlinked in  $OSAB/nodes-set/jo-0.sh
+#==> Thunderbird 1 remove
+prs thunderbird thunderbird-i18n-en-gb
 

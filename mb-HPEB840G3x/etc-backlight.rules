@@ -1,0 +1,10 @@
+
+# vim: set ft=udevrules:
+
+# $OSAB/mb-HPEB840G3x/etc-backlight.rules
+#  
+# udevadm test /etc/udev/rules.d/90-backlight.rules
+
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", RUN+="/usr/bin/chgrp video /sys/class/backlight/acpi_video0/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="acpi_video0", RUN+="/usr/bin/chmod g+w /sys/class/backlight/acpi_video0/brightness"
+

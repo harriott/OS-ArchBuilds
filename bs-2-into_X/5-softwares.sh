@@ -3,6 +3,7 @@
 # bash $OSAB/bs-2-into_X/5-softwares.sh
 
 set -v  # prints each statement here, including comments
+# prs  defined in  $AjB/bashrc-console
 shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
 #=> Alacritty

@@ -214,7 +214,7 @@ pipx install 'pdftl[full]'  didn't download the supposed extra (full) packages
   (dropbox:117508): libayatana-appindicator-WARNING **: 15:45:19.230: libayatana-appindicator is deprecated. Please use libayatana-appindicator-glib in newly written code.
 pactree -r libayatana-appindicator  returns nowt, so  sudo pacman -Rs libayatana-appindicator
 ## rakudo GnuPG key
-gpg --import $cITcc/CP/Raku/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2.asc
+gpg --import $ITcop/CP/Raku/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2.asc
 ## moar-debug  remove
 (for  moarvm) sudo pacman -Rs moar-debug
 ## qt5-remoteobjects

@@ -288,8 +288,8 @@ JOBS(1P)
 ## TeX Live
     /usr/local/texlive/2025/texmf-dist/doc/info
     locx .fmt
-    pacman -Qs texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
     pdfjam
+    Q texlive > $machLg/TeXLive/Arch_packages-$(date '+%Y%m%d%H%M').txt
 
 ### Arch package files
     C /usr/share/texmf-dist/tex/latex/
@@ -569,8 +569,8 @@ unalias **<tab>
 
 ## ranger
     $OSL/nodes/terminal-ranger/JH.md
+    $OSL/nodes/terminal-ranger/scope.sh
     feh $ITref/unix-like/cheatsheet.png &
-    r /mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/OS-Linux/nodes/terminal-ranger/scope.sh
     ranger --version
 
 - can't cope with `utf-16le`
@@ -687,7 +687,7 @@ unalias **<tab>
     fRs $Drpbx/Cop Björk
     fRs $Drpbx/Cop US 1
     fRs $DWp/pn/internet internet.dw
-    fRs $cITcc unix-linux-forArch-fonts
+    fRs $ITccl unix-linux-forArch-fonts
     fRs $ITmCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
     fRs $machBld/jo/Bash VsLmore
@@ -842,17 +842,9 @@ gpg(1)
     :e /run/media/jo
     cd /sys/devices/system/cpu/cpu0/cpufreq
     doas showkey  # keycodes
+    r /sys/class/backlight/intel_backlight
 
 WIPEFS(8)
-
-## avio
-    /sys/class/backlight/intel_backlight/max_brightness
-
-### graphics card details
-    doas cat /sys/kernel/debug/dri/0/radeon_pm_info
-    lspci -vnn | grep VGA -A 12 | xcol Intel Radeon size VGA
-    lspci -vnnd ::03xx
-    doas lshw -C display | xcol GeForce NVIDIA Radeon size VGA
 
 ## cbh - keyboard
     xev | grep keycode
@@ -871,6 +863,12 @@ WIPEFS(8)
 ## f1t2t3
     $machBld/jo/f1t2t3/f1t2t3.sh
     fRs /home/jo/Arch/f1t2t3 f1t2t3.log
+
+## graphics card details
+    doas cat /sys/kernel/debug/dri/0/radeon_pm_info
+    lspci -vnn | grep VGA -A 12 | xcol Intel Radeon size VGA
+    lspci -vnnd ::03xx
+    doas lshw -C display | xcol GeForce NVIDIA Radeon size VGA
 
 ## printing - CUPS
     $AjB/bashrc-wm
@@ -996,8 +994,8 @@ mediainfo -h | mo
     r /usr/share/doc/mpv
     rg mpv --sort=modified -l $ITculLAb/ml-$host/pm/cu
 
-- `c` cycles through visualisations (`$cITcc/CP/mpv/visualizer.lua`)
-- `Ctrl+e` invokes equalizer (`$cITcc/CP/mpv/firequalizer15.lua`)
+- `c` cycles through visualisations (`$ITccl/CP/mpv-scripts/visualizer.lua`)
+- `Ctrl+e` invokes equalizer (`$ITccl/CP/mpv-scripts/firequalizer15.lua`)
 - MPV(1)
 
 ## OBS Studio Settings
@@ -1026,15 +1024,14 @@ whereis languagetool
 
 ## LanguageTool symlinked
 ```bash
-java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar -h
-java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
-java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --list  # languages
+java -jar $ITccl/CP/LanguageTool/languagetool-commandline.jar -h
+java -jar $ITccl/CP/LanguageTool/languagetool-commandline.jar --list  # languages
 ```
 
 ### version
 ```bash
-$cITcc/CP/LanguageTool/README.md
-java -jar $cITcc/CP/LanguageTool/languagetool-commandline.jar --version
+$ITccl/CP/LanguageTool/README.md
+java -jar $ITccl/CP/LanguageTool/languagetool-commandline.jar --version
 ```
 
 # network
@@ -1368,10 +1365,12 @@ creates an initial ramdisk environment
 - `uf()` (= usr files) in `$OSAB/Bash/bashrc-generic)`
 
 ## fonts
-    $cITcc/unix-linux-forArch-fonts/readme.md
+    $ITccl/unix-linux-forArch-fonts/readme.md
     font-manager &
+    xfd -fa FingerPaint-Regular &
 
 ### /usr/share/fonts/
+    fd -L all-the-icons
     fd -L architects
     fd -L broot
     fd -L consolas

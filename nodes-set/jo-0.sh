@@ -88,7 +88,7 @@ if [ $host = 'sbMb' ]; then
   # e -la ~/Arch/f1t2t3
 fi
 
-# #=> Surfraw
+# #=> WAN - Surfraw
 # [ -d ~/.config/surfraw ] || mkdir -p ~/.config/surfraw
 # ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 

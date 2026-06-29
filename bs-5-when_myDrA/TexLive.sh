@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# $OSAB/bs-3-toWM-0/1-sudo-prep_forWM.sh
+# $OSAB/bs-5-when_myDrA/TexLive.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
@@ -8,7 +8,7 @@ set -v  # prints each statement here, including comments
 shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
 # #=> documenting - TeX Live 0 native 0 install 0 source online
-# cd $cITcc/unix-TL-install-tl-20250525  # will download 6GB of code
+# cd $ITcop/unix-TL-install-tl-20260611  # will download 6GB of code
 
 #=> documenting - TeX Live 0 native 0 install 0 source local
 for s in $notDr/ircam_fr_pub_CTAN_systems_texlive_tlnet /usr/local/texlive; do find "$s" | echo "$(wc -l) $s"; done

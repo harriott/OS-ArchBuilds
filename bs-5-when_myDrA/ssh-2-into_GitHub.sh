@@ -1,7 +1,8 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-# after  $cITCP/encoding/git/remote2.sh
+# $OSAB/bs-5-when_myDrA/ssh-2-into_GitHub.sh
+#  after  $OSAB/bs-5-when_myDrA/ssh-1-files-2-to_machine.sh
 
 set -ev
 trap read debug  # puts a read request after each executable line
