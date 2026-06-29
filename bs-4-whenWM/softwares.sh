@@ -49,18 +49,18 @@ pikn perl-json-parse  # $misc/CP/PerlTools/FM-json-md.pl
 
 #=> de - fcitx5-configtool
 # for  Input Method  tray icon
-sudo pacman -S fcitx5-configtool
+pikn fcitx5-configtool
 read -p '- now Alt+F3 > Fcitx 5 Configuration > Addon > Clipboard  off'
 
 #=> de - NetworkManager - network-manager-applet
-sudo pacman -S network-manager-applet  # tray icon
+pikn network-manager-applet  # tray icon
 
 #=> documenting
 pikn apostrophe  # Apostrophe markdown editor
 pikn odt2txt
 
 #==> LibreOffice Fresh install
-sudo pacman -S libreoffice-fresh-en-gb
+pikn libreoffice-fresh-en-gb
 libreoffice &
 read -p '- first-run of LibreOffice - close it'
 
@@ -149,7 +149,8 @@ pikn xnviewmp  # XnViewMP
 
 #==> nomacs
 pikn nomacs
-read -p 'nomacs > English > Close  then  nomacs > Ctrl+Shift+p > Close on ESC'
+nomacs &
+read -p 'Ctr+Shift+p > English > Close  then  Close on ESC'
 
 #==> qrtool
 # (rustup update)
@@ -177,7 +178,6 @@ sudo usermod -aG http jo
 pikn flatpak
 pikn gucharmap
 pikn handlr-regex
-pikn keepassxc
 pikn pacfinder
 pikn pscircle
 pikn qalculate-gtk
@@ -200,12 +200,12 @@ pikn rxvt-unicode-truecolor-wide-glyphs
 #=> text wrangling
 pikn featherpad  # FeatherPad
 
-#==> Vim
-pacman -S neovide python-flake8 python-pynvim
+#==> Vim 0
+pikn neovide python-flake8 python-pynvim
 
-#===> Vim - ShellCheck
+#==> Vim 1 ShellCheck
 # (after  pandoc, for bash linting in xVim)
-pacman -S shellcheck  # brings in Haskell
+pikn shellcheck  # brings in Haskell
 
 #=> WAN
 pikn falkon firefox
