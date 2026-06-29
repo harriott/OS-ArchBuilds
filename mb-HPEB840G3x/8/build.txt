@@ -165,8 +165,9 @@ pikn vimpc-git  gets  error: boostthread-dev library is required
 boost, boost-libs, libmpdclient, pcre  are all there
 ## prepare for X
 prs perl-test-fatal
-
 $OSAB/bs-3-intoWM/1-prepare.sh
+
+$OSAB/bs-4-whenWM/1-softwares.sh
 chown jo:jo /mnt/HDTB330EK3CA
 ## waiting
 $OSAB/bs-1-into_jo/7-rsnapshot.sh
@@ -187,3 +188,9 @@ Main > System Information > System BIOS : N75 Ver. 01.53 11/19/2021
 #### Advanced
 Built-in Device Options > Backlit keyboard timeout > 30 secs.
 Secure Boot Configuration > Legacy Support Enable and Secure Boot Disable
+# Xfce configuration
+Paramètres de bureau... > Arrière-plan > Style > ----
+xfce4-terminal > Édition > Préférences... > [
+  Apparence > Fonts > JetBrainsMono Nerd Font Regular 10
+  Général > Titre initial > xfce4-terminal
+  ]
