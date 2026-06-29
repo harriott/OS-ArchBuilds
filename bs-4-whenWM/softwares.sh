@@ -75,7 +75,10 @@ gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8  # Adam Reichold's publ
 #==> TeX Live - perl-tk
 pikn perl-tk  # needed for  tlmgr -gui
 
-#==> Zathura
+#==> Zathura 0 tessdata
+pikn tesseract-data-eng
+
+#==> Zathura 1 zathura-pdf-mupdf
 pikn zathura-pdf-mupdf
 [ -d ~/.config/zathura ] || mkdir ~/.config/zathura
 # zathurarc  symlinked in  $OSAB/nodes-set/jo-3-whenWM.sh
@@ -99,18 +102,18 @@ pikn font-manager
 pikn xorg-xfd
 
 #=> hw
-pikn asunder  # graphical Audio CD ripper
+pikn asunder  # graphical Audio CD ripper, takes ages
 pikn cameractrls
 pikn gnome-disk-utility  # (for Menu > Accessories > Disks)
 pikn guvcview  # (GTK+ UVC Viewer) webcam application (V4L2 camera devices)
 pikn hplip
 pikn iscan  # epkowa SANE backend
-pikn localsend
+pikn localsend  # takes ages
 pikn cpu-x
 pikn sane  # SANE
 
 #==> acpilight - configure
-gpasswd -a jo video  # groups jo
+sudo gpasswd -a jo video  # groups jo
 sudo cp $OSAB/mb-HPEB840G3x/etc-backlight.rules /etc/udev/rules.d/backlight.rules
 #  pb /etc/udev/rules.d/backlight.rules
 # after a reboot can  xbacklight -inc 12
