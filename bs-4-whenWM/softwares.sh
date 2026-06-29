@@ -212,7 +212,7 @@ pikn falkon firefox
 pikn fastmail
 pikn rclone  # Rclone
 pikn signal-desktop  # Signal
-pikn Google Chrome
+pikn google-chrome  # Google Chrome
 pikn zoom
 
 #==> Dropbox 0 install
