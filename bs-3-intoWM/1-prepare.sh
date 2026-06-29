@@ -19,7 +19,7 @@ pikn pandoc-cli  # Pandoc
 [ -d ~/.pandoc/defaults ] || mkdir -p ~/.pandoc/defaults
 
 #=> ebook - Calibre - qt6-multimedia-ffmpeg
-pikn qt6-multimedia-ffmpeg
+pikn qt6-multimedia-ffmpeg  # brings in  ffmpeg
 
 #=> ebook - Calibre
 pikn calibre

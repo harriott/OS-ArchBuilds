@@ -24,7 +24,6 @@ pikn mpv
 [ -d ~/.config/mpv/scripts ] || mkdir -p ~/.config/mpv/scripts
 
 #=> AV
-pikn ffmpeg
 pikn obs-studio  # OBS Studio
 pikn libopenshot libopenshot-audio libopenshot-audio-docs openshot  # OpenShot
 pikn playerctl  # $OSL/QR
@@ -46,7 +45,7 @@ pikn perl-json  # $misc/CP/PerlTools/FM-json-md.pl
 pikn perl-regexp-common  # $cITCP/encoding/dpl/Perl/numbers_or_not.pl
 
 #==> Perl modules JSON::Parse, JSON::Tokenize, JSON::Whitespace
-perl-json-parse  # $misc/CP/PerlTools/FM-json-md.pl
+pikn perl-json-parse  # $misc/CP/PerlTools/FM-json-md.pl
 
 #=> de - fcitx5-configtool
 # for  Input Method  tray icon
