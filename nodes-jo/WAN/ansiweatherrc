@@ -1,7 +1,7 @@
 
 # $ABjo/WAN/ansiweatherrc ($OSAB/nodes-set/jo-0.sh)
 
-# $cGRs/d-unix-like/d-linux/r-fcambus-ansiweather/ansiweatherrc.example
+# $nDrGRs/d-unix-like/d-linux/r-fcambus-ansiweather/ansiweatherrc.example
 
 background:\033[40m
 location:Paris,FR

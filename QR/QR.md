@@ -265,7 +265,7 @@ JOBS(1P)
     za $ITref/CP/TeX/LaTeX/structure/pdfpages.pdf
 
 ## TeX - LaTeX
-    r $cGRs/CP/MartinThoma-LaTeX-examples
+    r $nDrGRs/CP/MartinThoma-LaTeX-examples
     r $ITmCP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
@@ -337,13 +337,13 @@ JOBS(1P)
 - `G` defined in `$AjB/bashrc-wm`
 
 ## resources
-    fd -e org -p $cGRs
-    r $cGRs/d-CP/d-emacs/r-syl20bnr-spacemacs  # local fresh clone
+    fd -e org -p $nDrGRs
+    r $nDrGRs/d-CP/d-emacs/r-syl20bnr-spacemacs  # local fresh clone
     r $ITref/CP/encoding/Emacs  # PDF guides
 
 ### Worg
-    $cGRs/emacs/_bzg-worg/orgcard.org
-    r $cGRs/emacs/_bzg-worg
+    $nDrGRs/emacs/_bzg-worg/orgcard.org
+    r $nDrGRs/emacs/_bzg-worg
 
 ## Spacemacs
     $ITculLAb/Emacs/sm/.spacemacs
@@ -1698,7 +1698,7 @@ TMUX(1)
     wezterm show-keys --lua > $ITref/WezTerm-show-keys.lua
 
 # text wrangling
-    $cGRs/CP/vim/vim/README.md
+    $nDrGRs/CP/vim/vim/README.md
     :s#/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes#    $TeNo
     o $EDITOR
     o $VISUAL

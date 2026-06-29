@@ -4252,6 +4252,10 @@ arch-chroot /mnt
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB  # UEFI
 grub-mkconfig -o /boot/grub/grub.cfg
 reboot
+## slow startup
+"Loading initial ramdisk" took a long time
+## tmux 3.7
+break-pane  causing "server exited unexpectedly" - fixed by switching to  tmux-git, except that  btop  won't display
 ## waiting
 gokcehan's lf
 MariaDB

@@ -10,8 +10,7 @@
 
 # test (or reload) this script with
 #  tmux kill-server
-#  bash $ABjo/wm/terminal/startup.sh
-#  bash $machBld/jo/tmux_begin.sh
+#  bash $ABjo/wm/terminal/startup.sh; bash $machBld/jo/tmux_begin.sh
 
 # (chmod u+x $machBld/jo/urxvtl.sh)
 
@@ -22,7 +21,7 @@ tmux send-keys omc Enter  # see $machBld/jo/Bash/bashrc
 
 #=> 1 open a new tmux window for btop
 tmux new-window
-tmux send btop Enter
+tmux send gtop Enter
 
 #=> 2 open a new tmux session, detached, for working in
 tmux new-session -s 1 -d -n 1

@@ -108,8 +108,8 @@ lg() {
     cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
     rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
   fi }
-# recommended in  $cGRs/d-CP/d-encoding/r-jesseduffield-lazygit/README.md
-# ($cGRs/d-CP/d-encoding/r-jesseduffield-lazygit/pkg/gui/controllers/helpers/record_directory_helper.go)
+# recommended in  $nDrGRs/d-CP/d-encoding/r-jesseduffield-lazygit/README.md
+# ($nDrGRs/d-CP/d-encoding/r-jesseduffield-lazygit/pkg/gui/controllers/helpers/record_directory_helper.go)
 # but I can't see it doing anything...
 
 #==> lists of files by content

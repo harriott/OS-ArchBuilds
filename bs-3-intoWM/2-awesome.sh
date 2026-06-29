@@ -10,8 +10,8 @@ trap read debug  # puts a read request after each executable line
 # mkdir -p ~/.config/awesome
 # sudo pacman -S awesome
 
-#=> 1 $cGRs - needed until Dropbox
+#=> 1 $nDrGRs - needed until Dropbox
 # see  $AjB/export-jo
 # $ITcore/notDr/readme.md
-rsync -iLrtv --delete --modify-window=1 ~/OS-ArchBuilds/GHrUse/ $cGRs
+rsync -iLrtv --delete --modify-window=1 ~/OS-ArchBuilds/GHrUse/ $nDrGRs
 
