@@ -3,8 +3,6 @@
 
 # bash $OSAB/bs-3-toWM-0/4-softwares-for_nnn.sh
 
-# trzAUR  rAUR  are defined in $AjB/bashrc-console
-
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
 
@@ -20,6 +18,7 @@ sh -c "$(curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/get
 #=> nnn plugins 3 put
 if [ $host = "sbMb" ]; then
   echo $(date "+%Y%m%d") >> $machLg/terminal/nnn_plugins_updated
+  # - check against  https://github.com/jarun/nnn/tree/master/plugins
 else
   echo $(date "+%Y%m%d") >> $machLg/nnn_plugins_updated
 fi

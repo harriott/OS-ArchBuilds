@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# su > root pw for  source $OSAB/nodes-set/root-1-fonts.sh
+# sl > root pw for  source $OSAB/nodes-set/root-1-fonts-ranger.sh
 #  lnd  defined in  $OSAB/Bash/bashrc-generic
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi

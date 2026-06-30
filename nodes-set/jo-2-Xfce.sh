@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=1:
 
-# bash $OSAB/nodes-set/jo-1-Xfce.sh
+# bash $OSAB/nodes-set/jo-2-Xfce.sh
 
 read -p "Xfce  is installed?"
 

@@ -20,13 +20,14 @@ ln -sf $AjB/bashrc-console                   ~/.bashrc-console
 eza -la ~/.bash* ~/Arch/bash_history.sh
 
 #=> X
-ln -sf $ABjo/wm/Xresources/Xresources                       ~/.Xresources
-  ln -sf $ABjo/wm/Xresources/fontUM                         ~/.Xresources-font
-  [[ $myDrA == 1 ]] && ln -sf $ABjo/wm/Xresources/fontNF    ~/.Xresources-font
-  ln -sf $ABjo/wm/Xresources/colorschemes/LukeSmith-gruvbox ~/.Xresources-LukeSmith-gruvbox
-ln -sf $ABjo/xbindkeysrc                                    ~/.xbindkeysrc  # mouse wheel
-ln -sf $ABjo/xinitrcs/xfce                                  ~/.xinitrc
-# ln -sf $ABjo/xinitrcs/openbox                               ~/.xinitrc
-# ln -sf $ABjo/xinitrcs/awesome                               ~/.xinitrc
+ln -sf $ABjo/wm/Xresources/Xresources                             ~/.Xresources
+  ln -sf $ABjo/wm/Xresources/fontUM                               ~/.Xresources-font
+  [[ $myDrA == 1 ]] && ln -sf $ABjo/wm/Xresources/fontNF          ~/.Xresources-font
+  ln -sf $ABjo/wm/Xresources/colorschemes/LukeSmith-gruvbox       ~/.Xresources-LukeSmith-gruvbox
+ln -sf $ABjo/xbindkeysrc                                          ~/.xbindkeysrc  # mouse wheel
+ln -sf $ABjo/xinitrcs/xfce                                        ~/.xinitrc
+# ln -sf $ABjo/xinitrcs/openbox                                     ~/.xinitrc
+# ln -sf $ABjo/xinitrcs/awesome                                     ~/.xinitrc
+[[ $host =~ HPEB840G3 ]] && ln -sf $OSAB/mb-HPEB840G3x/jo/xmodmap ~/.xmodmap
 eza -la ~/.Xresources* ~/.xbindkeysrc ~/.xinitrc
 

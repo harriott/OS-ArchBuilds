@@ -1,6 +1,6 @@
 " vim: fdl=1:
 
-" $machBld/jo/gvimrc  symlinked in  $OSAB/nodes/set/jo-2-whenWM-0.sh
+" $machBld/jo/gvimrc ($OSAB/nodes-set/jo-1-encoding.sh)
 
 ""> 0 monitor height
 let g:monitorheight='1080' " used in  $vfv/enter/gvimrc.vim

@@ -34,7 +34,7 @@ if [[ $myDrA == 1 ]]; then
     export ITcore=$Drpbx/IT/core
       export culL=$ITcore/ulLinux
         export culLA="$culL/Arch"
-          export machLg=$culLA/ml-$host  # as opposed to  $machBld
+          export machLg=$culLA/ml-$host  # $machLg  as opposed to  $machBld
         export culLB=$culL/Bash  # rg -l '\$culLB' $ITcore
       export ITccl=$ITcore/copied-linked  # $ITccl
       export onGH=$ITcore/onGitHub

@@ -847,6 +847,7 @@ gpg(1)
 WIPEFS(8)
 
 ## cbh - keyboard
+    /usr/include/linux/input-event-codes.h
     xev | grep keycode
 
 ### Logitech K280e
@@ -859,6 +860,11 @@ WIPEFS(8)
           " --> @
 
     :Tabularize /-->/r1c1l0
+
+### xmodmap
+    xmodmap -pke > $machLg/usr/xmodmap-pke
+    xmodmap -pke > $machLg/xmodmap-pke  # $culLA
+    XMODMAP(1)
 
 ## f1t2t3
     $machBld/jo/f1t2t3/f1t2t3.sh

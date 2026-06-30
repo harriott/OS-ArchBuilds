@@ -1,9 +1,9 @@
 #!/bin/bash
 # vim: fdl=2:
 
-# Joseph Harriott, Mon 16 Feb 2026
+# Joseph Harriott, mar 30 juin 2026
 
-# machine dependent Openbox autostart tmux tweaks
+# machine dependent autostart tmux tweaks
 # called from
 #  $ABjo/wm/Xfce/terminal_startup.sh
 #  $Obc/autostart

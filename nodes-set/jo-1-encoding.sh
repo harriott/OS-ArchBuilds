@@ -47,8 +47,13 @@ for dir in '' pack plugin; do
 done
 
 #=> vimfiles - vim entry points
-ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
-ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
+if [[ $host =~ HPEB840G3 ]]; then
+  ln -sf $OSAB/mb-HPEB840G3x/hi/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
+  ln -sf $OSAB/mb-HPEB840G3x/jo/vimrc ~/.vimrc
+else
+  ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
+  ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
+fi
 
 #=> vimfiles - vim configurations
 sudo rm -r ~/.vim

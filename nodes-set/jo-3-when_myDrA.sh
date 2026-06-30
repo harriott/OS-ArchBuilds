@@ -3,13 +3,14 @@
 
 # https://harriott.github.io/ - Wed 17 Jun 2026
 
-# bash $OSAB/nodes-set/jo-3-whenWM.sh
+# bash $OSAB/nodes-set/jo-3-when_myDrA.sh
 
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
 ln -sf $ABjo/music/MPD/mpd.conf ~/.config/mpd/mpd.conf
 ln -sf $ABjo/music/MPD/vimpcrc ~/.config/vimpc/vimpcrc
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
+lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 
 #=> $notDr
 [ -d $notDr/GR-NF ] || mkdir -p $notDr/GR-NF
@@ -62,10 +63,7 @@ ln -sf $machBld/jo/gitconfig ~/.gitconfig
 # points to further convigurations on  $ITcore
 # e -la ~/.gitconfig
 
-#=> GitHub CLI 0 install
-sudo pacman -S github-cli
-
-#=> GitHub CLI 1 configure
+#=> GitHub CLI - configure
 gh config set -h github.com git_protocol ssh
 gh extension install gennaro-tedesco/gh-s
 
@@ -80,7 +78,7 @@ lnd $LTXj ~/texmf/tex/latex/jo
 #=> mdfpdf Pandoc defaults
 ln -sf $MD4PDF/defaults.yaml     ~/.pandoc/defaults/md4pdf.yaml
 ln -sf $MD4PDF/defaults-toc.yaml ~/.pandoc/defaults/md4pdfToC.yaml
-e -adl ~/.pandoc/defaults/*
+eza -adl ~/.pandoc/defaults/*
 
 #=> mpv
 ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf

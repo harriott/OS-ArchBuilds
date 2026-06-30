@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# su > root pw for  source $OSAB/nodes-set/root-0.sh
+# sl > root pw for  source $OSAB/nodes-set/root-0.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 

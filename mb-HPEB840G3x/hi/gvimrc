@@ -1,0 +1,10 @@
+" vim: fdl=1:
+
+" $OSAB/mb-HPEB840G3x/hi/gvimrc ($OSAB/nodes-set/jo-1-encoding.sh)
+
+""> 0 monitor height
+let g:monitorheight='768' " used in  $vfv/enter/gvimrc-Arch.vim, then  $vfv/enter/gvimrc.vim
+
+""> 1 move on to  $vimfiles/gvimrc-Arch.vim
+source $vimfiles/vim/enter/gvimrc-Arch.vim
+

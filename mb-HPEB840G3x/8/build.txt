@@ -216,6 +216,8 @@ Clavier >
   Raccourcis d'applications >
     alacritty > Super+A
     firefox > Super+X
+    gvim > Super+V
+    neovide > Super+N
 ## tableau de bord
 mouse grabbed corner and dragged to bottom
 Préférences du tableau de bord > Tableau de bord 2 > -

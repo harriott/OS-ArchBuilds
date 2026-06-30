@@ -6,7 +6,7 @@
 
 [miscellaneous]
 
-path=/mnt/SDU3D1TB/Dropbox/music
+path=~/music
 allowNotifications=1
 hideLogo=0
 hideHelp=0

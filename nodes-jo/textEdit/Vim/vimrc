@@ -1,8 +1,6 @@
 " vim: fdl=1:
 
-" $ABjo/textEdit/Vim/vimrc
-"  symlinked in my  $OSAB/nodes-set/jo-2-whenWM-0.sh
-"   pb ~/.vimrc
+" $ABjo/textEdit/Vim/vimrc ($OSAB/nodes-set/jo-1-encoding.sh) pb ~/.vimrc
 
 source $vfv/enter/vimrc-Arch.vim
 

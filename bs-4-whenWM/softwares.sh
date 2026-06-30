@@ -85,6 +85,7 @@ pikn zathura-pdf-mupdf
 
 #=> file manage
 pikn fsearch
+pikn github-cli  # GitHub CLI
 pikn peazip
 pikn vimiv  # Vimiv
 
