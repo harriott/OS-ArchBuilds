@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Joseph Harriott - Wed 11 Jun 2025
+# Joseph Harriott - mar 30 juin 2026
 
 # run Thunderbird safely from Profile shared on Dropbox
 # -----------------------------------------------------
 
-# managed in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
+# managed in my  $OSAB/nodes-set/jo-3-when_myDrA.sh
 #  to provide my command  thunderbird_safely
 #   target for  Xfce > Application Shortcuts > Mail
 #   used in  $Obc/schema.pl
@@ -21,4 +21,5 @@ if test $(find $thb -regex ".* conflicted copy .*\|.* (Copie en conflit de .*" |
 else
     notify-send -i /usr/share/icons/hicolor/16x16/apps/org.mozilla.Thunderbird.png -u critical 'Dropbox conflicts in  $thb!'
 fi
+# $thb  is managed in  $AjB/bashrc-wm
 

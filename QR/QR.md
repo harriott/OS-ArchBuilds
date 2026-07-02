@@ -5,6 +5,7 @@ vim: nospell:
 
 my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
+    [[ $host =~ HPEB840G3(7|8) ]] && o hi
     bm  # (in a wide enough terminal) fuzzy search for manuals
     ch /usr/share/doc/arch-wiki/html/en
     gsimplecal &  # toggle the little month pop-up
@@ -27,15 +28,6 @@ my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
 pulseaudio(1)
 
-## SoX
-    i sox
-
-### rec
-    rec -c 2 sox.flac  # record in stereo
-    rec -h
-
-symlinked to `rec_ng`
-
 ## cmus
     $ABjo/wm/cmus-rc.conf
     :Man cmus
@@ -55,6 +47,14 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 ## Kew
     $ABjo/kewrc
     kew play $Drpbx/Cop
+
+## libpulse
+    pactl -h
+    pactl info
+    pactl list short
+    pactl list sinks | grep -B1 -A9 State:
+
+( also brought in by `pipewire-pulse`)
 
 ## MPD
     $ABjo/music/MPD/mpd.conf
@@ -81,6 +81,15 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
     pkill exfalso
 
 follows my `PCManFM` folder settings
+
+## SoX
+    i sox
+
+### rec
+    rec -c 2 sox.flac  # record in stereo
+    rec -h
+
+symlinked to `rec_ng`
 
 # Bash
     $AjB/bash_history.sh
@@ -843,6 +852,7 @@ gpg(1)
     cd /sys/devices/system/cpu/cpu0/cpufreq
     doas showkey  # keycodes
     r /sys/class/backlight/intel_backlight
+    systemctl status bluetooth
 
 WIPEFS(8)
 
@@ -993,6 +1003,8 @@ see `$Imagey/Scan.sh`
 for t in *.mp3; do aet "$t" 3; done
 mediainfo -h | mo
 ```
+
+PLAYERCTL(1)
 
 ## mpv
     $misc/CP/mpv.conf
@@ -1255,7 +1267,7 @@ pass cz
 pass zou
 ```
 
-    pb ~/.password-store/.gpg-id
+    b ~/.password-store/.gpg-id
     r ~/.password-store
 
 PASS(1)

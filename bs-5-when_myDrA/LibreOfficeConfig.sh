@@ -1,25 +1,24 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# $ bash $OSAB/bs-4-whenWM/5-LibreOfficeConfig.sh
+# bash $OSAB/bs-5-when_myDrA/LibreOfficeConfig.sh
 
 set -ev
 
-# LibreOffice configurations ($cITCP/LibreOffice/Buildup.txt)
+# LibreOffice configurations ($cITCP/documenting/LibreOffice/Buildup.txt)
 
-#=> 0 config directory
-uc0="$HOME/.config/libreoffice/4/user"
+#=> 0 config directories
+hu="$HOME/.config/libreoffice/4/user"
+# cu="$cITCP/documenting/LibreOffice/user-o38-HPEB840G362"
+cu="$cITCP/documenting/LibreOffice/user-q71-sbMb-mature"
+# cu="$cITCP/documenting/LibreOffice/user-q71-HPEB840G38-pristine"
 
-# #=> 1 import o38
-# [ -d "$uc0/config" ] && rm -r $uc0/config
-# [ -s "$uc0/registrymodifications.xcu" ] && rm $uc0/registrymodifications.xcu
-# uc1=$cITCP/documenting/LibreOffice/user-o38-HPEB840G362
-# cp -r $uc1/config $uc0/config
-# cp $uc1/registrymodifications.xcu $uc0/registrymodifications.xcu
+#=> 1 implement
+cp $cu/registrymodifications.xcu $hu/registrymodifications.xcu
+rsync -irtv --delete $cu/config/ $hu/config
 
-#=> 1 export q2l-sbMb
-uc1=$cITCP/documenting/LibreOffice/user-q2l-sbMb
-mkdir $uc1
-cp -r $uc0/config $uc1/config
-cp $uc0/registrymodifications.xcu $uc1/registrymodifications.xcu
+# #=> 1 get
+# mkdir $cu
+# cp -r $hu/config $cu/config
+# cp $hu/registrymodifications.xcu $cu/registrymodifications.xcu
 

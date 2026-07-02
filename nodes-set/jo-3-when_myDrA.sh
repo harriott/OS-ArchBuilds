@@ -19,14 +19,14 @@ ln -sf $ITcore/notDr/NF.md $notDr/GR-NF/readme.md  # e -la $notDr/GR-NF/readme.m
 
 #=> Alacritty
 if [ $host = 'DOP3040D11S' ]; then
-  ln -sf $OSAB/mb-DOP3040D11S/alacritty.toml ~/.alacritty.toml
+  ln -sf $OSAB/mb-DOP3040D11S/jo/alacritty.toml ~/.alacritty.toml
 elif [[ $host =~ HPEB840G3 ]]; then
-  ln -sf $OSAB/mb-HPEB840G3x/hi/alacritty.toml ~/.alacritty.toml
-else
-  ln -sf $OSAB/mb-sbMb/Alacritty/Xfce.toml ~/.alacritty.toml
+  ln -sf $OSAB/mb-HPEB840G3x/hi-jo/alacritty.toml ~/.alacritty.toml
+else  # - sbMb
+  ln -sf $machBld/jo/term/Alacritty/Xfce.toml ~/.alacritty.toml
 fi
 ln -sf $OSAB/nodes-terminal/alacritty-all.toml ~/.alacritty-all.toml
-# e -la ~/.alacritty*
+# es ~/.alacritty*
 
 #=> CLM config
 cp -f $lclm/mbsyncrc-backup ~/.mbsyncrc
@@ -61,7 +61,7 @@ ln -sf $ABjo/wm/fontconfig-conf_d-20-no-embedded.conf ~/.config/fontconfig/conf.
 #=> gitconfig
 ln -sf $machBld/jo/gitconfig ~/.gitconfig
 # points to further convigurations on  $ITcore
-# e -la ~/.gitconfig
+# es ~/.gitconfig
 
 #=> GitHub CLI - configure
 gh config set -h github.com git_protocol ssh
@@ -83,16 +83,16 @@ eza -adl ~/.pandoc/defaults/*
 #=> mpv
 ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf
 
-# e -la ~/.config/mpv
+# es ~/.config/mpv/*
 
 #==> minimal
 # $misc/GRs/cGRs-needed.sh
 [ -d ~/.config/mpv/scripts ] && rm -r ~/.config/mpv/scripts; ln -sf $ITccl/CP/mpv-scripts ~/.config/mpv/scripts
 
-#==> mpv-uosc 0 install
-ln -sf /usr/share/mpv/fonts ~/.config/mpv/fonts
-[ -d ~/.config/mpv/scripts ] && rm -r ~/.config/mpv/scripts; ln -sf /usr/share/mpv/scripts ~/.config/mpv/scripts
-ln -sf /usr/share/mpv/script-opts ~/.config/mpv/script-opts
+# #==> mpv-uosc 0 install
+# ln -sf /usr/share/mpv/fonts ~/.config/mpv/fonts
+# [ -d ~/.config/mpv/scripts ] && rm -r ~/.config/mpv/scripts; ln -sf /usr/share/mpv/scripts ~/.config/mpv/scripts
+# ln -sf /usr/share/mpv/script-opts ~/.config/mpv/script-opts
 
 #=> music_rotate
 chmod 755 $ABjo/music/music_rotate.sh
@@ -105,7 +105,7 @@ lnd $onGH/pandoc-templates ~/.pandoc/templates
 # e -adl ~/.pandoc/templates
 
 #=> SSH config
-ln -sf $cITCP/networking-SSHconfig/$host ~/.ssh/config
+ln -sf $cITCP/networking-SSH/config/$host ~/.ssh/config
 # e -la ~/.ssh/config
 # pb ~/.ssh/config
 

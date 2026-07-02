@@ -4263,6 +4263,7 @@ PDFsam, when it works on  java-runtime 26
 Recoll
 switch to fastmail
 TeX Live release 2026 full
+usbutils
 # clm possible extras
 imapbox
 maildir-rank-addr
@@ -4306,7 +4307,7 @@ sudo rm /etc/locale.gen.pacnew
 Bose Companion 20
 D-Link DUB-H7
 NETGEAR WG111v2
-TP-Link UB400
+Bluetooth: TP-Link UB400
 B525 HD Webcam
 ## cbh
 Logitech K120 UK keyboard

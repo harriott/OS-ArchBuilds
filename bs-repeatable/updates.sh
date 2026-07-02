@@ -7,6 +7,7 @@
 CAC="$ITculLAb/ml-$host/CAC" # ca-certificates
 pc="$ITculLAb/ml-$host/pm/cu" # checkupdates
 pQa="$ITculLAb/ml-$host/pm/Qa" # pacman -Q
+# mkdir -p $CAC $ITculLAb/ml-$host/AURs $pc $pQa; exit
 ymdHM=$(date '+%y%m%d-%H%M')
 
 #=> 1 log directories 1 fallback

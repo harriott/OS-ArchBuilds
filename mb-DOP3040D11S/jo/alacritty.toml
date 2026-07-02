@@ -1,5 +1,5 @@
 
-# $machBld/Alacritty/Xfce.toml ($OSAB/nodes-set/jo-0.sh) $OSAB/mb-DOP3040D11S/alacritty.toml
+# $OSAB/mb-DOP3040D11S/alacritty.toml ($OSAB/nodes-set/jo-3-when_myDrA.sh)
 
 [font]
   size = 8

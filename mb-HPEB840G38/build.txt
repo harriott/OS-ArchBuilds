@@ -1,6 +1,6 @@
 vim: set ft=build nospell:
 
-$OSAB/mb-HPEB840G3x/8/build.txt
+$OSAB/mb-HPEB840G38/build.txt
 
 HP EliteBook 840 G3 barcoded PC117860 (labelled BC PNB 18 by last owner) = HPEB840G38
 
@@ -170,8 +170,40 @@ $OSAB/bs-3-intoWM/1-prepare.sh
 $OSAB/bs-4-whenWM/1-softwares.sh
 Applications par défaut > Internet > Navigateur > Mozilla Firefox  rebooted
 sudo chown jo:jo /mnt/MZNLN128
+## $myDrA
+$OSAB/nodes-set/jo-3-when_myDrA.sh
+## initialise pass
+pass init jharr@ftml.net
+  mkdir: création du répertoire '/home/jo/.password-store/'
+  Password store initialized for jharr@ftml.net
+(because  .gpg-id  is same)
+  rsync -irtv --delete --progress $Enc/Secure1/password-store/ ~/.password-store
+## SSH into GitHub
+$OSAB/bs-5-when_myDrA/ssh-1-files.sh
+$OSAB/bs-5-when_myDrA/ssh-2-into_GitHub.sh
+## LibreOffice configurations
+$cITCP/documenting/LibreOffice/user-q71-sbMb-mature
+## audio
+speaker-test -c 2  shows speakers good, dedicated button not responding
+xev scancode of dedicated button:
+  121 XF86AudioMute
+  122 XF86AudioLowerVolume
+  123 XF86AudioRaiseVolume
+pactl set-sink-mute 0 toggle  toggles off (making orange the dedicated button)
+sudo systemctl enable bluetooth.service --now
+## tmux 3.7
+break-pane  causing "server exited unexpectedly" - fixed by switching to  tmux-git
+## xdg-open .jpg
+gets popup "Impossible de détecter le schéma URI de « .jpg »"
+handlr get .jpg  reports  feh.desktop, but it's opening in  XnViewMP
+Thunar > a .jpg > Propriétés… > Ouvrir avec > nomacs
+.png, .JPG  also not opening.
+## xdg-open .pdf
+Thunar > a .pdf > Propriétés… > Ouvrir avec > Zathura
 ## waiting
-$OSAB/bs-1-into_jo/7-rsnapshot.sh
+$OSAB/bs-5-when_myDrA/LibreOfficeConfig.sh
+$OSAB/bs-5-when_myDrA/rsnapshot.sh
+tdf
 # CopyQ
 CopyQ > Ctrl+P >
   Générale > Confirmer la sortie de l'application  éteint
@@ -182,7 +214,7 @@ CopyQ > Ctrl+P >
   Raccourcis >
     Afficher / mqsquer la fenêtre principale > Win+q (== Méta+Q)
     Coller le presse-papiers en texte brut > Win+l (= Méta+L)
-  Apparence > Thème > dark
+  Apparence > Thème > nord (is very clear)
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
@@ -202,27 +234,41 @@ Built-in Device Options > Backlit keyboard timeout > 30 secs.
 Secure Boot Configuration > Legacy Support Enable and Secure Boot Disable
 # Xfce configuration
 Apparence > Style > Adwaita-sombre
-Gestionnaire d'alimentation >
-  Écran > my preferences
-  Général > Appui sur le bouton de mise en veille > Mettre in veille
-  Gestion de l'économisateur d'écran > Économiseur > Activer  off
-  Système > Sur batterie > Couvercle du portable > Fermeture > Mettre en veille
-Paramètres de bureau... > Arrière-plan > Style > ----
-xfce4-terminal > Édition > Préférences... >
-  Apparence > Fonts > JetBrainsMono Nerd Font Regular 10
-  Général > Titre initial > xfce4-terminal
-## Applications > Paramètres
-Clavier >
-  Raccourcis d'applications >
-    alacritty > Super+A
-    firefox > Super+X
-    gvim > Super+V
-    neovide > Super+N
-## tableau de bord
+Paramètres de bureau… > Arrière-plan > Style > ----
+Souris et pavé tactile > Inverser le sens de défilement
+## Clavier > Raccourcis d'applications
+alacritty                    > Super+A
+firefox                      > Super+X
+google-chrome-stable         > Super+G
+gvim                         > Super+V
+keepassxc                    > Super+K
+neovide                      > Super+N
+pactl set-sink-mute 0 toggle > speaker button (XF86AudioMute) = Sourdine volume
+pactl set-sink-volume 0 -5%  > Fn+f8 (XF86AudioLowerVolume) = Volume plus faible
+pactl set-sink-volume 0 +5%  > Fn+f9 (XF86AudioRaiseVolume) = Volume plus fort
+thunderbird_safely           > Super+T (= win+t)
+wezterm                      > Super+W
+## Gestionnaire d'alimentation
+Écran > my preferences
+Général > Appui sur le bouton de mise en veille > Mettre in veille
+Gestion de l'économisateur d'écran > Économiseur > Activer  off
+Système > Sur batterie > Couvercle du portable > Fermeture > Mettre en veille
+## Session et démarrage > Démarrage automatique d'application
+Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
+Conky > [ Conky  conky ]
+Neovide > [ Neovide  neovide ]
+## Tableau de bord
 mouse grabbed corner and dragged to bottom
 Préférences du tableau de bord > Tableau de bord 2 > -
 Éléments >
-  yeux
-  Mise à jour météo
-  Moniteur de batterie
-  Moniteur de la charge du système
+Greffon de barre d'état
+Greffon PulseAudio (works with PipeWire)
+Horloge
+Mise à jour météo
+Moniteur de batterie
+Moniteur de la charge du système
+Wavelan
+yeux
+## xfce4-terminal > Édition > Préférences…
+Apparence > Fonts > JetBrainsMono Nerd Font Regular 10
+Général > Titre initial > xfce4-terminal

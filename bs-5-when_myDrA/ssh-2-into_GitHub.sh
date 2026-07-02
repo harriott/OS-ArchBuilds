@@ -1,10 +1,9 @@
 #!/bin/bash
 # vim: set fdl=1 sw=2:
 
-# $OSAB/bs-5-when_myDrA/ssh-2-into_GitHub.sh
-#  after  $OSAB/bs-5-when_myDrA/ssh-1-files-2-to_machine.sh
+# bash $OSAB/bs-5-when_myDrA/ssh-2-into_GitHub.sh
 
-set -ev
+set -v
 trap read debug  # puts a read request after each executable line
 
 #=> 0 check configuration
@@ -15,6 +14,7 @@ git config -l
 #  RSA key fingerprint SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
 #  Ed25519 key fingerprint SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU
 ssh -T git@github.com  # "yes"
-cat ~/.ssh/known_hosts  # pb ~/.ssh/known_hosts
-cp ~/.ssh/known_hosts ~/known_hosts-m8f  # $machLg/jo/known_hosts
+b ~/.ssh/known_hosts  # pb ~/.ssh/known_hosts
+# cp ~/.ssh/known_hosts ~/known_hosts-m8f  # $machLg/jo/known_hosts
+cp ~/.ssh/known_hosts $machLg/known_hosts-q71
 

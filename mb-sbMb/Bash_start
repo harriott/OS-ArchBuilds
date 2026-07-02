@@ -12,7 +12,7 @@
 
 export CopIT='/mnt/WD20EZAZ/Cop-IT'  # $CopIT
 export OBSmkvGrabs='/mnt/ST4000VN008/OBSmkvGrabs'
-export rsnapshot='/mnt/ST4000VN008/rsnapshot'  # $rsnapshot
+export rsnapshot='/mnt/WD1001FALS/rsnapshot'  # $rsnapshot
 export startxDelay=5
 
 #=> for  $OSAB/nodes-Bash/export-Arch

@@ -1,0 +1,22 @@
+#!/bin/bash
+# vim: fdl=3:
+
+# $OSAB/mb-HPEB840G3x/hi-jo/exportWS
+
+# sourced by  $OSL/nodes/jo/export
+
+# changes here require a  reboot
+# definitions here are used in
+#  $ABjo/wm/terminal/startup.sh
+#  $Obc/rc/rc_xml-mb_make.sh
+
+#=> set  Alacritty  window
+# used in  $ABjo/wm/terminal/startup.sh
+export Awp='window.position={x=5,y=5}'
+
+#==> for screens
+# depending on font set in  $OSAB/nodes-terminal/alacritty-all.toml
+
+#===> 1366x768
+export Awd='window.dimensions={columns=110,lines=67}'
+

@@ -56,7 +56,6 @@ read -p '- now Alt+F3 > Fcitx 5 Configuration > Addon > Clipboard  off'
 pikn network-manager-applet  # tray icon
 
 #=> documenting
-pikn apostrophe  # Apostrophe markdown editor
 pikn odt2txt
 
 #==> LibreOffice Fresh install
@@ -65,27 +64,32 @@ libreoffice &
 read -p '- first-run of LibreOffice - close it'
 
 #==> markdown
+pikn apostrophe  # Apostrophe markdown editor
 pikn glow
 pikn marktext-bin  # MarkText
 
-#==> qpdfview
+#==> PDF
+cargo install --git https://github.com/itsjunetime/tdf.git  # takes ages
+
+#===> qpdfview
 gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8  # Adam Reichold's public key
     pikn qpdfview
 
-#==> TeX Live - perl-tk
-pikn perl-tk  # needed for  tlmgr -gui
-
-#==> Zathura 0 tessdata
+#===> Zathura 0 tessdata
 pikn tesseract-data-eng
 
-#==> Zathura 1 zathura-pdf-mupdf
+#===> Zathura 1 zathura-pdf-mupdf
 pikn zathura-pdf-mupdf
 [ -d ~/.config/zathura ] || mkdir ~/.config/zathura
 # zathurarc  symlinked in  $OSAB/nodes-set/jo-3-whenWM.sh
 
+#==> TeX Live - perl-tk
+pikn perl-tk  # needed for  tlmgr -gui
+
 #=> file manage
 pikn fsearch
 pikn github-cli  # GitHub CLI
+pikn mcat-bin
 pikn peazip
 pikn vimiv  # Vimiv
 

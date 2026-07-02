@@ -268,6 +268,7 @@ m4ps() {
 alias mmsc="zathura -P 435 $ITref/CP/documenting/TeX/LaTeX/structure/classes/memoir/memman.pdf &"
 # - p.389 Appendix B Showcase B1 Chapter styles
 alias pif="zathura -P 9 $ITref/CP/documenting/TeX/LaTeX/appearance/font/psnfss2e.pdf &"
+alias tdf="$HOME/.cargo/bin/tdf"
 alias xc="zathura -P 38 $ITref/CP/documenting/TeX/LaTeX/appearance/colour/xcolor.pdf &"
 za () { zathura "$1" & }
 
@@ -445,6 +446,8 @@ dcc1 () {
 }  # moves them to  $Drpbx/conflicted
 
 #==> Thb
+# $ABjo/wm/TS/
+
 function Tg() {
   # rsync -irtv --delete $DrThb/ ~/.thunderbird/jo
   rsync -irtv --delete $DrThb/ $thb/jo

@@ -157,8 +157,9 @@ pacman -S udiskie
 # # systemctl status fstrim.timer
 # systemctl enable fstrim.timer --now
 
-#=> 2 hw - linux-firmware-intel
+#=> 2 hw
 pacman -S linux-firmware-intel
+pacman -S usbutils
 
 # #=> 2 info 1
 # # Bashtop

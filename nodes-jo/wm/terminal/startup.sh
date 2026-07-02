@@ -9,6 +9,7 @@
 
 #=> 1 terminal
 # $machBld/jo/Bash/exportWS
+# $OSAB/mb-HPEB840G3x/hi/exportWS
 
 #==> Alacritty
 alacritty -o $Awd -o $Awp -e sh -c "tmux new; bash" & disown

@@ -1,0 +1,33 @@
+! vim: set ft=xdefaults:
+
+# $OSAB/mb-HPEB840G3x/hi-jo/Xresources_fontNF
+!  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh  to  ~/.Xresources-font
+!   called from my  $ABjo/wm/Xresources/Xresources
+
+
+!-*- Nerd Font Caskaydia -*-
+
+! only needed for  rxvt-unicode
+! URxvt.letterSpace: -1
+
+! using from  $notDr
+! URxvt.font: xft:CaskaydiaCoveNerdFontMono:size=8
+!  better than Ubuntu Mono, except the hyphen runs into adjoining letters
+
+! URxvt.boldFont: xft:CaskaydiaCoveNerdFontMono:bold
+!  gets too small if size of Regular is 8
+
+! using  ttf-cascadia-mono-nerd
+URxvt.font: xft:CaskaydiaMonoNF:size=9
+
+
+!! Nerd Font Hack Bold !!
+
+! eg directories in  nnn
+
+! for  rxvt-unicode
+! URxvt.boldFont: xft:HackNerdFont:Bold
+
+! for  rxvt-unicode-truecolor-wide-glyphs
+URxvt.boldFont: xft:HackNerdFont:Bold:size=9
+

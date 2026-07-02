@@ -1,0 +1,13 @@
+# vim: ft=gitconfig
+
+# $machBld/jo/gitconfig ($OSAB/nodes-set/jo-3-when_myDrA.sh)
+#  e -la ~/.gitconfig
+#  b ~/.gitconfig
+
+# my machine-specific Git configuration file
+# changes saved here instantaneous
+
+[include]
+	path = /mnt/MZNLN128/Dropbox/IT/core/CP/encoding/gitconfig-JH
+	path = /mnt/MZNLN128/Dropbox/IT/core/onGitHub/misc/CP/gitconfig
+

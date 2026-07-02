@@ -1,5 +1,5 @@
 
-# $machBld/Alacritty/Xfce.toml ($OSAB/nodes-set/jo-0.sh) $OSAB/mb-sbMb/Alacritty/Xfce.toml
+# $machBld/jo/Alacritty/Xfce.toml ($OSAB/nodes-set/jo-3-when_myDrA.sh)
 
 [font]
   size = 8  # change is instantaneous

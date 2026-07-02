@@ -246,16 +246,27 @@ sudo pacman -Rs auracle-git  then re-installed it
   Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/libffmpeg.so': No debugging symbols
 ## xdg-utils
   :: xdg-utils-1.2.1-2 and xdg-utils-handlr-0.6.4-2 are in conflict. Remove xdg-utils-handlr? [y/N] y
+## Recoll  overloading  ~
+~/.recoll  is  7.3 GiB, blocking  Pikaur, so  prs recoll  then  rm -r ~/.recoll
+## Ruby rbenv global
+rbenv install 4.0.5  (could've just 4)
+rbenv global 4.0.5
+## Ruby rbenv $JHm
+rbenv install 3.3.4
+cd $Jhm
+rbenv local 3.3.4
+## tmux 3.7
+break-pane  causing "server exited unexpectedly" - fixed by switching to  tmux-git
 ## waiting
+$cITCP/networking-SSH/config/$host
 $culL/Arch/handlr-regex_error.bbcode
 apache
 EFI install
 gokcehan's lf
-isd
 MariaDB
-ouch
-Ruby rdoc fix
-Ruby rbenv
+mcat-bin
+tdf
+usbutils
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

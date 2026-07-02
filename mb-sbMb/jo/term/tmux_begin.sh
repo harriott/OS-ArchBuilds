@@ -3,6 +3,8 @@
 
 # Joseph Harriott, Wed 08 May 2024
 
+# $machBld/jo/term/tmux_begin.sh
+
 # machine dependent  tmux  startup
 # called from
 #  $ABjo/wm/Xfce/terminal_startup.sh

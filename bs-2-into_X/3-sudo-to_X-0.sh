@@ -27,13 +27,7 @@ pacman -S xorg-xset
 pacman -S xsel
 
 #=> 2 prepare for X - updatedb.conf
-if   [[ $host =~ HPEB840G37 ]]; then
-  sudo cp $OSAB/mb-HPEB840G3x/7/etc/updatedb.conf /etc/updatedb.conf
-elif [[ $host =~ HPEB840G38 ]]; then
-  sudo cp $OSAB/mb-HPEB840G3x/8/etc/updatedb.conf /etc/updatedb.conf
-else
-  sudo cp $machBld/etc/updatedb.conf /etc/updatedb.conf
-fi
+sudo cp $machBld/etc/updatedb.conf /etc/updatedb.conf
 updatedb
 
 # #=> 2 save grub.cfg

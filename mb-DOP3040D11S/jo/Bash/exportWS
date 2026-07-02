@@ -3,9 +3,10 @@
 
 # $machBld/jo/Bash/exportWS
 
-# called by  $AjB/export-jo
+# sourced by  $OSL/nodes/jo/export
+
 # definitions here are used in
-#  $Obc/autostart/terminal_launch.sh
+#  $ABjo/wm/terminal/startup.sh
 #  $Obc/rc/rc_xml-mb_make.sh
 
 #=> set  Alacritty  window
@@ -36,11 +37,12 @@ export Nvdg='--grid 109x68'  # 1920x1080 Dell E2214HB monitor, only 65 lines of 
 # export Nvdg='--grid 109x70'  # 1680x1050 monitor (Philips 220V4L), 67 lines of buffer
 # UbuntuMono_Nerd_Font_Mono:  h9:59
 # $Nvdg  used in
-#  $Obc/autostart/autostart
+#  $Obc/autostart
+#  $Obc/rc/rc-generic.xml
 #  $Obc/rc/rc_xml-mb_make.sh
 
 #=> set  urxvt  geometry appropriate for 1440x900 monitor
 # open urxvt from left of screen, allowing room for 106 column gVim
 export urxvtGeometry='104x64+0+0'  # urxvt -geometry '104x64+0+0' &
-# for  ubuntumono 9  in  $Openbox/Xresources/Xresources
+# in relation to  URxvt.font
 

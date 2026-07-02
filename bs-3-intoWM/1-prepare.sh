@@ -98,7 +98,7 @@ pikn jdk-openjdk  # (removes  jre-openjdk) required for  :Mason
 #=> networking
 # bluetooth
 gpasswd -a jo lp
-pikn blueman bluez bluez-utils
+pikn blueman bluetui bluez-utils
 systemctl enable bluetooth.service --now
 
 pikn iptraf-ng

@@ -86,5 +86,5 @@ URxvt.clipboard.autocopy: true
 ! cmus  &  tmux  folders show in  URxvt.boldFont
 
 #include "/home/jo/.Xresources-font"
-! see  $OSAB/nodes/set/jo-0.sh
+! see  $OSAB/nodes-set/jo-0-Bash-X.sh
 

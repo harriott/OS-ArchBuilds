@@ -2,7 +2,7 @@
 
 --[[
 Joseph Harriott - Mon 04 May 2026
-$machBld/jo/Conky/Xfce.lua  adapted from output of  conky -C
+$OSAB/mb-HPEB840G3x/8/jo-Conky.lua
 symlinked in
   $OSAB/nodes-Bash/bashrc-generic
   $OSAB/nodes-set/jo-2-Xfce.sh

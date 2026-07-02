@@ -3,6 +3,7 @@
 
 # $OSAB/mb-HPEB840G3x/8/Bash_start
 #  machine-specific exports that could also be useful as root
+#  symlinked in  $OSAB/nodes-set/shell.sh
 
 # for jo:
 #  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
