@@ -4256,6 +4256,7 @@ reboot
 "Loading initial ramdisk" took a long time
 ## tmux 3.7
 break-pane  causing "server exited unexpectedly" - fixed by switching to  tmux-git, except that  btop  won't display
+## nnn dragdrop no longer launching the popup
 ## waiting
 gokcehan's lf
 MariaDB
@@ -4408,40 +4409,22 @@ journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS
 Desktop > Style > None  for each monitor
 Desktop Settings > (Background >) [ Other > Folder > WallpaperFlare > Open  Style > Stretched ]
 Terminal > Edit > Preferences > Appearance > Font > 8
-## Applications > Settings
-Keyboard >
-  Application Shortcuts >
-    alacritty > Super+A
-    cmus-remote -u > Super+C
-    google-chrome-stable > Super+G
-    exfalso > Super+F
-    firefox > Super+X
-    gvim > Super+V
-    keepassxc > Super+K
-    music_rotate > Super+M
-    signal-desktop > Super+S
-    thunderbird_safely > Super+T (= win+t)
-    neovide > Super+N
-    wezterm > Super+W
-  Behaviour > General > Restore numlock state on startup
-Power Manager >
-  Display > Display power management
-    General > When sleep button is pressed > Suspend
-    Screensaver Management > (= Screensaver Preferences) > Activate off
-    System > Security > Lock screen when system is going to sleep off
-Session and Startup > Application Autostart >
-  Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
-  Conky > [ Conky  conky ]
-  CopyQ > copyq
-  Dropbox > dropbox
-  Neovide > [ Neovide  neovide ]
-Window Manager >
-  Keyboard >
-    Move window to left monitor > Super+1
-    Move window to right monitor > Super+2
-Window Manager Tweaks >
-  Cycle through windows in a list
-  Raise windows while cycling
+## Keyboard >
+Behaviour > General > Restore numlock state on startup
+### Application Shortcuts
+alacritty            > Super+A
+cmus-remote -u       > Super+C
+google-chrome-stable > Super+G
+exfalso              > Super+F
+firefox              > Super+X
+gvim                 > Super+V
+keepassxc            > Super+K
+kitty                > Super+i
+music_rotate         > Super+M
+signal-desktop       > Super+S
+thunderbird_safely   > Super+T (= win+t)
+neovide              > Super+N
+wezterm              > Super+W
 ## Panel Preferences > Panel 1 > Items
 Show Desktop
 Screenshot
@@ -4466,3 +4449,19 @@ Dictionary
 Notification Plugin > Notifications > Log > Log notifications > always
 PulseAudio Plugin
   Action Buttons
+## Power Manager > Display > Display power management
+General > When sleep button is pressed > Suspend
+Screensaver Management > (= Screensaver Preferences) > Activate off
+System > Security > Lock screen when system is going to sleep off
+## Session and Startup > Application Autostart
+Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
+Conky > [ Conky  conky ]
+CopyQ > copyq
+Dropbox > dropbox
+Neovide > [ Neovide  neovide ]
+## Window Manager > Keyboard
+Move window to left monitor > Super+1
+Move window to right monitor > Super+2
+## Window Manager Tweaks
+Cycle through windows in a list
+Raise windows while cycling

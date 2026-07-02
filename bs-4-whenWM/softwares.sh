@@ -12,6 +12,16 @@ shopt -s expand_aliases; alias pikn='pikaur -S --needed'
 
 read -p 'Have you run  pikaur -Syu  ?'
 
+#=> $TERM
+pikn wezterm  # WezTerm
+
+# #==> rxvt-unicode
+# pikn urxvt-perls  # provides keyboard-select and brings in  rxvt-unicode
+# # prs urxvt-perls rxvt-unicode  # in that order
+
+#==> rxvt-unicode-truecolor-wide-glyphs
+pikn rxvt-unicode-truecolor-wide-glyphs
+
 #=> audio
 pikn blanket  # Blanket
 pikn mousai  # similar to Shazam
@@ -87,6 +97,7 @@ pikn zathura-pdf-mupdf
 pikn perl-tk  # needed for  tlmgr -gui
 
 #=> file manage
+pikn dragon-drop  # for nnn
 pikn fsearch
 pikn github-cli  # GitHub CLI
 pikn mcat-bin
@@ -191,16 +202,6 @@ pikn sqlitebrowser
 #==> enable multilib
 sudo sed -i 's/#\[multilib]/[multilib]/' /etc/pacman.conf
 sudo sed -i '/^\[m/{n;s/#I/I/}' /etc/pacman.conf
-
-#=> terminal
-pikn wezterm  # WezTerm
-
-# #==> rxvt-unicode
-# pikn urxvt-perls  # provides keyboard-select and brings in  rxvt-unicode
-# # prs urxvt-perls rxvt-unicode  # in that order
-
-#==> rxvt-unicode-truecolor-wide-glyphs
-pikn rxvt-unicode-truecolor-wide-glyphs
 
 #=> text wrangling
 pikn featherpad  # FeatherPad

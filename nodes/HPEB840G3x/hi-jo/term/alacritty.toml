@@ -1,0 +1,9 @@
+
+# $ABno/HPEB840G3x/hi-jo/term/alacritty.toml ($OSAB/nodes-set/jo-3-when_myDrA.sh)
+
+[font]
+  size = 9
+
+[general]
+  import = [ "~/.alacritty-all.toml" ] # $OSAB/nodes-terminal/alacritty-all.toml
+

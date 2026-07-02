@@ -10,8 +10,8 @@
 source $ABjo/wm/terminal/startup.sh
 sleep 3
 if [[ $host =~ HPEB840G3 ]]; then
-    source $OSAB/mb-HPEB840G3x/hi-jo/tmux_begin.sh
+    source $ABno/HPEB840G3x/hi-jo/term/tmux_begin.sh
 else
-    source $machBld/jo/tmux_begin.sh
+    source $machBld/jo/term/tmux_begin.sh
 fi
 

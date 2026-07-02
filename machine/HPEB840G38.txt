@@ -200,9 +200,13 @@ Thunar > a .jpg > Propriétés… > Ouvrir avec > nomacs
 .png, .JPG  also not opening.
 ## xdg-open .pdf
 Thunar > a .pdf > Propriétés… > Ouvrir avec > Zathura
-## waiting
+## xdg-open .webm
+Thunar > a .webm > Propriétés… > Ouvrir avec > mpv
+## LibreOffice configuration
 $OSAB/bs-5-when_myDrA/LibreOfficeConfig.sh
+## waiting
 $OSAB/bs-5-when_myDrA/rsnapshot.sh
+mcat-bin
 tdf
 # CopyQ
 CopyQ > Ctrl+P >

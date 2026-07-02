@@ -260,9 +260,13 @@ break-pane  causing "server exited unexpectedly" - fixed by switching to  tmux-g
 ## waiting
 $cITCP/networking-SSH/config/$host
 $culL/Arch/handlr-regex_error.bbcode
+alacritty.toml
 apache
+dragon-drop
 EFI install
+fastfetch.jsonc
 gokcehan's lf
+kitty
 MariaDB
 mcat-bin
 tdf

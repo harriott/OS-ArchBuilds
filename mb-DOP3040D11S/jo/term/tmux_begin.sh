@@ -11,7 +11,7 @@
 # test (or reload) this script with
 #  tmux kill-server
 #  bash $ABjo/wm/terminal/startup.sh
-#  bash $machBld/jo/tmux_begin.sh
+#  bash $machBld/jo/term/tmux_begin.sh
 
 # (chmod u+x $machBld/jo/urxvtl.sh)
 

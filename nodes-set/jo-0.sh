@@ -44,8 +44,8 @@ ln -sf $ABjo/WAN/dictrc ~/.dictrc
 
 #=> fastfetch
 [ -d ~/.config/fastfetch ] || mkdir -p ~/.config/fastfetch
-ln -sf $OSAB/nodes-terminal/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
-# e -la ~/.config/fastfetch/config.jsonc
+ln -sf $ABno/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
+# es ~/.config/fastfetch/config.jsonc
 
 #=> gpg-agent configuration
 gpg --list-keys  # creates populated  ~/.gnupg

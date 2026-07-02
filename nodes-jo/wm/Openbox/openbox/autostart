@@ -57,5 +57,5 @@ mpd &
 mpDris2 &  # for notifications and link to  playerctl
 
 #==> 1 tmux - machine dependent tweaks
-[ -f $machBld/jo/tmux_begin.sh ] && source $machBld/jo/tmux_begin.sh
+tb="$ABno/HPEB840G3x/hi-jo/term/tmux_begin.sh"; [ -f $tb ] && source $tb
 
