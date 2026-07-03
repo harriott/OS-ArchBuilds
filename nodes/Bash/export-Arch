@@ -50,7 +50,7 @@ export OSAB=$onGH/OS-ArchBuilds
     export BAT_CONFIG_PATH="$ABjo/bat.conf"  # for the bat pager
   export ABm=$OSAB/machine  # $ABm
   export ABno=$OSAB/nodes
-    export ABnm=$ABno/m-$host  # $ABnm (nodes machine)
+    export ABnm=$ABno/$host  # $ABnm (nodes machine)
     export ABnj=$ABno/jo  # $ABnj (nodes jo)
   export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg  /machLg=
 export OSL=$onGH/OS-Linux

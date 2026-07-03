@@ -1,0 +1,21 @@
+
+! $ABno/m-HPEB840G3x/jo/xmodmap ($OSAB/nodes-set/jo-0-Bash-X.sh)
+
+! used in  $ABjo/xinitrcs/xinitrc
+!
+! (see also  $MSn/AutoHotkey/AZERTY.ahk)
+
+! ----
+! keys
+! ----
+
+! $culLA/ml-HPEB840G38/xmodmap-pke
+
+! keycode  49 = backslash NoSymbol backslash
+
+! ù -> ` :
+keycode  48 = grave percent grave percent
+
+! µ -> ù :
+keycode  51 = asterisk ugrave asterisk ugrave
+

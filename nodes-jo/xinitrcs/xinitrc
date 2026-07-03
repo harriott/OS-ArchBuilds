@@ -57,7 +57,7 @@ fi
 
 # possible key changes
 [ -s ~/.xmodmap ] && xmodmap ~/.xmodmap
-#  - eg  $OSAB/mb-HPEB840G3x/jo/xmodmap
+#  - eg  $ABno/m-HPEB840G3x/jo/xmodmap
 
 # stop the 600s screensaver
 xset s off

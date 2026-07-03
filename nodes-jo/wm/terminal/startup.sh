@@ -7,9 +7,9 @@
 #   $ABjo/wm/Xfce/terminal_startup.sh
 #   $Obc/autostart
 
-#=> 1 terminal
-# $machBld/jo/Bash/exportWS
-# $OSAB/mb-HPEB840G3x/hi/exportWS
+# Terminal sizes:
+#  $machBld/jo/Bash/exportWS
+#  $ABno/m-HPEB840G3x/hi-jo/exportWS
 
 #==> Alacritty
 alacritty -o $Awd -o $Awp -e sh -c "tmux new; bash" & disown

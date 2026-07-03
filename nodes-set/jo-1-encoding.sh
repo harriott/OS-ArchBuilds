@@ -48,8 +48,8 @@ done
 
 #=> vimfiles - vim entry points
 if [[ $host =~ HPEB840G3 ]]; then
-  ln -sf $OSAB/mb-HPEB840G3x/hi-jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
-  ln -sf $OSAB/mb-HPEB840G3x/jo/vimrc ~/.vimrc
+  ln -sf $ABno/m-HPEB840G3x/jo/vimrc ~/.vimrc  # b ~/.vimrc
+  ln -sf $ABno/m-HPEB840G3x/hi-jo/gvimrc ~/.gvimrc  # es ~/.gvimrc
 else
   ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
   ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc

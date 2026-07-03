@@ -144,7 +144,7 @@ pikn hplip-plugin
 
 #==> laptop - acpilight - configure
 sudo gpasswd -a jo video  # groups jo
-sudo cp $OSAB/mb-HPEB840G3x/etc-backlight.rules /etc/udev/rules.d/backlight.rules
+sudo cp $ABno/m-HPEB840G3x/etc-backlight.rules /etc/udev/rules.d/backlight.rules
 #  pb /etc/udev/rules.d/backlight.rules
 # after a reboot can  xbacklight -inc 12
 

@@ -203,10 +203,13 @@ Thunar > a .pdf > Propriétés… > Ouvrir avec > Zathura
 Thunar > a .webm > Propriétés… > Ouvrir avec > mpv
 ## LibreOffice configuration
 $OSAB/bs-5-when_myDrA/LibreOfficeConfig.sh
+## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.87.222.239
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.87.222.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
 $OSAB/bs-5-when_myDrA/rsnapshot.sh
-rsnapshot.conf
-updatedb.conf
 # CopyQ
 CopyQ > Ctrl+P >
   Générale > Confirmer la sortie de l'application  éteint

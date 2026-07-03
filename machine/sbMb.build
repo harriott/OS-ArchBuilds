@@ -4258,12 +4258,10 @@ reboot
 break-pane  causing "server exited unexpectedly" - fixed by switching to  tmux-git, except that  btop  won't display
 ## nnn dragdrop no longer launching the popup
 ## waiting
-alacritty.toml
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
 Recoll
-remove marktext
 rsnapshot.conf
 switch to fastmail
 TeX Live release 2026 full

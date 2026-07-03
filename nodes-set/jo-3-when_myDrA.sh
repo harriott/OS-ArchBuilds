@@ -58,7 +58,7 @@ eza -adl ~/.pandoc/defaults/*
 # # e -la /usr/share/texmf.cnf
 
 #=> gitconfig
-ln -sf $machBld/jo/gitconfig ~/.gitconfig
+ln -sf $ABnm/jo/gitconfig ~/.gitconfig
 # points to further convigurations on  $ITcore
 # es ~/.gitconfig
 
@@ -98,7 +98,7 @@ ln -sf $OSAB/nodes/jo/term/kitty.conf $ck/kitty.conf
 if [ $host = 'DOP3040D11S' ]; then
   ln -sf $ABnm/jo/term/alacritty.toml ~/.alacritty.toml
 elif [[ $host =~ HPEB840G3 ]]; then
-  ln -sf $ABno/HPEB840G3x/hi-jo/term/alacritty.toml ~/.alacritty.toml
+  ln -sf $ABno/m-HPEB840G3x/hi-jo/term/alacritty.toml ~/.alacritty.toml
 else  # - sbMb
   ln -sf $ABnm/jo/term/Alacritty/Xfce.toml ~/.alacritty.toml
 fi

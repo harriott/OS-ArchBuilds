@@ -7,7 +7,7 @@
 #=> shell
 # sort these lists by last use of "~":  :sort /,*\~/
 
-ln -sf $machBld/Bash_start                ~/.start
+ln -sf $ABnm/Bash_start                   ~/.start
   ln -sf $OSAB/nodes-Bash/export-Arch     ~/.export-Arch
 ln -sf $OSAB/nodes-Bash/bashrc-generic    ~/.bashrc-generic
 ln -sf $OSL/nodes/GNUReadline-inputrc     ~/.inputrc
