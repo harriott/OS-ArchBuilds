@@ -1,6 +1,5 @@
-vim: set ft=build nospell:
 
-$OSAB/mb-HPEB840G38/build.txt
+$ABm/HPEB840G38.build
 
 HP EliteBook 840 G3 barcoded PC117860 (labelled BC PNB 18 by last owner) = HPEB840G38
 
@@ -206,8 +205,8 @@ Thunar > a .webm > Propriétés… > Ouvrir avec > mpv
 $OSAB/bs-5-when_myDrA/LibreOfficeConfig.sh
 ## waiting
 $OSAB/bs-5-when_myDrA/rsnapshot.sh
-mcat-bin
-tdf
+rsnapshot.conf
+updatedb.conf
 # CopyQ
 CopyQ > Ctrl+P >
   Générale > Confirmer la sortie de l'application  éteint
@@ -239,6 +238,7 @@ Secure Boot Configuration > Legacy Support Enable and Secure Boot Disable
 # Xfce configuration
 Apparence > Style > Adwaita-sombre
 Paramètres de bureau… > Arrière-plan > Style > ----
+PulseAudio Panel icon > Mixeur audio > pwvucontrol
 Souris et pavé tactile > Inverser le sens de défilement
 ## Clavier > Raccourcis d'applications
 alacritty                    > Super+A

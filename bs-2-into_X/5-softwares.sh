@@ -12,6 +12,7 @@ pikn kitty
 
 #=> audio
 pikn spectroterm
+pikn pwvucontrol  # takes ages, for  PulseAudio  volume icon
 
 #==> Cmus
 [ -d ~/.config/cmus ] || mkdir ~/.config/cmus

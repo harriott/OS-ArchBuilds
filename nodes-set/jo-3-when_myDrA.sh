@@ -96,11 +96,11 @@ ln -sf $OSAB/nodes/jo/term/kitty.conf $ck/kitty.conf
 
 #==> Alacritty
 if [ $host = 'DOP3040D11S' ]; then
-  ln -sf $OSAB/mb-DOP3040D11S/jo/term/alacritty.toml ~/.alacritty.toml
+  ln -sf $ABnm/jo/term/alacritty.toml ~/.alacritty.toml
 elif [[ $host =~ HPEB840G3 ]]; then
   ln -sf $ABno/HPEB840G3x/hi-jo/term/alacritty.toml ~/.alacritty.toml
 else  # - sbMb
-  ln -sf $machBld/jo/term/Alacritty/Xfce.toml ~/.alacritty.toml
+  ln -sf $ABnm/jo/term/Alacritty/Xfce.toml ~/.alacritty.toml
 fi
 ln -sf $OSAB/nodes-terminal/alacritty-all.toml ~/.alacritty-all.toml
 # es ~/.alacritty*

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=2 sw=2:
 
-# sudo bash $OSAB/bs-2-into_X/1-sudo-autoLoginTTY.sh
+# bash $OSAB/bs-2-into_X/1-as_root-autoLoginTTY.sh
 # - automatic login ttyx
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
@@ -16,13 +16,13 @@ set -ev  # quits on error, prints each statement here, including comments
 ea=/etc/systemd/system/getty@tty1.service.d/autologin.conf
 # eo=/etc/systemd/system/getty@tty1.service.d/override.conf
 
-#==> tty1 1 on
-cp $OSAB/nodes-etc/systemd/autologin.conf $ea; cat $ea
-# cp $OSAB/nodes-etc/systemd/override.conf $eo; cat $eo
+# #==> tty1 1 on
+# cp $OSAB/nodes-etc/systemd/autologin.conf $ea; cat $ea
+# # cp $OSAB/nodes-etc/systemd/override.conf $eo; cat $eo
 
-# #==> tty1 1 off
-# rm $ea
-# # rm $eo
+#==> tty1 1 off
+rm $ea
+# rm $eo
 
 #==> tty2 0
 [ -d /etc/systemd/system/getty@tty2.service.d ] || mkdir /etc/systemd/system/getty@tty2.service.d

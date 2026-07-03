@@ -1,6 +1,6 @@
-vim: set ft=build nospell:
 
-$machBld/build.txt ($OSAB/mb-sbMb/build.txt)
+$ABm/sbMb.build
+
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 # build
 ## Arch install - from the ISO
@@ -4258,12 +4258,17 @@ reboot
 break-pane  causing "server exited unexpectedly" - fixed by switching to  tmux-git, except that  btop  won't display
 ## nnn dragdrop no longer launching the popup
 ## waiting
+alacritty.toml
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
 Recoll
+remove marktext
+rsnapshot.conf
 switch to fastmail
 TeX Live release 2026 full
+tmux_begin.sh
+updatedb.conf
 usbutils
 # clm possible extras
 imapbox

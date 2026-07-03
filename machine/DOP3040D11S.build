@@ -1,6 +1,7 @@
-vim: ft=build:
 
-$machBld/build.txt ($OSAB/mb-DOP3040D11S/build.txt) Dell OptiPlex 3040 D11S
+$ABm/DOP3040D11S.build
+
+Dell OptiPlex 3040 D11S
 
 # build
 ## mature Arch install from i34G1TU02
@@ -193,84 +194,12 @@ nomacs -v  got  "nomacs: error while loading shared libraries: libraw.so.24: can
 sudo pacman -Rs pdfsam
 ## Updates
 :: geocode-glib-3.26.4-6 and geocode-glib-common-3.26.4-5 are in conflict. Remove geocode-glib-common? [y/N] y
-## pdftl
-pipx upgrade-all
-/home/jo/.local/pipx/venvs/radio-active/bin/python: No module named pip
-  '/home/jo/.local/pipx/venvs/radio-active/bin/python -m pip --no-input install --upgrade radio-active -q' failed
-  /home/jo/.local/pipx/venvs/terminal-colors/bin/python: No module named pip
-  '/home/jo/.local/pipx/venvs/terminal-colors/bin/python -m pip --no-input install --upgrade terminal-colors -q' failed
-  /home/jo/.local/pipx/venvs/gdown/bin/python: No module named pip
-  '/home/jo/.local/pipx/venvs/gdown/bin/python -m pip --no-input install --upgrade gdown -q' failed
-  /home/jo/.local/pipx/venvs/yaml2toml/bin/python: No module named pip
-  '/home/jo/.local/pipx/venvs/yaml2toml/bin/python -m pip --no-input install --upgrade yaml2toml -q' failed
-  No packages upgraded after running 'pipx upgrade-all' 😴
-  The following package(s) failed to upgrade: radio-active,terminal-colors,gdown,yaml2toml
-pipx reinstall-all
-  The following package(s) failed to reinstall: radio-active
-pipx install radio-active
-pipx install 'pdftl[full]'  didn't download the supposed extra (full) packages
-## dropbox &
-  desktop/dropbox/sync_engine/nucleus/classic_client/modern_client/modern_thin_client.py:17: UserWarning: google.protobuf.service module is deprecated. RPC implementations should provide code generator plugins which generate code specific to the RPC implementation. service.py will be removed in Jan 2025
-  (dropbox:117508): libayatana-appindicator-WARNING **: 15:45:19.230: libayatana-appindicator is deprecated. Please use libayatana-appindicator-glib in newly written code.
-pactree -r libayatana-appindicator  returns nowt, so  sudo pacman -Rs libayatana-appindicator
-## rakudo GnuPG key
-gpg --import $ITcop/CP/Raku/will_coleda-2832BDB33241A14EFCCA61470F09888FE017A4C2.asc
-## moar-debug  remove
-(for  moarvm) sudo pacman -Rs moar-debug
-## qt5-remoteobjects
-pactree -r qt5-remoteobjects  shows nothing so  sudo pacman -Rs qt5-remoteobjects
-## handlr list
-  ERROR handlr::error: No such file or directory (os error 2)
-not fixed by removing & re-installing
-## auracle-git  error
-auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2601.0.0: cannot open shared object file: No such file or directory
-sudo pacman -Rs auracle-git  then re-installed it
-## marktext-deb
-  Error while writing index for `/usr/lib/debug/opt/marktext/libEGL.so.debug': No debugging symbols
-  Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/libEGL.so': No debugging symbols
-  gdb-add-index: No index was created for ./opt/marktext/libEGL.so
-  gdb-add-index: [Was there no debuginfo? Was there already an index?]
-  Error while writing index for `/usr/lib/debug/opt/marktext/libvk_swiftshader.so.debug': No debugging symbols
-  Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/libvk_swiftshader.so': No debugging symbols
-  gdb-add-index: No index was created for ./opt/marktext/libvk_swiftshader.so
-  gdb-add-index: [Was there no debuginfo? Was there already an index?]
-  Error while writing index for `/usr/lib/debug/opt/marktext/chrome-sandbox.debug': No debugging symbols
-  Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/chrome-sandbox': No debugging symbols
-  gdb-add-index: No index was created for ./opt/marktext/chrome-sandbox
-  gdb-add-index: [Was there no debuginfo? Was there already an index?]
-  Error while writing index for `/usr/lib/debug/opt/marktext/marktext.debug': No debugging symbols
-  Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/marktext': No debugging symbols
-  gdb-add-index: No index was created for ./opt/marktext/marktext
-  gdb-add-index: [Was there no debuginfo? Was there already an index?]
-  Error while writing index for `/usr/lib/debug/opt/marktext/libffmpeg.so.debug': No debugging symbols
-  Error while writing index for `/home/jo/Arch/AUR/marktext-deb/pkg/marktext-deb/opt/marktext/libffmpeg.so': No debugging symbols
-## xdg-utils
-  :: xdg-utils-1.2.1-2 and xdg-utils-handlr-0.6.4-2 are in conflict. Remove xdg-utils-handlr? [y/N] y
-## Recoll  overloading  ~
-~/.recoll  is  7.3 GiB, blocking  Pikaur, so  prs recoll  then  rm -r ~/.recoll
-## Ruby rbenv global
-rbenv install 4.0.5  (could've just 4)
-rbenv global 4.0.5
-## Ruby rbenv $JHm
-rbenv install 3.3.4
-cd $Jhm
-rbenv local 3.3.4
-## tmux 3.7
-break-pane  causing "server exited unexpectedly" - fixed by switching to  tmux-git
+bash-completion-git verbiste-debug vimpc-git-debug xnviewmp-debug yay-bin-debug yj-git-debug
 ## waiting
-$cITCP/networking-SSH/config/$host
 $culL/Arch/handlr-regex_error.bbcode
-alacritty.toml
 apache
-dragon-drop
 EFI install
-fastfetch.jsonc
 gokcehan's lf
-kitty
-MariaDB
-mcat-bin
-tdf
-usbutils
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

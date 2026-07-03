@@ -6,7 +6,7 @@
 read -p "Xfce  is installed?"
 
 #=> Xfce
-ln -sf $ABjo/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh  # es ~/.startup_terminal.sh
+ln -sf $ABnj/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh  # es ~/.startup_terminal.sh
 if [[ $host =~ HPEB840G38 ]]; then
     ln -sf $machBld/jo/Conky.lua ~/.conkyrc
 else

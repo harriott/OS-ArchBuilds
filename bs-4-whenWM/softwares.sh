@@ -76,19 +76,15 @@ read -p '- first-run of LibreOffice - close it'
 #==> markdown
 pikn apostrophe  # Apostrophe markdown editor
 pikn glow
-pikn marktext-bin  # MarkText
 
-#==> PDF
-cargo install --git https://github.com/itsjunetime/tdf.git  # takes ages
-
-#===> qpdfview
+#==> PDF - qpdfview
 gpg --recv-keys 1F521FF0F87E9E1CDE46B8A9F4928C4DD24D4DF8  # Adam Reichold's public key
     pikn qpdfview
 
-#===> Zathura 0 tessdata
+#==> PDF - Zathura 0 tessdata
 pikn tesseract-data-eng
 
-#===> Zathura 1 zathura-pdf-mupdf
+#==> PDF - Zathura 1 zathura-pdf-mupdf
 pikn zathura-pdf-mupdf
 [ -d ~/.config/zathura ] || mkdir ~/.config/zathura
 # zathurarc  symlinked in  $OSAB/nodes-set/jo-3-whenWM.sh
@@ -119,31 +115,38 @@ pikn xorg-xfd
 
 #=> hw
 pikn asunder  # graphical Audio CD ripper, takes ages
-pikn cameractrls
 pikn gnome-disk-utility  # (for Menu > Accessories > Disks)
-pikn guvcview  # (GTK+ UVC Viewer) webcam application (V4L2 camera devices)
-pikn hplip
-pikn iscan  # epkowa SANE backend
 pikn localsend  # takes ages
 pikn cpu-x
+
+#==> cameras
+pikn cameractrls
+pikn guvcview  # (GTK+ UVC Viewer) webcam application (V4L2 camera devices)
+
+#===> gPhoto (digital cameras)
+pikn gphoto2  # brings in  libgphoto2
+pikn gvfs-gphoto2  # for GNOME Files integration
+
+#==> for paper
+pikn epson-inkjet-printer-escpr2  # Epson Expression XP-2150
+pikn iscan  # epkowa SANE backend
 pikn sane  # SANE
 
-#==> acpilight - configure
+#===> hplip
+pikn hplip
+
+#====> hplip-plugin 0 HPLIP key
+gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
+# - see  ~/Arch/AUR/hplip-plugin/PKGBUILD
+
+#====> hplip-plugin 1 install
+pikn hplip-plugin
+
+#==> laptop - acpilight - configure
 sudo gpasswd -a jo video  # groups jo
 sudo cp $OSAB/mb-HPEB840G3x/etc-backlight.rules /etc/udev/rules.d/backlight.rules
 #  pb /etc/udev/rules.d/backlight.rules
 # after a reboot can  xbacklight -inc 12
-
-#==> gPhoto (digital cameras)
-pikn gphoto2  # brings in  libgphoto2
-pikn gvfs-gphoto2  # for GNOME Files integration
-
-#==> hplip-plugin 0 HPLIP key
-gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
-# - see  ~/Arch/AUR/hplip-plugin/PKGBUILD
-
-#==> hplip-plugin 1 install
-pikn hplip-plugin
 
 #=> imagey
 pikn feh
@@ -177,6 +180,12 @@ pikn java-commons-lang  # (for pdftk's functions)
 pikn java-environment-common  # for  JDK
 pikn java-runtime-common  # supposedly for  JRE, but anyway provides  /usr/bin/java
 pikn pdftk
+
+#=> Rust 0 rustup
+rustup update
+
+#=> Rust 1 crates
+pikn clang; cargo install --git https://github.com/itsjunetime/tdf.git  # takes ages
 
 #=> serve
 pikn hugo  # Hugo

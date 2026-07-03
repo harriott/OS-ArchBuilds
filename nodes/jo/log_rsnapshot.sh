@@ -6,11 +6,11 @@
 # --------------------------
 # because on  DOP3040D11S  it gets refreshed sometimes, losing old records
 
-# ln -sf $ABjo/log_rsnapshot.sh ~/Arch/log_rsnapshot.sh
+# ln -sf $ABnj/log_rsnapshot.sh ~/Arch/log_rsnapshot.sh
 #  fcrontab:  @ 1 d bash ~/Arch/log_rsnapshot.sh
 
 d=$(date +%Y%m%d)
-l="$HOME/Arch/root/log_rsnapshot-$d"
+l="$HOME/Arch/root/log_rsnapshot-$d" # ~/Arch/root
 echo 'vim: ft=rsnapshotlog:' > $l
 echo '' >> $l
 cat /var/log/rsnapshot >> $l

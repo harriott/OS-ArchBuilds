@@ -1,26 +1,18 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $OSAB/bs-1-into_jo/7-rsnapshot.sh
+# bash $OSAB/bs-5-when_myDrA/rsnapshot.sh
 
 set -ev  # quits on error, prints each statement here, including comments
 
 #=> 0 inotify-tools
-# supplies  inotifywait, for monitoring file changes
-sudo pacman -S inotify-tools
+pikn inotify-tools  # supplies  inotifywait, for monitoring file changes
 
 #=> 1 set my rsnapshot conf 1 working
-if   [[ $host =~ HPEB840G37 ]]; then
-  sudo cp $OSAB/mb-HPEB840G3x/7/etc/rsnapshot.conf /etc/rsnapshot.conf
-elif [[ $host =~ HPEB840G38 ]]; then
-  sudo cp $OSAB/mb-HPEB840G3x/8/etc/rsnapshot.conf /etc/rsnapshot.conf
-else
-  sudo cp $machBld/etc/rsnapshot.conf /etc/rsnapshot.conf
-fi
+sudo cp $ABnm/etc/rsnapshot.conf /etc/rsnapshot.conf
 
 #=> 2 rsnapshot needed locations
-read -p "going to  mdir $rsnapshot"
-mkdir $rsnapshot  # /rsnapshot=
+read -p "going to  mdir $rsnapshot"; mkdir $rsnapshot  # /rsnapshot=
 sudo touch /var/log/rsnapshot
 
 #=> 3 test rsnapshot conf

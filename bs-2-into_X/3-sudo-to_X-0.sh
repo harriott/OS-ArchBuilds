@@ -27,7 +27,7 @@ pacman -S xorg-xset
 pacman -S xsel
 
 #=> 2 prepare for X - updatedb.conf
-sudo cp $machBld/etc/updatedb.conf /etc/updatedb.conf
+sudo cp $ABnm/etc/updatedb.conf /etc/updatedb.conf
 updatedb
 
 # #=> 2 save grub.cfg

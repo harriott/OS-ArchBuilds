@@ -48,7 +48,7 @@ startxo () {
 startxx () {
   ln -sf $ABjo/xinitrcs/xfce ~/.xinitrc
   ln -sf $machBld/Alacritty/Xfce.toml ~/.alacritty.toml
-  ln -sf $ABjo/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh
+  ln -sf $ABnj/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh
   ln -sf $ABjo/wm/Xfce/config_gtk30_gtk.css ~/.config/gtk-3.0/gtk.css
   # - for  ~/.config/autostart/Alacritty.desktop
   ln -sf $machBld/jo/Conky/Xfce.lua ~/.conkyrc
