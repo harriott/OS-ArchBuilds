@@ -257,6 +257,7 @@ neovide                      > Super+N
 pactl set-sink-mute 0 toggle > speaker button (XF86AudioMute) = Sourdine volume
 pactl set-sink-volume 0 -5%  > Fn+f8 (XF86AudioLowerVolume) = Volume plus faible
 pactl set-sink-volume 0 +5%  > Fn+f9 (XF86AudioRaiseVolume) = Volume plus fort
+sxk                          > Super+S (= win+s) because s is same place in gb/fr
 thunderbird_safely           > Super+T (= win+t)
 wezterm                      > Super+W
 ## Gestionnaire d'alimentation

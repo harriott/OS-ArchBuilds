@@ -34,5 +34,6 @@ ln -sf $ABjo/xinitrcs/xfce                                                      
 # ln -sf $ABjo/xinitrcs/openbox                                                           ~/.xinitrc
 # ln -sf $ABjo/xinitrcs/awesome                                                           ~/.xinitrc
 [[ $host =~ HPEB840G3 ]] && ln -sf $ABno/m-HPEB840G3x/jo/xmodmap                        ~/.xmodmap
+[[ $host =~ HPEB840G3 ]] && ln -sf $ABjo/xmodmapAZERTY                                  ~/.xmodmap
 es ~/.Xresources* ~/.xbindkeysrc ~/.xinitrc ~/.xmodmap
 

@@ -1,8 +1,8 @@
 
-! $ABno/m-HPEB840G3x/jo/xmodmap ($OSAB/nodes-set/jo-0-Bash-X.sh)
+! xmodmap $ABjo/xmodmapAZERTY
+!  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
+!  then used in  $ABjo/xinitrcs/xinitrc
 
-! used in  $ABjo/xinitrcs/xinitrc
-!
 ! (see also  $MSn/AutoHotkey/AZERTY.ahk)
 
 ! ----

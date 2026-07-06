@@ -875,6 +875,7 @@ XKEYBOARD-CONFIG(7) > MODELS (= physical arrangement), LAYOUTS (= languages)
     :Tabularize /-->/r1c1l0
 
 ### xmodmap
+    $ABno/m-HPEB840G3x/jo/xmodmap
     xmodmap -pke > $machLg/usr/xmodmap-pke
     xmodmap -pke > $machLg/xmodmap-pke  # $culLA
     XMODMAP(1)

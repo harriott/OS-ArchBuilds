@@ -42,6 +42,13 @@ es ~/.config/dunst/dunstrc
 # # for  i34G1TU02  &  sbMb
 # ln -sf $Openbox/shiftPrtSc.sh ~/.config/openbox/shiftPrtSc.sh
 
+#==> setxkbmap toggle
+chmod 755 $ABjo/wm/sxk/sxk.sh
+sudo ln -sf $ABjo/wm/sxk/sxk.desktop /usr/share/applications/sxk.desktop
+es /usr/share/applications/sxk.desktop
+sudo ln -sf $ABjo/wm/sxk/sxk.sh /usr/local/bin/sxk
+es /usr/local/bin/sxk
+
 #=> documenting
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
 
