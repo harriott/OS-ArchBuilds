@@ -1,7 +1,7 @@
 # GRUB boot loader configuration
 
 # JH
-# sudo nvim -O /etc/default/grub $machBld/etc/grub -c 'windo difft'
+# sudo nvim -O /etc/default/grub $ABnm/etc/grub -c 'windo difft'
 #  sudo grub-mkconfig -o /boot/grub/grub.cfg
 #   su > root_pw  for  nvim /boot/grub/grub.cfg  to check
 # JH

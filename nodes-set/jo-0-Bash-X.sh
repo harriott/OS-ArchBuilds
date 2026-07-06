@@ -3,19 +3,20 @@
 
 # source $OSAB/nodes-set/jo-0-Bash-X.sh
 
+set -v  # prints each statement here, including comments
+
 #=> Bash
 # sort these lists by last use of "~":  :sort /,*\~/
 
-ln -sf $AjB/bash_profile                     ~/.bash_profile
+ln -sf $AjB/bash_profile                                            ~/.bash_profile
 if [[ $host =~ HPEB840G3 ]]; then
-  ln -sf $ABno/m-HPEB840G3x/jo/bashrc          ~/.bashrc
+  ln -sf $ABno/m-HPEB840G3x/jo/bashrc                               ~/.bashrc
 else
-  ln -sf $machBld/jo/Bash/bashrc             ~/.bashrc
+  ln -sf $ABnm/jo/Bash/bashrc                                       ~/.bashrc
 fi
-ln -sf $Openbox/bashrc_for_Alacritty-nvim.sh ~/.bashrc-An
-ln -sf $AjB/bashrc-console                   ~/.bashrc-console
-[ -d ~/Arch ] || mkdir ~/Arch
-  ln -sf $AjB/bash_history.sh                ~/Arch/bash_history.sh
+[[ $host =~ sbMb ]] && ln -sf $Openbox/bashrc_for_Alacritty-nvim.sh ~/.bashrc-An
+ln -sf $AjB/bashrc-console                                          ~/.bashrc-console
+[ -d ~/Arch ] || mkdir ~/Arch; ln -sf $AjB/bash_history.sh          ~/Arch/bash_history.sh
 
 es ~/.bash* ~/Arch/bash_history.sh
 
@@ -25,13 +26,13 @@ ln -sf $ABjo/wm/Xresources/Xresources                                           
   [[ $myDrA == 1 ]] && ln -sf $ABjo/wm/Xresources/fontNF                                ~/.Xresources-font
   if [[ $myDrA == 1 ]]; then
     ln -sf $ABjo/wm/Xresources/fontNF                                                   ~/.Xresources-font
-    [[ $host =~ HPEB840G3(7|8) ]] && ln -sf $ABno/m-HPEB840G3x/hi-jo/Xresources_fontNF ~/.Xresources-font
+    [[ $host =~ HPEB840G3(7|8) ]] && ln -sf $ABno/m-HPEB840G3x/hi-jo/Xresources_fontNF  ~/.Xresources-font
   fi
   ln -sf $ABjo/wm/Xresources/colorschemes/LukeSmith-gruvbox                             ~/.Xresources-LukeSmith-gruvbox
 ln -sf $ABjo/xbindkeysrc                                                                ~/.xbindkeysrc  # mouse wheel
 ln -sf $ABjo/xinitrcs/xfce                                                              ~/.xinitrc
 # ln -sf $ABjo/xinitrcs/openbox                                                           ~/.xinitrc
 # ln -sf $ABjo/xinitrcs/awesome                                                           ~/.xinitrc
-[[ $host =~ HPEB840G3 ]] && ln -sf $ABno/m-HPEB840G3x/jo/xmodmap                          ~/.xmodmap
+[[ $host =~ HPEB840G3 ]] && ln -sf $ABno/m-HPEB840G3x/jo/xmodmap                        ~/.xmodmap
 es ~/.Xresources* ~/.xbindkeysrc ~/.xinitrc ~/.xmodmap
 

@@ -212,6 +212,6 @@ until passwd jo; do echo "try again"; done
 cat /etc/passwd
 
 pacman -S opendoas
-    cp $OSAB/nodes-etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
+    cp $ABno/etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
     chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
 

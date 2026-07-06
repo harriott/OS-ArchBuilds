@@ -1,11 +1,10 @@
 #!/bin/bash
 # vim: sw=2:
 
-# bash $OSAB/nodes-set/jo-0.sh
+# source $OSAB/nodes-set/jo-0.sh
 
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 set -e
-set -v  # prints each statement here, including comments
 
 #=> ansiweather
 ln -sf $ABjo/WAN/ansiweatherrc ~/.ansiweatherrc  # e -l ~/.ansiweatherrc
@@ -83,9 +82,9 @@ ln -sf $misc/irbrc ~/.irbrc
 
 #=> sbMb motherboard temp
 if [ $host = 'sbMb' ]; then
-  ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
-  ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
-  # e -la ~/Arch/f1t2t3
+  ln -sf $ABnm/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
+  ln -sf $ABnm/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
+  # es ~/Arch/f1t2t3
 fi
 
 # #=> WAN - Surfraw
@@ -97,4 +96,5 @@ fi
 ln -sf $ABjo/WAN/w3m/config ~/.w3m/config
 ln -sf $ABjo/WAN/w3m/keymap ~/.w3m/keymap
 ln -sf $ABjo/WAN/w3m/omnibar_duckduckgo.cgi ~/.w3m/cgi-bin/omnibar_duckduckgo.cgi
+es ~/.w3m ~/.w3m/cgi-bin
 

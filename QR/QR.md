@@ -858,7 +858,10 @@ WIPEFS(8)
 
 ## cbh - keyboard
     /usr/include/linux/input-event-codes.h
+    setxkbmap -query
     xev | grep keycode
+
+XKEYBOARD-CONFIG(7) > MODELS (= physical arrangement), LAYOUTS (= languages)
 
 ### Logitech K280e
       alt+3 --> €
@@ -1230,6 +1233,7 @@ pacsearch <keyword>  # better search
 - `-F` (`--files`) query the files database
     - `-y` (`--refresh`) the master package list
 - `-Q` (`--query`) (`Q ()` in `$OSAB/nodes-Bash/bashrc-generic`)
+    - `-e`, `--explicit` only explicitly installed packages
     - `-o` (`--owns`)
     - `-q` (`--quiet`) even omits version
     - `-s` (`--search <regexp>`)
@@ -1430,9 +1434,8 @@ uses `fzf`
 
 ## locale
     i localectl
-    localectl list-keymaps
-    localectl list-locales
-    localectl status
+
+`~/.config/fcitx5/profile` input method framework
 
 ## mimeapps
     /usr/share/applications/mimeinfo.cache

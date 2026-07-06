@@ -51,8 +51,9 @@ if [[ $host =~ HPEB840G3 ]]; then
   ln -sf $ABno/m-HPEB840G3x/jo/vimrc ~/.vimrc  # b ~/.vimrc
   ln -sf $ABno/m-HPEB840G3x/hi-jo/gvimrc ~/.gvimrc  # es ~/.gvimrc
 else
-  ln -sf $machBld/jo/gvimrc ~/.gvimrc  # e -la ~/.gvimrc
+  ln -sf $ABnm/jo/gvimrc ~/.gvimrc
   ln -sf $ABjo/textEdit/Vim/vimrc ~/.vimrc
+  es ~/.gvimrc ~/.vimrc
 fi
 
 #=> vimfiles - vim configurations

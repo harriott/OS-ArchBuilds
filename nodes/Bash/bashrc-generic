@@ -5,15 +5,14 @@
 
 # Bash configurations that are also useful everywhere, including in  Console  and as  root.
 
-# $OSAB/nodes-Bash/bashrc-generic
+# $ABno/Bash/bashrc-generic
 #  symlinked in  $OSAB/nodes-set/shell.sh
 #   for jo: sourced by  $AjB/bash_profile  &  $AjB/bashrc
-#   for root: sourced by  $OSAB/nodes-root/bashrc
-# see  $OSAB/nodes/set/repair.sh  for checking if this was sourced
+#   for root: sourced by  $ABno/root/bashrc
 
 [ -f /usr/bin/grc ] && export grc='grc'
 [ -f /usr/bin/rainbow ] && export rainbow='rainbow'
-[ -f /usr/share/blesh/ble.sh ] && [[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$OSAB/nodes-Bash/blerc"
+[ -f /usr/share/blesh/ble.sh ] && [[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$ABno/Bash/blerc"
 alias sl='su -l'
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 source $OSL/nodes/bashrc-generic
@@ -48,7 +47,7 @@ startxo () {
 startxx () {
   ln -sf $ABjo/xinitrcs/xfce ~/.xinitrc
   ln -sf $machBld/Alacritty/Xfce.toml ~/.alacritty.toml
-  ln -sf $ABnj/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh
+  ln -sf $ABjo/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh
   ln -sf $ABjo/wm/Xfce/config_gtk30_gtk.css ~/.config/gtk-3.0/gtk.css
   # - for  ~/.config/autostart/Alacritty.desktop
   ln -sf $machBld/jo/Conky/Xfce.lua ~/.conkyrc

@@ -240,7 +240,7 @@ install -dm0 ~/.dropbox-dist  # s ~/.dropbox-dist
 
 #==> NetworkManager dispatcher
 sudo systemctl enable NetworkManager-dispatcher --now
-sudo cp $OSAB/nodes-etc/NMdispatcher-ntpd.sh /etc/NetworkManager/dispatcher.d/ntpd.sh
+sudo cp $ABno/etc/NMdispatcher-ntpd.sh /etc/NetworkManager/dispatcher.d/ntpd.sh
 sudo chmod 755 /etc/NetworkManager/dispatcher.d/ntpd.sh
 # vifm /etc/NetworkManager/dispatcher.d /usr/lib/NetworkManager/dispatcher.d
 

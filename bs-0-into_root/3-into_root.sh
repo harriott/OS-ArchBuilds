@@ -11,6 +11,7 @@ mkdir -p ~/.config/nano
 pacman -S acpi avahi clamav cpupower eza fbset iwd ranger sudo tk turbostat
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime  # don't  cat  it!
 hwclock --systohc
+sed -i 's/#en_GB.U/en_GB.U/' /etc/locale.gen
 sed -i 's/#fr_FR.U/fr_FR.U/' /etc/locale.gen
 grep '^f' /etc/locale.gen
 locale-gen
@@ -29,8 +30,8 @@ source nodes-set/root-0.sh
 
 #=> systemd-boot
 bootctl install
-cp nodes-efi_loader/entries_arch_conf/$host.conf /boot/loader/entries/arch.conf
-cp nodes-efi_loader/loader.conf /boot/loader/loader.conf
+cp nodes/efi_loader/entries_arch_conf/$host.conf /boot/loader/entries/arch.conf
+cp nodes/efi_loader/loader.conf /boot/loader/loader.conf
 passwd
 
 echo; echo 'now  exit; reboot'

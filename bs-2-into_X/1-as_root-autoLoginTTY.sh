@@ -17,8 +17,8 @@ ea=/etc/systemd/system/getty@tty1.service.d/autologin.conf
 # eo=/etc/systemd/system/getty@tty1.service.d/override.conf
 
 # #==> tty1 1 on
-# cp $OSAB/nodes-etc/systemd/autologin.conf $ea; cat $ea
-# # cp $OSAB/nodes-etc/systemd/override.conf $eo; cat $eo
+# cp $ABno/etc/systemd/autologin.conf $ea; cat $ea
+# # cp $ABno/etc/systemd/override.conf $eo; cat $eo
 
 #==> tty1 1 off
 rm $ea
@@ -30,8 +30,8 @@ ea=/etc/systemd/system/getty@tty2.service.d/autologin.conf
 # eo=/etc/systemd/system/getty@tty2.service.d/override.conf
 
 # #==> tty1 2 on
-# cp $OSAB/nodes-etc/systemd/autologin.conf $ea; cat $ea
-# # cp $OSAB/nodes-etc/systemd/override.conf $eo; cat $eo
+# cp $ABno/etc/systemd/autologin.conf $ea; cat $ea
+# # cp $ABno/etc/systemd/override.conf $eo; cat $eo
 
 # #==> tty1 2 off
 # rm $ea

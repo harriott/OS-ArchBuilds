@@ -3,9 +3,9 @@
 
 # Joseph Harriott
 
-# $OSAB/nodes-Bash/blerc
+# $ABno/Bash/blerc
 
-# ble.sh  configuration - sourced from  $OSAB/nodes-Bash/bashrc-generic
+# ble.sh  configuration - sourced from  $ABno/Bash/bashrc-generic
 
 bleopt allow_exit_with_jobs=1
 bleopt info_display=bottom

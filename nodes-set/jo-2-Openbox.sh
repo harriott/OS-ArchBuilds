@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# bash $OSAB/nodes-set/jo-1-Openbox.sh
+# bash $OSAB/nodes-set/jo-2-Openbox.sh
 
 #=> Openbox
 
@@ -21,6 +21,6 @@ ln -sf $machBld/jo/openbox/rc.xml   ~/.config/openbox/rc.xml
 eza -la ~/.config/openbox
 
 #=> Openbox - Alacritty with Nvim
-ln -sf $machBld/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh
+ln -sf $ABnm/jo/openbox/AlacrittyNvim.sh ~/.config/openbox/AlacrittyNvim.sh
 # e -la ~/.config/openbox/AlacrittyNvim.sh
 

@@ -1,0 +1,10 @@
+" vim: fdl=1:
+
+" $ABnm/jo/gvimrc ($OSAB/nodes-set/jo-1-encoding.sh)
+
+""> 0 monitor height
+let g:monitorheight='900' " used in  $vimfiles/gvimrc.vim
+
+""> 1 move on to  $vimfiles/gvimrc-Arch.vim
+source $vimfiles/vim/enter/gvimrc-Arch.vim
+

@@ -5,7 +5,7 @@
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 read -p "Going to  diff  with  Vim, when done  :wq!"
-vim -O /etc/sudoers $OSAB/nodes-etc/sudoers -c 'windo difft'
+vim -O /etc/sudoers $ABno/etc/sudoers -c 'windo difft'
 
 echo; echo "Check with visudo:"
 visudo -c -f /etc/sudoers  # essential!

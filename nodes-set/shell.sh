@@ -8,8 +8,8 @@
 # sort these lists by last use of "~":  :sort /,*\~/
 
 ln -sf $ABnm/Bash_start                   ~/.start
-  ln -sf $OSAB/nodes-Bash/export-Arch     ~/.export-Arch
-ln -sf $OSAB/nodes-Bash/bashrc-generic    ~/.bashrc-generic
+  ln -sf $ABno/Bash/export-Arch           ~/.export-Arch
+ln -sf $ABno/Bash/bashrc-generic          ~/.bashrc-generic
 ln -sf $OSL/nodes/GNUReadline-inputrc     ~/.inputrc
 ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf
 

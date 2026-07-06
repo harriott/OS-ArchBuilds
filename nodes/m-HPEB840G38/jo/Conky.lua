@@ -3,6 +3,7 @@
 --[[
 Joseph Harriott - ven 03 juil 2026
 $ABnm/jo/Conky.lua ($OSAB/nodes-set/jo-2-Xfce.sh)
+adapted from output of  conky -C
 pb ~/.conkyrc
 ]]
 

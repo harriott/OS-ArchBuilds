@@ -9,14 +9,13 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 read -p "\$OSAB  is  $OSAB - looks good?"
 
 #=> 0 Bash
-ln -sf $OSAB/nodes-root/bash_profile    ~/.bash_profile
-ln -sf $OSAB/nodes-root/bashrc          ~/.bashrc
-ln -sf $OSAB/nodes-root/bash_history.sh ~/bash_history.sh
+ln -sf $ABno/root/bash_profile    ~/.bash_profile
+ln -sf $ABno/root/bashrc          ~/.bashrc
+ln -sf $ABno/root/bash_history.sh ~/bash_history.sh
 
 #=> 1 root symlinks 1 more
-ln -sf $OSAB/nodes-root/nanorc          ~/.config/nano/nanorc
+ln -sf $ABno/root/nanorc          ~/.config/nano/nanorc
 
 #=> 1 root symlinks 2 show
-eza -la /root
-eza -la /root/.config/nano
+eza -la /root/.bash* /root/bash* /root/.config/nano
 

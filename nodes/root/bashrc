@@ -1,0 +1,38 @@
+# vim: set fdl=2 ft=sh tw=0:
+
+# Joseph Harriott
+
+# $ABno/root/bashrc ($OSAB/nodes-set/root.sh)
+
+# rbh="/home/jo/Arch/root-bash_history"; sudo cp /root/.bash_history $rbh; sudo chown jo:jo $rbh
+
+[[ $- != *i* ]] && return  # if not running interactively, don't do anything
+
+# offered by Arch:
+alias l='ls --color=auto'
+# PS1='[\u@\h \W]\$ '
+
+#=> 0 find system stuff
+# ------------------
+# fd -p -tf /init$ / --xdev
+# fd -p <regex> / --xdev
+
+#==> using find
+fs () { find / \
+    -path /home/jo -prune -o \
+    -path /mnt -prune -o \
+    -path /run/media -prune -o \
+    -iname "*$1*" -print; }
+fss () { fs "$1" > /home/jo/fs.lst; chown jo:jo /home/jo/fs.ffl; }
+
+#=> 0 more useful tweaks
+alias o=echo
+set -o vi
+source /home/jo/.bashrc-generic  # $ABno/Bash/bashrc-generic
+
+# a colorised (bold red) prompt:
+PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
+
+#=> 1 ble.sh, Atuin
+source $ABno/Bash/ble-atuin
+

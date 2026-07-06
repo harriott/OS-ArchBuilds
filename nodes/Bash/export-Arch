@@ -1,7 +1,7 @@
 #!/bin/sh
 # vim: ft=sh sw=2:
 
-# $OSAB/nodes-Bash/export-Arch
+# $ABno/Bash/export-Arch
 # here I export variables that could also be useful as root
 
 # Variable naming constraints:
@@ -45,13 +45,12 @@ fi
 
 #=> 4 rooting on  $onGH
 export OSAB=$onGH/OS-ArchBuilds
-  export ABjo=$OSAB/nodes-jo
-    export AjB=$ABjo/Bash
-    export BAT_CONFIG_PATH="$ABjo/bat.conf"  # for the bat pager
   export ABm=$OSAB/machine  # $ABm
   export ABno=$OSAB/nodes
-    export ABnm=$ABno/$host  # $ABnm (nodes machine)
-    export ABnj=$ABno/jo  # $ABnj (nodes jo)
+    export ABjo=$ABno/jo
+      export AjB=$ABjo/Bash  # $AjB
+      export BAT_CONFIG_PATH="$ABjo/bat.conf"  # for the bat pager
+    export ABnm=$ABno/m-$host  # $ABnm (nodes machine)
   export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg  /machLg=
 export OSL=$onGH/OS-Linux
   export clMail="$OSL/nodes/jo/clm" # used in  $clMail  &  $OSL/nodes/bashrc-clm

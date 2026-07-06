@@ -208,6 +208,10 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.87.222.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## nnn  contexts broken in  WezTerm
+can't select by number or by Shift+tab/tab
+nnn 5.2-1, wezterm 20240203.110809.5046fc22-2  - same as on  sbMb  where selection works
+  so this would seem to be an  AZERTY  snag in  WezTerm
 ## waiting
 $OSAB/bs-5-when_myDrA/rsnapshot.sh
 # CopyQ
@@ -266,16 +270,32 @@ Conky > [ Conky  conky ]
 Neovide > [ Neovide  neovide ]
 ## Tableau de bord
 mouse grabbed corner and dragged to bottom
-Préférences du tableau de bord > Tableau de bord 2 > -
-Éléments >
-Greffon de barre d'état
-Greffon PulseAudio (works with PipeWire)
+### Préférences du tableau de bord
+Tableau de bord 2 > -
+#### Tableau de bord 1 > Éléments
+##### Ajouter
+Boutons d'action
+Emplacements
+Menu des applications
+Boutons des fenêtres
+Séparateur > Étendre
+Yeux
+Moniteur réseau > [ Texte à afficher empty  Périphérique réseau > wlan0 ]
+Greffon de barre d'état (Wifi, Dropbox, CopyQ) > Fcitx 5 masqué
 Horloge
 Mise à jour météo
+Greffon PulseAudio (works with PipeWire)
+Graphique processeur
+Greffon Capteurs > [ BAT0-0 both on  coretemp-0 all on  pch_skylake-0 on ]
+Greffon de gestionnaire d'alimentation
 Moniteur de batterie
+Dispositions de clavier (as from  setxkbmap -query)
+Dictionnaire
+Greffon de notification
+##### Supprimer
+Changer d'espace de travail
 Moniteur de la charge du système
-Wavelan
-yeux
+Wavelan (doesn't add more than  Greffon de barre d'état
 ## xfce4-terminal > Édition > Préférences…
 Apparence > Fonts > JetBrainsMono Nerd Font Regular 10
 Général > Titre initial > xfce4-terminal
