@@ -3,12 +3,12 @@
 # $ABno/Bash/ble-atuin
 #  sourced at end of
 #   $AjB/bashrc
-#   $OSAB/nodes-root/bashrc
+#   $ABno/root/bashrc
 
-#=> ble.sh
+#=> 0 ble.sh
 [[ ! ${BLE_VERSION-} ]] || ble-attach
 
-#=> Atuin
+#=> 1 Atuin
 # command history
 if [ -f /usr/bin/atuin ]; then
   export ATUIN_NOBIND=1

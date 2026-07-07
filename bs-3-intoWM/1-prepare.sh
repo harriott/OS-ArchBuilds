@@ -18,10 +18,11 @@ pikn texlab  # for  ALE
 pikn pandoc-cli  # Pandoc
 [ -d ~/.pandoc/defaults ] || mkdir -p ~/.pandoc/defaults
 
-#=> ebook - Calibre - qt6-multimedia-ffmpeg
+#=> ebook - Calibre 0
+pikn onnxruntime-cpu
 pikn qt6-multimedia-ffmpeg  # brings in  ffmpeg
 
-#=> ebook - Calibre
+#=> ebook - Calibre 1
 pikn calibre
 
 #=> ebook - Foliate

@@ -2,7 +2,6 @@
 
 # JH note:
 #  called by
-#   $ABjo/xinitrcs/awesome
 #   $ABjo/xinitrcs/openbox
 #   $ABjo/xinitrcs/xfce
 #   so that it is used instead of the default

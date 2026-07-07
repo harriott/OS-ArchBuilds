@@ -34,5 +34,5 @@ source /home/jo/.bashrc-generic  # $ABno/Bash/bashrc-generic
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 
 #=> 1 ble.sh, Atuin
-source $ABno/Bash/ble-atuin
+[[ $TERM_PROGRAM == 'WezTerm' ]] || source $ABno/Bash/ble-atuin
 

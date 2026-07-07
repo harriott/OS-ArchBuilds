@@ -71,7 +71,7 @@ bash /mnt/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-in_chroot/1-git_clone_to_root_o
 umount /dev/sdd1
 ### get environment
 cd /root/onGH/OS-ArchBuilds; git pull
-source nodes-Bash/export-Arch (= $OSAB/nodes-Bash/export-Arch)
+source nodes-Bash/export-Arch (= $ABno/Bash/export-Arch)
 source nodes-set/jo-0-Bash-X.sh
 passwd > pw > pw
 ### ClamAV
@@ -134,7 +134,7 @@ su > root pw  for  rsync -irtv --delete /root/onGH/ /home/jo/onGH
 sudo chown -R jo:jo /home/jo/onGH
 bash $OSAB/bs-0-into_root/0-iwctl-Jo-MotoG86.sh
 dhcpcd wlan0
-source $OSAB/nodes-Bash/export-Arch
+source $ABno/Bash/export-Arch
 source $OSAB/nodes-set/jo-0-Bash-X.sh
 git pull  was throwing  TLS connect error, fixed by  sudo ip l set wlan0 down; sudo ip l set wlan0 up
 bash $OSAB/nodes-set/jo-0.sh
@@ -212,8 +212,13 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 can't select by number or by Shift+tab/tab
 nnn 5.2-1, wezterm 20240203.110809.5046fc22-2  - same as on  sbMb  where selection works
   so this would seem to be an  AZERTY  snag in  WezTerm
+Creating a file from  nnn  in WezTerm  named "1_2_3_4_5_6_7_8", get
+  27;2;49~_27;2;50~_27;2;51~_27;2;52~_27;2;53~_27;2;54~_27;2;55~_27;2;56~
+switched to  wezterm-git  got me  wezterm 20260705-075440-5cc2d1ef, but still broken
 ## waiting
 $OSAB/bs-5-when_myDrA/rsnapshot.sh
+Alacritty with Neovim
+urxvt extensions
 # CopyQ
 CopyQ > Ctrl+P >
   Générale > Confirmer la sortie de l'application  éteint

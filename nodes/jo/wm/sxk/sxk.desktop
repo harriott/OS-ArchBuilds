@@ -11,5 +11,5 @@ Exec=/usr/local/bin/sxk
 Terminal=false
 Type=Application
 Icon=org.xfce.settings.keyboard
-Categories=X-XFCE-HardwareSettings;
+Categories=Settings
 

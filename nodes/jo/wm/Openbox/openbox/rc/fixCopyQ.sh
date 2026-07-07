@@ -5,7 +5,7 @@
 
 # chmod 755 $Obc/rc/fixCopyQ.sh
 #  symlinked in  $OSAB/nodes-set/jo-1-Openbox.sh
-#   called by  $machBld/jo/openbox/rc.xml
+#   called by  $ABnm/jo/openbox-rc.xml
 
 pkill copyq; copyq &
 sleep 1; copyq show

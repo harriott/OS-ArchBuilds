@@ -1,12 +1,12 @@
 
-% $ABjo/texmf.cnf ($OSAB/nodes-set/jo-0.sh)
+% $ABjo/texmf.cnf ($OSAB/nodes-set/jo-3-when_myDrA.sh)
 % runtime configuration file for  Kpathsea
 %  supplementary to
 %   Arch install
 %    /usr/share/texmf-dist/web2c/texmf.cnf
 %     which is copied from  /etc/texmf/web2c/texmf.cnf
 %   native install
-%    /usr/local/texlive/2024/texmf.cnf
+%    /usr/local/texlive/2025/texmf.cnf
 %     which is supplementary to  /usr/local/texlive/2024/texmf-dist/web2c/texmf.cnf`
 
 % let terminal handle line-wraps

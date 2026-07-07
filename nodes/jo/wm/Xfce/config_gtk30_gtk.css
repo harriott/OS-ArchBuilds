@@ -1,6 +1,7 @@
 
 /* $ABjo/wm/Xfce/config_gtk30_gtk.css */
-/* symlinked in  $OSAB/nodes-Bash/bashrc-generic */
+/* for ensuring active window tab in Panel are distinguishable */
+/* don't seem to need it now */
 
 /* after changes, xfce4-panel -r */
 

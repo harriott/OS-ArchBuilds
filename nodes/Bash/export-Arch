@@ -8,11 +8,11 @@
 #  avoid names that only differ by case
 #  use names that grep unambiguously throughout all of my notes directories
 
-# After $machBld/Bash_start,
+# After $ABnm/Bash_start,
 #  for initial build of Arch:
 #    rsync -irtv --delete --modify-window=1 /run/media/jo/K16GBDTG2/Dr-IT/core/onGitHub/ $HOME/onGH
 #  for jo, sourced by  $AjB/bash_profile
-#  for root, sourced by  $OSAB/nodes-root/bash_profile
+#  for root, sourced by  $ABno/root/bash_profile
 #  symlinked in  $OSAB/nodes-set/shell.sh
 
 export thb="/home/jo/.thunderbird" # $thb
@@ -25,13 +25,13 @@ export maild=/home/jo/.local/share/mail  # $maild  for  mutt
 
 #=> 2 $Drpbx, or not
 if [[ $myDrA == 1 ]]; then
-  # $myDrA, $Storage  defined in  $machBld/export-machine
+  # $myDrA, $Storage  defined in  $ABnm/Bash_start
   export Drpbx=$Storage/Dropbox
     export DrJo=$Drpbx/Jo
     export ITcore=$Drpbx/IT/core
       export culL=$ITcore/ulLinux
         export culLA="$culL/Arch"
-          export machLg=$culLA/ml-$host  # $machLg  as opposed to  $machBld
+          export machLg=$culLA/ml-$host  # $machLg
         export culLB=$culL/Bash  # rg -l '\$culLB' $ITcore
       export ITccl=$ITcore/copied-linked  # $ITccl
       export onGH=$ITcore/onGitHub
@@ -51,7 +51,6 @@ export OSAB=$onGH/OS-ArchBuilds
       export AjB=$ABjo/Bash  # $AjB
       export BAT_CONFIG_PATH="$ABjo/bat.conf"  # for the bat pager
     export ABnm=$ABno/m-$host  # $ABnm (nodes machine)
-  export machBld=$OSAB/mb-$host  # $machBld  as opposed to  $machLg  /machLg=
 export OSL=$onGH/OS-Linux
   export clMail="$OSL/nodes/jo/clm" # used in  $clMail  &  $OSL/nodes/bashrc-clm
     export clMn=$clMail/neomutt  # $clMn

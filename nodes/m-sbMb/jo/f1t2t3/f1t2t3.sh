@@ -2,8 +2,8 @@
 
 # Joseph Harriott, Mon 23 Aug 2021
 
-# bash $ABnm/jo/f1t2t3/f1t2t3.sh
-#  aliased in  $OSAB/nodes-Bash/bashrc-generic
+# bash $ABnm/jo/f1t2t3/f1t2t3.sh (= $ABno/m-sbMb/jo/f1t2t3/f1t2t3.sh)
+#  aliased in  $ABno/Bash/bashrc-generic
 #  symlinked in  $OSAB/nodes-set/jo-0.sh
 #   ll ~/Arch/f1t2t3/f1t2t3.sh
 

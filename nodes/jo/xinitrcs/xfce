@@ -2,7 +2,7 @@
 
 # $ABjo/xinitrcs/xfce
 #  symlinked in
-#   $OSAB/nodes-Bash/bashrc-generic
+#   $ABno/Bash/bashrc-generic
 #   $OSAB/nodes-set/jo-0-Bash-X.sh
 
 if [[ $ABjo ]]; then

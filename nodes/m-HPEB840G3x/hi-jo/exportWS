@@ -15,7 +15,7 @@
 export Awp='window.position={x=5,y=5}'
 
 #==> for screens
-# depending on font set in  $OSAB/nodes-terminal/alacritty-all.toml
+# depending on font set in  $ABjo/term/alacritty-all.toml
 
 #===> 1366x768
 export Awd='window.dimensions={columns=110,lines=67}'

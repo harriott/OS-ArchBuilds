@@ -5,8 +5,7 @@
 # get my  .bashrc  settings working in  Console  &  su
 # I'm using symlinks into  /root  to allow easier temporary configurations.
 
-# source ~/.export-machine  # $machBld/export-machine
-source ~/.start  # $machBld/Bash_start
+source ~/.start  # $ABnm/Bash_start
   source ~/.export-Arch  # $ABno/Bash/export-Arch
 
 [[ -f /root/.bashrc ]] && source /root/.bashrc  # $ABno/root/bashrc

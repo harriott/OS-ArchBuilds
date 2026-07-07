@@ -3,8 +3,6 @@
 
 # Joseph Harriott, Wed 08 May 2024
 
-# $ABnm/jo/term/tmux_begin.sh
-
 # machine dependent  tmux  startup
 # called from
 #  $ABjo/wm/Xfce/terminal_startup.sh
@@ -12,14 +10,12 @@
 
 # test (or reload) this script with
 #  tmux kill-server
-#  bash $ABjo/wm/terminal/startup.sh; bash $machBld/jo/term/tmux_begin.sh
-
-# (chmod u+x $machBld/jo/urxvtl.sh)
+#  bash $ABjo/wm/terminal/startup.sh; bash $ABnm/jo/term/tmux_begin.sh
 
 #=> 0 safely run omc in existing tmux
 tmux send 'figlet -f univers tmux-S0 -t' Enter
 tmux split-window  # moves focus down, and allows  Tmux Resurrect  to  Restore  without clobbering
-tmux send-keys omc Enter  # see $machBld/jo/Bash/bashrc
+tmux send-keys omc Enter
 
 #=> 1 open a new tmux window for btop
 tmux new-window

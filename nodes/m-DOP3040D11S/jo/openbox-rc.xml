@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- vim: fdl=1 sw=2:
 
-  $ABnm/jo/openbox/rc.xml
+  $ABnm/jo/openbox-rc.xml
   - made by  $Obc/rc/rc_xml-mb_make.sh  for  $OSAB/nodes-set/jo-1-Openbox.sh
 
   reconfigure  after making changes here - JH -->
@@ -333,7 +333,7 @@
     </action>
   </keybind>
   <!-- dunst notification close - JH -->
-  <keybind key="w-space">
+  <keybind key="c-space">
     <action name="Execute">
       <command>dunstctl close</command>
     </action>
@@ -361,7 +361,7 @@
   <!-- urxvt large - JH -->
   <keybind key="s-w-u">
     <action name="Execute">
-      <command>urxvt -geometry 122x78+0+0</command>
+      <command>urxvt -geometry 104x64+0+0</command>
     </action>
   </keybind>
   <!-- urxvt small - JH -->
@@ -386,7 +386,7 @@
   <!-- WezTerm - JH -->
   <keybind key="w-w">
     <action name="execute">
-      <command>wezterm start --always-new-process --position 5,5</command>
+      <command>wezterm</command>
     </action>
   </keybind>
 
@@ -497,7 +497,7 @@
   <!-- Nvim - JH -->
   <keybind key="w-n">
     <action name="Execute">
-      <command>neovide --grid 109x72</command>
+      <command>neovide --grid 109x68</command>
     </action>
   </keybind>
 

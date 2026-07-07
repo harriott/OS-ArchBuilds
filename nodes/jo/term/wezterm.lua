@@ -11,7 +11,7 @@ local config = wezterm.config_builder()
   -- config.color_scheme = 'Builtin Tango Dark'
   -- config.color_scheme = 'Campbell (Gogh)'
   config.color_scheme = 'ChallengerDeep'
-  config.default_prog = { 'bash', '-i' } -- so  .bashrc ($machBld/jo/Bash/bashrc) also sourced
+  config.default_prog = { 'bash', '-i' } -- interactive, so  $AjB/bashrc  also sourced
   config.font = wezterm.font 'DejaVuSansMono'
     -- more readable than default  JetBrains Mono, and around 10% less tall
   config.font_size = 8.0

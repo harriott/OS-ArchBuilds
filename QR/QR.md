@@ -94,7 +94,7 @@ symlinked to `rec_ng`
 # Bash
     $AjB/bash_history.sh
     $AjB/bash_profile
-    $OSAB/nodes-root/bashrc
+    $ABno/root/bashrc
     /etc/profile
     :Man bash
     :Man mktemp
@@ -115,11 +115,11 @@ ENV(1)
 ## Atuin
     sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
 
-`$OSAB/nodes-Bash/ble-atuin` sets `Ctrl+u`
+`$ABno/Bash/ble-atuin` sets `Ctrl+u`
 
 ## ble.sh
+    $ABno/Bash/ble-atuin
     ble-bind -P | fzf
-    $OSAB/nodes-Bash/blerc
 
 - ` ` expands
 - `Ctrl-xCtrl-v` = `display-shell-version`
@@ -183,7 +183,7 @@ as root: `find / -xdev -iname "*fmtutil.cnf*"`
     locate -i 'nick cave'
 
 ##### updatedb
-    $machBld/etc/updatedb.conf
+    $ABnm/etc/updatedb.conf
     doas updatedb
     systemctl status updatedb.timer
 
@@ -209,7 +209,7 @@ JOBS(1P)
 ## pager - moor
     mo -h
 
-`mo` aliased in `$OSAB/nodes-Bash/bashrc-generic`
+`mo` aliased in `$ABno/Bash/bashrc-generic`
 
 ## time
     $OSAB/mb-sbMb/rsnapshots.sh
@@ -414,7 +414,7 @@ SED(1)
     i lsd
     n [directory]
 
-- better file managing in `$OSAB/nodes-Bash/bashrc-generic`
+- better file managing in `$ABno/Bash/bashrc-generic`
 - CP(1)
 - DIFF(1)
 - filetype frequencies in `$OSL/nodes/bashrc-console-fm`
@@ -536,7 +536,7 @@ vid => ffmpegthumbnailer
     e -adl <directory_to_check>  # reports for the directory (not its contents)
     e <symlink>  # red if no reference
     i eza
-    more in  $OSAB/nodes-Bash/bashrc-generic
+    more in  $ABno/Bash/bashrc-generic
 
 ## fd
     :Man fd
@@ -552,7 +552,7 @@ vid => ffmpegthumbnailer
 Alt+c  # to change directory
 cat $(fzf)
 cd [directory/][fuzzy_pattern]**<tab>
-f  # with  bat, $OSAB/nodes-Bash/bashrc-generic
+f  # with  bat, $ABno/Bash/bashrc-generic
 gvim -o `f`  # calling upon fzf
 i fzf
 kill -9 <tab>
@@ -643,7 +643,7 @@ unalias **<tab>
     perl-rename 's/^\.//' *  # removes leading  .
 
 ## rsnapshot
-    $machBld/etc/rsnapshot.conf
+    $ABnm/etc/rsnapshot.conf
     r $rsnapshot
     snapshot_root
     sudo du -sh $rsnapshot
@@ -699,8 +699,6 @@ unalias **<tab>
     fRs $ITccl unix-linux-forArch-fonts
     fRs $ITmCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
-    fRs $machBld/jo/Bash VsLmore
-    fRs $machBld/jo conkyrc
     fRs $Obc/rc rc.xml
     fRs $onGH/misc/CP/PerlTools mysmsMD.pl
     fRs $TeNo/md-JH-DailyLife DailyLife.md
@@ -767,7 +765,7 @@ NCDU(1)
     rm -r /mnt/ST4000VN008/.Trash-1000
 
 ## tree lists
-    $OSAB/nodes-Bash/bashrc-generic
+    $ABno/Bash/bashrc-generic
     i tree
 
 ## Vifm
@@ -822,7 +820,7 @@ gpg(1)
     $ABjo/cheat-conf.yml
     ea cheat
 
-`ea` aliased in `$OSAB/nodes-Bash/bashrc-generic`
+`ea` aliased in `$ABno/Bash/bashrc-generic`
 
 ## manpages
     o $MANPAGER
@@ -881,7 +879,7 @@ XKEYBOARD-CONFIG(7) > MODELS (= physical arrangement), LAYOUTS (= languages)
     XMODMAP(1)
 
 ## f1t2t3
-    $machBld/jo/f1t2t3/f1t2t3.sh
+    $ABno/m-sbMb/jo/f1t2t3/f1t2t3.sh
     fRs /home/jo/Arch/f1t2t3 f1t2t3.log
 
 ## graphics card details
@@ -1233,7 +1231,7 @@ pacsearch <keyword>  # better search
 ### operators
 - `-F` (`--files`) query the files database
     - `-y` (`--refresh`) the master package list
-- `-Q` (`--query`) (`Q ()` in `$OSAB/nodes-Bash/bashrc-generic`)
+- `-Q` (`--query`) (`Q ()` in `$ABno/Bash/bashrc-generic`)
     - `-e`, `--explicit` only explicitly installed packages
     - `-o` (`--owns`)
     - `-q` (`--quiet`) even omits version
@@ -1375,7 +1373,7 @@ creates an initial ramdisk environment
     ls /sys/firmware/efi/efivars  # populated is good
 
 ## build
-    $OSAB/nodes-etc/doas.conf
+    $ABno/etc/doas.conf
     r $OSAB $culLA
     r $machLg/etc/fstab
     rsync -irtv --delete $OSAB/ ~/Play0/OSAB
@@ -1403,7 +1401,7 @@ creates an initial ramdisk environment
 #### trees
     lsd -L --tree /usr/share/fonts > $machLg/usr/share/fonts/$(date +%y%m%d-%H%M).tree
 
-`usf()` (`$OSAB/nodes-Bash/bashrc-generic`)
+`usf()` (`$ABno/Bash/bashrc-generic`)
 
 ### Fontconfig
     r /etc/fonts  # to explore the configuration files
@@ -1512,7 +1510,7 @@ TIMEDATECTL(1)
     xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
 ### awesome
-    $machBld/jo/awesome/rc.lua
+    $culLA/build/mb-.../jo/awesome/rc.lua
     modkey+c = c:kill()
     modkey+p = hotkeys_popup
 
@@ -1572,8 +1570,7 @@ TIMEDATECTL(1)
     watch -n1 "date '+%D%n%T' | figlet -k"
 
 ## Alacritty
-    $machBld/alacritty.toml
-    $machBld/Alacritty
+    $ABnm/../alacritty.toml
 
 scroll don't work in `tmux`
 
@@ -1601,7 +1598,7 @@ scroll don't work in `tmux`
 - `-t` selects terminal width (instead of `-w 80` default)
 
 ### fonts
-    ft  # $OSAB/nodes-Bash/bashrc-generic
+    ft  # $ABno/Bash/bashrc-generic
 
 `showfigfonts Deauram > ~/FIGletFonts.txt; sed -i 's/ \+$//' ~/FIGletFonts.txt` then reduced and copied to `$culLB/FIGletFontsDeauram.txt`
 
@@ -1716,7 +1713,7 @@ TMUX(1)
 - `ctrl+alt+f2` anywhere brings up getty for virtual console `tty2`
 
 ## WezTerm
-    $OSAB/nodes-terminal/wezterm.lua
+    $ABjo/term/wezterm.lua
     wezterm show-keys --lua > $ITref/WezTerm-show-keys.lua
 
 # text wrangling

@@ -14,7 +14,7 @@ export Awp='window.position={x=5,y=5}'
 # used in  $ABjo/wm/terminal/startup.sh
 
 #==> for screens
-# depending on font set in  $OSAB/nodes-terminal/alacritty-all.toml
+# depending on font set in  $ABjo/term/alacritty-all.toml
 
 #===> 1440x900
 export Awd='window.dimensions={columns=67,lines=64}'

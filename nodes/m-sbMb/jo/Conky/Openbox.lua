@@ -2,7 +2,7 @@
 
 --[[
 Joseph Harriott - Sat 11 May 2024
-$machBld/jo/Conky/Openbox  adapted from output of  conky --print-config
+$ABnm/jo/Conky/Openbox.lua
 conky -c <thisfile>, as in  $Obc/autostart
 some settings are machine specific (and there's no easy way to generalise this file)
 

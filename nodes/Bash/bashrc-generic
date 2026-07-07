@@ -17,17 +17,6 @@ alias sl='su -l'
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 source $OSL/nodes/bashrc-generic
 
-alias fe=fastfetch
-if [[ $TERM_PROGRAM != 'WezTerm' ]]; then
-  if [[ $TERM != 'screen-256color' ]] && [[ -z $in_nvim ]] && [[ $(logname) == $(whoami) ]]; then
-    if [[ $TERM_PROGRAM == 'WezTerm' ]]; then
-      fastfetch -c neofetch.jsonc
-    else
-      fastfetch
-    fi
-  fi  # won't run in  tmux  or after  su
-fi
-
 # tmux
 alias u=tmux
   alias tkt='u kill-server > /dev/null 2>&1; tmux'  # rarely used
@@ -37,21 +26,6 @@ if [ ! -z $ITccl ] && [ -d $ITccl ]; then
   source $ITccl/unix-linux/ohmybash-sudo.plugin.sh # <esc> <esc> prefixes sudo on last command
   source $ITccl/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"
 fi
-
-#=> awesome  or  Openbox  or Xfce  on a machine
-startxa () { ln -sf $ABjo/xinitrcs/awesome ~/.xinitrc; }
-startxo () {
-  ln -sf $ABjo/xinitrcs/openbox ~/.xinitrc
-  ln -sf $machBld/Alacritty/Openbox.toml ~/.alacritty.toml
-}
-startxx () {
-  ln -sf $ABjo/xinitrcs/xfce ~/.xinitrc
-  ln -sf $machBld/Alacritty/Xfce.toml ~/.alacritty.toml
-  ln -sf $ABjo/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh
-  ln -sf $ABjo/wm/Xfce/config_gtk30_gtk.css ~/.config/gtk-3.0/gtk.css
-  # - for  ~/.config/autostart/Alacritty.desktop
-  ln -sf $machBld/jo/Conky/Xfce.lua ~/.conkyrc
-}
 
 #=> clamscan
 # $ITculLAh/ml-$host/cs
@@ -90,6 +64,10 @@ csF () {
     echo "- need a clamscan nnnnnn-nnnn.log"
   fi
 } # csF <log_file>
+
+#=> fastfetch
+[[ $TERM_PROGRAM != 'WezTerm' ]] && [[ $TERM != 'screen-256color' ]] && [[ -z $in_nvim ]] && [[ $(logname) == $(whoami) ]] && fastfetch  # won't run after  su, in  tmux, or in  WezTerm
+alias fe=fastfetch
 
 #=> figlet
 alias fin='figlet -f univers finished'

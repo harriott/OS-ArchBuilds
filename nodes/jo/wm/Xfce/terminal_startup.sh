@@ -3,11 +3,11 @@
 
 # bash $ABjo/wm/Xfce/terminal_startup.sh  # terminal launch
 #  symlinked in
-#   $OSAB/nodes-Bash/bashrc-generic
+#   $ABno/Bash/bashrc-generic
 #   $OSAB/nodes-set/jo-2-Xfce.sh
 #  for use in  Applications > Settings > Session and Startup > Alacritty
 
-source $ABjo/wm/terminal/startup.sh
+source $ABjo/wm/term/startup.sh
 sleep 3
 if [[ $host =~ HPEB840G3 ]]; then
     source $ABno/m-HPEB840G3x/hi-jo/term/tmux_begin.sh

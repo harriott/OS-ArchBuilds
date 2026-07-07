@@ -26,10 +26,8 @@ c="$HOME/.config/cmus"; [ -d $c ] || mkdir -p $c; ln -sf $ABjo/wm/cmus-rc.conf $
 es ~/.config/cmus/rc
 
 #==> music_rotate
-chmod 755 $ABjo/music/music_rotate.sh
-sudo ln -sf $ABjo/music/music_rotate.sh /usr/local/bin/music_rotate
-sudo ln -sf $ABjo/music/music_rotate.desktop /usr/share/applications/music_rotate.desktop
-es /usr/share/applications/music_rotate.desktop
+mr="$ABjo/music/music_rotate.sh"; chmod 755 $mr; sudo ln -sf $mr /usr/local/bin/music_rotate
+mrd="/usr/share/applications/music_rotate.desktop"; sudo ln -sf $ABjo/music/music_rotate.desktop $mrd; es $mrd
 
 #=> desktop
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
@@ -38,16 +36,9 @@ ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
 d="$HOME/.config/dunst"; [ -d $d ] || mkdir -p $d; ln -sf $ABjo/wm/dunstrc $d/dunstrc  # requires restarting X
 es ~/.config/dunst/dunstrc
 
-# #==> Openbox - shift+PrtSc disabled - notification
-# # for  i34G1TU02  &  sbMb
-# ln -sf $Openbox/shiftPrtSc.sh ~/.config/openbox/shiftPrtSc.sh
-
 #==> setxkbmap toggle
-chmod 755 $ABjo/wm/sxk/sxk.sh
-sudo ln -sf $ABjo/wm/sxk/sxk.desktop /usr/share/applications/sxk.desktop
-es /usr/share/applications/sxk.desktop
-sudo ln -sf $ABjo/wm/sxk/sxk.sh /usr/local/bin/sxk
-es /usr/local/bin/sxk
+ss="$ABjo/wm/sxk/sxk.sh"; chmod 755 $ss; bs="/usr/local/bin/sxk"; sudo ln -sf $ss $bs
+as="/usr/share/applications/sxk.desktop"; sudo ln -sf $ABjo/wm/sxk/sxk.desktop $as; es $as
 
 #=> documenting
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
@@ -85,11 +76,8 @@ lnd $onGH/pandoc-templates ~/.pandoc/templates
 # e -adl ~/.pandoc/templates
 
 #=> Spacemacs
-sudo ln -sf $ABjo/Emacs/spacemacs.desktop /usr/share/applications/spacemacs.desktop
-es /usr/share/applications/spacemacs.desktop
-chmod 755 $ABjo/Emacs/spacemacs.sh
-sudo ln -sf $ABjo/Emacs/spacemacs.sh /usr/local/bin/spacemacs
-es /usr/local/bin/spacemacs
+ss="$ABjo/Emacs/spacemacs.sh"; chmod 755 $ss; bs="/usr/local/bin/spacemacs"; sudo ln -sf $ss $bs; es $bs
+sd="/usr/share/applications/spacemacs.desktop"; sudo ln -sf $ABjo/Emacs/spacemacs.desktop $sd; es $sd
 
 #=> terminal
 k="$HOME/.config/kitty"; [ -d $k ] || mkdir $k; ln -sf $OSAB/nodes/jo/term/kitty.conf $k/kitty.conf
@@ -105,8 +93,22 @@ fi
 ln -sf $ABjo/term/alacritty-all.toml ~/.alacritty-all.toml
 es ~/.alacritty*
 
+#==> Alacritty with Neovim
+if [[ $host == DOP3040D11S ]]; then
+    ANs="$ABnm/jo/term/AlNvim.sh"
+    ANd="$ABnm/jo/term/AlNvim.desktop"
+elif [[ $host =~ HPEB840G3 ]]; then
+    ANs="$ABno/m-HPEB840G3x/hi-jo/term/AlNvim.sh"
+    ANd="$ABno/m-HPEB840G3x/hi-jo/term/AlNvim.desktop"
+else
+    ANs="$ABnm/jo/term/Alacritty/AlNvim.sh"
+    ANd="$ABnm/jo/term/Alacritty/AlNvim.desktop"
+fi
+chmod 755 $ANs; sudo ln -sf $ANs /usr/local/bin/AlNvim; es $ANs
+uANd="/usr/share/applications/AlNvim.desktop"; sudo ln -sf $ANd $uANd; es $uANd
+
 #==> urxvt extensions
-u="$HOME/.urxvt"; [ -d $u ] || mkdir $u; lnd $ABjo/wm/terminal/urxvt-Perls $u/ext
+u="$HOME/.urxvt"; [ -d $u ] || mkdir $u; lnd $ABjo/wm/term/urxvt-Perls $u/ext
 es ~/.urxvt
 
 #==> WezTerm
@@ -135,9 +137,6 @@ ln -sf $cITCP/networking-SSH/config/$host ~/.ssh/config
 es ~/.ssh/config
 
 #=> WAN - Thunderbird safely
-chmod 755 $ABjo/wm/TS/thunderbird_safely.sh
-sudo ln -sf $ABjo/wm/TS/thunderbird_safely.sh /usr/local/bin/thunderbird_safely
-es /usr/local/bin/thunderbird_safely
-sudo ln -sf $ABjo/wm/TS/thunderbird_safely.desktop /usr/share/applications/thunderbird_safely.desktop
-es /usr/share/applications/thunderbird_safely.desktop
+tss="$ABjo/wm/TS/thunderbird_safely.sh"; chmod 755 $tss; ts="/usr/local/bin/thunderbird_safely"; sudo ln -sf $tss $ts; es $ts
+tsd="/usr/share/applications/thunderbird_safely.desktop"; sudo ln -sf $ABjo/wm/TS/thunderbird_safely.desktop $tsd; es $tsd
 

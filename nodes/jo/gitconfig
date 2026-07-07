@@ -1,7 +1,7 @@
 # vim: ft=gitconfig
 
-# $ABjo/kewrc ($OSAB/nodes-set/jo-0.sh)
-# e -la ~/.gitconfig
+# $ABjo/gitconfig
+# es ~/.gitconfig
 
 # provisional Git configuration file, for use before Dropbox
 # changes saved here are instantaneous
@@ -9,4 +9,6 @@
 [include]
 	path = /home/jo/gitconfig-JH
 	path = /home/jo/misc/CrossPlatform/gitconfig
+
+# when  $myDrA,  $ABnm/jo/gitconfig
 

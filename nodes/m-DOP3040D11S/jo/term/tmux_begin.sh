@@ -13,8 +13,6 @@
 #  bash $ABjo/wm/terminal/startup.sh
 #  bash $ABnm/jo/term/tmux_begin.sh  # this script
 
-# (chmod u+x $machBld/jo/urxvtl.sh)
-
 #=> 0 launch btop and open a new tmux window
 tmux send btop Enter
 tmux new-window

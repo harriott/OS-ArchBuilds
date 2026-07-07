@@ -1,0 +1,15 @@
+
+# $ABnm/jo/term/Alacritty/AlNvim.desktop
+#  symlinked in my  $OSAB/nodes-set/jo-3-when_myDrA.sh
+#   to reveal my command  AlNvim  to Desktop
+#   desktop-file-validate /usr/share/applications/AlNvim.desktop
+
+[Desktop Entry]
+Name=Alacritty win Neovim
+Comment=for the rare occasions when I don't want to use Neovide
+Exec=/usr/local/bin/AlNvim
+Terminal=false
+Type=Application
+Icon=Alacritty
+Categories=System;TerminalEmulator;
+

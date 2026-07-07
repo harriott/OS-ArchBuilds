@@ -15,7 +15,7 @@
 export rsnapshot=/run/media/jo/9QG2FFEE/rsnapshot  # $rsnapshot
 export startxDelay=5
 
-#=> for  $OSAB/nodes-Bash/export-Arch
+#=> for  $ABno/Bash/export-Arch
 export myDrA=1  # $myDrA, only when my Dropbox is active
 export Storage=/mnt/BX200  # where I keep stuff
     export Enc=$Storage/encrypted  # mkdir $Enc

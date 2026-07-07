@@ -2,14 +2,12 @@
 # vim: fdl=2:
 
 # terminal launch
-# bash $ABjo/wm/terminal/startup.sh
+# bash $ABjo/wm/term/startup.sh
 #  sourced from
 #   $ABjo/wm/Xfce/terminal_startup.sh
 #   $Obc/autostart
 
-# Terminal sizes:
-#  $machBld/jo/Bash/exportWS
-#  $ABno/m-HPEB840G3x/hi-jo/exportWS
+# Terminal sizes: $ABno/.../exportWS
 
 #==> Alacritty
 alacritty -o $Awd -o $Awp -e sh -c "tmux new; bash" & disown

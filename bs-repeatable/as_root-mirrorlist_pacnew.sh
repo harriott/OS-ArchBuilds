@@ -8,11 +8,11 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 set -e  # quit on error
 
 #=> 0 get $OSAB
-source ~/.start  # $machBld/Bash_start
-  source ~/.export-Arch  # $OSAB/nodes-Bash/export-Arch
+source ~/.start  # $ABnm/Bash_start
+  source ~/.export-Arch  # $ABno/Bash/export-Arch
 
 #=> 1 check $OSAB
-# check  $OSAB/nodes-Bash/export-Arch  has leveraged  /ArchBuilds
+# check  $ABno/Bash/export-Arch  has leveraged  /ArchBuilds
 read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 2 verbose

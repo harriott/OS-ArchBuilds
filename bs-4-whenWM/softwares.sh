@@ -12,15 +12,16 @@ shopt -s expand_aliases; alias pikn='pikaur -S --needed'
 
 read -p 'Have you run  pikaur -Syu  ?'
 
-#=> $TERM
-pikn wezterm  # WezTerm
-
-# #==> rxvt-unicode
+# #=> $TERM - rxvt-unicode - urxvt-perls
 # pikn urxvt-perls  # provides keyboard-select and brings in  rxvt-unicode
 # # prs urxvt-perls rxvt-unicode  # in that order
 
-#==> rxvt-unicode-truecolor-wide-glyphs
+#=> $TERM - rxvt-unicode-truecolor-wide-glyphs
 pikn rxvt-unicode-truecolor-wide-glyphs
+
+#=> $TERM - WezTerm
+# pikn wezterm
+pikn wezterm-git  # takes a long, long time
 
 #=> audio
 pikn blanket  # Blanket

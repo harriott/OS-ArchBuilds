@@ -3,7 +3,7 @@ vim: nospell:
     $OSAB/QR/encoding.md
 
     $cITCP/encoding/dpl/Perl/scratch.pl
-    $machBld/jo/gitconfig
+    $ABjo/gitconfig
     archlinux-java status
     b <codeFile>  # syntax'd cat
     bluefish -v
@@ -71,7 +71,7 @@ open Wikipedia page in browser from terminal
 
 ## Pygments
 - PYGMENTIZE(1)
-- `pz` (`$OSAB/nodes-Bash/bashrc-generic`)
+- `pz` (`$ABno/Bash/bashrc-generic`)
 
 # Ruby - gem list
 ```bash

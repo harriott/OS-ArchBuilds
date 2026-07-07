@@ -378,7 +378,7 @@
   <!-- Alacritty large with Nvim - JH -->
   <keybind key="w-l">
     <action name="execute">
-      <command>/home/jo/.config/openbox/AlacrittyNvim.sh</command>
+      <command>AlNvim</command>
       <!-- $Openbox/bashrc_for_Alacritty-nvim.sh -->
     </action>
   </keybind>

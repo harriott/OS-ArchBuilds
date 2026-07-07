@@ -20,7 +20,7 @@
 
 #=> JH additions
 # $Obc/autostart ($OSAB/nodes-set/jo-1-Openbox.sh) e -l ~/.config/openbox/autostart
-#  depends on  $OSAB/nodes-Bash/export-Arch
+#  depends on  $ABno/Bash/export-Arch
 
 # #==> 0 gVim
 # # gVim's  columns  lines  are set in  $vimfiles/gvimrc.vim
@@ -45,7 +45,7 @@ source $ABjo/wm/terminal/startup.sh
 
 #==> 0 utilities
 blueman-applet &  # Blueman (Bluetooth manager)
-conky -c $machBld/jo/Conky/Openbox
+conky -c $ABnm/jo/Conky/Openbox.lua
 copyq &  # because CopyQ's internal Autostart doesn't work
 # dropbox &
 # hp-systray & disown   doesn't launch...
@@ -57,5 +57,5 @@ mpd &
 mpDris2 &  # for notifications and link to  playerctl
 
 #==> 1 tmux - machine dependent tweaks
-tb=$machBld/jo/term/tmux_begin.sh; [ -f $tb ] && source $tb
+tb="$ABjo/wm/Xfce/terminal_startup.sh"; [ -f $tb ] && source $tb
 
