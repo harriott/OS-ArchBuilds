@@ -90,6 +90,7 @@ includes system-wide gems
 package is `ruby-bundler`
 
 # Ruby - rbenv
+    $AjB/bashrc-console
     du -h --max-depth=0 ~/.rbenv/versions/4.0.5/
     r ~/.rbenv/versions
     rbenv versions  # reports from  ~/.rbenv/version

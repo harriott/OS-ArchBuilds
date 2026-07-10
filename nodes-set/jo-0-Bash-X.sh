@@ -32,7 +32,6 @@ ln -sf $ABjo/wm/Xresources/Xresources                                           
 ln -sf $ABjo/xbindkeysrc                                                                ~/.xbindkeysrc  # mouse wheel
 ln -sf $ABjo/xinitrcs/xfce                                                              ~/.xinitrc
 # ln -sf $ABjo/xinitrcs/openbox                                                           ~/.xinitrc
-[[ $host =~ HPEB840G3 ]] && ln -sf $ABno/m-HPEB840G3x/jo/xmodmap                        ~/.xmodmap
-[[ $host =~ HPEB840G3 ]] && ln -sf $ABjo/xmodmapAZERTY                                  ~/.xmodmap
+ln -sf $ABjo/xmodmapAZERTY                                                              ~/.xmodmap
 es ~/.Xresources* ~/.xbindkeysrc ~/.xinitrc ~/.xmodmap
 

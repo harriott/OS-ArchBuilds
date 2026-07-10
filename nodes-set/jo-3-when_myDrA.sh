@@ -10,11 +10,6 @@ shopt -s expand_aliases; alias es='eza -al'  # show permissions, rough sizes, an
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 
-#=> $notDr
-[ -d $notDr/GR-NF ] || mkdir -p $notDr/GR-NF
-ln -sf $ITcore/notDr/readme.md $notDr/readme.md; es $notDr/readme.md
-ln -sf $ITcore/notDr/NF.md $notDr/GR-NF/readme.md; es $notDr/GR-NF/readme.md
-
 #=> audio
 m="$HOME/.config/mpd"; [ -d $m ] || mkdir $m; ln -sf $ABjo/music/MPD/mpd.conf $m/mpd.conf
 v="$HOME/.config/vimpc"; [ -d $v ] || mkdir $v; ln -sf $ABjo/music/MPD/vimpcrc $v/vimpcrc
@@ -37,8 +32,8 @@ d="$HOME/.config/dunst"; [ -d $d ] || mkdir -p $d; ln -sf $ABjo/wm/dunstrc $d/du
 es ~/.config/dunst/dunstrc
 
 #==> setxkbmap toggle
-ss="$ABjo/wm/sxk/sxk.sh"; chmod 755 $ss; bs="/usr/local/bin/sxk"; sudo ln -sf $ss $bs
-as="/usr/share/applications/sxk.desktop"; sudo ln -sf $ABjo/wm/sxk/sxk.desktop $as; es $as
+ss="$ABjo/wm/sxk.sh"; chmod 755 $ss; bs="/usr/local/bin/sxk"; sudo ln -sf $ss $bs; es $bs
+as="/usr/share/applications/sxk.desktop"; sudo ln -sf $ABjo/wm/sxk.desktop $as; es $as
 
 #=> documenting
 ln -sf $ABjo/wm/zathurarc ~/.config/zathura/zathurarc
@@ -137,6 +132,6 @@ ln -sf $cITCP/networking-SSH/config/$host ~/.ssh/config
 es ~/.ssh/config
 
 #=> WAN - Thunderbird safely
-tss="$ABjo/wm/TS/thunderbird_safely.sh"; chmod 755 $tss; ts="/usr/local/bin/thunderbird_safely"; sudo ln -sf $tss $ts; es $ts
-tsd="/usr/share/applications/thunderbird_safely.desktop"; sudo ln -sf $ABjo/wm/TS/thunderbird_safely.desktop $tsd; es $tsd
+tss="$ABjo/wm/thunderbird_safely.sh"; chmod 755 $tss; ts="/usr/local/bin/thunderbird_safely"; sudo ln -sf $tss $ts; es $ts
+tsd="/usr/share/applications/thunderbird_safely.desktop"; sudo ln -sf $ABjo/wm/thunderbird_safely.desktop $tsd; es $tsd
 

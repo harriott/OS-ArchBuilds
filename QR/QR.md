@@ -124,7 +124,7 @@ ENV(1)
 - ` ` expands
 - `Ctrl-xCtrl-v` = `display-shell-version`
 - `F1` = `vi_xmap/command-help`
-- Stopped jobs might need `kill -9 %1` twice...
+- Stopped jobs might need `kill -9 %n` (`n` being the job number) twice...
 
 ## completion
     complete 2>&1 | tee $machLg/bash.cmplt
@@ -363,7 +363,7 @@ JOBS(1P)
     systemctl status fcron.service  # showing recent events
 
 ## fcrontab
-    VISUAL= fcrontab -e  # then make your changes
+    VISUAL=vim fcrontab -e  # then make your changes
 
 ### spool directory
     /var/spool/fcron
@@ -644,20 +644,20 @@ unalias **<tab>
 
 ## rsnapshot
     $ABnm/etc/rsnapshot.conf
+    $ABno/rsnapshot
     r $rsnapshot
     snapshot_root
     sudo du -sh $rsnapshot
     sm $rsnapshot/aaa.0
-
-### backup localhost without mnt
-    lastMonthly=/mnt/WD1001FALS/rsnapshot/monthly.6/localhost/; month=$(date -r $lastMonthly +%y%m%d); echo $month
-    sudo rsync -aAivX --delete --progress --exclude=mnt $lastMonthly/ /mnt/WD30EZRZ/Archive/localhost-sbMb-$month
+    sudo rsync -aAivX --delete --progress $rsnapshot ...
 
 ### checking
+    $ABno/rsnapshots.sh
     ncdu --exclude rsnapshot
     tail -n 44 /var/log/rsnapshot | xcolorize green 'completed successfully' yellow started
 
 #### counts
+    find $rsnapshot/.sync/localhost$Drpbx | wc -l
     find $rsnapshot/hourly.0/localhost$Drpbx | wc -l
     sudo find $rsnapshot/hourly.1/localhost | wc -l
     sudo find $rsnapshot/manual.0/localhost | wc -l
@@ -746,7 +746,6 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     sudo rsync -a --info=progress2 $rsnapshot/aaa.0/localhost/home/jo/
 
 ### running
-    $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh
     doas rsnapshot aaa &
     pgrep rsnapshot
     rsnapshot -t aaa
@@ -798,7 +797,8 @@ NCDU(1)
     cmatrix -u 9 -C blue
     man cmatrix
 
-# GNU Privacy Guard
+# GnuPG
+    $ITcore; rg 13F327EF
     gpg --export-ownertrust > $machLg/jo/gnupg-trustdb.txt
     gpg -k > $machLg/jo/GnuPGkeys/$(date +%y%m%d-%H%M).gpgk  # $vfv/syntax/gpgk.vim
     im gpg
@@ -1143,13 +1143,15 @@ can fail to start after waking system
     1. `paru -Sua` updates AURs
 
 ### Pikaur
-    pikaur -h
+    pikaur -h  # --help
+    pikaur -h -S  # --sync
     pikaur -Syu  # wants pw, offers to redo if connection fails
     ~/.config/pikaur.conf
-    ~/.local/share/pikaur/aur_repos/
+    r ~/.local/share/pikaur/aur_repos/
 
 - `-a` (`--aur`) only AUR packages will be upgraded, but wants to downgrade `auracle-git`
 - `--devel` doesn't reliably offer upgrades
+- `--no-edit` don't offer to edit the PKGBUILD
 
 ### traur
     ~/.cache/traur/git
@@ -1646,6 +1648,7 @@ TMUX(1)
 
 ### key binds
     $OSL/nodes/terminal-tmux/tmux.conf
+    $machLg/terminal/tmux/
     C-a :  # command prompt
       $ 3       # rename current session to 3
       new -s 1  # new session named 1
@@ -1745,7 +1748,8 @@ TMUX(1)
     r ~/.vimswap
     r /usr/share/nvim/runtime
 
-nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/parser`
+- nvim-treesitter shared objects: `ls ~/.local/share/nvim/lazy/nvim-treesitter/parser`
+- NVIM(1)
 
 ##### log file
     :echo $NVIM_LOG_FILE

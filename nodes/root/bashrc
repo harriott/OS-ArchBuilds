@@ -33,6 +33,10 @@ source /home/jo/.bashrc-generic  # $ABno/Bash/bashrc-generic
 # a colorised (bold red) prompt:
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 
+#=> 0 nnn - n
+source $OSL/nodes/bashrc-console-fm-n
+
 #=> 1 ble.sh, Atuin
-[[ $TERM_PROGRAM == 'WezTerm' ]] || source $ABno/Bash/ble-atuin
+source $ABno/Bash/ble-atuin  # if  WezTerm  fix is implemented in  $ABno/Bash/blerc
+# [[ $TERM_PROGRAM == 'WezTerm' ]] || source $ABno/Bash/ble-atuin
 

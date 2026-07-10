@@ -200,6 +200,8 @@ $culL/Arch/handlr-regex_error.bbcode
 apache
 EFI install
 gokcehan's lf
+Keyboard Layouts
+sxk
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
@@ -260,15 +262,32 @@ CPU XD Support > Enable
 TPM 2.0 Security > TPM On
 # Xfce configuration
 Desktop Settings > [ Folder > WallpaperFlare  Style > Stretched ]
-## Applications > Settings
-Keyboard >
-  Application Shortcuts >
-    alacritty > Super+A
-    firefox > Super+X
-    music_rotate > Super+M
-Session and Startup > Application Autostart >
-  Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
-  Conky > [ Conky  conky ]
-  Neovide > [ Neovide  neovide ]
+## Session and Startup > Application Autostart
+Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
+Conky     > [ Conky  conky ]
+Neovide   > [ Neovide  neovide ]
+## Keyboard > Application Shortcuts
+alacritty    > Super+A
+firefox      > Super+X
+music_rotate > Super+M
+notifyd      > Super+D
 ## Panel Preferences > Panel 1 > Items
-following  sbMb
+### Add'd
+Show Desktop
+Screenshot
+Whisker Menu
+Applications Menu
+Window Buttons
+Separator > Expand
+Eyes
+Clock
+Weather Update
+MPD Client Plugin > ymuse
+Status Tray Plugin (Wifi, Dropbox, CopyQ) > fcitx5 tray window > Hidden
+Mount devices
+Dictionary
+Notification Plugin > Notifications > Log > Log notifications > always
+PulseAudio Plugin
+Action Buttons
+### Remove'd
+Wavelan (doesn't add more than  Status Tray Plugin)

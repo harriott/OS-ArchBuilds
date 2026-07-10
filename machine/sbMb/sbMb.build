@@ -2,8 +2,8 @@
 $ABm/sbMb/sbMb.build
 
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
+
 # $rsnapshot
-$ABno/rsnapshots.sh
 time (sudo find $rsnapshot/.sync/$host | wc -l)  reports  
 time (sudo find $rsnapshot/aaa.0/$host | wc -l)  reports  2001641
 # build
@@ -4261,18 +4261,21 @@ reboot
 ## tmux 3.7
 break-pane  causing "server exited unexpectedly" - fixed by switching to  tmux-git, except that  btop  won't display
 ## nnn dragdrop no longer launching the popup
+## nomacs not opening
+nomacs -v  got  "nomacs: error while loading shared libraries: libopencv_imgproc.so.413: cannot open shared object file: No such file or directory", so  prs nomacs
+pikn nomacs  got me "fatal error: opencv2/imgproc/imgproc_c.h: No such file or directory
+## TeX Live
+$OSAB/bs-5-when_myDrA/TexLive.sh > native remove  for  native install full
+## Neovim in tmux
+initially most blacked out, workaround is to move out and back into the pane
+same from  tmux -f $culL/term/tmux_test.conf
+same from  GNOME Terminal, xterm
 ## waiting
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
 Recoll
-rm ~/.bashrc-An
-rsnapshot.conf
 switch to fastmail
-TeX Live release 2026 full
-tmux_begin.sh
-updatedb.conf
-usbutils
 # clm possible extras
 imapbox
 maildir-rank-addr
@@ -4292,7 +4295,6 @@ ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
 # fcrontab
   !m(0)
   @ 1 bash ~/Arch/f1t2t3/log.sh
-  @ 1 bash ~/Arch/locks.sh
   @ 3 bash ~/Arch/cmusqueue.sh
   @ 10 bash ~/Arch/bash_history.sh
 ## temperatures
@@ -4417,7 +4419,7 @@ journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS
 Desktop > Style > None  for each monitor
 Desktop Settings > (Background >) [ Other > Folder > WallpaperFlare > Open  Style > Stretched ]
 Terminal > Edit > Preferences > Appearance > Font > 8
-## Keyboard >
+## Keyboard
 Behaviour > General > Restore numlock state on startup
 ### Application Shortcuts
 alacritty            > Super+A
@@ -4429,34 +4431,33 @@ gvim                 > Super+V
 keepassxc            > Super+K
 kitty                > Super+i
 music_rotate         > Super+M
-signal-desktop       > Super+S
+sxk                  > Super+S (= win+s) because s is same place in gb/fr
 thunderbird_safely   > Super+T (= win+t)
 neovide              > Super+N
 wezterm              > Super+W
 ## Panel Preferences > Panel 1 > Items
+### Add'd
+Action Buttons
 Show Desktop
 Screenshot
 Whisker Menu
 Applications Menu
 Windows Buttons
-Separator
+Separator > Expand
 Eyes
 Workspace Switcher
-Separator
 Clock
-Separator
 Weather Update
-Separator
 MPD Client Plugin > ymuse
-Separator
 System Load Monitor
-Status Tray Plugin
-Separator
-Wavelan
-Dictionary
+Status Tray Plugin (Wifi, Clipman, Dropbox, CopyQ)
+Mount devices
 Notification Plugin > Notifications > Log > Log notifications > always
 PulseAudio Plugin
-  Action Buttons
+Keyboard Layouts (as from  setxkbmap -query)
+Dictionary
+### Remove'd
+Wavelan (doesn't add more than  Status Tray Plugin)
 ## Power Manager > Display > Display power management
 General > When sleep button is pressed > Suspend
 Screensaver Management > (= Screensaver Preferences) > Activate off
@@ -4473,3 +4474,10 @@ Move window to right monitor > Super+2
 ## Window Manager Tweaks
 Cycle through windows in a list
 Raise windows while cycling
+# XnView MP > F12
+General > Check for program updates > Never
+## View
+Background color > almost black
+Filter > Custom > [ Audio  Video ] off
+Misc. > Loop on the file list
+

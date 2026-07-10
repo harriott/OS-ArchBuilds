@@ -1,6 +1,6 @@
 # vim: et:
 
-# $ABjo/wm/dunstrc ($OSAB/nodes-set/jo-0.sh)
+# $ABjo/wm/dunstrc ($OSAB/nodes-set/jo-3-when_myDrA.sh)
 
 #  reduced from
 #   /etc/dunst/dunstrc ($nDrGRs/d-unix-like/d-linux/r-dunst-project-dunst/dunstrc)
@@ -10,7 +10,7 @@
 
 # errors are reported on  dunst &
 
-# dunstify  tests in  $misc/linux/QR/QR.md
+# dunstify  tests in  $OSL/QR/QR.md
 
 # my old settings
 #   browser = chromium

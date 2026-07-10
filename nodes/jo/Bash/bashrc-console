@@ -246,13 +246,15 @@ con () {
 [[ $PATH =~ npm-global ]] || export PATH="$HOME/.npm-global/bin:$PATH"
 
 #=> packages
-alias pikn='pikaur -S --needed --keepbuilddeps'
+alias pikn='pikaur -S --needed --noedit --keepbuilddeps'
 alias prs='pikaur -Rs'
 
-#==> AUR packages
-chAURpds () { for pd in ~/.cache/paru/clone ~/.cache/traur/git ~/Arch/AUR ~/Arch/AURdev-clone; do [ -d $pd/$1 ] && s $pd/$1; done }
+chAPDs () {
+  for pd in ~/.cache/paru/clone ~/.cache/traur/git ~/.local/share/pikaur/aur_repos ~/Arch/AUR ~/Arch/AURdev-clone; do
+    if [[ -d $pd/$1 ]]; then stat -c '%y %n' $pd/$1 | xcol paru traur pikaur AURdev; fi; done }
+export -f chAPDs  # check AUR PKGBUILDs
 
-#===> using  trizen
+#==> AUR packages - using  trizen
 # "Get Clone To Make" - for my building of AUR development packages
 gctm(){ cd $HOME/Arch/AURdev-make; rAUR $1; cp -r ../AURdev-clone/$1 $1; cd $1; }; export -f gctm
 

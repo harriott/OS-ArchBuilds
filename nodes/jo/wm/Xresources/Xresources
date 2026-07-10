@@ -30,7 +30,9 @@ xman*manualFontNormal:    -*-ubuntumono-*-r-*-*-*-120-*-*-*-*-*-*
 XTerm.termName: xterm-256color
 XTerm.vt100.locale: true
 XTerm.vt100.reverseVideo: true
-! white on black, so I can see text in tmux
+! - white on black, so I can see text in tmux
+XTerm.vt100.metaSendsEscape: true
+! - stop Alt from being used for entering weird characters
 XTerm.vt100.saveLines: 4096
 XTerm*VT100*translations: #override \n\
   Ctrl <KeyPress> Insert: copy-selection(CLIPBOARD)

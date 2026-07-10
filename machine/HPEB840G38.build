@@ -215,10 +215,38 @@ nnn 5.2-1, wezterm 20240203.110809.5046fc22-2  - same as on  sbMb  where selecti
 Creating a file from  nnn  in WezTerm  named "1_2_3_4_5_6_7_8", get
   27;2;49~_27;2;50~_27;2;51~_27;2;52~_27;2;53~_27;2;54~_27;2;55~_27;2;56~
 switched to  wezterm-git  got me  wezterm 20260705-075440-5cc2d1ef, but still broken
+## TeX Live
+$OSAB/bs-5-when_myDrA/TexLive.sh > native 0 install 1 full
+## $thb
+cp $thb/profiles.ini $machLg/thunderbird-profiles-q78.ini
+in  $thb, removed all but  jo
+cp $ABjo/thunderbird-profiles.ini $thb/profiles.ini
+## import GnuPG key 13F327EF
+(to be able to  pass <pass-name>)
+in  $Enc/Secure1/GnuPG/13F327EF  gpg --import sprbMbArch-ob8-private.asc
+## switch to  rbenv, switch to  shotcut
+prs libopenshot openshot ruby
+rbenv install 4
+rbenv global 4.0.5
+pikn libopenshot-git
+  [a] abandonner la compilation de tous les paquets > a
+  erreur : Échec de la suppression des dépendances installées, incohérence des paquets : libopenshot-audio
+prs libopenshot-audio-docs libopenshot-audio-git
+pikn shotcut
+## ImageFan Reloaded
+flatpak install flathub io.github.mihnea_radulescu.imagefanreloaded
+flatpak uninstall io.github.mihnea_radulescu.imagefanreloaded
+## nomacs - Image Lounge
+flatpak install flathub org.nomacs.ImageLounge
+Ctrl+Shift+p (= Paramètres) Général > [ Dark Theme  Fermer en appuyant sur la touche Echap ]
+## Flatpak
+over 112k files in  /var/lib/flatpaK
+flatpak uninstall --unused  got it down to 92k
+flatpak uninstall org.nomacs.ImageLounge  just removes 1k
+flatpak uninstall --unused  got it down to 335
+## mypaint v2.0.1-7 failing to run
+same after removing then reinstalling, so removed again
 ## waiting
-$OSAB/bs-5-when_myDrA/rsnapshot.sh
-Alacritty with Neovim
-urxvt extensions
 # CopyQ
 CopyQ > Ctrl+P >
   Générale > Confirmer la sortie de l'application  éteint
@@ -259,6 +287,7 @@ google-chrome-stable         > Super+G
 gvim                         > Super+V
 keepassxc                    > Super+K
 neovide                      > Super+N
+notifyd                      > Super+D
 pactl set-sink-mute 0 toggle > speaker button (XF86AudioMute) = Sourdine volume
 pactl set-sink-volume 0 -5%  > Fn+f8 (XF86AudioLowerVolume) = Volume plus faible
 pactl set-sink-volume 0 +5%  > Fn+f9 (XF86AudioRaiseVolume) = Volume plus fort
@@ -301,7 +330,13 @@ Greffon de notification
 ##### Supprimer
 Changer d'espace de travail
 Moniteur de la charge du système
-Wavelan (doesn't add more than  Greffon de barre d'état
+Wavelan (doesn't add more than  Greffon de barre d'état)
 ## xfce4-terminal > Édition > Préférences…
 Apparence > Fonts > JetBrainsMono Nerd Font Regular 10
 Général > Titre initial > xfce4-terminal
+# XnView MP > F12
+Général > Vérification des mises à jour > Jamais
+## Affichage
+Couleur de fond > presque noir
+Divers > Boucle
+Filtre > Personnalisé > [ Audio  Video ] décoché

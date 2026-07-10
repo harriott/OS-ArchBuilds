@@ -66,8 +66,13 @@ csF () {
 } # csF <log_file>
 
 #=> fastfetch
-[[ $TERM_PROGRAM != 'WezTerm' ]] && [[ $TERM != 'screen-256color' ]] && [[ -z $in_nvim ]] && [[ $(logname) == $(whoami) ]] && fastfetch  # won't run after  su, in  tmux, or in  WezTerm
 alias fe=fastfetch
+if [[ $TERM =~ xterm ]]; then
+  fastfetch -c neofetch.jsonc  # compact
+else
+  [[ ! $TERM =~ tmux && $TERM_PROGRAM != 'WezTerm' && -z $in_nvim && $(logname) == $(whoami) ]] && fe
+  # - won't run in  tmux, xterm, WezTerm, in  Neovim (see $vfn/init.vim), or after  su
+fi
 
 #=> figlet
 alias fin='figlet -f univers finished'

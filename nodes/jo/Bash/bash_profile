@@ -18,12 +18,13 @@ source ~/.start  # $ABnm/Bash_start  /  $ABno/m-HPEB840G38/Bash_start
 # Useful before X:
   source ~/.bashrc-generic  # ($ABno/Bash/bashrc-generic) useful everywhere, including root
   source ~/.bashrc-console  # ($AjB/bashrc-console) useful also in Console as user
+
 # This is commented out because I keep bashrc just for instances in X:
 #  [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # backup the previous boot's systemd journal
 if [[ $myDrA == 1 ]]; then
-  jc=$ITculLAh/ml-$host/jc
+  jc="$ITculLAh/ml-$host/jc"
 else
   jc=~/Arch
 fi

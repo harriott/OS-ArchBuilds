@@ -42,13 +42,11 @@ fi
 ln -sf $ABjo/WAN/dictrc ~/.dictrc
 
 #=> fastfetch
-[ -d ~/.config/fastfetch ] || mkdir -p ~/.config/fastfetch
-ln -sf $ABno/fastfetch.jsonc ~/.config/fastfetch/config.jsonc
-# es ~/.config/fastfetch/config.jsonc
+f=~/.config/fastfetch; [ -d $f ] || mkdir -p $f; fc=$f/config.jsonc; ln -sf $ABno/fastfetch.jsonc $fc; es $fc
 
 #=> gpg-agent configuration
 gpg --list-keys  # creates populated  ~/.gnupg
-ln -sf $OSL/nodes/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+gac=~/.gnupg/gpg-agent.conf; ln -sf $OSL/nodes/gpg-agent.conf $gac; es $gac
 
 #=> kew
 [ -d ~/music ] || mkdir -p ~/music

@@ -9,6 +9,7 @@
 
 bleopt allow_exit_with_jobs=1
 bleopt info_display=bottom
+bleopt term_modifyOtherKeys_external=0  # for  WezTerm (see "akinomyoga/ble.sh - Issues")
 
 #=> blehook  keymap_vi_load
 function my/vi_load {

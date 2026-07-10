@@ -142,8 +142,7 @@ pacman -S python-pip
 pacman -S python-pipx
     # pipx ensurepath  # maybe not needed
 pacman -S r  # R
-pacman -S ruby ruby-docs
-    pacman -S rbenv ruby-build
+pacman -S rbenv ruby-build ruby-docs  # $OSAB/bs-1-into_jo/3-config.sh
 pacman -S selene  # Lua linter
 
 #=> 2 fonts

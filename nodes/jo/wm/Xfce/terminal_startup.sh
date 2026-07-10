@@ -2,9 +2,7 @@
 # vim: fdl=2:
 
 # bash $ABjo/wm/Xfce/terminal_startup.sh  # terminal launch
-#  symlinked in
-#   $ABno/Bash/bashrc-generic
-#   $OSAB/nodes-set/jo-2-Xfce.sh
+#  symlinked in  $OSAB/nodes-set/jo-2-Xfce.sh
 #  for use in  Applications > Settings > Session and Startup > Alacritty
 
 source $ABjo/wm/term/startup.sh

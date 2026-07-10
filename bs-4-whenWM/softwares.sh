@@ -2,7 +2,7 @@
 
 # softwares that require a WM
 
-# bash $OSAB/bs-4-whenWM/1-softwares.sh
+# bash $OSAB/bs-4-whenWM/softwares.sh
 
 if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 
@@ -154,18 +154,22 @@ pikn feh
 pikn ffmpegthumbnailer  # for  /usr/share/clifm/plugins/vid_viewer.sh
 pikn gifski  # (for making animated GIFs)
 pikn gnuplot
-pikn gpicview  # GPicView
 pikn graphicsmagick  # GraphicsMagick
 pikn img2pdf
 pikn librecad  # LibreCAD
 pikn mermaid-cli  # flowcharts
-pikn mypaint
 pikn nsxiv
+pikn oculante
 pikn peek  # (GIF Screen Recorder)
 pikn pqiv
 pikn resvg  # for SVG's in Yazi in WezTerm
 pikn sxiv
 pikn xnviewmp  # XnViewMP
+
+#==> GPicView
+pikn gpicview  # GPicView
+gpicview &
+read -p "Préférences > Couleurs d'arrière-plan > Normal > presque noir"
 
 #==> nomacs
 pikn nomacs
@@ -201,7 +205,7 @@ sudo systemctl enable php-fpm.service --now
 sudo usermod -aG http jo
 
 #=> softwares
-pikn flatpak
+pikn flatpak xdg-desktop-portal-xapp
 pikn gucharmap
 pikn handlr-regex
 pikn pacfinder

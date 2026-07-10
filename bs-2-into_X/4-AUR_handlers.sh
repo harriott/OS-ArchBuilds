@@ -30,6 +30,9 @@ set -v  # prints each statement here, including comments
 #=> 2 Pikaur 1 pikn
 shopt -s expand_aliases; alias pikn='pikaur -S --needed'
 
+#=> 3 Aura
+pikn aura-bin
+
 #=> 3 Glaze
 # for  auracle-git
 pikn fmt glaze pod2man

@@ -6,6 +6,7 @@
 #   $ABno/root/bashrc
 
 #=> 0 ble.sh
+# $ABno/Bash/blerc
 [[ ! ${BLE_VERSION-} ]] || ble-attach
 
 #=> 1 Atuin

@@ -198,9 +198,9 @@ alias dceE5='doas cupsenable ENVY_5530'
 alias dceEI7='doas cupsenable ENVY_Inspire_7200'
 
 #=> documenting - LaTeX
-export MANPATH="/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH" # for  man <command>
-export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH" # essential
-export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH" # for  pinfo
+export MANPATH="/usr/local/texlive/2026/texmf-dist/doc/man:$MANPATH" # for  man <command>
+export PATH="/usr/local/texlive/2026/bin/x86_64-linux:$PATH" # essential
+export INFOPATH="/usr/local/texlive/2026/texmf-dist/doc/info:$INFOPATH" # for  pinfo
 
 ltx () {
   if [[ ! -z $TNt ]]; then
@@ -449,7 +449,6 @@ dcc1 () {
 # $ABjo/wm/TS/
 
 function Tg() {
-  # rsync -irtv --delete $DrThb/ ~/.thunderbird/jo
   rsync -irtv --delete $DrThb/ $thb/jo
   echo "- you can now run Thunderbird on this machine"
 } # Thunderbird get from Dropbox
