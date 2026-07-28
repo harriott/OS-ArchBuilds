@@ -1,0 +1,58 @@
+vim: fdl=1 ft=build:
+
+$OSAB/software_configs.txt
+
+KeePassXC > Affichage > Thème > Sombre
+
+# CopyQ
+cp $ABjo/wm/CopyQ/readyforPasting.ini ~/readyforPasting.ini
+ for  CopyQ > F6 > Load > readyforPasting.ini  then  rm ~/readyforPasting.ini
+
+## gb
+Ctrl+p (= Preferences) >
+  General >
+    Wrap long text  off
+    Confirm application exit  off
+  History >
+    Maximum > 2000
+    External editor > gvim -f %1
+  Tray > 25
+  Items > Text >
+    HTML off-ticked
+    Maximum number of lines > 2
+  Shortcuts > Show/hide > + > Win+q
+  Appearance > Theme > Forest
+
+## fr
+CopyQ > Ctrl+P >
+  Générale > Confirmer la sortie de l'application  éteint
+  Historique > Nombre maximal > 700
+  Éléments > Texte >
+    Enregistrer et afficher le code HTML ...  éteint
+    La hauteur ... > 2
+  Raccourcis >
+    Afficher / mqsquer la fenêtre principale > Win+q (== Méta+Q)
+    Coller le presse-papiers en texte brut > Win+l (= Méta+L)
+  Apparence > Thème > nord (is very clear)
+
+# nomacs
+(C-S-p >) [ Advanced > Save Exif Orientation  off-ticked
+  Display > Slideshow > Appear ]
+
+# XnView MP (fr) F12
+Interface > Clavier > Appui sur ESC ferme > chaque coché
+## Général
+Thème > Sombre
+Vérification des mises à jour > Jamais
+## Affichage
+Couleur de fond > presque noir
+Divers > Boucle
+Filtre > Personnalisé > [ Audio  Video ] décoché
+# XnView MP (gb) F12
+Interface > Keyboard > Presssing ESC close > both on
+## General
+Check for program updates > Never
+Theme > dark
+## View
+Filter > Custom > [ Audio  Video ] off
+Misc. > Loop on the file list

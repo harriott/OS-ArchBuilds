@@ -246,18 +246,38 @@ flatpak uninstall org.nomacs.ImageLounge  just removes 1k
 flatpak uninstall --unused  got it down to 335
 ## mypaint v2.0.1-7 failing to run
 same after removing then reinstalling, so removed again
+## mcat-bin
+  ==> Validation des fichiers source_x86_64 avec sha256sums…
+    mcat-v0.6.3-x86_64-unknown-linux-gnu.tar.xz ... ÉCHEC
+  ==> ERREUR : Un ou plusieurs fichiers ne sont pas valides !
+pikn mcat-bin  same so  prs mcat-bin
+sudo rm -r ~/.local/share/pikaur/aur_repos/mcat-bin
+## HP Envy Inspire 7220e at 10.242.239.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+  warning: GUI Modules PyQt4 and PyQt5 are not installed
+  error: hp-setup requires GUI support (try running with --qt3). Also, try using interactive (-i) mode.
+prs hplip hplip-plugin
+pikn hplip hplip-plugin
+hp-setup -r > Select > Remove
+hp-setup 10.242.239.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e at 10.156.164.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.156.164.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## lolcat gem tryout
+gem ins lolcat
+  A new release of RubyGems is available: 4.0.10 → 4.0.17!
+  Run `gem update --system 4.0.17` to update your installation.
+gem up
+gem up --system
+rbenv rehash
+### remove it
+gem uni lolcat
+rbenv rehash
 ## waiting
-# CopyQ
-CopyQ > Ctrl+P >
-  Générale > Confirmer la sortie de l'application  éteint
-  Historique > Nombre maximal > 700
-  Éléments > Texte >
-    Enregistrer et afficher le code HTML ...  éteint
-    La hauteur ... > 2
-  Raccourcis >
-    Afficher / mqsquer la fenêtre principale > Win+q (== Méta+Q)
-    Coller le presse-papiers en texte brut > Win+l (= Méta+L)
-  Apparence > Thème > nord (is very clear)
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
@@ -334,9 +354,3 @@ Wavelan (doesn't add more than  Greffon de barre d'état)
 ## xfce4-terminal > Édition > Préférences…
 Apparence > Fonts > JetBrainsMono Nerd Font Regular 10
 Général > Titre initial > xfce4-terminal
-# XnView MP > F12
-Général > Vérification des mises à jour > Jamais
-## Affichage
-Couleur de fond > presque noir
-Divers > Boucle
-Filtre > Personnalisé > [ Audio  Video ] décoché

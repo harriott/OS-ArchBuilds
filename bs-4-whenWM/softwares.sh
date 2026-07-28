@@ -28,6 +28,7 @@ pikn blanket  # Blanket
 pikn mousai  # similar to Shazam
 pikn mpdris2  # for MPD
 pikn quodlibet  # Quod Libet
+pikn sox
 pikn ymuse  # for MPD, takes ages to compile
 
 #==> mpv
@@ -135,6 +136,7 @@ pikn sane  # SANE
 
 #===> hplip
 pikn hplip
+pikn python-pyqt5
 
 #====> hplip-plugin 0 HPLIP key
 gpg --keyserver hkps://keyserver.ubuntu.com --recv-keys 82FFA7C6AA7411D934BDE173AC69536A2CF3A243
@@ -153,6 +155,7 @@ sudo cp $ABno/m-HPEB840G3x/etc-backlight.rules /etc/udev/rules.d/backlight.rules
 pikn feh
 pikn ffmpegthumbnailer  # for  /usr/share/clifm/plugins/vid_viewer.sh
 pikn gifski  # (for making animated GIFs)
+pikn gimp  # GIMP
 pikn gnuplot
 pikn graphicsmagick  # GraphicsMagick
 pikn img2pdf
@@ -164,7 +167,7 @@ pikn peek  # (GIF Screen Recorder)
 pikn pqiv
 pikn resvg  # for SVG's in Yazi in WezTerm
 pikn sxiv
-pikn xnviewmp  # XnViewMP
+pikn xnviewmp  # XnView MP
 
 #==> GPicView
 pikn gpicview  # GPicView

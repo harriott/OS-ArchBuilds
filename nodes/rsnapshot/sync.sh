@@ -4,8 +4,8 @@
 
 # bash $ABno/rsnapshot/sync.sh &
 
-dunstify "rsnapshot sync will start"
+notify-send "rsnapshot sync will start"
 doas rsnapshot sync  # from sources into  $rsnapshot/.sync
-dunstify -u critical "rsnapshot sync finished"
+notify-send -u critical "rsnapshot sync finished"
 [[ $host == DOP3040D11S ]] && source $ABno/rsnapshot/log.sh
 

@@ -1,9 +1,10 @@
 #!/bin/bash
 # vim: fdl=2:
 
-# bash $ABjo/wm/Xfce/terminal_startup.sh  # terminal launch
-#  symlinked in  $OSAB/nodes-set/jo-2-Xfce.sh
-#  for use in  Applications > Settings > Session and Startup > Alacritty
+# (tmux kill-server  for)
+#  bash $ABjo/wm/Xfce/terminal_startup.sh  # terminal launch
+#   symlinked in  $OSAB/nodes-set/jo-2-Xfce.sh
+#   for use in  Applications > Settings > Session and Startup > Alacritty
 
 source $ABjo/wm/term/startup.sh
 sleep 3

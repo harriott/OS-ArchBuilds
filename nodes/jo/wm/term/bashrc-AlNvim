@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # rc file for  $ABnm/.../term/Alacritty/AlNvim.sh
-# source $ABjo/wm/Openbox/bashrc_for_Alacritty-nvim.sh
+# source $ABjo/wm/term/bashrc-AlNvim
 #  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
 #   size dictated by  nvim
 
-source ~/.bashrc  # $ABnm/.../bashrc
-nn  # defined in  $AjB/bashrc-console
+source ~/.bashrc  # see  $OSAB/nodes-set/jo-0-Bash-X.sh
+nvim -c "echo 'Alacritty > Neovim'"
+cd $(cat ~/lastVimDirectory)
 

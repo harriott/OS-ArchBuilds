@@ -6,12 +6,10 @@
 # bash $ABno/rsnapshot/dates.sh
 
 rc () {
-  lh=$host
-  # lh=localhost
   r1=$rsnapshot/$1
   if [ -d $r1 ]; then
     printf "${tpf5}$1${tpfn} "
-    stat -c '%y' $r1/$lh/home/jo/.bash_history
+    stat -c '%y' $r1/*/home/jo/.bash_history
   fi
 } # rsnapshot checks
 rc .sync
@@ -26,4 +24,5 @@ rc aaa.7
 rc aaa.8
 rc aaa.9
 rc bbb.0
+rc bbb.1
 

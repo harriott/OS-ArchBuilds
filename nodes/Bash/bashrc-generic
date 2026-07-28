@@ -67,11 +67,15 @@ csF () {
 
 #=> fastfetch
 alias fe=fastfetch
-if [[ $TERM =~ xterm ]]; then
-  fastfetch -c neofetch.jsonc  # compact
-else
-  [[ ! $TERM =~ tmux && $TERM_PROGRAM != 'WezTerm' && -z $in_nvim && $(logname) == $(whoami) ]] && fe
-  # - won't run in  tmux, xterm, WezTerm, in  Neovim (see $vfn/init.vim), or after  su
+alias fec="fastfetch -c neofetch.jsonc" # compact
+if [[ $TERM_PROGRAM != 'WezTerm' ]]; then
+  if [[ $TERM =~ xterm ]]; then
+    fec
+  elif [[ ! $TERM =~ tmux && -z $in_nvim && $(logname) == $(whoami) ]]; then
+    fe  # - won't run in  tmux  or in  Neovim (see $vfn/init.vim), or after  su
+  fi
+elif [[ $WEZTERM_PANE == 0 ]]; then
+  fe
 fi
 
 #=> figlet
@@ -95,6 +99,7 @@ ft () {
 #=> file contents
 alias mo='moor -style monokai'
 alias pz='pygmentize -O style=paraiso-dark'
+alias rgsm='rg --sort=modified'
 
 #==> bat
 alias b='bat'  # syntax highlit cat

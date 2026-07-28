@@ -410,6 +410,7 @@ SED(1)
     tldr tldr
 
 # file manage
+    basename ~/Arch/bash_history.sh
     cd $Drpbx; fd -tf -u index.lock -x rm  # in  .git/  folders
     i lsd
     n [directory]
@@ -422,6 +423,7 @@ SED(1)
 - MV(1)
 - rsync(1)
 - STAT(1)
+- `Thunar` file associations won't work without `~/.local/share/mime/`
 - WC(1)
 
 ## advcpmv
@@ -552,6 +554,7 @@ vid => ffmpegthumbnailer
 Alt+c  # to change directory
 cat $(fzf)
 cd [directory/][fuzzy_pattern]**<tab>
+Ctrl+r  # select command from history
 f  # with  bat, $ABno/Bash/bashrc-generic
 gvim -o `f`  # calling upon fzf
 i fzf
@@ -568,6 +571,11 @@ unalias **<tab>
     i sk
     i sk
     i sk-tmux
+
+## nnn
+    ~/.config/nnn/sessions
+
+NNN(1)
 
 ## pv
       # pv ARCH_nnnnnn -Yo /dev/sdx
@@ -721,7 +729,6 @@ unalias **<tab>
 
 ### interval directories
     for y in h d w m; do find $rsnapshot -maxdepth 1 -mindepth 1 -type d -name "$y*" | sort -V; done | while read -r rsd; do o $rsd; done
-    so * | grep 700; fd 'bash_history$' */localhost/home/jo/Arch --max-depth 1 -x stat {} -c '%Y %n %y' | sort -r
     sudo diff --no-dereference -qr hourly.0 hourly.1 > hourly0+1.gnudiff
 
 #### permissions
@@ -888,22 +895,22 @@ XKEYBOARD-CONFIG(7) > MODELS (= physical arrangement), LAYOUTS (= languages)
     lspci -vnnd ::03xx
     doas lshw -C display | xcol GeForce NVIDIA Radeon size VGA
 
-## printing - CUPS
+## printing
     $AjB/bashrc-wm
 
-## printing - HP ENVY WiFi
+### HP ENVY WiFi
     HP ENVY 5532: d0:bf:9c:a2:2f:0e
 
-### CUPS
+#### CUPS
     doas cupsenable ENVY_Inspire_7200  # if it's paused
     lpoptions -d ENVY_Inspire_7200  # sets as default in  ~/.cups/lpoptions
     lpoptions -p Envy5532 -o PageSize=A4
 
-#### see selected options
+##### see selected options
     lpoptions -p ENVY_5530 -l | xcol '\*'
     lpoptions -p ENVY_5532 -l | xcol '\*'  # see selected options
 
-### HPLIP
+#### HPLIP
     hp-levels -p ENVY_5530
     hp-setup -b net 192.168.43.249  # when online
     http://192.168.43.249/
@@ -997,6 +1004,15 @@ pqiv(1)
 
 see `$Imagey/Scan.sh`
 
+## XnView MP
+    xnviewmp . &
+
+Useable backup when `nomacs` not available, but presents some png's with roughly painted orange background...
+
+### landscape print
+- to `HP Envy Inspire 7220e`, prints as cropped portrait
+- to `PDF` (= `~/jo/print.pdf`)
+
 # multimedia
     /usr/lib/vlc/plugins
     ~/.config/obs-studio/logs
@@ -1012,7 +1028,7 @@ PLAYERCTL(1)
     $misc/CP/mpv.conf
     :Man mpv
     r /usr/share/doc/mpv
-    rg mpv --sort=modified -l $ITculLAb/ml-$host/pm/cu
+    rgsm mpv -l $ITculLAb/ml-$host/pm/cu
 
 - `c` cycles through visualisations (`$ITccl/CP/mpv-scripts/visualizer.lua`)
 - `Ctrl+e` invokes equalizer (`$ITccl/CP/mpv-scripts/firequalizer15.lua`)
@@ -1146,8 +1162,9 @@ can fail to start after waking system
     pikaur -h  # --help
     pikaur -h -S  # --sync
     pikaur -Syu  # wants pw, offers to redo if connection fails
-    ~/.config/pikaur.conf
     r ~/.local/share/pikaur/aur_repos/
+    sudo rm -r ~/.cache/pikaur  # it'll get rebuilt
+    ~/.config/pikaur.conf
 
 - `-a` (`--aur`) only AUR packages will be upgraded, but wants to downgrade `auracle-git`
 - `--devel` doesn't reliably offer upgrades
@@ -1443,7 +1460,7 @@ uses `fzf`
     gio yime
     handlr -h
     handlr get .png
-    handlr list  # neatly presented [Default Applications]
+    handlr list  # neatly presented [Default Applications] (requires  ~/.config/mimeapps.list)
     mimeo -h
     mimeo -m <fileToOpen>  # reports mimetype
     ~/.config/mimeapps.list  # the default applications
@@ -1642,7 +1659,7 @@ scroll don't work in `tmux`
     printf '\e]710;%s\007' "xft:Consolas:Bold:pixelsize=12"
 
 ## tmux
-    resize -s 65 120  # good for half of ViewSonic VX2025wm
+    :display-message -p "#{version}"
 
 TMUX(1)
 

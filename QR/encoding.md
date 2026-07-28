@@ -75,7 +75,6 @@ open Wikipedia page in browser from terminal
 
 # Ruby - gem list
 ```bash
-gem list
 gem list --no-versions | tr '\n' ' ' | xcol bundler github-pages jekyll liquid
 rv=$(ruby -v); gem list > "$machLg/ruby${rv:5:1}${rv:7:1}${rv:9:1}.gems"  # using  $vfv/syntax/gems.vim
 ```
@@ -94,7 +93,7 @@ package is `ruby-bundler`
     du -h --max-depth=0 ~/.rbenv/versions/4.0.5/
     r ~/.rbenv/versions
     rbenv versions  # reports from  ~/.rbenv/version
-    whereis gem
+    whereis gem  # RubyGems
 
 # Ruby - ruby
     du -h --max-depth=0 /usr/lib/ruby/

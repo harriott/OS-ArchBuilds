@@ -8,10 +8,6 @@
 #  $ABjo/wm/Xfce/terminal_startup.sh
 #  $Obc/autostart
 
-# test (or reload) this script with
-#  tmux kill-server
-#  bash $ABjo/wm/terminal/startup.sh; bash $ABnm/jo/term/tmux_begin.sh
-
 #=> 0 safely run omc in existing tmux
 tmux send 'figlet -f univers tmux-S0 -t' Enter
 tmux split-window  # moves focus down, and allows  Tmux Resurrect  to  Restore  without clobbering

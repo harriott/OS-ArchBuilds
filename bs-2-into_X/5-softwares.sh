@@ -8,7 +8,9 @@ shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
 #=> $TERM
 pikn alacritty  # Alacritty
+pikn figurine
 pikn kitty
+pikn lolcat++
 
 #=> audio
 pikn spectroterm
@@ -83,6 +85,7 @@ npm config set prefix=$HOME/.npm-global
 
 #=> npm 1 packages
 npm i -g carbonyl
+npm i -g cowsay
 npm i -g cspell
 npm i -g js-beautify
 npm i -g mapscii  # world map in terminal

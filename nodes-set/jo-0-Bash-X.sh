@@ -8,15 +8,20 @@ set -v  # prints each statement here, including comments
 #=> Bash
 # sort these lists by last use of "~":  :sort /,*\~/
 
-ln -sf $AjB/bash_profile                                   ~/.bash_profile
+ln -sf $AjB/bash_profile              ~/.bash_profile
 if [[ $host =~ HPEB840G3 ]]; then
-  ln -sf $ABno/m-HPEB840G3x/jo/bashrc                      ~/.bashrc
+  ln -sf $ABno/m-HPEB840G3x/jo/bashrc ~/.bashrc
 else
-  ln -sf $ABnm/jo/Bash/bashrc                              ~/.bashrc
+  ln -sf $ABnm/jo/Bash/bashrc         ~/.bashrc
 fi
-ln -sf $ABjo/wm/term/bashrc-AlNvim                         ~/.bashrc-AlNvim
-ln -sf $AjB/bashrc-console                                 ~/.bashrc-console
-[ -d ~/Arch ] || mkdir ~/Arch; ln -sf $AjB/bash_history.sh ~/Arch/bash_history.sh
+ln -sf $ABjo/wm/term/bashrc-AlNvim    ~/.bashrc-AlNvim
+ln -sf $AjB/bashrc-console            ~/.bashrc-console
+
+#==> Bash history
+[ -d ~/Arch ] || mkdir ~/Arch
+[[ -d $machLg/jo ]] || mkdir $machLg/jo
+[[ -d $machLg/root ]] || mkdir $machLg/root
+ln -sf $AjB/bash_history.sh ~/Arch/bash_history.sh
 
 es ~/.bash* ~/Arch/bash_history.sh
 

@@ -1,6 +1,8 @@
 # vim: fdl=2 ft=sh sw=2:
 
-# $AjB/bashrc, sourced by  $ABno/m-.../bashrc
+# $AjB/bashrc, sourced by
+#  $ABnm/jo/Bash/bashrc
+#  $ABno/m-HPEB840G3x/jo/bashrc
 
 #=> 0 up to Console
 # $AjB/bash_profile  ensured the exports
@@ -16,5 +18,5 @@ source $OSL/nodes/bashrc-clm  # can be used before WM
 
 #=> 3 ble.sh, Atuin
 source $ABno/Bash/ble-atuin  # if  WezTerm  fix is implemented in  $ABno/Bash/blerc
-# [[ $TERM_PROGRAM == 'WezTerm' ]] || source $ABno/Bash/ble-atuin
+# [[ $TERM_PROGRAM != 'WezTerm' ]] && source $ABno/Bash/ble-atuin
 

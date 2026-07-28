@@ -14,9 +14,9 @@ bleopt term_modifyOtherKeys_external=0  # for  WezTerm (see "akinomyoga/ble.sh -
 #=> blehook  keymap_vi_load
 function my/vi_load {
 
-  # loss of  SIGINT
-  # ble-bind -f 'C-c' ''
-  # - doesn't help much, so just use  Esc 0 D
+  # Loss of  SIGINT:
+  #  ble-bind -f 'C-c' ''
+  #   - doesn't help much, so just use  Esc 0 D
 
   ble-bind -m vi_cmap --cursor 0
   ble-bind -m vi_imap --cursor 5

@@ -246,7 +246,7 @@ con () {
 [[ $PATH =~ npm-global ]] || export PATH="$HOME/.npm-global/bin:$PATH"
 
 #=> packages
-alias pikn='pikaur -S --needed --noedit --keepbuilddeps'
+alias pikn='pikaur -S --needed --noedit --nodiff --keepbuilddeps'
 alias prs='pikaur -Rs'
 
 chAPDs () {

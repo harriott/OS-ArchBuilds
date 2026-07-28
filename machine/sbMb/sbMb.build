@@ -4270,11 +4270,31 @@ $OSAB/bs-5-when_myDrA/TexLive.sh > native remove  for  native install full
 initially most blacked out, workaround is to move out and back into the pane
 same from  tmux -f $culL/term/tmux_test.conf
 same from  GNOME Terminal, xterm
+## FSearch
+  ... fsearch:validate-metainfo FAIL ...
+  ...
+  Full log written to /home/jo/.cache/pikaur/build/fsearch/src/build/meson-logs/testlog.txt
+  ==> ERROR: A failure occurred in check().
+    Aborting...
+rsync -irtv --delete ~/.cache/pikaur/ ~/cache_pikaur
+sudo rm -r ~/.cache/pikaur  but still can't install  fsearch, so  prs fsearch
+pikn fsearch-git  got same fail
+## HP Envy Inspire 7220e at 10.242.239.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.242.239.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## fzf lists blacked out in tmux
+fzf --version  reports  0.74.1 (eae8d9d2)
+tmux -V  reports  tmux next-3.7
+pikn tmux-git  got me  tmux next-3.8
+tmux kill-server; bash $ABjo/wm/Xfce/terminal_startup.sh  got  fzf  output visible again
 ## waiting
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
 Recoll
+RustDesk
 switch to fastmail
 # clm possible extras
 imapbox

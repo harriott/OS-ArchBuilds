@@ -195,13 +195,54 @@ sudo pacman -Rs pdfsam
 ## Updates
 :: geocode-glib-3.26.4-6 and geocode-glib-common-3.26.4-5 are in conflict. Remove geocode-glib-common? [y/N] y
 bash-completion-git verbiste-debug vimpc-git-debug xnviewmp-debug yay-bin-debug yj-git-debug
+## PDFs with Zathura
+right-click from  Thunar > Zathura  got me popup reporting, weirdly
+  Failed to set default application for "...pdf". Failed to create file "/mnt/BX200/Dropbox/IT/core/onGitHub/OS-ArchBuilds/mb-DOP3040D11S/jo/mimeapps.list.9qgCS3": No such file or directory.
+prs handlr-regex  same weird error, so re-installed it
+prs xdg-utils
+update-mime-database ~/.local/share/mime
+  I/O warning : failed to load "/home/jo/.local/share/mime/packages/audio-oma.xml": No such file or directory
+  Failed to parse '/home/jo/.local/share/mime/packages/audio-oma.xml'
+  I/O warning : failed to load "/home/jo/.local/share/mime/packages/text-fetl.xml": No such file or directory
+  Failed to parse '/home/jo/.local/share/mime/packages/text-fetl.xml'
+  I/O warning : failed to load "/home/jo/.local/share/mime/packages/text-mediawiki.xml": No such file or directory
+  Failed to parse '/home/jo/.local/share/mime/packages/text-mediawiki.xml'
+  I/O warning : failed to load "/home/jo/.local/share/mime/packages/text-sifw.xml": No such file or directory
+  Failed to parse '/home/jo/.local/share/mime/packages/text-sifw.xml'
+quit Desktop for  prs thunar thunar-archive-plugin thunar-dropbox thunar-media-tags-plugin thunar-volman xfdesktop; reboot
+rsync -irtv --delete ~/.local/share/mime/ ~/local_share_mime
+rm -r ~/.local/share/mime/*
+pikn xfdesktop
+discovered I'd sometime symlinked
+  so  rm ~/.config/mimeapps.list; cp $ABnm/jo/mimeapps.list ~/.config/mimeapps.list
+rsync -irtv --delete ~/local_share_mime/ ~/.local/share/mime
+relaunch of Thunar got the default applications working again
+pikn thunar-archive-plugin thunar-dropbox thunar-media-tags-plugin thunar-volman
+rm -r ~/local_share_mime
+## xfce4-notifyd snag
+systemctl --user start xfce4-notifyd
+  Failed to start xfce4-notifyd.service: Unit xfce4-notifyd.service failed to load properly, please adjust/correct and reload service manager: File exists
+  See user logs and 'systemctl --user status xfce4-notifyd.service' for details.
+systemctl --user disable xfce4-notifyd --now
+journalctl -b0 | grep notifyd
+  ... Service file '/usr/share//dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service' is not named after the D-Bus name 'org.freedesktop.Notifications'.
+  ... Ignoring duplicate name 'org.freedesktop.Notifications' in service file '/usr/share//dbus-1/services/org.xfce.xfce4-notifyd.Notifications.service'
+  ... Service file '/usr/share//dbus-1/services/org.xfce.xfce4-notifyd.Notifyd.service' is not named after the D-Bus name 'org.xfce.Notifyd'.
+prs xfce4-notifyd xfce4-power-manager
+pikn xfce4-notifyd xfce4-power-manager; reboot  got it working
+## mcat-bin
+  ==> Validating source_x86_64 files with sha256sums...
+    mcat-v0.6.3-x86_64-unknown-linux-gnu.tar.xz ... FAILED
+  ==> ERROR: One or more files did not pass the validity check!
+pikn mcat-bin  same so  prs mcat-bin
+sudo rm -r ~/.local/share/pikaur/aur_repos/mcat-bin
 ## waiting
-$culL/Arch/handlr-regex_error.bbcode
 apache
+cowsay
 EFI install
+figurine
 gokcehan's lf
-Keyboard Layouts
-sxk
+sox
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
@@ -285,9 +326,10 @@ Weather Update
 MPD Client Plugin > ymuse
 Status Tray Plugin (Wifi, Dropbox, CopyQ) > fcitx5 tray window > Hidden
 Mount devices
-Dictionary
 Notification Plugin > Notifications > Log > Log notifications > always
 PulseAudio Plugin
 Action Buttons
+Keyboard Layouts (as from  setxkbmap -query)
+Dictionary
 ### Remove'd
 Wavelan (doesn't add more than  Status Tray Plugin)

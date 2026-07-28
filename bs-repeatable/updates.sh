@@ -28,7 +28,8 @@ set -e
 
 #=> 5 updates
 echo 'Do updates:'
-pikaur -Syu  # because it's informative, and offers to continue after connection failure
+# pikaur --noedit -Syu  # because it's informative, and offers to continue after connection failure
+pikaur --nodiff --noedit -Syu # because it's informative, and offers to continue after connection failure
 # sudo pacman -Syu
 ################################
 ## reboot if kernel updated ! ##
