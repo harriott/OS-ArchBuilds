@@ -75,6 +75,10 @@ pikn xorg-xev
 pikn intel-hybrid-codec-driver-git
 pikn nbfc-linux  # fan control for  HPEB840G3x
 
+#=> LanguageTool
+pikn languagetool  # for the GUI
+pikn textidote-bin
+
 #=> network
 pikn bandwhich
 pikn mtr  # network diagnostic tool

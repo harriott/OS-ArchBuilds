@@ -34,6 +34,22 @@ cat /etc/sysctl.d/99-sysctl.conf
 #=> 2 automake
 pacman -S automake
 
+#=> 2 encoding
+# pacman -S bash-language-server
+pacman -S dart
+pacman -S git-delta
+pacman -S gvim
+pacman -S lazygit
+pacman -S lua-language-server
+pacman -S luarocks
+pacman -S onefetch
+pacman -S python-pip
+pacman -S python-pipx
+    # pipx ensurepath  # maybe not needed
+pacman -S r  # R
+pacman -S rbenv ruby-build ruby-docs  # $OSAB/bs-1-into_jo/3-config.sh
+pacman -S selene  # Lua linter
+
 #=> 2 file manage
 pacman -S broot
 pacman -S chafa  # Chafa
@@ -61,6 +77,26 @@ pacman -S tree
 pacman -S vifm
 pacman -S yazi  # Yazi
 pacman -S zoxide
+
+#=> 2 fonts
+sudo pacman -S adobe-source-code-pro-fonts  # for  Source Code Pro
+sudo pacman -S gnu-free-fonts
+sudo pacman -S noto-fonts  # for  Firefox  text and  Xfce  window labels
+sudo pacman -S noto-fonts-cjk  # for  $MD4PDF/GNULinux/md4pdf.sh
+sudo pacman -S ttf-arimo-nerd
+sudo pacman -S ttf-cascadia-mono-nerd
+sudo pacman -S ttf-croscore
+sudo pacman -S ttf-dejavu
+sudo pacman -S ttf-hack
+sudo pacman -S ttf-hack-nerd
+sudo pacman -S ttf-jetbrains-mono-nerd
+sudo pacman -S ttf-meslo-nerd
+sudo pacman -S ttf-opensans
+sudo pacman -S ttf-ubuntu-mono-nerd
+
+#=> 2 graphics
+# pacman -S mesa-demos  # Mesa demos
+pacman -S libva-utils
 
 #=> 2 hw
 pacman -S linux-firmware-intel
@@ -100,16 +136,6 @@ pacman -S progress
 pacman -S sysstat
 pacman -S tldr; tldr -u
 
-#=> 2 systemd Journal size
-grep SystemMaxUse /etc/systemd/journald.conf
-
-# #==> 0 limit
-# # helpful for storage-limited installations
-# sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
-
-# #==> 1 unlimit
-# sed -i 's/^SystemMaxUse=300/#SystemMaxUse=/' /etc/systemd/journald.conf
-
 #=> 2 networking
 pacman -S arp-scan
 pacman -S openbsd-netcat  # netcat - for network connection tests
@@ -129,42 +155,6 @@ pacman -S pkgfile  # for finding possible packages
     systemctl enable pkgfile-update.timer --now
 pacman -S pkgstats
 
-#=> 2 encoding
-# pacman -S bash-language-server
-pacman -S dart
-pacman -S git-delta
-pacman -S gvim
-pacman -S lazygit
-pacman -S lua-language-server
-pacman -S luarocks
-pacman -S onefetch
-pacman -S python-pip
-pacman -S python-pipx
-    # pipx ensurepath  # maybe not needed
-pacman -S r  # R
-pacman -S rbenv ruby-build ruby-docs  # $OSAB/bs-1-into_jo/3-config.sh
-pacman -S selene  # Lua linter
-
-#=> 2 fonts
-sudo pacman -S adobe-source-code-pro-fonts  # for  Source Code Pro
-sudo pacman -S gnu-free-fonts
-sudo pacman -S noto-fonts  # for  Firefox  text and  Xfce  window labels
-sudo pacman -S noto-fonts-cjk  # for  $MD4PDF/GNULinux/md4pdf.sh
-sudo pacman -S ttf-arimo-nerd
-sudo pacman -S ttf-cascadia-mono-nerd
-sudo pacman -S ttf-croscore
-sudo pacman -S ttf-dejavu
-sudo pacman -S ttf-hack
-sudo pacman -S ttf-hack-nerd
-sudo pacman -S ttf-jetbrains-mono-nerd
-sudo pacman -S ttf-meslo-nerd
-sudo pacman -S ttf-opensans
-sudo pacman -S ttf-ubuntu-mono-nerd
-
-#=> 2 graphics
-# pacman -S mesa-demos  # Mesa demos
-pacman -S libva-utils
-
 #=> 2 system
 pacman -S beep
 pacman -S bpytop  # BpyTOP - supersedes  Bashtop
@@ -178,24 +168,15 @@ pacman -S isd  # GNU isd
 pacman -S meson  # for  auracle-git  later
 pacman -S pv  # Pipe Viewer
 
-#=> 2 various
-pacman -S arch-wiki-docs lynx w3m  # web-ish
-pacman -S cpanminus
-pacman -S ctags  # universal-ctags
-pacman -S emacs  # brings in  tree-sitter
-# pacman -S gnome-terminal  # GNOME Terminal
-pacman -S hyperfine
-pacman -S kew
-pacman -S languagetool  # for the GUI
-pacman -S npm  # Node Package Manager, brings in  nodejs
-pacman -S mythes-en  # OpenOffice English thesaurus
-pacman -S pass  # brings in gnupg, which brings in pinentry
-    gpg -k  # creates & populates  ~/.gnupg
-pacman -S python-beautifulsoup4  # for thesaurus_query.vim
-pacman -S rkhunter  # Rootkit Hunter
-pacman -S speech-dispatcher  # Speech Dispatcher
-pacman -S strace  # for debugging
-pacman -S tmux
+#=> 2 systemd Journal size
+grep SystemMaxUse /etc/systemd/journald.conf
+
+# #==> 0 limit
+# # helpful for storage-limited installations
+# sed -i 's/^#SystemMaxUse=/SystemMaxUse=300/' /etc/systemd/journald.conf
+
+# #==> 1 unlimit
+# sed -i 's/^SystemMaxUse=300/#SystemMaxUse=/' /etc/systemd/journald.conf
 
 #=> 2 users
 # activate wheel group
@@ -213,4 +194,22 @@ cat /etc/passwd
 pacman -S opendoas
     cp $ABno/etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
     chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
+
+#=> 2 various
+pacman -S arch-wiki-docs lynx w3m  # web-ish
+pacman -S cpanminus
+pacman -S ctags  # universal-ctags
+pacman -S emacs  # brings in  tree-sitter
+# pacman -S gnome-terminal  # GNOME Terminal
+pacman -S hyperfine
+pacman -S kew
+pacman -S npm  # Node Package Manager, brings in  nodejs
+pacman -S mythes-en  # OpenOffice English thesaurus
+pacman -S pass  # brings in gnupg, which brings in pinentry
+    gpg -k  # creates & populates  ~/.gnupg
+pacman -S python-beautifulsoup4  # for thesaurus_query.vim
+pacman -S rkhunter  # Rootkit Hunter
+pacman -S speech-dispatcher  # Speech Dispatcher
+pacman -S strace  # for debugging
+pacman -S tmux
 

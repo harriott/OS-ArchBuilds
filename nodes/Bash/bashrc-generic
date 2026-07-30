@@ -11,7 +11,6 @@
 #   for root: sourced by  $ABno/root/bashrc
 
 [ -f /usr/bin/grc ] && export grc='grc'
-[ -f /usr/bin/rainbow ] && export rainbow='rainbow'
 [ -f /usr/share/blesh/ble.sh ] && [[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$ABno/Bash/blerc"
 alias sl='su -l'
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
@@ -124,6 +123,14 @@ c() { if [ -n "$1" ]; then cd "$1" || return 1; else cd ..; fi; l -a; }
 # - https://superuser.com/a/1244522/242800
 
 export PAGER=less
+
+gr () {
+    root=$(git rev-parse --show-toplevel 2>/dev/null) || {
+        echo "not inside a Git repository" >&2
+        return 1
+    }
+    cd "$root"
+} # from  ChatGPT
 
 if [ -s "/usr/bin/broot" ]; then
   source ~/.config/broot/launcher/bash/br  # (first  broot  adds to  .bashrc)

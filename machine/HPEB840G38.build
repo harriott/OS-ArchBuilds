@@ -278,6 +278,8 @@ rbenv rehash
 gem uni lolcat
 rbenv rehash
 ## waiting
+### RustDesk
+pikn rustdesk-git
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)

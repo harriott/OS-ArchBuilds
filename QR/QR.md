@@ -1030,9 +1030,7 @@ PLAYERCTL(1)
     r /usr/share/doc/mpv
     rgsm mpv -l $ITculLAb/ml-$host/pm/cu
 
-- `c` cycles through visualisations (`$ITccl/CP/mpv-scripts/visualizer.lua`)
-- `Ctrl+e` invokes equalizer (`$ITccl/CP/mpv-scripts/firequalizer15.lua`)
-- MPV(1)
+MPV(1)
 
 ## OBS Studio Settings
     Hotkeys > [ Start Recording  Stop Recording ] > Win+Space (= Super + Space)
@@ -1132,7 +1130,7 @@ can fail to start after waking system
 - downgrade
 
 ## AUR
-    chAURpds <AUR_package>
+    chAPDs <AUR_package>
 
 `$AjB/bashrc-console` > trizen
 

@@ -4289,12 +4289,14 @@ fzf --version  reports  0.74.1 (eae8d9d2)
 tmux -V  reports  tmux next-3.7
 pikn tmux-git  got me  tmux next-3.8
 tmux kill-server; bash $ABjo/wm/Xfce/terminal_startup.sh  got  fzf  output visible again
+## RustDesk
+pikn rustdesk  eventually failed, so  prs amf-headers ffnvcodec-headers gst-plugin-pipewire liblc3 libmysofa libwireplumber lilv lv2 pipewire-audio pipewire-session-manager serd sord spandsp sratom wireplumber xdg-user-dirs yasm zix
+pikn rustdesk-bin  brought in  alsa-card-profiles gst-plugin-pipewire libfdk-aac libfreeaptx liblc3 libldac libmysofa libwireplumber lilv lv2 pipewire-audio pipewire-session-manager serd sord spandsp sratom wireplumber zix  then was quickly done
 ## waiting
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
 Recoll
-RustDesk
 switch to fastmail
 # clm possible extras
 imapbox

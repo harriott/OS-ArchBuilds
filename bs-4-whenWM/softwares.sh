@@ -179,6 +179,9 @@ pikn nomacs
 nomacs &
 read -p 'Ctr+Shift+p > English > Close  then  Close on ESC'
 
+#==> Perl module Image::ExifTool
+pikn perl-image-exiftool  # $onGH/jpgorhor/jpgorhor.pl
+
 #==> qrtool
 # (rustup update)
 pikn qrtool  # for QR code
