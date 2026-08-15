@@ -4292,6 +4292,36 @@ tmux kill-server; bash $ABjo/wm/Xfce/terminal_startup.sh  got  fzf  output visib
 ## RustDesk
 pikn rustdesk  eventually failed, so  prs amf-headers ffnvcodec-headers gst-plugin-pipewire liblc3 libmysofa libwireplumber lilv lv2 pipewire-audio pipewire-session-manager serd sord spandsp sratom wireplumber xdg-user-dirs yasm zix
 pikn rustdesk-bin  brought in  alsa-card-profiles gst-plugin-pipewire libfdk-aac libfreeaptx liblc3 libldac libmysofa libwireplumber lilv lv2 pipewire-audio pipewire-session-manager serd sord spandsp sratom wireplumber zix  then was quickly done
+## HP Envy Inspire 7220e at 172.17.94.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 172.17.94.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## RustDesk
+  ID: 506 728 299
+  Unsupported display server tty, x11 expected
+## cmus-git  not playing tracks
+prs cmus-git  for  pikn cmus
+  cmus: Error: no such option input.cdio.cddb_url
+  cmus: Error: no such option input.mp4.priority
+  cmus: Error: no such option mixer.alsa.mapped_volume
+  - fixed by a reboot, but still not playing tracks...
+prs alsa-card-profiles gst-plugin-pipewire libfdk-aac libfreeaptx liblc3 libldac libmysofa libwireplumber lilv lv2 pipewire-audio pipewire-session-manager rustdesk-bin serd sord spandsp sratom wireplumber zix  fixed it
+## HP Envy Inspire 7220e at 10.60.32.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.60.32.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## BIOS crash
+attempted to restore from backup, but then refused to boot
+### fix
+booted into  KDT100G3A (F12 > UEFI: KingstonDataTraveler 3.0)  with  ARCH_202608
+mount /dev/sda2 /mnt
+mount /dev/sda1 /mnt/efi
+arch-chroot /mnt
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB  # UEFI
+grub-mkconfig -o /boot/grub/grub.cfg
+Ctrl-d  out of  chroot  for  reboot
 ## waiting
 gokcehan's lf
 MariaDB

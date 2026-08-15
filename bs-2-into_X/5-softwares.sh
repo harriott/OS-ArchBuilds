@@ -18,8 +18,8 @@ pikn pwvucontrol  # takes ages, for  PulseAudio  volume icon
 
 #==> Cmus
 [ -d ~/.config/cmus ] || mkdir ~/.config/cmus
-# pikn cmus
-pikn cmus-git
+pikn cmus
+# pikn cmus-git
 
 #==> MPD
 pikn mpd

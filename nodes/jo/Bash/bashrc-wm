@@ -189,7 +189,7 @@ fps () { for v in "$@"; do echo $(fpwh $v) $(fpcn v $v) $(fpfr $v) $(fpcn a $v) 
 alias yt='yt-dlp'
   alias ya='yt -f ba'  # overrides  Yazi
   alias ytf='yt -F'  # --list-formats
-  y7 () { yt-dlp -S "height:720" "$1"; o "${tpf3} - now check for unwanted characters and mkv!${tpfn}"; }
+  y7 () { yt-dlp -S "height:720" "$1"; (($?==0)) && o "${tpf3} - now check for unwanted characters and mkv!${tpfn}"; }
 
 #=> CUPS
 alias lpf='lp -o fit-to-page'  # lpf *
@@ -412,10 +412,8 @@ cfmj() {
 dcc0 () {
   pushd $Drpbx
   jHMS=$(date "+%y%m%d-%H%M%S")  # o $jHMS
-  export DropboxConflictedLog="$Drpbx/conflicted/$jHMS.log"
+  export DropboxConflictedLog="$Drpbx/conflicted/$jHMS.drcl"
   echo 'scanning for conflicted copies'
-  echo 'vim: nowrap:' > $DropboxConflictedLog
-  echo '' >> $DropboxConflictedLog
   find $PWD -path $Drpbx/conflicted -prune -o -regex ".*'s conflicted copy.*\|.* (Copie en conflit de .*" -print >> $DropboxConflictedLog
   # fd -E conflicted conflicted
   gvim $DropboxConflictedLog
@@ -423,12 +421,11 @@ dcc0 () {
 }  # lists them
 dcc1 () {
   if [ -s "$DropboxConflictedLog" ]; then
-    DropboxConflictedRemoved=${DropboxConflictedLog/.log/-removed}
+    DropboxConflictedRemoved=${DropboxConflictedLog/.drcl/-removed}
     mkdir $DropboxConflictedRemoved
     removedRestore="$DropboxConflictedRemoved-restore.sh"
     echo '# vim: nowrap:' > $removedRestore
     echo '' >> $removedRestore
-    sed -i '1,2d' $DropboxConflictedLog  # remove the vim modeline
     while IFS= read -r dcc; do
       removedRelativePath=${dcc/$Drpbx\//}
       removedFlattenedPath=${removedRelativePath//\//--}
@@ -447,6 +444,12 @@ dcc1 () {
 
 #==> Thb
 # $ABjo/wm/TS/
+
+function Tc() {
+  for td in $DrThb $thb/jo; do
+    find -L $td -type f -printf '%TY-%Tm-%Td-%TH:%TM:%.2TS %p\n' | sort -k1,1r | head -5
+  done
+}
 
 function Tg() {
   rsync -irtv --delete $DrThb/ $thb/jo

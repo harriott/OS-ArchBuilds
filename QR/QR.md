@@ -54,7 +54,7 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
     pactl list short
     pactl list sinks | grep -B1 -A9 State:
 
-( also brought in by `pipewire-pulse`)
+(also brought in by `pipewire-pulse`)
 
 ## MPD
     $ABjo/music/MPD/mpd.conf
@@ -652,7 +652,7 @@ NNN(1)
 
 ## rsnapshot
     $ABnm/etc/rsnapshot.conf
-    $ABno/rsnapshot
+    $ABno/rsnapshot/
     r $rsnapshot
     snapshot_root
     sudo du -sh $rsnapshot
@@ -857,9 +857,15 @@ gpg(1)
     cd /sys/devices/system/cpu/cpu0/cpufreq
     doas showkey  # keycodes
     r /sys/class/backlight/intel_backlight
-    systemctl status bluetooth
 
-WIPEFS(8)
+## wipefs
+- `-a` (= `--all`) signatures
+- WIPEFS(8)
+
+## Bluetooth
+    blueman-manager &
+    sudo rm -r /var/lib/bluetooth  clears out stored devices
+    systemctl status bluetooth
 
 ## cbh - keyboard
     /usr/include/linux/input-event-codes.h

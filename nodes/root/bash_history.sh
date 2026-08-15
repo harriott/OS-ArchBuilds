@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=2:
 
-# Joseph Harriott, Sun 14 Jun 2026
+# Joseph Harriott, lun 03 août 2026
 
 # sudo bash $ABno/root/bash_history.sh ($OSAB/nodes-set/root-0.sh)
 
@@ -10,5 +10,6 @@
 # changes here are instantly effected
 
 #=> backup root
-rbh="/home/jo/Arch/root-bash_history"; cp /root/.bash_history $rbh; chown jo:jo $rbh
+rbh="/home/jo/Arch/root-bash_history" # further processed by  $AjB/bash_history.sh
+cp /root/.bash_history $rbh; chown jo:jo $rbh
 

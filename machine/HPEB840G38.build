@@ -277,9 +277,35 @@ rbenv rehash
 ### remove it
 gem uni lolcat
 rbenv rehash
+## volume keys
+XF86AudioLowerVolume & XF86AudioRaiseVolume not responding after system suspended
+systemctl --user restart pipewire pipewire-pulse wireplumber
+## RustDesk
+pikn rustdesk-bin
+connection to  sbMb  fails with  Unsupported display server type "tty", x11 or wayland expected
+o $XDG_SESSION_TYPE  reports  tty
+sudo systemctl start rustdesk
+## HP Envy Inspire 7220e at 10.60.32.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.60.32.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## not connecting to Sony WH-CH520
+connects and disconnects  br-connection-aborted-by-local
+sudo rm -r /var/lib/bluetooth  didn't help  factory reset of headphones did
+## seized
+hard reboot
+## Pierre Schmitz gpg key
+gpg --recv-keys 76A5EF9054449A5C
+## HP Envy Inspire 7220e at 10.191.125.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.191.125.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates
+localsend  update stuck for a long time on "Building Linux application..."  then  TRAUR  reported it  SKETCHY, so  prs localsend
+/etc/tpm2-tss/fapi-profiles
 ## waiting
-### RustDesk
-pikn rustdesk-git
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)

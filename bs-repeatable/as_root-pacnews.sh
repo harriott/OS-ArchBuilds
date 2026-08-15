@@ -25,6 +25,13 @@ rm /etc/davfs2/davfs2.conf.pacnew
 nvim -O /etc/dhcpcd.conf /etc/dhcpcd.conf.pacnew -c 'windo difft'
 rm /etc/dhcpcd.conf.pacnew
 
+#=> 1 fapi-profiles
+nvim -O /etc/tpm2-tss/fapi-profiles/P_ECCP384SHA384.json /etc/tpm2-tss/fapi-profiles/P_ECCP384SHA384.json.pacnew -c 'windo difft'
+mv /etc/tpm2-tss/fapi-profiles/P_ECCP384SHA384.json.pacnew /etc/tpm2-tss/fapi-profiles/P_ECCP384SHA384.json
+
+nvim -O /etc/tpm2-tss/fapi-profiles/P_RSA3072SHA384.json /etc/tpm2-tss/fapi-profiles/P_RSA3072SHA384.json.pacnew -c 'windo difft'
+mv /etc/tpm2-tss/fapi-profiles/P_RSA3072SHA384.json.pacnew /etc/tpm2-tss/fapi-profiles/P_RSA3072SHA384.json
+
 #=> 1 firewalld
 # nvim -O /etc/firewalld/firewalld.conf /etc/firewalld/firewalld.conf.pacnew -c 'windo difft'
 # rm /etc/firewalld/firewalld.conf.pacnew

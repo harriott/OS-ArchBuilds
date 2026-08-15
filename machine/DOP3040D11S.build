@@ -236,6 +236,21 @@ pikn xfce4-notifyd xfce4-power-manager; reboot  got it working
   ==> ERROR: One or more files did not pass the validity check!
 pikn mcat-bin  same so  prs mcat-bin
 sudo rm -r ~/.local/share/pikaur/aur_repos/mcat-bin
+## RustDesk
+pikn rustdesk-git  brought in  alsa-card-profiles amf-headers gst-plugin-pipewire libfdk-aac libfreeaptx liblc3 libldac libmysofa libwireplumber pipewire-audio pipewire-session-manager spandsp wireplumber xdg-user-dirs yasm  but then couldn't download "the latest sources for a devel package rustdesk-git..."
+pikn rustdesk-bin
+  alsa-card-profiles (for pipewire-audio)
+  gst-plugin-pipewire (for rustdesk-bin)
+  libfdk-aac (for pipewire-audio)
+  libfreeaptx (for pipewire-audio)
+  liblc3 (for pipewire-audio)
+  libldac (for pipewire-audio)
+  libmysofa (for pipewire-audio)
+  libwireplumber (for wireplumber)
+  pipewire-audio (for gst-plugin-pipewire)
+  pipewire-session-manager (for gst-plugin-pipewire)
+  spandsp (for pipewire-audio)
+  wireplumber (for pipewire-session-manager, gst-plugin-pipewire)
 ## waiting
 apache
 cowsay

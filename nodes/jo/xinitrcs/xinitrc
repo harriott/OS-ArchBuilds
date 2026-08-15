@@ -54,6 +54,9 @@ fi
 # ------------
 # e -la ~/.Xresources*
 
+# for  RustDesk
+# XDG_SESSION_TYPE=x11
+
 # possible key changes
 [ -s ~/.xmodmap ] && xmodmap ~/.xmodmap
 #  - eg  $ABno/m-HPEB840G3x/jo/xmodmap
