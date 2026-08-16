@@ -1,9 +1,9 @@
 
 $ABm/HPEB840G38.build
 
-HP EliteBook 840 G3 barcoded PC117860 (labelled BC PNB 18 by last owner) = HPEB840G38
+$Drpbx/devSh/HPEB840G38/
 
-journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
+HP EliteBook 840 G3 barcoded PC117860 (labelled BC PNB 18 by last owner) = HPEB840G38
 
 pikn, prs  defined in  $AjB/bashrc-console
 
@@ -304,7 +304,7 @@ hp-setup 10.191.125.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Updates
 localsend  update stuck for a long time on "Building Linux application..."  then  TRAUR  reported it  SKETCHY, so  prs localsend
-/etc/tpm2-tss/fapi-profiles
+fixed  /etc/tpm2-tss/fapi-profiles  pacnews
 ## waiting
 # physical configuration
 1366x768 screen
@@ -314,7 +314,9 @@ RAM CT2K8G4SFRA32A
 (essential) M.2 SSD: 119Go Samsung MZNLN128
 LITEON CV1-8B128-HP
 (optional) 2.5" SSD: BX500 shimmed to prevent disconnection
-## Startup Menu
+## BIOS
+journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
+### Startup Menu
 hold  esc  at start to get into  Startup Menu
 hold  f9  at start to get into  Boot Menu
 hold  f10  at start to get into  BIOS Setup

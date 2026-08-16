@@ -250,7 +250,7 @@ alias pikn='pikaur -S --needed --noedit --nodiff --keepbuilddeps'
 alias prs='pikaur -Rs'
 
 chAPDs () {
-  for pd in ~/.cache/paru/clone ~/.cache/traur/git ~/.local/share/pikaur/aur_repos ~/Arch/AUR ~/Arch/AURdev-clone; do
+  for pd in ~/.cache/paru/clone ~/.cache/traur/git ~/.local/share/pikaur/aur_repos ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make; do
     if [[ -d $pd/$1 ]]; then stat -c '%y %n' $pd/$1 | xcol paru traur pikaur AURdev; fi; done }
 export -f chAPDs  # check AUR PKGBUILDs
 

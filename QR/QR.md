@@ -104,6 +104,7 @@ symlinked to `rec_ng`
     tput bel  # bell
 
 - BASH(1)
+- CUT(1)
 - UNIQ(1)
 
 ## env
@@ -573,6 +574,7 @@ unalias **<tab>
     i sk-tmux
 
 ## nnn
+    $culLA/jo/bashrc-console-NNN_BMS
     ~/.config/nnn/sessions
 
 NNN(1)
@@ -1138,7 +1140,12 @@ can fail to start after waking system
 ## AUR
     chAPDs <AUR_package>
 
-`$AjB/bashrc-console` > trizen
+`$AjB/bashrc-console` > `trizen`
+
+### Aura
+    aura --help
+    i aura
+    sudo aura -Aakux --devel > n  # just for info
 
 ### auracle-git
     auracle -h
@@ -1149,13 +1156,8 @@ can fail to start after waking system
     aur-scan scan <package_directory>  # detailed report
     aur-scan system  # all installed AURs, quick info
 
-### Aura
-    aura --help
-    i aura
-    sudo aura -Aakux --devel > n  # just for info
-
 ### paru
-    ~/.cache/paru/clone
+    sudo rm -r ~/.cache/paru/*
 
 - `paru` (= `paru -Syu`)
 - `paru --gendb` is required to include `*-git` packages
