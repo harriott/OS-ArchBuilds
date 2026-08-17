@@ -96,3 +96,6 @@ ln -sf $ABjo/WAN/w3m/keymap ~/.w3m/keymap
 ln -sf $ABjo/WAN/w3m/omnibar_duckduckgo.cgi ~/.w3m/cgi-bin/omnibar_duckduckgo.cgi
 es ~/.w3m ~/.w3m/cgi-bin
 
+#=> wlan0
+ln -sf $ABno/wlan0.sh ~/Arch/wlan0.sh
+

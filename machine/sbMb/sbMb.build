@@ -4323,19 +4323,93 @@ grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB  # UE
 grub-mkconfig -o /boot/grub/grub.cfg
 Ctrl-d  out of  chroot  for  reboot
 ## Updates
-during  localsend, ran out of space in  ~
-sudo rm -r ~/Arch/AURdev-clone/*
-sudo rm -r ~/Arch/AURdev-make/*
-
-    sudo rm -r ~/.cache/pikaur
-
+during  localsend, ran out of space in  ~, so
+  bash $OSAB/bs-repeatable/AURs-rm.sh
+  rm -r ~/cache_pikaur
+## Updates
+  ...
+  ==> Making package: localsend 1.18.1-1
+  ...
+  Downloading Linux x64 Dart SDK from Flutter engine
+  ...
+  Downloading packages... (2:18.2s)
+    _fe_analyzer_shared 93.0.0 (105.0.0 available)
+    analyzer 10.0.1 (14.1.0 available)
+    assorted_layout_widgets 11.0.0 (12.12.1 available)
+    build 4.0.7 (4.0.10 available)
+    build_runner 2.15.1 (2.16.0 available)
+    dart_mappable_builder 4.8.0 (4.9.0 available)
+    dart_style 3.1.7 (3.1.12 available)
+    dbus 0.7.13 (0.7.14 available)
+  ! device_apps 2.2.0 from git https://github.com/Tienisto/device_apps.git at 5dc795 (overridden)
+    device_info_plus 12.4.0 (13.2.0 available)
+    device_info_plus_platform_interface 7.0.3 (8.1.0 available)
+    dynamic_color 1.8.1 (1.9.0 available)
+    file_picker 11.0.3 (12.0.0 available)
+    file_selector_android 0.5.2+6 (0.5.2+9 available)
+    flutter_foreground_task 9.2.2 (10.0.0 available)
+    flutter_markdown 0.7.7+1 (discontinued replaced by flutter_markdown_plus)
+    hooks 2.0.2 (2.1.0 available)
+    image_picker_android 0.8.13+17 (0.8.13+19 available)
+    in_app_purchase_android 0.5.0 (0.5.2 available)
+    in_app_purchase_storekit 0.4.11 (0.4.11+1 available)
+    intl 0.20.2 (0.20.3 available)
+    matcher 0.12.19 (0.12.20 available)
+    material_color_utilities 0.13.0 (0.13.1 available)
+    meta 1.17.0 (1.19.0 available)
+    mockito 5.6.4 (5.8.1 available)
+    network_info_plus 7.0.0 (8.2.1 available)
+    network_info_plus_platform_interface 2.0.2 (3.1.0 available)
+    package_config 2.2.0 (3.0.0 available)
+    package_info_plus 9.0.1 (10.2.1 available)
+    package_info_plus_platform_interface 3.2.1 (4.1.0 available)
+  ! pasteboard 0.3.0 from git https://github.com/Seidko/flutter-plugins.git at 58748d in packages/pasteboard (overridden)
+    permission_handler 12.0.3 (13.0.1 available)
+    permission_handler_android 13.0.1 (14.0.0 available)
+    permission_handler_apple 9.5.1 (9.6.1 available)
+  ! permission_handler_windows 0.1.2 from git https://github.com/localsend/permission_handler_windows_noop.git at 2dadd8 (overridden)
+    qr 3.0.2 (4.0.0 available)
+    record_use 0.6.0 (1.1.0 available)
+    share_handler 0.0.22 (0.0.25 available)
+    shared_preferences_android 2.4.23 (2.4.27 available)
+    shelf_web_socket 2.0.1 (3.0.0 available)
+    test 1.30.0 (1.31.2 available)
+    test_api 0.7.10 (0.7.13 available)
+    test_core 0.6.16 (0.6.19 available)
+    uri_content 3.1.1 (4.0.1 available)
+    url_launcher_android 6.3.30 (6.3.32 available)
+    vector_math 2.2.0 (2.4.2 available)
+    video_player 2.11.1 (2.14.0 available)
+    video_player_android 2.9.5 (2.12.0 available)
+    wakelock_plus 1.5.2 (1.7.0 available)
+    win32 5.15.0 (6.4.0 available)
+    win32_registry 2.1.0 (3.0.3 available)
+  ...
+  1 package is discontinued.
+  47 packages have newer versions incompatible with dependency constraints.
+  Try `flutter pub outdated` for more information.
+  ...
+  ==> ERROR: A failure occurred in build().
+  ...
+## clear out  Dart, Flutter
+find ~/.pub-cache | wc -l  reported  80044
+dart pub cache clean
+prs localsend
+prs dart
+cargo install cargo-cache
+rm -r ~/.dart-tool
+rm -r ~/.config/flutter
+## remove  mpv-uosc
 prs mpv-uosc
+## remove  easyplayer
+prs easyplayer
 ## waiting
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
 Recoll
 switch to fastmail
+wlan0.sh
 # clm possible extras
 imapbox
 maildir-rank-addr

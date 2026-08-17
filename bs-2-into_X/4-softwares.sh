@@ -6,13 +6,15 @@ set -v  # prints each statement here, including comments
 # prs  defined in  $AjB/bashrc-console
 shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
+pikn neovim
+
 #=> $TERM
 pikn alacritty  # Alacritty
-pikn figurine
 pikn kitty
-pikn lolcat++
+pikn xterm
 
 #=> audio
+pikn espeak-ng
 pikn spectroterm
 pikn pwvucontrol  # takes ages, for  PulseAudio  volume icon
 
@@ -54,8 +56,18 @@ pikn htmlhint  # HTMLHint
 pikn sd  # chmln.sd
 pikn tspreed  # words of a text at preferred speed
 
+#=> file contents - bat
+# bat-modules, batdiff, batgrep, batman, batpipe, batwatch, prettybat
+pikn bat-extras  # brings in bat (used in  fzf --preview)
+pikn entr  # (also used by batwatch)
+pikn prettier  # (needs  nodejs)
+pikn python-black
+pikn shfmt
+
 #=> file manage
+pikn fzy
 pikn gitleaks
+pikn rsnapshot
 pikn superfile
 
 #==> CliFM 0 noto-fonts-emoji
@@ -69,6 +81,7 @@ pikn -s batstat-git  # battery status
 pikn diskonaut
 pikn exfatprogs  # exFAT utilities
 pikn hwinfo
+pikn xf86-input-wacom
 pikn xorg-xev
 
 #==> for  HPEB840G3x
@@ -80,8 +93,17 @@ pikn languagetool  # for the GUI
 pikn textidote-bin
 
 #=> network
+pikn aria2
 pikn bandwhich
+pikn bind-tools  # DNS Lookup utility
+pikn chromium  # Chromium
+pikn msmtp-mta  # brings in  msmtp
 pikn mtr  # network diagnostic tool
+pikn rtorrent
+pikn transmission-cli
+
+#=> network - OpenSSH
+pikn openssh; g="$HOME/sshd_config-q6k"; sudo cp /etc/ssh/sshd_config $g; chown jo:jo $g
 
 #=> npm 0 configure npm-global
 [ -d ~/.npm-global ] ||  mkdir ~/.npm-global
@@ -95,12 +117,13 @@ npm i -g js-beautify
 npm i -g mapscii  # world map in terminal
 npm i -g wikit  # open Wikipedia page in browser from terminal
 
-# #=> packages
-# pikn downgrade  # Arch packages
+#=> packages
+pikn downgrade  # Arch packages
 
-# #==> devtools
-# # mkdir /mnt/SD480GSSDPlus/chroot
-# pikn devtools  # for package managers
+#==> devtools
+# mkdir /mnt/SD480GSSDPlus/chroot
+pikn devtools  # for package managers
+pikn rebuild-detector  # for packages that might need rebuilding
 
 #=> Perl modules
 pikn perl-clone-pp  # for  perl-data-printer
@@ -113,6 +136,7 @@ pikn python-virtualenvwrapper
 pipx install gdown
 pipx install proselint
 pipx install radio-active
+pipx install terminal-colors
 pipx install yaml2toml
 
 #=> Rust 0 rustup
@@ -120,6 +144,7 @@ rustup update
 
 #=> Rust 1 crates
 cargo install pipecolor  # dalance/pipecolor
+pikn cargo-cache
 pikn cloudflare-speed-cli
 pikn didyoumean  # provides  dym
 pikn dust
@@ -145,12 +170,16 @@ pikn atuin
 pikn blesh-git
 pikn cmatrix
 pikn figlet-fonts  # brings in figlet
+pikn figurine
 pikn fortune-mod
 pikn grc  # garabik/grc - colourised output in terminal
 pikn julia-bin  # for displaying sixels
 pikn libsixel  # for  sixel  graphics
+pikn lolcat++
 pikn lsix-git  # for sixels
+pikn moreutils
 pikn shell-color-scripts-git  # DT's  colorscript -r
+pikn termdown
 pikn tty-clock-git
 pikn zellij  # Zellij
 
@@ -158,6 +187,7 @@ pikn zellij  # Zellij
 pikn gtop
 pikn lnav  # Logfile Navigator
 pikn sysstat  # brings in  lm_sensors
+pikn systeroid
 pikn sysz  # fzf terminal UI for systemctl
 
 #=> WAN
@@ -166,6 +196,7 @@ pikn chawan-git
 pikn fping
 pikn gping
 pikn librespeed-cli
+pikn neomutt  # brings in  notmuch-runtime
 pikn rdrview-git  # extract the main content from a webpage
 pikn speedtest-cli
 sudo systemctl enable systemd-resolved.service --now

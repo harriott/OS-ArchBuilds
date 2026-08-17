@@ -46,13 +46,16 @@ configured in `$OSAB/bs-4-whenWM/1-softwares.sh`
     ~/.w3m/config
 
 # cloud storage - Dropbox
+    s ~/.dropbox
+
 ```bash
 dropbox &  # as in  $Obc/autostart/autostart
 killall dropbox
 lsof -c dropbox
 pgrep dropbox
 pkill dropbox; dropbox &
-rm -r $Drpbx/.dropbox.cache/*
+rm $Drpbx/.dropbox  # it gets immediately recreated  644 jo:jo
+rm -r $Drpbx/.dropbox.cache/*  # causes a relaunch, can fix slow syncs
 ```
 
 ## conflicted copies

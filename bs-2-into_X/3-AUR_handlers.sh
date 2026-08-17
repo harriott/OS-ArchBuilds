@@ -7,7 +7,10 @@ set -v  # prints each statement here, including comments
 
 # rAUR, trzAUR, trzAURd  are defined in  $AjB/bashrc-console
 
-# #=> 0 trizen install
+# #=> 0 trizen 0 prepare
+mkdir ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make
+
+# #=> 0 trizen 1 install
 # # needed for  trzAUR
 # cd ~/Arch/AUR
 # rAUR trizen

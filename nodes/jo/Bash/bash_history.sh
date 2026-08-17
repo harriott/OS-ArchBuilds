@@ -11,13 +11,14 @@
 
 # DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/notify-send -u critical "bash_history.sh $(date +%H%M)" # - uncomment to check if this script is being called
 
-#=> backup to Dropbox
-source ~/.start; source ~/.export-Arch
+#=> 0 get $machLg
+source ~/.start  # $ABnm/Bash_start
+  source ~/.export-Arch  # $ABno/Bash/export-Arch
 
-#==> users
+#=> 1 backup user's histories
 # any bad lines would need to expunged from the default history and my reversed backup
 
-#===> jo
+#==> jo
 bhr="$machLg/jo/bash_history_reversed"; [ -f $bhr ] || touch $bhr
 bht="$HOME/Arch/bash_history_tmp.sh"
 tac $bhr > $bht; cat ~/.bash_history >> $bht
@@ -27,7 +28,7 @@ rm $bht
 #  s $culLA/ml-sbMb/jo/bash_history_reversed
 cat $bhr | sort > "$machLg/jo/bash_history_sorted"
 
-#===> root
+#==> root
 rbhr="$machLg/root/bash_history_reversed"; [ -f $rbhr ] || touch $rbhr
 rbht="$HOME/Arch/root_bash_history_tmp.sh"
 tac $rbhr > $rbht; cat ~/Arch/root-bash_history >> $rbht

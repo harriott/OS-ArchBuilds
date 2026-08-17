@@ -253,12 +253,15 @@ pikn rustdesk-bin
   wireplumber (for pipewire-session-manager, gst-plugin-pipewire)
 ## waiting
 apache
+cargo-cache
 cowsay
+easyplayer
 EFI install
 figurine
 gokcehan's lf
 perl-image-exiftool
 sox
+wlan0.sh
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]

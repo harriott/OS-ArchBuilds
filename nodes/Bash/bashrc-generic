@@ -1,7 +1,7 @@
 #!/bin/sh
 # vim: ft=sh sw=2:
 
-# Joseph Harriott - Thu 12 Feb 2026
+# Joseph Harriott - Mon 17 Aug 2026
 
 # Bash configurations that are also useful everywhere, including in  Console  and as  root.
 
@@ -21,9 +21,9 @@ alias u=tmux
   alias tkt='u kill-server > /dev/null 2>&1; tmux'  # rarely used
 
 if [ ! -z $ITccl ] && [ -d $ITccl ]; then
-  source $ITccl/CP/wfxr-code-minimap/completions/bash/code-minimap.bash  # code-minimap ~/.bashrc
+  source $ITccl/CP/wfxr-code-minimap-completions/code-minimap.bash  # code-minimap ~/.bashrc
   source $ITccl/unix-linux/ohmybash-sudo.plugin.sh # <esc> <esc> prefixes sudo on last command
-  source $ITccl/unix-linux/trapd00r-LS_COLORS/lscolors.sh  # fancy colouring, echo "$LS_COLORS"
+  source $ITccl/unix-linux/trapd00r-LS_COLORS-lscolors.sh  # fancy colouring, echo "$LS_COLORS"
 fi
 
 #=> clamscan

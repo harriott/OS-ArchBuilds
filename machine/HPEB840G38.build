@@ -306,6 +306,7 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 localsend  update stuck for a long time on "Building Linux application..."  then  TRAUR  reported it  SKETCHY, so  prs localsend
 fixed  /etc/tpm2-tss/fapi-profiles  pacnews
 ## waiting
+cargo-cache
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
