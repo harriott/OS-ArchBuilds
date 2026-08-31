@@ -4403,13 +4403,50 @@ rm -r ~/.config/flutter
 prs mpv-uosc
 ## remove  easyplayer
 prs easyplayer
+## fix  nnn  plugin  autojump
+prs jump
+rm -r ~/.jump
+## HP Envy Inspire 7220e  at  10.191.88.239  from  OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.191.88.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e  at  10.45.219.239  from  oppo a76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.45.219.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
+## Updates
+  auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2605.0.0: cannot open shared object file: No such file or directory
+prs auracle-git  for  pikn auracle-git
+## Updates
+  traur: google-chrome (trust: 60/100)
+    Trust: SKETCHY
+    Negative signals:
+      !! P-CRYPTO-WALLET: Cryptocurrency wallet address (Monero/Bitcoin/Ethereum)
+       ! T-DIFF-NEW-SUSPICIOUS: Newly introduced suspicious pattern: P-CRYPTO-WALLET (Cryptocurrency wallet address (Monero/Bitcoin/Ethereum))
+- aborted  for  prs google-chrome  then  pikn google-chrome-beta
+## Updates
+  auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2605.0.0: cannot open shared object file: No such file or directory
+## abandon  traur  for  archcanary
+prs traur  for  pikn archcanary
+## python-monotonic
+archcanary  didn't like it, pactree -r python-monotonic  finds nothing, so  prs python-monotonic
+## xfce4-notifyd
+notifyd
+  Failed to restart xfce4-notifyd.service: Unit xfce4-notifyd.service failed to load properly, please adjust/correct and reload service manager: File exists
+systemctl --user status xfce4-notifyd.service
+  xfce4-notifyd.service: Two services allocated for the same bus name org.freedesktop.Notifications, refusing operation.
+## back to  google-chrome
+
+prs google-chrome-beta  then  pikn google-chrome
 ## waiting
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
+prs imageglass traur
 Recoll
 switch to fastmail
-wlan0.sh
 # clm possible extras
 imapbox
 maildir-rank-addr
@@ -4549,7 +4586,7 @@ journalctl -b -1 -r  shows no snags
 regularly: clock stuck, no CBH, so hard reboot
 ### orphaned inodes on /dev/sda2
 journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS
-# Xfce configuration
+# Xfce configuratioN
 Desktop > Style > None  for each monitor
 Desktop Settings > (Background >) [ Other > Folder > WallpaperFlare > Open  Style > Stretched ]
 Terminal > Edit > Preferences > Appearance > Font > 8

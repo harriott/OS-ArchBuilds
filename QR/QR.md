@@ -248,31 +248,31 @@ JOBS(1P)
     zathura -P <page> <pdf> &
 
 ## TeX - copied resources
-    r $ITref/CP/TeX
-    za $ITref/CP/TeX/albatross-manual.pdf
-    za $ITref/CP/TeX/blindtext.pdf
-    za $ITref/CP/TeX/LaTeX/etoolbox.pdf
-    za $ITref/CP/TeX/LaTeX/appearance/colour/xcolor.pdf
-    za $ITref/CP/TeX/LaTeX/appearance/datetime2.pdf
-    za $ITref/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
-    za $ITref/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
-    za $ITref/CP/TeX/LaTeX/appearance/drawing/PGF-TikZ/worldflags.pdf
-    za $ITref/CP/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
-    za $ITref/CP/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
-    za $ITref/CP/TeX/LaTeX/appearance/ragged2e.pdf
-    za $ITref/CP/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
-    za $ITref/CP/TeX/LaTeX/appearance/url.pdf
-    za $ITref/CP/TeX/LaTeX/LaTeX3/tabularray.pdf
-    za $ITref/CP/TeX/LaTeX/structure/classes/memoir/memman.pdf
-    za $ITref/CP/TeX/LaTeX/structure/CV/Currvita/currvita.pdf
-    za $ITref/CP/TeX/LaTeX/structure/multicol.pdf
-    za $ITref/CP/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
-    za $ITref/CP/TeX/LaTeX/structure/parts/labelling/fancyref.pdf
-    za $ITref/CP/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
-    za $ITref/CP/TeX/LaTeX/structure/parts/lists/enumitem.pdf
-    za $ITref/CP/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
-    za $ITref/CP/TeX/LaTeX/structure/parts/scalerel.pdf
-    za $ITref/CP/TeX/LaTeX/structure/pdfpages.pdf
+    r $ITref/CP/documenting/TeX
+    za $ITref/CP/documenting/TeX/albatross-manual.pdf
+    za $ITref/CP/documenting/TeX/blindtext.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/etoolbox.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/appearance/colour/xcolor.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/appearance/datetime2.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfmanual.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/appearance/drawing/PGF-TikZ/pgfplots.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/appearance/drawing/PGF-TikZ/worldflags.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/appearance/font/psnfss2e.pdf  # includes package pifont
+    za $ITref/CP/documenting/TeX/LaTeX/appearance/font/XeLaTeX/fontspec.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/appearance/ragged2e.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/appearance/symbols/symbols-a4.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/appearance/url.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/LaTeX3/tabularray.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/structure/classes/memoir/memman.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/structure/CV/Currvita/currvita.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/structure/multicol.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/structure/parts/hyperref/hyperref-doc.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/structure/parts/labelling/fancyref.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/structure/parts/lists/easylist-doc.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/structure/parts/lists/enumitem.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/structure/parts/titling/contrib-titlesec/titlesec.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/structure/parts/scalerel.pdf
+    za $ITref/CP/documenting/TeX/LaTeX/structure/pdfpages.pdf
 
 ## TeX - LaTeX
     r $nDrGRs/CP/MartinThoma-LaTeX-examples
@@ -575,6 +575,7 @@ unalias **<tab>
 
 ## nnn
     $culLA/jo/bashrc-console-NNN_BMS
+    $OSAB/nodes-set/plugins_for_nnn.sh
     ~/.config/nnn/sessions
 
 NNN(1)
@@ -789,6 +790,7 @@ NCDU(1)
     i zoxide-query
     zi <fuzzy_tail_pattern> > Enter > <fuzzy_pattern> > Enter/Esc
     zq <case_insensitive>  # greps relevant lines from the database  # $AjB/bashrc-console
+    zoxide -V
     zoxide query -i <fuzzy_tail_pattern>
     zoxide query -ls | mo
 
@@ -859,6 +861,7 @@ gpg(1)
     cd /sys/devices/system/cpu/cpu0/cpufreq
     doas showkey  # keycodes
     r /sys/class/backlight/intel_backlight
+    which lshw
 
 ## wipefs
 - `-a` (= `--all`) signatures
@@ -899,9 +902,9 @@ XKEYBOARD-CONFIG(7) > MODELS (= physical arrangement), LAYOUTS (= languages)
 
 ## graphics card details
     doas cat /sys/kernel/debug/dri/0/radeon_pm_info
+    doas lshw -C display | xcol GeForce NVIDIA Radeon size VGA
     lspci -vnn | grep VGA -A 12 | xcol Intel Radeon size VGA
     lspci -vnnd ::03xx
-    doas lshw -C display | xcol GeForce NVIDIA Radeon size VGA
 
 ## printing
     $AjB/bashrc-wm
@@ -920,6 +923,7 @@ XKEYBOARD-CONFIG(7) > MODELS (= physical arrangement), LAYOUTS (= languages)
 
 #### HPLIP
     hp-levels -p ENVY_5530
+    hp-levels -p ENVY_Inspire_7200
     hp-setup -b net 192.168.43.249  # when online
     http://192.168.43.249/
 
@@ -1084,6 +1088,15 @@ java -jar $ITccl/CP/LanguageTool/languagetool-commandline.jar --version
     s="$machLg/network/services"; o 'vim: ft=services:' > $s; echo '' >> $s; cat /etc/services >> $s
     sudo ls /var/lib/dhcpcd/
 
+## iptraf-ng
+    doas iptraf-ng -d wlan0  # detailed
+    doas iptraf-ng -i wlan0  # IP traffic monitor
+    doas iptraf-ng -s wlan0  # TCP/UDP traffic
+    doas iptraf-ng -l wlan0  # LAN stations
+    doas iptraf-ng -z wlan0  # packet counts
+
+`doas iptraf-ng > Configure...` isn't useful, and don't set `Color`!
+
 ## Avahi
     avahi-browse --all --ignore-local --resolve --terminate  # services & hosts running on LAN
     sudo systemctl status avahi-daemon.service
@@ -1138,6 +1151,7 @@ can fail to start after waking system
 - downgrade
 
 ## AUR
+    archcanary
     chAPDs <AUR_package>
 
 `$AjB/bashrc-console` > `trizen`
@@ -1516,6 +1530,8 @@ to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
 
 ## systemd
     sysz  # fzf systemctl
+
+SYSTEMCTL(1)
 
 ### journalctl
     journalctl | grep Consumed

@@ -1,5 +1,6 @@
 vim: nospell:
 
+    doas fping google.com
     i yt-dlp
     whois
 
@@ -34,9 +35,9 @@ configured in `$OSAB/bs-4-whenWM/1-softwares.sh`
     ch https://en.wikipedia.org
     ~/.config/chawan/history.uri
 
-## Firefox
-    st="$HOME/.mozilla/firefox/6qq4cnaa.default-release/storage"
-        for big in $st/archives $st/default; do find $big | wc -l; done
+## Firefox - search in databases
+1. in `~/.config/mozilla/firefox/9bf8ne83.default-release`, use `$onGH/FM-underscores/copyFlat.sh`
+1. in `~/Play0/copyFlat-yymmdd-hhmmss/`,  `for db in *; do sqlite3 "$db" .dump > "${db%.*}.sql"; rm "$db"; done`
 
 ## w3m
     /usr/share/doc/w3m/keymap.default

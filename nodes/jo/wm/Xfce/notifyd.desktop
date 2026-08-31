@@ -1,7 +1,8 @@
 
-# managed in my  $OSAB/nodes-set/jo-2-Xfce.sh
-#  to reveal my command  notifyd  to Desktop
-#  desktop-file-validate /usr/share/applications/notifyd.desktop
+# $ABjo/wm/Xfce/notify.desktop
+#  managed in my  $OSAB/nodes-set/jo-2-Xfce.sh
+#   to reveal my command  notifyd  to Desktop
+#   desktop-file-validate /usr/share/applications/notifyd.desktop
 
 [Desktop Entry]
 Name= restart  Xfce Notify Daemon

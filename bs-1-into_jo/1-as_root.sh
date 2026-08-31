@@ -193,7 +193,7 @@ cat /etc/passwd
 
 pacman -S opendoas
     cp $ABno/etc/doas.conf /etc/doas.conf  # sudo prettybat /etc/doas.conf
-    chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
+        chmod -c 0400 /etc/doas.conf  # s /etc/doas.conf
 
 #=> 2 various
 pacman -S arch-wiki-docs lynx w3m  # web-ish

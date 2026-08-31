@@ -20,3 +20,7 @@ sudo ln -sf $ITccl/CP/WallpaperFlare /usr/share/backgrounds/xfce/WallpaperFlare
 ns="$ABjo/wm/Xfce/notifyd.sh"; chmod 755 $ns; bs="/usr/local/bin/notifyd"; sudo ln -sf $ns $bs; es $bs
 nd="/usr/share/applications/notifyd.desktop"; sudo ln -sf $ABjo/wm/Xfce/notifyd.desktop $nd; es $nd
 
+#==> notifications_kill
+ns="$ABjo/wm/Xfce/notifications_kill.sh"; chmod 755 $ns; bs="/usr/local/bin/notifications_kill"; sudo ln -sf $ns $bs; es $bs
+nd="/usr/share/applications/notifications_kill.desktop"; sudo ln -sf $ABjo/wm/Xfce/notifications_kill.desktop $nd; es $nd
+

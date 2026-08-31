@@ -147,7 +147,7 @@ fbbcode () {
   fdb='fd -tf -e bbcode'
   { echo $fdb; echo; } >> $bbcf
   $fdb >> $bbcf; echo >> $bbcf
-  rgb="rg -ttxt -l --sort modified 'ft=bbcode'"
+  rgb="rgsm -ttxt -l 'ft=bbcode'" # (rgsm  defined in  $ABno/Bash/bashrc-generic)
   { echo $rgb; echo; } >> $bbcf
   eval $rgb >> $bbcf; echo >> $bbcf
   echo 'results are in $Drpbx/IT/bbcode.ffl'

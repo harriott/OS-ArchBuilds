@@ -6,6 +6,8 @@
 set -ev  # quits on error, prints each statement here, including comments
 
 cnp="$HOME/.config/nnn/plugins"
+  rsync -irtv --delete $cnp/ $Drpbx/nnn-plugins-$host  # for debugging
+  sudo rm -r $Drpbx/nnn-plugins-$host
 
 #=> nnn plugins 0 show
 [[ $distro =~ 'Arch' ]] && thunar $cnp &

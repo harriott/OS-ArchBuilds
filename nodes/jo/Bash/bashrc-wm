@@ -61,7 +61,7 @@ fv () {
       find $Vs -iname "*$1*" | xcol "$1"
     done
   done
-} # fv cat  fv 'Dog Vision'
+} # fv cat; fv 'Dog Vision'
 
 fVs () {
   for hd in /mnt/* /run/media/jo/*; do

@@ -305,8 +305,37 @@ hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set
 ## Updates
 localsend  update stuck for a long time on "Building Linux application..."  then  TRAUR  reported it  SKETCHY, so  prs localsend
 fixed  /etc/tpm2-tss/fapi-profiles  pacnews
+## Zen Browser fail
+pikn zen-browser
+  cbindgen imake lld nasm wasi-compiler-rt wasi-libc wasi-libc++ wasi-libc++abi xorg-server-xvfb yasm
+  system seized, so  pikn zen-browser, but it failed, so
+    prs cbindgen imake lld nasm wasi-compiler-rt wasi-libc wasi-libc++ wasi-libc++abi xorg-server-xvfb yasm
+## Updates
+  auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2605.0.0: cannot open shared object file: No such file or directory
+prs auracle-git  for  pikn auracle-git
+## Zen Browser
+pikn zen-browser-bin
+## HP Envy Inspire 7220e at 10.45.219.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.45.219.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## Updates - google-chrome sketch
+  traur: google-chrome (trust: 60/100)
+    Trust: SKETCHY
+    Negative signals:
+      !! P-CRYPTO-WALLET: Cryptocurrency wallet address (Monero/Bitcoin/Ethereum)
+       ! T-DIFF-NEW-SUSPICIOUS: Newly introduced suspicious pattern: P-CRYPTO-WALLET (Cryptocurrency wallet address (Monero/Bitcoin/Ethereum))
+- aborted
+## temporary switch to  google-chrome-beta
+prs google-chrome  then  pikn google-chrome-beta
+  ran it, connected, lost all my  OneTab's...
+rsync -irtv --delete ~/.config/google-chrome/Default/IndexedDB/chrome-extension_chphlpgkkbolifaimnlloiipkdnihall_0.indexeddb.leveldb/ ~/.config/google-chrome-beta/Default/IndexedDB/chrome-extension_chphlpgkkbolifaimnlloiipkdnihall_0.indexeddb.leveldb
+## back to  google-chrome
+prs google-chrome-beta  then  pikn google-chrome
+## abandon  traur  for  archcanary
+prs traur  for  pikn archcanary
 ## waiting
-cargo-cache
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
@@ -345,6 +374,8 @@ pactl set-sink-volume 0 +5%  > Fn+f9 (XF86AudioRaiseVolume) = Volume plus fort
 sxk                          > Super+S (= win+s) because s is same place in gb/fr
 thunderbird_safely           > Super+T (= win+t)
 wezterm                      > Super+W
+### option
+google-chrome-beta           > Super+G
 ## Gestionnaire d'alimentation
 Écran > my preferences
 Général > Appui sur le bouton de mise en veille > Mettre in veille

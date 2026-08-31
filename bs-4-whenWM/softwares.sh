@@ -239,6 +239,7 @@ pikn fastmail
 pikn rclone  # Rclone
 pikn signal-desktop  # Signal
 pikn google-chrome  # Google Chrome
+pikn zen-browser  # Zen Browser, takes ages...
 pikn zoom
 
 #==> Dropbox 0 install

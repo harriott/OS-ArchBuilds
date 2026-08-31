@@ -65,6 +65,9 @@ update-mime-database ~/.local/share/mime
 [ -d ~/.config/nano ] || mkdir -p ~/.config/nano
 ln -sf $ABjo/textEdit/nanorc ~/.config/nano/nanorc
 
+#=> OneTab
+ln -sf $ABjo/WAN/OneTab.sh ~/Arch/OneTab/OneTab.sh
+
 #=> pinfo
 ln -sf $ABjo/pinforc ~/.pinforc
 
@@ -85,7 +88,7 @@ if [ $host = 'sbMb' ]; then
   # es ~/Arch/f1t2t3
 fi
 
-# #=> WAN - Surfraw
+# #=> Surfraw
 # [ -d ~/.config/surfraw ] || mkdir -p ~/.config/surfraw
 # ln -sf $ABjo/WAN/surfraw.conf ~/.config/surfraw/conf
 

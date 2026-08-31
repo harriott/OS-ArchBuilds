@@ -31,9 +31,6 @@ pikn mpd
 #==> MPD - vimpc-git
 pikn vimpc-git
 
-#=> cheat-bin
-pikn cheat-bin
-
 #=> code-minimap-bin
 # /usr/share/bash-completion/completions/code-minimap.bash  for  minimap.vim
 pikn code-minimap-bin
@@ -75,6 +72,10 @@ pikn noto-fonts-emoji  # don't work in  urxvt  or  xterm...
 
 #==> CliFM 1 clifm-git
 pikn clifm-git  # $AjB/bashrc-console
+
+#=> help
+pikn cheat-bin
+pikn pinfo-git
 
 #=> hw
 pikn -s batstat-git  # battery status
