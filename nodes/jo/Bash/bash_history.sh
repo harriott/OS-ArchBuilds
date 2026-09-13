@@ -36,5 +36,5 @@ tac $rbht | awk '!a[$0]++' > $rbhr  # reverse and remove older duplicate lines
 rm $rbht
 #  s $culLA/ml-DOP3040D11S/root/bash_history_reversed
 #  s $culLA/ml-sbMb/root/bash_history_reversed
-cat $rbhr | sort > "$machLg/root/root_bash_history_sorted"
+cat $rbhr | sort > "$machLg/root/bash_history_sorted"
 

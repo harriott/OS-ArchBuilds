@@ -1,7 +1,7 @@
 
 # $ABjo/wm/Xfce/notifications_kill.desktop
 #  managed in my  $OSAB/nodes-set/jo-2-Xfce.sh
-#   to reveal my command  notifications_kill  to Desktop
+#   to reveal my command  notifications_kill  to Desktop, for use in  xfce4-keyboard-settings > application shortcuts
 #   desktop-file-validate /usr/share/applications/notifications_kill.desktop
 
 [Desktop Entry]

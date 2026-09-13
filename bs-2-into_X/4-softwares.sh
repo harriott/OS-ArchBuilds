@@ -172,6 +172,7 @@ pikn blesh-git
 pikn cmatrix
 pikn figlet-fonts  # brings in figlet
 pikn figurine
+pikn flyline
 pikn fortune-mod
 pikn grc  # garabik/grc - colourised output in terminal
 pikn julia-bin  # for displaying sixels

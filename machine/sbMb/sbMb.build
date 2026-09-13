@@ -4432,20 +4432,31 @@ prs auracle-git  for  pikn auracle-git
 prs traur  for  pikn archcanary
 ## python-monotonic
 archcanary  didn't like it, pactree -r python-monotonic  finds nothing, so  prs python-monotonic
-## xfce4-notifyd
-notifyd
-  Failed to restart xfce4-notifyd.service: Unit xfce4-notifyd.service failed to load properly, please adjust/correct and reload service manager: File exists
-systemctl --user status xfce4-notifyd.service
-  xfce4-notifyd.service: Two services allocated for the same bus name org.freedesktop.Notifications, refusing operation.
-## back to  google-chrome
-
-prs google-chrome-beta  then  pikn google-chrome
+## remove  google-chrome-beta
+prs google-chrome-beta
+## Updates
+  xf86EnableIO: failed to enable I/O ports 0000-03ff (Operation not permitted) ... no screens found
+  ...
+  xinit: unable to connect to X server: Connection refused
+Q nvidia-  reports
+  nvidia-470xx-dkms v470.256.02-8.02
+  nvidia-470xx-utils v470.256.02-8.02
+pikn nvidia-470xx-utils  got me  nvidia-470xx-dkms v470.256.02-8.03
+reboot  took a long time for  Loading initial ramdisk ...
+still no screens, so  pikn nvidia-470xx-dkms  startx
+## google-chrome
+pikn google-chrome  unsure if I`d had any OneTab`s...
+## cmus-git  not playing tracks
+pulseaudio -k  was enough
+## Updates
+  auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2605.0.0: cannot open shared object file: No such file or directory
+prs auracle-git  for  pikn auracle-git
 ## waiting
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
-prs imageglass traur
 Recoll
+resvg
 switch to fastmail
 # clm possible extras
 imapbox
@@ -4586,7 +4597,7 @@ journalctl -b -1 -r  shows no snags
 regularly: clock stuck, no CBH, so hard reboot
 ### orphaned inodes on /dev/sda2
 journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS
-# Xfce configuratioN
+# Xfce configuration
 Desktop > Style > None  for each monitor
 Desktop Settings > (Background >) [ Other > Folder > WallpaperFlare > Open  Style > Stretched ]
 Terminal > Edit > Preferences > Appearance > Font > 8
@@ -4602,6 +4613,7 @@ gvim                 > Super+V
 keepassxc            > Super+K
 kitty                > Super+i
 music_rotate         > Super+M
+notifications_kill   > Super+D
 sxk                  > Super+S (= win+s) because s is same place in gb/fr
 thunderbird_safely   > Super+T (= win+t)
 neovide              > Super+N

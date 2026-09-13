@@ -193,7 +193,8 @@ plo(){
 } # takes a while
 
 cgabck () {
-  e="$machLg/jo/shell/compgen_abck.txt"
+  e="$machLg/jo/compgen_abck.txt"
+  # $culLA/ml-sbMb/jo/Bash_settings/compgen_abck.txt
   echo 'vim: fdl=0 ft=build:' > $e; echo '' >> $e
   echo "# aliases" >> $e
   compgen -a | sort | awk '{print}' ORS=' : ' >> $e; echo '' >> $e

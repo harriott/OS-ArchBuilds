@@ -98,6 +98,7 @@ symlinked to `rec_ng`
     /etc/profile
     :Man bash
     :Man mktemp
+    cgabck () { ... compgen ...}
     EscEsc  # toggle sudo
     pinfo bash
     pinfo -m bash
@@ -106,6 +107,8 @@ symlinked to `rec_ng`
 - BASH(1)
 - CUT(1)
 - UNIQ(1)
+
+    o $BASH_LOADABLES_PATH
 
 ## env
     env | fzf
@@ -128,7 +131,7 @@ ENV(1)
 - Stopped jobs might need `kill -9 %n` (`n` being the job number) twice...
 
 ## completion
-    complete 2>&1 | tee $machLg/bash.cmplt
+    complete 2>&1 | tee $machLg/jo/bash.cmplt
     r /usr/share/bash-completion
 
 ## file manage
@@ -663,7 +666,6 @@ NNN(1)
     sudo rsync -aAivX --delete --progress $rsnapshot ...
 
 ### checking
-    $ABno/rsnapshots.sh
     ncdu --exclude rsnapshot
     tail -n 44 /var/log/rsnapshot | xcolorize green 'completed successfully' yellow started
 
@@ -1144,8 +1146,8 @@ can fail to start after waking system
 # packages
     checkrebuild
     expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500.log  # 500 most recent installs
-    pacfinder
     grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
+    pacfinder
 
 - Arch Linux Package Maintainers
 - downgrade
@@ -1153,6 +1155,7 @@ can fail to start after waking system
 ## AUR
     archcanary
     chAPDs <AUR_package>
+    for A in ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make; do ls $A; done
 
 `$AjB/bashrc-console` > `trizen`
 
@@ -1232,7 +1235,7 @@ pacman -Sg base-devel  # lists all
     pacman -Qu | grep -Eo '^[^ ]+' | xargs pacman -Si | grep -E 'Name|Depends On' | grep -B1 'nodejs-lts-jod'
     pacman -Sy archlinux-keyring  # refreshes it
     pacman -v  # --verbose - lists local paths
-    pkgfile -l <package>  # lists all installed files
+    pubc pacman
     sudo du -sh /var/cache/pacman/pkg
     sudo paccache -k2 -qr  # --quiet --remove --keep (only 2)
     sudo pacman -U package.pkg.tar.xz
@@ -1287,6 +1290,10 @@ pacsearch <keyword>  # better search
     - `-u` (`--sysupgrade`)
     - `-y` (`--refresh`) refresh copy of the master package list (use with `-u`)
         - `Syy` force refresh
+
+### pkgfile
+    pkgfile -bl <package>  # --binaries --list
+    pubc coreutils
 
 ### re-install Haskells
     pacman -Qqs haskell > ~/pacman_haskell

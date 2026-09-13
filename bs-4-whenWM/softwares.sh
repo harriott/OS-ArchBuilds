@@ -33,7 +33,7 @@ pikn ymuse  # for MPD, takes ages to compile
 
 #==> mpv
 pikn mpv
-[ -d ~/.config/mpv/scripts ] || mkdir -p ~/.config/mpv/scripts
+s="$HOME/.config/mpv/scripts"; [ -d $s ] || mkdir -p $s
 
 #=> AV
 pikn obs-studio  # OBS Studio
@@ -88,7 +88,7 @@ pikn tesseract-data-eng
 
 #==> PDF - Zathura 1 zathura-pdf-mupdf
 pikn zathura-pdf-mupdf
-[ -d ~/.config/zathura ] || mkdir ~/.config/zathura
+z="$HOME/.config/zathura"; [ -d $z ] || mkdir $z
 # zathurarc  symlinked in  $OSAB/nodes-set/jo-3-whenWM.sh
 
 #==> TeX Live - perl-tk
@@ -236,7 +236,6 @@ pikn shellcheck  # brings in Haskell
 #=> WAN
 pikn falkon firefox
 pikn fastmail
-pikn rclone  # Rclone
 pikn signal-desktop  # Signal
 pikn google-chrome  # Google Chrome
 pikn zen-browser  # Zen Browser, takes ages...
@@ -255,6 +254,10 @@ sudo systemctl enable NetworkManager-dispatcher --now
 sudo cp $ABno/etc/NMdispatcher-ntpd.sh /etc/NetworkManager/dispatcher.d/ntpd.sh
 sudo chmod 755 /etc/NetworkManager/dispatcher.d/ntpd.sh
 # vifm /etc/NetworkManager/dispatcher.d /usr/lib/NetworkManager/dispatcher.d
+
+#==> Rclone
+pikn rclone
+r="$HOME/.config/rclone"; [ -d $r ] || mkdir $r
 
 #==> Thunderbird 0 install
 pikn thunderbird-i18n-en-gb

@@ -251,6 +251,11 @@ pikn rustdesk-bin
   pipewire-session-manager (for gst-plugin-pipewire)
   spandsp (for pipewire-audio)
   wireplumber (for pipewire-session-manager, gst-plugin-pipewire)
+## Updates
+$HOME  max'd out, so  
+  prs localsend
+  sudo rm -r ~/.cache/pikaur
+  for A in ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make; do sudo rm -r $A/*; done
 ## waiting
 apache
 cargo-cache
@@ -263,6 +268,7 @@ notifications_kill
 perl-image-exiftool
 pikn archcanary
 prs imageglass traur
+resvg
 sox
 wlan0.sh
 # CopyQ

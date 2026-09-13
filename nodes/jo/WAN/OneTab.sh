@@ -10,8 +10,7 @@
 # no obvious single data node, manually save as HTML occasionally
 
 #=> Google Chrome 0 define some long placenames
-D=Default/IndexedDB/chrome-extension_chphlpgkkbolifaimnlloiipkdnihall_0.indexeddb.leveldb/
-gc="$HOME/.config/google-chrome"
+gc="$HOME/.config/google-chrome"; D=Default/IndexedDB/chrome-extension_chphlpgkkbolifaimnlloiipkdnihall_0.indexeddb.leveldb/
 
 #=> Google Chrome 1 backup my OneTab's
 rsync -irtv --delete $gc/$D      ~/Arch/OneTab/gc-leveldb

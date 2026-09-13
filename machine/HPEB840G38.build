@@ -335,7 +335,27 @@ rsync -irtv --delete ~/.config/google-chrome/Default/IndexedDB/chrome-extension_
 prs google-chrome-beta  then  pikn google-chrome
 ## abandon  traur  for  archcanary
 prs traur  for  pikn archcanary
+## HP Envy Inspire 7220e at 10.134.64.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.134.64.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e at 10.77.141.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.77.141.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e at 10.145.49.239 from OPPO A76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.145.49.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## waiting
+# fcrontab
+  !m(0)
+  @ 4 bash ~/Arch/wlan0.sh
+  @ 5 bash ~/Arch/bash_history.sh
+  @daily bash ~/Arch/OneTab/OneTab.sh
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
@@ -367,7 +387,7 @@ google-chrome-stable         > Super+G
 gvim                         > Super+V
 keepassxc                    > Super+K
 neovide                      > Super+N
-notifyd                      > Super+D
+notifications_kill           > Super+D
 pactl set-sink-mute 0 toggle > speaker button (XF86AudioMute) = Sourdine volume
 pactl set-sink-volume 0 -5%  > Fn+f8 (XF86AudioLowerVolume) = Volume plus faible
 pactl set-sink-volume 0 +5%  > Fn+f9 (XF86AudioRaiseVolume) = Volume plus fort

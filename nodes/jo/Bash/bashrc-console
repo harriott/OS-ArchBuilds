@@ -251,8 +251,19 @@ alias prs='pikaur -Rs'
 
 chAPDs () {
   for pd in ~/.cache/paru/clone ~/.cache/traur/git ~/.local/share/pikaur/aur_repos ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make; do
-    if [[ -d $pd/$1 ]]; then stat -c '%y %n' $pd/$1 | xcol paru traur pikaur AURdev; fi; done }
-export -f chAPDs  # check AUR PKGBUILDs
+    if [[ -d $pd/$1 ]]; then stat -c '%y %n' $pd/$1 | xcol paru traur pikaur AURdev; fi; done } # check AUR PKGBUILDs
+export -f chAPDs  # eg  chAPDs paru
+
+pubc () {
+  mapfile -t pfbl < <(pkgfile -bl $1)
+  cl=$(printf '%s,' "${pfbl[@]}") # comma separated
+  cl=$(o $cl | sed -r 's/([^/]+,)/;\1/g') # semicolon prefixed
+  cl=$(o $cl | sed -r 's/([^;]+;)//') # start at first command
+  cl=$(o $cl | sed -r 's/,$//') # remove trailing comma
+  cl=$(o $cl | sed -r 's/,[^;]+;/  /g') # remove trailing comma
+  echo $cl
+} # get package's  /usr/bin  commands (won't find for AUR's)
+export -f pubc  # eg  pubc coreutils
 
 #==> AUR packages - using  trizen
 # "Get Clone To Make" - for my building of AUR development packages
