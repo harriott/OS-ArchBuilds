@@ -1,0 +1,29 @@
+# vim: fdl=2 ft=sh sw=2:
+
+# Joseph Harriott
+
+# $ABno/Bash/jazz/bashrc  sourced by
+#  $ABno/root/bashrc
+#  $AjB/bashrc
+
+[[ -z $bj ]] && export bj='/home/jo/Arch/bash_jazz'
+# - avoids hanging on  cat  incase  $bj  wasn't set in  $AjB/bash_profile
+
+j () {
+  if [[ $(cat $bj) == 'ble.sh' ]]; then
+    echo flyline > $bj
+    echo "next ${tpf2}Bash${tpfn} instance will by jazz'd with ${tpf3}flyline${tpfn}"
+  else
+    echo ble.sh > $bj
+    echo "next ${tpf2}Bash${tpfn} instance will by jazz'd with ${tpf3}ble.sh${tpfn}"
+  fi
+  }
+
+#=> 1 set jazz for this instance
+if [[ $(cat $bj) == 'ble.sh' ]]; then
+  source $ABno/Bash/jazz/bashrc_ble-atuin  # if  WezTerm  fix is implemented in  $ABno/Bash/jazz/blerc
+  # [[ $TERM_PROGRAM != 'WezTerm' ]] && source $ABno/Bash/ble-atuin
+else
+  source $ABno/Bash/jazz/bashrc_flyline  # kills off  fzf's  **<tab>  functionality
+fi
+

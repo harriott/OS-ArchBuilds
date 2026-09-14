@@ -11,7 +11,7 @@
 #   for root: sourced by  $ABno/root/bashrc
 
 [ -f /usr/bin/grc ] && export grc='grc'
-[ -f /usr/share/blesh/ble.sh ] && [[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$ABno/Bash/blerc" # later activated in  $ABno/Bash/ble-atuin
+[ -f /usr/share/blesh/ble.sh ] && [[ $EUID > 0 ]] && [[ $- == *i* ]] && source -- '/usr/share/blesh/ble.sh' --attach=none --rcfile "$ABno/Bash/jazz/blerc" # later activated in  $ABno/Bash/ble-atuin
 alias sl='su -l'
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 source $OSL/nodes/bashrc-generic

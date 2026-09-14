@@ -91,7 +91,7 @@ follows my `PCManFM` folder settings
 symlinked to `rec_ng`
 
 # Bash
-    $ABno/Bash/flyline
+    $ABno/Bash/jazz/bashrc
     $ABno/root/bashrc
     $AjB/bash_history.sh
     $AjB/bash_profile
@@ -791,28 +791,19 @@ NCDU(1)
     cmatrix -u 9 -C blue
     man cmatrix
 
-# fuzzy - fzf
-    <someCommand> Ctrl-t - gets the selected node on the command-line
+# fuzzy
+    i fzy
+
+## fzf
     FZF_DEFAULT_COMMAND
 
 ```bash
-Alt+c  # to change directory
-cat $(fzf)
-cd [directory/][fuzzy_pattern]**<tab>
-Ctrl+r  # select command from history
 f  # with  bat, $ABno/Bash/bashrc-generic
 gvim -o `f`  # calling upon fzf
 i fzf
-kill -9 <tab>
-ls -l $(fzf -m)
-unalias **<tab>
 ```
 
-# fuzzy - fzy
-    find . -type f | fzy  # selecta
-    i fzy
-
-# fuzzy - skim
+## skim
     i sk
     i sk
     i sk-tmux

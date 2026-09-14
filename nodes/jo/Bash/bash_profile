@@ -15,9 +15,8 @@ source ~/.start  # $ABnm/Bash_start  /  $ABno/m-HPEB840G38/Bash_start
     source $OSL/nodes/jo/export
 # - carry through to X
 
-# For $AjB/bashrc_jazz:
+# For $ABno/Bash/jazz/bashrc:
 export bj='/home/jo/Arch/bash_jazz'
-echo ble.sh > $ABno/Bash/jazz
 echo ble.sh > $bj
 # echo flyline > $bj
 

@@ -41,5 +41,5 @@ source $OSL/nodes/bashrc-console-fm-n
 # # [[ $TERM_PROGRAM == 'WezTerm' ]] || source $ABno/Bash/ble-atuin
 
 #=> 1 jazz
-source $AjB/bashrc_jazz
+source $ABno/Bash/jazz/bashrc
 

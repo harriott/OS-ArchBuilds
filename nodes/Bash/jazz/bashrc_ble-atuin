@@ -1,9 +1,7 @@
 # vim: fdl=2 ft=sh sw=2:
 
 # $ABno/Bash/ble-atuin
-#  sourced at end of
-#   $AjB/bashrc
-#   $ABno/root/bashrc
+#  sourced from  $ABno/Bash/jazz/bashrc
 
 #=> 0 ble.sh
 # Arch package  blesh, configured in  $ABno/Bash/blerc
