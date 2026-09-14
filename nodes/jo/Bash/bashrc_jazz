@@ -1,0 +1,14 @@
+# vim: fdl=2 ft=sh sw=2:
+
+# $AjB/bashrc_jazz  sourced by
+#  $AjB/bashrc
+
+#=> jazz
+# $bj  preset in  $AjB/bash_profile
+if [[ -z $bj || $(cat $bj) == 'flyline' ]]; then
+  source $ABno/Bash/flyline
+else
+  source $ABno/Bash/ble-atuin  # if  WezTerm  fix is implemented in  $ABno/Bash/blerc
+  # [[ $TERM_PROGRAM != 'WezTerm' ]] && source $ABno/Bash/ble-atuin
+fi
+

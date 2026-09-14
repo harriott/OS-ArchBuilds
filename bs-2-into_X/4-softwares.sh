@@ -167,12 +167,9 @@ sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
 sudo systemctl enable fangfrisch.timer --now
 
 #=> shell
-pikn atuin
-pikn blesh-git
 pikn cmatrix
 pikn figlet-fonts  # brings in figlet
 pikn figurine
-pikn flyline
 pikn fortune-mod
 pikn grc  # garabik/grc - colourised output in terminal
 pikn julia-bin  # for displaying sixels
@@ -184,6 +181,14 @@ pikn shell-color-scripts-git  # DT's  colorscript -r
 pikn termdown
 pikn tty-clock-git
 pikn zellij  # Zellij
+
+#==> ble.sh
+pikn atuin
+pikn blesh-git
+
+#==> flyline
+pikn bash-completion
+pikn flyline
 
 #=> system
 pikn gtop

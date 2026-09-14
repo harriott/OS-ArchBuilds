@@ -1,0 +1,15 @@
+# vim: fdl=1 ft=sh sw=2:
+
+# $ABno/Bash/flyline
+#  sourced at end of
+#   $AjB/bashrc
+#   $ABno/root/bashrc - not yet
+
+#=> 0 flyline
+enable -f /usr/lib/bash/libflyline.so flyline
+# RPS1='\t' # time at right
+RPS1='\e[01;32m\t\e[00m' # time at right
+flyline create-prompt-widget mouse-mode --name MOUSE_MODE '\e[01;32mmm\e[00m' '' && RPS1=" MOUSE_MODE $RPS1"
+flyline set-style --default-theme dark  # maybe the default
+flyline set-cursor --backend flyline --style "#33ccff" --effect fade --effect-easing in-out-sine --effect-speed 0.7 --interpolate-easing out-elastic --interpolate 2  # funky beating cursor
+

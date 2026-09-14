@@ -257,10 +257,10 @@ export -f chAPDs  # eg  chAPDs paru
 pubc () {
   mapfile -t pfbl < <(pkgfile -bl $1)
   cl=$(printf '%s,' "${pfbl[@]}") # comma separated
-  cl=$(o $cl | sed -r 's/([^/]+,)/;\1/g') # semicolon prefixed
-  cl=$(o $cl | sed -r 's/([^;]+;)//') # start at first command
-  cl=$(o $cl | sed -r 's/,$//') # remove trailing comma
-  cl=$(o $cl | sed -r 's/,[^;]+;/  /g') # remove trailing comma
+  cl=$(echo $cl | sed -r 's/([^/]+,)/;\1/g') # semicolon prefixed
+  cl=$(echo $cl | sed -r 's/([^;]+;)//') # start at first command
+  cl=$(echo $cl | sed -r 's/,$//') # remove trailing comma
+  cl=$(echo $cl | sed -r 's/,[^;]+;/  /g') # remove trailing comma
   echo $cl
 } # get package's  /usr/bin  commands (won't find for AUR's)
 export -f pubc  # eg  pubc coreutils

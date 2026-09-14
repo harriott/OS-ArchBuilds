@@ -16,8 +16,7 @@ my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
     tty-clock -bcs
     ~/.config/pnmixer/config
 
-- DATE(1)
-- SORT(1)
+POSIX - JOBS(1P)
 
 # audio
     $ABjo/music/music_rotate.sh
@@ -92,116 +91,43 @@ follows my `PCManFM` folder settings
 symlinked to `rec_ng`
 
 # Bash
+    $ABno/Bash/flyline
+    $ABno/root/bashrc
     $AjB/bash_history.sh
     $AjB/bash_profile
-    $ABno/root/bashrc
     /etc/profile
-    :Man bash
-    :Man mktemp
-    cgabck () { ... compgen ...}
+    cgabck () { ... compgen ...} # aliases builtins commands keywords
     EscEsc  # toggle sudo
-    pinfo bash
-    pinfo -m bash
+    i jobs
+    o $BASH_LOADABLES_PATH
     tput bel  # bell
 
-- BASH(1)
-- CUT(1)
-- UNIQ(1)
-
-    o $BASH_LOADABLES_PATH
-
-## env
-    env | fzf
-    grc env
-
-ENV(1)
-
-## Atuin
-    sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
-
-`$ABno/Bash/ble-atuin` sets `Ctrl+u`
+BASH(1)
 
 ## ble.sh
     $ABno/Bash/ble-atuin
     ble-bind -P | fzf
+    r /usr/share/blesh/
 
 - ` ` expands
-- `Ctrl-xCtrl-v` = `display-shell-version`
+- `Ctrl-xCtrl-v` = `display-shell-version` colourful
 - `F1` = `vi_xmap/command-help`
+- replaces `GNU Readline`
 - Stopped jobs might need `kill -9 %n` (`n` being the job number) twice...
 
+### Atuin
+    sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
+
+`$ABno/Bash/ble-atuin` sets `Ctrl+u` for colourful & informative history
+
 ## completion
-    complete 2>&1 | tee $machLg/jo/bash.cmplt
+    complete 2>&1 | tee $machLg/jo/Bash_settings/bash.cmplt
     r /usr/share/bash-completion
 
-## file manage
-FIND(1)
-
-### ls
-    dircolors --print-ls-colors
-    ls ~/{go,mus*,*Shot}; o
-
-#### man
-    :Man ls
-    im ls
-
-### directory structures
-    <directory>  # cd <directory>  ( shopt autocd )
-    file ~/.vim  # shows symlink source
-    namei ~/.vim  # shows tree, including symlink sources
-
-### file searching
-    find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
-    find . -type d -name .git
-    find . -type f -name .gitignore
-    find . -type f -name "*.pl"
-    find . -type f -name "python.vim"
-
-#### for configuration files
-    fd -I -e conf
-    find . -type f -name "*.conf"
-
-#### fmtutil.cnf
-    cp /etc/texmf/web2c/fmtutil.cnf.pacsave $machLg/etc/texmf-web2c-fmtutil/$(date '+%y%m%d-%H%M').cnf
-
-as root: `find / -xdev -iname "*fmtutil.cnf*"`
-
-#### grepping
-    grep -E '<someText>|<otherText>'
-    grep -r --include "*.sh" ' -f ' .
-    grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
-    grep -ri --include "*.conf" '#=> ' .
-    man grep | grep egrep | xcol egrep fgrep
-
-##### manual
-- GNU Grep Manual
-- GREP(1)
-
-#### mlocate
-    i locate
-    im locate
-
-##### regex searches
-    locate -r '\.conf$'
-    locate -r '\.json$' | mo
-    locate -i 'nick cave'
-
-##### updatedb
-    $ABnm/etc/updatedb.conf
-    doas updatedb
-    systemctl status updatedb.timer
-
-#### list symlinks
-    find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
-
-##### recursively
-    find . -type l -ls
-    find ~ -path '*/.virtualenvs' -prune -o -type l -ls
-
-## jobs
-    i jobs
-
-JOBS(1P)
+## help
+    :Man bash
+    pinfo bash
+    pinfo -m bash
 
 ## pager - less
     less <file>
@@ -218,6 +144,42 @@ JOBS(1P)
 ## time
     $OSAB/mb-sbMb/rsnapshots.sh
     im time
+
+## directory structures
+    <directory>  # cd <directory>  ( shopt autocd )
+    file ~/.vim  # shows symlink source
+    namei ~/.vim  # shows tree, including symlink sources
+
+# coreutils
+    :Man mktemp
+
+- CAT(1)
+- CP(1)
+- CUT(1)
+- DATE(1)
+- INSTALL(1)
+- MV(1)
+- SORT(1)
+- STAT(1)
+- TAIL(1)
+- UNIQ(1)
+- WC(1)
+
+## env
+    env | fzf
+    grc env
+
+ENV(1)
+
+## ls
+    dircolors --print-ls-colors
+    ls ~/{go,mus*,*Shot}; o
+
+LS(1)
+
+### man
+    :Man ls
+    im ls
 
 # documenting
     r $Sig
@@ -380,14 +342,22 @@ JOBS(1P)
     fd -tf -e md -x du -h | sort -hr  # sorted by size
     skl
 
-- CAT(1)
-- TAIL(1)
-
 ## awk
     $ITref/unix-like/awk
 
 - `-F fs`, (`--field-separator fs`) redefines `FS`
 - GAWK(1)
+
+## grep
+    grep -E '<someText>|<otherText>'
+    grep -r --include "*.sh" ' -f ' .
+    grep -ri --exclude-dir *Copied* --include "*.tex" chapterstyle .
+    grep -ri --include "*.conf" '#=> ' .
+    man grep | grep egrep | xcol egrep fgrep
+
+### manual
+- GNU Grep Manual
+- GREP(1)
 
 ## ripgrep
     batgrep
@@ -416,19 +386,13 @@ SED(1)
 # file manage
     basename ~/Arch/bash_history.sh
     cd $Drpbx; fd -tf -u index.lock -x rm  # in  .git/  folders
-    i lsd
-    n [directory]
 
 - better file managing in `$ABno/Bash/bashrc-generic`
-- CP(1)
 - DIFF(1)
+- FILE(1)
 - filetype frequencies in `$OSL/nodes/bashrc-console-fm`
-- FIND(1)
-- MV(1)
 - rsync(1)
-- STAT(1)
 - `Thunar` file associations won't work without `~/.local/share/mime/`
-- WC(1)
 
 ## advcpmv
     cpg --help | mo  # man advcp
@@ -535,7 +499,55 @@ vid => ffmpegthumbnailer
     sb => selection box
     t sel => trash selection
 
-## eza
+## finding
+    find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
+    find . -type d -name .git
+    find . -type f -name .gitignore
+    find . -type f -name "*.pl"
+    find . -type f -name "python.vim"
+
+FIND(1)
+
+### configuration files
+    fd -I -e conf
+    find . -type f -name "*.conf"
+
+### fd
+    :Man fd
+    fd -e dw -x mv {} {.}.txt  # recursively renames all  *.dw  to  *.txt
+    fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
+    im fd
+
+### fmtutil.cnf
+    cp /etc/texmf/web2c/fmtutil.cnf.pacsave $machLg/etc/texmf-web2c-fmtutil/$(date '+%y%m%d-%H%M').cnf
+
+as root: `find / -xdev -iname "*fmtutil.cnf*"`
+
+### mlocate
+    i locate
+    im locate
+
+#### regex searches
+    locate -r '\.conf$'
+    locate -r '\.json$' | mo
+    locate -i 'nick cave'
+
+#### updatedb
+    $ABnm/etc/updatedb.conf
+    doas updatedb
+    systemctl status updatedb.timer
+
+### symlinks
+    find . -mindepth 1 -maxdepth 1 -type l -ls  # only in this directory
+
+#### recursively
+    find . -type l -ls
+    find ~ -path '*/.virtualenvs' -prune -o -type l -ls
+
+## listing
+    i lsd
+
+### eza
     e
     e -l -s modified  # time sorted
     e -RL 2  # depth of 2
@@ -544,42 +556,11 @@ vid => ffmpegthumbnailer
     i eza
     more in  $ABno/Bash/bashrc-generic
 
-## fd
-    :Man fd
-    fd -e dw -x mv {} {.}.txt  # recursively renames all  *.dw  to  *.txt
-    fd . $OSAB | entr notify-send 'a file in $OSAB was modified'
-    im fd
-
-## fuzzy - fzf
-    <someCommand> Ctrl-t - gets the selected node on the command-line
-    FZF_DEFAULT_COMMAND
-
-```bash
-Alt+c  # to change directory
-cat $(fzf)
-cd [directory/][fuzzy_pattern]**<tab>
-Ctrl+r  # select command from history
-f  # with  bat, $ABno/Bash/bashrc-generic
-gvim -o `f`  # calling upon fzf
-i fzf
-kill -9 <tab>
-ls -l $(fzf -m)
-unalias **<tab>
-```
-
-## fuzzy - fzy
-    find . -type f | fzy  # selecta
-    i fzy
-
-## fuzzy - skim
-    i sk
-    i sk
-    i sk-tmux
-
 ## nnn
     $culLA/jo/bashrc-console-NNN_BMS
     $OSAB/nodes-set/plugins_for_nnn.sh
     ~/.config/nnn/sessions
+    n [directory]
 
 NNN(1)
 
@@ -809,6 +790,32 @@ NCDU(1)
 ## CMatrix
     cmatrix -u 9 -C blue
     man cmatrix
+
+# fuzzy - fzf
+    <someCommand> Ctrl-t - gets the selected node on the command-line
+    FZF_DEFAULT_COMMAND
+
+```bash
+Alt+c  # to change directory
+cat $(fzf)
+cd [directory/][fuzzy_pattern]**<tab>
+Ctrl+r  # select command from history
+f  # with  bat, $ABno/Bash/bashrc-generic
+gvim -o `f`  # calling upon fzf
+i fzf
+kill -9 <tab>
+ls -l $(fzf -m)
+unalias **<tab>
+```
+
+# fuzzy - fzy
+    find . -type f | fzy  # selecta
+    i fzy
+
+# fuzzy - skim
+    i sk
+    i sk
+    i sk-tmux
 
 # GnuPG
     $ITcore; rg 13F327EF
@@ -1085,7 +1092,6 @@ java -jar $ITccl/CP/LanguageTool/languagetool-commandline.jar --version
 # network
     :Man iwctl  " minimal
     curl ifconfig.co  # IP address
-    curl ifconfig.co/country
     doas bandwhich
     s="$machLg/network/services"; o 'vim: ft=services:' > $s; echo '' >> $s; cat /etc/services >> $s
     sudo ls /var/lib/dhcpcd/
@@ -1210,6 +1216,10 @@ can fail to start after waking system
 - updates AURs
 - `yay > pw`
 
+## coreutils
+    :r!pubc coreutils
+    [ b2sum base32 base64 basename basenc cat chgrp chmod chown chroot cksum comm cp csplit cut date dd df dir dircolors dirname du echo env expand expr factor false fmt fold groups head hostid id install join link ln logname ls md5sum mkdir mkfifo mknod mktemp mv nice nl nohup nproc numfmt od paste pathchk pinky pr printenv printf ptx pwd readlink realpath rm rmdir seq sha1sum sha224sum sha256sum sha384sum sha512sum shred shuf sleep sort split stat stdbuf stty sum sync tac tail tee test timeout touch tr true truncate tsort tty uname unexpand uniq unlink users vdir wc who whoami yes
+
 ## Flatpak
     /var/lib/flatpak/exports/bin
     org.keepassxc.KeePassXC &
@@ -1293,7 +1303,8 @@ pacsearch <keyword>  # better search
 
 ### pkgfile
     pkgfile -bl <package>  # --binaries --list
-    pubc coreutils
+
+`pubc()` in `$AjB/bashrc-console`
 
 ### re-install Haskells
     pacman -Qqs haskell > ~/pacman_haskell

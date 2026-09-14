@@ -4,6 +4,7 @@ vim: nospell:
     i yt-dlp
     whois
 
+- curl(1)
 - WAN
 - WGET(1)
 
