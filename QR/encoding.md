@@ -4,6 +4,7 @@ vim: nospell:
 
     $cITCP/encoding/dpl/Perl/scratch.pl
     $ABjo/gitconfig
+    /usr/lib/tree_sitter
     archlinux-java status
     b <codeFile>  # syntax'd cat
     bluefish -v

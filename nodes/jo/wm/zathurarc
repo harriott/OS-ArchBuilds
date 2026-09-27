@@ -1,20 +1,27 @@
 
 # $ABjo/wm/zathurarc  symlinked in  $OSAB/nodes-set/jo-0.sh
+#  ZATHURARC(5)
 
 
-# Adding reverse search between gvim and zathura
+# Adding reverse search between gvim and zathura:
 set synctex true
 set synctex-editor-command "gvim --remote-silent +%{line} %{input}"
 
-# Enable copy to clipboard
+# Enable copy to clipboard:
 set selection-clipboard clipboard
 
-# first page on the left side:
+# First page on the left side:
 set first-page-column 1:1
 
-# for  xdg-open http://...
+# For  xdg-open http://...
 set sandbox none
 
+# GUI elements:
+# :set guioptions
+set guioptions cshv
+# - including horizontal, vertical scroll bars
+
+# Window:
 set window-height 970
 # - good for a 1050 screen
 

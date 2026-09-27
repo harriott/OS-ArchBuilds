@@ -258,20 +258,8 @@ $HOME  max'd out, so
   for A in ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make; do sudo rm -r $A/*; done
 ## waiting
 apache
-cargo-cache
-cowsay
-easyplayer
 EFI install
-figurine
-flyline'
 gokcehan's lf
-notifications_kill
-perl-image-exiftool
-pikn archcanary
-prs imageglass traur
-resvg
-sox
-wlan0.sh
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
   Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
@@ -337,10 +325,10 @@ Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
 Conky     > [ Conky  conky ]
 Neovide   > [ Neovide  neovide ]
 ## Keyboard > Application Shortcuts
-alacritty    > Super+A
-firefox      > Super+X
-music_rotate > Super+M
-notifyd      > Super+D
+alacritty            > Super+A
+firefox              > Super+X
+music_rotate         > Super+M
+notifications_kill   > Super+D
 ## Panel Preferences > Panel 1 > Items
 ### Add'd
 Show Desktop

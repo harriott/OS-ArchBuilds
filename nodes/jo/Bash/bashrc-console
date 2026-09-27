@@ -11,9 +11,7 @@
 # settings that can also be useful in Console
 # -------------------------------------------
 
-# Joseph Harriott, Sat 14 Feb 2026
-
-export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
+# Joseph Harriott, lun 14 sept 2026
 
 #=> Bash interface
 alias o=echo
@@ -84,6 +82,12 @@ dcp (){
     dircolors -p >> $dcpo
     echo '' >> $dcpo
 }
+
+fdewcls () {
+  mapfile -t yu < <(fd -tf -u -e $1 -X wc -l)
+  mapfile -t ys < <(printf '%s\n' "${yu[@]}" | sort -n)
+  printf '%s\n' "${ys[@]}"
+} # "fd extension wc l sorted" - examples in  $Drpbx/search/searches.md
 
 skl () { sk --ansi -i -c 'rg --color=always --line-number "{}"'; } # for finding text in files
 
@@ -293,6 +297,11 @@ fi
 
 #=> Ruby - rbenv
 [[ $PATH =~ shims ]] || eval "$(rbenv init - --no-rehash bash)" # r ~/.rbenv
+
+#=> sudo
+# $ABno/etc/sudoers
+
+export SUDO_PROMPT="$(tput setab 1 setaf 7 bold)[sudo]$(tput sgr0) $(tput setaf 6)password for$(tput sgr0) $(tput setaf 5)%p$(tput sgr0): "
 
 #=> system
 alias i=pinfo

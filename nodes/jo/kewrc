@@ -1,8 +1,7 @@
 
-# $ABjo/kewrc  symlinked in my  $OSAB/nodes-set/jo-0.sh
-#  but might be enough just to let  ~/.config/kew/kewrc  be
-#   if the latter's deleted, it gets remade on next run
+# vim: ft=dosini:
 
+# $ABjo/kewrc  see  $OSAB/nodes-set/jo-0.sh
 
 [miscellaneous]
 
@@ -34,7 +33,6 @@ shuffleEnabled=0
 # Set the window title to the title of the currently playing track
 trackTitleAsWindowTitle=1
 
-
 [colors]
 
 # Theme's go in ~/.config/kew/themes (on Linux/FreeBSD/Android), 
@@ -53,17 +51,14 @@ colorMode=0
 # ~/.config/kew/themes (on Linux/FreeBSD/Android), 
 # and ~/Library/Preferences/kew/themes (on macOS).
 
-
 [track cover]
 
 coverEnabled=1
 coverAnsi=0
 
-
 [mouse]
 
 mouseEnabled=1
-
 
 [visualizer]
 
@@ -76,7 +71,6 @@ visualizerColorType=2
 
 # 0=Thin bars, 1=Bars twice the width, 2=Auto (depends on window size).
 visualizerBarWidth=2
-
 
 [progress bar]
 
@@ -119,7 +113,6 @@ progressBarApproachingEvenChar=━
 progressBarApproachingOddChar=━
 progressBarCurrentEvenChar=━
 progressBarCurrentOddChar=━
-
 
 [key bindings]
 

@@ -350,7 +350,21 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.145.49.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
+## GitHub CLI
+gh auth login > GitHub.com > SSH > Skip > Login with a web browser > offered one-time code pasted into browser page
+## HP Envy Inspire 7220e  at  10.242.231.239  from  oppo a76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.242.231.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
+## seized
+after cancelling out of  rec  from  bandcamp.com
+## Updates - no more disk space
+df -h /dev/sdb3
 ## waiting
+asciinema-agg
+Copilot CLI
+sequoia-sq
 # fcrontab
   !m(0)
   @ 4 bash ~/Arch/wlan0.sh

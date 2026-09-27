@@ -127,6 +127,10 @@ echo "Getting gh extensions:"
 gh extension install gennaro-tedesco/gh-s
 echo "- got them"
 
+#=> WAN - GitHub Copilot CLI
+cd $Drpbx/Play1  # - an empty directory
+copilot > /login  # gets  ~/.copilot/config.json
+
 #=> WAN - SSH config
 ln -sf $cITCP/networking-SSH/config/$host ~/.ssh/config
 es ~/.ssh/config

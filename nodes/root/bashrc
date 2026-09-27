@@ -27,18 +27,17 @@ fss () { fs "$1" > /home/jo/fs.lst; chown jo:jo /home/jo/fs.ffl; }
 
 #=> 0 more useful tweaks
 alias o=echo
+nvim () {
+    echo 'from root login, use vim instead'
+    # avoiding need to  rm -r /root/.local/share/nvim
+    # sudo nvim $HOME/lastVimDirectory  still works
+    }
 set -o vi
+source $OSL/nodes/bashrc-console-fm-n
 source /home/jo/.bashrc-generic  # $ABno/Bash/bashrc-generic
 
 # a colorised (bold red) prompt:
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
-
-#=> 0 nnn - n
-source $OSL/nodes/bashrc-console-fm-n
-
-# #=> 1 ble.sh, Atuin
-# source $ABno/Bash/ble-atuin  # if  WezTerm  fix is implemented in  $ABno/Bash/blerc
-# # [[ $TERM_PROGRAM == 'WezTerm' ]] || source $ABno/Bash/ble-atuin
 
 #=> 1 jazz
 source $ABno/Bash/jazz/bashrc

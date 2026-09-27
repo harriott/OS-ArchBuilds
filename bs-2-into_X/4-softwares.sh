@@ -153,13 +153,14 @@ pikn gitui
 pikn igrep
 pikn typos  # for correcting mistakes in source code
 
-#=> security
+#=> security - PGP
 pikn pgpdump  # OpenPGP packet visualizer
+pikn sequoia-sq
 
-#==> python-fangfrisch 0 install
+#=> security - python-fangfrisch 0 install
 pikn python-fangfrisch  # further databases/signatures for  ClamAV
 
-#==> python-fangfrisch 1 configure
+#=> security - python-fangfrisch 1 configure
 # 1 create database structure
 sudo -u clamav /usr/bin/fangfrisch --conf /etc/fangfrisch/fangfrisch.conf initdb
 
@@ -187,6 +188,7 @@ pikn atuin
 pikn blesh-git
 
 #==> flyline
+bash $ITref/unix-like/linux/flycomp-install.sh
 pikn bash-completion
 pikn flyline
 
@@ -207,4 +209,8 @@ pikn neomutt  # brings in  notmuch-runtime
 pikn rdrview-git  # extract the main content from a webpage
 pikn speedtest-cli
 sudo systemctl enable systemd-resolved.service --now
+
+#==> GitHub Copilot CLI
+pikn github-copilot-cli-bin
+pikn gnome-keyring  # useless in Xfce
 

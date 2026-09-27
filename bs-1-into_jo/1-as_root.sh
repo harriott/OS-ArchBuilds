@@ -11,6 +11,7 @@ read -p "\$OSAB is $OSAB - looks good?"
 
 #=> 1 softwares
 pacman -S bash-completion
+pacman -S bc  # arbitrary precision
 pacman -S jdk-openjdk  # for  languagetool
 pacman -S ttf-nerd-fonts-symbols  # for Yazi
 

@@ -148,9 +148,11 @@ avte () {
   trim=1; [[ $2 ]] && [[ $2 -gt '1' ]] && trim=$2
   duration=$(ffprobe -i "$av" -show_format -v quiet | sed -n 's/duration=//p')
   trimmed=$(echo "$duration-$trim" | bc)
-  ffi "$av" -c copy -t $trimmed -y "t$av"
+  # ffi "$av" -c copy -t $trimmed -y "t$av"
+  [ ${av##*.} = 'flac' ] || cc='-c copy'
+  ffi "$av" $cc -t $trimmed -y "t$av"
   mpv --start=-3 "t$av"
-} # aet <anAVFileToTrimOffEnd> <trimIfGreaterThan1second>
+} # avte <anAVFileToTrimOffEnd> <trimIfGreaterThan1second>
 
 avtb () {
   export av="$1"
@@ -192,6 +194,7 @@ alias yt='yt-dlp'
   y7 () { yt-dlp -S "height:720" "$1"; (($?==0)) && o "${tpf3} - now check for unwanted characters and mkv!${tpfn}"; }
 
 #=> CUPS
+alias lp4='lp -o orientation-requested=4'  # lp4 *
 alias lpf='lp -o fit-to-page'  # lpf *
 alias lpspd='lpstat -p -d'
 alias dceE5='doas cupsenable ENVY_5530'
@@ -458,7 +461,9 @@ function Tg() {
 
 function Tp() {
   # find $thb | wc -l
+  cd $thb/jo; find . -xtype l -delete  # silently gets rid of any weird symlinks like  $thb/jo/lock
   rsync -irtv --delete $thb/jo/ $DrThb
   echo "$(find $DrThb -type f -printf '%Ty%Tm%Td-%TH%TM%.2TS\n' | sort -k1,1r | head -1)  $host  \$DrThb $(find $DrThb | wc -l)" >> $cITCP/WAN/email-Thunderbird/activity
+  cd $DrThb
 }
 

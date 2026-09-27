@@ -17,8 +17,8 @@ source ~/.start  # $ABnm/Bash_start  /  $ABno/m-HPEB840G38/Bash_start
 
 # For $ABno/Bash/jazz/bashrc:
 export bj='/home/jo/Arch/bash_jazz'
-echo ble.sh > $bj
-# echo flyline > $bj
+# echo ble.sh > $bj
+echo flyline > $bj
 
 # Useful before X:
   source ~/.bashrc-generic  # ($ABno/Bash/bashrc-generic) useful everywhere, including root

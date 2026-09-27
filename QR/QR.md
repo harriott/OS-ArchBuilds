@@ -23,6 +23,7 @@ POSIX - JOBS(1P)
     pactl set-sink-volume @DEFAULT_SINK@ 75%
     spectroterm -acp --green 17 --orange 17 --red 17
     spectroterm -acp --green 235 --orange 235 --red 235
+    spectroterm -acp --pipewire-fix --green 17 --orange 17 --red 17
     sudo fuser --all --verbose /dev/snd/*
 
 pulseaudio(1)
@@ -45,7 +46,7 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 
 ## Kew
     $ABjo/kewrc
-    kew play $Drpbx/Cop
+    kew play $Drpbx/music
 
 ## libpulse
     pactl -h
@@ -61,9 +62,10 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 ### mpd.service
     systemctl --user enable mpd.service --now
     systemctl --user disable mpd.service --now
-    systemctl status mpd.service
+    systemctl status mpd
 
 ### vimpc
+    i vimpc
     pgrep vimpc
 
 - `$ABjo/music/MPD/vimpcrc` maps a better `q` among other things
@@ -116,9 +118,11 @@ BASH(1)
 - Stopped jobs might need `kill -9 %n` (`n` being the job number) twice...
 
 ### Atuin
-    sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
-
 `$ABno/Bash/ble-atuin` sets `Ctrl+u` for colourful & informative history
+
+#### history.db
+    sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
+        $culLA/ml-sbMb/jo/Bash_settings/Atuin-history_dump.sql
 
 ## completion
     complete 2>&1 | tee $machLg/jo/Bash_settings/bash.cmplt
@@ -344,6 +348,7 @@ LS(1)
 
 ## awk
     $ITref/unix-like/awk
+    i gawk
 
 - `-F fs`, (`--field-separator fs`) redefines `FS`
 - GAWK(1)
@@ -808,22 +813,6 @@ i fzf
     i sk
     i sk-tmux
 
-# GnuPG
-    $ITcore; rg 13F327EF
-    gpg --export-ownertrust > $machLg/jo/gnupg-trustdb.txt
-    gpg -k > $machLg/jo/GnuPGkeys/$(date +%y%m%d-%H%M).gpgk  # $vfv/syntax/gpgk.vim
-    im gpg
-    pgpdump -h
-    r ~/.gnupg
-
-gpg(1)
-
-## show keys
-    xcgpgk() { xcol 049956B6 13F327EF Asus expired expires jharr sprbMb trohib; }
-
-- all keys `gpg -k | xcgpgk`
-- secret keys `gpg -K | xcgpgk`
-
 # help
     apropos
 
@@ -913,7 +902,6 @@ XKEYBOARD-CONFIG(7) > MODELS (= physical arrangement), LAYOUTS (= languages)
     HP ENVY 5532: d0:bf:9c:a2:2f:0e
 
 #### CUPS
-    doas cupsenable ENVY_Inspire_7200  # if it's paused
     lpoptions -d ENVY_Inspire_7200  # sets as default in  ~/.cups/lpoptions
     lpoptions -p Envy5532 -o PageSize=A4
 
@@ -1141,6 +1129,7 @@ can fail to start after waking system
     systemctl status systemd-resolved.service
 
 # packages
+    $AjB/bashrc-console
     checkrebuild
     expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort | tail -n 500 > $machLg/pacman/expac-500.log  # 500 most recent installs
     grep -iE 'installed|upgraded' /var/log/pacman.log | xcol hplip
@@ -1153,8 +1142,6 @@ can fail to start after waking system
     archcanary
     chAPDs <AUR_package>
     for A in ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make; do ls $A; done
-
-`$AjB/bashrc-console` > `trizen`
 
 ### Aura
     aura --help
@@ -1183,12 +1170,17 @@ can fail to start after waking system
     pikaur -h -S  # --sync
     pikaur -Syu  # wants pw, offers to redo if connection fails
     r ~/.local/share/pikaur/aur_repos/
-    sudo rm -r ~/.cache/pikaur  # it'll get rebuilt
     ~/.config/pikaur.conf
 
 - `-a` (`--aur`) only AUR packages will be upgraded, but wants to downgrade `auracle-git`
 - `--devel` doesn't reliably offer upgrades
 - `--no-edit` don't offer to edit the PKGBUILD
+
+#### cache
+    sudo rm -r ~/.cache/pikaur  # it'll get rebuilt
+    sudo du -hs ~/.cache/pikaur
+
+can be many GB's
 
 ### traur
     ~/.cache/traur/git
@@ -1249,13 +1241,17 @@ pacman(8)
 - `sudo pkgfile -u` then `pkgfile not`
 - `sudo pacman -Fy` then `pacman -F not`
 
-### keys
-    gpg --homedir /etc/pacman.d/gnupg -k > $machLg/etc/PacmanKeys/$(date +%y%m%d-%H%M).gpgk  # $vfv/syntax/gpgk.vim
-
-#### archlinux-keyring
+### keys - archlinux-keyring
     /usr/share/pacman/keyrings/archlinux-revoked
     /usr/share/pacman/keyrings/archlinux-trusted
     /usr/share/pacman/keyrings/archlinux.gpg
+
+### keys --list-keys
+    $vfv/syntax/gpgk.vim
+
+#### DOP3040D11S
+    $culLA/ml-DOP3040D11S/etc/PacmanKeys/
+    gpg --homedir /etc/pacman.d/gnupg -k > $machLg/etc/PacmanKeys/$(date +%y%m%d-%H%M).gpgk
 
 ### list local and remote packages
 ```bash
@@ -1328,6 +1324,28 @@ PASS(1)
 date -d @$(pass cz/GmailAPI/token-expire)
 pass cz/GmailAPI/token-expire
 ```
+
+# PGP
+    :Man sq
+
+## GnuPG
+    $ITcore; rg 13F327EF
+    :Man gpg
+    gpg --export-ownertrust > $machLg/jo/gnupg-trustdb.txt
+    gpg -k > $machLg/jo/GnuPGkeys/$(date +%y%m%d-%H%M).gpgk  # $vfv/syntax/gpgk.vim
+    im gpg
+    r ~/.gnupg
+
+gpg(1)
+
+### pubring.db
+    sqlite3 ~/.gnupg/public-keys.d/pubring.db .dump > $machLg/jo/gnupg-pkd-pubring.sql
+        $culLA/ml-HPEB840G38/jo/gnupg-pkd-pubring.sql
+
+### show keys
+0. `xcgpgk() { xcol 049956B6 13F327EF 37D9 54449A5C 76A5EF9054449A5C Brady expire hplip jharr pierre sprbMb trohib; }` # don't all get detected
+1. all keys `gpg -k | xcgpgk`
+1. secret keys `gpg -K | xcgpgk`
 
 # scripting
     kill -9 "$(pidof perl)"
@@ -1524,9 +1542,10 @@ IOSTAT(1)
 to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
 
 ## security
-    $OSAB/extra-etc/sudoers/sudoers
     sudo freshclam
     systemctl status fangfrisch.timer
+
+`$ABno/etc/sudoers` sets `insults` (not for `su`)
 
 ### groups
     cat /etc/group  # list all groups on the system

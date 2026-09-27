@@ -37,6 +37,7 @@ fi
 scs () {
   cslbn="/home/jo/Arch/cs"
   [ $myDrA ] && cslbn="$ITculLAh/ml-$host/cs"
+  # $ITculLAh/ml-sbMb/cs/
   cslmn=$(date '+%y%m%d-%H%M').log  # clamscan log make name
   cslm=~/Arch/clamscan-$cslmn
   echo "about to clamscan /"
@@ -45,7 +46,7 @@ scs () {
   mv $cslm $cslbn/$cslmn
 } # scs /opt/zoom  to test
 # end of log shows time taken
-# sbMb: scs /  took 21h to scan almost 2m files
+#  sbMb: scs /  took 21h to scan almost 2m files
 
 #==> 1 filter the results
 # $vfv/syntax/cslF.vim
@@ -104,7 +105,7 @@ alias rgsm='rg --sort=modified'
 alias b='bat'  # syntax highlit cat
 alias bd='bat -d'  # showing changes from git index
 alias bm='batman'  # better manual (in wide enough terminal)
-alias pb='prettybat'  # tidied code
+alias pb='prettybat'  # tidied code using  prettier
 export BAT_PAGER=less
 
 #=> file managing

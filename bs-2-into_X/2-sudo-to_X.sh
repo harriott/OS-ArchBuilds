@@ -33,7 +33,10 @@ pacman -S xorg-xman
 #=> 2 prepare for X 2 AV 0
 pacman -S alsa-utils  # AlsaUtils
 pacman -S mediainfo
-pacman -S pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse wiremix  # PipeWire
+
+#==> PipeWire
+pacman -S pipewire-alsa pipewire-audio pipewire-jack pipewire-pulse wiremix
+# - brings in  wireplumber
 
 #=> 2 prepare for X 2 AV 1 GStreamer
 # (after  pipewire-jack) GStreamer Plug-ins

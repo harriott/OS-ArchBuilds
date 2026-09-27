@@ -12,6 +12,8 @@
 #  this could be faster on the db with different db_file's ($ABjo/music/MPD/mpd.conf),
 #   but advantage here is anything could be dumped into  ~/music
 
+# cd $Drpbx/music; for n in *; do o "$n $(find $n | wc -l)"; done
+
 ml="$HOME/music/linked"
 if [ -f $ml ]; then
   mrf=$(cat $ml)
@@ -32,9 +34,9 @@ if [ $mrf == 'best' ]; then
   mdlm joy-copies
   echo joy > $ml
 elif [ $mrf == 'joy' ]; then
-  mdlm good
-  mdlm good-Eurafrasia-UK
-  mdlm good-tA-North-US
+  mdlm good  # ln -sf $Drpbx/music/good ~/music/ln-good
+  mdlm good-Eurafrasia-UK  # ln -sf $Drpbx/music/good-Eurafrasia-UK ~/music/ln-good-Eurafrasia-UK
+  mdlm good-tA-North-US  # ln -sf $Drpbx/music/good-tA-North-US ~/music/ln-good-tA-North-US
   echo good > $ml
 else
   mdlm best best

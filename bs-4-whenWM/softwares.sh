@@ -28,6 +28,7 @@ pikn blanket  # Blanket
 pikn mousai  # similar to Shazam
 pikn mpdris2  # for MPD
 pikn quodlibet  # Quod Libet
+pikn simple-wireplumber-gui
 pikn sox
 pikn ymuse  # for MPD, takes ages to compile
 
@@ -68,6 +69,7 @@ read -p '- now Alt+F3 > Fcitx 5 Configuration > Addon > Clipboard  off'
 pikn network-manager-applet  # tray icon
 
 #=> documenting
+pikn docling  # brings in a shitload of dependencies!
 pikn odt2txt
 
 #==> LibreOffice Fresh install
@@ -130,6 +132,7 @@ pikn gphoto2  # brings in  libgphoto2
 pikn gvfs-gphoto2  # for GNOME Files integration
 
 #==> for paper
+pikn brother-mfc-j5340dw
 pikn epson-inkjet-printer-escpr2  # Epson Expression XP-2150
 pikn iscan  # epkowa SANE backend
 pikn sane  # SANE
@@ -211,6 +214,8 @@ sudo systemctl enable php-fpm.service --now
 sudo usermod -aG http jo
 
 #=> softwares
+pikn asciinema
+pikn asciinema-agg  # takes ages
 pikn flatpak xdg-desktop-portal-xapp
 pikn gucharmap
 pikn handlr-regex
@@ -243,7 +248,8 @@ pikn zoom
 
 #==> Dropbox 0 install
 # (once  Dropbox public key)
-pikn dropbox thunar-dropbox
+pikn dropbox
+pikn thunar-dropbox  # menu appears in  Thunar  after q reboot
 
 #==> Dropbox 1 prevent automatic updates
 # allowing Arch installation to work

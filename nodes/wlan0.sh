@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# Joseph Harriott, lun 17 août 2026
+# Joseph Harriott, mar 15 sept 2026
 
 # bash $ABno/wlan0.sh ($OSAB/nodes-set/jo-0-Bash-X.sh)
 # fcrontab:  @ 4 bash ~/Arch/wlan0.sh
@@ -18,5 +18,11 @@ else
 fi
 [ -f $mw ] || touch $mw
 
-echo "$(date +%y%m%d-%H%M) $(ip -4 -br a | awk 'FNR==2 {print $3}') $(iwgetid wlan0 --raw)" >> $mw
+# save current connection
+echo "$(date +%y%m%d):$(ip -4 -br a | awk 'FNR==2 {print $3}'):$(iwgetid wlan0 --raw) $(date +%H%M)" >> $mw
+
+# remove subsequent identical connections in a day
+awk -i inplace '!($1 in a) {a[$1];print}' $mw
+sed -i '/::/d' $mw
+sed -i '/: /d' $mw
 

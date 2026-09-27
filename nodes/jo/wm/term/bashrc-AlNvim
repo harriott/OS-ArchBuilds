@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# rc file for  $ABnm/.../term/Alacritty/AlNvim.sh
+# rc file for
+#  $ABno/m-DOP3040D11S/jo/term/AlNvim.sh
+#  $ABno/m-HPEB840G3x/hi-jo/term/AlNvim.sh
+#  $ABno/m-sbMb/jo/term/Alacritty/AlNvim.sh
+
 # source $ABjo/wm/term/bashrc-AlNvim
 #  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
 #   size dictated by  nvim

@@ -1,0 +1,93 @@
+
+$ABm/HPEB840G37.build
+
+$Drpbx/devSh/HPEB840G37/
+
+$ITmore/HW/laptops/HPEliteBook840G3-7
+
+HP EliteBook 840 G3 barcoded PC117862 (labelled BC PNB 17 by last owner) = HPEB840G37
+
+pikn, prs  defined in  $AjB/bashrc-console
+
+# build
+## Arch install - from the ISO
+## waiting
+# fcrontab
+# physical configuration
+1366x768 screen
+Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
+## storage
+(essential) M.2 SSD: 119Go
+(optional) 2.5" SSD: 238Go HX256GSSDSATA3, shimmed
+## BIOS
+journalctl -b -g 'EFI v'  reports
+### BIOS Setup
+Main > System Information > System BIOS : N75 Ver. 01.53 11/19/2021
+#### Advanced
+Built-in Device Options > Backlit keyboard timeout > 30 secs.
+Secure Boot Configuration > Legacy Support Enable and Secure Boot Disable
+### Startup Menu
+hold  esc  at start to get into  Startup Menu
+hold  f9  at start to get into  Boot Menu
+hold  f10  at start to get into  BIOS Setup
+# Xfce configuration
+Apparence > Style > Adwaita-sombre
+Paramètres de bureau… > Arrière-plan > Style > ----
+PulseAudio Panel icon > Mixeur audio > pwvucontrol
+Souris et pavé tactile > Inverser le sens de défilement
+## Clavier > Raccourcis d'applications
+alacritty                    > Super+A
+firefox                      > Super+X
+google-chrome-stable         > Super+G
+gvim                         > Super+V
+keepassxc                    > Super+K
+neovide                      > Super+N
+notifications_kill           > Super+D
+pactl set-sink-mute 0 toggle > speaker button (XF86AudioMute) = Sourdine volume
+pactl set-sink-volume 0 -5%  > Fn+f8 (XF86AudioLowerVolume) = Volume plus faible
+pactl set-sink-volume 0 +5%  > Fn+f9 (XF86AudioRaiseVolume) = Volume plus fort
+sxk                          > Super+S (= win+s) because s is same place in gb/fr
+thunderbird_safely           > Super+T (= win+t)
+wezterm                      > Super+W
+### option
+google-chrome-beta           > Super+G
+## Gestionnaire d'alimentation
+Écran > my preferences
+Général > Appui sur le bouton de mise en veille > Mettre in veille
+Gestion de l'économisateur d'écran > Économiseur > Activer  off
+Système > Sur batterie > Couvercle du portable > Fermeture > Mettre en veille
+## Session et démarrage > Démarrage automatique d'application
+Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
+Conky > [ Conky  conky ]
+Neovide > [ Neovide  neovide ]
+## Tableau de bord
+mouse grabbed corner and dragged to bottom
+### Préférences du tableau de bord
+Tableau de bord 2 > -
+#### Tableau de bord 1 > Éléments
+##### Ajouter
+Boutons d'action
+Emplacements
+Menu des applications
+Boutons des fenêtres
+Séparateur > Étendre
+Yeux
+Moniteur réseau > [ Texte à afficher empty  Périphérique réseau > wlan0 ]
+Greffon de barre d'état (Wifi, Dropbox, CopyQ) > Fcitx 5 masqué
+Horloge
+Mise à jour météo
+Greffon PulseAudio (works with PipeWire)
+Graphique processeur
+Greffon Capteurs > [ BAT0-0 both on  coretemp-0 all on  pch_skylake-0 on ]
+Greffon de gestionnaire d'alimentation
+Moniteur de batterie
+Dispositions de clavier (as from  setxkbmap -query)
+Dictionnaire
+Greffon de notification
+##### Supprimer
+Changer d'espace de travail
+Moniteur de la charge du système
+Wavelan (doesn't add more than  Greffon de barre d'état)
+## xfce4-terminal > Édition > Préférences…
+Apparence > Fonts > JetBrainsMono Nerd Font Regular 10
+Général > Titre initial > xfce4-terminal

@@ -6,7 +6,10 @@
 #=> 0 enable
 enable -f /usr/lib/bash/libflyline.so flyline
 
-#=> 1 decorate
+#=> 1 AI agent
+flyline set-agent-mode --system-prompt "Be concise. Answer with a JSON array of at most 3 items with objects containing: command and description. Command will be a Bash command. " --trigger-prefix 'c: ' --command 'copilot --prompt' # c: normalise dates in file
+
+#=> 1 decorate  Bash
 RPS1='\e[01;32m\t\e[00m' # time at right
 flyline create-prompt-widget mouse-mode --name MOUSE_MODE '\e[01;32mmm\e[00m' '' && RPS1=" MOUSE_MODE $RPS1"
 

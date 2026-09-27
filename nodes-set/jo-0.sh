@@ -50,7 +50,7 @@ gac=~/.gnupg/gpg-agent.conf; ln -sf $OSL/nodes/gpg-agent.conf $gac; es $gac
 
 #=> kew
 [ -d ~/music ] || mkdir -p ~/music
-kew path ~/music  # creates  ~/.config/kew/kewrc
+kew path ~/music  # [re]creates  ~/.config/kew/kewrc
 ln -sf $ABjo/kewrc ~/.config/kew/kewrc
 # b ~/.config/kew/kewrc
 
