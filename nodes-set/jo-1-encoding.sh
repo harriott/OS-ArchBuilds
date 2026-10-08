@@ -10,7 +10,7 @@ mkdir -p ~/.emacs.d
 ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el
 ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el  # pb ~/.emacs.d/early-init.el
 ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
-ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp
+ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp  # ll ~/.emacs.d/lisp
 ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
 ln -sf $onGH/zenburn-emacs ~/.emacs.d/zenburn-emacs
 eza -adl ~/.emacs.d/*

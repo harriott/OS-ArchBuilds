@@ -44,12 +44,16 @@ pacman -S lazygit
 pacman -S lua-language-server
 pacman -S luarocks
 pacman -S onefetch
-pacman -S python-pip
-pacman -S python-pipx
-    # pipx ensurepath  # maybe not needed
 pacman -S r  # R
 pacman -S rbenv ruby-build ruby-docs  # $OSAB/bs-1-into_jo/3-config.sh
 pacman -S selene  # Lua linter
+
+#==> Python
+pacman -S python-beautifulsoup4  # for thesaurus_query.vim
+pacman -S python-pip
+pacman -S python-pipx
+    # pipx ensurepath  # maybe not needed
+pacman -S ruff
 
 #=> 2 file manage
 pacman -S broot
@@ -208,7 +212,6 @@ pacman -S npm  # Node Package Manager, brings in  nodejs
 pacman -S mythes-en  # OpenOffice English thesaurus
 pacman -S pass  # brings in gnupg, which brings in pinentry
     gpg -k  # creates & populates  ~/.gnupg
-pacman -S python-beautifulsoup4  # for thesaurus_query.vim
 pacman -S rkhunter  # Rootkit Hunter
 pacman -S speech-dispatcher  # Speech Dispatcher
 pacman -S strace  # for debugging

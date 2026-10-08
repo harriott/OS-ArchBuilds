@@ -306,13 +306,12 @@ LS(1)
     /usr/local/texlive/2025/texmf-dist/doc/latex/tcolorbox/tcolorbox-example-poster.tex
 
 # Emacs
-    $misc/CP/Emacs/init.el
-    $TeNo/Emacs/org/org.org
-    et <fileToOpenTerminal>
     im emacs
+    za /usr/share/emacs/31.1/etc/refcards/refcard.pdf
+    za /usr/share/emacs/31.1/etc/refcards/survival.pdf
     ~/.emacs.d/.cache
 
-- `T` defined in `$AjB/bashrc-console`
+- `T`, `lT` defined in `$AjB/bashrc-terminal`
 - `G` defined in `$AjB/bashrc-wm`
 
 ## resources
@@ -344,7 +343,11 @@ LS(1)
 
 # file contents
     fd -tf -e md -x du -h | sort -hr  # sorted by size
+    joe -h | mo
     skl
+
+- CSPLIT(1) = context split
+- SPLIT(1)
 
 ## awk
     $ITref/unix-like/awk
@@ -363,6 +366,11 @@ LS(1)
 ### manual
 - GNU Grep Manual
 - GREP(1)
+
+## head
+    :Man head
+
+HEAD(1)
 
 ## ripgrep
     batgrep

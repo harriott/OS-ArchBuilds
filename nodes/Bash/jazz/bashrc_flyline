@@ -17,6 +17,11 @@ flyline set-style --default-theme dark  # maybe the default
 
 flyline set-cursor --backend flyline --style "#33ccff" --effect fade --effect-easing in-out-sine --effect-speed 0.7 --interpolate-easing out-elastic --interpolate 2  # funky beating cursor
 
+#=> 2 keep  Atuin  available
+eval "$(atuin init bash)"
+flyline key bind Ctrl+u 'always=runBashCommand(__atuin_widget_run)+submitOrNewline'
+# - for times when flyline's search is just too fuzzy
+
 #=> 2 keep  fzf  directory selections
 flyline key bind Ctrl+t 'always=runBashCommand(fzf-file-widget)'
 

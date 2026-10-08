@@ -1,10 +1,9 @@
 #!/bin/bash
 # vim: ft=sh sw=2:
 
-# Joseph Harriott, Sat 13 Jun 2026
+# Joseph Harriott, Wed 07 Oct 2026
 
-# $AjB/bashrc-terminal ($OSAB/nodes-set/jo-0-Bash-X.sh) sourced by  $AjB/bashrc
-# see  $OSAB/nodes-set/repair.sh  for checking if this was sourced
+# $AjB/bashrc-terminal  sourced by  $AjB/bashrc
 
 # -----------------------
 # working in the terminal
@@ -19,5 +18,7 @@ ra () {
   rec -c 2 $o.flac  # SoX
 }; export -f ra  # ra <stereoAudioRecording>
 
-T (){ emacs -nw $1; }  # in terminal
+# Emacs:
+alias T='emacs -nw'  # --no-window-system
+lT () { T --eval "(setq auto-save-default nil)" "$1"; } # large T
 

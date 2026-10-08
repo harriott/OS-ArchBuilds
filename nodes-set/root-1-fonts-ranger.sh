@@ -15,7 +15,7 @@ done
 eza -la /usr/share/fonts/EmacsAllTheIcons
 
 #=> 1 fonts 0 install
-lnd $ITccl/unix-linux-forArch-fonts /usr/share/fonts/copiedForArch
+lnd $ITccl/Ull-forArch-fonts /usr/share/fonts/copiedForArch
 eza -la /usr/share/fonts
 
 # #=> 1 fonts 1 remove

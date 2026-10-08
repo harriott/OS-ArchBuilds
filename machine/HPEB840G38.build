@@ -361,23 +361,21 @@ hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Contr
 after cancelling out of  rec  from  bandcamp.com
 ## Updates - no more disk space
 df -h /dev/sdb3
+## remove  gnome-keyring
+I'd installed it for  GitHub Copilot CLI, but to no effect
+seems to've triggered a pw request for the "login keyring" on launching Google Chrome
+prs gnome-keyring
 ## waiting
-asciinema-agg
-Copilot CLI
-sequoia-sq
+joe
 # fcrontab
   !m(0)
   @ 4 bash ~/Arch/wlan0.sh
   @ 5 bash ~/Arch/bash_history.sh
   @daily bash ~/Arch/OneTab/OneTab.sh
 # physical configuration
-1366x768 screen
+1920 x 1080 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
 RAM CT2K8G4SFRA32A
-## storage
-(essential) M.2 SSD: 119Go Samsung MZNLN128
-LITEON CV1-8B128-HP
-(optional) 2.5" SSD: BX500 shimmed to prevent disconnection
 ## BIOS
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 ### Startup Menu
@@ -389,6 +387,10 @@ Main > System Information > System BIOS : N75 Ver. 01.53 11/19/2021
 #### Advanced
 Built-in Device Options > Backlit keyboard timeout > 30 secs.
 Secure Boot Configuration > Legacy Support Enable and Secure Boot Disable
+## storage
+(essential) M.2 SSD: 119Go Samsung MZNLN128
+LITEON CV1-8B128-HP
+(optional) 2.5" SSD: BX500 shimmed to prevent disconnection
 # Xfce configuration
 Apparence > Style > Adwaita-sombre
 Paramètres de bureau… > Arrière-plan > Style > ----

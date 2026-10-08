@@ -4446,8 +4446,6 @@ reboot  took a long time for  Loading initial ramdisk ...
 still no screens, so  pikn nvidia-470xx-dkms  startx
 ## google-chrome
 pikn google-chrome  unsure if I`d had any OneTab`s...
-## cmus-git  not playing tracks
-pulseaudio -k  was enough
 ## Updates
   auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2605.0.0: cannot open shared object file: No such file or directory
 prs auracle-git  for  pikn auracle-git
@@ -4563,7 +4561,24 @@ from AUR:
   python-transformers (for docling, python-docling-ibm-models)
   python-typer026 (for docling, python-docling-core, python-transformers, python-doclang)
 scs /
+## BIOS crash
+attempted to restore from backup, but then refused to boot
+### fix
+booted into  KDT100G3B (F12 > UEFI: KingstonDataTraveler 3.0)  with  ARCH_202609
+after inactivity, system shut down again, rebooted into  ARCH_202609
+mount /dev/sda2 /mnt
+mount /dev/sda1 /mnt/efi
+arch-chroot /mnt
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB  # UEFI
+grub-mkconfig -o /boot/grub/grub.cfg
+Ctrl-d  out of  chroot  for  reboot
+## HP Envy Inspire 7220e  at  10.103.106.239  from  oppo a76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.103.106.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
 ## waiting
+$cITCP/encoding/dpl/Python/uv/ > uv pip install 'markitdown[all]
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26

@@ -63,8 +63,9 @@ open Wikipedia page in browser from terminal
     whereis perl
 
 # Python
+    /usr/bin/pip
     i python
-    r /usr/lib/python3.11/site-packages
+    r /usr/lib/python3.14/site-packages
 
 ## pipx
     r ~/.local/bin/
@@ -73,6 +74,12 @@ open Wikipedia page in browser from terminal
 ## Pygments
 - PYGMENTIZE(1)
 - `pz` (`$ABno/Bash/bashrc-generic`)
+
+## uv - directories
+    ~/.cache/uv  # dependencies
+    ~/.local/bin  # Python & tool executables
+    ~/.local/share/uv/python  # Python versions
+    ~/.local/share/uv/tools
 
 # Ruby - gem list
 ```bash

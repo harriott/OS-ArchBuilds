@@ -50,6 +50,7 @@ pikn nuspell
 pikn ansifilter
 pikn dos2unix
 pikn htmlhint  # HTMLHint
+pikn joe
 pikn sd  # chmln.sd
 pikn tspreed  # words of a text at preferred speed
 
@@ -130,15 +131,16 @@ pikn rebuild-detector  # for packages that might need rebuilding
 pikn perl-clone-pp  # for  perl-data-printer
 pikn perl-data-printer  # provides  Data::Printer
 
-#=> Python
-pikn python-virtualenvwrapper
-
-#==> Python modules
+#=> Python - modules
 pipx install gdown
 pipx install proselint
 pipx install radio-active
 pipx install terminal-colors
 pipx install yaml2toml
+
+#=> Python - projects
+pikn python-virtualenvwrapper
+pikn uv
 
 #=> Rust 0 rustup
 rustup update
@@ -203,14 +205,11 @@ pikn sysz  # fzf terminal UI for systemctl
 gpg --keyserver keyserver.ubuntu.com --recv-keys 1C61A2656FB57B7E4DE0F4C1FC918B335044912E  # Dropbox public key
 pikn chawan-git
 pikn fping
+pikn github-copilot-cli-bin
 pikn gping
 pikn librespeed-cli
 pikn neomutt  # brings in  notmuch-runtime
 pikn rdrview-git  # extract the main content from a webpage
 pikn speedtest-cli
 sudo systemctl enable systemd-resolved.service --now
-
-#==> GitHub Copilot CLI
-pikn github-copilot-cli-bin
-pikn gnome-keyring  # useless in Xfce
 

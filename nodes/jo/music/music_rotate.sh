@@ -13,6 +13,7 @@
 #   but advantage here is anything could be dumped into  ~/music
 
 # cd $Drpbx/music; for n in *; do o "$n $(find $n | wc -l)"; done
+# r $Drpbx/music/joy-copies/
 
 ml="$HOME/music/linked"
 if [ -f $ml ]; then
