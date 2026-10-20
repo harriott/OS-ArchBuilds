@@ -30,14 +30,14 @@ if [[ $myDrA == 1 ]]; then
   export Drpbx=$Storage/Dropbox
     export DrJo=$Drpbx/Jo
     export ITcore=$Drpbx/IT/core
-      export culL=$ITcore/ulLinux
-        export culLA="$culL/Arch"
-          export machLg=$culLA/ml-$host  # $machLg
-        export culLB=$culL/Bash  # rg -l '\$culLB' $ITcore
+      export coLi=$ITcore/UlLinux
+        export coAr="$coLi/Arch"
+          export machLg=$coAr/ml-$host  # $machLg
+        export cLBa=$coLi/Bash  # $cLBa
       export ITccl=$ITcore/copied-linked  # $ITccl
       export onGH=$ITcore/onGitHub
-    export ITculLAb="$Drpbx/IT-culLAb"  # IT core unix-like Linux Arch big  $ITculLAb
-    export ITculLAh="$Drpbx/IT-culLAh"  # IT core unix-like Linux Arch huge  $ITculLAh
+    export ITcoAb="$Drpbx/IT-coAb"  # IT core Arch huge  $ITcoAb
+    export ITcoAh="$Drpbx/IT-coAh"  # IT core Arch huge  $ITcoAh
 else
   # No  $Drpbx  yet, building  root / user:
     export onGH=$HOME/onGH  # because following test fails in  user

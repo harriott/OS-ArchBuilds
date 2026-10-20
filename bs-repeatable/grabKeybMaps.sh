@@ -10,6 +10,6 @@ for i in {1..3}; do
 done
 
 #=> 1 saved results
-# $ITmULlA/myBuilds-AVT661-xkbprint/
-# $ITmULlA/myBuilds-sbMb/xkbprint/
+# $ITmUlLA/myBuilds-AVT661-xkbprint/
+# $ITmUlLA/myBuilds-sbMb/xkbprint/
 

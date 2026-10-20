@@ -3,7 +3,7 @@
 # $ABjo/wm/dunstrc ($OSAB/nodes-set/jo-3-when_myDrA.sh)
 
 #  reduced from
-#   /etc/dunst/dunstrc ($nDrGRs/d-unix-like/d-linux/r-dunst-project-dunst/dunstrc)
+#   /etc/dunst/dunstrc ($nDrGRs/d-Ul/d-linux/r-dunst-project-dunst/dunstrc)
 #   which also contains explanations of each setting
 
 # $ eval $(dbus-launch)   if you make changes here

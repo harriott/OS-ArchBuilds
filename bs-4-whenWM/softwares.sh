@@ -216,6 +216,7 @@ sudo usermod -aG http jo
 #=> softwares
 pikn asciinema
 pikn asciinema-agg  # takes ages
+pikn debian-archive-keyring
 pikn flatpak xdg-desktop-portal-xapp
 pikn gucharmap
 pikn handlr-regex

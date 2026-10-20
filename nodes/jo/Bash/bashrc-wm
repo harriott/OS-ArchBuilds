@@ -12,7 +12,7 @@ alias th='thunar' # Xfce
 G (){ emacs --no-splash -fh $1 & }  # GUI
 
 function psc() {
-  pscs="$ITculLAh/ml-$host/pscircle" # pscircle shots
+  pscs="$ITcoAh/ml-$host/pscircle" # pscircle shots
   pscsn="$pscs/$(date +%Y%m%d%H%M%S).png" # pscircle shot now
   pscircle --output=$pscsn --output-height=3600 --output-width=5000
   nsxiv -fn $(ls $pscs | wc -l) $pscs &
@@ -194,7 +194,7 @@ alias yt='yt-dlp'
   y7 () { yt-dlp -S "height:720" "$1"; (($?==0)) && o "${tpf3} - now check for unwanted characters and mkv!${tpfn}"; }
 
 #=> CUPS
-alias lp4='lp -o orientation-requested=4'  # lp4 *
+alias lp4='lp -o orientation-requested=4'  # lp4 *  # rotates 90°
 alias lpf='lp -o fit-to-page'  # lpf *
 alias lpspd='lpstat -p -d'
 alias dceE5='doas cupsenable ENVY_5530'
@@ -231,8 +231,8 @@ ltx () {
   fi
 }
 
-alias tit='rm *.aux *.listing *.log *.out *.toc *.tcbtemp'
-# = tidy tex = clear away TeX ancillary files
+alias tit='rm **/*.aux **/*.listing **/*.log **/*.out **/*.toc **/*.tcbtemp'
+# = (recursively) tidy tex = clear away TeX ancillary files
 x () { max_print_line=4000 xelatex -halt-on-error $1 | xcol Missing; }
 
 #=> documenting - Pandoc my markdown notes

@@ -4,10 +4,10 @@
 # bash $OSAB/bs-repeatable/updates.sh
 
 #=> 0 log directories
-CAC="$ITculLAb/ml-$host/CAC" # ca-certificates
-pc="$ITculLAb/ml-$host/pm/cu" # checkupdates
-pQa="$ITculLAb/ml-$host/pm/Qa" # pacman -Q
-# mkdir -p $CAC $ITculLAb/ml-$host/AURs $pc $pQa; exit
+CAC="$ITcoAb/ml-$host/CAC" # ca-certificates
+pc="$ITcoAb/ml-$host/pm/cu" # checkupdates
+pQa="$ITcoAb/ml-$host/pm/Qa" # pacman -Q
+# mkdir -p $CAC $ITcoAb/ml-$host/AURs $pc $pQa; exit
 ymdHM=$(date '+%y%m%d-%H%M')
 
 #=> 1 log directories 1 fallback
@@ -61,7 +61,7 @@ fi
 
 #=> 9 AURs
 echo 'checking AURs'
-pacman -Qm > $ITculLAb/ml-$host/AURs/$ymdHM.log
+pacman -Qm > $ITcoAb/ml-$host/AURs/$ymdHM.log
 if ( pacman -Qs auracle > /dev/null 2>&1) ; then
   auracle sync
 fi

@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh sw=2:
 
-# $ABnm/Bash_start ($OSAB/nodes-set/shell.sh)
+# $ABnm/Bash_start ($OSAB/nodes-set/shell.sh) $ABno/m-HPEB840G38/Bash_start
 #  machine-specific exports that could also be useful as root
 
 # for jo: sourced by  $AjB/bash_profile

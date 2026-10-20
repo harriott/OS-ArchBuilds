@@ -19,8 +19,8 @@ vim: nospell:
 
 # gnuplot
     ff $ITref/CP/gnuplot/gnuplot_info-colornames.jpg
-    gnuplot -e 'show linetypes' 2> $culLA/gnuplot-linetypes.txt
-    gnuplot -e 'show palette colornames' 2> $culLA/gnuplot-colornames.txt
+    gnuplot -e 'show linetypes' 2> $coAr/gnuplot-linetypes.txt
+    gnuplot -e 'show palette colornames' 2> $coAr/gnuplot-colornames.txt
     za $ITref/CP/documenting/gnuplot/Gnuplot_5_4.pdf
     za $ITref/CP/documenting/gnuplot/gpcard.pdf
 

@@ -366,7 +366,6 @@ I'd installed it for  GitHub Copilot CLI, but to no effect
 seems to've triggered a pw request for the "login keyring" on launching Google Chrome
 prs gnome-keyring
 ## waiting
-joe
 # fcrontab
   !m(0)
   @ 4 bash ~/Arch/wlan0.sh
@@ -376,6 +375,7 @@ joe
 1920 x 1080 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
 RAM CT2K8G4SFRA32A
+TP-Link UB4400
 ## BIOS
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 ### Startup Menu

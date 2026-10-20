@@ -1,9 +1,8 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh:
 
-# $ABnm/Bash_start
-
-# machine-specific exports that could also be useful as root
+# $ABnm/Bash_start ($OSAB/nodes-set/shell.sh) $ABno/m-DOP3040D11S/Bash_start
+#  machine-specific exports that could also be useful as root
 
 # for jo:
 #  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh

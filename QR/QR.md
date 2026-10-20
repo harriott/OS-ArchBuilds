@@ -122,7 +122,7 @@ BASH(1)
 
 #### history.db
     sqlite3 ~/.local/share/atuin/history.db .dump > $machLg/jo/shell/Atuin-history_dump.sql
-        $culLA/ml-sbMb/jo/Bash_settings/Atuin-history_dump.sql
+        $coAr/ml-sbMb/jo/Bash_settings/Atuin-history_dump.sql
 
 ## completion
     complete 2>&1 | tee $machLg/jo/Bash_settings/bash.cmplt
@@ -324,7 +324,7 @@ LS(1)
     r $nDrGRs/emacs/_bzg-worg
 
 ## Spacemacs
-    $ITculLAb/Emacs/sm/.spacemacs
+    $ITcoAb/Emacs/sm/.spacemacs
     n ~/.sm/.emacs.d
     nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
@@ -350,7 +350,7 @@ LS(1)
 - SPLIT(1)
 
 ## awk
-    $ITref/unix-like/awk
+    $ITref/Ul/awk
     i gawk
 
 - `-F fs`, (`--field-separator fs`) redefines `FS`
@@ -383,7 +383,7 @@ RG(1)
     i rg
 
 ## sed
-    $ITref/unix-like/sed
+    $ITref/Ul/sed
     i sed
     sed -i '/match/{n;Q}' <file>  # remove all lines after match
     tldr sed
@@ -570,7 +570,7 @@ as root: `find / -xdev -iname "*fmtutil.cnf*"`
     more in  $ABno/Bash/bashrc-generic
 
 ## nnn
-    $culLA/jo/bashrc-console-NNN_BMS
+    $coAr/jo/bashrc-console-NNN_BMS
     $OSAB/nodes-set/plugins_for_nnn.sh
     ~/.config/nnn/sessions
     n [directory]
@@ -587,7 +587,7 @@ NNN(1)
 ## ranger
     $OSL/nodes/terminal-ranger/JH.md
     $OSL/nodes/terminal-ranger/scope.sh
-    feh $ITref/unix-like/cheatsheet.png &
+    ff $ITref/Ul/cheatsheet.png
     ranger --version
 
 - can't cope with `utf-16le`
@@ -690,10 +690,6 @@ NNN(1)
     r $rsnapshot/aaa.1/localhost/$DWp
     r $rsnapshot/aaa.0/$host/home/jo/.recoll
     r $rsnapshot/daily.0/$host/$Drpbx/Photos
-    r $rsnapshot/daily.1/$host/$Drpbx/Photos
-    r $rsnapshot/daily.6/$host/$Drpbx/Photos
-    r $rsnapshot/hourly.1/$host/$Drpbx/Photos
-    r $rsnapshot/hourly.6/$host/$Drpbx/Photos
 
 #### fRs
     $AjB/bashrc-console
@@ -703,7 +699,7 @@ NNN(1)
     fRs $Drpbx/Cop Björk
     fRs $Drpbx/Cop US 1
     fRs $DWp/pn/internet internet.dw
-    fRs $ITccl unix-linux-forArch-fonts
+    fRs $ITccl Ul-linux-forArch-fonts
     fRs $ITmCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
     fRs $Obc/rc rc.xml
@@ -784,11 +780,12 @@ NCDU(1)
     i zoxide-add
     i zoxide-import
     i zoxide-query
-    zi <fuzzy_tail_pattern> > Enter > <fuzzy_pattern> > Enter/Esc
     zq <case_insensitive>  # greps relevant lines from the database  # $AjB/bashrc-console
     zoxide -V
     zoxide query -i <fuzzy_tail_pattern>
     zoxide query -ls | mo
+
+interactive: `zi <fuzzy_tail_pattern> > Enter > <fuzzy_pattern> > Enter/Esc`
 
 # forum
     fbbcode
@@ -890,7 +887,7 @@ XKEYBOARD-CONFIG(7) > MODELS (= physical arrangement), LAYOUTS (= languages)
 ### xmodmap
     $ABno/m-HPEB840G3x/jo/xmodmap
     xmodmap -pke > $machLg/usr/xmodmap-pke
-    xmodmap -pke > $machLg/xmodmap-pke  # $culLA
+    xmodmap -pke > $machLg/xmodmap-pke  # $coAr
     XMODMAP(1)
 
 ## f1t2t3
@@ -989,7 +986,7 @@ xterm -geometry 160x70+20+20 -ti vt340 -e "lsix; $SHELL" &  # sixel thumbnails
 ```
 
 ## ImageMagick
-    magick -list color > $culLA/IM-magick-list_color.txt
+    magick -list color > $coAr/IM-magick-list_color.txt
 
 font list: `magick -list font > $machLg/IMfonts.IMfo`
 
@@ -1036,7 +1033,7 @@ PLAYERCTL(1)
     $misc/CP/mpv.conf
     :Man mpv
     r /usr/share/doc/mpv
-    rgsm mpv -l $ITculLAb/ml-$host/pm/cu
+    rgsm mpv -l $ITcoAb/ml-$host/pm/cu
 
 MPV(1)
 
@@ -1258,7 +1255,7 @@ pacman(8)
     $vfv/syntax/gpgk.vim
 
 #### DOP3040D11S
-    $culLA/ml-DOP3040D11S/etc/PacmanKeys/
+    $coAr/ml-DOP3040D11S/etc/PacmanKeys/
     gpg --homedir /etc/pacman.d/gnupg -k > $machLg/etc/PacmanKeys/$(date +%y%m%d-%H%M).gpgk
 
 ### list local and remote packages
@@ -1335,6 +1332,7 @@ pass cz/GmailAPI/token-expire
 
 # PGP
     :Man sq
+    :Man sq-network
 
 ## GnuPG
     $ITcore; rg 13F327EF
@@ -1348,7 +1346,7 @@ gpg(1)
 
 ### pubring.db
     sqlite3 ~/.gnupg/public-keys.d/pubring.db .dump > $machLg/jo/gnupg-pkd-pubring.sql
-        $culLA/ml-HPEB840G38/jo/gnupg-pkd-pubring.sql
+        $coAr/ml-HPEB840G38/jo/gnupg-pkd-pubring.sql
 
 ### show keys
 0. `xcgpgk() { xcol 049956B6 13F327EF 37D9 54449A5C 76A5EF9054449A5C Brady expire hplip jharr pierre sprbMb trohib; }` # don't all get detected
@@ -1360,13 +1358,13 @@ gpg(1)
 
 ## Bash
     [ -f $DrThb/parent.lock ] && echo zero file size
-    r $culLB
+    r $cLBa
 
 ### ANSI escape sequences
     $OSL/nodes/bashrc-generic
 
 #### colours
-    bash $culLB/colours/color-bash.sh
+    bash $cLBa/colours/color-bash.sh
     echo -e "\e[1m\e[95m[1m[95m\e[0m"
     echo -e "=\e[0;31m=Red=\e[0m="
     echo -e "=\e[0;32m=Green=\e[0m="
@@ -1406,7 +1404,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     ~/.local/share/xorg/Xorg.0.log
 
 - `Qt`: `Q qt6`
-- `su` > root pw for `st="$ITculLAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`
+- `su` > root pw for `st="$ITcoAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`
 - SU(1)
 - Trusted Users
 
@@ -1448,10 +1446,10 @@ creates an initial ramdisk environment
 
 ## build
     $ABno/etc/doas.conf
-    r $OSAB $culLA
+    r $OSAB $coAr
     r $machLg/etc/fstab
     rsync -irtv --delete $OSAB/ ~/Play0/OSAB
-    v $OSAB $culLA
+    v $OSAB $coAr
 
 ## filesystem hierarchy
     i hier
@@ -1460,7 +1458,7 @@ creates an initial ramdisk environment
 - `uf()` (= usr files) in `$OSAB/Bash/bashrc-generic)`
 
 ## fonts
-    $ITccl/unix-linux-forArch-fonts/readme.md
+    $ITccl/Ul-linux-forArch-fonts/readme.md
     font-manager &
     xfd -fa FingerPaint-Regular &
 
@@ -1527,7 +1525,7 @@ uses `fzf`
 IOSTAT(1)
 
 ## pscircle
-    cd $ITmULlA; fd pscircle
+    cd $ITmUlLA; fd pscircle
     pscircle --output="pscircle-$(date +%Y%m%d%H%M%S).png" --output-height=2600 --output-width=4600
 
 ### BpyTOP
@@ -1587,7 +1585,7 @@ TIMEDATECTL(1)
     xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
 ### awesome
-    $culLA/build/mb-.../jo/awesome/rc.lua
+    $coAr/build/mb-.../jo/awesome/rc.lua
     modkey+c = c:kill()
     modkey+p = hotkeys_popup
 
@@ -1652,9 +1650,9 @@ TIMEDATECTL(1)
 scroll don't work in `tmux`
 
 ## colours
-    bash $culLB/colours/256/BR-color256.sh
-    bash $culLB/colours/256/SE269077-numbers-ordered.sh
-    bash $culLB/colours/awk-rgb-test.sh  # nice one-line gradient
+    bash $cLBa/colours/256/BR-color256.sh
+    bash $cLBa/colours/256/SE269077-numbers-ordered.sh
+    bash $cLBa/colours/awk-rgb-test.sh  # nice one-line gradient
     colorscript -r  # shell-color-scripts
     terminal-colors  # shows what the terminal can do (console only 8 colours)
     terminal-colors -l  # with #xxxxxx's
@@ -1662,10 +1660,10 @@ scroll don't work in `tmux`
 
 ### using tput
     $OSL/nodes/bashrc-generic
-    bash $culLB/colours/256/SO-BrunoBronosky.sh
-    bash $culLB/colours/256/SE269077-FHauri.sh
-    bash $culLB/colours/ss64.sh
-    bash $culLB/colours/tripleee+isntn.sh
+    bash $cLBa/colours/256/SO-BrunoBronosky.sh
+    bash $cLBa/colours/256/SE269077-FHauri.sh
+    bash $cLBa/colours/ss64.sh
+    bash $cLBa/colours/tripleee+isntn.sh
 
 ## FIGlet
     figlet Joseph Harriott
@@ -1677,7 +1675,7 @@ scroll don't work in `tmux`
 ### fonts
     ft  # $ABno/Bash/bashrc-generic
 
-`showfigfonts Deauram > ~/FIGletFonts.txt; sed -i 's/ \+$//' ~/FIGletFonts.txt` then reduced and copied to `$culLB/FIGletFontsDeauram.txt`
+`showfigfonts Deauram > ~/FIGletFonts.txt; sed -i 's/ \+$//' ~/FIGletFonts.txt` then reduced and copied to `$cLBa/FIGletFontsDeauram.txt`
 
 ## termdown
     termdown --help | mo
@@ -1730,7 +1728,6 @@ TMUX(1)
       selectp -t 0
       selectw -t 0:0
     C-a ?  # list-keys -Na
-    C-a [  # copy-mode
     C-a <  # display-menu
     C-a >  # display-menu
     C-a ~  # show-messages (q to quit)
@@ -1745,20 +1742,23 @@ TMUX(1)
     C-a #  # list-buffers
     C-a =  # choose-buffer -Z
 
-#### copy mode
+#### for copying
+    C-a C-f  # extrakto
+    C-a F    # fingers mode
+
+##### copy mode
     C-a [  # copy-mode
     C-a e  # easycopy
     C-a P (C-p)  # quickopen (abspath, URL)
     Enter  # quits
     Pg Up/Dn
-    S  # copytk mode
-    s  # easymotion
 
 ##### copytk mode
     j  # easymotion forward
     k  # easymotion backward
     n  # easymotion lines
     s  # easymotion
+    S  # copytk mode
 
 #### session window pane
     M-PgDn/PgUp  # (= C-a (/) ) previous/next session

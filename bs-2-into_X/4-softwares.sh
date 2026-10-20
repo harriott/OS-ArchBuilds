@@ -11,6 +11,7 @@ pikn neovim
 #=> $TERM
 pikn alacritty  # Alacritty
 pikn kitty
+pikn tmux-fingers
 pikn xterm
 
 #=> audio
@@ -190,7 +191,7 @@ pikn atuin
 pikn blesh-git
 
 #==> flyline
-bash $ITref/unix-like/linux/flycomp-install.sh
+bash $ITref/Ul/linux/flycomp-install.sh
 pikn bash-completion
 pikn flyline
 

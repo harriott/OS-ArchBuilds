@@ -16,7 +16,8 @@ v="$HOME/.config/vimpc"; [ -d $v ] || mkdir $v; ln -sf $ABjo/music/MPD/vimpcrc $
 
 #==> cmus
 ln -sf $ABjo/wm/cmusqueue.sh   ~/Arch/cmusqueue.sh
-ln -sf $culLA/jo/cmushnotify.sh ~/.local/share/cmushnotify.sh
+ln -sf $coAr/jo/cmushnotify.sh ~/.local/share/cmushnotify.sh
+
 c="$HOME/.config/cmus"; [ -d $c ] || mkdir -p $c; ln -sf $ABjo/wm/cmus-rc.conf $c/rc
 es ~/.config/cmus/rc
 

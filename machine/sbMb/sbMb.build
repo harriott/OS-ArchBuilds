@@ -1150,7 +1150,7 @@ mt  to update  headings.sty
 [$Storage/Dropbox/JH/core/IT_stack/onGitHub/ArchBuilds/build-scripts]$ su > root pw
 bash 37-as_root-symlink_fonts.sh
 ### fix my OBS grabs
-symlinks as in  $culL/video/OBSmkv/shrink.sh
+symlinks as in  $coLi/video/OBSmkv/shrink.sh
 ### fix tmux'ing into CAM-toSort0
 $machBld/jo/autostart.sh
 ## remove WD30EZRZ from mlocate path
@@ -1503,7 +1503,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.235.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## gnupg trustdb backup
-gpg --export-ownertrust > $culLA/$host/jo/gnupg-trustdb-n4e.txt
+gpg --export-ownertrust > $coAr/$host/jo/gnupg-trustdb-n4e.txt
 ## GnuPG my key 13F327EF backup
 gpg -ao sbMb-backup-n4e.asc --export-secret-keys --export-options backup jh
 ## SystemRescueCd public signing key
@@ -2627,7 +2627,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.133.10 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## fix /etc/sudoers
-sudo nvim -O /etc/sudoers $culLA/ml-i34G1TU02/etc/sudoers-o9p -c 'windo difft'
+sudo nvim -O /etc/sudoers $coAr/ml-i34G1TU02/etc/sudoers-o9p -c 'windo difft'
   diff over changes then  :wq!
   visudo -c -f /etc/sudoers
 ## HP ENVY 5532 IP Address changed to 100.10
@@ -3074,7 +3074,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.160.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Updates
-nomacs not opening, only clue from  $ITculLAb/ml-$host/pm/cu/250109-1049.log  is  opencv
+nomacs not opening, only clue from  $ITcoAb/ml-$host/pm/cu/250109-1049.log  is  opencv
 switched to  nomacs-git
 ## mbsync
 still failing to get FastMail  removal and re-installation of  isync  didn't fix it
@@ -4268,7 +4268,7 @@ pikn nomacs  got me "fatal error: opencv2/imgproc/imgproc_c.h: No such file or d
 $OSAB/bs-5-when_myDrA/TexLive.sh > native remove  for  native install full
 ## Neovim in tmux
 initially most blacked out, workaround is to move out and back into the pane
-same from  tmux -f $culL/term/tmux_test.conf
+same from  tmux -f $coLi/term/tmux_test.conf
 same from  GNOME Terminal, xterm
 ## FSearch
   ... fsearch:validate-metainfo FAIL ...
@@ -4577,6 +4577,21 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.103.106.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
+## BunsenLabs key
+gpg --recv-keys AED6420C
+## Manjaro Build Server key
+gpg --keyserver keyserver.ubuntu.com --search-keys Manjaro Build Server > 2
+  gpg: key 279E7CF5D8D56EC8: public key "Manjaro Build Server <build@manjaro.org>" imported
+## HP Envy Inspire 7220e  at  10.64.37.239  from  oppo a76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.64.37.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
+## HP Envy Inspire 7220e  at  10.153.72.239  from  oppo a76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.153.72.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
 ## waiting
 $cITCP/encoding/dpl/Python/uv/ > uv pip install 'markitdown[all]
 gokcehan's lf
@@ -4626,8 +4641,8 @@ sudo rm /etc/locale.gen.pacnew
 Bose Companion 20
 D-Link DUB-H7
 NETGEAR WG111v2
-Bluetooth: TP-Link UB400
 B525 HD Webcam
+Bluetooth: TP-Link UB500
 ## cbh
 Logitech K120 UK keyboard
 Logitech Wireless Mouse M525 works fine

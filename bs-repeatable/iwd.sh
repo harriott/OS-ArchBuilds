@@ -2,7 +2,7 @@
 # vim: fdl=1:
 
 # iNet wireless daemon
-# for  $culL/iwctl-connect.sh
+# for  $coLi/connectSSID/iwctl.sh
 
 # #=> 1 iwd enable
 # systemctl enable iwd.service --now

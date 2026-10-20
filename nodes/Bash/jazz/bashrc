@@ -17,13 +17,13 @@ j () {
     echo ble.sh > $bj
     echo "next ${tpf2}Bash${tpfn} instance will by jazz'd with ${tpf3}ble.sh${tpfn}"
   fi
-  }
+  } # toggle jazz for next instance
 
 #=> 1 set jazz for this instance
 if [[ $(cat $bj) == 'ble.sh' ]]; then
-  source $ABno/Bash/jazz/bashrc_ble-atuin  # if  WezTerm  fix is implemented in  $ABno/Bash/jazz/blerc
+  source $ABno/Bash/jazz/bashrc-ble_sh-atuin  # if  WezTerm  fix is implemented in  $ABno/Bash/jazz/blerc
 else
-  source $ABno/Bash/jazz/bashrc_flyline  # kills off  fzf's  **<tab>  functionality
+  source $ABno/Bash/jazz/bashrc-flyline  # kills off  fzf's  **<tab>  functionality
 fi
 
 # #=> 1 minimal prompts for this instance

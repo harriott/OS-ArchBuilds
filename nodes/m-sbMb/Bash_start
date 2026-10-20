@@ -1,7 +1,8 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh:
 
-# $ABnm/Bash_start - machine-specific exports that could also be useful as root
+# $ABnm/Bash_start ($OSAB/nodes-set/shell.sh) $ABno/m-sbMb/Bash_start
+#  machine-specific exports that could also be useful as root
 
 # for jo:
 #  symlinked in  $OSAB/nodes-set/shell.sh
@@ -14,6 +15,7 @@ export CopIT='/mnt/WD20EZAZ/Cop-IT'  # $CopIT
 export OBSmkvGrabs='/mnt/ST4000VN008/OBSmkvGrabs'
 export rsnapshot='/mnt/WD1001FALS/rsnapshot'  # $rsnapshot
 export startxDelay=5
+setxkbmap gb  # failing to ensure '`~ aren't French at start
 
 #=> for  $ABno/Bash/export-Arch
 export Enc=/mnt/SD480GSSDPlus/Encrypted  # $Enc

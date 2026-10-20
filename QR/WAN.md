@@ -132,7 +132,7 @@ URLs (such as in an email sent from `mutt`) unclickable - so better to send to t
     /usr/share/nginx/html/index.html
     r /usr/share/nginx/html
 
-    rsync -irtv --delete /usr/share/nginx/test/ $ITmULl/Arch/networking-usr-share-nginx-test
+    rsync -irtv --delete /usr/share/nginx/test/ $ITmUlL/Arch/networking-usr-share-nginx-test
 
 ## nginx.service
     sudo systemctl disable nginx.service --now
