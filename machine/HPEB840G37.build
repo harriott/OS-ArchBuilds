@@ -46,7 +46,7 @@ swapon /dev/sdb2
 swapon -s
 #### basic system
 (should've run the scripts in  $OSAB/bs-0-into_root)
-pacstrap /mnt base linux linux-firmware
+pacstrap /mnt base linux linux-firmware  (base is a meta package)
 timedatectl set-timezone Europe/Paris
 #### into chroot
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -94,7 +94,9 @@ mount /dev/sdb1 /mnt/boot
 iwctl station wlan0 scan (no output) for  iwctl station wlan0 get-networks
 iwctl station wlan0 connect Jo-OPPO-A76 > pw
 arch-chroot -S /mnt
+pacman -S iwd  (will be needed after chroot)
 cd /root/onGH/OS-ArchBuilds; git pull
+
 . bs-0-into_root/2-git_clone_to_root_onGH.sh
 
 bash bs-0-into_root/3-into_root.sh
