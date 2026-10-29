@@ -77,7 +77,7 @@ arch-chroot -S /mnt
 #### K16GBDTG2 for Dr-IT
 mount /dev/sdd1 /efi  (abusing it)
 ##### get my repositories
-cd /efi/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-into_root/2-git_clone_to_root_onGH.sh
+source /efi/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-into_root/2-git_clone_to_root_onGH.sh
 ##### get fstab
 cd /
 cat /etc/fstab
@@ -87,7 +87,16 @@ cat /etc/fstab > /efi/HPEB840G37/fstab-qat
 umount /dev/sdd1
 from sbMb, prep'd  $OSAB/nodes/efi_loader/entries_arch_conf/HPEB840G37.conf
 #### systemd-boot
-in /root/onGH/OS-ArchBuilds, git pull
+got in a tangle, rebooted into  ARCH_202610
+loadkeys fr
+mount /dev/sdb3 /mnt
+mount /dev/sdb1 /mnt/boot
+iwctl station wlan0 scan (no output) for  iwctl station wlan0 get-networks
+iwctl station wlan0 connect Jo-OPPO-A76 > pw
+arch-chroot -S /mnt
+cd /root/onGH/OS-ArchBuilds; git pull
+. bs-0-into_root/2-git_clone_to_root_onGH.sh
+
 bash bs-0-into_root/3-into_root.sh
 ## waiting
 # fcrontab

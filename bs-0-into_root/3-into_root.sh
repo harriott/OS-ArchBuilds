@@ -23,7 +23,7 @@
 
 #=> 1 get environment
 set -e  # quits on error
-[ -d /root/Arch ] || mkdir /root/Arch
+rA=/root/Arch; [ -d $rA ] || mkdir $rA
 archiso=1
 source nodes/Bash/export-Arch  # defines  $OSAB
 source $OSAB/nodes-set/root-0.sh
