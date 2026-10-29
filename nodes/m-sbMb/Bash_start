@@ -15,7 +15,9 @@ export CopIT='/mnt/WD20EZAZ/Cop-IT'  # $CopIT
 export OBSmkvGrabs='/mnt/ST4000VN008/OBSmkvGrabs'
 export rsnapshot='/mnt/WD1001FALS/rsnapshot'  # $rsnapshot
 export startxDelay=5
-setxkbmap gb  # failing to ensure '`~ aren't French at start
+
+#=> '`~ not French at start
+# setxkbmap gb  # fails to ensure it, and causes "Cannot open display default display" in root
 
 #=> for  $ABno/Bash/export-Arch
 export Enc=/mnt/SD480GSSDPlus/Encrypted  # $Enc

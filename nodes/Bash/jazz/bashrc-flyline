@@ -4,7 +4,6 @@
 #  sourced from  $ABno/Bash/jazz/bashrc
 
 #=> 0 enable
-alias s!='sudo !!' # because  ohmybash-sudo.plugin.sh  doesn't work with  flyline
 enable -f /usr/lib/bash/libflyline.so flyline
 
 #=> 1 AI agent

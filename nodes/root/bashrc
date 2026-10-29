@@ -2,9 +2,7 @@
 
 # Joseph Harriott
 
-# $ABno/root/bashrc ($OSAB/nodes-set/root.sh)
-
-# rbh="/home/jo/Arch/root-bash_history"; sudo cp /root/.bash_history $rbh; sudo chown jo:jo $rbh
+# $ABno/root/bashrc ($OSAB/nodes-set/root-0.sh)
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 

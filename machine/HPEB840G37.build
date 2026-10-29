@@ -11,14 +11,88 @@ pikn, prs  defined in  $AjB/bashrc-console
 
 # build
 ## Arch install - from the ISO
+SDCB32G2  with  ARCH_202610  in lh USB
+### keyboard, internet, time
+(should've run a script from  $OSAB/bs-0-into_root)
+loadkeys fr
+iwctl station wlan0 scan (no output) for  iwctl station wlan0 get-networks
+    wireless button does toggle
+iwctl station wlan0 connect Jo-OPPO-A76 > pw
+timedatectl
+### partitions
+lsblk  shows  CV1-8B128-HP  is  /dev/sdb
+  gdisk /dev/sdb > o (create a new empty GUID partition table GPT & new protective MBR) y
+    w > y
+  gdisk /dev/sdb  (MBR: protection  GPT: present)
+    n > Partition number (defaults to 1) > First sector (defaults to 2048) > Last sector > +1g >
+      ef00 (EFI system partition)
+    n > Partition number (defaults to 2) > First sector (defaults to the sector after partition 2) >
+      +4g > 8200 (Linux swap)
+    n > Partition number (defaults to 3) > First sector (defaults to 250068991) > Hex code >
+      8304 Linux x86-64 root (/)
+    w > y
+mkfs.fat -F32 /dev/sdb1
+mkswap /dev/sdb2
+lsblk -f
+mkfs.ext4 /dev/sdb3
+gdisk /dev/sda > o (create a new empty GUID partition table GPT & new protective MBR) y > w > y
+gdisk /dev/sda  (MBR: protection  GPT: present) > n > all defaults > w > y
+mkfs.ext4 -L HX256GSSDSATA3 /dev/sda1
+### chroot
+#### prepare
+mount /dev/sdb3 /mnt
+mount --mkdir /dev/sdb1 /mnt/efi - should've been /mnt/boot
+swapon /dev/sdb2
+swapon -s
+#### basic system
+(should've run the scripts in  $OSAB/bs-0-into_root)
+pacstrap /mnt base linux linux-firmware
+timedatectl set-timezone Europe/Paris
+#### into chroot
+genfstab -U /mnt >> /mnt/etc/fstab
+cat /mnt/etc/fstab
+arch-chroot -S /mnt
+#### in chroot
+ping 8.8.8.8
+pacman -S acpi cpupower dhcpcd fbset sudo tig tk turbostat
+fbset -i
+ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime  (Don't cat it!)
+hwclock --systohc
+sed -i 's/#fr_FR.U/fr_FR.U/' /etc/locale.gen
+grep '^f' /etc/locale.gen
+locale-gen
+echo 'LANG=fr_FR.UTF-8' > /etc/locale.conf
+cat /etc/locale.conf
+loadkeys fr-latin1
+echo KEYMAP=fr-latin1 > /etc/vconsole.conf
+echo HPEB840G37 > /etc/hostname
+passwd > pw > pw
+#### /boot (not /efi)
+Ctrl+d (= exit)
+umount /dev/sdb1  for  mount /dev/sdb1 /mnt/boot
+#### into chroot
+genfstab -U /mnt >> /mnt/etc/fstab
+cat /mnt/etc/fstab
+arch-chroot -S /mnt
+#### K16GBDTG2 for Dr-IT
+mount /dev/sdd1 /efi  (abusing it)
+##### get my repositories
+cd /efi/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-into_root/2-git_clone_to_root_onGH.sh
+##### get fstab
+cd /
+cat /etc/fstab
+pacman -S nano
+nano /etc/fstab
+cat /etc/fstab > /efi/HPEB840G37/fstab-qat
+umount /dev/sdd1
+from sbMb, prep'd  $OSAB/nodes/efi_loader/entries_arch_conf/HPEB840G37.conf
+#### systemd-boot
+in /root/onGH/OS-ArchBuilds, git pull
 ## waiting
 # fcrontab
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
-## storage
-(essential) M.2 SSD: 119Go
-(optional) 2.5" SSD: 238Go HX256GSSDSATA3, shimmed
 ## BIOS
 journalctl -b -g 'EFI v'  reports
 ### BIOS Setup
@@ -30,6 +104,9 @@ Secure Boot Configuration > Legacy Support Enable and Secure Boot Disable
 hold  esc  at start to get into  Startup Menu
 hold  f9  at start to get into  Boot Menu
 hold  f10  at start to get into  BIOS Setup
+## storage
+(essential) M.2 SSD: 119Go CV1-8B128-HP
+(optional) 2.5" SSD: 238Go HX256GSSDSATA3, shimmed
 # Xfce configuration
 Apparence > Style > Adwaita-sombre
 Paramètres de bureau… > Arrière-plan > Style > ----

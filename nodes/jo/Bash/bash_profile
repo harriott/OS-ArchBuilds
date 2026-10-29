@@ -29,7 +29,7 @@ echo flyline > $bj
 
 # backup the previous boot's systemd journal
 if [[ $myDrA == 1 ]]; then
-  jc="$ITcoAh/ml-$host/jc"
+  jc="$ITAh/ml-$host/jc"
 else
   jc=~/Arch
 fi

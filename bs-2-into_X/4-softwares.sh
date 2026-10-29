@@ -191,7 +191,7 @@ pikn atuin
 pikn blesh-git
 
 #==> flyline
-bash $ITref/Ul/linux/flycomp-install.sh
+bash $IrUl/Linux/flycomp-install.sh
 pikn bash-completion
 pikn flyline
 

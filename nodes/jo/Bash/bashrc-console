@@ -1,6 +1,8 @@
 #!/bin/bash
 # vim: ft=sh sw=2:
 
+# Joseph Harriott, lun 14 sept 2026
+
 # $AjB/bashrc-console  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
 #  then sourced by  $AjB/bash_profile  &  $AjB/bashrc
 # see  $OSAB/nodes-set/repair.sh  for checking if this was sourced
@@ -10,8 +12,6 @@
 # -------------------------------------------
 # settings that can also be useful in Console
 # -------------------------------------------
-
-# Joseph Harriott, lun 14 sept 2026
 
 #=> Bash interface
 alias o=echo

@@ -36,8 +36,10 @@ if [[ $myDrA == 1 ]]; then
         export cLBa=$coLi/Bash  # $cLBa
       export ITccl=$ITcore/copied-linked  # $ITccl
       export onGH=$ITcore/onGitHub
-    export ITcoAb="$Drpbx/IT-coAb"  # IT core Arch huge  $ITcoAb
+    export ITAb="$Drpbx/IT-Ab"  # IT Arch big  $ITAb
     export ITcoAh="$Drpbx/IT-coAh"  # IT core Arch huge  $ITcoAh
+    export ITAh="$Drpbx/IT-Ah"  # IT Arch huge  $ITAh
+    export ITAT="$Drpbx/IT-AT"  # IT Android Termux  $ITAT
 else
   # No  $Drpbx  yet, building  root / user:
     export onGH=$HOME/onGH  # because following test fails in  user

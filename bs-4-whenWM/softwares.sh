@@ -44,6 +44,7 @@ pikn vlc vlc-gui-ncurses vlc-plugin-ffmpeg
 
 #=> coding
 pikn gopls  # Go language server
+pikn jq
 pikn tree-sitter-cli
 pikn yamllint
 pikn yj-git  # convert between HCL, JSON, TOML, YAML
@@ -55,7 +56,7 @@ pikn perl-file-slurp  # $misc/CP/workHours/makeDats.pl
 pikn perl-json  # $misc/CP/PerlTools/FM-json-md.pl
 
 #==> Perl module Regexp::Common
-pikn perl-regexp-common  # $cITCP/encoding/dpl/Perl/numbers_or_not.pl
+pikn perl-regexp-common  # $CPenc/dpl/Perl/numbers_or_not.pl
 
 #==> Perl modules JSON::Parse, JSON::Tokenize, JSON::Whitespace
 pikn perl-json-parse  # $misc/CP/PerlTools/FM-json-md.pl
@@ -171,6 +172,7 @@ pikn pqiv
 pikn resvg  # for SVG's in Yazi in WezTerm
 pikn sxiv
 pikn xnviewmp  # XnView MP
+pikn zbar  # ZBar
 
 #==> GPicView
 pikn gpicview  # GPicView

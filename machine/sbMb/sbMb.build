@@ -3074,7 +3074,7 @@ hp-setup -r > Select > Remove
 hp-setup 192.168.160.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## Updates
-nomacs not opening, only clue from  $ITcoAb/ml-$host/pm/cu/250109-1049.log  is  opencv
+nomacs not opening, only clue from  $ITAb/ml-$host/pm/cu/250109-1049.log  is  opencv
 switched to  nomacs-git
 ## mbsync
 still failing to get FastMail  removal and re-installation of  isync  didn't fix it
@@ -4577,6 +4577,8 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.103.106.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
+## SystemRescueCd public signing key
+gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
 ## BunsenLabs key
 gpg --recv-keys AED6420C
 ## Manjaro Build Server key
@@ -4592,8 +4594,16 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.153.72.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
+## MX Linux - dolphinoracle key
+gpg --keyserver hkps://keys.openpgp.org  --recv-keys F62EDEAA3AE70A9C99DAC4189B68A1E8B9B6375C
+  gpg: key 9B68A1E8B9B6375C: public key "Dolphin Oracle (mxlinux) <dolphinoracle@gmail.com>" imported
+## time 1h 4.7s slow
+as revealed by   http://time.is/
+sudo ntpd -qg
+sudo hwclock --systohc
 ## waiting
-$cITCP/encoding/dpl/Python/uv/ > uv pip install 'markitdown[all]
+$ABnm/etc/rsnapshot.conf
+$CPenc/dpl/Python/uv/ > uv pip install 'markitdown[all]
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
@@ -4632,17 +4642,12 @@ ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # Firefox
 ~/.mozilla/firefox/6qq4cnaa.default-release/cookies.sqlite
 ~/.mozilla/firefox/6qq4cnaa.default-release/prefs.js
-# GnuPG - SystemRescueCd public signing key
-gpg --import gnupg-pubkey-fdupoux-20210704-v001.pem
-# locale.gen.pacnew
-sudo nvim -O /etc/locale.gen /etc/locale.gen.pacnew -c 'windo difft'
-sudo rm /etc/locale.gen.pacnew
 # physical configuration
 Bose Companion 20
 D-Link DUB-H7
 NETGEAR WG111v2
 B525 HD Webcam
-Bluetooth: TP-Link UB500
+Bluetooth: TP-Link UB500 Plus
 ## cbh
 Logitech K120 UK keyboard
 Logitech Wireless Mouse M525 works fine

@@ -168,6 +168,7 @@ BASH(1)
 - TAIL(1)
 - UNIQ(1)
 - WC(1)
+- YES(1)
 
 ## env
     env | fzf
@@ -191,8 +192,10 @@ LS(1)
 ## dict
     $AjB/bashrc-console
     :Man dict
-    client for the Dictionary Server Protocol - nothing stored locally
     i dict
+
+- client for the Dictionary Server Protocol - nothing stored locally
+- finding answers online
 
 ## LibreOffice
     bash $OSAB/bs-4-whenWM/5-LibreOfficeConfig.sh
@@ -261,7 +264,7 @@ LS(1)
 
 ## TeX - my packages
     r $LTXj
-    r $ITmore/CP/TeX/LaTeX
+    r $ITmCP/TeX/LaTeX
     r ~/texmf
 
 ## TeX Live
@@ -324,7 +327,7 @@ LS(1)
     r $nDrGRs/emacs/_bzg-worg
 
 ## Spacemacs
-    $ITcoAb/Emacs/sm/.spacemacs
+    $ITAb/Emacs/sm/.spacemacs
     n ~/.sm/.emacs.d
     nvim -O ~/.sm/.spacemacs ~/.sm/.emacs.d/core/templates/.spacemacs.template -c 'windo difft'
 
@@ -350,7 +353,7 @@ LS(1)
 - SPLIT(1)
 
 ## awk
-    $ITref/Ul/awk
+    $IrUl/awk
     i gawk
 
 - `-F fs`, (`--field-separator fs`) redefines `FS`
@@ -383,7 +386,7 @@ RG(1)
     i rg
 
 ## sed
-    $ITref/Ul/sed
+    $IrUl/sed
     i sed
     sed -i '/match/{n;Q}' <file>  # remove all lines after match
     tldr sed
@@ -561,11 +564,12 @@ as root: `find / -xdev -iname "*fmtutil.cnf*"`
     i lsd
 
 ### eza
+    :Man eza
     e
     e -l -s modified  # time sorted
     e -RL 2  # depth of 2
     e -adl <directory_to_check>  # reports for the directory (not its contents)
-    e <symlink>  # red if no reference
+    es <path>/*  # red if no symlink reference
     i eza
     more in  $ABno/Bash/bashrc-generic
 
@@ -587,7 +591,7 @@ NNN(1)
 ## ranger
     $OSL/nodes/terminal-ranger/JH.md
     $OSL/nodes/terminal-ranger/scope.sh
-    ff $ITref/Ul/cheatsheet.png
+    ff $IrUl/cheatsheet.png
     ranger --version
 
 - can't cope with `utf-16le`
@@ -699,7 +703,7 @@ NNN(1)
     fRs $Drpbx/Cop Björk
     fRs $Drpbx/Cop US 1
     fRs $DWp/pn/internet internet.dw
-    fRs $ITccl Ul-linux-forArch-fonts
+    fRs $ITccl Ul-Linux-forArch-fonts
     fRs $ITmCP/TeX/LaTeX/tikz shadows-glow.tex
     fRs $LTXj/CzPlanning planning.cls
     fRs $Obc/rc rc.xml
@@ -767,6 +771,7 @@ NCDU(1)
 
 ## tree lists
     $ABno/Bash/bashrc-generic
+    :Man tree
     i tree
 
 ## Vifm
@@ -794,7 +799,7 @@ interactive: `zi <fuzzy_tail_pattern> > Enter > <fuzzy_pattern> > Enter/Esc`
 - Topics by ttoirrah https://bbs.archlinux.org/search.php?action=show_user_topics&user_id=88384
 
 # fun
-    cat $cITCP/encoding/EMOJI_CHEAT_SHEET.gfm
+    cat $CPenc/EMOJI_CHEAT_SHEET.gfm
     tint  # tetris
 
 ## CMatrix
@@ -1018,6 +1023,10 @@ Useable backup when `nomacs` not available, but presents some png's with roughly
 - to `HP Envy Inspire 7220e`, prints as cropped portrait
 - to `PDF` (= `~/jo/print.pdf`)
 
+## ZBar
+- `zbarimg <image_containing_a_QR_code>` decodes the QR
+- ZBARIMG(1)
+
 # multimedia
     /usr/lib/vlc/plugins
     ~/.config/obs-studio/logs
@@ -1033,7 +1042,7 @@ PLAYERCTL(1)
     $misc/CP/mpv.conf
     :Man mpv
     r /usr/share/doc/mpv
-    rgsm mpv -l $ITcoAb/ml-$host/pm/cu
+    rgsm mpv -l $ITAb/ml-$host/pm/cu
 
 MPV(1)
 
@@ -1342,7 +1351,8 @@ pass cz/GmailAPI/token-expire
     im gpg
     r ~/.gnupg
 
-gpg(1)
+- GPG(1)
+- GPGV(1)
 
 ### pubring.db
     sqlite3 ~/.gnupg/public-keys.d/pubring.db .dump > $machLg/jo/gnupg-pkd-pubring.sql
@@ -1404,7 +1414,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     ~/.local/share/xorg/Xorg.0.log
 
 - `Qt`: `Q qt6`
-- `su` > root pw for `st="$ITcoAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`
+- `su` > root pw for `st="$ITAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`
 - SU(1)
 - Trusted Users
 
@@ -1426,7 +1436,9 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     find /boot/vmli*  # lists available kernels
     find /dev/disk/by-designator -type l -ls
 
-as root user, `genfstab -U / >> /etc/fstab`
+### genfstab
+- as root user, `genfstab -U / >> /etc/fstab` (= `-t UUID`)
+- GENFSTAB(8)
 
 ### init
     $ file /lib/systemd/systemd
@@ -1458,7 +1470,7 @@ creates an initial ramdisk environment
 - `uf()` (= usr files) in `$OSAB/Bash/bashrc-generic)`
 
 ## fonts
-    $ITccl/Ul-linux-forArch-fonts/readme.md
+    $ITccl/Ul/Linux-forArch-fonts/readme.md
     font-manager &
     xfd -fa FingerPaint-Regular &
 

@@ -1,6 +1,7 @@
 #!/bin/bash
+# vim: fdl=1:
 
-# $ bash $OSAB/bs-5-when_myDrA/Caddy.sh
+# bash $OSAB/bs-5-when_myDrA/Caddy.sh
 
 set -v  # prints each statement here, including comments
 trap read debug  # puts a read request after each executable line
@@ -13,7 +14,7 @@ sudo usermod -aG http caddy  # (seems to need a reboot) for permission to use  /
 #=> DokuWiki 0 install
 pikn dokuwiki php-gd
 sudo sed -i 's/;extension=gd/extension=gd/' /etc/php/php.ini
-sudo sed -i 's/;extension=iconv/extension=iconv/' /etc/php/php.ini  # for  Cloud Plugin, probable needs a reboot
+sudo sed -i 's/;extension=iconv/extension=iconv/' /etc/php/php.ini  # for  Cloud Plugin, probably needs a reboot
 sudo sed -i 's/variables_order/;variables_order/' /etc/php/php.ini
 
 #=> DokuWiki 1 for Caddy

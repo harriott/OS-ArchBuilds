@@ -2,7 +2,7 @@ vim: nospell:
 
     $OSAB/QR/encoding.md
 
-    $cITCP/encoding/dpl/Perl/scratch.pl
+    $CPenc/dpl/Perl/scratch.pl
     $ABjo/gitconfig
     /usr/lib/tree_sitter
     archlinux-java status

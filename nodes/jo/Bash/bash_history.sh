@@ -24,9 +24,9 @@ bht="$HOME/Arch/bash_history_tmp.sh"
 tac $bhr > $bht; cat ~/.bash_history >> $bht
 tac $bht | awk '!a[$0]++' > $bhr  # reverse and remove older duplicate lines
 rm $bht
-#  s $culLA/ml-DOP3040D11S/jo/bash_history_reversed
-#  s $culLA/ml-HPEB840G38/jo/bash_history_reversed
-#  s $culLA/ml-sbMb/jo/bash_history_reversed
+#  s $coAr/ml-DOP3040D11S/jo/bash_history_reversed
+#  s $coAr/ml-HPEB840G38/jo/bash_history_reversed
+#  s $coAr/ml-sbMb/jo/bash_history_reversed
 cat $bhr | sort > "$machLg/jo/bash_history_sorted"
 
 #==> root
@@ -35,7 +35,7 @@ rbht="$HOME/Arch/root_bash_history_tmp.sh"
 tac $rbhr > $rbht; cat ~/Arch/root-bash_history >> $rbht
 tac $rbht | awk '!a[$0]++' > $rbhr  # reverse and remove older duplicate lines
 rm $rbht
-#  s $culLA/ml-DOP3040D11S/root/bash_history_reversed
-#  s $culLA/ml-sbMb/root/bash_history_reversed
+#  s $coAr/ml-DOP3040D11S/root/bash_history_reversed
+#  s $coAr/ml-sbMb/root/bash_history_reversed
 cat $rbhr | sort > "$machLg/root/bash_history_sorted"
 
