@@ -22,7 +22,7 @@
 # echo $host > /etc/hostname
 
 #=> 1 get environment
-set -v  # prints each statement here, including comments
+set -e  # quits on error
 mkdir /root/Arch
 archiso=1
 source nodes/Bash/export-Arch  # defines  $OSAB
