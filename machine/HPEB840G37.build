@@ -88,6 +88,7 @@ umount /dev/sdd1
 from sbMb, prep'd  $OSAB/nodes/efi_loader/entries_arch_conf/HPEB840G37.conf
 #### systemd-boot
 in /root/onGH/OS-ArchBuilds, git pull
+bash bs-0-into_root/3-into_root.sh
 ## waiting
 # fcrontab
 # physical configuration

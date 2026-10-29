@@ -25,8 +25,8 @@
 set -v  # prints each statement here, including comments
 mkdir /root/Arch
 archiso=1
-source nodes-Bash/export-Arch
-source nodes-set/root-0.sh
+source nodes/Bash/export-Arch  # defines  $OSAB
+source $OSAB/nodes-set/root-0.sh
 
 #=> systemd-boot
 bootctl install
