@@ -23,12 +23,13 @@
 
 #=> 1 get environment
 set -e  # quits on error
-mkdir /root/Arch
+[ -d /root/Arch ] || mkdir /root/Arch
 archiso=1
 source nodes/Bash/export-Arch  # defines  $OSAB
 source $OSAB/nodes-set/root-0.sh
 
 #=> systemd-boot
+set -v  # prints each statement here, including comments
 bootctl install
 cp $OSAB/nodes/efi_loader/entries_arch_conf/$host.conf /boot/loader/entries/arch.conf
 cp $OSAB/nodes/efi_loader/loader.conf /boot/loader/loader.conf
