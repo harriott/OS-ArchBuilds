@@ -102,6 +102,7 @@ mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
 iwctl station wlan0 scan (no output) for  iwctl station wlan0 get-networks
 iwctl station wlan0 connect Jo-OPPO-A76 > pw
+cd /root/onGH/OS-ArchBuilds; git pull
 
 bash bs-0-into_root/3-into_root.sh
 

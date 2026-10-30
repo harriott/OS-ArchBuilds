@@ -14,7 +14,7 @@ ln -sf $ABno/root/bashrc          ~/.bashrc
 ln -sf $ABno/root/bash_history.sh ~/bash_history.sh
 
 #=> 1 root symlinks 1 more
-cn="$HOME/.config/nano"; [ -d $cn ] || mkdir $cn
+cn="$HOME/.config/nano"; [ -d $cn ] || mkdir -p $cn
 ln -sf $ABno/root/nanorc ~/.config/nano/nanorc
 
 #=> 1 root symlinks 2 show
