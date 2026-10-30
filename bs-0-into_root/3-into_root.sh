@@ -3,7 +3,8 @@
 
 # $OSAB/bs-0-into_root/3-into_root.sh
 # cd /root/onGH/OS-ArchBuilds; git pull
-#  then set  host  for  . bs-0-into_root/3-into_root.sh
+#  then set  host  for  bash bs-0-into_root/3-into_root.sh
+#   (source  would risk exit dropping me out of  chroot)
 
 # #=> 0 prepare
 # set -v  # prints each statement here, including comments
