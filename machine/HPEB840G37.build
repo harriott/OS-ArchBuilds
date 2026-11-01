@@ -13,7 +13,6 @@ pikn, prs  defined in  $AjB/bashrc-console
 ## Arch install - from the ISO
 SDCB32G2  with  ARCH_202610  in lh USB
 ### keyboard, internet, time
-(should've run a script from  $OSAB/bs-0-into_root)
 loadkeys fr
 iwctl station wlan0 scan (no output) for  iwctl station wlan0 get-networks
     wireless button does toggle
@@ -45,39 +44,31 @@ mount --mkdir /dev/sdb1 /mnt/efi - should've been /mnt/boot
 swapon /dev/sdb2
 swapon -s
 #### basic system
-(should've run the scripts in  $OSAB/bs-0-into_root)
+#### into chroot
+(should've run  $OSAB/bs-0-in_chroot/0-into_chroot.sh)
 pacstrap /mnt base linux linux-firmware  (base is a meta package)
 timedatectl set-timezone Europe/Paris
-#### into chroot
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 arch-chroot -S /mnt
 #### in chroot
 ping 8.8.8.8
-pacman -S acpi cpupower dhcpcd fbset sudo tig tk turbostat
-fbset -i
-ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime  (Don't cat it!)
-hwclock --systohc
-sed -i 's/#fr_FR.U/fr_FR.U/' /etc/locale.gen
-grep '^f' /etc/locale.gen
-locale-gen
-echo 'LANG=fr_FR.UTF-8' > /etc/locale.conf
-cat /etc/locale.conf
-loadkeys fr-latin1
-echo KEYMAP=fr-latin1 > /etc/vconsole.conf
-echo HPEB840G37 > /etc/hostname
-passwd > pw > pw
-#### /boot (not /efi)
+##### locale & needed packages
+manually entered (should've bash'd) most lines from
+  $OSAB/bs-0-into_root/2-prepare_for_root-1.sh
+##### passwd
+pw > pw
+#### (not /efi but) /boot
 Ctrl+d (= exit)
 umount /dev/sdb1  for  mount /dev/sdb1 /mnt/boot
-#### into chroot
+##### into chroot
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 arch-chroot -S /mnt
 #### K16GBDTG2 for Dr-IT
 mount /dev/sdd1 /efi  (abusing it)
-##### get my repositories
-source /efi/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-into_root/2-git_clone_to_root_onGH.sh
+##### get my needed repositories
+source /efi/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-into_root/1-get_onGHs.sh
 ##### get fstab
 cd /
 cat /etc/fstab
@@ -86,7 +77,7 @@ nano /etc/fstab
 cat /etc/fstab > /efi/HPEB840G37/fstab-qat
 umount /dev/sdd1
 from sbMb, prep'd  $OSAB/nodes/efi_loader/entries_arch_conf/HPEB840G37.conf
-#### systemd-boot
+#### arch-chroot again
 got in a tangle, rebooted into  ARCH_202610
 loadkeys fr
 mount /dev/sdb3 /mnt
@@ -97,16 +88,17 @@ arch-chroot -S /mnt
 pacman -S iwd  (will be needed after chroot)
 cd /root/onGH/OS-ArchBuilds; git pull
 got myself pulled out of chroot again
+#### arch-chroot again
 loadkeys fr
 mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
 iwctl station wlan0 scan (no output) for  iwctl station wlan0 get-networks
 iwctl station wlan0 connect Jo-OPPO-A76 > pw
 cd /root/onGH/OS-ArchBuilds; git pull
-
-bash bs-0-into_root/3-into_root.sh
-
-bash bs-0-into_root/3-into_root.sh
+#### systemd-boot
+pacman -S eza
+bash bs-0-into_root/2-prepare_for_root-2.sh
+pacman -S hdparm; hdparm -I /dev/sda
 ## waiting
 # fcrontab
 # physical configuration

@@ -1,0 +1,20 @@
+# vim: expandtab ft=fstab:
+
+# sudo cp $ABnm/etc/fstab /etc/fstab
+
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+
+# /dev/sda1
+LABEL=MZNLN128 /mnt/MZNLN128 ext4 defaults 0 2
+
+# /dev/sdb1 (xmasks as per  https://wiki.archlinux.org/title/Fstab)
+UUID=2A8C-416D /boot vfat rw,relatime,fmask=0177,dmask=0077,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro 0 2
+
+# /dev/sdb2 swap is on, though somehow not configured here
+
+# /dev/sdb3
+UUID=78580165-47e4-464a-837b-14a91868f115 / ext4 rw,relatime 0 1
+

@@ -9,8 +9,7 @@ set -v  # prints each statement here, including comments
 read -p "You've mounted  /, /boot, /home?"
 
 #=> 1 prepare for chroot
-# pacstrap /mnt base linux linux-firmware
-pacstrap /mnt base linux linux-firmware tig
+pacstrap /mnt base linux linux-firmware tig  # git
 timedatectl set-timezone Europe/Paris
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab

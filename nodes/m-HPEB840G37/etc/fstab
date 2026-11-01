@@ -1,0 +1,21 @@
+# vim: expandtab ft=fstab:
+
+# sudo cp $ABnm/etc/fstab /etc/fstab
+
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+
+# /dev/sda1
+LABEL=HX256GSSDSATA3 /mnt/HX256GSSDSATA3 ext4 defaults 0 2
+
+# /dev/sdb1 (xmasks as per https://wiki.archlinux.org/title/Fstab)
+UUID=C5F7-3586 /boot vfat rw,relatime,fmask=0177,dmask=0077,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro 0 2
+
+# /dev/sdb2
+UUID=59469ef7-a0d0-4b30-9f9b-46fd619067f6 none swap defaults 0 0
+
+# /dev/sdb3
+UUID=8e958943-5b41-40a9-86a4-f9b31e8723af / ext4 rw,relatime 0 1
+

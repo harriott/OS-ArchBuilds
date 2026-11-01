@@ -860,11 +860,6 @@ i fzf
     cd /sys/devices/system/cpu/cpu0/cpufreq
     doas showkey  # keycodes
     r /sys/class/backlight/intel_backlight
-    which lshw
-
-## wipefs
-- `-a` (= `--all`) signatures
-- WIPEFS(8)
 
 ## Bluetooth
     blueman-manager &
@@ -905,6 +900,12 @@ XKEYBOARD-CONFIG(7) > MODELS (= physical arrangement), LAYOUTS (= languages)
     lspci -vnn | grep VGA -A 12 | xcol Intel Radeon size VGA
     lspci -vnnd ::03xx
 
+## lshw
+    doas lshw -short
+    which lshw
+
+LSHW(1)
+
 ## printing
     $AjB/bashrc-wm
 
@@ -929,6 +930,7 @@ XKEYBOARD-CONFIG(7) > MODELS (= physical arrangement), LAYOUTS (= languages)
     $misc/linux/slJH.sh  # check for symlinks which could bother Dropbox
     /proc/filesystems - those supported by the kernel
     doas file -s /dev/sdx(n)
+    doas lshw -c disk -short
     for hd in /mnt/* /run/media/jo/*; do o $hd; done
     grc lsblk -f
     i ioping
@@ -946,6 +948,11 @@ optimised for SSDs
     i gdu
     gdu -d
     gdu -nps <directory>
+
+### hdparm
+    doas hdparm -I /dev/sda
+
+HDPARM(8)
 
 ### mkfs.ext4
 `/etc/mke2fs.conf` has bytes-per-inode ratios for usage types
@@ -981,6 +988,10 @@ UDISKIE(8)
 ## suspend
 - `/sys/power/mem_sleep` states [current]
 - `fn+f12` invokes `XF86Sleep` = `systemctl suspend`
+
+## wipefs
+- `-a` (= `--all`) signatures
+- WIPEFS(8)
 
 # imagey
 ```bash
@@ -1563,7 +1574,8 @@ to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
     sudo freshclam
     systemctl status fangfrisch.timer
 
-`$ABno/etc/sudoers` sets `insults` (not for `su`)
+- `$ABno/etc/sudoers` sets `insults` (not for `su`)
+- umask(2)
 
 ### groups
     cat /etc/group  # list all groups on the system

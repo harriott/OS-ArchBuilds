@@ -370,7 +370,10 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.211.72.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
+## secure \boot
+cp /etc/fstab $machLg/etc-fstab/qau
 ## waiting
+$ABno/etc/doas.conf
 $ITccl/Ul/Linux-forArch-fonts
 # fcrontab
   !m(0)
@@ -381,7 +384,7 @@ $ITccl/Ul/Linux-forArch-fonts
 1920 x 1080 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
 RAM CT2K8G4SFRA32A
-TP-Link UB4400
+TP-Link UB500
 ## BIOS
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 ### Startup Menu

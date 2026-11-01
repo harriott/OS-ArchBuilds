@@ -9,10 +9,9 @@
 #  use names that grep unambiguously throughout all of my notes directories
 
 # After $ABnm/Bash_start,
-#  for initial build of Arch:
-#    rsync -irtv --delete --modify-window=1 /run/media/jo/K16GBDTG2/Dr-IT/core/onGitHub/ $HOME/onGH
-#  for jo, sourced by  $AjB/bash_profile
-#  for root, sourced by  $ABno/root/bash_profile
+#  for initial build of Arch, then
+#   for jo, sourced by  $AjB/bash_profile
+#   for root, sourced by  $ABno/root/bash_profile
 #  symlinked in  $OSAB/nodes-set/shell.sh
 
 export jazz=flyline

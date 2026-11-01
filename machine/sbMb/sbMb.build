@@ -4601,6 +4601,11 @@ gpg --keyserver hkps://keys.openpgp.org  --recv-keys F62EDEAA3AE70A9C99DAC4189B6
 as revealed by   http://time.is/
 sudo ntpd -qg
 sudo hwclock --systohc
+## HP Envy Inspire 7220e  at  10.165.58.239  from  oppo a76
+fixed in  $Imagey/Scan.sh
+hp-setup -r > Select > Remove
+hp-setup 10.165.58.239 > Next > Add Printer
+hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
 ## waiting
 $ABnm/etc/rsnapshot.conf
 $CPenc/dpl/Python/uv/ > uv pip install 'markitdown[all]

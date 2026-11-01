@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: se fdl=1 sw=2:
 
-# . $OSAB/bs-0-into_root/2-git_clone_to_root_onGH.sh
+# . $OSAB/bs-0-into_root/2-get_onGHs.sh
 # until  $myDrA == 1
 
 set -v  # prints each statement here, including comments
