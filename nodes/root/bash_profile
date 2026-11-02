@@ -3,7 +3,6 @@
 # $ABno/root/bash_profile ($OSAB/nodes-set/root-0.sh)
 
 # get my  .bashrc  settings working in  Console  &  su
-# I'm using symlinks into  /root  to allow easier temporary configurations.
 
 source ~/.start  # $ABnm/Bash_start
   source ~/.export-Arch  # $ABno/Bash/export-Arch

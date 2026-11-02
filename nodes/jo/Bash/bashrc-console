@@ -117,18 +117,8 @@ lg() {
 # but I can't see it doing anything...
 
 #==> lists of files by content
-alias rgo="rg --field-match-separator ':::'"
+alias rgo="rgsm --field-match-separator ':::'" # ($ABno/Bash/bashrc-generic)
 # rgo rsync $DrJo > $Drpbx/search/rsync.rgo ($vfv/syntax/rgo.vim)
-
-rgIT () {
-  cd $Drpbx/search
-  f=IT-rg.ffl  # $Drpbx/search/IT-rg.ffl
-  echo '' > $f
-  rgc="rg -l $1 $Drpbx/IT"
-  echo '' >> $f; echo $rgc >> $f
-  echo '' >> $f; $rgc >> $f; echo '' >> $f
-  echo "- now open  $Drpbx/search/IT-rg.ffl"
-} # rgIT <text_to_find_in_many_filetypes>
 
 SE () {
   cd $Drpbx/search

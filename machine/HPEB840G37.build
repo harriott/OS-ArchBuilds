@@ -14,9 +14,7 @@ pikn, prs  defined in  $AjB/bashrc-console
 SDCB32G2  with  ARCH_202610  in lh USB
 ### keyboard, internet, time
 loadkeys fr
-iwctl station wlan0 scan (no output) for  iwctl station wlan0 get-networks
-    wireless button does toggle
-iwctl station wlan0 connect Jo-OPPO-A76 > pw
+as in  $coAr/build/bs-iwctl/Jo-OPPO-A76.sh
 timedatectl
 ### partitions
 lsblk  shows  CV1-8B128-HP  is  /dev/sdb
@@ -38,37 +36,30 @@ gdisk /dev/sda > o (create a new empty GUID partition table GPT & new protective
 gdisk /dev/sda  (MBR: protection  GPT: present) > n > all defaults > w > y
 mkfs.ext4 -L HX256GSSDSATA3 /dev/sda1
 ### chroot
-#### prepare
+#### prepare drives
 mount /dev/sdb3 /mnt
 mount --mkdir /dev/sdb1 /mnt/efi - should've been /mnt/boot
 swapon /dev/sdb2
 swapon -s
-#### basic system
-#### into chroot
-(should've run  $OSAB/bs-0-in_chroot/0-into_chroot.sh)
-pacstrap /mnt base linux linux-firmware  (base is a meta package)
-timedatectl set-timezone Europe/Paris
-genfstab -U /mnt >> /mnt/etc/fstab
-cat /mnt/etc/fstab
-arch-chroot -S /mnt
+#### basic system, into chroot
+as in  $OSAB/bs-0-boot/0-into_chroot.sh
 #### in chroot
 ping 8.8.8.8
-##### locale & needed packages
-manually entered (should've bash'd) most lines from
-  $OSAB/bs-0-into_root/2-prepare_for_root-1.sh
+##### host, locale, needed packages, time
+manually entered all but en_GB from  $OSAB/bs-0-boot/2-prepare_for_root-1.sh
 ##### passwd
 pw > pw
 #### (not /efi but) /boot
 Ctrl+d (= exit)
 umount /dev/sdb1  for  mount /dev/sdb1 /mnt/boot
-##### into chroot
+##### back into chroot
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 arch-chroot -S /mnt
 #### K16GBDTG2 for Dr-IT
 mount /dev/sdd1 /efi  (abusing it)
 ##### get my needed repositories
-source /efi/Dr-IT/core/onGitHub/OS-ArchBuilds/bs-0-into_root/1-get_onGHs.sh
+source'd (from /efi) $OSAB/bs-0-boot/1-get_onGHs.sh
 ##### get fstab
 cd /
 cat /etc/fstab
@@ -82,8 +73,7 @@ got in a tangle, rebooted into  ARCH_202610
 loadkeys fr
 mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
-iwctl station wlan0 scan (no output) for  iwctl station wlan0 get-networks
-iwctl station wlan0 connect Jo-OPPO-A76 > pw
+as in  $coAr/build/bs-iwctl/Jo-OPPO-A76.sh
 arch-chroot -S /mnt
 pacman -S iwd  (will be needed after chroot)
 cd /root/onGH/OS-ArchBuilds; git pull
@@ -92,13 +82,22 @@ got myself pulled out of chroot again
 loadkeys fr
 mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
-iwctl station wlan0 scan (no output) for  iwctl station wlan0 get-networks
-iwctl station wlan0 connect Jo-OPPO-A76 > pw
+as in  $coAr/build/bs-iwctl/Jo-OPPO-A76.sh
+ping 8.8.8.8
+#### prep for boot into root
 cd /root/onGH/OS-ArchBuilds; git pull
-#### systemd-boot
 pacman -S eza
-bash bs-0-into_root/2-prepare_for_root-2.sh
+export host=HPEB840G37  to then bash the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh
+#### check  HX256GSSDSATA3
 pacman -S hdparm; hdparm -I /dev/sda
+#### systemd-boot fail
+reboot  only goes into  hp Startup Menu
+#### arch-chroot again
+loadkeys fr
+mount /dev/sdb3 /mnt
+mount /dev/sdb1 /mnt/boot
+as in  $coAr/build/bs-iwctl/Jo-OPPO-A76.sh
+ping 8.8.8.8
 ## waiting
 # fcrontab
 # physical configuration
@@ -111,10 +110,6 @@ Main > System Information > System BIOS : N75 Ver. 01.53 11/19/2021
 #### Advanced
 Built-in Device Options > Backlit keyboard timeout > 30 secs.
 Secure Boot Configuration > Legacy Support Enable and Secure Boot Disable
-### Startup Menu
-hold  esc  at start to get into  Startup Menu
-hold  f9  at start to get into  Boot Menu
-hold  f10  at start to get into  BIOS Setup
 ## storage
 (essential) M.2 SSD: 119Go CV1-8B128-HP
 (optional) 2.5" SSD: 238Go HX256GSSDSATA3, shimmed

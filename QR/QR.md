@@ -1094,11 +1094,16 @@ java -jar $ITccl/CP/LanguageTool/languagetool-commandline.jar --version
 ```
 
 # network
-    :Man iwctl  " minimal
     curl ifconfig.co  # IP address
     doas bandwhich
     s="$machLg/network/services"; o 'vim: ft=services:' > $s; echo '' >> $s; cat /etc/services >> $s
     sudo ls /var/lib/dhcpcd/
+
+## iwctl
+    $coAr/build/bs-iwctl/
+    :Man iwctl  " minimal
+
+`-P` (= `--passphrase`)
 
 ## iptraf-ng
     doas iptraf-ng -d wlan0  # detailed
@@ -1580,6 +1585,17 @@ to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
 ### groups
     cat /etc/group  # list all groups on the system
     id jo  # show uid, gid, and groups for jo
+
+### passwd
+    passwd -h  # --help
+
+PASSWD(1)
+
+#### --status
+    sudo passwd -aS | sort  # --all (users)
+    sudo passwd -S  # (of root)
+
+but can never actually see a pw
 
 ## sizes
     sudo du -h --max-depth=1 /usr

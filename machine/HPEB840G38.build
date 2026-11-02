@@ -387,10 +387,6 @@ RAM CT2K8G4SFRA32A
 TP-Link UB500
 ## BIOS
 journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
-### Startup Menu
-hold  esc  at start to get into  Startup Menu
-hold  f9  at start to get into  Boot Menu
-hold  f10  at start to get into  BIOS Setup
 ### BIOS Setup
 Main > System Information > System BIOS : N75 Ver. 01.53 11/19/2021
 #### Advanced
