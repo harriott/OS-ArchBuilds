@@ -87,7 +87,7 @@ ping 8.8.8.8
 #### prep for boot into root
 cd /root/onGH/OS-ArchBuilds; git pull
 pacman -S eza
-export host=HPEB840G37  to then bash the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh
+export host=HPEB840G37  to then bash'd the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh
 #### check  HX256GSSDSATA3
 pacman -S hdparm; hdparm -I /dev/sda
 #### systemd-boot fail
@@ -98,6 +98,8 @@ mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
 as in  $coAr/build/bs-iwctl/Jo-OPPO-A76.sh
 ping 8.8.8.8
+export host=HPEB840G37  to then bash'd the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh  again
+bootctl  reports broken entries for initrd & linux
 ## waiting
 # fcrontab
 # physical configuration
