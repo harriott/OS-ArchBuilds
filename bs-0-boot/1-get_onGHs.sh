@@ -1,10 +1,12 @@
 #!/bin/bash
 # vim: se fdl=1 sw=2:
 
-# . $OSAB/bs-0-into_root/2-get_onGHs.sh
+# . $OSAB/bs-0-into_root/1-get_onGHs.sh
 # until  $myDrA == 1
 
 set -v  # prints each statement here, including comments
+
+rsync -irtv --delete /efi//Dr-IT/core/UlLinux/Arch/build/bs-iwctl/ /root/bs-iwctl
 
 #=> 0 repositories 0 get
 [ -d /root/onGH ] || mkdir /root/onGH

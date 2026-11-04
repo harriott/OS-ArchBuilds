@@ -7,7 +7,7 @@
 #=> host, locale, needed packages, time
 set -v  # prints each statement here, including comments
 timedatectl set-timezone Europe/Paris
-pacman -S acpi avahi clamav cpupower eza fbset hdparm iwd ranger sudo tk turbostat
+pacman -S acpi avahi clamav cpupower eza fbset hdparm iwd ranger rsync sudo tk turbostat
 fbset -i
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime  # don't  cat  it!
 hwclock --systohc

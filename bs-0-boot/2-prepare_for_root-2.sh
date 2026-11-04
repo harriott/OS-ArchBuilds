@@ -4,15 +4,16 @@
 # $OSAB/bs-0-boot/2-prepare_for_root-2.sh
 #  export $host then bash this (source  would risk exit dropping me out of  chroot)
 
-# #=> 0 get environment
-# set -e  # quits on error
-# rA=/root/Arch; [ -d $rA ] || mkdir $rA
-# archiso=1
-# source nodes/Bash/export-Arch  # defines  $OSAB
-# source $OSAB/nodes-set/root-0.sh
-# source $OSAB/nodes-set/shell.sh
+#=> 0 get environment
+set -e  # quits on error
+rA=/root/Arch; [ -d $rA ] || mkdir $rA
+archiso=1
+source nodes/Bash/export-Arch  # defines  $OSAB
+source $OSAB/nodes-set/root-0.sh
+source $OSAB/nodes-set/shell.sh
 
 #=> 1 systemd-boot
+source ~/.export-Arch
 set -v  # prints each statement here, including comments
 bootctl install
 cp $ABnm/etc/fstab /etc/fstab

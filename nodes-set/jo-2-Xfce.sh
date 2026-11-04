@@ -14,7 +14,7 @@ fi  # es ~/.conkyrc
 
 ln -sf $ABjo/wm/Xfce/terminal_startup.sh ~/.startup_terminal.sh  # es ~/.startup_terminal.sh
 
-sudo ln -sf $ITccl/CP/WallpaperFlare /usr/share/backgrounds/xfce/WallpaperFlare
+sudo ln -sf $ITccl/CP/WallpaperFlare/ /usr/share/backgrounds/xfce/WallpaperFlare
 
 #==> notifyd
 ns="$ABjo/wm/Xfce/notifyd.sh"; chmod 755 $ns; bs="/usr/local/bin/notifyd"; sudo ln -sf $ns $bs; es $bs

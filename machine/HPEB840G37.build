@@ -98,8 +98,20 @@ mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
 as in  $coAr/build/bs-iwctl/Jo-OPPO-A76.sh
 ping 8.8.8.8
-export host=HPEB840G37  to then bash'd the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh  again
+export host=HPEB840G37  to then
+  bash the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh  again
 bootctl  reports broken entries for initrd & linux
+bootctl install  then  bootctl  reports broken entries for initramfs-linux.img & vmlinuz-linux
+  fix was  pacman -Syu linux
+## root
+reboot into root
+### get online
+#### K16GBDTG2 for Dr-IT
+mount /dev/sdd1 /efi  (abusing it)
+cp /efi/Dr-IT/core/UlLinux/Arch/build/bs-iwctl/ ~/bs-iwctl
+bash ~/bs-iwctl/Jo-OPPO-A76.sh
+dhcpcd wlan0
+pacman -Syu rsync
 ## waiting
 # fcrontab
 # physical configuration

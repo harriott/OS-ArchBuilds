@@ -407,6 +407,7 @@ SED(1)
 - DIFF(1)
 - FILE(1)
 - filetype frequencies in `$OSL/nodes/bashrc-console-fm`
+- REALPATH(3)
 - rsync(1)
 - `Thunar` file associations won't work without `~/.local/share/mime/`
 
@@ -1097,7 +1098,6 @@ java -jar $ITccl/CP/LanguageTool/languagetool-commandline.jar --version
     curl ifconfig.co  # IP address
     doas bandwhich
     s="$machLg/network/services"; o 'vim: ft=services:' > $s; echo '' >> $s; cat /etc/services >> $s
-    sudo ls /var/lib/dhcpcd/
 
 ## iwctl
     $coAr/build/bs-iwctl/
@@ -1120,8 +1120,11 @@ java -jar $ITccl/CP/LanguageTool/languagetool-commandline.jar --version
 
 ## dhcpcd
     sudo dhcpcd wlwg111v2
+    sudo ls /var/lib/dhcpcd/
     systemctl status nordvpnd.service
     systemctl list-unit-files | grep dhcpcd
+
+DHCPCD(8)
 
 ## ss
     ss -aO > $machLg/network/ss-$(date +%y%m%d-%H%M)
@@ -1431,7 +1434,6 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
 
 - `Qt`: `Q qt6`
 - `su` > root pw for `st="$ITAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`
-- SU(1)
 - Trusted Users
 
 ## .desktop
@@ -1601,6 +1603,10 @@ but can never actually see a pw
     sudo du -h --max-depth=1 /usr
     sudo du -h --max-depth=1 /usr/share
     sudo du -sh /boot /etc /home /root /usr
+
+## su
+- `sl` (`$ABno/Bash/bashrc-generic`)
+- SU(1)
 
 ## systemd
     sysz  # fzf systemctl

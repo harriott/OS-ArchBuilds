@@ -16,5 +16,5 @@ cat /mnt/etc/fstab
 
 #=> 2 get into chroot
 read -p "Going to chroot now"
-arch-chroot -S /mnt  # losing red prompt
+arch-chroot -S /mnt  # square-bracketed prompt
 
