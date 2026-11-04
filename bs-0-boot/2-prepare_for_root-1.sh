@@ -9,6 +9,7 @@ set -v  # prints each statement here, including comments
 timedatectl set-timezone Europe/Paris
 pacman -S acpi avahi clamav cpupower eza fbset hdparm ranger rsync sudo tk turbostat
 pacman -S dhcpcd iwd  # will be needed when true root
+pacman -S fastfetch  # for  $ABno/Bash/bashrc-generic
 fbset -i
 ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime  # don't  cat  it!
 hwclock --systohc

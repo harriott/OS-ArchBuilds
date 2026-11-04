@@ -38,5 +38,5 @@ source ~/.bashrc-generic  # $ABno/Bash/bashrc-generic
 PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[0m\] '
 
 #=> 1 jazz
-source $ABno/Bash/jazz/bashrc
+[[ $user_jo == 1 ]] && source $ABno/Bash/jazz/bashrc
 

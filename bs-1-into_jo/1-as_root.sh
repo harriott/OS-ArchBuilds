@@ -128,10 +128,9 @@ systemctl enable fstrim.timer --now
 # systemctl status fstrim.timer
 
 #=> 2 info
+f=~/.config/fastfetch; [ -d $f ] || mkdir $f  # Fastfetch
 pacman -S bashtop  # Bashtop, superseded by AUR bpytop
 pacman -S dateutils  # Dateutils
-pacman -S fastfetch  # Fastfetch
-    f=~/.config/fastfetch; [ -d $f ] || mkdir $f
 pacman -S htop
 pacman -S iotop
 pacman -S lshw
