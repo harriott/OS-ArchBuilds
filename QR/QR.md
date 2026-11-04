@@ -1468,7 +1468,7 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     mkinitcpio -L  # --lishooks
     mkinitcpio -V  # --version
 
-creates an initial ramdisk environment
+creates an `initramfs` (initial ramdisk environment)
 
 ### UEFI?
     cat /sys/firmware/efi/fw_platform_size  # 64 is good

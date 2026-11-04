@@ -32,8 +32,9 @@ echo "vm.swappiness=00" >> /etc/sysctl.d/99-sysctl.conf
 #==> 3 check settings
 cat /etc/sysctl.d/99-sysctl.conf
 
-#=> 2 automake
-pacman -S automake
+#=> 2 base-devel
+# needed for  Pikaur, yay
+sudo pacman -S --needed base-devel  # brings in automake
 
 #=> 2 encoding
 # pacman -S bash-language-server

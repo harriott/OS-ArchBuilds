@@ -19,10 +19,6 @@ mkdir ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make
 # nvim -c "silent! /trizen" PKGBUILD
 # makepkg -sic
 
-# #=> 1 base-devel
-# # needed for  Pikaur, yay
-# sudo pacman -S --needed base-devel
-
 # #=> 2 Pikaur 0 install
 # trzAUR pikaur
 # nvim -c "silent! /github.com\/actionless\/pikaur" PKGBUILD
