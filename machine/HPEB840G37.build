@@ -87,6 +87,7 @@ ping 8.8.8.8
 #### prep for boot into root
 cd /root/onGH/OS-ArchBuilds; git pull
 pacman -S eza
+$user_jo, $myDrA  off in  $ABnm/Bash_start
 export host=HPEB840G37  to then bash'd the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh
 #### check  HX256GSSDSATA3
 pacman -S hdparm; hdparm -I /dev/sda
@@ -96,7 +97,7 @@ reboot  only goes into  hp Startup Menu
 loadkeys fr
 mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
-as in  $coAr/build/bs-iwctl/Jo-OPPO-A76.sh
+as in  $coAr/build/bs-networking/iwctl-Jo-OPPO-A76.sh
 ping 8.8.8.8
 export host=HPEB840G37  to then
   bash the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh  again
@@ -109,17 +110,18 @@ reboot into root
 #### K16GBDTG2 for Dr-IT
 mount /dev/sdd1 /efi  (abusing it)
 cp /efi/Dr-IT/core/UlLinux/Arch/build/bs-iwctl/ ~/bs-iwctl
-bash ~/bs-iwctl/Jo-OPPO-A76.sh
+as in  $coAr/build/bs-networking/iwctl-Jo-OPPO-A76.sh
 dhcpcd wlan0
 pacman -Syu rsync
 #### softwares to jo
 $OSAB/bs-1-into_jo/1-as_root.sh
-$OSAB/bs-1-into_jo/1-as_root-to_jo.sh
+$OSAB/bs-1-into_jo/2-as_root-to_jo.sh
 ## jo
 $OSAB/bs-1-into_jo/3-NetworkManager.sh
 $coAr/build/bs-networking/nmcli-Jo-MotoG86.sh
-$OSAB/nodes-set/jo-0-Bash-X.sh
+$user_jo  on in  $ABnm/Bash_start
 
+$OSAB/nodes-set/jo-0-Bash-X.sh
 $OSAB/bs-1-into_jo/4-config.sh
 ## waiting
 # fcrontab

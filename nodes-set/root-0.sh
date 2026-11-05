@@ -10,6 +10,7 @@ read -p "\$OSAB  is  $OSAB - looks good?"
 
 #=> 0 Bash
 ln -sf $ABno/root/bash_profile    ~/.bash_profile
+  # - sources  $ABnm/Bash_start, wherein  $user_jo, $myDrA  are set
 ln -sf $ABno/root/bashrc          ~/.bashrc
 ln -sf $ABno/root/bash_history.sh ~/bash_history.sh
 

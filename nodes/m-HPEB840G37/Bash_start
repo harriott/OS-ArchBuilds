@@ -12,7 +12,7 @@ export startxDelay=5
 
 #=> for  $ABno/Bash/export-Arch
 # 0 during initial build, before  $Drpbx:
-# export user_jo=1  # only when user  jo  is active
+export user_jo=1  # $user_jo, only when user  jo  is active
   # because [ -d /home/jo/onGh ] fails from  ~/.bash_profile
   # once set and integrated into  /root, can  rm -r /root/onGH
 
