@@ -73,7 +73,7 @@ got in a tangle, rebooted into  ARCH_202610
 loadkeys fr
 mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
-as in  $coAr/build/bs-iwctl/Jo-OPPO-A76.sh
+as in  $coAr/build/bs-networking/iwctl-Jo-OPPO-A76.sh
 arch-chroot -S /mnt
 pacman -S iwd  (will be needed after chroot)
 cd /root/onGH/OS-ArchBuilds; git pull
@@ -82,7 +82,7 @@ got myself pulled out of chroot again
 loadkeys fr
 mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
-as in  $coAr/build/bs-iwctl/Jo-OPPO-A76.sh
+as in  $coAr/build/bs-networking/iwctl-Jo-OPPO-A76.sh
 ping 8.8.8.8
 #### prep for boot into root
 cd /root/onGH/OS-ArchBuilds; git pull
@@ -118,6 +118,9 @@ $OSAB/bs-1-into_jo/1-as_root-to_jo.sh
 ## jo
 $OSAB/bs-1-into_jo/3-NetworkManager.sh
 $coAr/build/bs-networking/nmcli-Jo-MotoG86.sh
+$OSAB/nodes-set/jo-0-Bash-X.sh
+
+$OSAB/bs-1-into_jo/4-config.sh
 ## waiting
 # fcrontab
 # physical configuration
