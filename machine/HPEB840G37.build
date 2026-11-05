@@ -112,6 +112,8 @@ cp /efi/Dr-IT/core/UlLinux/Arch/build/bs-iwctl/ ~/bs-iwctl
 bash ~/bs-iwctl/Jo-OPPO-A76.sh
 dhcpcd wlan0
 pacman -Syu rsync
+#### softwares to jo
+bash $OSAB/bs-1-into_jo/1-as_root.sh
 ## waiting
 # fcrontab
 # physical configuration

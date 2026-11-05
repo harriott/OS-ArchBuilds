@@ -13,7 +13,7 @@ ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
 ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp  # ll ~/.emacs.d/lisp
 ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
 ln -sf $onGH/zenburn-emacs ~/.emacs.d/zenburn-emacs
-eza -adl ~/.emacs.d/*
+el ~/.emacs.d/*
 
 #=> vimfiles - nvim 0 empty 0
 [ -d "$nvim" ] && sudo rm -r $nvim
@@ -37,7 +37,7 @@ ln -s $vfv/plugin/plugin.vim              $nvim/plugin/plugin.vim
 ln -s $vfv/spell                          $nvim/spell
 ln -s $vfv/syntax                         $nvim/syntax
 ln -s $vfv/thesaurus                      $nvim/thesaurus
-eza -adl $nvim/*
+el $nvim/*
 
 #=> vimfiles - nvim 2 check
 lsd -al $nvim
@@ -72,8 +72,8 @@ ln -s $vfv/spell                          ~/.vim/spell
 ln -s $vfv/syntax                         ~/.vim/syntax
 ln -s $vfv/thesaurus                      ~/.vim/thesaurus
 ln -s $vfv/filetype.vim                   ~/.vim/filetype.vim
-eza -adl ~/.vim*
-eza -adl ~/.vim/*
-eza -adl ~/.vim/pack/*
-eza -adl ~/.vim/plugin/*
+el ~/.vim*
+el ~/.vim/*
+el ~/.vim/pack/*
+el ~/.vim/plugin/*
 

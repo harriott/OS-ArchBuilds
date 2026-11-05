@@ -13,9 +13,31 @@ vim: nospell:
     yj -ty <file.toml >file.yml
     za $ITref/CP/encoding/cheatsheet-a5.pdf &  # emmet
 
-# ffprobe
+# ffmpeg
+    $AjB/bashrc-wm
+
+FFMPEG(1)
+
+## audio convert
+    f=sox.flac; ffi $f -c:a libvorbis -aq 4 ${f%.*}.ogg
+    for f in *.flac; do ffi "$f" -c:a libvorbis -aq 4 "${f%.*}.ogg" ; done
+    for f in *.oma; do ffi "$f" -c:a libvorbis "${f%.*}.ogg" ; done  # at default VBR quality 3
+    for f in *.rmj; do ffi "$f" -c:a libvorbis -aq 4 "${f%.*}.ogg" ; done
+    for f in *.wma; do ffi "$f" -c:a libvorbis -aq 4 "${f%.*}.ogg" ; done
+    for f in *.wma; do ffi "$f" -c:a libvorbis -aq 4 -map 0:a "${f%.*}.ogg" ; done  # no hidden video
+    for f in *.wav; do ffi "$f" -c:a libvorbis -aq 4 "${f%.*}.ogg"; rm "$f"; done
+    for f in *; do ffi "$f" -b:a 128K -vn "${f%.*}.mp3" ; done
+
+### from m4a
+    for f in *.m4a; do ffi "$f" -c:a libvorbis -aq 4 "${f%.*}.ogg" ; done
+
+VBR quality 4 is closer to the original size
+
+## ffprobe
     ffprobe -h | mo
     i ffprobe
+
+FFPROBE(1)
 
 # gnuplot
     ff $ITref/CP/gnuplot/gnuplot_info-colornames.jpg

@@ -58,7 +58,7 @@ es ~/.gitconfig
 
 #=> mpv
 ln -sf $misc/CP/mpv.conf ~/.config/mpv/mpv.conf
-es ~/.config/mpv/*
+el ~/.config/mpv/*
 
 #==> minimal
 # $misc/GRs/cGRs-needed.sh

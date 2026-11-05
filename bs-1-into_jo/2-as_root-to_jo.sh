@@ -12,6 +12,6 @@ set -v  # prints each statement here, including comments
 rsync -irtv --delete /root/onGH/ /home/jo/onGH
 chown -R jo:jo /home/jo/onGH
 
-#=> 4 end
-# you're ready to reboot and login to jo
+#=> 1 end
+echo "you're ready to reboot and login to jo"
 

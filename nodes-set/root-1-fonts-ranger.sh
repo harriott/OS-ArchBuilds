@@ -25,5 +25,5 @@ eza -la /usr/share/fonts
 #=> 1 ranger
 # no file preview
 lnd $OSL/nodes/terminal-ranger ~/.config/ranger
-eza -adl ~/.config/ranger
+el ~/.config/ranger
 

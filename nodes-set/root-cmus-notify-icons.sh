@@ -14,5 +14,5 @@
 ID="/usr/share/IcoMoon-Free"
 [ -d $ID ] && sudo rm -r $ID
 sudo ln -sf $ITcore/ulLinux/Arch/usr-share-IcoMoon-Free $ID
-eza -adl /usr/share/IcoMoon-Free
+el /usr/share/IcoMoon-Free
 

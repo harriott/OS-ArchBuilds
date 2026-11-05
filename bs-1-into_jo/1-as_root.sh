@@ -44,7 +44,6 @@ pacman -S gvim
 pacman -S lazygit
 pacman -S lua-language-server
 pacman -S luarocks
-pacman -S onefetch
 pacman -S r  # R
 pacman -S rbenv ruby-build ruby-docs  # $OSAB/bs-1-into_jo/3-config.sh
 pacman -S selene  # Lua linter
@@ -168,10 +167,10 @@ pacman -S btop
 pacman -S dool
 pacman -S fcron; systemctl enable fcron.service
 pacman -S glances
-pacman -S time  # GNU time
 pacman -S isd  # GNU isd
 pacman -S meson  # for  auracle-git  later
 pacman -S pv  # Pipe Viewer
+pacman -S time  # GNU time
 
 #=> 2 systemd Journal size
 grep SystemMaxUse /etc/systemd/journald.conf
@@ -194,6 +193,7 @@ visudo -c -f /etc/sudoers
 #  user jo, creating the home directory and adding to group wheel
 useradd -m -G wheel jo
 until passwd jo; do echo "try again"; done
+543ehjbn
 cat /etc/passwd
 
 pacman -S opendoas
