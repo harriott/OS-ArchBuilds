@@ -193,7 +193,6 @@ visudo -c -f /etc/sudoers
 #  user jo, creating the home directory and adding to group wheel
 useradd -m -G wheel jo
 until passwd jo; do echo "try again"; done
-543ehjbn
 cat /etc/passwd
 
 pacman -S opendoas

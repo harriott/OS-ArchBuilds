@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: se fdl=2:
 
-# bash $OSAB/bs-1-into_jo/3-config.sh
+# bash $OSAB/bs-1-into_jo/4-config.sh
 
 set -ev  # quits on error, prints each statement here, including comments
 

@@ -14,3 +14,11 @@ sudo systemctl enable NetworkManager --now
 #=> 2 status
 systemctl status NetworkManager.service
 
+#=> 3 devices
+nmcli device wifi list
+
+#=> 4 reboot
+# -------------------------------------------
+# now reboot to allow a connection to be made
+# -------------------------------------------
+

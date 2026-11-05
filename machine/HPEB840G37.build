@@ -113,7 +113,11 @@ bash ~/bs-iwctl/Jo-OPPO-A76.sh
 dhcpcd wlan0
 pacman -Syu rsync
 #### softwares to jo
-bash $OSAB/bs-1-into_jo/1-as_root.sh
+$OSAB/bs-1-into_jo/1-as_root.sh
+$OSAB/bs-1-into_jo/1-as_root-to_jo.sh
+## jo
+$OSAB/bs-1-into_jo/3-NetworkManager.sh
+$coAr/build/bs-networking/nmcli-Jo-MotoG86.sh
 ## waiting
 # fcrontab
 # physical configuration

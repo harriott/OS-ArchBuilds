@@ -1,4 +1,5 @@
 #!/bin/bash
+# vim: fdl=1:
 
 # sudo bash $OSAB/bs-1-into_jo/1-as_root-to_jo.sh
 
@@ -13,5 +14,5 @@ rsync -irtv --delete /root/onGH/ /home/jo/onGH
 chown -R jo:jo /home/jo/onGH
 
 #=> 1 end
-echo "you're ready to reboot and login to jo"
+# you're ready to reboot and login to jo
 
