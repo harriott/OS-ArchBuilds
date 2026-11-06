@@ -13,8 +13,6 @@ export startxDelay=5
 #=> for  $ABno/Bash/export-Arch
 # 0 during initial build, before  $Drpbx:
 export user_jo=1  # $user_jo, only when user  jo  is active
-  # because [ -d /home/jo/onGh ] fails from  ~/.bash_profile
-  # once set and integrated into  /root, can  rm -r /root/onGH
 
 # 1 once  $Drpbx:
 # export myDrA=1  # $myDrA, only when my Dropbox is active

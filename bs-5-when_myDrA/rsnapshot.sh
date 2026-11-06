@@ -12,7 +12,7 @@ pikn inotify-tools  # supplies  inotifywait, for monitoring file changes
 sudo cp $ABnm/etc/rsnapshot.conf /etc/rsnapshot.conf
 
 #=> 2 rsnapshot needed locations
-read -p "going to  mdir $rsnapshot"; mkdir $rsnapshot  # /rsnapshot=
+read -p "going to  mkdir $rsnapshot"; mkdir $rsnapshot  # /rsnapshot=
 sudo touch /var/log/rsnapshot
 
 #=> 3 test rsnapshot conf

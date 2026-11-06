@@ -20,7 +20,14 @@ export startxDelay=5
 # setxkbmap gb  # fails to ensure it, and causes "Cannot open display default display" in root
 
 #=> for  $ABno/Bash/export-Arch
+# build 0 during initial build, before  $Drpbx:
+export user_jo=1  # only when user  jo  is active
+# - also needed for  $ABno/root/bashrc
+
+# build 1 once  $Drpbx:
+export myDrA=1  # $myDrA, only when my Dropbox is active
+
+# Machine:
 export Enc=/mnt/SD480GSSDPlus/Encrypted  # $Enc
-export myDrA=1  # only when my Dropbox is active
 export Storage=/mnt/SDU3D1TB  # $Storage, where I keep stuff
 

@@ -259,6 +259,16 @@ $HOME  max'd out, so
 ## auracle-git  error
 auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2605.0.0: cannot open shared object file: No such file or directory
 prs auracle-git  then  pikn pod2man  for   pikn auracle-git
+## 9QG2FFEE unwriteable
+s /run/media/jo/9QG2FFEE/*  all good
+journalctl -k --since "2 hours ago" | grep -iE "i/o error|ext4|buffer"
+  Nov 06 09:35:48 DOP3040D11S kernel: EXT4-fs warning (device sdb1): ext4_clear_journal_err:6421: Filesystem error recorded from previous mount: Corrupt filesystem
+  Nov 06 09:35:48 DOP3040D11S kernel: EXT4-fs warning (device sdb1): ext4_clear_journal_err:6429: Marked fs in need of filesystem check.
+  Nov 06 09:35:48 DOP3040D11S kernel: EXT4-fs (sdb1): warning: mounting fs with errors, running e2fsck is recommended
+  Nov 06 09:35:48 DOP3040D11S kernel: EXT4-fs (sdb1): recovery complete
+  Nov 06 09:35:48 DOP3040D11S kernel: EXT4-fs (sdb1): mounted filesystem 0182adb6-21c3-4819-9ff4-0dfa0e569105 r/w with ordered data mode. Quota mode: none.
+  Nov 06 09:35:54 DOP3040D11S kernel: EXT4-fs error (device sdb1): ext4_mb_generate_buddy:1314: group 94, block bitmap and bg descriptor inconsistent: 2562 vs 2727 free clusters
+  Nov 06 09:35:54 DOP3040D11S kernel: EXT4-fs (sdb1): Remounting filesystem read-only
 ## waiting
 $ABno/etc/doas.conf
 apache

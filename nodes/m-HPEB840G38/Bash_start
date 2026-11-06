@@ -11,15 +11,14 @@ export rsnapshot=/run/media/jo/S14JJ9CP956373/rsnapshot  # $rsnapshot
 export startxDelay=5
 
 #=> for  $ABno/Bash/export-Arch
-# 0 during initial build, before  $Drpbx:
+# build 0 during initial build, before  $Drpbx:
 export user_jo=1  # only when user  jo  is active
-  # because [ -d /home/jo/onGh ] fails from  ~/.bash_profile
-  # once set and integrated into  /root, can  rm -r /root/onGH
+# - also needed for  $ABno/root/bashrc
 
-# 1 once  $Drpbx:
+# build 1 once  $Drpbx:
 export myDrA=1  # $myDrA, only when my Dropbox is active
 
-# 2 Machine:
+# Machine:
 export Storage=/mnt/MZNLN128  # $Storage, where I keep stuff
   export Enc=$Storage/encrypted  # mkdir $Enc
 

@@ -247,7 +247,7 @@ LS(1)
     za $ITref/CP/documenting/TeX/LaTeX/structure/pdfpages.pdf
 
 ## TeX - LaTeX
-    r $nDrGRs/CP/MartinThoma-LaTeX-examples
+    r $GRs/CP/MartinThoma-LaTeX-examples
     r $ITmCP/TeX/LaTeX  # my MWEs
     x <LaTeX_file_basename>
 
@@ -318,13 +318,13 @@ LS(1)
 - `G` defined in `$AjB/bashrc-wm`
 
 ## resources
-    fd -e org -p $nDrGRs
-    r $nDrGRs/d-CP/d-emacs/r-syl20bnr-spacemacs  # local fresh clone
+    fd -e org -p $GRs
+    r $GRs/d-CP/d-emacs/r-syl20bnr-spacemacs  # local fresh clone
     r $ITref/CP/encoding/Emacs  # PDF guides
 
 ### Worg
-    $nDrGRs/emacs/_bzg-worg/orgcard.org
-    r $nDrGRs/emacs/_bzg-worg
+    $GRs/emacs/_bzg-worg/orgcard.org
+    r $GRs/emacs/_bzg-worg
 
 ## Spacemacs
     $ITAb/Emacs/sm/.spacemacs
@@ -1841,7 +1841,7 @@ TMUX(1)
     wezterm show-keys --lua > $ITref/WezTerm-show-keys.lua
 
 # text wrangling
-    $nDrGRs/CP/vim/vim/README.md
+    $GRs/CP/vim/vim/README.md
     :s#/mnt/SDU3D1TB/Dropbox/JH/core/TextNotes#    $TeNo
     o $EDITOR
     o $VISUAL

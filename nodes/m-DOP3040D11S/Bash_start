@@ -11,7 +11,7 @@
 #  symlinked in  $OSAB/nodes-set/root.sh
 #  sourced by  $OSAB/nodes-root/bash_profile
 
-export rsnapshot=/run/media/jo/9QG2FFEE/rsnapshot  # $rsnapshot
+export rsnapshot=/run/media/jo/HDT721016SLA380/rsnapshot  # $rsnapshot
 export startxDelay=5
 
 #=> for  $ABno/Bash/export-Arch
