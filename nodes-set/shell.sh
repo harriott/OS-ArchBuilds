@@ -13,5 +13,5 @@ ln -sf $ABno/Bash/bashrc-generic          ~/.bashrc-generic
 ln -sf $OSL/nodes/GNUReadline-inputrc     ~/.inputrc
 ln -sf $OSL/nodes/terminal-tmux/tmux.conf ~/.tmux.conf
 
-eza -la ~/.bash-generic ~/.export-Arch ~/.inputrc ~/.start ~/.tmux.conf
+eza -la ~/.bashrc-generic ~/.export-Arch ~/.inputrc ~/.start ~/.tmux.conf
 
