@@ -3,11 +3,12 @@
 
 # $OSAB/bs-1-into_jo/4-config.sh
 
-set -ev  # quits on error, prints each statement here, including comments
+set -e  # quits on error
 
 #=> for Bash
 # should've  cd ~/onGH/OS-ArchBuilds/
-source nodes/Bash/export-Arch  # defines  $OSAB  and some dependents
+source nodes/Bash/export-Arch
+    # = $ABno/Bash/export-Arch, defines  $OSAB  and some dependents
     source $OSAB/nodes-set/shell.sh
     source $OSAB/nodes-set/jo-0-Bash-X.sh
 

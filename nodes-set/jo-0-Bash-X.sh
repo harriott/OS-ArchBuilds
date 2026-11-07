@@ -3,8 +3,6 @@
 
 # source $OSAB/nodes-set/jo-0-Bash-X.sh
 
-set -v  # prints each statement here, including comments
-
 #=> Bash
 # sort these lists by last use of "~":  :sort /,*\~/
 
@@ -18,12 +16,11 @@ fi
 ln -sf $ABjo/wm/term/bashrc-AlNvim    ~/.bashrc-AlNvim
 ln -sf $AjB/bashrc-console            ~/.bashrc-console
 
-#==> Bash history
+#==> 0 Bash history
 [ -d ~/Arch ] || mkdir ~/Arch
-[[ -d $machLg/jo ]] || mkdir $machLg/jo
-[[ -d $machLg/root ]] || mkdir $machLg/root
 ln -sf $AjB/bash_history.sh ~/Arch/bash_history.sh
 
+#==> 1 checks
 eza -al ~/.bash* ~/Arch/bash_history.sh
 
 #=> X

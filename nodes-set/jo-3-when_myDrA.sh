@@ -25,6 +25,10 @@ es ~/.config/cmus/rc
 mr="$ABjo/music/music_rotate.sh"; chmod 755 $mr; sudo ln -sf $mr /usr/local/bin/music_rotate
 mrd="/usr/share/applications/music_rotate.desktop"; sudo ln -sf $ABjo/music/music_rotate.desktop $mrd; es $mrd
 
+#=> Bash history
+[[ -d $machLg/jo ]] || mkdir $machLg/jo
+[[ -d $machLg/root ]] || mkdir $machLg/root
+
 #=> desktop
 ln -sf $ABjo/configGtk30Settings.ini ~/.config/gtk-3.0/settings.ini
 
