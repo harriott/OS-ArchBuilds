@@ -21,7 +21,8 @@ export thb="/home/jo/.thunderbird" # $thb
 export maild=/home/jo/.local/share/mail  # $maild  for  mutt
 
 #=> 1 host
-[[ $archiso ]] || export host=$(uname -n) # $host
+# /etc/hostname  was set in  $OSAB/bs-0-into_root/2-prepare_for_root-1.sh
+export host=$(uname -n) # $host
 
 #=> 2 $Drpbx, or not
 if [[ $myDrA == 1 ]]; then

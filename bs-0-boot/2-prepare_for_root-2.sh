@@ -2,13 +2,12 @@
 # vim: fdl=1 sw=2:
 
 # $OSAB/bs-0-boot/2-prepare_for_root-2.sh
-#  export $host then bash this (source  would risk exit dropping me out of  chroot)
+#  bash this (source  would risk exit dropping me out of  chroot/jo)
 
 #=> 0 get environment
 set -e  # quits on error
 rA=/root/Arch; [ -d $rA ] || mkdir $rA
-archiso=1
-source nodes/Bash/export-Arch  # defines  $OSAB
+source nodes/Bash/export-Arch  # defines  $OSAB  and some dependents
 source $OSAB/nodes-set/root-0.sh
 source $OSAB/nodes-set/shell.sh
 

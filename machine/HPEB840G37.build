@@ -88,7 +88,7 @@ ping 8.8.8.8
 cd /root/onGH/OS-ArchBuilds; git pull
 pacman -S eza
 $user_jo, $myDrA  off in  $ABnm/Bash_start, reboot
-export host=HPEB840G37  to then bash'd the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh
+bash'd the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh
 #### check  HX256GSSDSATA3
 pacman -S hdparm; hdparm -I /dev/sda
 #### systemd-boot fail
@@ -99,8 +99,7 @@ mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
 as in  $coAr/build/bs-networking/iwctl-Jo-OPPO-A76.sh
 ping 8.8.8.8
-export host=HPEB840G37  to then
-  bash the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh  again
+bash the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh  again
 bootctl  reports broken entries for initrd & linux
 bootctl install  then  bootctl  reports broken entries for initramfs-linux.img & vmlinuz-linux
   fix was  pacman -Syu linux
@@ -123,7 +122,7 @@ $coAr/build/bs-networking/nmcli-Jo-MotoG86.sh
 $user_jo  on in  $ABnm/Bash_start, reboot
 ## cli environment
 cd ~/onGH/OS-ArchBuilds
-bash bs-1-into_jo/4-config.sh
+bash bs-1-into_jo/4-config.sh  # $OSAB/bs-1-into_jo/4-config.sh
 ## waiting
 # fcrontab
 # physical configuration

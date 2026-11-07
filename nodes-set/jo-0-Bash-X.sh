@@ -5,13 +5,6 @@
 
 set -v  # prints each statement here, including comments
 
-#=> 0 get environment
-rA=/root/Arch; [ -d $rA ] || mkdir $rA
-archiso=1
-source nodes/Bash/export-Arch  # defines  $OSAB
-source $OSAB/nodes-set/root-0.sh
-source $OSAB/nodes-set/shell.sh
-
 #=> Bash
 # sort these lists by last use of "~":  :sort /,*\~/
 

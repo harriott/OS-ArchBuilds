@@ -146,7 +146,7 @@ BASH(1)
 `mo` aliased in `$ABno/Bash/bashrc-generic`
 
 ## time
-    $OSAB/mb-sbMb/rsnapshots.sh
+    $OSAB/bs-5-when_myDrA/rsnapshot.sh
     im time
 
 ## directory structures
@@ -378,6 +378,7 @@ HEAD(1)
 ## ripgrep
     batgrep
     rg <searchText> -l | xargs sed -i 's/<searchText>/<replaceText>/g'
+    rgsm
 
 RG(1)
 
@@ -961,10 +962,10 @@ HDPARM(8)
 ### non-optical
     df -h | xcol mnt media
     doas file -s /dev/sdxn | xcol bit FAT
-    findmnt
     grc df -h /run/media/jo/*
 
-GPT fdisk
+- FINDMNT(8)
+- GPT fdisk
 
 #### fsck
 - FSCK(8)

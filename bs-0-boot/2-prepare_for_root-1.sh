@@ -4,7 +4,7 @@
 # bash $OSAB/bs-0-into_root/2-prepare_for_root-1.sh
 #  (source  would risk exit dropping me out of  chroot)
 
-#=> host, locale, needed packages, time
+#=> hostname, locale, needed packages, time
 set -v  # prints each statement here, including comments
 timedatectl set-timezone Europe/Paris
 pacman -S acpi avahi clamav cpupower eza fbset hdparm ranger rsync sudo tk turbostat

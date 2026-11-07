@@ -7,10 +7,9 @@ set -ev  # quits on error, prints each statement here, including comments
 
 #=> for Bash
 # should've  cd ~/onGH/OS-ArchBuilds/
-source nodes/Bash/export-Arch  # defines  $OSAB and others
-source nodes-set/jo-0-Bash-X.sh
-source nodes-set/shell.sh
-source bs-1-into_jo/4-config.sh
+source nodes/Bash/export-Arch  # defines  $OSAB  and some dependents
+    source $OSAB/nodes-set/shell.sh
+    source $OSAB/nodes-set/jo-0-Bash-X.sh
 
 #=> for broot
 broot -- install
