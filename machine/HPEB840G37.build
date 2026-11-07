@@ -104,7 +104,7 @@ export host=HPEB840G37  to then
 bootctl  reports broken entries for initrd & linux
 bootctl install  then  bootctl  reports broken entries for initramfs-linux.img & vmlinuz-linux
   fix was  pacman -Syu linux
-## root
+## root to jo
 reboot into root
 ### get online
 #### K16GBDTG2 for Dr-IT
@@ -116,13 +116,14 @@ pacman -Syu rsync
 #### softwares to jo
 $OSAB/bs-1-into_jo/1-as_root.sh
 $OSAB/bs-1-into_jo/2-as_root-to_jo.sh
-## jo
+reboot into jo
+## nmcli
 $OSAB/bs-1-into_jo/3-NetworkManager.sh
 $coAr/build/bs-networking/nmcli-Jo-MotoG86.sh
 $user_jo  on in  $ABnm/Bash_start, reboot
-
-$OSAB/nodes-set/jo-0-Bash-X.sh
-$OSAB/bs-1-into_jo/4-config.sh
+## cli environment
+cd ~/onGH/OS-ArchBuilds
+bash bs-1-into_jo/4-config.sh
 ## waiting
 # fcrontab
 # physical configuration
