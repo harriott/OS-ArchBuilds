@@ -22,8 +22,8 @@ mkdir -p ~/.local/share/mime/packages
 
 #=> Ruby 4.x.x
 rbenv install 4  # takes a while
-read -p "- good to  rbenv global 4.0.5 ?"
-rbenv global 4.0.5
+read -p "- good to  rbenv global 4.0.7 ?"
+rbenv global 4.0.7
 
 #=> vimswap
 [ -d ~/.vimswap ] || mkdir ~/.vimswap

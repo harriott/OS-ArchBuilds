@@ -123,6 +123,8 @@ $user_jo  on in  $ABnm/Bash_start, reboot
 ## cli environment
 cd ~/onGH/OS-ArchBuilds
 bash bs-1-into_jo/4-config.sh  # $OSAB/bs-1-into_jo/4-config.sh
+
+bash $OSAB/bs-1-into_jo/5-as_root-sudoers.sh
 ## waiting
 # fcrontab
 # physical configuration

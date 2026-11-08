@@ -270,7 +270,6 @@ journalctl -k --since "2 hours ago" | grep -iE "i/o error|ext4|buffer"
   Nov 06 09:35:54 DOP3040D11S kernel: EXT4-fs error (device sdb1): ext4_mb_generate_buddy:1314: group 94, block bitmap and bg descriptor inconsistent: 2562 vs 2727 free clusters
   Nov 06 09:35:54 DOP3040D11S kernel: EXT4-fs (sdb1): Remounting filesystem read-only
 ## waiting
-$ABno/etc/doas.conf
 apache
 EFI install
 gokcehan's lf

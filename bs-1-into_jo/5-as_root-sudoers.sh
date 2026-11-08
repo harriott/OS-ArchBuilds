@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# from root,  bash $OSAB/bs-1-into_jo/4-as_root-sudoers.sh
+# from root,  bash $OSAB/bs-1-into_jo/5-as_root-sudoers.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
