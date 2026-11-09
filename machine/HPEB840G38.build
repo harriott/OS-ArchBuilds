@@ -375,6 +375,7 @@ cp /etc/fstab $machLg/etc-fstab/qau
 ## waiting
 $ABno/etc/doas.conf
 $ITccl/Ul/Linux-forArch-fonts
+br
 # fcrontab
   !m(0)
   @ 4 bash ~/Arch/wlan0.sh

@@ -418,24 +418,9 @@ SED(1)
     mvg --help | mo  # man advmv
 
 ## broot
+    $ABjo/broot/conf.hjson
+    $ABjo/broot/verbs.hjson
     i broot
-
-### commands
-    ?
-    alt+enter => quit to current directory
-    alt+h => toggle hidden
-    ctrl+q [<enter>] => quit
-    F5 => refresh
-
-### launch
-    br
-    br -c :count
-    br -d => br --dates => the last modified date
-    br -g => br --show-git-info
-    br -h => br --hidden
-    br -i => br --show-gitignored
-    br -p => br --permissions
-    br -s => br --sizes
 
 ## CliFM
     C [dir1 [dir2 ...]]

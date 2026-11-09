@@ -271,6 +271,7 @@ journalctl -k --since "2 hours ago" | grep -iE "i/o error|ext4|buffer"
   Nov 06 09:35:54 DOP3040D11S kernel: EXT4-fs (sdb1): Remounting filesystem read-only
 ## waiting
 apache
+br
 EFI install
 gokcehan's lf
 # CopyQ

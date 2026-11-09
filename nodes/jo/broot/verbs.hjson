@@ -1,0 +1,101 @@
+
+# $ABjo/broot/verbs.hjson ($ABno-set/jo-0.sh)
+
+# Based off of:
+#  $GRs/d-CP/d-CLI/r-Canop-broot/resources/default-conf/verbs.hjson
+# what's set here appears in the internal help
+
+verbs: [
+
+    {
+        invocation: edit
+        shortcut: e
+        key: ctrl-e
+        apply_to: text_file
+        external: "$EDITOR {file:space-separated}"
+        leave_broot: false
+    }
+
+    # Don't obliterate, sent to trash
+    {
+        invocation: "rm"
+        internal: "trash"
+        leave_broot: false
+    }
+
+    # Scroll the rightest panel on alt-pagedown and alt-pageup,
+    # while keeping the focus on your current panel
+    {
+        key: alt-pagedown
+        internal: page_down
+        impacted_panel: right
+    }
+    {
+        key: alt-pageup
+        internal: page_up
+        impacted_panel: right
+    }
+
+
+    # Here's going to the work-dir root of the current git repository
+    {
+        invocation: gtr
+        execution: ":focus {git-root}"
+    }
+
+    # A popular set of shortcuts for going up and down:
+    {
+        key: ctrl-k
+        execution: ":line_up"
+    }
+    {
+        key: ctrl-j
+        execution: ":line_down"
+    }
+    {
+        key: ctrl-u
+        execution: ":page_up"
+    }
+    {
+        key: ctrl-d
+        execution: ":page_down"
+    }
+
+    # Toggle dates:
+    {
+        key: alt-d
+        execution: ":toggle_dates"
+    }
+
+    # Toggle counts:
+    {
+        key: alt-c
+        execution: ":toggle_counts"
+    }
+
+    # Toggle files:
+    {
+        key: ctrl-f
+        execution: ":toggle_files"
+    }
+
+    # Toggle hidden (because alt-h in $OSL/nodes/terminal-tmux/tmux.conf:
+    {
+        key: ctrl-h
+        execution: ":toggle_hidden"
+    }
+
+    # Toggle permissions:
+    {
+        key: alt-p
+        execution: ":toggle_perm"
+    }
+
+    # Toggle sizes:
+    {
+        key: alt-s
+        execution: ":toggle_sizes"
+    }
+
+]
+

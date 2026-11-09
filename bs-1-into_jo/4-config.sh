@@ -14,8 +14,11 @@ source nodes/Bash/export-Arch
 
 #=> for broot
 broot -- install
-#  adds  source ~/.config/broot/launcher/bash/br  which gets me  br
-#  but I keep that line in  $ABno/Bash/bashrc-generic
+es ~/.config/broot/launcher/bash/br
+#  I source  br  only in  $ABno/Bash/bashrc-generic
+#  so, before next  git pull  in /home/jo/onGH/OS-ArchBuilds  will need to
+#   cd nodes; rm jo/Bash/bash_profile m-HPEB840G3x/jo/bashrc
+# subsequently configured in  $ABno-set/jo-0.sh
 
 #=> for MIME database
 mkdir -p ~/.local/share/mime/packages

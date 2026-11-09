@@ -1,0 +1,22 @@
+
+# $ABjo/broot/conf.hjson ($ABno-set/jo-0.sh)
+
+# Based off of
+#  $GRs/d-CP/d-CLI/r-Canop-broot/resources/default-conf/conf.hjson
+#   & (previously) $coAr/jo/broot-qb9-conf.toml
+
+# Don't use colons in comments!
+
+default_flags: g
+show_selection_mark: true
+
+# Content
+content_search_max_file_size: 10MB
+lines_before_match_in_preview: 1
+lines_after_match_in_preview: 1
+
+# More
+imports: [
+    verbs.hjson
+]
+
