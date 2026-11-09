@@ -4,7 +4,7 @@
 Joseph Harriott - Mon 04 May 2026
 $ABnm/jo/Conky/Xfce.lua
 adapted from output of  conky -C
-symlinked in  $OSAB/nodes-set/jo-2-Xfce.sh
+symlinked in  $ABno-set/jo-2-Xfce.sh
 pb ~/.conkyrc
 ]]
 

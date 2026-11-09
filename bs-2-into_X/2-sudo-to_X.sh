@@ -58,7 +58,7 @@ updatedb
 #=> 2 prepare for X 2 xorg.conf.d
 xcd="/etc/X11/xorg.conf.d"
 [ -d $xcd ] || mkdir $xcd
-cp $OSAB/nodes-etc/10-monitor.conf $xcd/10-monitor.conf  # disable DPMS
+cp $ABno-etc/10-monitor.conf $xcd/10-monitor.conf  # disable DPMS
 
 # #=> 2 save grub.cfg
 # gcs="$machLg/boot-grub-grub-pb3.cfg"

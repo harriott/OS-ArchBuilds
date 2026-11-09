@@ -5,7 +5,7 @@
 # toggle  XKEYBOARD-CONFIG  LAYOUT (= language)
 # ---------------------------------------------
 
-# managed in my  $OSAB/nodes-set/jo-3-when_myDrA.sh
+# managed in my  $ABno-set/jo-3-when_myDrA.sh
 #  to provide my command  sxk  for  Xfce > Clavier > Raccourcis d'applications
 
 # useful to have also  Préférences du tableau de bord > Éléments > Dispositions de clavier  to see the associated country flag

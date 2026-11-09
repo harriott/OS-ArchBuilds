@@ -2,7 +2,7 @@
 # vim: fdl=1 ft=sh sw=2:
 
 # $ABnm/jo/Bash/bashrc (= $ABno/m-sbMb/jo/Bash/bashrc)
-#  ($OSAB/nodes-set/jo-0-Bash-X.sh) es ~/.bashrc
+#  ($ABno-set/jo-0-Bash-X.sh) es ~/.bashrc
 #  (before this, $AjB/bash_profile  sets up  X11  consoles)
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything

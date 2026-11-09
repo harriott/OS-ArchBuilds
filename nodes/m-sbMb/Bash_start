@@ -1,15 +1,12 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh:
 
-# $ABnm/Bash_start ($OSAB/nodes-set/shell.sh) $ABno/m-sbMb/Bash_start
+# $ABnm/Bash_start ($ABno-set/shell.sh) $ABno/m-sbMb/Bash_start
 #  machine-specific exports that could also be useful as root
 
-# for jo:
-#  symlinked in  $OSAB/nodes-set/shell.sh
-#   then sourced by  $AjB/bash_profile
-# for root:
-#  symlinked in  $OSAB/nodes-set/root.sh
-#   then sourced by  $OSAB/nodes-root/bash_profile
+# symlinked in  $ABno-set/shell.sh, then
+#  for jo: sourced by  $AjB/bash_profile
+#  for root: sourced by  $ABno/root/bash_profile
 
 export CopIT='/mnt/WD20EZAZ/Cop-IT'  # $CopIT
 export OBSmkvGrabs='/mnt/ST4000VN008/OBSmkvGrabs'

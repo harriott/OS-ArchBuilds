@@ -4,7 +4,7 @@
 " vimpc (MPD client) configuration file
 
 " based on  /usr/share/doc/vimpc/vimpcrc.example
-" symlinked in  $OSAB/nodes-set/jo-2-whenWM-1.sh
+" symlinked in  $ABno-set/jo-2-whenWM-1.sh
 " ll ~/.config/vimpc/vimpcrc
 " pb ~/.config/vimpc/vimpcrc
 

@@ -52,7 +52,7 @@ nvim -O /etc/hosts /etc/hosts.pacnew -c 'windo difft'
 rm /etc/hosts.pacnew
 
 #=> 1 http
-# see  $OSAB/nodes-etc_httpd_conf/httpd.conf
+# see  $ABno-etc_httpd_conf/httpd.conf
 
 #=> 1 journald
 nvim -O /etc/systemd/journald.conf /etc/systemd/journald.conf.pacnew -c 'windo difft'

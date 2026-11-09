@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# bash $OSAB/nodes-set/jo-1-encoding.sh
+# bash $ABno-set/jo-1-encoding.sh
 # Vim's won't work unless the  $vfv/packs/packs-*  are populated, which is the case in my  $Drpbx
 
 #=> Emacs configure

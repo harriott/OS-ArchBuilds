@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# bash $OSAB/nodes-set/plugins_for_nnn.sh
+# bash $ABno-set/plugins_for_nnn.sh
 
 set -ev  # quits on error, prints each statement here, including comments
 

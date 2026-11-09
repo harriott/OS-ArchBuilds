@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# source $OSAB/nodes-set/jo-0.sh
+# source $ABno-set/jo-0.sh
 
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 set -e
@@ -57,7 +57,7 @@ ln -sf $ABjo/kewrc ~/.config/kew/kewrc
 #=> MIME database
 cd $ABjo/mime
 for x in *; do ln -sf $ABjo/mime/$x ~/.local/share/mime/packages/$x; done
-cd $OSAB/nodes-set
+cd $ABno-set
 # eza -al ~/.local/share/mime/packages
 update-mime-database ~/.local/share/mime
 

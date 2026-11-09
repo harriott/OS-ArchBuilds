@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# source $OSAB/nodes-set/shell.sh
+# source $ABno-set/shell.sh
 # for both  root  and  user
 
 #=> shell

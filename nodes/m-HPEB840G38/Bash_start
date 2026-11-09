@@ -1,11 +1,11 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh sw=2:
 
-# $ABnm/Bash_start ($OSAB/nodes-set/shell.sh) $ABno/m-HPEB840G38/Bash_start
+# $ABnm/Bash_start ($ABno-set/shell.sh) $ABno/m-HPEB840G38/Bash_start
 #  machine-specific exports that could also be useful as root
 
 # for jo: sourced by  $AjB/bash_profile
-# for root: sourced by  $OSAB/nodes-root/bash_profile
+# for root: sourced by  $ABno-root/bash_profile
 
 export rsnapshot=/run/media/jo/S14JJ9CP956373/rsnapshot  # $rsnapshot
 export startxDelay=5

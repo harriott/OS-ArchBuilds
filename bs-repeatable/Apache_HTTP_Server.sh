@@ -7,7 +7,7 @@ trap read debug  # puts a read request after each executable line
 
 #=> Apache HTTP Server 0 install
 sudo pacman -S apache
-echo 'now sync  $OSAB/nodes/etc_httpd_conf/httpd.conf'
+echo 'now sync  $ABno/etc_httpd_conf/httpd.conf'
 
 #=> Apache HTTP Server 1 enable
 sudo systemctl enable httpd.service --now  # check  http://localhost/
@@ -16,10 +16,10 @@ sudo systemctl enable httpd.service --now  # check  http://localhost/
 sudo pacman -Rs apache
 
 #=> Apache HTTP Server 2 tweaks for PHP
-echo 'sync  $OSAB/nodes/etc_httpd_conf/extra/php-fcgid.conf'
+echo 'sync  $ABno/etc_httpd_conf/extra/php-fcgid.conf'
 
 #=> Apache HTTP Server 2 virtual hosts 1 configuration
-echo 'sync  $OSAB/nodes/etc_httpd_conf/httpd-vhosts.conf'
+echo 'sync  $ABno/etc_httpd_conf/httpd-vhosts.conf'
 
 #=> Apache HTTP Server 2 virtual hosts 2 DocumentRoot's 0 set
 # http://atiavda

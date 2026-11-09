@@ -12,7 +12,7 @@ Xft.rgba: rgb
 ! ------------
 ! ------------
 
-! symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh  to  ~/.Xresources
+! symlinked in  $ABno-set/jo-0-Bash-X.sh  to  ~/.Xresources
 
 ! called from my  $ABjo/xinitrcs/xinitrc
 
@@ -88,5 +88,5 @@ URxvt.clipboard.autocopy: true
 ! cmus  &  tmux  folders show in  URxvt.boldFont
 
 #include "/home/jo/.Xresources-font"
-! see  $OSAB/nodes-set/jo-0-Bash-X.sh
+! see  $ABno-set/jo-0-Bash-X.sh
 

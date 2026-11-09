@@ -5,7 +5,7 @@
 # run Thunderbird safely from Profile shared on Dropbox
 # -----------------------------------------------------
 
-# managed in my  $OSAB/nodes-set/jo-3-when_myDrA.sh
+# managed in my  $ABno-set/jo-3-when_myDrA.sh
 #  to provide my command  thunderbird_safely
 #   target for  Xfce > Application Shortcuts > Mail
 #   used in  $Obc/schema.pl

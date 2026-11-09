@@ -3,7 +3,7 @@
 
 # rotate contents of  ~/music
 #  . $ABjo/music/music_rotate.sh
-#  managed in my  $OSAB/nodes-set/jo-2-whenWM-1.sh
+#  managed in my  $ABno-set/jo-2-whenWM-1.sh
 #  music_rotate
 #   $OSAB/mb-DOP3040D11S/build.txt
 #   $OSAB/mb-sbMb/build.txt

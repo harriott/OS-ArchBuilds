@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=2 sw=2:
 
-# source $OSAB/nodes-set/jo-0-Bash-X.sh
+# source $ABno-set/jo-0-Bash-X.sh
 
 #=> Bash
 # sort these lists by last use of "~":  :sort /,*\~/

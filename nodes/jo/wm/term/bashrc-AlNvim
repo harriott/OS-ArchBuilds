@@ -6,10 +6,10 @@
 #  $ABno/m-sbMb/jo/term/Alacritty/AlNvim.sh
 
 # source $ABjo/wm/term/bashrc-AlNvim
-#  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
+#  symlinked in  $ABno-set/jo-0-Bash-X.sh
 #   size dictated by  nvim
 
-source ~/.bashrc  # see  $OSAB/nodes-set/jo-0-Bash-X.sh
+source ~/.bashrc  # see  $ABno-set/jo-0-Bash-X.sh
 nvim -c "echo 'Alacritty > Neovim'"
 cd $(cat ~/lastVimDirectory)
 

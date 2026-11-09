@@ -46,6 +46,7 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 
 ## Kew
     $ABjo/kewrc
+    kew
     kew play $Drpbx/music
 
 ## libpulse
@@ -577,7 +578,7 @@ as root: `find / -xdev -iname "*fmtutil.cnf*"`
 
 ## nnn
     $coAr/jo/bashrc-console-NNN_BMS
-    $OSAB/nodes-set/plugins_for_nnn.sh
+    $ABno-set/plugins_for_nnn.sh
     ~/.config/nnn/sessions
     n [directory]
 

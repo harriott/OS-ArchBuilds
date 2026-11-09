@@ -3,7 +3,7 @@
 
 # Joseph Harriott, jeu 27 août 2026
 
-# $ABjo/WAN/OneTab.sh ($OSAB/nodes-set/jo-0.sh)
+# $ABjo/WAN/OneTab.sh ($ABno-set/jo-0.sh)
 # fcrontab:  @daily bash ~/Arch/OneTab/OneTab.sh
 
 #=> Firefox

@@ -92,7 +92,7 @@ pikn tesseract-data-eng
 #==> PDF - Zathura 1 zathura-pdf-mupdf
 pikn zathura-pdf-mupdf
 z="$HOME/.config/zathura"; [ -d $z ] || mkdir $z
-# zathurarc  symlinked in  $OSAB/nodes-set/jo-3-whenWM.sh
+# zathurarc  symlinked in  $ABno-set/jo-3-whenWM.sh
 
 #==> TeX Live - perl-tk
 pikn perl-tk  # needed for  tlmgr -gui

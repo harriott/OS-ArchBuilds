@@ -19,7 +19,7 @@
 #xfce-mcs-manager &
 
 #=> JH additions
-# $Obc/autostart ($OSAB/nodes-set/jo-1-Openbox.sh) e -l ~/.config/openbox/autostart
+# $Obc/autostart ($ABno-set/jo-1-Openbox.sh) e -l ~/.config/openbox/autostart
 #  depends on  $ABno/Bash/export-Arch
 
 # #==> 0 gVim

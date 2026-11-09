@@ -135,13 +135,13 @@ sudo chown -R jo:jo /home/jo/onGH
 bash $OSAB/bs-0-into_root/0-iwctl-Jo-MotoG86.sh
 dhcpcd wlan0
 source $ABno/Bash/export-Arch
-source $OSAB/nodes-set/jo-0-Bash-X.sh
+source $ABno-set/jo-0-Bash-X.sh
 git pull  was throwing  TLS connect error, fixed by  sudo ip l set wlan0 down; sudo ip l set wlan0 up
-bash $OSAB/nodes-set/jo-0.sh
+bash $ABno-set/jo-0.sh
 bash $OSAB/bs-1-into_jo/3-NetworkManager.sh
 nmcli connection up Jo-MotoG86
 nmcli device wifi connect Jo-MotoG86 password <pw>
-bash $OSAB/nodes-set/jo-1-encoding.sh
+bash $ABno-set/jo-1-encoding.sh
 $OSAB/bs-1-into_jo/4-as_root-sudoers.sh
 $OSAB/bs-1-into_jo/6-sudo-configure_freshclam.sh
 sudo pacman -Syu
@@ -156,7 +156,7 @@ lsblk  shows  Samsung MZNLN128  is  /dev/sda
 ## prepare for X
 $OSAB/bs-2-into_X/2-jo.sh
 sl > pw  for  $OSAB/bs-2-into_X/3-sudo-to_X-0.sh
-$OSAB/nodes-set/jo-1-encoding.sh
+$ABno-set/jo-1-encoding.sh
 $OSAB/bs-2-into_X/4-AUR_handlers.sh
 $OSAB/bs-2-into_X/5-softwares.sh
 ## vimpc-git  fail
@@ -170,7 +170,7 @@ $OSAB/bs-4-whenWM/1-softwares.sh
 Applications par défaut > Internet > Navigateur > Mozilla Firefox  rebooted
 sudo chown jo:jo /mnt/MZNLN128
 ## $myDrA
-$OSAB/nodes-set/jo-3-when_myDrA.sh
+$ABno-set/jo-3-when_myDrA.sh
 ## initialise pass
 pass init jharr@ftml.net
   mkdir: création du répertoire '/home/jo/.password-store/'

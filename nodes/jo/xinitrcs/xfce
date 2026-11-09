@@ -3,7 +3,7 @@
 # $ABjo/xinitrcs/xfce
 #  symlinked in
 #   $ABno/Bash/bashrc-generic
-#   $OSAB/nodes-set/jo-0-Bash-X.sh
+#   $ABno-set/jo-0-Bash-X.sh
 
 if [[ $ABjo ]]; then
     source $ABjo/xinitrcs/xinitrc  # calls  $ABjo/wm/Xresources/Xresources

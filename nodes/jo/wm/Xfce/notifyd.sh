@@ -3,7 +3,7 @@
 # Joseph Harriott - lun 31 août 2026
 
 # $ABjo/wm/Xfce/notifyd.sh
-#  managed in my  $OSAB/nodes-set/jo-2-Xfce.sh
+#  managed in my  $ABno-set/jo-2-Xfce.sh
 
 # kill each notification source
 # -----------------------------

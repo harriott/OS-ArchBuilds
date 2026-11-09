@@ -3783,7 +3783,7 @@ rsync -ainv $rsnapshot/aaa.0/localhost/home/jo/ /home/jo 2>&1 | tee ~/rsync_aaa0
 sudo chown jo:jo /mnt/SD480GSSDPlus
 ## $thb
 rm -r $thb/*
-cp $OSAB/nodes-jo/WAN/thunderbird-profiles.ini $thb/profiles.ini
+cp $ABno-jo/WAN/thunderbird-profiles.ini $thb/profiles.ini
 ## FastMail app
 flatpak install flathub com.fastmail.Fastmail  around 1GB!
 ## HP Envy Inspire 7220e to Sony Xperia 10 II on 10.166.155.239
@@ -3838,7 +3838,7 @@ hp-setup 10.156.23.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy 5530 Series) > Printer Control > Set as Default
 ## thunderbird-bin
 launched, then closed for  $thb  cleared all but  jo  &  profiles.ini, then
-  sudo nvim -o $OSAB/nodes-jo/WAN/thunderbird-profiles.ini $thb/profiles.ini -c 'windo difft'
+  sudo nvim -o $ABno-jo/WAN/thunderbird-profiles.ini $thb/profiles.ini -c 'windo difft'
 ## xfce4-settings 4.20.3
 monitors partially switched over, so
   Applications > Settings > Display > dragged  Dell Inc. 22"  to left of  PKB 22" > Apply

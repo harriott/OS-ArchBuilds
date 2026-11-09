@@ -5,7 +5,7 @@
 # save indications of CPU temperature for my Gigabyte GA-970A-DS3P rev.2.1
 # bash $ABnm/jo/f1t2t3/log.sh
 #  fcrontab:  @ 1 bash ~/Arch/f1t2t3/log.sh
-#  symlinked in  $OSAB/nodes-set/jo-0.sh
+#  symlinked in  $ABno-set/jo-0.sh
 
 # to check if this script is being called
 # either  r ~/Arch/f1t2t3  and watch  f1t2t3.log  or uncomment the following line

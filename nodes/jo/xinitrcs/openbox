@@ -3,7 +3,7 @@
 # $ABjo/xinitrcs/openbox
 #  symlinked in
 #   $ABno/Bash/bashrc-generic
-#   $OSAB/nodes-set/jo-0-Bash-X.sh
+#   $ABno-set/jo-0-Bash-X.sh
 
 source $ABjo/xinitrcs/xinitrc  # calls  $ABjo/wm/Xresources/Xresources
 

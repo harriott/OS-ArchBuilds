@@ -3,7 +3,7 @@
 
 # Joseph Harriott, mar 15 sept 2026
 
-# bash $ABno/wlan0.sh ($OSAB/nodes-set/jo-0-Bash-X.sh)
+# bash $ABno/wlan0.sh ($ABno-set/jo-0-Bash-X.sh)
 # fcrontab:  @ 4 bash ~/Arch/wlan0.sh
 
 #=> 0 get $machLg

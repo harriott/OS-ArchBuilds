@@ -1,6 +1,6 @@
 # vim: fdl=1 ft=sh sw=2:
 
-# $ABnm/jo/Bash/bashrc ($OSAB/nodes-set/jo-0-Bash-X.sh)
+# $ABnm/jo/Bash/bashrc ($ABno-set/jo-0-Bash-X.sh)
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 

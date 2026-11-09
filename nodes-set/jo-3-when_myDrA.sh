@@ -1,7 +1,7 @@
 
 # https://harriott.github.io/ - Wed 17 Jun 2026
 
-# bash $OSAB/nodes-set/jo-3-when_myDrA.sh
+# bash $ABno-set/jo-3-when_myDrA.sh
 
 set -v  # prints each statement here, including comments
 
@@ -80,7 +80,7 @@ ss="$ABjo/Emacs/spacemacs.sh"; chmod 755 $ss; bs="/usr/local/bin/spacemacs"; sud
 sd="/usr/share/applications/spacemacs.desktop"; sudo ln -sf $ABjo/Emacs/spacemacs.desktop $sd; es $sd
 
 #=> terminal
-k="$HOME/.config/kitty"; [ -d $k ] || mkdir $k; ln -sf $OSAB/nodes/jo/term/kitty.conf $k/kitty.conf
+k="$HOME/.config/kitty"; [ -d $k ] || mkdir $k; ln -sf $ABno/jo/term/kitty.conf $k/kitty.conf
 
 #==> Alacritty
 if [ $host = 'DOP3040D11S' ]; then

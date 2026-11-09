@@ -7,7 +7,7 @@
 
 # Thu 27 Nov 2025
 
-# sudo cp $OSAB/nodes-root/backup/rsyncBackup.sh /root/rsyncBackup.sh
+# sudo cp $ABno-root/backup/rsyncBackup.sh /root/rsyncBackup.sh
 #  then run this script from Arch ISO
 
 # UTC -> CEST:

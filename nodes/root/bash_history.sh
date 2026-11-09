@@ -3,7 +3,7 @@
 
 # Joseph Harriott, lun 03 août 2026
 
-# sudo bash $ABno/root/bash_history.sh ($OSAB/nodes-set/root-0.sh)
+# sudo bash $ABno/root/bash_history.sh ($ABno-set/root-0.sh)
 
 # save my root BASH history
 # fcrontab:  @ 6 bash ~/bash_history.sh

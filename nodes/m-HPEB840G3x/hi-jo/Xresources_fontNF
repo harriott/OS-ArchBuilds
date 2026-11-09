@@ -1,7 +1,7 @@
 ! vim: set ft=xdefaults:
 
 # $ABno/m-HPEB840G3x/hi-jo/Xresources_fontNF
-!  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh  to  ~/.Xresources-font
+!  symlinked in  $ABno-set/jo-0-Bash-X.sh  to  ~/.Xresources-font
 !   called from my  $ABjo/wm/Xresources/Xresources
 
 

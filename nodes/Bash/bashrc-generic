@@ -6,7 +6,7 @@
 # Bash configurations that are also useful everywhere, including in  Console  and as  root.
 
 # $ABno/Bash/bashrc-generic
-#  symlinked in  $OSAB/nodes-set/shell.sh
+#  symlinked in  $ABno-set/shell.sh
 #   for jo: sourced by  $AjB/bash_profile  &  $AjB/bashrc
 #   for root: sourced by  $ABno/root/bashrc
 
@@ -100,6 +100,7 @@ ft () {
 alias mo='moor -style monokai'
 alias pz='pygmentize -O style=paraiso-dark'
 alias rgsm='rg --sort=modified'
+alias rgsp='rg --sort=path'
 
 #==> bat
 alias b='bat'  # syntax highlit cat

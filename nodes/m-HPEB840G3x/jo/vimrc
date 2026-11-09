@@ -1,6 +1,6 @@
 " vim: fdl=1:
 
-" $ABno/m-HPEB840G3x/jo/vimrc ($OSAB/nodes-set/jo-1-encoding.sh)
+" $ABno/m-HPEB840G3x/jo/vimrc ($ABno-set/jo-1-encoding.sh)
 
 let mapleader = '²'
 source $vfv/enter/vimrc-AZERTY.vim

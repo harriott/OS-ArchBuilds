@@ -56,7 +56,7 @@ $ABjo/xinitrcs/xfce
 Terminal > Edit > Preferences > Appearance
 rsync -irtv --delete ~/.config/xfce4/xfconf/xfce-perchannel-xml/ $machLg/jo/xfce-perchannel
 rsync -irtv --delete $coAr/ml-sbMb/jo/xfce-perchannel/ ~/.config/xfce4/xfconf/xfce-perchannel-xml
-bash $OSAB/nodes-set/jo-1-Xfce.sh
+bash $ABno-set/jo-1-Xfce.sh
 ## Updates
 :: Replace python-cgi with extra/python-standard-cgi? [Y/n]
 ## Perl v5.xx
@@ -131,7 +131,7 @@ ran it for  Main Menu > Set Proxy  got me an exit point in  Brandenburg
 again, rebooted
 ## $thb
 rm -r $thb/*
-cp $OSAB/nodes-jo/WAN/thunderbird-profiles.ini $thb/profiles.ini
+cp $ABno-jo/WAN/thunderbird-profiles.ini $thb/profiles.ini
 ## Emacs  'cl
 changed to  'cl-lib in
   ~/.emacs.d/straight/repos/dash.el/dash.el

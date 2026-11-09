@@ -5,7 +5,7 @@
 # run Spacemacs from its seperate configuration
 # ---------------------------------------------
 
-# managed in my  $OSAB/nodes-set/jo-3-when_myDrA.sh
+# managed in my  $ABno-set/jo-3-when_myDrA.sh
 #  to provide command  spacemacs
 #   used in  $Obc/schema.pl
 

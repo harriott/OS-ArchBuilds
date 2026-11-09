@@ -2,7 +2,7 @@
 
 # rc file for  $ABnm/.../term/Alacritty/AlNvim.sh
 # source $ABjo/wm/Openbox/bashrc_for_Alacritty-nvim.sh
-#  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
+#  symlinked in  $ABno-set/jo-0-Bash-X.sh
 #   (bash <this_script>  fails)
 #   size dictated by  nvim
 

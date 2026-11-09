@@ -1,15 +1,15 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh:
 
-# $ABnm/Bash_start ($OSAB/nodes-set/shell.sh) $ABno/m-DOP3040D11S/Bash_start
+# $ABnm/Bash_start ($ABno-set/shell.sh) $ABno/m-DOP3040D11S/Bash_start
 #  machine-specific exports that could also be useful as root
 
 # for jo:
-#  symlinked in  $OSAB/nodes-set/jo-0-Bash-X.sh
+#  symlinked in  $ABno-set/jo-0-Bash-X.sh
 #  sourced by  $AjB/bash_profile
 # for root:
-#  symlinked in  $OSAB/nodes-set/root.sh
-#  sourced by  $OSAB/nodes-root/bash_profile
+#  symlinked in  $ABno-set/root.sh
+#  sourced by  $ABno-root/bash_profile
 
 export rsnapshot=/run/media/jo/HDT721016SLA380/rsnapshot  # $rsnapshot
 export startxDelay=5

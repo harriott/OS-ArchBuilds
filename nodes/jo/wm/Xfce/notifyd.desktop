@@ -1,6 +1,6 @@
 
 # $ABjo/wm/Xfce/notify.desktop
-#  managed in my  $OSAB/nodes-set/jo-2-Xfce.sh
+#  managed in my  $ABno-set/jo-2-Xfce.sh
 #   to reveal my command  notifyd  to Desktop
 #   desktop-file-validate /usr/share/applications/notifyd.desktop
 

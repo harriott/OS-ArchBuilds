@@ -5,5 +5,5 @@
   size = 7  # change is instantaneous
 
 [general]
-  import = [ "~/.alacritty-all.toml" ] # $OSAB/nodes/alacritty-all.toml
+  import = [ "~/.alacritty-all.toml" ] # $ABno/alacritty-all.toml
 

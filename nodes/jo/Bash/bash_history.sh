@@ -3,7 +3,7 @@
 
 # Joseph Harriott, Wed 20 May 2026
 
-# $AjB/bash_history.sh ($OSAB/nodes-set/jo-0-Bash-X.sh)
+# $AjB/bash_history.sh ($ABno-set/jo-0-Bash-X.sh)
 
 # robustly save my BASH history, for finding ancient commands
 # fcrontab:  @ 5 bash ~/Arch/bash_history.sh
