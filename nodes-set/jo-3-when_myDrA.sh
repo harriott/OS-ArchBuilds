@@ -5,8 +5,6 @@
 
 set -v  # prints each statement here, including comments
 
-shopt -s expand_aliases; alias es='eza -al'  # show permissions, rough sizes, and symlinks
-
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 

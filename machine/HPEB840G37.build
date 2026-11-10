@@ -127,9 +127,9 @@ bash bs-1-into_jo/4-config.sh  # $OSAB/bs-1-into_jo/4-config.sh
 cd nodes; rm jo/Bash/bash_profile m-HPEB840G3x/jo/bashrc; git pull
 ## cli environment: 5-as_root-broot-sudoers.sh
 sudo ln -sf $ABnm/Bash_start /root/.start
-
 sl > pw; cd /home/jo/onGH/OS-ArchBuilds
   source $ABno-set/cli.sh
+
   bash $OSAB/bs-1-into_jo/5-as_root-broot-sudoers.sh
 ## waiting
 # fcrontab
