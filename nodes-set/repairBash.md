@@ -10,5 +10,5 @@
 1. `source $ABno-set/cli.sh`
 
 ## root
-1. `source $ABno-set/root-0.sh`
+1. `source $ABno-set/root.sh`
 

@@ -126,6 +126,8 @@ bash bs-1-into_jo/4-config.sh  # $OSAB/bs-1-into_jo/4-config.sh
 ### remove surplus  source ...broot/launcher...
 cd nodes; rm jo/Bash/bash_profile m-HPEB840G3x/jo/bashrc; git pull
 ## cli environment: root stuff
+source /home/jo/onGH/OS-ArchBuilds/bs-1-into_jo/5-as_root-broot-sudoers.sh
+
 user_jo=1; source /home/jo/onGH/OS-ArchBuilds/nodes/Bash/export-Arch
 sudo ln -sf $ABnm/Bash_start /root/.start
 sl > pw; cd /home/jo/onGH/OS-ArchBuilds

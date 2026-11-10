@@ -8,7 +8,7 @@
 set -e  # quits on error
 rA=/root/Arch; [ -d $rA ] || mkdir $rA
 source nodes/Bash/export-Arch  # defines  $OSAB  and some dependents
-source $ABno-set/root-0.sh
+source $ABno-set/root.sh
 source $ABno-set/cli.sh
 
 #=> 1 systemd-boot

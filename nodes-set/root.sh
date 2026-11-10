@@ -18,7 +18,6 @@ ln -sf $ABno/root/bash_history.sh ~/bash_history.sh
 cn="$HOME/.config/nano"; [ -d $cn ] || mkdir -p $cn
 ln -sf $ABno/root/nanorc ~/.config/nano/nanorc
 vp=~/.vim/pack; [ -d $vp ] || mkdir -p $vp
-mkdir -p ~/.vim/pack
 ln -sf $vimfiles/repos-packs/packs-colo ~/.vim/pack/colo
 
 #=> 1 root symlinks 2 show
