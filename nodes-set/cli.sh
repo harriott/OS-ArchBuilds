@@ -5,6 +5,7 @@
 # for both  root  and  user
 
 #=> broot
+b=~/.config/broot; [ -d $b ] || mkdir $b
 ln -sf $ABjo/broot/conf.hjson  ~/.config/broot/conf.hjson
 ln -sf $ABjo/broot/verbs.hjson ~/.config/broot/verbs.hjson
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: sw=2:
+# vim: fdl=1 sw=2:
 
 # sl > root pw for  source $ABno-set/root-1-fonts-ranger.sh
 #  lnd  defined in  $OSAB/Bash/bashrc-generic
@@ -7,12 +7,12 @@
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 1 fonts - all-the-icons.el
-[ -d /usr/share/fonts/EmacsAllTheIcons ] || mkdir /usr/share/fonts/EmacsAllTheIcons
+E=/usr/share/fonts/EmacsAllTheIcons; [ -d $E ] || mkdir $E
 for aif in all-the-icons file-icons fontawesome material-design-icons octicons weathericons; do
-  sudo ln -sf $ITccl/CP/Emacs-domtronn-all-the-icons.el/fonts/$aif.ttf /usr/share/fonts/EmacsAllTheIcons/$aif.ttf
+  sudo ln -sf $ITccl/CP/Emacs-domtronn-all-the-icons.el/fonts/$aif.ttf $E/$aif.ttf
   # $misc/GRs/needed.sh
 done
-eza -la /usr/share/fonts/EmacsAllTheIcons
+eza -la $E
 
 #=> 1 fonts 0 install
 lnd $ITccl/Ul/Linux-forArch-fonts /usr/share/fonts/copiedForArch
