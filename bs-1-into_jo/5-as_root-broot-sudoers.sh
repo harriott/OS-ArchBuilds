@@ -5,14 +5,20 @@
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
-#=> for broot
-broot -- install  # then  br  called from  $ABno/Bash/bashrc-generic
+#=> 0 get environment from /home/jo/onGH
+user_jo=1; source /home/jo/onGH/OS-ArchBuilds/nodes/Bash/export-Arch
+sudo ln -sf $ABnm/Bash_start /root/.start
+source $ABno-set/root.sh
+source $ABno-set/cli.sh
 
-#=> sudoers 0 set
+# #=> 1 for broot
+# broot -- install  # then  br  called from  $ABno/Bash/bashrc-generic
+
+#=> 1 sudoers 0 set
 read -p "Going to  diff  with  Vim, when done  :wq!"
 vim -O /etc/sudoers $ABno/etc/sudoers -c 'windo difft'
 
-#=> sudoers 1 check
+#=> 1 sudoers 1 check
 echo; echo "Check with visudo:"
 visudo -c -f /etc/sudoers  # essential!
 

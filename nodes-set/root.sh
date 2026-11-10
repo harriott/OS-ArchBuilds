@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# sl > root pw for  source $ABno-set/root-0.sh
+# sl > root pw for  source $ABno-set/root.sh
 
 if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
@@ -17,7 +17,10 @@ ln -sf $ABno/root/bash_history.sh ~/bash_history.sh
 #=> 1 root symlinks 1 more
 cn="$HOME/.config/nano"; [ -d $cn ] || mkdir -p $cn
 ln -sf $ABno/root/nanorc ~/.config/nano/nanorc
+vp=~/.vim/pack; [ -d $vp ] || mkdir -p $vp
+mkdir -p ~/.vim/pack
+ln -sf $vimfiles/repos-packs/packs-colo ~/.vim/pack/colo
 
 #=> 1 root symlinks 2 show
-eza -la /root/.bash* /root/bash* /root/.config/nano
+eza -la ~/.bash* ~/bash* ~/.config/nano ~/.vim
 

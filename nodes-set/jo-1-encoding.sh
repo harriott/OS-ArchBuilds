@@ -11,7 +11,6 @@ ln -sf $misc/CP/Emacs/custom.el ~/.emacs.d/custom.el
 ln -sf $misc/CP/Emacs/early-init.el ~/.emacs.d/early-init.el  # pb ~/.emacs.d/early-init.el
 ln -sf $misc/CP/Emacs/init.el ~/.emacs.d/init.el
 ln -sf $misc/CP/Emacs/lisp ~/.emacs.d/lisp  # ll ~/.emacs.d/lisp
-ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
 ln -sf $onGH/zenburn-emacs ~/.emacs.d/zenburn-emacs
 el ~/.emacs.d/*
 
@@ -22,21 +21,21 @@ echo > ~/lastVimDirectory  # ($vfv/enter/vimrc.vim)
 mkdir $nvim/plugin
 
 #=> vimfiles - nvim 1 populate use
-ln -s $vfv/after                          $nvim/after
-ln -s $vfv/filetype.vim                   $nvim/filetype.vim
-ln -s $vfv/ftplugin                       $nvim/ftplugin
-ln -s $vfn/init.vim                       $nvim/init.vim
-ln -s $vfn/lua                            $nvim/lua
-ln -s $vfn/lsp                            $nvim/lsp
-ln -s $vimfiles/repos-packs/packs-colo    $nvim/pack/colo
-ln -s $vimfiles/repos-packs/packs-cp-all  $nvim/pack/cp-all
-ln -s $vimfiles/repos-packs/packs-cp-full $nvim/pack/cp-full
-ln -s $vimfiles/repos-packs/packs-unix    $nvim/pack/unix
-ln -s $vfv/plugin/packs.vim               $nvim/plugin/packs.vim
-ln -s $vfv/plugin/plugin.vim              $nvim/plugin/plugin.vim
-ln -s $vfv/spell                          $nvim/spell
-ln -s $vfv/syntax                         $nvim/syntax
-ln -s $vfv/thesaurus                      $nvim/thesaurus
+ln -s $vfv/after             $nvim/after
+ln -s $vfv/filetype.vim      $nvim/filetype.vim
+ln -s $vfv/ftplugin          $nvim/ftplugin
+ln -s $vfn/init.vim          $nvim/init.vim
+ln -s $vfn/lua               $nvim/lua
+ln -s $vfn/lsp               $nvim/lsp
+ln -s $vfvp/packs-colo       $nvim/pack/colo
+ln -s $vfvp/packs-cp-all     $nvim/pack/cp-all
+ln -s $vfvp/packs-cp-full    $nvim/pack/cp-full
+ln -s $vfvp/packs-unix       $nvim/pack/unix
+ln -s $vfv/plugin/packs.vim  $nvim/plugin/packs.vim
+ln -s $vfv/plugin/plugin.vim $nvim/plugin/plugin.vim
+ln -s $vfv/spell             $nvim/spell
+ln -s $vfv/syntax            $nvim/syntax
+ln -s $vfv/thesaurus         $nvim/thesaurus
 el $nvim/*
 
 #=> vimfiles - nvim 2 check
@@ -60,18 +59,18 @@ fi
 sudo rm -r ~/.vim
 mkdir -p ~/.vim/pack
 mkdir ~/.vim/plugin
-ln -s $vfv/after                          ~/.vim/after
-ln -s $vfv/ftplugin                       ~/.vim/ftplugin
-ln -s $vimfiles/repos-packs/packs-colo    ~/.vim/pack/colo
-ln -s $vimfiles/repos-packs/packs-cp-all  ~/.vim/pack/cp-all
-ln -s $vimfiles/repos-packs/packs-cp-full ~/.vim/pack/cp-full
-ln -s $vimfiles/repos-packs/packs-unix    ~/.vim/pack/unix
-ln -s $vfv/plugin/packs.vim               ~/.vim/plugin/packs.vim  # remove this one before  $Drpbx
-ln -s $vfv/plugin/plugin.vim              ~/.vim/plugin/plugin.vim
-ln -s $vfv/spell                          ~/.vim/spell
-ln -s $vfv/syntax                         ~/.vim/syntax
-ln -s $vfv/thesaurus                      ~/.vim/thesaurus
-ln -s $vfv/filetype.vim                   ~/.vim/filetype.vim
+ln -s $vfv/after             ~/.vim/after
+ln -s $vfv/ftplugin          ~/.vim/ftplugin
+ln -s $vfvp/packs-colo       ~/.vim/pack/colo
+ln -s $vfvp/packs-cp-all     ~/.vim/pack/cp-all
+ln -s $vfvp/packs-cp-full    ~/.vim/pack/cp-full
+ln -s $vfvp/packs-unix       ~/.vim/pack/unix
+ln -s $vfv/plugin/packs.vim  ~/.vim/plugin/packs.vim  # remove this one before  $Drpbx
+ln -s $vfv/plugin/plugin.vim ~/.vim/plugin/plugin.vim
+ln -s $vfv/spell             ~/.vim/spell
+ln -s $vfv/syntax            ~/.vim/syntax
+ln -s $vfv/thesaurus         ~/.vim/thesaurus
+ln -s $vfv/filetype.vim      ~/.vim/filetype.vim
 el ~/.vim*
 el ~/.vim/*
 el ~/.vim/pack/*

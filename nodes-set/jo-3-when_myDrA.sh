@@ -8,6 +8,8 @@ set -v  # prints each statement here, including comments
 ln -sf $ABjo/wm/pqivrc ~/.config/pqivrc
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 
+ln -sf $TeNo/Emacs/diary ~/.emacs.d/diary
+
 #=> audio
 m="$HOME/.config/mpd"; [ -d $m ] || mkdir $m; ln -sf $ABjo/music/MPD/mpd.conf $m/mpd.conf
 v="$HOME/.config/vimpc"; [ -d $v ] || mkdir $v; ln -sf $ABjo/music/MPD/vimpcrc $v/vimpcrc
