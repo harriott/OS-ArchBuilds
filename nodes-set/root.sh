@@ -17,8 +17,9 @@ ln -sf $ABno/root/bash_history.sh ~/bash_history.sh
 #=> 1 root symlinks 1 more
 cn="$HOME/.config/nano"; [ -d $cn ] || mkdir -p $cn
 ln -sf $ABno/root/nanorc ~/.config/nano/nanorc
-vp=~/.vim/pack; [ -d $vp ] || mkdir -p $vp
-ln -sf $vimfiles/repos-packs/packs-colo ~/.vim/pack/colo
+vpc=~/.vim/pack/colo; [ -d $vpc ] || mkdir -p $vpc
+# ln -sf $vimfiles/repos-packs/packs-colo ~/.vim/pack/colo
+git clone https://github.com/ajmwagar/vim-deus $vpc/vim-deus
 
 #=> 1 root symlinks 2 show
 eza -la ~/.bash* ~/bash* ~/.config/nano ~/.vim
