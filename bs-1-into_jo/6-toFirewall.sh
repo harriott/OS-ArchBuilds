@@ -3,8 +3,6 @@
 
 # bash $OSAB/bs-1-into_jo/5-sudo-toFirewall.sh
 
-if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
-
 set -ev  # quits on error, prints each statement here, including comments
 
 #=> 0 check $OSAB
