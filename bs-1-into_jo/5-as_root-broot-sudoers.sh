@@ -7,9 +7,10 @@ if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
 
 #=> 0 get environment from /home/jo/onGH
 user_jo=1; source /home/jo/onGH/OS-ArchBuilds/nodes/Bash/export-Arch
-sudo ln -sf $ABnm/Bash_start /root/.start
+ln -sf $ABnm/Bash_start /root/.start
 source $ABno-set/root.sh
 source $ABno-set/cli.sh
+rm -r ~/bs-iwctl ~/onGH
 
 # #=> 1 for broot
 # broot -- install  # then  br  called from  $ABno/Bash/bashrc-generic
