@@ -6,7 +6,7 @@
 # Bash configurations that are also useful everywhere, including in  Console  and as  root.
 
 # $ABno/Bash/bashrc-generic
-#  symlinked in  $ABno-set/shell.sh
+#  symlinked in  $ABno-set/cli.sh
 #   for jo: sourced by  $AjB/bash_profile  &  $AjB/bashrc
 #   for root: sourced by  $ABno/root/bashrc
 

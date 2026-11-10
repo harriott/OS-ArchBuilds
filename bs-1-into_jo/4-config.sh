@@ -9,7 +9,7 @@ set -e  # quits on error
 # should've  cd ~/onGH/OS-ArchBuilds/
 source nodes/Bash/export-Arch
     # = $ABno/Bash/export-Arch, defines  $OSAB  and some dependents
-    source $ABno-set/shell.sh
+    source $ABno-set/cli.sh
     source $ABno-set/jo-0-Bash-X.sh
 
 #=> for broot

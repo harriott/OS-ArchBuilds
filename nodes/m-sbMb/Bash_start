@@ -1,10 +1,10 @@
 #!/bin/bash
 # vim: fdl=1 ft=sh:
 
-# $ABnm/Bash_start ($ABno-set/shell.sh) $ABno/m-sbMb/Bash_start
+# $ABnm/Bash_start
 #  machine-specific exports that could also be useful as root
 
-# symlinked in  $ABno-set/shell.sh, then
+# symlinked in  $ABno-set/cli.sh, then
 #  for jo: sourced by  $AjB/bash_profile
 #  for root: sourced by  $ABno/root/bash_profile
 

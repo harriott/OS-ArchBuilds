@@ -12,7 +12,7 @@
 #  for initial build of Arch, then
 #   for jo, sourced by  $AjB/bash_profile
 #   for root, sourced by  $ABno/root/bash_profile
-#  symlinked in  $OSAB/nodes-set/shell.sh
+#  symlinked in  $OSAB/nodes-set/cli.sh
 
 export jazz=flyline
 export thb="/home/jo/.thunderbird" # $thb

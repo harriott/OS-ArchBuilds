@@ -129,6 +129,7 @@ cd nodes; rm jo/Bash/bash_profile m-HPEB840G3x/jo/bashrc; git pull
 sudo ln -sf $ABnm/Bash_start /root/.start
 
 sl > pw; cd /home/jo/onGH/OS-ArchBuilds
+  source $ABno-set/cli.sh
   bash $OSAB/bs-1-into_jo/5-as_root-broot-sudoers.sh
 ## waiting
 # fcrontab

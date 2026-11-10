@@ -1,8 +1,12 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# source $ABno-set/shell.sh
+# source $ABno-set/cli.sh
 # for both  root  and  user
+
+#=> broot
+ln -sf $ABjo/broot/conf.hjson  ~/.config/broot/conf.hjson
+ln -sf $ABjo/broot/verbs.hjson ~/.config/broot/verbs.hjson
 
 #=> shell
 # sort these lists by last use of "~":  :sort /,*\~/

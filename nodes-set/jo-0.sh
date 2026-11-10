@@ -9,10 +9,6 @@ set -e
 #=> ansiweather
 ln -sf $ABjo/WAN/ansiweatherrc ~/.ansiweatherrc  # e -l ~/.ansiweatherrc
 
-#=> broot
-ln -sf $ABjo/broot/conf.hjson  ~/.config/broot/conf.hjson
-ln -sf $ABjo/broot/verbs.hjson ~/.config/broot/verbs.hjson
-
 #=> Chawan
 [ -d ~/.config/chawan ] || mkdir -p ~/.config/chawan
 ln -sf $ABjo/Chawan/all.toml ~/.config/chawan/config.toml
