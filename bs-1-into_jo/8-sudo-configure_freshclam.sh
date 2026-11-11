@@ -20,6 +20,6 @@ systemctl status clamav-freshclam
 
 #=> ClamAV 2 test
 #  be patient after the curl
-# curl https://secure.eicar.org/eicar.com.txt | clamscan -
+curl https://secure.eicar.org/eicar.com.txt | clamscan -
 echo "- should've seen  \"stdin: Eicar-Test-Signature FOUND\""
 
