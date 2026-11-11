@@ -1,22 +1,22 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# from root,  bash $OSAB/bs-1-into_jo/6-sudo-configure_freshclam.sh
+# bash $OSAB/bs-1-into_jo/8-sudo-configure_freshclam.sh
 
 set -v  # prints each statement here, including comments
 
 #=> ClamAV 0 empty sock file
 # when freshclam triggered warning "Clamd was NOT notified"
-touch /run/clamav/clamd.ctl
-chown clamav:clamav /run/clamav/clamd.ctl
-freshclam
+sudo touch /run/clamav/clamd.ctl
+sudo chown clamav:clamav /run/clamav/clamd.ctl
+sudo freshclam
 
 #=> ClamAV 1 freshclam daemon 0 enable
-systemctl enable clamav-freshclam --now
-systemctl status clamav-freshclam
+sudo systemctl enable clamav-freshclam --now
+sudo systemctl status clamav-freshclam
 
 # #=> ClamAV 1 freshclam daemon 1 stop
-# systemctl stop clamav-freshclam.service
+# sudo systemctl stop clamav-freshclam.service
 
 #=> ClamAV 2 test
 #  be patient after the curl

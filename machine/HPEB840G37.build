@@ -129,6 +129,7 @@ cd nodes; rm jo/Bash/bash_profile m-HPEB840G3x/jo/bashrc; git pull
 source /home/jo/onGH/OS-ArchBuilds/bs-1-into_jo/5-as_root-broot-sudoers.sh
 bash $OSAB/bs-1-into_jo/6-toFirewall.sh
 bash $OSAB/bs-1-into_jo/7-configure_firewalld.sh
+bash $OSAB/bs-1-into_jo/8-sudo-configure_freshclam.sh
 ## waiting
 # fcrontab
 # physical configuration
