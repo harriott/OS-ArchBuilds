@@ -17,22 +17,6 @@ sudo pacman -S firewalld
 sudo systemctl enable firewalld --now
 sleep 2
 
-# 2 active zone
-sudo firewall-cmd --set-default-zone=home
-
-#=> 2 Firewalld 1 port for Avahi
-# open UDP port 5353
-sudo firewall-cmd --permanent --zone=home --add-port 5353/udp
-
-# #=> 2 Firewalld 1 ports for KDE Connect
-# sudo firewall-cmd --zone=home --permanent --add-port=1714-1764/tcp
-# sudo firewall-cmd --zone=home --permanent --add-port=1714-1764/udp
-
-#=> 2 Firewalld 2 restart
-sudo systemctl restart firewalld.service
-sleep 2
-
-#=> 2 Firewalld 3 check
-sudo firewall-cmd --state
-sudo firewall-cmd --info-zone=home
+#=> 3 reboot
+read -p '- now reboot'
 

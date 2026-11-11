@@ -1565,11 +1565,12 @@ IOSTAT(1)
 to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
 
 ## security
-    sudo freshclam
-    systemctl status fangfrisch.timer
-
 - `$ABno/etc/sudoers` sets `insults` (not for `su`)
 - umask(2)
+
+### ClamAV
+    sudo freshclam
+    systemctl status fangfrisch.timer
 
 ### groups
     cat /etc/group  # list all groups on the system
