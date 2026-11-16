@@ -130,7 +130,26 @@ source /home/jo/onGH/OS-ArchBuilds/bs-1-into_jo/5-as_root-broot-sudoers.sh
 bash $OSAB/bs-1-into_jo/6-toFirewall.sh
 bash $OSAB/bs-1-into_jo/7-configure_firewalld.sh
 bash $OSAB/bs-1-into_jo/8-sudo-configure_freshclam.sh
+## KDE
+
 ## waiting
+browser integration
+klassy-qt5
+latte-dock-ng
+plasma6-applets-appgrid
+plasma6-applets-arch-update-notifier
+plasma6-applets-catwalk
+plasma6-applets-cursor-eyes
+plasma6-applets-kde-control-station
+plasma6-applets-kurve-git
+plasma6-applets-kvitals-git
+plasma6-applets-netspeed
+plasma6-applets-panel-spacer-extended
+plasma6-applets-panon
+plasma6-applets-qalculate
+plasma6-applets-thermal-monitor-git
+plasma6-applets-wunderground
+vim-deus
 # fcrontab
 # physical configuration
 1366x768 screen

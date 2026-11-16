@@ -1,9 +1,7 @@
 #!/bin/sh
 
 # $ABjo/xinitrcs/xfce
-#  symlinked in
-#   $ABno/Bash/bashrc-generic
-#   $ABno-set/jo-0-Bash-X.sh
+#  symlinked in  $ABno-set/jo-0-Bash-X.sh
 
 if [[ $ABjo ]]; then
     source $ABjo/xinitrcs/xinitrc  # calls  $ABjo/wm/Xresources/Xresources

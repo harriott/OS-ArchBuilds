@@ -260,6 +260,7 @@ $HOME  max'd out, so
 auracle: error while loading shared libraries: libabsl_raw_hash_set.so.2605.0.0: cannot open shared object file: No such file or directory
 prs auracle-git  then  pikn pod2man  for   pikn auracle-git
 ## 9QG2FFEE unwriteable
+during  $ABno/rsnapshot/rotate.sh aaa &, got loads of unstoppable "cp: cannot stat .."
 s /run/media/jo/9QG2FFEE/*  all good
 journalctl -k --since "2 hours ago" | grep -iE "i/o error|ext4|buffer"
   Nov 06 09:35:48 DOP3040D11S kernel: EXT4-fs warning (device sdb1): ext4_clear_journal_err:6421: Filesystem error recorded from previous mount: Corrupt filesystem
@@ -269,9 +270,13 @@ journalctl -k --since "2 hours ago" | grep -iE "i/o error|ext4|buffer"
   Nov 06 09:35:48 DOP3040D11S kernel: EXT4-fs (sdb1): mounted filesystem 0182adb6-21c3-4819-9ff4-0dfa0e569105 r/w with ordered data mode. Quota mode: none.
   Nov 06 09:35:54 DOP3040D11S kernel: EXT4-fs error (device sdb1): ext4_mb_generate_buddy:1314: group 94, block bitmap and bg descriptor inconsistent: 2562 vs 2727 free clusters
   Nov 06 09:35:54 DOP3040D11S kernel: EXT4-fs (sdb1): Remounting filesystem read-only
+## $ABno/rsnapshot/rotate.sh snag
+many such as "cp: cannot stat '/run/media/jo/HDT721016SLA380/rsnapshot/.sync/DOP3040D11S/home/jo/.local/share/nvim/lazy/notmuch.nvim/tests/fixtures/corpora/threading/ghost-root/1532672447.R3166642290392477575.len:2,S': No such file or directory"
+s /run/media/jo/HDT721016SLA380/*  all good
+cp ~/.local/share/nvim/lazy/notmuch.nvim/tests/fixtures/corpora/threading/ghost-root/1532672447.R3166642290392477575.len:2,S ~/Play0/len25  works from  DOP3040D11S & sbMb
+journalctl -k --since "today" | grep -iE "i/o error|ext4|buffer"  finds nothing of concern
 ## waiting
 apache
-br
 EFI install
 gokcehan's lf
 # CopyQ

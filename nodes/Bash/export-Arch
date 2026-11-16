@@ -14,7 +14,6 @@
 #   for root, sourced by  $ABno/root/bash_profile
 #  symlinked in  $OSAB/nodes-set/cli.sh
 
-export jazz=flyline
 export thb="/home/jo/.thunderbird" # $thb
 
 #=> 0 mail

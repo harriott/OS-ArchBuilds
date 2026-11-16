@@ -9,7 +9,7 @@
 #  for root: sourced by  $ABno/root/bash_profile
 
 export rsnapshot=/run/media/jo/S14JJ9CP956373/rsnapshot  # $rsnapshot
-export startxDelay=5
+export startplasmaDelay=5
 
 #=> for  $ABno/Bash/export-Arch
 # 0 during initial build, before  $Drpbx:

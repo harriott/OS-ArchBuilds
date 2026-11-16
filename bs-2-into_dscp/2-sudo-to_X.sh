@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# bash $OSAB/bs-2-into_X/3-sudo-to_X-0.sh
+# sudo -i bash $OSAB/bs-2-into_X/2-sudo-to_X.sh
 
-if [[ $(id -u) > 0 ]]; then echo "Run this as root!"; exit; fi
+if [[ $(id -u) > 0 ]]; then echo "sudo -i bash ...!"; exit; fi
 set -ev  # quits on error, prints each statement here, including comments
 
 read -p "\$OSAB is $OSAB - looks good?"

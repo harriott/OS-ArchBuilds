@@ -7,3 +7,5 @@
 #=> load the rest of my bashrc
 source $AjB/bashrc
 
+
+source /home/jo/.config/broot/launcher/bash/br

@@ -1,0 +1,26 @@
+# vim: set ft=sh sw=2:
+#
+# my  ~/.bash_profile - to supersede $AjB/bash_profile
+# -------------------
+# $AjB/profile-X  symlinked in  $ABno-set/jo-0-Bash-X.sh
+
+source ~/.bp_everywhere
+
+# first, test that X hasn't launched for this user
+ps aux | grep $USER | grep -v grep | grep "/usr/lib/Xorg" >& /dev/null
+EXITSTATUS=$?
+if [ $EXITSTATUS -eq 1 ]; then
+  echo -e "\\n\\e[5;30;47m---startx--------------------------------------------\\e[0m"
+  echo -e "\\n\\e[5;30;47m-----------startx------------------------------------\\e[0m"
+  echo -e "\\n\\e[5;30;47m-------------------startx----------------------------\\e[0m"
+  echo -e "\\n\\e[5;30;47m---------------------------startx--------------------\\e[0m"
+  echo -e "\\n\\e[5;30;47m-----------------------------------startx------------\\e[0m"
+  echo -e "\\n\\e[5;30;47m-------------------------------------------startx----\\e[0m\n"
+  for x in {0..3}; do eval "$flashline"; done
+  if (read -rsn1 -t$startxDelay -p"Going to startx in $startxDelay seconds, press any key to abort: "); then
+    echo -e "\nOkay, \e[1mstartx\e[0m yourself when ready..."
+  else
+    [[ -z $DISPLAY ]] && startx  # because running interactively
+  fi
+fi  # possibly start X
+

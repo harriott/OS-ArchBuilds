@@ -4626,6 +4626,13 @@ br
   Afterwards, you should start broot with br in order to use its full power.
 removed last two lines added to  $ABnm/jo/Bash/bashrc, $AjB/bash_profile
 cp ~/.config/broot/conf.toml $coAr/jo/broot-qb9-conf.toml
+## Updates - docling snag, remove
+  error: Dependencies missing for python-pypdfium2
+  warning: Following package cannot be found in AUR: libpdfium.so
+pikn libpdfium  ultimately for  docling
+brings in a huge and slightly outdated  chromium, which I aborted
+prs docling
+  Packages (62) cmake-4.4.5-1  cppdap-1.58.0-3  eigen-5.0.1-2  glew-2.3.1-1  intel-oneapi-common-2026.0.0_235-1  intel-oneapi-mkl-2026.0.0_908-1  intel-oneapi-openmp-2026.0.0_947-1  intel-oneapi-tbb-2023.0.0_724-1  intel-oneapi-tcm-1.5.0_489-1  jsoncpp-1.9.8-1  level-zero-loader-1.32.0-1  libfabric-2.7.0-1 libsaxonc-12.9.0-2  libspatialindex-2.1.0-1  openmp-23.1.4-1  openmpi-5.0.11-1  openpmix-5.0.11-1  openucx-1.20.1-3  prrte-3.0.14-1  pugixml-1.16-1  pybind11-3.1.0-1  python-annotated-doc-0.0.5-1  python-contourpy-1.4.0-1  python-cycler-0.12.1-4  python-doclang-0.7.3-1  python-docling-2.129.0-1 python-docling-core-2.97.1-1  python-docling-ibm-models-4.0.3-1  python-docling-parse-7.20.0-1  python-filetype-1.2.0-7  python-gmpy2-2.3.2-1  python-jsonref-1.1.0-1  python-jsonschema-4.26.0-1  python-jsonschema-specifications-2025.9.1-2  python-kiwisolver-1.5.1-1  python-langcodes-3.5.1-1 python-latex2mathml-3.81.1-1  python-matplotlib-3.11.2-1  python-mpmath-1.4.1-1  python-networkx-3.7-1  python-opencv-5.0.0-13  python-pooch-1.9.0-1  python-pypdfium2-5.14.0-1  python-pytorch-2.15.0-1  python-referencing-0.37.0-3  python-rpds-py-2026.9.1-1  python-rtree-1.4.1-2 python-safetensors-0.8.0-1  python-saxonche-12.9.0-2  python-scikit-build-core-1.1.1-1  python-scipy-1.18.1-1  python-shellingham-1.5.4-4  python-sympy-1.14.0-6  python-tabulate-0.10.0-1  python-tokenizers-0.23.3-3  python-torchvision-0.29.2-1  python-transformers-5.22.1-1  python-typer026-0.26.8-2  = 3.7G in all!
 ## waiting
 $ABnm/etc/rsnapshot.conf
 $CPenc/dpl/Python/uv/ > uv pip install 'markitdown[all]

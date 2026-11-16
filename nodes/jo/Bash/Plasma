@@ -1,0 +1,13 @@
+# vim: set ft=sh sw=2:
+#
+# my  ~/.plasma  for KDE
+# ----------------------
+# $AjB/Plasma  symlinked in  $ABno-set/jo-0-Bash-X.sh  for
+# . ~/.plasma  eg from  $AjB/profile-KDE
+
+if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+  exec /usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland
+else
+
+fi
+

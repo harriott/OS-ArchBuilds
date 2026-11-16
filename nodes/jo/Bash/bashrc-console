@@ -116,6 +116,11 @@ lg() {
 # ($GRs/d-CP/d-encoding/r-jesseduffield-lazygit/pkg/gui/controllers/helpers/record_directory_helper.go)
 # but I can't see it doing anything...
 
+#==> laurent22/rsync-time-backup
+if [ $host = 'sbMb' ]; then
+  rtb () { bash $ITccl/Ul/Linux/backup/rsync_tmbackup.sh $Drpbx /mnt/SD480GSSDPlus/rtb-Dr $onGH/FM-rsync-drives/rtb-sbMb-Dr-exclude; }
+fi # my local copy of  rsync_tmbackup  is ensured in   $misc/GRs/cGRs-needed.sh
+
 #==> lists of files by content
 alias rgo="rgsm --field-match-separator ':::'" # ($ABno/Bash/bashrc-generic)
 # rgo rsync $DrJo > $Drpbx/search/rsync.rgo ($vfv/syntax/rgo.vim)

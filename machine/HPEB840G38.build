@@ -373,9 +373,7 @@ hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Contr
 ## secure \boot
 cp /etc/fstab $machLg/etc-fstab/qau
 ## waiting
-$ABno/etc/doas.conf
-$ITccl/Ul/Linux-forArch-fonts
-br
+system-config-printer
 # fcrontab
   !m(0)
   @ 4 bash ~/Arch/wlan0.sh

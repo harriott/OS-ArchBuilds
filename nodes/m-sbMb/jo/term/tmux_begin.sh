@@ -25,7 +25,7 @@ tmux new-window
 tmux select-window -t 1:0
 
 #==> 1 open two panes on my new music directory
-cdm () { tmux send-keys -t 1:0 'cd /mnt/SDU3D1TB/Dropbox/music/toSort0' Enter; }
+cdm () { tmux send-keys -t 1:0 'cd /mnt/SDU3D1TB/Dropbox/music/toSort' Enter; }
 # cdm 0; tmux split-window -t 1:0; cdm 0.1
 cdm; tmux split-window -t 1:0; cdm
 

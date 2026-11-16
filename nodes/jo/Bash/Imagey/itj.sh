@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Joseph Harriott, Thu 02 Sep 2021
-# convert images to jpg with ImageMagick
+# $imagey/itj.sh = convert images to jpg with ImageMagick
 
 # this is normally called from one of my aliases defined in  $AjB/bashrc-wm,
 # but can: find * -exec bash /usr/local/bin/itj.sh {} \;

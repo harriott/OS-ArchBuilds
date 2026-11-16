@@ -318,7 +318,7 @@ ir () { mapfile -t images < <(fd -e jpg)
   } # image resolutions
 # while :; do ir; sleep 9; tput reset; done
 
-S () { bash $Imagey/Scan.sh $1 $2 $3 $4; }
+S () { bash $imagey/scan.sh $1 $2 $3 $4; }
   sH () { S HPEn 3 $1 $2; t $1.tiff; }  # call SANE's scanimage tool, and convert to jpg
 
 #==> convert all webp to jpg
@@ -344,7 +344,7 @@ dsd () {
 
 #==> images to jpg
 t () {
-  bash $Imagey/itj.sh $1 "-quality 70"
+  bash $imagey/itj.sh $1 "-quality 70"
 }  # most useful for scanned tiff's
 
 # won't work with white-spaces in file names

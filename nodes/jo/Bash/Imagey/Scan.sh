@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# $Imagey/Scan.sh
+# $imagey/scan.sh
 # Joseph Harriott, Thu 26 Sep 2024
 # sH (S)  defined in  $AjB/bashrc-wm
 

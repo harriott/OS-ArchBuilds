@@ -42,7 +42,7 @@ get the PIDs `ps ax | grep cmus` then for each `kill -9 PID`
 
 ### queue
     $ABjo/wm/cmusqueue.sh
-    $Drpbx/music/toSort0/cmusq
+    $Drpbx/music/toSort/cmusq
 
 ## Kew
     $ABjo/kewrc
@@ -502,6 +502,10 @@ vid => ffmpegthumbnailer
     s 2 4 6-9 => select those ELNs
     sb => selection box
     t sel => trash selection
+
+## cp
+    :Man cp
+    whereis cp
 
 ## finding
     find . -iregex '.*\.\(avi\|flv\|mkv\|mov\|mp4\|ogv\)$' > avfiles.txt
@@ -1250,7 +1254,6 @@ pacman -Sg base-devel  # lists all
     pacman -v  # --verbose - lists local paths
     pubc pacman
     sudo du -sh /var/cache/pacman/pkg
-    sudo paccache -k2 -qr  # --quiet --remove --keep (only 2)
     sudo pacman -U package.pkg.tar.xz
     sudo pacman -Rs <packagetoremove>
 
@@ -1307,6 +1310,12 @@ pacsearch <keyword>  # better search
     - `-u` (`--sysupgrade`)
     - `-y` (`--refresh`) refresh copy of the master package list (use with `-u`)
         - `Syy` force refresh
+
+### paccache
+    sudo paccache -k2 -qr  # --quiet --remove --keep (only 2)
+
+- `-c`, `--cachedir <dir>`
+- PACCACHE(8)
 
 ### pkgfile
     pkgfile -bl <package>  # --binaries --list
@@ -1565,8 +1574,7 @@ IOSTAT(1)
 to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
 
 ## security
-- `$ABno/etc/sudoers` sets `insults` (not for `su`)
-- umask(2)
+umask(2)
 
 ### ClamAV
     sudo freshclam
@@ -1586,6 +1594,10 @@ PASSWD(1)
     sudo passwd -S  # (of root)
 
 but can never actually see a pw
+
+### Sudo
+- `$ABno/etc/sudoers` sets `insults` (not for `su`)
+- SUDO(8)
 
 ## sizes
     sudo du -h --max-depth=1 /usr

@@ -28,12 +28,9 @@ set -e
 
 #=> 5 updates
 echo 'Do updates:'
-# pikaur --noedit -Syu  # because it's informative, and offers to continue after connection failure
 pikaur --nodiff --noedit -Syu # because it's informative, and offers to continue after connection failure
 # sudo pacman -Syu
-################################
-## reboot if kernel updated ! ##
-################################
+echo "${tpf5b}- reboot if kernel updated! ${tpfn}"
 
 #=> 6 pacnews
 echo "${tpf5b}Checking for pacnews:${tpfn}"
@@ -55,11 +52,13 @@ if [ $host = "DOP3040D11S" ]; then
   set +e
   yes | sudo pacman -Scc  # empty completely
   sudo rm -rf /var/cache/pacman/pkg/download*  # workaround
+  sudo rm ~/.cache/pikaur/pkg/*
 else
-  sudo paccache -qr  # reduce to last 3 versions
+  sudo paccache -c ~/.cache/pikaur/pkg -k2 -qr
+  sudo paccache -k2 -qr  # quietly reduce to last 3 versions
 fi
 
-#=> 9 AURs
+#=> 9 auracle
 echo 'checking AURs'
 pacman -Qm > $ITAb/ml-$host/AURs/$ymdHM.log
 if ( pacman -Qs auracle > /dev/null 2>&1) ; then

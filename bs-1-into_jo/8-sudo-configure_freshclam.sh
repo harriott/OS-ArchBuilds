@@ -3,8 +3,6 @@
 
 # bash $OSAB/bs-1-into_jo/8-sudo-configure_freshclam.sh
 
-set -v  # prints each statement here, including comments
-
 #=> ClamAV 0 empty sock file
 # when freshclam triggered warning "Clamd was NOT notified"
 sudo touch /run/clamav/clamd.ctl

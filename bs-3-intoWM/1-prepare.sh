@@ -43,7 +43,7 @@ pikn gvfs-mtp  # for accessing phone memory
 pikn gpick  # for getting onscreen colours
 
 #=> hw - CUPS services
-pikn cups
+pikn cups system-config-printer
 sudo systemctl enable cups.service --now
 
 #=> hw - generate 00-keyboard.conf

@@ -10,19 +10,22 @@
 # - avoids hanging on  cat  incase  $bj  wasn't set in  $AjB/bash_profile
 
 j () {
-  if [[ $(cat $bj) == 'ble.sh' ]]; then
+  if [[ $(cat $bj) == 'none' ]]; then
     echo flyline > $bj
     echo "next ${tpf2}Bash${tpfn} instance will by jazz'd with ${tpf3}flyline${tpfn}"
-  else
+  elif [[ $(cat $bj) == 'flyline' ]]; then
     echo ble.sh > $bj
     echo "next ${tpf2}Bash${tpfn} instance will by jazz'd with ${tpf3}ble.sh${tpfn}"
+  else
+    echo none > $bj
+    echo "next ${tpf2}Bash${tpfn} instance will not be jazz'd${tpfn}"
   fi
   } # toggle jazz for next instance
 
 #=> 1 set jazz for this instance
 if [[ $(cat $bj) == 'ble.sh' ]]; then
   source $ABno/Bash/jazz/bashrc-ble_sh-atuin  # if  WezTerm  fix is implemented in  $ABno/Bash/jazz/blerc
-elif [ -f /usr/lib/bash/libflyline.so ]; then
+elif [[ $(cat $bj) == 'flyline' ]] && [ -f /usr/lib/bash/libflyline.so ]; then
   source $ABno/Bash/jazz/bashrc-flyline  # kills off  fzf's  **<tab>  functionality
 fi
 

@@ -7,7 +7,7 @@
 shopt -s expand_aliases; alias es='eza -al'  # definitively in  $ABno/Bash/bashrc-generic
 
 #=> broot
-b=~/.config/broot; [ -d $b ] || mkdir $b
+b="$HOME/.config/broot"; [ -d $b ] || mkdir $b
 ln -sf $ABjo/broot/conf.hjson  ~/.config/broot/conf.hjson
 ln -sf $ABjo/broot/verbs.hjson ~/.config/broot/verbs.hjson
 es ~/.config/broot/*.hjson
