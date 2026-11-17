@@ -1,6 +1,6 @@
 # $ABjo/cheat-conf.yml
 #  based of  /etc/cheat/conf.yml
-#  symlinked by  $ABno-set/jo-0.sh
+#  symlinked by  $ABno-set/jo-2.sh
 
 colorize: true
 formatter: terminal256

@@ -6,7 +6,8 @@
 1. `source $ABno-set/cli.sh`
 
 ## jo
-1. `source $ABno-set/jo-0-Bash-X.sh`
+1. `source $ABno-set/jo-0-Bash.sh`
+1. `source $ABno-set/jo-1-X.sh`
 1. `source $ABno-set/cli.sh`
 
 ## root

@@ -1,27 +1,7 @@
 #!/bin/bash
 # vim: fdl=2 sw=2:
 
-# source $ABno-set/jo-0-Bash-X.sh
-
-#=> Bash
-# sort these lists by last use of "~":  :sort /,*\~/
-
-ln -sf $AjB/bash_profile              ~/.bash_profile
-  # - sources  $ABno/Bash/bashrc-generic, which aliases  eza
-if [[ $host =~ HPEB840G3 ]]; then
-  ln -sf $ABno/m-HPEB840G3x/jo/bashrc ~/.bashrc
-else
-  ln -sf $ABnm/jo/Bash/bashrc         ~/.bashrc
-fi
-ln -sf $ABjo/wm/term/bashrc-AlNvim    ~/.bashrc-AlNvim
-ln -sf $AjB/bashrc-console            ~/.bashrc-console
-
-#==> 0 Bash history
-[ -d ~/Arch ] || mkdir ~/Arch
-ln -sf $AjB/bash_history.sh ~/Arch/bash_history.sh
-
-#==> 1 checks
-eza -al ~/.bash* ~/Arch/bash_history.sh
+# source $ABno-set/jo-1-X.sh
 
 #=> X
 ln -sf $ABjo/wm/Xresources/Xresources                                                   ~/.Xresources
@@ -36,5 +16,6 @@ ln -sf $ABjo/xbindkeysrc                                                        
 ln -sf $ABjo/xinitrcs/xfce                                                              ~/.xinitrc
 # ln -sf $ABjo/xinitrcs/openbox                                                           ~/.xinitrc
 ln -sf $ABjo/xmodmapAZERTY                                                              ~/.xmodmap
+
 eza -al ~/.Xresources* ~/.xbindkeysrc ~/.xinitrc ~/.xmodmap
 

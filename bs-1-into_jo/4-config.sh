@@ -10,7 +10,8 @@ set -e  # quits on error
 source nodes/Bash/export-Arch
     # = $ABno/Bash/export-Arch, defines  $OSAB  and some dependents
     source $ABno-set/cli.sh
-    source $ABno-set/jo-0-Bash-X.sh
+    source $ABno-set/jo-0-Bash.sh
+    source $ABno-set/jo-1-X.sh
 
 #=> for broot
 broot -- install
@@ -18,7 +19,7 @@ es ~/.config/broot/launcher/bash/br
 #  I source  br  only in  $ABno/Bash/bashrc-generic
 #  so, before next  git pull  in /home/jo/onGH/OS-ArchBuilds  will need to
 #   cd nodes; rm jo/Bash/bash_profile m-HPEB840G3x/jo/bashrc
-# subsequently configured in  $ABno-set/jo-0.sh
+# subsequently configured in  $ABno-set/jo-2.sh
 
 #=> for MIME database
 mkdir -p ~/.local/share/mime/packages

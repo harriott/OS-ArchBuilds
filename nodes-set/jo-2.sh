@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# source $ABno-set/jo-0.sh
+# source $ABno-set/jo-2.sh
 
 lnd () { [ -d $2 ] && rm -r $2; ln -sf $1 $2; } # symlink a directory
 set -e

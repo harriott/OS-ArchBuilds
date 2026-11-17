@@ -275,6 +275,7 @@ many such as "cp: cannot stat '/run/media/jo/HDT721016SLA380/rsnapshot/.sync/DOP
 s /run/media/jo/HDT721016SLA380/*  all good
 cp ~/.local/share/nvim/lazy/notmuch.nvim/tests/fixtures/corpora/threading/ghost-root/1532672447.R3166642290392477575.len:2,S ~/Play0/len25  works from  DOP3040D11S & sbMb
 journalctl -k --since "today" | grep -iE "i/o error|ext4|buffer"  finds nothing of concern
+turns out all the rejections are files with : in the path, which I realised was down to HDT721016SLA380 being NTFS...
 ## waiting
 apache
 EFI install

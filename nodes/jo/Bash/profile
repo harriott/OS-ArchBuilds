@@ -1,10 +1,8 @@
 # vim: set ft=sh sw=2:
 #
-# my generic  ~/.bash_profile
-# ---------------------------
 # $AjB/profile
-#  symlinked in  $ABno-set/jo-0-Bash-X.sh
-#   so that can be sourced from 
+#  symlinked in  $ABno-set/jo-0-Bash.sh  to  ~/.bp_everywhere
+#   which is then sourced from
 #    $AjB/profile-KDE
 #    $AjB/profile-X
 #  supplements and overrides  /etc/profile

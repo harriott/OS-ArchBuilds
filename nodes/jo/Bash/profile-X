@@ -2,7 +2,7 @@
 #
 # my  ~/.bash_profile - to supersede $AjB/bash_profile
 # -------------------
-# $AjB/profile-X  symlinked in  $ABno-set/jo-0-Bash-X.sh
+# $AjB/profile-X  symlinked in  $ABno-set/jo-0-Bash.sh
 
 source ~/.bp_everywhere
 

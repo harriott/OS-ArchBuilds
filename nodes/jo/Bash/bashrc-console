@@ -3,7 +3,7 @@
 
 # Joseph Harriott, lun 14 sept 2026
 
-# $AjB/bashrc-console  symlinked in  $ABno-set/jo-0-Bash-X.sh
+# $AjB/bashrc-console  symlinked in  $ABno-set/jo-0-Bash.sh
 #  then sourced by  $AjB/bash_profile  &  $AjB/bashrc
 # see  $ABno-set/repair.sh  for checking if this was sourced
 
@@ -119,7 +119,7 @@ lg() {
 #==> laurent22/rsync-time-backup
 if [ $host = 'sbMb' ]; then
   rtb () { bash $ITccl/Ul/Linux/backup/rsync_tmbackup.sh $Drpbx /mnt/SD480GSSDPlus/rtb-Dr $onGH/FM-rsync-drives/rtb-sbMb-Dr-exclude; }
-fi # my local copy of  rsync_tmbackup  is ensured in   $misc/GRs/cGRs-needed.sh
+fi  # $onGH/FM-rsync-drives/README.md
 
 #==> lists of files by content
 alias rgo="rgsm --field-match-separator ':::'" # ($ABno/Bash/bashrc-generic)

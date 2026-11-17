@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: set fdl=2:
 
-# source $ABno-set/jo-2-Xfce.sh
+# source $ABno-set/jo-4-Xfce.sh
 
 read -p "Xfce  is installed?"
 

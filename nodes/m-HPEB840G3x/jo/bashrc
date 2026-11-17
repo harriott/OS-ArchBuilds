@@ -1,6 +1,6 @@
 # vim: fdl=1 ft=sh sw=2:
 
-# $ABno/m-HPEB840G3x/jo/bashrc ($ABno-set/jo-0-Bash-X.sh)
+# $ABno/m-HPEB840G3x/jo/bashrc ($ABno-set/jo-0-Bash.sh)
 
 [[ $- != *i* ]] && return  # if not running interactively, don't do anything
 
@@ -8,4 +8,3 @@
 source $AjB/bashrc
 
 
-source /home/jo/.config/broot/launcher/bash/br

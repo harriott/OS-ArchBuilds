@@ -648,7 +648,6 @@ NNN(1)
 
 ## rsnapshot
     $ABnm/etc/rsnapshot.conf
-    $ABno/rsnapshot/
     r $rsnapshot
     snapshot_root
     sudo du -sh $rsnapshot
@@ -744,6 +743,7 @@ ls *ly.*/localhost/mnt/*/S* -d  # finds my Share/Sync2 instances
     sudo rsync -a --info=progress2 $rsnapshot/aaa.0/localhost/home/jo/
 
 ### running
+    $ABno/rsnapshot/
     doas rsnapshot aaa &
     pgrep rsnapshot
     rsnapshot -t aaa

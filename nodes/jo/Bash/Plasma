@@ -2,7 +2,7 @@
 #
 # my  ~/.plasma  for KDE
 # ----------------------
-# $AjB/Plasma  symlinked in  $ABno-set/jo-0-Bash-X.sh  for
+# $AjB/Plasma  symlinked in  $ABno-set/jo-1-KDE.sh  for
 # . ~/.plasma  eg from  $AjB/profile-KDE
 
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then

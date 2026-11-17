@@ -5,7 +5,7 @@
 #  machine-specific exports that could also be useful as root
 
 # for jo:
-#  symlinked in  $ABno-set/jo-0-Bash-X.sh
+#  symlinked in  $ABno-set/jo-0-Bash.sh
 #  sourced by  $AjB/bash_profile
 # for root:
 #  symlinked in  $ABno-set/root.sh

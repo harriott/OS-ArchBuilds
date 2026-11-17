@@ -1,7 +1,7 @@
 
 # https://harriott.github.io/ - Wed 17 Jun 2026
 
-# bash $ABno-set/jo-3-when_myDrA.sh
+# bash $ABno-set/jo-5-when_myDrA.sh
 
 set -v  # prints each statement here, including comments
 

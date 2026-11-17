@@ -2,22 +2,26 @@
 #
 # my  ~/.bash_profile  for KDE
 # ----------------------------
-# $AjB/profile-KDE  symlinked in  $ABno-set/jo-0-Bash-X.sh
+# $AjB/profile-KDE  symlinked in  $ABno-set/jo-1-KDE.sh
 
-source ~/.bp_everywhere
+source ~/.bp_everywhere  # $AjB/profile
 
-if pgrep -l plasmashell &> /dev/null 2>&1; then
-  echo Plasma; fi
-  echo -e "\\n\\e[5;30;47m--- . ~/.plasma --------------------------------------------\\e[0m"
-  echo -e "\\n\\e[5;30;47m----------- . ~/.plasma ------------------------------------\\e[0m"
-  echo -e "\\n\\e[5;30;47m------------------- . ~/.plasma ----------------------------\\e[0m"
-  echo -e "\\n\\e[5;30;47m--------------------------- . ~/.plasma --------------------\\e[0m"
-  echo -e "\\n\\e[5;30;47m----------------------------------- . ~/.plasma ------------\\e[0m"
-  echo -e "\\n\\e[5;30;47m------------------------------------------- . ~/.plasma ----\\e[0m\n"
-  if (read -rsn1 -t$startplasmaDelay -p"Going to startplasma in $startplasmaDelay seconds, press any key to abort: "); then
-    echo -e "\nOkay \e[1m . ~/.plasma \e[0m yourself when ready..."
-  else
-    source ~/.plasma
-  fi
-fi  # possibly start KDE
+echo -e "you might want to \\e[5;30;47m sudo systemctl enable plasmalogin.service \\e[0m & then reboot"
+echo -e 'you might want to \e[5;30;47m sudo systemctl enable plasmalogin.service \e[0m & then reboot'
+echo -e 'you might want to \e[1m\e[95m sudo systemctl enable plasmalogin.service \e[0m & then reboot'
+
+# if pgrep -l plasmashell &> /dev/null 2>&1; then
+#   echo Plasma; fi
+#   echo -e "\\n\\e[5;30;47m--- . ~/.plasma --------------------------------------------\\e[0m"
+#   echo -e "\\n\\e[5;30;47m----------- . ~/.plasma ------------------------------------\\e[0m"
+#   echo -e "\\n\\e[5;30;47m------------------- . ~/.plasma ----------------------------\\e[0m"
+#   echo -e "\\n\\e[5;30;47m--------------------------- . ~/.plasma --------------------\\e[0m"
+#   echo -e "\\n\\e[5;30;47m----------------------------------- . ~/.plasma ------------\\e[0m"
+#   echo -e "\\n\\e[5;30;47m------------------------------------------- . ~/.plasma ----\\e[0m\n"
+#   if (read -rsn1 -t$startplasmaDelay -p"Going to startplasma in $startplasmaDelay seconds, press any key to abort: "); then
+#     echo -e "\nOkay \e[1m . ~/.plasma \e[0m yourself when ready..."
+#   else
+#     source ~/.plasma
+#   fi
+# fi  # possibly start KDE
 

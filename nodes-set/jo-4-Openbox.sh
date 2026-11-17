@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# source $ABno-set/jo-2-Openbox.sh
+# source $ABno-set/jo-4-Openbox.sh
 
 #=> Openbox
 

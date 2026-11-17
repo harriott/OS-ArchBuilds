@@ -916,7 +916,7 @@ rsync -inrtv --delete /mnt/SD480GSSDPlus/Dropbox/ /mnt/WD30EZRZ/Dropbox >
 ### fix symlinks
 find ~/ -type l -ls | xcol SD480GSSDPlus WD30EZRZ
 sudo bash 05-root_symlinks.sh
-bash anytime/symlinks-jo-0.sh
+bash anytime/symlinks-jo-2.sh
 source $ABno/Bash/export-Arch
 bash 31-symlinks-Openbox.sh
 nvim 05-exports.sh
@@ -1131,7 +1131,7 @@ find /root -type l -ls | xcol SDU3D1TB WD30EZRZ
 bash 05-root_symlinks.sh
 ### fix symlinks
 find ~ -type l -ls | xcol SDU3D1TB WD30EZRZ
-bash anytime/symlinks-jo-0.sh
+bash anytime/symlinks-jo-2.sh
 bash 31-symlinks-Openbox.sh
 reboot to get $machBld  for  bash 36-symlinks-sshd.sh
 rm -r ~/.pandoc/templates; ln -s $onGH/pandoc-templates ~/.pandoc/templates
@@ -4636,6 +4636,7 @@ prs docling
 ## waiting
 $ABnm/etc/rsnapshot.conf
 $CPenc/dpl/Python/uv/ > uv pip install 'markitdown[all]
+$DrCop
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26
