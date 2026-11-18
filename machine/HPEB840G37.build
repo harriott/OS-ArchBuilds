@@ -132,6 +132,7 @@ bash $OSAB/bs-1-into_jo/7-configure_firewalld.sh
 bash $OSAB/bs-1-into_jo/8-sudo-configure_freshclam.sh
 ## KDE
 
+$OSAB/bs-2-into_dscp/2-sudo-to_Wayland.sh
 ## waiting
 browser integration
 klassy-qt5
