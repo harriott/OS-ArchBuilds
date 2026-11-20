@@ -689,7 +689,6 @@ NNN(1)
 #### fRs
     $AjB/bashrc-console
     fRs $AjB bashrc-console
-    fRs $CfWk/technos/civil/catering/CM-DeLonghiDinamica/Fr staplable.tex
     fRs $DaLi SNCF
     fRs $Drpbx/Cop Björk
     fRs $Drpbx/Cop US 1

@@ -3,6 +3,8 @@
 # $ABno/Bash/jazz/bashrc-flyline
 #  sourced from  $ABno/Bash/jazz/bashrc
 
+# caveat: $coLi/Bash/flyline+ANSI-Cquoting.md
+
 #=> 0 enable
 enable -f /usr/lib/bash/libflyline.so flyline
 
