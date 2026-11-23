@@ -53,4 +53,3 @@ if [ $EXITSTATUS -eq 1 ]; then
 fi  # possibly start X
 
 
-source /home/jo/.config/broot/launcher/bash/br

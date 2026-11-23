@@ -15,11 +15,11 @@ ln -sf /usr/share/zoneinfo/Europe/Paris /etc/localtime  # don't  cat  it!
 hwclock --systohc
 sed -i 's/#en_GB.U/en_GB.U/' /etc/locale.gen
 sed -i 's/#fr_FR.U/fr_FR.U/' /etc/locale.gen
-grep '^f' /etc/locale.gen
+grep '^e\|^f' /etc/locale.gen
 locale-gen
 echo 'LANG=fr_FR.UTF-8' > /etc/locale.conf
 cat /etc/locale.conf
-loadkeys fr-latin1
+loadkeys fr-latin1  # for tty's
 echo KEYMAP=fr-latin1 > /etc/vconsole.conf
 echo HPEB840G37 > /etc/hostname
 

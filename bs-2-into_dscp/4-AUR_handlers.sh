@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1:
 
-# bash $OSAB/bs-2-into_X/4-AUR_handlers.sh
+# bash $OSAB/bs-2-into_dscp/3-AUR_handlers.sh
 
 set -v  # prints each statement here, including comments
 
@@ -10,14 +10,14 @@ set -v  # prints each statement here, including comments
 # #=> 0 trizen 0 prepare
 mkdir ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make
 
-# #=> 0 trizen 1 install
-# # needed for  trzAUR
-# cd ~/Arch/AUR
-# rAUR trizen
-# git clone https://aur.archlinux.org/trizen.git
-# cd trizen
-# nvim -c "silent! /trizen" PKGBUILD
-# makepkg -sic
+#=> 0 trizen 1 install
+# needed for  trzAUR
+cd ~/Arch/AUR
+rAUR trizen
+git clone https://aur.archlinux.org/trizen.git
+cd trizen
+nvim -c "silent! /trizen" PKGBUILD
+makepkg -sic
 
 # #=> 2 Pikaur 0 install
 # trzAUR pikaur

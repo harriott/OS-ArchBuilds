@@ -169,7 +169,7 @@ if [ $myDrA ]; then
   Q () { pacman -Qs $1 | xcol $1; }
 else
   Q () { pacman -Qs $1; }
-fi
+fi  # can't send multiple arguments
 # or use  pacsearch
 
 suho () {

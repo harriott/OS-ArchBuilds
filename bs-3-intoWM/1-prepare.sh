@@ -46,21 +46,6 @@ pikn gpick  # for getting onscreen colours
 pikn cups system-config-printer
 sudo systemctl enable cups.service --now
 
-#=> hw - generate 00-keyboard.conf
-# XKEYBOARD-CONFIG(7)
-# /usr/share/xkeyboard-config-2/rules/base.lst
-
-# will need to restart X to get country key maps
-
-# UK:
-# sudo localectl --no-convert set-x11-keymap gb pc105
-
-# Starting choice for  HPEB840G3x:
-sudo localectl --no-convert set-x11-keymap fr pc105
-
-cp /etc/X11/xorg.conf.d/00-keyboard.conf ~/00-keyboard.conf
-# move later to  $machLg/etc/00-keyboard.conf
-
 #=> hw - graphical card 0
 pikn intel-media-driver  # for  VA-API
 # pikn nvidia  # will need to reboot

@@ -5,6 +5,7 @@ vim: nospell:
 
 my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
 
+    /usr/share/doc/arch-wiki/html/en/
     [[ $host =~ HPEB840G3(7|8) ]] && o hi
     bm  # (in a wide enough terminal) fuzzy search for manuals
     ch /usr/share/doc/arch-wiki/html/en
@@ -16,7 +17,8 @@ my Arch QuickReference, some of which is relevant to my WSL Ubuntu builds
     tty-clock -bcs
     ~/.config/pnmixer/config
 
-POSIX - JOBS(1P)
+- POSIX - JOBS(1P)
+- Trusted Users
 
 # audio
     $ABjo/music/music_rotate.sh
@@ -1412,38 +1414,17 @@ tput setaf 95; tput setaf 95 | cat -v; echo =95
     i hunspell
 
 # system
-    $ABjo/wm/Xresources/Xresources
     bat -A /etc/hosts
     bm <command>  # batman (replacing man) only good in full-screen
     cat /proc/cpuinfo
     fd -tf -u -e bmp -e gif -e ico -e jfif -e jp2 -e jpeg -e jpg -e png -e sog -e tif -e tiff . /usr/share > $machLg/usr/share/imagey.ffl
     lnav /var/log  # then  Esc  to get out of weird editing mode
-    r /usr/share/applications  # the  *.desktop  files
-    slock  # unlocks when correct user pw is entered
     swapoff -a
     swapon --show
     systeroid -T > $machLg/systeroid/$(date '+%y%m%d-%H%M').tree
-    XF86Sleep
-    /usr/share/doc/arch-wiki/html/en
-    ~/.local/share/xorg/Xorg.0.log
 
 - `Qt`: `Q qt6`
 - `su` > root pw for `st="$ITAb/ml-$host/systemfilessymlinks/$(date '+%y%m%d-%H%M').txt"; find / -path /home/jo -prune -o -path /mnt -prune -o -path /proc -prune -o -path /run/media -prune -o -type l -ls > $st; chown jo:jo $st`
-- Trusted Users
-
-## .desktop
-    fd -tf .desktop $OSAB
-    locate -r '\.desktop$' > $machLg/desktops.txt
-    r /usr/share/applications
-    rg Exec= /usr/share/applications  # check others
-
-## alt-sysrq REISUB
-1. r unRaw the keyboard
-1. e tErminate all processes
-1. i kIll all processes
-1. s Sync (flush data)
-1. u Unmount all
-1. b reBoot
 
 ## boot
     find /boot/vmli*  # lists available kernels
@@ -1528,6 +1509,11 @@ uses `fzf`
 - HVD Steinzeit
 - icomoon
 
+## KDE - Plasma keyboard shortcuts - Fr
+`ctrl+echap` = suivi de la souris
+`ctrl+win+echap` = 
+`win+echap` = `surveillance du système` (= `plasma-systemmonitor`)
+
 ## locale
     i localectl
 
@@ -1566,11 +1552,6 @@ IOSTAT(1)
 ##### tree view
     e toggles it
     spacebar toggles open/closed a branch
-
-## notification - Dunst
-    $ABjo/wm/dunstrc
-
-to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
 
 ## security
 umask(2)
@@ -1626,22 +1607,50 @@ backed up in `$AjB/bash_profile`
 
 TIMEDATECTL(1)
 
-## windows managers
+## X
+    $ABjo/wm/Xresources/Xresources
+    slock  # unlocks when correct user pw is entered
+    XF86Sleep
+    ~/.local/share/xorg/Xorg.0.log
+
+### .desktop
+    fd -tf .desktop $OSAB
+    locate -r '\.desktop$' > $machLg/desktops.txt
+    r /usr/share/applications
+    rg Exec= /usr/share/applications  # check others
+
+### notification - Dunst
+    $ABjo/wm/dunstrc
+
+to get `org.freedesktop.Notifications` back, `pkill xfce4-notifyd`
+
+### REISUB
+1. `alt-sysrq+r` unRaw the keyboard
+1. `alt-sysrq+e` tErminate all processes
+1. `alt-sysrq+i` kIll all processes
+1. `alt-sysrq+s` Sync (flush data)
+1. `alt-sysrq+u` Unmount all
+1. `alt-sysrq+b` reBoot
+
+- "busier" reversed
+- "Reboot Even If System Utterly Broken"
+
+### windows managers
     xrandr --output DVI-0 --auto --primary --output VGA-0 --auto --left-of DVI-0
 
-### awesome
+#### awesome
     $coAr/build/mb-.../jo/awesome/rc.lua
     modkey+c = c:kill()
     modkey+p = hotkeys_popup
 
-### Openbox
+#### Openbox
     $Obc/autostart/autostart
     $Obc/schema.pl
     openbox --reconfigure
 
 `XDG_CURRENT_DESKTOP` ain't set
 
-#### rc
+##### rc
     $Obc/rc/rc-generic.xml
     Alt+Space => show client menu for active window
     Ctrl+Alt+arrows => move to desktop
@@ -1659,11 +1668,11 @@ TIMEDATECTL(1)
     win-S-Left/Right/Up/Down => DirectionalCycleWindows <direction>
     win+t => last tmux buffer to X11 clipboard
 
-#### tint2
+##### tint2
     $Openbox/tint2rc
     killall -SIGUSR1 tint2  # reloads
 
-## Xfce
+### Xfce
     o $XDG_CACHE_HOME
     o $XDG_CONFIG_HOME
     o $XDG_CONFIG_DIRS
@@ -1671,11 +1680,11 @@ TIMEDATECTL(1)
 
 `xn` defined in `$AjB/bashrc-wm`
 
-### Conky
+#### Conky
     ~/.config/autostart/Conky.desktop
     killall -9 conky; pgrep conky; conky  # resets it
 
-### xfce-perchannel
+#### xfce-perchannel
     rsync -irtv --delete ~/.config/xfce4/xfconf/xfce-perchannel-xml/ $machLg/jo/xfce/perchannel
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
     ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml

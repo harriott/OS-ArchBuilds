@@ -5,8 +5,12 @@
 
 read -p "\$OSAB is $OSAB - looks good?"
 
+set -v  # prints each statement here, including comments
+
+# avoiding  akonadi
+
 #=> 0 KDE 0
-sudo pacman --needed -S plasma-meta  # Q breeze
+sudo pacman --needed -S plasma-meta  # Q baloo; Q breeze
 sudo pacman --needed -S kde-system-meta # Q partitionmanager
 sudo pacman --needed -S kdevelop-meta  # Q kdevelop
 
@@ -14,7 +18,7 @@ sudo pacman --needed -S kdevelop-meta  # Q kdevelop
 sudo pacman --needed -S noto-fonts-emoji qt6-multimedia-ffmpeg
 
 #=> 0 KDE 1
-sudo pacman --needed -S arianna ark audiocd-kio audex dolphin-plugins dragon elisa falkon ffmpegthumbs filelight gwenview isoimagewriter k3b kalk kalzium kamera kate kcalc kclock kcharselect kcolorchooser kdebugsettings kdeconnect kdenlive kdf kdialog kfind kget kio-extras kio-zeroconf kleopatra kolourpaint konsole krecorder krita kruler krusader kstars ktimer ktorrent kwalletmanager kwave kweather marble okular phonon-qt6-vlc pipewire-jack power-profiles-daemon print-manager qrca skanlite skanpage svgpart tesseract-data-eng
+sudo pacman --needed -S arianna ark audiocd-kio audex dolphin-plugins dragon elisa falkon ffmpegthumbs filelight gwenview isoimagewriter k3b kalk kalzium kamera kate kcalc kclock kcharselect kcolorchooser kdebugsettings kdeconnect kdenlive kdf kdialog kfind kget kio-extras kio-zeroconf kolourpaint konsole krecorder krita kruler krusader kstars ktimer ktorrent kwalletmanager kwave kweather marble okular phonon-qt6-vlc pipewire-jack power-profiles-daemon print-manager qrca skanlite skanpage svgpart tesseract-data-eng
 
 # #=> 0 more Bash
 # source $ABno-set/jo-0-Bash.sh

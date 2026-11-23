@@ -3,8 +3,10 @@
 
 # Joseph Harriott, lun 14 sept 2026
 
-# $AjB/bashrc-console  symlinked in  $ABno-set/jo-0-Bash.sh
-#  then sourced by  $AjB/bash_profile  &  $AjB/bashrc
+# $AjB/bashrc-console ($ABno-set/jo-0-Bash.sh) sourced by
+#   $AjB/bash_profile
+#   $AjB/bashrc
+#   $AjB/profile
 # see  $ABno-set/repair.sh  for checking if this was sourced
 
 # useful also in Console as user
