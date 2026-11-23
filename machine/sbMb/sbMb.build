@@ -4638,11 +4638,18 @@ fixed in  $Imagey/Scan.sh
 hp-setup -r > Select > Remove
 hp-setup 10.218.13.239 > Next > Add Printer
 hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Control > Set as Default
+## nomacs not opening
+nomacs -v  got  "nomacs: error while loading shared libraries: libopencv_imgproc.so.500: cannot open shared object file: No such file or directory", so  prs nomacs
+pikn nomacs  didn't fix it  it's flagged out-of-date, and I've  lib/libopencv_imgproc.so.501, so  prs nomacs  again
+pikn nomacs-git  took a long, long time
 ## waiting
 $ABnm/etc/rsnapshot.conf
 $CPenc/dpl/Python/uv/ > uv pip install 'markitdown[all]
 $DrCop
+fdupes
+fsearch
 gokcehan's lf
+kiwix-desktop
 MariaDB
 PDFsam, when it works on  java-runtime 26
 Recoll

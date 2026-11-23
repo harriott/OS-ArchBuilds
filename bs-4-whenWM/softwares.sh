@@ -245,6 +245,7 @@ pikn shellcheck  # brings in Haskell
 #=> WAN
 pikn falkon firefox
 pikn fastmail
+pikn kiwix-desktop
 pikn signal-desktop  # Signal
 pikn google-chrome  # Google Chrome
 pikn zen-browser  # Zen Browser, takes ages...
