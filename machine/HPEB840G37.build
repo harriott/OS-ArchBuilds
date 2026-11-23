@@ -136,8 +136,7 @@ bash $OSAB/bs-2-into_dscp/2-sudo-to_KDE.sh
 unfortunately needed kleopatra, so  sudo pacman -Rs akonadi akonadi-mime kleopatra
 reboot  got me into  Plasma Login Manager  with keyboard US
 Luminosité et couleurs > Thème > Mode sombre
-
-bash $OSAB/bs-2-into_dscp/3-00-keyboard_conf.sh
+bash $OSAB/bs-2-into_dscp/3-00-keyboard_conf.sh  then  reboot  for Fr keymap in Plasma
 ## waiting
 browser integration
 klassy-qt5

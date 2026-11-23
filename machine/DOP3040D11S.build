@@ -279,6 +279,8 @@ turns out all the rejections are files with : in the path, which I realised was 
 ## waiting
 apache
 EFI install
+fdupes
+fsearch
 gokcehan's lf
 # CopyQ
 CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700

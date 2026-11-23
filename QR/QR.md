@@ -1207,12 +1207,6 @@ can fail to start after waking system
 
 can be many GB's
 
-### traur
-    ~/.cache/traur/git
-
-- checks an AUR after `pikaur -S`
-- `traur scan` trust scoring of installed AURs
-
 ### trizen
     bm trizen
     trizen  # trizen --help

@@ -99,6 +99,7 @@ pikn perl-tk  # needed for  tlmgr -gui
 
 #=> file manage
 pikn dragon-drop  # for nnn
+pikn fdupes
 pikn fsearch
 pikn github-cli  # GitHub CLI
 pikn mcat-bin

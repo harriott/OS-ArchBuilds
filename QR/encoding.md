@@ -6,12 +6,15 @@ vim: nospell:
     $ABjo/gitconfig
     /usr/lib/tree_sitter
     archlinux-java status
-    b <codeFile>  # syntax'd cat
     bluefish -v
-    pb <codeFile>  # also reformatted
     r ~/.cache/hugo_cache
     yj -ty <file.toml >file.yml
     za $ITref/CP/encoding/cheatsheet-a5.pdf &  # emmet
+
+# bat
+    $ABjo/bat.conf
+    b <codeFile>  # syntax'd cat ($ABno/Bash/bashrc-generic)
+    pb <codeFile>  # (prettybat) also reformatted
 
 # ffmpeg
     $AjB/bashrc-wm

@@ -7,7 +7,7 @@ read -p "\$OSAB is $OSAB - looks good?"
 
 set -v  # prints each statement here, including comments
 
-# avoiding  akonadi
+# being careful to avoid pulling in  akonadi
 
 #=> 0 KDE 0
 sudo pacman --needed -S plasma-meta  # Q baloo; Q breeze
