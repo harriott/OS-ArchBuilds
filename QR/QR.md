@@ -1198,6 +1198,7 @@ can fail to start after waking system
     1. `paru -Sua` updates AURs
 
 ### Pikaur
+    :Man pikaur
     pikaur -h  # --help
     pikaur -h -S  # --sync
     pikaur -Syu  # wants pw, offers to redo if connection fails
@@ -1511,8 +1512,7 @@ uses `fzf`
 - icomoon
 
 ## KDE - Plasma keyboard shortcuts - Fr
-`ctrl+echap` = suivi de la souris
-`ctrl+win+echap` = 
+`ctrl+win` = suivi de la souris
 `win+echap` = `surveillance du système` (= `plasma-systemmonitor`)
 
 ## locale

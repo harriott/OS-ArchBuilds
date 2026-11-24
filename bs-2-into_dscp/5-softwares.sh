@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# bash $OSAB/bs-2-into_X/5-softwares.sh
+# bash $OSAB/bs-2-into_dscp/5-softwares.sh
 
 set -v  # prints each statement here, including comments
 # prs  defined in  $AjB/bashrc-console
@@ -80,7 +80,7 @@ pikn cheat-bin
 pikn pinfo-git
 
 #=> hw
-pikn -s batstat-git  # battery status
+pikn batstat-git  # battery status
 pikn diskonaut
 pikn exfatprogs  # exFAT utilities
 pikn hwinfo
@@ -106,7 +106,7 @@ pikn rtorrent
 pikn transmission-cli
 
 #=> network - OpenSSH
-pikn openssh; g="$HOME/sshd_config-q6k"; sudo cp /etc/ssh/sshd_config $g; chown jo:jo $g
+pikn openssh; g="$HOME/sshd_config"; sudo cp /etc/ssh/sshd_config $g; chown jo:jo $g
 
 #=> npm 0 configure npm-global
 [ -d ~/.npm-global ] ||  mkdir ~/.npm-global
@@ -143,7 +143,7 @@ pipx install yaml2toml
 pikn python-virtualenvwrapper
 pikn uv
 
-#=> Rust 0 rustup
+#=> Rust 0 update
 rustup update
 
 #=> Rust 1 crates

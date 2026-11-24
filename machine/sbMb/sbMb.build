@@ -6,7 +6,91 @@ journalctl -b -g 'EFI v'  reports "EFI v2.31 by American Megatrends"
 # $rsnapshot
 time (sudo find $rsnapshot/.sync/$host | wc -l)  reports  
 time (sudo find $rsnapshot/aaa.0/$host | wc -l)  reports  2001641
-# build
+# build - parallel
+Kiwix > Download directory > Browse > /mnt/ST4000VN008/kiwix
+## CopyQ
+CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
+  Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
+  Shortcuts >
+    Paste clipboard as plain text > Win+l (= Meta+L)
+    Show/hide main window > Win+Q (= Meta+Q)
+  Appearance > [ Set colors for tabs, tool bar and menus  Theme > dark ]
+## fcrontab
+  !m(0)
+  @ 1 bash ~/Arch/f1t2t3/log.sh
+  @ 3 bash ~/Arch/cmusqueue.sh
+  @ 10 bash ~/Arch/bash_history.sh
+## Firefox
+~/.mozilla/firefox/6qq4cnaa.default-release/cookies.sqlite
+~/.mozilla/firefox/6qq4cnaa.default-release/prefs.js
+## Xfce configuration
+Desktop > Style > None  for each monitor
+Desktop Settings > (Background >) [ Other > Folder > WallpaperFlare > Open  Style > Stretched ]
+Terminal > Edit > Preferences > Appearance > Font > 8
+### Keyboard
+Behaviour > General > Restore numlock state on startup
+#### Application Shortcuts
+alacritty            > Super+A
+cmus-remote -u       > Super+C
+google-chrome-stable > Super+G
+exfalso              > Super+F
+firefox              > Super+X
+gvim                 > Super+V
+keepassxc            > Super+K
+kitty                > Super+i
+music_rotate         > Super+M
+notifications_kill   > Super+D
+sxk                  > Super+S (= win+s) because s is same place in gb/fr
+thunderbird_safely   > Super+T (= win+t)
+neovide              > Super+N
+wezterm              > Super+W
+### Panel Preferences > Panel 1 > Items
+#### Add'd
+Action Buttons
+Show Desktop
+Screenshot
+Whisker Menu
+Applications Menu
+Windows Buttons
+Separator > Expand
+Eyes
+Workspace Switcher
+Clock
+Weather Update
+MPD Client Plugin > ymuse
+System Load Monitor
+Status Tray Plugin (Wifi, Clipman, Dropbox, CopyQ)
+Mount devices
+Notification Plugin > Notifications > Log > Log notifications > always
+PulseAudio Plugin
+Keyboard Layouts (as from  setxkbmap -query)
+Dictionary
+#### Remove'd
+Wavelan (doesn't add more than  Status Tray Plugin)
+### Power Manager > Display > Display power management
+General > When sleep button is pressed > Suspend
+Screensaver Management > (= Screensaver Preferences) > Activate off
+System > Security > Lock screen when system is going to sleep off
+### Session and Startup > Application Autostart
+Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
+Conky > [ Conky  conky ]
+CopyQ > copyq
+Dropbox > dropbox
+Neovide > [ Neovide  neovide ]
+### Window Manager > Keyboard
+Move window to left monitor > Super+1
+Move window to right monitor > Super+2
+### Window Manager Tweaks
+Cycle through windows in a list
+Raise windows while cycling
+## XnView MP > F12
+General > Check for program updates > Never
+### View
+Background color > almost black
+Filter > Custom > [ Audio  Video ] off
+Misc. > Loop on the file list
+
+# build - sequential
 ## Arch install - from the ISO
 ASUS NVIDIA C027PI rev2.00 Radeon HD 5450  on  PCIEX16
 ### ARCH_202008 - SQUASHFS errors
@@ -4648,41 +4732,15 @@ MariaDB
 PDFsam, when it works on  java-runtime 26
 Recoll
 switch to fastmail
-# clm possible extras
+### clm possible extras
 imapbox
 maildir-rank-addr
-# CopyQ
-CopyQ > Ctrl+P > [ General > Confirm application exit off   History > Maximum > 700
-  Items > Text > [ HTML off-ticked  Maximum number of lines > 2 ]
-  Shortcuts >
-    Paste clipboard as plain text > Win+l (= Meta+L)
-    Show/hide main window > Win+Q (= Meta+Q)
-  Appearance > [ Set colors for tabs, tool bar and menus  Theme > dark ]
-# CPU frequency
-/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
-## drivers
-ls /usr/lib/modules/$(uname -r)/kernel/drivers/cpufreq/
-  acpi-cpufreq.ko.zst          p4-clockmod.ko.zst  powernow-k8.ko.zst
-  amd_freq_sensitivity.ko.zst  pcc-cpufreq.ko.zst  speedstep-lib.ko.zst
-# fcrontab
-  !m(0)
-  @ 1 bash ~/Arch/f1t2t3/log.sh
-  @ 3 bash ~/Arch/cmusqueue.sh
-  @ 10 bash ~/Arch/bash_history.sh
-## temperatures
-ln -sf $machBld/jo/f1t2t3/log.sh ~/Arch/f1t2t3/log.sh
-ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # file-hierarchy - diskusage
 /usr/lib 5.4GB
 /usr/share 4.7GB
 /var/cache/ 8.9GB
 /var/cache/pacman/ 8.6GB
 /var/log/journal/ 2.2 GB
-# Firefox
-~/.mozilla/firefox/6qq4cnaa.default-release/cookies.sqlite
-~/.mozilla/firefox/6qq4cnaa.default-release/prefs.js
-# Kiwix
-F12 (= Settings) > Download directory > Browse > /mnt/ST4000VN008/kiwix-desktop
 # physical configuration
 Bose Companion 20
 D-Link DUB-H7
@@ -4759,11 +4817,6 @@ M.I.T > PC Health Status >
 ### USB headers
 CY Double Port USB 3.0, exiting by middle slot
 Digitus 4x USB 2 outlet fitted to F_USB2 & F_USB3
-# recovering journal, after a hard reboot
-  Starting version 251.1-1-arch
-  /dev/sda2: recovering journal
-  /dev/sda2: clean, 874157/3932160 files, 14687050/15728640 blocks
-when finally booted,  /dev/sda2 = /
 # snags
 failing under CPU pressure off ffmpeg + YouTube
 PulseAudio  fail after  Suspend (but  speaker-test -c 2  works): pulseaudio -k
@@ -4778,76 +4831,14 @@ root pw > nvim /etc/fstab > comment out ST4000VN008, ctrl+d (reboots)  for
   sudo e2fsck -v /dev/sdc1
   sudo nvim /etc/fstab  to reinstate  ST4000VN008, reboot
   sudo bash $OSAB/bs-1-to_jo/6-as_root-rsnapshot_automated.sh > enable
+## recovering journal, after a hard reboot
+  Starting version 251.1-1-arch
+  /dev/sda2: recovering journal
+  /dev/sda2: clean, 874157/3932160 files, 14687050/15728640 blocks
+when finally booted,  /dev/sda2 = /
 ## system seizures under load
 happens most when system is under load, but also sometimes when not heavily loaded
 journalctl -b -1 -r  shows no snags
 regularly: clock stuck, no CBH, so hard reboot
 ### orphaned inodes on /dev/sda2
 journalctl -b | grep 'sbMb systemd-fsck'  shows a 9 minute wait for  WD1001FALS
-# Xfce configuration
-Desktop > Style > None  for each monitor
-Desktop Settings > (Background >) [ Other > Folder > WallpaperFlare > Open  Style > Stretched ]
-Terminal > Edit > Preferences > Appearance > Font > 8
-## Keyboard
-Behaviour > General > Restore numlock state on startup
-### Application Shortcuts
-alacritty            > Super+A
-cmus-remote -u       > Super+C
-google-chrome-stable > Super+G
-exfalso              > Super+F
-firefox              > Super+X
-gvim                 > Super+V
-keepassxc            > Super+K
-kitty                > Super+i
-music_rotate         > Super+M
-notifications_kill   > Super+D
-sxk                  > Super+S (= win+s) because s is same place in gb/fr
-thunderbird_safely   > Super+T (= win+t)
-neovide              > Super+N
-wezterm              > Super+W
-## Panel Preferences > Panel 1 > Items
-### Add'd
-Action Buttons
-Show Desktop
-Screenshot
-Whisker Menu
-Applications Menu
-Windows Buttons
-Separator > Expand
-Eyes
-Workspace Switcher
-Clock
-Weather Update
-MPD Client Plugin > ymuse
-System Load Monitor
-Status Tray Plugin (Wifi, Clipman, Dropbox, CopyQ)
-Mount devices
-Notification Plugin > Notifications > Log > Log notifications > always
-PulseAudio Plugin
-Keyboard Layouts (as from  setxkbmap -query)
-Dictionary
-### Remove'd
-Wavelan (doesn't add more than  Status Tray Plugin)
-## Power Manager > Display > Display power management
-General > When sleep button is pressed > Suspend
-Screensaver Management > (= Screensaver Preferences) > Activate off
-System > Security > Lock screen when system is going to sleep off
-## Session and Startup > Application Autostart
-Alacritty > [ Alacritty at start  /home/jo/.startup_terminal.sh ]
-Conky > [ Conky  conky ]
-CopyQ > copyq
-Dropbox > dropbox
-Neovide > [ Neovide  neovide ]
-## Window Manager > Keyboard
-Move window to left monitor > Super+1
-Move window to right monitor > Super+2
-## Window Manager Tweaks
-Cycle through windows in a list
-Raise windows while cycling
-# XnView MP > F12
-General > Check for program updates > Never
-## View
-Background color > almost black
-Filter > Custom > [ Audio  Video ] off
-Misc. > Loop on the file list
-

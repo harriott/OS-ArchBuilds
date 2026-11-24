@@ -7,16 +7,35 @@ $ITmore/HW/laptops/HPEliteBook840G3-7
 
 HP EliteBook 840 G3 barcoded PC117862 (labelled BC PNB 17 by last owner) = HPEB840G37
 
-pikn, prs  defined in  $AjB/bashrc-console
-
 # build
-## Arch install - from the ISO
+pikn, prs  defined in  $AjB/bashrc-console
+## parallel - KDE
+right-click on Panel > Afficher la configuration du panneau >
+  Largeur > Ajuster au contenu
+  Opacité > Translucide  doesn't seem to do anything in Breeze
+### Configuration du système
+Affichage & Écran > Lumière nocturne > Heures d'activation > Lever et coucher du soleil
+Apparence & Style > Fond d'écran >
+  Couleur > noire
+  Type de fond d'écran > Couleur plein
+Applications & Fenêtres > Effets de bureau > Suivi de la souris > ( Configuration > CTRL Meta )
+Gestion de fenêtres > Effets de bureau > Suivi de la souris > ( Configuration > CTRL Meta )
+Sécurité & Confidentialité > Verrouillage de l'écran >
+  Configurer l'apparence > Apparence > Type de fond d'écran > Couleur pleine > Couleur > #000000
+  Verrouiller l'écran automatiquement > Jamais
+Système > Système de gestion de l'énergie >
+  Sur secteur >
+    Affichage et luminosité > Éteindre l'écran > Jamais
+    Lorsque inactif > Ne rien faire
+    Lorsque l'écran de l'ordinateur portable est refermé > Ne rien faire
+## sequential
+### Arch install - from the ISO
 SDCB32G2  with  ARCH_202610  in lh USB
-### keyboard, internet, time
+#### keyboard, internet, time
 loadkeys fr
 as in  $coAr/build/bs-iwctl/Jo-OPPO-A76.sh
 timedatectl
-### partitions
+#### partitions
 lsblk  shows  CV1-8B128-HP  is  /dev/sdb
   gdisk /dev/sdb > o (create a new empty GUID partition table GPT & new protective MBR) y
     w > y
@@ -35,32 +54,32 @@ mkfs.ext4 /dev/sdb3
 gdisk /dev/sda > o (create a new empty GUID partition table GPT & new protective MBR) y > w > y
 gdisk /dev/sda  (MBR: protection  GPT: present) > n > all defaults > w > y
 mkfs.ext4 -L HX256GSSDSATA3 /dev/sda1
-### chroot
-#### prepare drives
+#### chroot
+##### prepare drives
 mount /dev/sdb3 /mnt
 mount --mkdir /dev/sdb1 /mnt/efi - should've been /mnt/boot
 swapon /dev/sdb2
 swapon -s
-#### basic system, into chroot
+##### basic system, into chroot
 as in  $OSAB/bs-0-boot/0-into_chroot.sh
-#### in chroot
+##### in chroot
 ping 8.8.8.8
-##### host, locale, needed packages, time
+###### host, locale, needed packages, time
 manually entered all but en_GB from  $OSAB/bs-0-boot/2-prepare_for_root-1.sh
-##### passwd
+###### passwd
 pw > pw
-#### (not /efi but) /boot
+##### (not /efi but) /boot
 Ctrl+d (= exit)
 umount /dev/sdb1  for  mount /dev/sdb1 /mnt/boot
-##### back into chroot
+###### back into chroot
 genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 arch-chroot -S /mnt
-#### K16GBDTG2 for Dr-IT
+##### K16GBDTG2 for Dr-IT
 mount /dev/sdd1 /efi  (abusing it)
-##### get my needed repositories
+###### get my needed repositories
 source'd (from /efi) $OSAB/bs-0-boot/1-get_onGHs.sh
-##### get fstab
+###### get fstab
 cd /
 cat /etc/fstab
 pacman -S nano
@@ -68,7 +87,7 @@ nano /etc/fstab
 cat /etc/fstab > /efi/HPEB840G37/fstab-qat
 umount /dev/sdd1
 from sbMb, prep'd  $ABno/efi_loader/entries_arch_conf/HPEB840G37.conf
-#### arch-chroot again
+##### arch-chroot again
 got in a tangle, rebooted into  ARCH_202610
 loadkeys fr
 mount /dev/sdb3 /mnt
@@ -78,22 +97,22 @@ arch-chroot -S /mnt
 pacman -S iwd  (will be needed after chroot)
 cd /root/onGH/OS-ArchBuilds; git pull
 got myself pulled out of chroot again
-#### arch-chroot again
+##### arch-chroot again
 loadkeys fr
 mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
 as in  $coAr/build/bs-networking/iwctl-Jo-OPPO-A76.sh
 ping 8.8.8.8
-#### prep for boot into root
+##### prep for boot into root
 cd /root/onGH/OS-ArchBuilds; git pull
 pacman -S eza
 $user_jo, $myDrA  off in  $ABno/m-HPEB840G37/Bash_start, reboot
 bash'd the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh
-#### check  HX256GSSDSATA3
+##### check  HX256GSSDSATA3
 pacman -S hdparm; hdparm -I /dev/sda
-#### systemd-boot fail
+##### systemd-boot fail
 reboot  only goes into  hp Startup Menu
-#### arch-chroot again
+##### arch-chroot again
 loadkeys fr
 mount /dev/sdb3 /mnt
 mount /dev/sdb1 /mnt/boot
@@ -103,43 +122,45 @@ bash the local copy of  $OSAB/bs-0-boot/2-prepare_for_root-2.sh  again
 bootctl  reports broken entries for initrd & linux
 bootctl install  then  bootctl  reports broken entries for initramfs-linux.img & vmlinuz-linux
   fix was  pacman -Syu linux
-## root to jo
+### root to jo
 reboot into root
-### get online
-#### K16GBDTG2 for Dr-IT
+#### get online
+##### K16GBDTG2 for Dr-IT
 mount /dev/sdd1 /efi  (abusing it)
 cp /efi/Dr-IT/core/UlLinux/Arch/build/bs-iwctl/ ~/bs-iwctl
 as in  $coAr/build/bs-networking/iwctl-Jo-OPPO-A76.sh
 dhcpcd wlan0
 pacman -Syu rsync
-#### softwares to jo
+##### softwares to jo
 $OSAB/bs-1-into_jo/1-as_root.sh
 $OSAB/bs-1-into_jo/2-as_root-to_jo.sh
 reboot into jo
-## nmcli
+### nmcli
 $OSAB/bs-1-into_jo/3-NetworkManager.sh
 $coAr/build/bs-networking/nmcli-Jo-MotoG86.sh
 $user_jo  on in  $ABno/m-HPEB840G37/Bash_start, reboot
-## cli environment: 4-config.sh
+### cli environment: 4-config.sh
 cd ~/onGH/OS-ArchBuilds
 bash bs-1-into_jo/4-config.sh  # $OSAB/bs-1-into_jo/4-config.sh
-### remove surplus  source ...broot/launcher...
+#### remove surplus  source ...broot/launcher...
 cd nodes; rm jo/Bash/bash_profile m-HPEB840G3x/jo/bashrc; git pull
-## cli environment: root stuff
+### cli environment: root stuff
 source /home/jo/onGH/OS-ArchBuilds/bs-1-into_jo/5-as_root-broot-sudoers.sh
 bash $OSAB/bs-1-into_jo/6-toFirewall.sh
 bash $OSAB/bs-1-into_jo/7-configure_firewalld.sh
 bash $OSAB/bs-1-into_jo/8-sudo-configure_freshclam.sh
-## KDE
+### KDE
 sudo pacman -Syu
 bash $OSAB/bs-2-into_dscp/2-sudo-to_KDE.sh
 unfortunately needed kleopatra, so  sudo pacman -Rs akonadi akonadi-mime kleopatra
 reboot  got me into  Plasma Login Manager  with keyboard US
 Luminosité et couleurs > Thème > Mode sombre
 bash $OSAB/bs-2-into_dscp/3-00-keyboard_conf.sh  then  reboot  for Fr keymap in Plasma
-
+### softwares
 bash $OSAB/bs-2-into_dscp/4-AUR_handlers.sh
-## waiting
+
+bash $OSAB/bs-2-into_dscp/5-softwares.sh
+### waiting
 browser integration
 klassy-qt5
 latte-dock-ng
@@ -157,26 +178,6 @@ plasma6-applets-qalculate
 plasma6-applets-thermal-monitor-git
 plasma6-applets-wunderground
 vim-deus
-# fcrontab
-# KDE
-right-click on Panel > Afficher la configuration du panneau >
-  Largeur > Ajuster au contenu
-  Opacité > Translucide  doesn't seem to do anything in Breeze
-## Configuration du système
-Affichage & Écran > Lumière nocturne > Heures d'activation > Lever et coucher du soleil
-Apparence & Style > Fond d'écran >
-  Couleur > noire
-  Type de fond d'écran > Couleur plein
-Applications & Fenêtres > Effets de bureau > Suivi de la souris > ( Configuration > CTRL Meta )
-Gestion de fenêtres > Effets de bureau > Suivi de la souris > ( Configuration > CTRL Meta )
-Sécurité & Confidentialité > Verrouillage de l'écran >
-  Configurer l'apparence > Apparence > Type de fond d'écran > Couleur pleine > Couleur > #000000
-  Verrouiller l'écran automatiquement > Jamais
-Système > Système de gestion de l'énergie >
-  Sur secteur >
-    Affichage et luminosité > Éteindre l'écran > Jamais
-    Lorsque inactif > Ne rien faire
-    Lorsque l'écran de l'ordinateur portable est refermé > Ne rien faire
 # physical configuration
 1366x768 screen
 Intel Core i5-6300U incorporating HD Graphics 520 (Gen9, Skylake)
