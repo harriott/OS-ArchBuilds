@@ -137,6 +137,8 @@ unfortunately needed kleopatra, so  sudo pacman -Rs akonadi akonadi-mime kleopat
 reboot  got me into  Plasma Login Manager  with keyboard US
 Luminosité et couleurs > Thème > Mode sombre
 bash $OSAB/bs-2-into_dscp/3-00-keyboard_conf.sh  then  reboot  for Fr keymap in Plasma
+
+bash $OSAB/bs-2-into_dscp/4-AUR_handlers.sh
 ## waiting
 browser integration
 klassy-qt5

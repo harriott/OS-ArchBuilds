@@ -16,12 +16,12 @@ cd ~/Arch/AUR
 rAUR trizen
 git clone https://aur.archlinux.org/trizen.git
 cd trizen
-nvim -c "silent! /trizen" PKGBUILD
+vim -c "silent! /trizen" PKGBUILD
 makepkg -sic
 
 #=> 2 Pikaur 0 install
 trzAUR pikaur
-nvim -c "silent! /github.com\/actionless\/pikaur" PKGBUILD
+vim -c "silent! /github.com\/actionless\/pikaur" PKGBUILD
 makepkg -sic
 pikaur -Syu  # to generate  ~/.config/pikaur.conf
 sed -i 's/^noedit = no/noedit = yes/' ~/.config/pikaur.conf
@@ -60,7 +60,4 @@ pikn paru  # downloads a load crates, then takes a while to build
 
 #=> 4 yay
 pikn yay
-
-# #=> 4 traur
-# pikn traur  # downloads a load crates, then takes a while to build
 

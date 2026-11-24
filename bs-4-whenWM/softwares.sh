@@ -72,6 +72,7 @@ pikn network-manager-applet  # tray icon
 #=> documenting
 pikn docling  # brings in a shitload of dependencies!
 pikn odt2txt
+pikn zim-tools
 
 #==> LibreOffice Fresh install
 pikn libreoffice-fresh-en-gb
@@ -100,7 +101,6 @@ pikn perl-tk  # needed for  tlmgr -gui
 #=> file manage
 pikn dragon-drop  # for nnn
 pikn fdupes
-pikn fsearch
 pikn github-cli  # GitHub CLI
 pikn mcat-bin
 pikn peazip

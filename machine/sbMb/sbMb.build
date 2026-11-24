@@ -4643,13 +4643,7 @@ nomacs -v  got  "nomacs: error while loading shared libraries: libopencv_imgproc
 pikn nomacs  didn't fix it  it's flagged out-of-date, and I've  lib/libopencv_imgproc.so.501, so  prs nomacs  again
 pikn nomacs-git  took a long, long time
 ## waiting
-$ABnm/etc/rsnapshot.conf
-$CPenc/dpl/Python/uv/ > uv pip install 'markitdown[all]
-$DrCop
-fdupes
-fsearch
 gokcehan's lf
-kiwix-desktop
 MariaDB
 PDFsam, when it works on  java-runtime 26
 Recoll
@@ -4687,6 +4681,8 @@ ln -sf $machBld/jo/f1t2t3/f1t2t3.sh ~/Arch/f1t2t3/f1t2t3.sh
 # Firefox
 ~/.mozilla/firefox/6qq4cnaa.default-release/cookies.sqlite
 ~/.mozilla/firefox/6qq4cnaa.default-release/prefs.js
+# Kiwix
+F12 (= Settings) > Download directory > Browse > /mnt/ST4000VN008/kiwix-desktop
 # physical configuration
 Bose Companion 20
 D-Link DUB-H7

@@ -200,6 +200,13 @@ LS(1)
 - client for the Dictionary Server Protocol - nothing stored locally
 - finding answers online
 
+## Kiwix - OpenZIM
+    zimcheck <file.zim>
+    zimdump info <file.zim>
+    zimdump show <file.zim>
+
+`zimdump dump --dir=dump <file.zim>` dumps contents to new directory `dump`
+
 ## LibreOffice
     bash $OSAB/bs-4-whenWM/5-LibreOfficeConfig.sh
 

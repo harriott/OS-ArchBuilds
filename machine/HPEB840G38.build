@@ -374,7 +374,6 @@ hp-toolbox & (= HP Device Manager > HP Envy Inspire 7200 Series) > Printer Contr
 cp /etc/fstab $machLg/etc-fstab/qau
 ## waiting
 fdupes
-fsearch
 system-config-printer
 # fcrontab
   !m(0)
