@@ -6,94 +6,98 @@ set -v  # prints each statement here, including comments
 # prs  defined in  $AjB/bashrc-console
 shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
 
-pikn neovim
+# #=> $TERM
+# pikn alacritty  # Alacritty
+# pikn kitty
+# pikn tmux-fingers
+# pikn xterm
 
-#=> $TERM
-pikn alacritty  # Alacritty
-pikn kitty
-pikn tmux-fingers
-pikn xterm
+# #=> audio
+# pikn espeak-ng
+# pikn spectroterm
+# pikn pwvucontrol  # takes ages, for  PulseAudio  volume icon
 
-#=> audio
-pikn espeak-ng
-pikn spectroterm
-pikn pwvucontrol  # takes ages, for  PulseAudio  volume icon
+# #==> Cmus
+# [ -d ~/.config/cmus ] || mkdir ~/.config/cmus
+# pikn cmus
+# # pikn cmus-git
 
-#==> Cmus
-[ -d ~/.config/cmus ] || mkdir ~/.config/cmus
-pikn cmus
-# pikn cmus-git
+# #==> MPD
+# pikn mpd
+# [ -d ~/.mpd/playlists ] || mkdir -p ~/.mpd/playlists
+# [ -d ~/music ] || mkdir -p ~/music
 
-#==> MPD
-pikn mpd
-[ -d ~/.mpd/playlists ] || mkdir -p ~/.mpd/playlists
-[ -d ~/music ] || mkdir -p ~/music
+# #==> MPD - vimpc-git
+# pikn vimpc-git
 
-#==> MPD - vimpc-git
-pikn vimpc-git
+# #=> code-minimap-bin
+# # /usr/share/bash-completion/completions/code-minimap.bash  for  minimap.vim
+# pikn code-minimap-bin
 
-#=> code-minimap-bin
-# /usr/share/bash-completion/completions/code-minimap.bash  for  minimap.vim
-pikn code-minimap-bin
+# #=> documenting
+# pikn dict-moby-thesaurus
+# pikn dictd
+# pikn vale  # Vale prose linting from cli, also for  ALE
 
-#=> documenting
-pikn dict-moby-thesaurus
-pikn dictd
-pikn vale  # Vale prose linting from cli, also for  ALE
+# #==> human language
+# pikn aspell-en aspell-fr
+# pikn hunspell-en_gb
+# pikn grammalecte
+# pikn nuspell
 
-#==> human language
-pikn aspell-en aspell-fr
-pikn hunspell-en_gb
-pikn grammalecte
-pikn nuspell
+# #=> file contents
+# pikn ansifilter
+# pikn dos2unix
+# pikn htmlhint  # HTMLHint
+# pikn joe
+# pikn sd  # chmln.sd
+# pikn tspreed  # words of a text at preferred speed
 
-#=> file contents
-pikn ansifilter
-pikn dos2unix
-pikn htmlhint  # HTMLHint
-pikn joe
-pikn sd  # chmln.sd
-pikn tspreed  # words of a text at preferred speed
+# #=> file contents - bat
+# # bat-modules, batdiff, batgrep, batman, batpipe, batwatch, prettybat
+# pikn bat-extras  # brings in bat (used in  fzf --preview)
+# pikn entr  # (also used by batwatch)
+# pikn prettier  # (needs  nodejs)
+# pikn python-black
+# pikn shfmt
 
-#=> file contents - bat
-# bat-modules, batdiff, batgrep, batman, batpipe, batwatch, prettybat
-pikn bat-extras  # brings in bat (used in  fzf --preview)
-pikn entr  # (also used by batwatch)
-pikn prettier  # (needs  nodejs)
-pikn python-black
-pikn shfmt
+# #=> file manage
+# pikn fzy
+# pikn gitleaks
+# pikn rsnapshot
+# pikn superfile
 
-#=> file manage
-pikn fzy
-pikn gitleaks
-pikn rsnapshot
-pikn superfile
+# #==> CliFM 0 noto-fonts-emoji
+# pikn noto-fonts-emoji  # don't work in  urxvt  or  xterm...
 
-#==> CliFM 0 noto-fonts-emoji
-pikn noto-fonts-emoji  # don't work in  urxvt  or  xterm...
+# #==> CliFM 1 clifm-git
+# pikn clifm-git  # $AjB/bashrc-console
 
-#==> CliFM 1 clifm-git
-pikn clifm-git  # $AjB/bashrc-console
+# #=> help
+# pikn cheat-bin
+# pikn pinfo-git
 
-#=> help
-pikn cheat-bin
-pikn pinfo-git
+# #=> hw
+# pikn batstat-git  # battery status
+# pikn diskonaut
+# pikn exfatprogs  # exFAT utilities
+# pikn hwinfo
 
-#=> hw
-pikn batstat-git  # battery status
-pikn diskonaut
-pikn exfatprogs  # exFAT utilities
-pikn hwinfo
-pikn xf86-input-wacom
-pikn xorg-xev
+#=> fixes
+prs htmlhint
+npm i -g htmlhint
+prs xf86-input-wacom
 
-#==> for  HPEB840G3x
+#=> hw - HPEB840G3x
 pikn intel-hybrid-codec-driver-git
 pikn nbfc-linux  # fan control for  HPEB840G3x
 
 #=> LanguageTool
 pikn languagetool  # for the GUI
 pikn textidote-bin
+
+# #=> Neovim
+# pikn neovim
 
 #=> network
 pikn aria2
@@ -116,6 +120,7 @@ npm config set prefix=$HOME/.npm-global
 npm i -g carbonyl
 npm i -g cowsay
 npm i -g cspell
+npm i -g htmlhint
 npm i -g js-beautify
 npm i -g mapscii  # world map in terminal
 npm i -g wikit  # open Wikipedia page in browser from terminal

@@ -158,7 +158,6 @@ Luminosité et couleurs > Thème > Mode sombre
 bash $OSAB/bs-2-into_dscp/3-00-keyboard_conf.sh  then  reboot  for Fr keymap in Plasma
 ### softwares
 bash $OSAB/bs-2-into_dscp/4-AUR_handlers.sh
-
 bash $OSAB/bs-2-into_dscp/5-softwares.sh
 ### waiting
 browser integration

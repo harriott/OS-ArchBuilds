@@ -31,7 +31,7 @@ pikn foliate
 #=> file manage 0 Pádraig Brady's key for coreutils
 # for jarun's advcp patch
 gpg --keyserver keys.gnupg.net --recv-keys DF6FD971306037D9
-# gpg -k DF6FD971306037D9
+gpg -k DF6FD971306037D9
 
 #=> file manage 1
 pikn advcpmv  # for nnn -r
