@@ -1565,6 +1565,11 @@ umask(2)
     cat /etc/group  # list all groups on the system
     id jo  # show uid, gid, and groups for jo
 
+### PAM
+    /etc/security/faillock.conf
+
+from a superuser `faillock --user jo --reset` if in a hurry
+
 ### passwd
     passwd -h  # --help
 

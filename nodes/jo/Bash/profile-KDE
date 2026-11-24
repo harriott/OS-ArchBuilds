@@ -6,8 +6,6 @@
 
 source ~/.bp_everywhere  # $AjB/profile
 
-echo -e "you might want to \\e[5;30;47m sudo systemctl enable plasmalogin.service \\e[0m & then reboot"
-echo -e 'you might want to \e[5;30;47m sudo systemctl enable plasmalogin.service \e[0m & then reboot'
 echo -e 'you might want to \e[1m\e[95m sudo systemctl enable plasmalogin.service \e[0m & then reboot'
 
 # if pgrep -l plasmashell &> /dev/null 2>&1; then
