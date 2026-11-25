@@ -7,8 +7,7 @@
 if [ $TERM != 'screen-256color' ]; then echo 'run this from tmux'; exit; fi
 
 set -ev  # quits on error, prints each statement here, including comments
-shopt -s expand_aliases; alias pikn='pikaur -S --needed'
-# prs  defined in  $AjB/bashrc-console
+shopt -s expand_aliases; source $AjB/alias_pikaur  # pikn, prs
 
 read -p 'Have you run  pikaur -Syu  ?'
 

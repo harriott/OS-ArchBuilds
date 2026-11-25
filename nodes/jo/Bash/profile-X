@@ -1,10 +1,10 @@
 # vim: set ft=sh sw=2:
 #
-# my  ~/.bash_profile - to supersede $AjB/bash_profile
+# my  ~/.bash_profile
 # -------------------
 # $AjB/profile-X  symlinked in  $ABno-set/jo-0-Bash.sh
 
-source ~/.bp_everywhere
+source ~/.bp_everywhere  # $AjB/profile
 
 # first, test that X hasn't launched for this user
 ps aux | grep $USER | grep -v grep | grep "/usr/lib/Xorg" >& /dev/null

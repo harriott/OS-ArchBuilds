@@ -4727,6 +4727,7 @@ nomacs -v  got  "nomacs: error while loading shared libraries: libopencv_imgproc
 pikn nomacs  didn't fix it  it's flagged out-of-date, and I've  lib/libopencv_imgproc.so.501, so  prs nomacs  again
 pikn nomacs-git  took a long, long time
 ## waiting
+$AjB/profile-X
 gokcehan's lf
 MariaDB
 PDFsam, when it works on  java-runtime 26

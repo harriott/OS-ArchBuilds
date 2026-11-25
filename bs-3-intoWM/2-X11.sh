@@ -4,7 +4,7 @@
 # $OSAB/bs-3-intoWM/2-X11.sh
 
 set -v  # prints each statement here, including comments
-shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
+shopt -s expand_aliases; source $AjB/alias_pikaur  # pikn, prs
 
 #=> hw
 pikn xf86-input-wacom

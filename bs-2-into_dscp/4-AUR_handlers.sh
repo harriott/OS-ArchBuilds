@@ -27,7 +27,7 @@ pikaur -Syu  # to generate  ~/.config/pikaur.conf
 sed -i 's/^noedit = no/noedit = yes/' ~/.config/pikaur.conf
 
 #=> 2 Pikaur 1 pikn
-shopt -s expand_aliases; alias pikn='pikaur -S --needed'
+shopt -s expand_aliases; source $AjB/alias_pikaur  # pikn, prs
 
 #=> 3 archcanary
 pikn archcanary

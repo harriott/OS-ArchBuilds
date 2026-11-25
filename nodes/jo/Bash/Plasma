@@ -2,8 +2,7 @@
 #
 # my  ~/.plasma  for KDE
 # ----------------------
-# $AjB/Plasma  symlinked in  $ABno-set/jo-1-KDE.sh  for
-# . ~/.plasma  eg from  $AjB/profile-KDE
+# $AjB/Plasma  obviated by  plasmalogin.service, but kept here incase
 
 if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
   exec /usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland

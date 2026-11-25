@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: ft=sh sw=2:
 
-# Joseph Harriott, lun 14 sept 2026
+# Joseph Harriott, mar 24 nov 2026
 
 # $AjB/bashrc-console ($ABno-set/jo-0-Bash.sh) sourced by
 #   $AjB/bash_profile
@@ -247,8 +247,9 @@ con () {
 [[ $PATH =~ npm-global ]] || export PATH="$HOME/.npm-global/bin:$PATH"
 
 #=> packages
-alias pikn='pikaur -S --needed --noedit --nodiff --keepbuilddeps'
-alias prs='pikaur -Rs'
+# alias pikn='pikaur -S --needed --noedit --nodiff --keepbuilddeps'
+# alias prs='pikaur -Rs'
+source $AjB/alias_pikaur  # pikn, prs
 
 chAPDs () {
   for pd in ~/.cache/paru/clone ~/.cache/traur/git ~/.local/share/pikaur/aur_repos ~/Arch/AUR ~/Arch/AURdev-clone ~/Arch/AURdev-make; do

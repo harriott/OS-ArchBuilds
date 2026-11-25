@@ -4,7 +4,7 @@
 
 set -v  # prints each statement here, including comments
 # prs  defined in  $AjB/bashrc-console
-shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
+shopt -s expand_aliases; source $AjB/alias_pikaur  # pikn, prs
 
 # #=> $TERM
 # pikn alacritty  # Alacritty

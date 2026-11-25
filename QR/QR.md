@@ -1246,6 +1246,7 @@ pacman -Sg base-devel  # lists all
 
 ## pacman
     /etc/pacman.conf
+    :Man pacman
     checkupdates
     fd neovim /var/cache/pacman/pkg
     pacman <operation> [options] [targets]
@@ -1260,7 +1261,8 @@ pacman -Sg base-devel  # lists all
     sudo pacman -U package.pkg.tar.xz
     sudo pacman -Rs <packagetoremove>
 
-pacman(8)
+- `/var/log/pacman.log` only gets written at end of Pikaur
+- pacman(8)
 
 ### find package owner of /usr/bin/not
 - `pacman -Qo not` only if `not` is installed

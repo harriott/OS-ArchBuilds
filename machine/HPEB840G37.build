@@ -159,6 +159,9 @@ bash $OSAB/bs-2-into_dscp/3-00-keyboard_conf.sh  then  reboot  for Fr keymap in 
 ### softwares
 bash $OSAB/bs-2-into_dscp/4-AUR_handlers.sh
 bash $OSAB/bs-2-into_dscp/5-softwares.sh
+
+piku
+bash $OSAB/bs-2-into_dscp/5-softwares.sh
 ### waiting
 browser integration
 klassy-qt5

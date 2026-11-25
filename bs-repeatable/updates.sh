@@ -28,8 +28,8 @@ set -e
 
 #=> 5 updates
 echo 'Do updates:'
-pikaur --nodiff --noedit -Syu # because it's informative, and offers to continue after connection failure
-# sudo pacman -Syu
+# pikaur --nodiff --noedit -Syu  # because it's informative, and offers to continue after connection failure
+piku  # ($AjB/alias_pikaur) preferred over  sudo pacman -Syu  because it's informative, and offers to continue after connection failure
 echo "${tpf5b}- reboot if kernel updated! ${tpfn}"
 
 #=> 6 pacnews

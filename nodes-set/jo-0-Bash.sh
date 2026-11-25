@@ -6,12 +6,13 @@
 #=> Bash
 # sort these lists by last use of "~":  :sort /,*\~/
 
-ln -sf $AjB/bash_profile              ~/.bash_profile
+# ln -sf $AjB/bash_profile              ~/.bash_profile
+ln -sf $AjB/profile                   ~/.bp_everywhere
+ln -sf $AjB/profile-X                 ~/.bash_profile
   # - sources  $ABno/Bash/bashrc-generic, which aliases  eza
 if [[ $host =~ HPEB840G3 ]]; then
   ln -sf $ABno/m-HPEB840G3x/jo/bashrc ~/.bashrc
   if [[ $host =~ HPEB840G37 ]]; then
-    ln -sf $AjB/profile               ~/.bp_everywhere
     ln -sf $AjB/profile-KDE           ~/.bash_profile
   fi
 else
@@ -25,5 +26,5 @@ ln -sf $AjB/bashrc-console            ~/.bashrc-console
 ln -sf $AjB/bash_history.sh ~/Arch/bash_history.sh
 
 #==> 1 checks
-eza -al ~/.bash* ~/Arch/bash_history.sh
+eza -al ~/.bash* ~/.bp_everywhere ~/Arch/bash_history.sh
 

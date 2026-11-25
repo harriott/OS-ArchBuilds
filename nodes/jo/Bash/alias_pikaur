@@ -1,0 +1,14 @@
+#!/bin/bash
+# vim: fdl=1 sw=2:
+
+# Joseph Harriott, Wed 25 Nov 2026
+
+# $AjB/alias_pikaur  sourced by  $AjB/bashrc-console, and various build scripts
+
+#=> pikaur
+# alias pikn='pikaur -S --needed --noedit --nodiff --keepbuilddeps'
+alias pikallways='pikaur --noedit --nodiff --keepbuilddeps' # base command
+  alias pikn='pikallways --needed -S'
+  alias piku='pikallways -Syu'
+alias prs='pikaur -Rs'
+

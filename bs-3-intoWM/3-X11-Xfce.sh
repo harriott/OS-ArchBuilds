@@ -3,7 +3,7 @@
 
 # bash <thisfile>.sh
 set -v  # prints each statement here, including comments
-shopt -s expand_aliases; alias pikn='pikaur -S --needed --keepbuilddeps'
+shopt -s expand_aliases; source $AjB/alias_pikaur  # pikn, prs
 
 pikn xfce4 xfce4-goodies
 pikn xfce4-indicator-plugin  # supposedly needed for Dropbox icon
